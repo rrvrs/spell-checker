@@ -1,0 +1,894 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="1.3" xml:lang="pt" article-type="research-article"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Arq Bras Cardiol</journal-id><journal-id journal-id-type="iso-abbrev">Arq Bras Cardiol</journal-id><journal-id journal-id-type="publisher-id">abc</journal-id><journal-title-group><journal-title>Arquivos Brasileiros de Cardiologia</journal-title></journal-title-group><issn pub-type="ppub">0066-782X</issn><issn pub-type="epub">1678-4170</issn><publisher><publisher-name>Sociedade Brasileira de Cardiologia - SBC</publisher-name></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">38597542</article-id><article-id pub-id-type="pmc">PMC12094287</article-id>
+<article-id pub-id-type="other">00305</article-id><article-id pub-id-type="doi">10.36660/abc.20230462</article-id><article-categories><subj-group subj-group-type="heading"><subject>Artigo Original</subject></subj-group></article-categories><title-group><article-title>Identifica&#x000e7;&#x000e3;o de Potenciais Biomarcadores Cruciais em IAMCSST por Meio de An&#x000e1;lise Bioinform&#x000e1;tica Integrada</article-title></title-group><contrib-group><contrib contrib-type="author"><name><surname>Zhao</surname><given-names>Li-Zhi</given-names></name><role>contribu&#x000ed;ram igualmente para este trabalho</role><role>Concep&#x000e7;&#x000e3;o e desenho da pesquisa</role><role>An&#x000e1;lise e interpreta&#x000e7;&#x000e3;o dos dados</role><role>Reda&#x000e7;&#x000e3;o do manuscrito</role><xref rid="aff1" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="aff2" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib contrib-type="author"><name><surname>Liang</surname><given-names>Yi</given-names></name><role>contribu&#x000ed;ram igualmente para este trabalho</role><role>Concep&#x000e7;&#x000e3;o e desenho da pesquisa</role><role>Reda&#x000e7;&#x000e3;o do manuscrito</role><xref rid="aff3" ref-type="aff">
+<sup>3</sup>
+</xref></contrib><contrib contrib-type="author"><name><surname>Yin</surname><given-names>Ting</given-names></name><role>An&#x000e1;lise e interpreta&#x000e7;&#x000e3;o dos dados</role><role>An&#x000e1;lise estat&#x000ed;stica</role><role>Reda&#x000e7;&#x000e3;o do manuscrito</role><xref rid="aff4" ref-type="aff">
+<sup>4</sup>
+</xref></contrib><contrib contrib-type="author"><name><surname>Liao</surname><given-names>Hui-Ling</given-names></name><role>Concep&#x000e7;&#x000e3;o e desenho da pesquisa</role><role>An&#x000e1;lise estat&#x000ed;stica</role><role>Revis&#x000e3;o cr&#x000ed;tica do manuscrito quanto ao conte&#x000fa;do intelectual importante</role><xref rid="aff1" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="aff2" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib contrib-type="author"><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-1749-6976</contrib-id><name><surname>Liang</surname><given-names>Bo</given-names></name><role>Concep&#x000e7;&#x000e3;o e desenho da pesquisa</role><role>Obten&#x000e7;&#x000e3;o de dados</role><role>An&#x000e1;lise e interpreta&#x000e7;&#x000e3;o dos dados</role><role>Revis&#x000e3;o cr&#x000ed;tica do manuscrito quanto ao conte&#x000fa;do intelectual importante</role><xref rid="aff5" ref-type="aff">
+<sup>5</sup>
+</xref></contrib></contrib-group><aff id="aff1">
+<label>1</label>
+<institution content-type="orgdiv1">The Affiliated Traditional Chinese Medicine Hospital</institution>
+<institution content-type="orgname">Southwest Medical University</institution>
+<addr-line>
+<named-content content-type="city">Luzhou</named-content>
+</addr-line>
+<country country="CN">China</country>
+<institution content-type="original"> The Affiliated Traditional Chinese Medicine Hospital, Southwest Medical University, Luzhou &#x02013; China</institution>
+</aff><aff id="aff2">
+<label>2</label>
+<institution content-type="orgdiv1">College of Integration of Traditional Chinese and Western Medicine</institution>
+<institution content-type="orgname">Southwest Medical University</institution>
+<addr-line>
+<named-content content-type="city">Luzhou</named-content>
+</addr-line>
+<country country="CN">China</country>
+<institution content-type="original"> College of Integration of Traditional Chinese and Western Medicine, Southwest Medical University, Luzhou &#x02013; China</institution>
+</aff><aff id="aff3">
+<label>3</label>
+<institution content-type="orgdiv1">Department of Geriatrics</institution>
+<institution content-type="orgname">Sichuan Second Hospital of T.C.M.</institution>
+<addr-line>
+<named-content content-type="city">Chengdu</named-content>
+</addr-line>
+<country country="CN">China</country>
+<institution content-type="original"> Department of Geriatrics, Sichuan Second Hospital of T.C.M., Chengdu &#x02013; China</institution>
+</aff><aff id="aff4">
+<label>4</label>
+<institution content-type="orgdiv2">The Second Affiliated Hospital</institution>
+<institution content-type="orgdiv1">School of Medicine</institution>
+<institution content-type="orgname">Zhejiang University</institution>
+<addr-line>
+<named-content content-type="city">Hangzhou</named-content>
+</addr-line>
+<country country="CN">China</country>
+<institution content-type="original"> Department of Cardiology, The Second Affiliated Hospital, School of Medicine, Zhejiang University, Hangzhou &#x02013; China</institution>
+</aff><aff id="aff5">
+<label>5</label>
+<institution content-type="orgdiv2">Chongqing Clinical Research Center of Kidney and Urology Diseases</institution>
+<institution content-type="orgdiv1">Xinqiao Hospital</institution>
+<institution content-type="orgname">Third Military Medical University</institution>
+<addr-line>
+<named-content content-type="city">Chongqing</named-content>
+</addr-line>
+<country country="CN">China</country>
+<institution content-type="original"> Department of Nephrology, The Key Laboratory for the Prevention and Treatment of Chronic Kidney Disease of Chongqing, Chongqing Clinical Research Center of Kidney and Urology Diseases, Xinqiao Hospital, Army Medical University (Third Military Medical University), Chongqing &#x02013; China</institution>
+</aff><author-notes><corresp id="c01">
+<bold>Correspond&#x000ea;ncia: Bo Liang e Hui-Ling Liao</bold>
+&#x02022; Army Medical University (Third Military Medical University) &#x02013; Chongqing &#x02013; China; Southwest Medical University &#x02013; Luzhou &#x02013; China. E-mail:
+<email>liangbo2018@126.com</email>
+;
+<email>liaohl@swmu.edu.cn</email>
+</corresp><fn fn-type="edited-by"><p>Editor respons&#x000e1;vel pela revis&#x000e3;o: Nat&#x000e1;lia Olivetti</p></fn><fn fn-type="COI-statement"><p>Potencial conflito de interesse</p><p>N&#x000e3;o h&#x000e1; conflito com o presente artigo</p></fn></author-notes><pub-date pub-type="epub"><day>14</day><month>3</month><year>2024</year></pub-date><pub-date pub-type="collection"><month>2</month><year>2024</year></pub-date><volume>121</volume><issue>2</issue><elocation-id>e20230462</elocation-id><history><date date-type="received"><day>12</day><month>7</month><year>2023</year></date><date date-type="rev-recd"><day>08</day><month>9</month><year>2023</year></date><date date-type="accepted"><day>14</day><month>11</month><year>2023</year></date></history><permissions><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p> This is an Open Access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited. </license-p></license></permissions><abstract><title>Resumo</title><sec><title>Fundamento</title><p> O infarto do mioc&#x000e1;rdio com eleva&#x000e7;&#x000e3;o do segmento ST (IAMCSST) &#x000e9; uma das principais causas de doen&#x000e7;as cardiovasculares fatais, que t&#x000ea;m sido a principal causa de mortalidade em todo o mundo. O diagn&#x000f3;stico na fase inicial beneficiaria a interven&#x000e7;&#x000e3;o cl&#x000ed;nica e o progn&#x000f3;stico, mas ainda falta a explora&#x000e7;&#x000e3;o dos biomarcadores do IAMCSST.</p></sec><sec><title>Objetivos</title><p> Neste estudo, conduzimos uma an&#x000e1;lise bioinform&#x000e1;tica para identificar potenciais biomarcadores cruciais no progresso do IAMCSST.</p></sec><sec><title>M&#x000e9;todos</title><p> Obtivemos GSE59867 para pacientes com IAMCSST e doen&#x000e7;a arterial coronariana est&#x000e1;vel (DACE). Genes diferencialmente expressos (GDEs) foram selecionados com o limiar de |log2fold change| &#x0003e; 0,5 e p &#x0003c; 0,05. Com base nesses genes, conduzimos an&#x000e1;lises de enriquecimento para explorar a relev&#x000e2;ncia potencial entre genes e para rastrear genes centrais. Posteriormente, os genes centrais foram analisados para detectar miRNAs relacionados e DAVID para detectar fatores de transcri&#x000e7;&#x000e3;o para an&#x000e1;lise posterior. Finalmente, o GSE62646 foi utilizado para avaliar a especificidade dos GDEs, com genes demonstrando resultados de AUC superiores a 75%, indicando seu potencial como candidatos a biomarcadores. Posteriormente, os genes centrais foram analisados para detectar miRNAs relacionados e DAVID para detectar fatores de transcri&#x000e7;&#x000e3;o para an&#x000e1;lise posterior. Finalmente, o GSE62646 foi utilizado para avaliar a especificidade dos GDEs, com genes demonstrando resultados de AUC superiores a 75%, indicando seu potencial como candidatos a biomarcadores.</p></sec><sec><title>Resultados</title><p> 133 GDEs entre DACE e IAMCSST foram obtidos. Em seguida, a rede PPI de GDEs foi constru&#x000ed;da usando String e Cytoscape, e an&#x000e1;lises posteriores determinaram genes centrais e 6 complexos moleculares. A an&#x000e1;lise de enriquecimento funcional dos GDEs sugere que as vias relacionadas &#x000e0; inflama&#x000e7;&#x000e3;o, metabolismo e imunidade desempenham um papel fundamental na progress&#x000e3;o de DACE para IAMCSST. Al&#x000e9;m disso, foram previstos miRNAs relacionados, has-miR-124, has-miR-130a/b e has-miR-301a/b regularam a express&#x000e3;o do maior n&#x000fa;mero de genes. Enquanto isso, a an&#x000e1;lise dos fatores de transcri&#x000e7;&#x000e3;o indica que EVI1, AML1, GATA1 e PPARG s&#x000e3;o os genes mais enriquecidos. Finalmente, as curvas ROC demonstram que MS4A3, KLRC4, KLRD1, AQP9 e CD14 exibem alta sensibilidade e especificidade na previs&#x000e3;o de IAMCSST.</p></sec><sec><title>Conclus&#x000f5;es</title><p> Este estudo revelou que imunidade, metabolismo e inflama&#x000e7;&#x000e3;o est&#x000e3;o envolvidos no desenvolvimento de IAMCSST derivado de DACE, e 6 genes, incluindo MS4A3, KLRC4, KLRD1, AQP9, CD14 e CCR1, poderiam ser empregados como candidatos a biomarcadores para IAMCSST.</p></sec></abstract><kwd-group><kwd>Infarto do Mioc&#x000e1;rdio sem Supradesn&#x000ed;vel do Segmento ST</kwd><kwd>Doen&#x000e7;a da Art&#x000e9;ria Coronariana</kwd><kwd>Biomarcadores</kwd><kwd>Biologia Computacional</kwd></kwd-group><counts><fig-count count="14"/><table-count count="4"/><equation-count count="0"/><ref-count count="45"/></counts></article-meta></front><body><p>
+<fig position="float" id="f01"><label>Figura Central</label><caption><title>: Identifica&#x000e7;&#x000e3;o de Potenciais Biomarcadores Cruciais em IAMCSST por Meio de An&#x000e1;lise Bioinform&#x000e1;tica Integrada</title></caption><graphic xlink:href="0066-782X-abc-121-2-e20230462-gf01" position="float"/><attrib>
+<italic toggle="yes">Identifica&#x000e7;&#x000e3;o de potenciais biomarcadores cruciais em IAMCSST por meio de an&#x000e1;lise bioinform&#x000e1;tica integrada. IAMCSST: infarto do mioc&#x000e1;rdio com eleva&#x000e7;&#x000e3;o do segmento ST; DACE: doen&#x000e7;a arterial coronariana est&#x000e1;vel.</italic>
+</attrib></fig>
+</p><sec sec-type="intro"><title>Introdu&#x000e7;&#x000e3;o</title><p>Nas &#x000fa;ltimas d&#x000e9;cadas, as doen&#x000e7;as cardiovasculares t&#x000ea;m sido a principal causa de mortalidade em todo o mundo.<sup>
+<xref rid="B1" ref-type="bibr">1</xref>
+</sup> Entre as mortes por doen&#x000e7;as cardiovasculares, a s&#x000ed;ndrome coronariana aguda (SCA) &#x000e9; a principal causa.<sup>
+<xref rid="B2" ref-type="bibr">2</xref>
+</sup> Embora o aumento do uso de estrat&#x000e9;gias terap&#x000ea;uticas baseadas em evid&#x000ea;ncias e mudan&#x000e7;as no estilo de vida tenham estimulado redu&#x000e7;&#x000f5;es consider&#x000e1;veis na mortalidade por doen&#x000e7;as cardiovasculares, o n&#x000fa;mero de mortes ainda est&#x000e1; aumentando.<sup>
+<xref rid="B3" ref-type="bibr">3</xref>
+</sup> Nos pa&#x000ed;ses desenvolvidos, mais de um ter&#x000e7;o das mortes foram causadas por SCA, e a situa&#x000e7;&#x000e3;o tamb&#x000e9;m est&#x000e1; a piorar ainda mais nos pa&#x000ed;ses em desenvolvimento.<sup>
+<xref rid="B3" ref-type="bibr">3</xref>
+</sup></p><p>O infarto do mioc&#x000e1;rdio com eleva&#x000e7;&#x000e3;o do segmento ST (IAMCSST), o tipo mais grave de ataque card&#x000ed;aco, &#x000e9; um dos tr&#x000ea;s tipos de SCA. Na maioria dos casos, o IAMCSST &#x000e9; devido &#x000e0; ruptura de uma placa ateroscler&#x000f3;tica vulner&#x000e1;vel num vaso coron&#x000e1;rio epic&#x000e1;rdico, resultando assim numa oclus&#x000e3;o tromb&#x000f3;tica completa,<sup>
+<xref rid="B4" ref-type="bibr">4</xref>
+</sup> ou seja, pacientes com doen&#x000e7;a arterial coronariana est&#x000e1;vel (DACE) s&#x000e3;o popula&#x000e7;&#x000f5;es de alto risco de IAMCSST.<sup>
+<xref rid="B3" ref-type="bibr">3</xref>
+</sup> Numerosas diretrizes da SCA sugerem que um estilo de vida saud&#x000e1;vel e um bom desempenho m&#x000e9;dico reduzem a morbidade, e estrat&#x000e9;gias de tratamento de reperfus&#x000e3;o e revasculariza&#x000e7;&#x000e3;o a tempo reduzem a mortalidade.<sup>
+<xref rid="B5" ref-type="bibr">5</xref>
+,
+<xref rid="B6" ref-type="bibr">6</xref>
+</sup> No entanto, quando ocorre IAMCSST, &#x000e9; muito dif&#x000ed;cil detectar, transportar, diagnosticar e realizar opera&#x000e7;&#x000f5;es a tempo, o que dificulta aproveitar o momento de ouro para a revasculariza&#x000e7;&#x000e3;o. O diagn&#x000f3;stico de IAMCSST baseia-se na evid&#x000ea;ncia de biomarcadores de necrose miocit&#x000e1;ria. As isoformas I e T da troponina card&#x000ed;aca surgiram como os biomarcadores diagn&#x000f3;sticos preferidos porque s&#x000e3;o altamente sens&#x000ed;veis e espec&#x000ed;ficos para les&#x000e3;o mioc&#x000e1;rdica; portanto, tanto as diretrizes europeias quanto as americanas enfatizam que a troponina card&#x000ed;aca &#x000e9; o biomarcador preferido para o diagn&#x000f3;stico de IAMCSST.<sup>
+<xref rid="B7" ref-type="bibr">7</xref>
+,
+<xref rid="B8" ref-type="bibr">8</xref>
+</sup> Como biomarcadores tradicionais de SCA, a troponina card&#x000ed;aca e a banda mioc&#x000e1;rdica da creatina quinase, que seguem cin&#x000e9;tica semelhante &#x000e0; da troponina card&#x000ed;aca, t&#x000ea;m sido recomendadas para diagn&#x000f3;stico precoce em casos suspeitos de SCA. No entanto, com o desenvolvimento de microarranjos e sequenciamento de &#x000fa;ltima gera&#x000e7;&#x000e3;o, encontrar novos biomarcadores com alta sensibilidade e especificidade &#x000e9; de grande import&#x000e2;ncia para a preven&#x000e7;&#x000e3;o e diagn&#x000f3;stico precoce do IAMCSST, especialmente desenvolvido a partir do DACE.</p><p>Neste trabalho, investigamos os genes diferencialmente expressos (GDEs) entre pacientes com DACE e IAMCSST. Conduzimos a an&#x000e1;lise das vias de intera&#x000e7;&#x000e3;o prote&#x000ed;na-prote&#x000ed;na (PPI), Gene Ontology (GO) e Enciclop&#x000e9;dia de Genes e Genomas de Kyoto (KEGG), que ajudaram a elucidar a fun&#x000e7;&#x000e3;o dos DEGs. Consequentemente, detectamos microRNAs (miRNAs) e fatores de transcri&#x000e7;&#x000e3;o relacionados para analisar ainda mais as fun&#x000e7;&#x000f5;es potenciais. Por fim, curvas ROC (Receiver Operating Characteristic) foram tra&#x000e7;adas para explorar a sensibilidade e especificidade de potenciais biomarcadores e validar os resultados (
+<xref rid="f01" ref-type="fig">Figura Central</xref>
+).</p></sec><sec sec-type="methods"><title>M&#x000e9;todo</title><sec><title>Aquisi&#x000e7;&#x000e3;o e processamento de dados brutos</title><p>Os dados brutos do conjunto de dados de express&#x000e3;o de microarranjo GSE59867<sup>
+<xref rid="B9" ref-type="bibr">9</xref>
+</sup> e seu arquivo de anota&#x000e7;&#x000e3;o GPL6244 foram obtidos do Gene Expression Omnibus. Um total de 157 amostras, incluindo 46 pacientes com DACE sem hist&#x000f3;ria de IM e 111 pacientes com IAMCSST, foram inclu&#x000ed;dos no presente estudo. Os dados s&#x000e3;o p&#x000fa;blicos e n&#x000e3;o envolvem a privacidade dos pacientes, n&#x000e3;o sendo necess&#x000e1;ria a revis&#x000e3;o e consentimento do comit&#x000ea; de &#x000e9;tica.</p></sec><sec><title>Investiga&#x000e7;&#x000e3;o de GDEs</title><p>Ap&#x000f3;s o processamento dos dados brutos, analisamos os dados usando o pacote
+<italic toggle="yes">limma</italic>
+(vers&#x000e3;o 3.12) com
+<italic toggle="yes">fold change</italic>
+e p para GDEs.<sup>
+<xref rid="B10" ref-type="bibr">10</xref>
+</sup> O limite de GDEs foi |log2fold change| &#x0003e; 0,5 e p &#x0003c; 0,05,<sup>
+<xref rid="B11" ref-type="bibr">11</xref>
+</sup> e os resultados foram visualizados usando os pacotes
+<italic toggle="yes">ggplot2</italic>
+(vers&#x000e3;o 3.3.3) e
+<italic toggle="yes">pheatmap</italic>
+(vers&#x000e3;o 1.0.12).</p></sec><sec><title>An&#x000e1;lise PPI</title><p>As informa&#x000e7;&#x000f5;es do PPI foram levantadas utilizando o banco de dados String (vers&#x000e3;o 11.0).<sup>
+<xref rid="B12" ref-type="bibr">12</xref>
+</sup> Em seguida, a rede PPI de GDEs foi carregada no Cytoscape (vers&#x000e3;o 3.8.2), conforme descrito anteriormente.<sup>
+<xref rid="B13" ref-type="bibr">13</xref>
+</sup> OCitoNCA plugin no Cytoscape foi usado para calcular centralidade e avaliar redes biol&#x000f3;gicas, e o plugin MCODE foi empregado para detectar potenciais complexos moleculares e m&#x000f3;dulos de fun&#x000e7;&#x000e3;o.</p></sec><sec><title>An&#x000e1;lise de enriquecimento funcional</title><p>Os termos GO e a an&#x000e1;lise KEGG de GDEs e potenciais complexos moleculares foram realizados usando Metascape, uma plataforma baseada na web que fornece anota&#x000e7;&#x000e3;o gen&#x000e9;tica, enriquecimento funcional e servi&#x000e7;os de an&#x000e1;lise de interatoma. Termos GO ou vias KEGG com p &#x0003c;0,01 e enriquecidos com mais de 3 genes foram considerados an&#x000e1;lise de enriquecimento significativo, conforme descrito anteriormente.<sup>
+<xref rid="B14" ref-type="bibr">14</xref>
+,
+<xref rid="B15" ref-type="bibr">15</xref>
+</sup></p></sec><sec><title>An&#x000e1;lise de Enriquecimento de Conjunto Gen&#x000e9;tico (GSEA)</title><p>O GSEA foi conduzido utilizando o software GSEA (vers&#x000e3;o 7.4) com termos GO, vias KEGG e vias Reactome para complementar o enriquecimento funcional;<sup>
+<xref rid="B16" ref-type="bibr">16</xref>
+</sup> termos com p &#x0003c; 0,05 e |escore de enriquecimento normalizado| &#x0003e;1 foram definidos como termos de enriquecimento significativo.</p></sec><sec><title>Investiga&#x000e7;&#x000e3;o de miRNAs essenciais e fatores de transcri&#x000e7;&#x000e3;o</title><p>Investigamos os miRNAs relacionados de genes centrais para uma explica&#x000e7;&#x000e3;o funcional adicional usando o software FunRich (vers&#x000e3;o 3.1.4).<sup>
+<xref rid="B17" ref-type="bibr">17</xref>
+</sup> Os fatores de transcri&#x000e7;&#x000e3;o foram previstos usando o Database for Annotation, Visualization, and Integrated Discovery (DAVID, vers&#x000e3;o 6.8), e os genes enriquecidos classificam os resultados.</p></sec><sec><title>Verifica&#x000e7;&#x000e3;o de genes centrais</title><p>Desenhamos as curvas da caracter&#x000ed;stica de opera&#x000e7;&#x000e3;o do receptor (ROC) usando o pacote pROC e comparamos a express&#x000e3;o dos genes hub em GSE59867 e GSE62646,<sup>
+<xref rid="B18" ref-type="bibr">18</xref>
+</sup> um conjunto de dados gen&#x000e9;ticos contendo 14 amostras DACE e 28 amostras de IAMCSST, para validar os genes centrais, que poderiam ser os potenciais biomarcadores de IAMCSST. A &#x000e1;rea sob a curva superior a 75% foi considerada como demonstrando sensibilidade e especificidade excepcionais, o que indicou a sua potencial candidatura como biomarcadores. A express&#x000e3;o dos genes hub foi comparada com um teste t n&#x000e3;o pareado, e p bicaudal &#x0003c;0,05 foi considerado uma diferen&#x000e7;a estat&#x000ed;stica.</p></sec></sec><sec sec-type="results"><title>Resultados</title><sec><title>Investiga&#x000e7;&#x000e3;o de GDEs</title><p>As informa&#x000e7;&#x000f5;es b&#x000e1;sicas dos conjuntos de dados s&#x000e3;o mostradas na
+<xref rid="t1" ref-type="table">Tabela 1</xref>
+. O conjunto de dados de express&#x000e3;o de microarranjo GSE62646 foi avaliado com um boxplot e um gr&#x000e1;fico de degrada&#x000e7;&#x000e3;o de RNA; os resultados sugeriram que GSE62646 &#x000e9; um conjunto de dados qualificado (
+<ext-link xlink:href="http://abccardiol.org/supplementary-material/2024/12102/2023-0462_supplemental.pdf" ext-link-type="uri">Figura S1</ext-link>
+). Em seguida, valores incertos ou amb&#x000ed;guos em GSE62646 foram complementados usando o m&#x000e9;todo K-Nearest Neighbor, e os DEGs foram analisados usando o pacote
+<italic toggle="yes">limma</italic>
+. Ap&#x000f3;s a regula&#x000e7;&#x000e3;o pelo UniProt, um total de 133 DEGs foram finalmente determinados, incluindo 54 genes regulados negativamente e 79 genes regulados positivamente, como mostrado na
+<xref rid="f02" ref-type="fig">Figura 1</xref>
+, visualizados pelo gr&#x000e1;fico do vulc&#x000e3;o e pelo mapa de calor.</p><p>
+<table-wrap position="float" id="t1"><label>Tabela 1</label><caption><title>&#x02013; Informa&#x000e7;&#x000f5;es b&#x000e1;sicas sobre os conjuntos de dados</title></caption><table frame="hsides" rules="groups"><colgroup width="33%" span="1"><col span="1"/><col span="1"/><col span="1"/></colgroup><thead><tr><th align="left" style="font-weight:normal" rowspan="1" colspan="1">&#x000a0;</th><th rowspan="1" colspan="1">GSE59867</th><th rowspan="1" colspan="1">GSE62646</th></tr></thead><tbody><tr><td rowspan="1" colspan="1">Status</td><td align="center" rowspan="1" colspan="1">P&#x000fa;blico em 21 de maio de 2015</td><td align="center" rowspan="1" colspan="1">P&#x000fa;blico em 23 de outubro de 2014</td></tr><tr><td rowspan="1" colspan="1">T&#x000ed;tulo</td><td align="center" rowspan="1" colspan="1">O perfil de express&#x000e3;o g&#x000ea;nica revela potenciais biomarcadores progn&#x000f3;sticos associados &#x000e0; progress&#x000e3;o da insufici&#x000ea;ncia card&#x000ed;aca.</td><td align="center" rowspan="1" colspan="1">Padr&#x000e3;o alterado de express&#x000e3;o g&#x000ea;nica em c&#x000e9;lulas mononucleares do sangue perif&#x000e9;rico em pacientes com infarto agudo do mioc&#x000e1;rdio</td></tr><tr><td rowspan="1" colspan="1">Popula&#x000e7;&#x000e3;o</td><td align="center" rowspan="1" colspan="1">Um total de 157 amostras, incluindo 111 pacientes com IAMCSST e 46 pacientes com DACE sem hist&#x000f3;rico de IM.</td><td align="center" rowspan="1" colspan="1">Um total de 146 amostras, incluindo 28 pacientes com IAMCSST e 14 pacientes com DACE sem hist&#x000f3;rico de IM.</td></tr><tr><td rowspan="1" colspan="1">Tipo de experimento</td><td align="center" rowspan="1" colspan="1">Perfil de express&#x000e3;o por array</td><td align="center" rowspan="1" colspan="1">Perfil de express&#x000e3;o por array</td></tr><tr><td rowspan="1" colspan="1">Plataformas</td><td align="center" rowspan="1" colspan="1">GPL6244</td><td align="center" rowspan="1" colspan="1">GPL6244</td></tr><tr><td rowspan="1" colspan="1">Publica&#x000e7;&#x000e3;o</td><td align="center" rowspan="1" colspan="1">PMID: 25984239</td><td align="center" rowspan="1" colspan="1">PMID: 23185530</td></tr></tbody></table><table-wrap-foot><fn id="TFN1"><p>IAMCSST: infarto do mioc&#x000e1;rdio com eleva&#x000e7;&#x000e3;o do segmento ST; DACE: doen&#x000e7;a arterial coronariana est&#x000e1;vel; IM: infarto do mioc&#x000e1;rdio.</p></fn></table-wrap-foot></table-wrap>
+</p><p>
+<fig position="float" id="f02"><label>Figura 1</label><caption><title>&#x02013; GDEs em amostras de IAMCSST e amostras de DACE. A) Mapa de calor. Cada linha representa uma amostra e cada coluna representa um &#x000fa;nico gene. A cor rosa representou amostras de IAMCSST e a cor azul representou amostras DACE. A escala de cores mostra o n&#x000ed;vel relativo de express&#x000e3;o g&#x000ea;nica em determinados slides: verde indica baixos n&#x000ed;veis de express&#x000e3;o relativa; vermelho indica altos n&#x000ed;veis de express&#x000e3;o relativa. B) Gr&#x000e1;fico do vulc&#x000e3;o. IAMCSST: infarto do mioc&#x000e1;rdio com eleva&#x000e7;&#x000e3;o do segmento ST; DACE: doen&#x000e7;a arterial coronariana est&#x000e1;vel.</title></caption><graphic xlink:href="0066-782X-abc-121-2-e20230462-gf02" position="float"/></fig>
+</p></sec><sec><title>An&#x000e1;lise PPI</title><p>Usando a plataforma String, investigamos a rede PPI de linha e o resultado foi carregado no Cytoscape para processamento posterior. Conforme mostrado na
+<xref rid="f03" ref-type="fig">Figura 2A</xref>
+, a rede consistia em 73 n&#x000f3;s e 167 arestas; 50 n&#x000f3;s desconectados foram ocultados, o valor do grau na rede PPI foi detectado usando CytoNCA para descobrir os genes do hub com a mediana do valor do grau, 35 genes incluindo FCGR1A, S100A12, CD163, CCR2, CD14 e outros foram definidos como genes centrais. Ent&#x000e3;o, o plugin MCODE no Cytoscape foi empregado para detectar os m&#x000f3;dulos de fun&#x000e7;&#x000e3;o potencial ou complexo proteico, como mostrado na
+<xref rid="f03" ref-type="fig">Figura 2B ~ D</xref>
+; os 3 principais m&#x000f3;dulos de fun&#x000e7;&#x000e3;o potencial (M1, M2 e M3) foram selecionados para an&#x000e1;lise de enriquecimento subsequente.</p><p>
+<fig position="float" id="f03"><label>Figura 2</label><caption><title>&#x02013; Rede PPI. A) Toda a rede PPI. B) M&#x000f3;dulos biofuncionais M1. C) M&#x000f3;dulos biofuncionais M2. D) M&#x000f3;dulos biofuncionais M3.</title></caption><graphic xlink:href="0066-782X-abc-121-2-e20230462-gf03" position="float"/></fig>
+</p></sec><sec><title>An&#x000e1;lise de enriquecimento de fun&#x000e7;&#x000e3;o</title><p>Numerosas fun&#x000e7;&#x000f5;es moleculares estavam envolvidas na liga&#x000e7;&#x000e3;o do complexo proteico de classe I do MHC, na liga&#x000e7;&#x000e3;o a carboidratos, na liga&#x000e7;&#x000e3;o ao ant&#x000ed;geno proteico e na liga&#x000e7;&#x000e3;o ao receptor RAGE (
+<xref rid="f04" ref-type="fig">Figura 3A</xref>
+). Da mesma forma, numerosos processos biol&#x000f3;gicos estiveram envolvidos na ativa&#x000e7;&#x000e3;o celular envolvida na resposta imune, ativa&#x000e7;&#x000e3;o de leuc&#x000f3;citos envolvida na resposta imune, regula&#x000e7;&#x000e3;o negativa do processo do sistema imunol&#x000f3;gico, ativa&#x000e7;&#x000e3;o de c&#x000e9;lulas mieloides envolvidas na resposta imune, ativa&#x000e7;&#x000e3;o de neutr&#x000f3;filos, imunidade mediada por leuc&#x000f3;citos mieloides e ativa&#x000e7;&#x000e3;o de neutr&#x000f3;filos envolvida na resposta imune (
+<xref rid="f04" ref-type="fig">Figura 3B</xref>
+). Os resultados indicaram que numerosos componentes celulares estavam envolvidos em gr&#x000e2;nulos espec&#x000ed;ficos, gr&#x000e2;nulos terci&#x000e1;rios, membranas de ves&#x000ed;culas citoplasm&#x000e1;ticas, membranas granulares secretoras, membranas granulares espec&#x000ed;ficas, o lado externo da membrana plasm&#x000e1;tica e outros (
+<xref rid="f04" ref-type="fig">Figura 3C</xref>
+). As vias KEGG estavam envolvidas no processamento e apresenta&#x000e7;&#x000e3;o de ant&#x000ed;genos, citotoxicidade mediada por c&#x000e9;lulas natural killer, diferencia&#x000e7;&#x000e3;o de osteoclastos, linhagem de c&#x000e9;lulas hematopoi&#x000e9;ticas, desregula&#x000e7;&#x000e3;o transcricional em c&#x000e2;ncer, infec&#x000e7;&#x000e3;o pelo v&#x000ed;rus 1 da leucemia de c&#x000e9;lulas T humanas, infec&#x000e7;&#x000e3;o por HTLV-I e via de sinaliza&#x000e7;&#x000e3;o PPAR (
+<xref rid="f04" ref-type="fig">Figura 3D</xref>
+). Al&#x000e9;m disso, a an&#x000e1;lise funcional dos 3 m&#x000f3;dulos funcionais potenciais (M1, M2 e M3) esteve envolvida na resposta imune (
+<ext-link xlink:href="http://abccardiol.org/supplementary-material/2024/12102/2023-0462_supplemental.pdf" ext-link-type="uri">Figura S2A~S2C</ext-link>
+).</p><p>
+<fig position="float" id="f04"><label>Figura 3</label><caption><title>&#x02013; An&#x000e1;lise de enriquecimento GO e KEGG de alvos potenciais. A) Fun&#x000e7;&#x000e3;o molecular GO. B) Processos biol&#x000f3;gicos GO. C) Componentes celulares GO. D) KEGG.</title></caption><graphic xlink:href="0066-782X-abc-121-2-e20230462-gf04" position="float"/></fig>
+</p></sec><sec><title>GSEA</title><p>Para investigar genes que n&#x000e3;o s&#x000e3;o expressos de forma significativamente diferencial, mas s&#x000e3;o biologicamente importantes e para complementar a an&#x000e1;lise GO e KEGG, foi realizada uma an&#x000e1;lise GSEA de todo o conjunto de dados usando GSEA. Tomando o ponto de corte mencionado acima, GSEA estava envolvido na remodela&#x000e7;&#x000e3;o e depura&#x000e7;&#x000e3;o do conjunto de lipoprote&#x000ed;nas plasm&#x000e1;ticas, depura&#x000e7;&#x000e3;o de lipoprote&#x000ed;nas plasm&#x000e1;ticas, forma&#x000e7;&#x000e3;o de tamp&#x000e3;o de agrega&#x000e7;&#x000e3;o plaquet&#x000e1;ria, RHO GTPases ativam NADPH oxidases, inflamassoma NLRP3, regula&#x000e7;&#x000e3;o transcricional da diferencia&#x000e7;&#x000e3;o de adip&#x000f3;citos brancos, depura&#x000e7;&#x000e3;o de LDL, sinaliza&#x000e7;&#x000e3;o de interleucina 10, sinaliza&#x000e7;&#x000e3;o de interleucina 4 e interleucina 13, metabolismo de sulfato de heparano/heparina, gliconeog&#x000ea;nese e citocromo p450 organizados por tipo de substrato (
+<xref rid="f05" ref-type="fig">Figura 4</xref>
+). Obviamente, a an&#x000e1;lise da GSEA enfatizou a import&#x000e2;ncia da resposta imunol&#x000f3;gica e forneceu suplementos significativos na coagula&#x000e7;&#x000e3;o e no IAMCSST.</p><p>
+<fig position="float" id="f05"><label>Figura 4</label><caption><title>&#x02013; GSEA.</title></caption><graphic xlink:href="0066-782X-abc-121-2-e20230462-gf05" position="float"/></fig>
+</p></sec><sec><title>Previs&#x000e3;o adicional de miRNAs e fatores de transcri&#x000e7;&#x000e3;o</title><p>Os miRNAs dos genes centrais foram previstos usando o software FunRich. Os 8 principais miRNAs classificados por grau, incluindo hsa-miR-124, hsa-miR-130a/b, hsa-miR-301a/b, hsa-miR-3666, hsa-miR-4295 e hsa-miR-454 (
+<ext-link xlink:href="http://abccardiol.org/supplementary-material/2024/12102/2023-0462_supplemental.pdf" ext-link-type="uri">Figura S3</ext-link>
+), entre eles foi confirmado que o hsa-miR-124 &#x000e9; fundamental no desenvolvimento de IAMCSST. Enquanto isso, os fatores de transcri&#x000e7;&#x000e3;o foram analisados utilizando a plataforma DAVID, e os resultados indicam que EVI1, AML1, GATA1 e PPARG s&#x000e3;o enriquecidos pela maioria dos genes (
+<ext-link xlink:href="http://abccardiol.org/supplementary-material/2024/12102/2023-0462_supplemental.pdf" ext-link-type="uri">Figura S4</ext-link>
+).</p></sec><sec><title>Verifica&#x000e7;&#x000e3;o de genes centrais</title><p>Para detectar a sensibilidade e especificidade dos genes centrais, curvas ROC foram empregadas para a verifica&#x000e7;&#x000e3;o dos genes centrais. Em GSE59867, as AUCs de MS4A3, KLRC4, KLRD1, AQP9, CD14 e CCR1 foram 73,6%, 80,5%, 84,7%, 90,3%, 88,2% e 84,2%, respectivamente (todos p &#x0003c;0,0001) (
+<xref rid="f06" ref-type="fig">Figura 5A</xref>
+,
+<xref rid="t2" ref-type="table">Tabela 2</xref>
+), o que indica que esses genes possuem excelente sensibilidade e especificidade. Ap&#x000f3;s processar o conjunto de dados GSE62646, incluindo 14 pacientes com DACE e 28 pacientes com IAMCSST, identificamos que MS4A3, KLRC4, KLRD1, AQP9, CD14 e CCR1 apresentaram sensibilidade e especificidade na predi&#x000e7;&#x000e3;o de IAMCSST (
+<xref rid="f06" ref-type="fig">Figura 5B</xref>
+). As AUCs desses genes foram de 88,3%, 86,7%, 86,2%, 85,5%, 84,9% e 82,4%, respectivamente (p &#x0003c;0,001) (
+<xref rid="f06" ref-type="fig">Figura 5B</xref>
+,
+<xref rid="t2" ref-type="table">Tabela 2</xref>
+). Al&#x000e9;m disso, MS4A3, KLRC4 e KLRD1 foram regulados negativamente em GSE59867 (todos p &#x0003c;0,0001) (
+<xref rid="f07" ref-type="fig">Figura 6A</xref>
+) e GSE62646 (p &#x0003c;0,001) (
+<xref rid="f07" ref-type="fig">Figura 6B</xref>
+), enquanto AQP9, CD14 e CCR1 foram regulados positivamente em GSE59867 (p &#x0003c; 0,0001) (
+<xref rid="f07" ref-type="fig">Figura 6A</xref>
+) e GSE62646 (p &#x0003c; 0,001) (
+<xref rid="f07" ref-type="fig">Figura 6B</xref>
+).</p><p>
+<fig position="float" id="f06"><label>Figura 5</label><caption><title>&#x02013; Curvas ROC de genes centrais. A) GSE59867. B) GSE62646.</title></caption><graphic xlink:href="0066-782X-abc-121-2-e20230462-gf06" position="float"/></fig>
+</p><p>
+<table-wrap position="float" id="t2"><label>Tabela 2</label><caption><title>&#x02013; AUCs de genes centrais</title></caption><table frame="hsides" rules="groups"><colgroup width="11%" span="1"><col span="1"/><col span="1"/><col span="1"/><col span="1"/><col span="1"/><col span="1"/><col span="1"/><col span="1"/><col span="1"/></colgroup><thead><tr><th align="left" style="font-weight:normal" rowspan="1" colspan="1">&#x000a0;</th><th colspan="4" rowspan="1">GSE59867</th><th colspan="4" rowspan="1">GSE62646</th></tr><tr><th align="left" style="font-weight:normal" rowspan="1" colspan="1">&#x000a0;</th><th rowspan="1" colspan="1">AUC</th><th rowspan="1" colspan="1">EP</th><th rowspan="1" colspan="1">95% IC</th><th rowspan="1" colspan="1">p</th><th rowspan="1" colspan="1">AUC</th><th rowspan="1" colspan="1">EP</th><th rowspan="1" colspan="1">95% IC</th><th rowspan="1" colspan="1">p</th></tr></thead><tbody><tr><td rowspan="1" colspan="1">MS4A3</td><td align="center" rowspan="1" colspan="1">0,736</td><td align="center" rowspan="1" colspan="1">0,046</td><td align="center" rowspan="1" colspan="1">0,654~0,827</td><td align="center" rowspan="1" colspan="1">&#x0003c;0,0001</td><td align="center" rowspan="1" colspan="1">0,883</td><td align="center" rowspan="1" colspan="1">0,054</td><td align="center" rowspan="1" colspan="1">0,776~0,989</td><td align="center" rowspan="1" colspan="1">&#x0003c;0,0001</td></tr><tr><td rowspan="1" colspan="1">KLRC4</td><td align="center" rowspan="1" colspan="1">0,805</td><td align="center" rowspan="1" colspan="1">0,037</td><td align="center" rowspan="1" colspan="1">0,733~0,878</td><td align="center" rowspan="1" colspan="1">&#x0003c;0,0001</td><td align="center" rowspan="1" colspan="1">0,967</td><td align="center" rowspan="1" colspan="1">0,056</td><td align="center" rowspan="1" colspan="1">0,758~0,977</td><td align="center" rowspan="1" colspan="1">0,0001</td></tr><tr><td rowspan="1" colspan="1">KLRD1</td><td align="center" rowspan="1" colspan="1">0,847</td><td align="center" rowspan="1" colspan="1">0,033</td><td align="center" rowspan="1" colspan="1">0,782~0,912</td><td align="center" rowspan="1" colspan="1">&#x0003c;0,0001</td><td align="center" rowspan="1" colspan="1">0,862</td><td align="center" rowspan="1" colspan="1">0,056</td><td align="center" rowspan="1" colspan="1">0,753~0,972</td><td align="center" rowspan="1" colspan="1">0,0002</td></tr><tr><td rowspan="1" colspan="1">AQP9</td><td align="center" rowspan="1" colspan="1">0,903</td><td align="center" rowspan="1" colspan="1">0,027</td><td align="center" rowspan="1" colspan="1">0,850~0,957</td><td align="center" rowspan="1" colspan="1">&#x0003c;0,0001</td><td align="center" rowspan="1" colspan="1">0,855</td><td align="center" rowspan="1" colspan="1">0,060</td><td align="center" rowspan="1" colspan="1">0,735~0,974</td><td align="center" rowspan="1" colspan="1">0,0002</td></tr><tr><td rowspan="1" colspan="1">CD14</td><td align="center" rowspan="1" colspan="1">0,882</td><td align="center" rowspan="1" colspan="1">0,028</td><td align="center" rowspan="1" colspan="1">0,826~0,937</td><td align="center" rowspan="1" colspan="1">&#x0003c;0,0001</td><td align="center" rowspan="1" colspan="1">0,849</td><td align="center" rowspan="1" colspan="1">0,058</td><td align="center" rowspan="1" colspan="1">0,734~0,965</td><td align="center" rowspan="1" colspan="1">0,0003</td></tr><tr><td rowspan="1" colspan="1">CCR1</td><td align="center" rowspan="1" colspan="1">0,842</td><td align="center" rowspan="1" colspan="1">0,036</td><td align="center" rowspan="1" colspan="1">0,771~0,913</td><td align="center" rowspan="1" colspan="1">&#x0003c;0,0001</td><td align="center" rowspan="1" colspan="1">0,824</td><td align="center" rowspan="1" colspan="1">0,064</td><td align="center" rowspan="1" colspan="1">0,698~0,950</td><td align="center" rowspan="1" colspan="1">0,0007</td></tr></tbody></table><table-wrap-foot><fn id="TFN2"><p>AUC: &#x000e1;rea sob a curva caracter&#x000ed;stica de opera&#x000e7;&#x000e3;o do receptor; EP: erro padr&#x000e3;o; IC: intervalo de confian&#x000e7;a.</p></fn></table-wrap-foot></table-wrap>
+</p><p>
+<fig position="float" id="f07"><label>Figura 6</label><caption><title>&#x02013; Express&#x000e3;o diferencial de genes hub. A) GSE59867. B) GSE62646. IAMCSST: infarto do mioc&#x000e1;rdio com eleva&#x000e7;&#x000e3;o do segmento ST; DACE: doen&#x000e7;a arterial coronariana est&#x000e1;vel.</title></caption><graphic xlink:href="0066-782X-abc-121-2-e20230462-gf07" position="float"/></fig>
+</p></sec></sec><sec sec-type="discussion"><title>Discuss&#x000e3;o</title><p>As doen&#x000e7;as cardiovasculares s&#x000e3;o a principal causa de morte no mundo,<sup>
+<xref rid="B1" ref-type="bibr">1</xref>
+</sup> e entre eles o IAMCSST deve ser o primeiro a ser controlado. Nos &#x000fa;ltimos anos, com o r&#x000e1;pido desenvolvimento de microarranjos e sequenciamento de pr&#x000f3;xima gera&#x000e7;&#x000e3;o, &#x000e9; vi&#x000e1;vel e dispon&#x000ed;vel a busca de biomarcadores confi&#x000e1;veis, que beneficiam o diagn&#x000f3;stico precoce e a preven&#x000e7;&#x000e3;o do IM. Neste estudo, obtivemos 133 GDEs entre DACE e IAMCSST, ent&#x000e3;o a rede PPI foi constru&#x000ed;da, e an&#x000e1;lises posteriores determinaram genes centrais e 6 complexos moleculares. A an&#x000e1;lise de enriquecimento funcional revelou que a imunidade, o metabolismo e a inflama&#x000e7;&#x000e3;o est&#x000e3;o envolvidos no desenvolvimento do IAMCSST. Al&#x000e9;m disso, foram previstos 103 miRNAs relacionados, hsa-miR-124, hsa-miR-130a/b e hsa-miR-301a/b regulam o maior n&#x000fa;mero de genes; entretanto, numerosos fatores de transcri&#x000e7;&#x000e3;o foram investigados, EVI1, AML1, GATA1 e PPARG s&#x000e3;o enriquecidos pela maioria dos genes. Por fim, as curvas ROC indicam que MS4A3, KLRC4, KLRD1, AQP9 e CD14 possuem alta sensibilidade e especificidade na predi&#x000e7;&#x000e3;o de IAMCSST.</p><p>Al&#x000e9;m disso, as an&#x000e1;lises GO e KEGG revelaram que a imunidade, o metabolismo e a inflama&#x000e7;&#x000e3;o est&#x000e3;o envolvidos no mecanismo de desenvolvimento de IAMCSST. Como mostrado acima, v&#x000e1;rios termos de enriquecimento estavam envolvidos na imunidade e na inflama&#x000e7;&#x000e3;o, incluindo ativa&#x000e7;&#x000e3;o celular envolvida na resposta imune, ativa&#x000e7;&#x000e3;o de leuc&#x000f3;citos envolvida na resposta imune, regula&#x000e7;&#x000e3;o negativa do processo do sistema imunol&#x000f3;gico, regula&#x000e7;&#x000e3;o da imunidade mediada por c&#x000e9;lulas assassinas naturais e assim por diante. Enquanto guardi&#x000f5;es do sistema imunol&#x000f3;gico, os leuc&#x000f3;citos possuem regula&#x000e7;&#x000e3;o bidirecional para o desenvolvimento de IAMCSST; alguns leuc&#x000f3;citos s&#x000e3;o aterog&#x000ea;nicos, enquanto outros s&#x000e3;o ateroprotetores; alguns sustentam a inflama&#x000e7;&#x000e3;o ap&#x000f3;s o infarto do mioc&#x000e1;rdio, enquanto outros a resolvem.<sup>
+<xref rid="B19" ref-type="bibr">19</xref>
+</sup> Uma revis&#x000e3;o construiu um modelo das estrat&#x000e9;gias terap&#x000ea;uticas do IAMCSST, estudos experimentais anteriores revelaram mecanismos complexos em rela&#x000e7;&#x000e3;o ao desenvolvimento, repara&#x000e7;&#x000e3;o e remodela&#x000e7;&#x000e3;o do IAMCSST e modula&#x000e7;&#x000e3;o da inflama&#x000e7;&#x000e3;o individualmente com base nas caracter&#x000ed;sticas da condi&#x000e7;&#x000e3;o do paciente no benef&#x000ed;cio dos pacientes com IAMCSST.<sup>
+<xref rid="B20" ref-type="bibr">20</xref>
+</sup> Resultados semelhantes puderam ser encontrados na an&#x000e1;lise funcional do potencial complexo molecular; todos os 3 complexos moleculares potenciais estavam envolvidos na imunidade. Como complemento &#x000e0; an&#x000e1;lise GO e KEGG, a an&#x000e1;lise GSEA verificou os resultados da an&#x000e1;lise funcional e forneceu mais evid&#x000ea;ncias de metabolismo. Al&#x000e9;m dos resultados da an&#x000e1;lise de enriquecimento sugerindo que os DEGs est&#x000e3;o relacionados ao metabolismo do colesterol, os resultados do GSEA levantaram v&#x000e1;rios termos envolvidos na regula&#x000e7;&#x000e3;o do metabolismo do colesterol, incluindo remodela&#x000e7;&#x000e3;o e depura&#x000e7;&#x000e3;o do conjunto de lipoprote&#x000ed;nas plasm&#x000e1;ticas, depura&#x000e7;&#x000e3;o de lipoprote&#x000ed;nas plasm&#x000e1;ticas, depura&#x000e7;&#x000e3;o de LDL e sulfato de heparano. /metabolismo da heparina, que eram consistentes com a cogni&#x000e7;&#x000e3;o atual. Al&#x000e9;m disso, os resultados da an&#x000e1;lise GSEA indicaram que a regula&#x000e7;&#x000e3;o da forma&#x000e7;&#x000e3;o do tamp&#x000e3;o de agrega&#x000e7;&#x000e3;o plaquet&#x000e1;ria foi diferente entre DACE e IAMCSST, enfatizando que a coagula&#x000e7;&#x000e3;o tamb&#x000e9;m &#x000e9; fundamental para o desenvolvimento de IAMCSST.<sup>
+<xref rid="B21" ref-type="bibr">21</xref>
+</sup> Al&#x000e9;m disso, a GSEA destacou a inflama&#x000e7;&#x000e3;o, o stress oxidativo e o metabolismo dos medicamentos, o que p&#x000f4;de ser confirmado na investiga&#x000e7;&#x000e3;o existente.<sup>
+<xref rid="B22" ref-type="bibr">22</xref>
+-
+<xref rid="B24" ref-type="bibr">24</xref>
+</sup> Os miRNAs desempenham pap&#x000e9;is fundamentais na g&#x000ea;nese e progress&#x000e3;o do IAMCSST; ap&#x000f3;s a triagem, hsa-miR-124, hsa-miR-130a/b, hsa-miR-301a/b, hsa-miR-3666, hsa-miR-4295 e hsa-miR-454 foram identificados como os principais miRNAs enriquecidos, numerosos estudos ilustram que o hsa-miR-124 regula o estresse oxidativo e a hip&#x000f3;xia no desenvolvimento do infarto do mioc&#x000e1;rdio, e pode ser um potencial biomarcador, bem como o alvo terap&#x000ea;utico para o IAMCSST.<sup>
+<xref rid="B25" ref-type="bibr">25</xref>
+,
+<xref rid="B26" ref-type="bibr">26</xref>
+</sup> Na fam&#x000ed;lia MiR-130, incluindo miR-130a e miR- 130b, uma an&#x000e1;lise mostra que o miR-130 agrava o IAMCSST ao atingir a via PPAR-&#x003b3;.<sup>
+<xref rid="B27" ref-type="bibr">27</xref>
+</sup> S&#x000e3;o necess&#x000e1;rias pesquisas para explorar e validar a conex&#x000e3;o entre hsa-miR-301a/b, hsa-miR-3666, hsa-miR-4295 e hsa-miR-454 e IM, al&#x000e9;m de miRNAs apoiados por experimentos envolvidos no desenvolvimento de IM , como miR-19, miR-23 e outros, podem ser encontrados nos resultados da predi&#x000e7;&#x000e3;o.<sup>
+<xref rid="B28" ref-type="bibr">28</xref>
+-
+<xref rid="B30" ref-type="bibr">30</xref>
+</sup> Os resultados da previs&#x000e3;o do fator de transcri&#x000e7;&#x000e3;o filtraram 4 fatores de transcri&#x000e7;&#x000e3;o, incluindo EVI1, AML1, GATA1 e PPARG. EVI1, histona-lisina N-metiltransferase MECOM, est&#x000e1; envolvido no progresso da imunidade, metabolismo e inflama&#x000e7;&#x000e3;o.<sup>
+<xref rid="B31" ref-type="bibr">31</xref>
+,
+<xref rid="B32" ref-type="bibr">32</xref>
+</sup> Da mesma forma, AML1, fator de transcri&#x000e7;&#x000e3;o 1 relacionado ao runt, est&#x000e1; envolvido na regula&#x000e7;&#x000e3;o funcional da leucemia, c&#x000e9;lulas B e c&#x000e9;lulas T e regula o sistema imunol&#x000f3;gico.<sup>
+<xref rid="B33" ref-type="bibr">33</xref>
+</sup> O GATA1, tamb&#x000e9;m conhecido como fator de transcri&#x000e7;&#x000e3;o eritr&#x000f3;ide, est&#x000e1; envolvido no progresso da produ&#x000e7;&#x000e3;o e coagula&#x000e7;&#x000e3;o de plaquetas.<sup>
+<xref rid="B34" ref-type="bibr">34</xref>
+</sup> Enquanto isso, um estudo elucidou que o GATA1 est&#x000e1; relacionado a uma doen&#x000e7;a vascular familiar com caracter&#x000ed;sticas de DACE e IAMCSST.<sup>
+<xref rid="B35" ref-type="bibr">35</xref>
+</sup> O PPARG, conhecido como receptor gama ativado por proliferador de peroxissoma, &#x000e9; o receptor nuclear que se liga aos proliferadores de peroxissoma, como drogas hipolipemiantes e &#x000e1;cidos graxos, principalmente envolvido no progresso do metabolismo da gordura e da inflama&#x000e7;&#x000e3;o e &#x000e9; fundamental para o desenvolvimento de IAMCSST.<sup>
+<xref rid="B36" ref-type="bibr">36</xref>
+</sup></p><p>MS4A3 regula o n&#x000ed;vel de fosforila&#x000e7;&#x000e3;o de CDK2 atrav&#x000e9;s de sua liga&#x000e7;&#x000e3;o direta a CDKN3,<sup>
+<xref rid="B37" ref-type="bibr">37</xref>
+</sup> e um estudo de coorte sugere que CDK2 estava envolvido na prolifera&#x000e7;&#x000e3;o anormal, uma das caracter&#x000ed;sticas da aterosclerose e do STEMI.<sup>
+<xref rid="B38" ref-type="bibr">38</xref>
+</sup> Al&#x000e9;m disso, um estudo mencionou que o CDK2 est&#x000e1; envolvido na regula&#x000e7;&#x000e3;o do ciclo celular em mi&#x000f3;citos ap&#x000f3;s infarto do mioc&#x000e1;rdio, o que promove a regenera&#x000e7;&#x000e3;o da massa muscular e a recupera&#x000e7;&#x000e3;o da fun&#x000e7;&#x000e3;o ventricular.<sup>
+<xref rid="B39" ref-type="bibr">39</xref>
+</sup> Tanto o KLRD1 quanto o KLRC4 s&#x000e3;o receptores naturais de c&#x000e9;lulas assassinas, e naturais as c&#x000e9;lulas killer s&#x000e3;o importantes no aparecimento do IAMCSST pela sua capacidade de secretar IFN-&#x003b3; e outras citocinas inflamat&#x000f3;rias.<sup>
+<xref rid="B40" ref-type="bibr">40</xref>
+</sup> Os pesquisadores mencionaram que a superexpress&#x000e3;o do miR-212 inibiu a AQP9 ativando a via de sinaliza&#x000e7;&#x000e3;o PI3K/Akt, diminuindo assim a apoptose dos cardiomi&#x000f3;citos, promovendo a regenera&#x000e7;&#x000e3;o vascular e aliviando a remodela&#x000e7;&#x000e3;o ventricular em ratos com IAMCSST.<sup>
+<xref rid="B41" ref-type="bibr">41</xref>
+</sup> Da mesma forma, um estudo indicou que o silenciamento do gene AQP9 pode inibir a ativa&#x000e7;&#x000e3;o da via de sinaliza&#x000e7;&#x000e3;o ERK1/2, atenuar a resposta inflamat&#x000f3;ria em ratos com IAMCSST, inibir a apoptose de c&#x000e9;lulas mioc&#x000e1;rdicas e melhorar a fun&#x000e7;&#x000e3;o card&#x000ed;aca.<sup>
+<xref rid="B42" ref-type="bibr">42</xref>
+</sup> CD14, o nome completo da prote&#x000ed;na &#x000e9; ant&#x000ed;geno de diferencia&#x000e7;&#x000e3;o de mon&#x000f3;citos CD14, recentemente, um estudo mencionou que, em compara&#x000e7;&#x000e3;o com pacientes com DAC, os n&#x000ed;veis de mon&#x000f3;citos relacionados ao CD14 foram significativamente maiores em pacientes com IAMCSST.<sup>
+<xref rid="B43" ref-type="bibr">43</xref>
+</sup></p><p>Este estudo tem algumas limita&#x000e7;&#x000f5;es. Primeiro, todos os resultados da an&#x000e1;lise foram derivados de conjuntos de dados anteriores. Apesar dos esfor&#x000e7;os que temos feito no controle de qualidade, a autenticidade dos resultados ainda necessita de verifica&#x000e7;&#x000e3;o. Al&#x000e9;m disso, limitado pelas informa&#x000e7;&#x000f5;es contidas em GSE59867 e GSE62646, n&#x000e3;o podemos comparar o desempenho diagn&#x000f3;stico dos biomarcadores identificados com a troponina I e T nem avaliar diferen&#x000e7;as em sua cin&#x000e9;tica temporal. Terceiro, todos os dados que utilizamos vieram de c&#x000e9;lulas mononucleares do sangue perif&#x000e9;rico, e n&#x000e3;o da art&#x000e9;ria coron&#x000e1;ria ou do tecido card&#x000ed;aco, porque &#x000e9; relativamente dif&#x000ed;cil obter clinicamente a art&#x000e9;ria coron&#x000e1;ria e o tecido card&#x000ed;aco. Felizmente, estudos anteriores demonstraram que os dados do sangue perif&#x000e9;rico tamb&#x000e9;m t&#x000ea;m boa fiabilidade.<sup>
+<xref rid="B44" ref-type="bibr">44</xref>
+,
+<xref rid="B45" ref-type="bibr">45</xref>
+</sup> Finalmente, embora numerosos estudos apoiassem a potencialidade dos potenciais biomarcadores previstos neste estudo, os resultados das curvas ROC n&#x000e3;o conseguiram encontrar um gene com elevada confian&#x000e7;a (AUC &#x0003e; 90%), e s&#x000e3;o necess&#x000e1;rios ensaios consider&#x000e1;veis para validar a sensibilidade e especificidade de potenciais biomarcadores. No entanto, este estudo determinou os potenciais biomarcadores e investigou os mecanismos complexos do IAMCSST desenvolvidos a partir da DACE, o que promoveu a designa&#x000e7;&#x000e3;o do nosso pr&#x000f3;ximo plano para explorar os mecanismos no ensaio cl&#x000ed;nico em breve.</p></sec><sec sec-type="conclusions"><title>Conclus&#x000e3;o</title><p>Revelamos que imunidade, metabolismo e inflama&#x000e7;&#x000e3;o est&#x000e3;o envolvidos no desenvolvimento de IAMCSST derivado de DACE, e 5 genes, incluindo MS4A3, KLRC4, KLRD1, AQP9 e CD14, poderiam ser empregados como candidatos a biomarcadores para IAMCSST.</p></sec></body><back><fn-group><fn fn-type="other"><p>Vincula&#x000e7;&#x000e3;o acad&#x000ea;mica</p><p>N&#x000e3;o h&#x000e1; vincula&#x000e7;&#x000e3;o deste estudo a programas de p&#x000f3;s-gradua&#x000e7;&#x000e3;o.</p><p>Aprova&#x000e7;&#x000e3;o &#x000e9;tica e consentimento informado</p><p>Este artigo n&#x000e3;o cont&#x000e9;m estudos com humanos ou animais realizados por nenhum dos autores.</p></fn><fn fn-type="supplementary-material" id="fn_ast1"><label>*</label><p>Material suplementar</p><p>Para informa&#x000e7;&#x000e3;o adicional, por favor,
+<ext-link xlink:href="http://abccardiol.org/supplementary-material/2024/12102/2023-0462_supplemental.pdf" ext-link-type="uri">clique aqui</ext-link>
+.</p></fn><fn fn-type="financial-disclosure"><p>Fontes de financiamento</p><p>O presente estudo n&#x000e3;o teve fontes de financiamento externas.</p></fn></fn-group><ref-list><title>Refer&#x000ea;ncias</title><ref id="B1"><label>1</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Evangelou</surname><given-names>K</given-names></name>
+<name><surname>Vasileiou</surname><given-names>PVS</given-names></name>
+<name><surname>Papaspyropoulos</surname><given-names>A</given-names></name>
+<name><surname>Hazapis</surname><given-names>O</given-names></name>
+<name><surname>Petty</surname><given-names>R</given-names></name>
+<name><surname>Demaria</surname><given-names>M</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>Cellular Senescence and Cardiovascular Diseases: Moving to the &#x0201c;Heart&#x0201d; of the Problem</article-title><source>
+Physiol Rev
+</source><year>2023</year><volume>103</volume><issue>1</issue><fpage>609</fpage><lpage>647</lpage><pub-id pub-id-type="doi">10.1152/physrev.00007.2022</pub-id><pub-id pub-id-type="pmid">36049114</pub-id>
+</element-citation></ref><ref id="B2"><label>2</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Liang</surname><given-names>B</given-names></name>
+<name><surname>Qu</surname><given-names>Y</given-names></name>
+<name><surname>Zhao</surname><given-names>QF</given-names></name>
+<name><surname>Gu</surname><given-names>N</given-names></name>
+</person-group><article-title>Guanxin V for Coronary Artery Disease: A Retrospective Study</article-title><source>
+Biomed Pharmacother
+</source><year>2020</year><volume>128</volume><fpage>110280</fpage><pub-id pub-id-type="doi">10.1016/j.biopha.2020.110280</pub-id><pub-id pub-id-type="pmid">32485568</pub-id>
+</element-citation></ref><ref id="B3"><label>3</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Reed</surname><given-names>GW</given-names></name>
+<name><surname>Rossi</surname><given-names>JE</given-names></name>
+<name><surname>Cannon</surname><given-names>CP</given-names></name>
+</person-group><article-title>Acute Myocardial Infarction</article-title><source>
+Lancet
+</source><year>2017</year><volume>389</volume><issue>10065</issue><fpage>197</fpage><lpage>210</lpage><pub-id pub-id-type="doi">10.1016/S0140-6736(16)30677-8</pub-id><pub-id pub-id-type="pmid">27502078</pub-id>
+</element-citation></ref><ref id="B4"><label>4</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Vogel</surname><given-names>B</given-names></name>
+<name><surname>Claessen</surname><given-names>BE</given-names></name>
+<name><surname>Arnold</surname><given-names>SV</given-names></name>
+<name><surname>Chan</surname><given-names>D</given-names></name>
+<name><surname>Cohen</surname><given-names>DJ</given-names></name>
+<name><surname>Giannitsis</surname><given-names>E</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>ST-Segment Elevation Myocardial Infarction</article-title><source>
+Nat Rev Dis Primers
+</source><year>2019</year><volume>5</volume><issue>1</issue><size units="pages">39</size><pub-id pub-id-type="doi">10.1038/s41572-019-0090-3</pub-id></element-citation></ref><ref id="B5"><label>5</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Hall</surname><given-names>M</given-names></name>
+<name><surname>Bebb</surname><given-names>OJ</given-names></name>
+<name><surname>Dondo</surname><given-names>TB</given-names></name>
+<name><surname>Yan</surname><given-names>AT</given-names></name>
+<name><surname>Goodman</surname><given-names>SG</given-names></name>
+<name><surname>Bueno</surname><given-names>H</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>Guideline-Indicated Treatments and Diagnostics, GRACE Risk Score, and Survival for Non-ST Elevation Myocardial Infarction</article-title><source>
+Eur Heart J
+</source><year>2018</year><volume>39</volume><issue>42</issue><fpage>3798</fpage><lpage>3806</lpage><pub-id pub-id-type="doi">10.1093/eurheartj/ehy517</pub-id><pub-id pub-id-type="pmid">30202849</pub-id>
+</element-citation></ref><ref id="B6"><label>6</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Thiele</surname><given-names>H</given-names></name>
+<name><surname>Ohman</surname><given-names>EM</given-names></name>
+<name><surname>Waha-Thiele</surname><given-names>S</given-names></name>
+<name><surname>Zeymer</surname><given-names>U</given-names></name>
+<name><surname>Desch</surname><given-names>S</given-names></name>
+</person-group><article-title>Management of Cardiogenic Shock Complicating Myocardial Infarction: an Update 2019</article-title><source>
+Eur Heart J
+</source><year>2019</year><volume>40</volume><issue>32</issue><fpage>2671</fpage><lpage>2683</lpage><pub-id pub-id-type="doi">10.1093/eurheartj/ehz363</pub-id><pub-id pub-id-type="pmid">31274157</pub-id>
+</element-citation></ref><ref id="B7"><label>7</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Collet</surname><given-names>JP</given-names></name>
+<name><surname>Thiele</surname><given-names>H</given-names></name>
+<name><surname>Barbato</surname><given-names>E</given-names></name>
+<name><surname>Barth&#x000e9;l&#x000e9;my</surname><given-names>O</given-names></name>
+<name><surname>Bauersachs</surname><given-names>J</given-names></name>
+<name><surname>Bhatt</surname><given-names>DL</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>2020 ESC Guidelines for the Management of Acute Coronary Syndromes in Patients Presenting without Persistent ST-Segment Elevation</article-title><source>
+Eur Heart J
+</source><year>2021</year><volume>42</volume><issue>14</issue><fpage>1289</fpage><lpage>1367</lpage><pub-id pub-id-type="doi">10.1093/eurheartj/ehaa575</pub-id><pub-id pub-id-type="pmid">32860058</pub-id>
+</element-citation></ref><ref id="B8"><label>8</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Anderson</surname><given-names>HVS</given-names></name>
+<name><surname>Masri</surname><given-names>SC</given-names></name>
+<name><surname>Abdallah</surname><given-names>MS</given-names></name>
+<name><surname>Chang</surname><given-names>AM</given-names></name>
+<name><surname>Cohen</surname><given-names>MG</given-names></name>
+<name><surname>Elgendy</surname><given-names>IY</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>2022 ACC/AHA Key Data Elements and Definitions for Chest Pain and Acute Myocardial Infarction: a Report of the American Heart Association/American College of Cardiology Joint Committee on Clinical Data Standards</article-title><source>
+J Am Coll Cardiol
+</source><year>2022</year><volume>80</volume><issue>17</issue><fpage>1660</fpage><lpage>1700</lpage><pub-id pub-id-type="doi">10.1016/j.jacc.2022.05.012</pub-id><pub-id pub-id-type="pmid">36055903</pub-id>
+</element-citation></ref><ref id="B9"><label>9</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Maciejak</surname><given-names>A</given-names></name>
+<name><surname>Kiliszek</surname><given-names>M</given-names></name>
+<name><surname>Michalak</surname><given-names>M</given-names></name>
+<name><surname>Tulacz</surname><given-names>D</given-names></name>
+<name><surname>Opolski</surname><given-names>G</given-names></name>
+<name><surname>Matlak</surname><given-names>K</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>Gene Expression Profiling Reveals Potential Prognostic Biomarkers Associated with the Progression of Heart Failure</article-title><source>
+Genome Med
+</source><year>2015</year><volume>7</volume><issue>1</issue><size units="pages">26</size><pub-id pub-id-type="doi">10.1186/s13073-015-0149-z</pub-id></element-citation></ref><ref id="B10"><label>10</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Ritchie</surname><given-names>ME</given-names></name>
+<name><surname>Phipson</surname><given-names>B</given-names></name>
+<name><surname>Wu</surname><given-names>D</given-names></name>
+<name><surname>Hu</surname><given-names>Y</given-names></name>
+<name><surname>Law</surname><given-names>CW</given-names></name>
+<name><surname>Shi</surname><given-names>W</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>Limma Powers Differential Expression Analyses for RNA-Sequencing and Microarray Studies</article-title><source>
+Nucleic Acids Res
+</source><year>2015</year><volume>43</volume><issue>7</issue><elocation-id>e47</elocation-id><pub-id pub-id-type="doi">10.1093/nar/gkv007</pub-id><pub-id pub-id-type="pmid">25605792</pub-id>
+</element-citation></ref><ref id="B11"><label>11</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Zhang</surname><given-names>J</given-names></name>
+<name><surname>Huang</surname><given-names>X</given-names></name>
+<name><surname>Wang</surname><given-names>X</given-names></name>
+<name><surname>Gao</surname><given-names>Y</given-names></name>
+<name><surname>Liu</surname><given-names>L</given-names></name>
+<name><surname>Li</surname><given-names>Z</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>Identification of Potential Crucial Genes in Atrial Fibrillation: a Bioinformatic Analysis</article-title><source>
+BMC Med Genomics
+</source><year>2020</year><volume>13</volume><issue>1</issue><size units="pages">104</size><pub-id pub-id-type="doi">10.1186/s12920-020-00754-5</pub-id></element-citation></ref><ref id="B12"><label>12</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Szklarczyk</surname><given-names>D</given-names></name>
+<name><surname>Gable</surname><given-names>AL</given-names></name>
+<name><surname>Lyon</surname><given-names>D</given-names></name>
+<name><surname>Junge</surname><given-names>A</given-names></name>
+<name><surname>Wyder</surname><given-names>S</given-names></name>
+<name><surname>Huerta-Cepas</surname><given-names>J</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>STRING V11: Protein-Protein Association Networks with Increased Coverage, Supporting Functional Discovery in Genome-Wide Experimental Datasets</article-title><source>
+Nucleic Acids Res
+</source><year>2019</year><volume>47</volume><issue>D1</issue><fpage>D607</fpage><lpage>D613</lpage><pub-id pub-id-type="doi">10.1093/nar/gky1131</pub-id><pub-id pub-id-type="pmid">30476243</pub-id>
+</element-citation></ref><ref id="B13"><label>13</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Liang</surname><given-names>B</given-names></name>
+<name><surname>Liang</surname><given-names>Y</given-names></name>
+<name><surname>Li</surname><given-names>R</given-names></name>
+<name><surname>Zhang</surname><given-names>H</given-names></name>
+<name><surname>Gu</surname><given-names>N</given-names></name>
+</person-group><article-title>Integrating Systematic Pharmacology-Based Strategy and Experimental Validation to Explore the Synergistic Pharmacological Mechanisms of Guanxin V in Treating Ventricular Remodeling</article-title><source>
+Bioorg Chem
+</source><year>2021</year><volume>115</volume><fpage>105187</fpage><pub-id pub-id-type="doi">10.1016/j.bioorg.2021.105187</pub-id><pub-id pub-id-type="pmid">34303037</pub-id>
+</element-citation></ref><ref id="B14"><label>14</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Zhou</surname><given-names>Y</given-names></name>
+<name><surname>Zhou</surname><given-names>B</given-names></name>
+<name><surname>Pache</surname><given-names>L</given-names></name>
+<name><surname>Chang</surname><given-names>M</given-names></name>
+<name><surname>Khodabakhshi</surname><given-names>AH</given-names></name>
+<name><surname>Tanaseichuk</surname><given-names>O</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>Metascape Provides a Biologist-Oriented Resource for the Analysis of Systems-Level Datasets</article-title><source>
+Nat Commun
+</source><year>2019</year><volume>10</volume><issue>1</issue><size units="pages">1523</size><pub-id pub-id-type="doi">10.1038/s41467-019-09234-6</pub-id></element-citation></ref><ref id="B15"><label>15</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Liang</surname><given-names>B</given-names></name>
+<name><surname>Zhang</surname><given-names>XX</given-names></name>
+<name><surname>Gu</surname><given-names>N</given-names></name>
+</person-group><article-title>Virtual Screening and Network Pharmacology-Based Synergistic Mechanism Identification of Multiple Components Contained in Guanxin V Against Coronary Artery Disease</article-title><source>
+BMC Complement Med Ther
+</source><year>2020</year><volume>20</volume><issue>1</issue><size units="pages">345</size><pub-id pub-id-type="doi">10.1186/s12906-020-03133-w</pub-id></element-citation></ref><ref id="B16"><label>16</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Jassal</surname><given-names>B</given-names></name>
+<name><surname>Matthews</surname><given-names>L</given-names></name>
+<name><surname>Viteri</surname><given-names>G</given-names></name>
+<name><surname>Gong</surname><given-names>C</given-names></name>
+<name><surname>Lorente</surname><given-names>P</given-names></name>
+<name><surname>Fabregat</surname><given-names>A</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>The Reactome Pathway Knowledgebase</article-title><source>
+Nucleic Acids Res
+</source><year>2020</year><volume>48</volume><issue>D1</issue><fpage>D498</fpage><lpage>D503</lpage><pub-id pub-id-type="doi">10.1093/nar/gkz1031</pub-id><pub-id pub-id-type="pmid">31691815</pub-id>
+</element-citation></ref><ref id="B17"><label>17</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Fonseka</surname><given-names>P</given-names></name>
+<name><surname>Pathan</surname><given-names>M</given-names></name>
+<name><surname>Chitti</surname><given-names>SV</given-names></name>
+<name><surname>Kang</surname><given-names>T</given-names></name>
+<name><surname>Mathivanan</surname><given-names>S</given-names></name>
+</person-group><article-title>FunRich Enables Enrichment Analysis of Omics Datasets</article-title><source>
+J Mol Biol
+</source><year>2021</year><volume>433</volume><issue>11</issue><fpage>166747</fpage><pub-id pub-id-type="doi">10.1016/j.jmb.2020.166747</pub-id><pub-id pub-id-type="pmid">33310018</pub-id>
+</element-citation></ref><ref id="B18"><label>18</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Kiliszek</surname><given-names>M</given-names></name>
+<name><surname>Burzynska</surname><given-names>B</given-names></name>
+<name><surname>Michalak</surname><given-names>M</given-names></name>
+<name><surname>Gora</surname><given-names>M</given-names></name>
+<name><surname>Winkler</surname><given-names>A</given-names></name>
+<name><surname>Maciejak</surname><given-names>A</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>Altered Gene Expression Pattern in Peripheral Blood Mononuclear Cells in Patients with Acute Myocardial Infarction</article-title><source>
+PLoS One
+</source><year>2012</year><volume>7</volume><issue>11</issue><elocation-id>e50054</elocation-id><pub-id pub-id-type="doi">10.1371/journal.pone.0050054</pub-id><pub-id pub-id-type="pmid">23185530</pub-id>
+</element-citation></ref><ref id="B19"><label>19</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Maier</surname><given-names>A</given-names></name>
+<name><surname>Toner</surname><given-names>YC</given-names></name>
+<name><surname>Munitz</surname><given-names>J</given-names></name>
+<name><surname>Sullivan</surname><given-names>NAT</given-names></name>
+<name><surname>Sakurai</surname><given-names>K</given-names></name>
+<name><surname>Meerwaldt</surname><given-names>AE</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>Multiparametric Immunoimaging Maps Inflammatory Signatures in Murine Myocardial Infarction Models</article-title><source>
+JACC Basic Transl Sci
+</source><year>2023</year><volume>8</volume><issue>7</issue><fpage>801</fpage><lpage>816</lpage><pub-id pub-id-type="doi">10.1016/j.jacbts.2022.12.014</pub-id><pub-id pub-id-type="pmid">37547068</pub-id>
+</element-citation></ref><ref id="B20"><label>20</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Horckmans</surname><given-names>M</given-names></name>
+<name><surname>Bianchini</surname><given-names>M</given-names></name>
+<name><surname>Santovito</surname><given-names>D</given-names></name>
+<name><surname>Megens</surname><given-names>RTA</given-names></name>
+<name><surname>Springael</surname><given-names>JY</given-names></name>
+<name><surname>Negri</surname><given-names>I</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>Pericardial Adipose Tissue Regulates Granulopoiesis, Fibrosis, and Cardiac Function after Myocardial Infarction</article-title><source>
+Circulation
+</source><year>2018</year><volume>137</volume><issue>9</issue><fpage>948</fpage><lpage>960</lpage><pub-id pub-id-type="doi">10.1161/CIRCULATIONAHA.117.028833</pub-id><pub-id pub-id-type="pmid">29167227</pub-id>
+</element-citation></ref><ref id="B21"><label>21</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Soo Kim</surname><given-names>B</given-names></name>
+<name><surname>Auerbach</surname><given-names>DS</given-names></name>
+<name><surname>Sadhra</surname><given-names>H</given-names></name>
+<name><surname>Godwin</surname><given-names>M</given-names></name>
+<name><surname>Bhandari</surname><given-names>R</given-names></name>
+<name><surname>Ling</surname><given-names>FS</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>Sex-Specific Platelet Activation Through Protease-Activated Receptors Reverses in Myocardial Infarction</article-title><source>
+Arterioscler Thromb Vasc Biol
+</source><year>2021</year><volume>41</volume><issue>1</issue><fpage>390</fpage><lpage>400</lpage><pub-id pub-id-type="doi">10.1161/ATVBAHA.120.315033</pub-id><pub-id pub-id-type="pmid">33176447</pub-id>
+</element-citation></ref><ref id="B22"><label>22</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Ikonomidis</surname><given-names>I</given-names></name>
+<name><surname>Vlastos</surname><given-names>D</given-names></name>
+<name><surname>Andreadou</surname><given-names>I</given-names></name>
+<name><surname>Gazouli</surname><given-names>M</given-names></name>
+<name><surname>Efentakis</surname><given-names>P</given-names></name>
+<name><surname>Varoudi</surname><given-names>M</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>Vascular Conditioning Prevents Adverse Left Ventricular Remodelling after Acute Myocardial Infarction: a Randomised Remote Conditioning Study</article-title><source>
+Basic Res Cardiol
+</source><year>2021</year><volume>116</volume><issue>1</issue><size units="pages">9</size><pub-id pub-id-type="doi">10.1007/s00395-021-00851-1</pub-id></element-citation></ref><ref id="B23"><label>23</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Ulander</surname><given-names>L</given-names></name>
+<name><surname>Tolppanen</surname><given-names>H</given-names></name>
+<name><surname>Hartman</surname><given-names>O</given-names></name>
+<name><surname>Rissanen</surname><given-names>TT</given-names></name>
+<name><surname>Paakkanen</surname><given-names>R</given-names></name>
+<name><surname>Kuusisto</surname><given-names>J</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>Hydroxychloroquine Reduces Interleukin-6 Levels after Myocardial Infarction: the Randomized, Double-Blind, Placebo-Controlled OXI Pilot Trial</article-title><source>
+Int J Cardiol
+</source><year>2021</year><volume>337</volume><fpage>21</fpage><lpage>27</lpage><pub-id pub-id-type="doi">10.1016/j.ijcard.2021.04.062</pub-id><pub-id pub-id-type="pmid">33961943</pub-id>
+</element-citation></ref><ref id="B24"><label>24</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Liang</surname><given-names>B</given-names></name>
+<name><surname>Zhu</surname><given-names>YC</given-names></name>
+<name><surname>Lu</surname><given-names>J</given-names></name>
+<name><surname>Gu</surname><given-names>N</given-names></name>
+</person-group><article-title>Effects of Traditional Chinese Medication-Based Bioactive Compounds on Cellular and Molecular Mechanisms of Oxidative Stress</article-title><source>
+Oxid Med Cell Longev
+</source><year>2021</year><volume>2021</volume><size units="pages">3617498</size><pub-id pub-id-type="doi">10.1155/2021/3617498</pub-id></element-citation></ref><ref id="B25"><label>25</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Han</surname><given-names>F</given-names></name>
+<name><surname>Chen</surname><given-names>Q</given-names></name>
+<name><surname>Su</surname><given-names>J</given-names></name>
+<name><surname>Zheng</surname><given-names>A</given-names></name>
+<name><surname>Chen</surname><given-names>K</given-names></name>
+<name><surname>Sun</surname><given-names>S</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>Microrna-124 Regulates Cardiomyocyte Apoptosis and Myocardial Infarction Through Targeting Dhcr24</article-title><source>
+J Mol Cell Cardiol
+</source><year>2019</year><volume>132</volume><fpage>178</fpage><lpage>188</lpage><pub-id pub-id-type="doi">10.1016/j.yjmcc.2019.05.007</pub-id><pub-id pub-id-type="pmid">31100313</pub-id>
+</element-citation></ref><ref id="B26"><label>26</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Hu</surname><given-names>G</given-names></name>
+<name><surname>Ma</surname><given-names>L</given-names></name>
+<name><surname>Dong</surname><given-names>F</given-names></name>
+<name><surname>Hu</surname><given-names>X</given-names></name>
+<name><surname>Liu</surname><given-names>S</given-names></name>
+<name><surname>Sun</surname><given-names>H</given-names></name>
+</person-group><article-title>Inhibition of Microrna-124-3p Protects Against Acute Myocardial Infarction by Suppressing the Apoptosis of Cardiomyocytes</article-title><source>
+Mol Med Rep
+</source><year>2019</year><volume>20</volume><issue>4</issue><fpage>3379</fpage><lpage>3387</lpage><pub-id pub-id-type="doi">10.3892/mmr.2019.10565</pub-id><pub-id pub-id-type="pmid">31432169</pub-id>
+</element-citation></ref><ref id="B27"><label>27</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Chu</surname><given-names>X</given-names></name>
+<name><surname>Wang</surname><given-names>Y</given-names></name>
+<name><surname>Pang</surname><given-names>L</given-names></name>
+<name><surname>Huang</surname><given-names>J</given-names></name>
+<name><surname>Sun</surname><given-names>X</given-names></name>
+<name><surname>Chen</surname><given-names>X</given-names></name>
+</person-group><article-title>miR-130 Aggravates Acute Myocardial Infarction-Induced Myocardial Injury by Targeting PPAR-&#x003b3;</article-title><source>
+J Cell Biochem
+</source><year>2018</year><volume>119</volume><issue>9</issue><fpage>7235</fpage><lpage>7244</lpage><pub-id pub-id-type="doi">10.1002/jcb.26903</pub-id><pub-id pub-id-type="pmid">29761875</pub-id>
+</element-citation></ref><ref id="B28"><label>28</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Gou</surname><given-names>L</given-names></name>
+<name><surname>Xue</surname><given-names>C</given-names></name>
+<name><surname>Tang</surname><given-names>X</given-names></name>
+<name><surname>Fang</surname><given-names>Z</given-names></name>
+</person-group><article-title>Inhibition of Exo-miR-19a-3p Derived from Cardiomyocytes Promotes Angiogenesis and Improves Heart Function in Mice with Myocardial Infarction Via Targeting HIF-1&#x003b1;</article-title><source>
+Aging (Albany NY)
+</source><year>2020</year><volume>12</volume><issue>23</issue><fpage>23609</fpage><lpage>23618</lpage><pub-id pub-id-type="doi">10.18632/aging.103563</pub-id><pub-id pub-id-type="pmid">33352533</pub-id>
+</element-citation></ref><ref id="B29"><label>29</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Song</surname><given-names>K</given-names></name>
+<name><surname>Li</surname><given-names>L</given-names></name>
+<name><surname>Quan</surname><given-names>Q</given-names></name>
+<name><surname>Wei</surname><given-names>Y</given-names></name>
+<name><surname>Hu</surname><given-names>S</given-names></name>
+</person-group><article-title>Inhibited Histone Deacetylase 3 Ameliorates Myocardial Ischemia-Reperfusion Injury in a Rat Model by Elevating Microrna-19a-3p and Reducing Cyclin-Dependent Kinase 2</article-title><source>
+IUBMB Life
+</source><year>2020</year><volume>72</volume><issue>12</issue><fpage>2696</fpage><lpage>2709</lpage><pub-id pub-id-type="doi">10.1002/iub.2402</pub-id><pub-id pub-id-type="pmid">33217223</pub-id>
+</element-citation></ref><ref id="B30"><label>30</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Huang</surname><given-names>J</given-names></name>
+<name><surname>Jiang</surname><given-names>R</given-names></name>
+<name><surname>Chu</surname><given-names>X</given-names></name>
+<name><surname>Wang</surname><given-names>F</given-names></name>
+<name><surname>Sun</surname><given-names>X</given-names></name>
+<name><surname>Wang</surname><given-names>Y</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>Overexpression of Microrna-23a-5p Induces Myocardial Infarction by Promoting Cardiomyocyte Apoptosis Through Inhibited of PI3K/AKT Signalling Pathway</article-title><source>
+Cell Biochem Funct
+</source><year>2020</year><volume>38</volume><issue>8</issue><fpage>1047</fpage><lpage>1055</lpage><pub-id pub-id-type="doi">10.1002/cbf.3536</pub-id><pub-id pub-id-type="pmid">32519337</pub-id>
+</element-citation></ref><ref id="B31"><label>31</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Ayoub</surname><given-names>E</given-names></name>
+<name><surname>Wilson</surname><given-names>MP</given-names></name>
+<name><surname>McGrath</surname><given-names>KE</given-names></name>
+<name><surname>Li</surname><given-names>AJ</given-names></name>
+<name><surname>Frisch</surname><given-names>BJ</given-names></name>
+<name><surname>Palis</surname><given-names>J</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>EVI1 Overexpression Reprograms Hematopoiesis Via Upregulation of Spi1 Transcription</article-title><source>
+Nat Commun
+</source><year>2018</year><volume>9</volume><issue>1</issue><size units="pages">4239</size><pub-id pub-id-type="doi">10.1038/s41467-018-06208-y</pub-id></element-citation></ref><ref id="B32"><label>32</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Fenouille</surname><given-names>N</given-names></name>
+<name><surname>Bassil</surname><given-names>CF</given-names></name>
+<name><surname>Ben-Sahra</surname><given-names>I</given-names></name>
+<name><surname>Benajiba</surname><given-names>L</given-names></name>
+<name><surname>Alexe</surname><given-names>G</given-names></name>
+<name><surname>Ramos</surname><given-names>A</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>The Creatine Kinase Pathway is a Metabolic Vulnerability in EVI1-Positive Acute Myeloid Leukemia</article-title><source>
+Nat Med
+</source><year>2017</year><volume>23</volume><issue>3</issue><fpage>301</fpage><lpage>313</lpage><pub-id pub-id-type="doi">10.1038/nm.4283</pub-id><pub-id pub-id-type="pmid">28191887</pub-id>
+</element-citation></ref><ref id="B33"><label>33</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Ono</surname><given-names>M</given-names></name>
+<name><surname>Yaguchi</surname><given-names>H</given-names></name>
+<name><surname>Ohkura</surname><given-names>N</given-names></name>
+<name><surname>Kitabayashi</surname><given-names>I</given-names></name>
+<name><surname>Nagamura</surname><given-names>Y</given-names></name>
+<name><surname>Nomura</surname><given-names>T</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>Foxp3 Controls Regulatory T-Cell Function by Interacting with AML1/Runx1</article-title><source>
+Nature
+</source><year>2007</year><volume>446</volume><issue>7136</issue><fpage>685</fpage><lpage>689</lpage><pub-id pub-id-type="doi">10.1038/nature05673</pub-id><pub-id pub-id-type="pmid">17377532</pub-id>
+</element-citation></ref><ref id="B34"><label>34</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Hughan</surname><given-names>SC</given-names></name>
+<name><surname>Senis</surname><given-names>Y</given-names></name>
+<name><surname>Best</surname><given-names>D</given-names></name>
+<name><surname>Thomas</surname><given-names>A</given-names></name>
+<name><surname>Frampton</surname><given-names>J</given-names></name>
+<name><surname>Vyas</surname><given-names>P</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>Selective Impairment of Platelet Activation to Collagen in the Absence of GATA1</article-title><source>
+Blood
+</source><year>2005</year><volume>105</volume><issue>11</issue><fpage>4369</fpage><lpage>4376</lpage><pub-id pub-id-type="doi">10.1182/blood-2004-10-4098</pub-id><pub-id pub-id-type="pmid">15701726</pub-id>
+</element-citation></ref><ref id="B35"><label>35</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Wang</surname><given-names>L</given-names></name>
+<name><surname>Fan</surname><given-names>C</given-names></name>
+<name><surname>Topol</surname><given-names>SE</given-names></name>
+<name><surname>Topol</surname><given-names>EJ</given-names></name>
+<name><surname>Wang</surname><given-names>Q</given-names></name>
+</person-group><article-title>Mutation of MEF2A in an Inherited Disorder with Features of Coronary Artery Disease</article-title><source>
+Science
+</source><year>2003</year><volume>302</volume><issue>5650</issue><fpage>1578</fpage><lpage>1581</lpage><pub-id pub-id-type="doi">10.1126/science.1088477</pub-id><pub-id pub-id-type="pmid">14645853</pub-id>
+</element-citation></ref><ref id="B36"><label>36</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Park</surname><given-names>SH</given-names></name>
+<name><surname>Choi</surname><given-names>HJ</given-names></name>
+<name><surname>Yang</surname><given-names>H</given-names></name>
+<name><surname>Do</surname><given-names>KH</given-names></name>
+<name><surname>Kim</surname><given-names>J</given-names></name>
+<name><surname>Lee</surname><given-names>DW</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>Endoplasmic Reticulum Stress-Activated C/EBP Homologous Protein Enhances Nuclear Factor-Kappab Signals Via Repression of Peroxisome Proliferator-Activated Receptor Gamma</article-title><source>
+J Biol Chem
+</source><year>2010</year><volume>285</volume><issue>46</issue><fpage>35330</fpage><lpage>35339</lpage><pub-id pub-id-type="doi">10.1074/jbc.M110.136259</pub-id><pub-id pub-id-type="pmid">20829347</pub-id>
+</element-citation></ref><ref id="B37"><label>37</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Donato</surname><given-names>JL</given-names></name>
+<name><surname>Ko</surname><given-names>J</given-names></name>
+<name><surname>Kutok</surname><given-names>JL</given-names></name>
+<name><surname>Cheng</surname><given-names>T</given-names></name>
+<name><surname>Shirakawa</surname><given-names>T</given-names></name>
+<name><surname>Mao</surname><given-names>XQ</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>Human Htm4 is a Hematopoietic Cell Cycle Regulator</article-title><source>
+J Clin Invest
+</source><year>2002</year><volume>109</volume><issue>1</issue><fpage>51</fpage><lpage>58</lpage><pub-id pub-id-type="doi">10.1172/JCI14025</pub-id><pub-id pub-id-type="pmid">11781350</pub-id>
+</element-citation></ref><ref id="B38"><label>38</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Dehghan</surname><given-names>A</given-names></name>
+<name><surname>van Hoek</surname><given-names>M</given-names></name>
+<name><surname>Sijbrands</surname><given-names>EJ</given-names></name>
+<name><surname>Oostra</surname><given-names>BA</given-names></name>
+<name><surname>Hofman</surname><given-names>A</given-names></name>
+<name><surname>van Duijn</surname><given-names>CM</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>Lack of Association of Two Common Polymorphisms on 9p21 with Risk of Coronary Heart Disease and Myocardial Infarction; Results from a Prospective Cohort Study</article-title><source>
+BMC Med
+</source><year>2008</year><volume>6</volume><size units="pages">30</size><pub-id pub-id-type="doi">10.1186/1741-7015-6-30</pub-id></element-citation></ref><ref id="B39"><label>39</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Huang</surname><given-names>W</given-names></name>
+<name><surname>Feng</surname><given-names>Y</given-names></name>
+<name><surname>Liang</surname><given-names>J</given-names></name>
+<name><surname>Yu</surname><given-names>H</given-names></name>
+<name><surname>Wang</surname><given-names>C</given-names></name>
+<name><surname>Wang</surname><given-names>B</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>Loss of Microrna-128 Promotes Cardiomyocyte Proliferation and Heart Regeneration</article-title><source>
+Nat Commun
+</source><year>2018</year><volume>9</volume><issue>1</issue><size units="pages">700</size><pub-id pub-id-type="doi">10.1038/s41467-018-03019-z</pub-id></element-citation></ref><ref id="B40"><label>40</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Ortega-Rodr&#x000ed;guez</surname><given-names>AC</given-names></name>
+<name><surname>Mar&#x000ed;n-J&#x000e1;uregui</surname><given-names>LS</given-names></name>
+<name><surname>Mart&#x000ed;nez-Shio</surname><given-names>E</given-names></name>
+<name><surname>Castro</surname><given-names>BH</given-names></name>
+<name><surname>Gonz&#x000e1;lez-Amaro</surname><given-names>R</given-names></name>
+<name><surname>Escobedo-Uribe</surname><given-names>CD</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>Altered NK Cell Receptor Repertoire and Function of Natural Killer Cells in Patients with Acute Myocardial Infarction: a Three-Month Follow-Up Study</article-title><source>
+Immunobiology
+</source><year>2020</year><volume>225</volume><issue>3</issue><fpage>151909</fpage><pub-id pub-id-type="doi">10.1016/j.imbio.2020.151909</pub-id><pub-id pub-id-type="pmid">32051096</pub-id>
+</element-citation></ref><ref id="B41"><label>41</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Ren</surname><given-names>N</given-names></name>
+<name><surname>Wang</surname><given-names>M</given-names></name>
+</person-group><article-title>Microrna-212-Induced Protection of the Heart Against Myocardial Infarction Occurs Via the Interplay Between AQP9 and PI3K/Akt Signaling Pathway</article-title><source>
+Exp Cell Res
+</source><year>2018</year><volume>370</volume><issue>2</issue><fpage>531</fpage><lpage>541</lpage><pub-id pub-id-type="doi">10.1016/j.yexcr.2018.07.018</pub-id><pub-id pub-id-type="pmid">30017933</pub-id>
+</element-citation></ref><ref id="B42"><label>42</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Huang</surname><given-names>X</given-names></name>
+<name><surname>Yu</surname><given-names>X</given-names></name>
+<name><surname>Li</surname><given-names>H</given-names></name>
+<name><surname>Han</surname><given-names>L</given-names></name>
+<name><surname>Yang</surname><given-names>X</given-names></name>
+</person-group><article-title>Regulation Mechanism of Aquaporin 9 Gene on Inflammatory Response and Cardiac Function in Rats with Myocardial Infarction Through Extracellular Signal-Regulated Kinase1/2 Pathway</article-title><source>
+Heart Vessels
+</source><year>2019</year><volume>34</volume><issue>12</issue><fpage>2041</fpage><lpage>2051</lpage><pub-id pub-id-type="doi">10.1007/s00380-019-01452-8</pub-id><pub-id pub-id-type="pmid">31218464</pub-id>
+</element-citation></ref><ref id="B43"><label>43</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Fan</surname><given-names>Q</given-names></name>
+<name><surname>Tao</surname><given-names>R</given-names></name>
+<name><surname>Zhang</surname><given-names>H</given-names></name>
+<name><surname>Xie</surname><given-names>H</given-names></name>
+<name><surname>Lu</surname><given-names>L</given-names></name>
+<name><surname>Wang</surname><given-names>T</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>Dectin-1 Contributes to Myocardial Ischemia/Reperfusion Injury by Regulating Macrophage Polarization and Neutrophil Infiltration</article-title><source>
+Circulation
+</source><year>2019</year><volume>139</volume><issue>5</issue><fpage>663</fpage><lpage>678</lpage><pub-id pub-id-type="doi">10.1161/CIRCULATIONAHA.118.036044</pub-id><pub-id pub-id-type="pmid">30586706</pub-id>
+</element-citation></ref><ref id="B44"><label>44</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Lin</surname><given-names>B</given-names></name>
+<name><surname>Zheng</surname><given-names>W</given-names></name>
+<name><surname>Jiang</surname><given-names>X</given-names></name>
+</person-group><article-title>Crosstalk between Circulatory Microenvironment and Vascular Endothelial Cells in Acute Myocardial Infarction</article-title><source>
+J Inflamm Res
+</source><year>2021</year><volume>14</volume><fpage>5597</fpage><lpage>5610</lpage><pub-id pub-id-type="doi">10.2147/JIR.S316414</pub-id><pub-id pub-id-type="pmid">34744446</pub-id>
+</element-citation></ref><ref id="B45"><label>45</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Askari</surname><given-names>N</given-names></name>
+<name><surname>Lipps</surname><given-names>C</given-names></name>
+<name><surname>Voss</surname><given-names>S</given-names></name>
+<name><surname>Staubach</surname><given-names>N</given-names></name>
+<name><surname>Gr&#x000fc;n</surname><given-names>D</given-names></name>
+<name><surname>Klingenberg</surname><given-names>R</given-names></name>
+<etal>et al</etal>
+</person-group><article-title>Circulating Monocyte Subsets are Associated with Extent of Myocardial Injury but not with Type of Myocardial Infarction</article-title><source>
+Front Cardiovasc Med
+</source><year>2021</year><volume>8</volume><size units="pages">741890</size><pub-id pub-id-type="doi">10.3389/fcvm.2021.741890</pub-id></element-citation></ref></ref-list></back><sub-article article-type="translation" id="TRen" xml:lang="en"><front-stub><article-categories><subj-group subj-group-type="heading"><subject>Artigo Original</subject></subj-group></article-categories><title-group><article-title>Identification of Potential Crucial Biomarkers in STEMI Through Integrated Bioinformatic Analysis</article-title></title-group><contrib-group><contrib contrib-type="author"><name><surname>Zhao</surname><given-names>Li-Zhi</given-names></name><role>contributed to this work equally</role><role>Conception and design of the research</role><role>Analysis and interpretation of the data</role><role>Writing of the manuscript</role><xref rid="aff1001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="aff2001" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib contrib-type="author"><name><surname>Liang</surname><given-names>Yi</given-names></name><role>contributed to this work equally</role><role>Conception and design of the research</role><role>Acquisition of data</role><role>Writing of the manuscript</role><xref rid="aff3001" ref-type="aff">
+<sup>3</sup>
+</xref></contrib><contrib contrib-type="author"><name><surname>Yin</surname><given-names>Ting</given-names></name><role>Analysis and interpretation of the data</role><role>Statistical analysis</role><role>Writing of the manuscript</role><xref rid="aff4001" ref-type="aff">
+<sup>4</sup>
+</xref></contrib><contrib contrib-type="author"><name><surname>Liao</surname><given-names>Hui-Ling</given-names></name><role>Conception and design of the research</role><role>Statistical analysis;</role><role>Critical revision of the manuscript for important intellectual content</role><xref rid="aff1001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="aff2001" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib contrib-type="author"><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-1749-6976</contrib-id><name><surname>Liang</surname><given-names>Bo</given-names></name><role>Conception and design of the research</role><role>Analysis and interpretation of the data</role><role>Critical revision of the manuscript for important intellectual content</role><xref rid="aff5001" ref-type="aff">
+<sup>5</sup>
+</xref></contrib></contrib-group><aff id="aff1001">
+<label>1</label>
+<country country="CN">China</country>
+<institution content-type="original">The Affiliated Traditional Chinese Medicine Hospital, Southwest Medical University, Luzhou &#x02013; China</institution>
+</aff><aff id="aff2001">
+<label>2</label>
+<country country="CN">China</country>
+<institution content-type="original">School of Integration of Traditional Chinese and Western Medicine, Southwest Medical University, Luzhou &#x02013; China</institution>
+</aff><aff id="aff3001">
+<label>3</label>
+<country country="CN">China</country>
+<institution content-type="original">Department of Geriatrics, Sichuan Second Hospital of T.C.M., Chengdu &#x02013; China</institution>
+</aff><aff id="aff4001">
+<label>4</label>
+<country country="CN">China</country>
+<institution content-type="original">Department of Cardiology, The Second Affiliated Hospital, School of Medicine, Zhejiang University, Hangzhou &#x02013; China</institution>
+</aff><aff id="aff5001">
+<label>5</label>
+<country country="CN">China</country>
+<institution content-type="original">Department of Nephrology, The Key Laboratory for the Prevention and Treatment of Chronic Kidney Disease of Chongqing, Chongqing Clinical Research Center of Kidney and Urology Diseases, Xinqiao Hospital, Army Medical University (Third Military Medical University),Chongqing &#x02013; China</institution>
+</aff><author-notes><corresp id="c01001">
+<bold>Mailing Address: Bo Liang and Hui-Ling Liao &#x02022;</bold>
+Army Medical University (Third Military Medical University) &#x02013; Chongqing &#x02013; China; Southwest Medical University &#x02013; Luzhou &#x02013; China. E-mail: liangbo2018@126.com; liaohl@swmu.edu.cn</corresp><fn fn-type="COI-statement"><p>Potential conflict of interest</p><p>No potential conflict of interest relevant to this article was reported.</p></fn><fn fn-type="edited-by"><p>Editor responsible for the review: Nat&#x000e1;lia Olivetti</p></fn></author-notes><abstract><title>Abstract</title><sec><title>Background</title><p>ST-segment elevation myocardial infarction (STEMI) is one of the leading causes of fatal cardiovascular diseases, which have been the prime cause of mortality worldwide. Diagnosis in the early phase would benefit clinical intervention and prognosis, but the exploration of the biomarkers of STEMI is still lacking.</p></sec><sec><title>Objectives</title><p>In this study, we conducted a bioinformatics analysis to identify potential crucial biomarkers in the progress of STEMI.</p></sec><sec><title>Methods</title><p>We obtained GSE59867 for STEMI and stable coronary artery disease (SCAD) patients. Differentially expressed genes (DEGs) were screened with the threshold of |log2fold change| &#x0003e; 0.5 and p &#x0003c;0.05. Based on these genes, we conducted enrichment analysis to explore the potential relevance between genes and to screen hub genes. Subsequently, hub genes were analyzed to detect related miRNAs and DAVID to detect transcription factors for further analysis. Finally, GSE62646 was utilized to assess DEGs specificity, with genes demonstrating AUC results exceeding 75%, indicating their potential as candidate biomarkers.</p></sec><sec><title>Results</title><p>133 DEGs between SCAD and STEMI were obtained. Then, the PPI network of DEGs was constructed using String and Cytoscape, and further analysis determined hub genes and 6 molecular complexes. Functional enrichment analysis of the DEGs suggests that pathways related to inflammation, metabolism, and immunity play a pivotal role in the progression from SCAD to STEMI. Besides, related-miRNAs were predicted, has-miR-124, has-miR-130a/b, and has-miR-301a/b regulated the expression of the largest number of genes. Meanwhile, Transcription factors analysis indicate that EVI1, AML1, GATA1, and PPARG are the most enriched gene. Finally, ROC curves demonstrate that MS4A3, KLRC4, KLRD1, AQP9, and CD14 exhibit both high sensitivity and specificity in predicting STEMI.</p></sec><sec><title>Conclusions</title><p>This study revealed that immunity, metabolism, and inflammation are involved in the development of STEMI derived from SCAD, and 6 genes, including MS4A3, KLRC4, KLRD1, AQP9, CD14, and CCR1, could be employed as candidate biomarkers to STEMI.</p></sec></abstract><kwd-group><kwd>ST Elevation Myocardial Infarction</kwd><kwd>Coronary Artery Disease</kwd><kwd>Biomarkers</kwd><kwd>Computational Biology</kwd></kwd-group></front-stub><body><p>
+<fig position="float" id="f01001"><label>Central Illustration</label><caption><title>: Identification of Potential Crucial Biomarkers in STEMI Through Integrated Bioinformatic Analysis</title></caption><graphic xlink:href="0066-782X-abc-121-2-e20230462-gf01-en" position="float"/><attrib>
+<italic toggle="yes">Identification of Potential Crucial Biomarkers in STEMI Through Integrated Bioinformatic Analysis. STEMI: ST-segment elevation myocardial infarction; SCAD: stable coronary artery disease.</italic>
+</attrib></fig>
+</p><sec sec-type="intro"><title>Introduction</title><p>In the past decades, cardiovascular diseases have been the prime cause of mortality worldwid.<sup>
+<xref rid="B1" ref-type="bibr">1</xref>
+</sup>Among the deaths from cardiovascular diseases, acute coronary syndrome (ACS) is the leading cause.<sup>
+<xref rid="B2" ref-type="bibr">2</xref>
+</sup>Although increased use of evidence-based therapy strategies and lifestyle changes have spurred considerable reductions in mortality from cardiovascular diseases, the number of deaths is still increasing.<sup>
+<xref rid="B3" ref-type="bibr">3</xref>
+</sup>In developed nations, more than a third of deaths were caused by ACS, and the situation is also rising even worse in developing countries.<sup>
+<xref rid="B3" ref-type="bibr">3</xref>
+</sup></p><p>ST-segment elevation myocardial infarction (STEMI), the most severe type of heart attack, is one of three types of ACS. In the majority of cases, STEMI is due to disruption of a vulnerable atherosclerotic plaque in an epicardial coronary vessel, thereby, a complete thrombotic occlusion,<sup>
+<xref rid="B4" ref-type="bibr">4</xref>
+</sup>that is to say, stable coronary artery disease (SCAD) patients are high-risk populations of STEMI,<sup>
+<xref rid="B3" ref-type="bibr">3</xref>
+</sup>Numerous guidelines from ACS suggest that a healthy lifestyle and good medical performance reduce morbidity and reperfusion and revascularization treatment strategies in time reduce mortality.<sup>
+<xref rid="B5" ref-type="bibr">5</xref>
+,
+<xref rid="B6" ref-type="bibr">6</xref>
+</sup>Nevertheless, when STEMI occurs, it is very hard to detect, transport, diagnose, and perform operations in time, which makes it difficult to seize the golden time for revascularization. The diagnosis of STEMI relies on biomarker evidence of myocyte necrosis. Cardiac troponin isoforms I and T have emerged as the preferred diagnostic biomarkers because they are highly sensitive and specific for myocardial injury; therefore, both European and American guidelines emphasize that cardiac troponin is the preferred biomarker for diagnosis of STEMI.<sup>
+<xref rid="B7" ref-type="bibr">7</xref>
+,
+<xref rid="B8" ref-type="bibr">8</xref>
+</sup>As traditional biomarkers of ACS, cardiac troponin and creatine kinase myocardial band, which follow similar kinetics as cardiac troponin, have been recommended for early diagnosis in suspected cases of ACS. However, with the development of microarray and next-generation sequencing, finding new biomarkers with high sensitivity and specificity is of great significance for the prevention and early diagnosis of STEMI, specially developed from SCAD.</p><p>In this work, we investigated the differentially expressed genes (DEGs) between patients with SCAD and STEMI. We conducted the protein-protein interaction (PPI), Gene Ontology (GO), and Kyoto Encyclopedia of Genes and Genomes (KEGG) pathway analysis, which helped to elucidate the function of DEGs. Consequently, we detected related microRNAs (miRNAs) and transcription factors to analyze the potential functions further. At last, receiver operating characteristic (ROC) curves were plotted to explore the sensitivity and specificity of potential biomarkers and validate the results (
+<xref rid="f01001" ref-type="fig">Central Illustration</xref>
+).</p></sec><sec sec-type="methods"><title>Method</title><sec><title>Acquisition and processing of raw data</title><p>The raw data of the microarray expression dataset GSE59867<sup>
+<xref rid="B9" ref-type="bibr">9</xref>
+</sup>and its annotation file GPL6244 were obtained from Gene Expression Omnibus. A total of 157 samples, including 46 SCAD patients without a history of MI and 111 ST-segment elevation myocardial infarction (STEMI) patients, were included in the present study. The data are public and do not involve the privacy of patients, so the review and consent of the ethics committee are not required.</p></sec><sec><title>Investigation of DEGs</title><p>After the processing of raw data, we analyzed the data using the
+<italic toggle="yes">limma</italic>
+package (version 3.12) with a fold change and p for DEGs.<sup>
+<xref rid="B10" ref-type="bibr">10</xref>
+</sup>The threshold of DEGs was |log<sub>2</sub>fold change| &#x0003e; 0.5 and p &#x0003c;0.05,<sup>
+<xref rid="B11" ref-type="bibr">11</xref>
+</sup>and the results were visualized using the
+<italic toggle="yes">ggplot2</italic>
+(version 3.3.3) and the
+<italic toggle="yes">pheatmap</italic>
+(version 1.0.12) packages.</p></sec><sec><title>PPI analysis</title><p>PPI information was surveyed using the String database (version 11.0).<sup>
+<xref rid="B12" ref-type="bibr">12</xref>
+</sup>Next, the PPI network of DEGs was uploaded to Cytoscape (version 3.8.2), as described previously.<sup>
+<xref rid="B13" ref-type="bibr">13</xref>
+</sup>The CytoNCA plugin in Cytoscape was used to calculate centrality and evaluate biological networks, and the MCODE plugin was employed for detecting potential molecular complexes and function modules.</p></sec><sec><title>Functional enrichment analysis</title><p>GO terms and KEGG analysis of DEGs and potential molecular complexes were carried out using Metascape, a web-based platform providing gene annotation, functional enrichment, and interactome analysis services. GO terms or KEGG pathways with both p &#x0003c; 0.01 and enriched with more than 3 genes were considered significant enrichment analysis, as described previously.<sup>
+<xref rid="B14" ref-type="bibr">14</xref>
+,
+<xref rid="B15" ref-type="bibr">15</xref>
+</sup></p></sec><sec><title>Gene Set Enrichment Analysis (GSEA)</title><p>GSEA was conducted using GSEA software (version 7.4) with GO terms, KEGG pathways, and Reactome pathways to supplement the functional enrichment;<sup>
+<xref rid="B16" ref-type="bibr">16</xref>
+</sup>terms with p &#x0003c; 0.05 and |normalized enrichment score| &#x0003e;1 were defined as significant enrichment terms.</p></sec><sec><title>Investigation of pivotal miRNAs and transcription factors</title><p>We investigated the related miRNAs of hub genes for a further functional explanation using FunRich software (version 3.1.4).<sup>
+<xref rid="B17" ref-type="bibr">17</xref>
+</sup>The transcription factors were predicted using the Database for Annotation, Visualization, and Integrated Discovery (DAVID, version 6.8), and the enriched genes rank the results.</p></sec><sec><title>Verification of hub genes</title><p>We draw the receiver operating characteristic (ROC) curves using the
+<italic toggle="yes">pROC</italic>
+package and compared the expression of hub genes in both GSE59867 and GSE62646,<sup>
+<xref rid="B18" ref-type="bibr">18</xref>
+</sup>a gene dataset containing 14 SCAD samples and 28 STEMI samples, to validate the hub genes, which could be the potential biomarkers of STEMI. The area under the curve exceeding 75% was regarded as demonstrating exceptional sensitivity and specificity, which indicated their potential candidacy as biomarkers. The expression of hub genes was compared with an unpaired t-test, and two-tailed p &#x0003c; 0.05 was considered a statistical difference.</p></sec></sec><sec sec-type="results"><title>Results</title><sec><title>Investigation of DEGs</title><p>The basic information of the datasets is shown in
+<xref rid="t1001" ref-type="table">Table 1</xref>
+. Microarray expression dataset GSE62646 was evaluated with a boxplot and RNA degradation plot; the results suggested that GSE62646 is a qualified dataset (
+<ext-link xlink:href="http://abccardiol.org/supplementary-material/2024/12102/2023-0462_supplemental.pdf" ext-link-type="uri">Figure S1</ext-link>
+). Then, uncertain or ambiguous values in GSE62646 were supplemented using the K-Nearest Neighbor method, and the DEGs were analyzed using the
+<italic toggle="yes">limma</italic>
+package. After regulating by UniProt, a total of 133 DEGs were finally determined, including 54 downregulated genes, and 79 upregulated genes, as shown in
+<xref rid="f02001" ref-type="fig">Figure 1</xref>
+, visualized by volcano plot and heat map.</p><p>
+<table-wrap position="float" id="t1001"><label>Table 1</label><caption><title>&#x02013; Basic information about the datasets</title></caption><table frame="hsides" rules="groups"><colgroup width="33%" span="1"><col span="1"/><col span="1"/><col span="1"/></colgroup><thead><tr><th align="left" style="font-weight:normal" rowspan="1" colspan="1">&#x000a0;</th><th rowspan="1" colspan="1">GSE59867</th><th rowspan="1" colspan="1">GSE62646</th></tr></thead><tbody><tr><td rowspan="1" colspan="1">Status</td><td align="center" rowspan="1" colspan="1">Public on May 21, 2015</td><td align="center" rowspan="1" colspan="1">Public on Oct 23, 2014</td></tr><tr><td rowspan="1" colspan="1">Title</td><td align="center" rowspan="1" colspan="1">Gene expression profiling reveals potential prognostic biomarkers associated with the progression of heart failure.</td><td align="center" rowspan="1" colspan="1">Altered gene expression pattern in peripheral blood mononuclear cells in patients with acute myocardial infarction</td></tr><tr><td rowspan="1" colspan="1">Population</td><td align="center" rowspan="1" colspan="1">A total of 157 samples, including 111 STEMI patients and 46 SCAD patients without a history of MI.</td><td align="center" rowspan="1" colspan="1">A total of 146 samples, including 28 STEMI patients and 14 SCAD patients without a history of MI.</td></tr><tr><td rowspan="1" colspan="1">Experiment type</td><td align="center" rowspan="1" colspan="1">Expression profiling by array</td><td align="center" rowspan="1" colspan="1">Expression profiling by array</td></tr><tr><td rowspan="1" colspan="1">Platforms</td><td align="center" rowspan="1" colspan="1">GPL6244</td><td align="center" rowspan="1" colspan="1">GPL6244</td></tr><tr><td rowspan="1" colspan="1">Publication</td><td align="center" rowspan="1" colspan="1">PMID: 25984239</td><td align="center" rowspan="1" colspan="1">PMID: 23185530</td></tr></tbody></table><table-wrap-foot><fn id="TFN1001"><p>STEMI: ST-segment elevation myocardial infarction; SCAD: stable coronary artery disease; MI: myocardial infarction.</p></fn></table-wrap-foot></table-wrap>
+</p><p>
+<fig position="float" id="f02001"><label>Figure 1</label><caption><title>&#x02013; DEGs in STEMI samples and SCAD samples. A) Heat map. Each row represents a sample, and each column represents a single gene. Pink color represented STEMI samples, and blue color represented SCAD samples. The color scale shows the relative gene expression level in certain slides: green indicates low relative expression levels; red indicates high relative expression levels. B) Volcano plot. STEMI: ST-segment elevation myocardial infarction; SCAD: stable coronary artery disease.</title></caption><graphic xlink:href="0066-782X-abc-121-2-e20230462-gf02-en" position="float"/></fig>
+</p></sec><sec><title>PPI analysis</title><p>Using the String platform, we investigated the row PPI network, and the result was uploaded to Cytoscape for further processing. As shown in
+<xref rid="f03001" ref-type="fig">Figure 2A</xref>
+, the network consisted of 73 nodes and 167 edges; 50 disconnected nodes were hidden, the value of the degree in the PPI network was detected using CytoNCA to figure out the hub genes with the median of the degree value, 35 genes including FCGR1A, S100A12, CD163, CCR2, CD14, and others were defined as hub genes. Then, the MCODE plugin in Cytoscape was employed to detect the potential function modules or protein complex, as shown in
+<xref rid="f03001" ref-type="fig">Figure 2B~D</xref>
+; the top 3 potential function modules (M1, M2, and M3) were selected for subsequent enrichment analysis.</p><p>
+<fig position="float" id="f03001"><label>Figure 2</label><caption><title>&#x02013; PPI network. A) The whole PPI network. B) M1 bio-functional modules. C) M2 bio-functional modules. D) M3 bio-functional modules.</title></caption><graphic xlink:href="0066-782X-abc-121-2-e20230462-gf03-en" position="float"/></fig>
+</p></sec><sec><title>Function enrichment analysis</title><p>Numerous molecular functions were involved in MHC class I protein complex binding, carbohydrate binding, protein antigen binding, and RAGE receptor binding (
+<xref rid="f04001" ref-type="fig">Figure 3A</xref>
+). Similarly, numerous biological processes were involved in cell activation involved in the immune response, leukocyte activation involved in the immune response, negative regulation of the immune system process, myeloid cell activation involved in the immune response, neutrophil activation, myeloid leukocyte mediated immunity, and neutrophil activation involved in immune response (
+<xref rid="f04001" ref-type="fig">Figure 3B</xref>
+). The results indicated that numerous cellular components were involved in specific granules, tertiary granules, cytoplasmic vesicle membranes, secretory granule membranes, specific granule membranes, the external side of the plasma membrane, and others (
+<xref rid="f04001" ref-type="fig">Figure 3C</xref>
+). KEGG pathways were involved in Antigen processing and presentation, natural killer cell-mediated cytotoxicity, osteoclast differentiation, hematopoietic cell lineage, transcriptional misregulation in cancer, Human T-cell leukemia virus 1 infection, HTLV-I infection, and PPAR signaling pathway (
+<xref rid="f04001" ref-type="fig">Figure 3D</xref>
+). Besides, the functional analysis of the 3 potential function modules (M1, M2, and M3) was involved in the immune response (
+<ext-link xlink:href="http://abccardiol.org/supplementary-material/2024/12102/2023-0462_supplemental.pdf" ext-link-type="uri">Figure S2A~S2C</ext-link>
+).</p><p>
+<fig position="float" id="f04001"><label>Figure 3</label><caption><title>&#x02013; GO and KEGG enrichment analysis of potential targets. A) GO molecular function. B) GO biological processes. C) GO cellular components. D) KEGG.</title></caption><graphic xlink:href="0066-782X-abc-121-2-e20230462-gf04-en" position="float"/></fig>
+</p></sec><sec><title>GSEA</title><p>To investigate genes that are not significantly differentially expressed but are biologically important and to supplement GO and KEGG analysis, a GSEA analysis of the whole dataset was conducted using GSEA. Take the cutoff as mentioned above, GSEA was involved in plasma lipoprotein assembly remodeling and clearance, plasma lipoprotein clearance, platelet aggregation plug formation, RHO GTPases activate NADPH oxidases, NLRP3 inflammasome, transcriptional regulation of white adipocyte differentiation, LDL clearance, interleukin 10 signaling, interleukin 4 and interleukin 13 signaling, heparan sulfate/heparin metabolism, gluconeogenesis, and cytochrome p450 arranged by substrate type (
+<xref rid="f05001" ref-type="fig">Figure 4</xref>
+). Obviously, GSEA analysis emphasized the importance of immune-related response and has provided significant supplements on coagulation and STEMI.</p><p>
+<fig position="float" id="f05001"><label>Figure 4</label><caption><title>&#x02013; GSEA.</title></caption><graphic xlink:href="0066-782X-abc-121-2-e20230462-gf05-en" position="float"/></fig>
+</p></sec><sec><title>Further prediction of miRNAs and transcription factors</title><p>The miRNAs of hub genes were predicted using FunRich software. Top 8 miRNA ranked by degree, including hsa-miR-124, hsa-miR-130a/b, hsa-miR-301a/b, hsa-miR-3666, hsa-miR-4295, and hsa-miR-454 (
+<ext-link xlink:href="http://abccardiol.org/supplementary-material/2024/12102/2023-0462_supplemental.pdf" ext-link-type="uri">Figure S3</ext-link>
+), among them hsa-miR-124 was confirmed are pivotal in the development of STEMI. Meanwhile, transcription factors were analyzed using the DAVID platform, and the results indicate that EVI1, AML1, GATA1, and PPARG are enriched by most genes (
+<ext-link xlink:href="http://abccardiol.org/supplementary-material/2024/12102/2023-0462_supplemental.pdf" ext-link-type="uri">Figure S4</ext-link>
+).</p></sec><sec><title>Verification of hub genes</title><p>To detect the sensitivity and specificity of hub genes, ROC curves were employed for the verification of the hub genes. In GSE59867, the AUCs of MS4A3, KLRC4, KLRD1, AQP9, CD14, and CCR1 were 73.6%, 80.5%, 84.7%, 90.3%, 88.2%, and 84.2%, respectively (all
+<italic toggle="yes">P</italic>
+&#x0003c; 0.0001) (
+<xref rid="f06001" ref-type="fig">Figure 5A</xref>
+,
+<xref rid="t2001" ref-type="table">Table 2</xref>
+), which indicate that these genes have excellent sensitivity and specificity. After processing the GSE62646 dataset, including 14 SCAD patients and 28 STEMI patients, we identified that MS4A3, KLRC4, KLRD1, AQP9, CD14, and CCR1 had sensitivity and specificity in the prediction of STEMI (
+<xref rid="f06001" ref-type="fig">Figure 5B</xref>
+). The AUCs of these genes were 88.3%, 86.7%, 86.2%, 85.5%, 84.9%, and 82.4%, respectively (p &#x0003c; 0.001) (
+<xref rid="f06001" ref-type="fig">Figure 5B</xref>
+,
+<xref rid="t2001" ref-type="table">Table 2</xref>
+). In addition, MS4A3, KLRC4, and KLRD1 were down-regulated in GSE59867 (p &#x0003c; 0.0001) (
+<xref rid="f07001" ref-type="fig">Figure 6A</xref>
+) and GSE62646 (p &#x0003c; 0.001) (
+<xref rid="f07001" ref-type="fig">Figure 6B</xref>
+), whereas AQP9, CD14, and CCR1 were upregulated in GSE59867 (p &#x0003c; 0.0001) (
+<xref rid="f07001" ref-type="fig">Figure 6A</xref>
+) and GSE62646 (p &#x0003c; 0.001) (
+<xref rid="f07001" ref-type="fig">Figure 6B</xref>
+).</p><p>
+<fig position="float" id="f06001"><label>Figure 5</label><caption><title>&#x02013; ROC curves of hub genes. A) GSE59867. B) GSE62646.</title></caption><graphic xlink:href="0066-782X-abc-121-2-e20230462-gf06-en" position="float"/></fig>
+</p><p>
+<table-wrap position="float" id="t2001"><label>Table 2</label><caption><title>&#x02013; AUCs of hub genes</title></caption><table frame="hsides" rules="groups"><colgroup width="11%" span="1"><col span="1"/><col span="1"/><col span="1"/><col span="1"/><col span="1"/><col span="1"/><col span="1"/><col span="1"/><col span="1"/></colgroup><thead><tr><th align="left" style="font-weight:normal" rowspan="1" colspan="1">&#x000a0;</th><th align="left" colspan="4" rowspan="1">GSE59867</th><th align="left" colspan="4" rowspan="1">GSE62646</th></tr><tr><th align="left" style="font-weight:normal" rowspan="1" colspan="1">&#x000a0;</th><th align="left" rowspan="1" colspan="1">AUC</th><th align="left" rowspan="1" colspan="1">SE</th><th align="left" rowspan="1" colspan="1">95% CIs</th><th align="left" rowspan="1" colspan="1">p</th><th align="left" rowspan="1" colspan="1">AUC</th><th align="left" rowspan="1" colspan="1">SE</th><th align="left" rowspan="1" colspan="1">95% CIs</th><th align="left" rowspan="1" colspan="1">p</th></tr></thead><tbody><tr><td rowspan="1" colspan="1">MS4A3</td><td rowspan="1" colspan="1">0.736</td><td rowspan="1" colspan="1">0.046</td><td rowspan="1" colspan="1">0.654~0.827</td><td rowspan="1" colspan="1">&#x0003c; 0.0001</td><td rowspan="1" colspan="1">0.883</td><td rowspan="1" colspan="1">0.054</td><td rowspan="1" colspan="1">0.776~0.989</td><td rowspan="1" colspan="1">&#x0003c; 0.0001</td></tr><tr><td rowspan="1" colspan="1">KLRC4</td><td rowspan="1" colspan="1">0.805</td><td rowspan="1" colspan="1">0.037</td><td rowspan="1" colspan="1">0.733~0.878</td><td rowspan="1" colspan="1">&#x0003c; 0.0001</td><td rowspan="1" colspan="1">0.967</td><td rowspan="1" colspan="1">0.056</td><td rowspan="1" colspan="1">0.758~0.977</td><td rowspan="1" colspan="1">0.0001</td></tr><tr><td rowspan="1" colspan="1">KLRD1</td><td rowspan="1" colspan="1">0.847</td><td rowspan="1" colspan="1">0.033</td><td rowspan="1" colspan="1">0.782~0.912</td><td rowspan="1" colspan="1">&#x0003c; 0.0001</td><td rowspan="1" colspan="1">0.862</td><td rowspan="1" colspan="1">0.056</td><td rowspan="1" colspan="1">0.753~0.972</td><td rowspan="1" colspan="1">0.0002</td></tr><tr><td rowspan="1" colspan="1">AQP9</td><td rowspan="1" colspan="1">0.903</td><td rowspan="1" colspan="1">0.027</td><td rowspan="1" colspan="1">0.850~0.957</td><td rowspan="1" colspan="1">&#x0003c; 0.0001</td><td rowspan="1" colspan="1">0.855</td><td rowspan="1" colspan="1">0.060</td><td rowspan="1" colspan="1">0.735~0.974</td><td rowspan="1" colspan="1">0.0002</td></tr><tr><td rowspan="1" colspan="1">CD14</td><td rowspan="1" colspan="1">0.882</td><td rowspan="1" colspan="1">0.028</td><td rowspan="1" colspan="1">0.826~0.937</td><td rowspan="1" colspan="1">&#x0003c; 0.0001</td><td rowspan="1" colspan="1">0.849</td><td rowspan="1" colspan="1">0.058</td><td rowspan="1" colspan="1">0.734~0.965</td><td rowspan="1" colspan="1">0.0003</td></tr><tr><td rowspan="1" colspan="1">CCR1</td><td rowspan="1" colspan="1">0.842</td><td rowspan="1" colspan="1">0.036</td><td rowspan="1" colspan="1">0.771~0.913</td><td rowspan="1" colspan="1">&#x0003c; 0.0001</td><td rowspan="1" colspan="1">0.824</td><td rowspan="1" colspan="1">0.064</td><td rowspan="1" colspan="1">0.698~0.950</td><td rowspan="1" colspan="1">0.0007</td></tr></tbody></table><table-wrap-foot><fn id="TFN2001"><p>AUC: area under the receiver operating characteristic curve; SE: standard error; CI: confidence interval.</p></fn></table-wrap-foot></table-wrap>
+</p><p>
+<fig position="float" id="f07001"><label>Figure 6</label><caption><title>&#x02013; Differential expression of hub genes. A) GSE59867. B) GSE62646. STEMI: ST-segment elevation myocardial infarction; SCAD: stable coronary artery disease.</title></caption><graphic xlink:href="0066-782X-abc-121-2-e20230462-gf07-en" position="float"/></fig>
+</p></sec></sec><sec sec-type="discussion"><title>Discussion</title><p>Cardiovascular diseases are the leading cause of death worldwide,<sup>
+<xref rid="B1" ref-type="bibr">1</xref>
+</sup>and among them, STEMI should be the first to be controlled. In recent years, with the rapid development of microarray and next-generation sequencing, it is feasible and available to seek reliable biomarkers, which benefit the early diagnosis and prevention of MI. In this study, we obtained 133 DEGs between SCAD and STEMI, then the PPI network was constructed, and further analysis determined hub genes and 6 molecular complexes. Functional enrichment analysis revealed that immunity, metabolism, and inflammation are involved in the development of STEMI. Besides, 103 related miRNAs were predicted, hsa-miR-124, hsa-miR-130a/b, and hsa-miR-301a/b regulate the largest number of genes; meanwhile, numerous transcription factors were investigated, EVI1, AML1, GATA1, and PPARG are enriched by most genes. At last, ROC curves indicate MS4A3, KLRC4, KLRD1, AQP9, and CD14 own high sensitivity and specificity in the prediction of STEMI.</p><p>Further, GO and KEGG analysis have revealed that immunity, metabolism, and inflammation are involved in the mechanism of STEMI development. As is showcased above, numerous enrichment terms were involved in immunity and inflammation, including cell activation involved in immune response, leukocyte activation involved in immune response, negative regulation of the immune system process, regulation of natural killer cell-mediated immunity, and so on. As the keepers of the immune system, Leukocytes possess bidirectional regulation to the development of STEMI; some leukocytes are atherogenic, whereas others are atheroprotective; some sustain inflammation after myocardial infarction while others resolve it.<sup>
+<xref rid="B19" ref-type="bibr">19</xref>
+</sup>A review has built a blueprint of the therapy strategies of STEMI, previous experimental studies have revealed complex mechanisms regarding the development, reparative, and remodeling of STEMI and modulating inflammation individually based on the characteristics of the patient&#x02019;s condition in the will benefit patients with STEMI.<sup>
+<xref rid="B20" ref-type="bibr">20</xref>
+</sup>Similar results could be found in the functional analysis of the potential molecular complex; all 3 potential molecular complexes were involved in the immunity. As a supplement to GO and KEGG analysis, GSEA analysis verified the results of the functional analysis and provided more evidence of metabolism. In addition to the enrichment analysis results suggesting that DEGs are related to cholesterol metabolism, the results of GSEA raised that numerous terms involved in the regulation of cholesterol metabolism, including plasma lipoprotein assembly remodeling and clearance, plasma lipoprotein clearance, LDL clearance, and heparan sulfate/heparin metabolism, which were consistent with current cognition. Besides, the results of GSEA analysis indicated that the regulation of platelet aggregation plug formation was different between SCAD and STEMI, emphasizing that coagulation is also pivotal to the development of STEMI.<sup>
+<xref rid="B21" ref-type="bibr">21</xref>
+</sup>Moreover, GSEA highlighted inflammation, oxidative stress, and drug metabolism, which could be confirmed in the existing research.<sup>
+<xref rid="B22" ref-type="bibr">22</xref>
+-
+<xref rid="B24" ref-type="bibr">24</xref>
+</sup></p><p>MiRNAs play key roles in the genesis and progression of STEMI; after screening, hsa-miR-124, hsa-miR-130a/b, hsa-miR-301a/b, hsa-miR-3666, hsa-miR-4295, and hsa-miR-454 were identified as the main enriched miRNAs, numerous studies illustrate that hsa-miR-124 regulates oxidative stress and hypoxia in the development of MI, and could be a potential biomarker as well as the therapeutic target for STEMI.<sup>
+<xref rid="B25" ref-type="bibr">25</xref>
+,
+<xref rid="B26" ref-type="bibr">26</xref>
+</sup>MiR-130 family, including miR-130a and miR-130b, an analysis shows miR-130 aggravates STEMI by targeting PPAR-&#x003b3; pathway.<sup>
+<xref rid="B27" ref-type="bibr">27</xref>
+</sup>Research is needed to explore and validate the connection between hsa-miR-301a/b, hsa-miR-3666, hsa-miR-4295, and hsa-miR-454 and MI, besides miRNAs supported by experiments involved in the development of MI, such as miR-19, miR-23, and others, could be found in the results of prediction.<sup>
+<xref rid="B28" ref-type="bibr">28</xref>
+-
+<xref rid="B30" ref-type="bibr">30</xref>
+</sup>The results of transcription factor prediction filtered 4 transcription factors, including EVI1, AML1, GATA1, and PPARG. EVI1, Histone-lysine N-methyltransferase MECOM, are involved in the progress of immunity, metabolism, and inflammation.<sup>
+<xref rid="B31" ref-type="bibr">31</xref>
+,
+<xref rid="B32" ref-type="bibr">32</xref>
+</sup>Similarly, AML1, runt-related transcription factor 1, is involved in the functional regulation of leukemia, B-cell, and T-cell and regulates the immunity system.<sup>
+<xref rid="B33" ref-type="bibr">33</xref>
+</sup>GATA1, also known as the Erythroid transcription factor, is involved in the progress of platelet production and coagulation.<sup>
+<xref rid="B34" ref-type="bibr">34</xref>
+</sup>Meanwhile, a study has elucidated that GATA1 is related to a familial vascular disease with features of SCAD and STEMI.<sup>
+<xref rid="B35" ref-type="bibr">35</xref>
+</sup>PPARG, known as Peroxisome proliferator-activated receptor gamma, is the nuclear receptor that binds peroxisome proliferators such as hypolipidemic drugs and fatty acids, mainly involved in the progress of fat metabolism and inflammation and is pivotal to the development of STEMI.<sup>
+<xref rid="B36" ref-type="bibr">36</xref>
+</sup></p><p>MS4A3 regulates the level of phosphorylation of CDK2 through its direct binding to CDKN3,<sup>
+<xref rid="B37" ref-type="bibr">37</xref>
+</sup>and a cohort study suggests that CDK2 was involved in abnormal proliferation, one of the characteristics of atherosclerosis and STEMI.<sup>
+<xref rid="B38" ref-type="bibr">38</xref>
+</sup>Besides, a study has mentioned that CDK2 is involved in the regulation of the cell cycle in myocytes after myocardial infarction, which promotes the regeneration of muscle mass and the recovery of ventricular function.<sup>
+<xref rid="B39" ref-type="bibr">39</xref>
+</sup>Both KLRD1 and KLRC4 are natural killer cell receptors, and natural killer cells are important in the onset of STEMI by their ability to secrete IFN-&#x003b3; and other inflammatory cytokines.<sup>
+<xref rid="B40" ref-type="bibr">40</xref>
+</sup>Researchers have mentioned that the overexpression of miR-212 inhibited AQP9 by activating the PI3K/Akt signaling pathway, thus decreasing cardiomyocyte apoptosis, promoting vascular regeneration, and alleviating ventricular remodeling in rats with STEMI.<sup>
+<xref rid="B41" ref-type="bibr">41</xref>
+</sup>Similarly, a study indicated that silencing the AQP9 gene can inhibit the activation of the ERK1/2 signaling pathway, attenuate the inflammatory response in rats with STEMI, inhibit apoptosis of myocardial cells, and improve cardiac function.<sup>
+<xref rid="B42" ref-type="bibr">42</xref>
+</sup>CD14, full protein name is monocyte differentiation antigen CD14, recently, a study has mentioned that compared with CAD patients, the CD14-related monocyte levels were significantly higher in patients with STEMI.<sup>
+<xref rid="B43" ref-type="bibr">43</xref>
+</sup></p><p>This study has some limitations. First, all the results of the analysis were derived from previous data sets. Despite the efforts we have made in quality control, the authenticity of the results still needs verification. Moreover, limited by the information contained in GSE59867 and GSE62646, we cannot compare the diagnostic performance of the identified biomarkers with troponin I and T nor evaluate differences in their temporal kinetics. Third, all data we used came from peripheral blood mononuclear cells, not from coronary artery or heart tissue, because it is relatively difficult to obtain coronary artery and heart tissue clinically. Fortunately, previous studies have shown that peripheral blood data also have good reliability.<sup>
+<xref rid="B44" ref-type="bibr">44</xref>
+,
+<xref rid="B45" ref-type="bibr">45</xref>
+</sup>Finally, although numerous studies supported the potentiality of the potential biomarkers predicted in this study, the results of ROC curves failed to find a gene with high confidence (AUC &#x0003e; 90%), and considerable trials are needed to validate the sensitivity and specificity of potential biomarkers. Nevertheless, this study determined the potential biomarkers and investigated the complex mechanisms of STEMI developed from SCAD, which has promoted the designation of our next plan to explore the mechanisms in the clinical trial soon.</p></sec><sec sec-type="conclusions"><title>Conclusion</title><p>We revealed that immunity, metabolism, and inflammation are involved in the development of STEMI derived from SCAD, and 5 genes, including MS4A3, KLRC4, KLRD1, AQP9, and CD14, could be employed as candidate biomarkers for STEMI.</p></sec></body><back><fn-group><fn fn-type="other"><p>Study association</p><p>This study is not associated with any thesis or dissertation work.</p><p>Ethics approval and consent to participate</p><p>This article does not contain any studies with human participants or animals performed by any of the authors.</p></fn><fn fn-type="supplementary-material" id="fn_ast1001"><label>*</label><p>Supplemental Materials</p><p>For additional information, please
+<ext-link xlink:href="http://abccardiol.org/supplementary-material/2024/12102/2023-0462_supplemental.pdf" ext-link-type="uri">click here</ext-link>
+.</p></fn><fn fn-type="financial-disclosure"><p>Sources of funding</p><p>There were no external funding sources for this study.</p></fn></fn-group></back></sub-article></article>

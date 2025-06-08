@@ -1,0 +1,734 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="1.3" id="pro70176" xml:lang="en" article-type="research-article"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Protein Sci</journal-id><journal-id journal-id-type="iso-abbrev">Protein Sci</journal-id><journal-id journal-id-type="doi">10.1002/(ISSN)1469-896X</journal-id><journal-id journal-id-type="publisher-id">PRO</journal-id><journal-title-group><journal-title>Protein Science : A Publication of the Protein Society</journal-title></journal-title-group><issn pub-type="ppub">0961-8368</issn><issn pub-type="epub">1469-896X</issn><publisher><publisher-name>John Wiley &#x00026; Sons, Inc.</publisher-name><publisher-loc>Hoboken, USA</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">40411413</article-id><article-id pub-id-type="pmc">PMC12102756</article-id><article-id pub-id-type="doi">10.1002/pro.70176</article-id><article-id pub-id-type="publisher-id">PRO70176</article-id><article-categories><subj-group subj-group-type="overline"><subject>Research Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Research Article</subject></subj-group></article-categories><title-group><article-title>Project automation in <styled-content style="fixed-case" toggle="no">CCP4</styled-content> Cloud: Enabling customization and high&#x02010;throughput efficiency</article-title><alt-title alt-title-type="left-running-head">Krissinel et al.</alt-title></title-group><contrib-group><contrib id="pro70176-cr-0001" contrib-type="author" corresp="yes"><name><surname>Krissinel</surname><given-names>Eugene</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0003-1267-7185</contrib-id><xref rid="pro70176-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><address><email>eugene.krissinel@stfc.ac.uk</email></address></contrib><contrib id="pro70176-cr-0002" contrib-type="author"><name><surname>Fando</surname><given-names>Maria</given-names></name><xref rid="pro70176-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="pro70176-cr-0003" contrib-type="author"><name><surname>Kovalevskiy</surname><given-names>Oleg</given-names></name><xref rid="pro70176-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="pro70176-cr-0004" contrib-type="author"><name><surname>Keegan</surname><given-names>Ronan</given-names></name><xref rid="pro70176-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="pro70176-cr-0005" contrib-type="author"><name><surname>Wills</surname><given-names>Jools</given-names></name><xref rid="pro70176-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="pro70176-cr-0006" contrib-type="author"><name><surname>Lebedev</surname><given-names>Andrey</given-names></name><xref rid="pro70176-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="pro70176-cr-0007" contrib-type="author"><name><surname>Uski</surname><given-names>Ville</given-names></name><xref rid="pro70176-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="pro70176-cr-0008" contrib-type="author"><name><surname>Ballard</surname><given-names>Charles</given-names></name><xref rid="pro70176-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib></contrib-group><aff id="pro70176-aff-0001">
+<label>
+<sup>1</sup>
+</label>
+<named-content content-type="organisation-division">Research Complex at Harwell, Scientific Computing Department</named-content>
+<institution>Science and Technology Facilities Council</institution>
+<city>Harwell</city>
+<country country="GB">UK</country>
+</aff><author-notes><corresp id="correspondenceTo">
+<label>*</label>
+<bold>Correspondence</bold>
+<break/>
+Eugene Krissinel, Research Complex at Harwell (RCaH), Rutherford Appleton Laboratory, Harwell, OX11 0FA, UK.<break/>
+Email: <email>eugene.krissinel@stfc.ac.uk</email>
+<break/>
+</corresp></author-notes><pub-date pub-type="epub"><day>24</day><month>5</month><year>2025</year></pub-date><pub-date pub-type="collection"><month>6</month><year>2025</year></pub-date><pub-date pub-type="pmc-release"><day>24</day><month>5</month><year>2025</year></pub-date><volume>34</volume><issue seq="400">6</issue><issue-id pub-id-type="doi">10.1002/pro.v34.6</issue-id><elocation-id>e70176</elocation-id><history>
+<date date-type="rev-recd"><day>07</day><month>5</month><year>2025</year></date>
+<date date-type="received"><day>19</day><month>2</month><year>2025</year></date>
+<date date-type="accepted"><day>09</day><month>5</month><year>2025</year></date>
+</history><permissions><!--&#x000a9; 2025 The Protein Society--><copyright-statement content-type="article-copyright">&#x000a9; 2025 The Author(s). <italic toggle="yes">Protein Science</italic> published by Wiley Periodicals LLC on behalf of The Protein Society.</copyright-statement><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>This is an open access article under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link> License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions><self-uri content-type="pdf" xlink:href="file:PRO-34-e70176.pdf"/><abstract><title>Abstract</title><p>The rapid advancement of automatic structure solution methods, driven by the availability of high&#x02010;quality predicted structures from AlphaFold and the growing adoption of multi&#x02010;crystal and serial experiments, has created a pressing need for streamlining routine operations, automating structure solution projects, and efficiently handling large volumes of data. Modern software solutions must be both robust and user&#x02010;friendly, supporting manual workflows while enabling high&#x02010;throughput operations to keep pace with the high data collection rates of modern beamlines. Here, we present new developments in CCP4 Cloud that address these challenges by providing predefined and customizable automatic workflows, which can be seamlessly integrated with experimental facilities, offering a powerful solution for modern macromolecular crystallography. CCP4 Cloud is available as a public service at <ext-link xlink:href="https://cloud.ccp4.ac.uk" ext-link-type="uri">https://cloud.ccp4.ac.uk</ext-link>.</p></abstract><kwd-group kwd-group-type="author-generated"><kwd id="pro70176-kwd-0001">automatic workflows</kwd><kwd id="pro70176-kwd-0002">computational cloud</kwd><kwd id="pro70176-kwd-0003">macromolecular crystallography</kwd><kwd id="pro70176-kwd-0004">structure solution</kwd></kwd-group><funding-group><award-group id="funding-0001"><funding-source>Collaborative Computational Project Number 4 UK</funding-source></award-group><award-group id="funding-0002"><funding-source><institution-wrap><institution>Biotechnology and Biological Sciences Research Council
+</institution><institution-id institution-id-type="doi">10.13039/501100000268</institution-id></institution-wrap></funding-source><award-id>BB/L007037/1</award-id></award-group></funding-group><counts><fig-count count="9"/><table-count count="0"/><page-count count="13"/><word-count count="6800"/></counts><custom-meta-group><custom-meta><meta-name>source-schema-version-number</meta-name><meta-value>2.0</meta-value></custom-meta><custom-meta><meta-name>cover-date</meta-name><meta-value>June 2025</meta-value></custom-meta><custom-meta><meta-name>details-of-publishers-convertor</meta-name><meta-value>Converter:WILEY_ML3GV2_TO_JATSPMC version:6.5.6 mode:remove_FC converted:24.05.2025</meta-value></custom-meta></custom-meta-group></article-meta><notes><p content-type="self-citation">
+<mixed-citation publication-type="journal" id="pro70176-cit-9001">
+<string-name>
+<surname>Krissinel</surname>
+<given-names>E</given-names>
+</string-name>, <string-name>
+<surname>Fando</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Kovalevskiy</surname>
+<given-names>O</given-names>
+</string-name>, <string-name>
+<surname>Keegan</surname>
+<given-names>R</given-names>
+</string-name>, <string-name>
+<surname>Wills</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Lebedev</surname>
+<given-names>A</given-names>
+</string-name>, et al. <article-title>Project automation in <styled-content style="fixed-case" toggle="no">CCP4</styled-content> Cloud: Enabling customization and high&#x02010;throughput efficiency</article-title>. <source>Protein Science</source>. <year>2025</year>;<volume>34</volume>(<issue>6</issue>):<elocation-id>e70176</elocation-id>. <pub-id pub-id-type="doi">10.1002/pro.70176</pub-id>
+</mixed-citation>
+</p><fn-group id="pro70176-ntgp-0001"><fn id="pro70176-note-0001"><p>
+<bold>Review Editor:</bold> Nir Ben&#x02010;Tal</p></fn></fn-group></notes></front><body id="pro70176-body-0001"><sec id="pro70176-sec-0001"><label>1</label><title>INTRODUCTION</title><p>Solving macromolecular structures is often a complex task that resists straightforward algorithmic solutions. Common challenges include poor diffraction, crystal defects, low resolution, weak anomalous signals, and&#x02014;particularly in molecular replacement&#x02014;the lack of close structural templates. However, the latter issue has significantly diminished with the advent of AlphaFold 2 (Jumper et al.&#x000a0;<xref rid="pro70176-bib-0012" ref-type="bibr">2021</xref>), which made it possible to generate high&#x02010;quality structural models for almost all UniProt (The UniProt Consortium&#x000a0;<xref rid="pro70176-bib-0032" ref-type="bibr">2025</xref>) sequences, now available in the AlphaFold Database (AFDB) (Varadi et al.&#x000a0;<xref rid="pro70176-bib-0035" ref-type="bibr">2024</xref>). Recent studies indicate that nearly 97% of structures deposited in the Protein Data Bank (PDB) (Berman et al.&#x000a0;<xref rid="pro70176-bib-0002" ref-type="bibr">2003</xref>; Burley et al.&#x000a0;<xref rid="pro70176-bib-0004" ref-type="bibr">2025</xref>) since AlphaFold's introduction can be solved through molecular replacement using AFDB models or AlphaFold&#x02010;derived predictions (Keegan et al.&#x000a0;<xref rid="pro70176-bib-0015" ref-type="bibr">2024</xref>; Terwilliger et al.&#x000a0;<xref rid="pro70176-bib-0031" ref-type="bibr">2023</xref>).</p><p>The success of AlphaFold&#x02010;assisted molecular replacement (MR) suggests that a fully automated approach to structure solution is feasible in most cases. Yet, manual intervention is often required for specific challenges, such as managing unique structural conformations or assembling multi&#x02010;domain models for macromolecular complexes. Once a structural model is built and refined, along with the established structure solution protocol, it serves as a foundation for efficient structure determination in subsequent experimental studies of target protein, as well as for applications such as high&#x02010;throughput screening and serial crystallography.</p><p>This suggests that in macromolecular crystallography (MX), computational projects can be categorized into two main groups:<list list-type="bullet" id="pro70176-list-0001"><list-item id="pro70176-li-0001"><p>
+<bold>New Structure Solutions</bold>: These projects involve solving novel structures, requiring multiple iterations, non&#x02010;trivial data manipulations, and innovative strategies. They present both scientific and technical challenges.</p></list-item><list-item id="pro70176-li-0002"><p>
+<bold>Established Protocols</bold>: These projects follow pre&#x02010;established structure solution pipelines, often based on MR, with customizations such as specific refinement procedures, complex model handling, and ligand fitting.</p></list-item></list>
+</p><p>Traditionally, graphical user interfaces (GUIs) like CCP4i (Berman et al.&#x000a0;<xref rid="pro70176-bib-0002" ref-type="bibr">2003</xref>; Potterton et al.&#x000a0;<xref rid="pro70176-bib-0024" ref-type="bibr">2003</xref>; Potterton et al.&#x000a0;<xref rid="pro70176-bib-0025" ref-type="bibr">2018</xref>), Phenix (Liebschner et al.&#x000a0;<xref rid="pro70176-bib-0018" ref-type="bibr">2019</xref>), and HKL&#x02010;3000 (Minor et al.&#x000a0;<xref rid="pro70176-bib-0021" ref-type="bibr">2006</xref>) have supported the first group by facilitating flexible manipulations, accelerating the discovery of suitable protocols. For the second group, particularly in high&#x02010;throughput environments, low&#x02010;level scripting is more effective for creating efficient pipelines like Xia&#x02010;2 (Winter&#x000a0;<xref rid="pro70176-bib-0039" ref-type="bibr">2010</xref>), MrBUMP (Keegan et al.&#x000a0;<xref rid="pro70176-bib-0013" ref-type="bibr">2011</xref>; Keegan et al.&#x000a0;<xref rid="pro70176-bib-0014" ref-type="bibr">2018</xref>; Keegan and Winn&#x000a0;<xref rid="pro70176-bib-0016" ref-type="bibr">2008</xref>), MoRDa (Vagin and Lebedev&#x000a0;<xref rid="pro70176-bib-0033" ref-type="bibr">2015</xref>), Dimple (Wojdyr et al.&#x000a0;<xref rid="pro70176-bib-0040" ref-type="bibr">2013</xref>), Crank&#x02010;2 (Skub&#x000e1;k et al.&#x000a0;<xref rid="pro70176-bib-0030" ref-type="bibr">2018</xref>) and similar. GUIs are less suited to these repetitive workflows due to their manual nature, while scripting can be cumbersome for managing the complexity and data bookkeeping inherent to new structure solution projects.</p><p>We present recent advancements in CCP4 Cloud (Krissinel et al.&#x000a0;<xref rid="pro70176-bib-0017" ref-type="bibr">2022</xref>) (CCP4: Collaborative Computational Project Number 4 in Protein Crystallography), an online system for MX calculations built on the CCP4 Software Suite (Agirre et al.&#x000a0;<xref rid="pro70176-bib-0001" ref-type="bibr">2023</xref>), that bridges the gap between the two main groups of MX projects by introducing high&#x02010;level automation on top of the established web GUI. This feature streamlines repetitive tasks in structure solution projects and enables fully automated structure determination using established protocols.</p><p>Additionally, the system includes tools for seamlessly transferring data and structure solution protocols from the data collection point to the Cloud, enabling complete automation in repetitive MX experiments. The proposed approach combines ease of implementation and customization, minimal maintenance requirements, and a robust project management and bookkeeping framework within CCP4 Cloud.</p><p>CCP4 Cloud is accessible as a public service at <ext-link xlink:href="https://cloud.ccp4.ac.uk" ext-link-type="uri">https://cloud.ccp4.ac.uk</ext-link> and is also available for in&#x02010;house installation as part of the CCP4 Software Suite.</p></sec><sec sec-type="results" id="pro70176-sec-0002"><label>2</label><title>RESULTS</title><sec id="pro70176-sec-0003"><label>2.1</label><title>Predefined workflows in <styled-content style="fixed-case" toggle="no">CCP4</styled-content> Cloud</title><p>CCP4 Cloud workflows are built on a foundation of fundamental tasks to automate routinely repeated actions in structure determination. For uncomplicated datasets&#x02014;such as those with resolution better than 2&#x02013;2.5&#x02009;&#x000c5;, no significant crystal pathologies, and confident space group determination&#x02014;these automated workflows can often produce solutions that are nearly final. Accordingly, all predefined workflows conclude with the generation of a PDB Validation Report (Read et al.&#x000a0;<xref rid="pro70176-bib-0026" ref-type="bibr">2011</xref>), enabling assessment of the final model's quality. Each task within a workflow is represented in the project tree exactly as if it had been initiated manually by a user. Moreover, every task can be cloned and re&#x02010;run with modified parameters, automatically creating an alternative branch in the project tree. This flexibility allows users to easily explore different approaches to structure determination, potentially achieving results with improved metrics. Below, we provide a brief overview of the predefined CCP4 Cloud workflows that are available out of the box.</p><sec id="pro70176-sec-0004"><label>2.1.1</label><title>
+auto&#x02010;MR: Molecular replacement with MrBUMP or MoRDa
+</title><p>This workflow streamlines the use of structural databases for Molecular Replacement (Figure&#x000a0;<xref rid="pro70176-fig-0001" ref-type="fig">1</xref>). It requires input of merged or unmerged reflection data, macromolecular sequence, and, optionally, a ligand description. If unmerged data is provided, the workflow employs Aimless (Evans and Murshudov&#x000a0;<xref rid="pro70176-bib-0009" ref-type="bibr">2013</xref>) to scale and merge the data and then estimates the asymmetric unit content. Next, it uses the Simbad software (Simpkin et al.&#x000a0;<xref rid="pro70176-bib-0029" ref-type="bibr">2018</xref>) to check whether a quick solution can be obtained from the analysis of the rotation function and to determine whether the data correspond to a contaminant. Phase determination begins with MrBUMP, which automatically searches for structural templates in the PDB. If unsuccessful, the workflow switches to MoRDa, which uses its curated database of structural domains to attempt an alternative solution. Once the phase problem is resolved, the structure is rebuilt using Modelcraft (Bond and Cowtan&#x000a0;<xref rid="pro70176-bib-0003" ref-type="bibr">2022</xref>) in order to remove differences between the used structural homolog and the target sequence. If a ligand description is given, the workflow generates ligand structures and attempts to fit them in a suitable density feature using Coot (Emsley et al.&#x000a0;<xref rid="pro70176-bib-0008" ref-type="bibr">2010</xref>) software. Finally, water molecules are added to appropriate density blobs using Coot's FindWaters (Emsley et al.&#x000a0;<xref rid="pro70176-bib-0007" ref-type="bibr">2012</xref>) utility, and the structure undergoes iterative refinement using methods from the auto&#x02010;REL workflow (see below).</p><fig position="float" fig-type="FIGURE" id="pro70176-fig-0001"><label>FIGURE 1</label><caption><p>Project tree generated by the automated workflow &#x0201c;Molecular replacement using MrBump or MoRDa&#x0201d; (auto&#x02010;MR). The figure illustrates a specific example based on particular input data and does not represent the complete workflow flowchart. The full project can be examined in the CCP4 Cloud Archive under the identifier PS25F1: <ext-link xlink:href="https://cloud.ccp4.ac.uk/archive/access.html?id=CCP4-PS25F1" ext-link-type="uri">https://cloud.ccp4.ac.uk/archive/access.html?id=CCP4&#x02010;PS25F1</ext-link>.</p></caption><graphic xlink:href="PRO-34-e70176-g008" position="anchor" id="jats-graphic-1"/></fig></sec><sec id="pro70176-sec-0005"><label>2.1.2</label><title>
+af&#x02010;MR: Molecular replacement with an AlphaFold model
+</title><p>This workflow simplifies the integration of AlphaFold predictions into molecular replacement, providing an efficient alternative to traditional methods (Figure&#x000a0;<xref rid="pro70176-fig-0002" ref-type="fig">2</xref>). It requires the same input as the auto&#x02010;MR workflow: merged or unmerged reflection data, a macromolecular sequence, and an optional ligand description. While it follows the same principal stages of structure solution, this workflow replaces the use of MrBUMP or MoRDa with a tailored process involving AlphaFold. The structural template is generated directly using AlphaFold 2 prediction software via Colabfold (Mirdita et al.&#x000a0;<xref rid="pro70176-bib-0022" ref-type="bibr">2022</xref>), with low&#x02010;confidence regions pruned and residue pLDDT confidence values converted to B&#x02010;factor estimates using Slice (Simpkin et al.&#x000a0;<xref rid="pro70176-bib-0028" ref-type="bibr">2025</xref>). The resulting refined model is then employed for molecular replacement with Phaser (McCoy et al.&#x000a0;<xref rid="pro70176-bib-0020" ref-type="bibr">2007</xref>), streamlining the process of phase determination.</p><fig position="float" fig-type="FIGURE" id="pro70176-fig-0002"><label>FIGURE 2</label><caption><p>Project tree generated by the automated workflow &#x0201c;Molecular replacement with a generated AlphaFold model&#x0201d; (af&#x02010;MR). The figure illustrates a specific example based on particular input data and does not represent the complete workflow flowchart. The full project can be examined in the CCP4 Cloud Archive under the identifier PS25F2: <ext-link xlink:href="https://cloud.ccp4.ac.uk/archive/access.html?id=CCP4-PS25F2" ext-link-type="uri">https://cloud.ccp4.ac.uk/archive/access.html?id=CCP4&#x02010;PS25F2</ext-link>.</p></caption><graphic xlink:href="PRO-34-e70176-g001" position="anchor" id="jats-graphic-3"/></fig></sec><sec id="pro70176-sec-0006"><label>2.1.3</label><title>
+simple&#x02010;MR: Simple molecular replacement with Search model
+</title><p>This workflow is designed for situations where a reliable structural template is available, providing a straightforward approach to molecular replacement (Figure&#x000a0;<xref rid="pro70176-fig-0003" ref-type="fig">3</xref>). It requires the same input as the above workflows, along with a PDB or mmCIF&#x02010;formatted file (Westbrook et al.&#x000a0;<xref rid="pro70176-bib-0037" ref-type="bibr">2022</xref>) containing the coordinates of the structural template. The process follows the same overall pathway as the af&#x02010;MR workflow but uses the supplied template instead of generating a model with AlphaFold. The template is employed for phase determination using Phaser. Since the workflow assumes that the template's backbone, though not necessarily its sequence, closely resembles the target structure, Molrep (Vagin and Teplyakov&#x000a0;<xref rid="pro70176-bib-0034" ref-type="bibr">1997</xref>) is used to prune mismatched side&#x02010;chains before the phasing step.</p><fig position="float" fig-type="FIGURE" id="pro70176-fig-0003"><label>FIGURE 3</label><caption><p>Project tree generated by the automated workflow &#x0201c;Molecular replacement using a known structure model&#x0201d; (simple&#x02010;MR). The figure illustrates a specific example based on particular input data and does not represent the complete workflow flowchart. The full project can be examined in the CCP4 Cloud Archive under the identifier PS25F3: <ext-link xlink:href="https://cloud.ccp4.ac.uk/archive/access.html?id=CCP4-PS25F3" ext-link-type="uri">https://cloud.ccp4.ac.uk/archive/access.html?id=CCP4&#x02010;PS25F3</ext-link>.</p></caption><graphic xlink:href="PRO-34-e70176-g002" position="anchor" id="jats-graphic-5"/></fig></sec><sec id="pro70176-sec-0007"><label>2.1.4</label><title>
+auto&#x02010;DPLMR: Dimple molecular replacement
+</title><p>This workflow is a specialized version of the simple&#x02010;MR workflow, tailored for cases where the supplied structural homolog is an exact match to the target protein (Figure&#x000a0;<xref rid="pro70176-fig-0004" ref-type="fig">4</xref>). Such scenarios are common in fragment screening experiments (de Souza Neto et al.&#x000a0;<xref rid="pro70176-bib-0005" ref-type="bibr">2024</xref>; Lima et al.&#x000a0;<xref rid="pro70176-bib-0019" ref-type="bibr">2020</xref>), where the template typically exhibits 100% sequence identity with the target. The perfect homology allows the workflow to significantly reduce the computational overhead by utilizing the highly efficient Dimple pipeline (DIMPLE&#x02010;MX Pipeline&#x000a0;<xref rid="pro70176-bib-0006" ref-type="bibr">2025</xref>) for molecular replacement. Unlike other workflows, this approach omits additional model building and refinement steps, as Dimple itself incorporates the necessary level of refinement.</p><fig position="float" fig-type="FIGURE" id="pro70176-fig-0004"><label>FIGURE 4</label><caption><p>Project tree generated by the automated workflow &#x0201c;Fast molecular replacement via Dimple with a high&#x02010;homology model&#x0201d; (auto&#x02010;DPLMR). The figure illustrates a specific example based on particular input data and does not represent the complete workflow flowchart. The full project can be examined in the CCP4 Cloud Archive under the identifier PS25F4: <ext-link xlink:href="https://cloud.ccp4.ac.uk/archive/access.html?id=CCP4-PS25F4" ext-link-type="uri">https://cloud.ccp4.ac.uk/archive/access.html?id=CCP4&#x02010;PS25F4</ext-link>.</p></caption><graphic xlink:href="PRO-34-e70176-g006" position="anchor" id="jats-graphic-7"/></fig></sec><sec id="pro70176-sec-0008"><label>2.1.5</label><title>
+auto&#x02010;EP: Automated experimental phasing with Crank&#x02010;2
+</title><p>This workflow simplifies the process of experimental phasing by utilizing the Crank&#x02010;2 software (Skub&#x000e1;k et al.&#x000a0;<xref rid="pro70176-bib-0030" ref-type="bibr">2018</xref>) (Figure&#x000a0;<xref rid="pro70176-fig-0005" ref-type="fig">5</xref>), an automated pipeline for solving macromolecular structures by experimental phasing. The workflow requires input data consisting of merged or unmerged reflections with an anomalous signal, a macromolecular sequence, the atom type of the primary anomalous scatterers, and an optional ligand description. If unmerged data is provided, the workflow first merges and scales the reflections with Aimless, and then estimates the content of the asymmetric unit. It then starts Crank&#x02010;2, which identifies the anomalous substructure and uses it to solve the phase problem. As Crank&#x02010;2 includes model building and refinement, these steps are omitted from the workflow. Following Crank&#x02010;2, the workflow proceeds with ligand and solvent fitting, followed by iterative refinement similar to the auto&#x02010;REL workflow (see below).</p><fig position="float" fig-type="FIGURE" id="pro70176-fig-0005"><label>FIGURE 5</label><caption><p>Project tree generated by the automated workflow &#x0201c;Experimental phasing with Crank&#x02010;2&#x0201d; (auto&#x02010;EP). The figure illustrates a specific example based on particular input data and does not represent the complete workflow flowchart. The full project can be examined in the CCP4 Cloud Archive under the identifier PS25F5: <ext-link xlink:href="https://cloud.ccp4.ac.uk/archive/access.html?id=CCP4-PS25F5" ext-link-type="uri">https://cloud.ccp4.ac.uk/archive/access.html?id=CCP4&#x02010;PS25F5</ext-link>.</p></caption><graphic xlink:href="PRO-34-e70176-g007" position="anchor" id="jats-graphic-9"/></fig></sec><sec id="pro70176-sec-0009"><label>2.1.6</label><title>
+auto&#x02010;DPL: Dimple refinement and ligand fitting
+</title><p>This workflow utilizes Dimple software to perform structure refinement, including rigid&#x02010;body adjustments (Figure&#x000a0;<xref rid="pro70176-fig-0006" ref-type="fig">6</xref>). It requires input in the form of a phased structure and, optionally, a ligand description. In CCP4 Cloud, a phased structure encompasses merged reflection data and a correctly positioned structural model, supplied as a unified data object within the framework of a structure revision&#x02014;a universal internal data type used across CCP4 Cloud projects. The workflow begins with optional re&#x02010;positioning and refinement of the structural model using Dimple. If a ligand description is provided, the workflow attempts to fit the ligand into the electron density, followed by the addition of solvent molecules. Iterative refinement is then performed to further optimize the structure (see details below).</p><fig position="float" fig-type="FIGURE" id="pro70176-fig-0006"><label>FIGURE 6</label><caption><p>Project tree generated by the automated workflow &#x0201c;Refinement and ligand fitting using Dimple&#x0201d; (auto&#x02010;DPL), initiated from Job 0002 using a partially solved structure imported in Job 0001. Alternatively, it could have been started, for example, after MR project as illustrated in Figure&#x000a0;<xref rid="pro70176-fig-0007" ref-type="fig">7</xref>. The figure illustrates a specific example based on particular input data and does not represent the complete workflow flowchart. The full project can be examined in the CCP4 Cloud Archive under the identifier PS25F6: <ext-link xlink:href="https://cloud.ccp4.ac.uk/archive/access.html?id=CCP4-PS25F6" ext-link-type="uri">https://cloud.ccp4.ac.uk/archive/access.html?id=CCP4&#x02010;PS25F6</ext-link>.</p></caption><graphic xlink:href="PRO-34-e70176-g009" position="anchor" id="jats-graphic-11"/></fig></sec><sec id="pro70176-sec-0010"><label>2.1.7</label><title>
+auto&#x02010;REL: Automated refinement and ligand fitting
+</title><p>This workflow automates the refinement of structures and the fitting of ligand and solvent molecules&#x02014;key tasks in structure completion (Figure&#x000a0;<xref rid="pro70176-fig-0007" ref-type="fig">7</xref>). A distinguishing feature of this workflow, based on REFMAC5/Refmacat (Murshudov et al.&#x000a0;<xref rid="pro70176-bib-0023" ref-type="bibr">2011</xref>; Yamashita et al.&#x000a0;<xref rid="pro70176-bib-0041" ref-type="bibr">2023</xref>) and Coot software, is its ability to optimize refinement parameters iteratively. In CCP4 Cloud, tasks are enhanced with verdict sections, which provide a detailed quality analysis of the resulting structure and suggestions for further optimization. The workflow integrates these recommendations automatically, eliminating the need for manual intervention during the refinement process: using REFMAC5 verdict, the workflow identifies opportunities for improvement and automatically applies the suggested parameters in subsequent (cloned) iterations. This process typically converges after 4&#x02013;6 iterations, ensuring optimal refinement. Similar to the auto&#x02010;DPL workflow, this approach requires a phased structure and an optional ligand description as input.</p><fig position="float" fig-type="FIGURE" id="pro70176-fig-0007"><label>FIGURE 7</label><caption><p>Project tree generated by the automated workflow &#x0201c;Refinement and ligand fitting using Refmacat&#x0201d; (auto&#x02010;REL), initiated from Job 0007 using results from a manually developed MR project upstream (Jobs 0001&#x02010;0006). The figure illustrates a specific example based on particular input data and does not represent the complete workflow flowchart. The full project can be examined in the CCP4 Cloud Archive under the identifier PS25F7: <ext-link xlink:href="https://cloud.ccp4.ac.uk/archive/access.html?id=CCP4-PS25F7" ext-link-type="uri">https://cloud.ccp4.ac.uk/archive/access.html?id=CCP4&#x02010;PS25F7</ext-link>.</p></caption><graphic xlink:href="PRO-34-e70176-g004" position="anchor" id="jats-graphic-13"/></fig></sec></sec><sec id="pro70176-sec-0011"><label>2.2</label><title>Custom workflows</title><p>While the predefined workflows in CCP4 Cloud address most common scenarios in structure determination, practical cases may benefit from customization. For instance, tailoring individual task parameters can significantly reduce CPU time, especially when optimized for a specific target structure in serial experiments. Similarly, customization may involve adjusting workflows, for example, to bring multiple datasets to a common resolution range for comparative analysis. In some cases, steps that are generally justified in broader contexts might be unnecessary for a particular experiment and can be omitted. Alternatively, compatible tasks offering better performance under specific conditions may replace default steps. CCP4 Cloud accommodates these needs by allowing users to define and execute custom workflows, just like any other task. This flexibility ensures that workflows can be adapted to meet the unique requirements of diverse research scenarios.</p><p>Custom workflows within CCP4 Cloud are created using WScript (Workflow Script), a specialized scripting language tailored to the unique requirements of project development in the system. The introduction of WScript addresses critical security concerns, particularly in public&#x02010;facing services, where the use of traditional scripting languages such as Python can introduce vulnerabilities. WScript scripts are structured into three main sections.</p><sec id="pro70176-sec-0012"><label>2.2.1</label><title>
+Workflow header
+</title><p>This section includes metadata and configuration details, such as the workflow's short name, title, keywords, brief description, and a suggested icon for the task list. These elements provide essential information to identify and organize the workflow within the system.</p></sec><sec id="pro70176-sec-0013"><label>2.2.2</label><title>
+Input data
+</title><p>This section specifies the parameters and datasets required for workflow execution, distinguishing between mandatory and optional inputs. The content of this section is rendered as a standard input panel for the corresponding CCP4 Cloud task, comprising data and parameter widgets. When the workflow is run from the top of the project tree, data widgets take the form of file upload fields; otherwise, they appear as drop&#x02010;down menus for selecting compatible data from upstream tasks. Parameter values are assigned to internal workflow variables, using the names defined in the widget descriptions.</p></sec><sec id="pro70176-sec-0014"><label>2.2.3</label><title>
+Workflow body
+</title><p>This section outlines the operational logic and procedural steps of the workflow. Each task is described in a separate subsection, which may include task&#x02010;specific parameters, references to optional data items, and conditions under which the task should be executed. WScript supports the definition of internal variables, as well as a full range of arithmetic and logical operations. It also allows for the inclusion of conditional statements to create project branches and loops to facilitate iterative refinement or exploration of parameter spaces.</p><p>Scripting with WScript is facilitated by the <bold>Workflow Creator</bold> (Figure&#x000a0;<xref rid="pro70176-fig-0008" ref-type="fig">8</xref>), an integral component of CCP4 Cloud, found in the task list. The Workflow Creator offers a user&#x02010;friendly graphical interface designed to streamline the creation of WScript scripts. It assists by providing templates for all three sections of the script, ensuring consistency and accuracy. Additionally, it auto&#x02010;generates unique names for the tasks executed by the workflow and automatically maps parameter widgets to the corresponding task keywords. This functionality simplifies the scripting process, reduces errors, and enhances the overall efficiency of workflow design. A detailed description of WScript syntax and design process is found in CCP4 Cloud documentation: <ext-link xlink:href="https://cloud.ccp4.ac.uk/manuals/html-userguide/jscofe_custom_workflows.html" ext-link-type="uri">https://cloud.ccp4.ac.uk/manuals/html-userguide/jscofe_custom_workflows.html</ext-link>.</p><fig position="float" fig-type="FIGURE" id="pro70176-fig-0008"><label>FIGURE 8</label><caption><p>A snapshot of Workflow Creator, a graphical tool designed to assist in creating custom workflows. The workflow is defined using WScript, a specialized scripting language. Workflow Creator simplifies the addition of tasks, parameter configuration, and the integration of custom workflows into the task list for users.</p></caption><graphic xlink:href="PRO-34-e70176-g003" position="anchor" id="jats-graphic-15"/></fig><p>WScript scripts are stored as plain&#x02010;text files with the .wscript extension, which can be used in several ways within CCP4 Cloud. They can be utilized to create new tasks in the CCP4 Cloud task list (this is done automatically if workflow is designed with the Workflow Creator). Once added, these tasks behave like any other in the system but remain visible and accessible only to the user who created them. WScript files can also be imported along with associated data files, such as reflection data files (.mtz), sequence, or structure model files, using the general import task. If a .wscript file is detected during the import process, CCP4 Cloud automatically executes the corresponding workflow, using the imported data as input. Additionally, WScript files are compatible with the CloudRun utility (see below), allowing data uploads and the triggering of scripted workflows directly from the command line. This forms the basis of the technical framework for using the CCP4 Cloud in high&#x02010;throughput scenarios, with the flexibility to customize workflows to meet specific beamline or experimental requirements, as described in the next section.</p></sec></sec><sec id="pro70176-sec-0015"><label>2.3</label><title>Using <styled-content style="fixed-case" toggle="no">CCP4</styled-content> Cloud in high&#x02010;throughput scenarios</title><p>High&#x02010;throughput experimentation, a cornerstone of drug discovery research, depends on highly automated systems to conduct and analyze multi&#x02010;crystal experiments with minimal human intervention (Gioiello et al.&#x000a0;<xref rid="pro70176-bib-0010" ref-type="bibr">2020</xref>; Hansel et al.&#x000a0;<xref rid="pro70176-bib-0011" ref-type="bibr">2022</xref>; Schneider&#x000a0;<xref rid="pro70176-bib-0027" ref-type="bibr">2018</xref>). These systems produce data at a rapid pace, necessitating software setups capable of handling and processing datasets in a highly parallelized and automated manner. This is where the computational cloud paradigm excels.</p><p>The automated workflows described above are designed to deliver near&#x02010;final results in structure determination with minimal user input. While the processing time may not always match the speed of data production, the cloud's ability to run an effectively unlimited number of workflows simultaneously ensures that there are no additional delays in the experimental cycle. This scalability makes the cloud paradigm particularly well&#x02010;suited to the demands of high&#x02010;throughput environments.</p><p>To fully harness the power of automated workflows, CCP4 Cloud is equipped with the CloudRun utility. This command&#x02010;line tool, included in the standard CCP4 distribution, enables users to transfer data, create projects, and initiate automated workflows in a single, streamlined invocation. CloudRun operates through a set of keyword&#x02010;value statements, which can be supplied via a separate file or through the standard input stream. Key parameters for CloudRun include:<list list-type="bullet" id="pro70176-list-0002"><list-item id="pro70176-li-0003"><p>
+<bold>CCP4 Cloud server URL</bold>: The address of the CCP4 Cloud server.</p></list-item><list-item id="pro70176-li-0004"><p>
+<bold>User login name and CloudRun</bold>
+<bold>ID</bold>: The login credentials for the CCP4 Cloud account. CloudRun ID is a 16&#x02010;character access token, generated by a user request in CCP4 Cloud. This token provides secure access without exposing the user's login password in plain&#x02010;text files or scripts.</p></list-item><list-item id="pro70176-li-0005"><p>
+<bold>Project name, title, and folder</bold>: A short name, optional descriptive title, and project list folder for the project where the uploaded data will be processed. If the project does not exist, it will be created automatically.</p></list-item><list-item id="pro70176-li-0006"><p>
+<bold>Workflow name</bold>: The name of the automated workflow to be triggered upon data upload.</p></list-item><list-item id="pro70176-li-0007"><p>
+<bold>Data files and ligand descriptions</bold>: Files containing reflection data, macromolecular sequences, template structures, ligand structures, and WScript descriptions, as needed. Expected ligands can be specified using SMILES strings (Weininger&#x000a0;<xref rid="pro70176-bib-0036" ref-type="bibr">1988</xref>) or ligand codes.</p></list-item></list>
+</p><p>The CloudRun utility simplifies the integration of CCP4 Cloud into high&#x02010;throughput pipelines by enabling seamless automation and workflow initiation. Detailed instructions on operating CloudRun are available in the CCP4 Cloud documentation: <ext-link xlink:href="https://cloud.ccp4.ac.uk/manuals/html-userguide/jscofe_cloudrun.html" ext-link-type="uri">https://cloud.ccp4.ac.uk/manuals/html-userguide/jscofe_cloudrun.html</ext-link>.</p><p>The CloudRun utility allows experiment&#x02010;side software to transfer produced data to CCP4 Cloud for structure determination at the end of each experimental cycle. CloudRun specifically handles processed diffraction data in the form of unmerged or merged MTZ files. This approach leverages the fact that synchrotron beamlines often run their own data processing pipelines, eliminating the need to duplicate diffraction image processing within the Cloud.</p><p>The transfer of raw diffraction images can be time&#x02010;consuming, even with high&#x02010;speed Internet, and results in significant data volumes in structure determination projects. To address this issue, CCP4 Cloud provides a dedicated storage area for diffraction images managed by a separate DataLink server. DataLink is integrated with the Globus framework for efficient file sharing and also supports direct transfer of large amounts of data from local devices to cloud storage. The details of this functionality are described elsewhere (Wills et al.&#x000a0;<xref rid="pro70176-bib-0038" ref-type="bibr">2024</xref>).</p></sec></sec><sec id="pro70176-sec-0016"><label>3</label><title>DISCUSSION AND CONCLUSIONS</title><p>The CCP4 suite is a long&#x02010;established crystallographic software project with a 46&#x02010;year history, accumulating a wide range of solutions for many crystallographic tasks. The sheer number of alternative approaches available within CCP4 highlights that there is no single ideal pathway from diffraction data to a final structure, which is also reflected in the variety of workflows presented in section&#x000a0;<xref rid="pro70176-sec-0002" ref-type="sec">2</xref>.</p><p>The choice of a particular MR workflow depends on the availability and quality of the structural template, as well as personal preference; in challenging cases, it may be necessary to attempt multiple workflows. The most general&#x02010;purpose workflow is auto&#x02010;MR, which requires only reflection data and protein sequence. It explores multiple strategies and leverages extensive databases to maximize the chances of success. This workflow is especially well suited for solving multimeric complexes. However, it is also the slowest option. When a good structural template is already known, such as in a series of experiments involving only minor protein modifications, the simple&#x02010;MR workflow can save considerable time.</p><p>When a suitable model is not available, the af&#x02010;MR workflow offers a fast way to predict a structure and test whether it can yield a solution. Finally, auto&#x02010;DPLMR is the fastest available workflow, developed specifically for rapid phasing of isomorphous structures in high&#x02010;throughput experiments, such as fragment screening. It requires the availability of a highly similar structural template.</p><p>When none of the MR approaches yield a solution, the auto&#x02010;EP workflow can be attempted, provided the data contain a measurable anomalous signal. Although this circumstance is becoming increasingly rare, experimental phasing remains a practical method.</p><p>If the phase problem was not solved using one of the automatic workflows described above, the resulting structure can be automatically refined using one of two available workflows. The auto&#x02010;REL workflow optimizes refinement parameters through multiple refinement attempts, adds solvent molecules, and attempts to fit ligands. It is intended to save effort on routine actions typically required for improving a solution at the intermediate to final stages of the structure solution process. The auto&#x02010;DPL workflow offers functionality similar to auto&#x02010;REL, with added features such as optional rigid&#x02010;body refinement and initial space group validation. While it closely resembles the auto&#x02010;DPLMR workflow, it does not assume a complete input model and is intended for use only after the structure has been phased. This workflow is the recommended choice when importing a phased but unrefined structure into a CCP4 Cloud project.</p><p>When an automatic workflow fails or yields poor results, few corrective actions are available beyond trying alternative workflows. The first step should be to identify the source of the underperformance. In many cases, issues arise during data processing or reduction; if so, the reflection data should be reprocessed before making another attempt. Another common issue is the use of suboptimal parameters in one of the workflow tasks. In such cases, the failed job can be cloned and re&#x02010;run with adjusted parameters in &#x0201c;Auto&#x0201d; mode, which will initiate a new branch in the project that continues automatically according to the workflow algorithm. Researchers may also switch to a fully manual mode at any point in the workflow tree by adding a new task (or cloning and running an existing one in non&#x02010;&#x0201c;Auto&#x0201d; mode) and continue developing the structural solution manually using a custom pathway. To conserve computational resources, any workflow can be interrupted at any time by stopping the currently running job.</p><p>From the user's perspective, CCP4 Cloud presents itself as a web&#x02010;based GUI that facilitates the operation of various CCP4 programs and the graphical development of structure solution projects. It offers an advanced, hierarchical system for organizing multiple projects and their associated tasks, complemented by an ergonomic interface and detailed graphical task reports. Notably, CCP4 Cloud Local can also be run as a conventional GUI on any laptop or desktop computer. CCP4 Cloud projects are fully compatible across Windows, macOS, and Linux systems, and can be transferred between CCP4 Cloud servers and local installations using the project export/import functionality. Individual tasks from local projects can also be run on remote CCP4 Cloud servers, provided CCP4 version 9.0.008 or later is used.</p><p>However, the true advantage of CCP4 Cloud lies in its centralized, server&#x02010;based setups powered by high&#x02010;performance computing (HPC) facilities. These setups provide significant computational power, enabling the extensive use of automated structure solvers. They also offer seamless access to sequence and structure databases, third&#x02010;party services, and maintainable storage for user projects and data. With its server&#x02010;based design, CCP4 Cloud ensures secure, geographically independent access to user data and projects, making it far more versatile and scalable than traditional desktop GUIs.</p><p>In this work, we presented further enhancements to CCP4 Cloud, extending its capabilities beyond the typical scope of graphical user interfaces. These advancements introduce tools for fully automating the development of structure solution projects, with the ability to receive data directly from X&#x02010;ray facilities and in&#x02010;house diffractometers. Importantly, the resulting projects maintain the same structure as those developed manually, allowing users to intervene at any stage to implement improvements or explore alternative approaches as needed.</p><p>This development introduces new possibilities for streamlining MX studies. A growing trend in the field involves conducting crystallographic experiments remotely, with researchers sending samples to X&#x02010;ray facilities and then operating a beamline over the internet; alternatively, the entire data collection can be performed by the beamline team. With the enhanced capabilities of CCP4 Cloud, collected data can now be automatically transferred to the user's CCP4 Cloud account, triggering the initiation of a structure solution project. In an ideal workflow, users simply send their samples to a synchrotron and later check the results in their CCP4 Cloud accounts. From there, they can make final adjustments, obtain the PDB validation report, and proceed with PDB deposition&#x02014;provided the results meet the validation criteria. Note that mmCIF deposition files become available only after completing the PDB validation task in CCP4 Cloud. Additionally, completed structure solution projects can be archived within CCP4 Cloud. This optimizes the description of computational procedures and provides a comprehensive level of detail for referees. Figure&#x000a0;<xref rid="pro70176-fig-0009" ref-type="fig">9</xref> illustrates the potential operational flow of MX projects enabled by this development, from data collection to publication and archiving.</p><fig position="float" fig-type="FIGURE" id="pro70176-fig-0009"><label>FIGURE 9</label><caption><p>A potential operational flow for MX studies, enabled by the developments presented in this paper. Samples produced in research labs can be shipped to any XRD facility, while collected data is transferred into a centralized computational framework accessible through a single gateway. This approach assumes fully remote and online operations from sample production onward. It streamlines data processing and structure solution, facilitates the use of web&#x02010;based bioinformatics resources and services, enables efficient PDB deposition, enhances long&#x02010;term data and project retention, and optimizes computational resource utilization.</p></caption><graphic xlink:href="PRO-34-e70176-g005" position="anchor" id="jats-graphic-17"/></fig><p>In summary, we have demonstrated that the enhanced automation and direct data integration with imaging facilities in CCP4 Cloud offer significant potential for optimizing computational support in MX studies. These advancements maintain the same level of flexibility and versatility as manual operation of crystallographic software, while streamlining and automating complex workflows.</p><p>Implementing operational flows similar to the one illustrated in Figure&#x000a0;<xref rid="pro70176-fig-0009" ref-type="fig">9</xref> could also raise data management standards in the field by enabling the centralized retention of structure solution projects in maintainable storage and supporting publications with the CCP4 Cloud Archive. However, this requires substantial computational resources, with demand likely to grow as more facilities and research groups shift their MX computing operations to the Cloud.</p><p>Scalability, data policy, and security are among the key focus areas in our ongoing development of CCP4 Cloud. The service available at <ext-link xlink:href="https://cloud.ccp4.ac.uk" ext-link-type="uri">https://cloud.ccp4.ac.uk</ext-link>, maintained by the CCP4 group at RAL&#x02010;Harwell, is hosted on the STFC UK network. This infrastructure is centrally managed to industry standards, ensuring that users' data remains secure and inaccessible from external sources. STFC complies with GDPR regulations, and the UKRI privacy and data protection statement is accessible via the CCP4 Cloud homepage.</p><p>Importantly, CCP4 Cloud can be deployed independently by any scientific organization, from small research labs to large pharmaceutical companies, allowing them to meet their own privacy and data governance requirements while leveraging their local computational resources.</p></sec><sec sec-type="materials-and-methods" id="pro70176-sec-0017"><label>4</label><title>MATERIALS AND METHODS</title><p>CCP4 Cloud is developed using JavaScript and Python, with its source code available through GitLab (<ext-link xlink:href="https://gitlab.com/CCP4/jsCoFE" ext-link-type="uri">https://gitlab.com/CCP4/jsCoFE</ext-link>), the CCP4 repositories (<ext-link xlink:href="https://fg.oisin.rc-harwell.ac.uk/projects/jscofe/" ext-link-type="uri">https://fg.oisin.rc-harwell.ac.uk/projects/jscofe/</ext-link>), and the CCP4 distribution package (<ext-link xlink:href="https://www.ccp4.ac.uk/download/" ext-link-type="uri">https://www.ccp4.ac.uk/download/</ext-link>). Detailed installation instructions can be found in the CCP4 Cloud documentation (<ext-link xlink:href="https://cloud.ccp4.ac.uk/manuals/html-dev/setup.html" ext-link-type="uri">https://cloud.ccp4.ac.uk/manuals/html-dev/setup.html</ext-link>).</p><p>The public CCP4 Cloud service, accessible at <ext-link xlink:href="https://cloud.ccp4.ac.uk" ext-link-type="uri">https://cloud.ccp4.ac.uk</ext-link>, operates on a robust infrastructure comprising 500 CPU cores, 8 GPUs (including 2 NVIDIA A100 and 6 NVIDIA RTX A6000), and 147&#x02009;TB of RAID disk storage. Additionally, the DataLink service provides 60&#x02009;TB of dedicated disk space, accessible to users as a &#x0201c;Cloud File Storage&#x0201d; virtual file system. CCP4 and STFC Cloud provide these resources through the IRIS framework. Resource usage&#x02014;both CPU and disk&#x02014;is allocated on a per&#x02010;user basis and can be adjusted upon request. There is no principal limitation on the number of users, projects or tasks in the system.</p><p>The public server is available free of charge to academic users and CCP4 license holders, offering the full range of features described in this publication.</p></sec><sec id="pro70176-sec-0022"><title>AUTHOR CONTRIBUTIONS</title><p>
+<bold>Eugene Krissinel:</bold> Conceptualization; software; funding acquisition; supervision; project administration; methodology; writing &#x02013; review and editing; writing &#x02013; original draft. <bold>Maria Fando:</bold> Software; writing &#x02013; review and editing; validation; visualization; investigation. <bold>Oleg Kovalevskiy:</bold> Software; writing &#x02013; review and editing; methodology; visualization; investigation; formal analysis. <bold>Ronan Keegan:</bold> Methodology; writing &#x02013; review and editing; software. <bold>Jools Wills:</bold> Software; writing &#x02013; review and editing; data curation; resources. <bold>Andrey Lebedev:</bold> Conceptualization; methodology; software; writing &#x02013; review and editing. <bold>Ville Uski:</bold> Writing &#x02013; review and editing; data curation; resources. <bold>Charles Ballard:</bold> Writing &#x02013; review and editing; data curation; resources.</p></sec><sec sec-type="COI-statement" id="pro70176-sec-0019"><title>CONFLICT OF INTEREST STATEMENT</title><p>The authors declare no conflicts of interest.</p></sec></body><back><ack id="pro70176-sec-0018"><title>ACKNOWLEDGMENTS</title><p>The authors acknowledge funding from the Collaborative Computational Project Number 4 in Protein Crystallography (CCP4). The development of CCP4 Cloud was supported by the Biotechnology and Biological Sciences Research Council (BBSRC UK) under Grant No. BB/L007037/1. The computational infrastructure was provided by the Science and Technology Facilities Council (STFC UK). CCP4 is hosted by STFC and operates from the Research Complex at Harwell (RCaH), which provides front&#x02010;end access to CCP4 Cloud.</p></ack><sec sec-type="data-availability" id="pro70176-sec-0021"><title>DATA AVAILABILITY STATEMENT</title><p>The data that support the findings of this study are openly available in GitLab at <ext-link xlink:href="https://gitlab.com/CCP4/jsCoFE" ext-link-type="uri" specific-use="software is-supplemented-by">https://gitlab.com/CCP4/jsCoFE</ext-link>.</p></sec><ref-list id="pro70176-bibl-0001" content-type="cited-references"><title>REFERENCES</title><ref id="pro70176-bib-0001"><mixed-citation publication-type="journal" id="pro70176-cit-0001">
+<string-name>
+<surname>Agirre</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Atanasova</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Bagdonas</surname>
+<given-names>H</given-names>
+</string-name>, <string-name>
+<surname>Ballard</surname>
+<given-names>CB</given-names>
+</string-name>, <string-name>
+<surname>Basl&#x000e9;</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Beilsten&#x02010;Edmands</surname>
+<given-names>J</given-names>
+</string-name>, et al. <article-title>The <italic toggle="yes">CCP</italic> 4 suite: integrative software for macromolecular crystallography</article-title>. <source>Acta Crystallogr Sect F Struct Biol Cryst Commun</source>. <year>2023</year>;<volume>79</volume>(<issue>6</issue>):<fpage>449</fpage>&#x02013;<lpage>461</lpage>. <pub-id pub-id-type="doi">10.1107/S2059798323003595</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0002"><mixed-citation publication-type="journal" id="pro70176-cit-0002">
+<string-name>
+<surname>Berman</surname>
+<given-names>H</given-names>
+</string-name>, <string-name>
+<surname>Henrick</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Nakamura</surname>
+<given-names>H</given-names>
+</string-name>. <article-title>Announcing the worldwide Protein Data Bank</article-title>. <source>Nat Struct Mol Biol</source>. <year>2003</year>;<volume>10</volume>(<issue>12</issue>):<elocation-id>980</elocation-id>. <pub-id pub-id-type="doi">10.1038/nsb1203-980</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0003"><mixed-citation publication-type="journal" id="pro70176-cit-0003">
+<string-name>
+<surname>Bond</surname>
+<given-names>PS</given-names>
+</string-name>, <string-name>
+<surname>Cowtan</surname>
+<given-names>KD</given-names>
+</string-name>. <article-title>ModelCraft: an advanced automated model&#x02010;building pipeline using Buccaneer</article-title>. <source>Acta Crystallogr Sect Struct Biol</source>. <year>2022</year>;<volume>78</volume>:<fpage>1090</fpage>&#x02013;<lpage>1098</lpage>. <pub-id pub-id-type="doi">10.1107/S2059798322007732</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0004"><mixed-citation publication-type="journal" id="pro70176-cit-0004">
+<string-name>
+<surname>Burley</surname>
+<given-names>SK</given-names>
+</string-name>, <string-name>
+<surname>Bhatt</surname>
+<given-names>R</given-names>
+</string-name>, <string-name>
+<surname>Bhikadiya</surname>
+<given-names>C</given-names>
+</string-name>, <string-name>
+<surname>Bi</surname>
+<given-names>C</given-names>
+</string-name>, <string-name>
+<surname>Biester</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Biswas</surname>
+<given-names>P</given-names>
+</string-name>, et al. <article-title>Updated resources for exploring experimentally&#x02010;determined PDB structures and computed structure models at the RCSB Protein Data Bank</article-title>. <source>Nucleic Acids Res</source>. <year>2025</year>;<volume>53</volume>(<issue>D1</issue>):<fpage>D564</fpage>&#x02013;<lpage>D574</lpage>. <pub-id pub-id-type="doi">10.1093/nar/gkae1091</pub-id>
+<pub-id pub-id-type="pmid">39607707</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0005"><mixed-citation publication-type="journal" id="pro70176-cit-0005">
+<string-name>
+<surname>de Souza Neto</surname>
+<given-names>LR</given-names>
+</string-name>, <string-name>
+<surname>Montoya</surname>
+<given-names>BO</given-names>
+</string-name>, <string-name>
+<surname>Brand&#x000e3;o&#x02010;Neto</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Verma</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Bowyer</surname>
+<given-names>S</given-names>
+</string-name>, <string-name>
+<surname>Moreira&#x02010;Filho</surname>
+<given-names>JT</given-names>
+</string-name>, et al. <article-title>Fragment library screening by X&#x02010;ray crystallography and binding site analysis on thioredoxin glutathione reductase of <italic toggle="yes">Schistosoma mansoni</italic>
+</article-title>. <source>Sci Rep</source>. <year>2024</year>;<volume>14</volume>(<issue>1</issue>):<elocation-id>1582</elocation-id>. <pub-id pub-id-type="doi">10.1038/s41598-024-52018-2</pub-id>
+<pub-id pub-id-type="pmid">38238498</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0006"><mixed-citation publication-type="miscellaneous" id="pro70176-cit-0006">
+<collab collab-type="authors">DIMPLE&#x02010;MX Pipeline</collab>
+. <article-title>dimple Macromolecular crystallography pipeline for refinement and ligand screening based on CCP4 programs</article-title>. <year>2025</year>. Available from: <ext-link xlink:href="https://ccp4.github.io/dimple/" ext-link-type="uri">https://ccp4.github.io/dimple/</ext-link>
+</mixed-citation></ref><ref id="pro70176-bib-0007"><mixed-citation publication-type="miscellaneous" id="pro70176-cit-0007">
+<string-name>
+<surname>Emsley</surname>
+<given-names>P</given-names>
+</string-name>, <string-name>
+<surname>Lohkamp</surname>
+<given-names>B</given-names>
+</string-name>, <string-name>
+<surname>Cowtan</surname>
+<given-names>K</given-names>
+</string-name>. <article-title>Find waters. Urnisbn978&#x02010;0&#x02010;470&#x02010;66078&#x02010;2. F:443&#x02010;447</article-title>. <year>2012</year>. <pub-id pub-id-type="doi">10.1107/97809553602060000853</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0008"><mixed-citation publication-type="journal" id="pro70176-cit-0008">
+<string-name>
+<surname>Emsley</surname>
+<given-names>P</given-names>
+</string-name>, <string-name>
+<surname>Lohkamp</surname>
+<given-names>B</given-names>
+</string-name>, <string-name>
+<surname>Scott</surname>
+<given-names>WG</given-names>
+</string-name>, <string-name>
+<surname>Cowtan</surname>
+<given-names>K</given-names>
+</string-name>. <article-title>Features and development of Coot</article-title>. <source>Acta Crystallogr D Biol Crystallogr</source>. <year>2010</year>;<volume>66</volume>(<issue>4</issue>):<fpage>486</fpage>&#x02013;<lpage>501</lpage>. <pub-id pub-id-type="doi">10.1107/S0907444910007493</pub-id>
+<pub-id pub-id-type="pmid">20383002</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0009"><mixed-citation publication-type="journal" id="pro70176-cit-0009">
+<string-name>
+<surname>Evans</surname>
+<given-names>PR</given-names>
+</string-name>, <string-name>
+<surname>Murshudov</surname>
+<given-names>GN</given-names>
+</string-name>. <article-title>How good are my data and what is the resolution?</article-title>
+<source>Acta Crystallogr D Biol Crystallogr</source>. <year>2013</year>;<volume>69</volume>(<issue>7</issue>):<fpage>1204</fpage>&#x02013;<lpage>1214</lpage>. <pub-id pub-id-type="doi">10.1107/S0907444913000061</pub-id>
+<pub-id pub-id-type="pmid">23793146</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0010"><mixed-citation publication-type="journal" id="pro70176-cit-0010">
+<string-name>
+<surname>Gioiello</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Piccinno</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Lozza</surname>
+<given-names>AM</given-names>
+</string-name>, <string-name>
+<surname>Cerra</surname>
+<given-names>B</given-names>
+</string-name>. <article-title>The medicinal chemistry in the era of machines and automation: recent advances in continuous flow technology</article-title>. <source>J Med Chem</source>. <year>2020</year>;<volume>63</volume>(<issue>13</issue>):<fpage>6624</fpage>&#x02013;<lpage>6647</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jmedchem.9b01956</pub-id>
+<pub-id pub-id-type="pmid">32049517</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0011"><mixed-citation publication-type="journal" id="pro70176-cit-0011">
+<string-name>
+<surname>Hansel</surname>
+<given-names>CS</given-names>
+</string-name>, <string-name>
+<surname>Plant</surname>
+<given-names>DL</given-names>
+</string-name>, <string-name>
+<surname>Holdgate</surname>
+<given-names>GA</given-names>
+</string-name>, <string-name>
+<surname>Collier</surname>
+<given-names>MJ</given-names>
+</string-name>, <string-name>
+<surname>Plant</surname>
+<given-names>H</given-names>
+</string-name>. <article-title>Advancing automation in high&#x02010;throughput screening: modular unguarded systems enable adaptable drug discovery</article-title>. <source>Drug Discov Today</source>. <year>2022</year>;<volume>27</volume>(<issue>8</issue>):<fpage>2051</fpage>&#x02013;<lpage>2056</lpage>. <pub-id pub-id-type="doi">10.1016/j.drudis.2022.03.010</pub-id>
+<pub-id pub-id-type="pmid">35304338</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0012"><mixed-citation publication-type="journal" id="pro70176-cit-0012">
+<string-name>
+<surname>Jumper</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Evans</surname>
+<given-names>R</given-names>
+</string-name>, <string-name>
+<surname>Pritzel</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Green</surname>
+<given-names>T</given-names>
+</string-name>, <string-name>
+<surname>Figurnov</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Ronneberger</surname>
+<given-names>O</given-names>
+</string-name>, et al. <article-title>Highly accurate protein structure prediction with AlphaFold</article-title>. <source>Nature</source>. <year>2021</year>;<volume>596</volume>(<issue>7873</issue>):<fpage>583</fpage>&#x02013;<lpage>589</lpage>. <pub-id pub-id-type="doi">10.1038/s41586-021-03819-2</pub-id>
+<pub-id pub-id-type="pmid">34265844</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0013"><mixed-citation publication-type="journal" id="pro70176-cit-0013">
+<string-name>
+<surname>Keegan</surname>
+<given-names>RM</given-names>
+</string-name>, <string-name>
+<surname>Long</surname>
+<given-names>F</given-names>
+</string-name>, <string-name>
+<surname>Fazio</surname>
+<given-names>VJ</given-names>
+</string-name>, <string-name>
+<surname>Winn</surname>
+<given-names>MD</given-names>
+</string-name>, <string-name>
+<surname>Murshudov</surname>
+<given-names>GN</given-names>
+</string-name>, <string-name>
+<surname>Vagin</surname>
+<given-names>AA</given-names>
+</string-name>. <article-title>Evaluating the solution from MrBUMP and BALBES</article-title>. <source>Acta Crystallogr D Biol Crystallogr</source>. <year>2011</year>;<volume>67</volume>(<issue>Pt 4</issue>):<fpage>313</fpage>&#x02013;<lpage>323</lpage>. <pub-id pub-id-type="doi">10.1107/S0907444911007530</pub-id>
+<pub-id pub-id-type="pmid">21460449</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0014"><mixed-citation publication-type="journal" id="pro70176-cit-0014">
+<string-name>
+<surname>Keegan</surname>
+<given-names>RM</given-names>
+</string-name>, <string-name>
+<surname>McNicholas</surname>
+<given-names>SJ</given-names>
+</string-name>, <string-name>
+<surname>Thomas</surname>
+<given-names>JMH</given-names>
+</string-name>, <string-name>
+<surname>Simpkin</surname>
+<given-names>AJ</given-names>
+</string-name>, <string-name>
+<surname>Simkovic</surname>
+<given-names>F</given-names>
+</string-name>, <string-name>
+<surname>Uski</surname>
+<given-names>V</given-names>
+</string-name>, et al. <article-title>Recent developments in MrBUMP: better search&#x02010;model preparation, graphical interaction with search models, and solution improvement and assessment</article-title>. <source>Acta Crystallogr Sect F Struct Biol Cryst Commun</source>. <year>2018</year>;<volume>74</volume>(<issue>3</issue>):<fpage>167</fpage>&#x02013;<lpage>182</lpage>. <pub-id pub-id-type="doi">10.1107/S2059798318003455</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0015"><mixed-citation publication-type="journal" id="pro70176-cit-0015">
+<string-name>
+<surname>Keegan</surname>
+<given-names>RM</given-names>
+</string-name>, <string-name>
+<surname>Simpkin</surname>
+<given-names>AJ</given-names>
+</string-name>, <string-name>
+<surname>Rigden</surname>
+<given-names>DJ</given-names>
+</string-name>. <article-title>The success rate of processed predicted models in molecular replacement: implications for experimental phasing in the AlphaFold era</article-title>. <source>Acta Crystallogr Sect Struct Biol</source>. <year>2024</year>;<volume>80</volume>(<issue>11</issue>):<fpage>766</fpage>&#x02013;<lpage>779</lpage>. <pub-id pub-id-type="doi">10.1107/S2059798324009380</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0016"><mixed-citation publication-type="journal" id="pro70176-cit-0016">
+<string-name>
+<surname>Keegan</surname>
+<given-names>RM</given-names>
+</string-name>, <string-name>
+<surname>Winn</surname>
+<given-names>MD</given-names>
+</string-name>. <article-title>MrBUMP: an automated pipeline for molecular replacement</article-title>. <source>Acta Crystallogr D Biol Crystallogr</source>. <year>2008</year>;<volume>64</volume>(<issue>Pt 1</issue>):<fpage>119</fpage>&#x02013;<lpage>124</lpage>. <pub-id pub-id-type="doi">10.1107/S0907444907037195</pub-id>
+<pub-id pub-id-type="pmid">18094475</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0017"><mixed-citation publication-type="journal" id="pro70176-cit-0017">
+<string-name>
+<surname>Krissinel</surname>
+<given-names>E</given-names>
+</string-name>, <string-name>
+<surname>Lebedev</surname>
+<given-names>AA</given-names>
+</string-name>, <string-name>
+<surname>Uski</surname>
+<given-names>V</given-names>
+</string-name>, <string-name>
+<surname>Ballard</surname>
+<given-names>CB</given-names>
+</string-name>, <string-name>
+<surname>Keegan</surname>
+<given-names>RM</given-names>
+</string-name>, <string-name>
+<surname>Kovalevskiy</surname>
+<given-names>O</given-names>
+</string-name>, et al. <article-title>CCP4 Cloud for structure determination and project management in macromolecular crystallography</article-title>. <source>Acta Crystallogr Sect F Struct Biol Cryst Commun</source>. <year>2022</year>;<volume>78</volume>(<issue>9</issue>):<fpage>1079</fpage>&#x02013;<lpage>1089</lpage>. <pub-id pub-id-type="doi">10.1107/S2059798322007987</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0018"><mixed-citation publication-type="journal" id="pro70176-cit-0018">
+<string-name>
+<surname>Liebschner</surname>
+<given-names>D</given-names>
+</string-name>, <string-name>
+<surname>Afonine</surname>
+<given-names>PV</given-names>
+</string-name>, <string-name>
+<surname>Baker</surname>
+<given-names>ML</given-names>
+</string-name>, <string-name>
+<surname>Bunk&#x000f3;czi</surname>
+<given-names>G</given-names>
+</string-name>, <string-name>
+<surname>Chen</surname>
+<given-names>VB</given-names>
+</string-name>, <string-name>
+<surname>Croll</surname>
+<given-names>TI</given-names>
+</string-name>, et al. <article-title>Macromolecular structure determination using X&#x02010;rays, neutrons and electrons: recent developments in Phenix</article-title>. <source>Acta Crystallogr Sect F Struct Biol Cryst Commun</source>. <year>2019</year>;<volume>75</volume>(<issue>10</issue>):<fpage>861</fpage>&#x02013;<lpage>877</lpage>. <pub-id pub-id-type="doi">10.1107/S2059798319011471</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0019"><mixed-citation publication-type="journal" id="pro70176-cit-0019">
+<string-name>
+<surname>Lima</surname>
+<given-names>GMA</given-names>
+</string-name>, <string-name>
+<surname>Talibov</surname>
+<given-names>VO</given-names>
+</string-name>, <string-name>
+<surname>Jagudin</surname>
+<given-names>E</given-names>
+</string-name>, <string-name>
+<surname>Sele</surname>
+<given-names>C</given-names>
+</string-name>, <string-name>
+<surname>Nyblom</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Knecht</surname>
+<given-names>W</given-names>
+</string-name>, et al. <article-title>FragMAX: the fragment&#x02010;screening platform at the MAX IV Laboratory</article-title>. <source>Acta Crystallogr Sect F Struct Biol Cryst Commun</source>. <year>2020</year>;<volume>76</volume>(<issue>Pt 8</issue>):<fpage>771</fpage>&#x02013;<lpage>777</lpage>. <pub-id pub-id-type="doi">10.1107/S205979832000889X</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0020"><mixed-citation publication-type="journal" id="pro70176-cit-0020">
+<string-name>
+<surname>McCoy</surname>
+<given-names>AJ</given-names>
+</string-name>, <string-name>
+<surname>Grosse&#x02010;Kunstleve</surname>
+<given-names>RW</given-names>
+</string-name>, <string-name>
+<surname>Adams</surname>
+<given-names>PD</given-names>
+</string-name>, <string-name>
+<surname>Winn</surname>
+<given-names>MD</given-names>
+</string-name>, <string-name>
+<surname>Storoni</surname>
+<given-names>LC</given-names>
+</string-name>, <string-name>
+<surname>Read</surname>
+<given-names>RJ</given-names>
+</string-name>. <article-title>Phaser crystallographic software</article-title>. <source>J Appl Cryst</source>. <year>2007</year>;<volume>40</volume>(<issue>4</issue>):<fpage>658</fpage>&#x02013;<lpage>674</lpage>. <pub-id pub-id-type="doi">10.1107/S0021889807021206</pub-id>
+<pub-id pub-id-type="pmid">19461840</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0021"><mixed-citation publication-type="journal" id="pro70176-cit-0021">
+<string-name>
+<surname>Minor</surname>
+<given-names>W</given-names>
+</string-name>, <string-name>
+<surname>Cymborowski</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Otwinowski</surname>
+<given-names>Z</given-names>
+</string-name>, <string-name>
+<surname>Chruszcz</surname>
+<given-names>M</given-names>
+</string-name>. <article-title>HKL&#x02010;3000: the integration of data reduction and structure solution&#x02014;from diffraction images to an initial model in minutes</article-title>. <source>Acta Crystallogr D Biol Crystallogr</source>. <year>2006</year>;<volume>62</volume>(<issue>8</issue>):<fpage>859</fpage>&#x02013;<lpage>866</lpage>. <pub-id pub-id-type="doi">10.1107/S0907444906019949</pub-id>
+<pub-id pub-id-type="pmid">16855301</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0022"><mixed-citation publication-type="journal" id="pro70176-cit-0022">
+<string-name>
+<surname>Mirdita</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Sch&#x000fc;tze</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Moriwaki</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name>
+<surname>Heo</surname>
+<given-names>L</given-names>
+</string-name>, <string-name>
+<surname>Ovchinnikov</surname>
+<given-names>S</given-names>
+</string-name>, <string-name>
+<surname>Steinegger</surname>
+<given-names>M</given-names>
+</string-name>. <article-title>ColabFold: making protein folding accessible to all</article-title>. <source>Nat Methods</source>. <year>2022</year>;<volume>19</volume>(<issue>6</issue>):<fpage>679</fpage>&#x02013;<lpage>682</lpage>. <pub-id pub-id-type="doi">10.1038/s41592-022-01488-1</pub-id>
+<pub-id pub-id-type="pmid">35637307</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0023"><mixed-citation publication-type="journal" id="pro70176-cit-0023">
+<string-name>
+<surname>Murshudov</surname>
+<given-names>GN</given-names>
+</string-name>, <string-name>
+<surname>Skub&#x000e1;k</surname>
+<given-names>P</given-names>
+</string-name>, <string-name>
+<surname>Lebedev</surname>
+<given-names>AA</given-names>
+</string-name>, <string-name>
+<surname>Pannu</surname>
+<given-names>NS</given-names>
+</string-name>, <string-name>
+<surname>Steiner</surname>
+<given-names>RA</given-names>
+</string-name>, <string-name>
+<surname>Nicholls</surname>
+<given-names>RA</given-names>
+</string-name>, et al. <article-title>REFMAC5 for the refinement of macromolecular crystal structures</article-title>. <source>Acta Crystallogr D Biol Crystallogr</source>. <year>2011</year>;<volume>67</volume>(<issue>4</issue>):<fpage>355</fpage>&#x02013;<lpage>367</lpage>. <pub-id pub-id-type="doi">10.1107/S0907444911001314</pub-id>
+<pub-id pub-id-type="pmid">21460454</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0024"><mixed-citation publication-type="journal" id="pro70176-cit-0024">
+<string-name>
+<surname>Potterton</surname>
+<given-names>E</given-names>
+</string-name>, <string-name>
+<surname>Briggs</surname>
+<given-names>P</given-names>
+</string-name>, <string-name>
+<surname>Turkenburg</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Dodson</surname>
+<given-names>E</given-names>
+</string-name>. <article-title>A graphical user interface to the <italic toggle="yes">CCP</italic> 4 program suite</article-title>. <source>Acta Crystallogr D Biol Crystallogr</source>. <year>2003</year>;<volume>59</volume>(<issue>7</issue>):<fpage>1131</fpage>&#x02013;<lpage>1137</lpage>. <pub-id pub-id-type="doi">10.1107/S0907444903008126</pub-id>
+<pub-id pub-id-type="pmid">12832755</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0025"><mixed-citation publication-type="journal" id="pro70176-cit-0025">
+<string-name>
+<surname>Potterton</surname>
+<given-names>L</given-names>
+</string-name>, <string-name>
+<surname>Agirre</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Ballard</surname>
+<given-names>C</given-names>
+</string-name>, <string-name>
+<surname>Cowtan</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Dodson</surname>
+<given-names>E</given-names>
+</string-name>, <string-name>
+<surname>Evans</surname>
+<given-names>PR</given-names>
+</string-name>, et al. <article-title>CCP4i2: the new graphical user interface to the CCP4 program suite</article-title>. <source>Acta Crystallogr Sect F Struct Biol Cryst Commun</source>. <year>2018</year>;<volume>74</volume>(<issue>Pt 2</issue>):<fpage>68</fpage>&#x02013;<lpage>84</lpage>. <pub-id pub-id-type="doi">10.1107/S2059798317016035</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0026"><mixed-citation publication-type="journal" id="pro70176-cit-0026">
+<string-name>
+<surname>Read</surname>
+<given-names>RJ</given-names>
+</string-name>, <string-name>
+<surname>Adams</surname>
+<given-names>PD</given-names>
+</string-name>, <string-name>
+<surname>Arendall</surname>
+<given-names>WB</given-names>
+</string-name>, <string-name>
+<surname>Brunger</surname>
+<given-names>AT</given-names>
+</string-name>, <string-name>
+<surname>Emsley</surname>
+<given-names>P</given-names>
+</string-name>, <string-name>
+<surname>Joosten</surname>
+<given-names>RP</given-names>
+</string-name>, et al. <article-title>A new generation of crystallographic validation tools for the protein data Bank</article-title>. <source>Structure</source>. <year>2011</year>;<volume>19</volume>(<issue>10</issue>):<fpage>1395</fpage>&#x02013;<lpage>1412</lpage>. <pub-id pub-id-type="doi">10.1016/j.str.2011.08.006</pub-id>
+<pub-id pub-id-type="pmid">22000512</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0027"><mixed-citation publication-type="journal" id="pro70176-cit-0027">
+<string-name>
+<surname>Schneider</surname>
+<given-names>G</given-names>
+</string-name>. <article-title>Automating drug discovery</article-title>. <source>Nat Rev Drug Discov</source>. <year>2018</year>;<volume>17</volume>(<issue>2</issue>):<fpage>97</fpage>&#x02013;<lpage>113</lpage>. <pub-id pub-id-type="doi">10.1038/nrd.2017.232</pub-id>
+<pub-id pub-id-type="pmid">29242609</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0028"><mixed-citation publication-type="journal" id="pro70176-cit-0028">
+<string-name>
+<surname>Simpkin</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Elliot</surname>
+<given-names>L</given-names>
+</string-name>, <string-name>
+<surname>Joseph</surname>
+<given-names>AP</given-names>
+</string-name>, <string-name>
+<surname>Burnley</surname>
+<given-names>T</given-names>
+</string-name>, <string-name>
+<surname>Stevenson</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Sanchez Rodriguez</surname>
+<given-names>F</given-names>
+</string-name>, et al. <article-title>Slice'N'Dice: maximising the value of predicted models for structural biologists</article-title>. <source>Acta Crystallogr Sect D Struct Biol</source>. <year>2025</year>;<volume>81</volume>:<fpage>105</fpage>&#x02013;<lpage>121</lpage>.<pub-id pub-id-type="pmid">39976565</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0029"><mixed-citation publication-type="journal" id="pro70176-cit-0029">
+<string-name>
+<surname>Simpkin</surname>
+<given-names>AJ</given-names>
+</string-name>, <string-name>
+<surname>Simkovic</surname>
+<given-names>F</given-names>
+</string-name>, <string-name>
+<surname>Thomas</surname>
+<given-names>JMH</given-names>
+</string-name>, <string-name>
+<surname>Savko</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Lebedev</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Uski</surname>
+<given-names>V</given-names>
+</string-name>, et al. <article-title>SIMBAD: a sequence&#x02010;independent molecular&#x02010;replacement pipeline</article-title>. <source>Acta Crystallogr Sect F Struct Biol Cryst Commun</source>. <year>2018</year>;<volume>D74</volume>:<fpage>595</fpage>&#x02013;<lpage>605</lpage>. <pub-id pub-id-type="doi">10.1107/S2059798318005752</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0030"><mixed-citation publication-type="journal" id="pro70176-cit-0030">
+<string-name>
+<surname>Skub&#x000e1;k</surname>
+<given-names>P</given-names>
+</string-name>, <string-name>
+<surname>Ara&#x000e7;</surname>
+<given-names>D</given-names>
+</string-name>, <string-name>
+<surname>Bowler</surname>
+<given-names>MW</given-names>
+</string-name>, <string-name>
+<surname>Correia</surname>
+<given-names>AR</given-names>
+</string-name>, <string-name>
+<surname>Hoelz</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Larsen</surname>
+<given-names>S</given-names>
+</string-name>, et al. <article-title>A new MR&#x02010;SAD algorithm for the automatic building of protein models from low&#x02010;resolution X&#x02010;ray data and a poor starting model</article-title>. <source>IUCrJ</source>. <year>2018</year>;<volume>5</volume>(<issue>2</issue>):<fpage>166</fpage>&#x02013;<lpage>171</lpage>. <pub-id pub-id-type="doi">10.1107/S2052252517017961</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0031"><mixed-citation publication-type="journal" id="pro70176-cit-0031">
+<string-name>
+<surname>Terwilliger</surname>
+<given-names>TC</given-names>
+</string-name>, <string-name>
+<surname>Afonine</surname>
+<given-names>PV</given-names>
+</string-name>, <string-name>
+<surname>Liebschner</surname>
+<given-names>D</given-names>
+</string-name>, <string-name>
+<surname>Croll</surname>
+<given-names>TI</given-names>
+</string-name>, <string-name>
+<surname>McCoy</surname>
+<given-names>AJ</given-names>
+</string-name>, <string-name>
+<surname>Oeffner</surname>
+<given-names>RD</given-names>
+</string-name>, et al. <article-title>Accelerating crystal structure determination with iterative AlphaFold prediction</article-title>. <source>Acta Crystallogr Sect F Struct Biol Cryst Commun</source>. <year>2023</year>;<volume>79</volume>(<issue>3</issue>):<fpage>234</fpage>&#x02013;<lpage>244</lpage>. <pub-id pub-id-type="doi">10.1107/S205979832300102X</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0032"><mixed-citation publication-type="journal" id="pro70176-cit-0032">
+<collab collab-type="authors">The UniProt Consortium</collab>
+. <article-title>UniProt: the universal protein knowledgebase in 2025</article-title>. <source>Nucleic Acids Res</source>. <year>2025</year>;<volume>53</volume>(<issue>D1</issue>):<fpage>D609</fpage>&#x02013;<lpage>D617</lpage>. <pub-id pub-id-type="doi">10.1093/nar/gkae1010</pub-id>
+<pub-id pub-id-type="pmid">39552041</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0033"><mixed-citation publication-type="journal" id="pro70176-cit-0033">
+<string-name>
+<surname>Vagin</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Lebedev</surname>
+<given-names>A</given-names>
+</string-name>. <article-title>MoRDa, an automatic molecular replacement pipeline</article-title>. <source>Acta Crystallogr Sect F Struct Biol Cryst Eng</source>. <year>2015</year>;<volume>71</volume>(<issue>a1</issue>):<elocation-id>S19</elocation-id>. <pub-id pub-id-type="doi">10.1107/S2053273315099672</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0034"><mixed-citation publication-type="journal" id="pro70176-cit-0034">
+<string-name>
+<surname>Vagin</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Teplyakov</surname>
+<given-names>A</given-names>
+</string-name>. <article-title>MOLREP: an automated program for molecular replacement</article-title>. <source>J Appl Cryst</source>. <year>1997</year>;<volume>30</volume>(<issue>6</issue>):<fpage>1022</fpage>&#x02013;<lpage>1025</lpage>. <pub-id pub-id-type="doi">10.1107/S0021889897006766</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0035"><mixed-citation publication-type="journal" id="pro70176-cit-0035">
+<string-name>
+<surname>Varadi</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Bertoni</surname>
+<given-names>D</given-names>
+</string-name>, <string-name>
+<surname>Magana</surname>
+<given-names>P</given-names>
+</string-name>, <string-name>
+<surname>Paramval</surname>
+<given-names>U</given-names>
+</string-name>, <string-name>
+<surname>Pidruchna</surname>
+<given-names>I</given-names>
+</string-name>, <string-name>
+<surname>Radhakrishnan</surname>
+<given-names>M</given-names>
+</string-name>, et al. <article-title>AlphaFold protein structure database in 2024: providing structure coverage for over 214 million protein sequences</article-title>. <source>Nucleic Acids Res</source>. <year>2024</year>;<volume>52</volume>(<issue>D1</issue>):<fpage>D368</fpage>&#x02013;<lpage>D375</lpage>. <pub-id pub-id-type="doi">10.1093/nar/gkad1011</pub-id>
+<pub-id pub-id-type="pmid">37933859</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0036"><mixed-citation publication-type="journal" id="pro70176-cit-0036">
+<string-name>
+<surname>Weininger</surname>
+<given-names>D</given-names>
+</string-name>. <article-title>SMILES, a chemical language and information system. 1. Introduction to methodology and encoding rules</article-title>. <source>J Chem Inf Comput Sci</source>. <year>1988</year>;<volume>28</volume>(<issue>1</issue>):<fpage>31</fpage>&#x02013;<lpage>36</lpage>. <pub-id pub-id-type="doi">10.1021/ci00057a005</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0037"><mixed-citation publication-type="journal" id="pro70176-cit-0037">
+<string-name>
+<surname>Westbrook</surname>
+<given-names>JD</given-names>
+</string-name>, <string-name>
+<surname>Young</surname>
+<given-names>JY</given-names>
+</string-name>, <string-name>
+<surname>Shao</surname>
+<given-names>C</given-names>
+</string-name>, <string-name>
+<surname>Feng</surname>
+<given-names>Z</given-names>
+</string-name>, <string-name>
+<surname>Guranovic</surname>
+<given-names>V</given-names>
+</string-name>, <string-name>
+<surname>Lawson</surname>
+<given-names>CL</given-names>
+</string-name>, et al. <article-title>PDBx/mmCIF ecosystem: foundational semantic tools for structural biology</article-title>. <source>J Mol Biol</source>. <year>2022</year>;<volume>434</volume>(<issue>11</issue>):<elocation-id>167599</elocation-id>. <pub-id pub-id-type="doi">10.1016/j.jmb.2022.167599</pub-id>
+<pub-id pub-id-type="pmid">35460671</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0038"><mixed-citation publication-type="journal" id="pro70176-cit-0038">
+<string-name>
+<surname>Wills</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Lebedev</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Fando</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Uski</surname>
+<given-names>V</given-names>
+</string-name>, <string-name>
+<surname>Ballard</surname>
+<given-names>C</given-names>
+</string-name>, <string-name>
+<surname>Keegan</surname>
+<given-names>R</given-names>
+</string-name>, et al. <article-title>Linking data sources with CCP4 Cloud: on the verge of a fully online setup for structure determination</article-title>. <source>Acta Crystallogr A</source>. <year>2024</year>;<volume>80</volume>:<elocation-id>e325</elocation-id>. <pub-id pub-id-type="doi">10.1107/S2053273324096736</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0039"><mixed-citation publication-type="journal" id="pro70176-cit-0039">
+<string-name>
+<surname>Winter</surname>
+<given-names>G</given-names>
+</string-name>. <article-title>xia2: an expert system for macromolecular crystallography data reduction</article-title>. <source>J Appl Cryst</source>. <year>2010</year>;<volume>43</volume>(<issue>1</issue>):<fpage>186</fpage>&#x02013;<lpage>190</lpage>. <pub-id pub-id-type="doi">10.1107/S0021889809045701</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0040"><mixed-citation publication-type="journal" id="pro70176-cit-0040">
+<string-name>
+<surname>Wojdyr</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Keegan</surname>
+<given-names>R</given-names>
+</string-name>, <string-name>
+<surname>Winter</surname>
+<given-names>G</given-names>
+</string-name>, <string-name>
+<surname>Ashton</surname>
+<given-names>A</given-names>
+</string-name>. <article-title>
+<italic toggle="yes">DIMPLE</italic>&#x02014;a pipeline for the rapid generation of difference maps from protein crystals with putatively bound ligands</article-title>. <source>Acta Crystallogr A</source>. <year>2013</year>;<volume>69</volume>(<issue>a1</issue>):<elocation-id>S299</elocation-id>. <pub-id pub-id-type="doi">10.1107/S0108767313097419</pub-id>
+</mixed-citation></ref><ref id="pro70176-bib-0041"><mixed-citation publication-type="journal" id="pro70176-cit-0041">
+<string-name>
+<surname>Yamashita</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Wojdyr</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Long</surname>
+<given-names>F</given-names>
+</string-name>, <string-name>
+<surname>Nicholls</surname>
+<given-names>RA</given-names>
+</string-name>, <string-name>
+<surname>Murshudov</surname>
+<given-names>GN</given-names>
+</string-name>. <article-title>GEMMI and Servalcat restrain REFMAC5</article-title>. <source>Acta Crystallogr Sect Struct Biol</source>. <year>2023</year>;<volume>79</volume>(<issue>5</issue>):<fpage>368</fpage>&#x02013;<lpage>373</lpage>. <pub-id pub-id-type="doi">10.1107/S2059798323002413</pub-id>
+</mixed-citation></ref></ref-list></back></article>

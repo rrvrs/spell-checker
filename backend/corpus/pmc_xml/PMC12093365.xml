@@ -1,0 +1,660 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" dtd-version="1.3" xml:lang="EN" article-type="research-article"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Chem Res Toxicol</journal-id><journal-id journal-id-type="iso-abbrev">Chem Res Toxicol</journal-id><journal-id journal-id-type="publisher-id">tx</journal-id><journal-id journal-id-type="coden">crtoec</journal-id><journal-title-group><journal-title>Chemical Research in Toxicology</journal-title></journal-title-group><issn pub-type="ppub">0893-228X</issn><issn pub-type="epub">1520-5010</issn><publisher><publisher-name>American Chemical Society</publisher-name></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">40285676</article-id><article-id pub-id-type="pmc">PMC12093365</article-id>
+<article-id pub-id-type="doi">10.1021/acs.chemrestox.4c00560</article-id><article-categories><subj-group><subject>Article</subject></subj-group></article-categories><title-group><article-title>Enhancing
+Transthyretin Binding Affinity
+Prediction with a Consensus Model: Insights
+from the Tox24 Challenge</article-title></title-group><contrib-group><contrib contrib-type="author" corresp="yes" id="ath1"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0002-9465-3971</contrib-id><name><surname>Pan</surname><given-names>Xiaolin</given-names></name><xref rid="cor1" ref-type="other">*</xref><xref rid="aff1" ref-type="aff">&#x02020;</xref><xref rid="notes3" ref-type="notes">&#x02225;</xref></contrib><contrib contrib-type="author" id="ath2"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0003-0924-5939</contrib-id><name><surname>Gu</surname><given-names>Yaowen</given-names></name><xref rid="aff1" ref-type="aff">&#x02020;</xref><xref rid="notes3" ref-type="notes">&#x02225;</xref></contrib><contrib contrib-type="author" id="ath3"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0009-0001-8352-8200</contrib-id><name><surname>Zhou</surname><given-names>Weijun</given-names></name><xref rid="aff1" ref-type="aff">&#x02020;</xref><xref rid="notes3" ref-type="notes">&#x02225;</xref></contrib><contrib contrib-type="author" corresp="yes" id="ath4"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0002-4984-3354</contrib-id><name><surname>Zhang</surname><given-names>Yingkai</given-names></name><xref rid="cor2" ref-type="other">*</xref><xref rid="aff1" ref-type="aff">&#x02020;</xref><xref rid="aff2" ref-type="aff">&#x02021;</xref><xref rid="aff3" ref-type="aff">&#x000a7;</xref></contrib><aff id="aff1"><label>&#x02020;</label>Department
+of Chemistry, <institution>New York University</institution>, New York, New York 10003, <country>United States</country></aff><aff id="aff2"><label>&#x02021;</label><institution>Simons
+Center for Computational Physical Chemistry at New York University</institution>, New York, New York 10003, <country>United States</country></aff><aff id="aff3"><label>&#x000a7;</label><institution>NYU-ECNU
+Center for Computational Chemistry at NYU Shanghai</institution>, Shanghai 200062, <country>China</country></aff></contrib-group><author-notes><corresp id="cor1"><label>*</label>Email: <email>xp2042@nyu.edu</email>.</corresp><corresp id="cor2"><label>*</label>Email: <email>yingkai.zhang@nyu.edu</email>.</corresp></author-notes><pub-date pub-type="epub"><day>26</day><month>04</month><year>2025</year></pub-date><pub-date pub-type="collection"><day>19</day><month>05</month><year>2025</year></pub-date><volume>38</volume><issue>5</issue><fpage>900</fpage><lpage>908</lpage><history><date date-type="received"><day>24</day><month>12</month><year>2024</year></date><date date-type="accepted"><day>09</day><month>04</month><year>2025</year></date><date date-type="rev-recd"><day>08</day><month>04</month><year>2025</year></date></history><permissions><copyright-statement>&#x000a9; 2025 The Authors. Published by American Chemical Society</copyright-statement><copyright-year>2025</copyright-year><copyright-holder>The Authors</copyright-holder><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>Permits the broadest form of re-use including for commercial purposes, provided that author attribution and integrity are maintained (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</ext-link>).</license-p></license></permissions><abstract><p content-type="toc-graphic"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="tx4c00560_0007" id="ab-tgr1"/></p><p>Transthyretin (TTR) plays a vital role in thyroid hormone
+transport
+and homeostasis in both the blood and target tissues. Interactions
+between exogenous compounds and TTR can disrupt the function of the
+endocrine system, potentially causing toxicity. In the Tox24 challenge,
+we leveraged the data set provided by the organizers to develop a
+deep learning-based consensus model, integrating sPhysNet, KANO, and
+GGAP-CPI for predicting TTR binding affinity. Each model utilized
+distinct levels of molecular information, including 2D topology, 3D
+geometry, and protein&#x02013;ligand interactions. Our consensus model
+achieved favorable performance on the blind test set, yielding an
+RMSE of 20.8 and ranking fifth among all submissions. Following the
+release of the blind test set, we incorporated the leaderboard test
+set into our training data, further reducing the RMSE to 20.6 in an
+offlineretrospective study. These results demonstrate that combining
+three regression models across different modalities significantly
+enhances the predictive accuracy. Furthermore, we employ the standard
+deviation of the consensus model&#x02019;s ensemble outputs as an uncertainty
+estimate. Our analysis reveals that both the RMSE and interval error
+of predictions increase with rising uncertainty, indicating that the
+uncertainty can serve as a useful measure of prediction confidence.
+We believe that this consensus model can be a valuable resource for
+identifying potential TTR binders and predicting their binding affinity
+in silico. The source code for data preparation, model training, and
+prediction can be accessed at <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/xiaolinpan/tox24_challenge_submission_yingkai_lab">https://github.com/xiaolinpan/tox24_challenge_submission_yingkai_lab</uri>.</p></abstract><funding-group><award-group><funding-source><institution-wrap><institution>National Institute of General Medical Sciences</institution><institution-id institution-id-type="doi">10.13039/100000057</institution-id></institution-wrap></funding-source><award-id>R35-GM127040</award-id></award-group></funding-group><custom-meta-group><custom-meta><meta-name>document-id-old-9</meta-name><meta-value>tx4c00560</meta-value></custom-meta><custom-meta><meta-name>document-id-new-14</meta-name><meta-value>tx4c00560</meta-value></custom-meta><custom-meta><meta-name>ccc-price</meta-name><meta-value/></custom-meta></custom-meta-group></article-meta></front><body><sec id="sec1"><title>Introduction</title><p>Transthyretin (TTR), synthesized primarily
+in the liver and choroid
+plexus, is distributed throughout the bloodstream and cerebrospinal
+fluid. This protein is essential for maintaining the homeostasis of
+thyroid hormones in blood and tissues.<sup><xref ref-type="bibr" rid="ref1">1</xref></sup> The binding of exogenous compounds to TTR can competitively inhibit
+the transport of thyroid hormones (TH) to target tissues, disrupting
+TH-dependent biological pathways. Moreover, TH displaced from TTR
+can be metabolized and excreted, leading to a decrease in serum TH
+levels.<sup><xref ref-type="bibr" rid="ref2">2</xref></sup> Several in vitro assays can be
+used to evaluate competitive binding to TTR, including the fluorescence-based
+competitive binding assays using fluorescein isothiocyanate-T4 conjugate
+(FITC-T4) or 8-anilino-1-naphthalenesulfonic acid ammonium salt (ANSA)<sup><xref ref-type="bibr" rid="ref3">3</xref>&#x02212;<xref ref-type="bibr" rid="ref5">5</xref></sup> and a radiolabeled ligand displacement assay.<sup><xref ref-type="bibr" rid="ref6">6</xref></sup> However, these assays are typically high in cost and time
+consumption, limiting their capacity for large-scale, rapid screening.</p><p>Therefore, the development of accurate and rapid computational
+models for TTR binding is important for avoiding the toxicity of candidates
+in medicinal chemistry, food chemistry, and environmental chemistry
+applications. For instance, Kovarich et al.<sup><xref ref-type="bibr" rid="ref7">7</xref></sup> utilized a k-nearest neighbor (KNN)-based method to calculate the
+binding potency of compounds in competitive binding to TTR, while
+Rybacka et al.<sup><xref ref-type="bibr" rid="ref8">8</xref></sup> developed a classification
+model based on molecular descriptors calculated via OCHEM<sup><xref ref-type="bibr" rid="ref9">9</xref></sup> to predict compound&#x02013;TTR interactions.
+Yang et al. combined in vitro experiments and computational methods
+to study the strength of binding and mechanisms of phenolic disinfection
+byproducts with TTR, employing multiple linear regression for QSAR
+modeling.<sup><xref ref-type="bibr" rid="ref10">10</xref></sup> Yang et al. also developed
+a combination method that contains both a regression and classification
+model.<sup><xref ref-type="bibr" rid="ref11">11</xref></sup> The classification model is employed
+to screen for molecules that disrupt human TTR, while the regression
+model is employed to calculate the binding activity. Additionally,
+Zhang et al. developed a structure-based virtual screening method
+that successfully identified potential thyroid-disrupting chemicals
+and determined the crystal complex structures of human TTR binding
+with several exogenous compounds.<sup><xref ref-type="bibr" rid="ref12">12</xref></sup></p><p>In recent years, advances in artificial intelligence (AI) have
+spurred the development of numerous novel models for molecular property
+prediction.<sup><xref ref-type="bibr" rid="ref13">13</xref>&#x02212;<xref ref-type="bibr" rid="ref22">22</xref></sup> However, the accuracy of data-driven deep learning approaches heavily
+depends on both the quantity and quality of the available data set.
+The biggest data set in the previous study only contains 407 binding
+compounds of TTR,<sup><xref ref-type="bibr" rid="ref11">11</xref></sup> which poses a considerable
+challenge to develop high-confidence models in the community. In contrast,
+the extensive experimental data set provided by the Tox24 challenge
+offers a robust foundation for developing more accurate predictive
+models.<sup><xref ref-type="bibr" rid="ref23">23</xref>,<xref ref-type="bibr" rid="ref24">24</xref></sup> In this challenge, our team developed a
+novel deep consensus model designed to improve the predictive accuracy
+of TTR binding activity by combining three distinct regression methods:
+simplified PhysNet (sPhysNet),<sup><xref ref-type="bibr" rid="ref25">25</xref>,<xref ref-type="bibr" rid="ref26">26</xref></sup> knowledge graph-enhanced
+molecular contrastive learning with functional prompt (KANO),<sup><xref ref-type="bibr" rid="ref27">27</xref></sup> and protein graph and ligand graph network with
+attention pooling for compound&#x02013;protein interaction prediction
+(GGAP-CPI)<sup><xref ref-type="bibr" rid="ref28">28</xref></sup> that incorporate various molecular
+levels of information, including 2D topology, 3D geometry, and protein&#x02013;ligand
+interactions. <xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref> shows the workflow of our consensus model building in detail. Our
+model demonstrated competitive performance on the blind test set,
+achieving a root-mean-square error (RMSE) of 20.8, which compares
+favorably with most of the other submissions and ranks fifth among
+all submissions.<sup><xref ref-type="bibr" rid="ref29">29</xref></sup> After incorporating
+the leaderboard set into our training data, we further improved the
+RMSE to 20.6 in an offline retrospective study. We believe that this
+model can serve as a valuable resource for identifying potential TTR
+binders and predicting their binding affinity in silico.</p><fig id="fig1" position="float"><label>Figure 1</label><caption><p>Schematic workflow
+of our approach for predicting TTR binding affinity
+in the Tox24 challenge. Final predictions are obtained from a consensus
+model integrating three distinct regression models: sPhysNet, KANO,
+and GGAP-CPI, each leveraging a different level of molecular information,
+including 2D topology, 3D geometry, and protein&#x02013;ligand interactions.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="tx4c00560_0001" id="gr1" position="float"/></fig></sec><sec id="sec2"><title>Materials and Methods</title><sec id="sec2.1"><title>Data Preparation</title><p>The Tox24 challenge provides the largest
+data set of TTR binding affinity for model training and validation
+until now, including the training set, leaderboard test set, and blind
+test set. It contains 1012 compounds, 200 compounds, and 300 compounds,
+respectively. These compounds were screened from the U.S. EPA&#x02019;s
+ToxCast libraries using human TTR protein and the fluorescent probe
+ANSA.<sup><xref ref-type="bibr" rid="ref24">24</xref></sup> This extensive experimental data
+set offers a robust foundation for developing more accurate predictive
+models. In this data set, some compounds are mixtures, salts, or contain
+metal elements. To ensure a cleaner data set, we standardized all
+compounds using RDKit, removing salts and generating canonical SMILES.
+For the record, with more than one molecule, we do not use it as training
+data. Finally, the training set contains 1002 compounds. For each
+compound, we generated 100 conformations using ETKDG<sup><xref ref-type="bibr" rid="ref30">30</xref>,<xref ref-type="bibr" rid="ref31">31</xref></sup> in RDKit and selected the lowest energy conformation post-MMFF94
+optimization.<sup><xref ref-type="bibr" rid="ref32">32</xref>&#x02212;<xref ref-type="bibr" rid="ref36">36</xref></sup> If ETKDG failed, we used Schrodinger as an alternative.</p></sec><sec id="sec2.2"><title>Deep Learning Models</title><p>In this challenge, we developed
+three distinct models to estimate the TTR binding affinity of compounds,
+including sPhysNet,<sup><xref ref-type="bibr" rid="ref25">25</xref>,<xref ref-type="bibr" rid="ref26">26</xref></sup> KANO,<sup><xref ref-type="bibr" rid="ref27">27</xref></sup> and GGAP-CPI.<sup><xref ref-type="bibr" rid="ref28">28</xref></sup> sPhysNet leverages 3D
+molecular geometry for property prediction by using radial basis functions
+(RBFs) to embed molecular features. KANO utilizes a chemical element-oriented
+knowledge graph (ElementKG) that integrates fundamental information
+on functional groups and element types to encode molecular information.
+GGAP-CPI combines both 2D ligand molecular graphs and 3D protein structure
+graphs with predrilled ligand and protein sequence embeddings. Each
+model underwent K-fold cross-validations (CVs) on the provided training
+set and was then tested independently on the leaderboard test set.
+Specifically, we employed a 5-fold split for sPhysNet and KANO and
+a 10-fold split for GGAP-CPI. During the blind challenge, the leaderboard
+test set was excluded from model training; however, in a subsequent
+retrospective study, it was merged with the training data. We evaluated
+our model performance using four commonly employed metrics: the coefficient
+of determination (<italic>R</italic><sup>2</sup>), root-mean-square
+error (RMSE), mean absolute error (MAE), and Pearson correlation coefficient
+(PCC). These metrics were calculated by the following functions<disp-formula id="uneq1"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="tx4c00560_m001" position="anchor"/></disp-formula><disp-formula id="uneq2"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="tx4c00560_m002" position="anchor"/></disp-formula><disp-formula id="uneq3"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="tx4c00560_m003" position="anchor"/></disp-formula><disp-formula id="uneq4"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="tx4c00560_m004" position="anchor"/></disp-formula></p><p>Here, <italic>f</italic><sub><italic>i</italic></sub> denotes the predicted value for molecule <italic>i</italic>, <italic>y</italic><sub><italic>i</italic></sub> represents
+its corresponding experimental value, <italic>&#x00066;&#x00305;</italic> is
+the mean of all predictions, <italic>&#x00079;&#x00305;</italic> is the mean
+of all experimental values, and <italic>n</italic> is the total number
+of molecules in the data set.</p><p>We then integrated these models
+into a consensus to enhance predictive
+accuracy on the blind test set, taking advantage of their diverse
+molecular embeddings and complementary strengths. The details of these
+three model architectures are described as follows.</p></sec><sec id="sec2.3"><title>sPhysNet</title><p>This multitask deep learning model directly
+estimates electronic energies and solvation energies. In this model
+architecture, each atom in a compound is processed through an embedding
+matrix to generate node embeddings, while radial basis functions (RBFs)
+encode interatomic distances as edge embeddings. These embeddings
+are iteratively refined through three interaction modules that incorporate
+message passing, residual connections, and gate mechanisms. The final
+node embeddings are then used by the output layer to produce the desired
+properties. In this study, we fine-tuned a pretrained sPhysNet model
+with our training set. The learning rate was set to 0.005, and training
+was conducted for 800 epochs using the EmaAmsGrad optimizer, which
+was configured with beta parameters ranging from 0.0 to 0.999, without
+applying any weight decay.</p></sec><sec id="sec2.4"><title>KANO</title><p>It is a recently developed deep learning framework
+that is designed for molecular property prediction. At its core, ElementKG
+integrates fundamental information about functional groups, element
+types, and their interrelationships. RDKit is used to identify functional
+groups by their names in ElementKG. A learnable vector is incorporated
+to capture the relative importance of these groups. Two self-attention
+layers generate embeddings for both the identified functional groups
+and the mediator vector. The outputs pass through an MLP to produce
+a functional prompt. This functional prompt is then combined with
+the molecular representation of each node, resulting in a prompt-enhanced
+molecular graph. That graph is fed into the pretrained graph encoder,
+leveraging the functional group knowledge gained during contrastive
+pretraining. Finally, a neural network is applied to the output for
+a molecular property prediction task. In this work, the pretrained
+KANO model was fine-tuned using our designated training set. The model
+was trained for 100 epochs by using a batch size of 256. It employed
+an initial learning rate of 5 &#x000d7; 10<sup>&#x02013;4</sup>, a maximum
+learning rate of 1 &#x000d7; 10<sup>&#x02013;3</sup>, and a final learning
+rate of 1 &#x000d7; 10<sup>&#x02013;4</sup>, with the Adam optimizer managing
+the training process.</p></sec><sec id="sec2.5"><title>GGAP-CPI</title><p>It is a protein Graph and ligand Graph with
+Attention Pooling for Compound&#x02013;Protein Interaction prediction
+(GGAP-CPI) model that utilizes both 2D ligand molecular graphs and
+3D protein structure graphs. It employs KANO as the ligand encoder
+and a graph convolutional network with pretrained ESM-2<sup><xref ref-type="bibr" rid="ref37">37</xref></sup> protein embeddings as the protein encoder. A
+cross-attention pooling module is used to simulate the protein&#x02013;ligand
+interaction and integrate the learned ligand and protein representations,
+which are then processed by a multilayer perceptron (MLP) for toxicity
+prediction. GGAP-CPI is an interaction-based method in our approach
+since it learns protein and ligand representations based on protein
+residue&#x02013;residue interactions (by Graphein<sup><xref ref-type="bibr" rid="ref38">38</xref></sup>) and ligand atom&#x02013;atom interactions from complex
+structure-free CPI data. To introduce protein structural variance,
+both the TTR crystal structure (PDB: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="PDB" xlink:href="3D7P">3D7P</ext-link>) and AlphaFold2-predicted<sup><xref ref-type="bibr" rid="ref39">39</xref></sup> structures were used. GGAP-CPI was optimized
+using the mean squared error as the loss function. Additional 215
+TTR bioactivity end points are collected from public databases (EquiVS<sup><xref ref-type="bibr" rid="ref40">40</xref></sup> and Papyrus<sup><xref ref-type="bibr" rid="ref41">41</xref></sup>) to
+benefit GGAP-CPI training from a data perspective. These assessed
+ligands do not overlap with those in the Tox24 challenge test set.
+We applied min&#x02013;max scaling to rescale the Tox24 data from approximately
+&#x02212;50 to 120 into a range of 0&#x02013;12, aligning it with the
+negative log(nM) bioactivity distribution. The Tox24 challenge training
+set and the collected data were then combined for GGAP-CPI training.
+The model is trained using the Adam optimizer with a learning rate
+of 1 &#x000d7; 10<sup>&#x02013;3</sup>. The training process runs for
+100 epochs with a batch size of 32. The model employs a hidden dimension
+of 300 nm and a dropout rate of 0.05 to prevent overfitting.</p></sec><sec id="sec2.6"><title>Offline Testing</title><p>To fully leverage the available training
+data from the Tox24 challenge and enhance the robustness of our base
+models, we conducted an additional offline experiment using 5 &#x000d7;
+5-fold cross-validation. In this setup, we combined the training and
+leaderboard sets for model training while ensuring that data splitting
+was consistent across sPhysNet, KANO, and GGAP-CPI. This strategy
+resulted in a total of 75 base models (25 per method), whose predictions
+were integrated via a soft voting ensemble (calculation of average
+values of all base model predictions) for the final prediction and
+inference.</p></sec></sec><sec id="sec3"><title>Results and Discussion</title><sec id="sec3.1"><title>Molecular Properties and Chemical Structure Distribution</title><p>We conducted a comprehensive analysis of the Tox24 challenge data
+to investigate the distribution of the prediction target (TTR binding
+activity), chemical structural properties, and their correlations,
+thereby providing a general understanding of the challenge from a
+feature analysis perspective. As shown in <xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>, TTR binding activities in the Tox24 training
+set and leaderboard test set range from &#x02212;45 to 111.12%, with
+a threshold of 50 chosen to classify molecules as active or inactive.
+According to the Quantitative Estimate of Drug-likeness (QED) properties,<sup><xref ref-type="bibr" rid="ref44">44</xref></sup> significant differences were observed in the
+distributions of MW, AlogP, and AROM between active and inactive molecules <xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>b, indicating that
+TTR-active molecules tend to have higher molecular weights and greater
+aromaticity. Correlation analysis results (<xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>c) revealed weak correlations (Pearson&#x02019;s
+correlation coefficients &#x0003c;0.2) between TTR binding activity and
+MW, AlogP, or AROM, suggesting that simple general properties are
+not sufficient for accurate prediction. This highlights the need for
+complex computational modeling to achieve precise TTR binding activity
+predictions. Furthermore, distribution analysis in Tox24 data sets
+(train/leaderboard/test) showed similar QED property distributions,
+indicating consistent chemical structure spaces in all data sets.</p><fig id="fig2" position="float"><label>Figure 2</label><caption><p>TTR binding
+activity and QED property distributions and correlations
+in Tox24 train + leaderboard data sets. (a) TTR binding activity (%)
+distribution; (b) QED (MW (Da): molecular weights; ALOGP: partition
+coefficient logP based on the Ghose&#x02013;Crippen atomic method;<sup><xref ref-type="bibr" rid="ref42">42</xref></sup> HBA: number of hydrogen bond acceptors; HBD:
+number of hydrogen bond donors; PSA (&#x000c5;<sup>2</sup>): polar surface
+areas; ROTB: number of rotatable bonds; AROM: number of aromatic rings;
+ALERTS: number of alert structures, which considers a curated reference
+set of 94 functional moieties that are potentially mutagenic, reactive,
+or have unfavorable pharmacokinetic properties<sup><xref ref-type="bibr" rid="ref43">43</xref></sup> property distributions for TTR active/inactive molecules
+(threshold: 50); (c) Pearson&#x02019;s correlation coefficients of
+the correlations between QED properties and TTR binding activities;
+(d) QED property distributions for Tox24 train/leaderboard/test data
+sets.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="tx4c00560_0002" id="gr2" position="float"/></fig><p>Since the physicochemical properties display only
+weak correlations
+with TTR toxicity, we further conducted a Bemis&#x02013;Murcko scaffold-activity
+analysis to identify representative active scaffolds. As shown in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00560/suppl_file/tx4c00560_si_001.pdf">Figure S3</ext-link>, most compounds in the Tox24 training,
+leaderboard, and test data sets either lack a clearly defined scaffold
+or consist merely of a simple benzene ring. Moreover, analyses of
+the most frequently occurring scaffolds among active compounds (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00560/suppl_file/tx4c00560_si_001.pdf">Figures S4&#x02013;S6</ext-link>) indicate that no distinctive
+scaffold or characteristic&#x02014;aside from significant aromaticity&#x02014;can
+be discerned.</p><p>To further explore the chemical structure space
+of the Tox24 challenge,
+we calculated 2048 bit ECFP4 fingerprints<sup><xref ref-type="bibr" rid="ref45">45</xref></sup> for all molecules and applied principal component analysis (PCA)
+for dimensionality reduction and visualization. As shown in <xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>a, TTR-active molecules
+(marked in red) are loosely clustered in the ECFP fingerprint space.
+Furthermore, the molecules in the Tox24 train, leaderboard, and test
+data sets are evenly distributed throughout the chemical space, with
+no clear cluster separation. This finding suggests that the data sets
+share a similar structural space.</p><fig id="fig3" position="float"><label>Figure 3</label><caption><p>PCA visualizations based on molecular
+ECFP fingerprints for data
+in (a) Tox24 leaderboard data sets, with TTR binding activities as
+scatter colors; (b) Tox24 train/leaderboard/test data sets.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="tx4c00560_0003" id="gr3" position="float"/></fig></sec><sec id="sec3.2"><title>Performance Comparison on Tox24 Leaderboard and Blind Test Sets</title><p>In this challenge, we evaluated our three regression models on
+the leaderboard test set of 200 compounds and subsequently submitted
+predictions for the blind test set of 300 compounds. Our novel consensus
+model achieved a competitive performance, ranking among the top 5
+submissions with a root-mean-square error (RMSE) of 20.8 on the blind
+test set. The performances of each of our individual models (sPhysNet,
+KANO, and GGAP-CPI) on both the leaderboard and blind test sets are
+summarized in <xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>a,b and <xref rid="tbl1" ref-type="other">Tables <xref rid="tbl1" ref-type="other">1</xref></xref> and <xref rid="tbl2" ref-type="other">2</xref>. Note that the submitted result (RMSE = 20.8) is
+obtained through soft voting of three ensemble models (the sPhysNet
+ensemble, KANO ensemble, and GGAP-CPI ensemble). In contrast, the
+RMSE = 20.7 result in <xref rid="tbl2" ref-type="other">Table <xref rid="tbl2" ref-type="other">2</xref></xref> is derived from soft voting of all base models directly,
+without first aggregating individual models before ensembling.</p><fig id="fig4" position="float"><label>Figure 4</label><caption><p>RMSE results
+for individual models (KANO, GGAP-CPI, and sPhysNet)
+and consensus models (KANO + GGAP-CPI, KANO + sPhysNet, GGAP-CPI +
+sPhysNet, Consensus model) on (a) the Tox24 leaderboard test set;
+(b) the Tox24 blind test set (only trained on training set); (c) the
+Tox24 test set in a 5 &#x000d7; 5-fold cross-validation offline testing
+manner that combined the training set and leaderboard test set for
+model training.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="tx4c00560_0004" id="gr4" position="float"/></fig><table-wrap id="tbl1" position="float"><label>Table 1</label><caption><title>Model Performance on the Leaderboard
+Test Set Only Using the Training Set for Model Training</title></caption><table frame="hsides" rules="groups" border="0"><colgroup><col align="left"/><col align="left"/><col align="left"/><col align="left"/><col align="left"/><col align="left"/></colgroup><thead><tr><th style="border:none;" align="center">Model</th><th style="border:none;" align="center">type</th><th style="border:none;" align="center"><italic>R</italic>-squared</th><th style="border:none;" align="center">RMSE</th><th style="border:none;" align="center">MAE</th><th style="border:none;" align="center">PCC</th></tr></thead><tbody><tr><td style="border:none;" align="left">KANO</td><td style="border:none;" align="left">ligand-based</td><td style="border:none;" align="left">0.52&#x000a0;&#x000b1;&#x000a0;0.05</td><td style="border:none;" align="left">23.1&#x000a0;&#x000b1;&#x000a0;1.1</td><td style="border:none;" align="left">16.8&#x000a0;&#x000b1;&#x000a0;0.8</td><td style="border:none;" align="left">0.73&#x000a0;&#x000b1;&#x000a0;0.02</td></tr><tr><td style="border:none;" align="left">GGAP-CPI</td><td style="border:none;" align="left">interaction-based</td><td style="border:none;" align="left">0.50&#x000a0;&#x000b1;&#x000a0;0.04</td><td style="border:none;" align="left">23.5&#x000a0;&#x000b1;&#x000a0;0.8</td><td style="border:none;" align="left">16.9&#x000a0;&#x000b1;&#x000a0;0.7</td><td style="border:none;" align="left">0.71&#x000a0;&#x000b1;&#x000a0;0.02</td></tr><tr><td style="border:none;" align="left">sPhysNet</td><td style="border:none;" align="left">structure-based</td><td style="border:none;" align="left">0.48&#x000a0;&#x000b1;&#x000a0;0.04</td><td style="border:none;" align="left">23.8&#x000a0;&#x000b1;&#x000a0;0.9</td><td style="border:none;" align="left">16.9&#x000a0;&#x000b1;&#x000a0;0.7</td><td style="border:none;" align="left">0.71&#x000a0;&#x000b1;&#x000a0;0.02</td></tr><tr><td style="border:none;" align="left">KANO&#x000a0;+&#x000a0;GGAP-CPI</td><td style="border:none;" align="left">ensemble</td><td style="border:none;" align="left">0.60</td><td style="border:none;" align="left">20.9</td><td style="border:none;" align="left">15.3</td><td style="border:none;" align="left">0.78</td></tr><tr><td style="border:none;" align="left">KANO&#x000a0;+&#x000a0;sPhysNet</td><td style="border:none;" align="left">ensemble</td><td style="border:none;" align="left">0.60</td><td style="border:none;" align="left">21.0</td><td style="border:none;" align="left">15.1</td><td style="border:none;" align="left">0.78</td></tr><tr><td style="border:none;" align="left">GGAP-CPI&#x000a0;+&#x000a0;sPhysNet</td><td style="border:none;" align="left">ensemble</td><td style="border:none;" align="left">0.60</td><td style="border:none;" align="left">21.1</td><td style="border:none;" align="left">15.3</td><td style="border:none;" align="left">0.77</td></tr><tr><td style="border:none;" align="left">consensus</td><td style="border:none;" align="left">ensemble</td><td style="border:none;" align="left">0.61</td><td style="border:none;" align="left">20.8</td><td style="border:none;" align="left">15.1</td><td style="border:none;" align="left">0.78</td></tr></tbody></table></table-wrap><table-wrap id="tbl2" position="float"><label>Table 2</label><caption><title>Model Performance on the Blind Test
+Set Only Using the Training Set for Model Training</title></caption><table frame="hsides" rules="groups" border="0"><colgroup><col align="left"/><col align="left"/><col align="left"/><col align="left"/><col align="left"/><col align="left"/></colgroup><thead><tr><th style="border:none;" align="center">Model</th><th style="border:none;" align="center">type</th><th style="border:none;" align="center"><italic>R</italic>-squared</th><th style="border:none;" align="center">RMSE</th><th style="border:none;" align="center">MAE</th><th style="border:none;" align="center">PCC</th></tr></thead><tbody><tr><td style="border:none;" align="left">KANO</td><td style="border:none;" align="left">ligand-based</td><td style="border:none;" align="left">0.59&#x000a0;&#x000b1;&#x000a0;0.02</td><td style="border:none;" align="left">22.9&#x000a0;&#x000b1;&#x000a0;0.5</td><td style="border:none;" align="left">17.3&#x000a0;&#x000b1;&#x000a0;0.4</td><td style="border:none;" align="left">0.77&#x000a0;&#x000b1;&#x000a0;0.01</td></tr><tr><td style="border:none;" align="left">GGAP-CPI</td><td style="border:none;" align="left">interaction-based</td><td style="border:none;" align="left">0.57&#x000a0;&#x000b1;&#x000a0;0.04</td><td style="border:none;" align="left">22.9&#x000a0;&#x000b1;&#x000a0;0.5</td><td style="border:none;" align="left">17.3&#x000a0;&#x000b1;&#x000a0;0.4</td><td style="border:none;" align="left">0.77&#x000a0;&#x000b1;&#x000a0;0.01</td></tr><tr><td style="border:none;" align="left">sPhysNet</td><td style="border:none;" align="left">structure-based</td><td style="border:none;" align="left">0.51&#x000a0;&#x000b1;&#x000a0;0.03</td><td style="border:none;" align="left">25.1&#x000a0;&#x000b1;&#x000a0;0.7</td><td style="border:none;" align="left">18.7&#x000a0;&#x000b1;&#x000a0;0.5</td><td style="border:none;" align="left">0.73&#x000a0;&#x000b1;&#x000a0;0.02</td></tr><tr><td style="border:none;" align="left">KANO&#x000a0;+&#x000a0;GGAP-CPI</td><td style="border:none;" align="left">ensemble</td><td style="border:none;" align="left">0.66</td><td style="border:none;" align="left">20.8</td><td style="border:none;" align="left">15.4</td><td style="border:none;" align="left">0.82</td></tr><tr><td style="border:none;" align="left">KANO&#x000a0;+&#x000a0;sPhysNet</td><td style="border:none;" align="left">ensemble</td><td style="border:none;" align="left">0.65</td><td style="border:none;" align="left">21.2</td><td style="border:none;" align="left">16.0</td><td style="border:none;" align="left">0.81</td></tr><tr><td style="border:none;" align="left">GGAP-CPI&#x000a0;+&#x000a0;sPhysNet</td><td style="border:none;" align="left">ensemble</td><td style="border:none;" align="left">0.64</td><td style="border:none;" align="left">21.3</td><td style="border:none;" align="left">15.5</td><td style="border:none;" align="left">0.81</td></tr><tr><td style="border:none;" align="left">consensus</td><td style="border:none;" align="left">ensemble</td><td style="border:none;" align="left">0.67</td><td style="border:none;" align="left">20.7</td><td style="border:none;" align="left">15.3</td><td style="border:none;" align="left">0.82</td></tr></tbody></table></table-wrap><p>To investigate whether combining the models could
+further improve
+performance, we evaluated various consensus combinations on both data
+sets. Across all combinations, consensus models consistently outperformed
+their single-model counterparts. In particular, combining sPhysNet
+with either KANO or GGAP-CPI produced superior results compared to
+the KANO plus GGAP-CPI consensus on both data sets. This finding suggests
+that the superior performance of sPhysNet plays a key role in the
+success of these consensus combinations. Furthermore, the full three-model
+consensus achieved the highest performance compared to the consensus
+of two models, demonstrating that each model in the consensus contributes
+complementary information that enhances the overall predictive power
+for TTR binding affinity. Additionally, we analyzed the correlation
+of absolute errors among sPhysNet, KANO, and GGAP-CPI on the blind
+test set. The results show that the Pearson correlation coefficient
+(PCC) is 0.71 between sPhysNet and KANO, 0.70 between sPhysNet and
+GGAP-CPI, and 0.81 between KANO and GGAP-CPI (see <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00560/suppl_file/tx4c00560_si_001.pdf">Figure S1</ext-link> for details). sPhysNet leverages molecular 3D geometry
+to model TTR binding information, whereas both KANO and GGAP-CPI rely
+on molecular topology derived from 2D graphs for their predictions.
+This difference in the ligand structural modeling and representation
+may contribute to the variation in predictions among the three models. <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00560/suppl_file/tx4c00560_si_001.pdf">Figure S2</ext-link> presents the top 12 molecules with
+the highest absolute errors for all three models. Notably, mercury(II)
+chloride (SMILES: [Cl-].[Cl-].[Hg+2], IUPAC name: dichloromercury)
+exhibits the largest error for KANO and GGAP-CPI. This is likely because
+the inorganic compound markedly differs from the rest of the training
+data, and RDKit fails to construct the correct bond connections between
+the Cl and Hg atoms, preventing the graph neural network from effectively
+capturing the topology structure for molecular graphs. sPhysNet also
+struggles with this molecule due to issues with force field parameters
+and conformation generation.</p><p>To maximize the utility of the
+available data as well as systematically
+examine the role of consensus learning, we combined the Tox24 training
+set and leaderboard set as a unified training data set and then conducted
+a 5 &#x000d7; 5-fold cross-validation offline testing. This integration
+increased the training data size by approximately 20% compared to
+our initial submission. The model performance was subsequently evaluated
+with the Tox24 blind test set. The offline results, presented in <xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>c and <xref rid="tbl3" ref-type="other">Table <xref rid="tbl3" ref-type="other">3</xref></xref>, reveal consistent performance
+improvements across all single models and consensus models. Notably,
+the final consensus model achieved an RMSE of 20.56 on the Tox24 test
+set. The statistical results (pairwise <italic>t</italic>-test) in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00560/suppl_file/tx4c00560_si_001.pdf">Tables S1 and S2</ext-link> also suggest our consensus model
+consistently outperforms other two-component ensemble models (KANO-GGAP-CPI,
+KANO-sPhysNet, GGAP-CPI-sPhysNet) and base models (KANO, GGAP-CPI,
+sPhysNet) with significant differences on each cross-validation testing.
+We also included a baseline model trained using XGBoost with 2048
+bit ECFP fingerprints; the training details are provided in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00560/suppl_file/tx4c00560_si_001.pdf">Text S1</ext-link>. The results in <xref rid="tbl3" ref-type="other">Table <xref rid="tbl3" ref-type="other">3</xref></xref> indicate that the XGBoost model achieved
+an RMSE of 26.46, which is significantly higher than that of our consensus
+model. These results highlight the robustness and scalability of our
+consensus model, which demonstrates the capacity to achieve even greater
+performance with larger data sets.</p><table-wrap id="tbl3" position="float"><label>Table 3</label><caption><title>Model Performance on the Test Set
+Using the Training Set and Leaderboard Test Set for Model Training
+in a 5 &#x000d7; 5-Fold Cross Validation Offline Testing Manner</title></caption><table frame="hsides" rules="groups" border="0"><colgroup><col align="left"/><col align="left"/><col align="left"/><col align="left"/><col align="left"/><col align="left"/></colgroup><thead><tr><th style="border:none;" align="center">Model</th><th style="border:none;" align="center">type</th><th style="border:none;" align="center"><italic>R</italic>-squared</th><th style="border:none;" align="center">RMSE</th><th style="border:none;" align="center">MAE</th><th style="border:none;" align="center">PCC</th></tr></thead><tbody><tr><td style="border:none;" align="left">XGBoost</td><td style="border:none;" align="left">ligand-based</td><td style="border:none;" align="left">0.453&#x000a0;&#x000b1;&#x000a0;0.03</td><td style="border:none;" align="left">26.5&#x000a0;&#x000b1;&#x000a0;0.7</td><td style="border:none;" align="left">19.9&#x000a0;&#x000b1;&#x000a0;0.5</td><td style="border:none;" align="left">0.68&#x000a0;&#x000b1;&#x000a0;0.02</td></tr><tr><td style="border:none;" align="left">KANO</td><td style="border:none;" align="left">ligand-based</td><td style="border:none;" align="left">0.64&#x000a0;&#x000b1;&#x000a0;0.01</td><td style="border:none;" align="left">21.4&#x000a0;&#x000b1;&#x000a0;0.1</td><td style="border:none;" align="left">16.2&#x000a0;&#x000b1;&#x000a0;0.1</td><td style="border:none;" align="left">0.80&#x000a0;&#x000b1;&#x000a0;0.00</td></tr><tr><td style="border:none;" align="left">GGAP-CPI</td><td style="border:none;" align="left">interaction-based</td><td style="border:none;" align="left">0.64&#x000a0;&#x000b1;&#x000a0;0.00</td><td style="border:none;" align="left">21.4&#x000a0;&#x000b1;&#x000a0;0.1</td><td style="border:none;" align="left">15.5&#x000a0;&#x000b1;&#x000a0;0.1</td><td style="border:none;" align="left">0.80&#x000a0;&#x000b1;&#x000a0;0.00</td></tr><tr><td style="border:none;" align="left">sPhysNet</td><td style="border:none;" align="left">structure-based</td><td style="border:none;" align="left">0.63&#x000a0;&#x000b1;&#x000a0;0.01</td><td style="border:none;" align="left">21.7&#x000a0;&#x000b1;&#x000a0;0.2</td><td style="border:none;" align="left">16.2&#x000a0;&#x000b1;&#x000a0;0.2</td><td style="border:none;" align="left">0.80&#x000a0;&#x000b1;&#x000a0;0.00</td></tr><tr><td style="border:none;" align="left">KANO&#x000a0;+&#x000a0;GGAP-CPI</td><td style="border:none;" align="left">ensemble (CV-wise)</td><td style="border:none;" align="left">0.66&#x000a0;&#x000b1;&#x000a0;0.00</td><td style="border:none;" align="left">20.9&#x000a0;&#x000b1;&#x000a0;0.1</td><td style="border:none;" align="left">15.4&#x000a0;&#x000b1;&#x000a0;0.1</td><td style="border:none;" align="left">0.81&#x000a0;&#x000b1;&#x000a0;0.00</td></tr><tr><td style="border:none;" align="left">KANO&#x000a0;+&#x000a0;sPhysNet</td><td style="border:none;" align="left">ensemble (CV-wise)</td><td style="border:none;" align="left">0.66&#x000a0;&#x000b1;&#x000a0;0.00</td><td style="border:none;" align="left">20.8&#x000a0;&#x000b1;&#x000a0;0.1</td><td style="border:none;" align="left">15.7&#x000a0;&#x000b1;&#x000a0;0.1</td><td style="border:none;" align="left">0.82&#x000a0;&#x000b1;&#x000a0;0.00</td></tr><tr><td style="border:none;" align="left">GGAP-CPI&#x000a0;+&#x000a0;sPhysNet</td><td style="border:none;" align="left">ensemble (CV-wise)</td><td style="border:none;" align="left">0.66&#x000a0;&#x000b1;&#x000a0;0.00</td><td style="border:none;" align="left">20.8&#x000a0;&#x000b1;&#x000a0;0.1</td><td style="border:none;" align="left">15.3&#x000a0;&#x000b1;&#x000a0;0.1</td><td style="border:none;" align="left">0.82&#x000a0;&#x000b1;&#x000a0;0.00</td></tr><tr><td style="border:none;" align="left">consensus</td><td style="border:none;" align="left">ensemble (CV-wise)</td><td style="border:none;" align="left">0.67&#x000a0;&#x000b1;&#x000a0;0.00</td><td style="border:none;" align="left">20.6&#x000a0;&#x000b1;&#x000a0;0.1</td><td style="border:none;" align="left">15.3&#x000a0;&#x000b1;&#x000a0;0.1</td><td style="border:none;" align="left">0.82&#x000a0;&#x000b1;&#x000a0;0.00</td></tr><tr><td style="border:none;" align="left">KANO&#x000a0;+&#x000a0;GGAP-CPI</td><td style="border:none;" align="left">ensemble (all)</td><td style="border:none;" align="left">0.66</td><td style="border:none;" align="left">20.8</td><td style="border:none;" align="left">15.4</td><td style="border:none;" align="left">0.81</td></tr><tr><td style="border:none;" align="left">KANO&#x000a0;+&#x000a0;sPhysNet</td><td style="border:none;" align="left">ensemble (all)</td><td style="border:none;" align="left">0.66</td><td style="border:none;" align="left">20.8</td><td style="border:none;" align="left">15.6</td><td style="border:none;" align="left">0.82</td></tr><tr><td style="border:none;" align="left">GGAP-CPI&#x000a0;+&#x000a0;sPhysNet</td><td style="border:none;" align="left">ensemble (all)</td><td style="border:none;" align="left">0.67</td><td style="border:none;" align="left">20.7</td><td style="border:none;" align="left">15.3</td><td style="border:none;" align="left">0.82</td></tr><tr><td style="border:none;" align="left">consensus</td><td style="border:none;" align="left">ensemble (all)</td><td style="border:none;" align="left">0.67</td><td style="border:none;" align="left">20.6</td><td style="border:none;" align="left">15.2</td><td style="border:none;" align="left">0.82</td></tr></tbody></table></table-wrap><p>Although our consensus model performed well on the
+blind set, the
+RMSE remained relatively high. We analyzed the absolute error distribution
+across the training set to explore potential approaches for improving
+our model performance. We used the model trained only on the training
+set to calculate the prediction error on the training set. <xref rid="fig5" ref-type="fig">Figure <xref rid="fig5" ref-type="fig">5</xref></xref> presents the details
+of the absolute error distribution. On the training set, 21% of the
+data points have absolute errors greater than 10, 10% exceed 15, and
+4% exceed 20; this may represent some noise in the training data.
+In general, deep learning models tend to achieve very low prediction
+errors on the training set because of overfitting. We believe that
+certain factors such as experimental noise or intrinsic compound complexity
+make the data difficult to learn. Nowadays, denoising learning techniques<sup><xref ref-type="bibr" rid="ref46">46</xref>&#x02212;<xref ref-type="bibr" rid="ref51">51</xref></sup> have been employed in deep learning models to improve performance,
+using specialized algorithms to identify noisy data and correct or
+filter it out. We anticipate that applying such methods will further
+improve our model&#x02019;s performance in the future.</p><fig id="fig5" position="float"><label>Figure 5</label><caption><p>Distribution of absolute
+errors in the training set.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="tx4c00560_0005" id="gr5" position="float"/></fig></sec><sec id="sec3.3"><title>Uncertainty Analysis</title><p>Uncertainty estimation has been
+an increasingly popular research topic with the advancement of artificial
+intelligence as researchers often seek to gauge the confidence of
+their predictions in a systematic manner.<sup><xref ref-type="bibr" rid="ref52">52</xref>&#x02212;<xref ref-type="bibr" rid="ref55">55</xref></sup> In this work, our consensus model
+serves not only to improve the performance of our submission but also
+to provide an estimate of prediction uncertainty. The standard deviation
+captures the variability across the multiple predictions; it also
+provides an effective estimate of predictive uncertainty for an ensemble
+model.<sup><xref ref-type="bibr" rid="ref56">56</xref></sup> The mean value of all predictions
+is employed as the final result, and the standard deviation is utilized
+as the uncertainty measure for our consensus model. <xref rid="fig6" ref-type="fig">Figure <xref rid="fig6" ref-type="fig">6</xref></xref>a illustrates the relationship
+between the uncertainty and the RMSE on the test set. Statistically,
+the prediction RMSE increases as model uncertainty rises. Notably,
+over 80% of compounds in the test set exhibit an average RMSE below
+20 when using an uncertainty threshold of 15. This suggests that compounds
+with higher estimated uncertainty tend to have larger prediction errors
+compared to those with lower uncertainty. However, the compound-level
+relationship between prediction error and uncertainty shows a weak
+correlation (PCC = 0.28), which may be influenced by rare structures,
+such as the molecule [Cl<sup>&#x02013;</sup>].[Cl<sup>&#x02013;</sup>].[Hg<sup>2+</sup>] that has an error of 84.73. These findings indicate
+that the uncertainty derived from our consensus model can potentially
+serve as a reference for assessing the quality of our predictions.
+Determining the applicability domains of a model is crucial, and various
+distance-to-model metrics can be employed for this purpose.<sup><xref ref-type="bibr" rid="ref57">57</xref>,<xref ref-type="bibr" rid="ref58">58</xref></sup> Tetko et al. conducted a systematic study of the effectiveness of
+using the standard deviation of model predictions to characterize
+the distance from an ensemble model. Their findings indicate that
+standard deviation is an efficient metric for quantifying the distance
+to the models.<sup><xref ref-type="bibr" rid="ref59">59</xref></sup> We believe that the standard
+deviation derived from our consensus model can similarly serve as
+a valuable metric for evaluating its applicability to domains.</p><fig id="fig6" position="float"><label>Figure 6</label><caption><p>Uncertainty
+analysis on the Tox24 test set in offline testing.
+(a) Subset RMSE vs uncertainty threshold. The corresponding uncertainty
+serves as the threshold to screen samples with lower uncertainty,
+and then RMSE is calculated on these subset data; (b) individual absolute
+prediction error vs uncertainty values.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="tx4c00560_0006" id="gr6" position="float"/></fig></sec></sec><sec id="sec4"><title>Conclusions</title><p>TTR is an important component of TH transport
+and homeostasis in
+blood and target tissues. In this challenge, leveraging the biggest
+data set provided by the organizers, we developed a consensus model
+that integrates sPhysNet, KANO, and GGAP-CPI to predict TTR binding
+affinity. Each model utilized a different level of molecular information
+including 2D topology, 3D geometry, and protein&#x02013;ligand interactions.
+This consensus model performed well on the blind test set, yielding
+an RMSE of 20.8 and ranking in the top 5. After the leaderboard set
+was incorporated into our training data, the RMSE improved to 20.6.
+The results demonstrate that combining three regression models enhances
+the predictive accuracy. Furthermore, by analyzing the model uncertainty,
+we observed that both the RMSE and the prediction interval error increased
+as uncertainty rose. Thus, the uncertainty measure provided by our
+consensus model might be a useful reference for estimating the confidence
+associated with each prediction. An analysis of the error distribution
+in the training set revealed that many molecules exhibit large prediction
+errors, suggesting that the deep learning model does not fit them
+very well for the training data, potentially due to experimental noise.
+We believe that model performance can be further improved by employing
+a denoising learning method, incorporating additional data, and integrating
+more structure-based information as prior knowledge. We are confident
+that this consensus model can serve as a valuable resource for identifying
+potential TTR binders and predicting their binding affinities in silico.</p></sec></body><back><notes notes-type="data-availability" id="notes4"><title>Data Availability Statement</title><p>All data sets
+and source codes in this work are available. The data set from Tox24
+challenge can be accessed at <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://ochem.eu/static/challenge.do">https://ochem.eu/static/challenge.do</uri>. All source codes for data set preparation, model training, and
+model usage are at <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/xiaolinpan/tox24_challenge_submission_yingkai_lab">https://github.com/xiaolinpan/tox24_challenge_submission_yingkai_lab</uri>.</p></notes><notes id="notes1" notes-type="si"><title>Supporting Information Available</title><p>The Supporting Information is
+available free of charge at <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/10.1021/acs.chemrestox.4c00560?goto=supporting-info">https://pubs.acs.org/doi/10.1021/acs.chemrestox.4c00560</ext-link>.<list id="silist" list-type="simple"><list-item><p>Description of training for the baseline models; correlation
+of absolute errors among sPhysNet, KANO, and GGAP-CPI on the blind
+test set; visualization of 12 molecules with the highest absolute
+errors on the blind test set for three models; top 10 scaffolds with
+counts of active and inactive compounds in the Tox24 training set,
+the Tox24 leaderboard set, and the Tox24 test set; top 10 scaffolds
+in the Tox24 training set; top 10 scaffolds in the Tox24 leaderboard
+set; top 10 scaffolds in the Tox24 test set; statistical significance
+of pairwise RMSE performances on the test set using the training set
+and leaderboard test set for model training; and number of cross-validation
+folds (out of 5) in which the model listed in the &#x0201c;Model&#x0201d;
+column achieved a lower RMSE compared to the other models (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00560/suppl_file/tx4c00560_si_001.pdf">PDF</ext-link>)</p></list-item></list></p></notes><sec sec-type="supplementary-material"><title>Supplementary Material</title><supplementary-material content-type="local-data" id="sifile1"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="tx4c00560_si_001.pdf"><caption><p>tx4c00560_si_001.pdf</p></caption></media></supplementary-material></sec><notes notes-type="" id="notes3"><title>Author Contributions</title><p><sup>&#x02225;</sup> X. P.,
+Y. G., and W. Z. contributed equally.</p></notes><notes notes-type="COI-statement" id="notes2"><p>The authors
+declare no competing financial interest.</p></notes><ack><title>Acknowledgments</title><p>This work was supported by the U.S.
+National Institutes
+of Health (R35-GM127040). We thank NYU-ITS and NYUADU for providing
+computational resources.</p></ack><ref-list><title>References</title><ref id="ref1"><mixed-citation publication-type="journal" id="cit1"><name><surname>Richardson</surname><given-names>S. J.</given-names></name>
+<article-title>Cell and
+Molecular Biology of Transthyretin and Thyroid Hormones</article-title>. <source>Int. Rev. Cytol.</source>
+<year>2007</year>, <volume>258</volume>, <fpage>137</fpage>&#x02013;<lpage>193</lpage>. <pub-id pub-id-type="doi">10.1016/S0074-7696(07)58003-4</pub-id>.<pub-id pub-id-type="pmid">17338921</pub-id>
+</mixed-citation></ref><ref id="ref2"><mixed-citation publication-type="journal" id="cit2"><name><surname>Cao</surname><given-names>J.</given-names></name>; <name><surname>Guo</surname><given-names>L.-H.</given-names></name>; <name><surname>Wan</surname><given-names>B.</given-names></name>; <name><surname>Wei</surname><given-names>Y.</given-names></name>
+<article-title>In vitro fluorescence
+displacement investigation of thyroxine transport disruption by bisphenol
+A</article-title>. <source>J. Environ. Sci.</source>
+<year>2011</year>, <volume>23</volume> (<issue>2</issue>), <fpage>315</fpage>&#x02013;<lpage>321</lpage>. <pub-id pub-id-type="doi">10.1016/S1001-0742(10)60408-1</pub-id>.</mixed-citation></ref><ref id="ref3"><mixed-citation publication-type="journal" id="cit3"><name><surname>Cao</surname><given-names>J.</given-names></name>; <name><surname>Lin</surname><given-names>Y.</given-names></name>; <name><surname>Guo</surname><given-names>L.-H.</given-names></name>; <name><surname>Zhang</surname><given-names>A.-Q.</given-names></name>; <name><surname>Wei</surname><given-names>Y.</given-names></name>; <name><surname>Yang</surname><given-names>Y.</given-names></name>
+<article-title>Structure-based
+investigation on the binding interaction of hydroxylated polybrominated
+diphenyl ethers with thyroxine transport proteins</article-title>. <source>Toxicology</source>
+<year>2010</year>, <volume>277</volume> (<issue>1</issue>), <fpage>20</fpage>&#x02013;<lpage>28</lpage>. <pub-id pub-id-type="doi">10.1016/j.tox.2010.08.012</pub-id>.<pub-id pub-id-type="pmid">20804816</pub-id>
+</mixed-citation></ref><ref id="ref4"><mixed-citation publication-type="journal" id="cit4"><name><surname>Monta&#x000f1;o</surname><given-names>M.</given-names></name>; <name><surname>Cocco</surname><given-names>E.</given-names></name>; <name><surname>Guignard</surname><given-names>C.</given-names></name>; <name><surname>Marsh</surname><given-names>G.</given-names></name>; <name><surname>Hoffmann</surname><given-names>L.</given-names></name>; <name><surname>Bergman</surname><given-names>&#x000c5;.</given-names></name>; <name><surname>Gutleb</surname><given-names>A. C.</given-names></name>; <name><surname>Murk</surname><given-names>A. J.</given-names></name>
+<article-title>New Approaches to
+Assess the Transthyretin Binding Capacity of Bioactivated Thyroid
+Hormone Disruptors</article-title>. <source>Toxicol. Sci.</source>
+<year>2012</year>, <volume>130</volume> (<issue>1</issue>), <fpage>94</fpage>&#x02013;<lpage>105</lpage>. <pub-id pub-id-type="doi">10.1093/toxsci/kfs228</pub-id>.<pub-id pub-id-type="pmid">22859314</pub-id>
+</mixed-citation></ref><ref id="ref5"><mixed-citation publication-type="journal" id="cit5"><name><surname>Ren</surname><given-names>X. M.</given-names></name>; <name><surname>Guo</surname><given-names>L.-H.</given-names></name>
+<article-title>Assessment of the
+Binding of Hydroxylated Polybrominated
+Diphenyl Ethers to Thyroid Hormone Transport Proteins Using a Site-Specific
+Fluorescence Probe</article-title>. <source>Environ. Sci. Technol.</source>
+<year>2012</year>, <volume>46</volume> (<issue>8</issue>), <fpage>4633</fpage>&#x02013;<lpage>4640</lpage>. <pub-id pub-id-type="doi">10.1021/es2046074</pub-id>.<pub-id pub-id-type="pmid">22482873</pub-id>
+</mixed-citation></ref><ref id="ref6"><mixed-citation publication-type="journal" id="cit6"><name><surname>Lans</surname><given-names>M. C.</given-names></name>; <name><surname>Klasson-Wehler</surname><given-names>E.</given-names></name>; <name><surname>Willemsen</surname><given-names>M.</given-names></name>; <name><surname>Meussen</surname><given-names>E.</given-names></name>; <name><surname>Safe</surname><given-names>S.</given-names></name>; <name><surname>Brouwer</surname><given-names>A.</given-names></name>
+<article-title>Structure-dependent,
+competitive interaction of hydroxy-polychlorobiphenyls,
+-dibenzo-p-dioxins and -dibenzofurans with human transthyretin</article-title>. <source>Chem.-Biol. Interact.</source>
+<year>1993</year>, <volume>88</volume> (<issue>1</issue>), <fpage>7</fpage>&#x02013;<lpage>21</lpage>. <pub-id pub-id-type="doi">10.1016/0009-2797(93)90081-9</pub-id>.<pub-id pub-id-type="pmid">8330325</pub-id>
+</mixed-citation></ref><ref id="ref7"><mixed-citation publication-type="journal" id="cit7"><name><surname>Kovarich</surname><given-names>S.</given-names></name>; <name><surname>Papa</surname><given-names>E.</given-names></name>; <name><surname>Gramatica</surname><given-names>P.</given-names></name>
+<article-title>QSAR classification
+models for the
+prediction of endocrine disrupting activity of brominated flame retardants</article-title>. <source>J. Hazard. Mater.</source>
+<year>2011</year>, <volume>190</volume> (<issue>1</issue>), <fpage>106</fpage>&#x02013;<lpage>112</lpage>. <pub-id pub-id-type="doi">10.1016/j.jhazmat.2011.03.008</pub-id>.<pub-id pub-id-type="pmid">21454014</pub-id>
+</mixed-citation></ref><ref id="ref8"><mixed-citation publication-type="journal" id="cit8"><name><surname>Rybacka</surname><given-names>A.</given-names></name>; <name><surname>Rud&#x000e9;n</surname><given-names>C.</given-names></name>; <name><surname>Tetko</surname><given-names>I. V.</given-names></name>; <name><surname>Andersson</surname><given-names>P. L.</given-names></name>
+<article-title>Identifying
+potential endocrine disruptors among industrial chemicals and their
+metabolites &#x02013; development and evaluation of in silico tools</article-title>. <source>Chemosphere</source>
+<year>2015</year>, <volume>139</volume>, <fpage>372</fpage>&#x02013;<lpage>378</lpage>. <pub-id pub-id-type="doi">10.1016/j.chemosphere.2015.07.036</pub-id>.<pub-id pub-id-type="pmid">26210185</pub-id>
+</mixed-citation></ref><ref id="ref9"><mixed-citation publication-type="journal" id="cit9"><name><surname>Sushko</surname><given-names>I.</given-names></name>; <name><surname>Novotarskyi</surname><given-names>S.</given-names></name>; <name><surname>K&#x000f6;rner</surname><given-names>R.</given-names></name>; <name><surname>Pandey</surname><given-names>A. K.</given-names></name>; <name><surname>Rupp</surname><given-names>M.</given-names></name>; <name><surname>Teetz</surname><given-names>W.</given-names></name>; <name><surname>Brandmaier</surname><given-names>S.</given-names></name>; <name><surname>Abdelaziz</surname><given-names>A.</given-names></name>; <name><surname>Prokopenko</surname><given-names>V. V.</given-names></name>; <name><surname>Tanchuk</surname><given-names>V. Y.</given-names></name>; et al. <article-title>Online chemical modeling
+environment (OCHEM): web platform for data storage, model development
+and publishing of chemical information</article-title>. <source>J. Comput.-Aided
+Mol. Des.</source>
+<year>2011</year>, <volume>25</volume> (<issue>6</issue>), <fpage>533</fpage>&#x02013;<lpage>554</lpage>. <pub-id pub-id-type="doi">10.1007/s10822-011-9440-2</pub-id>.<pub-id pub-id-type="pmid">21660515</pub-id>
+</mixed-citation></ref><ref id="ref10"><mixed-citation publication-type="journal" id="cit10"><name><surname>Yang</surname><given-names>X.</given-names></name>; <name><surname>Ou</surname><given-names>W.</given-names></name>; <name><surname>Xi</surname><given-names>Y.</given-names></name>; <name><surname>Chen</surname><given-names>J.</given-names></name>; <name><surname>Liu</surname><given-names>H.</given-names></name>
+<article-title>Emerging Polar Phenolic
+Disinfection Byproducts Are High-Affinity Human Transthyretin Disruptors:
+An in Vitro and in Silico Study</article-title>. <source>Environ. Sci.
+Technol.</source>
+<year>2019</year>, <volume>53</volume> (<issue>12</issue>), <fpage>7019</fpage>&#x02013;<lpage>7028</lpage>. <pub-id pub-id-type="doi">10.1021/acs.est.9b00218</pub-id>.<pub-id pub-id-type="pmid">31117532</pub-id>
+</mixed-citation></ref><ref id="ref11"><mixed-citation publication-type="journal" id="cit11"><name><surname>Yang</surname><given-names>X.</given-names></name>; <name><surname>Ou</surname><given-names>W.</given-names></name>; <name><surname>Zhao</surname><given-names>S.</given-names></name>; <name><surname>Xi</surname><given-names>Y.</given-names></name>; <name><surname>Wang</surname><given-names>L.</given-names></name>; <name><surname>Liu</surname><given-names>H.</given-names></name>
+<article-title>Rapid Screening
+of Human Transthyretin Disruptors through a Tiered in Silico Approach</article-title>. <source>ACS Sustainable Chem. Eng.</source>
+<year>2021</year>, <volume>9</volume> (<issue>16</issue>), <fpage>5661</fpage>&#x02013;<lpage>5672</lpage>. <pub-id pub-id-type="doi">10.1021/acssuschemeng.1c00680</pub-id>.</mixed-citation></ref><ref id="ref12"><mixed-citation publication-type="journal" id="cit12"><name><surname>Zhang</surname><given-names>J.</given-names></name>; <name><surname>Begum</surname><given-names>A.</given-names></name>; <name><surname>Br&#x000e4;nnstr&#x000f6;m</surname><given-names>K.</given-names></name>; <name><surname>Grundstr&#x000f6;m</surname><given-names>C.</given-names></name>; <name><surname>Iakovleva</surname><given-names>I.</given-names></name>; <name><surname>Olofsson</surname><given-names>A.</given-names></name>; <name><surname>Sauer-Eriksson</surname><given-names>A. E.</given-names></name>; <name><surname>Andersson</surname><given-names>P. L.</given-names></name>
+<article-title>Structure-Based Virtual Screening Protocol for in Silico
+Identification of Potential Thyroid Disrupting Chemicals Targeting
+Transthyretin</article-title>. <source>Environ. Sci. Technol.</source>
+<year>2016</year>, <volume>50</volume> (<issue>21</issue>), <fpage>11984</fpage>&#x02013;<lpage>11993</lpage>. <pub-id pub-id-type="doi">10.1021/acs.est.6b02771</pub-id>.<pub-id pub-id-type="pmid">27668830</pub-id>
+</mixed-citation></ref><ref id="ref13"><mixed-citation publication-type="journal" id="cit13"><name><surname>Pan</surname><given-names>X.</given-names></name>; <name><surname>Wang</surname><given-names>H.</given-names></name>; <name><surname>Li</surname><given-names>C.</given-names></name>; <name><surname>Zhang</surname><given-names>J. Z. H.</given-names></name>; <name><surname>Ji</surname><given-names>C.</given-names></name>
+<article-title>MolGpka: A
+Web Server for Small Molecule p<italic>K</italic><sub>a</sub> Prediction
+Using a Graph-Convolutional Neural Network</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2021</year>, <volume>61</volume> (<issue>7</issue>), <fpage>3159</fpage>&#x02013;<lpage>3165</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.1c00075</pub-id>.<pub-id pub-id-type="pmid">34251213</pub-id>
+</mixed-citation></ref><ref id="ref14"><mixed-citation publication-type="journal" id="cit14"><name><surname>Unke</surname><given-names>O. T.</given-names></name>; <name><surname>Meuwly</surname><given-names>M.</given-names></name>
+<article-title>PhysNet: A Neural Network for Predicting
+Energies,
+Forces, Dipole Moments, and Partial Charges</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2019</year>, <volume>15</volume> (<issue>6</issue>), <fpage>3678</fpage>&#x02013;<lpage>3693</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jctc.9b00181</pub-id>.<pub-id pub-id-type="pmid">31042390</pub-id>
+</mixed-citation></ref><ref id="ref15"><mixed-citation publication-type="journal" id="cit15"><name><surname>Pan</surname><given-names>X.</given-names></name>; <name><surname>Zhao</surname><given-names>F.</given-names></name>; <name><surname>Zhang</surname><given-names>Y.</given-names></name>; <name><surname>Wang</surname><given-names>X.</given-names></name>; <name><surname>Xiao</surname><given-names>X.</given-names></name>; <name><surname>Zhang</surname><given-names>J. Z. H.</given-names></name>; <name><surname>Ji</surname><given-names>C.</given-names></name>
+<article-title>MolTaut: A Tool for the Rapid Generation
+of Favorable Tautomer in Aqueous Solution</article-title>. <source>J.
+Chem. Inf. Model.</source>
+<year>2023</year>, <volume>63</volume> (<issue>7</issue>), <fpage>1833</fpage>&#x02013;<lpage>1840</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.2c01393</pub-id>.<pub-id pub-id-type="pmid">36939644</pub-id>
+</mixed-citation></ref><ref id="ref16"><mixed-citation publication-type="journal" id="cit16"><name><surname>Heid</surname><given-names>E.</given-names></name>; <name><surname>Greenman</surname><given-names>K. P.</given-names></name>; <name><surname>Chung</surname><given-names>Y.</given-names></name>; <name><surname>Li</surname><given-names>S.-C.</given-names></name>; <name><surname>Graff</surname><given-names>D. E.</given-names></name>; <name><surname>Vermeire</surname><given-names>F. H.</given-names></name>; <name><surname>Wu</surname><given-names>H.</given-names></name>; <name><surname>Green</surname><given-names>W. H.</given-names></name>; <name><surname>McGill</surname><given-names>C. J.</given-names></name>
+<article-title>Chemprop:
+A Machine Learning Package for Chemical Property Prediction</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2024</year>, <volume>64</volume> (<issue>1</issue>), <fpage>9</fpage>&#x02013;<lpage>17</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.3c01250</pub-id>.<pub-id pub-id-type="pmid">38147829</pub-id>
+</mixed-citation></ref><ref id="ref17"><mixed-citation publication-type="journal" id="cit17"><name><surname>Lu</surname><given-names>J.</given-names></name>; <name><surname>Zhang</surname><given-names>Y.</given-names></name>
+<article-title>Unified Deep Learning Model for Multitask Reaction
+Predictions with
+Explanation</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2022</year>, <volume>62</volume> (<issue>6</issue>), <fpage>1376</fpage>&#x02013;<lpage>1387</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.1c01467</pub-id>.<pub-id pub-id-type="pmid">35266390</pub-id>
+</mixed-citation></ref><ref id="ref18"><mixed-citation publication-type="journal" id="cit18"><name><surname>Zhang</surname><given-names>X.</given-names></name>; <name><surname>Mao</surname><given-names>J.</given-names></name>; <name><surname>Wei</surname><given-names>M.</given-names></name>; <name><surname>Qi</surname><given-names>Y.</given-names></name>; <name><surname>Zhang</surname><given-names>J. Z. H.</given-names></name>
+<article-title>HergSPred: Accurate
+Classification of hERG Blockers/Nonblockers with Machine-Learning
+Models</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2022</year>, <volume>62</volume> (<issue>8</issue>), <fpage>1830</fpage>&#x02013;<lpage>1839</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.2c00256</pub-id>.<pub-id pub-id-type="pmid">35404051</pub-id>
+</mixed-citation></ref><ref id="ref19"><mixed-citation publication-type="journal" id="cit19"><name><surname>Wei</surname><given-names>M.</given-names></name>; <name><surname>Zhang</surname><given-names>X.</given-names></name>; <name><surname>Pan</surname><given-names>X.</given-names></name>; <name><surname>Wang</surname><given-names>B.</given-names></name>; <name><surname>Ji</surname><given-names>C.</given-names></name>; <name><surname>Qi</surname><given-names>Y.</given-names></name>; <name><surname>Zhang</surname><given-names>J. Z. H.</given-names></name>
+<article-title>HobPre: accurate prediction of human oral bioavailability
+for small molecules</article-title>. <source>J. Cheminf.</source>
+<year>2022</year>, <volume>14</volume> (<issue>1</issue>), <fpage>1</fpage><pub-id pub-id-type="doi">10.1186/s13321-021-00580-6</pub-id>.</mixed-citation></ref><ref id="ref20"><mixed-citation publication-type="journal" id="cit20"><name><surname>Tetko</surname><given-names>I. V.</given-names></name>; <name><surname>Karpov</surname><given-names>P.</given-names></name>; <name><surname>Van Deursen</surname><given-names>R.</given-names></name>; <name><surname>Godin</surname><given-names>G.</given-names></name>
+<article-title>State-of-the-art augmented
+NLP transformer models for direct and single-step retrosynthesis</article-title>. <source>Nat. Commun.</source>
+<year>2020</year>, <volume>11</volume> (<issue>1</issue>), <fpage>5575</fpage><pub-id pub-id-type="doi">10.1038/s41467-020-19266-y</pub-id>.<pub-id pub-id-type="pmid">33149154</pub-id>
+</mixed-citation></ref><ref id="ref21"><mixed-citation publication-type="journal" id="cit21"><name><surname>Karpov</surname><given-names>P.</given-names></name>; <name><surname>Godin</surname><given-names>G.</given-names></name>; <name><surname>Tetko</surname><given-names>I. V.</given-names></name>
+<article-title>Transformer-CNN:
+Swiss knife for
+QSAR modeling and interpretation</article-title>. <source>J. Cheminf.</source>
+<year>2020</year>, <volume>12</volume> (<issue>1</issue>), <fpage>17</fpage><pub-id pub-id-type="doi">10.1186/s13321-020-00423-w</pub-id>.</mixed-citation></ref><ref id="ref22"><mixed-citation publication-type="journal" id="cit22"><name><surname>Cai</surname><given-names>L.</given-names></name>; <name><surname>Han</surname><given-names>F.</given-names></name>; <name><surname>Ji</surname><given-names>B.</given-names></name>; <name><surname>He</surname><given-names>X.</given-names></name>; <name><surname>Wang</surname><given-names>L.</given-names></name>; <name><surname>Niu</surname><given-names>T.</given-names></name>; <name><surname>Zhai</surname><given-names>J.</given-names></name>; <name><surname>Wang</surname><given-names>J.</given-names></name>
+<article-title>In Silico
+Screening of Natural Flavonoids
+against 3-Chymotrypsin-like Protease of SARS-CoV-2 Using Machine Learning
+and Molecular Modeling</article-title>. <source>Molecules</source>
+<year>2023</year>, <volume>28</volume> (<issue>24</issue>), <fpage>8034</fpage><pub-id pub-id-type="doi">10.3390/molecules28248034</pub-id>.<pub-id pub-id-type="pmid">38138524</pub-id>
+</mixed-citation></ref><ref id="ref23"><mixed-citation publication-type="journal" id="cit23"><name><surname>Tetko</surname><given-names>I. V.</given-names></name>
+<article-title>Tox24 Challenge</article-title>. <source>Chem. Res. Toxicol.</source>
+<year>2024</year>, <volume>37</volume> (<issue>6</issue>), <fpage>825</fpage>&#x02013;<lpage>826</lpage>. <pub-id pub-id-type="doi">10.1021/acs.chemrestox.4c00192</pub-id>.<pub-id pub-id-type="pmid">38769907</pub-id>
+</mixed-citation></ref><ref id="ref24"><mixed-citation publication-type="journal" id="cit24"><name><surname>Eytcheson</surname><given-names>S. A.</given-names></name>; <name><surname>Zosel</surname><given-names>A. D.</given-names></name>; <name><surname>Olker</surname><given-names>J. H.</given-names></name>; <name><surname>Hornung</surname><given-names>M. W.</given-names></name>; <name><surname>Degitz</surname><given-names>S. J.</given-names></name>
+<article-title>Screening
+the ToxCast Chemical Libraries for Binding to Transthyretin</article-title>. <source>Chem. Res. Toxicol.</source>
+<year>2024</year>, <volume>37</volume> (<issue>10</issue>), <fpage>1670</fpage>&#x02013;<lpage>1681</lpage>. <pub-id pub-id-type="doi">10.1021/acs.chemrestox.4c00215</pub-id>.<pub-id pub-id-type="pmid">39258767</pub-id>
+</mixed-citation></ref><ref id="ref25"><mixed-citation publication-type="journal" id="cit25"><name><surname>Lu</surname><given-names>J.</given-names></name>; <name><surname>Xia</surname><given-names>S.</given-names></name>; <name><surname>Lu</surname><given-names>J.</given-names></name>; <name><surname>Zhang</surname><given-names>Y.</given-names></name>
+<article-title>Dataset Construction to Explore Chemical
+Space with 3D Geometry and Deep Learning</article-title>. <source>J.
+Chem. Inf. Model.</source>
+<year>2021</year>, <volume>61</volume> (<issue>3</issue>), <fpage>1095</fpage>&#x02013;<lpage>1104</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.1c00007</pub-id>.<pub-id pub-id-type="pmid">33683885</pub-id>
+</mixed-citation></ref><ref id="ref26"><mixed-citation publication-type="journal" id="cit26"><name><surname>Xia</surname><given-names>S.</given-names></name>; <name><surname>Zhang</surname><given-names>D.</given-names></name>; <name><surname>Zhang</surname><given-names>Y.</given-names></name>
+<article-title>Multitask Deep Ensemble Prediction
+of Molecular Energetics in Solution: From Quantum Mechanics to Experimental
+Properties</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2023</year>, <volume>19</volume> (<issue>2</issue>), <fpage>659</fpage>&#x02013;<lpage>668</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jctc.2c01024</pub-id>.</mixed-citation></ref><ref id="ref27"><mixed-citation publication-type="journal" id="cit27"><name><surname>Fang</surname><given-names>Y.</given-names></name>; <name><surname>Zhang</surname><given-names>Q.</given-names></name>; <name><surname>Zhang</surname><given-names>N.</given-names></name>; <name><surname>Chen</surname><given-names>Z.</given-names></name>; <name><surname>Zhuang</surname><given-names>X.</given-names></name>; <name><surname>Shao</surname><given-names>X.</given-names></name>; <name><surname>Fan</surname><given-names>X.</given-names></name>; <name><surname>Chen</surname><given-names>H.</given-names></name>
+<article-title>Knowledge graph-enhanced
+molecular contrastive learning with functional prompt</article-title>. <source>Nat. Mach. Intell.</source>
+<year>2023</year>, <volume>5</volume> (<issue>5</issue>), <fpage>542</fpage>&#x02013;<lpage>553</lpage>. <pub-id pub-id-type="doi">10.1038/s42256-023-00654-0</pub-id>.</mixed-citation></ref><ref id="ref28"><mixed-citation publication-type="journal" id="cit28"><name><surname>Gu</surname><given-names>Y.</given-names></name>; <name><surname>Xia</surname><given-names>S.</given-names></name>; <name><surname>Ouyang</surname><given-names>Q.</given-names></name>; <name><surname>Zhang</surname><given-names>Y.</given-names></name>
+<article-title>Complex structure-free
+compound-protein
+interaction prediction for mitigating activity cliff-induced discrepancies
+and integrated bioactivity learning</article-title>. <source>chemrxiv</source>
+<year>2025</year>, <pub-id pub-id-type="doi">10.26434/chemrxiv-2025-96p6b</pub-id>.</mixed-citation></ref><ref id="ref29"><mixed-citation publication-type="journal" id="cit29"><name><surname>Eytcheson</surname><given-names>S. A.</given-names></name>; <name><surname>Tetko</surname><given-names>I. V.</given-names></name>
+<article-title>Which modern AI
+methods provide accurate predictions
+of toxicological endpoints? Analysis of Tox24 challenge results</article-title>. <source>chemrxiv</source>
+<year>2025</year>, <pub-id pub-id-type="doi">10.26434/chemrxiv-2025-7k7x3</pub-id>.</mixed-citation></ref><ref id="ref30"><mixed-citation publication-type="journal" id="cit30"><name><surname>Riniker</surname><given-names>S.</given-names></name>; <name><surname>Landrum</surname><given-names>G. A.</given-names></name>
+<article-title>Better Informed Distance Geometry: Using What We Know
+To Improve Conformation Generation</article-title>. <source>J. Chem.
+Inf. Model.</source>
+<year>2015</year>, <volume>55</volume> (<issue>12</issue>), <fpage>2562</fpage>&#x02013;<lpage>2574</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.5b00654</pub-id>.<pub-id pub-id-type="pmid">26575315</pub-id>
+</mixed-citation></ref><ref id="ref31"><mixed-citation publication-type="journal" id="cit31"><name><surname>Wang</surname><given-names>S.</given-names></name>; <name><surname>Witek</surname><given-names>J.</given-names></name>; <name><surname>Landrum</surname><given-names>G. A.</given-names></name>; <name><surname>Riniker</surname><given-names>S.</given-names></name>
+<article-title>Improving Conformer
+Generation for Small Rings and Macrocycles Based on Distance Geometry
+and Experimental Torsional-Angle Preferences</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2020</year>, <volume>60</volume> (<issue>4</issue>), <fpage>2044</fpage>&#x02013;<lpage>2058</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.0c00025</pub-id>.<pub-id pub-id-type="pmid">32155061</pub-id>
+</mixed-citation></ref><ref id="ref32"><mixed-citation publication-type="journal" id="cit32"><name><surname>Halgren</surname><given-names>T. A.</given-names></name>
+<article-title>Merck molecular
+force field. I. Basis, form, scope, parameterization, and performance
+of MMFF94</article-title>. <source>J. Comput. Chem.</source>
+<year>1996</year>, <volume>17</volume> (<issue>5&#x02013;6</issue>), <fpage>490</fpage>&#x02013;<lpage>519</lpage>. <pub-id pub-id-type="doi">10.1002/(SICI)1096-987X(199604)17:5/6&#x0003c;490::AID-JCC1&#x0003e;3.0.CO;2-P</pub-id>.</mixed-citation></ref><ref id="ref33"><mixed-citation publication-type="journal" id="cit33"><name><surname>Halgren</surname><given-names>T. A.</given-names></name>
+<article-title>Merck molecular
+force field. II. MMFF94 van der Waals and electrostatic parameters
+for intermolecular interactions</article-title>. <source>J. Comput.
+Chem.</source>
+<year>1996</year>, <volume>17</volume> (<issue>5&#x02013;6</issue>), <fpage>520</fpage>&#x02013;<lpage>552</lpage>. <pub-id pub-id-type="doi">10.1002/(SICI)1096-987X(199604)17:5/6&#x0003c;520::AID-JCC2&#x0003e;3.0.CO;2-W</pub-id>.</mixed-citation></ref><ref id="ref34"><mixed-citation publication-type="journal" id="cit34"><name><surname>Halgren</surname><given-names>T. A.</given-names></name>
+<article-title>Merck molecular
+force field. III. Molecular geometries and vibrational frequencies
+for MMFF94</article-title>. <source>J. Comput. Chem.</source>
+<year>1996</year>, <volume>17</volume> (<issue>5&#x02013;6</issue>), <fpage>553</fpage>&#x02013;<lpage>586</lpage>. <pub-id pub-id-type="doi">10.1002/(SICI)1096-987X(199604)17:5/6&#x0003c;553::AID-JCC3&#x0003e;3.0.CO;2-T</pub-id>.</mixed-citation></ref><ref id="ref35"><mixed-citation publication-type="journal" id="cit35"><name><surname>Halgren</surname><given-names>T. A.</given-names></name>; <name><surname>Merck molecular force
+field</surname><given-names>V.</given-names></name>
+<article-title>Extension of MMFF94 using experimental
+data, additional computational data, and empirical rules</article-title>. <source>J. Comput. Chem.</source>
+<year>1996</year>, <volume>17</volume> (<issue>5&#x02013;6</issue>), <fpage>616</fpage>&#x02013;<lpage>641</lpage>. <pub-id pub-id-type="doi">10.1002/(SICI)1096-987X(199604)17:5/6&#x0003c;616::AID-JCC5&#x0003e;3.0.CO;2-X</pub-id>.</mixed-citation></ref><ref id="ref36"><mixed-citation publication-type="journal" id="cit36"><name><surname>Halgren</surname><given-names>T. A.</given-names></name>; <name><surname>Nachbar</surname><given-names>R. B.</given-names></name>
+<article-title>Merck molecular
+force field. IV. conformational energies
+and geometries for MMFF94</article-title>. <source>J. Comput. Chem.</source>
+<year>1996</year>, <volume>17</volume> (<issue>5&#x02013;6</issue>), <fpage>587</fpage>&#x02013;<lpage>615</lpage>. <pub-id pub-id-type="doi">10.1002/(SICI)1096-987X(199604)17:5/6&#x0003c;587::AID-JCC4&#x0003e;3.0.CO;2-Q</pub-id>.</mixed-citation></ref><ref id="ref37"><mixed-citation publication-type="journal" id="cit37"><name><surname>Lin</surname><given-names>Z.</given-names></name>; <name><surname>Akin</surname><given-names>H.</given-names></name>; <name><surname>Rao</surname><given-names>R.</given-names></name>; <name><surname>Hie</surname><given-names>B.</given-names></name>; <name><surname>Zhu</surname><given-names>Z.</given-names></name>; <name><surname>Lu</surname><given-names>W.</given-names></name>; <name><surname>Smetanin</surname><given-names>N.</given-names></name>; <name><surname>Verkuil</surname><given-names>R.</given-names></name>; <name><surname>Kabeli</surname><given-names>O.</given-names></name>; <name><surname>Shmueli</surname><given-names>Y.</given-names></name>; et al. <article-title>Evolutionary-scale prediction
+of atomic-level protein structure with
+a language model</article-title>. <source>Science</source>
+<year>2023</year>, <volume>379</volume> (<issue>6637</issue>), <fpage>1123</fpage>&#x02013;<lpage>1130</lpage>. <pub-id pub-id-type="doi">10.1126/science.ade2574</pub-id>.<pub-id pub-id-type="pmid">36927031</pub-id>
+</mixed-citation></ref><ref id="ref38"><mixed-citation publication-type="book" id="cit38"><person-group person-group-type="allauthors"><name><surname>Jamasb</surname><given-names>A.</given-names></name>; <name><surname>Vi&#x000f1;as Torn&#x000e9;</surname><given-names>R.</given-names></name>; <name><surname>Ma</surname><given-names>E.</given-names></name>; <name><surname>Du</surname><given-names>Y.</given-names></name>; <name><surname>Harris</surname><given-names>C.</given-names></name>; <name><surname>Huang</surname><given-names>K.</given-names></name>; <name><surname>Hall</surname><given-names>D.</given-names></name>; <name><surname>Lio</surname><given-names>P.</given-names></name>; <name><surname>Blundell</surname><given-names>T.</given-names></name></person-group><article-title>Graphein-a python library for geometric deep learning
+and network analysis on biomolecular structures and interaction networks</article-title>. <source>Advances in Neural Information Processing Systems</source>; <publisher-name>Curran Associates, Inc.</publisher-name>, <year>2022</year>; Vol. <volume>35</volume>; pp <fpage>27153</fpage>&#x02013;<lpage>27167</lpage>.</mixed-citation></ref><ref id="ref39"><mixed-citation publication-type="journal" id="cit39"><name><surname>Jumper</surname><given-names>J.</given-names></name>; <name><surname>Evans</surname><given-names>R.</given-names></name>; <name><surname>Pritzel</surname><given-names>A.</given-names></name>; <name><surname>Green</surname><given-names>T.</given-names></name>; <name><surname>Figurnov</surname><given-names>M.</given-names></name>; <name><surname>Ronneberger</surname><given-names>O.</given-names></name>; <name><surname>Tunyasuvunakool</surname><given-names>K.</given-names></name>; <name><surname>Bates</surname><given-names>R.</given-names></name>; <name><surname>&#x0017d;&#x000ed;dek</surname><given-names>A.</given-names></name>; <name><surname>Potapenko</surname><given-names>A.</given-names></name>; et al. <article-title>Highly accurate protein structure prediction
+with AlphaFold</article-title>. <source>Nature</source>
+<year>2021</year>, <volume>596</volume> (<issue>7873</issue>), <fpage>583</fpage>&#x02013;<lpage>589</lpage>. <pub-id pub-id-type="doi">10.1038/s41586-021-03819-2</pub-id>.<pub-id pub-id-type="pmid">34265844</pub-id>
+</mixed-citation></ref><ref id="ref40"><mixed-citation publication-type="journal" id="cit40"><name><surname>Gu</surname><given-names>Y.</given-names></name>; <name><surname>Li</surname><given-names>J.</given-names></name>; <name><surname>Kang</surname><given-names>H.</given-names></name>; <name><surname>Zhang</surname><given-names>B.</given-names></name>; <name><surname>Zheng</surname><given-names>S.</given-names></name>
+<article-title>Employing Molecular
+Conformations for Ligand-Based Virtual Screening with Equivariant
+Graph Neural Network and Deep Multiple Instance Learning</article-title>. <source>Molecules</source>
+<year>2023</year>, <volume>28</volume> (<issue>16</issue>), <fpage>5982</fpage><pub-id pub-id-type="doi">10.3390/molecules28165982</pub-id>.<pub-id pub-id-type="pmid">37630234</pub-id>
+</mixed-citation></ref><ref id="ref41"><mixed-citation publication-type="journal" id="cit41"><name><surname>B&#x000e9;quignon</surname><given-names>O. J.
+M.</given-names></name>; <name><surname>Bongers</surname><given-names>B. J.</given-names></name>; <name><surname>Jespers</surname><given-names>W.</given-names></name>; <name><surname>Ijzerman</surname><given-names>A. P.</given-names></name>; <name><surname>van der
+Water</surname><given-names>B.</given-names></name>; <name><surname>van Westen</surname><given-names>G. J. P.</given-names></name>
+<article-title>Papyrus: a large-scale curated dataset
+aimed at bioactivity predictions</article-title>. <source>J. Cheminf.</source>
+<year>2023</year>, <volume>15</volume> (<issue>1</issue>), <fpage>3</fpage><pub-id pub-id-type="doi">10.1186/s13321-022-00672-x</pub-id>.</mixed-citation></ref><ref id="ref42"><mixed-citation publication-type="journal" id="cit42"><name><surname>Wildman</surname><given-names>S. A.</given-names></name>; <name><surname>Crippen</surname><given-names>G. M.</given-names></name>
+<article-title>Prediction of physicochemical
+parameters by atomic
+contributions</article-title>. <source>J. Chem. Inf. Comput. Sci.</source>
+<year>1999</year>, <volume>39</volume> (<issue>5</issue>), <fpage>868</fpage>&#x02013;<lpage>873</lpage>. <pub-id pub-id-type="doi">10.1021/ci990307l</pub-id>.</mixed-citation></ref><ref id="ref43"><mixed-citation publication-type="journal" id="cit43"><name><surname>Brenk</surname><given-names>R.</given-names></name>; <name><surname>Schipani</surname><given-names>A.</given-names></name>; <name><surname>James</surname><given-names>D.</given-names></name>; <name><surname>Krasowski</surname><given-names>A.</given-names></name>; <name><surname>Gilbert</surname><given-names>I. H.</given-names></name>; <name><surname>Frearson</surname><given-names>J.</given-names></name>; <name><surname>Wyatt</surname><given-names>P. G.</given-names></name>
+<article-title>Lessons
+learnt from
+assembling screening libraries for drug discovery for neglected diseases</article-title>. <source>ChemMedChem</source>
+<year>2008</year>, <volume>3</volume> (<issue>3</issue>), <fpage>435</fpage>&#x02013;<lpage>444</lpage>. <pub-id pub-id-type="doi">10.1002/cmdc.200700139</pub-id>.<pub-id pub-id-type="pmid">18064617</pub-id>
+</mixed-citation></ref><ref id="ref44"><mixed-citation publication-type="journal" id="cit44"><name><surname>Bickerton</surname><given-names>G. R.</given-names></name>; <name><surname>Paolini</surname><given-names>G. V.</given-names></name>; <name><surname>Besnard</surname><given-names>J.</given-names></name>; <name><surname>Muresan</surname><given-names>S.</given-names></name>; <name><surname>Hopkins</surname><given-names>A. L.</given-names></name>
+<article-title>Quantifying
+the chemical beauty of drugs</article-title>. <source>Nat. Chem.</source>
+<year>2012</year>, <volume>4</volume> (<issue>2</issue>), <fpage>90</fpage>&#x02013;<lpage>98</lpage>. <pub-id pub-id-type="doi">10.1038/nchem.1243</pub-id>.<pub-id pub-id-type="pmid">22270643</pub-id>
+</mixed-citation></ref><ref id="ref45"><mixed-citation publication-type="journal" id="cit45"><name><surname>Rogers</surname><given-names>D.</given-names></name>; <name><surname>Hahn</surname><given-names>M.</given-names></name>
+<article-title>Extended-Connectivity
+Fingerprints</article-title>. <source>J. Chem.
+Inf. Model.</source>
+<year>2010</year>, <volume>50</volume> (<issue>5</issue>), <fpage>742</fpage>&#x02013;<lpage>754</lpage>. <pub-id pub-id-type="doi">10.1021/ci100050t</pub-id>.<pub-id pub-id-type="pmid">20426451</pub-id>
+</mixed-citation></ref><ref id="ref46"><mixed-citation publication-type="journal" id="cit46"><name><surname>Adrian</surname><given-names>M.</given-names></name>; <name><surname>Chung</surname><given-names>Y.</given-names></name>; <name><surname>Cheng</surname><given-names>A. C.</given-names></name>
+<article-title>Denoising
+Drug Discovery Data for
+Improved Absorption, Distribution, Metabolism, Excretion, and Toxicity
+Property Prediction</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2024</year>, <volume>64</volume> (<issue>16</issue>), <fpage>6324</fpage>&#x02013;<lpage>6337</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.4c00639</pub-id>.<pub-id pub-id-type="pmid">39108185</pub-id>
+</mixed-citation></ref><ref id="ref47"><mixed-citation publication-type="conf-proc" id="cit47"><person-group person-group-type="allauthors"><name><surname>Tan</surname><given-names>C.</given-names></name>; <name><surname>Xia</surname><given-names>J.</given-names></name>; <name><surname>Wu</surname><given-names>L.</given-names></name>; <name><surname>Li</surname><given-names>S. Z.</given-names></name></person-group><article-title>Co-learning: Learning from
+noisy labels with self-supervision</article-title>. In <source>Proceedings
+of the 29th ACM International Conference
+on Multimedia</source>, <year>2021</year>; pp <fpage>1405</fpage>&#x02013;<lpage>1413</lpage>.</mixed-citation></ref><ref id="ref48"><mixed-citation publication-type="journal" id="cit48"><name><surname>Yuan</surname><given-names>B.</given-names></name>; <name><surname>Hormozdiari</surname><given-names>F.</given-names></name>; <name><surname>McLean</surname><given-names>C. Y.</given-names></name>; <name><surname>Cosentino</surname><given-names>J.</given-names></name>
+<article-title>An Empirical
+Study of ML-based Phenotyping and Denoising for Improved Genomic Discovery</article-title>. <source>bioRxiv</source>
+<year>2022</year>, <pub-id pub-id-type="doi">10.1101/2022.11.17.516907</pub-id>.</mixed-citation></ref><ref id="ref49"><mixed-citation publication-type="conf-proc" id="cit49"><person-group person-group-type="allauthors"><name><surname>Li</surname><given-names>Y.</given-names></name>; <name><surname>Han</surname><given-names>H.</given-names></name>; <name><surname>Shan</surname><given-names>S.</given-names></name>; <name><surname>Chen</surname><given-names>X.</given-names></name></person-group><article-title>DISC: Learning from Noisy Labels via Dynamic Instance-Specific
+Selection and Correction</article-title>. In <source>2023 IEEE/CVF
+Conference on Computer Vision and Pattern Recognition (CVPR)</source>, <year>2023</year>; pp <fpage>24070</fpage>&#x02013;<lpage>24079</lpage>. 17&#x02013;24 June 2023.<pub-id pub-id-type="doi">10.1109/CVPR52729.2023.02305</pub-id>.</mixed-citation></ref><ref id="ref50"><mixed-citation publication-type="journal" id="cit50"><name><surname>Song</surname><given-names>H.</given-names></name>; <name><surname>Kim</surname><given-names>M.</given-names></name>; <name><surname>Park</surname><given-names>D.</given-names></name>; <name><surname>Shin</surname><given-names>Y.</given-names></name>; <name><surname>Lee</surname><given-names>J. G.</given-names></name>
+<article-title>Learning From Noisy
+Labels With Deep Neural Networks: A Survey</article-title>. <source>IEEE Transact. Neural Networks Learn. Syst.</source>
+<year>2023</year>, <volume>34</volume> (<issue>11</issue>), <fpage>8135</fpage>&#x02013;<lpage>8153</lpage>. <pub-id pub-id-type="doi">10.1109/TNNLS.2022.3152527</pub-id>.</mixed-citation></ref><ref id="ref51"><mixed-citation publication-type="conf-proc" id="cit51"><person-group person-group-type="allauthors"><name><surname>Bai</surname><given-names>Y.</given-names></name>; <name><surname>Yang</surname><given-names>E.</given-names></name>; <name><surname>Han</surname><given-names>B.</given-names></name>; <name><surname>Yang</surname><given-names>Y.</given-names></name>; <name><surname>Li</surname><given-names>J.</given-names></name>; <name><surname>Mao</surname><given-names>Y.</given-names></name>; <name><surname>Niu</surname><given-names>G.</given-names></name>; <name><surname>Liu</surname><given-names>T.</given-names></name></person-group><article-title>Understanding
+and improving early stopping for learning with noisy labels</article-title>. In <source>Proceedings of the 35th International Conference on
+Neural Information Processing Systems</source>, <year>2024</year>.</mixed-citation></ref><ref id="ref52"><mixed-citation publication-type="book" id="cit52"><person-group person-group-type="allauthors"><name><surname>Lakshminarayanan</surname><given-names>B.</given-names></name>; <name><surname>Pritzel</surname><given-names>A.</given-names></name>; <name><surname>Blundell</surname><given-names>C.</given-names></name></person-group><article-title>Simple
+and scalable predictive uncertainty estimation using deep ensembles</article-title>. <source>Advances in neural information processing systems</source>; <publisher-name>Curran Associates Inc.</publisher-name>, <year>2017</year>; Vol <volume>30</volume>.</mixed-citation></ref><ref id="ref53"><mixed-citation publication-type="journal" id="cit53"><name><surname>Lubbers</surname><given-names>N.</given-names></name>; <name><surname>Smith</surname><given-names>J. S.</given-names></name>; <name><surname>Barros</surname><given-names>K.</given-names></name>
+<article-title>Hierarchical modeling of molecular
+energies using a deep neural network</article-title>. <source>J. Chem.
+Phys.</source>
+<year>2018</year>, <volume>148</volume> (<issue>24</issue>), <fpage>241715</fpage><pub-id pub-id-type="doi">10.1063/1.5011181</pub-id>.<pub-id pub-id-type="pmid">29960311</pub-id>
+</mixed-citation></ref><ref id="ref54"><mixed-citation publication-type="journal" id="cit54"><name><surname>Gasteiger</surname><given-names>J.</given-names></name>; <name><surname>Giri</surname><given-names>S.</given-names></name>; <name><surname>Margraf</surname><given-names>J. T.</given-names></name>; <name><surname>G&#x000fc;nnemann</surname><given-names>S.</given-names></name>
+<article-title>Fast and uncertainty-aware
+directional message passing for non-equilibrium molecules</article-title>. <source>arXiv</source>
+<year>2020</year>, <fpage>arXiv:2011.14115v3</fpage><pub-id pub-id-type="doi">10.48550/arXiv.2011.14115</pub-id>.</mixed-citation></ref><ref id="ref55"><mixed-citation publication-type="journal" id="cit55"><name><surname>Soleimany</surname><given-names>A. P.</given-names></name>; <name><surname>Amini</surname><given-names>A.</given-names></name>; <name><surname>Goldman</surname><given-names>S.</given-names></name>; <name><surname>Rus</surname><given-names>D.</given-names></name>; <name><surname>Bhatia</surname><given-names>S. N.</given-names></name>; <name><surname>Coley</surname><given-names>C. W.</given-names></name>
+<article-title>Evidential Deep Learning for Guided
+Molecular Property
+Prediction and Discovery</article-title>. <source>ACS Cent. Sci.</source>
+<year>2021</year>, <volume>7</volume> (<issue>8</issue>), <fpage>1356</fpage>&#x02013;<lpage>1367</lpage>. <pub-id pub-id-type="doi">10.1021/acscentsci.1c00546</pub-id>.<pub-id pub-id-type="pmid">34471680</pub-id>
+</mixed-citation></ref><ref id="ref56"><mixed-citation publication-type="journal" id="cit56"><name><surname>Gawlikowski</surname><given-names>J.</given-names></name>; <name><surname>Tassi</surname><given-names>C. R. N.</given-names></name>; <name><surname>Ali</surname><given-names>M.</given-names></name>; <name><surname>Lee</surname><given-names>J.</given-names></name>; <name><surname>Humt</surname><given-names>M.</given-names></name>; <name><surname>Feng</surname><given-names>J.</given-names></name>; <name><surname>Kruspe</surname><given-names>A.</given-names></name>; <name><surname>Triebel</surname><given-names>R.</given-names></name>; <name><surname>Jung</surname><given-names>P.</given-names></name>; <name><surname>Roscher</surname><given-names>R.</given-names></name>; et al. <article-title>A survey of uncertainty
+in deep neural networks</article-title>. <source>Artif. Intell. Rev.</source>
+<year>2023</year>, <volume>56</volume> (<issue>1</issue>), <fpage>1513</fpage>&#x02013;<lpage>1589</lpage>. <pub-id pub-id-type="doi">10.1007/s10462-023-10562-9</pub-id>.</mixed-citation></ref><ref id="ref57"><mixed-citation publication-type="journal" id="cit57"><name><surname>Zhu</surname><given-names>H.</given-names></name>; <name><surname>Tropsha</surname><given-names>A.</given-names></name>; <name><surname>Fourches</surname><given-names>D.</given-names></name>; <name><surname>Varnek</surname><given-names>A.</given-names></name>; <name><surname>Papa</surname><given-names>E.</given-names></name>; <name><surname>Gramatica</surname><given-names>P.</given-names></name>; <name><surname>&#x000d6;berg</surname><given-names>T.</given-names></name>; <name><surname>Dao</surname><given-names>P.</given-names></name>; <name><surname>Cherkasov</surname><given-names>A.</given-names></name>; <name><surname>Tetko</surname><given-names>I. V.</given-names></name>
+<article-title>Combinatorial QSAR Modeling of Chemical Toxicants Tested
+against Tetrahymena pyriformis</article-title>. <source>J. Chem. Inf.
+Model.</source>
+<year>2008</year>, <volume>48</volume> (<issue>4</issue>), <fpage>766</fpage>&#x02013;<lpage>784</lpage>. <pub-id pub-id-type="doi">10.1021/ci700443v</pub-id>.<pub-id pub-id-type="pmid">18311912</pub-id>
+</mixed-citation></ref><ref id="ref58"><mixed-citation publication-type="journal" id="cit58"><name><surname>Zhong</surname><given-names>S.</given-names></name>; <name><surname>Lambeth</surname><given-names>D. R.</given-names></name>; <name><surname>Igou</surname><given-names>T. K.</given-names></name>; <name><surname>Chen</surname><given-names>Y.</given-names></name>
+<article-title>Enlarging Applicability
+Domain of Quantitative Structure&#x02013;Activity Relationship Models
+through Uncertainty-Based Active Learning</article-title>. <source>ACS
+ES&#x00026;T Eng.</source>
+<year>2022</year>, <volume>2</volume> (<issue>7</issue>), <fpage>1211</fpage>&#x02013;<lpage>1220</lpage>. <pub-id pub-id-type="doi">10.1021/acsestengg.1c00434</pub-id>.</mixed-citation></ref><ref id="ref59"><mixed-citation publication-type="journal" id="cit59"><name><surname>Tetko</surname><given-names>I. V.</given-names></name>; <name><surname>Sushko</surname><given-names>I.</given-names></name>; <name><surname>Pandey</surname><given-names>A. K.</given-names></name>; <name><surname>Zhu</surname><given-names>H.</given-names></name>; <name><surname>Tropsha</surname><given-names>A.</given-names></name>; <name><surname>Papa</surname><given-names>E.</given-names></name>; <name><surname>&#x000d6;berg</surname><given-names>T.</given-names></name>; <name><surname>Todeschini</surname><given-names>R.</given-names></name>; <name><surname>Fourches</surname><given-names>D.</given-names></name>; <name><surname>Varnek</surname><given-names>A.</given-names></name>
+<article-title>Critical Assessment of QSAR Models
+of Environmental Toxicity against Tetrahymena pyriformis: Focusing
+on Applicability Domain and Overfitting by Variable Selection</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2008</year>, <volume>48</volume> (<issue>9</issue>), <fpage>1733</fpage>&#x02013;<lpage>1746</lpage>. <pub-id pub-id-type="doi">10.1021/ci800151m</pub-id>.<pub-id pub-id-type="pmid">18729318</pub-id>
+</mixed-citation></ref></ref-list></back></article>

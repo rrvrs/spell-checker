@@ -1,0 +1,726 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Sci Rep</journal-id><journal-id journal-id-type="iso-abbrev">Sci Rep</journal-id><journal-title-group><journal-title>Scientific Reports</journal-title></journal-title-group><issn pub-type="epub">2045-2322</issn><publisher><publisher-name>Nature Publishing Group UK</publisher-name><publisher-loc>London</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">40404823</article-id><article-id pub-id-type="pmc">PMC12098894</article-id>
+<article-id pub-id-type="publisher-id">2643</article-id><article-id pub-id-type="doi">10.1038/s41598-025-02643-2</article-id><article-categories><subj-group subj-group-type="heading"><subject>Article</subject></subj-group></article-categories><title-group><article-title>An intelligent guided troubleshooting method for aircraft based on HybirdRAG</article-title></title-group><contrib-group><contrib contrib-type="author"><name><surname>Xie</surname><given-names>Xiaoyue</given-names></name><xref ref-type="aff" rid="Aff1">1</xref></contrib><contrib contrib-type="author" corresp="yes"><name><surname>Tang</surname><given-names>Xilang</given-names></name><address><email>xxyueamss@163.com</email></address><xref ref-type="aff" rid="Aff1">1</xref></contrib><contrib contrib-type="author"><name><surname>Gu</surname><given-names>Siwei</given-names></name><xref ref-type="aff" rid="Aff2">2</xref></contrib><contrib contrib-type="author"><name><surname>Cui</surname><given-names>Lijie</given-names></name><xref ref-type="aff" rid="Aff1">1</xref></contrib><aff id="Aff1"><label>1</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/00seraz22</institution-id><institution-id institution-id-type="GRID">grid.440645.7</institution-id><institution-id institution-id-type="ISNI">0000 0004 1800 072X</institution-id><institution>School of Equipment Management and UAV Engineering, </institution><institution>Air Force Engineering University, </institution></institution-wrap>Xi&#x02019;an, 710051 China </aff><aff id="Aff2"><label>2</label>Hangzhou Joyful Data Technology Corporation, Hangzhou, 310018 China </aff></contrib-group><pub-date pub-type="epub"><day>22</day><month>5</month><year>2025</year></pub-date><pub-date pub-type="pmc-release"><day>22</day><month>5</month><year>2025</year></pub-date><pub-date pub-type="collection"><year>2025</year></pub-date><volume>15</volume><elocation-id>17752</elocation-id><history><date date-type="received"><day>23</day><month>12</month><year>2024</year></date><date date-type="accepted"><day>14</day><month>5</month><year>2025</year></date></history><permissions><copyright-statement>&#x000a9; The Author(s) 2025</copyright-statement><copyright-year>2025</copyright-year><license><ali:license_ref specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p><bold>Open Access</bold> This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article&#x02019;s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article&#x02019;s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link>.</license-p></license></permissions><abstract id="Abs1"><p id="Par5">To enhance aircraft fault diagnosis efficiency, this paper proposes HybridRAG, an intelligent-guided troubleshooting framework that integrates knowledge graphs and large language models (LLMs). Unlike conventional retrieval-augmented generation (RAG) methods that rely on single-modal retrieval, HybridRAG adopts a multi-dimensional retrieval strategy, combining graph-based reasoning with both vector-based and BM25-based text retrieval techniques. This hybrid approach ensures comprehensive extraction of relevant information from both unstructured text and structured fault graphs, enhancing diagnostic precision, relevance, and robustness. Experimental results demonstrate that HybridRAG achieves an F1 score improvement of at least 4% and reduces hallucination rates by over 7% compared to mainstream RAG baselines. These advancements, combined with its unique integration of multi-modal retrieval, position HybridRAG as a novel framework for addressing complex aircraft maintenance challenges. Additionally, the paper presents an agent-based intelligent troubleshooting assistant that supports more interactive, adaptive, and flexible diagnostic Q&#x00026;A, providing maintenance personnel with a significant advanced intelligent, context-aware diagnostic tool.</p><sec><title>Supplementary Information</title><p>The online version contains supplementary material available at 10.1038/s41598-025-02643-2.</p></sec></abstract><kwd-group xml:lang="en"><title>Keywords</title><kwd>Knowledge graph</kwd><kwd>HybridRAG</kwd><kwd>Multi-Dimensional retrieval</kwd><kwd>Guided troubleshooting</kwd></kwd-group><kwd-group kwd-group-type="npg-subject"><title>Subject terms</title><kwd>Aerospace engineering</kwd><kwd>Computer science</kwd><kwd>Information technology</kwd></kwd-group><funding-group><award-group><funding-source><institution-wrap><institution-id institution-id-type="FundRef">https://doi.org/10.13039/501100001809</institution-id><institution>National Natural Science Foundation of China</institution></institution-wrap></funding-source><award-id>72201276</award-id><principal-award-recipient><name><surname>Tang</surname><given-names>Xilang</given-names></name></principal-award-recipient></award-group></funding-group><custom-meta-group><custom-meta><meta-name>issue-copyright-statement</meta-name><meta-value>&#x000a9; Springer Nature Limited 2025</meta-value></custom-meta></custom-meta-group></article-meta></front><body><sec id="Sec1"><title>Introduction</title><p id="Par6">As aircraft systems grow increasingly complex, fault diagnosis has become a typical knowledge-intensive activity. When facing unknown faults, maintenance personnel often spend considerable time analyzing technical documents pertaining to these anomalies. These documents provide essential details about system component composition, signal parameter variations, and historical fault case records. This time-consuming process leads to extended equipment downtime, significantly affecting aircraft availability and operational efficiency. Consequently, enhancing the efficiency and accuracy of fault diagnosis is crucial for ensuring aircraft stability and reliability.</p><p id="Par7">To address these challenges, various intelligent diagnostic methods have been developed to assist maintenance personnel in more efficient fault identification and resolution. Early approaches primarily relied on rule-based system (RBS) and case-based reasoning (CBR). RBS achieves efficient diagnosis through predefined logic trees, proving particularly effective for routine fault scenarios<sup><xref ref-type="bibr" rid="CR1">1</xref></sup>. However, its rigid knowledge representation imposes limitations when handling novel complex faults. In contrast, CBR leverages historical data similarity matching mechanisms, demonstrating stronger adaptability in unknown fault diagnosis<sup><xref ref-type="bibr" rid="CR2">2</xref></sup>, though its diagnostic accuracy remains highly dependent on the quality and comprehensiveness of the case database. To synergize the strengths of both approaches, hybrid expert systems emerged, integrating rule-based reasoning with case-based reasoning<sup><xref ref-type="bibr" rid="CR3">3</xref></sup>. This combination improved diagnostic accuracy and adaptability, but it struggled to cope with the escalating complexity of aircraft systems and the ever-expanding of technical knowledge required.</p><p id="Par8">The emergence of knowledge graph (KG) technology has driven extensive research into domain-specific expert system construction<sup><xref ref-type="bibr" rid="CR4">4</xref>&#x02013;<xref ref-type="bibr" rid="CR7">7</xref></sup>. By establishing structured KGs paired with advanced reasoning algorithms, these systems help maintenance personnel reduce time spent on fault information retrieval, accelerate fault localization rapidly localizing faults, and enhance diagnostic efficiency during equipment operations. However, while knowledge graph-based systems streamline information retrieval and partially boost productivity, they ultimately remain constrained as static retrieval tools<sup><xref ref-type="bibr" rid="CR8">8</xref>&#x02013;<xref ref-type="bibr" rid="CR10">10</xref></sup>, lacking flexible natural multi-turn dialogue mechanisms and unable to provide step-by-step guidance for complex fault isolation. For instance, when diagnosing abnormal brake pressure, traditional KG approaches execute static entity resolution&#x02014;mapping symptoms to related entities such as brake assemblies, hydraulic sensors, and control valves&#x02014;followed by template-driven slot filling to retrieve relevant fault cases. This retrieval paradigm, relying on keyword matching or fixed vector similarity metrics, fails to incorporate dynamic contextual cues or adapt reasoning paths through interactive dialogue. These limitations motivate the integration of large language models (LLMs), which offer flexible reasoning capabilities and natural multi-turn conversations for guided troubleshooting. Despite LLMs&#x02019; well-documented success in general NLP tasks<sup><xref ref-type="bibr" rid="CR11">11</xref>&#x02013;<xref ref-type="bibr" rid="CR14">14</xref></sup>, their direct deployment for aircraft maintenance diagnostics faces significant barriers. Primary among these are inherent domain knowledge deficiencies &#x02014; particularly regarding aircraft-specific fault patterns &#x02014; that may compromise diagnostic reliability<sup><xref ref-type="bibr" rid="CR15">15</xref></sup>, coupled with the intrinsic opacity of neural network decision-making processes that undermines traceability in safety-critical scenarios<sup><xref ref-type="bibr" rid="CR16">16</xref></sup>. In comparison, domain-specific KGs (e.g., AFKG<sup><xref ref-type="bibr" rid="CR7">7</xref></sup>, AAKG<sup><xref ref-type="bibr" rid="CR17">17</xref></sup>) provide structured knowledge representation via graph databases with transparent reasoning processes. This complementary relationship&#x02014;combing KG&#x02019;s structured expertise with LLM&#x02019;s adaptive reasoning&#x02014;creates a promising framework for aircraft fault diagnosis, enabling maintenance personnel to leverage both technologies for substantial improvements in troubleshooting accuracy and operational efficiency.</p><p id="Par9">Current methodologies for enhancing LLMs with KGs fall into two paradigms: knowledge infusion and retrieval-augmented generation (RAG). The knowledge infusion approach embeds KG elements directly into LLM pretraining to enhance domain knowledge retention, but faces critical constraints including the massive parameter sizes of modern LLMs requiring prohibitive computational resources for iterative updates, and the inherent data disparity between compact domain-specific KGs and LLMs&#x02019; pretraining corpora that mandates meticulous prompt engineering to activate latent knowledge<sup><xref ref-type="bibr" rid="CR18">18</xref></sup>. In contrast, RAG dynamically fetches relevant KG subgraphs during inference, supplementing LLMs with contextual knowledge<sup><xref ref-type="bibr" rid="CR19">19</xref></sup>, and demonstrates several advantages on real-time knowledge integration synchronization, cost-effective deployment, and auditable decision trails through explicit retrieval evidence<sup><xref ref-type="bibr" rid="CR20">20</xref>,<xref ref-type="bibr" rid="CR21">21</xref></sup>. These benefits make RAG particularly suited for aviation maintenance&#x02019;s dynamic environments. Given the cost-effectiveness and need for transparency in fault diagnosis, we prioritize RAG over KG embedding for our approach. Although a hybrid framework combining KG embedding and retrieval-based augmentation, as proposed in<sup><xref ref-type="bibr" rid="CR22">22</xref></sup>, appears promising for integrating structured knowledge into large models, it has notable drawbacks. Its effectiveness hinges on high-quality domain-specific KGs, which require continuous updates. Adapting the LLM to evolving knowledge still demands parameter adjustments, incurring significant computational costs. Moreover, unlike aviation assembly, our focus is on real-time fault diagnosis, where users need interactive, step-by-step guidance. This process relies on LLMs&#x02019; general reasoning and conversational abilities, which can be hindered by subgraph embedding, limiting flexibility and adaptability in troubleshooting. Therefore, we aim to enhance fault diagnosis accuracy and streamline troubleshooting guidance by designing an advanced retrieval-augmented strategy while preserving the reasoning capabilities of the underlying large language model.</p><p id="Par10">This study presents HybridRAG, an intelligent guided troubleshooting framework for aircraft maintenance that achieves an optimal balance between diagnostic accuracy with transparency. The framework establishes a domain-specific fault knowledge graph and implements a novel multi-dimensional retrieval strategy combining vector, BM25 text, and graph retrieval techniques. This hybrid approach comprehensively extracts and synthesizes relevant information from both unstructured text and structured graph data, enabling large language models to deliver more precise and context-aware fault diagnosis. Experimental results demonstrate that our hybrid retrieval strategy, outperforms several mainstream RAG methods in both diagnostic accuracy and interpretability. Furthermore, we develop an agent-based intelligent troubleshooting assistant within this framework, incorporating advanced interactive capabilities to provide adaptive, step-by-step fault localization guidance. Practical evaluations across multiple scenarios, especially in complex fault situations. In summary, this paper primarily contributes in three main areas.</p><p id="Par11">
+<list list-type="bullet"><list-item><p id="Par12">Addressing efficiency and accuracy issues in aircraft fault diagnosis: The paper addresses challenges encountered by traditional knowledge-based expert systems in complex diagnostic scenarios, such as rigid interaction methods and a lack of multi-round dialogue capabilities. It also considers potential accuracy and authenticity issues that may arise when applying large language models directly.</p></list-item><list-item><p id="Par13">Proposing a HybirdRAG-based intelligent guided troubleshooting framework: This framework merges the creation of domain-specific fault knowledge graphs with multi-dimensional retrieval strategies, including vector, BM25 text, and a novel graph exploration retrieval algorithm and highly optimized algorithm implementation.</p></list-item><list-item><p id="Par14">Significant advantages demonstrated in comparative experiments: Experimental results demonstrate that HybirdRAG achieves superior performance compared to mainstream RAG baselines in terms of fault diagnosis accuracy and hallucination. Moreover, particularly outstanding effectiveness in complex fault scenarios through our developed agent-based intelligent assistant, which provides adaptive, context-aware troubleshooting guidance.</p></list-item></list>
+</p></sec><sec id="Sec2"><title>Related work</title><p id="Par15">RAG techniques have gained widespread adoption across multiple domains where output reliability is critical, including clinical decision support<sup><xref ref-type="bibr" rid="CR23">23</xref></sup>, financial risk assessment<sup><xref ref-type="bibr" rid="CR24">24</xref></sup>, and personalized education<sup><xref ref-type="bibr" rid="CR25">25</xref></sup>. In aviation maintenance, RAG-based systems have demonstrated potential in accelerating fault diagnosis through the integration of historical case databases with technical documentation. However, their application in safety-critical aviation environments remains challenged by the need for more sophisticated retrieval architectures.</p><p id="Par16">Conventional RAG implementations, such as VectorRAG and BM25-based RAG, primarily employ dense vector similarity search or keyword matching for knowledge retrieval. These methods excel in terms of efficiency and semantic/keyword alignment capabilities. For instance, VectorRAG can identify semantically similar historical cases (e.g., &#x0201c;engine temperature anomaly&#x0201d;) within seconds, while BM25 effectively retrieves precise sections from maintenance manuals based on specific fault codes (e.g., &#x0201c;ECAM code 501&#x0201d;). However, their principal limitation lies in the inability to explicitly represent causal or structural dependencies within knowledge bases<sup><xref ref-type="bibr" rid="CR26">26</xref></sup>, often yielding disconnected troubleshooting suggestions. For instance, while VectorRAG might concurrently retrieve fragments related to &#x0201c;fuel pump failure&#x0201d; and &#x0201c;ECAM warning code 501&#x0201d;, it cannot generate a causal path like &#x0201c;fuel pump failure &#x02192; insufficient fuel pressure&#x02192;ECAM 501 trigger&#x0201d;. Similarly, BM25, being heavily reliant on keyword matching, struggles to produce engineering-logical troubleshooting workflows (e.g., &#x0201c;check wear-prone components first, then investigate system faults&#x0201d;). Although recent enhancements incorporate metadata filtering or hybrid search algorithms<sup><xref ref-type="bibr" rid="CR27">27</xref>,<xref ref-type="bibr" rid="CR28">28</xref></sup>, these still underperform with heterogeneous aviation corpora, frequently producing inaccurate or incomplete diagnosis analyses.</p><p id="Par17">GraphRAG has consequently emerged as a promising alternative, leveraging structured knowledge graphs to model fault causality for aviation maintenance. The current state-of-the-art in graph retrieval predominantly adopts a subgraph extraction approach, which entity linking first identifies query-relevant nodes followed by local subgraph expansion<sup><xref ref-type="bibr" rid="CR29">29</xref>,<xref ref-type="bibr" rid="CR30">30</xref></sup>. Although effective for capturing localized knowledge, this paradigm frequently fails to preserve long-range dependencies<sup><xref ref-type="bibr" rid="CR31">31</xref>&#x02013;<xref ref-type="bibr" rid="CR33">33</xref></sup>. This limitation has spurred reasoning-enhanced graph methods like ROG<sup><xref ref-type="bibr" rid="CR34">34</xref></sup>, TOG<sup><xref ref-type="bibr" rid="CR35">35</xref></sup> and COE<sup><xref ref-type="bibr" rid="CR36">36</xref></sup>, which combine LLMs with KGs to perform multi-hop inference and path planning&#x02014;capabilities particularly valuable for tracing indirect fault relationships.</p><p id="Par18">Nevertheless, the efficacy of graph-based retrieval remains fundamentally constrained by the knowledge density within the graph structure. Sparse knowledge representations, exemplified by the fault graph in<sup><xref ref-type="bibr" rid="CR7">7</xref></sup>, where &#x0201c;test method&#x0201d; entities contain only abstract attributes (&#x0201c;operations&#x0201d; or &#x0201c;judgments&#x0201d;) without operational specifics (e.g., detailed workflows or procedural examples), often necessitate recourse to original unstructured text data. This underscores the critical need to augment graph retrieval with document retrieval for comprehensive, step-by-step troubleshooting support. Moreover, certain knowledge sources, such as conversational data like operator-expert troubleshooting dialogues, are not well-suited for direct knowledge graph extraction. The resource-intensive nature of KG construction further compounds these limitations, rendering exhaustive knowledge extraction from all documents impractical. Notably, since knowledge updates predominantly occur in textual formats, direct retrieval from unstructured texts frequently proves more efficient than perpetual graph reconstruction. These considerations collectively demonstrate the complementary advantages of integrating knowledge graph and document retrieval for fault diagnosis applications. Consequently, our work proposes a novel multi-dimensional retrieval paradigm within the RAG framework that synergistically combines vector-based, BM25, and graph-based approaches. This integrated strategy is specifically designed to deliver more robust and efficient troubleshooting support by capitalizing on the respective strengths of each retrieval modality.</p><sec id="Sec3"><title>Method</title><p id="Par19">As illustrated in Fig.&#x000a0;<xref rid="Fig1" ref-type="fig">1</xref>., the HybridRAG framework for aircraft guided troubleshooting comprises three core stages: domain knowledge graph construction, multi-dimensional retrieval (graph retrieval, vector retrieval, and BM25 retrieval), and answer generation. The entire process involves that it conducts multi-dimensional retrieval based on the query of user and place the Top-K retrieval results into prompting instructions of the large language model (LLM), which then generates an answer based on this foundation and returns it to the user.</p><p id="Par20">
+<fig id="Fig1"><label>Fig. 1</label><caption><p>HybirdRAG-based Troubleshooting Framework for Aircraft.</p></caption><graphic xlink:href="41598_2025_2643_Fig1_HTML" id="d33e367"/></fig>
+</p></sec><sec id="Sec4"><title><italic>A. Construction of Equipment Fault Graph</italic></title><p id="Par21">1) Graph scheme development.</p><p id="Par22">To construct an effective fault knowledge graph, we systematically collected and organized aircraft technical documentation from manufacturers, maintenance facilities, regulatory agencies, and academic institutions. These materials encompass equipment configurations, operational principles, historical fault cases, and maintenance protocols, forming a comprehensive knowledge base that ensures both practical utility and broad applicability. Following the methodology outlined in<sup><xref ref-type="bibr" rid="CR7">7</xref></sup>, we develop an aircraft fault ontology model comprising 5 entity types, 8 relationship categories, and 18 attribute classes across structural, functional, and fault dimensions (Fig.&#x000a0;<xref rid="Fig2" ref-type="fig">2</xref>). Detailed specifications of entities, relationships, and attributes are provided in Appendix A.</p></sec><sec id="Sec5"><title>2) Entity-Relation Triple Extraction</title><p id="Par23">Entity-relation triple extraction identifies entity-relation-entity structures (e.g., &#x0003c; Fault, Location, Unit&#x0003e;) from unstructured text, serving as the critical process in knowledge graph construction. While deep neural networks excel at this task through advanced semantic encoding, conventional two-stage pipelines<sup><xref ref-type="bibr" rid="CR37">37</xref>&#x02013;<xref ref-type="bibr" rid="CR40">40</xref></sup>&#x02014;first detecting entity pairs then classifying relationships as discrete labels&#x02014;demonstrate critical limitations in handling overlapping triples prevalent in aviation maintenance data. These limitations become evident in statements like &#x0201c;The brake system consists of a brake solenoid valve, a brake controller, and a brake device&#x0201d;, which generate multiple triples sharing identical predicate-subject pairs: &#x0003c; brake solenoid valve, isPartOf, brake system&#x0003e;, &#x0003c; brake controller, isPartOf, brake system&#x0003e;, and &#x0003c;&#x02009;brake device, isPartOf, brake system&#x0003e;. The Cascade Binary Tagging Framework (Casrel)<sup><xref ref-type="bibr" rid="CR41">41</xref>,<xref ref-type="bibr" rid="CR42">42</xref></sup> partially addresses this through relationship-as-function modeling but suffers from oversimplified head entity representation, using mere the start and end vectors averages that discard crucial semantic information.</p><p id="Par24">
+<fig id="Fig2"><label>Fig. 2</label><caption><p>The schema of fault knowledge graph. This schema consists of three types&#x02014;entities, relationships, and entity attributes&#x02014;where blue circles represent entity types, orange squares represent entity attributes, and blue arrows represent the relationship types between entities.</p></caption><graphic xlink:href="41598_2025_2643_Fig2_HTML" id="d33e410"/></fig>
+</p><p id="Par25">
+<fig id="Fig3"><label>Fig. 3</label><caption><p>The Hor-Ver-Casrel model architecture. The diagram illustrates the process of extracting a set of &#x0003c;&#x02009;Fault, Cause, Fault &#x0003e;&#x02009;triple instances, where the head entity is &#x0201c;loose the throttle&#x0201d;, the tail entity is &#x0201c;the engine packed up&#x0201d;.</p></caption><graphic xlink:href="41598_2025_2643_Fig3_HTML" id="d33e420"/></fig>
+</p><p id="Par26">To overcome these limitations, we propose the Hor-Ver-CasRel model&#x02014;an enhanced Casrel framework integrating horizontal and vertical contextual information for enriched head entity representation. Horizontal context captures intra-sentence entity relationships through syntactic dependencies, while vertical context models inter-sentence semantic patterns across documents. The synergistic fusion of these dimensions elevates head entity representation quality, as visualized in Fig.&#x000a0;<xref rid="Fig3" ref-type="fig">3</xref>. The algorithm is outlined as follows.</p><p id="Par27">a. Input the text sentences into a pre-trained BERT model, which employs the Transformer architectures as its core encoding mechanism. The model adjusts the weight coefficient matrices based on the inter-character association degree within a sentence to extract word features, that is<disp-formula id="Equ1"><label>1</label><alternatives><tex-math id="d33e429">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$Attention\left( {Q,K,V} \right)=Softmax\left( {\frac{{Q{K^T}}}{{\sqrt {dk} }}} \right)V,$$\end{document}</tex-math><graphic xlink:href="41598_2025_2643_Article_Equ1.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par28">where<inline-formula id="IEq1"><alternatives><tex-math id="d33e437">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$Q,K,V$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq1.gif"/></alternatives></inline-formula>represents the character vector matrix, <inline-formula id="IEq2"><alternatives><tex-math id="d33e443">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$dk$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq2.gif"/></alternatives></inline-formula> represents the embedding dimension, <inline-formula id="IEq3"><alternatives><tex-math id="d33e449">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$Attention$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq3.gif"/></alternatives></inline-formula>denotes the self-attention mechanism function,<inline-formula id="IEq4"><alternatives><tex-math id="d33e455">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$Softmax$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq4.gif"/></alternatives></inline-formula>indicates the activation function, and <italic>T</italic> represents the transpose symbol of the matrix.</p><p id="Par29">b. Based on the vector representation of each character, predict the starting and ending positions of the head entity that<disp-formula id="Equ2"><label>2</label><alternatives><tex-math id="d33e466">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$p_{i}^{{start\_s}}=\sigma \left( {{W_{start}}{F_i}+{b_{start}}} \right)~~$$\end{document}</tex-math><graphic xlink:href="41598_2025_2643_Article_Equ2.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ3"><label>3</label><alternatives><tex-math id="d33e472">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$p_{i}^{{end\_s}}=\sigma \left( {{W_{end}}{F_i}+{b_{end}}} \right)$$\end{document}</tex-math><graphic xlink:href="41598_2025_2643_Article_Equ3.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par30">where <inline-formula id="IEq5"><alternatives><tex-math id="d33e480">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${F_i}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq5.gif"/></alternatives></inline-formula>&#x000a0;represents the vector of the <italic>i&#x000a0;</italic>-th character, <inline-formula id="IEq6"><alternatives><tex-math id="d33e489">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$p_{i}^{{start\_s}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq6.gif"/></alternatives></inline-formula> and <inline-formula id="IEq7"><alternatives><tex-math id="d33e495">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$p_{i}^{{end\_s}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq7.gif"/></alternatives></inline-formula> denote the probability of the <italic>i</italic>-th character being the start position of the head entity, respectively. The weight matrices <inline-formula id="IEq8"><alternatives><tex-math id="d33e505">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${W_{start}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq8.gif"/></alternatives></inline-formula>&#x000a0;and <inline-formula id="IEq9"><alternatives><tex-math id="d33e511">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${W_{end}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq9.gif"/></alternatives></inline-formula>, along with their corresponding biases <inline-formula id="IEq10"><alternatives><tex-math id="d33e517">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${b_{start}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq10.gif"/></alternatives></inline-formula>&#x000a0;and <inline-formula id="IEq11"><alternatives><tex-math id="d33e523">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${b_{end}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq11.gif"/></alternatives></inline-formula>, are employed to predict the head entity&#x02019;s start and end positions, while&#x000a0;<inline-formula id="IEq12"><alternatives><tex-math id="d33e529">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sigma$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq12.gif"/></alternatives></inline-formula> represents the fully connected layer responsible for integrating these predictions into the final output.</p><p id="Par31">c. Based on the head entity predicted in the previous step, let&#x000a0;<inline-formula id="IEq13"><alternatives><tex-math id="d33e537">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${F_a}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq13.gif"/></alternatives></inline-formula>, <inline-formula id="IEq14"><alternatives><tex-math id="d33e543">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${F_b}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq14.gif"/></alternatives></inline-formula> be the word vector at the start and end position of the head entity. Through information fusion in both horizontal and vertical directions, obtain the vector representations for horizontal&#x000a0;<inline-formula id="IEq15"><alternatives><tex-math id="d33e549">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{{sub}}^{{hor}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq15.gif"/></alternatives></inline-formula> and vertical&#x000a0;<inline-formula id="IEq16"><alternatives><tex-math id="d33e555">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{{sub}}^{{ver}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq16.gif"/></alternatives></inline-formula> directions, respectively. That is<disp-formula id="Equ4"><label>4</label><alternatives><tex-math id="d33e561">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{{sub}}^{{hor}}=average\left( {{F_a},{F_b}} \right)$$\end{document}</tex-math><graphic xlink:href="41598_2025_2643_Article_Equ4.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ5"><label>5</label><alternatives><tex-math id="d33e567">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{{sub}}^{{ver}}=\sigma ({W_{sub}}[sum\left( {{F_a}} \right),sum\left( {{F_b}} \right)]+{b_{sub}})$$\end{document}</tex-math><graphic xlink:href="41598_2025_2643_Article_Equ5.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par32">Further, concatenate these two vector to obtain the final information representation of the head entity, <inline-formula id="IEq17"><alternatives><tex-math id="d33e575">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${v_{sub}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq17.gif"/></alternatives></inline-formula>. That is&#x000a0;<disp-formula id="Equ6"><label>6</label><alternatives><tex-math id="d33e581">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${v_{sub}}=v_{{sub}}^{{hor}}+v_{{sub}}^{{ver}}$$\end{document}</tex-math><graphic xlink:href="41598_2025_2643_Article_Equ6.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par33">d. Construct a mapping function for each relation using the vector representation of each character and the predicted head entity for predicting the tail entity, that is<disp-formula id="Equ7"><label>7</label><alternatives><tex-math id="d33e590">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$p_{i}^{{start\_o}}=\sigma \left( {W_{{start}}^{r}\left( {{F_i}+{v_{sub}}} \right)+b_{{start}}^{r}} \right)$$\end{document}</tex-math><graphic xlink:href="41598_2025_2643_Article_Equ7.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ8"><label>8</label><alternatives><tex-math id="d33e596">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$p_{i}^{{end\_o}}=\sigma \left( {W_{{end}}^{r}\left( {{F_i}+{v_{sub}}} \right)+b_{{end}}^{r}} \right)~$$\end{document}</tex-math><graphic xlink:href="41598_2025_2643_Article_Equ8.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par34">where <inline-formula id="IEq18"><alternatives><tex-math id="d33e604">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$p_{i}^{{start\_o}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq18.gif"/></alternatives></inline-formula> and <inline-formula id="IEq19"><alternatives><tex-math id="d33e610">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$p_{i}^{{end\_o}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq19.gif"/></alternatives></inline-formula> denote the start and end position labels of the predicted tail entity for the <italic>i</italic>-th character, The weight matrices <inline-formula id="IEq20"><alternatives><tex-math id="d33e619">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$W_{{start}}^{r}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq20.gif"/></alternatives></inline-formula> and <inline-formula id="IEq21"><alternatives><tex-math id="d33e625">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$W_{{end}}^{r}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq21.gif"/></alternatives></inline-formula>, paired with biases <inline-formula id="IEq22"><alternatives><tex-math id="d33e632">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$b_{{start}}^{r}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq22.gif"/></alternatives></inline-formula>and <inline-formula id="IEq23"><alternatives><tex-math id="d33e638">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$b_{{end}}^{r}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq23.gif"/></alternatives></inline-formula>, predict these positions under the relation mapping.</p><p id="Par35">The Hor-Ver-Casrel model&#x02019;s encoding process is completed via maximum likelihood estimation. The likelihood function combines two components that.<disp-formula id="Equ9"><label>9</label><alternatives><tex-math id="d33e646">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:L\left(\theta\:,\phi\:r\right)={logP}_{\theta\:}\left(s|X\right)+{logP}_{\phi\:r}\left(o|s,X\right)$$\end{document}</tex-math><graphic xlink:href="41598_2025_2643_Article_Equ9.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par36">where <inline-formula id="IEq24"><alternatives><tex-math id="d33e654">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{P}_{\theta\:}\left(s|X\right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq24.gif"/></alternatives></inline-formula> denotes the likelihood function of head entity prediction, <inline-formula id="IEq25"><alternatives><tex-math id="d33e660">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{P}_{\phi\:r}\left(o|s,X\right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq25.gif"/></alternatives></inline-formula> denotes the likelihood function of relation and tail entity prediction. That is<disp-formula id="Equa"><alternatives><tex-math id="d33e666">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{P}_{\theta\:}\left(s|X\right)=\prod\:_{t\in\:\left\{start\_s,end\_s\right\}}\sum\:_{i=1}^{L}{\left({p}_{i}^{t}\right)}^{I\left\{{y}_{i}^{t}=1\right\}}{\left(1-{p}_{i}^{t}\right)}^{I\left\{{y}_{i}^{t}=0\right\}}$$\end{document}</tex-math><graphic xlink:href="41598_2025_2643_Article_Equa.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equb"><alternatives><tex-math id="d33e671">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{P}_{\phi\:r}\left(o|s,X\right)=\prod\:_{t\in\:\left\{start\_o,end\_o\right\}}\sum\:_{i=1}^{L}{\left({p}_{i}^{t}\right)}^{I\left\{{y}_{i}^{t}=1\right\}}{\left(1-{p}_{i}^{t}\right)}^{I\left\{{y}_{i}^{t}=0\right\}}$$\end{document}</tex-math><graphic xlink:href="41598_2025_2643_Article_Equb.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equc"><alternatives><tex-math id="d33e676">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\varvec{\uptheta}}}=\left\{ {{W_{start}},{b_{start}},{W_{end}},{b_{end}}} \right\}, \varphi r=\left\{ {W_{{start}}^{r},b_{{start}}^{r},W_{{end}}^{r},b_{{end}}^{r},{W_{sub}},{b_{sub}}} \right\}$$\end{document}</tex-math><graphic xlink:href="41598_2025_2643_Article_Equc.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par37">Here,&#x000a0;<inline-formula id="IEq26"><alternatives><tex-math id="d33e683">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\{ y_{i}^{t}=1\}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq26.gif"/></alternatives></inline-formula> indicates that the i-th character is the start/end position of the head/tail entity, <italic>L</italic> is the sentence length, <italic>I</italic> is the indicator function.</p><p id="Par38">Using fault knowledge extraction technology, we construct a fault knowledge graph for a certain type of aircraft. Figure&#x000a0;<xref rid="Fig4" ref-type="fig">4</xref>. shows the local fault knowledge graph of a certain type of UAV system, which captures critical information such as system architecture, signal parameters, associated faults, and fault detection methods. The constructed graph provides a foundation for subsequent research on LLM-based reasoning over knowledge graphs.</p><p id="Par39">
+<fig id="Fig4"><label>Fig. 4</label><caption><p>The local fault knowledge graph of a certain type of UAV system, Circles of different colors represent different types of entities, and edges represent different types of relationships, where orange circles denote Test method, red circles denote Fault, blue circles denote Unit, and green circles denote Signal.</p></caption><graphic xlink:href="41598_2025_2643_Fig4_HTML" id="d33e708"/></fig>
+</p></sec><sec id="Sec6"><title>B. HybirdRAG method based on Multi-Dimensional retrieval</title><p id="Par40">The retrieval stage represents a critical component in RAG-based intelligent troubleshooting systems, where its primary objective is to deliver accurate responses to user queries by effectively extracting relevant information from a well-constructed knowledge base. As retrieval performance directly determines the quality of RAG-generated outputs, our methodology employs a novel multi-dimensional approach that synergistically combines three complementary retrieval techniques. Our framework establishes knowledge graph retrieval as the foundational element, leveraging its rich semantic relationships to capture deep fault characteristics. This core retrieval layer is augmented by vector retrieval and BM25 algorithms, which enable efficient extraction of supplementary information from unstructured data sources. To further optimize retrieval quality, we implement a sophisticated re-ranking mechanism that evaluates and refines initially retrieved contexts, ensuring optimal relevance and precision in the final output. This integrated multi-retrieval strategy can screen out the most decisive information from large-scale knowledge repositories, significantly enhancing the efficiency and reliability of fault troubleshooting.</p></sec><sec id="Sec7"><title>1) Primary retrieval based on KG exploration chain</title><p id="Par41">KG retrieval exploits graph structures to identify the most relevant paths for query resolution. Formally, given a query <italic>q</italic>&#x000a0;and domain-specific KG <italic>G</italic>, the retrieval task aims to find the optimal path <inline-formula id="IEq27"><alternatives><tex-math id="d33e724">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${w_z}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq27.gif"/></alternatives></inline-formula> that maximizes the probability of answering <italic>q</italic>:<disp-formula id="Equ10"><label>10</label><alternatives><tex-math id="d33e733">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\text{IR}}=\mathop {\arg \hbox{max} }\limits_{{{w_z}}} P({w_z}|q,G)$$\end{document}</tex-math><graphic xlink:href="41598_2025_2643_Article_Equ10.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par42">Inspired by the graph-based LLM reasoning work<sup><xref ref-type="bibr" rid="CR34">34</xref>&#x02013;<xref ref-type="bibr" rid="CR36">36</xref></sup>, we propose a Chain of Exploration with Planner-Agent for fault knowledge graph. Our strategy leverages a planner-agent framework to orchestrate exploration tasks, dynamically adjusting its exploration task based on intermediate results and ensuring context-aware, efficient traversal of the graph, as detailed in Algorithm 1. The algorithm is structured into three primary phases: planning, execution, and self-reflection. In the planning phase&#x02014;the core component of the algorithm&#x02014;two key tasks are performed. First, the system evaluates the current state of the query and designs a sequence of exploration tasks <inline-formula id="IEq28"><alternatives><tex-math id="d33e748">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\mathcal{B}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq28.gif"/></alternatives></inline-formula> that are tailored to the structure and content of the knowledge graph. These tasks are organized by a planner-agent utilizing the graph exploration tools <inline-formula id="IEq29"><alternatives><tex-math id="d33e754">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\mathcal{T}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq29.gif"/></alternatives></inline-formula>(namely, explore neighbors, explore paths, and explore patterns as detailed in Algorithms 2&#x02013;4). Second, the planner evaluates the current retrieval state to decide whether to refine the exploration strategy, expand the search scope, or finalize the response via the LLM. Once the planner decides to explore further, the algorithm transitions to the execution phase, where the planned tasks are carried out. Following execution, the system enters the self-reflection phase in which the LLM assesses alignment between retrieved information and the initial query . If the current traversal sufficiently addresses the query requirements, the system proceeds with the next planning cycle; otherwise, it dynamically adjusts the exploration strategy&#x02014;either by refining existing tasks or by generating additional tasks to address identified knowledge gaps. This iterative process continues until a conclusive answer is reached or the maximum iteration limit is met.</p><p id="Par43">
+<fig id="Figa"><caption><p>
+<bold>Algorithm 1 Chain of Exploration with Planner-Agent</bold>
+</p></caption><graphic xlink:href="41598_2025_2643_Figa_HTML" id="d33e771"/></fig>
+</p><p id="Par44">In contrast to conventional GraphRAG approaches that typically operate on schemeless triple graphs<sup><xref ref-type="bibr" rid="CR33">33</xref></sup>, our Chain of Exploration (CoE) framework leverages a structured schema and rich relational semantics within knowledge graph , offering superior performance for complex aircraft fault diagnosis. The innovation of CoE centers on the Zero-Shot Planning paradigm, which utilizes a domain-specific language (DSL) for sophisticated graph reasoning (see Appendix B for DSL details). In this paradigm, we define succinct commands&#x02014;such as exploring neighbors, paths, or patterns&#x02014;that can be seamlessly chained together by a large language model. These commands are interpreted by an execution mechanism that translates the DSL into precise graph exploration operations with minimal overhead. This approach not only differentiates CoE from standard GraphRAG solutions but also optimizes its performance for advanced reasoning tasks, making it ideal for handling intricate, real-world challenges. By integrating the Zero-Shot Planning paradigm with DSL, our method eliminates the need for task-specific fine-tuning, enabling rapid adaptation to diverse diagnostic problems while maintaining high efficiency and interpretability.</p><p id="Par45">
+<fig id="Figb"><caption><p>
+<bold>Algorithm 2 Explore neighbors(node, depth)</bold>
+</p></caption><graphic xlink:href="41598_2025_2643_Figb_HTML" id="d33e790"/></fig>
+</p><p id="Par46">
+<fig id="Figc"><caption><p>
+<bold>Algorithm 3 Explore paths(start, end)</bold>
+</p></caption><graphic xlink:href="41598_2025_2643_Figc_HTML" id="d33e803"/></fig>
+</p><p id="Par47">
+<fig id="Figd"><caption><p>
+<bold>Algorithm 4 Explore patterns(pattern, condition, query)</bold>
+</p></caption><graphic xlink:href="41598_2025_2643_Figd_HTML" id="d33e816"/></fig>
+</p></sec><sec id="Sec8"><title>2) Complementary retrieval based on vectors and BM25</title><p id="Par48">To fully leverage the original fault descriptions in aircraft technical documentation, we propose a complementary retrieval method based on vector similarity and BM25 algorithms to augment the knowledge obtained through graph retrieval.</p><sec id="Sec9"><title>a. Vector retrieval</title><p id="Par49">Vector retrieval employs semantic similarity matching, with its workflow depicted in Fig.&#x000a0;<xref rid="Fig5" ref-type="fig">5</xref>. This method initially processes fault text data through segmentation and chunking, followed by vector representation using advanced embedding techniques<sup><xref ref-type="bibr" rid="CR43">43</xref></sup>. The system then constructs an efficient search index utilizing Hierarchical Navigable Small World (HNSW) graphs<sup><xref ref-type="bibr" rid="CR44">44</xref></sup>, enabling high-performance approximate nearest neighbor search. When processing user queries, the same embedding model generates vector representations that maintain semantic alignment with the indexed content. The HNSW algorithm subsequently retrieves the Top-K most semantically similar text passages, combining the nuanced semantic understanding of embeddings with the computational efficiency of modern approximate nearest neighbor search techniques. This dual advantage makes the approach particularly effective for handling large-scale fault text corpora while ensuring both retrieval speed and result relevance.</p><p id="Par50">
+<fig id="Fig5"><label>Fig. 5</label><caption><p>Vector Retrieval Framework Diagram. The framework converts fault text data into vector representations via embedding techniques to construct an index, then retrieves the Top-K most similar results from the vector index for user queries using the HNSW algorithm.</p></caption><graphic xlink:href="41598_2025_2643_Fig5_HTML" id="d33e845"/></fig>
+</p></sec><sec id="Sec10"><title>b. BM25 retrieval</title><p id="Par51">The BM25 algorithm establishes itself as a probabilistic retrieval framework that substantially improves upon traditional TF-IDF methods<sup><xref ref-type="bibr" rid="CR45">45</xref></sup>. At its core, this algorithm evaluates document relevance through a sophisticated interplay of three critical factors including the frequency of query terms within documents, their inverse document frequency across the entire collection, and the length of the document. Within RAG systems, BM25 has proven particularly valuable for enhancing recall performance when employed alongside vector retrieval techniques<sup><xref ref-type="bibr" rid="CR46">46</xref></sup>. For a query <italic>q</italic>&#x000a0;composed of terms <inline-formula id="IEq30"><alternatives><tex-math id="d33e862">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${q_1},{q_2}, \ldots ,{q_N}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq30.gif"/></alternatives></inline-formula> and a document <italic>d</italic>, the BM25 ranking function is as follows:<disp-formula id="Equ11"><label>11</label><alternatives><tex-math id="d33e872">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$Score(d,q)=\sum\limits_{{i=1}}^{N} {{\text{IDF}}} ({q_i}) \cdot \frac{{f({q_i},d) \cdot ({k_1}+1)}}{{f({q_i},d)+{k_1}1(1 - b+b\frac{{|d|}}{{avgdl}})}}$$\end{document}</tex-math><graphic xlink:href="41598_2025_2643_Article_Equ11.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par52">where&#x000a0;<inline-formula id="IEq31"><alternatives><tex-math id="d33e880">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$Score(d,q)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq31.gif"/></alternatives></inline-formula> denotes the relevance score between the document <italic>d&#x000a0;</italic>and the query <italic>q</italic>, <inline-formula id="IEq32"><alternatives><tex-math id="d33e892">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$f({q_i},d)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq32.gif"/></alternatives></inline-formula> is the frequency of the term <inline-formula id="IEq33"><alternatives><tex-math id="d33e898">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${q_i}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq33.gif"/></alternatives></inline-formula> in the document <italic>d</italic>, <inline-formula id="IEq34"><alternatives><tex-math id="d33e908">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$|d|$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq34.gif"/></alternatives></inline-formula> is the document length, and&#x000a0;<inline-formula id="IEq35"><alternatives><tex-math id="d33e914">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$avgdl$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq35.gif"/></alternatives></inline-formula> represents the average document length across the corpus. The inverse document frequency&#x000a0;<inline-formula id="IEq36"><alternatives><tex-math id="d33e920">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\text{IDF}}({q_i})$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq36.gif"/></alternatives></inline-formula>&#x000a0;is computed as <inline-formula id="IEq37"><alternatives><tex-math id="d33e926">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\log ({{(N - n({q_i})+0.5)} \mathord{\left/ {\vphantom {{(N - n({q_i})+0.5)} {(n({q_i})+0.5}}} \right. \kern-0pt} {(n({q_i})+0.5}})+1)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq37.gif"/></alternatives></inline-formula>, where <italic>N</italic>&#x000a0;is the total number of documents in the collection and <inline-formula id="IEq38"><alternatives><tex-math id="d33e936">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$n({q_i})$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq38.gif"/></alternatives></inline-formula> is the number of documents containing <inline-formula id="IEq39"><alternatives><tex-math id="d33e942">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${q_i}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq33.gif"/></alternatives></inline-formula>. The free parameters <inline-formula id="IEq40"><alternatives><tex-math id="d33e948">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${k_1}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq40.gif"/></alternatives></inline-formula> (typically set between 1.2 and 2.0) and <italic>b&#x000a0;</italic>(usually 0.75) control term frequency saturation and document length normalization, respectively.</p></sec></sec></sec><sec id="Sec11"><title>3) Cross-Encoding Re-Ranking</title><p id="Par53">To enhance the relevance and accuracy of retrieved results, we introduce a cross-encoding re-ranking<sup><xref ref-type="bibr" rid="CR47">47</xref></sup> mechanism that operates on the initial retrieval outputs from heterogeneous sources including knowledge graphs, vector embeddings, and BM25 algorithms. This module serves as a critical refinement stage in our Retrieval-Augmented Generation (RAG) pipeline, effectively filtering irrelevant content and optimizing the ranking of retrieved passages based on their semantic relevance to the input query<sup><xref ref-type="bibr" rid="CR48">48</xref>,<xref ref-type="bibr" rid="CR49">49</xref></sup>.</p><p id="Par54">
+<fig id="Fig6"><label>Fig. 6</label><caption><p>Cross-encoding Re-ranking Model Architecture. The framework processes concatenated query-document sequences (yellow boxes) through multi-layer Transformer encoders (dashed box). The encoded sequence representations (blue box) are used to extract the [CLS] token&#x02019;s hidden state (orange box), which serves as the joint query-document representation for relevance scoring.</p></caption><graphic xlink:href="41598_2025_2643_Fig6_HTML" id="d33e980"/></fig>
+</p><p id="Par55">The architecture of the cross-encoder, depicted in Fig.&#x000a0;<xref rid="Fig6" ref-type="fig">6</xref>, implements a sophisticated relevance scoring system through sequential processing stages. Formally, given a query <italic>q&#x000a0;</italic>and document chunk <italic>d</italic>, the model constructs an input sequence following the standard Transformer format:<disp-formula id="Equ12"><label>12</label><alternatives><tex-math id="d33e993">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$Input=[CLS]q[SEP]d[SEP]$$\end{document}</tex-math><graphic xlink:href="41598_2025_2643_Article_Equ12.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par56">where [CLS] denotes the classification token and [SEP] represents sequence separators. This composite sequence undergoes deep contextual encoding through multiple Transformer layers:<disp-formula id="Equ13"><label>13</label><alternatives><tex-math id="d33e1001">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$H=Transformer\left( {Input} \right)$$\end{document}</tex-math><graphic xlink:href="41598_2025_2643_Article_Equ13.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par57">yielding a sequence of hidden states <italic>H</italic>. The model subsequently extracts the hidden state corresponding to the [CLS] token:<disp-formula id="Equ14"><label>14</label><alternatives><tex-math id="d33e1012">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${h_{{\text{CLS}}}}=H[{\text{CLS}}]$$\end{document}</tex-math><graphic xlink:href="41598_2025_2643_Article_Equ14.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par58">which encapsulates the joint query-document representation. Finally, a feedforward neural network (FFN) processes this representation to generate the relevance score:<disp-formula id="Equ15"><label>15</label><alternatives><tex-math id="d33e1020">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$Score\left( {q,d} \right)=FFN( {h_{CLS}})$$\end{document}</tex-math><graphic xlink:href="41598_2025_2643_Article_Equ15.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par59">Based on these computed scores, the system returns the top-K most relevant contents for subsequent answer generation.</p><sec id="Sec12"><title>C. Answer generation</title><p id="Par60">The LLM synthesizes coherent and contextually relevant responses by processing the top-K re-ranked retrieval results from previous stages. This input concentration mechanism ensures the model receives the most pertinent information for each query. Through carefully designed prompt engineering, the retrieved content is transformed into structured input parameters that enhance the LLM&#x02019;s contextual comprehension. The model then leverages its language generation capabilities to produce informative, query-specific responses. This generation process is formally expressed as<disp-formula id="Equ16"><label>16</label><alternatives><tex-math id="d33e1032">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$a={\text{LM}}(q,Q)$$\end{document}</tex-math><graphic xlink:href="41598_2025_2643_Article_Equ16.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par61">where <italic>Q</italic>&#x000a0;represents the retrieved information. To optimize response quality, the LLM maximizes the probability of generating the most appropriate answer <italic>a</italic>&#x000a0;given the query <italic>q</italic>&#x000a0;and the retrieved context <italic>Q</italic>, that is<disp-formula id="Equ17"><label>17</label><alternatives><tex-math id="d33e1052">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\arg {\hbox{max} _{a \in A}}P(a|q,Q)=\prod\limits_{{j=1}}^{m} P ({a_j}|{a_{&#x0003c;j}},q,Q)$$\end{document}</tex-math><graphic xlink:href="41598_2025_2643_Article_Equ17.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par62">where <italic>A</italic>&#x000a0;denotes the set of all possible answers, <italic>m&#x000a0;</italic>is the answer length, and <inline-formula id="IEq41"><alternatives><tex-math id="d33e1066">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$P({a_j}|{a_{&#x0003c;j}},q,Q)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq41.gif"/></alternatives></inline-formula> represents the conditional probability of each word <inline-formula id="IEq42"><alternatives><tex-math id="d33e1072">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${a_j}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq42.gif"/></alternatives></inline-formula> in output sequence given the preceding context <inline-formula id="IEq43"><alternatives><tex-math id="d33e1078">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${a_{&#x0003c;j}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq43.gif"/></alternatives></inline-formula>, query <italic>q</italic>, and retrieved information <italic>Q</italic>.</p><p id="Par63">
+<fig id="Fig7"><label>Fig. 7</label><caption><p>Structured Instruction Prompts for Agent-Guided Troubleshooting. The blue highlighted block represents the request, which specifies the assistant&#x02019;s mandatory inference rules including step-by-step verification requirements. The yellow highlighted block provides the example, demonstrating the expected interaction sequence. This two-component design ensures context-aware guidance while maintaining strict diagnostic protocols.</p></caption><graphic xlink:href="41598_2025_2643_Fig7_HTML" id="d33e1099"/></fig>
+</p><p id="Par64">To operationalize interactive fault diagnosis, we developed an intelligent troubleshooting assistant within our guided framework. As illustrated in Fig.&#x000a0;<xref rid="Fig7" ref-type="fig">7</xref>, the assistant implements structured system instruction prompts consisting of explicit request specifications for AI inference and formatted demonstration examples. These prompts enforce a strict step-by-step diagnostic protocol where the assistant must first request user verification of a specified component, then provide subsequent guidance based on the observed phenomenon, and finally proceed to the next logical check point. The design specifically accommodates non-expert users through constrained interaction patterns that prevent unsupervised diagnostic actions.</p></sec><sec id="Sec13"><title>Experiment studies</title><p id="Par65">This section evaluates the troubleshooting guidance efficiency of the proposed method in aircraft fault diagnosis scenarios, with experimental dataset derived from the UAV fault knowledge graphs constructed in Method section. The implementation details and results analysis are presented in the following subsections.</p></sec><sec id="Sec14"><title>A. Experimental settings</title><p id="Par66">The experiments were conducted on a local machine equipped with four NVIDIA GeForce RTX 3090 GPUs running Ubuntu 22.04 with a 32-core and 256GiB RAM. The large language model (LLM) employed was qwen2-72b<sup><xref ref-type="bibr" rid="CR50">50</xref></sup>. We utilized the constructed UAV fault knowledge graph corpus&#x02014;consisting of 1,000 fault handling records/articles and 20 MB of fault-related technical text manuals&#x02014;as the RAG experiment dataset. This study investigates three RAG frameworks for assisted diagnosis: HybridRAG, VectorRAG, and GraphRAG_sub (subgraph retrieval-based). For each query, HybridRAG was configured with a maximum of 5 iterations, returning the most relevant results through top-10 ranking<sup><xref ref-type="bibr" rid="CR51">51</xref></sup> while maintaining a default subgraph depth of 3. The subgraph depth of 3 was determined through a comprehensive analysis of domain-specific schema design and instance data characteristics, ensuring sufficient knowledge coverage for fault diagnosis queries. When the default retrieval results are insufficient, the planner-agent autonomously adjusts the subgraph retrieval depth to meet task-specific requirements.</p><p id="Par67">In our experiments, we evaluated the methods using four key metrics&#x02014;F1-score, hallucination rate, end-to-end latency, and RAM utilization&#x02014;to assess both accuracy and practical deployment feasibility. Specifically, the F1-score quantifies diagnostic accuracy, while the hallucination rate measures the frequency of irrelevant or incorrect outputs generated during inference. End-to-end latency and RAM utilization were used to assess computational efficiency and resource consumption. Notably, traditional statistical significance tests (e.g., confidence intervals, p-values) were not applied to evaluate the robustness of these metrics due to the non-independent and identically distributed (non-IID) nature of textual data, which violates fundamental statistical assumptions. Our metric selection follows established practices in LLM, knowledge graph, and RAG research communities, where absolute performance improvements typically outweigh statistical validation<sup><xref ref-type="bibr" rid="CR22">22</xref>,<xref ref-type="bibr" rid="CR36">36</xref></sup>.</p><sec id="Sec15"><title>1) F1-score</title><p id="Par68">The F1-score evaluates answer prediction quality by combining precision and recall metrics. For each diagnostic query, this is formally computed as<disp-formula id="Equ18"><label>18</label><alternatives><tex-math id="d33e1135">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\text{F1(\% )}}=\frac{{2 \times {\text{Precision}} \times {\text{Recall}}}}{{{\text{Precision}}+{\text{Recall}}}} \times 100\%$$\end{document}</tex-math><graphic xlink:href="41598_2025_2643_Article_Equ18.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ19"><label>19</label><alternatives><tex-math id="d33e1141">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\text{Precision}}=\frac{{count\_pred}}{{len\left( {\hat {a}} \right)}}$$\end{document}</tex-math><graphic xlink:href="41598_2025_2643_Article_Equ19.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ20"><label>20</label><alternatives><tex-math id="d33e1147">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\kern 1pt} {\text{Recall}}=\frac{{count\_pred}}{{len\left( a \right)}}$$\end{document}</tex-math><graphic xlink:href="41598_2025_2643_Article_Equ20.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par69">where <inline-formula id="IEq44"><alternatives><tex-math id="d33e1155">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\hat {a}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq44.gif"/></alternatives></inline-formula>denotes the predicted answer, <italic>a</italic>&#x000a0;represents the ground truth answer, <inline-formula id="IEq45"><alternatives><tex-math id="d33e1164">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$len\left( {\hat {a}} \right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq45.gif"/></alternatives></inline-formula> and <inline-formula id="IEq46"><alternatives><tex-math id="d33e1170">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$len\left( a \right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq46.gif"/></alternatives></inline-formula> indicate the length of the predicted and true answers respectively, and<inline-formula id="IEq47"><alternatives><tex-math id="d33e1176">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$count\_pred$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq47.gif"/></alternatives></inline-formula>corresponds to the number of matching tokens between <inline-formula id="IEq48"><alternatives><tex-math id="d33e1183">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\hat {a}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq44.gif"/></alternatives></inline-formula> and <italic>a</italic>.</p></sec><sec id="Sec16"><title>2) Hallucination Rate</title><p id="Par70">The hallucination rate (HR) quantifies the frequency of generating content that does not contain real information. Formally, HR is computed as<disp-formula id="Equ21"><label>21</label><alternatives><tex-math id="d33e1196">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\text{HR(\% )}}=\frac{{\sum\limits_{{i=1}}^{N} {h({{\hat {a}}_i},{a_i})} }}{N} \times 100\% ,{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} i=1,2,\cdots,N$$\end{document}</tex-math><graphic xlink:href="41598_2025_2643_Article_Equ21.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par71">where<inline-formula id="IEq49"><alternatives><tex-math id="d33e1204">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\hat {a}_i}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq49.gif"/></alternatives></inline-formula> and <inline-formula id="IEq50"><alternatives><tex-math id="d33e1210">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${a_i}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq50.gif"/></alternatives></inline-formula> denotes respectively predicted and ground truth answers for the i-th question, <italic>N</italic>&#x000a0;denotes the total number of questions, <inline-formula id="IEq51"><alternatives><tex-math id="d33e1219">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$h({\hat {a}_i},{a_i})$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2643_Article_IEq51.gif"/></alternatives></inline-formula>denotes the hallucination score for the i-th question, which is ranged from 0 to 1 and implemented via &#x0201c;LLM as a judge&#x0201d; between ground truth and generated answers by the system.</p></sec></sec></sec><sec id="Sec17"><title><italic>B. Experimental Results</italic></title><sec id="Sec18"><title>1) Overall performance</title><p id="Par72">The performance of the proposed HybridRAG method and baseline approaches (VectorRAG and GraphRAG_sub) was evaluated using 100 domain-specific fault diagnosis queries derived from real-world aviation scenarios. Experimental results, summarized in Table&#x000a0;<xref rid="Tab1" ref-type="table">1</xref>, demonstrate that HybridRAG significantly outperforms its counterparts in both diagnostic accuracy and reliability. Notably, HybridRAG achieves an F1-score of 84.83%, representing a 4% relative improvement over the next-best GraphRAG_sub (80.12%), while reducing the hallucination rate (HR) to 16.67% &#x02014;a 7% reduction compared to VectorRAG&#x02019;s 24.05% HR. These results underscore the efficacy of HybridRAG&#x02019;s hybrid retrieval strategy in minimizing diagnostic errors and improving decision-making precision. Regarding resource consumption, HybridRAG incurs higher computational costs due to the Graph Index system overhead&#x02014;specifically, a 41.19-second inference latency (versus 32.81&#x02013;33.51 s for baselines) and 26.12 GiB RAM usage (versus 16.91&#x02013;18.11 GiB). However, these costs are justified by the substantial accuracy gains. Furthermore, in practical troubleshooting scenarios, the 41.19-second latency per query is acceptable when contrasted with the total troubleshooting duration, which typically requires one hour or more of technician time. Critically, in this domain, diagnostic precision outweighs response speed, as even minor inaccuracies, such as hallucinations that mislead engineers, can derail diagnostic efforts and substantially extend troubleshooting timelines.</p><p id="Par73">
+<table-wrap id="Tab1"><label>Table 1</label><caption><p>The performance results of some methods.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">method</th><th align="left">F1-score</th><th align="left">HR</th><th align="left">Latency<sup>*</sup></th><th align="left">RAM</th></tr></thead><tbody><tr><td align="left">VectorRAG</td><td char="." align="char">76.59%</td><td char="." align="char">35.43%</td><td align="left">32.81 s</td><td align="left">16.91 GiB</td></tr><tr><td align="left">GraphRAG_sub</td><td char="." align="char">80.12%</td><td char="." align="char">24.05%</td><td align="left">33.51 s</td><td align="left">18.11 GiB</td></tr><tr><td align="left">HybirdRAG(ours)</td><td char="." align="char">84.83%</td><td char="." align="char">16.67%</td><td align="left">41.19 s</td><td align="left">26.12 GiB</td></tr></tbody></table></table-wrap>
+</p><p id="Par74"><sup>*</sup>Latency denotes the average time taken to process 100 questions, measured from the start of retrieval to the completion of answer generation.</p><p id="Par75">
+<table-wrap id="Tab2"><label>Table 2</label><caption><p>The performance results of some methods for new fault.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">method</th><th align="left">F1-score</th><th align="left">HR</th></tr></thead><tbody><tr><td align="left">VectorRAG</td><td char="." align="char">69.54%</td><td char="." align="char">46.05%</td></tr><tr><td align="left">GraphRAG_sub</td><td char="." align="char">75.69%</td><td char="." align="char">23.76%</td></tr><tr><td align="left">HybirdRAG(ours)</td><td char="." align="char">81.50%</td><td char="." align="char">15.01%</td></tr></tbody></table></table-wrap>
+</p><p id="Par76">In addition, we discovered through BM25 retrieval analysis that 82 out of 100 collected fault queries were entirely novel&#x02014;their corresponding fault cases, root causes, or solutions were absent in the training corpus, but their underlying operating principles and structural configurations were fully covered in the dataset. We thus designated these 82 query pairs as a dedicated benchmark for assessing generalization, with results presented in Table&#x000a0;<xref rid="Tab2" ref-type="table">2</xref>. The findings demonstrate that graph-based reasoning outperforms baseline methods for unseen queries. Specifically, HybridRAG exhibits a smaller performance decline compared to historical data in terms of F1-score (84.83% &#x02192; 81.50%) and HR (16.67%&#x02192; 15.01%), suggesting a more effective extraction of the contextual information required for robust knowledge reasoning in unseen fault scenarios.</p></sec><sec id="Sec19"><title>2) Robustness</title><p id="Par77">To validate the robustness of the HybirdRAG method, we collected five categories of aircraft fault-related questions as detailed in Table&#x000a0;<xref rid="Tab3" ref-type="table">3</xref>, with 100 distinct test queries per category. Figure&#x000a0;<xref rid="Fig8" ref-type="fig">8</xref> presents the evaluation results, showing that the proposed method consistently achieves F1-scores above 80% while keeping hallucination rates below 30% across all question categories, which confirms its stable diagnostic performance. However, HybridRAG exhibits performance variations across different question types due to varying inference complexities. Statistical questions, in particular, are more challenging due to their complex reasoning requirements. For instance, when answering <italic>&#x0201c;What percentage of a specific root cause&#x02019;s frequency accounts for all possible causes of a given fault phenomenon?&#x0201c;</italic>, the model must first infer all plausible root causes and then calculate their relative frequencies. This two-step process is prone to hallucinations, such as inventing non-existent cause distributions or miscounting statistical patterns.</p><p id="Par78">
+<table-wrap id="Tab3"><label>Table 3</label><caption><p>The question categories and examples.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Category</th><th align="left">Example</th></tr></thead><tbody><tr><td align="left">Statistics</td><td align="left">How many cases have occurred where the left brake pressure is too low?</td></tr><tr><td align="left">Fact</td><td align="left">What are the components of the brake system?</td></tr><tr><td align="left">Cause</td><td align="left">What causes the left normal brake pressure to be too low?</td></tr><tr><td align="left">Troubleshooting</td><td align="left">How to troubleshoot the left brake pressure being too low?</td></tr><tr><td align="left">Preventive</td><td align="left">How to maintain normal brake pressure on the left side?</td></tr></tbody></table></table-wrap>
+</p><p id="Par79">
+<fig id="Fig8"><label>Fig. 8</label><caption><p>The performances of five categories of fault-related questions on HybirdRAG method.</p></caption><graphic xlink:href="41598_2025_2643_Fig8_HTML" id="d33e1412"/></fig>
+</p><p id="Par80">Further analysis reveals that HybridRAG exhibits performance limitations in specific fault scenarios, particularly for root cause identification and judgment of abnormal signal parameter characteristics. These challenges originate from both knowledge graph schema ambiguities and corpus data quality issues. The schema design introduces reasoning inconsistencies when edge types are misinterpreted&#x02014;the BelongTo relationship between Signal and Unit entities is occasionally applied incorrectly to Unit-Unit connections, while the explicitly defined Cause relationship between Fault entities is sometimes misconstrued as linking Fault to Fault Case, despite prompt-based constraints. Parallel to these schema challenges, the original corpus contains unstructured maintenance records featuring vague descriptions, inconsistent terminology, and missing technical specifications. These data quality limitations introduce substantial noise during information retrieval, particularly affecting experience-based articles written by maintenance personnel.</p><p id="Par81">The experimental results conclusively demonstrate that HybridRAG&#x02019;s innovative integration of multi-dimensional retrieval strategies yields significant improvements in fault diagnosis efficiency. This enhanced performance, particularly evident in complex diagnostic scenarios, underscores the methodological superiority of the hybrid approach and its critical value for practical aviation maintenance applications. Although schema ambiguities and data quality limitations present identifiable challenges, they represent addressable constraints rather than fundamental flaws&#x02014;offering clear pathways for future methodological refinement. Collectively, these empirical results establish HybridRAG as a practically viable solution, providing a robust foundation for its ongoing implementation in aircraft fault diagnosis systems.</p><sec id="Sec20"><title>C. Agent-Guided troubleshooting</title><p id="Par82">Based on the proposed HybirdRAG method and a designed system prompt framework, we developed an interactive troubleshooting guidance agent. As demonstrated in Fig.&#x000a0;<xref rid="Fig9" ref-type="fig">9</xref>, the agent guides users through a structured fault diagnosis process. For example, when a user inquiries about &#x0201c;how to troubleshoot low pressure in the left normal brake system,&#x0201d; the agent provides all possible causes of the fault along with detailed troubleshooting steps. The user follows these steps to perform tests and reports the results back to the agent, which then determines and suggests the next steps until the specific fault cause and component are identified. This guided fault diagnosis agent emulates an expert&#x02019;s thought process. Compared to traditional question-and-answer systems, it more effectively guides users through complex fault diagnosis tasks. This interactive model both troubleshooting efficiency and user experience, demonstrating the practical value of this technology in aircraft fault diagnosis applications.</p><p id="Par83">
+<fig id="Fig9"><label>Fig. 9</label><caption><p>Interactive fault diagnosis process guided by the HybridRAG agent.</p></caption><graphic xlink:href="41598_2025_2643_Fig9_HTML" id="d33e1433"/></fig>
+</p></sec></sec></sec><sec id="Sec21"><title>Conclusion</title><p id="Par84">In this paper, we propose a guided fault diagnosis method for aircraft based on the HybridRAG framework, which integrates knowledge graphs and large language models. By combining multiple retrieval strategies, including VectorRAG, BM25, and graph-based reasoning, our method enhances inference capabilities for complex fault diagnosis through the synergistic use of structured knowledge and unstructured data. We further develop an intelligent diagnostic agent that implements a multi-turn conversational functionality to guide maintenance personnel through troubleshooting process, significantly improving interactivity, and operational efficiency in real-world aviation maintenance scenarios.</p><p id="Par85">However, despite its effectiveness, our experiments reveal that the proposed method can still fail due to issues such as schema ambiguities and low data quality. To address these, we plan to refine the domain-specific schema by leveraging expert knowledge as a foundation and using large language models (LLMs) to identify inconsistencies and gaps in the current design, thereby eliminating ambiguities and ensuring completeness&#x02014;a one-time upfront cost since the finalized schema remains unchanged during actual deployment. Furthermore, we will incorporate reinforcement learning (RL) techniques to train the model to critically evaluate the reliability of input data, adopting an offline-training/online-inference framework that ensures only marginal inference costs during deployment post-training, enabling it to prioritize credible data sources during the reasoning process and reduce the impact of noisy inputs. These improvements will enhance HybridRAG&#x02019;s robustness without compromising deployability.</p><p id="Par87">Beyond addressing the current limitations, we recognize that the scope of diagnostic data needs extension. While this study focuses on unstructured text data, real-world aircraft maintenance relies on diverse data sources including fault images, diagnostic videos, and sensor readings. Integrating these modalities will enable more comprehensive fault analysis&#x02014;particularly for complex cases where visual inspection or sensor trends provide critical supplementary evidence. Moving forward, we will explore unified multimodal reasoning methods to jointly interpret textual, visual, and time-series data. This expansion is expected to improve robustness in handling ambiguous or rare faults while broadening the system&#x02019;s applicability across different maintenance scenarios.</p></sec><sec id="Sec22" sec-type="supplementary-material"><title>Electronic supplementary material</title><p>Below is the link to the electronic supplementary material.</p><p>
+<supplementary-material content-type="local-data" id="MOESM1"><media xlink:href="41598_2025_2643_MOESM1_ESM.docx"><caption><p>Supplementary Material 1</p></caption></media></supplementary-material>
+</p></sec></body><back><fn-group><fn><p><bold>Publisher&#x02019;s note</bold></p><p>Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></fn></fn-group><notes notes-type="author-contribution"><title>Author contributions</title><p>X.Y.X. wrote the main manuscript text. X.L.T and L.J.C. dealt with data collection and preparation. S.W.G. wrote experiment codes in the work. All authors reviewed the manuscript.</p></notes><notes notes-type="funding-information"><title>Funding</title><p>This work was supported by the National Natural Science Foundation of China (No. 72201276).</p></notes><notes notes-type="data-availability"><title>Data availability</title><p>The datasets analysed during the current study are not publicly available due to confidentiality and sensitive information but some de-identified data can be available partly from the corresponding author on reasonable request.</p></notes><notes><title>Declarations</title><notes id="FPar1" notes-type="COI-statement"><title>Competing interests</title><p id="Par88">The authors declare no competing interests.</p></notes></notes><ref-list id="Bib1"><title><sc>R</sc>eferences</title><ref id="CR1"><label>1.</label><mixed-citation publication-type="other">Aamodt, A., Plaza, E., Case-Based &#x00026; Reasoning Foundational Issues, Methodological Variations, and System Approaches. <italic>AI Communications</italic>, vol. 7, no. 1, pp. 39&#x02013;59, (1994).</mixed-citation></ref><ref id="CR2"><label>2.</label><mixed-citation publication-type="other">Jackson, P. <italic>Introduction To Expert systems[M]</italic> (Addison-Wesle, Jan, 1998).</mixed-citation></ref><ref id="CR3"><label>3.</label><mixed-citation publication-type="other">Yurin, A. et al. Towards an intelligent decision support system for aircraft troubleshooting. <italic>Proceedings of 10th International Conference on Recent Advances in Civil Aviation</italic>, (2022).</mixed-citation></ref><ref id="CR4"><label>4.</label><mixed-citation publication-type="other">Qiu, L. et al. Method for Building and Applying Knowledge Graphs for Unmanned Aerial Vehicle Fault Diagnosis. <italic>Computer Engineering and Applications</italic>, vol. 59, no. 9, pp.9&#x02013;14, (2023).</mixed-citation></ref><ref id="CR5"><label>5.</label><mixed-citation publication-type="other">Xu, J. X. et al. Construction and Application of Knowledge Graphs in Engine Fault Diagnosis. <italic>Computer Systems &#x00026; Applications</italic>, vol. 7, no. 31, pp.66&#x02013;76, (2022).</mixed-citation></ref><ref id="CR6"><label>6.</label><citation-alternatives><element-citation id="ec-CR6" publication-type="journal"><person-group person-group-type="author"><name><surname>Wu</surname><given-names>C</given-names></name><name><surname>Zhang</surname><given-names>L</given-names></name><name><surname>Tang</surname><given-names>XL</given-names></name><name><surname>Cui</surname><given-names>LJ</given-names></name><name><surname>Xie</surname><given-names>XY</given-names></name></person-group><article-title>Construction and application of fault knowledge graphs for aircraft engine lubrication systems</article-title><source>J. Beijing Univ. Aeronaut. Astronaut.</source><year>2024</year><volume>4</volume><issue>50</issue><fpage>1336</fpage><lpage>1346</lpage></element-citation><mixed-citation id="mc-CR6" publication-type="journal">Wu, C., Zhang, L., Tang, X. L., Cui, L. J. &#x00026; Xie, X. Y. Construction and application of fault knowledge graphs for aircraft engine lubrication systems. <italic>J. Beijing Univ. Aeronaut. Astronaut.</italic><bold>4</bold> (50), 1336&#x02013;1346 (2024).</mixed-citation></citation-alternatives></ref><ref id="CR7"><label>7.</label><citation-alternatives><element-citation id="ec-CR7" publication-type="journal"><person-group person-group-type="author"><name><surname>Tang</surname><given-names>XL</given-names></name><etal/></person-group><article-title>Exploring research on the construction and application of knowledge graphs for aircraft fault diagnosis</article-title><source>Sensors</source><year>2023</year><volume>11</volume><issue>23</issue><fpage>5295</fpage><lpage>5313</lpage><pub-id pub-id-type="doi">10.3390/s23115295</pub-id></element-citation><mixed-citation id="mc-CR7" publication-type="journal">Tang, X. L. et al. Exploring research on the construction and application of knowledge graphs for aircraft fault diagnosis. <italic>Sensors</italic><bold>11</bold> (23), 5295&#x02013;5313 (2023).</mixed-citation></citation-alternatives></ref><ref id="CR8"><label>8.</label><mixed-citation publication-type="other">Peng, C. Y., Xia, F., Mehdia, N. &#x00026; Francesco, O. Knowledge Graphs: Opportunities and Challenges, arXiv:2303.13948v1. (2023).</mixed-citation></ref><ref id="CR9"><label>9.</label><citation-alternatives><element-citation id="ec-CR9" publication-type="journal"><person-group person-group-type="author"><name><surname>Meng</surname><given-names>X</given-names></name><etal/></person-group><article-title>Fault knowledge graph construction and platform development for aircraft PHM</article-title><source>Sensors</source><year>2024</year><volume>24</volume><fpage>231</fpage><lpage>252</lpage><pub-id pub-id-type="doi">10.3390/s24010231</pub-id></element-citation><mixed-citation id="mc-CR9" publication-type="journal">Meng, X. et al. Fault knowledge graph construction and platform development for aircraft PHM. <italic>Sensors</italic><bold>24</bold>, 231&#x02013;252 (2024).</mixed-citation></citation-alternatives></ref><ref id="CR10"><label>10.</label><mixed-citation publication-type="other">Mishra, R. &#x00026; Shridevi, S. Knowledge graph driven medicine recommendation system using graph neural networks on longitudinal medical records. <italic>Sci Rep</italic>, <bold>14</bold>, 25449, (2024).</mixed-citation></ref><ref id="CR11"><label>11.</label><mixed-citation publication-type="other">Zhao, W. X. et al. A survey of large language models, arXiv.2303.18223. (2023).</mixed-citation></ref><ref id="CR12"><label>12.</label><citation-alternatives><element-citation id="ec-CR12" publication-type="journal"><person-group person-group-type="author"><name><surname>Dale</surname><given-names>R</given-names></name></person-group><article-title>Start-up activity in the LLM ecosystem</article-title><source>Nat. Lang. Eng.</source><year>2024</year><volume>30</volume><issue>3</issue><fpage>650</fpage><lpage>659</lpage><pub-id pub-id-type="doi">10.1017/S1351324924000032</pub-id></element-citation><mixed-citation id="mc-CR12" publication-type="journal">Dale, R. Start-up activity in the LLM ecosystem. <italic>Nat. Lang. Eng.</italic><bold>30</bold> (3), 650&#x02013;659 (2024).</mixed-citation></citation-alternatives></ref><ref id="CR13"><label>13.</label><mixed-citation publication-type="other">Li, Y. F., Wang, H. &#x00026; Sun, M. ChatGPT-Like Large-Scale Foundation Models for Prognostics and Health Management: A Survey and Roadmaps, arXiv:2305.06472. (2023).</mixed-citation></ref><ref id="CR14"><label>14.</label><mixed-citation publication-type="other">Mittelst&#x000e4;dt, J. M. et al. Large Language models can outperform humans in social situational judgments. <italic>Sci Rep</italic>, <bold>14</bold>, (2024).</mixed-citation></ref><ref id="CR15"><label>15.</label><citation-alternatives><element-citation id="ec-CR15" publication-type="journal"><person-group person-group-type="author"><name><surname>Ji</surname><given-names>ZW</given-names></name><etal/></person-group><article-title>Survey of hallucination in natural Language generation</article-title><source>Comput. Surv.</source><year>2023</year><volume>55</volume><issue>12</issue><fpage>1</fpage><lpage>38</lpage><pub-id pub-id-type="doi">10.1145/3571730</pub-id></element-citation><mixed-citation id="mc-CR15" publication-type="journal">Ji, Z. W. et al. Survey of hallucination in natural Language generation. <italic>Comput. Surv.</italic><bold>55</bold> (12), 1&#x02013;38 (2023).</mixed-citation></citation-alternatives></ref><ref id="CR16"><label>16.</label><mixed-citation publication-type="other">Hao, G. et al. Quantifying the uncertainty of LLM hallucination spreading in complex adaptive social networks. <italic>Sci Rep</italic>, <bold>14</bold>, 16375, (2024).</mixed-citation></ref><ref id="CR17"><label>17.</label><citation-alternatives><element-citation id="ec-CR17" publication-type="journal"><person-group person-group-type="author"><name><surname>Liu</surname><given-names>P</given-names></name><name><surname>Qian</surname><given-names>L</given-names></name><name><surname>Zhao</surname><given-names>X</given-names></name><name><surname>Tao</surname><given-names>B</given-names></name></person-group><article-title>The construction of knowledge graphs in the aviation assembly domain based on a joint knowledge extraction model</article-title><source>IEEE Access.</source><year>2023</year><volume>11</volume><fpage>26483</fpage><lpage>26495</lpage><pub-id pub-id-type="doi">10.1109/ACCESS.2023.3254132</pub-id></element-citation><mixed-citation id="mc-CR17" publication-type="journal">Liu, P., Qian, L., Zhao, X. &#x00026; Tao, B. The construction of knowledge graphs in the aviation assembly domain based on a joint knowledge extraction model. <italic>IEEE Access.</italic><bold>11</bold>, 26483&#x02013;26495 (2023).</mixed-citation></citation-alternatives></ref><ref id="CR18"><label>18.</label><mixed-citation publication-type="other">Sun, Y. et al. JointLK: Joint reasoning with language models and knowledge graphs for commonsense question answering. In Proc. 2022 Annual Conference of the North American Chapter of the Association for Computational Linguistics-Human Language Technologies, pp. 5049&#x02013;5060, (2022).</mixed-citation></ref><ref id="CR19"><label>19.</label><mixed-citation publication-type="other">Guu, K. et al. REALM: Retrieval-augmented language model pre-training, arXiv:2002.08909. (2020).</mixed-citation></ref><ref id="CR20"><label>20.</label><mixed-citation publication-type="other">Gao, Y. F. et al. Retrieval-augmented generation for large language models: A survey, arXiv:2312.10997.8. (2023).</mixed-citation></ref><ref id="CR21"><label>21.</label><mixed-citation publication-type="other">Church, K. W. et al. Emerging trends: a gentle introduction to RAG. Natural Language Engineering. <bold>30</bold>, 4, pp. 870&#x02013;881, (2024).</mixed-citation></ref><ref id="CR22"><label>22.</label><citation-alternatives><element-citation id="ec-CR22" publication-type="journal"><person-group person-group-type="author"><name><surname>Liu</surname><given-names>PF</given-names></name><etal/></person-group><article-title>Joint knowledge graph and large Language model for fault diagnosis and its application in aviation assembly</article-title><source>IEEE Trans. Industr. Inf.</source><year>2024</year><volume>20</volume><issue>6</issue><fpage>8160</fpage><lpage>8169</lpage><pub-id pub-id-type="doi">10.1109/TII.2024.3366977</pub-id></element-citation><mixed-citation id="mc-CR22" publication-type="journal">Liu, P. F. et al. Joint knowledge graph and large Language model for fault diagnosis and its application in aviation assembly. <italic>IEEE Trans. Industr. Inf.</italic><bold>20</bold> (6), 8160&#x02013;8169 (2024).</mixed-citation></citation-alternatives></ref><ref id="CR23"><label>23.</label><mixed-citation publication-type="other">Liu, L. et al. A Survey on Medical Large Language Models: Technology, Application, Trustworthiness, and Future Directions, arXiv.2406.03712. (2024).</mixed-citation></ref><ref id="CR24"><label>24.</label><mixed-citation publication-type="other">Nie, Y. Q. et al. A Survey of Large Language Models for Financial Applications: Progress, Prospects and Challenges, arXiv.2406.11903. (2024).</mixed-citation></ref><ref id="CR25"><label>25.</label><mixed-citation publication-type="other">Wang, Y. et al. Knowledge graph prompting for multi-document question answering. <italic>In Proceedings of the AAAI Conference on Artificial Intelligence</italic>, vol. 38, pp.19206&#x02013;19214, (2024).</mixed-citation></ref><ref id="CR26"><label>26.</label><mixed-citation publication-type="other">Gao, Y. F. et al. Retrieval-augmented generation for large language models: A survey, arXiv:2312.10997. (2023).</mixed-citation></ref><ref id="CR27"><label>27.</label><mixed-citation publication-type="other">Luo, M. et al. A Study on the Efficiency and Generalization of Light Hybrid Retrievers, arXiv:2210.01371. (2022).</mixed-citation></ref><ref id="CR28"><label>28.</label><mixed-citation publication-type="other">Juvekar, K. &#x00026; Purwar, A. Cos-mix: cosine similarity and distance fusion for improved information retrieval, (2024). arXiv:2406.00638.</mixed-citation></ref><ref id="CR29"><label>29.</label><citation-alternatives><element-citation id="ec-CR29" publication-type="journal"><person-group person-group-type="author"><name><surname>Zhang</surname><given-names>J</given-names></name><etal/></person-group><article-title>Subgraph retrieval enhanced model for Multi-hop knowledge base question answering</article-title><source>Association Comput. Linguistics</source><year>2022</year><volume>1</volume><fpage>5773</fpage><lpage>5784</lpage></element-citation><mixed-citation id="mc-CR29" publication-type="journal">Zhang, J. et al. Subgraph retrieval enhanced model for Multi-hop knowledge base question answering. <italic>Association Comput. Linguistics</italic>. <bold>1</bold>, 5773&#x02013;5784 (2022).</mixed-citation></citation-alternatives></ref><ref id="CR30"><label>30.</label><mixed-citation publication-type="other">He, G. L. et al. Improving multi-hop knowledge base question answering by learning intermediate supervision signals. <italic>In Proceedings of the 14th ACM International Conference on Web Search and Data Mining</italic>, pp. 553&#x02013;561, (2021).</mixed-citation></ref><ref id="CR31"><label>31.</label><mixed-citation publication-type="other">Li, X. X. et al. Chain-of-Knowledge: Grounding Large Language Models via Dynamic Knowledge Adapting over Heterogeneous Sources, arXiv.2305.13269. (2024).</mixed-citation></ref><ref id="CR32"><label>32.</label><mixed-citation publication-type="other">He, X. X. et al. G-Retriever: Retrieval-Augmented Generation for Textual Graph Understanding and Question Answering, arXiv.2402.07630. (2024).</mixed-citation></ref><ref id="CR33"><label>33.</label><mixed-citation publication-type="other">Edge, D. et al. From local to global: A graph RAG approach to Query-Focused summarization. <italic>Comput. Lang.</italic> arXiv.2404.16130 (2024).</mixed-citation></ref><ref id="CR34"><label>34.</label><mixed-citation publication-type="other">Luo, L. H. et al. Reasoning on graphs: faithful and interpretable large Language model reasoning. <italic>ICLR</italic>, (2024). arXiv:2310.01061v2.</mixed-citation></ref><ref id="CR35"><label>35.</label><mixed-citation publication-type="other">Maciej, B. et al. Graph of Thoughts: Solving Elaborate Problems with Large Language Models. <italic>In Proceedings of the AAAI Conference on Artificial Intelligence</italic>, arXiv:2308.09687. (2024).</mixed-citation></ref><ref id="CR36"><label>36.</label><mixed-citation publication-type="other">Diego, S. et al. KG-RAG: Bridging the Gap Between Knowledge and Creativity, arXiv:2405.12035. (2024).</mixed-citation></ref><ref id="CR37"><label>37.</label><citation-alternatives><element-citation id="ec-CR37" publication-type="journal"><person-group person-group-type="author"><name><surname>Church</surname><given-names>KW</given-names></name><etal/></person-group><article-title>Emerging trends: a gentle introduction to RAG</article-title><source>Nat. Lang. Eng.</source><year>2024</year><volume>30</volume><issue>4</issue><fpage>870</fpage><lpage>881</lpage><pub-id pub-id-type="doi">10.1017/S1351324924000044</pub-id></element-citation><mixed-citation id="mc-CR37" publication-type="journal">Church, K. W. et al. Emerging trends: a gentle introduction to RAG. <italic>Nat. Lang. Eng.</italic><bold>30</bold> (4), 870&#x02013;881 (2024).</mixed-citation></citation-alternatives></ref><ref id="CR38"><label>38.</label><mixed-citation publication-type="other">Geng, Z., Zhang, Y. &#x00026; Han, Y. Joint entity and relation extraction model based on rich semantics. <italic>Neurocomputing</italic>, <bold>429</bold>, 1, pp. 132&#x02013;140, (2021).</mixed-citation></ref><ref id="CR39"><label>39.</label><mixed-citation publication-type="other">Yuan, Y. et al. A relation-Specific attention network for joint entity and relation extraction. <italic>In IJCAI</italic>, pp. 4054&#x02013;4060. (2020).</mixed-citation></ref><ref id="CR40"><label>40.</label><mixed-citation publication-type="other">Shan, Y., Lu, H. &#x00026; Lou, W. A hybrid attention and dilated convolution framework for entity and relation extraction and mining. <italic>Sci Rep</italic>, vol. 13, (2023).</mixed-citation></ref><ref id="CR41"><label>41.</label><mixed-citation publication-type="other">Nayak, T. &#x00026; Ng, H. T. Effective modeling of encoder-decoder architecture for joint entity and relation extraction. <italic>In Proceedings of the Thirty-Fourth AAAI conference on artificial intelligence</italic>, Hilton New York Midtown, New York, USA, pp. 8528&#x02013;8535, (2020).</mixed-citation></ref><ref id="CR42"><label>42.</label><citation-alternatives><element-citation id="ec-CR42" publication-type="journal"><person-group person-group-type="author"><name><surname>Drury</surname><given-names>B</given-names></name><name><surname>Oliveira</surname><given-names>G</given-names></name><name><surname>de Andrade Lopes</surname><given-names>H</given-names></name></person-group><article-title>A survey of the extraction and applications of causal relations</article-title><source>Nat. Lang. Eng.</source><year>2022</year><volume>28</volume><issue>3</issue><fpage>361</fpage><lpage>400</lpage><pub-id pub-id-type="doi">10.1017/S135132492100036X</pub-id></element-citation><mixed-citation id="mc-CR42" publication-type="journal">Drury, B., Oliveira, G. &#x00026; de Andrade Lopes, H. A survey of the extraction and applications of causal relations. <italic>Nat. Lang. Eng.</italic><bold>28</bold> (3), 361&#x02013;400 (2022).</mixed-citation></citation-alternatives></ref><ref id="CR43"><label>43.</label><mixed-citation publication-type="other">Reimers, N. &#x00026; Gurevych, I. Sentence-BERT: sentence embeddings using Siamese BERT-Networks. <italic>EMNLP</italic> arXiv:1908.10084 (2019).</mixed-citation></ref><ref id="CR44"><label>44.</label><citation-alternatives><element-citation id="ec-CR44" publication-type="journal"><person-group person-group-type="author"><name><surname>Malkov</surname><given-names>YA</given-names></name><name><surname>Yashunin</surname><given-names>DA</given-names></name></person-group><article-title>Efficient and robust approximate nearest neighbor search using hierarchical navigable small world graphs</article-title><source>IEEE Trans. Pattern Anal. Mach. Intell.</source><year>2020</year><volume>42</volume><issue>4</issue><fpage>824</fpage><lpage>836</lpage><pub-id pub-id-type="doi">10.1109/TPAMI.2018.2889473</pub-id><pub-id pub-id-type="pmid">30602420</pub-id>
+</element-citation><mixed-citation id="mc-CR44" publication-type="journal">Malkov, Y. A. &#x00026; Yashunin, D. A. Efficient and robust approximate nearest neighbor search using hierarchical navigable small world graphs. <italic>IEEE Trans. Pattern Anal. Mach. Intell.</italic><bold>42</bold> (4), 824&#x02013;836 (2020).<pub-id pub-id-type="pmid">30602420</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR45"><label>45.</label><mixed-citation publication-type="other">Robertson, S. &#x00026; Zaragoza, H. The probabilistic relevance framework: BM25 and beyond. <italic>Foundations &#x00026; Trends in Information Retrieval</italic>, vol. 3, no. 4, pp. 333&#x02013;389, (2009).</mixed-citation></ref><ref id="CR46"><label>46.</label><mixed-citation publication-type="other">Joaqu&#x000ed;n, P. I. et al. Integrating the probabilistic models BM25/BM25F into Lucene. (2009). arXiv.0911.5046.</mixed-citation></ref><ref id="CR47"><label>47.</label><citation-alternatives><element-citation id="ec-CR47" publication-type="journal"><person-group person-group-type="author"><name><surname>Gao</surname><given-names>LY</given-names></name><name><surname>Dai</surname><given-names>ZY</given-names></name><name><surname>Callan</surname><given-names>J</given-names></name></person-group><article-title>Rethink training of BERT rerankers in Multi-Stage retrieval pipeline</article-title><source>ECIR</source><year>2021</year><pub-id pub-id-type="doi">10.48550/arXiv.2101.08751</pub-id></element-citation><mixed-citation id="mc-CR47" publication-type="journal">Gao, L. Y., Dai, Z. Y. &#x00026; Callan, J. Rethink training of BERT rerankers in Multi-Stage retrieval pipeline. <italic>ECIR</italic>10.48550/arXiv.2101.08751 (2021).</mixed-citation></citation-alternatives></ref><ref id="CR48"><label>48.</label><mixed-citation publication-type="other">Pradeep, R., Sahel, S., Jimmy, R. &#x00026; RankZephyr Effective and Robust Zero-Shot Listwise Reranking is a Breeze, arXiv.2312.02724. (2023).</mixed-citation></ref><ref id="CR49"><label>49.</label><mixed-citation publication-type="other">Glass, M. et al. Re2G: retrieve, rerank, generate. <italic>NAACL</italic> arXiv.2207.06300 (2022).</mixed-citation></ref><ref id="CR50"><label>50.</label><mixed-citation publication-type="other">An, Y. &#x00026; Song, B. &#x00026;Hui, B. Y.Qwen2: Technical Report, arXiv.2407.10671. (2024).</mixed-citation></ref><ref id="CR51"><label>51.</label><mixed-citation publication-type="other">Han, H. et al. RAG vs. GraphRAG: A Systematic Evaluation and Key Insights, arXiv:2502.11371. (2025).</mixed-citation></ref></ref-list></back></article>

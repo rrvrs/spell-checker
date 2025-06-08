@@ -1,0 +1,557 @@
+<!--
+
+File produced by pipelineRunner package (for JATS 2 SCJATS with pipeline SCJATS)
+At: 2025-05-22T15:12:21.482Z
+
+Version        : 1.16.1
+Last update    : 2024-08-27
+Modified by    : dunnm
+
+-->
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="1.3" xml:lang="en" article-type="research-article"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Database (Oxford)</journal-id><journal-id journal-id-type="iso-abbrev">Database (Oxford)</journal-id><journal-id journal-id-type="publisher-id">databa</journal-id><journal-title-group><journal-title>Database: The Journal of Biological Databases and Curation</journal-title></journal-title-group><issn pub-type="epub">1758-0463</issn><publisher><publisher-name>Oxford University Press</publisher-name><publisher-loc>UK</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">40118779</article-id><article-id pub-id-type="pmc">PMC11928227</article-id>
+<article-id pub-id-type="doi">10.1093/database/baaf016</article-id><article-id pub-id-type="publisher-id">baaf016</article-id><article-categories><subj-group subj-group-type="heading"><subject>Original Article</subject></subj-group><subj-group subj-group-type="category-taxonomy-collection"><subject>AcademicSubjects/SCI00960</subject></subj-group></article-categories><title-group><article-title>A comprehensive experimental comparison between federated and centralized learning</article-title></title-group><contrib-group><contrib contrib-type="author" corresp="yes"><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0009-0009-4774-0309</contrib-id><name><surname>Garst</surname><given-names>Swier</given-names></name><!--s.j.f.garst@tudelft.nl--><aff>
+<institution content-type="department">Intelligent Systems, Delft University of Technology</institution>, van Mourik Broekmanweg 6, Delft, Zuid-Holland 2628 XE, <country country="NL">The Netherlands</country></aff><xref rid="COR0001" ref-type="corresp"/></contrib><contrib contrib-type="author"><name><surname>Dekker</surname><given-names>Julian</given-names></name><aff>
+<institution content-type="department">Intelligent Systems, Delft University of Technology</institution>, van Mourik Broekmanweg 6, Delft, Zuid-Holland 2628 XE, <country country="NL">The Netherlands</country></aff></contrib><contrib contrib-type="author"><name><surname>Reinders</surname><given-names>Marcel</given-names></name><aff>
+<institution content-type="department">Intelligent Systems, Delft University of Technology</institution>, van Mourik Broekmanweg 6, Delft, Zuid-Holland 2628 XE, <country country="NL">The Netherlands</country></aff></contrib></contrib-group><author-notes><corresp id="COR0001">*Corresponding author. Intelligent Systems, Delft University of Technology, van Mourik Broekmanweg 6, Delft, Zuid-Holland 2628 XE, The Netherlands. E-mail: <email xlink:href="s.j.f.garst@tudelft.nl">s.j.f.garst@tudelft.nl</email></corresp></author-notes><pub-date pub-type="collection"><year>2025</year></pub-date><pub-date pub-type="epub" iso-8601-date="2025-03-19"><day>19</day><month>3</month><year>2025</year></pub-date><pub-date pub-type="pmc-release"><day>19</day><month>3</month><year>2025</year></pub-date><volume>2025</volume><elocation-id>baaf016</elocation-id><history><date date-type="rev-recd"><day>28</day><month>1</month><year>2025</year></date><date date-type="received"><day>01</day><month>5</month><year>2024</year></date><date date-type="accepted"><day>18</day><month>2</month><year>2025</year></date><date date-type="editorial-decision"><day>30</day><month>1</month><year>2025</year></date><date date-type="corrected-typeset"><day>21</day><month>3</month><year>2025</year></date></history><permissions><copyright-statement>&#x000a9; The Author(s) 2025. Published by Oxford University Press.</copyright-statement><copyright-year>2025</copyright-year><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>This is an Open Access article distributed under the terms of the Creative Commons Attribution License (<ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</ext-link>), which permits unrestricted reuse, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions><self-uri xlink:href="baaf016.pdf"/><abstract><title>Abstract</title><p>Federated learning is an upcoming machine learning paradigm which allows data from multiple sources to be used for training of classifiers without the data leaving the source it originally resides. This can be highly valuable for use cases such as medical research, where gathering data at a central location can be quite complicated due to privacy and legal concerns of the data. In such cases, federated learning has the potential to vastly speed up the research cycle. Although federated and central learning have been compared from a theoretical perspective, an extensive experimental comparison of performances and learning behavior still lacks. We have performed a comprehensive experimental comparison between federated and centralized learning. We evaluated various classifiers on various datasets exploring influences of different sample distributions as well as different class distributions across the clients. The results show similar performances under a wide variety of settings between the federated and central learning strategies. Federated learning is able to deal with various imbalances in the data distributions. It is sensitive to batch effects between different datasets when they coincide with location, similar to central learning, but this setting might go unobserved more easily. Federated learning seems to be robust to various challenges such as skewed data distributions, high data dimensionality, multiclass problems, and complex models. Taken together, the insights from our comparison gives much promise for applying federated learning as an alternative to sharing data. Code for reproducing the results in this work can be found at: <ext-link xlink:href="https://github.com/swiergarst/FLComparison" ext-link-type="uri">https://github.com/swiergarst/FLComparison</ext-link></p></abstract><counts><page-count count="10"/></counts></article-meta></front><body><sec id="s1"><title>Introduction</title><p>Nowadays, a lot of data is available for the use of machine learning applications. However, in some use cases data do not naturally reside at a single location, and centralizing data might be difficult due to regulation or hardware constraints. One example is medical data (<xref rid="R1" ref-type="bibr">1</xref>, <xref rid="R2" ref-type="bibr">2</xref>), which are collected at different hospitals or medical institutions, but cannot leave these institutions due to privacy concerns. In order to make use of this type of data, the concept of federated learning (<xref rid="R3" ref-type="bibr">3</xref>) was introduced. Instead of gathering the data in a centralized location before training a single model, in a federated learning environment, the model gets send to wherever the data are available: the so-called clients. In these clients, the models undergo some form of training, after which the updated model parameters are sent back to a central point, referred to as the server. The server then aggregates all the local updates in order to create a new global model, which it then sends back to all the clients, and the cycle repeats. With this setup, only model updates are being communicated, and since the original data never have to leave its origins, the entire process becomes less privacy-sensitive.</p><p>The concept of federated learning is analogous to other fields trying to learn from distributed data, particularly distributed optimization (<xref rid="R4" ref-type="bibr">4</xref>). Distributed optimization operates similar to federated learning. The major difference is that federated learning generally uses a star network, with a centralized server connected to each client, whereas such a central point is usually not present in distributed learning, in which clients are only connected to (some) other clients. For a more in-depth analysis of distributed learning we refer the interested reader to (<xref rid="R5" ref-type="bibr">5</xref>).</p><p>A seminal algorithm for federated learning was Federated Averaging (fedAVG, (<xref rid="R3" ref-type="bibr">3</xref>)), where a weighted average of the model parameters is taken at the central server each communication round. Since the introduction of federated learning in 2017, a lot of research has been done on its efficiency, performance, and privacy-preserving properties (<xref rid="R6" ref-type="bibr">6</xref>, <xref rid="R7" ref-type="bibr">7</xref>). Communication ends up being a bottleneck for efficiency in many federated systems. As a result, techniques have been developed in order to reduce communication rounds (<xref rid="R8" ref-type="bibr">8</xref>, <xref rid="R9" ref-type="bibr">9</xref>). With regard to performance, many analyses have been made on the performance of fedAVG (<xref rid="R3" ref-type="bibr">3</xref>). These studies focus usually on performance under poorer data distributions (<xref rid="R10" ref-type="bibr">10&#x02013;12</xref>), i.e. where data are not independent and identically distributed (IID) at the different clients, as this is the area where fedAVG performance seems to deteriorate (<xref rid="R13" ref-type="bibr">13</xref>). As a result, extensions of fedAVG trying to accommodate for different (non-IID) data distributions have been developed, e.g. (<xref rid="R12" ref-type="bibr">12</xref>, <xref rid="R14" ref-type="bibr">14</xref>). Privacy preservation has been explored by means of constructing specific attacks on federated systems (<xref rid="R15" ref-type="bibr">15</xref>, <xref rid="R16" ref-type="bibr">16</xref>). As a response, extensions on the original federated algorithms that include some form of increased privacy preservation are becoming a vast area of research (<xref rid="R17" ref-type="bibr">17</xref>).</p><table-wrap position="float" id="UT1"><label>Algorithm&#x000a0;1.</label><caption><p>The federated learning algorithm of all classifiers except GBDT</p></caption><table frame="hsides" rules="groups"><colgroup span="1"><col align="left" span="1"/><col align="left" span="1"/></colgroup><tbody><tr><td align="left" rowspan="1" colspan="1">1:</td><td align="left" rowspan="1" colspan="1">Initialize <inline-formula id="ILM0001"><tex-math notation="LaTeX" id="ILM0001-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$W_0^g$\end{document}</tex-math></inline-formula> randomly</td></tr><tr><td align="left" rowspan="1" colspan="1">2:</td><td align="left" rowspan="1" colspan="1">
+<bold>For all</bold> &#x000a0;<italic toggle="yes">r</italic> rounds <bold>do</bold></td></tr><tr><td align="left" rowspan="1" colspan="1">3:</td><td align="left" rowspan="1" colspan="1">
+<bold>On server:</bold> Send <inline-formula id="ILM0002"><tex-math notation="LaTeX" id="ILM0002-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$W_r^g$\end{document}</tex-math></inline-formula> to all clients <italic toggle="yes">i</italic></td></tr><tr><td align="left" rowspan="1" colspan="1">4:</td><td align="left" rowspan="1" colspan="1">
+<bold>On clients:</bold> &#x000a0;<inline-formula id="ILM0003"><tex-math notation="LaTeX" id="ILM0003-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$W_r^i \gets W_r^g$\end{document}</tex-math></inline-formula></td></tr><tr><td align="left" rowspan="1" colspan="1">5:</td><td align="left" rowspan="1" colspan="1">
+<bold>On clients:</bold> &#x000a0;<inline-formula id="ILM0004"><tex-math notation="LaTeX" id="ILM0004-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\text{acc}_r^i = \text{acc}(W_r^i,X_{\text{test}}^i,Y_{\text{test}}^i)$\end{document}</tex-math></inline-formula></td></tr><tr><td align="left" rowspan="1" colspan="1">6:</td><td align="left" rowspan="1" colspan="1">
+<bold>On clients:</bold> &#x000a0;<inline-formula id="ILM0005"><tex-math notation="LaTeX" id="ILM0005-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$W_{r+1}^i\gets \text{localStep}(W_r^i, X_{\text{train}}^i, Y_{\text{train}}^i)$\end{document}</tex-math></inline-formula></td></tr><tr><td align="left" rowspan="1" colspan="1">7:</td><td align="left" rowspan="1" colspan="1">
+<bold>On clients:</bold> &#x000a0;<inline-formula id="ILM0006"><tex-math notation="LaTeX" id="ILM0006-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$s^i \gets \text{size}(X_{\text{train}}^i)$\end{document}</tex-math></inline-formula></td></tr><tr><td align="left" rowspan="1" colspan="1">8:</td><td align="left" rowspan="1" colspan="1">
+<bold>On clients:</bold> send <inline-formula id="ILM0007"><tex-math notation="LaTeX" id="ILM0007-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$W_{r+1}^i$\end{document}</tex-math></inline-formula>, <inline-formula id="ILM0008"><tex-math notation="LaTeX" id="ILM0008-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\text{acc}_r^i$\end{document}</tex-math></inline-formula>, <italic toggle="yes">s<sub>i</sub></italic> back to server</td></tr><tr><td align="left" rowspan="1" colspan="1">9:</td><td align="left" rowspan="1" colspan="1">
+<bold>On server:</bold> retrieve <inline-formula id="ILM0009"><tex-math notation="LaTeX" id="ILM0009-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$W_{r+1}^i$\end{document}</tex-math></inline-formula>, <inline-formula id="ILM0010"><tex-math notation="LaTeX" id="ILM0010-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\text{acc}_r^i$\end{document}</tex-math></inline-formula> and <italic toggle="yes">s<sub>i</sub></italic> for all <italic toggle="yes">i</italic></td></tr><tr><td align="left" rowspan="1" colspan="1">10:</td><td align="left" rowspan="1" colspan="1">
+<inline-formula id="ILM0011">
+<tex-math notation="LaTeX" id="ILM0011-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$W^l = \{W_{r+1}^1, W_{r+1}^2,..,W_{r+1}^i\}$\end{document}</tex-math>
+</inline-formula>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">11:</td><td align="left" rowspan="1" colspan="1">
+<inline-formula id="ILM0012">
+<tex-math notation="LaTeX" id="ILM0012-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$S = \{s^1, s^2,..,s^i\}$\end{document}</tex-math>
+</inline-formula>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">12:</td><td align="left" rowspan="1" colspan="1">
+<bold>On server:</bold> &#x000a0;<inline-formula id="ILM0013"><tex-math notation="LaTeX" id="ILM0013-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$W_{r+1}^g = \text{globalStep}(W^l,S)$\end{document}</tex-math></inline-formula></td></tr><tr><td align="left" rowspan="1" colspan="1">13:</td><td align="left" rowspan="1" colspan="1">
+<bold>On server:</bold> &#x000a0;<inline-formula id="ILM0014"><tex-math notation="LaTeX" id="ILM0014-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\text{acc}_r^g = \text{acc}(W_{r+1}^g, X_{\text{test}}, Y_{\text{test}})$\end{document}</tex-math></inline-formula></td></tr><tr><td align="left" rowspan="1" colspan="1">14:</td><td align="left" rowspan="1" colspan="1">
+<bold>end for</bold>
+</td></tr></tbody></table></table-wrap><p>Although all the aforementioned studies have developed federated learning into a vast research area, many analyses remain mostly theoretical. Besides, the aforementioned works assume that the use of a federated approach is given. However, whether to use federated learning is often an important design decision. One example is the medical research field. There have been various efforts over the years to pool medical data from multiple institutes in order to create a large data resource (<xref rid="R18" ref-type="bibr">18</xref>, <xref rid="R19" ref-type="bibr">19</xref>). However, the efforts required to create such resources cannot be understated. In these cases, one might want to know whether a federated setup will give comparable performance to central models or whether it is beneficial to create a pooled database.</p><p>Recently, papers comparing a federated setting with centralized baselines have been emerging, e.g. (<xref rid="R20" ref-type="bibr">20</xref>, <xref rid="R21" ref-type="bibr">21</xref>). However, most comparisons only include one or few classifiers and/or distributions of the data. Therefore, we set out to design a comprehensive set of experiments in which centralized and federated models are compared to one another.</p><p>We explore the use of different classifiers (six in total) on multiple datasets (five in total), distributed in several ways. Specifically, we start with a toy problem by comparing performances between federated and centralized classifiers on subsets of the Modified National Institute of Standards and Technology dataset (MNIST), as well as fashion MNIST. Next, we move to more realistic scenarios, with data collected from various locations. These datasets were selected such that they have a variety of data types: tabular (RNA abundance), sequential (kinase activation), and 3D imaging (cardiovascular disease classification). As such, we shed some light on different scenarios in which federated learning might perform similar to a centralized model and when to be careful in assuming such a similar performance.</p><table-wrap position="float" id="UT2"><label>Algorithm&#x000a0;2.</label><caption><p>The inPrivate learning algorithm</p></caption><table frame="hsides" rules="groups"><colgroup span="1"><col align="left" span="1"/><col align="left" span="1"/></colgroup><tbody><tr><td align="left" rowspan="1" colspan="1">1:</td><td align="left" rowspan="1" colspan="1">init <italic toggle="yes">W<sup>g</sup></italic> randomly</td></tr><tr><td align="left" rowspan="1" colspan="1">2:</td><td align="left" rowspan="1" colspan="1">for all <italic toggle="yes">r</italic> rounds</td></tr><tr><td align="left" rowspan="1" colspan="1">3:</td><td align="left" rowspan="1" colspan="1">
+<bold>At server :</bold> &#x000a0;<italic toggle="yes">C</italic><sub><italic toggle="yes">a</italic></sub> = <italic toggle="yes">r</italic> mod <italic toggle="yes">N</italic></td></tr><tr><td align="left" rowspan="1" colspan="1">4:</td><td align="left" rowspan="1" colspan="1">
+<bold>At server :</bold> send <italic toggle="yes">W<sup>g</sup></italic> to client <italic toggle="yes">C</italic><sub><italic toggle="yes">a</italic></sub></td></tr><tr><td align="left" rowspan="1" colspan="1">5:</td><td align="left" rowspan="1" colspan="1">
+<bold>On client</bold> &#x000a0;<italic toggle="yes">C</italic><bold><sub><italic toggle="yes">a</italic></sub>:</bold> &#x000a0;<inline-formula id="ILM0015"><tex-math notation="LaTeX" id="ILM0015-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\tilde{y}_{\text{pred}} = W^g(X^{C_{a}}_{\text{train}})$\end{document}</tex-math></inline-formula></td></tr><tr><td align="left" rowspan="1" colspan="1">6:</td><td align="left" rowspan="1" colspan="1">
+<bold>On client</bold> &#x000a0;<italic toggle="yes">C</italic><bold><sub><italic toggle="yes">a</italic></sub>:</bold> &#x000a0;<inline-formula id="ILM0016"><tex-math notation="LaTeX" id="ILM0016-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$L(C_{a}) = log(1 - \tilde{y}_{\text{pred}}) + y_{\text{train}} * \text{log}(\frac{\tilde{y}_{\text{pred}}}{1 - \tilde{y}_{\text{pred}}})$\end{document}</tex-math></inline-formula></td></tr><tr><td align="left" rowspan="1" colspan="1">7:</td><td align="left" rowspan="1" colspan="1">
+<bold>On client</bold> &#x000a0;<italic toggle="yes">C</italic><bold><sub><italic toggle="yes">a</italic></sub>:</bold> create new tree minimizing <inline-formula id="ILM0017"><tex-math notation="LaTeX" id="ILM0017-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$L(C_{a})$\end{document}</tex-math></inline-formula></td></tr><tr><td align="left" rowspan="1" colspan="1">8:</td><td align="left" rowspan="1" colspan="1">
+<bold>On client</bold> &#x000a0;<italic toggle="yes">C</italic><bold><sub><italic toggle="yes">a</italic></sub>:</bold> add tree to <italic toggle="yes">W<sup>g</sup></italic></td></tr><tr><td align="left" rowspan="1" colspan="1">9:</td><td align="left" rowspan="1" colspan="1">
+<bold>On client</bold> &#x000a0;<italic toggle="yes">C</italic><bold><sub><italic toggle="yes">a</italic></sub>:</bold> &#x000a0;<inline-formula id="ILM0018"><tex-math notation="LaTeX" id="ILM0018-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\text{acc}_r$\end{document}</tex-math></inline-formula> = <inline-formula id="ILM0019"><tex-math notation="LaTeX" id="ILM0019-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\text{accuracy}(W^g, X^{C_{a}}_{\text{test}}, Y^{C_{\text{active}}}_{\text{test}})$\end{document}</tex-math></inline-formula></td></tr><tr><td align="left" rowspan="1" colspan="1">10:</td><td align="left" rowspan="1" colspan="1">
+<bold>On client</bold> &#x000a0;<italic toggle="yes">C</italic><bold><sub><italic toggle="yes">a</italic></sub>:</bold> send <italic toggle="yes">W<sup>g</sup></italic>, <inline-formula id="ILM0020"><tex-math notation="LaTeX" id="ILM0020-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\text{acc}_r$\end{document}</tex-math></inline-formula> back to server</td></tr><tr><td align="left" rowspan="1" colspan="1">11:</td><td align="left" rowspan="1" colspan="1">
+<bold>At server:</bold> Receive <italic toggle="yes">W<sup>g</sup></italic>, <inline-formula id="ILM0021"><tex-math notation="LaTeX" id="ILM0021-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\text{acc}_r$\end{document}</tex-math></inline-formula> from client <italic toggle="yes">C</italic><sub><italic toggle="yes">a</italic></sub></td></tr><tr><td align="left" rowspan="1" colspan="1">12:</td><td align="left" rowspan="1" colspan="1">
+<bold>At server:</bold> &#x000a0;<inline-formula id="ILM0022"><tex-math notation="LaTeX" id="ILM0022-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\text{acc}^g_i$\end{document}</tex-math></inline-formula> = <inline-formula id="ILM0023"><tex-math notation="LaTeX" id="ILM0023-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\text{accuracy}(W^g, X_{\text{test}} Y_{\text{test}})$\end{document}</tex-math></inline-formula></td></tr><tr><td align="left" rowspan="1" colspan="1">13:</td><td align="left" rowspan="1" colspan="1">
+<bold>end for</bold>
+</td></tr></tbody></table></table-wrap></sec><sec id="s2"><title>Methods</title><sec id="s2-s1"><title>Algorithm overview</title><p>In total, five different classifiers were implemented in a federated setting: a logistic regressor (LR), a support vector machine (SVM), a fully connected neural network (FNN), a convolutional neural network (CNN), and a gradient-boosting decision tree (GBDT) protocol. All classifiers except the GBDT follow the same federated learning scheme, which is given by <xref rid="UT1" ref-type="table">Algorithm 1</xref>. The federated learning algorithm for the GBDT is given by <xref rid="UT2" ref-type="table">Algorithm 2</xref>.</p><p>The architectures for the FNN and CNN can be found in <xref rid="s5" ref-type="sec">Supplementary Tables&#x000a0;1</xref> and <xref rid="s5" ref-type="sec">2</xref>, respectively. A performance comparison with a centralized version of the classifiers was the outcome of interest, rather than optimizing the final performance. Therefore, the neural net architectures were kept simple, allowing for faster training. The linear models were implemented using sklearn&#x02019;s SGDClassifier, using default parameters (except for the loss function). Similarly, the GBDT protocol was implemented using sklearn&#x02019;s GradientBoostingClassifier, using default parameters except for n_estimators, which was initialized as one, and incremented each iteration to allow for the construction of subsequent trees.</p><p>
+<xref rid="UT1" ref-type="table">Algorithm 1</xref> works as follows: first, a model is initialized on the server with random values. This model is then sent to all clients. Upon reception, every client performs (in parallel) a local training step to update the coefficients of the local model based on stochastic gradient descent (SGD). All clients then send back their updated model to the central server. At the server, these models are combined to update the global model. Then the next epoch starts, and the combined coefficients from the previous round are now used as the new values to be sent out to all clients. In <xref rid="UT1" ref-type="table">Algorithm 1</xref>, the intermediate models are evaluated on the test set at the server (holding a concatenation of all test sets from all clients). Although this is not realistic, we observed no difference between calculating the performance locally at each client and then averaging the performances or doing this centrally on the combined test sets. Therefore, for simplicity reasons, we chose to calculate the performances centrally.
+</p><p>The functions <italic toggle="yes">localStep</italic> and <italic toggle="yes">globalStep</italic> in lines 6 and 12 of <xref rid="UT1" ref-type="table">Algorithm 1</xref>, respectively, are either an implementation of the fedAVG Algorithm (<xref rid="R3" ref-type="bibr">3</xref>) or the SCAFFOLD algorithm (<xref rid="R12" ref-type="bibr">12</xref>).</p><p>The <italic toggle="yes">localStep</italic> for fedAVG is done by means of SGD, i.e.</p><disp-formula id="UM0001">
+<tex-math notation="LaTeX" id="UM0001-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$$ W^i_{r+1} = W^i_r - \eta_l * \nabla L(X^i_{\text{train}},y^i_{\text{train}}), $$\end{document}</tex-math>
+</disp-formula><p>where <inline-formula id="ILM0024"><tex-math notation="LaTeX" id="ILM0024-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$W^i_r$\end{document}</tex-math></inline-formula> is the model on client <italic toggle="yes">i</italic> in round <italic toggle="yes">r</italic>, <italic toggle="yes">&#x003b7;</italic><sub><italic toggle="yes">l</italic></sub> the local learning rate, <inline-formula id="ILM0025"><tex-math notation="LaTeX" id="ILM0025-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$L(X^i_{\text{train}},y^i_{\text{train}})$\end{document}</tex-math></inline-formula> is a loss function which differs between classifiers, and <inline-formula id="ILM0026"><tex-math notation="LaTeX" id="ILM0026-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$X^i_{\text{train}}$\end{document}</tex-math></inline-formula> and <inline-formula id="ILM0027"><tex-math notation="LaTeX" id="ILM0027-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$Y^i_{\text{train}}$\end{document}</tex-math></inline-formula> are the training data available at client <italic toggle="yes">i</italic>. Note that the clients also have to split data into training and testing to be able to independently evaluate a learned classifier. The global step of fedAVG consists of taking the weighted average for all model parameters:</p><disp-formula id="UM0002">
+<tex-math notation="LaTeX" id="UM0002-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$$ W^g_{r+1} = \frac{1}{S} * \sum_{i=0}^{N} s^i * W^i_{r+1}, $$\end{document}</tex-math>
+</disp-formula><p>where <italic toggle="yes">s<sup>i</sup></italic> is the dataset size of the <italic toggle="yes">i</italic><sup>th</sup> client, <italic toggle="yes">N</italic> the amount of clients, and <inline-formula id="ILM0028"><tex-math notation="LaTeX" id="ILM0028-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$S = \sum_{i=1}^N s^i$\end{document}</tex-math></inline-formula>.</p><p>Besides fedAVG, we have also used the SCAFFOLD aggregation algorithm (<xref rid="R12" ref-type="bibr">12</xref>). For both the local and global step, SCAFFOLD expands on fedAVG by means of a so-called control variate <italic toggle="yes">c</italic>. Intuitively, these control variates are used to compensate for model drift, where a model update does not move into the direction of the global optimum due to local datasets being distributed in a non-IID fashion. For the local step:</p><disp-formula id="UM0003">
+<tex-math notation="LaTeX" id="UM0003-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$$ W^i_{r+1} = W^g_r - \eta_l \nabla L(X^i_{\text{train}}, y^i_{\text{train}}) + c^g_r - c^i_{r}, $$\end{document}</tex-math>
+</disp-formula><p>in which <inline-formula id="ILM0029"><tex-math notation="LaTeX" id="ILM0029-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$c^g_r$\end{document}</tex-math></inline-formula> and <inline-formula id="ILM0030"><tex-math notation="LaTeX" id="ILM0030-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$c^i_r$\end{document}</tex-math></inline-formula> are the global and local control variates in round <italic toggle="yes">r</italic> which are all initialized with zero values. Next (but within the same round), <italic toggle="yes">c<sup>i</sup></italic> gets updated as</p><disp-formula id="UM0004">
+<tex-math notation="LaTeX" id="UM0004-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$$ c^i_{r+1} = c^i_r - c^g_r + \frac{1}{\eta_l} (W^i_r - W^i_{r+1}). $$\end{document}</tex-math>
+</disp-formula><p>These updated control variates are sent back to the server together with the model parameters and accuracy for that round. Then the global update step of SCAFFOLD first updates the coefficients:</p><disp-formula id="UM0005">
+<tex-math notation="LaTeX" id="UM0005-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$$ W^g_{r+1} = W^g_r + \frac{\eta_g}{N} * \sum_{i=0}^{N} (W^i_{r+1} - W^i_r), $$\end{document}</tex-math>
+</disp-formula><p>with <italic toggle="yes">&#x003b7;</italic><sub><italic toggle="yes">g</italic></sub> being the global learning rate. The global control variate <italic toggle="yes">c<sup>g</sup></italic> is</p><disp-formula id="UM0006">
+<tex-math notation="LaTeX" id="UM0006-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$$ c^g_{r+ 1} = c^g_r + \frac{1}{N} * \sum_{i=0}^{N}(c^i_{r+1} - c^{i}_{r}). $$\end{document}</tex-math>
+</disp-formula><p>The localStep of both fedAVG and SCAFFOLD allows for batch learning, i.e. splitting up the local training data into multiple shards, allowing multiple consecutive gradient descent steps each local epoch. However, our main objective was comparison with the central case and not optimizing performance. Therefore, since batch learning was not required for convergence, it was not utilized. Exception to this is the CNN classifier for the kinase datasets, which needed some batch learning for convergence: For all CNN experiments, the local data were split up into 10 batches each epoch.</p><p>The federated GBDT is implemented different from the other classifiers, as a decision tree does not lend itself very well for parameter averaging. Instead, for GBDT, we followed the &#x0201c;inPrivate Learning&#x0201d; algorithm from (<xref rid="R30" ref-type="bibr">30</xref>), as shown in <xref rid="UT2" ref-type="table">Algorithm 2</xref>. In this algorithm, only one client is active per round. This client is referred to as <italic toggle="yes">C</italic><sub><italic toggle="yes">a</italic></sub> in Algorithm <xref rid="UT2" ref-type="table">2</xref>. This client uses the decision trees of its predecessors to calculate a loss on its own dataset, which it then uses to boost the decision tree it builds.</p></sec><sec id="s2-s2"><title>Datasets</title><p>All classifiers were tested on five different datasets: (i) MNIST (<xref rid="R22" ref-type="bibr">22</xref>), images of handwritten digits; (ii) fashion MNIST (<xref rid="R23" ref-type="bibr">23</xref>), images of clothes; (iii) a dataset used for the prediction of Acute Myeloid Leukemia (AML) based on measured gene expressions (<xref rid="R28" ref-type="bibr">28</xref>); (iv) a dataset consisting of molecular fingerprints used to predict the activation of certain kinases; and (v) a dataset of 3D Magnetic Resonance Imaging (MRI) scans of hearts from either healthy patients or patient with a cardiovascular disease.</p><sec id="s2-s2-s1"><title>Two and four class MNIST</title><p>The first dataset is derived from MNIST (<xref rid="R22" ref-type="bibr">22</xref>). In order to reduce complexity, two derivatives were made, using only a subset of the original classes: a two-class problem (MNIST2) and a four-class problem (MNIST4). The digits were chosen based on which combination is most difficult to separate according to the original work introducing MNIST. For MNIST2, we included digits 4 and 9, whereas for MNIST4, digits 2 and 8 are being added. A total of 80% of the dataset is used for training, with the remaining 20% for testing. Three different splits were made, resulting in 6 federated datasets: an IID distribution, a distribution with imbalances in sample size (sample imbalance, SI), and one with imbalances in classes (class imbalance, CI). <xref rid="F1" ref-type="fig">Figure&#x000a0;1d</xref> through <xref rid="F1" ref-type="fig">1f</xref> and <xref rid="s5" ref-type="sec">Supplementary Figure&#x000a0;9</xref> show these distributions.</p><fig position="float" id="F1" fig-type="figure"><label>Figure&#x000a0;1.</label><caption><p>(a&#x02013;c) show results on MNIST datasets, (d&#x02013;f) show the various distributions for the MNIST2 dataset (IID, SI, and CI, respectively), and (g&#x02013;h) show heatmaps resembling model updates throughout training on the IID and CI distributions, respectively.</p></caption><graphic xlink:href="baaf016f1" position="float"/></fig></sec><sec id="s2-s2-s2"><title>Fashion MNIST</title><p>The fashion MNIST dataset (<xref rid="R23" ref-type="bibr">23</xref>) was also split into 80% training and 20% test data. Two different distributions were made: an IID distribution and a class-imbalanced distribution. Note that this imbalanced distribution is different from the MNIST distributions as it concerns 10 classes (<xref rid="F2" ref-type="fig">Figure&#x000a0;2a</xref>).</p><fig position="float" id="F2" fig-type="figure"><label>Figure&#x000a0;2.</label><caption><p>The aggressive CI distribution for the fashion MNIST dataset (a), with the results for both IID and CI distributions reported in (b).</p></caption><graphic xlink:href="baaf016f2" position="float"/></fig></sec><sec id="s2-s2-s3"><title>AML dataset (A1&#x02013;A3)</title><p>The third dataset was taken from a study done by Warnat-Herresthal et&#x000a0;al. (<xref rid="R28" ref-type="bibr">28</xref>). In their experiments, they used measured transcriptomes of gene expressions from patients to predict the presence of acute myeloid leukaemia (AML). These transcriptomes were taken from human peripheral blood mononuclear cells from three different sources. In the datasets, A1 and A2 are transcriptomes that have been measured using microarrays (<xref rid="R31" ref-type="bibr">31</xref>), whereas dataset A3 is measured using RNA-sequencing (<xref rid="R32" ref-type="bibr">32</xref>). All three datasets contain 12&#x02009;709 different gene expression values per sample, with labels for 25 different illnesses. Samples were labelled according to (<xref rid="R28" ref-type="bibr">28</xref>), i.e. all AML samples were given label (1), and all other labels were joined under one label (0) (in the original work named &#x02018;cases&#x02019; and &#x02018;controls&#x02019;). This approach does result in an inherent class imbalance in the combined dataset, i.e. 7500 samples have label 0 and only 4000 samples have label 1. The datasets were split into 80% training samples and 20% test samples.</p></sec><sec id="s2-s2-s4"><title>Kinase dataset</title><p>The kinase dataset was taken from (<xref rid="R26" ref-type="bibr">26</xref>). This dataset consists of two deMorgan fingerprints, connectivity and feature based, with as labels the activation values for certain kinases. We chose two of these kinases, being KDR and ABL1. Two of the three datasets were quite sparse, so there is no full overlap between molecules with data on KDR and ABL1, practically creating two datasets. The activation values were binarized between active and non-active, with a cutoff value of 6.3 (e.g. a molecule is seen as activating a kinase if it has a <inline-formula id="ILM0031"><tex-math notation="LaTeX" id="ILM0031-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\text{pIC}_{50}$\end{document}</tex-math></inline-formula> value higher than 6.3), following the original study.</p></sec><sec id="s2-s2-s5"><title>MRI dataset</title><p>The last dataset consisted of 3D MRI scans of patients&#x02019; hearts, taken from the Multi-Vendor and Multi-Disease Cardiac Segmentation Challenge (MNM) (<xref rid="R27" ref-type="bibr">27</xref>), where it was generated as part of a challenge on using deep learning models for cardiac MRI scans. Multiple time frames of MRI scans are available for all patients. Following instructions from (<xref rid="R27" ref-type="bibr">27</xref>), only the time points of the end-diastolic and the end-systolic phase were used. As various MRI scanners were used (at different hospitals), not all scans had the same resolution/dimensionality. Scans were brought to equal dimensionality by downsampling to the lowest common dimensions.</p><p>We only selected samples from healthy patients and patients with hypertrophic cardiomyopathy (HCM), making it a binary classification problem. The original dataset had a train/validate/test split setup to make the problem extra challenging. Since our main objective is not to solve this issue, but rather compare federated and central classifiers, we opted to redistribute the test/validate/train split to be more similar across all clients (<xref rid="F5" ref-type="fig">Figure&#x000a0;5b</xref>). Note that this did not mix the samples across clients.</p><fig position="float" id="F5" fig-type="figure"><label>Figure&#x000a0;5.</label><caption><p>(a) and (b) show distributions of the MNM dataset, originally and after redistribution, respectively, with (c) showing the accuracy curve of ResNet 34 on the distribution from (b) (bs = batch size).</p></caption><graphic xlink:href="baaf016f5" position="float"/></fig></sec></sec><sec id="s2-s3"><title>Experimental setup</title><p>Our goal is to compare a federated classifier performance to a central model, i.e. when all data are available at the server. To do this in a fair way, the learning rate was kept equal between the federated and central runs. Also, the amount of communication rounds was kept equal to the amount of epochs in the central case. Only one &#x02018;local&#x02019; epoch was used during all experiments, meaning that all classifiers sent their updated model back to the server after only one full pass of their local data. Four runs with different model initializations were made per experiment (for both the federated and centralized case). All experiments were executed on one laptop, running all clients as well as the server. The federated learning platform vantage6 (<xref rid="R33" ref-type="bibr">33</xref>, <xref rid="R34" ref-type="bibr">34</xref>) was used. Vantage6 uses a dockerized solution, which means that every client (and every task that every node runs) runs in its own docker, therefore being unable to alter the solution of the other clients. The experiment on the MRI dataset, however, was not performed with vantage6 due to size constraints of both data and neural network. For this case, we built a simulated federated environment to run on our high-performance cluster.</p></sec></sec><sec id="s3"><title>Results</title><sec id="s3-s1"><title>Linear models on a binary classification problem show a relation between the learning rate and the amount of clients used</title><p>The MNIST dataset (images of handwritten digits) was chosen as a first dataset, as it is known to be a relatively easy problem for modern day classifiers (<xref rid="R22" ref-type="bibr">22</xref>). In order to simplify, MNIST was converted into a binary classification problem (MNIST2) by selecting only two of the classes. This dataset was distributed evenly (IID) among 10 clients, meaning that each client had a similar amount of samples, with an even class distribution (<xref rid="F1" ref-type="fig">Figure&#x000a0;1d</xref>, Methods). A logistic regression (LR) and SVM were trained, with varying learning rates for both the central and federated model. Results for the LR model can be found in <xref rid="F1" ref-type="fig">Figure&#x000a0;1a</xref>. These results show that increasing the learning rate leads to faster convergence times, both in the federated and centralized case. There is a consistent factor of 10 between the federated and centralized models, i.e. a federated classifier with a learning rate of 0.5 seems to give a comparable result as a central classifier with learning rate 0.05. This was observed for both the LR and SVM models (results on SVM can be found in <xref rid="s5" ref-type="sec">Supplementary Figure&#x000a0;6</xref>). This can be explained by the amount of clients used, which is also 10. A mathematical motivation behind this is given in Supplement A.1, but the intuition is as follows: a single SGD step in a central model is based on the sum of the loss function over all <italic toggle="yes">S</italic> available data samples. In a federated setting, these <italic toggle="yes">S</italic> data points are distributed over <italic toggle="yes">N</italic> clients, meaning that each client gives an update based on only <inline-formula id="ILM0032"><tex-math notation="LaTeX" id="ILM0032-Latex">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\frac{S}{N}$\end{document}</tex-math></inline-formula> samples (on average). As these updates are only getting averaged, this is analogous to dividing the learning rate by a factor <italic toggle="yes">N</italic>.</p></sec><sec id="s3-s2"><title>Extension towards more complex models shows different relationships between federated and centralized models</title><p>We were interested whether our findings would be different when more complex classifiers were adopted. Hereto, we examined a fully connected neural net (FNN), a convolutional neural net (CNN), and a decision tree (GBDT) classifier (implementation details in methods). <xref rid="F1" ref-type="fig">Figure&#x000a0;1b</xref> (<xref rid="s5" ref-type="sec">Supplementary Table&#x000a0;4</xref>) shows the area under curve (AUC) values for the accuracy curves (i.e. accuracy versus epochs/communication rounds). This metric is indicative of how the convergence of two classifiers compare, especially if the convergence accuracy is equal, which is shown in the top part of the plot. We ran each classifier four times, resulting in the boxplots in <xref rid="F1" ref-type="fig">Figure&#x000a0;1b</xref>. This figure shows that also for the neural network-based models (FNN and CNN), similar performance is being reached when comparing the federated (IID) and central models of the same classifier. The GBDT shows a slight difference between the federated and central versions. This could be due to the GBDT using a different federated update scheme as all other classifiers (<xref rid="UT2" ref-type="table">Algorithm 2</xref>, methods). The CNN shows some difference in AUC of the accuracy curve between the central and federated setting. This highlights a limitation of this metric, as it is caused by a slightly faster start of convergence in the federated case, as can be seen in <xref rid="s5" ref-type="sec">Supplementary Figure&#x000a0;7</xref>. Furthermore, the convergence accuracy is similar on average, although a higher variance is observed in the central case. Curiously, the relation between the learning rate and the amount of clients that was observed in the first set of experiments does not seem to be present for the neural network-based classifiers, i.e. these had the same learning rate between federated and central experiments. We speculate that this difference is due to the non-convexity of the neural networks.</p></sec><sec id="s3-s3"><title>Binary classification experiments show robustness to sample and class distributions</title><p>In the next experiment, the robustness to a change in distribution between clients was tested. Hereto, the MNIST2 dataset was split with a sample imbalance across the clients (SI), i.e. the first client only holds a small fraction of the data, the second client a slightly larger fraction, etc. (<xref rid="F1" ref-type="fig">Figure&#x000a0;1e</xref>). We also considered another imbalance, in which the distribution of classes across clients was skewed (CI) (<xref rid="F1" ref-type="fig">Figure&#x000a0;1f</xref>), i.e. some clients have more samples from one class and others have more samples from the other class, and in between. <xref rid="F1" ref-type="fig">Figure&#x000a0;1b</xref> and <xref rid="s5" ref-type="sec">Supplementary Table&#x000a0;4</xref> show that, with the exception for the GBDT model, similar performances are being attained for the SI and CI settings compared to the IID setting. The SVM does seem to have a slightly higher AUC for the SI distribution, although this is not visible in final accuracy. After observing the accuracy curves (<xref rid="s5" ref-type="sec">Supplementary Figure&#x000a0;8</xref>), this difference seems to come from a slightly faster convergence rate for the SI distribution (about 1 epoch difference).</p><p>Although no performance differences are observed in the imbalance settings, we were interested on how both imbalance settings influenced the learning process. Hereto, we visualized the model parameters at the client and at the server at each communication round. In the IID setting (<xref rid="F1" ref-type="fig">Figure&#x000a0;1g</xref>), one can observe that the updated model parameters at the client are more or less similarly changing across the epochs. Interestingly, for the CI setting, this is not the case (<xref rid="F1" ref-type="fig">Figure&#x000a0;1h</xref>). Here, we see that the clients with the larger class imbalance have model updates that are consistently further from the global model.</p></sec><sec id="s3-s4"><title>Extension to multiclass problem results in similar performance as compared to binary classification</title><p>To explore the effect of having a multiclass problem, we created a four class dataset out of the original MNIST dataset; MNIST4 (see Methods&#x02014;datasets). When splitting the samples evenly (IID) across the clients (in number of samples as well as class distributions), the linear models achieve similarly shaped accuracy curves for the federated and central versions, as indicated by the AUC&#x02019;s in <xref rid="F1" ref-type="fig">Figure&#x000a0;1c</xref> (<xref rid="s5" ref-type="sec">Supplementary Table&#x000a0;4</xref>). The neural network-based models show differences in these AUCs. In the case of the CNN, this difference is even visible in the final accuracy. Then we distributed MNIST4 with either sample imbalance (SI) or CI, similar to the two class experiments (see <xref rid="s5" ref-type="sec">Supplementary Figure&#x000a0;9</xref>). The same robustness to the difference in sample and class distributions are observed as in the two class experiments.</p></sec><sec id="s3-s5"><title>SCAFFOLD model updating performs similar to fedAVG model updating</title><p>To be more robust to class imbalances across clients, an alternative model updating scheme with respect to fedAVG was introduced: SCAFFOLD ((<xref rid="R12" ref-type="bibr">12</xref>), <xref rid="s5" ref-type="sec">Supplementary Materials A.2</xref>). We find that the performance of SCAFFOLD (<xref rid="F1" ref-type="fig">Figure&#x000a0;1(b)</xref> and (c)) is comparable to fedAVG for the generated distributions of the MNIST2 and MNIST4 datasets. This might have been expected, as fedAVG shows similar performance in the CI case compared to the IID case (so no deterioration in performance that could be repaired by SCAFFOLD).</p></sec><sec id="s3-s6"><title>Increasing class distribution aggressiveness gives varying results</title><p>After our first experiments on the MNIST datasets, we continued with the fasion MNIST dataset (images of 10 classes of different clothing) as this has been designed to be a harder classification task (<xref rid="R23" ref-type="bibr">23</xref>). When distributing evenly across 10 clients (IID), all models behave similarly as for the more simple MNIST classification tasks (<xref rid="F2" ref-type="fig">Figure&#x000a0;2</xref>); there is no visible difference between the central and federated versions of the linear models, the FNN shows a slight difference in AUC but not in final accuracy, and the CNN shows a larger difference in AUC, but not in final accuracy. For the GBDT, some difference can be seen in both AUC and final accuracy.</p><p>We then tested a more aggressive class imbalance by distributing the fashion MNIST across clients in such a way that the available classes for each client are not necessarily overlapping, i.e. some clients have training examples of a particular class, whereas other clients do not (<xref rid="F2" ref-type="fig">Figure&#x000a0;2a</xref>). Somewhat surprisingly, differences between the IID setting and the more aggressive CI setting were negligible for most classifiers, except the GBDT, which breaks down for this aggressive CI setting. This might be related to the updating scheme in which the decision tree is updated for each client sequentially (<xref rid="UT2" ref-type="table">Algorithm 2</xref>, methods) instead of simultaneously for all other classifiers (<xref rid="UT1" ref-type="table">Algorithm 1</xref>, methods).</p></sec><sec id="s3-s7"><title>Experiments on high-dimensional data show potential for federated data processing techniques</title><p>Until now, all experiments have utilized a single dataset which has then been split into multiple pieces. A more realistic scenario would use multiple datasets, each gathered on a separate client. Hereto, we used datasets that were gathered to predict whether a patient has acute myeloid leukemia (AML) based on their measured transcriptome ((<xref rid="R24" ref-type="bibr">24</xref>), Methods). It consists of three different datasets (A1&#x02013;A3), with 11 500 total patients for which the expression of 12 709 genes are measured. For two of the datasets (A1, A2) the expression is measured using microarray technology, and for the third dataset (A3) this was done using current RNA sequencing technology.</p><p>In order to determine the feasibility of learning on these datasets, we first analysed A2 only. A2 was distributed in an IID fashion over 10 clients. As these data have a high dimensionality (over 12.000 features), a dimensionality reduction method seemed to be essential as all classifiers could not perform above random level in the original feature domain (this was also the case for the central models). Therefore, a principal component analysis (PCA) was performed beforehand, reducing the data to 100 features. For this we implemented the PCA in a federated manner (adapted from (<xref rid="R25" ref-type="bibr">25</xref>), see <xref rid="s5" ref-type="sec">Supplementary Algorithm A.3</xref>). With the reduced dataset, all classifiers perform similar to what we observed in earlier experiments (<xref rid="F3" ref-type="fig">Figure&#x000a0;3a</xref>). Next, we also tested the SI and CI distributions (before reapplying the federated PCA). Also for this distributed A2 dataset, we observe a high robustness to the different data distributions (<xref rid="F3" ref-type="fig">Figure&#x000a0;3a</xref> and <xref rid="s5" ref-type="sec">Supplementary Table&#x000a0;5</xref>).</p><fig position="float" id="F3" fig-type="figure"><label>Figure&#x000a0;3.</label><caption><p>AUC performance of the five classifiers across different splits of dataset A2 across 10 clients in (a), FNN results when all three AML datasets A1&#x02013;A3 are used with the original data are shown in (b), and (c) shows the FNN results on A1&#x02013;A3 using the locally scaled data.</p></caption><graphic xlink:href="baaf016f3" position="float"/></fig></sec><sec id="s3-s8"><title>Usage of heterogeneous datasets highlights the need to &#x02018;think federated&#x02019;</title><p>Then we returned to the combined datasets A1&#x02013;A3. In this setup, only three clients have been used, each holding one complete dataset. Also in this setting dimensionality reduction using federated PCA was done before training the classifiers. The LR seems to perform fine, although the relation between client amount and learning rate seems to have disappeared (<xref rid="s5" ref-type="sec">Supplementary Figure&#x000a0;10</xref>). However, while the centralized neural network manages to improve slightly over time, the federated neural network now breaks down (<xref rid="F3" ref-type="fig">Figure&#x000a0;3b</xref>). We therefore dived deeper into possible causes of this breakdown.</p><p>This breakdown might have been caused by difference in measuring technology, causing the measured features to be distributed differently between dataset A3 (sequencing technology) and the datasets A1 and A2 (microarray technology). To correct for the different feature distributions between the datasets, we normalized features for all datasets locally, similar to a batch correction scheme, by <italic toggle="yes">z</italic>-normalizing each gene before applying the federated PCA (<xref rid="s5" ref-type="sec">Supplementary Algorithm 4</xref>). After this batch correction, performance of the federated and central classifiers is similar again (<xref rid="F3" ref-type="fig">Figure&#x000a0;3c</xref> and <xref rid="s5" ref-type="sec">Supplementary Figure&#x000a0;9</xref>). Although technical batch effect such as these can occur in a centralized setting as well, the nature of federated data being &#x02018;unseen&#x02019; means that such batch effects could go unnoticed. Moreover, it can be tempting to view a federated dataset as one dataset (which happens do be distributed). These results underline the importance of treating distributed datasets as separate entities, instead of as subsets of a larger dataset.</p></sec><sec id="s3-s9"><title>Experiments on &#x02018;real-life&#x02019; distributed datasets show increased variance for federated models</title><p>Next, we explored a dataset consisting of molecules that are described by their molecular fingerprints (deMorgan fingerprints, see Methods for details), which can be used to predict the activation or inhibition of certain kinases (<xref rid="R26" ref-type="bibr">26</xref>). The dataset is compiled out of three different studies, which we treated as different clients. Two different kinases, KDR and ABL1, were selected as targets for classification, resulting in two datasets. Note that, due to sparsity in the data, these two datasets are not equal in size (for each client), see <xref rid="F4 F4" ref-type="fig">Figures&#x000a0;4a and 4d</xref> for data distributions. After a brief analysis of the datasets, two interesting aspects came to mind. First, the distributions shown in <xref rid="F4" ref-type="fig">Figure&#x000a0;4a</xref> and&#x000a0;<xref rid="F4" ref-type="fig">d</xref> could be seen as a combination between a class and sample imbalanced dataset, thereby increasing complexity with respect to earlier distributions. Second, we looked at a combined tSNE plot (<xref rid="F4 F4" ref-type="fig">Figure&#x000a0;4b and e</xref>), which show a large amount of small clusters, most of which are only present at one of the datasets.</p><fig position="float" id="F4" fig-type="figure"><label>Figure&#x000a0;4.</label><caption><p>(a) and (d) show data distributions, (b) and (e) show t-distributed stochastic neighbor embedding plots (every dot is a molecule, and color indicates study), and (c) and (f) show performance results for the different classifiers for the central and federated setting.</p></caption><graphic xlink:href="baaf016f4" position="float"/></fig><p>
+<xref rid="F4 F4" ref-type="fig">Figure&#x000a0;4c and f</xref> shows the results for kinase KDR and ABL1, respectively, as well as <xref rid="s5" ref-type="sec">Supplementary Table&#x000a0;3</xref>. For KDR, convergence behaviour seems to be similar, albeit with a higher variance for the linear models, with the exception of CNN and GBDT. However, some difference in final accuracy can be seen for the linear models as well. CNN seems to outperform on KDR with the given metric, which can also somewhat be observed in <xref rid="s5" ref-type="sec">Supplementary Figure&#x000a0;12</xref>. For this experiment, minibatch learning was used for the CNN experiments (both federated and centralized), which could explain this behaviour.</p><p>For ABL1, there is a larger difference in convergence for the linear models between the federated and centralized settings. However, final accuracy is still similar, as can also be seen in <xref rid="s5" ref-type="sec">Supplementary Figure&#x000a0;13</xref>. Curiously, both FNN and CNN seem to converge similarly this time, although there is a slightly higher final accuracy for the CNN.</p></sec><sec id="s3-s10"><title>Complex federated dataset shows capability for larger neural networks</title><p>To compare performances on a more complex, distributed dataset, we used the publicly available dataset for the MNM challenge from (<xref rid="R27" ref-type="bibr">27</xref>). 3D MRI scans of the heart are classified as either a healthy patient or as a patient having one of various cardiovascular diseases. We selected only MRI scans of healthy patients and patients with HCM, which was the largest class of diseases, simplifying the task to a binary classification.</p><p>After initial testing, it became clear that the structure of the 3D MRI scans was too complex for the simple linear and shallow neural networks to achieve reasonable performances. We therefore adapted the ResNet-34 model by adjusting the input layer to accommodate the size of the scans, as well as by modifying the output layer to account for the amount of classes. For the federated experiment, the dataset was split based on hospital of origin. This resulted in four clients (the fifth hospital did not have any samples of the classes we selected) (<xref rid="F5" ref-type="fig">Figure&#x000a0;5a</xref>). The train/test split chosen by the original authors proved to be exceptionally challenging without any data augmentation strategies, as performed in earlier work on the same dataset (<xref rid="R25" ref-type="bibr">25</xref>, <xref rid="R27" ref-type="bibr">27</xref>). We therefore changed the train/test split as shown in <xref rid="F5" ref-type="fig">Figure&#x000a0;5b</xref> (note that data remained at their original &#x02018;location&#x02019;, only local changes to the train/test splits were made). <xref rid="F5" ref-type="fig">Figure&#x000a0;5c</xref> shows the comparison between the federated and centralized experiments. This shows, although the learning behaviour between the two settings is different, both the central and federated approaches converge to a similar accuracy, indicating that federated learning also works well on larger (neural) networks, which is in line with earlier research (<xref rid="R25" ref-type="bibr">25</xref>).</p></sec></sec><sec id="s4"><title>Conclusion</title><p>This paper describes the results of a set of experiments exploring the differences between centralized and federated machine learning models. Multiple classifiers were used on several datasets, which have been distributed in different ways. Results show that, especially under IID circumstances, a federated classifier could reach similar performances compared to its centralized counterpart. However, a careful choice of parameters such as learning rate and batch size is vital to reach comparable performance. The exact relation between those parameters for reaching equal performance between centralized and federated models remains unclear and could be part of future work, although we have shown that the learning rate can be adapted taking into account the number of clients. Furthermore we have illustrated that when using datasets from multiple sources, one can suffer from batch effects between the datasets. Although this affects both a federated and a central model, we advocate to be extra careful on this aspect in the federated case as the data distributions are not trivially compared in this setting.</p><p>For all MNIST variants, fashion MNIST, A2, and both kinase datasets, the same set of classifiers was used. This allowed us to compare performance differences between central and federated classifiers across datasets for all models. It does, however, create the situation that we applied classifiers on data types for which such a specific classifier might not be a good choice. However, since our goal was not to find optimal performance on the studied datasets, but rather compare federated with central models, we deemed this situation acceptable. Nevertheless, our results should not be seen as a recommendation on which type of classifier to use for a specific data type.</p><p>The federated GBDT classifier breaks down on the aggressive class-imbalanced distribution of the fashion MNIST dataset, in which each client has approximately half of the total amount of classes. The inPrivate learning algorithm utilizes decision trees created by the previous clients to boost. If these trees were created using a different subset of classes, it can be understood that the resulting gradient does not serve as a helpful tool for the creation of the next decision tree.</p><p>For the AML dataset, we have shown the necessity of dimension reduction to achieve reasonable performance for the classifiers studied. We should note that in the original work (<xref rid="R28" ref-type="bibr">28</xref>), no form of dimension reduction was used. This might have been possible because they used a deep neural network including multiple dropout layers, which are known for being helpful at dealing with highly dimensional data (<xref rid="R29" ref-type="bibr">29</xref>). In contrast, the neural network used in this paper only consisted of two linear layers, combined with a relu-layer.</p><p>One of the strengths of the fedAVG algorithm is that it allows for multiple local epochs, as well as batch learning. This results in multiple learning steps per communication round, potentially reducing the total amount of communication rounds required (<xref rid="R3" ref-type="bibr">3</xref>). In our work, we did not explore the amount of local epochs or batch learning in the federated setting. A further analysis on differences between federated and central models could include experiments exploring the influence of varying these parameters.</p><p>One limitation of the results on all MNIST datasets is that it is composed of one original dataset. This means that there are no concept shifts (i.e. batch effects) between the different clients, even in the class- and sample imbalanced cases, as can be observed in the AML dataset. Another limitation is the lack of calibration. Calibration is especially interesting in a federated learning case, as there can be a high variance in class distribution between clients (as has been simulated in this work). How this influences a federated classifier is an interesting direction for future work.</p><p>Another limitation to this work is the fact that we simulated a federated setting. This was done because it does not affect the performance metrics compared in this work, being the accuracy differences between federated and centralized models. However, for a comparison on runtime, including an analysis of communication overhead for a federated setup, a simulated environment falls short.</p><p>Hospitals could decide to &#x02018;personalize&#x02019; their model, i.e. take a model trained using a federated approach (with or without their local dataset), to then retrain that model on their local data only. Although this might lose some generalizability, it could also result in a more accurate model for the institution itself. Exploring such strategies is an interesting venue for future work as well.</p><p>Taken together, our work has shown promising results for federated learning as an alternative to centrally organized learning. We strongly advice that, like in central learning with batch effects, it is important to align data distributions across the different clients. Nevertheless, federated learning might open new possibilities to increase data availability for data hungry machine learning methods.</p></sec><sec sec-type="supplementary-material"><title>Supplementary Material</title><supplementary-material id="sup1" position="float" content-type="local-data"><label>baaf016_Supp</label><media xlink:href="baaf016_supp.zip"/></supplementary-material></sec></body><back><sec id="s5"><title>Supplementary data</title><p>
+<xref rid="sup1" ref-type="supplementary-material">Supplementary data</xref> is available at Database online.</p></sec><sec sec-type="COI-statement" id="s6"><title>Conflict of interest:</title><p>None declared.</p></sec><ref-list id="ref1"><title>References</title><ref id="R1"><label>1.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Xu</surname> &#x000a0;<given-names>J</given-names></string-name>, <string-name><surname>Glicksberg</surname> &#x000a0;<given-names>BS</given-names></string-name>, <string-name><surname>Su</surname> &#x000a0;<given-names>C</given-names></string-name></person-group> &#x000a0;<etal>et al.</etal> &#x000a0;<article-title>Federated learning for healthcare informatics</article-title>. <source><italic toggle="yes">J Healthc Inform Res</italic></source> &#x000a0;<year>2021</year>;<volume>5</volume>:<fpage>1</fpage>&#x02013;<lpage>19</lpage>. doi: <pub-id pub-id-type="doi">10.1007/s41666-020-00082-4</pub-id><pub-id pub-id-type="pmid">33204939</pub-id>
+</mixed-citation></ref><ref id="R2"><label>2.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Jochems</surname> &#x000a0;<given-names>A</given-names></string-name>, <string-name><surname>Deist</surname> &#x000a0;<given-names>T</given-names></string-name>, <string-name><surname>van Soest</surname> &#x000a0;<given-names>J</given-names></string-name></person-group> &#x000a0;<etal>et al.</etal> &#x000a0;<article-title>Distributed learning: developing a predictive model based on data from multiple hospitals without data leaving the hospital &#x02013; a real life proof of concept</article-title>. <source><italic toggle="yes">Radiother Oncol</italic></source> &#x000a0;<year>2016</year>;<volume>121</volume>:<fpage>459</fpage>&#x02013;<lpage>67</lpage>.<pub-id pub-id-type="pmid">28029405</pub-id>
+</mixed-citation></ref><ref id="R3"><label>3.</label><mixed-citation publication-type="confproc">
+<person-group person-group-type="author">
+<string-name>
+<surname>McMahan</surname> &#x000a0;<given-names>B</given-names></string-name>, <string-name><surname>Moore</surname> &#x000a0;<given-names>E</given-names></string-name>, <string-name><surname>Ramage</surname> &#x000a0;<given-names>D</given-names></string-name></person-group> &#x000a0;<etal>et al.</etal> &#x000a0;<article-title>Communication-efficient learning of deep networks from decentralized data</article-title>. In: <italic toggle="yes">Proceedings of the 20th International Conference on Artificial Intelligence and Statistics</italic>, <conf-loc>Ft. Lauderdale, FL, USA</conf-loc>, Vol. <volume>54</volume>, <year>2017</year>, <conf-date>20-22 April</conf-date>, pp. <fpage>1273</fpage>&#x02013;<lpage>82</lpage>. <ext-link xlink:href="https://proceedings.mlr.press/v54/mcmahan17a.html" ext-link-type="uri">https://proceedings.mlr.press/v54/mcmahan17a.html</ext-link>.</mixed-citation></ref><ref id="R4"><label>4.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Nedic</surname> &#x000a0;<given-names>A</given-names></string-name>, <string-name><surname>Ozdaglar</surname> &#x000a0;<given-names>A</given-names></string-name></person-group>. <article-title>Distributed subgradient methods for multi-agent optimization</article-title>. <source><italic toggle="yes">IEEE Trans Autom Control</italic></source> &#x000a0;<year>2009</year>;<volume>54</volume>:<fpage>48</fpage>&#x02013;<lpage>61</lpage>.</mixed-citation></ref><ref id="R5"><label>5.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Yang</surname> &#x000a0;<given-names>T</given-names></string-name>, <string-name><surname>Yi</surname> &#x000a0;<given-names>X</given-names></string-name>, <string-name><surname>Wu</surname> &#x000a0;<given-names>J</given-names></string-name></person-group> &#x000a0;<etal>et al.</etal> &#x000a0;<article-title>A survey of distributed optimization</article-title>. <source><italic toggle="yes">Annu Rev Control</italic></source> &#x000a0;<year>2019</year>;<volume>47</volume>:<fpage>278</fpage>&#x02013;<lpage>305</lpage>.</mixed-citation></ref><ref id="R6"><label>6.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Li</surname> &#x000a0;<given-names>Q</given-names></string-name>, <string-name><surname>Wen</surname> &#x000a0;<given-names>Z</given-names></string-name>, <string-name><surname>Wu</surname> &#x000a0;<given-names>Z</given-names></string-name></person-group> &#x000a0;<etal>et al.</etal> &#x000a0;<article-title>A survey on federated learning systems: vision, hype and reality for data privacy and protection</article-title>. <source><italic toggle="yes">CoRR</italic></source> &#x000a0;<year>2019</year>;<volume>35</volume>:<fpage>3347</fpage>&#x02013;<lpage>66</lpage>. <ext-link xlink:href="http://arxiv.org/abs/1907.09693" ext-link-type="uri">http://arxiv.org/abs/1907.09693</ext-link>.</mixed-citation></ref><ref id="R7"><label>7.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Li</surname> &#x000a0;<given-names>T</given-names></string-name>, <string-name><surname>Sahu</surname> &#x000a0;<given-names>AK</given-names></string-name>, <string-name><surname>Talwalkar</surname> &#x000a0;<given-names>A</given-names></string-name></person-group> &#x000a0;<etal>et al.</etal> &#x000a0;<article-title>Federated learning: challenges, methods, and future directions</article-title>. <source><italic toggle="yes">IEEE Signal Process Mag</italic></source> &#x000a0;<year>2020</year>;<volume>37</volume>:<fpage>50</fpage>&#x02013;<lpage>60</lpage>.</mixed-citation></ref><ref id="R8"><label>8.</label><mixed-citation publication-type="other">
+<person-group person-group-type="author">
+<string-name>
+<surname>Konecy</surname> &#x000a0;<given-names>J</given-names></string-name>, <string-name><surname>McMahan</surname> &#x000a0;<given-names>B</given-names></string-name>, <string-name><surname>Yu</surname> &#x000a0;<given-names>F</given-names></string-name></person-group> &#x000a0;<etal>et al.</etal> &#x000a0;<article-title>Federated learning: strategies for improving communication efficiency</article-title>. <source><italic toggle="yes">CoRR</italic></source> &#x000a0;<year>2016</year>. <ext-link xlink:href="http://arxiv.org/abs/1610.05492" ext-link-type="uri">http://arxiv.org/abs/1610.05492</ext-link>.</mixed-citation></ref><ref id="R9"><label>9.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Jeong</surname> &#x000a0;<given-names>E</given-names></string-name>, <string-name><surname>Oh</surname> &#x000a0;<given-names>S</given-names></string-name>, <string-name><surname>Kim</surname> &#x000a0;<given-names>H</given-names></string-name></person-group> &#x000a0;<etal>et al.</etal> &#x000a0;<article-title>Communication-efficient on-device machine learning: federated distillation and augmentation under non-IID private data</article-title>. <source><italic toggle="yes">CoRR</italic></source> &#x000a0;<year>2018</year>. <ext-link xlink:href="http://arxiv.org/abs/1811.11479" ext-link-type="uri">http://arxiv.org/abs/1811.11479</ext-link>.</mixed-citation></ref><ref id="R10"><label>10.</label><mixed-citation publication-type="book">
+<person-group person-group-type="author">
+<string-name>
+<surname>Khaled</surname> &#x000a0;<given-names>A</given-names></string-name>, <string-name><surname>Mishchenko</surname> &#x000a0;<given-names>K</given-names></string-name>, <string-name><surname>Richtarik</surname> &#x000a0;<given-names>P</given-names></string-name></person-group> &#x000a0;<etal>et al</etal>. <article-title>Tighter theory for local SGD on identical and heterogeneous data</article-title>. In: <source><italic toggle="yes">Proceedings of the Twenty Third International Conference on Artificial Intelligence and Statistics</italic></source>, Vol. <volume>108</volume>, pp. <fpage>4519</fpage>&#x02013;<lpage>29</lpage>. <publisher-name>PMLR</publisher-name>, <year>2020</year>. <ext-link xlink:href="https://proceedings.mlr.press/v108/bayoumi20a.html" ext-link-type="uri">https://proceedings.mlr.press/v108/bayoumi20a.html</ext-link>.</mixed-citation></ref><ref id="R11"><label>11.</label><mixed-citation publication-type="other">
+<person-group person-group-type="author">
+<string-name>
+<surname>Haddadpour</surname> &#x000a0;<given-names>F</given-names></string-name>, <string-name><surname>Mahdavi</surname> &#x000a0;<given-names>M</given-names></string-name></person-group>. <article-title>On the convergence of local descent methods in federated learning</article-title>. <source><italic toggle="yes">CoRR</italic></source> &#x000a0;<year>2019</year>. <ext-link xlink:href="http://arxiv.org/abs/1910.14425" ext-link-type="uri">http://arxiv.org/abs/1910.14425</ext-link>.</mixed-citation></ref><ref id="R12"><label>12.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Karimireddy</surname> &#x000a0;<given-names>SP</given-names></string-name>, <string-name><surname>Kale</surname> &#x000a0;<given-names>S</given-names></string-name>, <string-name><surname>Morhi</surname> &#x000a0;<given-names>M</given-names></string-name></person-group> &#x000a0;<etal>et al.</etal> &#x000a0;<article-title>SCAFFOLD: Stochastic controlled averaging for federated learning</article-title>. In: <source><italic toggle="yes">Proceedings of the 37th International Conference on Machine Learning</italic></source>, Vol. <volume>119</volume>, <year>2020</year>, pp. <fpage>5132</fpage>&#x02013;<lpage>43</lpage>. <ext-link xlink:href="https://proceedings.mlr.press/v119/karimireddy20a.html" ext-link-type="uri">https://proceedings.mlr.press/v119/karimireddy20a.html</ext-link>.</mixed-citation></ref><ref id="R13"><label>13.</label><mixed-citation publication-type="other">
+<person-group person-group-type="author">
+<string-name>
+<surname>Zhao</surname> &#x000a0;<given-names>Y</given-names></string-name>, <string-name><surname>Li</surname> &#x000a0;<given-names>M</given-names></string-name>, <string-name><surname>Lai</surname> &#x000a0;<given-names>L</given-names></string-name></person-group> &#x000a0;<etal>et al.</etal> &#x000a0;<article-title>Federated learning with non-IID data</article-title>. arXiv Preprint abs/1806.00582, <year>2018</year>.</mixed-citation></ref><ref id="R14"><label>14.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Li</surname> &#x000a0;<given-names>T</given-names></string-name>, <string-name><surname>Sahu</surname> &#x000a0;<given-names>AK</given-names></string-name>, <string-name><surname>Sanjabi</surname> &#x000a0;<given-names>M</given-names></string-name></person-group> &#x000a0;<etal>et al.</etal> &#x000a0;<article-title>On the convergence of federated optimization in heterogeneous networks</article-title>. In: <italic toggle="yes">Proceedings of Machine Learning and Systems</italic>, Vol. <volume>2</volume>, 2020, pp. <fpage>429</fpage>&#x02013;<lpage>50</lpage>. <ext-link xlink:href="http://arxiv.org/abs/1812.06127201820" ext-link-type="uri">http://arxiv.org/abs/1812.06127201820</ext-link>.</mixed-citation></ref><ref id="R15"><label>15.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Geiping</surname> &#x000a0;<given-names>J</given-names></string-name>, <string-name><surname>Bauermeister</surname> &#x000a0;<given-names>H</given-names></string-name>, <string-name><surname>Dr&#x000f6;ge</surname> &#x000a0;<given-names>H</given-names></string-name></person-group> &#x000a0;<etal>et al.</etal> &#x000a0;<article-title>Inverting gradients &#x02013; how easy is it to break privacy in federated learning?</article-title>. In: <italic toggle="yes">Conference on Neural Information Processing Systems</italic>, Vol. <volume>33</volume>, 2020, pp. <fpage>16937</fpage>&#x02013;<lpage>47</lpage>.</mixed-citation></ref><ref id="R16"><label>16.</label><mixed-citation publication-type="confproc">
+<person-group person-group-type="author">
+<string-name>
+<surname>Shokri</surname> &#x000a0;<given-names>R</given-names></string-name>, <string-name><surname>Stronati</surname> &#x000a0;<given-names>M</given-names></string-name>, <string-name><surname>Shmatikov</surname> &#x000a0;<given-names>V</given-names></string-name></person-group> &#x000a0;<etal>et al.</etal> &#x000a0;<article-title>Membership inference attacks against machine learning models</article-title>. In: <italic toggle="yes">IEEE Symposium on Security and Privacy (SP)</italic>, <conf-loc>San Jose, CA, USA</conf-loc>, <year>2016</year>, <conf-date>22 May</conf-date>, pp. <fpage>3</fpage>&#x02013;<lpage>18</lpage>. <ext-link xlink:href="http://arxiv.org/abs/1610.05820" ext-link-type="uri">http://arxiv.org/abs/1610.05820</ext-link>.</mixed-citation></ref><ref id="R17"><label>17.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Wei</surname> &#x000a0;<given-names>K</given-names></string-name>, <string-name><surname>Li</surname> &#x000a0;<given-names>J</given-names></string-name>, <string-name><surname>Ding</surname> &#x000a0;<given-names>M</given-names></string-name></person-group> &#x000a0;<etal>et al.</etal> &#x000a0;<article-title>Federated learning with differential privacy: algorithms and performance analysis</article-title>. <source><italic toggle="yes">IEEE Trans Inf Forensics Secur</italic></source> &#x000a0;<year>2020</year>;<volume>15</volume>:<fpage>3454</fpage>&#x02013;<lpage>69</lpage>.</mixed-citation></ref><ref id="R18"><label>18.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Mahita</surname> &#x000a0;<given-names>J</given-names></string-name>, <string-name><surname>Ha</surname> &#x000a0;<given-names>B</given-names></string-name>, <string-name><surname>Gambiez</surname> &#x000a0;<given-names>A</given-names></string-name></person-group> &#x000a0;<etal>et al.</etal> &#x000a0;<article-title>Coronavirus immunotherapeutic consortium database</article-title>. <source><italic toggle="yes">Database</italic></source> &#x000a0;<year>2023</year>;<volume>2023</volume>:<page-range>baac112</page-range>. doi: <pub-id pub-id-type="doi">10.1093/database/baac112</pub-id></mixed-citation></ref><ref id="R19"><label>19.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Arora</surname> &#x000a0;<given-names>A</given-names></string-name>, <string-name><surname>Kaur</surname> &#x000a0;<given-names>D</given-names></string-name>, <string-name><surname>Patiyal</surname> &#x000a0;<given-names>S</given-names></string-name></person-group> &#x000a0;<etal>et al.</etal> &#x000a0;<article-title>SalivaDB&#x02014;a comprehensive database for salivary biomarkers in humans</article-title>. <source><italic toggle="yes">Database</italic></source> &#x000a0;<year>2023</year>;<volume>2023</volume>:<page-range>baad002</page-range>. doi: <pub-id pub-id-type="doi">10.1093/database/baad002</pub-id></mixed-citation></ref><ref id="R20"><label>20.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Linardos</surname> &#x000a0;<given-names>A</given-names></string-name>, <string-name><surname>Kushibar</surname> &#x000a0;<given-names>K</given-names></string-name>, <string-name><surname>Walsh</surname> &#x000a0;<given-names>S</given-names></string-name></person-group> &#x000a0;<etal>et al.</etal> &#x000a0;<article-title>Federated learning for multi-center imaging diagnostics: a simulation study in cardiovascular disease</article-title>. <source><italic toggle="yes">Sci Rep</italic></source> &#x000a0;<year>2022</year>;<volume>12</volume>:<page-range>3551</page-range>.</mixed-citation></ref><ref id="R21"><label>21.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Abdul Salam</surname> &#x000a0;<given-names>M</given-names></string-name>, <string-name><surname>Taha</surname> &#x000a0;<given-names>S</given-names></string-name>, <string-name><surname>Ramadan</surname> &#x000a0;<given-names>M</given-names></string-name></person-group> &#x000a0;<etal>et al</etal>. <article-title>COVID-19 detection using federated machine learning</article-title>. <source><italic toggle="yes">PLoS ONE</italic></source> &#x000a0;<year>2021</year>;<volume>16</volume>:<fpage>1</fpage>&#x02013;<lpage>25</lpage>.</mixed-citation></ref><ref id="R22"><label>22.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>LeCun</surname> &#x000a0;<given-names>Y</given-names></string-name>, <string-name><surname>Bottou</surname> &#x000a0;<given-names>L</given-names></string-name>, <string-name><surname>Bengio</surname> &#x000a0;<given-names>Y</given-names></string-name></person-group> &#x000a0;<etal>et al.</etal> &#x000a0;<article-title>Gradient-based learning applied to document recognition</article-title>. <source><italic toggle="yes">Proc IEEE</italic></source> &#x000a0;<year>1998</year>;<volume>86</volume>:<fpage>2278</fpage>&#x02013;<lpage>324</lpage>.</mixed-citation></ref><ref id="R23"><label>23.</label><mixed-citation publication-type="other">
+<person-group person-group-type="author">
+<string-name>
+<surname>Xiao</surname> &#x000a0;<given-names>H</given-names></string-name>, <string-name><surname>Rasul</surname> &#x000a0;<given-names>K</given-names></string-name>, <string-name><surname>Vollgraf</surname> &#x000a0;<given-names>R</given-names></string-name></person-group> &#x000a0;<etal>et al.</etal> &#x000a0;<article-title>Fashion-MNIST: a novel image dataset for benchmarking machine learning algorithms</article-title>. <source><italic toggle="yes">CoRR</italic></source> &#x000a0;<year>2017</year>. <ext-link xlink:href="http://arxiv.org/abs/1708.07747" ext-link-type="uri">http://arxiv.org/abs/1708.07747</ext-link>.</mixed-citation></ref><ref id="R24"><label>24.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Warnat-Herresthal</surname> &#x000a0;<given-names>S</given-names></string-name>, <string-name><surname>Perrakis</surname> &#x000a0;<given-names>K</given-names></string-name>, <string-name><surname>Taschler</surname> &#x000a0;<given-names>B</given-names></string-name></person-group> &#x000a0;<etal>et al.</etal> &#x000a0;<article-title>Scalable prediction of acute myeloid leukemia using high-dimensional machine learning and blood transcriptomics</article-title>. <source><italic toggle="yes">Iscience</italic></source> &#x000a0;<year>2020</year>;<volume>23</volume>:<page-range>2589&#x02013;0042&#x0200c;</page-range>.</mixed-citation></ref><ref id="R25"><label>25.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Andreas</surname> &#x000a0;<given-names>G</given-names></string-name>
+</person-group>. <article-title>Federated principal component analysis</article-title>. <source><italic toggle="yes">Adv Neural Inf Process Syst</italic></source> &#x000a0;<year>2020</year>;<volume>33</volume>:<fpage>6453</fpage>&#x02013;<lpage>64</lpage>.</mixed-citation></ref><ref id="R26"><label>26.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Merget</surname> &#x000a0;<given-names>B</given-names></string-name>, <string-name><surname>Turk</surname> &#x000a0;<given-names>S</given-names></string-name>, <string-name><surname>Eid</surname> &#x000a0;<given-names>S</given-names></string-name></person-group> &#x000a0;<etal>et al.</etal> &#x000a0;<article-title>Profiling prediction of kinase inhibitors: toward the virtual assay</article-title>. <source><italic toggle="yes">J Med Chem</italic></source> &#x000a0;<year>2017</year>;<volume>60</volume>:<fpage>474</fpage>&#x02013;<lpage>85</lpage>.<pub-id pub-id-type="pmid">27966949</pub-id>
+</mixed-citation></ref><ref id="R27"><label>27.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Campello</surname> &#x000a0;<given-names>VM</given-names></string-name>, <string-name><surname>Gkontra</surname> &#x000a0;<given-names>P</given-names></string-name>, <string-name><surname>Izquierdo</surname> &#x000a0;<given-names>C</given-names></string-name></person-group> &#x000a0;<etal>et al.</etal> &#x000a0;<article-title>Multi-centre, multi-vendor and multi-disease cardiac segmentation: the M&#x00026;Ms challenge</article-title>. <source><italic toggle="yes">IEEE Trans Med Imaging</italic></source> &#x000a0;<year>2021</year>;<volume>40</volume>:<fpage>3543</fpage>&#x02013;<lpage>54</lpage>.<pub-id pub-id-type="pmid">34138702</pub-id>
+</mixed-citation></ref><ref id="R28"><label>28.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Warnat-Herrestal</surname> &#x000a0;<given-names>S</given-names></string-name>, <string-name><surname>Schultze</surname> &#x000a0;<given-names>H</given-names></string-name>, <string-name><surname>Shastry</surname> &#x000a0;<given-names>KL</given-names></string-name></person-group> &#x000a0;<etal>et al.</etal> &#x000a0;<article-title>Swarm learning for decentralized and confidential clinical machine learning</article-title>. <source><italic toggle="yes">Nature</italic></source> &#x000a0;<year>2021</year>;<volume>594</volume>:<fpage>265</fpage>&#x02013;<lpage>70</lpage>. doi: <pub-id pub-id-type="doi">10.1038/s41586-021-03583-3</pub-id><pub-id pub-id-type="pmid">34040261</pub-id>
+</mixed-citation></ref><ref id="R29"><label>29.</label><mixed-citation publication-type="other">
+<person-group person-group-type="author">
+<string-name>
+<surname>Hinton</surname> &#x000a0;<given-names>G</given-names></string-name>, <string-name><surname>Srivastava</surname> &#x000a0;<given-names>N</given-names></string-name>, <string-name><surname>Krizhevsky</surname> &#x000a0;<given-names>A</given-names></string-name></person-group> &#x000a0;<etal>et al.</etal> &#x000a0;<article-title>Improving neural networks by preventing co-adaptation of feature detectors</article-title>. <source><italic toggle="yes">CoRR</italic></source> &#x000a0;<year>2012</year>. <ext-link xlink:href="http://arxiv.org/abs/1207.0580" ext-link-type="uri">http://arxiv.org/abs/1207.0580</ext-link>.</mixed-citation></ref><ref id="R30"><label>30.</label><mixed-citation publication-type="confproc">
+<person-group person-group-type="author">
+<string-name>
+<surname>Zhao</surname> &#x000a0;<given-names>L</given-names></string-name>, <string-name><surname>Ni</surname> &#x000a0;<given-names>L</given-names></string-name>, <string-name><surname>Hu</surname> &#x000a0;<given-names>S</given-names></string-name></person-group> &#x000a0;<etal>et al.</etal> &#x000a0;<article-title>InPrivate digging: enabling tree-based distributed data mining with differential privacy</article-title>. In: <italic toggle="yes">IEEE INFOCOM 2018 - IEEE Conference On Computer Communications</italic>, <conf-loc>Honolulu, HI, USA</conf-loc>, <year>2018</year>, <conf-date>15-19 April</conf-date>, pp. <fpage>2087</fpage>&#x02013;<lpage>95</lpage>.</mixed-citation></ref><ref id="R31"><label>31.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Quackenbush</surname> &#x000a0;<given-names>J</given-names></string-name>
+</person-group>. <article-title>Microarray analysis and tumor classification</article-title>. <source><italic toggle="yes">N Engl J Med</italic></source> &#x000a0;<year>2006</year>;<volume>354</volume>:<fpage>2463</fpage>&#x02013;<lpage>72</lpage>.<pub-id pub-id-type="pmid">16760446</pub-id>
+</mixed-citation></ref><ref id="R32"><label>32.</label><mixed-citation publication-type="other">
+<person-group person-group-type="author">
+<string-name>
+<surname>Mackenzie Ruairi</surname> &#x000a0;<given-names>J.</given-names></string-name>
+</person-group> &#x000a0;<article-title>RNA-Seq: basics, applications and protocol</article-title>. <ext-link xlink:href="https://www.technologynetworks.com/genomics/articles/rna-seq-basics-applications-and-protocol-299461" ext-link-type="uri">https://www.technologynetworks.com/genomics/articles/rna-seq-basics-applications-and-protocol-299461</ext-link>, <year>2017</year>.</mixed-citation></ref><ref id="R33"><label>33.</label><mixed-citation publication-type="other">
+<person-group person-group-type="author">
+<string-name>
+<surname>Moncada-Torres</surname> &#x000a0;<given-names>A</given-names></string-name>, <string-name><surname>Frank</surname> &#x000a0;<given-names>M</given-names></string-name>, <string-name><surname>Sieswerda</surname> &#x000a0;<given-names>M</given-names></string-name></person-group> &#x000a0;<etal>et al.</etal> &#x000a0;<article-title>VANTAGE6: an open source priVAcy preserviNg federaTed leArninG infrastructurE for Secure Insight eXchange</article-title>. In: <italic toggle="yes">AMIA Annual Symposium Proceedings Virtual Only</italic>, <year>2020</year>, <conf-date>14-18 November</conf-date>, pp. <fpage>870</fpage>&#x02013;<lpage>77</lpage>.</mixed-citation></ref><ref id="R34"><label>34.</label><mixed-citation publication-type="other">
+<person-group person-group-type="author">
+<string-name>
+<surname>Frank</surname> &#x000a0;<given-names>M</given-names></string-name>, <string-name><surname>Sieswerda</surname> &#x000a0;<given-names>M</given-names></string-name>, <string-name><surname>Alradhi</surname> &#x000a0;<given-names>H</given-names></string-name></person-group> &#x000a0;<etal>et al.</etal> &#x000a0;<article-title>Vantage 6 repository</article-title>, 10.5281/zenodo.3686944 (<comment>8 September 2021</comment>, date last accessed).</mixed-citation></ref></ref-list></back></article>

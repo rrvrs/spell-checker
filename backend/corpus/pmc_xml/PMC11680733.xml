@@ -1,0 +1,1028 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="1.3" id="mrm30324" xml:lang="en" article-type="research-article"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Magn Reson Med</journal-id><journal-id journal-id-type="iso-abbrev">Magn Reson Med</journal-id><journal-id journal-id-type="doi">10.1002/(ISSN)1522-2594</journal-id><journal-id journal-id-type="publisher-id">MRM</journal-id><journal-title-group><journal-title>Magnetic Resonance in Medicine</journal-title></journal-title-group><issn pub-type="ppub">0740-3194</issn><issn pub-type="epub">1522-2594</issn><publisher><publisher-name>John Wiley and Sons Inc.</publisher-name><publisher-loc>Hoboken</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">39385473</article-id><article-id pub-id-type="pmc">PMC11680733</article-id>
+<article-id pub-id-type="doi">10.1002/mrm.30324</article-id><article-id pub-id-type="publisher-id">MRM30324</article-id><article-categories><subj-group subj-group-type="overline"><subject>Research Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Computer Processing and Modeling</subject></subj-group></article-categories><title-group><article-title>Improved liver fat and <mml:math id="jats-math-2" display="inline" overflow="scroll"><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:math> quantification at 0.<styled-content style="fixed-case" toggle="no">55 T</styled-content> using locally low&#x02010;rank denoising</article-title><alt-title alt-title-type="left-running-head">SHIH et al.</alt-title></title-group><contrib-group><contrib id="mrm30324-cr-0001" contrib-type="author"><name><surname>Shih</surname><given-names>Shu&#x02010;Fu</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-3812-9091</contrib-id><xref rid="mrm30324-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="mrm30324-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="mrm30324-cr-0002" contrib-type="author"><name><surname>Tasdelen</surname><given-names>Bilal</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0001-6462-3651</contrib-id><xref rid="mrm30324-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref></contrib><contrib id="mrm30324-cr-0003" contrib-type="author"><name><surname>Yagiz</surname><given-names>Ecrin</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0001-8113-2192</contrib-id><xref rid="mrm30324-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref></contrib><contrib id="mrm30324-cr-0004" contrib-type="author"><name><surname>Zhang</surname><given-names>Zhaohuan</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0001-8086-6522</contrib-id><xref rid="mrm30324-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="mrm30324-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="mrm30324-cr-0005" contrib-type="author"><name><surname>Zhong</surname><given-names>Xiaodong</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0001-8355-5279</contrib-id><xref rid="mrm30324-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="mrm30324-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="mrm30324-cr-0006" contrib-type="author"><name><surname>Cui</surname><given-names>Sophia X.</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-5133-4903</contrib-id><xref rid="mrm30324-aff-0004" ref-type="aff">
+<sup>4</sup>
+</xref></contrib><contrib id="mrm30324-cr-0007" contrib-type="author"><name><surname>Nayak</surname><given-names>Krishna S.</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0001-5735-3550</contrib-id><xref rid="mrm30324-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref></contrib><contrib id="mrm30324-cr-0008" contrib-type="author" corresp="yes"><name><surname>Wu</surname><given-names>Holden H.</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-2585-5916</contrib-id><xref rid="mrm30324-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="mrm30324-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><address><email>holdenwu@mednet.ucla.edu</email></address></contrib></contrib-group><aff id="mrm30324-aff-0001">
+<label>
+<sup>1</sup>
+</label>
+<named-content content-type="organisation-division">Department of Radiological Sciences</named-content>
+<institution>University of California Los Angeles</institution>
+<city>
+Los Angeles</city>
+<named-content content-type="country-part">California</named-content>
+<country country="US">USA</country>
+</aff><aff id="mrm30324-aff-0002">
+<label>
+<sup>2</sup>
+</label>
+<named-content content-type="organisation-division">Department of Bioengineering</named-content>
+<institution>University of California Los Angeles</institution>
+<city>Los Angeles</city>
+<named-content content-type="country-part">California</named-content>
+<country country="US">USA</country>
+</aff><aff id="mrm30324-aff-0003">
+<label>
+<sup>3</sup>
+</label>
+<named-content content-type="organisation-division">Ming Hsieh Department of Electrical and Computer Engineering</named-content>
+<institution>University of Southern California</institution>
+<city>Los Angeles</city>
+<named-content content-type="country-part">California</named-content>
+<country country="US">USA</country>
+</aff><aff id="mrm30324-aff-0004">
+<label>
+<sup>4</sup>
+</label>
+<named-content content-type="organisation-division">MR R&#x00026;D Collaborations</named-content>
+<institution>Siemens Medical Solutions USA, Inc.</institution>
+<city>Los Angeles</city>
+<named-content content-type="country-part">California</named-content>
+<country country="US">USA</country>
+</aff><author-notes><corresp id="correspondenceTo">
+<label>*</label>
+<bold>Correspondence</bold>
+<break/>
+Holden H. Wu, Department of Radiological Sciences, 300 UCLA Medical Plaza, Suite B119, Los Angeles, CA 90095.<break/>
+Email: <email>holdenwu@mednet.ucla.edu</email>
+<break/>
+</corresp></author-notes><pub-date pub-type="epub"><day>09</day><month>10</month><year>2024</year></pub-date><pub-date pub-type="ppub"><month>3</month><year>2025</year></pub-date><volume>93</volume><issue seq="330">3</issue><issue-id pub-id-type="doi">10.1002/mrm.v93.3</issue-id><fpage>1348</fpage><lpage>1364</lpage><history>
+<date date-type="rev-recd"><day>19</day><month>8</month><year>2024</year></date>
+<date date-type="received"><day>09</day><month>6</month><year>2024</year></date>
+<date date-type="accepted"><day>13</day><month>9</month><year>2024</year></date>
+</history><permissions><!--&#x000a9; 2025 International Society for Magnetic Resonance in Medicine.--><copyright-statement content-type="article-copyright">&#x000a9; 2024 The Author(s). <italic toggle="yes">Magnetic Resonance in Medicine</italic> published by Wiley Periodicals LLC on behalf of International Society for Magnetic Resonance in Medicine.</copyright-statement><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>This is an open access article under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link> License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions><self-uri content-type="pdf" xlink:href="file:MRM-93-1348.pdf"/><abstract><title>Abstract</title><sec id="mrm30324-sec-0001"><title>Purpose</title><p>To improve liver proton density fat fraction (PDFF) and <mml:math id="jats-math-8" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> quantification at 0.55&#x02009;T by systematically validating the acquisition parameter choices and investigating the performance of locally low&#x02010;rank denoising methods.</p></sec><sec id="mrm30324-sec-0002"><title>Methods</title><p>A Monte Carlo simulation was conducted to design a protocol for PDFF and <mml:math id="jats-math-9" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> mapping at 0.55&#x02009;T. Using this proposed protocol, we investigated the performance of robust locally low&#x02010;rank (RLLR) and random matrix theory (RMT) denoising. In a reference phantom, we assessed quantification accuracy (concordance correlation coefficient [<mml:math id="jats-math-10" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>&#x003c1;</mml:mi><mml:mi>c</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math>] vs. reference values) and precision (using SD) across scan repetitions. We performed in vivo liver scans (11 subjects) and used regions of interest to compare means and SDs of PDFF and <mml:math id="jats-math-11" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> measurements. Kruskal&#x02013;Wallis and Wilcoxon signed&#x02010;rank tests were performed (<italic toggle="no">p</italic>&#x02009;&#x0003c;&#x02009;0.05 considered significant).</p></sec><sec id="mrm30324-sec-0003"><title>Results</title><p>In the phantom, RLLR and RMT denoising improved accuracy in PDFF and <mml:math id="jats-math-12" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> with <mml:math id="jats-math-13" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>&#x003c1;</mml:mi><mml:mi>c</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math> &#x0003e;0.992 and improved precision with &#x0003e;67% decrease in SD across 50 scan repetitions versus conventional reconstruction (i.e., no denoising). For in vivo liver scans, the mean PDFF and mean <mml:math id="jats-math-14" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> were not significantly different between the three methods (conventional reconstruction; RLLR and RMT denoising). Without denoising, the SDs of PDFF and <mml:math id="jats-math-15" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> were 8.80% and 14.17&#x02009;s<sup>&#x02212;1</sup>. RLLR denoising significantly reduced the values to 1.79% and 5.31&#x02009;s<sup>&#x02212;1</sup> (<italic toggle="no">p</italic>&#x02009;&#x0003c;&#x02009;0.001); RMT denoising significantly reduced the values to 2.00% and 4.81&#x02009;s<sup>&#x02212;1</sup> (<italic toggle="no">p</italic>&#x02009;&#x0003c;&#x02009;0.001).</p></sec><sec id="mrm30324-sec-0004"><title>Conclusion</title><p>We validated an acquisition protocol for improved PDFF and <mml:math id="jats-math-16" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> quantification at 0.55&#x02009;T. Both RLLR and RMT denoising improved the accuracy and precision of PDFF and <mml:math id="jats-math-17" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> measurements.</p></sec></abstract><kwd-group kwd-group-type="author-generated"><kwd id="mrm30324-kwd-0001">0.55&#x02009;T MRI</kwd><kwd id="mrm30324-kwd-0002">denoising</kwd><kwd id="mrm30324-kwd-0003">liver PDFF</kwd><kwd id="mrm30324-kwd-0004">liver <mml:math id="jats-math-3" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math>
+</kwd><kwd id="mrm30324-kwd-0005">locally low&#x02010;rank</kwd></kwd-group><funding-group><award-group id="funding-0001"><funding-source><institution-wrap><institution>National Science Foundation
+</institution><institution-id institution-id-type="doi">10.13039/100000001</institution-id></institution-wrap></funding-source><award-id>1828736</award-id></award-group><award-group id="funding-0002"><funding-source><institution-wrap><institution>National Institute of Biomedical Imaging and Bioengineering
+</institution><institution-id institution-id-type="doi">10.13039/100000070</institution-id></institution-wrap></funding-source><award-id>U01EB031894</award-id></award-group><award-group id="funding-0003"><funding-source><institution-wrap><institution>National Institute of Diabetes and Digestive and Kidney Diseases
+</institution><institution-id institution-id-type="doi">10.13039/100000062</institution-id></institution-wrap></funding-source><award-id>R01DK124417</award-id></award-group></funding-group><counts><fig-count count="9"/><table-count count="1"/><page-count count="17"/><word-count count="8700"/></counts><custom-meta-group><custom-meta><meta-name>source-schema-version-number</meta-name><meta-value>2.0</meta-value></custom-meta><custom-meta><meta-name>cover-date</meta-name><meta-value>March 2025</meta-value></custom-meta><custom-meta><meta-name>details-of-publishers-convertor</meta-name><meta-value>Converter:WILEY_ML3GV2_TO_JATSPMC version:6.5.1 mode:remove_FC converted:27.12.2024</meta-value></custom-meta></custom-meta-group></article-meta><notes><p content-type="self-citation">
+<mixed-citation publication-type="journal" id="mrm30324-cit-1001">
+<string-name>
+<surname>Shih</surname>
+<given-names>S&#x02010;F</given-names>
+</string-name>, <string-name>
+<surname>Tasdelen</surname>
+<given-names>B</given-names>
+</string-name>, <string-name>
+<surname>Yagiz</surname>
+<given-names>E</given-names>
+</string-name>, et al. <article-title>Improved liver fat and <mml:math id="jats-math-1" display="inline" overflow="scroll"><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:math> quantification at 0.<styled-content style="fixed-case" toggle="no">55 T</styled-content> using locally low&#x02010;rank denoising</article-title>. <source>Magn Reson Med</source>. <year>2025</year>;<volume>93</volume>(<issue>3</issue>):<fpage>1348</fpage>&#x02010;<lpage>1364</lpage>. doi: <pub-id pub-id-type="doi">10.1002/mrm.30324</pub-id>
+</mixed-citation>
+</p></notes></front><body id="mrm30324-body-0001"><sec id="mrm30324-sec-0005"><label>1</label><title>INTRODUCTION</title><p>Proton density fat fraction (PDFF)<xref rid="mrm30324-bib-0001" ref-type="bibr">
+<sup>1</sup>
+</xref> and <mml:math id="jats-math-18" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math>
+<xref rid="mrm30324-bib-0002" ref-type="bibr">
+<sup>2</sup>
+</xref> are powerful noninvasive MRI biomarkers for liver fat and iron accumulation, respectively. These two parameters can be quantified simultaneously using multi&#x02010;echo gradient&#x02010;echo Dixon MRI sequences followed by signal fitting to a model that resolves different confounding factors.<xref rid="mrm30324-bib-0003" ref-type="bibr">
+<sup>3</sup>
+</xref>, <xref rid="mrm30324-bib-0004" ref-type="bibr">
+<sup>4</sup>
+</xref>, <xref rid="mrm30324-bib-0005" ref-type="bibr">
+<sup>5</sup>
+</xref> Several MRI sequences and signal fitting approaches have been developed and validated at 1.5 and 3&#x02009;T.<xref rid="mrm30324-bib-0003" ref-type="bibr">
+<sup>3</sup>
+</xref>, <xref rid="mrm30324-bib-0004" ref-type="bibr">
+<sup>4</sup>
+</xref>, <xref rid="mrm30324-bib-0005" ref-type="bibr">
+<sup>5</sup>
+</xref>, <xref rid="mrm30324-bib-0006" ref-type="bibr">
+<sup>6</sup>
+</xref>, <xref rid="mrm30324-bib-0007" ref-type="bibr">
+<sup>7</sup>
+</xref>, <xref rid="mrm30324-bib-0008" ref-type="bibr">
+<sup>8</sup>
+</xref>, <xref rid="mrm30324-bib-0009" ref-type="bibr">
+<sup>9</sup>
+</xref>, <xref rid="mrm30324-bib-0010" ref-type="bibr">
+<sup>10</sup>
+</xref> Recently, MRI field strengths &#x0003c;1.5&#x02009;T are being explored due to advantages such as reduced hardware and siting costs and reduction of artifacts in certain applications.<xref rid="mrm30324-bib-0011" ref-type="bibr">
+<sup>11</sup>
+</xref>, <xref rid="mrm30324-bib-0012" ref-type="bibr">
+<sup>12</sup>
+</xref>, <xref rid="mrm30324-bib-0013" ref-type="bibr">
+<sup>13</sup>
+</xref>, <xref rid="mrm30324-bib-0014" ref-type="bibr">
+<sup>14</sup>
+</xref> A lower&#x02010;field MRI system with a larger bore diameter may also improve comfort<xref rid="mrm30324-bib-0015" ref-type="bibr">
+<sup>15</sup>
+</xref> for populations with obesity and at risk for fatty liver disease. In addition, decreased <mml:math id="jats-math-19" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> at lower fields can enable more accurate <mml:math id="jats-math-20" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> quantification in patients with high iron overload.<xref rid="mrm30324-bib-0016" ref-type="bibr">
+<sup>16</sup>
+</xref>
+</p><p>Most existing scan protocols for joint PDFF and <mml:math id="jats-math-21" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> quantification have been designed and validated at 1.5 and/or 3&#x02009;T. Adaptation to lower field strengths such as 0.55&#x02009;T requires careful investigation into the trade&#x02010;offs associated with acquisition parameter choices. There are several important considerations. First, lower B<sub>0</sub> field strengths result in lower equilibrium polarization, which reduces the SNR.<xref rid="mrm30324-bib-0011" ref-type="bibr">
+<sup>11</sup>
+</xref>, <xref rid="mrm30324-bib-0012" ref-type="bibr">
+<sup>12</sup>
+</xref>, <xref rid="mrm30324-bib-0013" ref-type="bibr">
+<sup>13</sup>
+</xref>, <xref rid="mrm30324-bib-0014" ref-type="bibr">
+<sup>14</sup>
+</xref> This is exacerbated when a small flip angle (FA) is used to reduce T<sub>1</sub>&#x02010;related bias in PDFF quantification.<xref rid="mrm30324-bib-0017" ref-type="bibr">
+<sup>17</sup>
+</xref> Low SNR can degrade image quality and affect accuracy and precision of quantitative biomarkers.<xref rid="mrm30324-bib-0018" ref-type="bibr">
+<sup>18</sup>
+</xref>, <xref rid="mrm30324-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref>, <xref rid="mrm30324-bib-0020" ref-type="bibr">
+<sup>20</sup>
+</xref> Second, the smaller fat&#x02013;water frequency difference at lower fields results in longer out&#x02010;of&#x02010;phase (TE<sub>op</sub>&#x02009;=&#x02009;6.47&#x02009;ms) and in&#x02010;phase (TE<sub>in</sub>&#x02009;=&#x02009;12.94&#x02009;ms) TEs. This increases scan time and limits sequence parameter choices. Increasing the number of scan repetitions to improve SNR, a common strategy, may be infeasible in breath&#x02010;holding abdominal scans. Compromises in imaging parameters such as reducing image resolution and restricting volumetric coverage can reduce diagnostic quality.</p><p>Locally low&#x02010;rank principal component analysis (PCA)&#x02013;based denoising is one popular approach to suppress noise in multi&#x02010;contrast MR images. By suppressing principal components associated with smaller coefficients, noise can be reduced, whereas signal can be largely preserved. Difficulties in this type of method involve how to accurately estimate the signal rank and suppress the noise without removing the desired signal. Different approaches have been proposed to objectively estimate the noise level for effective noise suppression. One method, termed as <italic toggle="yes">robust locally low&#x02010;rank denoising</italic> (RLLR) technique,<xref rid="mrm30324-bib-0021" ref-type="bibr">
+<sup>21</sup>
+</xref> has been proposed. Using samples of random matrices from a known Gaussian distribution, the noise level in the multi&#x02010;echo images can be estimated. Based on Stein's unbiased risk estimate,<xref rid="mrm30324-bib-0022" ref-type="bibr">
+<sup>22</sup>
+</xref>, <xref rid="mrm30324-bib-0023" ref-type="bibr">
+<sup>23</sup>
+</xref> the singular value threshold can be objectively obtained for noise suppression. RLLR has been shown to improve image quality for PDFF and <mml:math id="jats-math-22" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> quantification at 3&#x02009;T,<xref rid="mrm30324-bib-0024" ref-type="bibr">
+<sup>24</sup>
+</xref> but it has not been studied at lower field strengths. On the other hand, <italic toggle="yes">random matrix theory</italic> (RMT)&#x02013;based denoising<xref rid="mrm30324-bib-0025" ref-type="bibr">
+<sup>25</sup>
+</xref>, <xref rid="mrm30324-bib-0026" ref-type="bibr">
+<sup>26</sup>
+</xref>, <xref rid="mrm30324-bib-0027" ref-type="bibr">
+<sup>27</sup>
+</xref> can accurately estimate noise level and remove the noise components by leveraging the spectral properties of random Gaussian matrices predicted by the Marchenko&#x02013;Pastur Law.<xref rid="mrm30324-bib-0028" ref-type="bibr">
+<sup>28</sup>
+</xref> This approach has shown promising noise suppression results, especially in diffusion MRI where many contrasts (i.e., multiple <italic toggle="yes">b</italic>&#x02010;values and multiple directions) are available to construct locally low&#x02010;rank patches.<xref rid="mrm30324-bib-0025" ref-type="bibr">
+<sup>25</sup>
+</xref>, <xref rid="mrm30324-bib-0026" ref-type="bibr">
+<sup>26</sup>
+</xref>, <xref rid="mrm30324-bib-0027" ref-type="bibr">
+<sup>27</sup>
+</xref>, <xref rid="mrm30324-bib-0029" ref-type="bibr">
+<sup>29</sup>
+</xref>, <xref rid="mrm30324-bib-0030" ref-type="bibr">
+<sup>30</sup>
+</xref>, <xref rid="mrm30324-bib-0031" ref-type="bibr">
+<sup>31</sup>
+</xref> There are initial studies applying RMT&#x02010;based denoising for lower&#x02010;field MRI,<xref rid="mrm30324-bib-0031" ref-type="bibr">
+<sup>31</sup>
+</xref> but this has not yet been well studied for the application of PDFF and <mml:math id="jats-math-23" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> mapping.</p><p>In this study, our objective is to improve liver PDFF and <mml:math id="jats-math-24" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> quantification accuracy and precision at 0.55&#x02009;T by (1) systematically refining and validating the acquisition parameter choices, and (2) investigating the performance of two locally low&#x02010;rank PCA&#x02010;based denoising methods: RLLR and RMT denoising. First, we performed a Monte Carlo simulation to investigate the impact of acquisition parameter choices on the accuracy and precision of PDFF and <mml:math id="jats-math-25" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> mapping at 0.55&#x02009;T. Second, we used the proposed acquisition protocol informed by simulation results and performed experiments in a reference phantom. Third, we evaluated the denoising performance in the pelvis, where high&#x02010;SNR reference images can be obtained without breath&#x02010;hold limitations. Fourth, we conducted experiments with breath&#x02010;holding liver scans and compared the performance of PDFF and <mml:math id="jats-math-26" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> quantification with different reconstruction/denoising algorithms.</p></sec><sec sec-type="methods" id="mrm30324-sec-0006"><label>2</label><title>METHODS</title><sec id="mrm30324-sec-0007"><label>2.1</label><title>Acquisition protocol for <styled-content style="fixed-case" toggle="no">PDFF</styled-content> and <mml:math id="jats-math-27" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> quantification at 0.<styled-content style="fixed-case" toggle="no">55&#x02009;T</styled-content>
+</title><p>The choice of TEs and FA in the 3D multi&#x02010;echo gradient&#x02010;echo Dixon sequence affects PDFF and <mml:math id="jats-math-28" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> quantification accuracy.<xref rid="mrm30324-bib-0032" ref-type="bibr">
+<sup>32</sup>
+</xref>, <xref rid="mrm30324-bib-0033" ref-type="bibr">
+<sup>33</sup>
+</xref>, <xref rid="mrm30324-bib-0034" ref-type="bibr">
+<sup>34</sup>
+</xref> A common choice at 3&#x02009;T is six echoes at either out&#x02010;of&#x02010;phase or in&#x02010;phase TEs and a low FA of 3<inline-graphic xlink:href="MRM-93-1348-e159.jpg"/> to 5<inline-graphic xlink:href="MRM-93-1348-e001.jpg"/> for reducing the T<sub>1</sub>&#x02010;related bias in PDFF estimation.<xref rid="mrm30324-bib-0005" ref-type="bibr">
+<sup>5</sup>
+</xref> Due to the longer out&#x02010;of&#x02010;phase and in&#x02010;phase TEs at 0.55&#x02009;T, this strategy would lead to longer TEs and TR that prolong acquisition beyond the acceptable time for one breath&#x02010;hold. On the other hand, the T<sub>1</sub>&#x02010;related bias is reduced at 0.55&#x02009;T because of the shortened T<sub>1</sub> values and the increased TR. A larger FA that balances between SNR and the T<sub>1</sub>&#x02010;related bias may be considered. Because the <mml:math id="jats-math-31" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> values change with the field strength,<xref rid="mrm30324-bib-0016" ref-type="bibr">
+<sup>16</sup>
+</xref> TEs for accurate <mml:math id="jats-math-32" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> quantification should also be reconsidered. Therefore, we conducted a Monte Carlo simulation to investigate different choices of FA, the first TE, and the echo spacing (<mml:math id="jats-math-33" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x02206;</mml:mo></mml:mrow></mml:mrow></mml:math>TE) with a range of reference PDFF and <mml:math id="jats-math-34" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> values at 0.55&#x02009;T. We limited our simulation to six echoes. This consideration was to maintain a balance between sufficient number of echoes for quantification and reasonable scan time.</p><p>The signal <mml:math id="jats-math-35" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>s</mml:mi><mml:mfenced open="(" close=")" separators=""><mml:msub><mml:mi>t</mml:mi><mml:mi>m</mml:mi></mml:msub></mml:mfenced></mml:mrow></mml:mrow></mml:math> at the <italic toggle="yes">m</italic>&#x02010;th TE was simulated using the signal model:
+<disp-formula id="mrm30324-disp-0001">
+<label>(1)</label>
+<mml:math id="jats-math-36" display="block" overflow="scroll"><mml:mrow><mml:mrow><mml:mtable columnalign="left"><mml:mtr><mml:mtd><mml:mi>s</mml:mi><mml:mfenced open="(" close=")" separators=""><mml:msub><mml:mi>t</mml:mi><mml:mi>m</mml:mi></mml:msub></mml:mfenced></mml:mtd><mml:mtd><mml:mo linebreak="goodbreak">=</mml:mo><mml:mi>M</mml:mi><mml:mfenced open="(" close=")" separators=""><mml:mrow><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo linebreak="goodbreak">&#x02212;</mml:mo><mml:mi>F</mml:mi></mml:mrow><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo linebreak="goodbreak">+</mml:mo><mml:mi>F</mml:mi><mml:mo linebreak="goodbreak">&#x000d7;</mml:mo><mml:mfenced open="(" close=")" separators=""><mml:mrow><mml:munderover><mml:mo>&#x02211;</mml:mo><mml:mrow><mml:mi>j</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mn>7</mml:mn></mml:munderover><mml:msub><mml:mi>a</mml:mi><mml:mi>j</mml:mi></mml:msub><mml:mo linebreak="goodbreak">&#x000d7;</mml:mo><mml:msup><mml:mi>e</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mn>2</mml:mn><mml:mi>&#x003c0;</mml:mi><mml:msub><mml:mi>f</mml:mi><mml:mi>j</mml:mi></mml:msub><mml:msub><mml:mi>t</mml:mi><mml:mi>m</mml:mi></mml:msub></mml:mrow></mml:msup></mml:mrow></mml:mfenced></mml:mrow></mml:mfenced></mml:mtd></mml:mtr><mml:mtr><mml:mtd/><mml:mtd><mml:mspace width="1em"/><mml:mo linebreak="goodbreak">&#x000d7;</mml:mo><mml:msup><mml:mi>e</mml:mi><mml:mrow><mml:mo>&#x02212;</mml:mo><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup><mml:msub><mml:mi>t</mml:mi><mml:mi>m</mml:mi></mml:msub></mml:mrow></mml:msup><mml:mo linebreak="goodbreak">&#x000d7;</mml:mo><mml:msup><mml:mi>e</mml:mi><mml:mrow><mml:mo>&#x02212;</mml:mo><mml:mi>i</mml:mi><mml:mn>2</mml:mn><mml:msub><mml:mrow><mml:mi>&#x003c0;</mml:mi><mml:mi mathvariant="italic">&#x003c6;t</mml:mi></mml:mrow><mml:mi>m</mml:mi></mml:msub></mml:mrow></mml:msup><mml:mo linebreak="goodbreak">+</mml:mo><mml:mi>n</mml:mi><mml:mo>,</mml:mo></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:mrow></mml:math>
+</disp-formula>
+where <mml:math id="jats-math-37" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>M</mml:mi></mml:mrow></mml:mrow></mml:math> represents the steady&#x02010;state magnetization signal dependent on the TE, TR, T<sub>1</sub>, and FA; <mml:math id="jats-math-38" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>F</mml:mi></mml:mrow></mml:mrow></mml:math> represents the PDFF value; <mml:math id="jats-math-39" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>a</mml:mi><mml:mi>j</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math> and <mml:math id="jats-math-40" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>f</mml:mi><mml:mi>j</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math> represent the relative amplitudes and frequencies for a seven&#x02010;peak fat spectrum<xref rid="mrm30324-bib-0035" ref-type="bibr">
+<sup>35</sup>
+</xref>; <mml:math id="jats-math-41" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>&#x003c6;</mml:mi></mml:mrow></mml:mrow></mml:math> represents the frequency shift due to B<sub>0</sub> field inhomogeneity; and <mml:math id="jats-math-42" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:mrow></mml:math> represents the complex&#x02010;valued Gaussian noise.</p><p>We used T<sub>1</sub> of 339 and 187&#x02009;ms for water and fat protons in the liver, respectively, based on previous work that measured in vivo relaxation times at 0.55&#x02009;T.<xref rid="mrm30324-bib-0036" ref-type="bibr">
+<sup>36</sup>
+</xref> The simulated FA were in the range of 2<inline-graphic xlink:href="MRM-93-1348-e083.jpg"/> to 20<inline-graphic xlink:href="MRM-93-1348-e092.jpg"/>. The simulated first TEs and <mml:math id="jats-math-45" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x02206;</mml:mo></mml:mrow></mml:mrow></mml:math>TE were both in the range of 1.2 to 2.8&#x02009;ms, considering hardware specifications of the 0.55&#x02009;T scanner and reasonable acquisition time of one breath&#x02010;hold. The TR was set to include all the echoes and the spoiler gradient. When investigating PDFF accuracy and precision in the range of 0% to 40% (a range that covers most of the biopsy&#x02010;proven metabolic dysfunction&#x02013;associated steatotic liver disease patients with histologic steatosis grade 0 to 3<xref rid="mrm30324-bib-0037" ref-type="bibr">
+<sup>37</sup>
+</xref>), the reference <mml:math id="jats-math-46" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> value was fixed at 30&#x02009;s<sup>&#x02212;1</sup> (<mml:math id="jats-math-47" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> value at 0.55&#x02009;T with no iron overload<xref rid="mrm30324-bib-0016" ref-type="bibr">
+<sup>16</sup>
+</xref>). When investigating <mml:math id="jats-math-48" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> accuracy and precision in the range of 20 to 90&#x02009;s<sup>&#x02212;1</sup> (a range that covers mild, moderate, and no iron overload at 0.55&#x02009;T<xref rid="mrm30324-bib-0016" ref-type="bibr">
+<sup>16</sup>
+</xref>), the reference PDFF value was fixed at 5% (close to the common cutoff value for metabolic dysfunction&#x02013;associated steatotic liver disease diagnosis<xref rid="mrm30324-bib-0038" ref-type="bibr">
+<sup>38</sup>
+</xref>).</p><p>For each combination of parameters (FA, first TE, <mml:math id="jats-math-49" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x02206;</mml:mo></mml:mrow></mml:mrow></mml:math>TE, reference PDFF, and reference <mml:math id="jats-math-50" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math>), 500 simulated instances were generated. For each instance, <mml:math id="jats-math-51" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>&#x003c6;</mml:mi></mml:mrow></mml:mrow></mml:math> was randomly drawn from a range of (&#x02212;100,&#x02009;100) Hz. The complex&#x02010;valued noise was modeled as <mml:math id="jats-math-52" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>n</mml:mi><mml:mo>=</mml:mo><mml:msub><mml:mi>n</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>+</mml:mo><mml:mi>i</mml:mi><mml:mo>&#x022c5;</mml:mo><mml:msub><mml:mi>n</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math>, where <mml:math id="jats-math-53" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>n</mml:mi><mml:mi>r</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math> and <mml:math id="jats-math-54" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>n</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math> were independently drawn from a Gaussian distribution with the same variance <mml:math id="jats-math-55" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msup><mml:mi>&#x003c3;</mml:mi><mml:mn>2</mml:mn></mml:msup></mml:mrow></mml:mrow></mml:math>. The value of <mml:math id="jats-math-56" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msup><mml:mi>&#x003c3;</mml:mi><mml:mn>2</mml:mn></mml:msup></mml:mrow></mml:mrow></mml:math> was set to be similar to the noise level in actual in vivo liver scans at 0.55&#x02009;T. To be more specific, the resulting apparent SNR (aSNR), defined as signal mean divided by noise SD, equaled 10 when PDFF&#x02009;=&#x02009;5%, <mml:math id="jats-math-57" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math>&#x02009;=&#x02009;25&#x02009;s<sup>&#x02212;1</sup>, and flip angle&#x02009;=&#x02009;8<inline-graphic xlink:href="MRM-93-1348-e085.jpg"/> in our Monte Carlo simulation.</p><p>All the simulated instances were fitted to a seven&#x02010;peak fat model<xref rid="mrm30324-bib-0035" ref-type="bibr">
+<sup>35</sup>
+</xref> with a single <mml:math id="jats-math-59" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> decay term using a multi&#x02010;step adaptive approach.<xref rid="mrm30324-bib-0005" ref-type="bibr">
+<sup>5</sup>
+</xref> We measured the quantification accuracy by reporting the mean difference (MD) across instances of fitted PDFF and <mml:math id="jats-math-60" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> versus the reference values (i.e., the bias) at different parameter settings. We measured the quantification precision by reporting the SD across instances of fitted PDFF and <mml:math id="jats-math-61" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> at different parameter settings.</p></sec><sec id="mrm30324-sec-0008"><label>2.2</label><title>Locally low&#x02010;rank <styled-content style="fixed-case" toggle="no">PCA</styled-content>&#x02010;based denoising</title><p>Here, we briefly summarize the two techniques that were investigated in this work, RLLR and RMT denoising (Figure&#x000a0;<xref rid="mrm30324-fig-0001" ref-type="fig">1</xref>), and describe how we adapt them to our specific application. More technical details can be found in previous works.<xref rid="mrm30324-bib-0021" ref-type="bibr">
+<sup>21</sup>
+</xref>, <xref rid="mrm30324-bib-0025" ref-type="bibr">
+<sup>25</sup>
+</xref> In the following paragraphs, we use <italic toggle="yes">p</italic>
+<sub>x</sub>, <italic toggle="yes">p</italic>
+<sub>y</sub>, and <italic toggle="yes">p</italic>
+<sub>z</sub> to represent the patch size in the three image dimensions, and use <italic toggle="yes">N</italic>
+<sub>e</sub> and <italic toggle="yes">N</italic>
+<sub>c</sub> to represent the number of echoes and number of coil channels, respectively.</p><fig position="float" fig-type="FIGURE" id="mrm30324-fig-0001"><label>FIGURE 1</label><caption><p>Reconstruction pipelines of the two locally low&#x02010;rank principal component analysis&#x02013;based denoising methods used in this work. RLLR denoising was applied on coil&#x02010;combined multi&#x02010;contrast images, whereas RMT denoising was applied on the multi&#x02010;coil multi&#x02010;contrast images. Both RLLR and RMT denoising methods needed to accurately estimate noise variance before performing singular value thresholding or shrinkage to suppress Gaussian noise. PDFF, proton density fat fraction; RLLR, robust locally low&#x02010;rank; RMT, random matrix theory; SVD, singular value decomposition; SURE, Stein's unbiased risk estimate.</p></caption><graphic xlink:href="MRM-93-1348-g001" position="anchor" id="jats-graphic-1"/></fig><p>The RLLR denoising method constructs a 2D low&#x02010;rank complex valued matrix <mml:math id="jats-math-62" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>M</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math> with dimensions [<italic toggle="yes">p</italic>
+<sub>x</sub>
+<mml:math id="jats-math-63" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x000d7;</mml:mo></mml:mrow></mml:mrow></mml:math>
+<italic toggle="yes">p</italic>
+<sub>y</sub>
+<mml:math id="jats-math-64" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x000d7;</mml:mo></mml:mrow></mml:mrow></mml:math>
+<italic toggle="yes">p</italic>
+<sub>z</sub> by <italic toggle="yes">N</italic>
+<sub>e</sub>] from the coil&#x02010;combined multi&#x02010;echo images. Assuming the signal rank of <mml:math id="jats-math-65" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>M</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math> is smaller than <italic toggle="yes">N</italic>
+<sub>e</sub>, the component associated with the smallest singular value is mainly noise. Before noise reduction, 2D random Gaussian matrix samples with dimensions [<italic toggle="yes">p</italic>
+<sub>x</sub>
+<mml:math id="jats-math-66" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x000d7;</mml:mo></mml:mrow></mml:mrow></mml:math>
+<italic toggle="yes">p</italic>
+<sub>y</sub>
+<mml:math id="jats-math-67" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x000d7;</mml:mo></mml:mrow></mml:mrow></mml:math>
+<italic toggle="yes">p</italic>
+<sub>z</sub> by <italic toggle="yes">N</italic>
+<sub>e</sub>] were generated using a predetermined variance <mml:math id="jats-math-68" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>&#x003c3;</mml:mi><mml:mi>s</mml:mi><mml:mn>2</mml:mn></mml:msubsup></mml:mrow></mml:mrow></mml:math>. The median of the smallest singular values of these matrix samples, denoted as <mml:math id="jats-math-69" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>&#x003bb;</mml:mi><mml:mi>m</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math>, is calculated. By comparing the smallest singular value of <mml:math id="jats-math-70" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>M</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math> to <mml:math id="jats-math-71" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>&#x003bb;</mml:mi><mml:mi>m</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math>, the noise variance <mml:math id="jats-math-72" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mover accent="true"><mml:mi>&#x003c3;</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover><mml:mi>n</mml:mi><mml:mn>2</mml:mn></mml:msubsup></mml:mrow></mml:mrow></mml:math> can be estimated using
+<disp-formula id="mrm30324-disp-0002">
+<label>(2)</label>
+<mml:math id="jats-math-73" display="block" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mover accent="true"><mml:mi>&#x003c3;</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover><mml:mi>n</mml:mi><mml:mn>2</mml:mn></mml:msubsup><mml:mo linebreak="goodbreak">=</mml:mo><mml:mfrac><mml:mrow><mml:mi>P</mml:mi><mml:mfenced open="(" close=")" separators=""><mml:msub><mml:mi>M</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mfenced></mml:mrow><mml:msub><mml:mi>&#x003bb;</mml:mi><mml:mi>m</mml:mi></mml:msub></mml:mfrac><mml:mo linebreak="goodbreak">&#x000d7;</mml:mo><mml:msubsup><mml:mi>&#x003c3;</mml:mi><mml:mi>s</mml:mi><mml:mn>2</mml:mn></mml:msubsup><mml:mo>,</mml:mo></mml:mrow></mml:mrow></mml:math>
+</disp-formula>
+while <mml:math id="jats-math-74" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>P</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mo>&#x022c5;</mml:mo><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math> extracts the smallest singular values of its argument. After estimating <mml:math id="jats-math-75" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mover accent="true"><mml:mi>&#x003c3;</mml:mi><mml:mo stretchy="true">^</mml:mo></mml:mover><mml:mi>n</mml:mi><mml:mn>2</mml:mn></mml:msubsup></mml:mrow></mml:mrow></mml:math>, RLLR denoising finds the optimal value for singular value soft&#x02010;thresholding by minimizing Stein's unbiased risk estimate<xref rid="mrm30324-bib-0023" ref-type="bibr">
+<sup>23</sup>
+</xref> and obtaining the denoised matrix. All the overlapping local patches (with stride&#x02009;=&#x02009;1 along three spatial dimensions) are denoised using the same method and averaged to generate the final denoised images. Please note that previous works applied RLLR denoising on PDFF and <mml:math id="jats-math-76" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> mapping at 3&#x02009;T and only used a 2D low&#x02010;rank matrix constructed from two image dimensions.<xref rid="mrm30324-bib-0021" ref-type="bibr">
+<sup>21</sup>
+</xref>, <xref rid="mrm30324-bib-0024" ref-type="bibr">
+<sup>24</sup>
+</xref> In this work, we extended the method to include the slice dimension.</p><p>The RMT denoising method relies on the Marchenko&#x02013;Pastur law.<xref rid="mrm30324-bib-0028" ref-type="bibr">
+<sup>28</sup>
+</xref> Let us consider a 2D random matrix <mml:math id="jats-math-77" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>X</mml:mi></mml:mrow></mml:mrow></mml:math> with dimensions [<mml:math id="jats-math-78" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>p</mml:mi></mml:mrow></mml:mrow></mml:math> by <mml:math id="jats-math-79" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>q</mml:mi></mml:mrow></mml:mrow></mml:math>] (<mml:math id="jats-math-80" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>p</mml:mi><mml:mo>&#x02264;</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:mrow></mml:math>) whose entries are drawn from a Gaussian distribution of mean 0 and variance <mml:math id="jats-math-81" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msup><mml:mi>&#x003c3;</mml:mi><mml:mn>2</mml:mn></mml:msup></mml:mrow></mml:mrow></mml:math>. The probability density function of the eigenvalues <mml:math id="jats-math-82" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>&#x003bb;</mml:mi></mml:mrow></mml:mrow></mml:math> of the matrix <mml:math id="jats-math-83" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>Y</mml:mi><mml:mo>=</mml:mo><mml:mfrac><mml:mn>1</mml:mn><mml:mi>q</mml:mi></mml:mfrac><mml:mi>X</mml:mi><mml:msup><mml:mi>X</mml:mi><mml:mi>T</mml:mi></mml:msup></mml:mrow></mml:mrow></mml:math> can be described by the Marchenko&#x02013;Pastur distribution:
+<disp-formula id="mrm30324-disp-0003">
+<label>(3)</label>
+<mml:math id="jats-math-84" display="block" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>p</mml:mi><mml:mfenced separators="" open="(" close=")"><mml:mi>&#x003bb;</mml:mi><mml:mo stretchy="false">|</mml:mo><mml:mrow><mml:msup><mml:mi>&#x003c3;</mml:mi><mml:mn>2</mml:mn></mml:msup><mml:mo>,</mml:mo><mml:mi>&#x003b3;</mml:mi></mml:mrow></mml:mfenced><mml:mo linebreak="goodbreak">=</mml:mo><mml:mfenced open="{" close="" separators=""><mml:mtable columnalign="left"><mml:mtr><mml:mtd><mml:mfrac><mml:msqrt><mml:mrow><mml:mfenced open="(" close=")" separators=""><mml:mrow><mml:msup><mml:mi>&#x003bb;</mml:mi><mml:mo>+</mml:mo></mml:msup><mml:mo linebreak="goodbreak">&#x02212;</mml:mo><mml:mi>&#x003bb;</mml:mi></mml:mrow></mml:mfenced><mml:mfenced open="(" close=")" separators=""><mml:mrow><mml:mi>&#x003bb;</mml:mi><mml:mo linebreak="goodbreak">&#x02212;</mml:mo><mml:msup><mml:mi>&#x003bb;</mml:mi><mml:mo>&#x02212;</mml:mo></mml:msup></mml:mrow></mml:mfenced></mml:mrow></mml:msqrt><mml:mrow><mml:mn>2</mml:mn><mml:mrow><mml:mi>&#x003c0;</mml:mi><mml:mi>&#x003b3;</mml:mi><mml:mi>&#x003bb;</mml:mi></mml:mrow><mml:msup><mml:mi>&#x003c3;</mml:mi><mml:mn>2</mml:mn></mml:msup></mml:mrow></mml:mfrac></mml:mtd><mml:mtd><mml:mtext mathvariant="italic">if</mml:mtext><mml:mspace width="0.25em"/><mml:msup><mml:mi>&#x003bb;</mml:mi><mml:mo>&#x02212;</mml:mo></mml:msup><mml:mo>&#x02264;</mml:mo><mml:mi>&#x003bb;</mml:mi><mml:mo>&#x02264;</mml:mo><mml:msup><mml:mi>&#x003bb;</mml:mi><mml:mo>+</mml:mo></mml:msup></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mn>0</mml:mn></mml:mtd><mml:mtd><mml:mtext>otherwise</mml:mtext></mml:mtd></mml:mtr></mml:mtable></mml:mfenced><mml:mo>,</mml:mo></mml:mrow></mml:mrow></mml:math>
+</disp-formula>
+where <mml:math id="jats-math-85" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msup><mml:mi>&#x003bb;</mml:mi><mml:mo>+</mml:mo></mml:msup><mml:mo>=</mml:mo><mml:msup><mml:mi>&#x003c3;</mml:mi><mml:mn>2</mml:mn></mml:msup><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>+</mml:mo><mml:msqrt><mml:mi>&#x003b3;</mml:mi></mml:msqrt></mml:mrow><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math>, <mml:math id="jats-math-86" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msup><mml:mi>&#x003bb;</mml:mi><mml:mo>&#x02212;</mml:mo></mml:msup><mml:mo>=</mml:mo><mml:msup><mml:mi>&#x003c3;</mml:mi><mml:mn>2</mml:mn></mml:msup><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>&#x02212;</mml:mo><mml:msqrt><mml:mi>&#x003b3;</mml:mi></mml:msqrt></mml:mrow><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math>, <mml:math id="jats-math-87" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>&#x003b3;</mml:mi><mml:mo>=</mml:mo><mml:mi>p</mml:mi><mml:mo stretchy="false">/</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:mrow></mml:math>. After constructing a low&#x02010;rank matrix from local image patches, noise variance <mml:math id="jats-math-88" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msup><mml:mi>&#x003c3;</mml:mi><mml:mn>2</mml:mn></mml:msup></mml:mrow></mml:mrow></mml:math> can be estimated by comparing the distribution of the singular values of the low&#x02010;rank matrix to the Marchenko&#x02013;Pastur distribution. Because it requires a sufficient number of eigenvalues/singular values for accurate estimation of the noise variance, we use both echo and coil dimensions to construct low&#x02010;rank matrices. The real and imaginary components from the multi&#x02010;coil multi&#x02010;echo complex data are then concatenated to form a matrix with dimensions [<italic toggle="yes">p</italic>
+<sub>x</sub>
+<mml:math id="jats-math-89" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x000d7;</mml:mo></mml:mrow></mml:mrow></mml:math>
+<italic toggle="yes">p</italic>
+<sub>y</sub>
+<mml:math id="jats-math-90" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x000d7;</mml:mo></mml:mrow></mml:mrow></mml:math>
+<italic toggle="yes">p</italic>
+<sub>z</sub> by 2 <mml:math id="jats-math-91" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x000d7;</mml:mo></mml:mrow></mml:mrow></mml:math>
+<italic toggle="yes">N</italic>
+<sub>e</sub>
+<mml:math id="jats-math-92" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x000d7;</mml:mo></mml:mrow></mml:mrow></mml:math>
+<italic toggle="yes">N</italic>
+<sub>c</sub>]. Once the noise variance is estimated, optimal singular value shrinkage based on Frobenius norm minimization<xref rid="mrm30324-bib-0039" ref-type="bibr">
+<sup>39</sup>
+</xref> is used. All the overlapping local patches are denoised using the same method and averaged to generate the denoised multi&#x02010;coil multi&#x02010;echo images. Coil combination<xref rid="mrm30324-bib-0040" ref-type="bibr">
+<sup>40</sup>
+</xref> is performed after RMT denoising.</p><p>Both denoising methods assume the noise is Gaussian&#x02010;distributed. Therefore, the reconstruction pipeline includes coil decorrelation<xref rid="mrm30324-bib-0041" ref-type="bibr">
+<sup>41</sup>
+</xref> and requires g&#x02010;factor correction<xref rid="mrm30324-bib-0042" ref-type="bibr">
+<sup>42</sup>
+</xref> for parallel imaging (PI)&#x02010;accelerated data before denoising (Figure&#x000a0;<xref rid="mrm30324-fig-0001" ref-type="fig">1</xref>).</p></sec><sec id="mrm30324-sec-0009"><label>2.3</label><title>
+<styled-content style="fixed-case" toggle="no">PDFF</styled-content> and <mml:math id="jats-math-93" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> phantom imaging</title><p>We validated the PDFF and <mml:math id="jats-math-94" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> quantification accuracy using a reference phantom (Calimetrix, Madison, WI) with seven PDFF&#x02010;only vials (0% to 100%, reference values provided by the vendor) and 10 <mml:math id="jats-math-95" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math>&#x02010;only vials (17.7 to 1009.5&#x02009;s<sup>&#x02212;1</sup> measured at 1.5&#x02009;T, provided by the vendor). The PDFF&#x02010;only vials did not have controlled <mml:math id="jats-math-96" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> values, and the <mml:math id="jats-math-97" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math>&#x02010;only vials had no fat content. Scans were performed using a whole&#x02010;body 0.55&#x02009;T MRI system (prototype MAGNETOM&#x000a0;Aera, Siemens Healthineers, Erlangen, Germany) equipped with high&#x02010;performance shielded gradients (45 mT/m maximum amplitude, 200&#x02009;T/m/s slew rate). Phased&#x02010;array receiver coils (18&#x02010;channel spine array and six&#x02010;channel body array) were used, and there were <italic toggle="yes">N</italic>
+<sub>c</sub>&#x02009;=&#x02009;12 activated coil channels during the scans. To acquire phantom images with similar SNR as in the in vivo liver scans, we placed pads between phantom vials and the coils such that the space between the body array coil and the spine array coil was similar to the volume of an adult abdomen. We acquired data using a 3D multi&#x02010;echo gradient&#x02010;echo Dixon MRI research application sequence.<xref rid="mrm30324-bib-0005" ref-type="bibr">
+<sup>5</sup>
+</xref> Key sequence parameters, based on findings from our Monte Carlo simulation, included <italic toggle="yes">N</italic>
+<sub>e</sub>&#x02009;=&#x02009;6 with TEs&#x02009;=&#x02009;(2.16, 4.32, 6.48, 8.64, 10.8, 12.96) ms, TR&#x02009;=&#x02009;14.7&#x02009;ms, FA&#x02009;=&#x02009;8<inline-graphic xlink:href="MRM-93-1348-e043.jpg"/>, FOV&#x02009;=&#x02009;300&#x02009;&#x000d7;&#x02009;300&#x02009;mm<sup>2</sup>, matrix size&#x02009;=&#x02009;192&#x02009;&#x000d7;&#x02009;192, and slice thickness&#x02009;=&#x02009;5&#x02009;mm. PI with acceleration factor (<italic toggle="yes">R</italic>) of 2 was used. The scan was repeated 50 times without repositioning. Detailed sequence parameters are reported in Table&#x000a0;<xref rid="mrm30324-tbl-0001" ref-type="table">1</xref>. Each scan repetition was reconstructed individually, using three reconstruction methods: (1) conventional reconstruction with only PI reconstruction (GRAPPA) without any denoising, (2) PI reconstruction and RLLR denoising with an image patch size (<italic toggle="yes">p</italic>
+<sub>x</sub>, <italic toggle="yes">p</italic>
+<sub>y</sub>, <italic toggle="yes">p</italic>
+<sub>z</sub>) = (5, 5, 5), and (3) PI reconstruction and RMT denoising with an image patch size (5, 5, 5). The reconstructed images were fitted with a multi&#x02010;step adaptive approach<xref rid="mrm30324-bib-0005" ref-type="bibr">
+<sup>5</sup>
+</xref> accounting for fat model complexity<xref rid="mrm30324-bib-0035" ref-type="bibr">
+<sup>35</sup>
+</xref> and single <mml:math id="jats-math-99" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> decay to generate PDFF and <mml:math id="jats-math-100" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> maps. For a fair comparison, all the reconstruction results presented in this work were reconstructed offline with the same GRAPPA algorithm and the same fat&#x02013;water&#x02010;<mml:math id="jats-math-101" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> fitting method.</p><table-wrap position="float" id="mrm30324-tbl-0001" content-type="TABLE"><label>TABLE 1</label><caption><p>Sequence parameters for phantom, in vivo pelvis, and in vivo liver MRI scans at 0.55&#x02009;T.</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><thead valign="bottom"><tr><th align="left" valign="bottom" rowspan="1" colspan="1"/><th colspan="2" align="left" style="border-bottom:solid 1px #000000" valign="bottom" rowspan="1">Phantom</th><th align="left" valign="bottom" rowspan="1" colspan="1">In vivo pelvis</th><th align="left" valign="bottom" rowspan="1" colspan="1">In vivo liver</th></tr><tr style="border-bottom:solid 1px #000000"><th align="left" valign="bottom" rowspan="1" colspan="1"/><th align="left" valign="bottom" rowspan="1" colspan="1">2D multi&#x02010;echo gradient echo</th><th align="left" valign="bottom" rowspan="1" colspan="1">3D multi&#x02010;echo Dixon</th><th align="left" valign="bottom" rowspan="1" colspan="1">3D multi&#x02010;echo Dixon</th><th align="left" valign="bottom" rowspan="1" colspan="1">3D multi&#x02010;echo Dixon</th></tr></thead><tbody valign="top"><tr><td align="left" valign="top" rowspan="1" colspan="1">Acquisition orientation</td><td align="left" valign="top" rowspan="1" colspan="1">Axial</td><td align="left" valign="top" rowspan="1" colspan="1">Axial</td><td align="left" valign="top" rowspan="1" colspan="1">Axial</td><td align="left" valign="top" rowspan="1" colspan="1">Axial</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">FOV (mm&#x02009;&#x000d7;&#x02009;mm)</td><td align="left" valign="top" rowspan="1" colspan="1">300&#x02009;&#x000d7;&#x02009;300</td><td align="left" valign="top" rowspan="1" colspan="1">300&#x02009;&#x000d7;&#x02009;300</td><td align="left" valign="top" rowspan="1" colspan="1">400&#x02009;&#x000d7;&#x02009;400</td><td align="left" valign="top" rowspan="1" colspan="1">380&#x02009;&#x000d7;&#x02009;380</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">TE (ms)</td><td align="left" valign="top" rowspan="1" colspan="1">1.35, 3.5, 5.8, 8.0, 10.3, 12.6, 14.8, 17.1, 19.3, 21.6, 23.9, 26.1</td><td align="left" valign="top" rowspan="1" colspan="1">2.16, 4.32, 6.48 (OP), 8.64, 10.8, 12.96 (IP)</td><td align="left" valign="top" rowspan="1" colspan="1">2.16, 4.32, 6.48 (OP), 8.64, 10.8, 12.96 (IP)</td><td align="left" valign="top" rowspan="1" colspan="1">2.16, 4.32, 6.48 (OP), 8.64, 10.8, 12.96 (IP)</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">TR (ms)</td><td align="left" valign="top" rowspan="1" colspan="1">35</td><td align="left" valign="top" rowspan="1" colspan="1">14.7</td><td align="left" valign="top" rowspan="1" colspan="1">14.7</td><td align="left" valign="top" rowspan="1" colspan="1">14.7</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Matrix size</td><td align="left" valign="top" rowspan="1" colspan="1">160&#x02009;&#x000d7;&#x02009;160</td><td align="left" valign="top" rowspan="1" colspan="1">192&#x02009;&#x000d7;&#x02009;192</td><td align="left" valign="top" rowspan="1" colspan="1">192&#x02009;&#x000d7;&#x02009;192</td><td align="left" valign="top" rowspan="1" colspan="1">192&#x02009;&#x000d7;&#x02009;192</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">In&#x02010;plane resolution (mm&#x02009;&#x000d7;&#x02009;mm)</td><td align="left" valign="top" rowspan="1" colspan="1">1.9&#x02009;&#x000d7;&#x02009;1.9</td><td align="left" valign="top" rowspan="1" colspan="1">1.6&#x02009;&#x000d7;&#x02009;1.6</td><td align="left" valign="top" rowspan="1" colspan="1">2.1&#x02009;&#x000d7;&#x02009;2.1</td><td align="left" valign="top" rowspan="1" colspan="1">2.0&#x02009;&#x000d7;&#x02009;2.0</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Number of slices</td><td align="left" valign="top" rowspan="1" colspan="1">1</td><td align="left" valign="top" rowspan="1" colspan="1">8</td><td align="left" valign="top" rowspan="1" colspan="1">8</td><td align="left" valign="top" rowspan="1" colspan="1">8</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Slice oversampling</td><td align="left" valign="top" rowspan="1" colspan="1">N/A</td><td align="left" valign="top" rowspan="1" colspan="1">20%</td><td align="left" valign="top" rowspan="1" colspan="1">20%</td><td align="left" valign="top" rowspan="1" colspan="1">20%</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Slice thickness (mm)</td><td align="left" valign="top" rowspan="1" colspan="1">5</td><td align="left" valign="top" rowspan="1" colspan="1">5</td><td align="left" valign="top" rowspan="1" colspan="1">5</td><td align="left" valign="top" rowspan="1" colspan="1">5</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Flip angle (<inline-graphic xlink:href="MRM-93-1348-e037.jpg"/>)</td><td align="left" valign="top" rowspan="1" colspan="1">15</td><td align="left" valign="top" rowspan="1" colspan="1">8</td><td align="left" valign="top" rowspan="1" colspan="1">8</td><td align="left" valign="top" rowspan="1" colspan="1">8</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Bandwidth (Hz/px)</td><td align="left" valign="top" rowspan="1" colspan="1">1565</td><td align="left" valign="top" rowspan="1" colspan="1">590</td><td align="left" valign="top" rowspan="1" colspan="1">590</td><td align="left" valign="top" rowspan="1" colspan="1">590</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Parallel imaging</td><td align="left" valign="top" rowspan="1" colspan="1">No</td><td align="left" valign="top" rowspan="1" colspan="1">GRAPPA (<italic toggle="yes">R</italic>&#x02009;=&#x02009;2)</td><td align="left" valign="top" rowspan="1" colspan="1">GRAPPA (<italic toggle="yes">R</italic>&#x02009;=&#x02009;2)</td><td align="left" valign="top" rowspan="1" colspan="1">GRAPPA (<italic toggle="yes">R</italic>&#x02009;=&#x02009;2)</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Averages</td><td align="left" valign="top" rowspan="1" colspan="1">2</td><td align="left" valign="top" rowspan="1" colspan="1">1</td><td align="left" valign="top" rowspan="1" colspan="1">1</td><td align="left" valign="top" rowspan="1" colspan="1">1</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Scan time (min:s)</td><td align="left" valign="top" rowspan="1" colspan="1">0:12</td><td align="left" valign="top" rowspan="1" colspan="1">0:19</td><td align="left" valign="top" rowspan="1" colspan="1">0:19</td><td align="left" valign="top" rowspan="1" colspan="1">0:19 (breath&#x02010;hold)</td></tr></tbody></table><table-wrap-foot id="mrm30324-ntgp-0001"><fn id="mrm30324-note-0001"><p>N/A, not applicable. OP, out of phase. IP, in phase.</p></fn></table-wrap-foot></table-wrap><p>The analysis consisted of two parts. First, we assessed the agreement of PDFF and <mml:math id="jats-math-103" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> values from different reconstruction methods versus the reference for the evaluation of accuracy. In this part, results from one scan repetition were used. We placed a region of interest (ROI) in each vial and calculated the mean PDFF and <mml:math id="jats-math-104" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math>. PDFF values provided by the phantom vendor were used as the reference. To obtain the reference <mml:math id="jats-math-105" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> values at 0.55&#x02009;T, a single&#x02010;slice 12&#x02010;echo gradient&#x02010;echo sequence was scanned and the images were fitted to a mono&#x02010;exponential model.<xref rid="mrm30324-bib-0016" ref-type="bibr">
+<sup>16</sup>
+</xref> Two <mml:math id="jats-math-106" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> vials had <mml:math id="jats-math-107" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math>&#x02009;&#x0003e;&#x02009;250&#x02009;s<sup>&#x02212;1</sup> (<mml:math id="jats-math-108" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>T</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math>&#x02009;&#x0003c;&#x02009;4&#x02009;ms) at 0.55&#x02009;T, which could not be reliably fitted using the specified protocol and were not included in the quantitative analysis. The phantom vials analyzed spanned the entire PDFF range (0% to 100%) and contained <mml:math id="jats-math-109" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> values that are consistent with values reported in subjects without iron overload (<mml:math id="jats-math-110" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math>&#x02009;&#x0003c;&#x02009;45&#x02009;s<sup>&#x02212;1</sup> from previous work<xref rid="mrm30324-bib-0016" ref-type="bibr">
+<sup>16</sup>
+</xref>) and with mild liver iron overload (45&#x02009;s<sup>&#x02212;1</sup>&#x02009;&#x0003c;&#x02009;<mml:math id="jats-math-111" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math>&#x02009;&#x0003c;&#x02009;91&#x02009;s<sup>&#x02212;1</sup> from previous work<xref rid="mrm30324-bib-0016" ref-type="bibr">
+<sup>16</sup>
+</xref>). The MD and the concordance correlation coefficient (<mml:math id="jats-math-112" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>&#x003c1;</mml:mi><mml:mi>c</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math>)<xref rid="mrm30324-bib-0043" ref-type="bibr">
+<sup>43</sup>
+</xref> between the measured PDFF and <mml:math id="jats-math-113" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> values versus the reference were calculated to assess agreement. Linear regression was also performed. Second, we evaluated the precision by calculating the SD of quantitative measurements in each voxel across scan repetitions. The mean values of the change in PDFF and <mml:math id="jats-math-114" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> SDs between different reconstruction methods were reported.</p></sec><sec id="mrm30324-sec-0010"><label>2.4</label><title>In vivo pelvic imaging</title><p>Quantitatively assessing denoising performance in liver scans can be challenging due to the difficulty to obtain reference high&#x02010;SNR images from multiple scan repetitions. The liver position can vary across multiple breath&#x02010;holds, leading to artifacts after averaging. Therefore, we performed an experiment in the pelvis to quantify accuracy and precision of in vivo PDFF and <mml:math id="jats-math-115" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> mapping. The experiment contained two analyses: (1) to investigate the denoising performance and the quantification accuracy under different noise levels, and (2) to investigate the quantification precision by calculating the SDs of PDFF and <mml:math id="jats-math-116" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> measurements across scan repetitions. All in vivo experiments in this work were conducted under a Health Insurance Portability and Accountability Act&#x02013;compliant study protocol approved by the institutional review board. All subjects were scanned after providing written informed consent.</p><p>For the first analysis, we scanned a healthy volunteer (29&#x02010;year&#x02010;old male with body&#x02010;mass index [BMI] 26.4&#x02009;kg/m<sup>2</sup>) using the 3D multi&#x02010;echo gradient&#x02010;echo Dixon MRI research application sequence<xref rid="mrm30324-bib-0005" ref-type="bibr">
+<sup>5</sup>
+</xref> with 30 scan repetitions (no repositioning). Key parameters were the same as the phantom scans except for the FOV and the in&#x02010;plane resolution. We averaged the multi&#x02010;coil multi&#x02010;echo k&#x02010;space data across the 30 repetitions to generate the &#x0201c;reference&#x0201d; k&#x02010;space data. We then added complex&#x02010;valued random Gaussian noise with different variances to the reference k&#x02010;space data to generate synthetic pelvis datasets with different noise levels. We chose the noise variances so that the synthetic images after GRAPPA reconstruction (without any denoising) had aSNR ranging from 3 to 15 (whereas the original reference image had aSNR&#x02009;=&#x02009;95). Here, aSNR was measured by the signal mean in a muscle ROI divided by background noise SD in coil&#x02010;combined echo 3 (out&#x02010;of&#x02010;phase) images. We performed RLLR and RMT denoising on the synthetic images after GRAPPA reconstruction. PDFF and <mml:math id="jats-math-117" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> maps were reconstructed using the same signal fitting method described earlier. We placed three ROIs, each with a size of 5&#x02009;mm<sup>2</sup>, in the subcutaneous fat tissue and in the muscle. Quantification accuracy was assessed by comparing mean PDFF and <mml:math id="jats-math-118" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> in these ROIs versus the quantification results in the reference data (from 30 repetitions).</p><p>For the second analysis, we scanned three healthy volunteers (3 males, age: 29.7&#x02009;<mml:math id="jats-math-119" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>&#x02009;0.6&#x02009;years, BMI: 24.5&#x02009;<mml:math id="jats-math-120" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>&#x02009;2.6&#x02009;kg/m<sup>2</sup>) using the same sequence, each with 15 scan repetitions. Each repetition was reconstructed individually using three different methods: (1) conventional reconstruction without denoising, (2) RLLR denoising with a patch size (5, 5, 5), and (3) RMT denoising with a patch size (5, 5, 5). PDFF and <mml:math id="jats-math-121" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> maps were calculated using the same signal fitting approach. To assess precision, we calculated pixel&#x02010;wise SDs of PDFF and <mml:math id="jats-math-122" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> values across 15 scan repetitions. We further calculated the percentage of voxels, which had reduced SDs of PDFF and <mml:math id="jats-math-123" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> (meaning improved precision) in denoised results compared to conventional reconstruction results.</p></sec><sec id="mrm30324-sec-0011"><label>2.5</label><title>In vivo liver imaging</title><p>Eleven subjects (three females and eight males, age: 39.5&#x02009;<mml:math id="jats-math-124" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>&#x02009;14.3&#x02009;years, BMI: 26.3&#x02009;<mml:math id="jats-math-125" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>&#x02009;4.0&#x02009;kg/m<sup>2</sup>) were recruited and scanned. Four of the subjects (one female and three males, age: 49.5&#x02009;<mml:math id="jats-math-126" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>&#x02009;16.8&#x02009;years, BMI: 29.9&#x02009;<mml:math id="jats-math-127" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>&#x02009;2.9&#x02009;kg/m<sup>2</sup>) had known fatty liver. All the subjects were scanned using the 3D multi&#x02010;echo gradient&#x02010;echo Dixon research application sequences<sup>5</sup> (Table&#x000a0;<xref rid="mrm30324-tbl-0001" ref-type="table">1</xref>) within a single breath&#x02010;hold. Conventional reconstruction (no denoising, only GRAPPA) and reconstruction with the two denoising methods were performed. The same signal fitting approach was used to generate PDFF and <mml:math id="jats-math-128" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> maps.</p><p>For each subject, three circular ROIs, each with a size of 5&#x02009;mm<sup>2</sup>, were placed on three different axial slices in the liver while avoiding large vessels.<xref rid="mrm30324-bib-0007" ref-type="bibr">
+<sup>7</sup>
+</xref> Mean and SD of the PDFF and <mml:math id="jats-math-129" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> values within each ROI were recorded. Bland&#x02013;Altman analysis was performed to analyze the agreement of the quantification results between the conventional reconstruction and two different denoising methods.</p><p>We performed Kruskal&#x02013;Wallis tests to investigate if there were any differences in PDFF mean, <mml:math id="jats-math-130" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> mean, PDFF SD, and <mml:math id="jats-math-131" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> SD in liver ROIs among the three reconstruction methods. <italic toggle="yes">p</italic>&#x02009;&#x0003c;&#x02009;0.05 was considered significant. If the Kruskal&#x02013;Wallis tests indicated significant differences, additional pair&#x02010;wise Wilcoxon signed rank tests with Bonferroni correction for the <italic toggle="yes">p</italic>&#x02010;values (<italic toggle="yes">p</italic>&#x02009;&#x0003c;&#x02009;0.05/3&#x02009;=&#x02009;0.017 considered significant) were used to evaluate if there was significant difference between a pair of two reconstruction methods. For all the statistical tests, only one liver ROI measurement in the mid&#x02010;slice from each subject was used.</p></sec></sec><sec sec-type="results" id="mrm30324-sec-0012"><label>3</label><title>RESULTS</title><sec id="mrm30324-sec-0013"><label>3.1</label><title>Monte Carlo simulation results</title><p>The Monte Carlo simulation results from FA&#x02009;=&#x02009;8<inline-graphic xlink:href="MRM-93-1348-e041.jpg"/> are in Figure&#x000a0;<xref rid="mrm30324-fig-0002" ref-type="fig">2</xref> (complete results from different FA in Figure&#x000a0;<xref rid="mrm30324-supitem-0001" ref-type="supplementary-material">S1</xref>). A larger FA results in larger biases in PDFF due to T<sub>1</sub> differences between fat and water. In contrast, a smaller FA results in less precise PDFF and <mml:math id="jats-math-133" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> due to lower SNR. Shorter TEs and less <mml:math id="jats-math-134" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>T</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> weighting in the multi&#x02010;echo signal also results in less precise PDFF and <mml:math id="jats-math-135" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math>. Considering the quantification accuracy and precision across a range of relevant PDFF and <mml:math id="jats-math-136" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> values, we chose FA&#x02009;=&#x02009;8<inline-graphic xlink:href="MRM-93-1348-e007.jpg"/>, first TE&#x02009;=&#x02009;2.16&#x02009;ms, and <mml:math id="jats-math-138" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x02206;</mml:mo></mml:mrow></mml:mrow></mml:math>TE&#x02009;=&#x02009;2.16&#x02009;ms as the preferred setting. In this design, the third TE and the sixth TE corresponded to out&#x02010;of&#x02010;phase and in&#x02010;phase TEs at 0.55&#x02009;T, respectively.</p><fig position="float" fig-type="FIGURE" id="mrm30324-fig-0002"><label>FIGURE 2</label><caption><p>Monte Carlo simulation results of FA&#x02009;=&#x02009;8<inline-graphic xlink:href="MRM-93-1348-e087.jpg"/>regarding the accuracy and precision for (A,B,C) PDFF and (D,E) <mml:math id="jats-math-140" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> mapping using different first TE and <mml:math id="jats-math-141" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x02206;</mml:mo></mml:mrow></mml:mrow></mml:math>TE at 0.55&#x02009;T. Complete results from different FA can be found in Figure&#x000a0;<xref rid="mrm30324-supitem-0001" ref-type="supplementary-material">S1</xref>. The PDFF bias and SD were reported in absolute units. To balance between accuracy and precision of parameter quantification and breath&#x02010;holding scan time, we chose first TE&#x02009;=&#x02009;2.16&#x02009;ms and <mml:math id="jats-math-142" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x02206;</mml:mo></mml:mrow></mml:mrow></mml:math>TE&#x02009;=&#x02009;2.16&#x02009;ms as indicated by the stars.&#x000a0;FA, flip angle.</p></caption><graphic xlink:href="MRM-93-1348-g004" position="anchor" id="jats-graphic-3"/></fig><p>Based on the simulation results at a representative aSNR level, our selected acquisition protocol achieved PDFF biases of 0.2% to 2% and PDFF SDs of 5.4% to 7.2% for reference PDFF values ranging from 0% to 40%. The PDFF bias and SD are reported with absolute units here and throughout this work. At the same time, our selected acquisition protocol yielded <mml:math id="jats-math-143" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> biases of 0.2 to 2.2&#x02009;s<sup>&#x02212;1</sup> and <mml:math id="jats-math-144" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> SDs of 10.5 to 17.7&#x02009;s<sup>&#x02212;1</sup> for reference <mml:math id="jats-math-145" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> values ranging from 20 to 90&#x02009;s<sup>&#x02212;1</sup>. Please note that these simulation results did not consider any denoising.</p></sec><sec id="mrm30324-sec-0014"><label>3.2</label><title>
+<styled-content style="fixed-case" toggle="no">PDFF</styled-content> and <mml:math id="jats-math-146" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> phantom imaging results</title><p>The signal difference between denoised and non&#x02010;denoised images showed minimal structured signals, demonstrating effective noise suppression without removing desired signal (Figure&#x000a0;<xref rid="mrm30324-fig-0001" ref-type="fig">S2</xref>). Figure&#x000a0;<xref rid="mrm30324-fig-0003" ref-type="fig">3A,C</xref> shows quantitative maps from one scan repetition. Without denoising, large PDFF errors and noisy PDFF and <mml:math id="jats-math-147" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> measurements were observed. Both denoising methods improved the visual quality of PDFF and <mml:math id="jats-math-148" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> maps with reduced inhomogeneity. Figure&#x000a0;<xref rid="mrm30324-fig-0003" ref-type="fig">3B,D</xref> shows maps of pixel&#x02010;wise SDs of PDFF and <mml:math id="jats-math-149" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> values from 50 scan repetitions. Compared with conventional reconstruction, RLLR denoising showed an average of 86% and 77% decrease in PDFF and <mml:math id="jats-math-150" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> SDs, respectively; RMT denoising showed an average of 77% and 67% decrease in PDFF and <mml:math id="jats-math-151" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> SDs, respectively.</p><fig position="float" fig-type="FIGURE" id="mrm30324-fig-0003"><label>FIGURE 3</label><caption><p>(A) PDFF quantification results in the phantom from one scan repetition. (B) Maps showing the pixelwise SD of PDFF across 50 scan repetitions. (C) <mml:math id="jats-math-152" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> quantification results in the phantom from one scan repetition. (D) Maps showing the pixelwise SD of <mml:math id="jats-math-153" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> across 50 scan repetitions. Numbers above each phantom vial show the measured mean value in that specific vial using a circular ROI. For example, the highest PDFF vial in the conventional reconstruction result had a mean PDFF of 79.7% and a SD of 44.4% in the circular ROI. ROI, region of interest.</p></caption><graphic xlink:href="MRM-93-1348-g009" position="anchor" id="jats-graphic-5"/></fig><p>Compared with the reference, the MD (i.e., bias) of PDFF was 8.03% for conventional reconstruction, 0.51% for RLLR denoising, and 0.77% for RMT denoising. Compared with the reference, the MD (i.e., bias) of <mml:math id="jats-math-154" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> was 2.08&#x02009;s<sup>&#x02212;1</sup> for conventional reconstruction, 2.76&#x02009;s<sup>&#x02212;1</sup> for RLLR denoising, and 3.48&#x02009;s<sup>&#x02212;1</sup> for RMT denoising. Figure&#x000a0;<xref rid="mrm30324-fig-0004" ref-type="fig">4A,B</xref> shows the correlation plots of PDFF and <mml:math id="jats-math-155" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> measurements between different methods and the reference. Conventional reconstruction had <mml:math id="jats-math-156" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>&#x003c1;</mml:mi><mml:mi>c</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math>&#x02009;=&#x02009;0.845 in PDFF and <mml:math id="jats-math-157" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>&#x003c1;</mml:mi><mml:mi>c</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math>&#x02009;=&#x02009;0.984 in <mml:math id="jats-math-158" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> when compared with the reference. Compared with reference PDFF, RLLR denoising had <mml:math id="jats-math-159" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>&#x003c1;</mml:mi><mml:mi>c</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math>&#x02009;=&#x02009;0.997 with regression result <italic toggle="yes">y</italic>&#x02009;=&#x02009;0.956<italic toggle="yes">x</italic>&#x02009;+&#x02009;2.059, and RMT denoising had <mml:math id="jats-math-160" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>&#x003c1;</mml:mi><mml:mi>c</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math>&#x02009;=&#x02009;0.997 with regression result <italic toggle="yes">y</italic>&#x02009;=&#x02009;0.949<italic toggle="yes">x</italic>&#x02009;+&#x02009;2.022. Compared with reference <mml:math id="jats-math-161" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math>, RLLR denoising had <mml:math id="jats-math-162" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>&#x003c1;</mml:mi><mml:mi>c</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math>&#x02009;=&#x02009;0.992 with regression result <italic toggle="yes">y</italic>&#x02009;=&#x02009;1.020<italic toggle="yes">x</italic>&#x02009;+&#x02009;2.550, and RMT denoising had <mml:math id="jats-math-163" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>&#x003c1;</mml:mi><mml:mi>c</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math>&#x02009;=&#x02009;0.994 with regression result <italic toggle="yes">y</italic>&#x02009;=&#x02009;1.028<italic toggle="yes">x</italic>&#x02009;+&#x02009;1.523. Both denoising methods achieved close PDFF and <mml:math id="jats-math-164" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> agreement with the reference.</p><fig position="float" fig-type="FIGURE" id="mrm30324-fig-0004"><label>FIGURE 4</label><caption><p>Correlation plots that compare (A) the mean PDFF measurements and (B) the mean <mml:math id="jats-math-165" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> measurements from one scan repetition with respect to the reference values. The linear regression results and the concordance correlation coefficients (<italic toggle="yes">&#x003c1;</italic>
+<sub>c</sub>) for each comparison are shown.</p></caption><graphic xlink:href="MRM-93-1348-g006" position="anchor" id="jats-graphic-7"/></fig></sec><sec id="mrm30324-sec-0015"><label>3.3</label><title>In vivo pelvic imaging results</title><p>Figure&#x000a0;<xref rid="mrm30324-fig-0005" ref-type="fig">5A</xref> shows the reference images (aSNR&#x02009;=&#x02009;95) and synthetic images with aSNR&#x02009;=&#x02009;8 reconstructed with different methods. Both denoising methods reduced PDFF quantification error and provided less noisy <mml:math id="jats-math-166" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> measurements. Without denoising, larger PDFF quantification errors were observed near the center of the body. This is consistent with the fact that the center of the body is farther away from the coil elements and the central region in the FOV has a higher g&#x02010;factor and more noise amplification.</p><fig position="float" fig-type="FIGURE" id="mrm30324-fig-0005"><label>FIGURE 5</label><caption><p>(A) Comparison of coil&#x02010;combined images and quantitative maps in the synthetic pelvis dataset (aSNR&#x02009;=&#x02009;8) reconstructed with different methods. (B) PDFF and <mml:math id="jats-math-167" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> measurements in three ROIs (locations depicted in [A]) across different aSNR levels. Both RLLR and RMT denoising achieved better quantification accuracy (closer agreement with reference results) for PDFF and <mml:math id="jats-math-168" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> than conventional reconstruction.&#x000a0;aSNR, apparent SNR.</p></caption><graphic xlink:href="MRM-93-1348-g007" position="anchor" id="jats-graphic-9"/></fig><p>Figure&#x000a0;<xref rid="mrm30324-fig-0005" ref-type="fig">5B</xref> compares quantification results in three ROIs across different aSNR levels. Different ROIs exhibited different levels of sensitivity to aSNR. This can be due to differences in signal intensity magnitudes and the underlying PDFF and <mml:math id="jats-math-169" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> values in different types of tissue. Both denoising methods reduced PDFF and <mml:math id="jats-math-170" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> errors. However, for images with aSNR less than 6, a PDFF bias of 1% to 2% still existed in two ROIs after denoising.</p><p>Figure&#x000a0;<xref rid="mrm30324-fig-0006" ref-type="fig">6</xref> shows representative pelvis MRI reconstruction results and SDs of PDFF and <mml:math id="jats-math-171" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> measurements across 15 scan repetitions. Compared to conventional reconstruction, both denoising methods improved PDFF and <mml:math id="jats-math-172" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> precision in terms of smaller SDs. Figure&#x000a0;<xref rid="mrm30324-fig-0006" ref-type="fig">6B,D</xref> show the scatter plots of PDFF and <mml:math id="jats-math-173" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> SDs from one representative slice. Across all the subjects in RLLR&#x02010;denoised results, the percentage of voxels with decreased PDFF and <mml:math id="jats-math-174" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> SDs were 97.5%&#x02009;<mml:math id="jats-math-175" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>&#x02009;0.3% and 98.9%&#x02009;<mml:math id="jats-math-176" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>&#x02009;0.4%. Across all the subjects in RMT&#x02010;denoised results, the percentage of voxels with decreased PDFF and <mml:math id="jats-math-177" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> SDs were 96.9%&#x02009;<mml:math id="jats-math-178" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>&#x02009;0.4% and 98.9%&#x02009;<mml:math id="jats-math-179" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>&#x02009;0.5%.</p><fig position="float" fig-type="FIGURE" id="mrm30324-fig-0006"><label>FIGURE 6</label><caption><p>(A) Representative PDFF map and corresponding voxel&#x02010;wise PDFF SD map for different methods. (B) Scatter plot of PDFF SD in all voxels (background voxels excluded). (C) Representative <mml:math id="jats-math-180" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> map and corresponding pixel&#x02010;wise <mml:math id="jats-math-181" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> SD map for different methods. (D) Scatter plot of <mml:math id="jats-math-182" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> SD in all voxels (background voxels excluded).</p></caption><graphic xlink:href="MRM-93-1348-g005" position="anchor" id="jats-graphic-11"/></fig></sec><sec id="mrm30324-sec-0016"><label>3.4</label><title>In vivo liver imaging results</title><p>Figure&#x000a0;<xref rid="mrm30324-fig-0007" ref-type="fig">7</xref> shows representative results from a fatty liver subject (45&#x02010;year&#x02010;old male, BMI&#x02009;=&#x02009;31.6&#x02009;kg/m<sup>2</sup>). Noisy images from conventional reconstruction led to PDFF quantification error and noisy <mml:math id="jats-math-183" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> measurements. After RLLR or RMT denoising, vessels in the liver became more discernible and the PDFF and <mml:math id="jats-math-184" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> maps were less noisy.</p><fig position="float" fig-type="FIGURE" id="mrm30324-fig-0007"><label>FIGURE 7</label><caption><p>Representative result of (A) coil&#x02010;combined echo 3 out&#x02010;of&#x02010;phase image, (B) signal difference in echo 3 image, (C) PDFF map, and (D) <mml:math id="jats-math-185" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> map from a fatty liver subject (45&#x02010;year&#x02010;old male, BMI&#x02009;=&#x02009;31.6&#x02009;kg/m<sup>2</sup>). The signal difference between conventional reconstructed and denoised images showed minimal tissue structures, demonstrating effective noise removal. Both RLLR and RMT denoising reduced PDFF quantification errors and provided less noisy <mml:math id="jats-math-186" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> maps. BMI, body mass index.</p></caption><graphic xlink:href="MRM-93-1348-g008" position="anchor" id="jats-graphic-13"/></fig><p>Figure&#x000a0;<xref rid="mrm30324-fig-0008" ref-type="fig">8</xref> shows Bland&#x02013;Altman plots comparing liver PDFF and <mml:math id="jats-math-187" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> values from two denoising methods versus using conventional reconstruction. For PDFF, RLLR and RMT denoising showed a MD of &#x02212;0.96% and &#x02212;0.82%, respectively, when compared with conventional reconstruction. This is consistent with previous findings<xref rid="mrm30324-bib-0044" ref-type="bibr">
+<sup>44</sup>
+</xref> that noise would lead to a positive PDFF bias (i.e., reducing noise can reduce the bias). On the other hand, the MD in <mml:math id="jats-math-188" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> between denoised and non&#x02010;denoised results were small, with values of 0.50&#x02009;s<sup>&#x02212;1</sup> between RLLR denoising and conventional reconstruction and 0.55&#x02009;s<sup>&#x02212;1</sup> between RMT denoising and conventional reconstruction.</p><fig position="float" fig-type="FIGURE" id="mrm30324-fig-0008"><label>FIGURE 8</label><caption><p>(A) Bland&#x02013;Altman plots comparing mean liver PDFF measurements in results using RLLR and RMT denoising versus conventional reconstruction. (B) Bland&#x02013;Altman plots comparing mean liver <mml:math id="jats-math-189" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> measurements in results using RLLR and RMT denoising versus conventional reconstruction. Three ROIs were placed in every subject, and ROIs from the same subject were color&#x02010;coded with the same color. LoA, 95% limits of agreement.</p></caption><graphic xlink:href="MRM-93-1348-g002" position="anchor" id="jats-graphic-15"/></fig><p>Figure&#x000a0;<xref rid="mrm30324-fig-0009" ref-type="fig">9</xref> shows scatter plots of PDFF and <mml:math id="jats-math-190" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> SDs in liver ROIs from two denoising methods versus conventional reconstruction. The mean value of PDFF SDs in liver ROIs was 8.80% for conventional reconstruction and was reduced to 1.79% and 2.00% after RLLR and RMT denoising, respectively. The mean value of <mml:math id="jats-math-191" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> SDs in liver ROIs was 14.17&#x02009;s<sup>&#x02212;1</sup> for conventional reconstruction, and was reduced to 5.31 and 4.81&#x02009;s<sup>&#x02212;1</sup> after RLLR and RMT denoising, respectively.</p><fig position="float" fig-type="FIGURE" id="mrm30324-fig-0009"><label>FIGURE 9</label><caption><p>(A) Scatter plots comparing liver PDFF SD in results using RLLR and RMT denoising versus conventional reconstruction. (B) Scatter plots comparing liver <mml:math id="jats-math-192" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> SD in results using RLLR and RMT denoising versus conventional reconstruction. Both denoising methods greatly reduced SDs of PDFF and <mml:math id="jats-math-193" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi mathvariant="normal">R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> measurements in liver ROIs. Three ROIs were placed in every subject, and ROIs from the same subject were color&#x02010;coded with the same color.</p></caption><graphic xlink:href="MRM-93-1348-g003" position="anchor" id="jats-graphic-17"/></fig><p>The Kruskal&#x02013;Wallis (<italic toggle="yes">p</italic>&#x02009;&#x0003c;&#x02009;0.05 considered significant) tests did not indicate significant differences in mean PDFF (<italic toggle="yes">p</italic>&#x02009;=&#x02009;0.209) and mean <mml:math id="jats-math-194" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> (<italic toggle="yes">p</italic>&#x02009;=&#x02009;0.846) among three reconstruction methods. On the other hand, the Kruskal&#x02013;Wallis tests found significant differences in PDFF SDs (<italic toggle="yes">p</italic>&#x02009;&#x0003c;&#x02009;0.001) and <mml:math id="jats-math-195" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> SDs (<italic toggle="yes">p</italic>&#x02009;&#x0003c;&#x02009;0.001) among three reconstruction methods. In pair&#x02010;wise Wilcoxon tests, both RLLR denoising and RMT denoising had significant differences in PDFF SDs and <mml:math id="jats-math-196" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> SDs when compared with conventional reconstruction (<italic toggle="yes">p</italic>&#x02009;&#x0003c;&#x02009;0.001 for all comparisons). There was no significant difference in PDFF SDs (<italic toggle="yes">p</italic>&#x02009;=&#x02009;0.083) and <mml:math id="jats-math-197" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> SDs (<italic toggle="yes">p</italic>&#x02009;=&#x02009;0.577) between RLLR denoising and RMT denoising.</p></sec></sec><sec sec-type="discussion" id="mrm30324-sec-0017"><label>4</label><title>DISCUSSION</title><p>In this work, we refined and validated the acquisition parameter choices for PDFF and <mml:math id="jats-math-198" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> quantification at 0.55&#x02009;T and investigated the performance of two denoising methods to improve the quantification accuracy and precision. Based on the Monte Carlo simulation, we designed a six&#x02010;echo protocol for quantifying liver PDFF and <mml:math id="jats-math-199" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> at 0.55&#x02009;T. Even with our careful design of acquisition parameters at 0.55&#x02009;T, the resulting biases and appreciable SDs of PDFF and <mml:math id="jats-math-200" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> underscored the importance and need of denoising algorithms. Using the proposed protocol in phantom and pelvis scans, we demonstrated that both RLLR and RMT denoising improved quantification accuracy in terms of close agreements with the reference and improved quantification precision in terms of reduced SDs across scan repetitions. In a cohort of 11 subjects, RLLR and RMT denoising significantly reduced SDs of PDFF and <mml:math id="jats-math-201" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> measurements in the liver ROIs when compared to conventional reconstruction.</p><p>To determine an acquisition protocol that can estimate PDFF and <mml:math id="jats-math-202" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> values in a range that is relevant for patient cohorts, we focused on PDFF values from 0% to 40% and <mml:math id="jats-math-203" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> values from 20 to 90&#x02009;s<sup>&#x02212;1</sup>. Although this range covers PDFF in fatty liver patients and mild iron overload (45&#x02009;s<sup>&#x02212;1</sup>&#x02009;&#x0003c;&#x02009;<mml:math id="jats-math-204" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math>&#x02009;&#x0003c;&#x02009;91&#x02009;s<sup>&#x02212;1</sup> from previous work<xref rid="mrm30324-bib-0016" ref-type="bibr">
+<sup>16</sup>
+</xref>), higher <mml:math id="jats-math-205" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> in patients with severe iron might not be robustly estimated using the proposed protocol. Whereas longer TEs with more fat&#x02013;water phase difference is beneficial for fat&#x02013;water separation, quantifying higher <mml:math id="jats-math-206" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> requires more echoes placed at shorter TEs. For these cases, the Monte Carlo simulation approach used in this work can be extended to include more relevant parameters and help design dedicated acquisition protocols.</p><p>In a previous multi&#x02010;center multi&#x02010;vendor PDFF phantom study,<xref rid="mrm30324-bib-0045" ref-type="bibr">
+<sup>45</sup>
+</xref> the slope of the regression line is in the range of 0.86 to 1.02 at 1.5&#x02009;T and 0.91 to 1.01 at 3&#x02009;T using vendor protocols. The intercept of the regression line was in the range of &#x02212;0.65% to 0.18% at 1.5&#x02009;T and&#x02009;&#x02212;0.78% to &#x02212;0.21% at 3&#x02009;T. In our phantom experiment at 0.55&#x02009;T, the slopes of the regression line were 0.956 and 0.949 after RLLR and RMT denoising, demonstrating similar PDFF linearity to that at 1.5 and 3&#x02009;T. The intercepts of the regression line were 2.06% and 2.02% after denoising. Even though RLLR and RMT denoising can effectively reduce the noise, a higher positive bias in PDFF is still observed at 0.55&#x02009;T compared with results from 1.5 and 3&#x02009;T.</p><p>From the Monte Carlo simulation and the pelvis experiment, we observed that PDFF and <mml:math id="jats-math-207" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> accuracy can be limited when the SNR is too low. This is consistent with previous findings that noise effect can lead to PDFF bias.<xref rid="mrm30324-bib-0018" ref-type="bibr">
+<sup>18</sup>
+</xref>, <xref rid="mrm30324-bib-0032" ref-type="bibr">
+<sup>32</sup>
+</xref> It is also known that noise can bias <mml:math id="jats-math-208" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> estimation if the signal in later echoes is close to the noise floor.<xref rid="mrm30324-bib-0046" ref-type="bibr">
+<sup>46</sup>
+</xref> Whereas denoising generally improves precision without impacting accuracy, denoising may reduce quantification bias in cases when original image SNR is relatively low. In the pelvis experiment, we found the denoising performance of RLLR and RMT is dependent on the original image SNR, which is affected by different factors including tissue types, acquisition parameters, proximity to the coils, and g&#x02010;factor distribution if PI is used. Therefore, future improvements such as better surface coils with more elements or sampling patterns with reduced g&#x02010;factor penalty are also important to further improve PDFF and <mml:math id="jats-math-209" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> quantification at 0.55&#x02009;T. We also found PDFF and <mml:math id="jats-math-210" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> had different sensitivities to noise. Without denoising, PDFF in liver ROIs showed larger bias. On the other hand, the mean <mml:math id="jats-math-211" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> values in liver ROIs were rather consistent with or without denoising. Nevertheless, both denoising methods can provide less noisy <mml:math id="jats-math-212" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> maps for more precise measurements and better diagnostic quality.</p><p>The computational bottlenecks for both denoising methods were the calculations of singular value decomposition. In our 3D liver dataset, the average computational time for the denoising step (excluding PI reconstruction and signal fitting) was 1&#x02009;min 10&#x02009;s for RLLR denoising and 3&#x02009;min 30&#x02009;s for RMT denoising, using a MATLAB script with MATLAB Parallel Computing Toolbox (R2023a, MathWorks, Natick, MA) running on a 64&#x02010;Core 2.7&#x02009;GHz CPU (AMD Ryzen Threadripper PRO 5995WX, Santa Clara, CA). RMT denoising had longer computational time because the singular value decomposition was applied on larger 2D matrices. For both methods, computational time can be further reduced by optimizing the software implementation and running on high&#x02010;performance hardware.</p><p>Both RLLR and RMT denoising rely on two assumptions: (1) the underlying noise is Gaussian&#x02010;distributed, and (2) the low&#x02010;rank property exists in local image patches. These requirements are typically met in multi&#x02010;contrast MR images after noise statistics are carefully corrected. Therefore, both denoising methods can be potentially applied in many other lower&#x02010;field or higher&#x02010;field MRI applications in which low SNR is a problem. Even though the noise variance can be objectively estimated using these two methods, the choice of patch size is dependent on the effective signal rank and is usually based on empirical results, as used in this work and in previous locally low&#x02010;rank denoising works.<xref rid="mrm30324-bib-0021" ref-type="bibr">
+<sup>21</sup>
+</xref>, <xref rid="mrm30324-bib-0025" ref-type="bibr">
+<sup>25</sup>
+</xref>, <xref rid="mrm30324-bib-0026" ref-type="bibr">
+<sup>26</sup>
+</xref>, <xref rid="mrm30324-bib-0027" ref-type="bibr">
+<sup>27</sup>
+</xref> One might need to adjust the patch size for optimal denoising performance for different datasets.</p><p>We achieved promising RMT denoising performance in our dataset by using both echo and coil dimensions to construct low&#x02010;rank patches. However, this approach can be dependent on the coil configuration and should be used with caution in different datasets or scan setups. For example, if there are limited overlapping coil sensitivities in local regions, the constructed local patches may contain noise&#x02010;only columns. The desired signal components therefore have a higher risk of being &#x0201c;drowned&#x0201d; in the sea of noise&#x02010;related singular value components.<xref rid="mrm30324-bib-0047" ref-type="bibr">
+<sup>47</sup>
+</xref> This can result in losing the desired signal components and lead to errors in final quantitative maps.</p><p>Deep learning&#x02013;based methods are another promising approach for noise suppression.<xref rid="mrm30324-bib-0048" ref-type="bibr">
+<sup>48</sup>
+</xref> Many deep learning&#x02013;based denoising methods for lower&#x02010;field MRI rely on supervised learning that requires a database of training data.<xref rid="mrm30324-bib-0049" ref-type="bibr">
+<sup>49</sup>
+</xref>, <xref rid="mrm30324-bib-0050" ref-type="bibr">
+<sup>50</sup>
+</xref> However, obtaining high&#x02010;SNR reference training data from multiple scan repetitions may be difficult for abdominal scans due to breath&#x02010;holding requirements. For these cases, the denoising methods investigated in this work can be used to generate training data. Another approach to improve the inherent SNR is to use non&#x02010;Cartesian MRI sequences, such as radial MRI, with free&#x02010;breathing acquisitions.<xref rid="mrm30324-bib-0051" ref-type="bibr">
+<sup>51</sup>
+</xref>, <xref rid="mrm30324-bib-0052" ref-type="bibr">
+<sup>52</sup>
+</xref>, <xref rid="mrm30324-bib-0053" ref-type="bibr">
+<sup>53</sup>
+</xref> These techniques usually require longer scan times but can also provide robust PDFF and <mml:math id="jats-math-213" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> quantification. Because of the higher inherent SNR, there can be more flexibility in the choice of acquisition parameters. A suitable scan protocol using non&#x02010;Cartesian sequences can also be designed with the Monte Carlo simulation used in this work.</p><p>This study has limitations. First, our studied cohort had a limited size, and none of the subjects had liver iron overload (<mml:math id="jats-math-214" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>T</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math>&#x02009;&#x0003e;&#x02009;45&#x02009;ms at 0.55&#x02009;T<xref rid="mrm30324-bib-0016" ref-type="bibr">
+<sup>16</sup>
+</xref>). Scans in subjects with high liver iron content should be conducted in future works, and the denoising performance should be further validated. Second, our phantom analysis only included fat&#x02010;only and <mml:math id="jats-math-215" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math>&#x02010;only vials, which may not reflect the actual in vivo environments in the liver, where both fat and iron may be present, although this condition is rare. Further experiments should be done in phantoms with different combinations of PDFF, <mml:math id="jats-math-216" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math>, and T<sub>1</sub> values<xref rid="mrm30324-bib-0054" ref-type="bibr">
+<sup>54</sup>
+</xref> to investigate the denoising performance and the limitations.</p></sec><sec sec-type="conclusions" id="mrm30324-sec-0018"><label>5</label><title>CONCLUSION</title><p>We used a Monte Carlo simulation to design an acquisition protocol for PDFF and <mml:math id="jats-math-217" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> quantification at 0.55&#x02009;T with validation in phantom experiments. We showed that both RLLR and RMT denoising improved quantification accuracy in terms of closer agreement with the reference, and improved quantification precision in terms of reduced SDs across scan repetitions. In a cohort with healthy volunteers and fatty liver subjects, RLLR and RMT denoising both improved quantitative maps in terms of the significant decrease of PDFF and <mml:math id="jats-math-218" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> SDs in liver ROIs when compared with conventional reconstruction.</p></sec><sec id="mrm30324-sec-0020"><title>FUNDING INFORMATION</title><p>Funding support was provided by the National Science Foundation (NSF) grant 1828736 and the National Institutes of Health (NIH) grants R01DK124417 and U01EB031894.</p></sec><sec sec-type="COI-statement" id="mrm30324-sec-0021"><title>CONFLICT OF INTEREST STATEMENT</title><p>Coauthor Sophia X. Cui is an employee of Siemens Healthcare.</p></sec><sec sec-type="supplementary-material"><title>Supporting information</title><supplementary-material id="mrm30324-supitem-0001" position="float" content-type="local-data"><caption><p>
+<bold>Figure S1.</bold> Monte Carlo simulation results regarding the accuracy and precision for PDFF and <mml:math id="jats-math-4" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>R</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> mapping using different flip angles (FA), first echo time (TE), and <mml:math id="jats-math-5" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x02206;</mml:mo></mml:mrow></mml:mrow></mml:math>TE at 0.55&#x02009;T. To balance between accuracy and precision of parameter quantification and breath&#x02010;holding scan time, we chose first FA&#x02009;=&#x02009;8<inline-graphic xlink:href="MRM-93-1348-e104.jpg"/>, TE&#x02009;=&#x02009;2.16&#x02009;ms, and <mml:math id="jats-math-7" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x02206;</mml:mo></mml:mrow></mml:mrow></mml:math>TE&#x02009;=&#x02009;2.16&#x02009;ms as indicated by the stars.</p><p>
+<bold>Figure S2.</bold> Comparison of (a) coil&#x02010;combined echo 3 (out&#x02010;of&#x02010;phase) and (b) coil&#x02010;combined echo 6 (in&#x02010;phase) images from different reconstruction methods All the images are displayed using the same window/level.</p></caption><media xlink:href="MRM-93-1348-s001.docx"/></supplementary-material></sec></body><back><ack id="mrm30324-sec-0019"><title>ACKNOWLEDGMENTS</title><p>We thank Liyun Yuan for referring subjects with fatty liver and thank Mary Yung for research coordination. We thank the Dynamic Imaging Science Center (DISC) at the University of Southern California for supporting data acquisition. We thank Siemens Medical Solutions USA, Inc. for research support. The content is solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health.</p></ack><sec sec-type="data-availability" id="mrm30324-sec-0023"><title>DATA AVAILABILITY STATEMENT</title><p>The MATLAB code with some example datasets is available from: <ext-link xlink:href="https://github.com/HoldenWuLab/LLR-image-denoising" ext-link-type="uri" specific-use="software is-supplemented-by">https://github.com/HoldenWuLab/LLR&#x02010;image&#x02010;denoising</ext-link>
+</p></sec><ref-list id="mrm30324-bibl-0001" content-type="cited-references"><title>REFERENCES</title><ref id="mrm30324-bib-0001"><label>1</label><mixed-citation publication-type="journal" id="mrm30324-cit-0001">
+<string-name>
+<surname>Idilman</surname>
+<given-names>IS</given-names>
+</string-name>, <string-name>
+<surname>Aniktar</surname>
+<given-names>H</given-names>
+</string-name>, <string-name>
+<surname>Idilman</surname>
+<given-names>R</given-names>
+</string-name>, et al. <article-title>Hepatic steatosis: quantification by proton density fat fraction with MR imaging versus liver biopsy</article-title>. <source>Radiology</source>. <year>2013</year>;<volume>267</volume>:<fpage>767</fpage>&#x02010;<lpage>775</lpage>.<pub-id pub-id-type="pmid">23382293</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0002"><label>2</label><mixed-citation publication-type="journal" id="mrm30324-cit-0002">
+<string-name>
+<surname>Wood</surname>
+<given-names>JC</given-names>
+</string-name>, <string-name>
+<surname>Enriquez</surname>
+<given-names>C</given-names>
+</string-name>, <string-name>
+<surname>Ghugre</surname>
+<given-names>N</given-names>
+</string-name>, et al. <article-title>MRI R2 and R2* mapping accurately estimates hepatic iron concentration in transfusion&#x02010;dependent thalassemia and sickle cell disease patients</article-title>. <source>Blood</source>. <year>2005</year>;<volume>106</volume>:<fpage>1460</fpage>&#x02010;<lpage>1465</lpage>.<pub-id pub-id-type="pmid">15860670</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0003"><label>3</label><mixed-citation publication-type="journal" id="mrm30324-cit-0003">
+<string-name>
+<surname>Hernando</surname>
+<given-names>D</given-names>
+</string-name>, <string-name>
+<surname>Kellman</surname>
+<given-names>P</given-names>
+</string-name>, <string-name>
+<surname>Haldar</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Liang</surname>
+<given-names>ZP</given-names>
+</string-name>. <article-title>Robust water/fat separation in the presence of large field inhomogeneities using a graph cut algorithm</article-title>. <source>Magn Reson Med</source>. <year>2010</year>;<volume>63</volume>:<fpage>79</fpage>&#x02010;<lpage>90</lpage>.<pub-id pub-id-type="pmid">19859956</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0004"><label>4</label><mixed-citation publication-type="journal" id="mrm30324-cit-0004">
+<string-name>
+<surname>Horng</surname>
+<given-names>DE</given-names>
+</string-name>, <string-name>
+<surname>Hernando</surname>
+<given-names>D</given-names>
+</string-name>, <string-name>
+<surname>Hines</surname>
+<given-names>CD</given-names>
+</string-name>, <string-name>
+<surname>Reeder</surname>
+<given-names>SB</given-names>
+</string-name>. <article-title>Comparison of R2* correction methods for accurate fat quantification in fatty liver</article-title>. <source>J Magn Reson Imaging</source>. <year>2013</year>;<volume>37</volume>:<fpage>414</fpage>&#x02010;<lpage>422</lpage>.<pub-id pub-id-type="pmid">23165934</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0005"><label>5</label><mixed-citation publication-type="journal" id="mrm30324-cit-0005">
+<string-name>
+<surname>Zhong</surname>
+<given-names>X</given-names>
+</string-name>, <string-name>
+<surname>Nickel</surname>
+<given-names>MD</given-names>
+</string-name>, <string-name>
+<surname>Kannengiesser</surname>
+<given-names>SA</given-names>
+</string-name>, <string-name>
+<surname>Dale</surname>
+<given-names>BM</given-names>
+</string-name>, <string-name>
+<surname>Kiefer</surname>
+<given-names>B</given-names>
+</string-name>, <string-name>
+<surname>Bashir</surname>
+<given-names>MR</given-names>
+</string-name>. <article-title>Liver fat quantification using a multi&#x02010;step adaptive fitting approach with multi&#x02010;echo GRE imaging</article-title>. <source>Magn Reson Med</source>. <year>2014</year>;<volume>72</volume>:<fpage>1353</fpage>&#x02010;<lpage>1365</lpage>.<pub-id pub-id-type="pmid">24323332</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0006"><label>6</label><mixed-citation publication-type="journal" id="mrm30324-cit-0006">
+<string-name>
+<surname>Artz</surname>
+<given-names>NS</given-names>
+</string-name>, <string-name>
+<surname>Haufe</surname>
+<given-names>WM</given-names>
+</string-name>, <string-name>
+<surname>Hooker</surname>
+<given-names>CA</given-names>
+</string-name>, et al. <article-title>Reproducibility of MR&#x02010;based liver fat quantification across field strength: same&#x02010;day comparison between 1.5 T and 3T in obese subjects</article-title>. <source>J Magn Reson Imaging</source>. <year>2015</year>;<volume>42</volume>:<fpage>811</fpage>&#x02010;<lpage>817</lpage>.<pub-id pub-id-type="pmid">25620624</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0007"><label>7</label><mixed-citation publication-type="journal" id="mrm30324-cit-0007">
+<string-name>
+<surname>Armstrong</surname>
+<given-names>T</given-names>
+</string-name>, <string-name>
+<surname>Zhong</surname>
+<given-names>X</given-names>
+</string-name>, <string-name>
+<surname>Shih</surname>
+<given-names>S&#x02010;F</given-names>
+</string-name>, et al. <article-title>Free&#x02010;breathing 3D stack&#x02010;of&#x02010;radial MRI quantification of liver fat and R2* in adults with fatty liver disease</article-title>. <source>Magn Reson Imaging</source>. <year>2022</year>;<volume>85</volume>:<fpage>141</fpage>&#x02010;<lpage>152</lpage>.<pub-id pub-id-type="pmid">34662702</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0008"><label>8</label><mixed-citation publication-type="journal" id="mrm30324-cit-0008">
+<string-name>
+<surname>Alam</surname>
+<given-names>MH</given-names>
+</string-name>, <string-name>
+<surname>Auger</surname>
+<given-names>D</given-names>
+</string-name>, <string-name>
+<surname>McGill</surname>
+<given-names>L&#x02010;A</given-names>
+</string-name>, et al. <article-title>Comparison of 3 T and 1.5 T for T2* magnetic resonance of tissue iron</article-title>. <source>J Cardiovasc Magn Reson</source>
+<year>2016</year>;<volume>18</volume>:40.</mixed-citation></ref><ref id="mrm30324-bib-0009"><label>9</label><mixed-citation publication-type="journal" id="mrm30324-cit-0009">
+<string-name>
+<surname>Bashir</surname>
+<given-names>MR</given-names>
+</string-name>, <string-name>
+<surname>Zhong</surname>
+<given-names>X</given-names>
+</string-name>, <string-name>
+<surname>Nickel</surname>
+<given-names>MD</given-names>
+</string-name>, et al. <article-title>Quantification of hepatic steatosis with a multistep adaptive fitting MRI approach: prospective validation against MR spectroscopy</article-title>. <source>Am J Roentgenol</source>. <year>2015</year>;<volume>204</volume>:<fpage>297</fpage>&#x02010;<lpage>306</lpage>.<pub-id pub-id-type="pmid">25615751</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0010"><label>10</label><mixed-citation publication-type="journal" id="mrm30324-cit-0010">
+<string-name>
+<surname>K&#x000fc;hn</surname>
+<given-names>J&#x02010;P</given-names>
+</string-name>, <string-name>
+<surname>Hernando</surname>
+<given-names>D</given-names>
+</string-name>, <string-name>
+<surname>Mu&#x000f1;oz del Rio</surname>
+<given-names>A</given-names>
+</string-name>, et al. <article-title>Effect of multipeak spectral modeling of fat for liver iron and fat quantification: correlation of biopsy with MR imaging results</article-title>. <source>Radiology</source>. <year>2012</year>;<volume>265</volume>:<fpage>133</fpage>&#x02010;<lpage>142</lpage>.<pub-id pub-id-type="pmid">22923718</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0011"><label>11</label><mixed-citation publication-type="journal" id="mrm30324-cit-0011">
+<string-name>
+<surname>Marques</surname>
+<given-names>JP</given-names>
+</string-name>, <string-name>
+<surname>Simonis</surname>
+<given-names>FF</given-names>
+</string-name>, <string-name>
+<surname>Webb</surname>
+<given-names>AG</given-names>
+</string-name>. <article-title>Low&#x02010;field MRI: an MR physics perspective</article-title>. <source>J Magn Reson Imaging</source>. <year>2019</year>;<volume>49</volume>:<fpage>1528</fpage>&#x02010;<lpage>1542</lpage>.<pub-id pub-id-type="pmid">30637943</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0012"><label>12</label><mixed-citation publication-type="journal" id="mrm30324-cit-0012">
+<string-name>
+<surname>Arnold</surname>
+<given-names>TC</given-names>
+</string-name>, <string-name>
+<surname>Freeman</surname>
+<given-names>CW</given-names>
+</string-name>, <string-name>
+<surname>Litt</surname>
+<given-names>B</given-names>
+</string-name>, <string-name>
+<surname>Stein</surname>
+<given-names>JM</given-names>
+</string-name>. <article-title>Low&#x02010;field MRI: clinical promise and challenges</article-title>. <source>J Magn Reson Imaging</source>. <year>2023</year>;<volume>57</volume>:<fpage>25</fpage>&#x02010;<lpage>44</lpage>.<pub-id pub-id-type="pmid">36120962</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0013"><label>13</label><mixed-citation publication-type="journal" id="mrm30324-cit-0013">
+<string-name>
+<surname>Shetty</surname>
+<given-names>AS</given-names>
+</string-name>, <string-name>
+<surname>Ludwig</surname>
+<given-names>DR</given-names>
+</string-name>, <string-name>
+<surname>Ippolito</surname>
+<given-names>JE</given-names>
+</string-name>, <string-name>
+<surname>Andrews</surname>
+<given-names>TJ</given-names>
+</string-name>, <string-name>
+<surname>Narra</surname>
+<given-names>VR</given-names>
+</string-name>, <string-name>
+<surname>Fraum</surname>
+<given-names>TJ</given-names>
+</string-name>. <article-title>Low&#x02010;field&#x02010;strength body MRI: challenges and opportunities at 0.55 T</article-title>. <source>Radiographics</source>. <year>2023</year>;<volume>43</volume>:<elocation-id>e230073</elocation-id>.<pub-id pub-id-type="pmid">37917537</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0014"><label>14</label><mixed-citation publication-type="journal" id="mrm30324-cit-0014">
+<string-name>
+<surname>Tian</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name>
+<surname>Nayak</surname>
+<given-names>KS</given-names>
+</string-name>. <article-title>New clinical opportunities of low&#x02010;field MRI: heart, lung, body, and musculoskeletal</article-title>. <source>MAGMA</source>. <year>2024</year>;<volume>37</volume>:<fpage>1</fpage>&#x02010;<lpage>14</lpage>.<pub-id pub-id-type="pmid">37902898</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0015"><label>15</label><mixed-citation publication-type="journal" id="mrm30324-cit-0015">
+<string-name>
+<surname>Michael</surname>
+<given-names>AE</given-names>
+</string-name>, <string-name>
+<surname>Heuser</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Moenninghoff</surname>
+<given-names>C</given-names>
+</string-name>, et al. <article-title>Does bore size matter?&#x02014;a comparison of the subjective perception of patient comfort during low field (0.55 Tesla) and standard (1.5 Tesla)</article-title>. <source>Medicine (Baltimore)</source>. <year>2023</year>;<volume>102</volume>:<elocation-id>e36069</elocation-id>.<pub-id pub-id-type="pmid">38013308</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0016"><label>16</label><mixed-citation publication-type="journal" id="mrm30324-cit-0016">
+<string-name>
+<surname>Campbell&#x02010;Washburn</surname>
+<given-names>AE</given-names>
+</string-name>, <string-name>
+<surname>Mancini</surname>
+<given-names>C</given-names>
+</string-name>, <string-name>
+<surname>Conrey</surname>
+<given-names>A</given-names>
+</string-name>, et al. <article-title>Evaluation of hepatic iron overload using a contemporary 0. 55 T MRI system</article-title>. <source>J Magn Reson Imaging</source>. <year>2022</year>;<volume>55</volume>:<fpage>1855</fpage>&#x02010;<lpage>1863</lpage>.<pub-id pub-id-type="pmid">34668604</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0017"><label>17</label><mixed-citation publication-type="journal" id="mrm30324-cit-0017">
+<string-name>
+<surname>K&#x000fc;hn</surname>
+<given-names>JP</given-names>
+</string-name>, <string-name>
+<surname>Jahn</surname>
+<given-names>C</given-names>
+</string-name>, <string-name>
+<surname>Hernando</surname>
+<given-names>D</given-names>
+</string-name>, et al. <article-title>T1 bias in chemical shift&#x02010;encoded liver fat&#x02010;fraction: role of the flip angle</article-title>. <source>J Magn Reson Imaging</source>. <year>2014</year>;<volume>40</volume>:<fpage>875</fpage>&#x02010;<lpage>883</lpage>.<pub-id pub-id-type="pmid">24243439</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0018"><label>18</label><mixed-citation publication-type="journal" id="mrm30324-cit-0018">
+<string-name>
+<surname>Reeder</surname>
+<given-names>SB</given-names>
+</string-name>, <string-name>
+<surname>Cruite</surname>
+<given-names>I</given-names>
+</string-name>, <string-name>
+<surname>Hamilton</surname>
+<given-names>G</given-names>
+</string-name>, <string-name>
+<surname>Sirlin</surname>
+<given-names>CB</given-names>
+</string-name>. <article-title>Quantitative assessment of liver fat with magnetic resonance imaging and spectroscopy</article-title>. <source>J Magn Reson Imaging</source>. <year>2011</year>;<volume>34</volume>:<fpage>729</fpage>&#x02010;<lpage>749</lpage>.<pub-id pub-id-type="pmid">22025886</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0019"><label>19</label><mixed-citation publication-type="journal" id="mrm30324-cit-0019">
+<string-name>
+<surname>Feng</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name>
+<surname>He</surname>
+<given-names>T</given-names>
+</string-name>, <string-name>
+<surname>Gatehouse</surname>
+<given-names>PD</given-names>
+</string-name>, et al. <article-title>Improved MRI R2* relaxometry of iron&#x02010;loaded liver with noise correction</article-title>. <source>Magn Reson Med</source>. <year>2013</year>;<volume>70</volume>:<fpage>1765</fpage>&#x02010;<lpage>1774</lpage>.<pub-id pub-id-type="pmid">23359410</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0020"><label>20</label><mixed-citation publication-type="book" id="mrm30324-cit-0020">
+<string-name>
+<surname>Shih</surname>
+<given-names>S&#x02010;F</given-names>
+</string-name>, <string-name>
+<surname>Cui</surname>
+<given-names>SX</given-names>
+</string-name>, <string-name>
+<surname>Zhong</surname>
+<given-names>X</given-names>
+</string-name>, et al. <part-title>Free&#x02010;breathing liver fat quantification using radial acquisition on a high&#x02010;herformance0.55 T MRI system</part-title>. <source>In Proceedings of the 30th Joint Annual ISMRM&#x02010;ESMRMB Meeting</source>, <publisher-loc>London, UK</publisher-loc>; <year>2022</year>:1807.</mixed-citation></ref><ref id="mrm30324-bib-0021"><label>21</label><mixed-citation publication-type="book" id="mrm30324-cit-0021">
+<string-name>
+<surname>Lugauer</surname>
+<given-names>F</given-names>
+</string-name>, <string-name>
+<surname>Nickel</surname>
+<given-names>D</given-names>
+</string-name>, <string-name>
+<surname>Wetzl</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Kannengiesser</surname>
+<given-names>SA</given-names>
+</string-name>, <string-name>
+<surname>Maier</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Hornegger</surname>
+<given-names>J</given-names>
+</string-name>. <part-title>Robust spectral denoising for water&#x02010;fat separation in magnetic resonance imaging</part-title>. <source>Medical Image Computing and Computer&#x02010;Assisted Intervention&#x02010;MICCAI 2015: 18th International Conference, Munich, Germany, October 5&#x02013;9, 2015, Proceedings, Part II 18</source>. <publisher-name>Cham, Switzerland: Springer</publisher-name>; <year>2015</year>:<fpage>667</fpage>&#x02010;<lpage>674</lpage>.</mixed-citation></ref><ref id="mrm30324-bib-0022"><label>22</label><mixed-citation publication-type="journal" id="mrm30324-cit-0022">
+<string-name>
+<surname>Stein</surname>
+<given-names>CM</given-names>
+</string-name>. <article-title>Estimation of the mean of a multivariate normal distribution</article-title>. <source>Ann Statist</source>. <year>1981</year>;<volume>9</volume>:<fpage>1135</fpage>&#x02010;<lpage>1151</lpage>.</mixed-citation></ref><ref id="mrm30324-bib-0023"><label>23</label><mixed-citation publication-type="journal" id="mrm30324-cit-0023">
+<string-name>
+<surname>Candes</surname>
+<given-names>EJ</given-names>
+</string-name>, <string-name>
+<surname>Sing&#x02010;Long</surname>
+<given-names>CA</given-names>
+</string-name>, <string-name>
+<surname>Trzasko</surname>
+<given-names>JD</given-names>
+</string-name>. <article-title>Unbiased risk estimates for singular value thresholding and spectral estimators</article-title>. <source>IEEE Trans Signal Process</source>. <year>2013</year>;<volume>61</volume>:<fpage>4643</fpage>&#x02010;<lpage>4657</lpage>.</mixed-citation></ref><ref id="mrm30324-bib-0024"><label>24</label><mixed-citation publication-type="journal" id="mrm30324-cit-0024">
+<string-name>
+<surname>Allen</surname>
+<given-names>BC</given-names>
+</string-name>, <string-name>
+<surname>Lugauer</surname>
+<given-names>F</given-names>
+</string-name>, <string-name>
+<surname>Nickel</surname>
+<given-names>D</given-names>
+</string-name>, et al. <article-title>Effect of a low&#x02010;rank denoising algorithm on quantitative magnetic resonance imaging&#x02010;based measures of liver fat and iron</article-title>. <source>J Comput Assist Tomogr</source>. <year>2017</year>;<volume>41</volume>:<fpage>412</fpage>&#x02010;<lpage>416</lpage>.<pub-id pub-id-type="pmid">28505623</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0025"><label>25</label><mixed-citation publication-type="journal" id="mrm30324-cit-0025">
+<string-name>
+<surname>Veraart</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Novikov</surname>
+<given-names>DS</given-names>
+</string-name>, <string-name>
+<surname>Christiaens</surname>
+<given-names>D</given-names>
+</string-name>, <string-name>
+<surname>Ades&#x02010;Aron</surname>
+<given-names>B</given-names>
+</string-name>, <string-name>
+<surname>Sijbers</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Fieremans</surname>
+<given-names>E</given-names>
+</string-name>. <article-title>Denoising of diffusion MRI using random matrix theory</article-title>. <source>Neuroimage</source>. <year>2016</year>;<volume>142</volume>:<fpage>394</fpage>&#x02010;<lpage>406</lpage>.<pub-id pub-id-type="pmid">27523449</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0026"><label>26</label><mixed-citation publication-type="journal" id="mrm30324-cit-0026">
+<string-name>
+<surname>Lemberskiy</surname>
+<given-names>G</given-names>
+</string-name>, <string-name>
+<surname>Baete</surname>
+<given-names>S</given-names>
+</string-name>, <string-name>
+<surname>Veraart</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Shepherd</surname>
+<given-names>TM</given-names>
+</string-name>, <string-name>
+<surname>Fieremans</surname>
+<given-names>E</given-names>
+</string-name>, <string-name>
+<surname>Novikov</surname>
+<given-names>DS</given-names>
+</string-name>. <article-title>Achieving sub&#x02010;mm clinical diffusion MRI resolution by removing noise during reconstruction using random matrix theory</article-title>. <source>In Proceedings of the 27th Annual Meeting of ISMRM</source>, Montr&#x000e9;al, Qu&#x000e9;bec, Canada; <year>2019</year>:770.</mixed-citation></ref><ref id="mrm30324-bib-0027"><label>27</label><mixed-citation publication-type="journal" id="mrm30324-cit-0027">
+<string-name>
+<surname>Moeller</surname>
+<given-names>S</given-names>
+</string-name>, <string-name>
+<surname>Pisharady</surname>
+<given-names>PK</given-names>
+</string-name>, <string-name>
+<surname>Ramanna</surname>
+<given-names>S</given-names>
+</string-name>, et al. <article-title>NOise reduction with DIstribution Corrected (NORDIC) PCA in dMRI with complex&#x02010;valued parameter&#x02010;free locally low&#x02010;rank processing</article-title>. <source>Neuroimage</source>. <year>2021</year>;<volume>226</volume>:<elocation-id>117539</elocation-id>.<pub-id pub-id-type="pmid">33186723</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0028"><label>28</label><mixed-citation publication-type="journal" id="mrm30324-cit-0028">
+<string-name>
+<surname>Marchenko</surname>
+<given-names>VA</given-names>
+</string-name>, <string-name>
+<surname>Pastur</surname>
+<given-names>LA</given-names>
+</string-name>. <article-title>Distribution of eigenvalues for some sets of random matrices</article-title>. <source>Matematicheskii Sbornik</source>. <year>1967</year>;<volume>114</volume>:<fpage>507</fpage>&#x02010;<lpage>536</lpage>.</mixed-citation></ref><ref id="mrm30324-bib-0029"><label>29</label><mixed-citation publication-type="journal" id="mrm30324-cit-0029">
+<string-name>
+<surname>Cordero&#x02010;Grande</surname>
+<given-names>L</given-names>
+</string-name>, <string-name>
+<surname>Christiaens</surname>
+<given-names>D</given-names>
+</string-name>, <string-name>
+<surname>Hutter</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Price</surname>
+<given-names>AN</given-names>
+</string-name>, <string-name>
+<surname>Hajnal</surname>
+<given-names>JV</given-names>
+</string-name>. <article-title>Complex diffusion&#x02010;weighted image estimation via matrix recovery under general noise models</article-title>. <source>Neuroimage</source>. <year>2019</year>;<volume>200</volume>:<fpage>391</fpage>&#x02010;<lpage>404</lpage>.<pub-id pub-id-type="pmid">31226495</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0030"><label>30</label><mixed-citation publication-type="journal" id="mrm30324-cit-0030">
+<string-name>
+<surname>Zhang</surname>
+<given-names>Z</given-names>
+</string-name>, <string-name>
+<surname>Aygun</surname>
+<given-names>E</given-names>
+</string-name>, <string-name>
+<surname>Shih</surname>
+<given-names>S&#x02010;F</given-names>
+</string-name>, <string-name>
+<surname>Raman</surname>
+<given-names>SS</given-names>
+</string-name>, <string-name>
+<surname>Sung</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Wu</surname>
+<given-names>HH</given-names>
+</string-name>. <article-title>High&#x02010;resolution prostate diffusion MRI using eddy current&#x02010;nulled convex optimized diffusion encoding and random matrix theory&#x02010;based denoising</article-title>. <source>MAGMA</source>. <year>2024</year>;<volume>37</volume>:<fpage>603</fpage>&#x02010;<lpage>619</lpage>.<pub-id pub-id-type="pmid">38349453</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0031"><label>31</label><mixed-citation publication-type="journal" id="mrm30324-cit-0031">
+<string-name>
+<surname>Lemberskiy</surname>
+<given-names>G</given-names>
+</string-name>, <string-name>
+<surname>Chandarana</surname>
+<given-names>H</given-names>
+</string-name>, <string-name>
+<surname>Bruno</surname>
+<given-names>M</given-names>
+</string-name>, et al. <article-title>Feasibility of accelerated prostate diffusion&#x02010;weighted imaging on 0.55 T MRI enabled with random matrix theory denoising</article-title>. <source>Invest Radiol</source>. <year>2023</year>;<volume>58</volume>:<fpage>720</fpage>&#x02010;<lpage>729</lpage>.<pub-id pub-id-type="pmid">37222526</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0032"><label>32</label><mixed-citation publication-type="journal" id="mrm30324-cit-0032">
+<string-name>
+<surname>Liu</surname>
+<given-names>CY</given-names>
+</string-name>, <string-name>
+<surname>McKenzie</surname>
+<given-names>CA</given-names>
+</string-name>, <string-name>
+<surname>Yu</surname>
+<given-names>H</given-names>
+</string-name>, <string-name>
+<surname>Brittain</surname>
+<given-names>JH</given-names>
+</string-name>, <string-name>
+<surname>Reeder</surname>
+<given-names>SB</given-names>
+</string-name>. <article-title>Fat quantification with IDEAL gradient echo imaging: correction of bias from T1 and noise</article-title>. <source>Magn Reson Med</source>. <year>2007</year>;<volume>58</volume>:<fpage>354</fpage>&#x02010;<lpage>364</lpage>.<pub-id pub-id-type="pmid">17654578</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0033"><label>33</label><mixed-citation publication-type="journal" id="mrm30324-cit-0033">
+<string-name>
+<surname>Levin</surname>
+<given-names>YS</given-names>
+</string-name>, <string-name>
+<surname>Yokoo</surname>
+<given-names>T</given-names>
+</string-name>, <string-name>
+<surname>Wolfson</surname>
+<given-names>T</given-names>
+</string-name>, et al. <article-title>Effect of echo&#x02010;sampling strategy on the accuracy of out&#x02010;of&#x02010;phase and in&#x02010;phase multiecho gradient&#x02010;echo MRI hepatic fat fraction estimation</article-title>. <source>J Magn Reson Imaging</source>. <year>2014</year>;<volume>39</volume>:<fpage>567</fpage>&#x02010;<lpage>575</lpage>.<pub-id pub-id-type="pmid">23720420</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0034"><label>34</label><mixed-citation publication-type="journal" id="mrm30324-cit-0034">
+<string-name>
+<surname>Hernando</surname>
+<given-names>D</given-names>
+</string-name>, <string-name>
+<surname>K&#x000fc;hn</surname>
+<given-names>JP</given-names>
+</string-name>, <string-name>
+<surname>Mensel</surname>
+<given-names>B</given-names>
+</string-name>, et al. <article-title>R2* estimation using &#x0201c;in&#x02010;phase&#x0201d; echoes in the presence of fat: the effects of complex spectrum of fat</article-title>. <source>J Magn Reson Imaging</source>. <year>2013</year>;<volume>37</volume>:<fpage>717</fpage>&#x02010;<lpage>726</lpage>.<pub-id pub-id-type="pmid">23055408</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0035"><label>35</label><mixed-citation publication-type="journal" id="mrm30324-cit-0035">
+<string-name>
+<surname>Ren</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Dimitrov</surname>
+<given-names>I</given-names>
+</string-name>, <string-name>
+<surname>Sherry</surname>
+<given-names>AD</given-names>
+</string-name>, <string-name>
+<surname>Malloy</surname>
+<given-names>CR</given-names>
+</string-name>. <article-title>Composition of adipose tissue and marrow fat in humans by 1H NMR at 7 Tesla</article-title>. <source>J Lipid Res</source>. <year>2008</year>;<volume>49</volume>:<fpage>2055</fpage>&#x02010;<lpage>2062</lpage>.<pub-id pub-id-type="pmid">18509197</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0036"><label>36</label><mixed-citation publication-type="journal" id="mrm30324-cit-0036">
+<string-name>
+<surname>Campbell&#x02010;Washburn</surname>
+<given-names>AE</given-names>
+</string-name>, <string-name>
+<surname>Ramasawmy</surname>
+<given-names>R</given-names>
+</string-name>, <string-name>
+<surname>Restivo</surname>
+<given-names>MC</given-names>
+</string-name>, et al. <article-title>Opportunities in interventional and diagnostic imaging by using high&#x02010;performance low&#x02010;field&#x02010;strength MRI</article-title>. <source>Radiology</source>. <year>2019</year>;<volume>293</volume>:<fpage>384</fpage>&#x02010;<lpage>393</lpage>.<pub-id pub-id-type="pmid">31573398</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0037"><label>37</label><mixed-citation publication-type="journal" id="mrm30324-cit-0037">
+<string-name>
+<surname>Caussy</surname>
+<given-names>C</given-names>
+</string-name>, <string-name>
+<surname>Reeder</surname>
+<given-names>SB</given-names>
+</string-name>, <string-name>
+<surname>Sirlin</surname>
+<given-names>CB</given-names>
+</string-name>, <string-name>
+<surname>Loomba</surname>
+<given-names>R</given-names>
+</string-name>. <article-title>Noninvasive, quantitative assessment of liver fat by MRI&#x02010;PDFF as an endpoint in NASH trials</article-title>. <source>Hepatology</source>. <year>2018</year>;<volume>68</volume>:<fpage>763</fpage>&#x02010;<lpage>772</lpage>.<pub-id pub-id-type="pmid">29356032</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0038"><label>38</label><mixed-citation publication-type="journal" id="mrm30324-cit-0038">
+<string-name>
+<surname>Tang</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Tan</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Sun</surname>
+<given-names>M</given-names>
+</string-name>, et al. <article-title>Nonalcoholic fatty liver disease: MR imaging of liver proton density fat fraction to assess hepatic steatosis</article-title>. <source>Radiology</source>. <year>2013</year>;<volume>267</volume>:<fpage>422</fpage>&#x02010;<lpage>431</lpage>.<pub-id pub-id-type="pmid">23382291</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0039"><label>39</label><mixed-citation publication-type="journal" id="mrm30324-cit-0039">
+<string-name>
+<surname>Gavish</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Donoho</surname>
+<given-names>DL</given-names>
+</string-name>. <article-title>Optimal shrinkage of singular values</article-title>. <source>IEEE Trans Inf Theory</source>. <year>2017</year>;<volume>63</volume>:<fpage>2137</fpage>&#x02010;<lpage>2152</lpage>.</mixed-citation></ref><ref id="mrm30324-bib-0040"><label>40</label><mixed-citation publication-type="journal" id="mrm30324-cit-0040">
+<string-name>
+<surname>Walsh</surname>
+<given-names>DO</given-names>
+</string-name>, <string-name>
+<surname>Gmitro</surname>
+<given-names>AF</given-names>
+</string-name>, <string-name>
+<surname>Marcellin</surname>
+<given-names>MW</given-names>
+</string-name>. <article-title>Adaptive reconstruction of phased array MR imagery</article-title>. <source>Magn Reson Med</source>. <year>2000</year>;<volume>43</volume>:<fpage>682</fpage>&#x02010;<lpage>690</lpage>.<pub-id pub-id-type="pmid">10800033</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0041"><label>41</label><mixed-citation publication-type="journal" id="mrm30324-cit-0041">
+<string-name>
+<surname>Pruessmann</surname>
+<given-names>KP</given-names>
+</string-name>, <string-name>
+<surname>Weiger</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>B&#x000f6;rnert</surname>
+<given-names>P</given-names>
+</string-name>, <string-name>
+<surname>Boesiger</surname>
+<given-names>P</given-names>
+</string-name>. <article-title>Advances in sensitivity encoding with arbitrary k&#x02010;space trajectories</article-title>. <source>Magn Reson Med</source>. <year>2001</year>;<volume>46</volume>:<fpage>638</fpage>&#x02010;<lpage>651</lpage>.<pub-id pub-id-type="pmid">11590639</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0042"><label>42</label><mixed-citation publication-type="journal" id="mrm30324-cit-0042">
+<string-name>
+<surname>Breuer</surname>
+<given-names>FA</given-names>
+</string-name>, <string-name>
+<surname>Kannengiesser</surname>
+<given-names>SA</given-names>
+</string-name>, <string-name>
+<surname>Blaimer</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Seiberlich</surname>
+<given-names>N</given-names>
+</string-name>, <string-name>
+<surname>Jakob</surname>
+<given-names>PM</given-names>
+</string-name>, <string-name>
+<surname>Griswold</surname>
+<given-names>MA</given-names>
+</string-name>. <article-title>General formulation for quantitative G&#x02010;factor calculation in GRAPPA reconstructions</article-title>. <source>Magn Reson Med</source>. <year>2009</year>;<volume>62</volume>:<fpage>739</fpage>&#x02010;<lpage>746</lpage>.<pub-id pub-id-type="pmid">19585608</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0043"><label>43</label><mixed-citation publication-type="journal" id="mrm30324-cit-0043">
+<string-name>
+<surname>Lawrence</surname>
+<given-names>I</given-names>
+</string-name>, <string-name>
+<surname>Lin</surname>
+<given-names>K</given-names>
+</string-name>. <article-title>A concordance correlation coefficient to evaluate reproducibility</article-title>. <source>Biometrics</source>. <year>1989</year>;<volume>45</volume>:<fpage>255</fpage>&#x02010;<lpage>268</lpage>.<pub-id pub-id-type="pmid">2720055</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0044"><label>44</label><mixed-citation publication-type="journal" id="mrm30324-cit-0044">
+<string-name>
+<surname>Roberts</surname>
+<given-names>NT</given-names>
+</string-name>, <string-name>
+<surname>Hernando</surname>
+<given-names>D</given-names>
+</string-name>, <string-name>
+<surname>Holmes</surname>
+<given-names>JH</given-names>
+</string-name>, <string-name>
+<surname>Wiens</surname>
+<given-names>CN</given-names>
+</string-name>, <string-name>
+<surname>Reeder</surname>
+<given-names>SB</given-names>
+</string-name>. <article-title>Noise properties of proton density fat fraction estimated using chemical shift&#x02013;encoded MRI</article-title>. <source>Magn Reson Med</source>. <year>2018</year>;<volume>80</volume>:<fpage>685</fpage>&#x02010;<lpage>695</lpage>.<pub-id pub-id-type="pmid">29322549</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0045"><label>45</label><mixed-citation publication-type="journal" id="mrm30324-cit-0045">
+<string-name>
+<surname>Hu</surname>
+<given-names>HH</given-names>
+</string-name>, <string-name>
+<surname>Yokoo</surname>
+<given-names>T</given-names>
+</string-name>, <string-name>
+<surname>Bashir</surname>
+<given-names>MR</given-names>
+</string-name>, et al. <article-title>Linearity and bias of proton density fat fraction as a quantitative imaging biomarker: a multicenter, multiplatform, multivendor phantom study</article-title>. <source>Radiology</source>. <year>2021</year>;<volume>298</volume>:<fpage>640</fpage>&#x02010;<lpage>651</lpage>.<pub-id pub-id-type="pmid">33464181</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0046"><label>46</label><mixed-citation publication-type="journal" id="mrm30324-cit-0046">
+<string-name>
+<surname>Sandino</surname>
+<given-names>CM</given-names>
+</string-name>, <string-name>
+<surname>Kellman</surname>
+<given-names>P</given-names>
+</string-name>, <string-name>
+<surname>Arai</surname>
+<given-names>AE</given-names>
+</string-name>, <string-name>
+<surname>Hansen</surname>
+<given-names>MS</given-names>
+</string-name>, <string-name>
+<surname>Xue</surname>
+<given-names>H</given-names>
+</string-name>. <article-title>Myocardial T2* mapping: influence of noise on accuracy and precision</article-title>. <source>J Cardiovasc Magn Reson</source>. <year>2015</year>;<volume>17</volume>:<fpage>7</fpage>.<pub-id pub-id-type="pmid">25648167</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0047"><label>47</label><mixed-citation publication-type="journal" id="mrm30324-cit-0047">
+<string-name>
+<surname>Johnstone</surname>
+<given-names>IM</given-names>
+</string-name>, <string-name>
+<surname>Paul</surname>
+<given-names>D</given-names>
+</string-name>. <article-title>PCA in high dimensions: an orientation</article-title>. <source>Proc IEEE Inst Electr Electron Eng</source>. <year>2018</year>;<volume>106</volume>:<fpage>1277</fpage>&#x02010;<lpage>1292</lpage>.<pub-id pub-id-type="pmid">30287970</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0048"><label>48</label><mixed-citation publication-type="journal" id="mrm30324-cit-0048">
+<string-name>
+<surname>Mazurowski</surname>
+<given-names>MA</given-names>
+</string-name>, <string-name>
+<surname>Buda</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Saha</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Bashir</surname>
+<given-names>MR</given-names>
+</string-name>. <article-title>Deep learning in radiology: an overview of the concepts and a survey of the state of the art with focus on MRI</article-title>. <source>J Magn Reson Imaging</source>. <year>2019</year>;<volume>49</volume>:<fpage>939</fpage>&#x02010;<lpage>954</lpage>.<pub-id pub-id-type="pmid">30575178</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0049"><label>49</label><mixed-citation publication-type="journal" id="mrm30324-cit-0049">
+<string-name>
+<surname>Koonjoo</surname>
+<given-names>N</given-names>
+</string-name>, <string-name>
+<surname>Zhu</surname>
+<given-names>B</given-names>
+</string-name>, <string-name>
+<surname>Bagnall</surname>
+<given-names>GC</given-names>
+</string-name>, <string-name>
+<surname>Bhutto</surname>
+<given-names>D</given-names>
+</string-name>, <string-name>
+<surname>Rosen</surname>
+<given-names>M</given-names>
+</string-name>. <article-title>Boosting the signal&#x02010;to&#x02010;noise of low&#x02010;field MRI with deep learning image reconstruction</article-title>. <source>Sci Rep</source>. <year>2021</year>;<volume>11</volume>:<fpage>8248</fpage>.<pub-id pub-id-type="pmid">33859218</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0050"><label>50</label><mixed-citation publication-type="journal" id="mrm30324-cit-0050">
+<string-name>
+<surname>Schmidt</surname>
+<given-names>IL</given-names>
+</string-name>, <string-name>
+<surname>Haag</surname>
+<given-names>N</given-names>
+</string-name>, <string-name>
+<surname>Shahzadi</surname>
+<given-names>I</given-names>
+</string-name>, et al. <article-title>Diagnostic image quality of a low&#x02010;field (0.55 T) knee MRI protocol using deep learning image reconstruction compared with a standard (1.5 T) knee MRI protocol</article-title>. <source>J Clin Med</source>. <year>2023</year>;<volume>12</volume>:1916.</mixed-citation></ref><ref id="mrm30324-bib-0051"><label>51</label><mixed-citation publication-type="journal" id="mrm30324-cit-0051">
+<string-name>
+<surname>Shih</surname>
+<given-names>S&#x02010;F</given-names>
+</string-name>, <string-name>
+<surname>Wu</surname>
+<given-names>HH</given-names>
+</string-name>. <article-title>Free&#x02010;breathing MRI techniques for fat and R2* quantification in the liver</article-title>. <source>MAGMA</source>. <year>2024</year>;<volume>37</volume>:<fpage>583</fpage>&#x02010;<lpage>602</lpage>.<pub-id pub-id-type="pmid">39039272</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0052"><label>52</label><mixed-citation publication-type="journal" id="mrm30324-cit-0052">
+<string-name>
+<surname>Armstrong</surname>
+<given-names>T</given-names>
+</string-name>, <string-name>
+<surname>Dregely</surname>
+<given-names>I</given-names>
+</string-name>, <string-name>
+<surname>Stemmer</surname>
+<given-names>A</given-names>
+</string-name>, et al. <article-title>Free&#x02010;breathing liver fat quantification using a multiecho 3 D stack&#x02010;of&#x02010;radial technique</article-title>. <source>Magn Reson Med</source>. <year>2018</year>;<volume>79</volume>:<fpage>370</fpage>&#x02010;<lpage>382</lpage>.<pub-id pub-id-type="pmid">28419582</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0053"><label>53</label><mixed-citation publication-type="journal" id="mrm30324-cit-0053">
+<string-name>
+<surname>Schneider</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Benkert</surname>
+<given-names>T</given-names>
+</string-name>, <string-name>
+<surname>Solomon</surname>
+<given-names>E</given-names>
+</string-name>, et al. <article-title>Free&#x02010;breathing fat and R2* quantification in the liver using a stack&#x02010;of&#x02010;stars multi&#x02010;echo acquisition with respiratory&#x02010;resolved model&#x02010;based reconstruction</article-title>. <source>Magn Reson Med</source>. <year>2020</year>;<volume>84</volume>:<fpage>2592</fpage>&#x02010;<lpage>2605</lpage>.<pub-id pub-id-type="pmid">32301168</pub-id>
+</mixed-citation></ref><ref id="mrm30324-bib-0054"><label>54</label><mixed-citation publication-type="journal" id="mrm30324-cit-0054">
+<string-name>
+<surname>Zhao</surname>
+<given-names>R</given-names>
+</string-name>, <string-name>
+<surname>Hamilton</surname>
+<given-names>G</given-names>
+</string-name>, <string-name>
+<surname>Brittain</surname>
+<given-names>JH</given-names>
+</string-name>, <string-name>
+<surname>Reeder</surname>
+<given-names>SB</given-names>
+</string-name>, <string-name>
+<surname>Hernando</surname>
+<given-names>D</given-names>
+</string-name>. <article-title>Design and evaluation of quantitative MRI phantoms to mimic the simultaneous presence of fat, iron, and fibrosis in the liver</article-title>. <source>Magn Reson Med</source>. <year>2021</year>;<volume>85</volume>:<fpage>734</fpage>&#x02010;<lpage>747</lpage>.<pub-id pub-id-type="pmid">32783200</pub-id>
+</mixed-citation></ref></ref-list></back></article>

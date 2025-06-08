@@ -1,0 +1,379 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" dtd-version="1.3" xml:lang="EN" article-type="brief-report"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">J Chem Inf Model</journal-id><journal-id journal-id-type="iso-abbrev">J Chem Inf Model</journal-id><journal-id journal-id-type="publisher-id">ci</journal-id><journal-id journal-id-type="coden">jcisd8</journal-id><journal-title-group><journal-title>Journal of Chemical Information and Modeling</journal-title></journal-title-group><issn pub-type="ppub">1549-9596</issn><issn pub-type="epub">1549-960X</issn><publisher><publisher-name>American Chemical Society</publisher-name></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">39919731</article-id><article-id pub-id-type="pmc">PMC11863379</article-id>
+<article-id pub-id-type="doi">10.1021/acs.jcim.4c02240</article-id><article-categories><subj-group><subject>Application Note</subject></subj-group></article-categories><title-group><article-title>ProcessOptimizer,
+an Open-Source Python Package for
+Easy Optimization of Real-World Processes Using Bayesian Optimization:
+Showcase of Features and Example of Use</article-title></title-group><contrib-group><contrib contrib-type="author" corresp="yes" id="ath1"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0003-2401-3650</contrib-id><name><surname>Bertelsen</surname><given-names>S&#x000f8;ren</given-names></name><xref rid="cor1" ref-type="other">*</xref><xref rid="aff1" ref-type="aff">&#x02020;</xref></contrib><contrib contrib-type="author" id="ath2"><name><surname>Carlsen</surname><given-names>Sigurd</given-names></name><xref rid="aff5" ref-type="aff">&#x022a5;</xref></contrib><contrib contrib-type="author" id="ath3"><name><surname>Furbo</surname><given-names>S&#x000f8;ren</given-names></name><xref rid="aff1" ref-type="aff">&#x02020;</xref></contrib><contrib contrib-type="author" id="ath4"><name><surname>Nielsen</surname><given-names>Morten Bormann</given-names></name><xref rid="aff2" ref-type="aff">&#x02021;</xref></contrib><contrib contrib-type="author" id="ath5"><name><surname>Obdrup</surname><given-names>Aksel</given-names></name><xref rid="aff3" ref-type="aff">&#x000a7;</xref></contrib><contrib contrib-type="author" id="ath6"><name><surname>Taaning</surname><given-names>Rolf</given-names></name><xref rid="aff4" ref-type="aff">&#x02225;</xref></contrib><aff id="aff1"><label>&#x02020;</label>Department
+of Automation and Process Optimisation, Digital Science and Innovation, <institution>Novo Nordisk A/S</institution>, 2760 M&#x000e5;l&#x000f8;v, <country>Denmark</country></aff><aff id="aff2"><label>&#x02021;</label><institution>Danish
+Technological Institute</institution>, Kongsvang All&#x000e9; 29, 8000 Aarhus C, <country>Denmark</country></aff><aff id="aff3"><label>&#x000a7;</label>Department
+of Digitalization, Global IT &#x00026; Digital, <institution>Topsoe A/S</institution>, 2800 Kongens Lyngby, <country>Denmark</country></aff><aff id="aff4"><label>&#x02225;</label>Department
+of Late-Stage Chemical Development, Chemistry Manufacture and Control, <institution>Novo Nordisk A/S</institution>, 2880 Bagsv&#x000e6;rd, <country>Denmark</country></aff><aff id="aff5"><label>&#x022a5;</label><institution>Teal
+Medical</institution>, 2300 Copenhagen, <country>Denmark</country></aff></contrib-group><author-notes><corresp id="cor1"><label>*</label>Email: <email>sqbl@novonordisk.com</email>.</corresp></author-notes><pub-date pub-type="epub"><day>07</day><month>02</month><year>2025</year></pub-date><pub-date pub-type="collection"><day>24</day><month>02</month><year>2025</year></pub-date><volume>65</volume><issue>4</issue><fpage>1702</fpage><lpage>1707</lpage><history><date date-type="received"><day>02</day><month>12</month><year>2024</year></date><date date-type="accepted"><day>16</day><month>01</month><year>2025</year></date><date date-type="rev-recd"><day>14</day><month>01</month><year>2025</year></date></history><permissions><copyright-statement>&#x000a9; 2025 The Authors. Published by American Chemical Society</copyright-statement><copyright-year>2025</copyright-year><copyright-holder>The Authors</copyright-holder><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>Permits the broadest form of re-use including for commercial purposes, provided that author attribution and integrity are maintained (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</ext-link>).</license-p></license></permissions><abstract><p content-type="toc-graphic"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02240_0009" id="ab-tgr1"/></p><p>ProcessOptimizer
+is a Python package designed to provide easy access
+to advanced machine learning techniques, specifically Bayesian optimization
+using, e.g., Gaussian processes. Aimed at experimentalist scientists
+and applicable to process and product optimizations in various fields,
+this package simplifies the optimization process, offering features
+such as benchmarking, noise addition/removal, multiobjective optimization,
+batch-mode operation, and comprehensive plotting features. The present
+publication focuses on ease of use by presenting an optimization of
+a chemical reaction to produce a specific color, such as leaf green.</p></abstract><custom-meta-group><custom-meta><meta-name>document-id-old-9</meta-name><meta-value>ci4c02240</meta-value></custom-meta><custom-meta><meta-name>document-id-new-14</meta-name><meta-value>ci4c02240</meta-value></custom-meta><custom-meta><meta-name>ccc-price</meta-name><meta-value/></custom-meta></custom-meta-group></article-meta></front><body><sec id="sec1"><title>Introduction</title><p>Process optimization
+is a cornerstone of scientific research and
+industrial applications. It is the strategic approach of fine-tuning
+various parameters to achieve the best possible outcome in terms of
+efficiency, yield, or cost-effectiveness. Proper application of structured
+process optimization often produces significant cost savings, improved
+product quality, enhanced performance, and increased productivity.
+In the context of experimental sciences, process optimization can
+help identify critical control parameters, find and apply optimal
+conditions, and ensure highly reliable regression models.<sup><xref ref-type="bibr" rid="ref1">1</xref></sup></p><p>Optimizing a process involves multiple
+stages, as illustrated in <xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>. The user first
+specifies optimization goals depending on the problem at hand, after
+which one must choose an appropriate metric to measure progress toward
+these goals, the factors to vary, and what values to allow for these
+factors. All of these steps require significant domain knowledge to
+ensure a successful process optimization. Once these decisions have
+been made, the process that is normally described as process optimization
+can begin.</p><fig id="fig1" position="float"><label>Figure 1</label><caption><p>Overall workflow of Bayesian optimization. The initial steps are
+common to many optimization strategies, and ProcessOptimizer is built
+to make the iterative optimization loop as simple to execute as possible.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02240_0001" id="gr1" position="float"/></fig><p>The intuitive approach to process optimization
+is often a simple
+trial-and-error method, where changes are made randomly or one factor
+at a time and outcomes are observed. This approach, however, is time-consuming
+and lacks precision. The need for a more systematic and efficient
+approach led to the development of &#x0201c;Design of Experiments&#x0201d;
+(DoE).<sup><xref ref-type="bibr" rid="ref2">2</xref></sup></p><p>DoE emerged as a structured,
+organized method to study the effects
+of various factors on a process. Early developments within DoE focused
+on screening designs, which aimed to identify the most influential
+factors among many. This was particularly useful for scientists who
+needed to determine the key control parameters in complex processes.<sup><xref ref-type="bibr" rid="ref3">3</xref></sup></p><p>Modern optimal designs were later introduced
+to determine the best
+combination of factor levels to estimate the model parameters. This
+approach allowed for more efficient exploration of the experimental
+space, easier handling of constraints, and more complex models.<sup><xref ref-type="bibr" rid="ref4">4</xref></sup></p><p>One of the most significant advancements
+in modern DoE is Bayesian
+optimization, a sequential design strategy for global optimization
+of black-box functions.<sup><xref ref-type="bibr" rid="ref5">5</xref></sup> Bayesian optimization
+considers the past evaluation results to choose the next input, allowing
+for more efficient exploration and exploitation of the process. This
+technique is particularly useful for scientists aiming to ensure either
+as large incremental improvements toward the objective(s) as possible
+(exploitation) or as large as possible information gain at each iteration
+(exploration). The iterative nature of the continued learning gives
+specific advantages, as it allows every single experiment design to
+be informed by the entire existing body of data. This is in opposition
+to classical DoE, where the majority of the runs are chosen at the
+time where the least amount of data is available.</p><p>Today, Bayesian
+optimization is being widely used in various fields,
+from hyperparameter tuning in machine learning models to process optimization
+in the experimental sciences. The current rise of self-driving laboratories
+often relies on Bayesian optimization.<sup><xref ref-type="bibr" rid="ref6">6</xref></sup> Many software packages for Bayesian optimization exist, with various
+degrees of user friendliness as well as a number of features presented
+to the user. Comparison through benchmarking is difficult because
+many packages are highly customized to specific fields of intended
+use and outcomes will vary depending on the objective of the optimization,
+as in the classical explore/exploit trade-off. To facilitate a qualitative
+comparison between the state-of-the-art packages within Bayesian optimization
+for life sciences, a noncomprehensive list of Python packages is presented
+in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02240/suppl_file/ci4c02240_si_001.pdf">Supporting Information S1</ext-link>.</p><p>However,
+the application of Bayesian optimization often requires
+a high level of expertise in coding and machine learning, which can
+be a barrier for many scientists. Here we introduce an open-source
+Python package that simplifies the setup of Bayesian optimization
+for real-world processes, making it more accessible to researchers
+and practitioners in various fields.<sup><xref ref-type="bibr" rid="ref7">7</xref></sup> ProcessOptimizer
+is a further development from another excellent open-source Python
+package, Scikit-Optimize.<sup><xref ref-type="bibr" rid="ref8">8</xref></sup> Numerous new
+features have been added, and many default settings have been set
+to reflect ProcessOptimizer&#x02019;s intended use in optimizing real-world
+processes, as opposed to machine learning problems.</p><p>ProcessOptimizer
+is a Python package that brings the power of Bayesian
+optimization to the fingertips of experimental scientists and process
+optimization professionals working on real-world (physical) processes.
+It is designed with simplicity and ease of use in mind, allowing users
+to leverage advanced machine learning models without requiring extensive
+coding or machine learning expertise.</p></sec><sec id="sec2"><title>Example of Use</title><p>In this paper, we illustrate the ease
+of setup and use of ProcessOptimizer,
+with a practical example from the field of chemistry: the goal is
+to produce 240 &#x003bc;L of a liquid having a color as close to a chosen
+color as possible (e.g., leaf green). This is a far simpler system
+than what would normally be the object of a real-world optimization
+but serves for illustrative purposes.</p><p>The objective of this
+specific optimization is to minimize the
+&#x00394;<italic>E</italic> value in the <italic>L</italic>*<italic>a</italic>*<italic>b</italic>* color space.<sup><xref ref-type="bibr" rid="ref9">9</xref></sup> As factors, our chemist chooses (1) an amount of a universal pH
+indicator between 5 and 40 &#x003bc;L (the pH indicator changes color
+as a function of pH) and (2) a percentage of acid between 30 and 85%
+for a mixture of acid and base. The pH indicator is diluted to a total
+volume of 40 &#x003bc;L with water, while the total acid/base mixture
+volume is set to 200 &#x003bc;L.</p><p>The following code blocks illustrate
+how to apply ProcessOptimizer
+to this optimization problem and assume that ProcessOptimizer has
+been installed in a Python environment.<sup><xref ref-type="bibr" rid="ref10">10</xref></sup></p><p>The first step involves importing the needed Python package
+and
+defining the search space, which in this case includes the amount
+of indicator and the percentage of acid in the mixed buffer. This
+is done using the following Python code:<graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02240_0004" id="GRAPHIC-d14e251-autogenerated" position="float"/>Next, we instantiate
+the optimizer and specify the number
+of initial points for the optimization process:<graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02240_0005" id="GRAPHIC-d14e253-autogenerated" position="float"/>With the setup
+complete, we can now ask the optimizer for
+the parameters for the next experiment:<graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02240_0006" id="GRAPHIC-d14e255-autogenerated" position="float"/>The value of
+the next_experiment variable instructs the
+user to perform an experiment with 79% acidic content of the pH buffer
+and 36 &#x003bc;L of pH indicator.</p><p>We then simulate conducting
+the experiment. To do this, we import
+color_pH model system and run its get_score() method with the suggested
+experiment parameters as input:<graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02240_0007" id="GRAPHIC-d14e259-autogenerated" position="float"/>After simulating the experiment and obtaining
+the result,
+we return this result to the optimizer:<graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02240_0008" id="GRAPHIC-d14e261-autogenerated" position="float"/>The opt.ask()
+and opt.tell() commands can be repeated until
+a recipe that satisfies the quality target of the user has been found.</p><p>The code above made use of a limited number of variables/settings:<list list-type="bullet"><list-item><p>&#x0201c;search_space&#x0201d; is a
+list of dimensions
+that constitutes the overall design space in which the user is searching
+for a minimum. Dimensions can be &#x0201c;Real&#x0201d; (decimal numbers),
+&#x0201c;Integer&#x0201d; (integers), or &#x0201c;Categorical&#x0201d;
+(list of possible selectors, such as &#x0201c;EtOH&#x0201d;, &#x0201c;MeOH&#x0201d;,
+&#x0201c;<italic>i</italic>PrOH&#x0201d;). Numeric dimensions are given
+as (&#x0201c;min_value&#x0201d;, &#x0201c;max_value&#x0201d;, [optional]&#x0201c;Name&#x0201d;).</p></list-item><list-item><p>&#x0201c;n_initial_points&#x0201d; is the
+number of experiments
+that will be suggested with no consideration of existing experimental
+data. These initial experiments are, by default, chosen via Latin
+hypercube sampling (LHS) to give a good coverage of each parameter
+in the search_space.</p></list-item><list-item><p>&#x0201c;next_recipe&#x0201d;
+is a transient variable
+holding the recipe (formatted as a vector) for the next experiment.</p></list-item><list-item><p>&#x0201c;opt&#x0201d; is the instantiation
+of the entire
+optimization. In the example above, the optimizer is instantiated
+with only knowledge of the design space and the intention of performing
+four initial experiments before the first regression model is fitted.
+However, in this, a number of options are given to allow the user
+to use different machine learning models for regression, different
+acquisition functions to help suggest the next experiment, knowledge
+of the design space and possible transformations (e.g., normalization)
+of the features, and options for multiobjective optimization or handling
+of modeled experimental noise. The rest is given by carefully chosen
+preset default values.</p></list-item><list-item><p>&#x0201c;result&#x0201d;
+is an object containing the data
+acquired during the optimization as well as all the interim regression
+models. &#x0201c;result&#x0201d; is used for plotting of the regression
+model and for inquiries to the models&#x02019; expected minimum (both
+estimated value and estimated standard deviation at the expected optimal
+recipe). &#x0201c;result&#x0201d; is the returned value after having
+performed a &#x0201c;tell&#x0201d; command to the optimizer; it can
+also be produced as a trait of the optimizer (&#x0201c;result = opt.get_result()&#x0201d;)</p></list-item></list></p></sec><sec id="sec3"><title>Methods and Materials</title><p>To simulate
+an experiment in the lab reproducibly and transparently,
+we prepared different combinations of concentration of universal pH
+indicator and balance of acid and base in a 96-well SBS plate (see <xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>). We then established
+the color of each well in the <italic>L</italic>*<italic>a</italic>*<italic>b</italic> color space and established this as a benchmarking
+data set (ModelSystem) in the ProcessOptimizer repository, which allows
+the user to quickly and effortlessly simulate making repeated physical
+experiments. The concrete objective is given by minimizing the calculated
+distance between an observed color and a target color. There are many
+metrics for distances in color spaces; here &#x00394;<italic>E</italic> is a calculated difference in sensation of colors.<sup><xref ref-type="bibr" rid="ref9">9</xref></sup></p><p>Like most other optimization packages, ProcessOptimizer
+assumes
+that the user is working on a minimization problem and will suggest
+new experiments to this end. In the case presented here, the distance
+to the desired color is naturally a minimization process.</p><p>All
+code in this paper was run on a computer with Microsoft Windows
+10 Enterprise (version 10.0.19045 Build 19045) and Python 3.9.1 installed.
+A new virtual Python environment was created, and ProcessOptimizer
+version 1.0.0 was installed with the command &#x0201c;pip install ProcessOptimizer&#x0201d;.
+The full list of installed packages is available in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02240/suppl_file/ci4c02240_si_001.pdf">Supporting Information S4</ext-link>. All code in this paper was run
+in this environment in the order it appears in the paper, and the
+return is what is reported here. The full example can be found in
+a Jupyter Notebook in the following repository: <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/novonordisk-research/ProcessOptimizer/blob/6c85018db95a79fbd479551270474089add3bb2b/examples/color_pH.ipynb">https://github.com/novonordisk-research/ProcessOptimizer/blob/6c85018db95a79fbd479551270474089add3bb2b/examples/color_pH.ipynb</uri>.</p></sec><sec id="sec3.1"><title>Results</title><p>To highlight the ability of ProcessOptimizer
+to
+optimize a physical
+process, we present a colorimetric pH adjustment. Using an easily
+prepared wide-range buffer series and a universal pH indicator, a
+wide range of colors and color saturations can be created experimentally
+(<xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>).</p><fig id="fig2" position="float"><label>Figure 2</label><caption><p>Possible outcomes of mixing a universal pH indicator with
+known
+and controlled amounts of acidic and basic buffers as described in
+the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02240/suppl_file/ci4c02240_si_001.pdf">Supporting Information</ext-link>. The color that
+is the target of the optimization is circled in red. The full corpus
+of the data is assumed to be unavailable to the algorithm and the
+scientist.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02240_0002" id="gr2" position="float"/></fig><p>To exemplify a scientist&#x02019;s
+search for an optimal recipe
+in the presence of many plausible solutions, we show the algorithm&#x02019;s
+approach to finding the amount of indicator and acid-to-base ratio
+to produce a specific color. In this experiment, we are searching
+for a mixture that results in a green color (red circle in <xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>).</p><p>The obtained
+color is compared to a desired color by calculating
+the &#x00394;<italic>E</italic> value of the <italic>L</italic>,&#x0202f;<italic>a</italic>,&#x0202f;<italic>b</italic>-encoded observed colors. The
+difference between the observed color for a given recipe and the desired
+color, &#x00394;<italic>E</italic>, is iteratively fed back to the algorithm
+in a &#x0201c;Design&#x02013;Make&#x02013;Test&#x02013;Evaluate&#x0201d;
+loop. In the current example, all data are pregenerated, but the optimization
+will be searching for a solution from scratch, thereby mimicking a
+real-world case in which the scientist does not know the best recipe
+for the task at hand.</p><p><xref rid="tbl1" ref-type="other">Table <xref rid="tbl1" ref-type="other">1</xref></xref> shows the
+experiments and the progression of the iterative model building process.
+The first four entries (<xref rid="tbl1" ref-type="other">Table <xref rid="tbl1" ref-type="other">1</xref></xref>, entries 1&#x02013;4) constitute the results of recipes that
+are given by the algorithm to form an initial body of data from which
+to make a first model. The result of each experiment is given to the
+model as &#x0201c;result = opt.tell([80, 35], 50.8)&#x0201d; (example
+from entry 1). Entries 5&#x02013;8 are iteratively suggested by the
+algorithm (by using the &#x0201c;opt.ask()&#x0201d; command). After
+eight experiments, the optimized recipe is extracted (<xref rid="tbl1" ref-type="other">Table <xref rid="tbl1" ref-type="other">1</xref></xref>, &#x0201c;Result&#x0201d;) by
+&#x0201c;po.expected_min(result)&#x0201d;. The results show that the
+optimized recipe results in the optimal color (confirmed by a calculated
+&#x00394;<italic>E</italic> of 0).</p><table-wrap id="tbl1" position="float"><label>Table 1</label><caption><title>Progression of Iterative
+Optimization
+in the Search for a Recipe That Will Produce a Green-Colored Liquid<xref rid="t1fn0" ref-type="table-fn">a</xref></title></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02240_0003" id="gr3" position="float"/><table-wrap-foot><fn id="t1fn0"><label>a</label><p>Recipes suggested by ProcessOptimizer
+are rounded to the nearest multiple of 5, and data are extracted from
+the preacquired experimental data base. Colors are numerically scored
+using the calculated distance to the desired green color (&#x00394;<italic>E</italic>). See the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02240/suppl_file/ci4c02240_si_001.pdf">Supporting Information</ext-link> for details.</p></fn><fn id="t1fn1"><label>b</label><p>Designed
+as part of the four initial
+LHS experiments.</p></fn><fn id="t1fn2"><label>c</label><p>Experiment
+designed by the Bayesian
+optimization learning loop.</p></fn><fn id="t1fn3"><label>d</label><p>The expected best recipe from a
+model trained on 8 data points is extracted and performed.</p></fn></table-wrap-foot></table-wrap><p>The optimized model can be plotted
+with built-in features of ProcessOptimizer.
+As such, the multidimensional regression model is plotted in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02240/suppl_file/ci4c02240_si_001.pdf">Supporting Information S3</ext-link> as a result of the
+command &#x0201c;po.plot_objective(result)&#x0201d;.</p><p>Through this
+example, it is evident that the ProcessOptimizer package
+allows for a streamlined, efficient, and user-friendly approach to
+process optimization. By simplifying the setup and execution of the
+optimization process, it enables scientists to focus on the results
+and their implications rather than the intricacies of the optimization
+algorithms.</p></sec><sec id="sec3.2"><title>Key Features of ProcessOptimizer</title><p>ProcessOptimizer offers
+a range of features that make it a user-friendly
+and versatile tool for real-world process optimization, usable out
+of the box:<list list-type="simple"><list-item><label>(1)</label><p>Comprehensive working examples of
+the most important features to get started (see: <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/novonordisk-research/ProcessOptimizer/blob/6c85018db95a79fbd479551270474089add3bb2b/examples/walkthrough/readme.md">https://github.com/novonordisk-research/ProcessOptimizer/blob/6c85018db95a79fbd479551270474089add3bb2b/examples/walkthrough/readme.md</uri>).</p></list-item><list-item><label>(2)</label><p>Comprehensive Plotting
+Features: The
+package includes several plotting features to visualize the underlying
+regression model and help users determine whether the optimization
+is complete (see <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02240/suppl_file/ci4c02240_si_001.pdf">Supporting Information S3</ext-link>).</p></list-item><list-item><label>(3)</label><p>Works with a combination
+of continuous
+factors (decimal numbers), discrete numerical factors (integer numbers),
+and categorical factors (e.g., solvents, colors, suppliers).</p></list-item><list-item><label>(4)</label><p>Constraints in the design
+space, including
+mixture designs and min, max, or specific values for individual factors.</p></list-item><list-item><label>(5)</label><p>Batch-Mode Operation:
+ProcessOptimizer
+can provide multiple experiment suggestions at once, enhancing efficiency
+and productivity, when practical circumstances favor executing multiple
+runs at a time.</p></list-item><list-item><label>(6)</label><p>Multiobjective
+Bayesian Optimization:
+The package supports Pareto optimization using NSGA-II, enabling multiobjective
+Bayesian optimization.</p></list-item><list-item><label>(7)</label><p>Benchmarking and Noise Management:
+A built-in ModelSystem class allows users of ProcessOptimizer to easily
+run benchmarks.</p></list-item><list-item><label>(8)</label><p>Model
+Uncertainty: ProcessOptimizer
+allows users to easily manage experimental noise modeling by adding
+or removing it from representations such as plots.</p></list-item></list></p><p>At present, ProcessOptimizer does not support design
+spaces that
+only contain categorical factors. Multiobjective optimization with
+ProcessOptimizer does not support constraints. Furthermore, investigations
+are ongoing regarding adding features such as initial DoE-inspired
+experimental design and multifidelity optimization. Implementation
+of new features is driven by identified user needs while maintaining
+a focus on user friendliness and usability within real-world experiments.</p></sec><sec id="sec3.3"><title>State of the Art</title><p>Many other Python packages also offer
+access
+to Bayesian optimization,
+including both packages tailored to specific branches of science and
+more generic packages.</p><p>To assist the reader in getting an overview
+of the state of the
+art in the field, we have assessed a number of current versions of
+these packages on recency, availability of easy-to-follow examples,
+plotting capabilities, and a number of features of high importance
+while optimizing physical experiments. The resulting curated list
+is presented in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02240/suppl_file/ci4c02240_si_001.pdf">Supporting Information S1</ext-link>. As can be seen from the table, there are a number of relevant packages
+which are currently being maintained. The ultimate choice of package
+should depend on the use case, experience of the user, and subjective
+preferences.</p><p>The aim of the development of ProcessOptimizer
+is to provide a
+user-friendly and robust experience for new practitioners within a
+wide range of experimental fields/sciences. As such, it does not offer
+cutting-edge mathematics, e.g., acquisition functions, as this is
+a fast-moving subject with active discussion about the optimal approach.<sup><xref ref-type="bibr" rid="ref11">11</xref></sup></p></sec><sec id="sec4"><title>Conclusion</title><p>ProcessOptimizer is a
+powerful, user-friendly Python package that
+brings advanced Bayesian optimization techniques to experimental scientists
+and professionals in various fields. With its unique features and
+easy-to-use interface, it can be readily used by scientists with just
+a minimum of training in Python.</p><p>In addition, it also offers
+benchmarking, noise management, multiobjective
+Bayesian optimization, batch-mode operation, and comprehensive plotting
+features.</p></sec></body><back><notes notes-type="data-availability" id="notes2"><title>Data Availability Statement</title><p>ProcessOptimizer
+is publicly available free of charge at <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/novonordisk-research/ProcessOptimizer">https://github.com/novonordisk-research/ProcessOptimizer</uri>. It can be installed using the standard package-management system
+in Python. Data presented in the present paper are available as part
+of the repo.</p></notes><notes id="notes1" notes-type="si"><title>Supporting Information Available</title><p>The
+Supporting Information is
+available free of charge at <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/10.1021/acs.jcim.4c02240?goto=supporting-info">https://pubs.acs.org/doi/10.1021/acs.jcim.4c02240</ext-link>.<list id="silist" list-type="simple"><list-item><p>S1: survey of open-source
+Python packages for Bayesian
+optimization; S2: experimental setup and analysis; S3: code examples
+for the example presented in the current paper, including additional
+plotting capabilities found in the ProcessOptimizer package; S4: list
+of installed packages in the install of PO used for the examples (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02240/suppl_file/ci4c02240_si_001.pdf">PDF</ext-link>)</p></list-item></list></p></notes><sec sec-type="supplementary-material"><title>Supplementary Material</title><supplementary-material content-type="local-data" id="sifile1"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02240_si_001.pdf"><caption><p>ci4c02240_si_001.pdf</p></caption></media></supplementary-material></sec><notes notes-type="COI-statement" id="notes5"><p>The authors
+declare no competing financial interest.</p></notes><ack><title>Acknowledgments</title><p>We express our gratitude to the colleagues in the
+department of Automation and Process Optimisation at Novo Nordisk
+for fruitful review and discussions. Furthermore, additional open-source
+contributors are acknowledged and thanked.</p></ack><ref-list><title>References</title><ref id="ref1"><mixed-citation publication-type="journal" id="cit1a"><label>a</label><name><surname>Daoutidis</surname><given-names>P.</given-names></name>; <name><surname>Zhang</surname><given-names>Q.</given-names></name>
+<article-title>From Amundson, Aris, and Sargent
+to the future of process systems engineering</article-title>. <source>Chem. Eng. Res. Des.</source>
+<year>2022</year>, <volume>188</volume>, <fpage>704</fpage>&#x02013;<lpage>713</lpage>. <pub-id pub-id-type="doi">10.1016/j.cherd.2022.10.014</pub-id>.</mixed-citation><mixed-citation publication-type="journal" id="cit1b"><label> b</label><name><surname>Lin</surname><given-names>J.</given-names></name>; <name><surname>Mo</surname><given-names>F.</given-names></name>
+<article-title>Empowering research in chemistry and materials science through intelligent
+algorithms</article-title>. <source>Artif. Intell. Chem.</source>
+<year>2024</year>, <volume>2</volume> (<issue>1</issue>), <fpage>100035</fpage><pub-id pub-id-type="doi">10.1016/j.aichem.2023.100035</pub-id>.</mixed-citation></ref><ref id="ref2"><mixed-citation publication-type="book" id="cit2a"><label>a</label><person-group person-group-type="allauthors"><name><surname>Fisher</surname><given-names>R. A.</given-names></name></person-group><source>The Design
+of Experiments</source>, <edition>9</edition>th ed.; <publisher-name>Macmillan</publisher-name>, <year>1971</year>.</mixed-citation><mixed-citation publication-type="journal" id="cit2b"><label>b</label><name><surname>Box</surname><given-names>G. E. P.</given-names></name>; <name><surname>Draper</surname><given-names>N. R.</given-names></name>
+<article-title>A Basis for the Selection of a Response Surface Design</article-title>. <source>J. Am. Stat. Assoc.</source>
+<year>1959</year>, <volume>54</volume> (<issue>287</issue>), <fpage>622</fpage>&#x02013;<lpage>654</lpage>. <pub-id pub-id-type="doi">10.1080/01621459.1959.10501525</pub-id>.</mixed-citation></ref><ref id="ref3"><mixed-citation publication-type="book" id="cit3a"><label>a</label><person-group person-group-type="allauthors"><name><surname>Box</surname><given-names>G. E.</given-names></name>; <name><surname>Hunter</surname><given-names>J. S.</given-names></name>; <name><surname>Hunter</surname><given-names>W. G.</given-names></name></person-group><source>Statistics
+for Experimenters: Design, Innovation, and Discovery</source>, <edition>2</edition>nd ed.; <publisher-name>Wiley</publisher-name>, 2005.</mixed-citation><mixed-citation publication-type="journal" id="cit3b"><label>b</label><name><surname>Plackett</surname><given-names>R. L.</given-names></name>; <name><surname>Burman</surname><given-names>J. P.</given-names></name>
+<article-title>The Design of Optimum Multifactorial Experiments</article-title>. <source>Biometrika</source>
+<year>1946</year>, <volume>33</volume> (<issue>4</issue>), <fpage>305</fpage>&#x02013;<lpage>325</lpage>. <pub-id pub-id-type="doi">10.1093/biomet/33.4.305</pub-id>.</mixed-citation><mixed-citation publication-type="journal" id="cit3c"><label> c</label><name><surname>Box</surname><given-names>G. E. P.</given-names></name>; <name><surname>Wilson</surname><given-names>K. B.</given-names></name>
+<article-title>On the Experimental Attainment of Optimum Conditions</article-title>. <source>J. R. Stat. Soc.</source>
+<year>1951</year>, <volume>13</volume> (<issue>1</issue>), <fpage>1</fpage>&#x02013;<lpage>38</lpage>. <pub-id pub-id-type="doi">10.1111/j.2517-6161.1951.tb00067.x</pub-id>.</mixed-citation></ref><ref id="ref4"><mixed-citation publication-type="book" id="cit4a"><label>a</label><person-group person-group-type="allauthors"><name><surname>Freddi</surname><given-names>A.</given-names></name>; <name><surname>Salmon</surname><given-names>M.</given-names></name></person-group><article-title>Introduction
+to the Taguchi Method</article-title>. In <source>Design Principles
+and Methodologies: From Conceptualization to First Prototyping with
+Examples and Case Studies</source>; <person-group person-group-type="editor"><name><surname>Freddi</surname><given-names>A.</given-names></name>, <name><surname>Salmon</surname><given-names>M.</given-names></name></person-group>, Eds.; <publisher-name>Springer
+International Publishing</publisher-name>, <year>2019</year>; pp <fpage>159</fpage>&#x02013;<lpage>180</lpage>.</mixed-citation><mixed-citation publication-type="book" id="cit4b"><label>b</label><person-group person-group-type="allauthors"><name><surname>Antony</surname><given-names>J.</given-names></name></person-group><article-title>2 - Fundamentals
+of Design of Experiments</article-title>. In <source>Design of Experiments
+for Engineers and Scientists</source>, <edition>2</edition>nd ed.; <person-group person-group-type="editor"><name><surname>Antony</surname><given-names>J.</given-names></name></person-group>, Ed.; <publisher-name>Elsevier</publisher-name>, <year>2014</year>; pp <fpage>7</fpage>&#x02013;<lpage>17</lpage>.</mixed-citation><mixed-citation publication-type="journal" id="cit4c"><label>c</label><name><surname>Goos</surname><given-names>P.</given-names></name>; <name><surname>Jones</surname><given-names>B.</given-names></name>
+<article-title>An Optimal Screening Experiment</article-title>. <source>Optim. Des. Exp.</source>
+<year>2011</year>, <fpage>9</fpage>&#x02013;<lpage>45</lpage>. <pub-id pub-id-type="doi">10.1002/9781119974017.ch2</pub-id>.</mixed-citation></ref><ref id="ref5"><mixed-citation publication-type="book" id="cit5a"><label>a</label><person-group person-group-type="allauthors"><name><surname>Garnett</surname><given-names>R.</given-names></name></person-group><source>Bayesian
+Optimization</source>; <publisher-name>Cambridge University Press</publisher-name>, <year>2023</year>.<pub-id pub-id-type="doi">10.1017/9781108348973</pub-id>.</mixed-citation><mixed-citation publication-type="journal" id="cit5b"><label>b</label><name><surname>Shahriari</surname><given-names>B.</given-names></name>; <name><surname>Swersky</surname><given-names>K.</given-names></name>; <name><surname>Wang</surname><given-names>Z.</given-names></name>; <name><surname>Adams</surname><given-names>R. P.</given-names></name>; <name><surname>de Freitas</surname><given-names>N.</given-names></name>
+<article-title>Taking the
+Human Out of the Loop: A Review of Bayesian Optimization</article-title>. <source>Proc. IEEE</source>
+<year>2016</year>, <volume>104</volume> (<issue>1</issue>), <fpage>148</fpage>&#x02013;<lpage>175</lpage>. <pub-id pub-id-type="doi">10.1109/JPROC.2015.2494218</pub-id>.</mixed-citation><mixed-citation publication-type="journal" id="cit5c"><label> c</label><name><surname>Clayton</surname><given-names>A. D.</given-names></name>; <name><surname>Manson</surname><given-names>J. A.</given-names></name>; <name><surname>Taylor</surname><given-names>C. J.</given-names></name>; <name><surname>Chamberlain</surname><given-names>T. W.</given-names></name>; <name><surname>Taylor</surname><given-names>B. A.</given-names></name>; <name><surname>Clemens</surname><given-names>G.</given-names></name>; <name><surname>Bourne</surname><given-names>R. A.</given-names></name>
+<article-title>Algorithms for the
+self-optimization of chemical reactions</article-title>. <source>React.
+Chem. Eng.</source>
+<year>2019</year>, <volume>4</volume> (<issue>9</issue>), <fpage>1545</fpage>&#x02013;<lpage>1554</lpage>. <pub-id pub-id-type="doi">10.1039/C9RE00209J</pub-id>.</mixed-citation><mixed-citation publication-type="weblink" id="cit5d"><label>d</label><person-group><name><surname>Agnihotri</surname><given-names>A.</given-names></name>; <name><surname>Batra</surname><given-names>N.</given-names></name></person-group><article-title>Exploring Bayesian Optimization</article-title>. <source>Distill</source>, May 5, <year>2020</year>.<pub-id pub-id-type="doi">10.23915/distill.00026</pub-id>. <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://distill.pub/2020/bayesian-optimization/">https://distill.pub/2020/bayesian-optimization/</uri> (accessed 2024-10-11).</mixed-citation></ref><ref id="ref6"><mixed-citation publication-type="journal" id="cit6a"><label>a</label><name><surname>Abolhasani</surname><given-names>M.</given-names></name>; <name><surname>Kumacheva</surname><given-names>E.</given-names></name>
+<article-title>The rise of self-driving labs in
+chemical and materials sciences</article-title>. <source>Nat. Synth.</source>
+<year>2023</year>, <volume>2</volume> (<issue>6</issue>), <fpage>483</fpage>&#x02013;<lpage>492</lpage>. <pub-id pub-id-type="doi">10.1038/s44160-022-00231-0</pub-id>.</mixed-citation></ref><ref id="ref7"><mixed-citation publication-type="journal" id="cit7"><name><surname>Obdrup</surname><given-names>A.</given-names></name>; <name><surname>Nielsen</surname><given-names>B. E.</given-names></name>; <name><surname>Taaning</surname><given-names>R. H.</given-names></name>; <name><surname>Carlsen</surname><given-names>S.</given-names></name>; <name><surname>Bertelsen</surname><given-names>S.</given-names></name>; <name><surname>Nielsen</surname><given-names>M. B.</given-names></name>; <name><surname>Blichfeld</surname><given-names>A. B.</given-names></name>; <name><surname>Brandt</surname><given-names>C. B.</given-names></name>; <name><surname>Furbo</surname><given-names>S.</given-names></name>
+<article-title>ProcessOptimizer
+(v1.0.0, October 11, 2023)</article-title>. <source>Zenodo</source>
+<year>2023</year>, <pub-id pub-id-type="doi">10.5281/zenodo.8431486</pub-id>.</mixed-citation></ref><ref id="ref8"><mixed-citation publication-type="journal" id="cit8"><name><surname>Head</surname><given-names>T.</given-names></name>; <name><surname>Kumar</surname><given-names>M.</given-names></name>; <name><surname>Nahrstaedt</surname><given-names>H.</given-names></name>; <name><surname>Louppe</surname><given-names>G.</given-names></name>; <name><surname>Shcherbatyi</surname><given-names>I.</given-names></name>
+<article-title>Scikit-Optimize/Scikit-Optimize
+(v0.9.0, October 11, 2021)</article-title>. <source>Zenodo</source>
+<year>2021</year>, <pub-id pub-id-type="doi">10.5281/zenodo.5565057</pub-id>.</mixed-citation></ref><ref id="ref9"><mixed-citation publication-type="report" id="cit9a"><label>a</label><source>CIE 15: Technical Report: Colorimetry</source>, <edition>3</edition>rd ed.; <publisher-name>International Commission
+on Illumination</publisher-name>, <year>2004</year>; <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://archive.org/details/gov.law.cie.15.2004">https://archive.org/details/gov.law.cie.15.2004</uri>.</mixed-citation><mixed-citation publication-type="journal" id="cit9b"><label>b</label><name><surname>Sharma</surname><given-names>G.</given-names></name>; <name><surname>Wu</surname><given-names>W.</given-names></name>; <name><surname>Dalal</surname><given-names>E. N.</given-names></name>
+<article-title>The CIEDE2000 color-difference
+formula: Implementation notes, supplementary test data, and mathematical
+observations</article-title>. <source>Color Research &#x00026; Application</source>
+<year>2005</year>, <volume>30</volume> (<issue>1</issue>), <fpage>21</fpage>&#x02013;<lpage>30</lpage>. <pub-id pub-id-type="doi">10.1002/col.20070</pub-id>.</mixed-citation></ref><ref id="ref10"><note><p>Full instructions for installation of ProcessOptimizer
+can be found on GitHub:</p></note><mixed-citation publication-type="weblink" id="cit10"><source>Novonordisk-Research/ProcessOptimizer</source>. <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/novonordisk-research/ProcessOptimizer">https://github.com/novonordisk-research/ProcessOptimizer</uri>.</mixed-citation></ref><ref id="ref11"><note><p>For an argument that classic
+acquisition
+functions performs well and that acquisition functions depend on the
+problem at hand, see:</p></note><mixed-citation publication-type="weblink" id="cit11a"><label>a</label><person-group><name><surname>Benjamins</surname><given-names>C.</given-names></name>; <name><surname>Raponi</surname><given-names>E.</given-names></name>; <name><surname>Jankovic</surname><given-names>A.</given-names></name>; <name><surname>van der Blom</surname><given-names>K.</given-names></name>; <name><surname>Santoni</surname><given-names>M. L.</given-names></name>; <name><surname>Lindauer</surname><given-names>M.</given-names></name>; <name><surname>Doerr</surname><given-names>C.</given-names></name></person-group><article-title>PI is back! Switching
+Acquisition Functions in Bayesian Optimization</article-title>. <source>arXiv (Computer Science.Machine Learning)</source>, November 2, <year>2022</year>, 2211.01455, ver. 1. <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://arxiv.org/abs/2211.01455">https://arxiv.org/abs/2211.01455</uri>.</mixed-citation><note><p>For recent developments within acquisition functions,
+see:</p></note><mixed-citation publication-type="weblink" id="cit11b"><label>b</label><person-group person-group-type="allauthors"><name><surname>Astudillo</surname><given-names>R.</given-names></name>; <name><surname>Lin</surname><given-names>Z. J.</given-names></name>; <name><surname>Bakshy</surname><given-names>E.</given-names></name>; <name><surname>Frazier</surname><given-names>P. I.</given-names></name></person-group><article-title>qEUBO: A Decision-Theoretic Acquisition Function
+for Preferential Bayesian Optimization</article-title>. <source>arXiv
+(Computer Science.Machine Learning)</source>, March 28, <year>2023</year>, 2303.15746, ver. 1. <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://arxiv.org/abs/2303.15746">https://arxiv.org/abs/2303.15746</uri>.</mixed-citation><mixed-citation publication-type="journal" id="cit11c"><label>c</label><name><surname>Wang</surname><given-names>X.</given-names></name>; <name><surname>Jin</surname><given-names>Y.</given-names></name>
+<article-title>Personalized Bayesian optimization for noisy problems</article-title>. <source>Complex Intell. Syst.</source>
+<year>2023</year>, <volume>9</volume> (<issue>5</issue>), <fpage>5745</fpage>&#x02013;<lpage>5760</lpage>. <pub-id pub-id-type="doi">10.1007/s40747-023-01020-8</pub-id>.</mixed-citation><mixed-citation publication-type="weblink" id="cit11d"><label>d</label><person-group person-group-type="allauthors"><name><surname>Moss</surname><given-names>H. B.</given-names></name>; <name><surname>Leslie</surname><given-names>D. S.</given-names></name>; <name><surname>Gonzalez</surname><given-names>J.</given-names></name>; <name><surname>Rayson</surname><given-names>P.</given-names></name></person-group><article-title>GIBBON: General-purpose Information-Based Bayesian OptimisatioN</article-title>. <source>arXiv (Computer Science.Machine Learning)</source>, October
+26, <year>2021</year>, 2102.03324, ver. 2. <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://arxiv.org/abs/2102.03324">https://arxiv.org/abs/2102.03324</uri>.</mixed-citation><mixed-citation publication-type="weblink" id="cit11e"><label>e</label><person-group person-group-type="allauthors"><name><surname>Zhao</surname><given-names>J.</given-names></name>; <name><surname>Yang</surname><given-names>R.</given-names></name>; <name><surname>Qiu</surname><given-names>S.</given-names></name>; <name><surname>Wang</surname><given-names>Z.</given-names></name></person-group><article-title>Unleashing the Potential of
+Acquisition Functions in High-Dimensional Bayesian Optimization</article-title>. <source>arXiv (Computer Science.Machine Learning)</source>, January
+24, <year>2024</year>, 2302.08298, ver. 2. <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://arxiv.org/abs/2302.08298">https://arxiv.org/abs/2302.08298</uri>.</mixed-citation><note><p>For a comparison between Gaussian Processes
+and random forest for modelling during Bayesian Optimization, see:</p></note><mixed-citation publication-type="conf-proc" id="cit11f"><label>f</label><person-group person-group-type="allauthors"><name><surname>Qin</surname><given-names>N.</given-names></name>; <name><surname>Zhou</surname><given-names>X.</given-names></name>; <name><surname>Wang</surname><given-names>J.</given-names></name>; <name><surname>Shen</surname><given-names>C.</given-names></name></person-group><article-title>Bayesian Optimization: Model Comparison
+with Different Benchmark Functions</article-title>. In <source>2021
+International Conference on Signal Processing and Machine Learning
+(CONF-SPML)</source>; <publisher-name>IEEE</publisher-name>, <year>2021</year>.</mixed-citation><note><p>For a comparison between the use
+of acquisition functions and space partition, see:</p></note><mixed-citation publication-type="journal" id="cit11g"><label> g</label><name><surname>Merrill</surname><given-names>E.</given-names></name>; <name><surname>Fern</surname><given-names>A.</given-names></name>; <name><surname>Fern</surname><given-names>X.</given-names></name>; <name><surname>Dolatnia</surname><given-names>N.</given-names></name>
+<article-title>An Empirical
+Study of Bayesian Optimization: Acquisition versus Partition</article-title>. <source>J. Mach. Learn. Res.</source>
+<year>2021</year>, <volume>22</volume> (<issue>4</issue>), <fpage>1</fpage>&#x02013;<lpage>25</lpage>.</mixed-citation></ref></ref-list></back></article>

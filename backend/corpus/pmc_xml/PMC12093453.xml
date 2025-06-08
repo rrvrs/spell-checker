@@ -1,0 +1,906 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="1.3" id="jcc70139" xml:lang="en" article-type="research-article"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">J Comput Chem</journal-id><journal-id journal-id-type="iso-abbrev">J Comput Chem</journal-id><journal-id journal-id-type="doi">10.1002/(ISSN)1096-987X</journal-id><journal-id journal-id-type="publisher-id">JCC</journal-id><journal-title-group><journal-title>Journal of Computational Chemistry</journal-title></journal-title-group><issn pub-type="ppub">0192-8651</issn><issn pub-type="epub">1096-987X</issn><publisher><publisher-name>John Wiley &#x00026; Sons, Inc.</publisher-name><publisher-loc>Hoboken, USA</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">40396479</article-id><article-id pub-id-type="pmc">PMC12093453</article-id><article-id pub-id-type="doi">10.1002/jcc.70139</article-id><article-id pub-id-type="publisher-id">JCC70139</article-id><article-categories><subj-group subj-group-type="overline"><subject>Research Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Research Article</subject></subj-group></article-categories><title-group><article-title>Exploring Monomer&#x02010;Amino Acid Interactions in Mimicking Mips for PSA Detection&#x02014;Using the Novel MBASM Approach</article-title></title-group><contrib-group><contrib id="jcc70139-cr-0001" contrib-type="author"><name><surname>Neres</surname><given-names>Lariel Chagas da Silva</given-names></name><xref rid="jcc70139-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="jcc70139-cr-0002" contrib-type="author"><name><surname>Mucelini</surname><given-names>Johnatan</given-names></name><xref rid="jcc70139-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="jcc70139-cr-0003" contrib-type="author"><name><surname>Pinheiro</surname><given-names>Gabriel Augusto</given-names></name><xref rid="jcc70139-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref></contrib><contrib id="jcc70139-cr-0004" contrib-type="author"><name><surname>Ambr&#x000f3;sio</surname><given-names>Helen Luiza Brand&#x000e3;o Silva</given-names></name><xref rid="jcc70139-aff-0004" ref-type="aff">
+<sup>4</sup>
+</xref></contrib><contrib id="jcc70139-cr-0005" contrib-type="author"><name><surname>da Silva</surname><given-names>Alb&#x000e9;rico Borges Ferreira</given-names></name><xref rid="jcc70139-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="jcc70139-cr-0006" contrib-type="author"><name><surname>Sotomayor</surname><given-names>Maria Del Pilar Taboada</given-names></name><xref rid="jcc70139-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="jcc70139-cr-0007" contrib-type="author" corresp="yes"><name><surname>Andriani</surname><given-names>Karla Furtado</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-6662-660X</contrib-id><xref rid="jcc70139-aff-0004" ref-type="aff">
+<sup>4</sup>
+</xref><address><email>kfandriani@uesc.br</email></address></contrib></contrib-group><aff id="jcc70139-aff-0001">
+<label>
+<sup>1</sup>
+</label>
+<institution>S&#x000e3;o Paulo State University (UNESP), Institute of Chemistry</institution>
+<city>Araraquara</city>
+<named-content content-type="country-part">S&#x000e3;o Paulo</named-content>
+<country country="BR">Brazil</country>
+</aff><aff id="jcc70139-aff-0002">
+<label>
+<sup>2</sup>
+</label>
+<institution>S&#x000e3;o Carlos Institute of Chemistry, University of S&#x000e3;o Paulo (USP)</institution>
+<city>S&#x000e3;o Carlos</city>
+<named-content content-type="country-part">S&#x000e3;o Paulo</named-content>
+<country country="BR">Brazil</country>
+</aff><aff id="jcc70139-aff-0003">
+<label>
+<sup>3</sup>
+</label>
+<institution>Institute of Science and Technology, Federal University of S&#x000e3;o Paulo (UNIFESP)</institution>
+<city>S&#x000e3;o Jos&#x000e9; dos Campos</city>
+<named-content content-type="country-part">S&#x000e3;o Paulo</named-content>
+<country country="BR">Brazil</country>
+</aff><aff id="jcc70139-aff-0004">
+<label>
+<sup>4</sup>
+</label>
+<named-content content-type="organisation-division">Department of Exact Sciences</named-content>
+<institution>State University of Santa Cruz (UESC)</institution>
+<city>Ilh&#x000e9;us</city>
+<named-content content-type="country-part">Bahia</named-content>
+<country country="BR">Brazil</country>
+</aff><author-notes><corresp id="correspondenceTo">
+<label>*</label>
+<bold>Correspondence:</bold>
+<break/>
+Karla Furtado Andriani (<email>kfandriani@uesc.br</email>)<break/>
+</corresp></author-notes><pub-date pub-type="epub"><day>21</day><month>5</month><year>2025</year></pub-date><pub-date pub-type="ppub"><day>30</day><month>5</month><year>2025</year></pub-date><volume>46</volume><issue seq="80">14</issue><issue-id pub-id-type="doi">10.1002/jcc.v46.14</issue-id><elocation-id>e70139</elocation-id><history>
+<date date-type="rev-recd"><day>01</day><month>5</month><year>2025</year></date>
+<date date-type="received"><day>01</day><month>5</month><year>2025</year></date>
+<date date-type="accepted"><day>09</day><month>5</month><year>2025</year></date>
+</history><permissions><!--&#x000a9; 2025 Wiley Periodicals LLC.--><copyright-statement content-type="article-copyright">&#x000a9; 2025 The Author(s). <italic toggle="yes">Journal of Computational Chemistry</italic> published by Wiley Periodicals LLC.</copyright-statement><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>This is an open access article under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link> License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions><self-uri content-type="pdf" xlink:href="file:JCC-46-0.pdf"/><abstract id="jcc70139-abs-0001"><title>ABSTRACT</title><p>Given the rising incidence of prostate cancer (PCa), there is an increasing demand for cost&#x02010;effective and reliable methods for early detection using the prostate&#x02010;specific antigen (PSA) biomarker. PCa remains a leading cause of mortality among individuals with prostates aged 55&#x02013;80 years. Molecularly Imprinted Polymers (MIPs) represent a promising solution due to their selectivity, sensitivity, and stability for PSA detection. However, the synthesis of MIPs for protein targets presents significant challenges, particularly in the rational selection of functional monomers and cross&#x02010;linkers. This study introduces a theoretical framework to aid the development of MIPs by assisting in the selection of optimal reagents for PSA targeting. A novel algorithm, the Molecular Binding Algorithm for Surface Mapping (MBASM), was developed to efficiently generate amino acid&#x02010;monomer complexes. The integrated MBASM + DFT approach was validated through comparison with the GFN2&#x02010;xTB method and the Quantum Cluster Growth approach implemented in the CREST program. The results demonstrated strong agreement between the methods, establishing MBASM + DFT as a viable and innovative alternative tool for predicting interaction structures and energies. Through this strategy, promising monomers for PSA&#x02010;targeted MIP synthesis were identified, including itaconic acid, 4&#x02010;imidazole acrylic acid, and methacrylic acid, with 1,4&#x02010;divinylbenzene emerging as the most effective cross&#x02010;linker. This computational methodology provides a powerful and systematic approach for optimizing MIP synthesis aimed at selective PSA detection.</p></abstract><abstract abstract-type="graphical" id="jcc70139-abs-0002"><p>This study presents the novel Molecular Binding Algorithm for Surface Mapping (MBASM) to identify optimal amino acid&#x02010;functional monomer complexes for enhancing molecularly imprinted polymers (MIPs) in PSA detection. By screening the combination of 20 amino acids and 15 functional monomers, we uncover promising complexes, establishing a basis for future MIP applications. <boxed-text position="anchor" content-type="graphic" id="jcc70139-blkfxd-0001"><graphic xlink:href="JCC-46-0-g005.jpg" position="anchor" id="jats-graphic-1"/></boxed-text>
+</p></abstract><kwd-group kwd-group-type="author-generated"><kwd id="jcc70139-kwd-0001">algorithm</kwd><kwd id="jcc70139-kwd-0002">DFT</kwd><kwd id="jcc70139-kwd-0003">MIP</kwd><kwd id="jcc70139-kwd-0004">molecular docking</kwd><kwd id="jcc70139-kwd-0005">PSA</kwd></kwd-group><funding-group><award-group id="funding-0001"><funding-source><institution-wrap><institution>S&#x000e3;o Paulo State University (UNESP)
+</institution><institution-id institution-id-type="doi">10.13039/501100009568</institution-id></institution-wrap></funding-source></award-group><award-group id="funding-0002"><funding-source><institution-wrap><institution>S&#x000e3;o Paulo Research Foundation (FAPESP), Brazil
+</institution><institution-id institution-id-type="doi">10.13039/501100001807</institution-id></institution-wrap></funding-source><award-id>#2022/03553&#x02010;0</award-id><award-id>#2021/08852&#x02010;2</award-id></award-group></funding-group><counts><fig-count count="8"/><table-count count="1"/><page-count count="14"/><word-count count="7115"/></counts><custom-meta-group><custom-meta><meta-name>source-schema-version-number</meta-name><meta-value>2.0</meta-value></custom-meta><custom-meta><meta-name>cover-date</meta-name><meta-value>May 30, 2025</meta-value></custom-meta><custom-meta><meta-name>details-of-publishers-convertor</meta-name><meta-value>Converter:WILEY_ML3GV2_TO_JATSPMC version:6.5.6 mode:remove_FC converted:21.05.2025</meta-value></custom-meta></custom-meta-group></article-meta><notes><fn-group id="jcc70139-ntgp-0001"><fn fn-type="funding" id="jcc70139-note-0001"><p>
+<bold>Funding:</bold> This research was supported by resources supplied by the Center for Scientific Computing (NCC/GridUNESP) of the S&#x000e3;o Paulo State University (UNESP). This study was financed, in part, by the S&#x000e3;o Paulo Research Foundation (FAPESP), Brazil. Process Number #2022/03553&#x02010;0 and #2021/08852&#x02010;2.</p></fn></fn-group></notes></front><body id="jcc70139-body-0001"><def-list list-content="abbreviations" id="jcc70139-dl-0001"><title>Abbreviations</title><def-item><term id="JCC70139-li-0001">DFT</term><def id="JCC70139-li-0002"><p>density functional theory</p></def></def-item><def-item><term id="JCC70139-li-0003">MIP</term><def id="JCC70139-li-0004"><p>molecularly imprinted polymer</p></def></def-item><def-item><term id="JCC70139-li-0005">PSA</term><def id="JCC70139-li-0006"><p>prostate&#x02010;specific antigen</p></def></def-item></def-list><sec id="jcc70139-sec-0002"><label>1</label><title>Introduction</title><p>Prostate cancer (PCa) represents a significant global health concern, with its incidence steadily increasing in recent years. It is a leading cause of mortality among individuals aged 55 to 80 years with a testicular reproductive system, accounting for approximately 10% of all cancer&#x02010;related deaths worldwide and ranked as the sixth deadliest cancer globally [<xref rid="jcc70139-bib-0001" ref-type="bibr">1</xref>, <xref rid="jcc70139-bib-0002" ref-type="bibr">2</xref>]. The progression of PCa to metastatic stages, often due to delayed diagnosis, dramatically worsens its prognosis [<xref rid="jcc70139-bib-0003" ref-type="bibr">3</xref>, <xref rid="jcc70139-bib-0004" ref-type="bibr">4</xref>]. Therefore, early detection and timely intervention are critical, as they are strongly associated with favorable outcomes, particularly when the disease remains confined to the prostate lobes. PCa is often asymptomatic in its early stages, with significant symptoms typically emerging only after metastasis to lymph nodes or bones [<xref rid="jcc70139-bib-0002" ref-type="bibr">2</xref>]. This underscores the urgent need for reliable diagnostic tools capable of detecting PCa in its early stages to improve treatment success and patient outcomes.</p><p>In this context, prostate&#x02010;specific antigen (PSA) has become the most widely adopted biomarker for PCa, as it is the only known substance in the human body specific for this application [<xref rid="jcc70139-bib-0001" ref-type="bibr">1</xref>, <xref rid="jcc70139-bib-0003" ref-type="bibr">3</xref>]. PSA is a serine protease commonly found in human serum that facilitates minimally invasive PCa screening [<xref rid="jcc70139-bib-0001" ref-type="bibr">1</xref>, <xref rid="jcc70139-bib-0004" ref-type="bibr">4</xref>]. As a member of the kallikrein family of proteases, PSA functions as a glycoprotein involved in androgen regulation, with gene transcription upregulated by androgen receptor activity [<xref rid="jcc70139-bib-0005" ref-type="bibr">5</xref>]. PSA exists in various isoforms, with isoelectric points ranging from 6.8 to 7.2 [<xref rid="jcc70139-bib-0003" ref-type="bibr">3</xref>]. Clinically, the &#x0201c;gray zone&#x0201d; of PCa risk is associated with PSA concentrations between 4 and 10&#x000a0;ng&#x000a0;<mml:math id="jats-math-1" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msup><mml:mrow><mml:mtext>mL</mml:mtext></mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mrow></mml:math>. PSA levels below 4&#x000a0;ng&#x000a0;<mml:math id="jats-math-2" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msup><mml:mrow><mml:mtext>mL</mml:mtext></mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mrow></mml:math> are generally considered negative, indicating a low probability of PCa [<xref rid="jcc70139-bib-0003" ref-type="bibr">3</xref>]. However, studies have shown that approximately 25% of individuals with PSA levels between 2.5 and 4&#x000a0;ng&#x000a0;<mml:math id="jats-math-3" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msup><mml:mrow><mml:mtext>mL</mml:mtext></mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mrow></mml:math> were diagnosed with PCa, highlighting the limitations of current diagnostic thresholds [<xref rid="jcc70139-bib-0001" ref-type="bibr">1</xref>, <xref rid="jcc70139-bib-0006" ref-type="bibr">6</xref>].</p><p>Nevertheless, while PSA is widely used as a biomarker for PCa, its specificity to prostate cancer is limited. PSA levels tend to increase with patient age and may also reflect non&#x02010;cancerous conditions, such as benign prostatic hyperplasia, or even other malignancies, such as breast cancer [<xref rid="jcc70139-bib-0004" ref-type="bibr">4</xref>, <xref rid="jcc70139-bib-0005" ref-type="bibr">5</xref>, <xref rid="jcc70139-bib-0007" ref-type="bibr">7</xref>]. The most common method for detecting PSA levels in clinical practice is the enzyme&#x02010;linked immunosorbent assay (ELISA), which is highly sensitive and effective for quantifying PSA. However, ELISA is a complex and time&#x02010;consuming procedure. Furthermore, PSA instability during analysis can contribute to suboptimal results, increasing the risk of errors [<xref rid="jcc70139-bib-0001" ref-type="bibr">1</xref>, <xref rid="jcc70139-bib-0003" ref-type="bibr">3</xref>]. Thus, ELISA assays are relatively expensive compared to alternative diagnostic methods. Despite these limitations, ELISA remains the gold standard for PSA detection and continues to play a central role in PCa diagnostics and monitoring [<xref rid="jcc70139-bib-0001" ref-type="bibr">1</xref>, <xref rid="jcc70139-bib-0003" ref-type="bibr">3</xref>, <xref rid="jcc70139-bib-0008" ref-type="bibr">8</xref>].</p><p>In recent years, molecularly imprinted polymers (MIPs) have gained significant attention in academic research as a promising, cost&#x02010;effective, more stable, and easier&#x02010;to&#x02010;handle alternative to ELISA [<xref rid="jcc70139-bib-0009" ref-type="bibr">9</xref>, <xref rid="jcc70139-bib-0010" ref-type="bibr">10</xref>]. MIPs offer several advantages over ELISA, including straightforward synthesis without the need for sophisticated equipment. Additionally, MIPs are reusable, leading to substantial cost savings in repeated analysis [<xref rid="jcc70139-bib-0011" ref-type="bibr">11</xref>]. They are highly versatile, functioning effectively across a wide range of temperatures, pH levels, and in organic&#x02010;aqueous solutions. Furthermore, their high selectivity for target molecules minimizes the occurrence of false positives and false negatives [<xref rid="jcc70139-bib-0012" ref-type="bibr">12</xref>, <xref rid="jcc70139-bib-0013" ref-type="bibr">13</xref>, <xref rid="jcc70139-bib-0014" ref-type="bibr">14</xref>]. Despite these advantages, MIPs are still under the development stage and require further validation before they can be reliably applied in clinical diagnostics [<xref rid="jcc70139-bib-0001" ref-type="bibr">1</xref>, <xref rid="jcc70139-bib-0015" ref-type="bibr">15</xref>]. Nevertheless, their potential to address the limitation of current PSA detection methods makes them a compelling focus of research in the quest for more efficient and cost&#x02010;effective PCa diagnostics.</p><p>The synthesis of MIPs relies on five essential elements: The template molecule or analyte (TM), the functional monomer (FM), the cross&#x02010;linker or structural monomer (SM), the radical initiator, and the solvent. The characteristics and concentrations of these components are critical for achieving optimal polymer performance [<xref rid="jcc70139-bib-0016" ref-type="bibr">16</xref>, <xref rid="jcc70139-bib-0017" ref-type="bibr">17</xref>]. However, MIP development for macromolecules such as proteins presents significant challenges, particularly with respect to achieving high selectivity [<xref rid="jcc70139-bib-0016" ref-type="bibr">16</xref>, <xref rid="jcc70139-bib-0018" ref-type="bibr">18</xref>]. One notable challenge is the decrease in selectivity with increasing TM size, making PSA a difficult target for MIP design [<xref rid="jcc70139-bib-0016" ref-type="bibr">16</xref>]. The wide variety of available FMs further complicates the selection process, as the chemical compatibility between the FM and analyte is crucial&#x02014;acidic monomers interact more effectively with basic regions of the analyte and vice versa [<xref rid="jcc70139-bib-0019" ref-type="bibr">19</xref>].</p><p>To overcome these complexities, the integration of computational approaches with experimental strategies offers a promising pathway for the design and optimization of selective PSA&#x02010;sensitive MIPs [<xref rid="jcc70139-bib-0016" ref-type="bibr">16</xref>, <xref rid="jcc70139-bib-0018" ref-type="bibr">18</xref>]. This combined approach minimizes the need for extensive experimentation, thereby saving both time and resources. Currently, Density Functional Theory (DFT) and Molecular Docking are widely employed to evaluate binding affinities and interaction sites. These methods provide valuable insights into monomer&#x02010;template interactions, enabling predictions of molecular properties that guides the selection of functional monomers (FM), structural monomers (SM), and solvents, thereby improving MIP design and application efficiency [<xref rid="jcc70139-bib-0013" ref-type="bibr">13</xref>, <xref rid="jcc70139-bib-0016" ref-type="bibr">16</xref>, <xref rid="jcc70139-bib-0018" ref-type="bibr">18</xref>, <xref rid="jcc70139-bib-0020" ref-type="bibr">20</xref>, <xref rid="jcc70139-bib-0021" ref-type="bibr">21</xref>, <xref rid="jcc70139-bib-0022" ref-type="bibr">22</xref>, <xref rid="jcc70139-bib-0023" ref-type="bibr">23</xref>, <xref rid="jcc70139-bib-0024" ref-type="bibr">24</xref>, <xref rid="jcc70139-bib-0025" ref-type="bibr">25</xref>].</p><p>Despite their advantages, DFT methods are computationally expensive, particularly when handling large datasets involving thousands of molecular structures. These constraints limit the systematic exploration of monomer&#x02010;analyte configurations and reduce research efficiency. Consequently, many studies rely on manually constructed interaction models, narrowing the configuration range to be explored and potentially overlooking optimal binding scenarios [<xref rid="jcc70139-bib-0016" ref-type="bibr">16</xref>, <xref rid="jcc70139-bib-0026" ref-type="bibr">26</xref>, <xref rid="jcc70139-bib-0027" ref-type="bibr">27</xref>, <xref rid="jcc70139-bib-0028" ref-type="bibr">28</xref>, <xref rid="jcc70139-bib-0029" ref-type="bibr">29</xref>].</p><p>To overcome this barrier, deterministic algorithms&#x02014;which operate exclusively on input data without stochastic variation&#x02014;have emerged as efficient tools for automating complex (analyte + monomer) generation and improving the scalability and reliability of molecular simulations [<xref rid="jcc70139-bib-0030" ref-type="bibr">30</xref>]. In this study, we introduce the Molecular Binding Algorithm by Surface Mapping (MBASM), a novel algorithm designed to automatically construct monomer&#x02010;analyte interaction complexes by evaluating molecular chemical environments. MBASM significantly enhances the efficiency of structure generation and enables broader sampling of potential configurations. When integrated with DFT, the algorithm yields results comparable to those obtained using semi&#x02010;empirical methods such as GFN2&#x02010;xTB + DFT. Future work will focus on refining the functionality of the algorithm and improving its performance in high&#x02010;throughput screening for MIP design.</p></sec><sec id="jcc70139-sec-0003"><label>2</label><title>Theoretical Approach and Computational Details</title><sec id="jcc70139-sec-0004"><label>2.1</label><title>Introduction to MBASM in Molecular Simulation</title><p>The Molecular Binding Algorithm by Surface Mapping (MBASM) differentiates itself from other structure&#x02010;generation algorithms by implementing a unique protocol that integrates several internal and external tools to achieve its main goal, that is, constructing interacting complexes such as monomer&#x02010;analyte systems, van der Waals (vdW) complexes, adsorbed systems, and others. This protocol performs a sophisticated analysis of the chemical environment, followed by the identification and selection of representative interaction sites to ensure the accurate generation of physically meaningful complexes, with a primary focus on molecule&#x02013;molecule interactions.</p><p>In MBASM, molecules are treated as rigid bodies, and atoms are represented as spheres with vdW radii or scaled fractions thereof. The algorithm maps the chemical environment on the molecular surface based on local atomic neighborhoods, allowing the systematic exploration of interaction modes between molecular pairs. This methodology enables the generation of hundreds of thousands of analyte&#x02013;monomer complexes, which would be computationally infeasible to analyze without an effective data reduction strategy.</p><p>To address this challenge, MBASM incorporates the <italic toggle="yes">k&#x02010;means</italic> clustering algorithm&#x02014;a widely used method for partitioning high&#x02010;dimensional datasets into representative clusters [<xref rid="jcc70139-bib-0031" ref-type="bibr">31</xref>, <xref rid="jcc70139-bib-0032" ref-type="bibr">32</xref>, <xref rid="jcc70139-bib-0033" ref-type="bibr">33</xref>, <xref rid="jcc70139-bib-0034" ref-type="bibr">34</xref>, <xref rid="jcc70139-bib-0035" ref-type="bibr">35</xref>, <xref rid="jcc70139-bib-0036" ref-type="bibr">36</xref>]. By applying <italic toggle="yes">k&#x02010;means</italic>, the algorithm efficiently extracts representative structures from the large ensemble of generated complexes for subsequent quantum mechanical evaluation via DFT. For more details on <italic toggle="yes">k&#x02010;means</italic>, see the work of MacQueen [<xref rid="jcc70139-bib-0032" ref-type="bibr">32</xref>].</p><sec id="jcc70139-sec-0005"><label>2.1.1</label><title>Surface Mapping</title><p>The objective of this initial stage is to identify a set of <italic toggle="yes">k</italic> representative points on the molecular surface that capture the diversity of local chemical environments. This is accomplished through the following steps:
+<list list-type="bullet" id="JCC70139-list-0001"><list-item id="jcc70139-li-0001"><p>
+<bold>Surface Point Identification</bold>: Firstly, the molecule surface is defined as the outermost surface formed by the union of vdW radii spheres around each atom. A large and predetermined number of surface points is then generated using the Deserno algorithm [<xref rid="jcc70139-bib-0037" ref-type="bibr">37</xref>], ensuring uniform and comprehensive coverage of the molecular surface.</p></list-item><list-item id="jcc70139-li-0002"><p>
+<bold>Feature Vector Calculation for Surface Points</bold>: For each surface point, a feature vector is constructed to quantify the local chemical environment. The vector elements decay with the distance <mml:math id="jats-math-4" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>d</mml:mi></mml:mrow></mml:mrow></mml:math> from the point to each atom in the molecule, following the exponential function <mml:math id="jats-math-5" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msup><mml:mrow><mml:mi>e</mml:mi></mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:msup><mml:mrow><mml:mi>d</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn><mml:mo stretchy="false">/</mml:mo><mml:mn>3</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:msup></mml:mrow></mml:mrow></mml:math>, which assigns greater weight to nearby atoms. These contributions are categorized and grouped based on the atomic species. Subsequently, <italic toggle="yes">k&#x02010;means</italic> clustering is applied to the feature vectors, grouping surface points into <italic toggle="yes">k</italic> clusters. The point closest to the centroid of each cluster is selected as the representative for that specific local chemical environment (see Figure&#x000a0;<xref rid="jcc70139-fig-0001" ref-type="fig">1</xref>).</p></list-item></list>
+</p><fig position="float" fig-type="FIGURE" id="jcc70139-fig-0001"><label>FIGURE 1</label><caption><p>(a) Input structures, here showing a glycine molecule interacting with a methacrylic acid structure, and forming a van der Waals complex, (b) example of surface point mapping on structures. The number of points mapped is determined by user settings, showcasing the flexibility and precision of the algorithm in surface analysis.</p></caption><graphic xlink:href="JCC-46-0-g006" position="anchor" id="jats-graphic-3"/></fig></sec><sec id="jcc70139-sec-0006"><label>2.1.2</label><title>Binding Procedure Algorithm</title><p>The trial binding structures are generated by aligning two molecules at their representative interaction points on the molecular surfaces. To comprehensively explore potential binding geometries, multiple spatial alignments are evaluated. For each pair of representative points, one molecule undergoes systematic rotation to generate a full set of configurational complexes. A controlled rotational grid is employed to sample all feasible three&#x02010;dimensional orientations, ensuring thorough exploration of the interaction space [<xref rid="jcc70139-bib-0038" ref-type="bibr">38</xref>, <xref rid="jcc70139-bib-0039" ref-type="bibr">39</xref>]. This approach produces a large dataset of trial configurations, which are then filtered and refined according to the following criteria:
+<list list-type="bullet" id="JCC70139-list-0002"><list-item id="jcc70139-li-0003"><p>
+<bold>Non&#x02010;overlapping Molecules:</bold> Configurations in which atoms from the two molecules overlap are excluded. Overlap is defined as any pair of atoms from different molecules being separated by a distance less than the sum of their vdW radii, multiplied by a weighted parameter (<mml:math id="jats-math-6" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>&#x003c3;</mml:mi></mml:mrow></mml:mrow></mml:math>). After testing several values for this <mml:math id="jats-math-7" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>&#x003c3;</mml:mi></mml:mrow></mml:mrow></mml:math> parameter, 0.5 was identified as optimal for monomer&#x02010;analyte interactions.</p></list-item><list-item id="jcc70139-li-0004"><p>
+<bold>Distinct Configurations:</bold> Configurations must be sufficiently distinct to avoid redundancy in the dataset. This is enforced through a filtering process based on geometric feature vectors. Each binding configuration is described by a concatenated feature vector composed of three key spatial points, that is, the geometric centers of both molecules and the representative surface points used to align them. The Euclidean distance between the feature vector of the current configuration and those of previously accepted configurations is computed. If this distance exceeds a specified threshold (0.08 was determined to be optimal for this study), the configuration is retained in the final pool of selected structures.</p></list-item></list>
+</p></sec><sec id="jcc70139-sec-0007"><label>2.1.3</label><title>Representative Set Extraction Algorithm</title><p>Finally, the selected structures from the filter pool are further clustered using the <italic toggle="yes">k&#x02010;means</italic>algorithm, resulting in a refined and smallest set of representative configurations. To visualize the clustering process, the t&#x02010;distributed Stochastic Neighbor Embedding (t&#x02010;SNE) algorithm is employed (Figure&#x000a0;<xref rid="jcc70139-supitem-0001" ref-type="supplementary-material">SM36</xref>). This dimensionality reduction technique, developed by Geoffrey Hinton and Laurens van der Maaten [<xref rid="jcc70139-bib-0040" ref-type="bibr">40</xref>], enables intuitive visualization of high&#x02010;dimensional data in a lower&#x02010;dimensional space, facilitating the interpretation of structural diversity within the dataset. Figure&#x000a0;<xref rid="jcc70139-fig-0002" ref-type="fig">2</xref> illustrates the complete workflow of the MBASM algorithm, detailing the key steps involved in identifying chemically relevant surface environments, generating a comprehensive pool of candidate complexes, and selecting a representative subset for further analysis.</p><fig position="float" fig-type="FIGURE" id="jcc70139-fig-0002"><label>FIGURE 2</label><caption><p>Schematic representation of the Molecular Binding Algorithm by Surface Mapping (MBASM), illustrating the workflow for identifying chemical environments, generating a pool of structures, and selecting a representative set for further analysis.</p></caption><graphic xlink:href="JCC-46-0-g007" position="anchor" id="jats-graphic-5"/></fig><p>Using the MBASM protocol, millions of chemical structures were generated and systematically filtered to identify representative monomer&#x02010;analyte configurations appropriate for DFT calculations. The initial stages of the protocol focused on evaluating a broad range of monomer&#x02010;amino acid complexes to identify those with the highest potential for effective molecular interactions. However, performing DFT calculations on such large datasets would be computationally expensive. To overcome this limitation, the pool of trial complexes was reduced to approximately 2400 representative monomer&#x02010;analyte configurations. These optimized structures were selected based on their chemical relevance and structural diversity, ensuring that the most promising candidates were retained for subsequent DFT analysis. The theoretical framework and corresponding results are presented and discussed in the following subsections.</p></sec></sec><sec id="jcc70139-sec-0008"><label>2.2</label><title>Ab Initio DFT Calculations</title><p>All total energy calculations were performed using ab&#x000a0;initio DFT methods, employing the B3LYP formulation for the exchange&#x02010;correlation functional [<xref rid="jcc70139-bib-0041" ref-type="bibr">41</xref>]. Thus, to solve the Kohn&#x02010;Sham (KS) equations, the KS orbitals were expanded on Gaussian&#x02010;type basis functions as implemented in the ORCA software package [<xref rid="jcc70139-bib-0042" ref-type="bibr">42</xref>, <xref rid="jcc70139-bib-0043" ref-type="bibr">43</xref>], using the triple&#x02010;zeta valence with polarization (TZVP) basis set quality [<xref rid="jcc70139-bib-0044" ref-type="bibr">44</xref>]. For convergence criteria, we employed the <monospace>Tight</monospace> (default) ORCA settings, in which the electron density self&#x02010;consistency was achieved once the total energy was smaller than <mml:math id="jats-math-8" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mn>1</mml:mn><mml:mo>.</mml:mo><mml:mn>0</mml:mn><mml:mo form="prefix">&#x000d7;</mml:mo><mml:mn>1</mml:mn><mml:msup><mml:mrow><mml:mn>0</mml:mn></mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>8</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mrow></mml:math> Hartree, while the equilibrium geometries were obtained once the forces on all atoms were smaller than <mml:math id="jats-math-9" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mn>1</mml:mn><mml:mo>.</mml:mo><mml:mn>0</mml:mn><mml:mo form="prefix">&#x000d7;</mml:mo><mml:mn>1</mml:mn><mml:msup><mml:mrow><mml:mn>0</mml:mn></mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>5</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mrow></mml:math> Hartree/Bohr. These criteria ensured accurate, optimized geometries for all studied amino acid&#x02010;monomer complexes. Vibrational frequencies calculations were also carried out for all isolated amino acids (AA) and monomers at the same level of theory to verify them as local minima. This was confirmed by the absence of negative eigenvalues in the Hessian matrix (Figures&#x000a0;<xref rid="jcc70139-supitem-0001" ref-type="supplementary-material">SM1</xref> to <xref rid="jcc70139-supitem-0001" ref-type="supplementary-material">SM35</xref>). Thus, to account for solvent effects, the implicit Conductor&#x02010;like Polarizable Continuum Model (CPCM) was applied, using water as solvent [<xref rid="jcc70139-bib-0045" ref-type="bibr">45</xref>].</p></sec><sec id="jcc70139-sec-0009"><label>2.3</label><title>Molecular Docking Simulations</title><p>Molecular docking using a flexible&#x02010;rigid ligand&#x02010;receptor model was performed with the AutoDock Vina v1.2.0 software [<xref rid="jcc70139-bib-0046" ref-type="bibr">46</xref>] in conjunction with AutoDock Tools 1.5.6 [<xref rid="jcc70139-bib-0047" ref-type="bibr">47</xref>]. The PSA protein structure was obtained from the PDB website [<xref rid="jcc70139-bib-0048" ref-type="bibr">48</xref>], code: 1GVZ with a resolution of 1.42 &#x000c5; [<xref rid="jcc70139-bib-0049" ref-type="bibr">49</xref>] (see Figure&#x000a0;<xref rid="jcc70139-fig-0003" ref-type="fig">3</xref>). Although 1GVZ corresponds to horse PSA (HPK), it shares over 60% amino acid sequence similarity with human PSA, including several identical regions [<xref rid="jcc70139-bib-0049" ref-type="bibr">49</xref>]. Homology analysis between HPK and human PSA was performed using BLAST analysis, based on FASTA sequence data [<xref rid="jcc70139-bib-0051" ref-type="bibr">51</xref>, <xref rid="jcc70139-bib-0052" ref-type="bibr">52</xref>]. The analysis highlights key sequence similarities and differences, providing valuable insights into their structural and functional relationships (Figures&#x000a0;<xref rid="jcc70139-supitem-0001" ref-type="supplementary-material">SM44</xref> and <xref rid="jcc70139-supitem-0001" ref-type="supplementary-material">SM45</xref>). Furthermore, given the size and inherent structural flexibility of protein molecules, molecular imprinting is often limited to using surface&#x02010;exposed peptide fragments, known as epitopes. This strategy, known as Epitope Molecularly Imprinted Polymers (EMIPs), was introduced by Rachkov and Minoura in 2001 [<xref rid="jcc70139-bib-0053" ref-type="bibr">53</xref>, <xref rid="jcc70139-bib-0054" ref-type="bibr">54</xref>]. In this approach, the amino acid sequence of the epitope used as a template is identical to a terminal segment of the target protein. EMIPs offer several advantages, including exceptionally high selectivity, lower cost, easy availability of template molecules, and high efficiency in template immobilization on the matrix surface [<xref rid="jcc70139-bib-0053" ref-type="bibr">53</xref>, <xref rid="jcc70139-bib-0054" ref-type="bibr">54</xref>, <xref rid="jcc70139-bib-0055" ref-type="bibr">55</xref>]. Additionally, due to their simpler structure, epitopes are less sensitive to environmental conditions and can be used with organic solvents, thereby broadening the range of monomers available for MIP synthesis [<xref rid="jcc70139-bib-0055" ref-type="bibr">55</xref>].</p><fig position="float" fig-type="FIGURE" id="jcc70139-fig-0003"><label>FIGURE 3</label><caption><p>The amino acids highlighted in yellow form a large peptide identical to the one found in human PSA, with this region also containing several other identical AA. A detailed sequence comparison between HPK and human PSA is provided in Carvalho (2002) [<xref rid="jcc70139-bib-0049" ref-type="bibr">49</xref>, <xref rid="jcc70139-bib-0050" ref-type="bibr">50</xref>].</p></caption><graphic xlink:href="JCC-46-0-g008" position="anchor" id="jats-graphic-7"/></fig><p>In addition to the aforementioned methodology, two crucial considerations were incorporated to ensure that the docking simulations focused on the most relevant binding regions of the PSA protein: 
+<list list-type="bullet" id="JCC70139-list-0003"><list-item id="jcc70139-li-0005"><p>
+<bold>Active Site Selection:</bold> The active site was chosen based on its sequence similarity to the human PSA binding site. Specifically, the selected region included a significant number of AA also present in the human PSA active site, ensuring that the predictive binding characteristics would be relevant for intended applications.</p></list-item><list-item id="jcc70139-li-0006"><p>
+<bold>Surface Accessibility:</bold> The selected binding region was required to be surface&#x02010;exposed. This consideration is particularly important because the functional monomer is expected to interact with the protein surface during polymerization. Therefore, ensuring surface accessibility promotes effective binding to the epitope and facilitates the formation of MIP.</p></list-item></list>
+</p><p>Considering these criteria, molecular docking simulations were performed at physiological pH (7.4), setting the protonation states of both the ligand (monomer) and receptor (PSA). Docking was carried out using AutoDock Vina in a flexible&#x02010;rigid ligand&#x02010;receptor regime, employing default parameters with the exception of the exhaustiveness setting, which was increased to 10 to enable a more comprehensive exploration of binding conformations. The homologous regions of horse PSA (HPK) corresponding to human PSA active site were used to define the docking grid box (<mml:math id="jats-math-10" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mn>8</mml:mn><mml:mo>.</mml:mo><mml:mn>795</mml:mn><mml:mo form="prefix">&#x000d7;</mml:mo><mml:mn>43</mml:mn><mml:mo>.</mml:mo><mml:mn>245</mml:mn><mml:mo form="prefix">&#x000d7;</mml:mo><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>5</mml:mn><mml:mo>.</mml:mo><mml:mn>193</mml:mn></mml:mrow></mml:mrow></mml:math>; Figures&#x000a0;<xref rid="jcc70139-supitem-0001" ref-type="supplementary-material">SM44</xref> and <xref rid="jcc70139-supitem-0001" ref-type="supplementary-material">SM45</xref>).</p></sec></sec><sec id="jcc70139-sec-0010"><label>3</label><title>Results and Discussion</title><sec id="jcc70139-sec-0011"><label>3.1</label><title>Evaluating MBASM Performance in Monomer&#x02010;Analyte Complexes</title><p>In this study, we assessed the effectiveness of the MBASM protocol combined with DFT calculations for generating and optimizing monomer&#x02010;analyte complexes. Its performance was benchmarked against a well&#x02010;established automated approach based on the semi&#x02010;empirical GFN2&#x02010;xTB method, combined with the Quantum Cluster Growth (QCG) strategy in the Conformer&#x02010;Rotamer Sampling Tool (CREST) program [<xref rid="jcc70139-bib-0056" ref-type="bibr">56</xref>]. CREST was selected for its demonstrated efficiency in exploring low&#x02010;energy conformational spaces, particularly in systems dominated by interactions that are non&#x02010;covalent in nature [<xref rid="jcc70139-bib-0056" ref-type="bibr">56</xref>]. Our comparative analysis began with a direct evaluation of the MBASM + DFT protocol relative to the GFN2&#x02010;xTB approach (Figure&#x000a0;<xref rid="jcc70139-supitem-0001" ref-type="supplementary-material">SM37</xref>. This was followed by an assessment of DFT&#x02010;optimized structures derived from GFN2&#x02010;xTB&#x02010;generated conformers (GFN2&#x02010;xTB followed by DFT optimization). Specifically, we compared the most stable structures generated by the CREST + GFN2&#x02010;xTB + DFT approach with those obtained using our MBASM + DFT protocol, as summarized in Figure&#x000a0;<xref rid="jcc70139-fig-0004" ref-type="fig">4</xref>.</p><fig position="float" fig-type="FIGURE" id="jcc70139-fig-0004"><label>FIGURE 4</label><caption><p>Comparison of optimized amino acid&#x02010;monomer complexes obtained using the MBASM+DFT and GFN2&#x02010;xTB+DFT approaches. The binding energy (<mml:math id="jats-math-11" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>E</mml:mi></mml:mrow></mml:mrow></mml:math>) is reported in kcal mol<inline-graphic xlink:href="JCC-46-0-e009.jpg"/>. (a) ARG&#x02010;acidm, <mml:math id="jats-math-13" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>E</mml:mi><mml:mo>=</mml:mo><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>18</mml:mn><mml:mo>.</mml:mo><mml:mn>38</mml:mn></mml:mrow></mml:mrow></mml:math> (MBASM+DFT) and <mml:math id="jats-math-14" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>E</mml:mi><mml:mo>=</mml:mo><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>22</mml:mn><mml:mo>.</mml:mo><mml:mn>66</mml:mn></mml:mrow></mml:mrow></mml:math> (GFN2&#x02010;xTB+DFT), (b) HIS&#x02010;acida, <mml:math id="jats-math-15" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>E</mml:mi><mml:mo>=</mml:mo><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>11</mml:mn><mml:mo>.</mml:mo><mml:mn>70</mml:mn></mml:mrow></mml:mrow></mml:math> (MBASM+DFT) and <mml:math id="jats-math-16" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>E</mml:mi><mml:mo>=</mml:mo><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>8</mml:mn><mml:mo>.</mml:mo><mml:mn>17</mml:mn></mml:mrow></mml:mrow></mml:math> (GFN2&#x02010;xTB+DFT), (c) GLU&#x02010;4imid, <mml:math id="jats-math-17" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>E</mml:mi><mml:mo>=</mml:mo><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>11</mml:mn><mml:mo>.</mml:mo><mml:mn>39</mml:mn></mml:mrow></mml:mrow></mml:math> (MBASM+DFT) and <mml:math id="jats-math-18" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>E</mml:mi><mml:mo>=</mml:mo><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>6</mml:mn><mml:mo>.</mml:mo><mml:mn>11</mml:mn></mml:mrow></mml:mrow></mml:math> (GFN2&#x02010;xTB+DFT), (d) TYR&#x02010;itaco, <mml:math id="jats-math-19" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>E</mml:mi><mml:mo>=</mml:mo><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>17</mml:mn><mml:mo>.</mml:mo><mml:mn>11</mml:mn></mml:mrow></mml:mrow></mml:math> (MBASM+DFT) and <mml:math id="jats-math-20" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>E</mml:mi><mml:mo>=</mml:mo><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>17</mml:mn><mml:mo>.</mml:mo><mml:mn>63</mml:mn></mml:mrow></mml:mrow></mml:math> (GFN2&#x02010;xTB+DFT), (e) ASP&#x02010;acrol, <mml:math id="jats-math-21" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>E</mml:mi><mml:mo>=</mml:mo><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>6</mml:mn><mml:mo>.</mml:mo><mml:mn>70</mml:mn></mml:mrow></mml:mrow></mml:math> (MBASM+DFT) and <mml:math id="jats-math-22" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>E</mml:mi><mml:mo>=</mml:mo><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>11</mml:mn><mml:mo>.</mml:mo><mml:mn>78</mml:mn></mml:mrow></mml:mrow></mml:math> (GFN2&#x02010;xTB+DFT), (f) ASN&#x02010;14dvb, <mml:math id="jats-math-23" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>E</mml:mi><mml:mo>=</mml:mo><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>5</mml:mn><mml:mo>.</mml:mo><mml:mn>84</mml:mn></mml:mrow></mml:mrow></mml:math> (MBASM+DFT) and <mml:math id="jats-math-24" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>E</mml:mi><mml:mo>=</mml:mo><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>3</mml:mn><mml:mo>.</mml:mo><mml:mn>71</mml:mn></mml:mrow></mml:mrow></mml:math> (GFN2&#x02010;xTB+DFT), (g) CYS&#x02010;2viny, <mml:math id="jats-math-25" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>E</mml:mi><mml:mo>=</mml:mo><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>9</mml:mn><mml:mo>.</mml:mo><mml:mn>61</mml:mn></mml:mrow></mml:mrow></mml:math> (MBASM+DFT) and <mml:math id="jats-math-26" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>E</mml:mi><mml:mo>=</mml:mo><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>11</mml:mn><mml:mo>.</mml:mo><mml:mn>32</mml:mn></mml:mrow></mml:mrow></mml:math> (GFN2&#x02010;xTB+DFT), (h) GLU&#x02010;alila, <mml:math id="jats-math-27" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>E</mml:mi><mml:mo>=</mml:mo><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>11</mml:mn><mml:mo>.</mml:mo><mml:mn>66</mml:mn></mml:mrow></mml:mrow></mml:math> (MBASM+DFT) and <mml:math id="jats-math-28" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>E</mml:mi><mml:mo>=</mml:mo><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>13</mml:mn><mml:mo>.</mml:mo><mml:mn>66</mml:mn></mml:mrow></mml:mrow></mml:math> (GFN2&#x02010;xTB+DFT), (i) GLY&#x02010;estir, <mml:math id="jats-math-29" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>E</mml:mi><mml:mo>=</mml:mo><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>3</mml:mn><mml:mo>.</mml:mo><mml:mn>34</mml:mn></mml:mrow></mml:mrow></mml:math> (MBASM+DFT) and <mml:math id="jats-math-30" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>E</mml:mi><mml:mo>=</mml:mo><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>4</mml:mn><mml:mo>.</mml:mo><mml:mn>42</mml:mn></mml:mrow></mml:mrow></mml:math> (GFN2&#x02010;xTB+DFT), and (j) GLU&#x02010;4viny, <mml:math id="jats-math-31" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>E</mml:mi><mml:mo>=</mml:mo><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>9</mml:mn><mml:mo>.</mml:mo><mml:mn>03</mml:mn></mml:mrow></mml:mrow></mml:math> (MBASM+DFT) and <mml:math id="jats-math-32" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>E</mml:mi><mml:mo>=</mml:mo><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>8</mml:mn><mml:mo>.</mml:mo><mml:mn>56</mml:mn></mml:mrow></mml:mrow></mml:math> (GFN2&#x02010;xTB+DFT).</p></caption><graphic xlink:href="JCC-46-0-g004" position="anchor" id="jats-graphic-9"/></fig><p>The results demonstrate the comparative efficiency and accuracy of the MBASM + DFT protocol compared with the automated CREST + GFN2&#x02010;xTB + DFT approach in generating and optimizing monomer&#x02010;analyte complexes. For instance, our protocol consistently produced a broader and more chemically diverse range of initial complexes compared to the GFN2&#x02010;xTB method. This highlights the capability of MBASM to explore the configurational space more exhaustively, particularly for interactions sensitive to local chemical environments. Thus, the monomer&#x02010;analyte DFT&#x02010;optimized structures derived from the MBASM protocol were comparable in stability to those generated by the CREST + GFN2&#x02010;xTB approach. The calculated binding energies of the most stable structures from both methods showed only minor energetic differences within the margin of computational error. However, in some cases, the CREST + GFN2&#x02010;xTB + DFT approach produced slightly more favorable binding energy magnitudes, which are discussed in detail in subsequent sections.</p><p>Despite its exhaustive sampling of configurations, MBASM efficiently reduced the trial complexes pool to a manageable and representative subset for DFT optimization. In contrast, the CREST + GFN2&#x02010;xTB approach generated a much larger number of candidate structures, requiring significantly more computational resources for processing and post&#x02010;optimization. Furthermore, while the GFN2&#x02010;xTB approach is designed for rapid pre&#x02010;optimization, it occasionally converged to local minima that demanded extensive refinement during subsequent optimization using DFT. The MBASM protocol, by leveraging its chemically informed surface&#x02010;mapping algorithm, consistently generated high&#x02010;quality initial configurations, thereby minimizing the need for computationally expensive post&#x02010;processing.</p><p>The initial results suggest that the binding energies obtained using raw GFN2&#x02010;xTB exhibit significant energetic discrepancies when compared to those calculated with MBASM + DFT (Figure&#x000a0;<xref rid="jcc70139-supitem-0001" ref-type="supplementary-material">SM37</xref>). For instance, in the ARG&#x02010;acidm complex, MBASM + DFT predicted a binding energy of <mml:math id="jats-math-33" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>18.38</mml:mn></mml:mrow></mml:mrow></mml:math>&#x000a0;kcal mol<inline-graphic xlink:href="JCC-46-0-e040.jpg"/>, whereas GFN2&#x02010;xTB resulted a much lower energy of <mml:math id="jats-math-35" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>29.27</mml:mn></mml:mrow></mml:mrow></mml:math>&#x000a0;kcal mol<inline-graphic xlink:href="JCC-46-0-e102.jpg"/>. Therefore, these results highlight the potential limitations of semi&#x02010;empirical methods in accurately estimating binding energies, likely due to an oversimplified treatment of electronic interactions and inadequate representation of polarization effects.</p><p>However, when the GFN2&#x02010;xTB structures were subsequently refined via DFT, the discrepancy was notably reduced. The DFT&#x02010;optimized GFN2&#x02010;xTB structure for the ARG&#x02010;acidm complex yielded a binding energy of <mml:math id="jats-math-37" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>22.66</mml:mn></mml:mrow></mml:mrow></mml:math>&#x000a0;kcal mol<inline-graphic xlink:href="JCC-46-0-e007.jpg"/> (see Figure&#x000a0;<xref rid="jcc70139-fig-0005" ref-type="fig">5</xref>). This enhanced stability is attributed to proton migration during the DFT optimization, which resulted in a more favorable electronic configuration. This behavior illustrates the utility of GFN2&#x02010;xTB in generating reasonable intermediate structures that can be improved through higher&#x02010;level post&#x02010;optimization. In contrast, the MBASM + DFT protocol inherently incorporated critical non&#x02010;covalent interactions&#x02014;such as the formation of two hydrogen bonds&#x02014;during its initial complex generation phase. This capability stems from MBASM's chemically informed surface&#x02010;mapping strategy, which enables the construction of highly relevant configurations prior to quantum mechanical refinement. As a result, MBASM + DFT achieved greater stabilization without the need for significant structural corrections, underscoring its effectiveness in capturing significant non&#x02010;covalent interactions directly, particularly when hydrogen bonding or other specific interactions play a crucial role in binding stability.</p><fig position="float" fig-type="FIGURE" id="jcc70139-fig-0005"><label>FIGURE 5</label><caption><p>Binding energy relationship (<mml:math id="jats-math-39" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>E</mml:mi></mml:mrow></mml:mrow></mml:math> in kcal mol<inline-graphic xlink:href="JCC-46-0-e021.jpg"/>) for the most relevant amino acid&#x02010;functional monomer complexes, comparing the MBASM+DFT methodology with CREST+GFN2&#x02010;xTB+DFT.</p></caption><graphic xlink:href="JCC-46-0-g003" position="anchor" id="jats-graphic-11"/></fig><p>Consistent results were also observed for the TYR&#x02010;itaco and GLU&#x02010;4imid complexes. In the case of TYR&#x02010;itaco, the MBASM + DFT approach yielded a binding energy of <mml:math id="jats-math-41" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>17.11</mml:mn></mml:mrow></mml:mrow></mml:math>&#x000a0;kcal mol<inline-graphic xlink:href="JCC-46-0-e122.jpg"/>, while the GFN2&#x02010;xTB + DFT method produced a value of <mml:math id="jats-math-43" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>17.63</mml:mn></mml:mrow></mml:mrow></mml:math>&#x000a0;kcal mol<inline-graphic xlink:href="JCC-46-0-e043.jpg"/>. The close agreement between these values demonstrates that the MBASM protocol is capable of generating chemically meaningful initial structures that are well&#x02010;aligned with refined results obtained from other established methodologies. This further supports the utility of MBASM as a reliable and efficient alternative for the high&#x02010;throughput generation of monomer&#x02010;analyte complexes, offering flexibility in identifying low&#x02010;energy structures with high accuracy.</p><p>Ongoing and future development of the MBASM algorithm will focus on introducing new functions to enhance its accuracy and applicability. The results presented above highlight areas for further improvement, such as expanding the sampling of configurations to capture additional interactions, including multiple hydrogen bonds in specific cases (e.g., ASP&#x02010;acrol). Enhancing the chemical environment mapping or incorporating adaptive sampling methods could further improve the accuracy and breadth of generated complexes. Future versions of the MBASM code may include advanced clustering algorithms for improved structural selection, more accurate treatment of protonation states, and integration with machine learning models to dynamically predict interaction sites and optimize binding geometries. These enhancements are expected to increase the protocol's robustness and scalability across a wider range of molecular systems and applications.</p></sec><sec id="jcc70139-sec-0012"><label>3.2</label><title>Structural, Energetic, and Electronic Features of Monomer&#x02010;Analyte Complexes</title><sec id="jcc70139-sec-0013"><label>3.2.1</label><title>Energetic Analysis: Evaluation of the Binding Energy</title><p>Using DFT, the binding interactions between a diverse array of monomers and 20 AA were systematically evaluated. For all calculations involving isolated molecules and complexes, an implicit water model was employed to account for the biological nature of the system under investigation. In total, approximately 15 monomers were analyzed. The monomers included in this study are abbreviated as follows:
+<list list-type="bullet" id="JCC70139-list-0004"><list-item id="jcc70139-li-0007"><p>
+<italic toggle="yes">Functional monomers</italic> and their abbreviations: 1&#x02010;allyl piperazine (<italic toggle="yes">1ally</italic>), 1&#x02010;vinylimidazole (<italic toggle="yes">4imid</italic>), 4&#x02010;vinylpyridine (<italic toggle="yes">2hydr</italic>), 2&#x02010;vinylpyridine (<italic toggle="yes">1viny</italic>), 4&#x02010;imidazoleacrylic acid (<italic toggle="yes">4viny</italic>), 2&#x02010;hydroxyethyl methacrylate (<italic toggle="yes">acidm</italic>), acrylamide (<italic toggle="yes">2viny</italic>), methacrylic acid (<italic toggle="yes">acril</italic>), acrolein (<italic toggle="yes">acrol</italic>), acrylic acid (<italic toggle="yes">acida</italic>), allylamine (<italic toggle="yes">alila</italic>), styrene (<italic toggle="yes">estir</italic>), itaconic acid (<italic toggle="yes">itaco</italic>).</p></list-item><list-item id="jcc70139-li-0008"><p>
+<italic toggle="yes">Structural monomers</italic> and their abbreviations: 1,4&#x02010;divinylbenzene (<italic toggle="yes">14dvb</italic>), N,N'&#x02010;methylenebisacrylamide (<italic toggle="yes">bisac</italic>).</p></list-item></list>
+</p><p>Therefore, the strength of the representative complexes (AA + monomers) was evaluated through binding energy analysis (<mml:math id="jats-math-45" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>E</mml:mi></mml:mrow></mml:mrow></mml:math>) using the following formula: <disp-formula id="jcc70139-disp-0001">
+<label>(1)</label>
+<mml:math id="jats-math-46" display="block" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>E</mml:mi><mml:mo>=</mml:mo><mml:mo stretchy="false">(</mml:mo><mml:msubsup><mml:mrow><mml:mi>E</mml:mi></mml:mrow><mml:mrow><mml:mtext>amino acid</mml:mtext></mml:mrow><mml:mrow><mml:mi>D</mml:mi><mml:mi>F</mml:mi><mml:mi>T</mml:mi></mml:mrow></mml:msubsup><mml:mo>+</mml:mo><mml:msubsup><mml:mrow><mml:mi>E</mml:mi></mml:mrow><mml:mrow><mml:mtext>monomer</mml:mtext></mml:mrow><mml:mrow><mml:mi>D</mml:mi><mml:mi>F</mml:mi><mml:mi>T</mml:mi></mml:mrow></mml:msubsup><mml:mo stretchy="false">)</mml:mo><mml:mo form="prefix">&#x02212;</mml:mo><mml:msubsup><mml:mrow><mml:mi>E</mml:mi></mml:mrow><mml:mrow><mml:mtext>complex</mml:mtext></mml:mrow><mml:mrow><mml:mi>D</mml:mi><mml:mi>F</mml:mi><mml:mi>T</mml:mi></mml:mrow></mml:msubsup></mml:mrow></mml:mrow></mml:math>
+</disp-formula>where <mml:math id="jats-math-47" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mrow><mml:mi>E</mml:mi></mml:mrow><mml:mrow><mml:mtext>amino acid</mml:mtext></mml:mrow><mml:mrow><mml:mi>D</mml:mi><mml:mi>F</mml:mi><mml:mi>T</mml:mi></mml:mrow></mml:msubsup></mml:mrow></mml:mrow></mml:math> and <mml:math id="jats-math-48" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mrow><mml:mi>E</mml:mi></mml:mrow><mml:mrow><mml:mtext>monomer</mml:mtext></mml:mrow><mml:mrow><mml:mi>D</mml:mi><mml:mi>F</mml:mi><mml:mi>T</mml:mi></mml:mrow></mml:msubsup></mml:mrow></mml:mrow></mml:math> are the DFT total energy for the gas&#x02010;phase amino acid and monomer molecules, respectively, while <mml:math id="jats-math-49" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mrow><mml:mi>E</mml:mi></mml:mrow><mml:mrow><mml:mtext>complex</mml:mtext></mml:mrow><mml:mrow><mml:mi>D</mml:mi><mml:mi>F</mml:mi><mml:mi>T</mml:mi></mml:mrow></mml:msubsup></mml:mrow></mml:mrow></mml:math> are the DFT total energy for the amino acid + monomer complex. Therefore, more favorable binding occurs with more negative values of <mml:math id="jats-math-50" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>E</mml:mi></mml:mrow></mml:mrow></mml:math>. The table with all explicit DFT data is available in the SM file (Table&#x000a0;<xref rid="jcc70139-supitem-0001" ref-type="supplementary-material">SM1</xref>). Below, Figure&#x000a0;<xref rid="jcc70139-fig-0006" ref-type="fig">6</xref> shows the relationship interaction of each FM with the respective AA, highlighting the difference in the binding energy in kcal mol<inline-graphic xlink:href="JCC-46-0-e044.jpg"/>
+</p><fig position="float" fig-type="FIGURE" id="jcc70139-fig-0006"><label>FIGURE 6</label><caption><p>Heatmap of binding energy (<mml:math id="jats-math-52" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi></mml:mrow></mml:mrow></mml:math> E in kcal mol<inline-graphic xlink:href="JCC-46-0-e096.jpg"/>) for all optimized configurations of amino acid&#x02010;monomer complexes obtained using the MBASM+DFT approach.</p></caption><graphic xlink:href="JCC-46-0-g001" position="anchor" id="jats-graphic-13"/></fig><p>Firstly, the selected specific region of the HPK protein resembling the active site of the human PSA does not encompass all 20 AA. For this reason, the predominant AA in the selected region includes cysteine (CYS), glutamine (GLN), glycine (GLY), glutamate (GLU), lysine (LYS), tryptophan (TRP), valine (VAL), and isoleucine (ILE). Although the majority of the evaluated monomer&#x02010;AA complexes exhibit negative binding energies, it is crucial to determine which complex demonstrates the most favorable binding with all the AA present in this region. Accordingly, as shown in Figure&#x000a0;<xref rid="jcc70139-fig-0006" ref-type="fig">6</xref>, the FMs with the lowest <mml:math id="jats-math-54" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>E</mml:mi></mml:mrow></mml:mrow></mml:math> energies are itaco, 4imid, and acidm, with acidm and acida being the most commonly employed FMs in MIP syntheses [<xref rid="jcc70139-bib-0057" ref-type="bibr">57</xref>].</p><p>Among the eight AA in the selected binding region, GLY (<mml:math id="jats-math-55" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>13.08</mml:mn></mml:mrow></mml:mrow></mml:math>&#x000a0;kcal mol<inline-graphic xlink:href="JCC-46-0-e124.jpg"/>) and TRP (<mml:math id="jats-math-57" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>10.00</mml:mn></mml:mrow></mml:mrow></mml:math>&#x000a0;kcal mol<inline-graphic xlink:href="JCC-46-0-e051.jpg"/>) exhibited the strongest interactions with itaco, followed by CYS (<mml:math id="jats-math-59" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>10.50</mml:mn></mml:mrow></mml:mrow></mml:math>&#x000a0;kcal mol<inline-graphic xlink:href="JCC-46-0-e132.jpg"/>) and GLN (<mml:math id="jats-math-61" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>10.38</mml:mn></mml:mrow></mml:mrow></mml:math>&#x000a0;kcal mol<inline-graphic xlink:href="JCC-46-0-e011.jpg"/>). These results position itaco as a particularly promising FM candidate. For example, the itaco&#x02010;MET complex features a binding energy of <mml:math id="jats-math-63" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>14.08</mml:mn></mml:mrow></mml:mrow></mml:math>&#x000a0;kcal mol<inline-graphic xlink:href="JCC-46-0-e084.jpg"/> and forms two hydrogen bonds, suggesting substantial stability compared to other complexes (Figure&#x000a0;<xref rid="jcc70139-supitem-0001" ref-type="supplementary-material">SM38</xref>).</p><p>Additionally, another key mechanistic feature observed in these interactions is the proton transfer from the FM carboxyl group to the amine nitrogen of AA. This transfer enhances the binding strength by increasing the positive charge on nitrogen and the negative charge on oxygen, reinforcing electrostatic interactions. Although this proton transfer is likely reversible, the resulting complex remains stable through resonance stabilization of the carboxylate group. This reversibility is crucial for the eventual extraction of the template molecule from the polymer, facilitating the formation of selective recognition cavities in the polymer matrix.</p><p>The results also show that the interaction between the intermediate FM acida and GLY is significant, particularly in the active site region. For example, the most stable acida&#x02010;GLY complex features two hydrogen bonds, forming a well&#x02010;symmetric structure with an energy of <mml:math id="jats-math-65" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>10.51</mml:mn></mml:mrow></mml:mrow></mml:math> kcal mol<inline-graphic xlink:href="JCC-46-0-e061.jpg"/> (Figure&#x000a0;<xref rid="jcc70139-supitem-0001" ref-type="supplementary-material">SM38</xref>). In contrast, the most stable itaco&#x02010;GLY complex has a single hydrogen bond but a lower energy of <mml:math id="jats-math-67" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>13.64</mml:mn></mml:mrow></mml:mrow></mml:math> kcal mol<inline-graphic xlink:href="JCC-46-0-e118.jpg"/> (Figure&#x000a0;<xref rid="jcc70139-supitem-0001" ref-type="supplementary-material">SM38</xref>). Another relevant complex is acida&#x02010;GLN, as GLN is also part of the relevant region in the protein. The most stable acida&#x02010;GLN complex, which has a moderate energy of <mml:math id="jats-math-69" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>5.53</mml:mn></mml:mrow></mml:mrow></mml:math> kcal mol<inline-graphic xlink:href="JCC-46-0-e091.jpg"/>, and is stabilized by a hydrogen bond (Figure&#x000a0;<xref rid="jcc70139-supitem-0001" ref-type="supplementary-material">SM38</xref>). Although this energy is less favorable, the intermediate FM acida remains a good candidate because the relatively weak interaction may facilitate the removal of the PSA template post&#x02010;polymerization, supporting acida's utility as an FM candidate.</p><p>The FM 4imid showed uniformly favorable interactions with the eight AAs in the PSA binding site region, making it a significant candidate for our analysis. Conversely, acidm exhibited particularly strong binding with ARG, yielding a binding energy of <mml:math id="jats-math-71" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>18.38</mml:mn></mml:mrow></mml:mrow></mml:math>&#x000a0;kcal mol<inline-graphic xlink:href="JCC-46-0-e046.jpg"/> for complex number 4 (Figure&#x000a0;<xref rid="jcc70139-supitem-0001" ref-type="supplementary-material">SM38</xref>), the strongest interaction among all evaluated complexes between an FM and AA. Other FMs, including 1ally, 2viny, and acida, showed moderate to strong interactions, suggesting their suitability as intermediate candidates.</p><p>It is also noteworthy that 1ally displayed strong binding with AAs such as PRO and CYS, with binding energies of approximately <mml:math id="jats-math-73" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>16.91</mml:mn></mml:mrow></mml:mrow></mml:math>&#x000a0;kcal mol<inline-graphic xlink:href="JCC-46-0-e116.jpg"/> and <mml:math id="jats-math-75" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>16.82</mml:mn></mml:mrow></mml:mrow></mml:math>&#x000a0;kcal mol<inline-graphic xlink:href="JCC-46-0-e029.jpg"/>, respectively; with SER (<mml:math id="jats-math-77" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>14.44</mml:mn></mml:mrow></mml:mrow></mml:math>&#x000a0;kcal mol<inline-graphic xlink:href="JCC-46-0-e076.jpg"/>); and HIS (<mml:math id="jats-math-79" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>8.21</mml:mn></mml:mrow></mml:mrow></mml:math>&#x000a0;kcal mol<inline-graphic xlink:href="JCC-46-0-e113.jpg"/>). Among these, the selected binding site region of the protein. Therefore, while 1ally may not be the best candidate for this specific PSA&#x02010;targeted application, it remains a promising candidate for MIPs targeting other proteins that contain these AAs in their accessible regions. Since this study focuses on the interaction between FM and the AA, the dataset could also be applied for use in MIPs designed for various biological macromolecules.</p><p>When comparing the two structural monomers (14dvb and bisac), the preferred monomer choice for synthesis is the one with weaker interaction energies with the AAs. This minimizes competitive binding with the FM and helps preserve the structural integrity of the final polymer [<xref rid="jcc70139-bib-0028" ref-type="bibr">28</xref>]. For example, in the 14dvb&#x02010;GLY complex, the interaction involves <mml:math id="jats-math-81" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>&#x003c0;</mml:mi></mml:mrow></mml:mrow></mml:math>&#x02010;orbital stacking from the aromatic ring, with a binding energy of <mml:math id="jats-math-82" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>4.40</mml:mn></mml:mrow></mml:mrow></mml:math>&#x000a0;kcal mol<inline-graphic xlink:href="JCC-46-0-e013.jpg"/> for the most stable configuration (complex 7). Conversely, the bisac&#x02010;GLY complex shows a stronger interaction with binding energy of <mml:math id="jats-math-84" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>6.60</mml:mn></mml:mrow></mml:mrow></mml:math>&#x000a0;kcal mol<inline-graphic xlink:href="JCC-46-0-e083.jpg"/> (complex 8), supported by a hydrogen bond (Figure&#x000a0;<xref rid="jcc70139-supitem-0001" ref-type="supplementary-material">SM38</xref>). These findings support the selection of 14dvb as the preferred structural monomer, as it is less likely to interfere with FM&#x02010;AA binding while still contributing to the rigidity of the imprinted polymer. Additional information is provided in Figures&#x000a0;<xref rid="jcc70139-supitem-0001" ref-type="supplementary-material">SM39</xref> to <xref rid="jcc70139-supitem-0001" ref-type="supplementary-material">SM41</xref>.</p></sec><sec id="jcc70139-sec-0014"><label>3.2.2</label><title>Electronic and Structural Analysis: Evaluation of Frontier Orbitals and Geometric Parameters</title><p>The analysis of frontier molecular orbitals (FMOs), specifically the Highest Occupied Molecular Orbital (HOMO) and Lowest Unoccupied Molecular Orbital (LUMO), along with the corresponding HOMO&#x02010;LUMO gap, is presented herein. These parameters are crucial for evaluating the electronic properties and chemical reactivity of molecules. The HOMO reflects the electron&#x02010;donating ability of the molecule, whereas LUMO represents its electron&#x02010;accepting capacity. The HOMO&#x02010;LUMO energy gap is an important indicator of both kinetic stability and overall molecular reactivity [<xref rid="jcc70139-bib-0058" ref-type="bibr">58</xref>, <xref rid="jcc70139-bib-0059" ref-type="bibr">59</xref>, <xref rid="jcc70139-bib-0060" ref-type="bibr">60</xref>].</p><p>For the acidm&#x02010;GLY complex, the calculated HOMO and LUMO energies were <mml:math id="jats-math-86" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mtext>HOMO&#x02010;acidm</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>7</mml:mn><mml:mo>.</mml:mo><mml:mn>52</mml:mn><mml:mo>&#x000a0;</mml:mo><mml:mtext>eV</mml:mtext></mml:mrow></mml:mrow></mml:math> and <mml:math id="jats-math-87" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mtext>LUMO&#x02010;acidm</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>1</mml:mn><mml:mo>.</mml:mo><mml:mn>52</mml:mn><mml:mo>&#x000a0;</mml:mo><mml:mtext>eV</mml:mtext></mml:mrow></mml:mrow></mml:math>, respectively. The LUMO of acidm, dominated by hydroxyl contributions, facilitates hydrogen bonding with the HOMO of GLY, whose energy is <mml:math id="jats-math-88" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>E</mml:mi><mml:mtext>HOMO&#x02010;GLY</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>6</mml:mn><mml:mo>.</mml:mo><mml:mn>94</mml:mn><mml:mo>&#x000a0;</mml:mo><mml:mtext>eV</mml:mtext></mml:mrow></mml:mrow></mml:math>. This orbital alignment contributes to the observed favorable binding energy of <mml:math id="jats-math-89" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>11</mml:mn><mml:mo>.</mml:mo><mml:mn>46</mml:mn><mml:mo>&#x000a0;</mml:mo><mml:mtext>kcal</mml:mtext><mml:mspace width="0.3em"/><mml:msup><mml:mtext>mol</mml:mtext><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mrow></mml:math> (Figure&#x000a0;<xref rid="jcc70139-supitem-0001" ref-type="supplementary-material">SM42</xref>).</p><p>In contrast, the 4imid&#x02010;Gly complex exhibited a weaker binding energy of <mml:math id="jats-math-90" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>3</mml:mn><mml:mo>.</mml:mo><mml:mn>37</mml:mn><mml:mo>&#x000a0;</mml:mo><mml:mtext>kcal</mml:mtext><mml:mspace width="0.3em"/><mml:msup><mml:mtext>mol</mml:mtext><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mrow></mml:math>. The higher HOMO energy of 4imid (<mml:math id="jats-math-91" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>6</mml:mn><mml:mo>.</mml:mo><mml:mn>30</mml:mn><mml:mo>&#x000a0;</mml:mo><mml:mtext>kcal</mml:mtext><mml:mspace width="0.3em"/><mml:msup><mml:mtext>mol</mml:mtext><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mrow></mml:math>) compared to GLY (<mml:math id="jats-math-92" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>6</mml:mn><mml:mo>.</mml:mo><mml:mn>94</mml:mn><mml:mo>&#x000a0;</mml:mo><mml:mtext>kcal</mml:mtext><mml:mspace width="0.3em"/><mml:msup><mml:mtext>mol</mml:mtext><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mrow></mml:math>) indicates a reduced electron donation capacity, as shown in Figure&#x000a0;<xref rid="jcc70139-supitem-0001" ref-type="supplementary-material">SM42</xref>. According to FMO theory, a higher HOMO energy indicates increased electron donation potential. However, in this context, the smaller energy difference between the HOMO of 4imid and the LUMO of glycine results in reduced interaction strength, explaining the less favorable binding energy. These observations demonstrate the utility of FMO theory in rationalizing molecular interaction trends and predicting relative stability and reactivity.</p><p>Beyond molecular orbital analyses, structural changes were observed in isolated molecules upon complex formation. For example, in the isolated methacrylic acid molecule, the bond length of the carbonyl group (C=O) is 1.35&#x000a0;&#x000c5;, while the hydroxyl O&#x02014;H bond length measures 0.97&#x000a0;&#x000c5; (Figure&#x000a0;<xref rid="jcc70139-supitem-0001" ref-type="supplementary-material">SM43</xref>). Additionally, the angle between the hydroxyl group and the carbonyl group of the carboxylic moiety is 108.9&#x000b0;. Upon interaction with GLY, forming the most stable complex, these structural parameters undergo significant changes. The C=O bond length reduces to 1.32&#x000a0;&#x000c5;, while the O&#x02014;H bond length increases to 1.05&#x000a0;&#x000c5;. The internal angle between these groups expands to 111.93&#x000b0;. These distortions indicate electronic and spatial reorganization due to complexation.</p><p>Such distortions in bond lengths and angles can be attributed to electrostatic interactions and hydrogen bonding between the carboxyl group of methacrylic acid and the amino and carboxyl groups of glycine. These non&#x02010;covalent interactions contribute to the overall stabilization of the complex. In light of these observations, a more detailed analysis is required to further explore the bonding characteristics and electronic redistribution mechanisms responsible for stabilizing the complex. These aspects are explored in the following subsection.</p></sec><sec id="jcc70139-sec-0015"><label>3.2.3</label><title>Topological Analysis: Evaluating the Nature of Chemical Interaction on Amino Acids&#x02010;Monomer Complexes</title><p>This section evaluates the nature of chemical interactions in amino acid&#x02010;functional monomer complexes using the Quantum Theory of Atoms in Molecules (QTAIM). Briefly, QTAIM enables the characterization of chemical bonding through the topological analysis of the electron density distribution, revealing insights into bond strength, nature (covalent and non&#x02010;covalent), and stability&#x02014;key factors that are critical for understanding and enhancing MIP selectivity.</p><p>In QTAIM, critical points of the electron density are classified by their rank and signature. Relevant types may include nuclear critical points NCP(3, <mml:math id="jats-math-93" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>3</mml:mn></mml:mrow></mml:mrow></mml:math>), bond critical points BCP(3, <mml:math id="jats-math-94" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:mrow></mml:math>), ring critical points RCP(3, +1), and cage critical points CCP(3, +3) [<xref rid="jcc70139-bib-0061" ref-type="bibr">61</xref>, <xref rid="jcc70139-bib-0062" ref-type="bibr">62</xref>, <xref rid="jcc70139-bib-0063" ref-type="bibr">63</xref>]. The analysis in this work focuses on BCPs, where electron density <mml:math id="jats-math-95" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mrow><mml:mi>&#x003c1;</mml:mi></mml:mrow><mml:mrow><mml:mi>b</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math> and its Laplacian <mml:math id="jats-math-96" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msup><mml:mrow><mml:mo>&#x02207;</mml:mo></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msup><mml:msub><mml:mrow><mml:mi>&#x003c1;</mml:mi></mml:mrow><mml:mrow><mml:mi>b</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math> serve as key descriptors of bonding interactions.</p><p>For hydrogen bonds, accepted values of <mml:math id="jats-math-97" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mrow><mml:mi>&#x003c1;</mml:mi></mml:mrow><mml:mrow><mml:mi>b</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math> between 0.002&#x02013;0.034 a.u. and <mml:math id="jats-math-98" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msup><mml:mrow><mml:mo>&#x02207;</mml:mo></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msup><mml:msub><mml:mrow><mml:mi>&#x003c1;</mml:mi></mml:mrow><mml:mrow><mml:mi>b</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math> between 0.024&#x02013;0.139 a.u. [<xref rid="jcc70139-bib-0061" ref-type="bibr">61</xref>]. These values indicate closed&#x02010;shell interactions typical of hydrogen bonding and vdW interactions.</p><p>Additionally, the electronic energy density <mml:math id="jats-math-99" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>H</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>r</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math> at the BCP is defined as follows: <disp-formula id="jcc70139-disp-0002">
+<label>(2)</label>
+<mml:math id="jats-math-100" display="block" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>H</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>r</mml:mi><mml:mo stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:mi>G</mml:mi><mml:mtext>(r)</mml:mtext><mml:mo>+</mml:mo><mml:mi>V</mml:mi><mml:mtext>(r)</mml:mtext></mml:mrow></mml:mrow></mml:math>
+</disp-formula>where, <italic toggle="yes">G</italic>(r) is the kinetic energy density and <italic toggle="yes">V</italic>(r) is the potential energy density. A negative <italic toggle="yes">H</italic>(r) typically suggests partial covalent character, whereas a positive <italic toggle="yes">H</italic>(r) supports electrostatic (non&#x02010;covalent) interactions.</p><p>QTAIM classifies chemical interactions based on the values of the electron density topological properties, as follows: If <mml:math id="jats-math-101" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msup><mml:mrow><mml:mo>&#x02207;</mml:mo></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msup><mml:mi>&#x003c1;</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>r</mml:mi><mml:mo stretchy="false">)</mml:mo><mml:mo>&#x0003e;</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:mrow></mml:math> and <mml:math id="jats-math-102" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>H</mml:mi><mml:mtext>(r)</mml:mtext><mml:mo>&#x0003e;</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:mrow></mml:math>, the interaction is considered weak and electrostatic; if <mml:math id="jats-math-103" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msup><mml:mrow><mml:mo>&#x02207;</mml:mo></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msup><mml:mi>&#x003c1;</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>r</mml:mi><mml:mo stretchy="false">)</mml:mo><mml:mo>&#x0003c;</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:mrow></mml:math> and <mml:math id="jats-math-104" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>H</mml:mi><mml:mtext>(r)</mml:mtext><mml:mo>&#x0003c;</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:mrow></mml:math>, the interaction is considered strong and covalent bond; and if <mml:math id="jats-math-105" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msup><mml:mrow><mml:mo>&#x02207;</mml:mo></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msup><mml:mi>&#x003c1;</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>r</mml:mi><mml:mo stretchy="false">)</mml:mo><mml:mo>&#x0003e;</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:mrow></mml:math> and <mml:math id="jats-math-106" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>H</mml:mi><mml:mtext>(r)</mml:mtext><mml:mo>&#x0003c;</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:mrow></mml:math>, the interaction is moderate with partial covalent characteristics [<xref rid="jcc70139-bib-0061" ref-type="bibr">61</xref>, <xref rid="jcc70139-bib-0064" ref-type="bibr">64</xref>].</p><p>In addition to QTAIM, the Electron Localization Function (ELF) provides complementary insights into bonding characteristics. ELF values range from 0 to 1, where values near 0 indicate low localization, typically associated with weak interactions near zero, while values near 1 suggest high localization, which may be indicative of covalent bonding. Therefore, ELF analysis can also be used to evaluate the strength and nature of hydrogen bonds within a complex. All wavefunction analyses were performed using Multiwfn v.3.7. The Poincar&#x000e9;&#x02010;Hopf relationship was satisfied for all monomer&#x02010;analyte complexes, ensuring topological completeness of the QTAIM analyses.</p><p>The analyzed monomer&#x02010;analyte complexes exhibit hydrogen bonds of varying strengths, as summarized in Table&#x000a0;<xref rid="jcc70139-tbl-0001" ref-type="table">1</xref>. Insights derived from electronic structure descriptors, particularly the ELF and the QTAIM parameters, provide valuable information on the nature and stability of these bonding interactions. For instance, for weak interactions, as on 4imid&#x02010;GLU complex (17H&#x02010;26N, CP 43) exhibits <mml:math id="jats-math-107" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>H</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>r</mml:mi><mml:mo stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>0</mml:mn><mml:mo>.</mml:mo><mml:mn>001</mml:mn></mml:mrow></mml:mrow></mml:math> a.u., ELF of 0.151, and bond length of 1.89 &#x000c5;. Here, the significantly lower ELF value and the small negative energy density indicate a weak, electrostatically dominated interaction. This indicates a more diffuse electron density at the bond critical point (BCP), which is characteristic of the weaker, non&#x02010;covalent hydrogen bond.</p><table-wrap position="float" id="jcc70139-tbl-0001" content-type="TABLE"><label>TABLE 1</label><caption><p>Topological, electronic and structural properties for the selected bond critical points (BCP) in the monomer (A)&#x02010;amino acid (B) complexes.</p></caption><table frame="hsides" rules="groups"><col align="left" style="border-right:solid 1px #000000; border-bottom:solid 1px #000000" span="1"/><col align="center" style="border-right:solid 1px #000000; border-bottom:solid 1px #000000" span="1"/><col align="center" style="border-right:solid 1px #000000; border-bottom:solid 1px #000000" span="1"/><col align="center" style="border-right:solid 1px #000000; border-bottom:solid 1px #000000" span="1"/><col align="center" style="border-right:solid 1px #000000; border-bottom:solid 1px #000000" span="1"/><col align="center" style="border-right:solid 1px #000000; border-bottom:solid 1px #000000" span="1"/><col align="center" style="border-right:solid 1px #000000; border-bottom:solid 1px #000000" span="1"/><thead valign="bottom"><tr><th rowspan="2" align="left" valign="bottom" colspan="1">Complexes</th><th rowspan="2" align="center" valign="bottom" colspan="1">A&#x02010;B</th><th align="center" valign="bottom" rowspan="1" colspan="1">
+<mml:math id="jats-math-108" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mrow><mml:mi>H</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>r</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math>
+</th><th align="center" valign="bottom" rowspan="1" colspan="1">ELF</th><th align="center" valign="bottom" rowspan="1" colspan="1">
+<mml:math id="jats-math-109" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mrow><mml:msub><mml:mrow><mml:mi>D</mml:mi></mml:mrow><mml:mrow><mml:mtext>bond</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:mrow></mml:math>
+</th><th align="center" valign="bottom" rowspan="1" colspan="1">
+<mml:math id="jats-math-110" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mrow><mml:mi>&#x003c1;</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>r</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math>
+</th><th align="center" valign="bottom" rowspan="1" colspan="1">
+<mml:math id="jats-math-111" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mrow><mml:msup><mml:mrow><mml:mo>&#x02207;</mml:mo></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msup><mml:mi>&#x003c1;</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>r</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math>
+</th></tr><tr><th align="center" valign="bottom" rowspan="1" colspan="1">(a.u.)</th><th align="center" valign="bottom" rowspan="1" colspan="1">(&#x02010;)</th><th align="center" valign="bottom" rowspan="1" colspan="1">(&#x000c3;&#x02026;)</th><th align="center" valign="bottom" rowspan="1" colspan="1">(a.u.)</th><th align="center" valign="bottom" rowspan="1" colspan="1">(a.u.)</th></tr></thead><tbody valign="top"><tr><td align="left" valign="top" rowspan="1" colspan="1">itaco&#x02010;gly</td><td align="center" valign="top" rowspan="1" colspan="1">21H&#x02010;4N</td><td align="center" valign="top" rowspan="1" colspan="1">&#x02212;0.007</td><td align="center" valign="top" rowspan="1" colspan="1">0.267</td><td align="center" valign="top" rowspan="1" colspan="1">1.61</td><td align="center" valign="top" rowspan="1" colspan="1">0.055</td><td align="center" valign="top" rowspan="1" colspan="1">0.124</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">4imid&#x02010;glu</td><td align="center" valign="top" rowspan="1" colspan="1">17H&#x02010;26N</td><td align="center" valign="top" rowspan="1" colspan="1">&#x02212;0.001</td><td align="center" valign="top" rowspan="1" colspan="1">0.151</td><td align="center" valign="top" rowspan="1" colspan="1">1.89</td><td align="center" valign="top" rowspan="1" colspan="1">0.035</td><td align="center" valign="top" rowspan="1" colspan="1">0.095</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">4imid&#x02010;glu</td><td align="center" valign="top" rowspan="1" colspan="1">6H&#x02010;22O</td><td align="center" valign="top" rowspan="1" colspan="1">&#x02212;0.005</td><td align="center" valign="top" rowspan="1" colspan="1">0.047</td><td align="center" valign="top" rowspan="1" colspan="1">2.12</td><td align="center" valign="top" rowspan="1" colspan="1">0.017</td><td align="center" valign="top" rowspan="1" colspan="1">0.059</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">acidm&#x02010;gly</td><td align="center" valign="top" rowspan="1" colspan="1">3H&#x02010;16O</td><td align="center" valign="top" rowspan="1" colspan="1">
+<mml:math id="jats-math-112" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mrow><mml:mn>0</mml:mn><mml:mo>.</mml:mo><mml:mn>001</mml:mn></mml:mrow></mml:mrow></mml:mrow></mml:math>
+</td><td align="center" valign="top" rowspan="1" colspan="1">0.027</td><td align="center" valign="top" rowspan="1" colspan="1">2.91</td><td align="center" valign="top" rowspan="1" colspan="1">0.010</td><td align="center" valign="top" rowspan="1" colspan="1">0.038</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">acidm&#x02010;gly</td><td align="center" valign="top" rowspan="1" colspan="1">22H&#x02010;4N</td><td align="center" valign="top" rowspan="1" colspan="1">&#x02212;0.006</td><td align="center" valign="top" rowspan="1" colspan="1">0.258</td><td align="center" valign="top" rowspan="1" colspan="1">1.56</td><td align="center" valign="top" rowspan="1" colspan="1">0.052</td><td align="center" valign="top" rowspan="1" colspan="1">0.119</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">acidm&#x02010;lys</td><td align="center" valign="top" rowspan="1" colspan="1">36H&#x02010;1N</td><td align="center" valign="top" rowspan="1" colspan="1">&#x02212;0.007</td><td align="center" valign="top" rowspan="1" colspan="1">0.269</td><td align="center" valign="top" rowspan="1" colspan="1">1.71</td><td align="center" valign="top" rowspan="1" colspan="1">0.055</td><td align="center" valign="top" rowspan="1" colspan="1">0.125</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">acida&#x02010;gly</td><td align="center" valign="top" rowspan="1" colspan="1">10H&#x02010;18O</td><td align="center" valign="top" rowspan="1" colspan="1">&#x02212;40.002</td><td align="center" valign="top" rowspan="1" colspan="1">0.179</td><td align="center" valign="top" rowspan="1" colspan="1">1.65</td><td align="center" valign="top" rowspan="1" colspan="1">0.050</td><td align="center" valign="top" rowspan="1" colspan="1">0.149</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">acida&#x02010;gly</td><td align="center" valign="top" rowspan="1" colspan="1">19H&#x02010;8O</td><td align="center" valign="top" rowspan="1" colspan="1">&#x02212;0.001</td><td align="center" valign="top" rowspan="1" colspan="1">0.171</td><td align="center" valign="top" rowspan="1" colspan="1">1.67</td><td align="center" valign="top" rowspan="1" colspan="1">0.046</td><td align="center" valign="top" rowspan="1" colspan="1">0.143</td></tr></tbody></table><table-wrap-foot id="JCC70139-ntgp-0002"><fn id="jcc70139-note-0002"><p>
+<italic toggle="yes">Note:</italic> The presented properties are electronic energy density, <mml:math id="jats-math-113" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>H</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>r</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math>; electron localization function, ELF; bond distance, <mml:math id="jats-math-114" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mrow><mml:mi>D</mml:mi></mml:mrow><mml:mrow><mml:mi>b</mml:mi><mml:mi>o</mml:mi><mml:mi>n</mml:mi><mml:mi>d</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math>; electron density, <mml:math id="jats-math-115" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>&#x003c1;</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>r</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math>; and Laplacian of electron density, <mml:math id="jats-math-116" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msup><mml:mrow><mml:mo>&#x02207;</mml:mo></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msup><mml:mi>&#x003c1;</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>r</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math>.</p></fn></table-wrap-foot></table-wrap><p>In contrast, moderate&#x02010;strength interactions are observed in complexes such as itaco&#x02010;GLY (21H&#x02010;4N, CP 44) with H(r)=0.007 a.u., ELF of 0.267, and a bond length of 1.61 &#x000c5;. Here, the negative H(r) and the relatively elevated ELF suggest a stabilizing hydrogen bond, where the electron density distribution is more localized and partial covalent character at the BCP, reinforcing the interaction. Similarly, the acidm&#x02010;LYS complex (36H&#x02010;1N, CP 43) exhibits values of H(r)=<mml:math id="jats-math-117" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>0.007</mml:mn></mml:mrow></mml:mrow></mml:math> a.u., ELF of 0.269, and a bond length of 1.71 &#x000c5;. These parameters also indicate a moderate hydrogen bond with appreciable covalent contributions, due to the more localized electron density. Similarly, the acida&#x02010;GLY complex (19H&#x02010;8O, CP 22) presents a weaker interaction, with <italic toggle="yes">H</italic>(r)=<mml:math id="jats-math-118" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>0.001</mml:mn></mml:mrow></mml:mrow></mml:math> a.u., ELF of 0.171, and a bond length of 1.67 &#x000c5;. Although the lower ELF and H(r) values point to a less localized interaction than the previous cases, this interaction contributes moderately to the stabilization, through a combination of both electrostatic and minor covalent effects.</p><p>Overall, the QTAIM parameters and ELF analysis collectively reveal that the strength and nature of the hydrogen bonds formed in these monomer&#x02010;analyte complexes range from weak, predominantly electrostatically driven interactions, to moderate, stabilizing bonds with partial covalent character. These insights are detailed in Table&#x000a0;<xref rid="jcc70139-tbl-0001" ref-type="table">1</xref>, where the full set of calculated parameters for each complex is shown.</p></sec></sec><sec id="jcc70139-sec-0016"><label>3.3</label><title>Evaluating PSA&#x02010;Monomers Interactions Through Molecular Docking</title><p>Although molecular dynamics (MD) simulations have been successfully employed in our previous studies involving MIPs [<xref rid="jcc70139-bib-0016" ref-type="bibr">16</xref>], we opted for molecular docking in the present work to facilitate the rapid and systematic screening of 15 candidate FMs. While MD simulations provide detailed insights into molecular interactions, they are computationally expensive and time&#x02010;consuming. In contrast, molecular docking offers a computationally efficient approach [<xref rid="jcc70139-bib-0065" ref-type="bibr">65</xref>], enabling fast estimation of interaction tendencies and making it ideally suited for the preliminary selection of promising monomers for further study.</p><p>Moreover, molecular docking shares conceptual similarities with the MIP imprinting process, as both are based on principles of molecular complementarity and pre&#x02010;organization. In docking, the ligand aligns with the receptor in a manner that maximizes binding affinity and interaction complementarity, closely resembling the &#x0201c;lock&#x02010;and&#x02010;key&#x0201d; model [<xref rid="jcc70139-bib-0066" ref-type="bibr">66</xref>, <xref rid="jcc70139-bib-0067" ref-type="bibr">67</xref>, <xref rid="jcc70139-bib-0068" ref-type="bibr">68</xref>]. This mechanism parallels the MIP approach, wherein monomers are selected to complement the size, shape, and functional groups of the target molecule [<xref rid="jcc70139-bib-0067" ref-type="bibr">67</xref>, <xref rid="jcc70139-bib-0068" ref-type="bibr">68</xref>]</p><p>In this study, molecular docking was performed using the FMs, that is, acida, itaco, 4imid, and acidm as flexible ligands, while the receptor active site region of the PSA protein is composed of the following eight AA: CYS, GLN, GLY, GLU, LYS, TRP, VAL, and ILE (Figures&#x000a0;<xref rid="jcc70139-supitem-0001" ref-type="supplementary-material">SM46</xref> to <xref rid="jcc70139-supitem-0001" ref-type="supplementary-material">SM56</xref>). Our previous DFT analyses have elucidated the stabilizing nature of FM&#x02010;AA interactions, where hydrogen bonds play a crucial role. However, docking results revealed that multi&#x02010;residue interactions could introduce additional destabilizing or stabilizing effects due to the formation of multiple hydrogen bonds as well as hydrophobic interactions.</p><p>For instance, in the case of acidm, hydrogen bonds were observed with ILE16 and GLY19, while hydrophobic interactions were predominant with ILE17, GLY18, and GLN156, as shown in Table&#x000a0;<xref rid="jcc70139-supitem-0001" ref-type="supplementary-material">SM2</xref>. For all eight AA included in the active site, the calculated binding free energy (<mml:math id="jats-math-119" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>G</mml:mi></mml:mrow></mml:mrow></mml:math>) for acidm is approximately <mml:math id="jats-math-120" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>3.00</mml:mn></mml:mrow></mml:mrow></mml:math>&#x000a0;kcal mol<inline-graphic xlink:href="JCC-46-0-e131.jpg"/>, one of the most favorable values among all studied FMs. FM 4imid also formed stabilizing interactions with AA GLY18, GLY19, and GLN156, through hydrogen bonds, and hydrophobic interactions with ILE16, ILE17, and GLU21. However, acidm exhibited a slightly more favorable <mml:math id="jats-math-122" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>G</mml:mi></mml:mrow></mml:mrow></mml:math>, DFT results (Figure&#x000a0;<xref rid="jcc70139-fig-0006" ref-type="fig">6</xref>) indicate that 4imid generally provides stronger and more consistent interactions with AAs, reinforcing its suitability as a promising FM.</p><p>It is crucial to recognize that the overall binding strength of a given FM increases as additional favorable interactions accumulate. Specifically, FM itaco, identified in DFT analysis as the second&#x02010;strongest interaction, interacts with four AAs via docking, two of them by hydrogen bonding, while the other two through hydrophobic interactions, as shown in Figure&#x000a0;<xref rid="jcc70139-fig-0007" ref-type="fig">7</xref>. The hydrogen bonds are formed with GLY18, GLY19, and ILE16, and hydrophobic interactions occur with GLN156 and ILE17. The <mml:math id="jats-math-123" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>G</mml:mi></mml:mrow></mml:mrow></mml:math> for itaco is <mml:math id="jats-math-124" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>3.40</mml:mn></mml:mrow></mml:mrow></mml:math>&#x000a0;kcal mol<inline-graphic xlink:href="JCC-46-0-e085.jpg"/>, indicating a strong and stable interaction in this region. Hydrogen bonds lenghts typically range from 2.7 &#x000c5; to 3.0 &#x000c5; [<xref rid="jcc70139-bib-0071" ref-type="bibr">71</xref>], with values around 3.0 &#x000c5; being the most common in biological systems. The hydrogen bond lengths observed in the itaco complex fall within this expected range, further confirming the validity of the interaction model.</p><fig position="float" fig-type="FIGURE" id="jcc70139-fig-0007"><label>FIGURE 7</label><caption><p>Depiction of the 3D and 2D molecular affinity of itaconic acid with the amino acids present in the strategic region of the PSA protein. The 3D structure includes a ribbon representation, illustrating the conformation of each protease peptide [<xref rid="jcc70139-bib-0069" ref-type="bibr">69</xref>], while the 2D interactions were analyzed using LIGPLOT+ software [<xref rid="jcc70139-bib-0070" ref-type="bibr">70</xref>]. Atom colors are as follows: Carbon (black), nitrogen (blue), and oxygen (red), with hydrogen atoms omitted for clarity. The binding free energy (<mml:math id="jats-math-126" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mtext>G</mml:mtext></mml:mrow></mml:mrow></mml:math>) for itaconic acid is <mml:math id="jats-math-127" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>3.40</mml:mn></mml:mrow></mml:mrow></mml:math>&#x000a0;kcal mol<inline-graphic xlink:href="JCC-46-0-e129.jpg"/>, as detailed in Table&#x000a0;<xref rid="jcc70139-supitem-0001" ref-type="supplementary-material">SM2</xref>.</p></caption><graphic xlink:href="JCC-46-0-g002" position="anchor" id="jats-graphic-15"/></fig><p>In the case of FM acida, docking revealed three hydrogen bonds with three different AA, that is, GLY18, GLY19, and ILE16, which significantly contribute to stabilizing the interaction. Additionally, hydrophobic interactions with ILE17 and GLN156 are observed. The <mml:math id="jats-math-129" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>G</mml:mi></mml:mrow></mml:mrow></mml:math> of <mml:math id="jats-math-130" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>2.50</mml:mn></mml:mrow></mml:mrow></mml:math>&#x000a0;kcal mol<inline-graphic xlink:href="JCC-46-0-e090.jpg"/> (Table&#x000a0;<xref rid="jcc70139-supitem-0001" ref-type="supplementary-material">SM2</xref>) supports its classification as good, but intermediate FM, which is consistent with the previous DFT prediction.</p><p>Finally, FM 1allyl, which slightly outperforms acida according to DFT analysis, exhibits a <mml:math id="jats-math-132" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:mi>G</mml:mi></mml:mrow></mml:mrow></mml:math> of <mml:math id="jats-math-133" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>2.60</mml:mn></mml:mrow></mml:mrow></mml:math>&#x000a0;kcal mol<inline-graphic xlink:href="JCC-46-0-e134.jpg"/> in molecular docking simulations. This close agreement between DFT and docking data enhances the reliability of the theoretical methodologies employed in this study to predict favorable FM&#x02010;AA interactions within the PSA active site.</p></sec></sec><sec sec-type="conclusions" id="jcc70139-sec-0017"><label>4</label><title>Conclusion</title><p>In this study, a novel algorithm, the Molecular Binding Algorithm by Surface Mapping (MBASM), was developed to systematically generate amino acid&#x02010;monomer complexes, followed by structural optimization using Density Functional theory (DFT). This integrated MBASM + DFT protocol was designed to identify the optimal functional monomer for the synthesis of molecularly imprinted polymer (MIP) targeting prostate&#x02010;specific antigen (PSA). The MBASM + DFT protocol streamlined the selection process, reducing thousands of potential structures to a manageable set of 2400, which were then subjected to detailed DFT analysis.</p><p>Preliminary benchmarking demonstrated the effectiveness of MBASM compared to alternative approaches. However, ongoing development and refinement of the algorithm are planned to further improve its accuracy, scalability, and applicability to other complex molecular systems.</p><p>From the combined DFT and molecular docking analyses, promising functional monomers for MIP synthesis were identified, including itaconic acid, 4&#x02010;imidazole acrylic acid, and methacrylic acid. Additionally, 1,4&#x02010;divinylbenzene was identified as a superior structural monomer (cross&#x02010;linker) based on its favorable interaction profile and minimal interference with FM&#x02010;template interactions.</p><p>Furthermore, the most promising stable FM&#x02010;AA complexes were found to be stabilized by hydrogen bonding interactions, which range in strength from weak to moderate, as confirmed by QTAIM and ELF analyses. These non&#x02010;covalent interactions play a key role in molecular recognition and contribute to the selective imprinting behavior of MIPs.</p><p>Overall, the MBASM + DFT novel framework offers a powerful and scalable approach for the rational design of MIP systems. This refined methodology has the potential to accelerate the development of targeted MIPs for biorecognition and diagnostic applications.</p></sec><sec sec-type="COI-statement" id="jcc70139-sec-0019"><title>Conflicts of Interest</title><p>The authors declare no conflicts of interest.</p></sec><sec sec-type="supplementary-material"><title>Supporting information</title><supplementary-material id="jcc70139-supitem-0001" position="float" content-type="local-data"><caption><p>
+<bold>Data S1.</bold> Supporting Information.</p></caption><media xlink:href="JCC-46-0-s001.pdf"/></supplementary-material></sec></body><back><ack id="jcc70139-sec-0018"><title>Acknowledgments</title><p>H.L.B.S.A. and K.F.A. thank UESC&#x02010;PROPP (SEI 073.6786.2024.0009668&#x02010;86), DCE, and PPGQuim. A.B.F.S. and J.M. thank USP. L.C.S.N. and M.D.P.T.S. thank UNESP, particularly the PPG. L.C.S.N. thanks CAPES&#x02010;PROEX, grant #2022/03553&#x02010;0, Sao Paulo Research Foundation (FAPESP), and CNPq(304899/2023&#x02010;2). The Article Processing Charge for the publication of this research was funded by the Coordena&#x000e7;&#x000e3;o de Aperfei&#x000e7;oamento de Pessoal de N&#x000ed;vel Superior &#x02010; Brasil (CAPES) (ROR identifier: 00x0ma614).</p></ack><sec sec-type="data-availability" id="jcc70139-sec-1001"><title>Data Availability Statement</title><p>The data that support the findings of this study are available from the corresponding author upon reasonable request.</p></sec><ref-list content-type="cited-references" id="jcc70139-bibl-0001"><title>References</title><ref id="jcc70139-bib-0001"><label>1</label><mixed-citation publication-type="journal" id="jcc70139-cit-0001">
+<string-name>
+<given-names>G.</given-names>
+<surname>Ert&#x000fc;rk</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Hedstr&#x000f6;m</surname>
+</string-name>, <string-name>
+<given-names>M. A.</given-names>
+<surname>T&#x000fc;mer</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Denizli</surname>
+</string-name>, and <string-name>
+<given-names>B.</given-names>
+<surname>Mattiasson</surname>
+</string-name>, &#x0201c;<article-title>Real&#x02010;Time Prostate&#x02010;Specific Antigen Detection With Prostate&#x02010;Specific Antigen Imprinted Capacitive Biosensors</article-title>,&#x0201d; <source>Analytica Chimica Acta</source>
+<volume>891</volume> (<year>2015</year>): <fpage>120</fpage>.<pub-id pub-id-type="pmid">26388370</pub-id>
+</mixed-citation></ref><ref id="jcc70139-bib-0002"><label>2</label><mixed-citation publication-type="journal" id="jcc70139-cit-0002">
+<string-name>
+<given-names>C.</given-names>
+<surname>Dejous</surname>
+</string-name> and <string-name>
+<given-names>U. M.</given-names>
+<surname>Krishnan</surname>
+</string-name>, &#x0201c;<article-title>Sensors for Diagnosis of Prostate Cancer: Looking Beyond the Prostate Specific Antigen</article-title>,&#x0201d; <source>Biosensors and Bioelectronics</source>
+<volume>173</volume> (<year>2021</year>): <elocation-id>112790</elocation-id>.<pub-id pub-id-type="pmid">33190047</pub-id>
+</mixed-citation></ref><ref id="jcc70139-bib-0003"><label>3</label><mixed-citation publication-type="journal" id="jcc70139-cit-0003">
+<string-name>
+<given-names>Z.</given-names>
+<surname>Yazdani</surname>
+</string-name>, <string-name>
+<given-names>H.</given-names>
+<surname>Yadegari</surname>
+</string-name>, and <string-name>
+<given-names>H.</given-names>
+<surname>Heli</surname>
+</string-name>, &#x0201c;<article-title>A Molecularly Imprinted Electrochemical Nanobiosensor for Prostate Specific Antigen Determination</article-title>,&#x0201d; <source>Analytical Biochemistry</source>
+<volume>566</volume> (<year>2019</year>): <fpage>116</fpage>.<pub-id pub-id-type="pmid">30472220</pub-id>
+</mixed-citation></ref><ref id="jcc70139-bib-0004"><label>4</label><mixed-citation publication-type="journal" id="jcc70139-cit-0004">
+<string-name>
+<given-names>S. M.</given-names>
+<surname>Traynor</surname>
+</string-name>, <string-name>
+<given-names>R.</given-names>
+<surname>Pandey</surname>
+</string-name>, <string-name>
+<given-names>R.</given-names>
+<surname>Maclachlan</surname>
+</string-name>, et&#x000a0;al., &#x0201c;<article-title>Review&#x02014;Recent Advances in Electrochemical Detection of Prostate Specific Antigen (PSA) in Clinically&#x02010;Relevant Samples</article-title>,&#x0201d; <source>Journal of the Electrochemical Society</source>
+<volume>167</volume> (<year>2020</year>): <elocation-id>037551</elocation-id>.</mixed-citation></ref><ref id="jcc70139-bib-0005"><label>5</label><mixed-citation publication-type="journal" id="jcc70139-cit-0005">
+<string-name>
+<given-names>S. P.</given-names>
+<surname>Balk</surname>
+</string-name>, <string-name>
+<given-names>Y.&#x02010;J.</given-names>
+<surname>Ko</surname>
+</string-name>, and <string-name>
+<given-names>G. J.</given-names>
+<surname>Bubley</surname>
+</string-name>, &#x0201c;<article-title>Biology of Prostate&#x02010;Specific Antigen</article-title>,&#x0201d; <source>Journal of Clinical Oncology</source>
+<volume>21</volume> (<year>2003</year>): <fpage>383</fpage>.<pub-id pub-id-type="pmid">12525533</pub-id>
+</mixed-citation></ref><ref id="jcc70139-bib-0006"><label>6</label><mixed-citation publication-type="journal" id="jcc70139-cit-0006">
+<string-name>
+<given-names>R. J.</given-names>
+<surname>Babaian</surname>
+</string-name>, <string-name>
+<given-names>D. A.</given-names>
+<surname>Johnston</surname>
+</string-name>, <string-name>
+<given-names>W.</given-names>
+<surname>Naccarato</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Ayala</surname>
+</string-name>, <string-name>
+<given-names>V. A.</given-names>
+<surname>Bhadkamkar</surname>
+</string-name>, and <string-name>
+<given-names>H. A.</given-names>
+<surname>Fritsche</surname>
+</string-name>, &#x0201c;<article-title>The Incidence of Prostate Cancer in a Screening Population With a Serum Prostate Specific Antigen Between 2.5 and 4.0 Ng/mL: Relation to Biopsy Stragegy</article-title>,&#x0201d; <source>Journal of Urology</source>
+<volume>165</volume> (<year>2001</year>): <fpage>757</fpage>.<pub-id pub-id-type="pmid">11176461</pub-id>
+</mixed-citation></ref><ref id="jcc70139-bib-0007"><label>7</label><mixed-citation publication-type="journal" id="jcc70139-cit-0007">
+<string-name>
+<given-names>X.&#x02010;H.</given-names>
+<surname>Pham</surname>
+</string-name>, <string-name>
+<given-names>E.</given-names>
+<surname>Hahm</surname>
+</string-name>, <string-name>
+<given-names>K.&#x02010;H.</given-names>
+<surname>Huynh</surname>
+</string-name>, <string-name>
+<given-names>B. S.</given-names>
+<surname>Son</surname>
+</string-name>, <string-name>
+<given-names>H.&#x02010;M.</given-names>
+<surname>Kim</surname>
+</string-name>, and <string-name>
+<given-names>B.&#x02010;H.</given-names>
+<surname>Jun</surname>
+</string-name>, &#x0201c;<article-title>Sensitive Colorimetric Detection of Prostate Specific Antigen Using a Peroxidase&#x02010;Mimicking Anti&#x02010;PSA Antibody Coated Au Nanoparticle</article-title>,&#x0201d; <source>BioChip Journal</source>
+<volume>14</volume> (<year>2020</year>): <fpage>158</fpage>.</mixed-citation></ref><ref id="jcc70139-bib-0008"><label>8</label><mixed-citation publication-type="journal" id="jcc70139-cit-0008">
+<string-name>
+<given-names>A.</given-names>
+<surname>Jedinak</surname>
+</string-name>, <string-name>
+<given-names>K. R.</given-names>
+<surname>Loughlin</surname>
+</string-name>, and <string-name>
+<given-names>M. A.</given-names>
+<surname>Moses</surname>
+</string-name>, &#x0201c;<article-title>Approaches to the Discovery of Non&#x02010;Invasive Urinary Biomarkers of Prostate Cancer</article-title>,&#x0201d; <source>Oncotarget</source>
+<volume>9</volume> (<year>2018</year>): <elocation-id>3253432550</elocation-id>.</mixed-citation></ref><ref id="jcc70139-bib-0009"><label>9</label><mixed-citation publication-type="journal" id="jcc70139-cit-0009">
+<string-name>
+<given-names>E.</given-names>
+<surname>Jara&#x02010;Cornejo</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Khan</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Vega&#x02010;Chacn</surname>
+</string-name>, et&#x000a0;al., &#x0201c;<article-title>Biomimetic Material for Quantification of Methotrexate Using Sensor Based on Molecularly Imprinted Polypyrrole Film and Mwcnt/Gce</article-title>,&#x0201d; <source>Biomimetics</source>
+<volume>8</volume> (<year>2023</year>): <fpage>77</fpage>.<pub-id pub-id-type="pmid">36810408</pub-id>
+</mixed-citation></ref><ref id="jcc70139-bib-0010"><label>10</label><mixed-citation publication-type="journal" id="jcc70139-cit-0010">
+<string-name>
+<given-names>Z.</given-names>
+<surname>Mazouz</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Mokni</surname>
+</string-name>, <string-name>
+<given-names>N.</given-names>
+<surname>Fourati</surname>
+</string-name>, et&#x000a0;al., &#x0201c;<article-title>Computational Approach and Electrochemical Measurements for Protein Detection With Mip&#x02010;Based Sensor</article-title>,&#x0201d; <source>Biosensors and Bioelectronics</source>
+<volume>151</volume> (<year>2020</year>): <elocation-id>111978</elocation-id>.<pub-id pub-id-type="pmid">31999585</pub-id>
+</mixed-citation></ref><ref id="jcc70139-bib-0011"><label>11</label><mixed-citation publication-type="journal" id="jcc70139-cit-0011">
+<string-name>
+<given-names>S.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Zeng</surname>
+</string-name>, et&#x000a0;al., &#x0201c;<article-title>Multi&#x02010;Templates Molecularly Imprinted Polymers for Simultaneous Recognition of Multiple Targets: From Academy to Application</article-title>,&#x0201d; <source>TrAC Trends in Analytical Chemistry</source>
+<volume>166</volume> (<year>2023</year>): <elocation-id>117173</elocation-id>.</mixed-citation></ref><ref id="jcc70139-bib-0012"><label>12</label><mixed-citation publication-type="journal" id="jcc70139-cit-0012">
+<string-name>
+<given-names>R. C.</given-names>
+<surname>Costa</surname>
+</string-name>, <string-name>
+<given-names>B. E.</given-names>
+<surname>Nagay</surname>
+</string-name>, <string-name>
+<given-names>J. E. L.</given-names>
+<surname>Villa</surname>
+</string-name>, et&#x000a0;al., &#x0201c;<article-title>Pathogenesis&#x02010;Guided Engineering: Ph&#x02010;Responsive Imprinted Polymer Co&#x02010;Delivering Folate for Inflammation&#x02010;Resolving as Immunotherapy in Implant&#x02010;Related Infections</article-title>,&#x0201d; <source>Advanced Functional Materials</source>
+<volume>34</volume> (<year>2024</year>): <fpage>2406640</fpage>.</mixed-citation></ref><ref id="jcc70139-bib-0013"><label>13</label><mixed-citation publication-type="journal" id="jcc70139-cit-0013">
+<string-name>
+<given-names>J. E. L.</given-names>
+<surname>Villa</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Khan</surname>
+</string-name>, <string-name>
+<given-names>L. C. S.</given-names>
+<surname>Neres</surname>
+</string-name>, and <string-name>
+<given-names>M. D. P. T.</given-names>
+<surname>Sotomayor</surname>
+</string-name>, &#x0201c;<article-title>Preparation of a Magnetic Molecularly Imprinted Polymer for Non&#x02010;Invasive Determination of Cortisol</article-title>,&#x0201d; <source>Journal of Polymer Research</source>
+<volume>28</volume> (<year>2021</year>): <fpage>298</fpage>.</mixed-citation></ref><ref id="jcc70139-bib-0014"><label>14</label><mixed-citation publication-type="journal" id="jcc70139-cit-0014">
+<string-name>
+<given-names>F. A.</given-names>
+<surname>Trikka</surname>
+</string-name>, <string-name>
+<given-names>K.</given-names>
+<surname>Yoshimatsu</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Ye</surname>
+</string-name>, and <string-name>
+<given-names>D. A.</given-names>
+<surname>Kyriakidis</surname>
+</string-name>, &#x0201c;<article-title>Molecularly Imprinted Polymers for Histamine Recognition in Aqueous Environment</article-title>,&#x0201d; <source>Amino Acids</source>
+<volume>43</volume> (<year>2012</year>): <elocation-id>21132124</elocation-id>.</mixed-citation></ref><ref id="jcc70139-bib-0015"><label>15</label><mixed-citation publication-type="journal" id="jcc70139-cit-0015">
+<string-name>
+<given-names>L.</given-names>
+<surname>Abbasy</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Mohammadzadeh</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Hasanzadeh</surname>
+</string-name>, and <string-name>
+<given-names>N.</given-names>
+<surname>Razmi</surname>
+</string-name>, &#x0201c;<article-title>Development of a Reliable Bioanalytical Method Based on Prostate Specific Antigen Trapping on the Cavity of Molecular Imprinted Polymer Towards Sensing of PSA Using Binding Affinity of PSA&#x02010;MIP Receptor: A Novel Biosensor</article-title>,&#x0201d; <source>Journal of Pharmaceutical and Biomedical Analysis</source>
+<volume>188</volume> (<year>2020</year>): <elocation-id>113447</elocation-id>.<pub-id pub-id-type="pmid">32623317</pub-id>
+</mixed-citation></ref><ref id="jcc70139-bib-0016"><label>16</label><mixed-citation publication-type="journal" id="jcc70139-cit-0016">
+<string-name>
+<given-names>L. C. S.</given-names>
+<surname>Neres</surname>
+</string-name>, <string-name>
+<given-names>G. T.</given-names>
+<surname>Feliciano</surname>
+</string-name>, <string-name>
+<given-names>R. F.</given-names>
+<surname>Dutra</surname>
+</string-name>, and <string-name>
+<given-names>M. D. P. T.</given-names>
+<surname>Sotomayor</surname>
+</string-name>, &#x0201c;<article-title>Development of a Selective Molecularly Imprinted Polymer for Troponin&#x000a0;T Detection: A Theoretical&#x02010;Experimental Approach</article-title>,&#x0201d; <source>Materials Today Communications</source>
+<volume>30</volume> (<year>2022</year>): <elocation-id>102996</elocation-id>.</mixed-citation></ref><ref id="jcc70139-bib-0017"><label>17</label><mixed-citation publication-type="journal" id="jcc70139-cit-0017">
+<string-name>
+<given-names>R.</given-names>
+<surname>Bujak</surname>
+</string-name>, <string-name>
+<given-names>R.</given-names>
+<surname>Gadzaa&#x02010;Kopciuch</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Nowaczyk</surname>
+</string-name>, et&#x000a0;al., &#x0201c;<article-title>Selective Determination of Cocaine and Its Metabolite Benzoylecgonine in Environmental Samples by Newly Developed Sorbent Materials</article-title>,&#x0201d; <source>Talanta</source>
+<volume>146</volume> (<year>2016</year>): <elocation-id>401409</elocation-id>.</mixed-citation></ref><ref id="jcc70139-bib-0018"><label>18</label><mixed-citation publication-type="journal" id="jcc70139-cit-0018">
+<string-name>
+<given-names>T. A.</given-names>
+<surname>Sales</surname>
+</string-name>, <string-name>
+<given-names>L. V. F.</given-names>
+<surname>Ferreira</surname>
+</string-name>, <string-name>
+<given-names>A. G.</given-names>
+<surname>Nogueira</surname>
+</string-name>, and <string-name>
+<given-names>T. C.</given-names>
+<surname>Ramalho</surname>
+</string-name>, &#x0201c;<article-title>A Theoretical Protocol for the Rational Design of the Bioinspired Multifunctional Hybrid Material Mip@Cercosporin</article-title>,&#x0201d; <source>Journal of Molecular Modeling</source>
+<volume>29</volume> (<year>2023</year>): <fpage>321</fpage>.<pub-id pub-id-type="pmid">37725158</pub-id>
+</mixed-citation></ref><ref id="jcc70139-bib-0019"><label>19</label><mixed-citation publication-type="journal" id="jcc70139-cit-0019">
+<string-name>
+<given-names>C. R. T.</given-names>
+<surname>Tarley</surname>
+</string-name>, <string-name>
+<given-names>M. D. P. T.</given-names>
+<surname>Sotomayor</surname>
+</string-name>, and <string-name>
+<given-names>L. T.</given-names>
+<surname>Kubota</surname>
+</string-name>, &#x0201c;<article-title>Pol&#x000ed;meros Biomim&#x000e9;ticos em Qu&#x000ed;mica Anal&#x000ed;tica. Parte 1: Preparo e Aplica&#x000e7;&#x000f5;es de MIP (&#x0201c;Molecularly Imprinted Polymers&#x0201d;) em T&#x000e9;cnicas de Extra&#x000e7;&#x000e3;o e Separa&#x000e7;&#x000e3;o</article-title>,&#x0201d; <source>Qu&#x000ed;mica Nova</source>
+<volume>28</volume> (<year>2005</year>): <fpage>1076</fpage>.</mixed-citation></ref><ref id="jcc70139-bib-0020"><label>20</label><mixed-citation publication-type="journal" id="jcc70139-cit-0020">
+<string-name>
+<given-names>E.</given-names>
+<surname>Mohsenzadeh</surname>
+</string-name>, <string-name>
+<given-names>V.</given-names>
+<surname>Ratautaite</surname>
+</string-name>, <string-name>
+<given-names>E.</given-names>
+<surname>Brazys</surname>
+</string-name>, et&#x000a0;al., &#x0201c;<article-title>Application of Computational Methods in the Design of Molecularly Imprinted Polymers (Review)</article-title>,&#x0201d; <source>TrAC Trends in Analytical Chemistry</source>
+<volume>171</volume> (<year>2024</year>): <elocation-id>117480</elocation-id>.</mixed-citation></ref><ref id="jcc70139-bib-0021"><label>21</label><mixed-citation publication-type="journal" id="jcc70139-cit-0021">
+<string-name>
+<given-names>A. K.</given-names>
+<surname>Singh</surname>
+</string-name> and <string-name>
+<given-names>M.</given-names>
+<surname>Singh</surname>
+</string-name>, &#x0201c;<article-title>Designing l&#x02010;Serine Targeted Molecularly Imprinted Polymer via Theoretical Investigation</article-title>,&#x0201d; <source>Journal of Theoretical and Computational Chemistry</source>
+<volume>15</volume> (<year>2016</year>): <elocation-id>1650041</elocation-id>.</mixed-citation></ref><ref id="jcc70139-bib-0022"><label>22</label><mixed-citation publication-type="journal" id="jcc70139-cit-0022">
+<string-name>
+<given-names>A.</given-names>
+<surname>Nezhadali</surname>
+</string-name> and <string-name>
+<given-names>M.</given-names>
+<surname>Mojarrab</surname>
+</string-name>, &#x0201c;<article-title>Computational Design and Multivariate Optimization of an Electrochemical Metoprolol Sensor Based on Molecular Imprinting in Combination With Carbon Nanotubes</article-title>,&#x0201d; <source>Analytica Chimica Acta</source>
+<volume>924</volume> (<year>2016</year>): <fpage>86</fpage>.<pub-id pub-id-type="pmid">27181648</pub-id>
+</mixed-citation></ref><ref id="jcc70139-bib-0023"><label>23</label><mixed-citation publication-type="journal" id="jcc70139-cit-0023">
+<string-name>
+<given-names>J. J.</given-names>
+<surname>BelBruno</surname>
+</string-name>, &#x0201c;<article-title>Molecularly Imprinted Polymers</article-title>,&#x0201d; <source>Chemical Reviews</source>
+<volume>119</volume> (<year>2018</year>): <fpage>94</fpage>.<pub-id pub-id-type="pmid">30246529</pub-id>
+</mixed-citation></ref><ref id="jcc70139-bib-0024"><label>24</label><mixed-citation publication-type="journal" id="jcc70139-cit-0024">
+<string-name>
+<given-names>C. F.</given-names>
+<surname>Silva</surname>
+</string-name>, <string-name>
+<given-names>L. F.</given-names>
+<surname>Menezes</surname>
+</string-name>, <string-name>
+<given-names>A. C.</given-names>
+<surname>Pereira</surname>
+</string-name>, and <string-name>
+<given-names>C. S.</given-names>
+<surname>Nascimento</surname>
+</string-name>, &#x0201c;<article-title>Molecularly Imprinted Polymer (MIP) for Thiamethoxam: A Theoretical and Experimental Study</article-title>,&#x0201d; <source>Journal of Molecular Structure</source>
+<volume>1231</volume> (<year>2021</year>): <elocation-id>129980</elocation-id>.</mixed-citation></ref><ref id="jcc70139-bib-0025"><label>25</label><mixed-citation publication-type="journal" id="jcc70139-cit-0025">
+<string-name>
+<given-names>Y.</given-names>
+<surname>Sun</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Gu</surname>
+</string-name>, and <string-name>
+<given-names>Y.</given-names>
+<surname>Jiang</surname>
+</string-name>, &#x0201c;<article-title>Adsorption Behavior of a Tri&#x02010;Functionalized Imprinted Resin With High Selectivity for 5&#x02010;Sulfosalicylic Acid: Batch Experiments and DFT Calculation</article-title>,&#x0201d; <source>Journal of Hazardous Materials</source>
+<volume>412</volume> (<year>2021</year>): <elocation-id>125271</elocation-id>.<pub-id pub-id-type="pmid">33548783</pub-id>
+</mixed-citation></ref><ref id="jcc70139-bib-0026"><label>26</label><mixed-citation publication-type="journal" id="jcc70139-cit-0026">
+<string-name>
+<given-names>L.</given-names>
+<surname>Xie</surname>
+</string-name>, <string-name>
+<given-names>N.</given-names>
+<surname>Xiao</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name>
+<given-names>X.</given-names>
+<surname>Xie</surname>
+</string-name>, and <string-name>
+<given-names>Y.</given-names>
+<surname>Li</surname>
+</string-name>, &#x0201c;<article-title>Theoretical Insight Into the Interaction Between Chloramphenicol and Functional Monomer (Methacrylic Acid) in Molecularly Imprinted Polymers</article-title>,&#x0201d; <source>International Journal of Molecular Sciences</source>
+<volume>21</volume> (<year>2020</year>): <fpage>4139</fpage>.<pub-id pub-id-type="pmid">32532004</pub-id>
+</mixed-citation></ref><ref id="jcc70139-bib-0027"><label>27</label><mixed-citation publication-type="journal" id="jcc70139-cit-0027">
+<string-name>
+<given-names>W.</given-names>
+<surname>Dong</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Yan</surname>
+</string-name>, <string-name>
+<given-names>Z.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name>
+<given-names>G.</given-names>
+<surname>Wu</surname>
+</string-name>, and <string-name>
+<given-names>Y.</given-names>
+<surname>Li</surname>
+</string-name>, &#x0201c;<article-title>Effects of Solvents on the Adsorption Selectivity of Molecularly Imprinted Polymers: Molecular Simulation and Experimental Validation</article-title>,&#x0201d; <source>Separation and Purification Technology</source>
+<volume>53</volume> (<year>2007</year>): <fpage>183</fpage>.</mixed-citation></ref><ref id="jcc70139-bib-0028"><label>28</label><mixed-citation publication-type="journal" id="jcc70139-cit-0028">
+<string-name>
+<given-names>D.</given-names>
+<surname>Mukasa</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Min</surname>
+</string-name>, et&#x000a0;al., &#x0201c;<article-title>A Computationally Assisted&#x000a0;Approach for Designing Wearable Biosensors Toward Non&#x02010;Invasive Personalized Molecular Analysis</article-title>,&#x0201d; <source>Advanced Materials</source>
+<volume>35</volume> (<year>2023</year>): <elocation-id>2212161</elocation-id>.</mixed-citation></ref><ref id="jcc70139-bib-0029"><label>29</label><mixed-citation publication-type="book" id="jcc70139-cit-0029">
+<string-name>
+<given-names>D. S.</given-names>
+<surname>Sholl</surname>
+</string-name> and <string-name>
+<given-names>J. A.</given-names>
+<surname>Steckel</surname>
+</string-name>, <source>Density Functional Theory: A Practical Introduction</source> (<publisher-name>John Wiley &#x00026; Sons</publisher-name>, <year>2011</year>).</mixed-citation></ref><ref id="jcc70139-bib-0030"><label>30</label><mixed-citation publication-type="journal" id="jcc70139-cit-0030">
+<string-name>
+<given-names>J.</given-names>
+<surname>Barhen</surname>
+</string-name>, <string-name>
+<given-names>V.</given-names>
+<surname>Protopopescu</surname>
+</string-name>, and <string-name>
+<given-names>D.</given-names>
+<surname>Reister</surname>
+</string-name>, &#x0201c;<article-title>TRUST: A Deterministic Algorithm for Global Optimization</article-title>,&#x0201d; <source>Science</source>
+<volume>276</volume> (<year>1997</year>): <fpage>1094</fpage>.</mixed-citation></ref><ref id="jcc70139-bib-0031"><label>31</label><mixed-citation publication-type="book" id="jcc70139-cit-0031">
+<string-name>
+<given-names>D.</given-names>
+<surname>Sculley</surname>
+</string-name>, <source>Web&#x02010;Scale k&#x02010;Means Clustering, in Proceedings of the 19th International Conference on World Wide Web &#x02010; WWW 10</source> (<publisher-name>ACM Press</publisher-name>, <year>2010</year>).</mixed-citation></ref><ref id="jcc70139-bib-0032"><label>32</label><mixed-citation publication-type="journal" id="jcc70139-cit-0032">
+<string-name>
+<given-names>J.</given-names>
+<surname>MacQueen</surname>
+</string-name>, &#x0201c;<article-title>Classification and Analysis of Multivariate Observations, in 5th Berkeley Symp</article-title>,&#x0201d; <source>Mathematical Statistics Probability</source> (<year>1967</year>): <fpage>281</fpage>&#x02013;<lpage>297</lpage>.</mixed-citation></ref><ref id="jcc70139-bib-0033"><label>33</label><mixed-citation publication-type="journal" id="jcc70139-cit-0033">
+<string-name>
+<given-names>G.</given-names>
+<surname>Hamerly</surname>
+</string-name> and <string-name>
+<given-names>C.</given-names>
+<surname>Elkan</surname>
+</string-name>, &#x0201c;<article-title>Learning the k in k&#x02010;Means</article-title>,&#x0201d; <source>Advances in Neural Information Processing Systems</source>
+<volume>16</volume> (<year>2003</year>).</mixed-citation></ref><ref id="jcc70139-bib-0034"><label>34</label><mixed-citation publication-type="journal" id="jcc70139-cit-0034">
+<string-name>
+<given-names>F.</given-names>
+<surname>Orlando Morais</surname>
+</string-name>, <string-name>
+<given-names>K. F.</given-names>
+<surname>Andriani</surname>
+</string-name>, and <string-name>
+<given-names>J. L. F.</given-names>
+<surname>Da Silva</surname>
+</string-name>, &#x0201c;<article-title>Investigation of the Stability Mechanisms of Eight&#x02010;Atom Binary Metal Clusters Using DFT Calculations and k&#x02010;Means Clustering Algorithm</article-title>,&#x0201d; <source>Journal of Chemical Information and Modeling</source>
+<volume>61</volume> (<year>2021</year>): <elocation-id>34113420</elocation-id>.</mixed-citation></ref><ref id="jcc70139-bib-0035"><label>35</label><mixed-citation publication-type="journal" id="jcc70139-cit-0035">
+<string-name>
+<given-names>K. F.</given-names>
+<surname>Andriani</surname>
+</string-name>, <string-name>
+<given-names>P.</given-names>
+<surname>Felicio&#x02010;Sousa</surname>
+</string-name>, <string-name>
+<given-names>F. O.</given-names>
+<surname>Morais</surname>
+</string-name>, and <string-name>
+<given-names>J. L. F.</given-names>
+<surname>Da Silva</surname>
+</string-name>, &#x0201c;<article-title>Role of Quantum&#x02010;Size Effects in the Dehydrogenation of CH4 on 3d TMn Clusters: DFT Calculations Combined With Data Mining</article-title>,&#x0201d; <source>Catalysis Science &#x00026; Technology</source>
+<volume>12</volume> (<year>2022</year>): <fpage>916</fpage>.</mixed-citation></ref><ref id="jcc70139-bib-0036"><label>36</label><mixed-citation publication-type="journal" id="jcc70139-cit-0036">
+<string-name>
+<given-names>R.</given-names>
+<surname>B&#x000fc;hler</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Sch&#x000fc;tz</surname>
+</string-name>, <string-name>
+<given-names>K. F.</given-names>
+<surname>Andriani</surname>
+</string-name>, et&#x000a0;al., &#x0201c;<article-title>A Living Library Concept to Capture the Dynamics and Reactivity of Mixed&#x02010;Metal Clusters for Catalysis</article-title>,&#x0201d; <source>Nature Chemistry</source>
+<volume>17</volume> (<year>2025</year>): <fpage>525</fpage>.</mixed-citation></ref><ref id="jcc70139-bib-0037"><label>37</label><mixed-citation publication-type="miscellaneous" id="jcc70139-cit-0037">
+<collab collab-type="authors">Deserno</collab>
+, accessed March 2022, 30, <ext-link xlink:href="https://www.cmu.edu/biolphys/deserno/pdf/sphere_equi.pdf" ext-link-type="uri">https://www.cmu.edu/biolphys/deserno/pdf/sphere_equi.pdf</ext-link>.</mixed-citation></ref><ref id="jcc70139-bib-0038"><label>38</label><mixed-citation publication-type="journal" id="jcc70139-cit-0038">
+<string-name>
+<given-names>A.</given-names>
+<surname>Yershova</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Jain</surname>
+</string-name>, <string-name>
+<given-names>S. M.</given-names>
+<surname>LaValle</surname>
+</string-name>, and <string-name>
+<given-names>J. C.</given-names>
+<surname>Mitchell</surname>
+</string-name>, &#x0201c;<article-title>Generating Uniform Incremental Grids on So(3) Using the Hopf Fibration</article-title>,&#x0201d; <source>International Journal of Robotics Research</source>
+<volume>29</volume> (<year>2009</year>): <fpage>801</fpage>.</mixed-citation></ref><ref id="jcc70139-bib-0039"><label>39</label><mixed-citation publication-type="journal" id="jcc70139-cit-0039">
+<string-name>
+<given-names>J. C.</given-names>
+<surname>Mitchell</surname>
+</string-name>, &#x0201c;<article-title>Sampling Rotation Groups by Successive Orthogonal Images</article-title>,&#x0201d; <source>SIAM Journal on Scientific Computing</source>
+<volume>30</volume> (<year>2008</year>): <fpage>525</fpage>.</mixed-citation></ref><ref id="jcc70139-bib-0040"><label>40</label><mixed-citation publication-type="journal" id="jcc70139-cit-0040">
+<string-name>
+<given-names>L.</given-names>
+<surname>Van der Maaten</surname>
+</string-name> and <string-name>
+<given-names>G.</given-names>
+<surname>Hinton</surname>
+</string-name>, &#x0201c;<article-title>Visualizing Data Using t&#x02010;SNE</article-title>,&#x0201d; <source>Journal of Machine Learning Research</source>
+<volume>9</volume> (<year>2008</year>): <fpage>2579</fpage>.</mixed-citation></ref><ref id="jcc70139-bib-0041"><label>41</label><mixed-citation publication-type="journal" id="jcc70139-cit-0041">
+<string-name>
+<given-names>C.</given-names>
+<surname>Lee</surname>
+</string-name>, <string-name>
+<given-names>W.</given-names>
+<surname>Yang</surname>
+</string-name>, and <string-name>
+<given-names>R. G.</given-names>
+<surname>Parr</surname>
+</string-name>, &#x0201c;<article-title>Development of the Colle&#x02010;Salvetti Correlation&#x02010;Energy Formula Into a Functional of the Electron Density</article-title>,&#x0201d; <source>Physical Review B</source>
+<volume>37</volume> (<year>1988</year>): <fpage>785</fpage>.</mixed-citation></ref><ref id="jcc70139-bib-0042"><label>42</label><mixed-citation publication-type="journal" id="jcc70139-cit-0042">
+<string-name>
+<given-names>F.</given-names>
+<surname>Neese</surname>
+</string-name>, &#x0201c;<article-title>Software Update: The Orca Program System, Version 4.0, Wiley Interdisciplinary Reviews: Computational Molecular</article-title>,&#x0201d; <source>Science</source>
+<volume>8</volume> (<year>2018</year>): <elocation-id>e1327</elocation-id>.</mixed-citation></ref><ref id="jcc70139-bib-0043"><label>43</label><mixed-citation publication-type="miscellaneous" id="jcc70139-cit-0043">
+<string-name>
+<given-names>F.</given-names>
+<surname>Neese</surname>
+</string-name>, &#x0201c;<article-title>Orca, an Ab&#x000a0;Initio, DFT and Semiempirical Electronic Structure Package 3</article-title>,&#x0201d; <year>2009</year>.</mixed-citation></ref><ref id="jcc70139-bib-0044"><label>44</label><mixed-citation publication-type="journal" id="jcc70139-cit-0044">
+<string-name>
+<given-names>F.</given-names>
+<surname>Weigend</surname>
+</string-name> and <string-name>
+<given-names>R.</given-names>
+<surname>Ahlrichs</surname>
+</string-name>, &#x0201c;<article-title>Balanced Basis Sets of Split Valence, Triple Zeta Valence and Quadruple Zeta Valence Quality for h to Rn: Design and Assessment of Accuracy</article-title>,&#x0201d; <source>Physical Chemistry Chemical Physics</source>
+<volume>7</volume> (<year>2005</year>): <fpage>3297</fpage>.<pub-id pub-id-type="pmid">16240044</pub-id>
+</mixed-citation></ref><ref id="jcc70139-bib-0045"><label>45</label><mixed-citation publication-type="journal" id="jcc70139-cit-0045">
+<string-name>
+<given-names>Y.</given-names>
+<surname>Takano</surname>
+</string-name> and <string-name>
+<given-names>K. N.</given-names>
+<surname>Houk</surname>
+</string-name>, &#x0201c;<article-title>Benchmarking the Conductor&#x02010;Like Polarizable Continuum Model (CPCM) for Aqueous Solvation Free Energies of Neutral and Ionic Organic Molecules</article-title>,&#x0201d; <source>Journal of Chemical Theory and Computation</source>
+<volume>1</volume> (<year>2004</year>): <fpage>70</fpage>.</mixed-citation></ref><ref id="jcc70139-bib-0046"><label>46</label><mixed-citation publication-type="journal" id="jcc70139-cit-0046">
+<string-name>
+<given-names>O.</given-names>
+<surname>Trott</surname>
+</string-name> and <string-name>
+<given-names>A. J.</given-names>
+<surname>Olson</surname>
+</string-name>, &#x0201c;<article-title>AutoDock Vina: Improving the Speed and Accuracy of Docking With a New Scoring Function, Efficient Optimization, and Multithreading</article-title>,&#x0201d; <source>Journal of Computational Chemistry</source>
+<volume>31</volume> (<year>2009</year>): <fpage>455</fpage>.</mixed-citation></ref><ref id="jcc70139-bib-0047"><label>47</label><mixed-citation publication-type="journal" id="jcc70139-cit-0047">
+<string-name>
+<given-names>G. M.</given-names>
+<surname>Morris</surname>
+</string-name>, <string-name>
+<given-names>R.</given-names>
+<surname>Huey</surname>
+</string-name>, <string-name>
+<given-names>W.</given-names>
+<surname>Lindstrom</surname>
+</string-name>, et&#x000a0;al., &#x0201c;<article-title>AutoDock4 and AutoDockTools4: Automated Docking With Selective Receptor Flexibility</article-title>,&#x0201d; <source>Journal of Computational Chemistry</source>
+<volume>30</volume> (<year>2009</year>): <fpage>2785</fpage>.<pub-id pub-id-type="pmid">19399780</pub-id>
+</mixed-citation></ref><ref id="jcc70139-bib-0048"><label>48</label><mixed-citation publication-type="journal" id="jcc70139-cit-0048">
+<string-name>
+<given-names>H. M.</given-names>
+<surname>Berman</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>Battistuz</surname>
+</string-name>, <string-name>
+<given-names>T. N.</given-names>
+<surname>Bhat</surname>
+</string-name>, et&#x000a0;al., &#x0201c;<article-title>The Protein Data Bank</article-title>,&#x0201d; <source>Acta Crystallographica Section D: Biological Crystallography</source>
+<volume>58</volume> (<year>2002</year>): <fpage>899</fpage>.<pub-id pub-id-type="pmid">12037327</pub-id>
+</mixed-citation></ref><ref id="jcc70139-bib-0049"><label>49</label><mixed-citation publication-type="journal" id="jcc70139-cit-0049">
+<string-name>
+<given-names>A. L.</given-names>
+<surname>Carvalho</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Sanz</surname>
+</string-name>, <string-name>
+<given-names>D.</given-names>
+<surname>Barettino</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Romero</surname>
+</string-name>, <string-name>
+<given-names>J. J.</given-names>
+<surname>Calvete</surname>
+</string-name>, and <string-name>
+<given-names>M. J.</given-names>
+<surname>Rom&#x000e3;o</surname>
+</string-name>, &#x0201c;<article-title>Crystal Structure of a Prostate Kallikrein Isolated From Stallion Seminal Plasma: A Homologue of Human PSA</article-title>,&#x0201d; <source>Journal of Molecular Biology</source>
+<volume>322</volume> (<year>2002</year>): <fpage>325</fpage>.<pub-id pub-id-type="pmid">12217694</pub-id>
+</mixed-citation></ref><ref id="jcc70139-bib-0050"><label>50</label><mixed-citation publication-type="journal" id="jcc70139-cit-0050">
+<string-name>
+<given-names>W.</given-names>
+<surname>Humphrey</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Dalke</surname>
+</string-name>, and <string-name>
+<given-names>K.</given-names>
+<surname>Schulten</surname>
+</string-name>, &#x0201c;<article-title>VMD &#x02013; Visual Molecular Dynamics</article-title>,&#x0201d; <source>Journal of Molecular Graphics</source>
+<volume>14</volume> (<year>1996</year>): <fpage>33</fpage>.<pub-id pub-id-type="pmid">8744570</pub-id>
+</mixed-citation></ref><ref id="jcc70139-bib-0051"><label>51</label><mixed-citation publication-type="journal" id="jcc70139-cit-0051">
+<string-name>
+<given-names>W. R.</given-names>
+<surname>Pearson</surname>
+</string-name> and <string-name>
+<given-names>D. J.</given-names>
+<surname>Lipman</surname>
+</string-name>, &#x0201c;<part-title>Improved Tools for Biological Sequence Comparison</part-title>,&#x0201d; in <source>Proceedings of the National Academy of Sciences</source>, vol. <volume>85</volume> (<year>1988</year>), <elocation-id>24442448</elocation-id>.</mixed-citation></ref><ref id="jcc70139-bib-0052"><label>52</label><mixed-citation publication-type="journal" id="jcc70139-cit-0052">
+<string-name>
+<given-names>S. F.</given-names>
+<surname>Altschul</surname>
+</string-name>, <string-name>
+<given-names>W.</given-names>
+<surname>Gish</surname>
+</string-name>, <string-name>
+<given-names>W.</given-names>
+<surname>Miller</surname>
+</string-name>, <string-name>
+<given-names>E. W.</given-names>
+<surname>Myers</surname>
+</string-name>, and <string-name>
+<given-names>D. J.</given-names>
+<surname>Lipman</surname>
+</string-name>, &#x0201c;<article-title>Basic Local Alignment Search Tool</article-title>,&#x0201d; <source>Journal of Molecular Biology</source>
+<volume>215</volume> (<year>1990</year>): <elocation-id>403410</elocation-id>.</mixed-citation></ref><ref id="jcc70139-bib-0053"><label>53</label><mixed-citation publication-type="journal" id="jcc70139-cit-0053">
+<string-name>
+<given-names>X.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name>
+<given-names>G.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name>
+<given-names>P.</given-names>
+<surname>Zhang</surname>
+</string-name>, and <string-name>
+<given-names>Q.</given-names>
+<surname>Jia</surname>
+</string-name>, &#x0201c;<article-title>Advances in Epitope Molecularly Imprinted Polymers for Protein Detection: A Review</article-title>,&#x0201d; <source>Analytical Methods</source>
+<volume>13</volume> (<year>2021</year>): <elocation-id>16601671</elocation-id>.</mixed-citation></ref><ref id="jcc70139-bib-0054"><label>54</label><mixed-citation publication-type="journal" id="jcc70139-cit-0054">
+<string-name>
+<given-names>S.</given-names>
+<surname>Dietl</surname>
+</string-name>, <string-name>
+<given-names>H.</given-names>
+<surname>Sobek</surname>
+</string-name>, and <string-name>
+<given-names>B.</given-names>
+<surname>Mizaikoff</surname>
+</string-name>, &#x0201c;<article-title>Epitope&#x02010;Imprinted Polymers for Biomacromolecules: Recent Strategies, Future Challenges and Selected Applications</article-title>,&#x0201d; <source>TrAC Trends in Analytical Chemistry</source>
+<volume>143</volume> (<year>2021</year>): <elocation-id>116414</elocation-id>.</mixed-citation></ref><ref id="jcc70139-bib-0055"><label>55</label><mixed-citation publication-type="journal" id="jcc70139-cit-0055">
+<string-name>
+<given-names>T.</given-names>
+<surname>Khumsap</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Corpuz</surname>
+</string-name>, and <string-name>
+<given-names>L. T.</given-names>
+<surname>Nguyen</surname>
+</string-name>, &#x0201c;<article-title>Epitope&#x02010;Imprinted Polymers: Applications in Protein Recognition and Separation</article-title>,&#x0201d; <source>RSC Advances</source>
+<volume>11</volume> (<year>2021</year>): <elocation-id>1140311414</elocation-id>.</mixed-citation></ref><ref id="jcc70139-bib-0056"><label>56</label><mixed-citation publication-type="journal" id="jcc70139-cit-0056">
+<string-name>
+<given-names>P.</given-names>
+<surname>Pracht</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Grimme</surname>
+</string-name>, <string-name>
+<given-names>C.</given-names>
+<surname>Bannwarth</surname>
+</string-name>, et&#x000a0;al., &#x0201c;<article-title>Crest &#x02010; A Program for the Exploration of Low&#x02010;Energy Molecular Chemical Space</article-title>,&#x0201d; <source>Journal of Chemical Physics</source>
+<volume>160</volume> (<year>2024</year>): <elocation-id>114110</elocation-id>.<pub-id pub-id-type="pmid">38511658</pub-id>
+</mixed-citation></ref><ref id="jcc70139-bib-0057"><label>57</label><mixed-citation publication-type="journal" id="jcc70139-cit-0057">
+<string-name>
+<given-names>K.</given-names>
+<surname>Nishchaya</surname>
+</string-name>, <string-name>
+<given-names>V. K.</given-names>
+<surname>Rai</surname>
+</string-name>, and <string-name>
+<given-names>H.</given-names>
+<surname>Bansode</surname>
+</string-name>, &#x0201c;<article-title>Methacrylic Acid as a Potential Monomer for Molecular Imprinting: A Review of Recent Advances</article-title>,&#x0201d; <source>Results in Materials</source>
+<volume>18</volume> (<year>2023</year>): <elocation-id>100379</elocation-id>.</mixed-citation></ref><ref id="jcc70139-bib-0058"><label>58</label><mixed-citation publication-type="journal" id="jcc70139-cit-0058">
+<string-name>
+<given-names>A.</given-names>
+<surname>Rahman</surname>
+</string-name>, <string-name>
+<given-names>M. M.</given-names>
+<surname>Hoque</surname>
+</string-name>, <string-name>
+<given-names>M. A. K.</given-names>
+<surname>Khan</surname>
+</string-name>, <string-name>
+<given-names>M. G.</given-names>
+<surname>Sarwar</surname>
+</string-name>, and <string-name>
+<given-names>M. A.</given-names>
+<surname>Halim</surname>
+</string-name>, &#x0201c;<article-title>Non&#x02010;Covalent Interactions Involving Halogenated Derivatives of Capecitabine and Thymidylate Synthase: A Computational Approach</article-title>,&#x0201d; <source>SpringerPlus</source>
+<volume>5</volume> (<year>2016</year>): <fpage>146</fpage>.<pub-id pub-id-type="pmid">27026843</pub-id>
+</mixed-citation></ref><ref id="jcc70139-bib-0059"><label>59</label><mixed-citation publication-type="journal" id="jcc70139-cit-0059">
+<string-name>
+<given-names>S.</given-names>
+<surname>Janani</surname>
+</string-name>, <string-name>
+<given-names>H.</given-names>
+<surname>Rajagopal</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Muthu</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Aayisha</surname>
+</string-name>, and <string-name>
+<given-names>M.</given-names>
+<surname>Raja</surname>
+</string-name>, &#x0201c;<article-title>Molecular Structure, Spectroscopic (Ft&#x02010;Ir, Ft&#x02010;Raman, Nmr), Homo&#x02010;Lumo, Chemical Reactivity, AIM, ELF, LOL and Molecular Docking Studies on 1&#x02010;Benzyl&#x02010;4&#x02010;(n&#x02010;Boc&#x02010;Amino)piperidine</article-title>,&#x0201d; <source>Journal of Molecular Structure</source>
+<volume>1230</volume> (<year>2021</year>): <elocation-id>129657</elocation-id>.</mixed-citation></ref><ref id="jcc70139-bib-0060"><label>60</label><mixed-citation publication-type="book" id="jcc70139-cit-0060">
+<string-name>
+<given-names>P.</given-names>
+<surname>Atkins</surname>
+</string-name>, <source>Shriver and Atkins' Inorganic Chemistry</source> (<publisher-name>Oxford University Press</publisher-name>, <year>2010</year>).</mixed-citation></ref><ref id="jcc70139-bib-0061"><label>61</label><mixed-citation publication-type="journal" id="jcc70139-cit-0061">
+<string-name>
+<given-names>F.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name>
+<given-names>H.</given-names>
+<surname>Du</surname>
+</string-name>, <string-name>
+<given-names>H.</given-names>
+<surname>Liu</surname>
+</string-name>, and <string-name>
+<given-names>X.</given-names>
+<surname>Gong</surname>
+</string-name>, &#x0201c;<article-title>Hydrogenbonding Interactions and Properties of Energetic Nitroamino[1, 3, 5]Triazinebased Guanidinium Salts: Dftd and Qtaim Studies</article-title>,&#x0201d; <source>Chemistry an Asian Journal</source>
+<volume>7</volume> (<year>2012</year>): <elocation-id>25772591</elocation-id>.</mixed-citation></ref><ref id="jcc70139-bib-0062"><label>62</label><mixed-citation publication-type="journal" id="jcc70139-cit-0062">
+<string-name>
+<given-names>T.</given-names>
+<surname>Lu</surname>
+</string-name> and <string-name>
+<given-names>F.</given-names>
+<surname>Chen</surname>
+</string-name>, &#x0201c;<article-title>Multiwfn: A Multifunctional Wavefunction Analyzer</article-title>,&#x0201d; <source>Journal of Computational Chemistry</source>
+<volume>33</volume> (<year>2012</year>): <fpage>580</fpage>.<pub-id pub-id-type="pmid">22162017</pub-id>
+</mixed-citation></ref><ref id="jcc70139-bib-0063"><label>63</label><mixed-citation publication-type="journal" id="jcc70139-cit-0063">
+<string-name>
+<given-names>M.</given-names>
+<surname>Jaboski</surname>
+</string-name> and <string-name>
+<given-names>M.</given-names>
+<surname>Palusiak</surname>
+</string-name>, &#x0201c;<article-title>The Halogenoxygen Interaction in 3&#x02010;Halogenopropenal Revisited the Dimer Model vs. Qtaim Indications</article-title>,&#x0201d; <source>Chemical Physics</source>
+<volume>415</volume> (<year>2013</year>): <fpage>207</fpage>.</mixed-citation></ref><ref id="jcc70139-bib-0064"><label>64</label><mixed-citation publication-type="journal" id="jcc70139-cit-0064">
+<string-name>
+<given-names>U.</given-names>
+<surname>Gunawan</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Ibrahim</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Luqman Ivansyah</surname>
+</string-name>, and <string-name>
+<given-names>S.</given-names>
+<surname>Damayanti</surname>
+</string-name>, &#x0201c;<article-title>Insights Into the Selective Imprinted Polymer of Voriconazole From Host&#x02010;Guest Interaction Perspective</article-title>,&#x0201d; <source>Journal of Molecular Liquids</source>
+<volume>383</volume> (<year>2023</year>): <elocation-id>122130</elocation-id>.</mixed-citation></ref><ref id="jcc70139-bib-0065"><label>65</label><mixed-citation publication-type="journal" id="jcc70139-cit-0065">
+<string-name>
+<given-names>K. F.</given-names>
+<surname>Andriani</surname>
+</string-name>, <string-name>
+<given-names>G.</given-names>
+<surname>Heinzelmann</surname>
+</string-name>, and <string-name>
+<given-names>G. F.</given-names>
+<surname>Caramori</surname>
+</string-name>, &#x0201c;<article-title>Shedding Light on the Hydrolysis Mechanism of Cis, Trans&#x02010;[Ru(dmso)4Cl2] Complexes and Their Interactions With DNA &#x02010; A Computational Perspective</article-title>,&#x0201d; <source>Journal of Physical Chemistry B</source>
+<volume>123</volume> (<year>2018</year>): <elocation-id>457467</elocation-id>.</mixed-citation></ref><ref id="jcc70139-bib-0066"><label>66</label><mixed-citation publication-type="journal" id="jcc70139-cit-0066">
+<string-name>
+<given-names>J.</given-names>
+<surname>Fan</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Fu</surname>
+</string-name>, and <string-name>
+<given-names>L.</given-names>
+<surname>Zhang</surname>
+</string-name>, &#x0201c;<article-title>Progress in Molecular Docking</article-title>,&#x0201d; <source>Quantitative Biology</source>
+<volume>7</volume> (<year>2019</year>): <fpage>8389</fpage>.</mixed-citation></ref><ref id="jcc70139-bib-0067"><label>67</label><mixed-citation publication-type="journal" id="jcc70139-cit-0067">
+<string-name>
+<given-names>E. K.</given-names>
+<surname>Reville</surname>
+</string-name>, <string-name>
+<given-names>E. H.</given-names>
+<surname>Sylvester</surname>
+</string-name>, <string-name>
+<given-names>S. J.</given-names>
+<surname>Benware</surname>
+</string-name>, <string-name>
+<given-names>S. S.</given-names>
+<surname>Negi</surname>
+</string-name>, and <string-name>
+<given-names>E. B.</given-names>
+<surname>Berda</surname>
+</string-name>, &#x0201c;<article-title>Customizable Molecular Recognition: Advancements in Design, Synthesis, and Application of Molecularly Imprinted Polymers</article-title>,&#x0201d; <source>Polymer Chemistry</source>
+<volume>13</volume> (<year>2022</year>): <fpage>3387</fpage>.</mixed-citation></ref><ref id="jcc70139-bib-0068"><label>68</label><mixed-citation publication-type="journal" id="jcc70139-cit-0068">
+<string-name>
+<given-names>Y.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name>
+<given-names>H.</given-names>
+<surname>Li</surname>
+</string-name>, et&#x000a0;al., &#x0201c;<article-title>Rigorous Recognition Mode Analysis of Molecularly Imprinted Polymersrational Design, Challenges, and Opportunities</article-title>,&#x0201d; <source>Progress in Polymer Science</source>
+<volume>150</volume> (<year>2024</year>): <elocation-id>101790</elocation-id>.</mixed-citation></ref><ref id="jcc70139-bib-0069"><label>69</label><mixed-citation publication-type="journal" id="jcc70139-cit-0069">
+<string-name>
+<given-names>E. F.</given-names>
+<surname>Pettersen</surname>
+</string-name>, <string-name>
+<given-names>T. D.</given-names>
+<surname>Goddard</surname>
+</string-name>, <string-name>
+<given-names>C. C.</given-names>
+<surname>Huang</surname>
+</string-name>, et&#x000a0;al., &#x0201c;<article-title>UCSF Chimera &#x02010; A Visualization System for Exploratory Research and Analysis</article-title>,&#x0201d; <source>Journal of Computational Chemistry</source>
+<volume>25</volume> (<year>2004</year>): <fpage>1605</fpage>.<pub-id pub-id-type="pmid">15264254</pub-id>
+</mixed-citation></ref><ref id="jcc70139-bib-0070"><label>70</label><mixed-citation publication-type="journal" id="jcc70139-cit-0070">
+<string-name>
+<given-names>R. A.</given-names>
+<surname>Laskowski</surname>
+</string-name> and <string-name>
+<given-names>M. B.</given-names>
+<surname>Swindells</surname>
+</string-name>, &#x0201c;<article-title>Ligplot+: Multiple Ligand&#x02013;Protein Interaction Diagrams for Drug Discovery</article-title>,&#x0201d; <source>Journal of Chemical Information and Modeling</source>
+<volume>51</volume> (<year>2011</year>): <fpage>2778</fpage>.<pub-id pub-id-type="pmid">21919503</pub-id>
+</mixed-citation></ref><ref id="jcc70139-bib-0071"><label>71</label><mixed-citation publication-type="journal" id="jcc70139-cit-0071">
+<string-name>
+<given-names>T. K.</given-names>
+<surname>Harris</surname>
+</string-name> and <string-name>
+<given-names>A. S.</given-names>
+<surname>Mildvan</surname>
+</string-name>, &#x0201c;<article-title>High&#x02010;Precision Measurement of Hydrogen Bond Lengths in Proteins by Nuclear Magnetic Resonance Methods, Proteins: Structure</article-title>,&#x0201d; <source>Function, and Genetics</source>
+<volume>35</volume> (<year>1999</year>): <fpage>275</fpage>.</mixed-citation></ref></ref-list></back></article>

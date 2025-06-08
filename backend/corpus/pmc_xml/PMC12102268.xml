@@ -1,0 +1,554 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Sci Rep</journal-id><journal-id journal-id-type="iso-abbrev">Sci Rep</journal-id><journal-title-group><journal-title>Scientific Reports</journal-title></journal-title-group><issn pub-type="epub">2045-2322</issn><publisher><publisher-name>Nature Publishing Group UK</publisher-name><publisher-loc>London</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">40410369</article-id><article-id pub-id-type="pmc">PMC12102268</article-id>
+<article-id pub-id-type="publisher-id">2800</article-id><article-id pub-id-type="doi">10.1038/s41598-025-02800-7</article-id><article-categories><subj-group subj-group-type="heading"><subject>Article</subject></subj-group></article-categories><title-group><article-title>A short-arc hardware delay estimation method for inter-satellite links to improve BDS-3 precise orbit determination</article-title></title-group><contrib-group><contrib contrib-type="author"><name><surname>Yang</surname><given-names>Zhouming</given-names></name><xref ref-type="aff" rid="Aff1">1</xref><xref ref-type="aff" rid="Aff2">2</xref></contrib><contrib contrib-type="author" corresp="yes"><name><surname>Yuan</surname><given-names>Yunbin</given-names></name><address><email>yybgps@asch.whigg.ac.cn</email></address><xref ref-type="aff" rid="Aff1">1</xref></contrib><contrib contrib-type="author"><name><surname>Tan</surname><given-names>Bingfeng</given-names></name><xref ref-type="aff" rid="Aff1">1</xref></contrib><aff id="Aff1"><label>1</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/034t30j35</institution-id><institution-id institution-id-type="GRID">grid.9227.e</institution-id><institution-id institution-id-type="ISNI">0000000119573309</institution-id><institution>State Key Laboratory of Geodesy and Earth&#x02019;s Dynamics, Innovation Academy for Precision Measurement Science and Technology (APM), </institution><institution>Chinese Academy of Sciences (CAS), </institution></institution-wrap>Wuhan, 430071 China </aff><aff id="Aff2"><label>2</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/05qbk4x57</institution-id><institution-id institution-id-type="GRID">grid.410726.6</institution-id><institution-id institution-id-type="ISNI">0000 0004 1797 8419</institution-id><institution>College of Earth and Planetary Sciences, </institution><institution>University of Chinese Academy of Sciences, </institution></institution-wrap>Beijing, China </aff></contrib-group><pub-date pub-type="epub"><day>23</day><month>5</month><year>2025</year></pub-date><pub-date pub-type="pmc-release"><day>23</day><month>5</month><year>2025</year></pub-date><pub-date pub-type="collection"><year>2025</year></pub-date><volume>15</volume><elocation-id>17940</elocation-id><history><date date-type="received"><day>5</day><month>12</month><year>2024</year></date><date date-type="accepted"><day>15</day><month>5</month><year>2025</year></date></history><permissions><copyright-statement>&#x000a9; The Author(s) 2025</copyright-statement><copyright-year>2025</copyright-year><license><ali:license_ref specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p><bold>Open Access</bold> This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article&#x02019;s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article&#x02019;s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link>.</license-p></license></permissions><abstract id="Abs1"><p id="Par1">The inter-satellite link (ISL) equipment of the third-generation BeiDou Navigation Satellite System (BDS-3) can enhance the accuracy of precise orbit determination (POD) for BDS-3 satellites. However, the hardware delays within ISL observations can impact the measurement accuracy of ISL observations. This study evaluates the characteristics of hardware delays in ISL observations for BDS-3 medium Earth orbit (MEO) satellites and investigates their effects on POD. Analysis shows that most links exhibit slow variations in hardware delays, with standard deviations (STD) of 6.4&#x000a0;cm and 3.6&#x000a0;cm over 45 days for the C19-C25 and C20-C21 links, respectively. Conversely, some links like C30-C23 and C30-C33 show more pronounced variations, with STD values reaching 17.7&#x000a0;cm and 14.1&#x000a0;cm within three days. Links involving satellites C23 and C30 display higher variability and significant jumps in hardware delays compared with other links. The larger variations in hardware delays of these links can be absorbed by other parameters, thereby affecting the accuracy of parameter estimation. To mitigate their impact on POD, a segmented estimation strategy for hardware delays is proposed. This strategy divides a single link into multiple segments based on a set interval length and estimates the hardware delay parameters for each segment separately, thereby absorbing the variations in hardware delays or unmodeled errors. The effectiveness of this strategy is demonstrated through ISL POD residual analysis, comparison with L-band orbit determination results, and validation using Satellite Laser Ranging (SLR) residuals. The root mean square (RMS) of ISL observation residuals decreased by approximately 44.3%, from 6.1&#x000a0;cm to 3.4&#x000a0;cm. Comparisons with L-band orbits confirmed an approximate 28.2% reduction in the 3D RMS of orbit discrepancies, from 26.5&#x000a0;cm to 19.0&#x000a0;cm. Additionally, the RMS of the overall SLR residuals showed a slight decrease. Overall, the improved segmented estimation strategy effectively reduces the influence of hardware delay variations on BDS-3 orbit determination, notably enhancing the orbit determination accuracy of BDS-3 satellites, especially for C23 and C30, which experience larger hardware delay fluctuations.</p></abstract><kwd-group xml:lang="en"><title>Keywords</title><kwd>BDS-3 navigation satellite system</kwd><kwd>Inter-satellite link</kwd><kwd>Precise orbit determination</kwd><kwd>Hardware delay</kwd><kwd>Segmented Estimation</kwd></kwd-group><kwd-group kwd-group-type="npg-subject"><title>Subject terms</title><kwd>Aerospace engineering</kwd><kwd>Astronomy and planetary science</kwd></kwd-group><funding-group><award-group><funding-source><institution>National Natural Science Foundation of China</institution></funding-source><award-id>42004022</award-id><award-id>42004022</award-id><award-id>42004022</award-id><principal-award-recipient><name><surname>Yang</surname><given-names>Zhouming</given-names></name><name><surname>Yuan</surname><given-names>Yunbin</given-names></name><name><surname>Tan</surname><given-names>Bingfeng</given-names></name></principal-award-recipient></award-group></funding-group><funding-group><award-group><funding-source><institution>the National Key Research Program of China &#x0201c;Collaborative Precision Positioning Project&#x0201d;</institution></funding-source><award-id>2016YFB0501900</award-id><award-id>2016YFB0501900</award-id><award-id>2016YFB0501900</award-id><principal-award-recipient><name><surname>Yang</surname><given-names>Zhouming</given-names></name><name><surname>Yuan</surname><given-names>Yunbin</given-names></name><name><surname>Tan</surname><given-names>Bingfeng</given-names></name></principal-award-recipient></award-group></funding-group><custom-meta-group><custom-meta><meta-name>issue-copyright-statement</meta-name><meta-value>&#x000a9; Springer Nature Limited 2025</meta-value></custom-meta></custom-meta-group></article-meta></front><body><sec id="Sec1"><title>Introduction</title><p id="Par2">The BeiDou-3 Navigation Satellite System (BDS-3) began providing global services in 2020, offering high-precision navigation, positioning, and timing services to users worldwide<sup><xref ref-type="bibr" rid="CR1">1</xref></sup>. According to the most recent data, the BDS-3 constellation now includes 28 medium Earth orbit (MEO) satellites, 5 inclined geosynchronous orbit (IGSO) satellites, and 4 geostationary orbit (GEO) satellites<sup><xref ref-type="bibr" rid="CR2">2</xref></sup>. To ensure continuous global service in the absence of sufficient overseas tracking stations, the BDS-3 system has prioritized the development and implementation of inter-satellite link (ISL) technology. ISL technology is valued for its ability to provide accurate distance measurements between BDS-3 satellites, offering distinct advantages over ground-based observations as it is not affected by tropospheric and ionospheric delays, thus more accurately reflecting the physical characteristics of the clocks on board the BDS-3 satellites<sup><xref ref-type="bibr" rid="CR3">3</xref>,<xref ref-type="bibr" rid="CR4">4</xref></sup>. Additionally, ISL technology enriches the inter-satellite observation data, enabling full-arc, high-precision orbit determination for BDS-3 satellites even when relying on a limited number of ground stations. However, ISLs are susceptible to a variety of complex errors, such as signal transmission delays, limitations in equipment precision, and environmental factors, which significantly complicate the processing of inter-satellite observation data. Therefore, there is a critical need for research into high-precision data processing algorithms and models for ISL technology.</p><p id="Par3">The five new-generation BDS satellites (BDS-3&#x000a0;S) are equipped with inter-satellite observation devices based on the Ka-band<sup><xref ref-type="bibr" rid="CR4">4</xref>&#x02013;<xref ref-type="bibr" rid="CR6">6</xref></sup>, which operate using a Concurrent Spatial Time Division Duplexing (CSTDD) system. The ISLs of the BDS-3&#x000a0;S system enable mutual communication between satellites, enabling the constellation to achieve joint orbit determination and time synchronization<sup><xref ref-type="bibr" rid="CR7">7</xref></sup>. To evaluate the orbit determination accuracy of these experimental satellites, Tang et al. (2018) conducted tests comparing the BDS-3&#x000a0;S satellite orbits through overlapping orbit analysis and satellite laser ranging (SLR) validation. The results indicated that inter-satellite ranging can effectively improve the orbital accuracy of BDS-3&#x000a0;S satellites, with the radial precision of MEO satellites reaching 10.0&#x000a0;cm. Following the BDS-3&#x000a0;S satellites, the BDS-3 satellites, designed for global service, were subsequently launched, all equipped with ISL equipment. To further assess the improvements in the orbit and clock offset determination of BDS-3 satellites achieved through inter-satellite ranging, Xie et al. (2020) analyzed the ISL data from BDS-3 MEO and GEO satellites. The analysis revealed that the radial orbit errors for MEO satellites, as determined by Ka-band measurements, ranged from 2 to 4&#x000a0;cm, while those for GEO satellites were 8 to 10&#x000a0;cm. Additionally, ISL technology enhances the accuracy of broadcast ephemerides<sup><xref ref-type="bibr" rid="CR8">8</xref></sup>, resulting in more than 98% of ephemeris parameters and 93% of clock parameters being updated within one hour when combining ground stations and ISLs<sup><xref ref-type="bibr" rid="CR9">9</xref></sup>. As the BDS-3 progressively reaches full operational capability, researchers have undertaken a wide range of studies focused on POD utilizing ISLs. These investigations encompass several key areas: the development and optimization of orbit determination algorithms for BDS-3 satellites<sup><xref ref-type="bibr" rid="CR10">10</xref></sup>; the examination of overall constellation self-rotation<sup><xref ref-type="bibr" rid="CR11">11</xref>&#x02013;<xref ref-type="bibr" rid="CR15">15</xref></sup>; the improvement of solar radiation pressure models specific to BDS-3 satellites<sup><xref ref-type="bibr" rid="CR16">16</xref>,<xref ref-type="bibr" rid="CR17">17</xref></sup>; the POD of GEO BDS-3 satellites<sup><xref ref-type="bibr" rid="CR18">18</xref></sup>; the estimation of satellite clock offsets within the BDS-3 constellation; and the assessment of ISL observation quality<sup><xref ref-type="bibr" rid="CR18">18</xref>&#x02013;<xref ref-type="bibr" rid="CR24">24</xref></sup>. Through these comprehensive research endeavors, significant insights into enhancing the accuracy and reliability of BDS-3 POD have been gained.</p><p id="Par4">In existing ISL POD, the ISL hardware delay parameters were treated as satellite-specific, with one clock-free (CF) combination hardware delay parameter estimated for each satellite over a 72-hour period. However, the assumption that ISL hardware delays are satellite-related constant parameters implies that these delays do not vary with the specific ISL link. If satellite-related hardware delays differ between various ISL links, it suggests that the satellite-specific hardware delay parameters would vary when different ISL links are formed<sup><xref ref-type="bibr" rid="CR25">25</xref></sup>. To address this issue, Wang et al. (2019) designed two strategies for estimating hardware delays: one involves estimating satellite-related hardware delays within the POD process; the other entails estimating the hardware delays for individual ISL links during POD. The effectiveness of these two strategies was evaluated using ISL residuals and operational orbit determinations (OODs). The evaluation results indicate that, excluding the satellites C29 and C30, the strategy of estimating hardware delays for individual ISL links performs better than estimating satellite-related hardware delays. This finding underscores the importance of accounting for variability in hardware delays across different ISL links to improve the accuracy of POD. Moreover, there are differences in the observational noise among various links, especially those involving satellites C23 and C26, which exhibit higher noise levels compared to other MEO satellites<sup><xref ref-type="bibr" rid="CR19">19</xref></sup>. These findings suggest that estimating hardware delay parameters per satellite may not be the optimal approach due to variations in link measurement noise. Hence, it is essential to investigate the variations in CF combination hardware delays for each ISL of the BDS-3 satellites. Based on the research by Wang et al. (2019), this study applies a segmented estimation approach to the CF combined hardware delays of individual ISL links. Furthermore, it evaluates the effects of different estimation strategies on POD.</p><p id="Par5">To study the hardware delays of the CF combinations of BDS-3 satellites, we integrate precise ephemerides with raw ISL observational data to estimate the CF combination hardware delay parameters for each link and analyze the characteristics of these parameters&#x02019; variations. Based on the characteristics of hardware delay changes, multiple segmented estimation strategies for the hardware delays of single links are designed. The effectiveness of the segmented hardware delay estimation strategies is evaluated using ISL orbit determination residuals, comparisons with L-band orbits, and SLR validation. The structure of this paper is organized as follows: First, we introduce the BDS-3 ISL observation model and the results of the analysis of CF combination hardware delays. Second, we present the status of ISL establishment and the segmented estimation strategies for ISL hardware delays, followed by an analysis and discussion of the orbit determination results. Finally, we summarize the findings and provide a conclusion.</p></sec><sec id="Sec2"><title>ISL observation model and hardware delay Estimation</title><p id="Par6">This section first presents the observation model for the BDS-3 ISLs. It then evaluates the quality of the ISL signals. During the assessment of ISL signal quality, a comprehensive comparison of the differences among various links is conducted to elucidate the characteristics of these signals.</p><sec id="Sec3"><title>Basic BDS-3 ISL observation model</title><p id="Par7">The original observation model for the ISLs can be expressed as:<disp-formula id="Equ1"><label>1</label><alternatives><tex-math id="d33e267">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{gathered} {P_{AB}}\left( {{t_1}} \right)=\left| {{{\overset{\lower0.5em\hbox{$\smash{\scriptscriptstyle\rightharpoonup}$}} {R} }_B}\left( {{t_1}} \right) - {{\overset{\lower0.5em\hbox{$\smash{\scriptscriptstyle\rightharpoonup}$}} {R} }_A}\left( {{t_1} - \Delta {t_1}} \right)} \right|+c \cdot \left[ {d{t_B}\left( {{t_1}} \right) - d{t_A}\left( {{t_1} - \Delta {t_1}} \right)} \right] \\ +c \cdot \left( {\delta _{B}^{{rec}}+\delta _{A}^{{send}}} \right)+{\Delta _{AB}}+{\varepsilon _{AB}} \\ {P_{BA}}\left( {{t_2}} \right)=\left| {{{\overset{\lower0.5em\hbox{$\smash{\scriptscriptstyle\rightharpoonup}$}} {R} }_A}\left( {{t_2}} \right) - {{\overset{\lower0.5em\hbox{$\smash{\scriptscriptstyle\rightharpoonup}$}} {R} }_B}\left( {{t_2} - \Delta {t_2}} \right)} \right|+c \cdot \left[ {d{t_A}\left( {{t_2}} \right) - d{t_B}\left( {{t_2} - \Delta {t_2}} \right)} \right] \\ +c \cdot \left( {\delta _{A}^{{rec}}+\delta _{B}^{{send}}} \right)+{\Delta _{BA}}+{\varepsilon _{BA}} \\ \end{gathered}$$\end{document}</tex-math><graphic xlink:href="41598_2025_2800_Article_Equ1.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par8">where the pseudorange observation <inline-formula id="IEq1"><alternatives><tex-math id="d33e275">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${P_{AB}}\left( {{t_1}} \right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq1.gif"/></alternatives></inline-formula> is the Ka-band pseudorange measurement obtained when Satellite B receives the signal from Satellite A at time <inline-formula id="IEq2"><alternatives><tex-math id="d33e281">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${t_1}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq2.gif"/></alternatives></inline-formula>, <inline-formula id="IEq3"><alternatives><tex-math id="d33e287">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${P_{BA}}\left( {{t_2}} \right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq3.gif"/></alternatives></inline-formula> is the pseudorange observation generated when Satellite A receives the signal from Satellite B at time <inline-formula id="IEq4"><alternatives><tex-math id="d33e293">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${t_2}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq4.gif"/></alternatives></inline-formula>, <inline-formula id="IEq5"><alternatives><tex-math id="d33e299">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\vec {R}_A}\left( {{t_2}} \right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq5.gif"/></alternatives></inline-formula> and <inline-formula id="IEq6"><alternatives><tex-math id="d33e306">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\vec {R}_B}\left( {{t_1}} \right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq6.gif"/></alternatives></inline-formula> represent the position vectors of Satellites A and B, respectively, <inline-formula id="IEq7"><alternatives><tex-math id="d33e312">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\Delta {t_1}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq7.gif"/></alternatives></inline-formula>and <inline-formula id="IEq8"><alternatives><tex-math id="d33e318">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\Delta {t_2}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq8.gif"/></alternatives></inline-formula> represent the signal propagation times,<italic> c</italic> denotes the speed of light, <inline-formula id="IEq10"><alternatives><tex-math id="d33e327">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d{t_A}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq10.gif"/></alternatives></inline-formula> and <inline-formula id="IEq11"><alternatives><tex-math id="d33e333">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d{t_B}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq11.gif"/></alternatives></inline-formula> are the clock offsets of the respective satellites, <inline-formula id="IEq12"><alternatives><tex-math id="d33e340">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\delta _{{}}^{{send}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq12.gif"/></alternatives></inline-formula>and <inline-formula id="IEq13"><alternatives><tex-math id="d33e346">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\delta _{{}}^{{rec}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq13.gif"/></alternatives></inline-formula> represent the signal transmission and reception delays due to the ISL equipment, <inline-formula id="IEq14"><alternatives><tex-math id="d33e352">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\Delta _{AB}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq14.gif"/></alternatives></inline-formula> and <inline-formula id="IEq15"><alternatives><tex-math id="d33e358">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\Delta _{BA}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq15.gif"/></alternatives></inline-formula> are the systematic error corrections, which include antenna phase center corrections, relativistic effects, multipath effects, and range measurement biases, <inline-formula id="IEq16"><alternatives><tex-math id="d33e364">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varepsilon _{AB}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq16.gif"/></alternatives></inline-formula> and <inline-formula id="IEq17"><alternatives><tex-math id="d33e370">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varepsilon _{BA}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq17.gif"/></alternatives></inline-formula> represent the observation noises. By combining the two-way observations, a CF combination observation is formed. Prior to the combination, the two-way ranging epochs must be normalized. The observations at times <inline-formula id="IEq18"><alternatives><tex-math id="d33e377">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${t_1}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq2.gif"/></alternatives></inline-formula> and <inline-formula id="IEq19"><alternatives><tex-math id="d33e383">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${t_2}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq4.gif"/></alternatives></inline-formula> are normalized to the reference epoch <inline-formula id="IEq20"><alternatives><tex-math id="d33e389">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${t_0}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq20.gif"/></alternatives></inline-formula>:<disp-formula id="Equ2"><label>2</label><alternatives><tex-math id="d33e395">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{gathered} {P_{AB}}\left( {{t_0}} \right)={P_{AB}}\left( {{t_1}} \right)+\Delta {P_{AB}} \\ =\left| {{{\vec {R}}_B}\left( {{t_0}} \right) - {{\vec {R}}_A}\left( {{t_0}} \right)} \right|+c \cdot \left[ {d{t_B}\left( {{t_0}} \right) - d{t_A}\left( {{t_0}} \right)} \right]+c \cdot \left( {\delta _{B}^{{rec}}+\delta _{A}^{{send}}} \right)+{{\tilde {\Delta }}_{AB}}+{\varepsilon _{AB}} \\ {P_{BA}}\left( {{t_0}} \right)={P_{BA}}\left( {{t_2}} \right)+\Delta {P_{BA}} \\ =\left| {{{\vec {R}}_A}\left( {{t_0}} \right) - {{\vec {R}}_B}\left( {{t_0}} \right)} \right|+c \cdot \left[ {d{t_A}\left( {{t_0}} \right) - d{t_B}\left( {{t_0}} \right)} \right]+c \cdot \left( {\delta _{A}^{{rec}}+\delta _{B}^{{send}}} \right)+{{\tilde {\Delta }}_{BA}}+{\varepsilon _{BA}} \\ \end{gathered}$$\end{document}</tex-math><graphic xlink:href="41598_2025_2800_Article_Equ2.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par9">where <inline-formula id="IEq21"><alternatives><tex-math id="d33e403">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${P_{AB}}\left( {{t_0}} \right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq21.gif"/></alternatives></inline-formula> and <inline-formula id="IEq22"><alternatives><tex-math id="d33e409">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${P_{BA}}\left( {{t_0}} \right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq22.gif"/></alternatives></inline-formula> represent the Ka-band virtual pseudorange observations corresponding to the normalized epoch <inline-formula id="IEq23"><alternatives><tex-math id="d33e415">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${t_0}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq20.gif"/></alternatives></inline-formula>, <inline-formula id="IEq24"><alternatives><tex-math id="d33e421">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\vec {R}_A}\left( {{t_0}} \right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq24.gif"/></alternatives></inline-formula> and <inline-formula id="IEq25"><alternatives><tex-math id="d33e427">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\vec {R}_B}\left( {{t_0}} \right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq25.gif"/></alternatives></inline-formula> are the satellite position vectors at <inline-formula id="IEq26"><alternatives><tex-math id="d33e434">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${t_0}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq20.gif"/></alternatives></inline-formula>, <inline-formula id="IEq27"><alternatives><tex-math id="d33e440">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d{t_A}\left( {{t_0}} \right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq27.gif"/></alternatives></inline-formula> and <inline-formula id="IEq28"><alternatives><tex-math id="d33e446">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d{t_B}\left( {{t_0}} \right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq28.gif"/></alternatives></inline-formula> are the satellite clock offsets at <inline-formula id="IEq29"><alternatives><tex-math id="d33e452">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${t_0}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq20.gif"/></alternatives></inline-formula>,<inline-formula id="IEq30"><alternatives><tex-math id="d33e458">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\tilde {\Delta }_{AB}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq30.gif"/></alternatives></inline-formula> and <inline-formula id="IEq31"><alternatives><tex-math id="d33e464">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\tilde {\Delta }_{BA}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq31.gif"/></alternatives></inline-formula> are the errors generated during the normalization process, <inline-formula id="IEq32"><alternatives><tex-math id="d33e471">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\Delta {P_{AB}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq32.gif"/></alternatives></inline-formula> and <inline-formula id="IEq33"><alternatives><tex-math id="d33e477">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\Delta {P_{BA}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq33.gif"/></alternatives></inline-formula> are the sums of the differences in inter-satellite distances and clock offsets between <inline-formula id="IEq34"><alternatives><tex-math id="d33e483">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${t_0}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq20.gif"/></alternatives></inline-formula> and <inline-formula id="IEq35"><alternatives><tex-math id="d33e489">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${t_1}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq2.gif"/></alternatives></inline-formula>, <inline-formula id="IEq36"><alternatives><tex-math id="d33e495">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${t_0}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq20.gif"/></alternatives></inline-formula>and <inline-formula id="IEq37"><alternatives><tex-math id="d33e501">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${t_2}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq4.gif"/></alternatives></inline-formula>, respectively. Their expressions are given as follows:<disp-formula id="Equ3"><label>3</label><alternatives><tex-math id="d33e508">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{gathered} \Delta {P_{AB}}=\left| {{{\vec {R}}_B}\left( {{t_0}} \right) - {{\vec {R}}_A}\left( {{t_0}} \right)} \right| - \left| {{{\vec {R}}_B}\left( {{t_1}} \right) - {{\vec {R}}_A}\left( {{t_1} - \Delta {t_1}} \right)} \right| \\ +c \cdot \left[ {d{t_B}\left( {{t_0}} \right) - d{t_A}\left( {{t_0}} \right)} \right] - c \cdot \left[ {d{t_B}\left( {{t_1}} \right) - d{t_A}\left( {{t_1} - \Delta {t_1}} \right)} \right] \\ \Delta {P_{BA}}=\left| {{{\vec {R}}_A}\left( {{t_0}} \right) - {{\vec {R}}_B}\left( {{t_0}} \right)} \right| - \left| {{{\vec {R}}_B}\left( {{t_2}} \right) - {{\vec {R}}_B}\left( {{t_2} - \Delta {t_2}} \right)} \right| \\ +c \cdot \left[ {d{t_A}\left( {{t_0}} \right) - d{t_B}\left( {{t_0}} \right)} \right] - c \cdot \left[ {d{t_A}\left( {{t_2}} \right) - d{t_B}\left( {{t_2} - \Delta {t_2}} \right)} \right] \\ \end{gathered}$$\end{document}</tex-math><graphic xlink:href="41598_2025_2800_Article_Equ3.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par10">The accuracy of the normalization corrections directly impacts the quality of the two-way combined observations, which primarily depends on the accuracy of the velocity and clock rates of the BeiDou satellites. In this study, the broadcast ephemeris of BeiDou satellites is utilized to compute their a priori positions, velocities, and clock offsets. The CF combination,<inline-formula id="IEq38"><alternatives><tex-math id="d33e516">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${P_{CF}}\left( {{t_0}} \right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq38.gif"/></alternatives></inline-formula>, is obtained by summing <inline-formula id="IEq39"><alternatives><tex-math id="d33e522">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${P_{AB}}\left( {{t_0}} \right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq21.gif"/></alternatives></inline-formula> and <inline-formula id="IEq40"><alternatives><tex-math id="d33e528">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${P_{BA}}\left( {{t_0}} \right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq22.gif"/></alternatives></inline-formula>. The expression for <inline-formula id="IEq41"><alternatives><tex-math id="d33e534">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${P_{CF}}\left( {{t_0}} \right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq38.gif"/></alternatives></inline-formula> is given as follows:<disp-formula id="Equ4"><label>4</label><alternatives><tex-math id="d33e540">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{gathered} {P_{CF}}\left( {{t_0}} \right)=\frac{{{P_{AB}}\left( {{t_0}} \right)+{P_{BA}}\left( {{t_0}} \right)}}{2} \\ =\left| {{{\vec {R}}_B}\left( {{t_0}} \right) - {{\vec {R}}_A}\left( {{t_0}} \right)} \right|+c \cdot \left( {{\delta _A}+{\delta _B}} \right)+\frac{{{{\tilde {\Delta }}_{AB}}+{{\tilde {\Delta }}_{BA}}}}{2}+{\varepsilon _{CF}} \\ \end{gathered}$$\end{document}</tex-math><graphic xlink:href="41598_2025_2800_Article_Equ4.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par11">where <inline-formula id="IEq42"><alternatives><tex-math id="d33e548">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\delta _{A}^{{}}=\frac{{\delta _{A}^{{send}}+\delta _{A}^{{rec}}}}{2}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq42.gif"/></alternatives></inline-formula> and <inline-formula id="IEq43"><alternatives><tex-math id="d33e554">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\delta _{B}^{{}}=\frac{{\delta _{B}^{{send}}+\delta _{B}^{{rec}}}}{2}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq43.gif"/></alternatives></inline-formula> represent half the sum of the transmission and reception hardware delays for the ISL equipment of Satellites A and B, respectively. During the computation of the satellite orbits, the orbital parameters, solar radiation pressure (SRP) model parameters, and ISL hardware delay parameters are estimated concurrently. This study focuses on the segmented estimation strategy for ISL hardware delays and its impact on orbit determination accuracy.</p></sec><sec id="Sec4"><title>Hardware delay variations and Estimation</title><p id="Par12">The hardware delay in inter-satellite observations varies slowly and has been treated as a constant in existing research, with only one CF combination hardware delay estimated for each satellite over a 72-hour period. However, measurement noise differs among the links, and some links exhibit significant noise levels<sup><xref ref-type="bibr" rid="CR19">19</xref></sup>, which can affect the estimation of hardware delays and orbital parameters. To address this, a segmented estimation approach is employed for the hardware delays of individual links to mitigate the impact of link noise or unmodeled errors on orbit determination, and to analyze the temporal variations of the hardware delays. The STD of the hardware delays for each link is calculated to quantify the time-varying characteristics of the hardware delays. This analysis aids in achieving a more comprehensive understanding of the stability and reliability of ISL signals, providing essential references for future applications. The expression for the link hardware delay is given as follows:<disp-formula id="Equ5"><label>5</label><alternatives><tex-math id="d33e568">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$c \cdot \left( {{\delta _A}+{\delta _B}} \right)={P_{CF}}\left( {{t_0}} \right) - \left| {{{\vec {R}}_B}\left( {{t_0}} \right) - {{\vec {R}}_A}\left( {{t_0}} \right)} \right| - \frac{{{{\tilde {\Delta }}_{AB}}+{{\tilde {\Delta }}_{BA}}}}{2} - {\varepsilon _{CF}}$$\end{document}</tex-math><graphic xlink:href="41598_2025_2800_Article_Equ5.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par13">where <inline-formula id="IEq44"><alternatives><tex-math id="d33e576">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$c \cdot \left( {{\delta _A}+{\delta _B}} \right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq44.gif"/></alternatives></inline-formula> is hardware delay. To avoid the influence of orbital errors on the calculation of hardware delays, the experiment utilized precise ephemeris data released by the international GNSS Monitoring &#x00026; Assessment System (iGMAS) Analysis Center of the Innovation Academy for Precision Measurement Science and Technology (APM), Chinese Academy of Sciences, to compute the accurate positions of BDS-3 satellites.</p><p id="Par14">This study analyzed the variations in hardware delays for 135 links over a 45-day period from April 26 to June 9, 2020, and calculated the STD of the hardware delays for each link. After removing outliers exceeding three times the STD, over 95% of data remained for all links. Most links retained over 96% of data, indicating high-quality inter-satellite observation data. Some links like C19-C25 and C20-C21 showed slow delay variations and low STD values. However, links such as C28-C23, C28-C32, C30-C23, and C30-C33 exhibited noticeable delay jumps and higher STD values.</p><p id="Par15">
+<fig id="Fig1"><label>Fig. 1</label><caption><p>hardware delay variation of six links within 117 to 162 days in 2020. Each data point in the figure corresponds to the estimated hardware delay for a single ISL, calculated using a 72-hour arc length.</p></caption><graphic xlink:href="41598_2025_2800_Fig1_HTML" id="d33e592"/></fig>
+</p><p id="Par16">Figure <xref rid="Fig1" ref-type="fig">1</xref> shows the hardware delay variations of six ISLs over 72-hour intervals. Assuming link hardware delays were constant during each interval, parameters were adjusted by subtracting their mean values. Results show that C19-C25 and C20-C21 delays varied slowly with STDs of 0.064&#x000a0;m and 0.036&#x000a0;m, indicating stability. Conversely, C28-C23, C28-C32, C30-C23, and C30-C33 showed significant variations. Their STDs were 6.631&#x000a0;m, 6.630&#x000a0;m, 0.209&#x000a0;m, and 0.193&#x000a0;m. C28-C32 and C28-C23 had larger jumps of about 15&#x000a0;m, while C30-C23 and C30-C33 had smaller jumps of 0.25&#x000a0;m.</p><p id="Par17">
+<fig id="Fig2"><label>Fig. 2</label><caption><p>STD of hardware-bias variation within 117 to 162 days in 2020 (3-days arc), excluding hardware-delay jump of C28 and C30.</p></caption><graphic xlink:href="41598_2025_2800_Fig2_HTML" id="d33e607"/></fig>
+</p><p id="Par18">Figure <xref rid="Fig2" ref-type="fig">2</xref> shows the STD values of hardware delay variations for all links, excluding jumps in C23, C28, and C30 links. Most links have STD values between 2.0&#x000a0;cm and 8.0&#x000a0;cm, showing no significant fluctuations. After removing hardware delay jumps, C28-related links exhibited good stability. However, C30-related links still had large STD values, mostly over 10.0&#x000a0;cm and up to about 16.0&#x000a0;cm.C23-related links also showed larger variations, with STD values around 10.0&#x000a0;cm. The C25-C35 link stands out with a relatively high STD of about 12&#x000a0;cm, yet other links involving C25 and C35 were of good quality, indicating varying quality among different ISLs.</p><p id="Par19">
+<fig id="Fig3"><label>Fig. 3</label><caption><p>hardware delay variation of 6 links within 117 to 120 days in 2020. Each point in the figure represents the estimated hardware delay for a single ISL, calculated using a 1-hour arc length.</p></caption><graphic xlink:href="41598_2025_2800_Fig3_HTML" id="d33e622"/></fig>
+</p><p id="Par20">Figure <xref rid="Fig3" ref-type="fig">3</xref> shows the hardware delay variations for six ISLs over 72&#x000a0;h, with parameters estimated hourly. The C19-C25 and C20-C21 links show small STD values of 6.0&#x000a0;cm and 2.6&#x000a0;cm, while the C30-C23 and C30-C33 links have larger values of 17.7&#x000a0;cm and 14.1&#x000a0;cm. The other links also varied but without a clear pattern. The variations in hardware delays across different links are heterogeneous due to factors like equipment characteristics, satellite positions, and environmental conditions. To address the challenge of uniformly modeling these variations, a segmented estimation approach is proposed. Each link is divided into multiple segments with a hardware delay estimated for each. An optimal segmented strategy is determined by designing ten strategies with sampling intervals from 0.5 to 24&#x000a0;h. For each link, the STD of the hardware delay variation sequence is calculated for each arc segment. By analyzing how the STD changes with arc length, we discuss the characteristics of hardware delay variations under different strategies. Figure&#x000a0;<xref rid="Fig4" ref-type="fig">4</xref> presents the average STD for each set of links established by a single satellite under a given strategy. This aids in analyzing the impact of arc length selection on hardware delay estimation and provides a basis for optimizing link performance.</p><p id="Par21">
+<fig id="Fig4"><label>Fig. 4</label><caption><p>The average STD value of CF combination for different strategies.</p></caption><graphic xlink:href="41598_2025_2800_Fig4_HTML" id="d33e640"/></fig>
+</p><p id="Par22">Figure <xref rid="Fig4" ref-type="fig">4</xref> illustrates the variations in the STD values of the hardware delays for BDS-3 MEO satellite ISLs under various strategies. It is evident from the figure that there is a correlation between the STD values of the hardware delays and the arc segment lengths. As the arc segment length increases, the STD values of the hardware delays also tend to increase, with a consistent trend observed across different satellites. This phenomenon indicates a positive correlation between the STD values of the hardware delays and the arc segment lengths. In the schemes with arc lengths of 6&#x000a0;h, 8&#x000a0;h, 12&#x000a0;h, 16&#x000a0;h, and 24&#x000a0;h, the STD values of the hardware delays increase with the growth of the arc length. Conversely, in the schemes with arc lengths of 0.5&#x000a0;h, 1&#x000a0;h, 2&#x000a0;h, 3&#x000a0;h, and 4&#x000a0;h, the STD values of the hardware delays for most satellites change slowly.</p><p id="Par23">In particular, Satellite C30 shows larger STD values than most other satellites in schemes with arc lengths beyond 4&#x000a0;h. Satellite C23 also differs from others, but less than C30.The analysis suggests most satellites have similar STD values under the same arc length scheme. As arc length increases, the STD values also rise. When the arc length is 24&#x000a0;h, the STD values of the links are all greater than 6&#x000a0;cm. In contrast, in schemes with arc lengths of 0.5&#x02013;4&#x000a0;h, the STD values for most satellites stabilize within 2&#x02013;4&#x000a0;cm, except for Satellite C23. Thus, in ISL-based POD, we can choose appropriate segmented strategies to estimate hardware delay parameters as needed.</p><p id="Par24">To further analyze the link characteristics associated with satellites C23 and C30, a transformation was applied to the GF combination formula of the ISLs:<disp-formula id="Equ6"><label>6</label><alternatives><tex-math id="d33e652">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$c \cdot \left[ {d{t_B}\left( {{t_0}} \right) - d{t_A}\left( {{t_0}} \right)} \right]=\frac{{{P_{AB}}\left( {{t_0}} \right) - {P_{BA}}\left( {{t_0}} \right)}}{2} - c \cdot \left( {\delta _{A}^{\prime } - \delta _{B}^{\prime }} \right) - \frac{{{{\tilde {\Delta }}_{AB}} - {{\tilde {\Delta }}_{BA}}}}{2} - {\varepsilon _{GF}}$$\end{document}</tex-math><graphic xlink:href="41598_2025_2800_Article_Equ6.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par25">where <inline-formula id="IEq45"><alternatives><tex-math id="d33e660">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$c \cdot \left[ {d{t_B}\left( {{t_0}} \right) - d{t_A}\left( {{t_0}} \right)} \right]$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq45.gif"/></alternatives></inline-formula> represents the difference in clock offsets between satellite A and satellite B at time <inline-formula id="IEq46"><alternatives><tex-math id="d33e666">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${t_0}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq20.gif"/></alternatives></inline-formula>, also referred to as the relative clock offset. The variation in satellite clock offsets from the broadcast ephemeris exhibits a linear correlation with time over short durations. By performing a linear fitting on the relative clock offsets derived from the GF combination, the residuals obtained after removing the trend term can effectively reflect the measurement noise characteristics of the link.</p><p id="Par26">
+<table-wrap id="Tab1"><label>Table 1</label><caption><p>Information on manufacturers of BeiDou-3 ISL equipment.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Manufacturers of ISL Equipment</th><th align="left">PRN</th></tr></thead><tbody><tr><td align="left">CASC1</td><td align="left">C19-C22, C24, C33, C37-C42, C46-C61</td></tr><tr><td align="left">CASC2</td><td align="left">C23, C32, C36, C45</td></tr><tr><td align="left">SECM1</td><td align="left">C27, C29, C30, C34, C35, C43, C44</td></tr><tr><td align="left">SECM2</td><td align="left">C25, C26</td></tr><tr><td align="left">SECM3</td><td align="left">C28</td></tr></tbody></table></table-wrap>
+</p><p id="Par27">To facilitate the analysis of the impact of link equipment on its measurement characteristics, the satellite PRN numbers are sorted based on the manufacturer information of the link equipment listed in Table&#x000a0;<xref rid="Tab1" ref-type="table">1</xref>. Additionally, the fitting residual plot of the GF combination is generated for further examination.</p><p id="Par28">
+<fig id="Fig5"><label>Fig. 5</label><caption><p>STD Values of Linear Fitting Residuals for GF Combinations Related to Satellites.</p></caption><graphic xlink:href="41598_2025_2800_Fig5_HTML" id="d33e728"/></fig>
+</p><p id="Par29">Figure <xref rid="Fig5" ref-type="fig">5</xref> displays the STD values of the GF combination linear fitting residuals for inter-satellite link equipment manufactured by five providers: CASC1, CASC2, SECM1, SECM2, and SECM3. A correlation is observed between the link equipment and the fitting residuals of the GF combination. The noise levels vary significantly among different equipment. Among all satellites, satellite C23 exhibits the highest noise level, followed by C30. When satellite C23, which has the highest noise level, is excluded from the analysis, the link equipment from CASC1, CASC2, and SECM3 demonstrates lower noise levels compared to that from SECM1 and SECM2. To further investigate the influence of different equipment on the noise characteristics of the GF combination, all links are grouped according to their respective manufacturers, and the corresponding STD value distribution of the GF combination is plotted, as shown in Fig.&#x000a0;<xref rid="Fig6" ref-type="fig">6</xref>.</p><p id="Par30">
+<fig id="Fig6"><label>Fig. 6</label><caption><p>STD Values of Linear Fitting Residuals for GF Combinations in ISL.</p></caption><graphic xlink:href="41598_2025_2800_Fig6_HTML" id="d33e746"/></fig>
+</p><p id="Par31">Figure <xref rid="Fig6" ref-type="fig">6</xref> illustrates the distribution of the STD values of the GF combination linear fitting residuals for the links, sorted by equipment manufacturer. A notable block-like pattern is evident in Fig.&#x000a0;<xref rid="Fig6" ref-type="fig">6</xref>, indicating that significant differences exist in the link noise levels among different equipment types. This further confirms the correlation between link noise and the associated equipment. Among the devices produced by the five manufacturers, links established using equipment from CASC1 and CASC2 exhibit relatively lower noise levels. In contrast, links constructed with SECM1 and SECM2 equipment demonstrate significantly higher noise levels compared to other links, suggesting that the stability of SECM1 and SECM2 equipment is slightly lower than that of the others. Additionally, most links associated with satellite C23 exhibit STD values higher than those of other links.</p><p id="Par32">
+<table-wrap id="Tab2"><label>Table 2</label><caption><p>STD values of linear fitting residuals for GF combinations related to link equipment (unit: cm).</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Equipment Type</th><th align="left">CASC1</th><th align="left">CASC2</th><th align="left">SECM1</th><th align="left">SECM2</th></tr></thead><tbody><tr><td align="left">CASC1</td><td char="." align="char">2.10</td><td align="left"/><td align="left"/><td align="left"/></tr><tr><td align="left">CASC2</td><td char="." align="char">2.09</td><td char="." align="char">2.57</td><td align="left"/><td align="left"/></tr><tr><td align="left">SECM1</td><td char="." align="char">2.78</td><td char="." align="char">2.85</td><td char="." align="char">3.14</td><td align="left"/></tr><tr><td align="left">SECM2</td><td char="." align="char">2.97</td><td char="." align="char">3.00</td><td char="." align="char">3.67</td><td char="." align="char">3.65</td></tr><tr><td align="left">SECM3</td><td char="." align="char">2.46</td><td char="." align="char">2.81</td><td char="." align="char">2.73</td><td char="." align="char">3.39</td></tr></tbody></table></table-wrap>
+</p><p id="Par33">Table&#x000a0;<xref rid="Tab2" ref-type="table">2</xref> presents the STD values of the GF combination linear fitting residuals for different equipment types. Links associated with CASC1-CASC1 and CASC2-CASC2 exhibit lower noise levels, with STD values of 2.10&#x000a0;cm and 2.09&#x000a0;cm, respectively. In contrast, links related to SECM1-SECM2, SECM2-SECM2, and SECM2-SECM3 demonstrate higher noise levels, with STD values of 3.67&#x000a0;cm, 3.65&#x000a0;cm, and 3.39&#x000a0;cm, respectively. This further confirms that links involving SECM1 and SECM2 are associated with significantly higher noise levels.</p><p id="Par34">Based on the analysis of the GF combination linear fitting residuals, it can be concluded that the noise in the inter-satellite link GF combination exhibits a strong correlation with the link equipment. The interconnection of link equipment manufactured by different manufacturers results in variations in the noise levels of the links. Notably, the noise levels of links associated with satellite C23 are significantly higher than those of other links. To analyze the impact of equipment differences on the CF combination, the satellites are grouped according to their link equipment, and a statistical plot of the hardware delay variations in the CF combination is generated.</p><p id="Par35">
+<fig id="Fig7"><label>Fig. 7</label><caption><p>STD Values of Hardware Delay for CF Combinations Related to Satellites.</p></caption><graphic xlink:href="41598_2025_2800_Fig7_HTML" id="d33e848"/></fig>
+</p><p id="Par36">Figure <xref rid="Fig7" ref-type="fig">7</xref> illustrates STD values of the hardware delays in the CF combination for each satellite. Among the 18 MEO satellites, the CF combination STD values of satellites C23 and C30 are notably higher than those of the other satellites, with their respective STD values being 10.30&#x000a0;cm and 13.41&#x000a0;cm. Excluding satellites C23 and C30, no significant differences were observed in the STD values of the remaining satellites. The smallest STD value was associated with satellite C22, measuring 6.31&#x000a0;cm, while the largest STD value was recorded for satellite C25 at 8.29&#x000a0;cm. To further investigate the influence of equipment differences on the CF combination of individual links, the links were grouped according to their corresponding equipment types, and the distribution of hardware delay variations in the CF combination was replotted accordingly (see Fig.&#x000a0;<xref rid="Fig8" ref-type="fig">8</xref>).</p><p id="Par37">
+<fig id="Fig8"><label>Fig. 8</label><caption><p>STD Values of Hardware Delay for CF Combination in ISL (Satellite PRNs Sorted by Link Equipment Manufacturers).</p></caption><graphic xlink:href="41598_2025_2800_Fig8_HTML" id="d33e866"/></fig>
+</p><p id="Par38">Figure <xref rid="Fig8" ref-type="fig">8</xref> presents the distribution of STD values of hardware delays in the CF combination, grouped by equipment type. It is evident that, excluding satellites C23 and C30, there are no significant differences in the CF combination hardware delay STD values among different equipment types, indicating the absence of a pronounced block-like pattern. However, both the GF and CF combination STD values for satellite C23 are higher than those for other satellites, suggesting that the measurement noise or variations in hardware delays for the link equipment on C23 are relatively large. Although the GF combination STD value for satellite C30 does not significantly differ from those equipped with SECM1 and SECM2 devices, its CF combination STD value is notably higher. There are three potential reasons for this: first, the orbital errors of satellite C30 may be larger than those of other satellites, affecting the estimation of hardware delays in the CF combination and thus leading to a higher STD value; second, the hardware delays in the CF combination for C30 might exhibit greater variability; third, there could be unmodeled errors in the link equipment of C30. To address the first possibility, we evaluated the precise orbit provided by the APM analysis center using overlapping orbit comparisons and SLR, and found no significant difference in the orbital accuracy between C30 and other MEO satellites. This eliminates the first hypothesis. Due to space limitations, the overlap orbit and SLR validation results for C30 are not shown here. For the second and third hypotheses, given the current lack of internal inspection methods for satellite link equipment, it is not possible to directly determine which factor is the direct cause of the increased variability in the CF combination hardware delay estimates for satellite C30.</p></sec></sec><sec id="Sec5"><title>ISL-based POD experiments and analysis</title><p id="Par39">This section provides an overview of ISL establishment for BDS-3 and introduces POD method based on segmented estimation strategy for ISL hardware delays. Through systematic evaluations of orbital accuracy, this study aims to validate the effectiveness of the segmented estimation approach and its impact on enhancing the accuracy of POD for BDS-3 satellites.</p><sec id="Sec6"><title>ISL experimental data</title><p id="Par40">
+<fig id="Fig9"><label>Fig. 9</label><caption><p>The diagram illustrates the ISLs establishment between MEO satellite C20 and other MEO satellites, where solid green lines represent continuous links and dashed red lines indicate intermittent links.</p></caption><graphic xlink:href="41598_2025_2800_Fig9_HTML" id="d33e887"/></fig>
+</p><p id="Par41">This study selected continuous ISL measurement data from BDS-3 MEO satellites over a 45-day period, from April 26 to June 9, 2020. The BDS-3 MEO satellites are primarily distributed across three orbital planes. Specifically, satellites C19, C20, C21, C22, C32, and C33 are in the second orbital plane; satellites C27, C28, C29, C30, C34, and C35 are in the first orbital plane; satellites C23, C24, C25, C26, C36, and C37 are in the third orbital plane. The distribution of BDS-3 MEO satellites allows the ISLs to be categorized into two types: Co-plane links and cross-plane links. Co-plane links refer to those established between satellites within the same orbital plane, whereas cross-plane links connect satellites residing in different orbital planes. Figure&#x000a0;<xref rid="Fig9" ref-type="fig">9</xref> illustrates the ISLs establishment between MEO satellite C20 and other MEO satellites. Within the selected timeframe, 135 links were established among 18 MEO satellites.</p></sec><sec id="Sec7"><title>Segmented estimation strategy for ISL hardware delays</title><p id="Par42">In previously published research, the hardware delays of ISLs are considered constant over short periods, with a single hardware delay estimated for each satellite over a 72-hour interval. However, the hardware delays of a few links can vary significantly over such periods. The analysis of ISL hardware delays demonstrates that segmenting the estimation of ISL hardware delays can effectively reduce the STD of the CF combination. Therefore, in this section, different segmented strategies for estimating hardware delays are implemented and evaluated for their impact on the accuracy of ISL orbit determination.</p><p id="Par43">Traditional methods typically estimate a constant hardware delay for each satellite over a 72-hour interval. However, considering the short-term fluctuations in hardware delay between satellite pairs in each link, this paper estimates a constant hardware delay for each link in the experiment, with different intervals of 1&#x000a0;h, 2&#x000a0;h, 3&#x000a0;h, 4&#x000a0;h, 6&#x000a0;h, 8&#x000a0;h, 12&#x000a0;h, 16&#x000a0;h, 24&#x000a0;h, and 72&#x000a0;h. For simplicity, the traditional method is abbreviated as &#x0201c;Satellite-specific-72&#x000a0;h&#x0201d; or &#x0201c;72&#x000a0;h-A&#x0201d;, while the method proposed in this paper is abbreviated as &#x0201c;Link-specific-*h&#x0201d; or &#x0201c;*h-B&#x0201d;, where * represents the different intervals.</p><p id="Par44">The BDS-3 ISLs operate under a CSTDD system<sup><xref ref-type="bibr" rid="CR5">5</xref></sup>. The term &#x0201c;Concurrent&#x0201d; refers to the ability of multiple satellites to establish connections simultaneously. The term &#x0201c;Spatial&#x0201d; indicates that satellites can switch their connection targets, enabling them to observe multiple other satellites. The term &#x0201c;Time Division&#x0201d; signifies that satellites perform observations at different times. Under the CSTDD system, a single satellite can observe multiple other satellites, but it can only observe one satellite at any given moment. This implies that among the multiple links established by a single satellite, there are no simultaneous observations. Additionally, raw ISL observations contain both satellite clock biases and hardware delays, which are linearly correlated and thus cannot be directly resolved. Consequently, we use prior satellite positions, prior clock biases, and Eq.&#x000a0;(<xref rid="Equ4" ref-type="disp-formula">4</xref>) to construct a CF combination, which is then used for orbit determination. During the construction of the CF combination, it is necessary to convert the two-way observations at times <inline-formula id="IEq47"><alternatives><tex-math id="d33e909">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${t_1}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq2.gif"/></alternatives></inline-formula> and <inline-formula id="IEq48"><alternatives><tex-math id="d33e915">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${t_2}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq4.gif"/></alternatives></inline-formula> to time <inline-formula id="IEq49"><alternatives><tex-math id="d33e921">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${t_0}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq20.gif"/></alternatives></inline-formula>, where <inline-formula id="IEq50"><alternatives><tex-math id="d33e928">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${t_0}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq20.gif"/></alternatives></inline-formula> is an integer second between <inline-formula id="IEq51"><alternatives><tex-math id="d33e934">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${t_1}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq2.gif"/></alternatives></inline-formula> and <inline-formula id="IEq52"><alternatives><tex-math id="d33e940">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${t_2}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_2800_Article_IEq4.gif"/></alternatives></inline-formula><sup><xref ref-type="bibr" rid="CR19">19</xref></sup>. In the data processing for this study, prior satellite positions and clock biases are provided by broadcast ephemerides.</p><p id="Par45">
+<table-wrap id="Tab3"><label>Table 3</label><caption><p>Options for ISL POD.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Type</th><th align="left">Name</th><th align="left">description</th></tr></thead><tbody><tr><td align="left">Observation model</td><td align="left">ISL</td><td align="left">Ka band ISL observations</td></tr><tr><td align="left" rowspan="8">dynamic model</td><td align="left">N-body</td><td align="left">Positions of Sun, moon, and other planets provided by JPL DE421<sup><xref ref-type="bibr" rid="CR26">26</xref>,<xref ref-type="bibr" rid="CR27">27</xref></sup></td></tr><tr><td align="left">Solid earth tides</td><td align="left">TIDE2000<sup><xref ref-type="bibr" rid="CR28">28</xref></sup></td></tr><tr><td align="left">Ocean tides:</td><td align="left">OT_FES2014b<sup><xref ref-type="bibr" rid="CR28">28</xref></sup></td></tr><tr><td align="left">Earth&#x02019;s gravitational model:</td><td align="left">EGM2008_SMALL<sup><xref ref-type="bibr" rid="CR28">28</xref></sup></td></tr><tr><td align="left">Sub-daily pole:</td><td align="left">IERS2010XY<sup><xref ref-type="bibr" rid="CR28">28</xref></sup></td></tr><tr><td align="left">Nutation</td><td align="left">IAU2000R06<sup><xref ref-type="bibr" rid="CR28">28</xref></sup></td></tr><tr><td align="left">Earth orientation</td><td align="left">CODE products</td></tr><tr><td align="left">Relativistic effects</td><td align="left">IERS Conventions 2010<sup><xref ref-type="bibr" rid="CR28">28</xref></sup></td></tr><tr><td align="left" rowspan="3">estimated parameters</td><td align="left">GNSS orbit parameters</td><td align="left">Initial value provided by Broadcast ephemeris</td></tr><tr><td align="left">Solar pressure parameters</td><td align="left">parameters of the five-parameter ECOM model <sup><xref ref-type="bibr" rid="CR29">29</xref></sup></td></tr><tr><td align="left">Ka hardware delay parameters</td><td align="left">hardware delay biases per satellite or per link</td></tr><tr><td align="left">estimation method</td><td align="left">Least Squares Method</td><td align="left">Parameters estimated simultaneously include those for satellite orbits, solar radiation pressure, and hardware delays.</td></tr><tr><td align="left" rowspan="2">other models</td><td align="left">Ka band PCO</td><td align="left">manufacturer values for Ka antennas</td></tr><tr><td align="left">Attitude model</td><td align="left">Yaw steering model for BDS-3 MEO satellites <sup><xref ref-type="bibr" rid="CR30">30</xref></sup></td></tr></tbody></table></table-wrap>
+</p><p id="Par46">In this study, the arc length for POD is set to 72&#x000a0;h. The process of orbit determination includes ISL data preprocessing, orbital integration, and orbit solution computation. Broadcast ephemerides are used to generate the equations of motion and the variational equations for the satellites. Table&#x000a0;<xref rid="Tab3" ref-type="table">3</xref> provides details of options employed for orbit determination. The orbital mechanics models used in the data processing include the gravitational influences of the Sun, Moon, Jupiter, Venus, and Mars<sup><xref ref-type="bibr" rid="CR26">26</xref></sup>, relativistic effects, polar tides, precession, and nutation<sup><xref ref-type="bibr" rid="CR28">28</xref></sup>. In the process of orbit determination, broadcast ephemerides were initially employed to compute the preliminary orbital trajectory, while ISL observations were utilized to estimate the six orbital parameters, ECOM 5 solar radiation pressure model parameters, and ISL hardware delay parameters. Consequently, ground-based tracking stations were not directly employed in this methodology. In reality, broadcast ephemerides are generated based on observational data from ground tracking stations. The integration of broadcast ephemerides and ISL observations can be considered as an indirect utilization of ground station observational data.</p></sec><sec id="Sec25"><title>Orbit result analysis</title><p id="Par47">We have designed various hardware delay estimation strategies (Table&#x000a0;<xref rid="Tab3" ref-type="table">3</xref>). This section primarily evaluates the accuracy of orbit determination under different hardware delay estimation strategies. The rest of this section discusses the ISL residuals and the reference orbit comparison results.</p><p id="Par48">Residuals from ISL observations reflect the internal consistency of orbital accuracy. Using the various hardware delay estimation strategies detailed in Table&#x000a0;<xref rid="Tab3" ref-type="table">3</xref>, we processed the ISL data. By analyzing the distribution and RMS of the ISL POD residuals for the links, we can discern the differences among the different hardware delay estimation strategies.</p><p id="Par49">
+<table-wrap id="Tab4"><label>Table 4</label><caption><p>RMS values of ISL POD residuals for strategies ranging from 1&#x000a0;h-B to 72&#x000a0;h-B (Units: m).</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Type</th><th align="left">1&#x000a0;h</th><th align="left">2&#x000a0;h</th><th align="left">3&#x000a0;h</th><th align="left">4&#x000a0;h</th><th align="left">6&#x000a0;h</th><th align="left">8&#x000a0;h</th><th align="left">12&#x000a0;h</th><th align="left">16&#x000a0;h</th><th align="left">24&#x000a0;h</th><th align="left">72&#x000a0;h</th></tr></thead><tbody><tr><td align="left">All</td><td char="." align="char">0.030</td><td char="." align="char">0.032</td><td char="." align="char">0.033</td><td char="." align="char">0.035</td><td char="." align="char">0.039</td><td char="." align="char">0.044</td><td char="." align="char">0.050</td><td char="." align="char">0.055</td><td char="." align="char">0.057</td><td char="." align="char">0.063</td></tr><tr><td align="left">Exclude C23/C30</td><td char="." align="char">0.028</td><td char="." align="char">0.029</td><td char="." align="char">0.031</td><td char="." align="char">0.032</td><td char="." align="char">0.036</td><td char="." align="char">0.040</td><td char="." align="char">0.045</td><td char="." align="char">0.050</td><td char="." align="char">0.051</td><td char="." align="char">0.057</td></tr></tbody></table></table-wrap>
+</p><p id="Par50">Table&#x000a0;<xref rid="Tab4" ref-type="table">4</xref> presents the RMS values of the ISL POD residuals for strategies ranging from 1&#x000a0;h-B to 72&#x000a0;h-B. The data indicate a significant correlation between ISL residuals and the arc length of segmented hardware delay estimates: as the arc length increases, the RMS values of ISL residuals also increase accordingly. Furthermore, after excluding the data from satellites C23 and C30, a reduction in the ISL residual RMS values was observed. This suggests that segmenting the estimation of hardware delays for individual links better aligns with the characteristics of ISL observations. To provide a more intuitive illustration of the ISL POD residuals for all satellites, we have plotted the relationship between the RMS values of residuals and the arc length of segmented hardware delays for each satellite in a line graph (see Fig.&#x000a0;<xref rid="Fig10" ref-type="fig">10</xref>).</p><p id="Par51">
+<fig id="Fig10"><label>Fig. 10</label><caption><p>RMS of ISL POD residuals for 1&#x000a0;h-B to72h-B strategies of BDS-3 MEO satellites.</p></caption><graphic xlink:href="41598_2025_2800_Fig10_HTML" id="d33e1228"/></fig>
+</p><p id="Par52">Figure <xref rid="Fig10" ref-type="fig">10</xref> shows the variations in the RMS values of ISL residuals for BDS-3 MEO satellites. Each point in the figure represents the RMS of the ISL POD residuals for all relevant links associated with a satellite. For instance, the point on the pink line at the 6&#x000a0;h mark on the x-axis indicates the RMS of the ISL POD residuals for all links related to satellite C30 under the 6&#x000a0;h-B strategy. The RMS values of ISL residuals correlate with the arc length of hardware delays, increasing as the arc length increases. This trend is consistent across most satellites, except for C23 and C30. For C23, the RMS values range from 5&#x000a0;cm to 9&#x000a0;cm, showing a linear trend and higher values compared to other satellites at shorter arc lengths (1&#x02013;8&#x000a0;h). This suggests higher measurement noise in links involving C23. Satellite C30 exhibits the largest RMS fluctuations, varying between 3&#x000a0;cm and 10&#x000a0;cm. Under 1&#x02013;4&#x000a0;h strategies, C30&#x02019;s RMS values are stable and similar to other satellites. However, at 6&#x02013;16&#x000a0;h strategies, the RMS values increase rapidly, indicating that C30&#x02019;s hardware delays change slowly within a 4-hour period. When the sampling interval is less than 4&#x000a0;h, most satellites have RMS values within 2&#x02013;4&#x000a0;cm, with C37 showing the smallest values at around 2&#x000a0;cm.</p><p id="Par53">
+<fig id="Fig11"><label>Fig. 11</label><caption><p>ISL POD residuals for traditional strategy(72&#x000a0;h-A) and our strategy(4&#x000a0;h-B); the parentheses in the legend show the RMS value of the residuals.</p></caption><graphic xlink:href="41598_2025_2800_Fig11_HTML" id="d33e1243"/></fig>
+</p><p id="Par54">Figure <xref rid="Fig11" ref-type="fig">11</xref> illustrates the ISL residuals for two links under the 72&#x000a0;h-A and 4&#x000a0;h-B strategies, respectively. Under the 72&#x000a0;h-A strategy, the RMS values of the residuals for the two links vary significantly, with residual values distributed between &#x02212;&#x02009;30.0&#x000a0;cm and 30.0&#x000a0;cm. The RMS values for C28-C32 and C30-C23 are close to 10&#x000a0;cm, with C30-C23 having the highest RMS value of 10.4&#x000a0;cm, indicating poorer observational data quality. Under the 4&#x000a0;h-B strategy, the RMS values for the two links, C28-C32 and C30-C23, show a substantial decrease, by 32.88% and 25.00%, respectively. Nonetheless, the RMS value for C30-C23 remains relatively high at 7.8&#x000a0;cm. This is due to the generally higher measurement noise associated with the links involving satellites C23 and C30. Overall, despite the varying degrees of improvement, the two links consistently indicate that a segmented estimation strategy is more suitable for links with significant hardware delay variations.</p><p id="Par55">Comparing satellite orbits derived from different types of observational data is a method used to assess external orbit accuracy. IGS stations are capable of tracking GNSS satellites and collecting the carrier phase and pseudorange signals. L-band phase and pseudorange measurements achieve millimeter and meter-level precision, respectively, making them suitable for the POD of BDS-3 satellites. Analysis centers such as CNES/CLS, CODE, Wuhan University (WHU), German Research Centre for Geosciences (GFZ), and APM use observational data from IGS stations to generate precise orbit products for GNSS satellites. Currently, the precise orbit products provided by the IGS Analysis Center for BDS-3 satellites have a radial accuracy better than 5 cm<sup><xref ref-type="bibr" rid="CR31">31</xref>,<xref ref-type="bibr" rid="CR32">32</xref></sup>. However, due to limitations in ground visibility, L-band orbit determination requires dozens or even hundreds of globally distributed ground observation stations. In this study, we use the precise ephemeris released by the iGMAS Analysis Center as a reference for comparing with the ISL POD results.</p><p id="Par56">
+<fig id="Fig12"><label>Fig. 12</label><caption><p>Along track, Cross track, Radial, and 3D RMS of differences between ISL and L-band orbits.</p></caption><graphic xlink:href="41598_2025_2800_Fig12_HTML" id="d33e1267"/></fig>
+</p><p id="Par57">Figure <xref rid="Fig12" ref-type="fig">12</xref> presents the RMS differences between ISL and L-band orbits under three strategies across different directions. The strategies rank in terms of 3D RMS as 72&#x000a0;h-A&#x02009;&#x0003e;&#x02009;72&#x000a0;h-B&#x02009;&#x0003e;&#x02009;4&#x000a0;h-B, indicating that segmented hardware delay estimation improves orbit determination accuracy. Under 72&#x000a0;h-A, satellites C23 and C30 exhibit higher 3D RMS values (28.9&#x000a0;cm and 32.3&#x000a0;cm, respectively) due to noisier links; however, these values decrease significantly under 4&#x000a0;h-B (19.88&#x000a0;cm and 19.75&#x000a0;cm, respectively), representing reductions of 31.2% and 38.9%. Radial direction RMS differences are minimal among the strategies, while along-track and cross-track directions show significant variations and marked decreases in RMS values as the segmented arc length shortens.</p><p id="Par58">SLR validation is a method used to assess the external orbit accuracy of satellites. We calculate SLR residuals by subtracting the geometric distance from the satellite to the SLR ground station from the SLR observations, using the coordinates of the SLR stations provided by the International Laser Ranging Service. In this study, we apply the MENDES-PAVLIS model to correct for tropospheric delays<sup><xref ref-type="bibr" rid="CR33">33</xref></sup>, and we use SLR Normal Point (NP) data from May 1, 2020, to May 31, 2020, to validate the POD results (<ext-link ext-link-type="uri" xlink:href="https://cddis.nasa.gov/archive/slr/data/fr_crd/quarantine/">https://cddis.nasa.gov/archive/slr/data/fr_crd/quarantine/</ext-link>).</p><p id="Par59">
+<fig id="Fig13"><label>Fig. 13</label><caption><p>SLR stations distribution.</p></caption><graphic xlink:href="41598_2025_2800_Fig13_HTML" id="d33e1293"/></fig>
+</p><p id="Par60">Figure <xref rid="Fig13" ref-type="fig">13</xref> shows the distribution of SLR stations observing BDS-3 MEO satellites, involving a total of 15 stations. After excluding data with residuals exceeding 30&#x000a0;cm, significant differences in data volume among stations were observed. Yarragadee contributed the most (335 NP points, with 99.70% having residuals within 30&#x000a0;cm), whereas Hartebeesthoek contributed the least (only 4 data points). Overall, 1,286 NP points were recorded, 99.77% of which had residuals under 30&#x000a0;cm, demonstrating high data quality.</p><p id="Par61">
+<table-wrap id="Tab5"><label>Table 5</label><caption><p>SLR residuals information (units: cm).</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left" rowspan="2">PRN</th><th align="left" colspan="2">STD</th><th align="left" colspan="2">RMS</th><th align="left" rowspan="2">NP numbers</th></tr><tr><th align="left">4&#x000a0;h-B</th><th align="left">72&#x000a0;h-A</th><th align="left">4&#x000a0;h-B</th><th align="left">72&#x000a0;h-A</th></tr></thead><tbody><tr><td align="left">C20</td><td char="." align="char">2.89</td><td char="." align="char">3.37</td><td char="." align="char">4.59</td><td char="." align="char">5.30</td><td char="." align="char">327</td></tr><tr><td align="left">C21</td><td char="." align="char">2.60</td><td char="." align="char">2.86</td><td char="." align="char">5.69</td><td char="." align="char">6.22</td><td char="." align="char">417</td></tr><tr><td align="left">C29</td><td char="." align="char">4.11</td><td char="." align="char">4.30</td><td char="." align="char">4.19</td><td char="." align="char">4.38</td><td char="." align="char">280</td></tr><tr><td align="left">C30</td><td char="." align="char">3.81</td><td char="." align="char">4.26</td><td char="." align="char">4.21</td><td char="." align="char">4.71</td><td char="." align="char">259</td></tr></tbody></table></table-wrap>
+</p><p id="Par62">Table&#x000a0;<xref rid="Tab5" ref-type="table">5</xref> shows the SLR residuals statistics for satellites C20, C21, C29, and C30 under the 4&#x000a0;h-B and 72&#x000a0;h-A strategies. All four satellites have over 250 NP points, ranging from 259 (C30) to 417 (C21). Under 4&#x000a0;h-B, STD values are under 5&#x000a0;cm, with C21 at 2.60&#x000a0;cm and C29 at 4.11&#x000a0;cm, indicating good orbit determination accuracy. Compared to 72&#x000a0;h-A, 4&#x000a0;h-B yields lower STD values for all four satellites, with C20 showing the largest decrease (14.31%) and C29 the smallest (4.40%). SLR validation confirms that segmented hardware delay estimation per link effectively improves orbit determination accuracy.</p></sec></sec><sec id="Sec9"><title>Summary and conclusion</title><p id="Par63">ISLs significantly enhance the orbit determination accuracy of BDS-3 satellites. Prior studies assumed constant hardware delays for CF-combined observations over 72&#x000a0;h, estimating a single parameter per satellite. However, analysis reveals substantial variations in certain links, notably those involving satellites C23 and C30, indicating that hardware delay changes impact accuracy. We propose a segmented estimation strategy for individual link hardware delays, evaluated using POD residual analysis, L-band orbit comparisons, and SLR validation. In the internal accuracy assessment, 4-hour arc segmentation of ISL hardware delays reduces POD residual RMS values to less than 4&#x000a0;cm for most ISLs, a 1&#x02013;3&#x000a0;cm improvement over traditional methods. In external accuracy assessments, L-band and ISL orbit differences are at the decimeter level, with a significant decrease in 3D RMS values under the segmented strategy. SLR residual STD and RMS values are also lower, with an overall difference of approximately 0.5&#x000a0;cm. For satellites C23 and C30, POD residuals decrease from 8.7&#x000a0;cm to 10.1&#x000a0;cm to 6.2&#x000a0;cm and 3.9&#x000a0;cm, respectively, and 3D RMS differences with L-band orbits decrease from 28.9&#x000a0;cm to 32.3&#x000a0;cm to 19.9&#x000a0;cm and 19.8&#x000a0;cm, respectively. These satellites show more pronounced improvements in orbit accuracy compared to other BDS-3 MEO satellites.</p><p id="Par64">In conclusion, the segmented estimation strategy aligns closely with the actual characteristics of ISL hardware delays, effectively mitigating their impact on BDS-3 orbit determination. This strategy is particularly beneficial for satellites C23 and C30, significantly enhancing their orbit determination accuracy.</p></sec></body><back><fn-group><fn><p><bold>Publisher&#x02019;s note</bold></p><p>Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></fn></fn-group><ack><title>Acknowledgements</title><p>The authors would like to acknowledge the iGMAS Analysis Center of the Institute of Precision Measurement Science and Technology Innovation, Chinese Academy of Sciences, GNSS Research Center in Wuhan University, and CDDIS for providing access to the ISL data, Broadcast ephemeris, post-processed satellite orbit products, and SLR products used in this study.</p></ack><notes notes-type="author-contribution"><title>Author contributions</title><p>Z.Y. and Y.Y. proposed the study concept; Z.Y. and Y.Y. designed the research; Z.Y. and B.T. wrote the paper; Z.Y. modified the software and prepared the data. Y.Y. and B.T. supervised the project and revised the manuscript. And all authors reviewed the manuscript.</p></notes><notes notes-type="funding-information"><title>Funding</title><p>Funding support from the National Natural Science Foundation of China (Grant No. 42004022) and the National Key Research Program of China &#x0201c;Collaborative Precision Positioning Project&#x0201d; (No. 2016YFB0501900) are also sincerely acknowledged.</p></notes><notes notes-type="data-availability"><title>Data availability</title><p>Data and materials for this article are available upon request from the corresponding author, Yunbin Yuan.</p></notes><notes><title>Declarations</title><notes id="FPar1" notes-type="COI-statement"><title>Competing interests</title><p id="Par65">The authors declare no competing interests.</p></notes></notes><ref-list id="Bib1"><title>References</title><ref id="CR1"><label>1.</label><mixed-citation publication-type="other">Yang, Y., Mao, Y. &#x00026; Sun, B. Basic performance and future developments of BeiDou global navigation satellite system. <italic>Satell. Navig.</italic><bold>1</bold>10.1186/s43020-019-0006-0 (2020).</mixed-citation></ref><ref id="CR2"><label>2.</label><mixed-citation publication-type="other">CSNO &#x00026; Fundamental, P. N. T. February Service. (2024). <ext-link ext-link-type="uri" xlink:href="http://www.csno-tarc.cn/en/system/constellation">http://www.csno-tarc.cn/en/system/constellation</ext-link>, accessed on 30 (2024).</mixed-citation></ref><ref id="CR3"><label>3.</label><citation-alternatives><element-citation id="ec-CR3" publication-type="journal"><person-group person-group-type="author"><name><surname>Tang</surname><given-names>C</given-names></name><etal/></person-group><article-title>Improvement of orbit determination accuracy for Beidou navigation satellite system with Two-way satellite time frequency transfer</article-title><source>Adv. Space Res.</source><year>2016</year><volume>58</volume><fpage>1390</fpage><lpage>1400</lpage><pub-id pub-id-type="doi">10.1016/j.asr.2016.06.007</pub-id></element-citation><mixed-citation id="mc-CR3" publication-type="journal">Tang, C. et al. Improvement of orbit determination accuracy for Beidou navigation satellite system with Two-way satellite time frequency transfer. <italic>Adv. Space Res.</italic><bold>58</bold>, 1390&#x02013;1400. 10.1016/j.asr.2016.06.007 (2016).</mixed-citation></citation-alternatives></ref><ref id="CR4"><label>4.</label><citation-alternatives><element-citation id="ec-CR4" publication-type="journal"><person-group person-group-type="author"><name><surname>Tang</surname><given-names>C</given-names></name><etal/></person-group><article-title>Initial results of centralized autonomous orbit determination of the new-generation BDS satellites with inter-satellite link measurements</article-title><source>J. Geodesy</source><year>2018</year><volume>92</volume><fpage>1155</fpage><lpage>1169</lpage><pub-id pub-id-type="doi">10.1007/s00190-018-1113-7</pub-id></element-citation><mixed-citation id="mc-CR4" publication-type="journal">Tang, C. et al. Initial results of centralized autonomous orbit determination of the new-generation BDS satellites with inter-satellite link measurements. <italic>J. Geodesy</italic>. <bold>92</bold>, 1155&#x02013;1169. 10.1007/s00190-018-1113-7 (2018).</mixed-citation></citation-alternatives></ref><ref id="CR5"><label>5.</label><citation-alternatives><element-citation id="ec-CR5" publication-type="journal"><person-group person-group-type="author"><name><surname>Yang</surname><given-names>D</given-names></name><name><surname>Yang</surname><given-names>J</given-names></name><name><surname>Li</surname><given-names>G</given-names></name><name><surname>Zhou</surname><given-names>Y</given-names></name><name><surname>Tang</surname><given-names>C</given-names></name></person-group><article-title>Globalization highlight: orbit determination using BeiDou inter-satellite ranging measurements</article-title><source>GPS Solutions</source><year>2017</year><volume>21</volume><fpage>1395</fpage><lpage>1404</lpage><pub-id pub-id-type="doi">10.1007/s10291-017-0626-5</pub-id></element-citation><mixed-citation id="mc-CR5" publication-type="journal">Yang, D., Yang, J., Li, G., Zhou, Y. &#x00026; Tang, C. Globalization highlight: orbit determination using BeiDou inter-satellite ranging measurements. <italic>GPS Solutions</italic>. <bold>21</bold>, 1395&#x02013;1404. 10.1007/s10291-017-0626-5 (2017).</mixed-citation></citation-alternatives></ref><ref id="CR6"><label>6.</label><citation-alternatives><element-citation id="ec-CR6" publication-type="journal"><person-group person-group-type="author"><name><surname>Yang</surname><given-names>Y</given-names></name><etal/></person-group><article-title>Inter-Satellite link enhanced orbit determination for BeiDou-3</article-title><source>J. Navig.</source><year>2019</year><volume>73</volume><fpage>115</fpage><lpage>130</lpage><pub-id pub-id-type="doi">10.1017/s0373463319000523</pub-id></element-citation><mixed-citation id="mc-CR6" publication-type="journal">Yang, Y. et al. Inter-Satellite link enhanced orbit determination for BeiDou-3. <italic>J. Navig.</italic><bold>73</bold>, 115&#x02013;130. 10.1017/s0373463319000523 (2019).</mixed-citation></citation-alternatives></ref><ref id="CR7"><label>7.</label><citation-alternatives><element-citation id="ec-CR7" publication-type="journal"><person-group person-group-type="author"><name><surname>Liu</surname><given-names>L</given-names></name><name><surname>Zhang</surname><given-names>T</given-names></name><name><surname>Zhou</surname><given-names>S</given-names></name><name><surname>Hu</surname><given-names>X</given-names></name><name><surname>Liu</surname><given-names>X</given-names></name></person-group><article-title>Improved design of control segment in BDS-3</article-title><source>Navigation</source><year>2019</year><volume>66</volume><fpage>37</fpage><lpage>47</lpage><pub-id pub-id-type="doi">10.1002/navi.297</pub-id></element-citation><mixed-citation id="mc-CR7" publication-type="journal">Liu, L., Zhang, T., Zhou, S., Hu, X. &#x00026; Liu, X. Improved design of control segment in BDS-3. <italic>Navigation</italic><bold>66</bold>, 37&#x02013;47. 10.1002/navi.297 (2019).</mixed-citation></citation-alternatives></ref><ref id="CR8"><label>8.</label><mixed-citation publication-type="other">Chen, J., Wang, J., Yu, C., Zhang, Y. &#x00026; Wang, B. Improving BDS broadcast ephemeris accuracy using ground-satellite-link observations. <italic>Satell. Navig.</italic><bold>3</bold>10.1186/s43020-022-00072-4 (2022).</mixed-citation></ref><ref id="CR9"><label>9.</label><mixed-citation publication-type="other">Lv, Y., Geng, T., Zhao, Q., Xie, X. &#x00026; Zhou, R. Initial assessment of BDS-3 preliminary system signal-in-space range error. <italic>GPS Solutions</italic>. <bold>24</bold>10.1007/s10291-019-0928-x (2019).</mixed-citation></ref><ref id="CR10"><label>10.</label><mixed-citation publication-type="other">Ren, X., Yang, Y., Zhu, J. &#x00026; Xu, T. Comparing satellite orbit determination by batch processing and extended Kalman filtering using inter-satellite link measurements of the next-generation BeiDou satellites. <italic>GPS Solutions</italic>. <bold>23</bold>10.1007/s10291-018-0816-9 (2019).</mixed-citation></ref><ref id="CR11"><label>11.</label><mixed-citation publication-type="other">Ananda, M. P., Bernstein, H., Cunningham, K. E., Feess, W. A. &#x00026; Stroud, E. G. Global positioning system (GPS) autonomous navigation. <italic>IEEE Symposium on Position Location and Navigation. A decade of excellence in the navigation sciences.</italic> IEEE, 497&#x02013;508, (1990). 10.1109/PLANS.1990.66220</mixed-citation></ref><ref id="CR12"><label>12.</label><mixed-citation publication-type="other">Menn, M. &#x00026; Bemstein, H. Ephemeris observability issues in the global positioning system (GPS) autonomous navigation (AUTONAV). <italic>In: Position Location and Navigation Symposium</italic>, 677&#x02013;680 (1994).</mixed-citation></ref><ref id="CR13"><label>13.</label><mixed-citation publication-type="other">Rajan, J., Brodie, P. &#x00026; Rawicz, H. Modernizing GPS autonomous navigation with anchor capability. <italic>In: Proceedings of international technical meeting of the satellite division of the institute of navigation</italic> pp, 1534&#x02013;1542 (2003).</mixed-citation></ref><ref id="CR14"><label>14.</label><mixed-citation publication-type="other">Rajan, J., Orr, M. &#x00026; Wang, P. On-orbit validation of GPS IIR autonomous navigation. <italic>In: Proceedings of the institute of navigation 59th annual meeting, 23&#x02013;25 June</italic> 411&#x02013;419 (2003b). (2003) pp.</mixed-citation></ref><ref id="CR15"><label>15.</label><mixed-citation publication-type="other">Guo, L. et al. Initial results of distributed autonomous orbit determination for Beidou BDS-3 satellites based on inter-satellite link measurements. <italic>GPS Solutions</italic>. <bold>24</bold>10.1007/s10291-020-00985-0 (2020).</mixed-citation></ref><ref id="CR16"><label>16.</label><mixed-citation publication-type="other">Lv, Y., Geng, T., Zhao, Q. &#x00026; Zhang, C. Contribution of intersatellite link measurements to ECOM solar radiation pressure Estimation on the BDS-3 MEO satellite. <italic>GPS Solutions</italic>. <bold>28</bold>10.1007/s10291-023-01588-1 (2023).</mixed-citation></ref><ref id="CR17"><label>17.</label><mixed-citation publication-type="other">Yang, C., Guo, J., Xu, X., Wang, L. &#x00026; Zhao, Q. Impacts of inter-satellite links on the ECOM model performance for BDS-3 MEO satellites. <italic>Satell. Navig.</italic><bold>5</bold>10.1186/s43020-024-00131-y (2024).</mixed-citation></ref><ref id="CR18"><label>18.</label><mixed-citation publication-type="other">Li, X. et al. Precise orbit determination for BDS-3 GEO satellites enhanced by intersatellite links. <italic>GPS Solutions</italic>. <bold>27</bold>10.1007/s10291-022-01330-3 (2022).</mixed-citation></ref><ref id="CR19"><label>19.</label><mixed-citation publication-type="other">Xie, X. et al. Orbit and clock analysis of BDS-3 satellites using inter-satellite link observations. <italic>J. Geodesy</italic>. <bold>94</bold>10.1007/s00190-020-01394-4 (2020).</mixed-citation></ref><ref id="CR20"><label>20.</label><mixed-citation publication-type="other">Wang, H., Xie, J., Zhuang, J. &#x00026; Wang, Z. Performance Analysis and Progress of Intersatellite-link of Beidou System. <italic>30th International Technical Meeting of the Satellite Division of the Institute of Navigation (ION GNSS&#x02009;+&#x02009;2017)</italic> 25&#x02013;29 (2017).</mixed-citation></ref><ref id="CR21"><label>21.</label><mixed-citation publication-type="other">Xie, X. et al. Precise orbit determination for BDS-3 satellites using satellite-ground and inter-satellite link observations. <italic>GPS Solutions</italic>. <bold>23</bold>10.1007/s10291-019-0823-5 (2019).</mixed-citation></ref><ref id="CR22"><label>22.</label><mixed-citation publication-type="other">Guo, Y. et al. Methods and assessments of two-way time synchronization based on BDS-3 Ka-band satellite-ground link observations. <italic>GPS Solutions</italic>. <bold>27</bold>10.1007/s10291-023-01459-9 (2023).</mixed-citation></ref><ref id="CR23"><label>23.</label><mixed-citation publication-type="other">Pan, J. et al. Full-ISL clock offset Estimation and prediction algorithm for BDS3. <italic>GPS Solutions</italic>. <bold>25</bold>10.1007/s10291-021-01177-0 (2021).</mixed-citation></ref><ref id="CR24"><label>24.</label><mixed-citation publication-type="other">Yang, Y. et al. BeiDou-3 broadcast clock Estimation by integration of observations of regional tracking stations and inter-satellite links. <italic>GPS Solutions</italic>. <bold>25</bold>10.1007/s10291-020-01067-x (2021).</mixed-citation></ref><ref id="CR25"><label>25.</label><citation-alternatives><element-citation id="ec-CR25" publication-type="journal"><person-group person-group-type="author"><name><surname>Wang</surname><given-names>C</given-names></name><name><surname>Zhao</surname><given-names>Q</given-names></name><name><surname>Guo</surname><given-names>J</given-names></name><name><surname>Liu</surname><given-names>J</given-names></name><name><surname>Chen</surname><given-names>G</given-names></name></person-group><article-title>The contribution of intersatellite links to BDS-3 orbit determination: Model refinement and comparisons</article-title><source>Navigation</source><year>2019</year><volume>66</volume><fpage>71</fpage><lpage>82</lpage><pub-id pub-id-type="doi">10.1002/navi.295</pub-id></element-citation><mixed-citation id="mc-CR25" publication-type="journal">Wang, C., Zhao, Q., Guo, J., Liu, J. &#x00026; Chen, G. The contribution of intersatellite links to BDS-3 orbit determination: model refinement and comparisons. <italic>Navigation</italic><bold>66</bold>, 71&#x02013;82. 10.1002/navi.295 (2019).</mixed-citation></citation-alternatives></ref><ref id="CR26"><label>26.</label><mixed-citation publication-type="other">Standish, E. M. J. The observational basis for JPL&#x02019;s DE200, the planetary ephemerides of the astronomical almanac. <italic>Astronomy Astrophysics</italic><bold>233</bold> (1990).</mixed-citation></ref><ref id="CR27"><label>27.</label><citation-alternatives><element-citation id="ec-CR27" publication-type="journal"><person-group person-group-type="author"><name><surname>Park</surname><given-names>RS</given-names></name><name><surname>Folkner</surname><given-names>WM</given-names></name><name><surname>Williams</surname><given-names>JG</given-names></name><name><surname>Boggs</surname><given-names>DH</given-names></name></person-group><article-title>The JPL planetary and lunar ephemerides DE440 and DE441</article-title><source>Astron. J.</source><year>2021</year><volume>161</volume><fpage>105</fpage><pub-id pub-id-type="doi">10.3847/1538-3881/abd414</pub-id></element-citation><mixed-citation id="mc-CR27" publication-type="journal">Park, R. S., Folkner, W. M., Williams, J. G. &#x00026; Boggs, D. H. The JPL planetary and lunar ephemerides DE440 and DE441. <italic>Astron. J.</italic><bold>161</bold>, 105 (2021).</mixed-citation></citation-alternatives></ref><ref id="CR28"><label>28.</label><mixed-citation publication-type="other">Petit, G., Luzum, B. I. E. R. S. &#x00026; Conventions <italic>IERS Technical Note</italic> 36 (2010). (2010).</mixed-citation></ref><ref id="CR29"><label>29.</label><citation-alternatives><element-citation id="ec-CR29" publication-type="journal"><person-group person-group-type="author"><name><surname>Arnold</surname><given-names>D</given-names></name><etal/></person-group><article-title>CODE&#x02019;s new solar radiation pressure model for GNSS orbit determination</article-title><source>J. Geodesy</source><year>2015</year><volume>89</volume><fpage>775</fpage><lpage>791</lpage><pub-id pub-id-type="doi">10.1007/s00190-015-0814-4</pub-id></element-citation><mixed-citation id="mc-CR29" publication-type="journal">Arnold, D. et al. CODE&#x02019;s new solar radiation pressure model for GNSS orbit determination. <italic>J. Geodesy</italic>. <bold>89</bold>, 775&#x02013;791 (2015).</mixed-citation></citation-alternatives></ref><ref id="CR30"><label>30.</label><mixed-citation publication-type="other">Vol <italic>GB/T 42577&#x02009;&#x02013;&#x02009;2023</italic> (National Beidou Satellite Navigation Standardization Technical Committee, 2023).</mixed-citation></ref><ref id="CR31"><label>31.</label><mixed-citation publication-type="other">Guo, J., Wang, C., Chen, G., Xu, X. &#x00026; Zhao, Q. BDS-3 precise orbit and clock solution at Wuhan University: status and improvement. <italic>J. Geodesy</italic>. <bold>97</bold>10.1007/s00190-023-01705-5 (2023).</mixed-citation></ref><ref id="CR32"><label>32.</label><mixed-citation publication-type="other">Tan, B., Ai, Q. &#x00026; Yuan, Y. Analysis of precise orbit determination of BDS-3 MEO and IGSO satellites based on several Dual-Frequency measurement combinations. <italic>Remote Sens.</italic><bold>14</bold>10.3390/rs14236030 (2022).</mixed-citation></ref><ref id="CR33"><label>33.</label><mixed-citation publication-type="other">Mendes, V. B. &#x00026; Pavlis, E. C. High-accuracy zenith delay prediction at optical wavelengths. <italic>Geophys. Res. Lett.</italic><bold>31</bold>10.1029/2004gl020308 (2004).</mixed-citation></ref></ref-list></back></article>

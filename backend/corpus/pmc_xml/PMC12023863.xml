@@ -1,0 +1,1995 @@
+<!--
+
+File produced by pipelineRunner package (for JATS 2 SCJATS with pipeline SCJATS)
+At: 2025-05-22T10:17:02.301Z
+
+Version        : 1.16.1
+Last update    : 2024-08-27
+Modified by    : dunnm
+
+-->
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="1.3" xml:lang="en" article-type="research-article"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Natl Sci Rev</journal-id><journal-id journal-id-type="iso-abbrev">Natl Sci Rev</journal-id><journal-id journal-id-type="publisher-id">nsr</journal-id><journal-title-group><journal-title>National Science Review</journal-title></journal-title-group><issn pub-type="ppub">2095-5138</issn><issn pub-type="epub">2053-714X</issn><publisher><publisher-name>Oxford University Press</publisher-name></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">40290589</article-id><article-id pub-id-type="pmc">PMC12023863</article-id>
+<article-id pub-id-type="doi">10.1093/nsr/nwaf091</article-id><article-id pub-id-type="publisher-id">nwaf091</article-id><article-categories><subj-group subj-group-type="heading"><subject>Research Article</subject><subj-group subj-group-type="category-toc-heading"><subject>Physics</subject></subj-group></subj-group><subj-group subj-group-type="category-taxonomy-collection"><subject>AcademicSubjects/MED00010</subject><subject>AcademicSubjects/SCI00010</subject></subj-group><subj-group subj-group-type="category-taxonomy-collection"><subject>Nsr/6</subject></subj-group></article-categories><title-group><article-title>Variational quantum metrology with the Loschmidt echo</article-title></title-group><contrib-group><contrib contrib-type="author"><name><surname>Liu</surname><given-names>Ran</given-names></name><role vocab="credit" vocab-identifier="https://credit.niso.org" vocab-term="Data curation" vocab-term-identifier="https://credit.niso.org/contributor-roles/data-curation" degree-contribution="equal">Data curation</role><role vocab="credit" vocab-identifier="https://credit.niso.org" vocab-term="Investigation" vocab-term-identifier="https://credit.niso.org/contributor-roles/investigation" degree-contribution="lead">Investigation</role><role vocab="credit" vocab-identifier="https://credit.niso.org" vocab-term="Methodology" vocab-term-identifier="https://credit.niso.org/contributor-roles/methodology" degree-contribution="equal">Methodology</role><role vocab="credit" vocab-identifier="https://credit.niso.org" vocab-term="Software" vocab-term-identifier="https://credit.niso.org/contributor-roles/software" degree-contribution="lead">Software</role><role vocab="credit" vocab-identifier="https://credit.niso.org" vocab-term="Writing - original draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-original-draft" degree-contribution="lead">Writing - original draft</role><aff>
+<institution>CAS Key Laboratory of Microscale Magnetic Resonance and School of Physical Sciences, University of Science and Technology of China</institution>, <addr-line>Hefei 230026</addr-line>, <country country="CN">China</country></aff><aff>
+<institution>Anhui Province Key Laboratory of Scientific Instrument Development and Application, University of Science and Technology of China</institution>, <addr-line>Hefei 230026</addr-line>, <country country="CN">China</country></aff><aff>
+<institution>Institute of Quantum Precision Measurement, State Key Laboratory of Radio Frequency Heterogeneous Integration, College of Physics and Optoelectronic Engineering, Shenzhen University</institution>, <addr-line>Shenzhen 518060</addr-line>, <country country="CN">China</country></aff><xref rid="afn1" ref-type="author-notes"/></contrib><contrib contrib-type="author"><name><surname>Wu</surname><given-names>Ze</given-names></name><role vocab="credit" vocab-identifier="https://credit.niso.org" vocab-term="Software" vocab-term-identifier="https://credit.niso.org/contributor-roles/software" degree-contribution="equal">Software</role><role vocab="credit" vocab-identifier="https://credit.niso.org" vocab-term="Validation" vocab-term-identifier="https://credit.niso.org/contributor-roles/validation" degree-contribution="equal">Validation</role><role vocab="credit" vocab-identifier="https://credit.niso.org" vocab-term="Visualization" vocab-term-identifier="https://credit.niso.org/contributor-roles/visualization" degree-contribution="lead">Visualization</role><aff>
+<institution>CAS Key Laboratory of Microscale Magnetic Resonance and School of Physical Sciences, University of Science and Technology of China</institution>, <addr-line>Hefei 230026</addr-line>, <country country="CN">China</country></aff><aff>
+<institution>Anhui Province Key Laboratory of Scientific Instrument Development and Application, University of Science and Technology of China</institution>, <addr-line>Hefei 230026</addr-line>, <country country="CN">China</country></aff><xref rid="afn1" ref-type="author-notes"/></contrib><contrib contrib-type="author"><name><surname>Yang</surname><given-names>Xiaodong</given-names></name><role vocab="credit" vocab-identifier="https://credit.niso.org" vocab-term="Investigation" vocab-term-identifier="https://credit.niso.org/contributor-roles/investigation" degree-contribution="equal">Investigation</role><role vocab="credit" vocab-identifier="https://credit.niso.org" vocab-term="Software" vocab-term-identifier="https://credit.niso.org/contributor-roles/software" degree-contribution="equal">Software</role><role vocab="credit" vocab-identifier="https://credit.niso.org" vocab-term="Writing - review &#x00026; editing" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-review-editing" degree-contribution="equal">Writing - review &#x00026; editing</role><aff>
+<institution>Institute of Quantum Precision Measurement, State Key Laboratory of Radio Frequency Heterogeneous Integration, College of Physics and Optoelectronic Engineering, Shenzhen University</institution>, <addr-line>Shenzhen 518060</addr-line>, <country country="CN">China</country></aff><aff>
+<institution>Quantum Science Center of Guangdong-Hong Kong-Macao Greater Bay Area (Guangdong)</institution>, <addr-line>Shenzhen 518045</addr-line>, <country country="CN">China</country></aff></contrib><contrib contrib-type="author"><name><surname>Li</surname><given-names>Yuchen</given-names></name><role vocab="credit" vocab-identifier="https://credit.niso.org" vocab-term="Software" vocab-term-identifier="https://credit.niso.org/contributor-roles/software" degree-contribution="equal">Software</role><role vocab="credit" vocab-identifier="https://credit.niso.org" vocab-term="Validation" vocab-term-identifier="https://credit.niso.org/contributor-roles/validation" degree-contribution="equal">Validation</role><aff>
+<institution>CAS Key Laboratory of Microscale Magnetic Resonance and School of Physical Sciences, University of Science and Technology of China</institution>, <addr-line>Hefei 230026</addr-line>, <country country="CN">China</country></aff><aff>
+<institution>Anhui Province Key Laboratory of Scientific Instrument Development and Application, University of Science and Technology of China</institution>, <addr-line>Hefei 230026</addr-line>, <country country="CN">China</country></aff></contrib><contrib contrib-type="author"><name><surname>Zhou</surname><given-names>Hui</given-names></name><role vocab="credit" vocab-identifier="https://credit.niso.org" vocab-term="Investigation" vocab-term-identifier="https://credit.niso.org/contributor-roles/investigation" degree-contribution="equal">Investigation</role><role vocab="credit" vocab-identifier="https://credit.niso.org" vocab-term="Validation" vocab-term-identifier="https://credit.niso.org/contributor-roles/validation" degree-contribution="equal">Validation</role><aff>
+<institution>School of Physics, Hefei University of Technology</institution>, <addr-line>Hefei 230009</addr-line>, <country country="CN">China</country></aff></contrib><contrib contrib-type="author"><name><surname>Li</surname><given-names>Zhaokai</given-names></name><role vocab="credit" vocab-identifier="https://credit.niso.org" vocab-term="Software" vocab-term-identifier="https://credit.niso.org/contributor-roles/software" degree-contribution="equal">Software</role><role vocab="credit" vocab-identifier="https://credit.niso.org" vocab-term="Writing - review &#x00026; editing" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-review-editing" degree-contribution="supporting">Writing - review &#x00026; editing</role><aff>
+<institution>CAS Key Laboratory of Microscale Magnetic Resonance and School of Physical Sciences, University of Science and Technology of China</institution>, <addr-line>Hefei 230026</addr-line>, <country country="CN">China</country></aff><aff>
+<institution>Anhui Province Key Laboratory of Scientific Instrument Development and Application, University of Science and Technology of China</institution>, <addr-line>Hefei 230026</addr-line>, <country country="CN">China</country></aff><aff>
+<institution>Hefei National Laboratory, University of Science and Technology of China</institution>, <addr-line>Hefei 230088</addr-line>, <country country="CN">China</country></aff></contrib><contrib contrib-type="author"><name><surname>Chen</surname><given-names>Yuquan</given-names></name><role vocab="credit" vocab-identifier="https://credit.niso.org" vocab-term="Software" vocab-term-identifier="https://credit.niso.org/contributor-roles/software" degree-contribution="supporting">Software</role><role vocab="credit" vocab-identifier="https://credit.niso.org" vocab-term="Visualization" vocab-term-identifier="https://credit.niso.org/contributor-roles/visualization" degree-contribution="supporting">Visualization</role><aff>
+<institution>CAS Key Laboratory of Microscale Magnetic Resonance and School of Physical Sciences, University of Science and Technology of China</institution>, <addr-line>Hefei 230026</addr-line>, <country country="CN">China</country></aff><aff>
+<institution>Anhui Province Key Laboratory of Scientific Instrument Development and Application, University of Science and Technology of China</institution>, <addr-line>Hefei 230026</addr-line>, <country country="CN">China</country></aff></contrib><contrib contrib-type="author" corresp="yes"><name><surname>Yuan</surname><given-names>Haidong</given-names></name><!--hdyuan@mae.cuhk.edu.hk--><role vocab="credit" vocab-identifier="https://credit.niso.org" vocab-term="Formal analysis" vocab-term-identifier="https://credit.niso.org/contributor-roles/formal-analysis" degree-contribution="lead">Formal analysis</role><role vocab="credit" vocab-identifier="https://credit.niso.org" vocab-term="Investigation" vocab-term-identifier="https://credit.niso.org/contributor-roles/investigation" degree-contribution="equal">Investigation</role><role vocab="credit" vocab-identifier="https://credit.niso.org" vocab-term="Writing - review &#x00026; editing" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-review-editing" degree-contribution="equal">Writing - review &#x00026; editing</role><aff>Department of Mechanical and Automation Engineering, <institution>The Chinese University of Hong Kong</institution>, <addr-line>Hong Kong SAR</addr-line>, <country country="CN">China</country></aff><xref rid="cor2" ref-type="corresp"/></contrib><contrib contrib-type="author" corresp="yes"><name><surname>Peng</surname><given-names>Xinhua</given-names></name><!--xhpeng@ustc.edu.cn--><role vocab="credit" vocab-identifier="https://credit.niso.org" vocab-term="Conceptualization" vocab-term-identifier="https://credit.niso.org/contributor-roles/conceptualization" degree-contribution="lead">Conceptualization</role><role vocab="credit" vocab-identifier="https://credit.niso.org" vocab-term="Methodology" vocab-term-identifier="https://credit.niso.org/contributor-roles/methodology" degree-contribution="equal">Methodology</role><role vocab="credit" vocab-identifier="https://credit.niso.org" vocab-term="Writing - review &#x00026; editing" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-review-editing" degree-contribution="lead">Writing - review &#x00026; editing</role><aff>
+<institution>CAS Key Laboratory of Microscale Magnetic Resonance and School of Physical Sciences, University of Science and Technology of China</institution>, <addr-line>Hefei 230026</addr-line>, <country country="CN">China</country></aff><aff>
+<institution>Anhui Province Key Laboratory of Scientific Instrument Development and Application, University of Science and Technology of China</institution>, <addr-line>Hefei 230026</addr-line>, <country country="CN">China</country></aff><aff>
+<institution>Hefei National Laboratory, University of Science and Technology of China</institution>, <addr-line>Hefei 230088</addr-line>, <country country="CN">China</country></aff><xref rid="cor1" ref-type="corresp"/></contrib></contrib-group><author-notes><corresp id="cor1">
+<bold>Corresponding author.</bold> E-mail: <email>xhpeng@ustc.edu.cn</email></corresp><corresp id="cor2">
+<bold>Corresponding author.</bold> E-mail: <email>hdyuan@mae.cuhk.edu.hk</email></corresp><fn id="afn1"><p>Ran Liu and Ze Wu are equally contributed to this work.</p></fn></author-notes><pub-date pub-type="collection"><month>5</month><year>2025</year></pub-date><pub-date pub-type="epub" iso-8601-date="2025-03-10"><day>10</day><month>3</month><year>2025</year></pub-date><pub-date pub-type="pmc-release"><day>10</day><month>3</month><year>2025</year></pub-date><volume>12</volume><issue>5</issue><elocation-id>nwaf091</elocation-id><history><date date-type="accepted"><day>22</day><month>1</month><year>2025</year></date><date date-type="received"><day>18</day><month>8</month><year>2024</year></date><date date-type="rev-recd"><day>31</day><month>12</month><year>2024</year></date><date date-type="corrected-typeset"><day>25</day><month>4</month><year>2025</year></date></history><permissions><copyright-statement>&#x000a9; The Author(s) 2025. Published by Oxford University Press on behalf of China Science Publishing &#x00026; Media Ltd.</copyright-statement><copyright-year>2025</copyright-year><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>This is an Open Access article distributed under the terms of the Creative Commons Attribution License (<ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</ext-link>), which permits unrestricted reuse, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions><self-uri xlink:href="nwaf091.pdf"/><abstract><title>ABSTRACT</title><p>By leveraging quantum effects, such as superposition and entanglement, quantum metrology promises higher precision than classical strategies. It is, however, a challenging task to achieve the higher precision on practical systems. This is mainly due to difficulties in engineering nonclassical states and performing nontrivial measurements on the system, especially when the number of particles is large. Here we propose a variational scheme with the Loschmidt echo for quantum metrology. By utilizing hardware-efficient ansatzes in the design of variational quantum circuits, the quantum Fisher information (QFI) of the probe state can be extracted from the experimentally measured Loschmidt echo in a scalable manner. This QFI is then used to guide the online optimization of the preparation of the probe state. We experimentally implement the scheme on an ensemble of 10-spin quantum processors and achieve a 12.4-dB enhancement of the measurement precision over the uncorrelated states, which is close to the theoretical limit. The scheme can also be employed on various other noisy intermediate-scale quantum devices, which provides a promising protocol to demonstrate quantum advantages.</p></abstract><abstract abstract-type="teaser"><p>This study introduces a variational quantum metrology scheme based on Loschmidt echo and experimentally demonstrates its quantum-enhanced characteristic, providing a promising framework for quantum metrology across diverse practical quantum systems.</p></abstract><kwd-group><kwd>quantum metrology</kwd><kwd>Loschmidt echo</kwd><kwd>variational quantum optimization</kwd><kwd>quantum Fisher information</kwd></kwd-group><funding-group><award-group award-type="grant"><funding-source>
+<institution-wrap><institution>Innovation Program for Quantum Science and Technology</institution></institution-wrap>
+</funding-source><award-id>2021ZD0303205</award-id><award-id>2023ZD0300600</award-id></award-group><award-group award-type="grant"><funding-source>
+<institution-wrap><institution>National Natural Science Foundation of China</institution><institution-id institution-id-type="DOI">10.13039/501100001809</institution-id></institution-wrap>
+</funding-source><award-id>12261160569</award-id><award-id>12404554</award-id></award-group><award-group award-type="grant"><funding-source>
+<institution-wrap><institution>Research Grants Council of Hong Kong</institution></institution-wrap>
+</funding-source><award-id>14309223</award-id><award-id>14309624</award-id><award-id>14309022</award-id></award-group><award-group award-type="grant"><funding-source>
+<institution-wrap><institution>Guangdong Provincial Quantum Science Strategic Initiative</institution></institution-wrap>
+</funding-source><award-id>GDZX2303007</award-id></award-group><award-group award-type="grant"><funding-source>
+<institution-wrap><institution>China Postdoctoral Science Foundation</institution><institution-id institution-id-type="DOI">10.13039/501100002858</institution-id></institution-wrap>
+</funding-source><award-id>2024M762114</award-id><award-id>GZC20231727</award-id></award-group></funding-group><counts><page-count count="8"/></counts></article-meta></front><body><sec id="sec1"><title>INTRODUCTION</title><p>To sense more accurately has always been one of the main drives for scientific advances and technological innovations. Quantum metrology [<xref rid="bib1" ref-type="bibr">1&#x02013;3</xref>], which utilizes quantum correlations to achieve higher sensitivities, has gained much attention recently. In ideal scenarios, quantum metrology can achieve a precision at the Heisenberg limit, which scales as <inline-formula><tex-math id="TM0001" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$1/N$\end{document}</tex-math></inline-formula> with <italic toggle="yes">N</italic> the number of particles [<xref rid="bib4" ref-type="bibr">4&#x02013;7</xref>]. As a contrast, the precision of the classical strategies is bounded by the standard quantum limit (SQL), which scales as <inline-formula><tex-math id="TM0002" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$1/\sqrt{N}$\end{document}</tex-math></inline-formula>. To achieve higher precisions in quantum metrology, nontrivial entangled probe states, however, need to be prepared. This poses a practically challenging task when the number of particles increases. In practice, there are two main difficulties in achieving the highest precision. First, it is difficult to identify the optimal probe state when the number of particles increases. Because of the &#x02018;curse of dimensionality&#x02019;, the classical optimization that is required to identify the optimal probe state soon becomes intractable [<xref rid="bib8" ref-type="bibr">8&#x02013;11</xref>]. Second, it is a challenging task to prepare the identified optimal probe state on practical systems due to device-specific constraints, such as decoherences, imperfect controls and readout errors [<xref rid="bib12" ref-type="bibr">12&#x02013;14</xref>].</p><p>Variational quantum metrology (VQM) provides a promising route to circumvent these problems. In VQM the identification of the optimal probe state is carried out with a hybrid quantum-classical scheme. A variational quantum circuit is used to prepare the probe state and the circuit is optimized externally by a classical computer [<xref rid="bib15" ref-type="bibr">15&#x02013;18</xref>]. This hybrid scheme inherits the advantages of the variational quantum algorithm that not only reduces the complexity of the classical simulation, but can also easily incorporate the device-specific constraints into the design of the variational quantum circuit (VQC). The optimization of the circuit, however, can still be very challenging for quantum metrology. This is because the quantum Fisher information (QFI), which is often taken as the figure&#x000a0;of merit in quantum metrology, is difficult to evaluate. The general brute-force approaches to extract QFI, such as quantum state tomography, demand an exponentially growing number of measurements [<xref rid="bib19" ref-type="bibr">19</xref>]. Although some effective surrogates of QFI have been proposed previously, such as those based on additional physical qubits or experimental measurements [<xref rid="bib18" ref-type="bibr">18</xref>,<xref rid="bib20" ref-type="bibr">20&#x02013;24</xref>], they may still require a considerable number of experimental measurements or extra physical qubits. This can go beyond current experimental capabilities.</p><p>In this article, we propose a variational optimization scheme for quantum metrology that uses the Loschmidt echo (LE) to efficiently extract the QFI. The signal of the LE can then be directly used to optimize the VQC that prepares the optimal probe state in quantum metrology. We demonstrate the power of the scheme by identifying and preparing a 10-spin optimal probe state in nuclear magnetic resonance (NMR) for the estimation of an unknown phase, where the system is in mixed states at room temperature. We experimentally implement the scheme and demonstrate that the achieved precision is close to the fundamental bound in quantum metrology&#x02014;the quantum Cram&#x000e9;r&#x02013;Rao bound (QCRB). This opens a promising avenue for the implementation of quantum-enhanced parameter estimation on practical quantum devices due to its efficiency, robustness against experimental imperfections and easy implementation.</p></sec><sec id="sec2"><title>RESULTS</title><sec id="sec2-1"><title>Scheme</title><p>We consider the iconic task of estimating parameter <inline-formula><tex-math id="TM0003" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\alpha$\end{document}</tex-math></inline-formula> in operator <inline-formula><tex-math id="TM0004" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$U_\alpha ={\rm e}^{-i\alpha G}$\end{document}</tex-math></inline-formula> with <italic toggle="yes">G</italic> as the generator. The ultimate precision can be quantified by the QCRB, [<xref rid="bib1" ref-type="bibr">1&#x02013;3</xref>,<xref rid="bib25" ref-type="bibr">25</xref>,<xref rid="bib26" ref-type="bibr">26</xref>] as</p><disp-formula id="equ1">
+<label>(1)</label>
+<tex-math id="TM0005" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+\begin{eqnarray*}
+\Delta \alpha \ge \frac{1}{\sqrt{\nu \mathcal {F}}},
+\end{eqnarray*}\end{document}</tex-math>
+</disp-formula><p>where <inline-formula><tex-math id="TM0006" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\Delta \alpha$\end{document}</tex-math></inline-formula> is the standard deviation of an unbiased estimator <inline-formula><tex-math id="TM0007" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\hat{\alpha }$\end{document}</tex-math></inline-formula>, <inline-formula><tex-math id="TM0008" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\nu$\end{document}</tex-math></inline-formula> is the number of repetitive measurements and <inline-formula><tex-math id="TM0009" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\mathcal {F}$\end{document}</tex-math></inline-formula> is the QFI. Our target here is to engineer a probe state with the maximal QFI, which leads to the smallest standard deviation. Here, the probe state is prepared by a VQC, which generates a unitary operation, <inline-formula><tex-math id="TM0010" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+${U}_{E}(\vec{\theta })$\end{document}</tex-math></inline-formula>, acting on a natural initial state of the physical system with <inline-formula><tex-math id="TM0011" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\vec{\theta }$\end{document}</tex-math></inline-formula> being the tunable parameters of the circuit. By taking the QFI as the figure&#x000a0;of merit, we then optimize <inline-formula><tex-math id="TM0012" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\vec{\theta }$\end{document}</tex-math></inline-formula> to steer the probe state towards the optimal or nearly optimal state. This state is subsequently used for high-precision phase estimation. The schematic for the workflow of quantum probe engineering via VQM is illustrated in Fig.&#x000a0;<xref rid="fig1" ref-type="fig">1a</xref>.</p><fig position="float" id="fig1"><label>Figure 1.</label><caption><p>(a) Workflow for quantum probe engineering via quantum variational optimization. By taking the QFI as the figure&#x000a0;of merit for the optimization of the VQC, the probe state is steered to the optimal state for high-precision phase estimation under practical dynamics. (b) Schematic diagram of measuring the LE. When the unperturbed evolution is specified as the engineering operation, i.e.&#x000a0;<inline-formula><tex-math id="TM0013" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$U\rightarrow {U}_{E}(\vec{\theta })$\end{document}</tex-math></inline-formula>, and the perturbation in the perturbed evolution is specified as a small quench under encoding dynamics, i.e.&#x000a0;<inline-formula><tex-math id="TM0014" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+${U}_\delta \rightarrow {\rm e}^{-i\delta G}{U}_{E}(\vec{\theta })$\end{document}</tex-math></inline-formula>, the QFI of the engineered probe <inline-formula><tex-math id="TM0015" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+${\rho}_{f}$\end{document}</tex-math></inline-formula> can then be extracted from the LE.</p></caption><graphic xlink:href="nwaf091fig1" position="float"/></fig><p>An essential part of the variational optimization is to efficiently evaluate the figure&#x000a0;of merit that determines how the parameters should be tuned. However, the standard methods of evaluating the QFI, such as state tomography, are extremely demanding in experiments. Here we develop an experimental protocol that uses the Loschmidt echo to evaluate the QFI.</p><p>For the pure state, the Loschmidt echo is given by <inline-formula><tex-math id="TM0016" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\mathcal {L}_\delta =|\langle \Psi _{0}|U^\dagger U_\delta | \Psi _{0}\rangle |^{2}$\end{document}</tex-math></inline-formula>, which is the overlap between the states obtained from the forward unperturbed evolution <inline-formula><tex-math id="TM0017" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$(U)$\end{document}</tex-math></inline-formula> and the forward perturbed evolution <inline-formula><tex-math id="TM0018" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$(U_\delta )$\end{document}</tex-math></inline-formula>. The Loschmidt echo corresponds to a susceptibility to the perturbation [<xref rid="bib27" ref-type="bibr">27</xref>,<xref rid="bib28" ref-type="bibr">28</xref>]. As shown in Fig.&#x000a0;<xref rid="fig1" ref-type="fig">1b</xref>, the Loschmidt echo can be used to extract the QFI when we substitute <italic toggle="yes">U</italic> and <inline-formula><tex-math id="TM0019" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$U_\delta$\end{document}</tex-math></inline-formula> with <inline-formula><tex-math id="TM0020" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+${U}_{E}(\vec{\theta })$\end{document}</tex-math></inline-formula> and <inline-formula><tex-math id="TM0021" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+${\rm e}^{-i\delta G}{U}_{E}(\vec{\theta })$\end{document}</tex-math></inline-formula>, respectively. In this case, the Fisher information can be evaluated from the Loschmidt echo as [<xref rid="bib29" ref-type="bibr">29</xref>]</p><disp-formula id="equ2">
+<label>(2)</label>
+<tex-math id="TM0022" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+\begin{eqnarray*}
+\mathcal {F}[{U}_{E}(\vec{\theta }) |\Psi _0\rangle ]=\lim _{\delta \rightarrow 0}4\frac{1-\mathcal {L}_{\delta }}{\delta ^2}.
+\end{eqnarray*}\end{document}</tex-math>
+</disp-formula><p>We generalize this connection to the initially mixed quantum system, in which the considered process for state preparation is still unitary. The Loschmidt echo then becomes</p><disp-formula id="equ3">
+<label>(3)</label>
+<tex-math id="TM0023" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+\begin{eqnarray*}
+\mathcal {L}_\delta &#x00026; \equiv&#x00026; {\mathrm{Tr}}[{\rho}_{\mathrm{f}}{\rho}_{\mathrm{f}}^\delta ] \\
+&#x00026; \approx&#x00026; \Gamma ({\rho}_{\rm f})\!-\!\frac{\delta ^2}{4} \left[\!2\sum \limits_{i,j=1}^d(\lambda _i-{\lambda}_ {j})^2|\langle {\psi}_{i|G|}{\psi}_{j}\rangle |^2\!\right]\!.\!\! \\
+\end{eqnarray*}\end{document}</tex-math>
+</disp-formula><p>Here <inline-formula><tex-math id="TM0024" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+${\rho}_{\mathrm{f}}={U}_{E}(\vec{\theta }){\rho}_{0}{U}_{E}^\dagger (\vec{\theta }) =\sum _{i=1}^d\lambda _i|\psi _i\rangle \langle \psi _i|$\end{document}</tex-math></inline-formula>, <inline-formula><tex-math id="TM0025" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+${\rho}_{\rm f}^\delta ={\rm e}^{-i\delta G}{U}_{E}(\vec{\theta }){\rho}_0{U}_{E}^{\dagger} (\vec{\theta }){\rm e}^{i\delta G}$\end{document}</tex-math></inline-formula>, <italic toggle="yes">d</italic> is the dimension of the Hilbert space and <inline-formula><tex-math id="TM0026" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\Gamma ({\rho}_{\rm f})=\sum _{i=1}^d\lambda _i^2 $\end{document}</tex-math></inline-formula> is the purity of the state, which in our case can be treated as a constant since it does not change under unitary evolution. The LE is connected to the QFI of mixed states as (see the Methods section&#x000a0;below for detailed deviations)</p><disp-formula id="equ4">
+<label>(4)</label>
+<tex-math id="TM0027" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+\begin{eqnarray*}
+\mathcal {F}[\rho _{\rm f},H]\ge \lim _{\delta \rightarrow 0}4\frac{\Gamma (\rho _{\rm f})-\mathcal {L}_\delta }{\delta ^2}.
+\end{eqnarray*}\end{document}</tex-math>
+</disp-formula><p>Though only a lower bound on QFI can be extracted from this inequality, this bound is directly related to sub-QFI, which shares the same global extrema with QFI [<xref rid="bib22" ref-type="bibr">22</xref>] and can thus be employed in the variational optimization of the probe state. For highly mixed states where the eigenvalues are almost degenerate, i.e.&#x000a0;<inline-formula><tex-math id="TM0028" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\lambda _i\approx {1}/{d}$\end{document}</tex-math></inline-formula> for <inline-formula><tex-math id="TM0029" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$1\le i\le d$\end{document}</tex-math></inline-formula>, the bound can also be saturated with</p><disp-formula id="equ5">
+<label>(5)</label>
+<tex-math id="TM0030" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+\begin{eqnarray*}
+\mathcal {F}[\rho _{\rm f},H]\approx \lim _{\delta \rightarrow 0}2d\frac{\Gamma (\rho _{\rm f})-\mathcal {L}_\delta }{\delta ^2}.
+\end{eqnarray*}\end{document}</tex-math>
+</disp-formula><p>This is exactly the case in NMR as the initial state of the NMR system is a thermal state with the Boltzmann distribution, which at room temperature is close to the completely mixed state [<xref rid="bib30" ref-type="bibr">30</xref>]. Since <inline-formula><tex-math id="TM0031" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\rho _{\rm f}={U}_{E}(\vec{\theta })\rho _0{U}_{E}^\dagger (\vec{\theta })$\end{document}</tex-math></inline-formula> has the same eigenvalue as <inline-formula><tex-math id="TM0032" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\rho _0$\end{document}</tex-math></inline-formula>, <inline-formula><tex-math id="TM0033" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\rho _{\rm f}$\end{document}</tex-math></inline-formula> is thus also almost degenerate.</p><p>For a better understanding of the experimental extraction of the LE, we rewrite Equation&#x000a0;(<xref rid="equ3" ref-type="disp-formula">3</xref>) as</p><disp-formula id="equ6">
+<label>(6)</label>
+<tex-math id="TM0034" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+\begin{eqnarray*}
+\mathcal {L}_\delta \equiv {\rm Tr} [V_\delta (\vec{\theta })\rho _0V_\delta ^\dagger (\vec{\theta })\rho _0]
+\end{eqnarray*}\end{document}</tex-math>
+</disp-formula><p>with <inline-formula><tex-math id="TM0035" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$V_\delta (\vec{\theta })\equiv {U}_{E}^\dagger (\vec{\theta }){\rm e}^{-i\delta G}{U}_{E}(\vec{\theta })$\end{document}</tex-math></inline-formula>. The LE can thus be obtained by first using the variational quantum circuit to generate <inline-formula><tex-math id="TM0036" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+${U}_{E}(\vec{\theta })$\end{document}</tex-math></inline-formula>, then applying a perturbation evolution <inline-formula><tex-math id="TM0037" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+${\rm e}^{-i\delta H}$\end{document}</tex-math></inline-formula>, followed by a backward evolution <inline-formula><tex-math id="TM0038" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$U^\dagger _{\rm E}(\vec{\theta })$\end{document}</tex-math></inline-formula> and a projection onto the initial state.</p><p>We note that the initial states of practical quantum systems are typically classical product states, making the LE efficiently extractable from linearly increasing local measurements with the system size and experimentally favorable. Moreover, the VQCs can be designed with hardware-efficient ansatzes [<xref rid="bib31" ref-type="bibr">31</xref>], which not only enhance their feasibility across diverse quantum systems by accommodating the constraints of current quantum hardware, but also ensure that the backward evolution <inline-formula><tex-math id="TM0039" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$U^\dagger _{\rm E}(\vec{\theta })$\end{document}</tex-math></inline-formula> can be implemented in a scalable manner (see the <xref rid="sup1" ref-type="supplementary-material">online supplementary material</xref>).</p></sec><sec id="sec2-2"><title>Experimental variational optimization of the 10-spin mixed quantum probe state</title><p>We experimentally demonstrate the scheme on a Bruker Avance III 400-MHz NMR spectrometer at room temperature. The sample is trimethylphosphite (TMP) dissolved in <inline-formula><tex-math id="TM0040" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$d_6$\end{document}</tex-math></inline-formula> acetone. The TMP molecule, which consists of a central <inline-formula><tex-math id="TM0041" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$^{31} {\rm P}$\end{document}</tex-math></inline-formula> nuclear spin and nine equivalent <inline-formula><tex-math id="TM0042" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$^{1} {\rm H}$\end{document}</tex-math></inline-formula> nuclear spins, as shown in Fig.&#x000a0;<xref rid="fig2" ref-type="fig">2</xref>, is employed as the 10-spin quantum probe. In the liquid state, the interaction between <inline-formula><tex-math id="TM0043" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$^{1} {\rm H}$\end{document}</tex-math></inline-formula> spins is negligible due to the magnetic equivalence. The natural Hamiltonian of the system in the doubly rotating frame is <inline-formula><tex-math id="TM0044" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$H_{\rm {NMR}}={\pi }J_{\rm {PH}}\sigma _z^1 / 2\otimes \sum _{j=2}^{10}\sigma _z^j$\end{document}</tex-math></inline-formula> with <inline-formula><tex-math id="TM0045" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$J_{\rm PH}=10.5$\end{document}</tex-math></inline-formula> Hz. Here we use Arabic numerals 1&#x02013;10 to respectively denote the <inline-formula><tex-math id="TM0046" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$^{31} {\rm P}$\end{document}</tex-math></inline-formula> nuclear spin and nine <inline-formula><tex-math id="TM0047" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$^1 {\rm H}$\end{document}</tex-math></inline-formula> nuclear spins.</p><fig position="float" id="fig2"><label>Figure 2.</label><caption><p>The experimental procedures for variationally optimizing the metrologically useful mixed state via the LE. The 10-spin quantum probe is realized by a <inline-formula><tex-math id="TM0048" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$^{31}{\rm P}$\end{document}</tex-math></inline-formula> nuclear spin and nine equivalent <inline-formula><tex-math id="TM0049" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$^1 {\rm H}$\end{document}</tex-math></inline-formula> spins in the TMP molecule and initialized as an equilibrium state <inline-formula><tex-math id="TM0050" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\rho _{\rm eq}$\end{document}</tex-math></inline-formula>. Here <inline-formula><tex-math id="TM0051" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\rho _{\rm eq}$\end{document}</tex-math></inline-formula> evolves under the symmetrical variational quantum circuit <inline-formula><tex-math id="TM0052" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$V_\delta (\vec{\theta })\equiv {U}_{E}^\dagger (\vec{\theta }) {\rm e}^{-i\delta G}{U}_{E}(\vec{\theta })$\end{document}</tex-math></inline-formula> and the polarization of each spin along the <italic toggle="yes">z</italic> axis is then measured to obtain the LE <inline-formula><tex-math id="TM0053" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\mathcal {L}_\delta$\end{document}</tex-math></inline-formula>. The QFI of the quantum probe, i.e.&#x000a0;<inline-formula><tex-math id="TM0054" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\mathcal {F}[\rho _{\rm f}(\vec{\theta }),G]$\end{document}</tex-math></inline-formula>, can be extracted from the LE and feedback to the classical computer, which is employed to iteratively update parameters <inline-formula><tex-math id="TM0055" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\vec{\theta }$\end{document}</tex-math></inline-formula> to maximize the QFI.</p></caption><graphic xlink:href="nwaf091fig2" position="float"/></fig><p>Figure&#x000a0;<xref rid="fig2" ref-type="fig">2</xref> shows the experimental procedures for engineering the mixed probe state via the hybrid quantum-classical scheme with quantum variational optimization. Here the extraction of the LE is performed on the quantum system, while the updating of the parameters is determined on the classical computer. The quantum part contains three major stages as described below.</p><list list-type="order"><list-item><p>The system is initially in the uncorrelated equilibrium state at room temperature, <inline-formula><tex-math id="TM0056" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+${\rho}_{\rm eq}=(\mathbb{1} + \epsilon {\rho}_{\rm eq}^\Delta )/2^{10}$\end{document}</tex-math></inline-formula>, where <inline-formula><tex-math id="TM0057" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\rho _{\rm eq}^\Delta =\sum _{j=1}^{10}\gamma _{j}\sigma _z^{j}/2 $\end{document}</tex-math></inline-formula>, <inline-formula><tex-math id="TM0058" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\mathbb{1}$\end{document}</tex-math></inline-formula> is the <inline-formula><tex-math id="TM0059" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$2^{10}\times 2^{10}$\end{document}</tex-math></inline-formula> unit operator, <inline-formula><tex-math id="TM0060" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\epsilon$\end{document}</tex-math></inline-formula> is the thermal polarization (<inline-formula><tex-math id="TM0061" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\sim\! 10^{-5}$\end{document}</tex-math></inline-formula>) and <inline-formula><tex-math id="TM0062" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\gamma _{j}$\end{document}</tex-math></inline-formula> is the relative gyromagnetic ratio of the corresponding nuclear spin with <inline-formula><tex-math id="TM0063" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\gamma _1=0.8,\gamma _{2,3,\dots ,10}=2.0$\end{document}</tex-math></inline-formula>.</p></list-item><list-item><p>Evolve the system under <inline-formula><tex-math id="TM0064" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$V_\delta (\vec{\theta })\equiv {U}_{E}^\dagger (\vec{\theta }) {\rm e}^{-i\delta G}{U}_{E}(\vec{\theta })$\end{document}</tex-math></inline-formula> according to Equation&#x000a0;(<xref rid="equ6" ref-type="disp-formula">6</xref>). In our experiment, <inline-formula><tex-math id="TM0065" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+${U}_{E}(\vec{\theta })$\end{document}</tex-math></inline-formula> is realized by a three-layer VQC consisting of single-spin rotations, i.e.&#x000a0;<inline-formula><tex-math id="TM0066" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+${\rm e}^{-i\theta _k\sigma _{x,y}/2}$\end{document}</tex-math></inline-formula> with <inline-formula><tex-math id="TM0067" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\vec{\theta }\equiv (\theta _1,\theta _2,\dots ,\theta _k,\dots )$\end{document}</tex-math></inline-formula>, and the free evolution under Hamiltonian <inline-formula><tex-math id="TM0068" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$H_{\rm NMR}$\end{document}</tex-math></inline-formula> for a duration <inline-formula><tex-math id="TM0069" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\tau$\end{document}</tex-math></inline-formula>. The interactions in <inline-formula><tex-math id="TM0070" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$H_{\rm NMR}$\end{document}</tex-math></inline-formula> facilitate the generation of nonclassical correlations in the probe state, thereby enabling the potential to achieve precision beyond the SQL. Details of the VQC can be found in the <xref rid="sup1" ref-type="supplementary-material">online supplementary material</xref>. After the preparation of the optimal probe state, the dynamics that encodes parameter <inline-formula><tex-math id="TM0071" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+${\rm e}^{-i\delta G}$\end{document}</tex-math></inline-formula> is then applied. Without loss of generality, we consider the encoding dynamics as a field along the <italic toggle="yes">z</italic> axis, and the corresponding Hamiltonian is <inline-formula><tex-math id="TM0072" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$G=\sum _{k=1}^{10}\sigma _z^j/2$\end{document}</tex-math></inline-formula>. Theoretically, the correspondence between the Loschmidt echo and QFI is best when <inline-formula><tex-math id="TM0073" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\delta \rightarrow 0$\end{document}</tex-math></inline-formula>, as indicated in Equation&#x000a0;(<xref rid="equ5" ref-type="disp-formula">5</xref>). However, the experiment signal of the Loschmidt echo is least sensitive to the change of the parameter when <inline-formula><tex-math id="TM0074" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\delta =0$\end{document}</tex-math></inline-formula> since <inline-formula><tex-math id="TM0075" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\mathcal {L}_\delta =\Gamma (\rho _f)$\end{document}</tex-math></inline-formula> reaches the maximal where the derivative is zero. So there exists a trade-off. With the aid of numerical simulation, we find that <inline-formula><tex-math id="TM0076" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\delta =0.2$\end{document}</tex-math></inline-formula> is optimal for our experiment (see the <xref rid="sup1" ref-type="supplementary-material">online supplementary material</xref>). Finally, the reverse evolution <inline-formula><tex-math id="TM0077" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$U^\dagger _{\rm E}(\vec{\theta })$\end{document}</tex-math></inline-formula> is performed. This can be implemented by applying the reverse evolution of each operation in the PQC in reverse order. Specifically, the reverse of single-spin rotations can be implemented by changing the phase of each pulse, and the reverse of the free evolution under <inline-formula><tex-math id="TM0078" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$H_{\rm NMR}$\end{document}</tex-math></inline-formula> can be implemented by applying <inline-formula><tex-math id="TM0079" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\pi$\end{document}</tex-math></inline-formula> pulses along the <inline-formula><tex-math id="TM0080" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$x $\end{document}</tex-math></inline-formula> direction to the <inline-formula><tex-math id="TM0081" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$^{31}$\end{document}</tex-math></inline-formula>P spin at both the beginning and end of the evolution.</p></list-item><list-item><p>Project the evolved state onto the initial state <inline-formula><tex-math id="TM0082" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\rho _0$\end{document}</tex-math></inline-formula>. Substituting the specific form of <inline-formula><tex-math id="TM0083" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\rho _0$\end{document}</tex-math></inline-formula> into Equation&#x000a0;(<xref rid="equ6" ref-type="disp-formula">6</xref>), we have
+<disp-formula id="equ7"><label>(7)</label><tex-math id="TM0084" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+\begin{eqnarray*}
+\mathcal {L}_\delta &#x00026;=&#x00026;\frac{1}{2^N} + \frac{\epsilon }{2^N}\sum _{j=1}^{10}\gamma _j {\rm Tr}\\
+&#x00026;&#x00026;\left[V_\delta (\vec{\theta })\rho _0V_\delta ^\dagger (\vec{\theta })\sigma _z^j\right].
+\end{eqnarray*}\end{document}</tex-math></disp-formula>This means that the LE can be extracted from the local measurement of the evolved state <inline-formula><tex-math id="TM0085" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$V_\delta (\vec{\theta })\rho _0V_\delta ^\dagger (\vec{\theta })$\end{document}</tex-math></inline-formula>, i.e.&#x000a0;the polarization of each spin along <italic toggle="yes">z</italic> axis. Hence, the measurement overhead increases linearly with the system size. The identity <inline-formula><tex-math id="TM0086" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\mathbb{1}$\end{document}</tex-math></inline-formula> in <inline-formula><tex-math id="TM0087" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\rho _0$\end{document}</tex-math></inline-formula> does not change under the unitary evolution <inline-formula><tex-math id="TM0088" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$V_\delta (\vec{\theta })$\end{document}</tex-math></inline-formula> and also does not contribute to the experimental signal since the observables in NMR are traceless. The Loschmidt echo in Equation&#x000a0;(<xref rid="equ7" ref-type="disp-formula">7</xref>) then becomes
+<disp-formula id="equ8"><label>(8)</label><tex-math id="TM0089" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+\begin{eqnarray*}
+\mathcal {L}_\delta =\frac{1}{2^N}+\frac{\epsilon ^2}{2^{2N}}\mathcal {L}_\delta ^\Delta
+\end{eqnarray*}\end{document}</tex-math></disp-formula>with <inline-formula><tex-math id="TM0090" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\mathcal {L}_\delta ^\Delta \equiv \sum _{j=1}^{10}\gamma _j{\rm Tr} (V_\delta (\vec{\theta })\rho _{\text eq}^\Delta V^\dagger _\delta (\vec{\theta })\sigma _z^j)$\end{document}</tex-math></inline-formula>, and <inline-formula><tex-math id="TM0091" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+${\rm Tr}(V_\delta (\vec{\theta })\rho_{\text eq}^\Delta V^\dagger _\delta (\vec{\theta })\sigma _z^j)$\end{document}</tex-math></inline-formula> directly obtained from the experimental measurements on different nuclear spins.</p></list-item></list><p>To reduce errors in measuring the LE, we employ several techniques in our experiment. We use single-spin rotations with the BB1 composited sequence [<xref rid="bib33" ref-type="bibr">33</xref>] to address pulse shape imperfections. To enhance the signal-to-noise ratio, protons are decoupled during measurement of the <inline-formula><tex-math id="TM0092" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$^{31}\text{P}$\end{document}</tex-math></inline-formula> nucleus signals. The total evolution duration is 19&#x000a0;ms, whereas the decoherence time is 44&#x000a0;ms. The signal decay due to decoherence is therefore non-negligible. We compensate for this decay by calibrating the signal <inline-formula><tex-math id="TM0093" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\mathcal {L}_\delta ^{\Delta }$\end{document}</tex-math></inline-formula> using <inline-formula><tex-math id="TM0094" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\mathcal {L}_0^\Delta \equiv \sum _{j=1}^{10}\gamma _j{\rm Tr}(V_0(\vec{\theta })\rho _{\text eq}^\Delta V^\dagger _0(\vec{\theta })\sigma _z^j)$\end{document}</tex-math></inline-formula>, which has a known theoretical value and a similar level of decay as <inline-formula><tex-math id="TM0095" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\mathcal {L}_\delta ^{\Delta }$\end{document}</tex-math></inline-formula> (see the <xref rid="sup1" ref-type="supplementary-material">online supplementary material</xref>).</p><p>With the extracted LE from our quantum processor, we proceed to train the parameters in the PQC using a classical optimizer. Specifically, we adopt the Nelder&#x02013;Mead (NM) algorithm [<xref rid="bib34" ref-type="bibr">34</xref>] due to its enhanced robustness against noise and ability to explore neighboring valleys to identify better local optima. These characteristics make the NM algorithm particularly well suited for our experimental implementation. We have also made modifications to the algorithm to further improve its efficiency (see the <xref rid="sup1" ref-type="supplementary-material">online supplementary material</xref>).</p><p>The experimental results are illustrated in Fig.&#x000a0;<xref rid="fig3" ref-type="fig">3</xref>, where the blue triangles represent the measured <inline-formula><tex-math id="TM0096" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\mathcal {L}_\delta ^{\Delta }$\end{document}</tex-math></inline-formula> obtained in the experiment. It is observed that the signal initially drops rapidly and tends to stabilize with increasing iteration number <italic toggle="yes">l</italic>, capped at a maximum of 70. The blue dashed line shows the theoretical LE signal, serving as a benchmark for experimental accuracy. The relative error between the theoretical and experimental results is <inline-formula><tex-math id="TM0097" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$1.35\%$\end{document}</tex-math></inline-formula>, primarily attributed to relaxation effects. A detailed analysis of the experimental error is given in the <xref rid="sup1" ref-type="supplementary-material">online supplementary material</xref>. The QFI extracted from the experimental data using Equation&#x000a0;(<xref rid="equ5" ref-type="disp-formula">5</xref>) is represented with red stars, while the theoretical QFI is represented with a red dashed line. The discrepancy between them arises from the experimental errors and the neglected higher-order terms in the correspondence between the Loschmidt echo and QFI at finite <inline-formula><tex-math id="TM0098" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\delta$\end{document}</tex-math></inline-formula>. Additionally, the optimal QFI predicted by Fiderer <italic toggle="yes">et&#x000a0;al.</italic>&#x000a0;[<xref rid="bib32" ref-type="bibr">32</xref>] is plotted with a solid black line. While the theoretical QFI does not always increase as the experimental one, for instance at <inline-formula><tex-math id="TM0099" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$l=34$\end{document}</tex-math></inline-formula> due to experimental error, it still converges to a significantly enhanced QFI close to the maximum. This result validates the feasibility of our scheme in the presence of experimental imperfections.</p><fig position="float" id="fig3"><label>Figure 3.</label><caption><p>Experimental results of variational quantum optimization. The blue triangles are the measured <inline-formula><tex-math id="TM0100" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\mathcal {L}_\delta ^{\Delta }$\end{document}</tex-math></inline-formula> in the experiment. Error bars are absent due to the fluctuations being smaller than the size of the points (see the <xref rid="sup1" ref-type="supplementary-material">online supplementary material</xref>). The blue dashed line is the theoretical LE obtained from numerical calculation. The estimated QFI according to Equation&#x000a0;(<xref rid="equ5" ref-type="disp-formula">5</xref>) is depicted with red stars, while the red dashed line is the theoretical QFI. The theoretical maximum of the QFI given by Fiderer <italic toggle="yes">et&#x000a0;al.</italic>&#x000a0;[<xref rid="bib32" ref-type="bibr">32</xref>] is <inline-formula><tex-math id="TM0101" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\mathcal {F}_{\text max}=989\epsilon ^2$\end{document}</tex-math></inline-formula> and plotted with a black solid line. The finally engineered probe is close to the optimal one even in the presence of experimental imperfections. To compensate for the signal decay caused by relaxation, the experimental results of the LE and QFI have been calibrated.</p></caption><graphic xlink:href="nwaf091fig3" position="float"/></fig></sec><sec id="sec2-3"><title>Phase estimation</title><p>To demonstrate the enhanced precision of our engineered mixed probe in quantum parameter estimation, we apply it to a typical quantum metrology application&#x02014;quantum phase estimation [<xref rid="bib35" ref-type="bibr">35&#x02013;37</xref>]. While our earlier results indicate that the engineered probe state via variational optimization exhibits a significantly improved QFI, approaching the ultimate QCRB given by the optimized QFI necessitates an optimal or near-optimal readout protocol. Here we adopt an easily implementable measurement protocol known as the time-reversal-based readout (TRBR) protocol, which exploits time-reversal dynamics to disentangle probe states for feasible readout and has been previously demonstrated on diverse platforms such as cold-atom cavity-QED systems [<xref rid="bib38" ref-type="bibr">38</xref>], Bose&#x02013;Einstein condensates [<xref rid="bib39" ref-type="bibr">39</xref>] and trapped ions [<xref rid="bib40" ref-type="bibr">40</xref>]. In our experiment, we employ the previously optimized state <inline-formula><tex-math id="TM0102" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\rho _{\rm f}$\end{document}</tex-math></inline-formula> as the probe and encode the parameter to be estimated <inline-formula><tex-math id="TM0103" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\alpha$\end{document}</tex-math></inline-formula>, i.e.&#x000a0;<inline-formula><tex-math id="TM0104" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\rho _{\rm f}^{\alpha }={\rm e}^{-i\alpha G}\rho _{\rm f}{\rm e}^{i\alpha G}$\end{document}</tex-math></inline-formula>. To implement the TRBR protocol, we apply the inverse evolution <inline-formula><tex-math id="TM0105" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$U_{\text{E}}^\dagger (\vec{\theta })$\end{document}</tex-math></inline-formula> before projecting onto the initial state <inline-formula><tex-math id="TM0106" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\rho _0$\end{document}</tex-math></inline-formula>, which is equivalent to applying a near-optimal measurement <inline-formula><tex-math id="TM0107" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\mathcal {O}_{\text rev}=U_{\text{E}}(\vec{\theta })\rho _0U_{\text{E}}^\dagger (\vec{\theta })$\end{document}</tex-math></inline-formula> on <inline-formula><tex-math id="TM0108" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\rho _{\rm f}^\alpha$\end{document}</tex-math></inline-formula>. Finally, we assess the performance of the optimized probe under the TRBR protocol according to the error propagation formula [<xref rid="bib4" ref-type="bibr">4</xref>]</p><disp-formula id="equ9">
+<label>(9)</label>
+<tex-math id="TM0109" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+\begin{eqnarray*}
+(\Delta \alpha _{\rm f})^2=\frac{(\Delta \mathcal {O}_{\text rev})^2}{(d\langle \mathcal {O}_{\text rev}\rangle /d\alpha )^2},
+\end{eqnarray*}\end{document}</tex-math>
+</disp-formula><p>where <inline-formula><tex-math id="TM0110" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$(\Delta \mathcal {O}_{\text rev})^2=\langle \mathcal {O}_{\text rev}^2\rangle -\langle \mathcal {O}_{\text rev}\rangle ^2$\end{document}</tex-math></inline-formula> represents the quantum fluctuation of <inline-formula><tex-math id="TM0111" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\mathcal {O}_{\text rev}$\end{document}</tex-math></inline-formula>, and <inline-formula><tex-math id="TM0112" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\langle \mathcal {O}_{\text rev}\rangle ={\rm Tr}(\rho _{\rm f}^{\alpha }\mathcal {O}_{\text rev})$\end{document}</tex-math></inline-formula>. Details of the experimental extraction of <inline-formula><tex-math id="TM0113" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$(\Delta \alpha _{\rm f})^2$\end{document}</tex-math></inline-formula> are elaborated in the Methods section&#x000a0;below.</p><p>We benchmark the precision of the optimized mixed state <inline-formula><tex-math id="TM0114" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\rho _{\rm f}$\end{document}</tex-math></inline-formula> against its classical counterpart <inline-formula><tex-math id="TM0115" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\rho _{\rm cl}$\end{document}</tex-math></inline-formula>, where <inline-formula><tex-math id="TM0116" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\rho _{\rm cl}$\end{document}</tex-math></inline-formula> is generated by local operations on individual spins from <inline-formula><tex-math id="TM0117" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\rho _0$\end{document}</tex-math></inline-formula> with a SQL-like precision scaling <inline-formula><tex-math id="TM0118" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\Delta \alpha _{\text cl}\sim 1/\sqrt{N}$\end{document}</tex-math></inline-formula> [<xref rid="bib41" ref-type="bibr">41</xref>]. The experimental result of <inline-formula><tex-math id="TM0119" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$(\Delta \alpha _{\rm f})^2/(\Delta \alpha _{\rm cl})^2$\end{document}</tex-math></inline-formula> is depicted in Fig.&#x000a0;<xref rid="fig4" ref-type="fig">4</xref> with red stars, closely matching the theoretical prediction indicated by the blue dashed line. Under the experimental condition <inline-formula><tex-math id="TM0120" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\epsilon \sim 10^{-5}$\end{document}</tex-math></inline-formula>, we have <inline-formula><tex-math id="TM0121" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\Delta \alpha _{\text cl}\sim 1.7\times 10^4$\end{document}</tex-math></inline-formula>, and the optimum of <inline-formula><tex-math id="TM0122" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\Delta \alpha _{\rm f}$\end{document}</tex-math></inline-formula> occurs around <inline-formula><tex-math id="TM0123" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\widetilde{\alpha }=0.08\pi$\end{document}</tex-math></inline-formula>, being <inline-formula><tex-math id="TM0124" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\Delta \alpha _{\rm f}\sim 4.0\times 10^{3}$\end{document}</tex-math></inline-formula>. This results in a precision ratio <inline-formula><tex-math id="TM0125" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$(\Delta \alpha _{\rm f})^2/(\Delta \alpha _{\text cl})^2=0.056$\end{document}</tex-math></inline-formula>, corresponding to a 12.4-dB improvement. This improvement in precision, greater than <inline-formula><tex-math id="TM0126" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\sqrt{N}$\end{document}</tex-math></inline-formula>, is attributed to the complex eigenspectrum of mixed states, as discussed by Modi <italic toggle="yes">et&#x000a0;al.</italic>&#x000a0;[<xref rid="bib41" ref-type="bibr">41</xref>] and further detailed in the <xref rid="sup1" ref-type="supplementary-material">online supplementary material</xref>. In practical implementations, we can asymptotically approach this local precision by adaptively adjusting <inline-formula><tex-math id="TM0127" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\alpha$\end{document}</tex-math></inline-formula> near <inline-formula><tex-math id="TM0128" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\widetilde{\alpha }$\end{document}</tex-math></inline-formula> with an additional control field [<xref rid="bib42" ref-type="bibr">42</xref>]. The QCRB is also plotted with a black solid line. The inset clarifies that while the TRBR protocol is suboptimal, the current engineered probe can still achieve quantum-enhanced precision close to the QCRB.</p><fig position="float" id="fig4"><label>Figure 4.</label><caption><p>The precision ratio of the experimentally engineered state <inline-formula><tex-math id="TM0129" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\rho _{\rm f}$\end{document}</tex-math></inline-formula> to the classical uncorrelated state <inline-formula><tex-math id="TM0130" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\rho _{\rm cl}$\end{document}</tex-math></inline-formula>. These experimental results have been calibrated to compensate for the signal decay caused by relaxation. The red stars are obtained from experimental measurements of <inline-formula><tex-math id="TM0131" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\rho _{\rm f}$\end{document}</tex-math></inline-formula>, which outperforms the precision limit of <inline-formula><tex-math id="TM0132" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\rho _{\rm cl}$\end{document}</tex-math></inline-formula> by a factor of 12.4&#x000a0;dB (a factor of 10.7&#x000a0;dB without signal compensation), and the blue dashed line is the theoretical result. The gray solid line is the optimal precision given by the QFI and bounds the precision of the experimental measurements. It is more clear in the inset that though the time-reversal-based readout protocol is suboptimal, a precision close to the optimal QCRB can still be realized with the current engineered probe.</p></caption><graphic xlink:href="nwaf091fig4" position="float"/></fig></sec></sec><sec id="sec3"><title>CONCLUSIONS</title><p>To summarize, we propose a novel scheme for variational quantum metrology with the LE. We demonstrate its feasibility by engineering an optimal 10-spin mixed probe state on an NMR system, where the QFI is efficiently estimated using the LE to guide the variational optimization. By utilizing the proposed time-reversal-based readout protocol, the engineered probe achieves a quantum-enhanced precision that approaches the optimal quantum Cram&#x000e9;r&#x02013;Rao bound.</p><p>The proposed variational scheme features several advantages for experimental implementation. First, since the measured Loschmidt echo provides a faithful lower bound for QFI [<xref rid="bib22" ref-type="bibr">22</xref>], this scheme can be extended to quantum systems with different purities. In addition, the scheme does not require detailed knowledge of the encoding dynamics during optimization, which is often unknown in practice. Furthermore, by utilizing VQCs designed with hardware-efficient ansatzes and a measurement overhead that scales linearly with system size, our scheme demonstrates practical efficiency and scalability for extracting QFI. This work paves the way for broader applications of variational quantum metrology to diverse quantum sensing tasks and quantum systems. Future work could explore the use of gradient-based classical optimizers to enhance efficiency. For example, the parameter-shift rule [<xref rid="bib43" ref-type="bibr">43</xref>] enables direct gradient evaluation on quantum processors, potentially improving optimization in complex parameter spaces. We also anticipate that future research will explore our scheme on various NISQ computers [<xref rid="bib44" ref-type="bibr">44&#x02013;46</xref>], demonstrating quantum-enhanced precision.</p></sec><sec id="sec4"><title>METHODS</title><sec id="sec4-1"><title>The connection between the Loschmidt echo and QFI</title><p>For the pure initial probe state <inline-formula><tex-math id="TM0133" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$|\Psi _0\rangle$\end{document}</tex-math></inline-formula>, the LE under engineering operation <inline-formula><tex-math id="TM0134" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+${U}_{E}$\end{document}</tex-math></inline-formula> and encoding dynamics <italic toggle="yes">G</italic> can be expressed as</p><disp-formula id="equ10">
+<label>(10)</label>
+<tex-math id="TM0135" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+\begin{eqnarray*}
+\mathcal {L}_\delta =\left|\left\langle \Psi _0\left|{U}_{E}^\dagger {\rm e}^{-i\delta G}{U}_{E}\right|\Psi _0\right\rangle \right|^2.
+\end{eqnarray*}\end{document}</tex-math>
+</disp-formula><p>By expanding Equation&#x000a0;(<xref rid="equ10" ref-type="disp-formula">10</xref>) as a Taylor series around <inline-formula><tex-math id="TM0136" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\delta =0$\end{document}</tex-math></inline-formula>, we have</p><disp-formula>
+<tex-math id="TM0137" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+\begin{eqnarray*}
+\mathcal {L}_\delta &#x00026;=&#x00026;\langle \Psi _f|{\rm e}^{-i\delta G}|\Psi _f\rangle \langle \Psi _f|{\rm e}^{i\delta G}|\Psi _f\rangle \\
+&#x00026;=&#x00026;\bigg (1-i\delta \langle G\rangle -\frac{\delta ^2}{2}\langle G^2\rangle +\frac{i\delta ^3}{6}\langle G^3\rangle \bigg )\\
+&#x00026;&#x00026;\!\! \times \bigg (1\!+\!i\delta \langle G\rangle\! -\!\frac{\delta ^2}{2}\langle G^2\rangle\! -\!\frac{i\delta ^3}{6}\langle G^3\rangle \bigg )+O(\delta ^4)\\
+&#x00026;=&#x00026;1-\delta ^2(\langle G^2\rangle -\langle G\rangle ^2)+O(\delta ^4),
+\end{eqnarray*}\end{document}</tex-math>
+</disp-formula><p>where <inline-formula><tex-math id="TM0138" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\langle \cdot \rangle \equiv \langle \Psi _f|\cdot |\Psi _f\rangle$\end{document}</tex-math></inline-formula> and <inline-formula><tex-math id="TM0139" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$|\Psi _f\rangle \equiv {U}_{E}|\Psi _0\rangle$\end{document}</tex-math></inline-formula>. As the QFI for a pure state is</p><disp-formula id="equ11">
+<label>(11)</label>
+<tex-math id="TM0140" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+\begin{eqnarray*}
+\mathcal {F}(|\Psi _f\rangle )=4(\langle G^2\rangle -\langle G\rangle ^2),
+\end{eqnarray*}\end{document}</tex-math>
+</disp-formula><p>we have [<xref rid="bib29" ref-type="bibr">29</xref>]</p><disp-formula id="equ12">
+<label>(12)</label>
+<tex-math id="TM0141" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+\begin{eqnarray*}
+\mathcal {F}\left(|\Psi _f\rangle \right)=\lim _{\delta \rightarrow 0}4\frac{1-\mathcal {L}_{\delta }}{\delta ^2}.
+\end{eqnarray*}\end{document}</tex-math>
+</disp-formula><p>For the mixed engineered probe <inline-formula><tex-math id="TM0142" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\rho _{\rm f}={U}_{E}\rho _0{U}_{E}^\dagger$\end{document}</tex-math></inline-formula> with the eigendecomposition <inline-formula><tex-math id="TM0143" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\sum _{i=1}^d\lambda _i|\psi _i\rangle \langle \psi _i|$\end{document}</tex-math></inline-formula> and <italic toggle="yes">d</italic> as the dimension of the Hilbert space, the LE can be computed as</p><disp-formula>
+<tex-math id="TM0144" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+\begin{eqnarray*}
+\mathcal {L}_\delta &#x00026;=&#x00026;{\rm Tr}(\rho _{\rm f} {\rm e}^{-i\delta G}\rho _{\rm f} {\rm e}^{i\delta G}) \\
+&#x00026;=&#x00026;{\rm Tr}\left (\!\sum _{i=1}\lambda _i|\psi _i\rangle \langle \psi _i| {\rm e}^{-i\delta G}\sum _{j=1}\lambda _j|\psi _j\rangle \langle \psi _j| {\rm e}^{i\delta G}\!\right ) \\
+&#x00026;=&#x00026;\sum _k\langle \psi _k|\sum _{i=1}\lambda _i|\psi _i\rangle \langle \psi _i| {\rm e}^{-i\delta G}\\
+&#x00026;&#x00026;\times \sum _{j=1}\lambda _j|\psi _j\rangle \langle \psi _j| {\rm e}^{i\delta G}|\psi _k\rangle \\
+&#x00026;=&#x00026;\sum _i\lambda _i^2-\delta ^2\Bigg(\sum _{i,j}\lambda _i\lambda _j|\langle \psi _i|G|\psi _j|^2\\
+&#x00026;&#x00026; +\,\sum _i\lambda _i^2\langle \psi _i| G^2|\psi _i\rangle \Bigg)+O(\delta ^4).
+\end{eqnarray*}\end{document}</tex-math>
+</disp-formula><p>The zeroth-order term in the perturbation expansion, i.e.&#x000a0;<inline-formula><tex-math id="TM0145" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\sum _i\lambda _i^2$\end{document}</tex-math></inline-formula>, represents the purity of <inline-formula><tex-math id="TM0146" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\rho _0$\end{document}</tex-math></inline-formula>, and it does not change under unitary transformation. However, for the second-order terms, note that</p><disp-formula>
+<tex-math id="TM0147" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+\begin{eqnarray*}
+\sum _i\lambda _i^2\langle \psi _i|G^2|\psi _i\rangle &#x00026;=&#x00026;\frac{1}{2}\Bigg(\sum _i\lambda _i^2\langle \psi _i|G^2|\psi _i\rangle\\
+&#x00026;&#x00026; +\, \sum _j\lambda _j^2\langle \psi _j|G^2|\psi _j\rangle \Bigg), \\
+\langle \psi _i|G^2|\psi _i\rangle &#x00026;=&#x00026;\langle \psi _i|G\sum _j|\psi _j\rangle \langle \psi _j|G|\psi _i\rangle\\
+&#x00026;=&#x00026;\sum _j|\langle \psi _i|G|\psi _j\rangle |^2;
+\end{eqnarray*}\end{document}</tex-math>
+</disp-formula><p>we thus have</p><disp-formula>
+<tex-math id="TM0148" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+\begin{eqnarray*}
+\mathcal {L}_\delta &#x00026;=&#x00026;\sum _i\lambda _i^2+\sum _{i,j}\lambda _i\lambda _j\delta ^2|\langle \psi _i| G|\psi _j\rangle |^2 \\
+&#x00026;&#x00026; -\frac{\delta ^2}{2}\sum _{i,j}\lambda _i^2\delta ^2|\langle \psi _i|G|\psi _j\rangle |^2 \\
+&#x00026;&#x00026; -\frac{\delta ^2}{2}\sum _{i,j}\lambda _j^2\delta ^2|\langle \psi _i|G|\psi _j\rangle |^2+O(\delta ^4) \\
+&#x00026;=&#x00026;\sum _i\lambda _i^2\!-\!\frac{\delta ^2}{4}\Bigg(2\sum _{i,j} (\lambda _i\!-\!\lambda _j)^2|\langle \psi _i|G|\psi _j\rangle |^2\Bigg).
+\end{eqnarray*}\end{document}</tex-math>
+</disp-formula><p>Comparing with the QFI for mixed states,</p><disp-formula id="equ13">
+<label>(13)</label>
+<tex-math id="TM0149" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+\begin{eqnarray*}
+\mathcal {F}(\rho _{\rm f})=2 \sum _{i, j} \frac{(\lambda _{i}-\lambda _{j})^{2}}{\lambda _{i}+\lambda _{j}}|\langle \psi _{i}|G| \psi _{j}\rangle |^{2},
+\end{eqnarray*}\end{document}</tex-math>
+</disp-formula><p>we have</p><disp-formula id="equ14">
+<label>(14)</label>
+<tex-math id="TM0150" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+\begin{eqnarray*}
+\mathcal {F}(\rho _{\rm f})\ge \lim _{\delta \rightarrow 0}4\frac{\Gamma (\rho _{\rm f}) -\mathcal {L}_\delta }{\delta ^2},
+\end{eqnarray*}\end{document}</tex-math>
+</disp-formula><p>where we used the fact that <inline-formula><tex-math id="TM0151" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\lambda _i+\lambda _j\le 1$\end{document}</tex-math></inline-formula>, and <inline-formula><tex-math id="TM0152" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\Gamma (\cdot )$\end{document}</tex-math></inline-formula> denotes the purity of the state. For highly mixed states where the eigenvalues are almost degenerate, i.e.&#x000a0;<inline-formula><tex-math id="TM0153" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\lambda _i\approx {1}/{d}$\end{document}</tex-math></inline-formula> for <inline-formula><tex-math id="TM0154" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$1\le i\le d$\end{document}</tex-math></inline-formula>, we have</p><disp-formula id="equ15">
+<label>(15)</label>
+<tex-math id="TM0155" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+\begin{eqnarray*}
+\mathcal {F}(\rho _{\rm f})\approx \lim _{\delta \rightarrow 0}2d\frac{\Gamma (\rho _{\rm f}) -\mathcal {L}_\delta }{\delta ^2}.
+\end{eqnarray*}\end{document}</tex-math>
+</disp-formula></sec><sec id="sec4-2"><title>Experimental calibration of the precision of phase estimation</title><p>We can calibrate <inline-formula><tex-math id="TM0156" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\Delta \alpha _{\rm f}$\end{document}</tex-math></inline-formula> according to Equation&#x000a0;(<xref rid="equ9" ref-type="disp-formula">9</xref>), in which</p><disp-formula>
+<tex-math id="TM0157" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+\begin{eqnarray*}
+\langle {\mathcal {O}}_{\rm rev}\rangle &#x00026;=&#x00026;{\rm Tr}({\rm e}^{-i\alpha G}\rho _{\rm f} {\rm e}^{i\alpha G}\mathcal {O}_{\rm rev}) \\
+&#x00026;=&#x00026;\frac{1}{2^{N}}+\frac{\epsilon ^2}{2^{2N}}{\rm Tr}\left({\rm e}^{-i\alpha G}\rho _{\rm f}^\Delta {\rm e}^{i\alpha G}\rho _{\rm f}^\Delta \right), \\
+\langle {\mathcal {O}}_{\rm rev}^2\rangle &#x00026; =&#x00026;{\rm Tr}\left({\rm e}^{-i\alpha G}\rho _{\rm f} {\rm e}^{i\alpha G}\mathcal {O}_{\rm rev}^2\right) \\
+&#x00026;=&#x00026;\frac{1}{2^{2N}}+\frac{\epsilon ^2}{2^{2N+2}}\sum _i\gamma ^2_i \\
+&#x00026;&#x00026; +\,\frac{\epsilon ^2}{2^{3N-1}}{\rm Tr}\big({\rm e}^{-i\alpha G}\rho _{\rm f}^\Delta {\rm e}^{i\alpha G}\rho _{\rm f}^\Delta \big)+O(\epsilon ^3).
+\end{eqnarray*}\end{document}</tex-math>
+</disp-formula><p>In experiment, following the method in [<xref rid="bib47" ref-type="bibr">47</xref>,<xref rid="bib48" ref-type="bibr">48</xref>], we extract <inline-formula><tex-math id="TM0158" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$(\Delta \mathcal {O}_{\rm rev})^2=\langle \mathcal {O}_{\rm rev}^2\rangle -\langle \mathcal {O}_{\rm rev}\rangle ^2$\end{document}</tex-math></inline-formula> by substituting the experimental signal of <inline-formula><tex-math id="TM0159" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+${\rm Tr}({\rm e}^{-i\alpha G}\rho _{\rm f}^\Delta {\rm e}^{i\alpha G}\rho _{\rm f}^\Delta )$\end{document}</tex-math></inline-formula> into the equations&#x000a0;above with <inline-formula><tex-math id="TM0160" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$N,\gamma _i,\epsilon$\end{document}</tex-math></inline-formula> being known. The derivation <inline-formula><tex-math id="TM0161" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$d\langle \mathcal {O}_{\rm rev}\rangle /d\alpha$\end{document}</tex-math></inline-formula> is approximated with the finite-difference approach</p><disp-formula id="equ16">
+<label>(16)</label>
+<tex-math id="TM0162" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+\begin{eqnarray*}
+\frac{\langle \mathcal {O}_{\rm rev}\rangle }{d\alpha }\approx \frac{\langle \mathcal {O}_{\rm rev}\rangle _{\alpha +\delta ^\prime }-\langle \mathcal {O}_{\rm rev}\rangle _{\alpha -\delta ^\prime }}{2\delta ^\prime }
+\end{eqnarray*}\end{document}</tex-math>
+</disp-formula><p>with <inline-formula><tex-math id="TM0163" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\delta ^\prime ={\pi }/{50}$\end{document}</tex-math></inline-formula>. For the experimental condition of <inline-formula><tex-math id="TM0164" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\epsilon \sim 10^{-5}$\end{document}</tex-math></inline-formula>, we have the precision of the engineered state <inline-formula><tex-math id="TM0165" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\Delta \alpha _{\rm f}\sim 4.0\times 10^3$\end{document}</tex-math></inline-formula> at <inline-formula><tex-math id="TM0166" notation="LaTeX">\documentclass[12pt]{minimal}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\setlength{\oddsidemargin}{-69pt}
+\begin{document}
+$\widetilde{\alpha }=0.08\pi$\end{document}</tex-math></inline-formula>.</p></sec></sec><sec sec-type="supplementary-material"><title>Supplementary Material</title><supplementary-material id="sup1" position="float" content-type="local-data"><label>nwaf091_Supplemental_File</label><media xlink:href="nwaf091_supplemental_file.pdf"/></supplementary-material></sec></body><back><sec id="sec6"><title>FUNDING</title><p>This work was supported by the Innovation Program for Quantum Science and Technology (2021ZD0303205), the National Natural Science Foundation of China (12261160569, 12404554), the New Cornerstone Science Foundation through the XPLORER PRIZE, the Research Grants Council of Hong Kong (14309223, 14309624, 14309022), the Innovation Program for Quantum Science and Technology (2023ZD0300600), the Guangdong Provincial Quantum Science Strategic Initiative (GDZX2303007), the China Postdoctoral Science Foundation (CPSF, 2024M762114) and the Postdoctoral Fellowship Program of CPSF (GZC20231727).</p></sec><sec id="sec7"><title>AUTHOR CONTRIBUTIONS</title><p>X.P. and H.Y. conceived the project. H.Y. and R.L. conceived the relevant theoretical constructs. X.P., R.L. and Z.W. designed the experiment. R.L. performed the numerical simulation and measurements and analyzed the data. X.Y. and Y.L. assisted with the experiment. X.P. supervised the experiment. H.Y. and R.L. wrote the draft. All authors contributed to analyzing the data, discussing the results and writing the manuscript.</p></sec><sec id="sec8"><p>
+<italic toggle="yes">
+<bold>Conflict of interest statement</bold>.</italic> None declared.</p></sec><ref-list id="ref1"><title>REFERENCES</title><ref id="bib1"><label>1.</label><mixed-citation publication-type="book">
+<person-group person-group-type="author">
+<string-name>
+<surname>Holevo</surname> &#x000a0;<given-names>AS</given-names></string-name>
+</person-group>. <source>Probabilistic and Statistical Aspects of Quantum Theory</source>, Vol. 1, <publisher-loc>New York</publisher-loc>: <publisher-name>Springer</publisher-name>, <year>2011</year>.<pub-id pub-id-type="doi">10.1007/978-88-7642-378-9</pub-id></mixed-citation></ref><ref id="bib2"><label>2.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Helstrom</surname> &#x000a0;<given-names>CW</given-names></string-name>
+</person-group>. <article-title>Quantum detection and estimation theory</article-title>. <source>J Stat Phys</source> &#x000a0;<year>1969</year>; <volume>1</volume>: <fpage>231</fpage>&#x02013;<lpage>52</lpage>.<pub-id pub-id-type="doi">10.1007/BF01007479</pub-id></mixed-citation></ref><ref id="bib3"><label>3.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Braunstein</surname> &#x000a0;<given-names>SL</given-names></string-name>, <string-name><surname>Caves</surname> &#x000a0;<given-names>CM</given-names></string-name></person-group>. <article-title>Statistical distance and the geometry of quantum states</article-title>. <source>Phys Rev Lett</source> &#x000a0;<year>1994</year>; <volume>72</volume>: <fpage>3439</fpage>&#x02013;<lpage>43</lpage>.<pub-id pub-id-type="doi">10.1103/PhysRevLett.72.3439</pub-id><pub-id pub-id-type="pmid">10056200</pub-id>
+</mixed-citation></ref><ref id="bib4"><label>4.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Giovannetti</surname> &#x000a0;<given-names>V</given-names></string-name>, <string-name><surname>Lloyd</surname> &#x000a0;<given-names>S</given-names></string-name>, <string-name><surname>Maccone</surname> &#x000a0;<given-names>L</given-names></string-name></person-group>. <article-title>Advances in quantum metrology</article-title>. <source>Nat Photonics</source> &#x000a0;<year>2011</year>; <volume>5</volume>: <fpage>222</fpage>&#x02013;<lpage>9</lpage>.<pub-id pub-id-type="doi">10.1038/nphoton.2011.35</pub-id></mixed-citation></ref><ref id="bib5"><label>5.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Giovannetti</surname> &#x000a0;<given-names>V</given-names></string-name>, <string-name><surname>Lloyd</surname> &#x000a0;<given-names>S</given-names></string-name>, <string-name><surname>Maccone</surname> &#x000a0;<given-names>L</given-names></string-name></person-group>. <article-title>Quantum metrology</article-title>. <source>Phys Rev Lett</source> &#x000a0;<year>2006</year>; <volume>96</volume>: <fpage>010401</fpage>.<pub-id pub-id-type="doi">10.1103/PhysRevLett.96.010401</pub-id><pub-id pub-id-type="pmid">16486424</pub-id>
+</mixed-citation></ref><ref id="bib6"><label>6.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Giovannetti</surname> &#x000a0;<given-names>V</given-names></string-name>, <string-name><surname>Lloyd</surname> &#x000a0;<given-names>S</given-names></string-name>, <string-name><surname>Maccone</surname> &#x000a0;<given-names>L</given-names></string-name></person-group>. <article-title>Quantum-enhanced measurements: beating the standard quantum limit</article-title>. <source>Science</source> &#x000a0;<year>2004</year>; <volume>306</volume>: <fpage>1330</fpage>&#x02013;<lpage>6</lpage>.<pub-id pub-id-type="doi">10.1126/science.1104149</pub-id><pub-id pub-id-type="pmid">15550661</pub-id>
+</mixed-citation></ref><ref id="bib7"><label>7.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Degen</surname> &#x000a0;<given-names>CL</given-names></string-name>, <string-name><surname>Reinhard</surname> &#x000a0;<given-names>F</given-names></string-name>, <string-name><surname>Cappellaro</surname> &#x000a0;<given-names>P</given-names></string-name></person-group>. <article-title>Quantum sensing</article-title>. <source>Rev Mod Phys</source> &#x000a0;<year>2017</year>; <volume>89</volume>: <fpage>035002</fpage>.<pub-id pub-id-type="doi">10.1103/RevModPhys.89.035002</pub-id></mixed-citation></ref><ref id="bib8"><label>8.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Liu</surname> &#x000a0;<given-names>J</given-names></string-name>, <string-name><surname>Zhang</surname> &#x000a0;<given-names>M</given-names></string-name>, <string-name><surname>Chen</surname> &#x000a0;<given-names>H</given-names></string-name> &#x000a0;<etal>et al.</etal></person-group> &#x000a0;<article-title>Optimal scheme for quantum metrology</article-title>. <source>Adv Quantum Technol</source> &#x000a0;<year>2021</year>; <volume>5</volume>: <fpage>2100080</fpage>.<pub-id pub-id-type="doi">10.1002/qute.202100080</pub-id></mixed-citation></ref><ref id="bib9"><label>9.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Liu</surname> &#x000a0;<given-names>Q</given-names></string-name>, <string-name><surname>Hu</surname> &#x000a0;<given-names>Z</given-names></string-name>, <string-name><surname>Yuan</surname> &#x000a0;<given-names>H</given-names></string-name> &#x000a0;<etal>et al.</etal></person-group> &#x000a0;<article-title>Optimal strategies of quantum metrology with a strict hierarchy</article-title>. <source>Phys Rev Lett</source> &#x000a0;<year>2023</year>; <volume>130</volume>: <fpage>070803</fpage>.<pub-id pub-id-type="doi">10.1103/PhysRevLett.130.070803</pub-id><pub-id pub-id-type="pmid">36867832</pub-id>
+</mixed-citation></ref><ref id="bib10"><label>10.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Yuan</surname> &#x000a0;<given-names>H</given-names></string-name>, <string-name><surname>Fung</surname> &#x000a0;<given-names>CHF</given-names></string-name></person-group>. <article-title>Quantum parameter estimation with general dynamics</article-title>. <source>npj Quantum Inf</source> &#x000a0;<year>2017</year>; <volume>3</volume>: <fpage>14</fpage>.<pub-id pub-id-type="doi">10.1038/s41534-017-0014-6</pub-id></mixed-citation></ref><ref id="bib11"><label>11.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Zhang</surname> &#x000a0;<given-names>M</given-names></string-name>, <string-name><surname>Yu</surname> &#x000a0;<given-names>HM</given-names></string-name>, <string-name><surname>Yuan</surname> &#x000a0;<given-names>H</given-names></string-name> &#x000a0;<etal>et al.</etal></person-group> &#x000a0;<article-title>QuanEstimation: an open-source toolkit for quantum parameter estimation</article-title>. <source>Phys Rev Res</source> &#x000a0;<year>2022</year>; <volume>4</volume>: <fpage>043057</fpage>.<pub-id pub-id-type="doi">10.1103/PhysRevResearch.4.043057</pub-id></mixed-citation></ref><ref id="bib12"><label>12.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Lu</surname> &#x000a0;<given-names>XM</given-names></string-name>, <string-name><surname>Yu</surname> &#x000a0;<given-names>S</given-names></string-name>, <string-name><surname>Oh</surname> &#x000a0;<given-names>CH</given-names></string-name></person-group>. <article-title>Robust quantum metrological schemes based on protection of quantum Fisher information</article-title>. <source>Nat Commun</source> &#x000a0;<year>2015</year>; <volume>6</volume>: <fpage>7282</fpage>.<pub-id pub-id-type="doi">10.1038/ncomms8282</pub-id><pub-id pub-id-type="pmid">26051453</pub-id>
+</mixed-citation></ref><ref id="bib13"><label>13.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Demkowicz-Dobrzanski</surname> &#x000a0;<given-names>R</given-names></string-name>, <string-name><surname>Kolodynski</surname> &#x000a0;<given-names>J</given-names></string-name>, <string-name><surname>Guta</surname> &#x000a0;<given-names>M</given-names></string-name></person-group>. <article-title>The elusive Heisenberg limit in quantum-enhanced metrology</article-title>. <source>Nat Commun</source> &#x000a0;<year>2012</year>; <volume>3</volume>: <fpage>1063</fpage>.<pub-id pub-id-type="doi">10.1038/ncomms2067</pub-id><pub-id pub-id-type="pmid">22990859</pub-id>
+</mixed-citation></ref><ref id="bib14"><label>14.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Demkowicz-Dobrza&#x00144;ski R and Maccone</surname> &#x000a0;<given-names>L</given-names></string-name>
+</person-group>. <article-title>Using entanglement against noise in quantum metrology</article-title>. <source>Phys Rev Lett</source> &#x000a0;<year>2014</year>; <volume>113</volume>: <fpage>250801</fpage>.<pub-id pub-id-type="doi">10.1103/PhysRevLett.113.250801</pub-id><pub-id pub-id-type="pmid">25554868</pub-id>
+</mixed-citation></ref><ref id="bib15"><label>15.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Marciniak</surname> &#x000a0;<given-names>CD</given-names></string-name>, <string-name><surname>Feldker</surname> &#x000a0;<given-names>T</given-names></string-name>, <string-name><surname>Pogorelov</surname> &#x000a0;<given-names>I</given-names></string-name> &#x000a0;<etal>et al.</etal></person-group> &#x000a0;<article-title>Optimal metrology with programmable quantum sensors</article-title>. <source>Nature</source> &#x000a0;<year>2022</year>; <volume>603</volume>: <fpage>604</fpage>&#x02013;<lpage>9</lpage>.<pub-id pub-id-type="doi">10.1038/s41586-022-04435-4</pub-id><pub-id pub-id-type="pmid">35322252</pub-id>
+</mixed-citation></ref><ref id="bib16"><label>16.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Koczor</surname> &#x000a0;<given-names>B</given-names></string-name>, <string-name><surname>Endo</surname> &#x000a0;<given-names>S</given-names></string-name>, <string-name><surname>Jones</surname> &#x000a0;<given-names>T</given-names></string-name> &#x000a0;<etal>et al.</etal></person-group> &#x000a0;<article-title>Variational-state quantum metrology</article-title>. <source>New J Phys</source> &#x000a0;<year>2020</year>; <volume>22</volume>: <fpage>083038</fpage>.<pub-id pub-id-type="doi">10.1088/1367-2630/ab965e</pub-id></mixed-citation></ref><ref id="bib17"><label>17.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Xu</surname> &#x000a0;<given-names>H</given-names></string-name>, <string-name><surname>Li</surname> &#x000a0;<given-names>J</given-names></string-name>, <string-name><surname>Liu</surname> &#x000a0;<given-names>L</given-names></string-name> &#x000a0;<etal>et al.</etal></person-group> &#x000a0;<article-title>Generalizable control for quantum parameter estimation through reinforcement learning</article-title>. <source>npj Quantum Inf</source> &#x000a0;<year>2019</year>; <volume>5</volume>: <fpage>82</fpage>.<pub-id pub-id-type="doi">10.1038/s41534-019-0198-z</pub-id></mixed-citation></ref><ref id="bib18"><label>18.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Yang</surname> &#x000a0;<given-names>X</given-names></string-name>, <string-name><surname>Thompson</surname> &#x000a0;<given-names>J</given-names></string-name>, <string-name><surname>Wu</surname> &#x000a0;<given-names>Z</given-names></string-name> &#x000a0;<etal>et al.</etal></person-group> &#x000a0;<article-title>Probe optimization for quantum metrology via closed-loop learning control</article-title>. <source>npj Quantum Inf</source> &#x000a0;<year>2020</year>; <volume>6</volume>: <fpage>62</fpage>.<pub-id pub-id-type="doi">10.1038/s41534-020-00292-z</pub-id></mixed-citation></ref><ref id="bib19"><label>19.</label><mixed-citation publication-type="book">
+<person-group person-group-type="author">
+<string-name>
+<surname>Nielsen</surname> &#x000a0;<given-names>MA</given-names></string-name>, <string-name><surname>Chuang</surname> &#x000a0;<given-names>IL</given-names></string-name></person-group>. <source>Quantum Computation and Quantum Information</source>. <publisher-loc>Cambridge</publisher-loc>: <publisher-name>Cambridge University Press</publisher-name>, <year>2010</year>.</mixed-citation></ref><ref id="bib20"><label>20.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Hauke</surname> &#x000a0;<given-names>P</given-names></string-name>, <string-name><surname>Heyl</surname> &#x000a0;<given-names>M</given-names></string-name>, <string-name><surname>Tagliacozzo</surname> &#x000a0;<given-names>L</given-names></string-name> &#x000a0;<etal>et al.</etal></person-group> &#x000a0;<article-title>Measuring multipartite entanglement through dynamic susceptibilities</article-title>. <source>Nat Phys</source> &#x000a0;<year>2016</year>; <volume>12</volume>: <fpage>778</fpage>&#x02013;<lpage>82</lpage>.<pub-id pub-id-type="doi">10.1038/nphys3700</pub-id></mixed-citation></ref><ref id="bib21"><label>21.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>G&#x000e4;rttner</surname> &#x000a0;<given-names>M</given-names></string-name>, <string-name><surname>Hauke</surname> &#x000a0;<given-names>P</given-names></string-name>, <string-name><surname>Rey</surname> &#x000a0;<given-names>AM</given-names></string-name></person-group>. <article-title>Relating out-of-time-order correlations to entanglement via multiple-quantum coherences</article-title>. <source>Phys Rev Lett</source> &#x000a0;<year>2018</year>; <volume>120</volume>: <fpage>040402</fpage>.<pub-id pub-id-type="doi">10.1103/PhysRevLett.120.040402</pub-id><pub-id pub-id-type="pmid">29437425</pub-id>
+</mixed-citation></ref><ref id="bib22"><label>22.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Cerezo</surname> &#x000a0;<given-names>M</given-names></string-name>, <string-name><surname>Sone</surname> &#x000a0;<given-names>A</given-names></string-name>, <string-name><surname>Beckey</surname> &#x000a0;<given-names>JL</given-names></string-name> &#x000a0;<etal>et al.</etal></person-group> &#x000a0;<article-title>Sub-quantum Fisher information</article-title>. <source>Quantum Sci Technol</source> &#x000a0;<year>2021</year>; <volume>6</volume>: <fpage>035008</fpage>.<pub-id pub-id-type="doi">10.1088/2058-9565/abfbef</pub-id></mixed-citation></ref><ref id="bib23"><label>23.</label><mixed-citation publication-type="other">
+<person-group person-group-type="author">
+<string-name>
+<surname>Modi</surname> &#x000a0;<given-names>K</given-names></string-name>, <string-name><surname>C&#x000e9;leri</surname> &#x000a0;<given-names>LC</given-names></string-name>, <string-name><surname>Thompson</surname> &#x000a0;<given-names>J</given-names></string-name> &#x000a0;<etal>et al.</etal></person-group> &#x000a0;<source>Fragile states are better for quantum metrology</source>, <comment>arXiv</comment>: 1608.01443.</mixed-citation></ref><ref id="bib24"><label>24.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Beckey</surname> &#x000a0;<given-names>JL</given-names></string-name>, <string-name><surname>Cerezo</surname> &#x000a0;<given-names>M</given-names></string-name>, <string-name><surname>Sone</surname> &#x000a0;<given-names>A</given-names></string-name> &#x000a0;<etal>et al.</etal></person-group> &#x000a0;<article-title>Variational quantum algorithm for estimating the quantum Fisher information</article-title>. <source>Phys Rev Res</source> &#x000a0;<year>2022</year>; <volume>4</volume>: <fpage>013083</fpage>.<pub-id pub-id-type="doi">10.1103/PhysRevResearch.4.013083</pub-id></mixed-citation></ref><ref id="bib25"><label>25.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Braunstein</surname> &#x000a0;<given-names>SL</given-names></string-name>, <string-name><surname>Caves</surname> &#x000a0;<given-names>CM</given-names></string-name></person-group>. <article-title>Statistical distance and the geometry of quantum states</article-title>. <source>Phys Rev Lett</source> &#x000a0;<year>1994</year>; <volume>72</volume>: <fpage>3439</fpage>&#x02013;<lpage>43</lpage>.<pub-id pub-id-type="doi">10.1103/PhysRevLett.72.3439</pub-id><pub-id pub-id-type="pmid">10056200</pub-id>
+</mixed-citation></ref><ref id="bib26"><label>26.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Braunstein</surname> &#x000a0;<given-names>SL</given-names></string-name>, <string-name><surname>Caves</surname> &#x000a0;<given-names>CM</given-names></string-name>, <string-name><surname>Milburn</surname> &#x000a0;<given-names>GJ</given-names></string-name></person-group>. <article-title>Generalized uncertainty relations: theory, examples, and Lorentz invariance</article-title>. <source>Ann Phys</source> &#x000a0;<year>1996</year>; <volume>247</volume>: <fpage>135</fpage>&#x02013;<lpage>73</lpage>.<pub-id pub-id-type="doi">10.1006/aphy.1996.0040</pub-id></mixed-citation></ref><ref id="bib27"><label>27.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Gorin</surname> &#x000a0;<given-names>T</given-names></string-name>, <string-name><surname>Prosen</surname> &#x000a0;<given-names>T</given-names></string-name>, <string-name><surname>Seligman</surname> &#x000a0;<given-names>TH</given-names></string-name> &#x000a0;<etal>et al.</etal></person-group> &#x000a0;<article-title>Dynamics of Loschmidt echoes and fidelity decay</article-title>. <source>Phys Rep</source> &#x000a0;<year>2006</year>; <volume>435</volume>: <fpage>33</fpage>&#x02013;<lpage>156</lpage>.<pub-id pub-id-type="doi">10.1016/j.physrep.2006.09.003</pub-id></mixed-citation></ref><ref id="bib28"><label>28.</label><mixed-citation publication-type="other">
+<person-group person-group-type="author">
+<string-name>
+<surname>Goussev</surname> &#x000a0;<given-names>A</given-names></string-name>, <string-name><surname>Jalabert</surname> &#x000a0;<given-names>RA</given-names></string-name>, <string-name><surname>Pastawski</surname> &#x000a0;<given-names>HM</given-names></string-name> &#x000a0;<etal>et al.</etal></person-group> &#x000a0;<source>Loschmidt echo</source>, <comment>arXiv</comment>: 1206.6348.</mixed-citation></ref><ref id="bib29"><label>29.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Macr&#x000ec;</surname> &#x000a0;<given-names>T</given-names></string-name>, <string-name><surname>Smerzi</surname> &#x000a0;<given-names>A</given-names></string-name>, <string-name><surname>Pezz&#x000e8;</surname> &#x000a0;<given-names>L</given-names></string-name></person-group>. <article-title>Loschmidt echo for quantum metrology</article-title>. <source>Phys Rev A</source> &#x000a0;<year>2016</year>; <volume>94</volume>: <fpage>010102</fpage>.<pub-id pub-id-type="doi">10.1103/PhysRevA.94.010102</pub-id></mixed-citation></ref><ref id="bib30"><label>30.</label><mixed-citation publication-type="book">
+<person-group person-group-type="author">
+<string-name>
+<surname>Levitt</surname> &#x000a0;<given-names>MH.</given-names></string-name>
+</person-group> &#x000a0;<source>Spin Dynamics: Basics of Nuclear Magnetic Resonance</source>. <publisher-loc>New York</publisher-loc>: <publisher-name>John Wiley and Sons</publisher-name>, <year>2008</year>.</mixed-citation></ref><ref id="bib31"><label>31.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Kandala</surname> &#x000a0;<given-names>A</given-names></string-name>, <string-name><surname>Mezzacapo</surname> &#x000a0;<given-names>A</given-names></string-name>, <string-name><surname>Temme</surname> &#x000a0;<given-names>K</given-names></string-name> &#x000a0;<etal>et al.</etal></person-group> &#x000a0;<article-title>Hardware-efficient variational quantum eigensolver for small molecules and quantum magnets</article-title>. <source>Nature</source> &#x000a0;<year>2017</year>; <volume>549</volume>: <fpage>242</fpage>&#x02013;<lpage>6</lpage>.<pub-id pub-id-type="doi">10.1038/nature23879</pub-id><pub-id pub-id-type="pmid">28905916</pub-id>
+</mixed-citation></ref><ref id="bib32"><label>32.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Fiderer</surname> &#x000a0;<given-names>LJ</given-names></string-name>, <string-name><surname>Fra&#x000ef;sse</surname> &#x000a0;<given-names>JME</given-names></string-name>, <string-name><surname>Braun</surname> &#x000a0;<given-names>D</given-names></string-name></person-group>. <article-title>Maximal quantum Fisher information for mixed states</article-title>. <source>Phys Rev Lett</source> &#x000a0;<year>2019</year>; <volume>123</volume>: <fpage>250502</fpage>.<pub-id pub-id-type="doi">10.1103/PhysRevLett.123.250502</pub-id><pub-id pub-id-type="pmid">31922770</pub-id>
+</mixed-citation></ref><ref id="bib33"><label>33.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Wimperis</surname> &#x000a0;<given-names>S</given-names></string-name>
+</person-group>. <article-title>Broadband, narrowband, and passband composite pulses for use in advanced NMR experiments</article-title>. <source>J Magn Reson Ser A</source> &#x000a0;<year>1994</year>; <volume>109</volume>: <fpage>221</fpage>&#x02013;<lpage>31</lpage>.<pub-id pub-id-type="doi">10.1006/jmra.1994.1159</pub-id></mixed-citation></ref><ref id="bib34"><label>34.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Nelder</surname> &#x000a0;<given-names>JA</given-names></string-name>, <string-name><surname>Mead</surname> &#x000a0;<given-names>R</given-names></string-name></person-group>. <article-title>A simplex method for function minimization</article-title>. <source>Comput J</source> &#x000a0;<year>1965</year>; <volume>7</volume>: <fpage>308</fpage>&#x02013;<lpage>13</lpage>.<pub-id pub-id-type="doi">10.1093/comjnl/7.4.308</pub-id></mixed-citation></ref><ref id="bib35"><label>35.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Anisimov</surname> &#x000a0;<given-names>PM</given-names></string-name>, <string-name><surname>Raterman</surname> &#x000a0;<given-names>GM</given-names></string-name>, <string-name><surname>Chiruvelli</surname> &#x000a0;<given-names>A</given-names></string-name> &#x000a0;<etal>et al.</etal></person-group> &#x000a0;<article-title>Quantum metrology with two-mode squeezed vacuum: parity detection beats the Heisenberg limit</article-title>. <source>Phys Rev Lett</source> &#x000a0;<year>2010</year>; <volume>104</volume>: <fpage>103602</fpage>.<pub-id pub-id-type="doi">10.1103/PhysRevLett.104.103602</pub-id><pub-id pub-id-type="pmid">20366424</pub-id>
+</mixed-citation></ref><ref id="bib36"><label>36.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Joo</surname> &#x000a0;<given-names>J</given-names></string-name>, <string-name><surname>Munro</surname> &#x000a0;<given-names>WJ</given-names></string-name>, <string-name><surname>Spiller</surname> &#x000a0;<given-names>TP</given-names></string-name></person-group>. <article-title>Quantum metrology with entangled coherent states</article-title>. <source>Phys Rev Lett</source> &#x000a0;<year>2011</year>; <volume>107</volume>: <fpage>083601</fpage>.<pub-id pub-id-type="doi">10.1103/PhysRevLett.107.083601</pub-id><pub-id pub-id-type="pmid">21929166</pub-id>
+</mixed-citation></ref><ref id="bib37"><label>37.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Higgins</surname> &#x000a0;<given-names>BL</given-names></string-name>, <string-name><surname>Berry</surname> &#x000a0;<given-names>DW</given-names></string-name>, <string-name><surname>Bartlett</surname> &#x000a0;<given-names>SD</given-names></string-name> &#x000a0;<etal>et al.</etal></person-group> &#x000a0;<article-title>Entanglement-free Heisenberg-limited phase estimation</article-title>. <source>Nature</source> &#x000a0;<year>2007</year>; <volume>450</volume>: <fpage>393</fpage>&#x02013;<lpage>6</lpage>.<pub-id pub-id-type="doi">10.1038/nature06257</pub-id><pub-id pub-id-type="pmid">18004379</pub-id>
+</mixed-citation></ref><ref id="bib38"><label>38.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Colombo</surname> &#x000a0;<given-names>S</given-names></string-name>, <string-name><surname>Pedrozo-Pe&#x000f1;afiel</surname> &#x000a0;<given-names>E</given-names></string-name>, <string-name><surname>Adiyatullin</surname> &#x000a0;<given-names>AF</given-names></string-name> &#x000a0;<etal>et al.</etal></person-group> &#x000a0;<article-title>Time-reversal-based quantum metrology with many-body entangled states</article-title>. <source>Nat Phys</source> &#x000a0;<year>2022</year>; <volume>18</volume>: <fpage>925</fpage>&#x02013;<lpage>30</lpage>.<pub-id pub-id-type="doi">10.1038/s41567-022-01653-5</pub-id></mixed-citation></ref><ref id="bib39"><label>39.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Linnemann</surname> &#x000a0;<given-names>D</given-names></string-name>, <string-name><surname>Strobel</surname> &#x000a0;<given-names>H</given-names></string-name>, <string-name><surname>Muessel</surname> &#x000a0;<given-names>W</given-names></string-name> &#x000a0;<etal>et al.</etal></person-group> &#x000a0;<article-title>Quantum-enhanced sensing based on time reversal of nonlinear dynamics</article-title>. <source>Phys Rev Lett</source> &#x000a0;<year>2016</year>; <volume>117</volume>: <fpage>013001</fpage>.<pub-id pub-id-type="doi">10.1103/PhysRevLett.117.013001</pub-id><pub-id pub-id-type="pmid">27419565</pub-id>
+</mixed-citation></ref><ref id="bib40"><label>40.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Gilmore</surname> &#x000a0;<given-names>KA</given-names></string-name>, <string-name><surname>Affolter</surname> &#x000a0;<given-names>M</given-names></string-name>, <string-name><surname>Lewis-Swan</surname> &#x000a0;<given-names>RJ</given-names></string-name> &#x000a0;<etal>et al.</etal></person-group> &#x000a0;<article-title>Quantum-enhanced sensing of displacements and electric fields with two-dimensional trapped-ion crystals</article-title>. <source>Science</source> &#x000a0;<year>2021</year>; <volume>373</volume>: <fpage>673</fpage>&#x02013;<lpage>8</lpage>.<pub-id pub-id-type="doi">10.1126/science.abi5226</pub-id><pub-id pub-id-type="pmid">34353950</pub-id>
+</mixed-citation></ref><ref id="bib41"><label>41.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Modi</surname> &#x000a0;<given-names>K</given-names></string-name>, <string-name><surname>Cable</surname> &#x000a0;<given-names>H</given-names></string-name>, <string-name><surname>Williamson</surname> &#x000a0;<given-names>M</given-names></string-name> &#x000a0;<etal>et al.</etal></person-group> &#x000a0;<article-title>Quantum correlations in mixed-state metrology</article-title>. <source>Phys Rev X</source> &#x000a0;<year>2011</year>; <volume>1</volume>: <fpage>021022</fpage>.<pub-id pub-id-type="doi">10.1103/PhysRevX.1.021022</pub-id></mixed-citation></ref><ref id="bib42"><label>42.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Hentschel</surname> &#x000a0;<given-names>A</given-names></string-name>, <string-name><surname>Sanders</surname> &#x000a0;<given-names>BC</given-names></string-name></person-group>. <article-title>Efficient algorithm for optimizing adaptive quantum metrology processes</article-title>. <source>Phys Rev Lett</source> &#x000a0;<year>2011</year>; <volume>107</volume>: <fpage>233601</fpage>.<pub-id pub-id-type="doi">10.1103/PhysRevLett.107.233601</pub-id><pub-id pub-id-type="pmid">22182087</pub-id>
+</mixed-citation></ref><ref id="bib43"><label>43.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Schuld</surname> &#x000a0;<given-names>M</given-names></string-name>, <string-name><surname>Bergholm</surname> &#x000a0;<given-names>V</given-names></string-name>, <string-name><surname>Gogolin</surname> &#x000a0;<given-names>C</given-names></string-name> &#x000a0;<etal>et al.</etal></person-group> &#x000a0;<article-title>Evaluating analytic gradients on quantum hardware</article-title>. <source>Phys Rev A</source> &#x000a0;<year>2019</year>; <volume>99</volume>: <fpage>032331</fpage>.<pub-id pub-id-type="doi">10.1103/PhysRevA.99.032331</pub-id></mixed-citation></ref><ref id="bib44"><label>44.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Bluvstein</surname> &#x000a0;<given-names>D</given-names></string-name>, <string-name><surname>Evered</surname> &#x000a0;<given-names>SJ</given-names></string-name>, <string-name><surname>Geim</surname> &#x000a0;<given-names>AA</given-names></string-name> &#x000a0;<etal>et al.</etal></person-group> &#x000a0;<article-title>Logical quantum processor based on reconfigurable atom arrays</article-title>. <source>Nature</source> &#x000a0;<year>2024</year>; <volume>626</volume>: <fpage>58</fpage>&#x02013;<lpage>65</lpage>.<pub-id pub-id-type="doi">10.1038/s41586-023-06927-3</pub-id><pub-id pub-id-type="pmid">38056497</pub-id>
+</mixed-citation></ref><ref id="bib45"><label>45.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Evered</surname> &#x000a0;<given-names>SJ</given-names></string-name>, <string-name><surname>Bluvstein</surname> &#x000a0;<given-names>D</given-names></string-name>, <string-name><surname>Kalinowski</surname> &#x000a0;<given-names>M</given-names></string-name> &#x000a0;<etal>et al.</etal></person-group> &#x000a0;<article-title>High-fidelity parallel entangling gates on a neutral-atom quantum computer</article-title>. <source>Nature</source> &#x000a0;<year>2023</year>; <volume>622</volume>: <fpage>268</fpage>&#x02013;<lpage>72</lpage>.<pub-id pub-id-type="doi">10.1038/s41586-023-06481-y</pub-id><pub-id pub-id-type="pmid">37821591</pub-id>
+</mixed-citation></ref><ref id="bib46"><label>46.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Guo</surname> &#x000a0;<given-names>SA</given-names></string-name>, <string-name><surname>Wu</surname> &#x000a0;<given-names>YK</given-names></string-name>, <string-name><surname>Ye</surname> &#x000a0;<given-names>J</given-names></string-name> &#x000a0;<etal>et al.</etal></person-group>
+<article-title> A site-resolved two-dimensional quantum simulator with hundreds of trapped ions</article-title>. <source>Nature</source> &#x000a0;<year>2024</year>; <volume>630</volume>: <fpage>613</fpage>&#x02013;<lpage>8</lpage>.<pub-id pub-id-type="doi">10.1038/s41586-024-07459-0</pub-id><pub-id pub-id-type="pmid">38811737</pub-id>
+</mixed-citation></ref><ref id="bib47"><label>47.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Girolami</surname> &#x000a0;<given-names>D</given-names></string-name>, <string-name><surname>Souza</surname> &#x000a0;<given-names>AM</given-names></string-name>, <string-name><surname>Giovannetti</surname> &#x000a0;<given-names>V</given-names></string-name> &#x000a0;<etal>et al.</etal></person-group> &#x000a0;<article-title>Quantum discord determines the interferometric power of quantum states</article-title>. <source>Phys Rev Lett</source> &#x000a0;<year>2014</year>; <volume>112</volume>: <fpage>210401</fpage>.<pub-id pub-id-type="doi">10.1103/PhysRevLett.112.210401</pub-id></mixed-citation></ref><ref id="bib48"><label>48.</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name>
+<surname>Chen</surname> &#x000a0;<given-names>X</given-names></string-name>, <string-name><surname>Wu</surname> &#x000a0;<given-names>Z</given-names></string-name>, <string-name><surname>Jiang</surname> &#x000a0;<given-names>M</given-names></string-name> &#x000a0;<etal>et al.</etal></person-group> &#x000a0;<article-title>Experimental quantum simulation of superradiant phase transition beyond no-go theorem via antisqueezing</article-title>. <source>Nat Commun</source> &#x000a0;<year>2021</year>; <volume>12</volume>: <fpage>6281</fpage>.<pub-id pub-id-type="doi">10.1038/s41467-021-26573-5</pub-id><pub-id pub-id-type="pmid">34725347</pub-id>
+</mixed-citation></ref></ref-list></back></article>

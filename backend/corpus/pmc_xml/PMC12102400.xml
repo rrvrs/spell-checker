@@ -1,0 +1,1810 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Sci Rep</journal-id><journal-id journal-id-type="iso-abbrev">Sci Rep</journal-id><journal-title-group><journal-title>Scientific Reports</journal-title></journal-title-group><issn pub-type="epub">2045-2322</issn><publisher><publisher-name>Nature Publishing Group UK</publisher-name><publisher-loc>London</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">40410392</article-id><article-id pub-id-type="pmc">PMC12102400</article-id>
+<article-id pub-id-type="publisher-id">98468</article-id><article-id pub-id-type="doi">10.1038/s41598-025-98468-0</article-id><article-categories><subj-group subj-group-type="heading"><subject>Article</subject></subj-group></article-categories><title-group><article-title>Fault-tolerant adaptive attitude tracking control of satellite with uncertainty and actuator misalignment in presence of environmental disturbances</article-title></title-group><contrib-group><contrib contrib-type="author"><name><surname>Hatami</surname><given-names>Mohammadjavad</given-names></name><xref ref-type="aff" rid="Aff1">1</xref></contrib><contrib contrib-type="author" corresp="yes"><name><surname>Nadafi</surname><given-names>Reza</given-names></name><address><email>Rezanadafi@aut.ac.ir</email></address><xref ref-type="aff" rid="Aff2">2</xref></contrib><contrib contrib-type="author"><name><surname>Kabganian</surname><given-names>Mansour</given-names></name><xref ref-type="aff" rid="Aff1">1</xref></contrib><aff id="Aff1"><label>1</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/04gzbav43</institution-id><institution-id institution-id-type="GRID">grid.411368.9</institution-id><institution-id institution-id-type="ISNI">0000 0004 0611 6995</institution-id><institution>Department of Mechanical Engineering, </institution><institution>Amirkabir University of Technology, </institution></institution-wrap>Tehran, 15875-4413 Iran </aff><aff id="Aff2"><label>2</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/04gzbav43</institution-id><institution-id institution-id-type="GRID">grid.411368.9</institution-id><institution-id institution-id-type="ISNI">0000 0004 0611 6995</institution-id><institution>Aerospace Research Institute, </institution><institution>Amirkabir University of Technology, </institution></institution-wrap>Tehran, 15875-4413 Iran </aff></contrib-group><pub-date pub-type="epub"><day>23</day><month>5</month><year>2025</year></pub-date><pub-date pub-type="pmc-release"><day>23</day><month>5</month><year>2025</year></pub-date><pub-date pub-type="collection"><year>2025</year></pub-date><volume>15</volume><elocation-id>17947</elocation-id><history><date date-type="received"><day>3</day><month>2</month><year>2025</year></date><date date-type="accepted"><day>11</day><month>4</month><year>2025</year></date></history><permissions><copyright-statement>&#x000a9; The Author(s) 2025</copyright-statement><copyright-year>2025</copyright-year><license><ali:license_ref specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>
+<bold>Open Access</bold> This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article's Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article's Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link>.</license-p></license></permissions><abstract id="Abs1"><p id="Par1">In this study, a novel asymptotically stable attitude tracking controller is propounded for a satellite, operating in the existence of environmental disturbances, uncertain inertia matrix, reaction wheel misalignment, and actuator faults. Unlike existing methods, the proposed controller addresses multiple practical challenges simultaneously, including disturbances, uncertainties, misalignment, and faults. Incidentally a key advantage of the proposed controller is its ability to work without requiring a priori knowledge of the upper bound values of uncertainties and disturbances, which is a significant advancement over previous approaches. By deriving the kinematic and kinetic equations of the satellite system and defining appropriate sliding surfaces, the global asymptotic stability of the closed-loop system is guaranteed via Lyapunov theory. Simulation results, incorporating actuator saturation constraints, demonstrate the controller&#x02019;s performance and robustness, achieving precise attitude tracking with 2% settling time of 7 s and saturation constraint of 0.12 Nm. Furthermore, a MATLAB Multibody simulation model validates the controller, yielding a maximum verification error less than 4% in angular velocity.</p></abstract><kwd-group xml:lang="en"><title>Keywords</title><kwd>Attitude tracking control</kwd><kwd>Uncertainty</kwd><kwd>Adaptive sliding mode control</kwd><kwd>Reaction wheel</kwd><kwd>Fault tolerant</kwd></kwd-group><kwd-group kwd-group-type="npg-subject"><title>Subject terms</title><kwd>Astronomy and planetary science</kwd><kwd>Engineering</kwd></kwd-group><custom-meta-group><custom-meta><meta-name>issue-copyright-statement</meta-name><meta-value>&#x000a9; Springer Nature Limited 2025</meta-value></custom-meta></custom-meta-group></article-meta></front><body><sec id="Sec1"><title>Introduction</title><p id="Par2">Attitude control is an indispensable aspect of any space mission. With advancements in space exploration, the attitude tracking problem has become a critical focus for satellites. Across a wide range of applications, including remote sensing, weather forecasting, telecommunication, navigation, technology demonstration, and some space activities such as rendezvous and docking<sup><xref ref-type="bibr" rid="CR1">1</xref></sup>, attitude tracking is vital and plays a key role in mission success. Environmental disturbances, uncertainties, and actuator misalignments pose significant challenges to achieving high accuracy in satellite orientation. However, in some applications, precise attitude control is crucial. This necessity has led many researchers to extensively study satellite attitude tracking, making it a prominent field in recent years.</p><p id="Par3">In the literature, several related studies have been conducted on spacecraft attitude tracking control. Cong et al.<sup><xref ref-type="bibr" rid="CR2">2</xref></sup> examined two sliding mode methods for spacecraft attitude tracking, addressing uncertainties in the inertia and environmental disturbances, assuming the known upper bound of these uncertainties. Jingrui et al.<sup><xref ref-type="bibr" rid="CR3">3</xref></sup> developed an attitude tracking controller for spacecraft using speed control moment gyros, considering uncertainties in the moment of inertia, gyro configuration, and rotor inertia. Hu et al.<sup><xref ref-type="bibr" rid="CR4">4</xref></sup> proposed an adaptive backstepping control strategy combined with a dynamic control allocation mechanism, accounting for actuator uncertainties and environmental disturbances. Their approach minimized energy consumption using optimal quadratic programming while adhering to actuator constraints. Gui et al.<sup><xref ref-type="bibr" rid="CR5">5</xref></sup> introduced an integral terminal sliding mode control strategy for rigid spacecraft, addressing actuator uncertainties such as faults and alignment errors, and conducted a comparative analysis of different control approaches. In a more recent study, Gui et al.<sup><xref ref-type="bibr" rid="CR6">6</xref></sup> presented a hybrid dual-quaternion integral sliding mode controller for combined position and attitude tracking of spacecraft. In a related study, Shen et al.<sup><xref ref-type="bibr" rid="CR7">7</xref></sup> focused on fault-tolerant attitude control with environmental disturbances, assuming the availability of known upper bounds for uncertainties and disturbances. Additionally, in another study, Shen et al.<sup><xref ref-type="bibr" rid="CR8">8</xref></sup> proposed an active fault-tolerant attitude control method that integrated actuator fault detection and handled control input constraints using a backstepping technique. Yue et al.<sup><xref ref-type="bibr" rid="CR9">9</xref></sup> designed a robust fault-tolerant attitude tracking controller with guaranteed performance, addressing issues such as actuator faults, misalignment, and sensor faults. Nadafi et al.<sup><xref ref-type="bibr" rid="CR10">10</xref></sup> introduced a robust control method for underactuated spacecraft, accounting for saturation constraints and time-varying perturbations. Their approach utilized a finite-time nonlinear disturbance observer-based backstepping technique to enhance robustness and demonstrated asymptotic stability even under a hard saturation limit of 0.035 N m. In another study by Nadafi et al.<sup><xref ref-type="bibr" rid="CR11">11</xref></sup> a super-twisting sliding mode controller designed with existence of saturation, inertia uncertainties and environmental disturbances. This study showed convergence to desired path with 0.08 N m saturation level within 230 s. Yang et al.<sup><xref ref-type="bibr" rid="CR12">12</xref></sup> investigated spacecraft attitude reorientation control, incorporating actuator faults, misalignment, and position constraints. They designed a reward function to manage position constraints and validated their approach through hardware-in-the-loop experiments. Su et al.<sup><xref ref-type="bibr" rid="CR13">13</xref></sup> developed an adaptive sliding mode controller for attitude tracking of a spacecraft without requiring initial condition information, stabilizing tracking errors within a small predefined area around the origin in a specified timeframe. Chen et al.<sup><xref ref-type="bibr" rid="CR14">14</xref></sup> brought up a nonsingular adaptive control strategy for on-orbit spacecraft orientation control, addressing actuator uncertainties, including failures and misalignment, while also exploring solutions for complete failure scenarios. Moreover, Zarourati et al.<sup><xref ref-type="bibr" rid="CR15">15</xref></sup> investigated underactuation faults in satellite reaction-wheel actuators during attitude tracking, emphasizing fault detection and diagnosis under nominal initial conditions. Their study introduced a finite-time sliding mode observer for fault detection. In another related work by Zarourati et al.<sup><xref ref-type="bibr" rid="CR16">16</xref></sup> a backstepping control method was developed to address the satellite attitude tracking problem, accounting for both underactuation faults and external disturbances. In another study, Jia et al.<sup><xref ref-type="bibr" rid="CR17">17</xref></sup> proposed a learning Chebyshev neural network-based approach for spacecraft attitude tracking control. Their work addressed uncertainties, actuator faults, and external disturbances in the spacecraft&#x02019;s dynamic model. The proposed controller utilized a finite-time prescribed learning sliding mode control algorithm. Zhao et al.<sup><xref ref-type="bibr" rid="CR18">18</xref></sup> presented an adaptive neural-network-based control algorithm for spacecraft attitude tracking problem. This article used command filtered backstepping for generating control input addressing challenges such as actuator saturation, inertial uncertainty, and disturbances.</p><p id="Par4">To conclude the limitations of previous studies based on the literature review, it can be observed that in some research, the upper bound values for disturbances or uncertainties are required, while these values are not always readily available. Additionally, few studies consider disturbances, uncertainties, faults, and misalignment simultaneously: most focus on addressing only some of these factors. Another limitation is the lack of attention to reaction wheels as actuators. Most studies treat system actuators in general terms without delving into specific details about them.</p><p id="Par5">therefore, one of the primary challenges addressed in this study is the design of a robust attitude tracking controller that can effectively handle uncertainties and disturbances without requiring prior knowledge of their upper bound values. This is particularly challenging because most existing methods rely on predefined bounds, which are often unavailable in practical scenarios. Additionally, incorporating reaction wheel angular momentum as an input to the system introduces further complexity, as it requires careful consideration of actuator dynamics and constraints. These challenges are compounded by the need to simultaneously address environmental disturbances, uncertain inertia matrices, reaction wheel misalignment, and actuator faults, a combination that is rarely tackled in existing studies.</p><p id="Par6">Therefore, the primary aim of this paper is to address mentioned limitations and improve the attitude tracking control for practical implementation. The main contributions of this study can be summarized as follows:<list list-type="order"><list-item><p id="Par7">Comprehensive inclusion of factors: The controller design process incorporates environmental disturbances, satellite inertia uncertainty, reaction wheel misalignment, and actuator faults simultaneously. Input saturation is also considered in the simulation results.</p></list-item><list-item><p id="Par8">Elimination of upper bound dependency: The proposed controller does not require knowledge of the upper bound values for environmental disturbances, uncertainties, misalignment, or actuator faults.</p></list-item></list></p><p id="Par9">In this paper, sliding mode algorithm is considered for controller design because it is inherently robust to disturbances or faults and effective in dealing with real-world challenges<sup><xref ref-type="bibr" rid="CR19">19</xref></sup>. Additionally, the proposed controller&#x02019;s functionality is demonstrated through satellite modeling in MATLAB Multibody for verification analysis, where the controller&#x02019;s performance is evaluated.</p><p id="Par10">The remainder of the paper is organized as follows: section &#x0201c;<xref rid="Sec2" ref-type="sec">Preliminaries and problem formulation</xref>&#x0201d; is dedicated to problem formulation and the derivation of the system&#x02019;s kinematic and kinetic equations. Section &#x0201c;<xref rid="Sec8" ref-type="sec">Controller design</xref>&#x0201d; presents the controller design. Simulation results for the proposed controller with analysis are demonstrated in section &#x0201c;<xref rid="Sec9" ref-type="sec">Simulation results</xref>&#x0201d;. Finally, the conclusions of this study are provided in section &#x0201c;<xref rid="Sec10" ref-type="sec">Conclusion</xref>&#x0201d;.</p></sec><sec id="Sec2"><title>Preliminaries and problem formulation</title><sec id="Sec3"><title>Attitude dynamics</title><p id="Par11">It is well-established that the total moment acting on a body about its center of mass equals the time rate change of the body&#x02019;s angular momentum<sup><xref ref-type="bibr" rid="CR20">20</xref></sup> . This is a starting point to derive the kinetic equations of a satellite with reaction wheels. For a satellite with moment exchange devices, such as reaction wheels the momentum of the entire system consists of the momentum of satellite and the momentum of the reaction wheels. In this study we consider a satellite with three reaction wheels as depicted in Fig.&#x000a0;<xref rid="Fig1" ref-type="fig">1</xref>. Thus, the attitude kinetics and kinematics of a satellite with reaction wheels can be derived as follows<sup><xref ref-type="bibr" rid="CR20">20</xref></sup>:<disp-formula id="Equ1"><label>1</label><alternatives><tex-math id="d33e296">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{J}}\dot{{\varvec{\omega}}}+{{\varvec{\omega}}}^{\times }{\varvec{J}}{\varvec{\omega}}=-{\dot{{\varvec{h}}}}_{{\varvec{w}}}-{{\varvec{\omega}}}^{\times }{{\varvec{h}}}_{{\varvec{w}}}+{\varvec{d}}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ1.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ2"><label>2</label><alternatives><tex-math id="d33e302">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\dot{\overline{{\varvec{\eta}}} }=\left[\begin{array}{c}{\dot{\eta }}_{0}\\ \dot{{\varvec{\eta}}}\end{array}\right]=\frac{1}{2}\left[\begin{array}{c}-{{\varvec{\eta}}}^{T}\\ {{\varvec{\eta}}}^{\times }+{\eta }_{0}{{\varvec{I}}}_{3}\end{array}\right]{\varvec{\omega}}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ2.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq5"><alternatives><tex-math id="d33e309">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{J}} \in {\mathbb{R}}^{3\times 3}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq5.gif"/></alternatives></inline-formula> states satellite inertia matrix specified in body-fixed frame, <inline-formula id="IEq6"><alternatives><tex-math id="d33e316">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{\omega}}\in {\mathbb{R}}^{3}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq6.gif"/></alternatives></inline-formula> denotes the satellite&#x02019;s angular velocity relative to an inertial frame, represented in body-fixed frame, <inline-formula id="IEq7"><alternatives><tex-math id="d33e322">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{d}}\in {\mathbb{R}}^{3}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq7.gif"/></alternatives></inline-formula> represents the vector of environmental disturbances, <inline-formula id="IEq8"><alternatives><tex-math id="d33e328">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\overline{{\varvec{\eta}} }={\left[\begin{array}{cc}{\eta }_{0}&#x00026; {\eta }_{1}\end{array} \begin{array}{cc}{\eta }_{2}&#x00026; {\eta }_{3}\end{array}\right]}^{T}={\left[\begin{array}{cc}{\eta }_{0}&#x00026; {{\varvec{\eta}}}^{T}\end{array}\right]}^{T}\in {\mathbb{R}}\times {\mathbb{R}}^{3}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq8.gif"/></alternatives></inline-formula> denotes quaternion parameters that describe the direction of body frame relative to an inertial frame and satisfies <inline-formula id="IEq9"><alternatives><tex-math id="d33e334">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\varvec{\eta}}}^{T}{\varvec{\eta}}+{\eta }_{0}=1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq9.gif"/></alternatives></inline-formula>, <inline-formula id="IEq10"><alternatives><tex-math id="d33e340">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\varvec{h}}}_{{\varvec{w}}}\in {\mathbb{R}}^{3}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq10.gif"/></alternatives></inline-formula> is an angular momentum vector of reaction wheels, <inline-formula id="IEq11"><alternatives><tex-math id="d33e346">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\varvec{I}}}_{3}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq11.gif"/></alternatives></inline-formula> denotes <inline-formula id="IEq12"><alternatives><tex-math id="d33e353">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$3\times 3$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq12.gif"/></alternatives></inline-formula> identity matrix, the notation <inline-formula id="IEq13"><alternatives><tex-math id="d33e359">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\varvec{b}}}^{\times }$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq13.gif"/></alternatives></inline-formula> for a vector <inline-formula id="IEq14"><alternatives><tex-math id="d33e365">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{b}}={\left[\begin{array}{ccc}{b}_{1}&#x00026; {b}_{2}&#x00026; {b}_{3}\end{array}\right]}^{T}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq14.gif"/></alternatives></inline-formula> is selected to specify skew-symmetric matrix. For the configuration of reaction wheels as demonstrated in Fig.&#x000a0;<xref rid="Fig1" ref-type="fig">1</xref>, <inline-formula id="IEq15"><alternatives><tex-math id="d33e374">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\varvec{h}}}_{{\varvec{w}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq15.gif"/></alternatives></inline-formula> can be described as:<fig id="Fig1"><label>Fig. 1</label><caption><p>Configuration of reaction wheels in the body coordinate.</p></caption><graphic xlink:href="41598_2025_98468_Fig1_HTML" id="MO1"/></fig><disp-formula id="Equ3"><label>3</label><alternatives><tex-math id="d33e388">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\varvec{h}}}_{{\varvec{w}}}=\left[\begin{array}{c}{I}_{a}{\Omega }_{1}\\ {I}_{a}{\Omega }_{2}\\ {I}_{a}{\Omega }_{3}\end{array}\right]$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ3.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par12">Where <inline-formula id="IEq16"><alternatives><tex-math id="d33e396">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${I}_{a}\in {\mathbb{R}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq16.gif"/></alternatives></inline-formula> is an axial moment of inertia of reaction wheel which is assumed identical for all wheels and <inline-formula id="IEq17"><alternatives><tex-math id="d33e402">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\Omega }_{1},{\Omega }_{2},{\Omega }_{3}\in {\mathbb{R}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq17.gif"/></alternatives></inline-formula> are the angular velocities of reaction wheels number 1 to 3, respectively. Moreover, the distance between the center of mass of each reaction wheel and the origin of the body coordinate is assumed to be the same.</p></sec><sec id="Sec4"><title>Reaction wheel misalignment</title><p id="Par13">In the process of assembling reaction wheels onto a satellite, it is impractical to mount them perfectly aligned. So, the misalignment effect of the reaction wheels should be considered in the dynamic equation of the satellite. Figure&#x000a0;<xref rid="Fig2" ref-type="fig">2</xref> illustrates the alignment errors of each reaction wheel. So, the Euler equation of the satellite (1) with actuator misalignment can be expressed as:<fig id="Fig2"><label>Fig. 2</label><caption><p>Satellite reaction wheels with misalignment.</p></caption><graphic xlink:href="41598_2025_98468_Fig2_HTML" id="MO2"/></fig><disp-formula id="Equ4"><label>4</label><alternatives><tex-math id="d33e422">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{J}}\dot{{\varvec{\omega}}}+{{\varvec{\omega}}}^{\times }{\varvec{J}}{\varvec{\omega}}=-{\varvec{D}}{\dot{{\varvec{h}}}}_{{\varvec{w}}}-{{\varvec{\omega}}}^{\times }{\varvec{D}}{{\varvec{h}}}_{{\varvec{w}}}+{\varvec{d}}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ4.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ5"><label>5</label><alternatives><tex-math id="d33e428">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{D}}=\left[\begin{array}{c}{\cos}({\beta }_{1}){\cos}({\alpha }_{1})\\ {\sin}({\beta }_{1}){\cos}({\alpha }_{1})\\ -{\sin}({\alpha }_{1})\end{array} \begin{array}{c}-{\sin}({\beta }_{2}){\cos}({\alpha }_{2})\\ {\cos}({\beta }_{2}){\cos}({\alpha }_{2})\\ {\sin}({\alpha }_{2})\end{array} \begin{array}{c}{\cos}({\beta }_{3}){\sin}({\alpha }_{3})\\ {\sin}({\beta }_{3}){\sin}({\alpha }_{3})\\ {\cos}({\alpha }_{3})\end{array}\right]$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ5.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par14">Where <inline-formula id="IEq19"><alternatives><tex-math id="d33e436">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{D}}\in {\mathbb{R}}^{3\times 3}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq19.gif"/></alternatives></inline-formula> is called misalignment matrix, and <inline-formula id="IEq20"><alternatives><tex-math id="d33e442">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\alpha }_{i}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq20.gif"/></alternatives></inline-formula> and <inline-formula id="IEq21"><alternatives><tex-math id="d33e448">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\beta }_{i}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq21.gif"/></alternatives></inline-formula>
+<inline-formula id="IEq22"><alternatives><tex-math id="d33e454">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(i \in \left\{{1,2},3\right\})$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq22.gif"/></alternatives></inline-formula> are the deviation angles away from their aligned direction for reaction wheels 1 to 3, respectively. It is evident that if there is no misalignment in the satellite actuators, the misalignment matrix will be equal to identity matrix.</p><sec id="d33e460"><title><italic>Remark 1</italic></title><p id="Par15">The existence of misalignment in satellite actuators alters the satellite inertia matrix, and this effect should be considered in controller design.</p></sec></sec><sec id="Sec5"><title>Actuator fault</title><p id="Par16">Faults in satellite actuators are inevitable, especially in reaction wheels. Reaction wheel faults can occur in the drive motor, bearings, and power supply due to insufficient lubrication or aging<sup><xref ref-type="bibr" rid="CR8">8</xref></sup>. Therefore, actuator faults should be modeled and considered in the satellite&#x02019;s dynamic equations. First, we define the nominal input to our system as:<disp-formula id="Equ6"><label>6</label><alternatives><tex-math id="d33e474">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\varvec{u}}}_{{\varvec{c}}}=-{\dot{{\varvec{h}}}}_{{\varvec{w}}}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ6.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq23"><alternatives><tex-math id="d33e481">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\dot{{\varvec{h}}}}_{{\varvec{w}}}\in {\mathbb{R}}^{3}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq23.gif"/></alternatives></inline-formula> is reaction wheel torque vector, and <inline-formula id="IEq24"><alternatives><tex-math id="d33e487">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\varvec{u}}}_{{\varvec{c}}}\in {\mathbb{R}}^{3}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq24.gif"/></alternatives></inline-formula> is nominal torque vector. Second, according to previous studies<sup><xref ref-type="bibr" rid="CR8">8</xref></sup> fault model can be described as:<disp-formula id="Equ7"><label>7</label><alternatives><tex-math id="d33e498">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\varvec{u}}}_{{\varvec{c}}}={\varvec{E}}{\varvec{u}}+\Delta {\varvec{u}}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ7.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq25"><alternatives><tex-math id="d33e505">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{E}}=diag\left\{{e}_{1},{e}_{2},{e}_{3}\right\}\in {\mathbb{R}}^{3\times 3}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq25.gif"/></alternatives></inline-formula> is called the effectiveness matrix that <inline-formula id="IEq26"><alternatives><tex-math id="d33e511">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$0&#x0003c;{e}_{i}\le 1 (i\in \left\{{1,2},3\right\})$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq26.gif"/></alternatives></inline-formula>, <inline-formula id="IEq27"><alternatives><tex-math id="d33e517">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{u}}\in {\mathbb{R}}^{3}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq27.gif"/></alternatives></inline-formula> denotes the actual moment acting on reaction wheels, <inline-formula id="IEq28"><alternatives><tex-math id="d33e523">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\Delta {\varvec{u}}\in {\mathbb{R}}^{3}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq28.gif"/></alternatives></inline-formula> is additive bias fault, and is assumed to be constant. So, the Euler equation of satellite (4) can be expressed as follows.<disp-formula id="Equ8"><label>8</label><alternatives><tex-math id="d33e529">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{J}}\dot{{\varvec{\omega}}}+{{\varvec{\omega}}}^{\times }({\varvec{J}}{\varvec{\omega}}+{\varvec{D}}{{\varvec{h}}}_{{\varvec{w}}})={\varvec{D}}({\varvec{E}}{\varvec{u}}+\Delta {\varvec{u}})+{\varvec{d}}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ8.gif" position="anchor"/></alternatives></disp-formula></p></sec><sec id="Sec6"><title>Error dynamics</title><p id="Par17">About tracking control of satellite attitude, the problem is brought up similar to the work<sup><xref ref-type="bibr" rid="CR21">21</xref></sup>. Therefore, desired attitude of the satellite is expressed with a reference frame. The attitude of the reference frame is expressed through the quaternion <inline-formula id="IEq30"><alternatives><tex-math id="d33e543">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\overline{{\varvec{\eta}}} }^{{\varvec{d}}}={\left[{\eta }_{0}^{d},{\left({{\varvec{\eta}}}^{{\varvec{d}}}\right)}^{T}\right]}^{T}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq30.gif"/></alternatives></inline-formula>, which satisfies <inline-formula id="IEq31"><alternatives><tex-math id="d33e549">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\left({{\varvec{\eta}}}^{{\varvec{d}}}\right)}^{T}{{\varvec{\eta}}}^{{\varvec{d}}}+{\left({\eta }_{0}^{d}\right)}^{2}=1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq31.gif"/></alternatives></inline-formula>. Let <inline-formula id="IEq32"><alternatives><tex-math id="d33e555">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\varvec{\omega}}}_{{\varvec{d}}}\in {\mathbb{R}}^{3}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq32.gif"/></alternatives></inline-formula> be the desirable angular velocity of the reference frame.</p><sec id="d33e561"><title>Assumption 1</title><p id="Par18">Desired angular velocity <inline-formula id="IEq33"><alternatives><tex-math id="d33e565">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\varvec{\omega}}}_{{\varvec{d}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq33.gif"/></alternatives></inline-formula> and derivative of that <inline-formula id="IEq34"><alternatives><tex-math id="d33e571">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\dot{{\varvec{\omega}}}}_{{\varvec{d}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq34.gif"/></alternatives></inline-formula> are bounded for all <inline-formula id="IEq35"><alternatives><tex-math id="d33e577">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t\ge 0$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq35.gif"/></alternatives></inline-formula>. So, there are some constants as <inline-formula id="IEq36"><alternatives><tex-math id="d33e583">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${c}_{1}&#x0003e;0$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq36.gif"/></alternatives></inline-formula> and <inline-formula id="IEq37"><alternatives><tex-math id="d33e589">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${c}_{2}&#x0003e;0$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq37.gif"/></alternatives></inline-formula> which are finite such that <inline-formula id="IEq38"><alternatives><tex-math id="d33e596">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\Vert {{\varvec{\omega}}}_{{\varvec{d}}}\Vert \le {c}_{1}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq38.gif"/></alternatives></inline-formula> and <inline-formula id="IEq39"><alternatives><tex-math id="d33e602">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\Vert {\dot{{\varvec{\omega}}}}_{{\varvec{d}}}\Vert \le {c}_{2}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq39.gif"/></alternatives></inline-formula> for all <inline-formula id="IEq40"><alternatives><tex-math id="d33e608">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t\ge 0$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq35.gif"/></alternatives></inline-formula>.</p><p>Now, the quaternion error is defined as <inline-formula id="IEq41"><alternatives><tex-math id="d33e616">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\overline{{\varvec{q}} }={\left[{q}_{0},{{\varvec{q}}}^{T}\right]}^{T}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq41.gif"/></alternatives></inline-formula>, which represents the attitude deviation of the body-fixed frame relative to the reference frame, fulfils <inline-formula id="IEq42"><alternatives><tex-math id="d33e622">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\varvec{q}}}^{T}{\varvec{q}}+{q}_{0}^{2}=1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq42.gif"/></alternatives></inline-formula>. The relation between the quaternion error <inline-formula id="IEq43"><alternatives><tex-math id="d33e628">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\overline{{\varvec{q}} }$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq43.gif"/></alternatives></inline-formula> to <inline-formula id="IEq44"><alternatives><tex-math id="d33e634">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\overline{{\varvec{\eta}}} }^{{\varvec{d}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq44.gif"/></alternatives></inline-formula> and <inline-formula id="IEq45"><alternatives><tex-math id="d33e640">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\overline{{\varvec{\eta}} }$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq45.gif"/></alternatives></inline-formula> is introduced as follows<sup><xref ref-type="bibr" rid="CR22">22</xref></sup>:<disp-formula id="Equ9"><label>9</label><alternatives><tex-math id="d33e651">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\overline{{\varvec{q}} }=\left[\begin{array}{c}{\eta }_{0}^{d}{\eta }_{0}+{\left({{\varvec{\eta}}}^{{\varvec{d}}}\right)}^{T}\eta \\ {\eta }_{0}^{d}\eta -{\eta }_{0}{{\varvec{\eta}}}^{{\varvec{d}}}-{\left({{\varvec{\eta}}}^{{\varvec{d}}}\right)}^{\times }\eta \end{array}\right]$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ9.gif" position="anchor"/></alternatives></disp-formula></p><p>The angular velocity error is then expressed by:<disp-formula id="Equ10"><label>10</label><alternatives><tex-math id="d33e659">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\widetilde{{\varvec{\omega}}}={\varvec{\omega}}-{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\varvec{\omega}}}_{{\varvec{d}}}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ10.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq46"><alternatives><tex-math id="d33e666">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{R}}(\overline{{\varvec{q}} })\in {\mathbb{R}}^{3\times 3}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq46.gif"/></alternatives></inline-formula> denotes the rotation matrix that transforms coordinates from the reference frame to the body-fixed frame and is specified by<sup><xref ref-type="bibr" rid="CR23">23</xref></sup>:<disp-formula id="Equ11"><label>11</label><alternatives><tex-math id="d33e676">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{R}}\left(\overline{{\varvec{q}} }\right)=\left({q}_{0}^{2}-{{\varvec{q}}}^{T}{\varvec{q}}\right){{\varvec{I}}}_{3}+2{\varvec{q}}{{\varvec{q}}}^{T}-2{q}_{0}{{\varvec{q}}}^{\times }$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ11.gif" position="anchor"/></alternatives></disp-formula></p><p>It follows from<sup><xref ref-type="bibr" rid="CR24">24</xref></sup> that <inline-formula id="IEq47"><alternatives><tex-math id="d33e688">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\varvec{R}}}^{T}{\varvec{R}}=1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq47.gif"/></alternatives></inline-formula> and <inline-formula id="IEq48"><alternatives><tex-math id="d33e694">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\dot{{\varvec{R}}}\left(\overline{{\varvec{q}} }\right)=-{\widetilde{{\varvec{\omega}}}}^{\times }{\varvec{R}}(\overline{{\varvec{q}} })$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq48.gif"/></alternatives></inline-formula>. So, from the angular velocity error of the satellite (10) and the dynamic equation (8), we can express the attitude error and the kinematics of the satellite as follows:<disp-formula id="Equ12"><label>12</label><alternatives><tex-math id="d33e700">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{J}}\dot{\widetilde{{\varvec{\omega}}}}={\varvec{D}}\left({\varvec{E}}{\varvec{u}}+\Delta {\varvec{u}}\right)+{\varvec{d}}-{{\varvec{\omega}}}^{\times }\left({\varvec{J}}{\varvec{\omega}}+{\varvec{D}}{{\varvec{h}}}_{{\varvec{w}}}\right)+{\varvec{J}}({\widetilde{{\varvec{\omega}}}}^{\times }{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\varvec{\omega}}}_{{\varvec{d}}}-{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\dot{{\varvec{\omega}}}}_{{\varvec{d}}}})$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ12.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ13"><label>13</label><alternatives><tex-math id="d33e706">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\dot{\overline{{\varvec{q}}} }=\left[\begin{array}{c}{\dot{q}}_{0}\\ \dot{{\varvec{q}}}\end{array}\right]=\frac{1}{2}\left[\begin{array}{c}-{{\varvec{q}}}^{T}\\ {{\varvec{q}}}^{\times }+{q}_{0}{{\varvec{I}}}_{3}\end{array}\right]\widetilde{{\varvec{\omega}}}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ13.gif" position="anchor"/></alternatives></disp-formula></p></sec></sec><sec id="Sec7"><title>Problem statement</title><p id="Par22">The objective of this paper is to develop an adaptive sliding mode controller in order to <inline-formula id="IEq51"><alternatives><tex-math id="d33e716">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\underset{t\to \infty }{\text{lim}}{\varvec{q}}(t)\to 0$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq51.gif"/></alternatives></inline-formula> and <inline-formula id="IEq52"><alternatives><tex-math id="d33e722">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\underset{t\to \infty }{\text{lim}}\widetilde{{\varvec{\omega}}}(t)\to 0$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq52.gif"/></alternatives></inline-formula>. It can be resulted that problem of attitude tracking is the same as stabilization for <inline-formula id="IEq53"><alternatives><tex-math id="d33e728">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\widetilde{{\varvec{\omega}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq53.gif"/></alternatives></inline-formula> and <inline-formula id="IEq54"><alternatives><tex-math id="d33e734">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{q}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq54.gif"/></alternatives></inline-formula>.</p></sec></sec><sec id="Sec8"><title>Controller design</title><p id="Par23">In this section, an adaptive control law is designed for tracking the satellite&#x02019;s attitude with environmental disturbances, inertia uncertainty, actuator misalignment, and faults. First, a sliding surface is introduced. Subsequently, a control input is formulated. Eventually, a smooth law is expressed to stay away from chattering in the satellite input.</p><p id="Par24">For facilitating controller design, we should consider the following assumptions for our system.</p><sec id="d33e746"><title>Assumption 2</title><p id="Par25">Consider <inline-formula id="IEq55"><alternatives><tex-math id="d33e750">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{J}}=\overline{{\varvec{J}} }+\Delta {\varvec{J}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq55.gif"/></alternatives></inline-formula> that <inline-formula id="IEq56"><alternatives><tex-math id="d33e756">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\overline{{\varvec{J}} }$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq56.gif"/></alternatives></inline-formula> and <inline-formula id="IEq57"><alternatives><tex-math id="d33e762">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\Delta {\varvec{J}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq57.gif"/></alternatives></inline-formula> are available and uncertain part of the satellite inertia respectively. We assume <inline-formula id="IEq58"><alternatives><tex-math id="d33e768">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\Vert \Delta {\varvec{J}}\Vert \le {\gamma }_{0}.$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq58.gif"/></alternatives></inline-formula></p></sec><sec id="d33e773"><title>Assumption 3</title><p id="Par26">Consider <inline-formula id="IEq59"><alternatives><tex-math id="d33e777">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{D}}=\overline{{\varvec{D}} }+\Delta \mathbf{D}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq59.gif"/></alternatives></inline-formula> and <inline-formula id="IEq60"><alternatives><tex-math id="d33e783">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{E}}=\overline{{\varvec{E}} }+\Delta {\varvec{E}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq60.gif"/></alternatives></inline-formula> so that <inline-formula id="IEq61"><alternatives><tex-math id="d33e789">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\overline{{\varvec{D}} }$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq61.gif"/></alternatives></inline-formula> and <inline-formula id="IEq62"><alternatives><tex-math id="d33e795">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\overline{{\varvec{E}} }$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq62.gif"/></alternatives></inline-formula> are known parts of misalignment and effectiveness matrices respectively. <inline-formula id="IEq63"><alternatives><tex-math id="d33e801">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\Delta {\varvec{D}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq63.gif"/></alternatives></inline-formula> and <inline-formula id="IEq64"><alternatives><tex-math id="d33e808">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\Delta {\varvec{E}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq64.gif"/></alternatives></inline-formula> are unknown parts of mentioned matrices which satisfies <inline-formula id="IEq65"><alternatives><tex-math id="d33e814">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\Vert \Delta {\varvec{D}}\Vert \le {\gamma }_{1}, \Vert \Delta {\varvec{E}}\Vert \le {\gamma }_{2}.$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq65.gif"/></alternatives></inline-formula></p></sec><sec id="d33e819"><title>Assumption 4</title><p id="Par27">All environmental disturbances, including those caused by gravitational forces, magnetic forces, and solar radiation, are considered to be limited. Additionally, we assume proportionality of the aerodynamic drag with the square of the angular velocity<sup><xref ref-type="bibr" rid="CR25">25</xref></sup>. the environmental disturbances <inline-formula id="IEq66"><alternatives><tex-math id="d33e827">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{d}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq66.gif"/></alternatives></inline-formula> are considered to be <inline-formula id="IEq67"><alternatives><tex-math id="d33e833">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\Vert {\varvec{d}}\Vert \le {\upgamma }_{3}+{\gamma }_{4}{\Vert \widetilde{{\varvec{\omega}}}\Vert }^{2}.$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq67.gif"/></alternatives></inline-formula></p></sec><sec id="d33e838"><title>Assumption 5</title><p id="Par28">The satellite&#x02019;s control law may incorporate the error of angular velocity and the quaternion error to address the attitude control problem, with the quaternion error being inherently bounded. Thus, we consider that <inline-formula id="IEq68"><alternatives><tex-math id="d33e842">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\Vert {\varvec{u}}\Vert \le {\gamma }_{7}+{\gamma }_{8}\Vert \widetilde{{\varvec{\omega}}}\Vert +{\gamma }_{9}{\Vert \widetilde{{\varvec{\omega}}}\Vert }^{2}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq68.gif"/></alternatives></inline-formula>.</p></sec><sec id="d33e848"><title>Assumption 6</title><p id="Par29">Reaction wheels are precise equipment that their technical information is available. So, at this study, we assume that axial moment of inertia of the reaction wheels <inline-formula id="IEq69"><alternatives><tex-math id="d33e852">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${I}_{a}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq69.gif"/></alternatives></inline-formula> is known and we have no uncertainty in it.</p><p>In order to design sliding mode controller, we consider sliding surface as below:<disp-formula id="Equ14"><label>14</label><alternatives><tex-math id="d33e860">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{s}}=b(\widetilde{{\varvec{\omega}}}+{\varvec{C}}{\varvec{q}})$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ14.gif" position="anchor"/></alternatives></disp-formula>where scalar <inline-formula id="IEq70"><alternatives><tex-math id="d33e867">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$b&#x0003e;0$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq70.gif"/></alternatives></inline-formula> and <inline-formula id="IEq71"><alternatives><tex-math id="d33e873">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\varvec{C}}}_{3\times 3}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq71.gif"/></alternatives></inline-formula> which is positive definite constant matrix are control gains for attitude tracking. We derived the error dynamic equation of our satellite (12) in the previous section. Now, by applying the above assumptions, we can rewrite it as below.<disp-formula id="Equ15"><label>15</label><alternatives><tex-math id="d33e879">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(\overline{{\varvec{J}} }+\Delta {\varvec{J}})\dot{\widetilde{{\varvec{\omega}}}}=(\overline{{\varvec{D}} }+\Delta {\varvec{D}})\left(\left(\overline{{\varvec{E}} }+\Delta {\varvec{E}}\right){\varvec{u}}+\Delta {\varvec{u}}\right)+{\varvec{d}}-{{\varvec{\omega}}}^{\times }\left(\left(\overline{{\varvec{J}} }+\Delta {\varvec{J}}\right){\varvec{\omega}}+\left(\overline{{\varvec{D}} }+\Delta {\varvec{D}}\right){{\varvec{h}}}_{{\varvec{w}}}\right)+(\overline{{\varvec{J}} }+\Delta {\varvec{J}})({\widetilde{{\varvec{\omega}}}}^{\times }{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\varvec{\omega}}}_{{\varvec{d}}}-{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\dot{{\varvec{\omega}}}}_{{\varvec{d}}}})$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ15.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ16"><label>16</label><alternatives><tex-math id="d33e885">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned}\overline{{\varvec{J}}}\dot{\widetilde{{\varvec{\omega}}} }+\Delta {\varvec{J}}\dot{\widetilde{{\varvec{\omega}}}}&#x00026;=\left(\overline{{\varvec{D}} }+\Delta {\varvec{D}}\right)\left(\overline{{\varvec{E}}}{\varvec{u} }+{\varvec{u}}\Delta {\varvec{E}}+\Delta {\varvec{u}}\right)+{\varvec{d}}-{{\varvec{\omega}}}^{\times }\left(\overline{{\varvec{J}}}{\varvec{\omega} }+{\varvec{\omega}}\Delta {\varvec{J}}+\overline{{\varvec{D}}}{{\varvec{h}} }_{{\varvec{w}}}+{{\varvec{h}}}_{{\varvec{w}}}\Delta {\varvec{D}}\right)\\ &#x00026;\quad+\overline{{\varvec{J}} }\left({\widetilde{{\varvec{\omega}}}}^{\times }{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\varvec{\omega}}}_{{\varvec{d}}}-{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\dot{{\varvec{\omega}}}}_{{\varvec{d}}}}\right)+\Delta {\varvec{J}}({\widetilde{{\varvec{\omega}}}}^{\times }{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\varvec{\omega}}}_{{\varvec{d}}}-{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\dot{{\varvec{\omega}}}}_{{\varvec{d}}}})\end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ16.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ17"><label>17</label><alternatives><tex-math id="d33e891">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned}\overline{{\varvec{J}}}\dot{\widetilde{{\varvec{\omega}}} }+\Delta {\varvec{J}}\dot{\widetilde{{\varvec{\omega}}}} &#x00026;=\overline{{\varvec{D}} }\left(\overline{{\varvec{E}}}{\varvec{u} }+{\varvec{u}}\Delta {\varvec{E}}+\Delta {\varvec{u}}\right)+\Delta {\varvec{D}}\left(\overline{{\varvec{E}}}{\varvec{u} }+{\varvec{u}}\Delta {\varvec{E}}+\Delta {\varvec{u}}\right)+{\varvec{d}}-{{\varvec{\omega}}}^{\times }\left(\overline{{\varvec{J}}}{\varvec{\omega} }+\overline{{\varvec{D}}}{{\varvec{h}} }_{{\varvec{w}}}\right)\\ &#x00026;\quad-{{\varvec{\omega}}}^{\times }\left({\varvec{\omega}}\Delta {\varvec{J}}+{{\varvec{h}}}_{{\varvec{w}}}\Delta {\varvec{D}}\right)+\overline{{\varvec{J}} }\left({\widetilde{{\varvec{\omega}}}}^{\times }{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\varvec{\omega}}}_{{\varvec{d}}}-{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\dot{{\varvec{\omega}}}}_{{\varvec{d}}}}\right)+\Delta {\varvec{J}}({\widetilde{{\varvec{\omega}}}}^{\times }{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\varvec{\omega}}}_{{\varvec{d}}}-{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\dot{{\varvec{\omega}}}}_{{\varvec{d}}}})\end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ17.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ18"><label>18</label><alternatives><tex-math id="d33e897">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned}\overline{{\varvec{J}}}\dot{\widetilde{{\varvec{\omega}}} }+\Delta {\varvec{J}}\dot{\widetilde{{\varvec{\omega}}}}&#x00026;=\overline{{\varvec{D}} }\overline{{\varvec{E}}}{\varvec{u} }+\overline{{\varvec{D}} }\left({\varvec{u}}\Delta {\varvec{E}}+\Delta {\varvec{u}}\right)+\Delta {\varvec{D}}\left(\overline{{\varvec{E}}}{\varvec{u} }+{\varvec{u}}\Delta {\varvec{E}}+\Delta {\varvec{u}}\right)+{\varvec{d}}-{{\varvec{\omega}}}^{\times }\left(\overline{{\varvec{J}}}{\varvec{\omega} }+\overline{{\varvec{D}}}{{\varvec{h}} }_{{\varvec{w}}}\right)\\ &#x00026;\quad-{{\varvec{\omega}}}^{\times }\left({\varvec{\omega}}\Delta {\varvec{J}}+{{\varvec{h}}}_{{\varvec{w}}}\Delta {\varvec{D}}\right)+\overline{{\varvec{J}} }\left({\widetilde{{\varvec{\omega}}}}^{\times }{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\varvec{\omega}}}_{{\varvec{d}}}-{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\dot{{\varvec{\omega}}}}_{{\varvec{d}}}}\right)+\Delta {\varvec{J}}({\widetilde{{\varvec{\omega}}}}^{\times }{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\varvec{\omega}}}_{{\varvec{d}}}-{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\dot{{\varvec{\omega}}}}_{{\varvec{d}}}})\end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ18.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ19"><label>19</label><alternatives><tex-math id="d33e904">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned}\overline{{\varvec{J}}}\dot{\widetilde{{\varvec{\omega}}} }&#x00026;=\overline{{\varvec{D}} }\overline{{\varvec{E}}}{\varvec{u} }-{{\varvec{\omega}}}^{\times }\left(\overline{{\varvec{J}}}{\varvec{\omega} }+\overline{{\varvec{D}}}{{\varvec{h}} }_{{\varvec{w}}}\right)+\overline{{\varvec{J}} }\left({\widetilde{{\varvec{\omega}}}}^{\times }{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\varvec{\omega}}}_{{\varvec{d}}}-{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\dot{{\varvec{\omega}}}}_{{\varvec{d}}}}\right)+(-\Delta {\varvec{J}}\dot{\widetilde{{\varvec{\omega}}}}+\overline{{\varvec{D}} }\left({\varvec{u}}\Delta {\varvec{E}}+\Delta {\varvec{u}}\right)\\ &#x00026;\quad+\Delta {\varvec{D}}\left(\overline{{\varvec{E}}}{\varvec{u} }+{\varvec{u}}\Delta {\varvec{E}}+\Delta {\varvec{u}}\right)+{\varvec{d}}-{{\varvec{\omega}}}^{\times }\left({\varvec{\omega}}\Delta {\varvec{J}}+{{\varvec{h}}}_{{\varvec{w}}}\Delta {\varvec{D}}\right)+\Delta {\varvec{J}}({\widetilde{{\varvec{\omega}}}}^{\times }{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\varvec{\omega}}}_{{\varvec{d}}}-{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\dot{{\varvec{\omega}}}}_{{\varvec{d}}}}))\end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ19.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ20"><label>20</label><alternatives><tex-math id="d33e910">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned}\dot{\widetilde{{\varvec{\omega}}}}&#x00026;={\overline{{\varvec{J}}} }^{-1}\overline{{\varvec{D}} }\overline{{\varvec{E}}}{\varvec{u} }-{\overline{{\varvec{J}}} }^{-1}{{\varvec{\omega}}}^{\times }\left(\overline{{\varvec{J}}}{\varvec{\omega} }+\overline{{\varvec{D}}}{{\varvec{h}} }_{{\varvec{w}}}\right)+\left({\widetilde{{\varvec{\omega}}}}^{\times }{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\varvec{\omega}}}_{{\varvec{d}}}-{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\dot{{\varvec{\omega}}}}_{{\varvec{d}}}}\right)+{\overline{{\varvec{J}}} }^{-1}(-\Delta {\varvec{J}}\dot{\widetilde{{\varvec{\omega}}}}+\overline{{\varvec{D}} }\left({\varvec{u}}\Delta {\varvec{E}}+\Delta {\varvec{u}}\right)\\ &#x00026;\quad+\Delta {\varvec{D}}\left(\overline{{\varvec{E}}}{\varvec{u} }+{\varvec{u}}\Delta {\varvec{E}}+\Delta {\varvec{u}}\right)+{\varvec{d}}-{{\varvec{\omega}}}^{\times }\left({\varvec{\omega}}\Delta {\varvec{J}}+{{\varvec{h}}}_{{\varvec{w}}}\Delta {\varvec{D}}\right)+\Delta {\varvec{J}}({\widetilde{{\varvec{\omega}}}}^{\times }{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\varvec{\omega}}}_{{\varvec{d}}}-{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\dot{{\varvec{\omega}}}}_{{\varvec{d}}}}))\end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ20.gif" position="anchor"/></alternatives></disp-formula></p><p>By considering <inline-formula id="IEq73"><alternatives><tex-math id="d33e918">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{Q}}=-{\overline{{\varvec{J}}} }^{-1}{{\varvec{\omega}}}^{\times }\left(\overline{{\varvec{J}}}{\varvec{\omega} }+\overline{{\varvec{D}}}{{\varvec{h}} }_{{\varvec{w}}}\right)+\left({\widetilde{{\varvec{\omega}}}}^{\times }{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\varvec{\omega}}}_{{\varvec{d}}}-{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\dot{{\varvec{\omega}}}}_{{\varvec{d}}}}\right)+\frac{1}{2}{\varvec{C}}({{\varvec{q}}}^{\times }+{q}_{0}{{\varvec{I}}}_{3})\widetilde{{\varvec{\omega}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq73.gif"/></alternatives></inline-formula> and <inline-formula id="IEq74"><alternatives><tex-math id="d33e924">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{\rho}}={\overline{{\varvec{J}}} }^{-1}(-\Delta {\varvec{J}}\dot{\widetilde{{\varvec{\omega}}}}+\overline{{\varvec{D}} }\left({\varvec{u}}\Delta {\varvec{E}}+\Delta {\varvec{u}}\right)+\Delta {\varvec{D}}\left(\overline{{\varvec{E}}}{\varvec{u} }+{\varvec{u}}\Delta {\varvec{E}}+\Delta {\varvec{u}}\right)+{\varvec{d}}-{{\varvec{\omega}}}^{\times }\left({\varvec{\omega}}\Delta {\varvec{J}}+{{\varvec{h}}}_{{\varvec{w}}}\Delta {\varvec{D}}\right)+\Delta {\varvec{J}}({\widetilde{{\varvec{\omega}}}}^{\times }{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\varvec{\omega}}}_{{\varvec{d}}}-{\varvec{R}}\left(\overline{{\varvec{q}} }\right){{\dot{{\varvec{\omega}}}}_{{\varvec{d}}}}))$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq74.gif"/></alternatives></inline-formula>, we can obtain a compact expression for the attitude error dynamic as follows:<disp-formula id="Equ21"><label>21</label><alternatives><tex-math id="d33e930">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\dot{\widetilde{{\varvec{\omega}}}}+{\varvec{C}}\dot{{\varvec{q}}}={\varvec{Q}}+{\varvec{\rho}}+{\overline{{\varvec{J}}} }^{-1}\overline{{\varvec{D}} }\overline{{\varvec{E}}}{\varvec{u} }$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ21.gif" position="anchor"/></alternatives></disp-formula></p><p>In the error dynamic equation (21), <inline-formula id="IEq76"><alternatives><tex-math id="d33e938">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{\rho}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq76.gif"/></alternatives></inline-formula> contains all uncertainties that, under equation (12) and assumption 5, we can easily verify that <inline-formula id="IEq78"><alternatives><tex-math id="d33e944">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{\rho}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq76.gif"/></alternatives></inline-formula> is bounded by following function:<disp-formula id="Equ22"><label>22</label><alternatives><tex-math id="d33e950">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\Vert {\varvec{\rho}}\Vert }_{1}\le {d}_{0}+{d}_{1}{\Vert \widetilde{{\varvec{\omega}}}\Vert }_{1}+{d}_{2}{\Vert \widetilde{{\varvec{\omega}}}\Vert }_{1}^{2}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ22.gif" position="anchor"/></alternatives></disp-formula></p><p>The control input to our system is considered as:<disp-formula id="Equ23"><label>23</label><alternatives><tex-math id="d33e959">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{u}}=-{\overline{{\varvec{E}}} }^{-1}{\overline{{\varvec{D}}} }^{-1}\overline{{\varvec{J}} }({\varvec{Q}}+{\varvec{K}}{\varvec{s}}+\widehat{\alpha }sgn({\varvec{s}}))$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ23.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq79"><alternatives><tex-math id="d33e966">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\varvec{K}}}_{3\times 3}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq79.gif"/></alternatives></inline-formula> is gain matrix which is positive definite, <inline-formula id="IEq80"><alternatives><tex-math id="d33e972">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\widehat{\alpha }={\widehat{d}}_{0}+{\widehat{d}}_{1}{\Vert \widetilde{{\varvec{\omega}}}\Vert }_{1}+{\widehat{d}}_{2}{\Vert \widetilde{{\varvec{\omega}}}\Vert }_{1}^{2}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq80.gif"/></alternatives></inline-formula> that <inline-formula id="IEq81"><alternatives><tex-math id="d33e978">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\widehat{d}}_{0}, {\widehat{d}}_{1}, {\widehat{d}}_{2}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq81.gif"/></alternatives></inline-formula> are estimations of <inline-formula id="IEq82"><alternatives><tex-math id="d33e984">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${d}_{0},{d}_{1}, {d}_{2}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq82.gif"/></alternatives></inline-formula> respectively and estimation errors are defined as <inline-formula id="IEq83"><alternatives><tex-math id="d33e991">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\widetilde{d}}_{0}={\widehat{d}}_{0}-{d}_{0}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq83.gif"/></alternatives></inline-formula>, <inline-formula id="IEq84"><alternatives><tex-math id="d33e997">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\widetilde{d}}_{1}={\widehat{d}}_{1}-{d}_{1}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq84.gif"/></alternatives></inline-formula> and <inline-formula id="IEq85"><alternatives><tex-math id="d33e1003">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\widetilde{d}}_{2}={\widehat{d}}_{2}-{d}_{2}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq85.gif"/></alternatives></inline-formula>. Estimated parameters are derived under following adaptation laws.<disp-formula id="Equ24"><label>24</label><alternatives><tex-math id="d33e1009">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\dot{\widehat{d}}}_{0}={k}_{0}{\Vert {\varvec{s}}\Vert }_{1}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ24.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ25"><label>25</label><alternatives><tex-math id="d33e1015">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\dot{\widehat{d}}}_{1}={k}_{1}{\Vert {\varvec{s}}\Vert }_{1}{\Vert \widetilde{{\varvec{\omega}}}\Vert }_{1}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ25.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ26"><label>26</label><alternatives><tex-math id="d33e1021">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\dot{\widehat{d}}}_{2}={k}_{2}{\Vert {\varvec{s}}\Vert }_{1}{\Vert \widetilde{{\varvec{\omega}}}\Vert }_{1}^{2}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ26.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq86"><alternatives><tex-math id="d33e1028">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${k}_{0}, {k}_{1}, {k}_{2}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq86.gif"/></alternatives></inline-formula> are positive adaptive gains. Note that since <inline-formula id="IEq87"><alternatives><tex-math id="d33e1035">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${d}_{0}, {d}_{1}, {d}_{2}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq87.gif"/></alternatives></inline-formula> are constant parameters then <inline-formula id="IEq88"><alternatives><tex-math id="d33e1041">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\dot{\widetilde{d}}}_{i}={\dot{\widehat{d}}}_{i} (i\in \left\{{1,2},3\right\})$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq88.gif"/></alternatives></inline-formula>. As a reminder <inline-formula id="IEq89"><alternatives><tex-math id="d33e1047">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$sgn\left({\varvec{s}}\right)={\left[\begin{array}{ccc}sgn({s}_{11})&#x00026; sgn({s}_{21})&#x00026; sgn({s}_{31})\end{array}\right]}^{T}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq89.gif"/></alternatives></inline-formula> denotes as a sign function.</p></sec><sec id="d33e1053"><title><italic>Remark 2</italic></title><p id="Par34">In the introduced control input (23), <inline-formula id="IEq91"><alternatives><tex-math id="d33e1059">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\overline{{\varvec{E}} }, \overline{{\varvec{D}} }, \overline{{\varvec{J}} }$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq91.gif"/></alternatives></inline-formula> are known positive definite matrices and invertible.</p></sec><sec id="d33e1065"><title><bold>Lemma 1</bold></title><p id="Par35"><italic>Consider the satellite dynamic equation and the error dynamic equation in</italic>
+<inline-formula id="IEq92"><alternatives><tex-math id="d33e1073">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\left(12\right), \left(21\right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq92.gif"/></alternatives></inline-formula>
+<italic>and also the sliding surface in</italic> (14). <italic>If control input in</italic> (23) <italic>is applied to the system, then</italic>
+<inline-formula id="IEq95"><alternatives><tex-math id="d33e1088">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\underset{t\to \infty }{\text{lim}}{\varvec{q}}(t)\to 0$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq51.gif"/></alternatives></inline-formula>
+<italic>and</italic>
+<inline-formula id="IEq96"><alternatives><tex-math id="d33e1098">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\underset{t\to \infty }{\text{lim}}\widetilde{{\varvec{\omega}}}(t)\to 0$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq52.gif"/></alternatives></inline-formula>
+<italic>which means that the attitude tracking errors converge to zero asymptotically and tracking objective is obtained</italic>.</p></sec><sec id="d33e1107"><title><italic>Proof</italic></title><p id="Par36">The following Lyapunov candidate function which is positive definite is selected.<disp-formula id="Equ27"><label>27</label><alternatives><tex-math id="d33e1113">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$V=\frac{1}{2}{{\varvec{s}}}^{T}{b}^{-1}{\varvec{s}}+\frac{1}{2}{k}_{0}^{-1}{\widetilde{d}}_{0}^{2}+\frac{1}{2}{k}_{1}^{-1}{\widetilde{d}}_{1}^{2}+\frac{1}{2}{k}_{2}^{-1}{\widetilde{d}}_{2}^{2}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ27.gif" position="anchor"/></alternatives></disp-formula></p><p>The time derivative of <inline-formula id="IEq97"><alternatives><tex-math id="d33e1121">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$V$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq97.gif"/></alternatives></inline-formula> is as below.<disp-formula id="Equ28"><label>28</label><alternatives><tex-math id="d33e1127">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\dot{V}=\frac{1}{2}{\dot{{\varvec{s}}}}^{T}{b}^{-1}{\varvec{s}}+\frac{1}{2}{{\varvec{s}}}^{T}{b}^{-1}\dot{{\varvec{s}}}+{k}_{0}^{-1}{\dot{\widetilde{d}}}_{0}{\widetilde{d}}_{0}+{k}_{1}^{-1}{\dot{\widetilde{d}}}_{1}{\widetilde{d}}_{1}+{k}_{2}^{-1}{\dot{\widetilde{d}}}_{2}{\widetilde{d}}_{2}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ28.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ29"><label>29</label><alternatives><tex-math id="d33e1133">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\dot{V}={{\varvec{s}}}^{T}{b}^{-1}\dot{{\varvec{s}}}+{k}_{0}^{-1}{\dot{\widetilde{d}}}_{0}{\widetilde{d}}_{0}+{k}_{1}^{-1}{\dot{\widetilde{d}}}_{1}{\widetilde{d}}_{1}+{k}_{2}^{-1}{\dot{\widetilde{d}}}_{2}{\widetilde{d}}_{2}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ29.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ30"><label>30</label><alternatives><tex-math id="d33e1139">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\dot{V}={{\varvec{s}}}^{T}{b}^{-1}b\left(\dot{\widetilde{{\varvec{\omega}}}}+{\varvec{C}}\dot{{\varvec{q}}}\right)+{k}_{0}^{-1}{\dot{\widetilde{d}}}_{0}{\widetilde{d}}_{0}+{k}_{1}^{-1}{\dot{\widetilde{d}}}_{1}{\widetilde{d}}_{1}+{k}_{2}^{-1}{\dot{\widetilde{d}}}_{2}{\widetilde{d}}_{2}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ30.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ31"><label>31</label><alternatives><tex-math id="d33e1145">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\dot{V}={{\varvec{s}}}^{T}\left({\varvec{Q}}+{\varvec{\rho}}+{\overline{{\varvec{J}}} }^{-1}\overline{{\varvec{D}} }\overline{{\varvec{E}}}{\varvec{u} }\right)+{k}_{0}^{-1}{\dot{\widetilde{d}}}_{0}{\widetilde{d}}_{0}+{k}_{1}^{-1}{\dot{\widetilde{d}}}_{1}{\widetilde{d}}_{1}+{k}_{2}^{-1}{\dot{\widetilde{d}}}_{2}{\widetilde{d}}_{2}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ31.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ32"><label>32</label><alternatives><tex-math id="d33e1151">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\dot{V}={{\varvec{s}}}^{T}\left(-{\varvec{K}}{\varvec{s}}-\widehat{\alpha }sgn\left({\varvec{s}}\right)+{\varvec{\rho}}\right)+{k}_{0}^{-1}{\dot{\widetilde{d}}}_{0}{\widetilde{d}}_{0}+{k}_{1}^{-1}{\dot{\widetilde{d}}}_{1}{\widetilde{d}}_{1}+{k}_{2}^{-1}{\dot{\widetilde{d}}}_{2}{\widetilde{d}}_{2}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ32.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ33"><label>33</label><alternatives><tex-math id="d33e1157">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\dot{V}=-{{\varvec{s}}}^{T}{\varvec{K}}{\varvec{s}}-\widehat{\alpha }{\Vert {\varvec{s}}\Vert }_{1}+{{\varvec{s}}}^{T}{\varvec{\rho}}+{k}_{0}^{-1}{\dot{\widetilde{d}}}_{0}{\widetilde{d}}_{0}+{k}_{1}^{-1}{\dot{\widetilde{d}}}_{1}{\widetilde{d}}_{1}+{k}_{2}^{-1}{\dot{\widetilde{d}}}_{2}{\widetilde{d}}_{2}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ33.gif" position="anchor"/></alternatives></disp-formula></p><p>Now in view of <inline-formula id="IEq98"><alternatives><tex-math id="d33e1165">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\left(22\right), \left(24\right), \left(25\right), (26)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq98.gif"/></alternatives></inline-formula> we have:<disp-formula id="Equ34"><label>34</label><alternatives><tex-math id="d33e1171">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\dot{V}\le -{{\varvec{s}}}^{T}{\varvec{K}}{\varvec{s}}-\widehat{\alpha }{\Vert {\varvec{s}}\Vert }_{1}+{\Vert {\varvec{s}}\Vert }_{1}{\Vert {\varvec{\rho}}\Vert }_{1}+{\Vert {\varvec{s}}\Vert }_{1}{\widetilde{d}}_{0}+{\Vert {\varvec{s}}\Vert }_{1}{\Vert \widetilde{{\varvec{\omega}}}\Vert }_{1}{\widetilde{d}}_{1}+{\Vert {\varvec{s}}\Vert }_{1}{\Vert \widetilde{{\varvec{\omega}}}\Vert }_{1}^{2}{\widetilde{d}}_{2}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ34.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ35"><label>35</label><alternatives><tex-math id="d33e1177">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\dot{V}\le -{{\varvec{s}}}^{T}{\varvec{K}}{\varvec{s}}-({\widehat{d}}_{0}+{\widehat{d}}_{1}{\Vert \widetilde{{\varvec{\omega}}}\Vert }_{1}+{\widehat{d}}_{2}{\Vert \widetilde{{\varvec{\omega}}}\Vert }_{1}^{2}){\Vert {\varvec{s}}\Vert }_{1}+{\Vert {\varvec{s}}\Vert }_{1}{\Vert {\varvec{\rho}}\Vert }_{1}+{\Vert {\varvec{s}}\Vert }_{1}{\widetilde{d}}_{0}+{\Vert {\varvec{s}}\Vert }_{1}{\Vert \widetilde{{\varvec{\omega}}}\Vert }_{1}{\widetilde{d}}_{1}+{\Vert {\varvec{s}}\Vert }_{1}{\Vert \widetilde{{\varvec{\omega}}}\Vert }_{1}^{2}{\widetilde{d}}_{2}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ35.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ36"><label>36</label><alternatives><tex-math id="d33e1183">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\dot{V}\le -{{\varvec{s}}}^{T}{\varvec{K}}{\varvec{s}}-({\widehat{d}}_{0}+{\widehat{d}}_{1}{\Vert \widetilde{{\varvec{\omega}}}\Vert }_{1}+{\widehat{d}}_{2}{\Vert \widetilde{{\varvec{\omega}}}\Vert }_{1}^{2}){\Vert {\varvec{s}}\Vert }_{1}+{\Vert {\varvec{s}}\Vert }_{1}({d}_{0}+{d}_{1}{\Vert \widetilde{{\varvec{\omega}}}\Vert }_{1}+{d}_{2}{\Vert \widetilde{{\varvec{\omega}}}\Vert }_{1}^{2})+{\Vert {\varvec{s}}\Vert }_{1}{\widetilde{d}}_{0}+{\Vert {\varvec{s}}\Vert }_{1}{\Vert \widetilde{{\varvec{\omega}}}\Vert }_{1}{\widetilde{d}}_{1}+{\Vert {\varvec{s}}\Vert }_{1}{\Vert \widetilde{{\varvec{\omega}}}\Vert }_{1}^{2}{\widetilde{d}}_{2}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ36.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ37"><label>37</label><alternatives><tex-math id="d33e1189">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\dot{V}\le -{{\varvec{s}}}^{T}{\varvec{K}}{\varvec{s}}-{\Vert {\varvec{s}}\Vert }_{1}\left({\widetilde{d}}_{0}+{\widetilde{d}}_{1}{\Vert \widetilde{{\varvec{\omega}}}\Vert }_{1}+{\widetilde{d}}_{2}{\Vert \widetilde{{\varvec{\omega}}}\Vert }_{1}^{2}\right)+{\Vert {\varvec{s}}\Vert }_{1}{\widetilde{d}}_{0}+{\Vert {\varvec{s}}\Vert }_{1}{\Vert \widetilde{{\varvec{\omega}}}\Vert }_{1}{\widetilde{d}}_{1}+{\Vert {\varvec{s}}\Vert }_{1}{\Vert \widetilde{{\varvec{\omega}}}\Vert }_{1}^{2}{\widetilde{d}}_{2}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ37.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ38"><label>38</label><alternatives><tex-math id="d33e1195">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\dot{V}\le -{{\varvec{s}}}^{T}{\varvec{K}}{\varvec{s}}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ38.gif" position="anchor"/></alternatives></disp-formula></p><p>Therefore, by computing <inline-formula id="IEq99"><alternatives><tex-math id="d33e1203">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\ddot{V}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq99.gif"/></alternatives></inline-formula>, its boundedness can easily be shown. Moreover, <inline-formula id="IEq100"><alternatives><tex-math id="d33e1209">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\widetilde{{\varvec{\omega}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq53.gif"/></alternatives></inline-formula> is bounded through its definition. So, with continuity of <inline-formula id="IEq101"><alternatives><tex-math id="d33e1215">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\dot{V}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq101.gif"/></alternatives></inline-formula> according to the Barbalat&#x02019;s lemma<sup><xref ref-type="bibr" rid="CR26">26</xref></sup>, we can prove that error dynamic equation (21) is globally asymptotically stable, which means <inline-formula id="IEq103"><alternatives><tex-math id="d33e1225">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\underset{t\to \infty }{\text{lim}}{\varvec{q}}(t)\to 0$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq51.gif"/></alternatives></inline-formula> and <inline-formula id="IEq104"><alternatives><tex-math id="d33e1232">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\underset{t\to \infty }{\text{lim}}\widetilde{{\varvec{\omega}}}(t)\to 0$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq52.gif"/></alternatives></inline-formula>.</p><p>The proposed control law exhibits chattering due to the sign function. To mitigate chattering in the satellite input, the sign function can be substituted with a saturation function, which is defined as:<disp-formula id="Equ39"><label>39</label><alternatives><tex-math id="d33e1240">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$sat\left(x\right)=\left\{\begin{array}{ll}sign\left(x\right),&#x00026;\quad if \left|x\right|&#x0003e;\varphi \\ \frac{x}{\varphi },&#x00026;\quad if \left|x\right|\le \varphi \end{array}\right.$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ39.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq105"><alternatives><tex-math id="d33e1247">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\varphi$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq105.gif"/></alternatives></inline-formula> is boundary layer thickness. It is important to note that the estimated gains may become unlimited within the boundary layer<sup><xref ref-type="bibr" rid="CR25">25</xref></sup>. To address this issue, the designed control law is modified as below.<disp-formula id="Equ40"><label>40</label><alternatives><tex-math id="d33e1257">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{u}}=-{\overline{{\varvec{E}}} }^{-1}{\overline{{\varvec{D}}} }^{-1}\overline{{\varvec{J}} }({\varvec{Q}}+{\varvec{K}}\overline{{\varvec{s}} }+\widehat{\alpha }sat({\varvec{s}}))$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ40.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq106"><alternatives><tex-math id="d33e1264">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$sat\left({\varvec{s}}\right)={\left[\begin{array}{ccc}sat({s}_{11})&#x00026; sat({s}_{21})&#x00026; sat({s}_{31})\end{array}\right]}^{T}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq106.gif"/></alternatives></inline-formula> and <inline-formula id="IEq107"><alternatives><tex-math id="d33e1271">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\overline{{\varvec{s}} }={\varvec{s}}-\varphi sat({\varvec{s}})$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq107.gif"/></alternatives></inline-formula> shows distance between boundary layer and the current state<sup><xref ref-type="bibr" rid="CR27">27</xref></sup>. Therefore, the adaptation laws should be altered as follows either.<disp-formula id="Equ41"><label>41</label><alternatives><tex-math id="d33e1281">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\dot{\widehat{d}}}_{0}={k}_{0}{\Vert \overline{{\varvec{s}}}\Vert }_{1}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ41.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ42"><label>42</label><alternatives><tex-math id="d33e1287">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\dot{\widehat{d}}}_{1}={k}_{1}{\Vert \overline{{\varvec{s}}}\Vert }_{1}{\Vert \widetilde{{\varvec{\omega}}}\Vert }_{1}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ42.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ43"><label>43</label><alternatives><tex-math id="d33e1293">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\dot{\widehat{d}}}_{2}={k}_{2}{\Vert \overline{{\varvec{s}}}\Vert }_{1}{\Vert \widetilde{{\varvec{\omega}}}\Vert }_{1}^{2}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ43.gif" position="anchor"/></alternatives></disp-formula></p><p>In this case, the following Lyapunov candidate function can be utilized.<disp-formula id="Equ44"><label>44</label><alternatives><tex-math id="d33e1301">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\overline{V }=\frac{1}{2}{\overline{{\varvec{s}}} }^{T}{b}^{-1}\overline{{\varvec{s}} }+\frac{1}{2}{k}_{0}^{-1}{\widetilde{d}}_{0}^{2}+\frac{1}{2}{k}_{1}^{-1}{\widetilde{d}}_{1}^{2}+\frac{1}{2}{k}_{2}^{-1}{\widetilde{d}}_{2}^{2}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ44.gif" position="anchor"/></alternatives></disp-formula></p><p>Similarly, as before we can demonstrate that:<disp-formula id="Equ45"><label>45</label><alternatives><tex-math id="d33e1309">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\dot{\overline{V} }\le -{\overline{{\varvec{s}}} }^{T}{\varvec{K}}\overline{{\varvec{s}} }$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ45.gif" position="anchor"/></alternatives></disp-formula></p><p>Thus, the system global boundedness inside the boundary layer is resulted<sup><xref ref-type="bibr" rid="CR27">27</xref></sup>. The control system block diagram under the proposed control formula is depicted in Fig.&#x000a0;<xref rid="Fig3" ref-type="fig">3</xref>. As is obvious after computing the control law, we have to transform it into the angular velocity and the angular acceleration of the reaction wheels. This is because the satellite&#x02019;s inputs, according to <inline-formula id="IEq108"><alternatives><tex-math id="d33e1324">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\left(1\right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq108.gif"/></alternatives></inline-formula>, are the reaction wheels angular momentum and their time derivatives.<fig id="Fig3"><label>Fig. 3</label><caption><p>System schematic under proposed controller.</p></caption><graphic xlink:href="41598_2025_98468_Fig3_HTML" id="MO3"/></fig></p></sec></sec><sec id="Sec9"><title>Simulation results</title><p id="Par44">To evaluate the effectiveness and robustness of the devised controller, numerical simulation has been carried out. To approach reality, a satellite with the configuration as depicted in Fig.&#x000a0;<xref rid="Fig1" ref-type="fig">1</xref> is considered. The parameters of the satellite are considered to be as shown in Table <xref rid="Tab1" ref-type="table">1</xref>. For ease of calculation, all products of inertia moments of the satellite are set as zero in the body frame. This implies that the body frame axes are oriented along the principal axes. In Table <xref rid="Tab1" ref-type="table">1</xref><inline-formula id="IEq109"><alternatives><tex-math id="d33e1349">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${I}_{xx}, {I}_{yy}, {I}_{zz}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq109.gif"/></alternatives></inline-formula> are the satellite&#x02019;s principal moments of inertia, <inline-formula id="IEq110"><alternatives><tex-math id="d33e1355">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${I}_{a}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq69.gif"/></alternatives></inline-formula> and <inline-formula id="IEq111"><alternatives><tex-math id="d33e1361">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${I}_{t}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq111.gif"/></alternatives></inline-formula> are axial and transversal reaction wheels moments of inertial, respectively. <inline-formula id="IEq112"><alternatives><tex-math id="d33e1368">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$m$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq112.gif"/></alternatives></inline-formula> is mass of each reaction wheel and <inline-formula id="IEq113"><alternatives><tex-math id="d33e1374">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$a$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq113.gif"/></alternatives></inline-formula> is distance between reaction wheels center, and the center of body frame.<table-wrap id="Tab1"><label>Table 1</label><caption><p>Satellite parameters.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Parameter</th><th align="left">Value (kgm<sup>2</sup>)</th></tr></thead><tbody><tr><td align="left"><inline-formula id="IEq115"><alternatives><tex-math id="d33e1401">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${I}_{xx}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq115.gif"/></alternatives></inline-formula></td><td align="left">0.02</td></tr><tr><td align="left"><inline-formula id="IEq117"><alternatives><tex-math id="d33e1411">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${I}_{yy}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq117.gif"/></alternatives></inline-formula></td><td align="left">0.03</td></tr><tr><td align="left"><inline-formula id="IEq119"><alternatives><tex-math id="d33e1421">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${I}_{zz}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq119.gif"/></alternatives></inline-formula></td><td align="left">0.04</td></tr><tr><td align="left"><inline-formula id="IEq121"><alternatives><tex-math id="d33e1431">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${I}_{a}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq69.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq122"><alternatives><tex-math id="d33e1438">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$8\times {10}^{-4}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq122.gif"/></alternatives></inline-formula></td></tr><tr><td align="left"><inline-formula id="IEq123"><alternatives><tex-math id="d33e1446">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${I}_{t}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq111.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq124"><alternatives><tex-math id="d33e1453">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$4.33\times {10}^{-4}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq124.gif"/></alternatives></inline-formula></td></tr><tr><td align="left"><inline-formula id="IEq125"><alternatives><tex-math id="d33e1461">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$m{a}^{2}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq125.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq126"><alternatives><tex-math id="d33e1468">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$36\times {10}^{-4}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq126.gif"/></alternatives></inline-formula></td></tr></tbody></table></table-wrap></p><p id="Par45">For misalignment consideration in satellite reaction wheels, the misalignment angles are assumed to be as shown in Table <xref rid="Tab2" ref-type="table">2</xref>. In this case, the satellite inertia matrix is derived as:<disp-formula id="Equ46"><label>46</label><alternatives><tex-math id="d33e1478">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{J}}=\left[\begin{array}{ccc}{J}_{1}&#x00026; {J}_{4}&#x00026; {J}_{5}\\ {J}_{4}&#x00026; {J}_{2}&#x00026; {J}_{6}\\ {J}_{5}&#x00026; {J}_{6}&#x00026; {J}_{3}\end{array}\right] {\text{kgm}}^{2}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ46.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq127"><alternatives><tex-math id="d33e1485">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${J}_{1}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq127.gif"/></alternatives></inline-formula> to <inline-formula id="IEq128"><alternatives><tex-math id="d33e1491">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${J}_{6}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq128.gif"/></alternatives></inline-formula> are as below:<table-wrap id="Tab2"><label>Table 2</label><caption><p>Satellite misalignment angles.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Angle</th><th align="left">Value (rad)</th></tr></thead><tbody><tr><td align="left"><inline-formula id="IEq130"><alternatives><tex-math id="d33e1515">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\alpha }_{1}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq130.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq131"><alternatives><tex-math id="d33e1522">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\pi /3$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq131.gif"/></alternatives></inline-formula></td></tr><tr><td align="left"><inline-formula id="IEq132"><alternatives><tex-math id="d33e1530">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\alpha }_{2}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq132.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq133"><alternatives><tex-math id="d33e1537">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\pi /4$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq133.gif"/></alternatives></inline-formula></td></tr><tr><td align="left"><inline-formula id="IEq134"><alternatives><tex-math id="d33e1545">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\alpha }_{3}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq134.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq135"><alternatives><tex-math id="d33e1552">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\pi /6$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq135.gif"/></alternatives></inline-formula></td></tr><tr><td align="left"><inline-formula id="IEq136"><alternatives><tex-math id="d33e1560">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\beta }_{1}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq136.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq137"><alternatives><tex-math id="d33e1567">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\pi /4$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq133.gif"/></alternatives></inline-formula></td></tr><tr><td align="left"><inline-formula id="IEq138"><alternatives><tex-math id="d33e1575">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\beta }_{2}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq138.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq139"><alternatives><tex-math id="d33e1582">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\pi /5$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq139.gif"/></alternatives></inline-formula></td></tr><tr><td align="left"><inline-formula id="IEq140"><alternatives><tex-math id="d33e1590">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\beta }_{3}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq140.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq141"><alternatives><tex-math id="d33e1597">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\pi /7$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq141.gif"/></alternatives></inline-formula></td></tr></tbody></table></table-wrap><disp-formula id="Equ47"><label>47</label><alternatives><tex-math id="d33e1602">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned}{J}_{1}&#x00026;={I}_{xx}+{I}_{a}\left({{\cos}}^{2}\left({\beta }_{1}\right){{\cos}}^{2}\left({\alpha }_{1}\right)+{{\sin}}^{2}\left({\alpha }_{3}\right){{\cos}}^{2}\left({\beta }_{3}\right)+{{\sin}}^{2}\left({\beta }_{2}\right){{\cos}}^{2}\left({\alpha }_{2}\right)\right)\\ &#x00026;\quad+{I}_{t}\left({{\sin}}^{2}\left({\beta }_{1}\right)+{{\cos}}^{2}\left({\beta }_{1}\right){{\sin}}^{2}\left({\alpha }_{1}\right)+{{\cos}}^{2}\left({\alpha }_{3}\right){{\cos}}^{2}\left({\beta }_{3}\right)+{{\sin}}^{2}\left({\beta }_{3}\right)+{{\cos}}^{2}\left({\beta }_{2}\right)+{{\sin}}^{2}\left({\beta }_{2}\right){{\sin}}^{2}\left({\alpha }_{2}\right)\right)+2m{a}^{2}\end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ47.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ48"><label>48</label><alternatives><tex-math id="d33e1609">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned}{J}_{2}&#x00026;={I}_{yy}+{I}_{a}\left({{\cos}}^{2}\left({\beta }_{2}\right){{\cos}}^{2}\left({\alpha }_{2}\right)+{{\cos}}^{2}\left({\alpha }_{1}\right){{\sin}}^{2}\left({\beta }_{1}\right)+{{\sin}}^{2}\left({\alpha }_{3}\right){{\sin}}^{2}\left({\beta }_{3}\right)\right)\\ &#x00026;\quad+{I}_{t}\left({{\sin}}^{2}\left({\beta }_{2}\right)-{{\cos}}^{2}\left({\beta }_{2}\right){{\sin}}^{2}\left({\alpha }_{2}\right)+{{\cos}}^{2}\left({\beta }_{1}\right)+{{\sin}}^{2}\left({\beta }_{1}\right){{\sin}}^{2}\left({\alpha }_{1}\right)+{{\cos}}^{2}\left({\alpha }_{3}\right){{\sin}}^{2}\left({\beta }_{3}\right)+{{\cos}}^{2}\left({\beta }_{3}\right)\right)+2m{a}^{2}\end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ48.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ49"><label>49</label><alternatives><tex-math id="d33e1615">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned}{J}_{3}={I}_{zz}+{I}_{a}\left({{\cos}}^{2}\left({\alpha }_{3}\right)+{{\sin}}^{2}\left({\alpha }_{1}\right)+{{\sin}}^{2}\left({\alpha }_{2}\right)\right)+{I}_{t}\left({{\sin}}^{2}\left({\alpha }_{3}\right)+{{\cos}}^{2}\left({\alpha }_{1}\right)+{{\cos}}^{2}\left({\alpha }_{2}\right)\right)+2m{a}^{2}\end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ49.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ50"><label>50</label><alternatives><tex-math id="d33e1621">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned}{J}_{4}&#x00026;={I}_{a}\left({{\cos}}^{2}\left({\alpha }_{1}\right){\sin}\left({\beta }_{1}\right){\cos}\left({\beta }_{1}\right)-{{\cos}}^{2}\left({\alpha }_{2}\right){\sin}\left({\beta }_{2}\right){\cos}\left({\beta }_{2}\right)+{{\sin}}^{2}\left({\alpha }_{3}\right){\sin}\left({\beta }_{3}\right){\cos}\left({\beta }_{3}\right)\right)\\ &#x00026;\quad+{I}_{t}(-{\sin}\left({\beta }_{1}\right){\cos}\left({\beta }_{1}\right)+{{\sin}}^{2}\left({\alpha }_{1}\right){\sin}\left({\beta }_{1}\right){\cos}\left({\beta }_{1}\right)+{\sin}\left({\beta }_{2}\right){\cos}\left({\beta }_{2}\right)-{{\sin}}^{2}\left({\alpha }_{2}\right){\sin}\left({\beta }_{2}\right){\cos}\left({\beta }_{2}\right)\\ &#x00026;\qquad+{{\cos}}^{2}\left({\alpha }_{3}\right){\cos}\left({\beta }_{3}\right){\sin}\left({\beta }_{3}\right)-{\sin}({\beta }_{3}){\cos}({\beta }_{3}))\end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ50.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ51"><label>51</label><alternatives><tex-math id="d33e1627">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned}{J}_{5}&#x00026;={I}_{a}\left(-{\sin}\left({\alpha }_{1}\right){\cos}\left({\beta }_{1}\right){\cos}\left({\alpha }_{1}\right)-{\sin}\left({\alpha }_{2}\right){\sin}\left({\beta }_{2}\right){\cos}\left({\alpha }_{2}\right)+{\sin}\left({\alpha }_{3}\right){\cos}\left({\alpha }_{3}\right){\cos}\left({\beta }_{3}\right)\right)\\ &#x00026;\quad+{I}_{t}({\cos}\left({\alpha }_{1}\right){\cos}\left({\beta }_{1}\right){\sin}\left({\alpha }_{1}\right)+{\cos}\left({\alpha }_{2}\right){\sin}\left({\beta }_{2}\right){\sin}\left({\alpha }_{2}\right)-{\sin}({\alpha }_{3}){\cos}({\alpha }_{3}){\cos}({\beta }_{3}))\end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ51.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ52"><label>52</label><alternatives><tex-math id="d33e1633">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned}{J}_{6}&#x00026;={I}_{a}\left(-{\sin}\left({\alpha }_{1}\right){\sin}\left({\beta }_{1}\right){\cos}\left({\alpha }_{1}\right)+{\sin}\left({\alpha }_{2}\right){\cos}\left({\beta }_{2}\right){\cos}\left({\alpha }_{2}\right)+{\sin}\left({\alpha }_{3}\right){\sin}\left({\beta }_{3}\right){\cos}\left({\alpha }_{3}\right)\right)\\ &#x00026;\quad+{I}_{t}({\cos}\left({\alpha }_{1}\right){\sin}\left({\beta }_{1}\right){\sin}\left({\alpha }_{1}\right)-{\cos}\left({\alpha }_{2}\right){\cos}\left({\beta }_{2}\right){\sin}\left({\alpha }_{2}\right)-{\sin}({\alpha }_{3}){\cos}({\alpha }_{3}){\sin}({\beta }_{3}))\end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ52.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par46">The effectiveness matrix and the additive bias term for the fault model is assumed as <inline-formula id="IEq142"><alternatives><tex-math id="d33e1641">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{E}}=\left[\begin{array}{ccc}0.85&#x00026; 0&#x00026; 0\\ 0&#x00026; 0.9&#x00026; 0\\ 0&#x00026; 0&#x00026; 0.8\end{array}\right]$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq142.gif"/></alternatives></inline-formula> and <inline-formula id="IEq143"><alternatives><tex-math id="d33e1647">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\Delta {\varvec{u}}=\left[\begin{array}{c}-0.01\\ -0.02\\ -0.05\end{array}\right] {\text{Nm}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq143.gif"/></alternatives></inline-formula>, respectively. Moreover, the environmental disturbance is set to be <inline-formula id="IEq144"><alternatives><tex-math id="d33e1653">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{d}}={\left[\begin{array}{ccc}0.01{\sin}(0.4t)&#x00026; 0.05{\cos}(0.5t)&#x00026; 0.08{\cos}(0.7t)\end{array}\right]}^{T} {\text{Nm}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq144.gif"/></alternatives></inline-formula>.</p><p id="Par47">In order to calculate the control input, we assumed that there is no misalignment and fault in the actuators which means <inline-formula id="IEq145"><alternatives><tex-math id="d33e1661">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\overline{{\varvec{D}} }$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq61.gif"/></alternatives></inline-formula> and <inline-formula id="IEq146"><alternatives><tex-math id="d33e1667">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\overline{{\varvec{E}} }$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq62.gif"/></alternatives></inline-formula> are equal to identity matrix and <inline-formula id="IEq147"><alternatives><tex-math id="d33e1673">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\overline{{\varvec{J}} }$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq56.gif"/></alternatives></inline-formula> is calculated as below.<disp-formula id="Equ53"><label>53</label><alternatives><tex-math id="d33e1679">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\overline{{\varvec{J}} }=\left[\begin{array}{ccc}{I}_{xx}+{I}_{a}+2{I}_{t}+2m{a}^{2}&#x00026; 0&#x00026; 0\\ 0&#x00026; {I}_{yy}+{I}_{a}+2{I}_{t}+2m{a}^{2}&#x00026; 0\\ 0&#x00026; 0&#x00026; {I}_{zz}+{I}_{a}+2{I}_{t}+2m{a}^{2}\end{array}\right] {\text{kgm}}^{2}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ53.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par48">The controller gains are set as <inline-formula id="IEq148"><alternatives><tex-math id="d33e1687">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{C}}={{\varvec{I}}}_{3}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq148.gif"/></alternatives></inline-formula>, <inline-formula id="IEq149"><alternatives><tex-math id="d33e1693">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{K}}={{\varvec{I}}}_{3}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq149.gif"/></alternatives></inline-formula>, <inline-formula id="IEq150"><alternatives><tex-math id="d33e1699">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$b=2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq150.gif"/></alternatives></inline-formula>, and the boundary layer thickness is considered as <inline-formula id="IEq151"><alternatives><tex-math id="d33e1705">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\varphi =0.01$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq151.gif"/></alternatives></inline-formula>. The adaptation law gains are considered as <inline-formula id="IEq152"><alternatives><tex-math id="d33e1711">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${k}_{0}=40$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq152.gif"/></alternatives></inline-formula>, <inline-formula id="IEq153"><alternatives><tex-math id="d33e1718">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${k}_{1}=20$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq153.gif"/></alternatives></inline-formula>, <inline-formula id="IEq154"><alternatives><tex-math id="d33e1724">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${k}_{2}=20$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq154.gif"/></alternatives></inline-formula>, and the initial values for <inline-formula id="IEq155"><alternatives><tex-math id="d33e1730">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\widehat{d}}_{0}, {\widehat{d}}_{1}, {\widehat{d}}_{2}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq81.gif"/></alternatives></inline-formula> are set as zero. The initial quaternion error for satellite is selected as <inline-formula id="IEq156"><alternatives><tex-math id="d33e1736">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\left[\begin{array}{cc}0.8986&#x00026; 0.4 \end{array} \begin{array}{cc}-0.1&#x00026; 0.15\end{array}\right]}^{T}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq156.gif"/></alternatives></inline-formula>, which the expected attitude is <inline-formula id="IEq157"><alternatives><tex-math id="d33e1742">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\left[\begin{array}{cc}1&#x00026; 0\end{array} \begin{array}{cc}0&#x00026; 0\end{array}\right]^{T}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq157.gif"/></alternatives></inline-formula>. In the following, the desirable angular velocity is <inline-formula id="IEq158"><alternatives><tex-math id="d33e1748">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\varvec{\omega}}}_{{\varvec{d}}}={\left[\begin{array}{ccc}0.1{\cos}(t/40)&#x00026; -0.1{\sin}(t/50)&#x00026; -0.1{\cos}(t/60)\end{array}\right]}^{T} {\text{rad/s}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq158.gif"/></alternatives></inline-formula>. In addition, the initial angular velocity of satellite and the reaction wheels are assumed to be zero.</p><sec id="d33e1754"><title><italic>Remark 3</italic></title><p id="Par49">The saturation constraint of calculated control input is given as <inline-formula id="IEq159"><alternatives><tex-math id="d33e1760">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$Max\left(\left|{\varvec{u}}\right|\right)=0.12 {\text{Nm}}.$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq159.gif"/></alternatives></inline-formula></p><p>Figures&#x000a0;<xref rid="Fig4" ref-type="fig">4</xref> and <xref rid="Fig5" ref-type="fig">5</xref> show the quaternion error and angular velocity error, respectively. As is clear, both the quaternion error and angular velocity error converge to a small set containing the origin, which guarantees that the proposed controller has achieved desirable result. According to Fig.&#x000a0;<xref rid="Fig4" ref-type="fig">4</xref>, it is concluded that satellite quaternion error converges to <inline-formula id="IEq160"><alternatives><tex-math id="d33e1776">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\left[\begin{array}{cc}1&#x00026; 0\end{array} \begin{array}{cc}0&#x00026; 0\end{array}\right]}^{T}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq160.gif"/></alternatives></inline-formula> with 2% settling time of 7 s. Figures&#x000a0;<xref rid="Fig6" ref-type="fig">6</xref> and <xref rid="Fig7" ref-type="fig">7</xref> depict the reaction wheels torque and angular velocity of the reaction wheels under the proposed controller. It can be seen that using a saturation function instead of a sign function is effective in reducing chattering. It is noticeable that the smaller the boundary layer value, the greater the chattering exists in the control input.<fig id="Fig4"><label>Fig. 4</label><caption><p>Quaternion error.</p></caption><graphic xlink:href="41598_2025_98468_Fig4_HTML" id="MO4"/></fig><fig id="Fig5"><label>Fig. 5</label><caption><p>Angular velocity error.</p></caption><graphic xlink:href="41598_2025_98468_Fig5_HTML" id="MO5"/></fig><fig id="Fig6"><label>Fig. 6</label><caption><p>Torque of reaction wheels.</p></caption><graphic xlink:href="41598_2025_98468_Fig6_HTML" id="MO6"/></fig><fig id="Fig7"><label>Fig. 7</label><caption><p>Angular velocity of reaction wheels.</p></caption><graphic xlink:href="41598_2025_98468_Fig7_HTML" id="MO7"/></fig></p><p>So as to verify the functionality of the propounded controller, the satellite is modeled in the MATLAB Multibody environment. Figure&#x000a0;<xref rid="Fig8" ref-type="fig">8</xref> shows details about modeled satellite in Simscape Multybody of MATLAB. In this environment we are able to model our satellite physically and then connect designed controller to that in order to evaluate our controller performance. In Fig.&#x000a0;<xref rid="Fig8" ref-type="fig">8</xref>A the block diagram of a satellite with the controller is depicted. In Fig.&#x000a0;<xref rid="Fig8" ref-type="fig">8</xref>B the graphical representation of satellite in multibody is showed. It can be seen that the satellite with three reaction wheels, which have misalignment, is modeled. At this case, the designed controller is connected to this model to control it ensuring that the satellite follows the desired angular velocity and attitude. Figures&#x000a0;<xref rid="Fig9" ref-type="fig">9</xref> and <xref rid="Fig10" ref-type="fig">10</xref> show the angular velocity and error of angular velocity respectively. The difference between angular velocities of the model in the loop (MIL) system and the satellite modeled in Multibody environment is illustrated in Fig.&#x000a0;<xref rid="Fig11" ref-type="fig">11</xref>. As is clear, the maximum verification error is about 0.004 rad/s. By noticing Figs.&#x000a0;<xref rid="Fig9" ref-type="fig">9</xref> and <xref rid="Fig11" ref-type="fig">11</xref> maximum error in this analysis can be calculated which is less than 4%. Therefore, the proposed controller&#x02019; functionality is successfully verified and satisfies the predefined expectations.<fig id="Fig8"><label>Fig. 8</label><caption><p>MATLAB Simscape Multibody environment. (<bold>A</bold>) Multibody block scheme. (<bold>B</bold>) Graphical representation of satellite in Mutlibody environment.</p></caption><graphic xlink:href="41598_2025_98468_Fig8_HTML" id="MO8"/></fig><fig id="Fig9"><label>Fig. 9</label><caption><p>Satellite angular velocity in Multibody environment.</p></caption><graphic xlink:href="41598_2025_98468_Fig9_HTML" id="MO9"/></fig><fig id="Fig10"><label>Fig. 10</label><caption><p>Angular velocity error in Multibody environment.</p></caption><graphic xlink:href="41598_2025_98468_Fig10_HTML" id="MO10"/></fig><fig id="Fig11"><label>Fig. 11</label><caption><p>Verification error.</p></caption><graphic xlink:href="41598_2025_98468_Fig11_HTML" id="MO11"/></fig></p><p>For further examination of the satellite performance with proposed controller, at the first step, we simulate our model with more severe condition on inertia matrix uncertainty. Therefore, we consider satellite inertia matrix as (54) and introduce 50% uncertainty in satellite inertia. Other parameters and conditions remain as before. The purpose of simulating the model at this situation is to evaluate the controller&#x02019;s capability in handling such a high inertia uncertainty. The simulated results are depicted in Figs.&#x000a0;<xref rid="Fig12" ref-type="fig">12</xref> and <xref rid="Fig13" ref-type="fig">13</xref>. As it is clear the quaternion error and angular velocity error of the satellite is in acceptable region but we can see high chattering in torques of reaction wheels. As shown in Fig.&#x000a0;<xref rid="Fig14" ref-type="fig">14</xref>, saturation constraint in the torque of reaction wheels can be observed either.<fig id="Fig12"><label>Fig. 12</label><caption><p>Quaternion error with 50% inertia uncertainty.</p></caption><graphic xlink:href="41598_2025_98468_Fig12_HTML" id="MO12"/></fig><fig id="Fig13"><label>Fig. 13</label><caption><p>Angular velocity error under 50% inertia uncertainty.</p></caption><graphic xlink:href="41598_2025_98468_Fig13_HTML" id="MO13"/></fig><fig id="Fig14"><label>Fig. 14</label><caption><p>Reaction wheels torque generation under 50% inertia uncertainty.</p></caption><graphic xlink:href="41598_2025_98468_Fig14_HTML" id="MO14"/></fig><disp-formula id="Equ54"><label>54</label><alternatives><tex-math id="d33e1911">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{J}}=\left[\begin{array}{ccc}0.2&#x00026; 0.01&#x00026; 0.03\\ 0.01&#x00026; 0.3&#x00026; 0.05\\ 0.03&#x00026; 0.05&#x00026; 0.4\end{array}\right] {\text{kgm}}^{2}$$\end{document}</tex-math><graphic xlink:href="41598_2025_98468_Article_Equ54.gif" position="anchor"/></alternatives></disp-formula></p><p>In the second step we aim to evaluate the performance of the system with different misalignments. We assume that <inline-formula id="IEq164"><alternatives><tex-math id="d33e1919">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\alpha }_{i}, {\beta }_{i} (i={1,2},3)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq164.gif"/></alternatives></inline-formula> are same and simulate our satellite with misalignment values of 5&#x000b0;, 25&#x000b0; and 45&#x000b0; respectively. The angular velocity error at this case is depicted in Fig.&#x000a0;<xref rid="Fig15" ref-type="fig">15</xref>. It can be mentioned that by increasing misalignment angle, X component of angular velocity error increases. The other components of angular velocity error are approximately near each other. By noticing the reaction wheels torque in Fig.&#x000a0;<xref rid="Fig16" ref-type="fig">16</xref>, we can express that by increasing misalignment angle, torque of first reaction wheel increases while third reaction wheel torque decreases. Moreover, second reaction wheel torque exhibits variable behavior. It should be announced that by increasing misalignment angle over 45&#x000b0; reaction wheels saturate and controller can&#x02019;t fulfil our expectations. The maximum torque of each reaction wheel at different misalignment angle is pointed out in Table <xref rid="Tab3" ref-type="table">3</xref>.<fig id="Fig15"><label>Fig. 15</label><caption><p>Angular velocity error with different misalignments.</p></caption><graphic xlink:href="41598_2025_98468_Fig15_HTML" id="MO15"/></fig><fig id="Fig16"><label>Fig. 16</label><caption><p>Reaction wheels torque with different misalignments.</p></caption><graphic xlink:href="41598_2025_98468_Fig16_HTML" id="MO16"/></fig><table-wrap id="Tab3"><label>Table 3</label><caption><p>Maximum torque for each misalignment angle.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left" rowspan="2">Misalignment (&#x000b0;)</th><th align="left" colspan="3">Maximum torque (Nm)</th></tr><tr><th align="left"><italic>T</italic><sub>1</sub></th><th align="left"><italic>T</italic><sub>2</sub></th><th align="left"><italic>T</italic><sub>3</sub></th></tr></thead><tbody><tr><td align="left">5</td><td char="." align="char">0.12</td><td char="." align="char">0.1063</td><td char="." align="char">0.12</td></tr><tr><td align="left">25</td><td char="." align="char">0.12</td><td char="." align="char">0.0859</td><td char="." align="char">0.12</td></tr><tr><td align="left">45</td><td char="." align="char">0.12</td><td char="." align="char">0.0887</td><td char="." align="char">0.12</td></tr></tbody></table></table-wrap></p><p>In third step, evaluation of system with different faults is in consideration. We assume three different effectiveness matrices: <inline-formula id="IEq186"><alternatives><tex-math id="d33e2012">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$0.8{I}_{3}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq186.gif"/></alternatives></inline-formula>, <inline-formula id="IEq187"><alternatives><tex-math id="d33e2018">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$0.6{I}_{3}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq187.gif"/></alternatives></inline-formula> and <inline-formula id="IEq188"><alternatives><tex-math id="d33e2024">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$0.4{I}_{3}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq188.gif"/></alternatives></inline-formula>. By the way, we consider that fault occurs between 20&#x000a0;s and 50 s of simulation. The results of the system simulation in this case are demonstrated in Fig.&#x000a0;<xref rid="Fig17" ref-type="fig">17</xref>. It is evident that by decreasing effectiveness matrix diagonal values, overall angular velocity error increases either. Figure&#x000a0;<xref rid="Fig18" ref-type="fig">18</xref> shows the reaction wheels torque for each effectiveness matrix value. According to Fig.&#x000a0;<xref rid="Fig18" ref-type="fig">18</xref> we can observe that decreasing values of effectiveness matrix cause higher peaks in start and end points of fault time happening. Moreover, the maximum torque of the reaction wheels in each situation is declared in Table <xref rid="Tab4" ref-type="table">4</xref>.<fig id="Fig17"><label>Fig. 17</label><caption><p>Angular velocity error with different faults.</p></caption><graphic xlink:href="41598_2025_98468_Fig17_HTML" id="MO17"/></fig><fig id="Fig18"><label>Fig. 18</label><caption><p>Reaction wheels torque with different faults.</p></caption><graphic xlink:href="41598_2025_98468_Fig18_HTML" id="MO18"/></fig><table-wrap id="Tab4"><label>Table 4</label><caption><p>Maximum torque for each fault percentage.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left" rowspan="2">Fault (%)</th><th align="left" colspan="3">Maximum torque (Nm)</th></tr><tr><th align="left"><italic>T</italic><sub>1</sub></th><th align="left"><italic>T</italic><sub>2</sub></th><th align="left"><italic>T</italic><sub>3</sub></th></tr></thead><tbody><tr><td align="left">80</td><td char="." align="char">0.12</td><td char="." align="char">0.0878</td><td char="." align="char">0.12</td></tr><tr><td align="left">60</td><td char="." align="char">0.12</td><td char="." align="char">0.0906</td><td char="." align="char">0.12</td></tr><tr><td align="left">40</td><td char="." align="char">0.12</td><td char="." align="char">0.12</td><td char="." align="char">0.12</td></tr></tbody></table></table-wrap></p></sec></sec><sec id="Sec10"><title>Conclusion</title><p id="Par55">This paper proposes an adaptive sliding mode controller for the satellite attitude tracking with environmental disturbances. The designed controller can handle the satellite inertia matrix uncertainty, the actuator faults, and the reaction wheel misalignment. A key strength of the proposed controller is that it does not require knowledge of the upper bound values of uncertainties or environmental disturbances to generate the control input. For the defined problem, sliding surfaces were introduced, and the globally asymptotic stability of the entire system was demonstrated using the Lyapunov method. The controller successfully stabilized the tracking errors within a vicinity of the origin. The effectiveness and robustness of the proposed controller were demonstrated through simulation results, which highlighted the merits of the designed scheme. The simulation results showed that the quaternion error converges to <inline-formula id="IEq206"><alternatives><tex-math id="d33e2121">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\left[\begin{array}{cc}1&#x00026; 0\end{array} \begin{array}{cc}0&#x00026; 0\end{array}\right]}^{T}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_98468_Article_IEq160.gif"/></alternatives></inline-formula> with 2% settling time of 7 s and a saturation constraint of 0.12 Nm. Furthermore, to verify the controller&#x02019;s performance, the system was modeled in MATLAB Multibody and integrated with the designed controller. The maximum verification error for the angular velocity errors was approximately 0.004 rad/s which was less than 4%.</p></sec></body><back><fn-group><fn><p><bold>Publisher&#x02019;s Note</bold></p><p>Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></fn></fn-group><notes notes-type="author-contribution"><title>Author contributions</title><p>Paper theoretical aspects including problem formulation, simulation and typing is responsibility of the M.H. Overall research concept with reviewing the paper is carried out by R.N and M.K. All authors reviewed the manuscript.</p></notes><notes notes-type="data-availability"><title>Data availability</title><p>The datasets used during the current study are available from the corresponding author on reasonable request.</p></notes><notes><title>Declarations</title><notes id="FPar1" notes-type="COI-statement"><title>Competing interests</title><p id="Par56">The authors declare no competing interests.</p></notes></notes><ref-list id="Bib1"><title>References</title><ref id="CR1"><label>1.</label><citation-alternatives><element-citation id="ec-CR1" publication-type="journal"><person-group person-group-type="author"><name><surname>Kasiri</surname><given-names>A</given-names></name><name><surname>FaniSaberi</surname><given-names>F</given-names></name></person-group><article-title>Coupled position and attitude control of a servicer spacecraft in rendezvous with an orbiting target</article-title><source>Sci. Rep.</source><year>2023</year><pub-id pub-id-type="doi">10.1038/s41598-023-30687-9</pub-id><pub-id pub-id-type="pmid">36918585</pub-id>
+</element-citation><mixed-citation id="mc-CR1" publication-type="journal">Kasiri, A. &#x00026; FaniSaberi, F. Coupled position and attitude control of a servicer spacecraft in rendezvous with an orbiting target. <italic>Sci. Rep.</italic>10.1038/s41598-023-30687-9 (2023).<pub-id pub-id-type="pmid">36918585</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR2"><label>2.</label><citation-alternatives><element-citation id="ec-CR2" publication-type="journal"><person-group person-group-type="author"><name><surname>Cong</surname><given-names>B</given-names></name><name><surname>Chen</surname><given-names>Z</given-names></name><name><surname>Liu</surname><given-names>X</given-names></name></person-group><article-title>Improved adaptive sliding mode control for rigid spacecraft attitude tracking</article-title><source>J. Aerosp. Eng.</source><year>2014</year><pub-id pub-id-type="doi">10.1061/(ASCE)AS.1943-5525.0000281</pub-id></element-citation><mixed-citation id="mc-CR2" publication-type="journal">Cong, B., Chen, Z. &#x00026; Liu, X. Improved adaptive sliding mode control for rigid spacecraft attitude tracking. <italic>J. Aerosp. Eng.</italic>10.1061/(ASCE)AS.1943-5525.0000281 (2014).</mixed-citation></citation-alternatives></ref><ref id="CR3"><label>3.</label><citation-alternatives><element-citation id="ec-CR3" publication-type="journal"><person-group person-group-type="author"><name><surname>Jingrui</surname><given-names>Z</given-names></name><name><surname>Jin</surname><given-names>J</given-names></name><name><surname>Zaozhen</surname><given-names>L</given-names></name></person-group><article-title>Adaptive spacecraft attitude tracking and parameter estimation with actuator uncertainties</article-title><source>J. Aerosp. Eng.</source><year>2014</year><pub-id pub-id-type="doi">10.1061/(ASCE)AS.1943-5525.0000317</pub-id></element-citation><mixed-citation id="mc-CR3" publication-type="journal">Jingrui, Z., Jin, J. &#x00026; Zaozhen, L. Adaptive spacecraft attitude tracking and parameter estimation with actuator uncertainties. <italic>J. Aerosp. Eng.</italic>10.1061/(ASCE)AS.1943-5525.0000317 (2014).</mixed-citation></citation-alternatives></ref><ref id="CR4"><label>4.</label><citation-alternatives><element-citation id="ec-CR4" publication-type="journal"><person-group person-group-type="author"><name><surname>Hu</surname><given-names>Q</given-names></name><name><surname>Li</surname><given-names>B</given-names></name><name><surname>Huo</surname><given-names>X</given-names></name><name><surname>Shi</surname><given-names>Z</given-names></name></person-group><article-title>Spacecraft attitude tracking control under actuator magnitude deviation and misalignment</article-title><source>Aerosp. Sci. Technol.</source><year>2013</year><volume>28</volume><fpage>266</fpage><lpage>280</lpage><pub-id pub-id-type="doi">10.1016/j.ast.2012.11.007</pub-id></element-citation><mixed-citation id="mc-CR4" publication-type="journal">Hu, Q., Li, B., Huo, X. &#x00026; Shi, Z. Spacecraft attitude tracking control under actuator magnitude deviation and misalignment. <italic>Aerosp. Sci. Technol.</italic><bold>28</bold>, 266&#x02013;280. 10.1016/j.ast.2012.11.007 (2013).</mixed-citation></citation-alternatives></ref><ref id="CR5"><label>5.</label><citation-alternatives><element-citation id="ec-CR5" publication-type="journal"><person-group person-group-type="author"><name><surname>Gui</surname><given-names>H</given-names></name><name><surname>Vukovich</surname><given-names>G</given-names></name></person-group><article-title>Adaptive integral sliding mode control for spacecraft attitude tracking with actuator uncertainty</article-title><source>J. Frankl. Inst.</source><year>2015</year><volume>352</volume><fpage>5832</fpage><lpage>5852</lpage><pub-id pub-id-type="doi">10.1016/j.jfranklin.2015.10.001</pub-id></element-citation><mixed-citation id="mc-CR5" publication-type="journal">Gui, H. &#x00026; Vukovich, G. Adaptive integral sliding mode control for spacecraft attitude tracking with actuator uncertainty. <italic>J. Frankl. Inst.</italic><bold>352</bold>, 5832&#x02013;5852. 10.1016/j.jfranklin.2015.10.001 (2015).</mixed-citation></citation-alternatives></ref><ref id="CR6"><label>6.</label><citation-alternatives><element-citation id="ec-CR6" publication-type="journal"><person-group person-group-type="author"><name><surname>Gui</surname><given-names>H</given-names></name><name><surname>De Ruiter</surname><given-names>AHJ</given-names></name></person-group><article-title>Adaptive fault-tolerant spacecraft pose tracking with control allocation</article-title><source>IEEE Trans. Control Syst. Technol.</source><year>2019</year><volume>27</volume><fpage>479</fpage><lpage>494</lpage><pub-id pub-id-type="doi">10.1109/TCST.2017.2771374</pub-id></element-citation><mixed-citation id="mc-CR6" publication-type="journal">Gui, H. &#x00026; De Ruiter, A. H. J. Adaptive fault-tolerant spacecraft pose tracking with control allocation. <italic>IEEE Trans. Control Syst. Technol.</italic><bold>27</bold>, 479&#x02013;494. 10.1109/TCST.2017.2771374 (2019).</mixed-citation></citation-alternatives></ref><ref id="CR7"><label>7.</label><citation-alternatives><element-citation id="ec-CR7" publication-type="journal"><person-group person-group-type="author"><name><surname>Shen</surname><given-names>Q</given-names></name><name><surname>Wang</surname><given-names>D</given-names></name><name><surname>Zhu</surname><given-names>S</given-names></name><name><surname>Poh</surname><given-names>EK</given-names></name></person-group><article-title>Inertia-free fault-tolerant spacecraft attitude tracking using control allocation</article-title><source>Automatica</source><year>2015</year><volume>62</volume><fpage>114</fpage><lpage>121</lpage><pub-id pub-id-type="doi">10.1016/j.automatica.2015.09.027</pub-id></element-citation><mixed-citation id="mc-CR7" publication-type="journal">Shen, Q., Wang, D., Zhu, S. &#x00026; Poh, E. K. Inertia-free fault-tolerant spacecraft attitude tracking using control allocation. <italic>Automatica</italic><bold>62</bold>, 114&#x02013;121. 10.1016/j.automatica.2015.09.027 (2015).</mixed-citation></citation-alternatives></ref><ref id="CR8"><label>8.</label><citation-alternatives><element-citation id="ec-CR8" publication-type="journal"><person-group person-group-type="author"><name><surname>Shen</surname><given-names>Q</given-names></name><name><surname>Yue</surname><given-names>C</given-names></name><name><surname>Goh</surname><given-names>CH</given-names></name><name><surname>Wang</surname><given-names>D</given-names></name></person-group><article-title>Active fault-tolerant control system design for spacecraft attitude maneuvers with actuator saturation and faults</article-title><source>IEEE Trans. Ind. Electron.</source><year>2019</year><volume>66</volume><fpage>3763</fpage><lpage>3772</lpage><pub-id pub-id-type="doi">10.1109/TIE.2018.2854602</pub-id></element-citation><mixed-citation id="mc-CR8" publication-type="journal">Shen, Q., Yue, C., Goh, C. H. &#x00026; Wang, D. Active fault-tolerant control system design for spacecraft attitude maneuvers with actuator saturation and faults. <italic>IEEE Trans. Ind. Electron.</italic><bold>66</bold>, 3763&#x02013;3772. 10.1109/TIE.2018.2854602 (2019).</mixed-citation></citation-alternatives></ref><ref id="CR9"><label>9.</label><citation-alternatives><element-citation id="ec-CR9" publication-type="journal"><person-group person-group-type="author"><name><surname>Yue</surname><given-names>C</given-names></name><name><surname>Wang</surname><given-names>F</given-names></name><name><surname>Cao</surname><given-names>X</given-names></name><name><surname>Shen</surname><given-names>Q</given-names></name><name><surname>Chen</surname><given-names>X</given-names></name></person-group><article-title>Robust fault-tolerant attitude tracking with guaranteed prescribed performance</article-title><source>J. Frankl. Inst.</source><year>2020</year><volume>357</volume><fpage>229</fpage><lpage>253</lpage><pub-id pub-id-type="doi">10.1016/j.jfranklin.2019.10.003</pub-id></element-citation><mixed-citation id="mc-CR9" publication-type="journal">Yue, C., Wang, F., Cao, X., Shen, Q. &#x00026; Chen, X. Robust fault-tolerant attitude tracking with guaranteed prescribed performance. <italic>J. Frankl. Inst.</italic><bold>357</bold>, 229&#x02013;253. 10.1016/j.jfranklin.2019.10.003 (2020).</mixed-citation></citation-alternatives></ref><ref id="CR10"><label>10.</label><citation-alternatives><element-citation id="ec-CR10" publication-type="journal"><person-group person-group-type="author"><name><surname>Nadafi</surname><given-names>R</given-names></name><name><surname>Kabganian</surname><given-names>M</given-names></name></person-group><article-title>Robust backstepping attitude tracking control of an underactuated spacecraft with saturation and time-variant perturbations</article-title><source>Proc. Inst. Mech. Eng. G J. Aerosp. Eng.</source><year>2022</year><volume>236</volume><fpage>502</fpage><lpage>516</lpage><pub-id pub-id-type="doi">10.1177/09544100211015938</pub-id></element-citation><mixed-citation id="mc-CR10" publication-type="journal">Nadafi, R. &#x00026; Kabganian, M. Robust backstepping attitude tracking control of an underactuated spacecraft with saturation and time-variant perturbations. <italic>Proc. Inst. Mech. Eng. G J. Aerosp. Eng.</italic><bold>236</bold>, 502&#x02013;516. 10.1177/09544100211015938 (2022).</mixed-citation></citation-alternatives></ref><ref id="CR11"><label>11.</label><citation-alternatives><element-citation id="ec-CR11" publication-type="journal"><person-group person-group-type="author"><name><surname>Nadafi</surname><given-names>R</given-names></name><name><surname>Kabganian</surname><given-names>M</given-names></name></person-group><article-title>Robust nonlinear attitude tracking control of an underactuated spacecraft under saturation and time-varying uncertainties</article-title><source>Eur. J. Control</source><year>2022</year><volume>63</volume><fpage>133</fpage><lpage>142</lpage><pub-id pub-id-type="doi">10.1016/j.ejcon.2021.09.003</pub-id></element-citation><mixed-citation id="mc-CR11" publication-type="journal">Nadafi, R. &#x00026; Kabganian, M. Robust nonlinear attitude tracking control of an underactuated spacecraft under saturation and time-varying uncertainties. <italic>Eur. J. Control</italic><bold>63</bold>, 133&#x02013;142. 10.1016/j.ejcon.2021.09.003 (2022).</mixed-citation></citation-alternatives></ref><ref id="CR12"><label>12.</label><citation-alternatives><element-citation id="ec-CR12" publication-type="journal"><person-group person-group-type="author"><name><surname>Yang</surname><given-names>H</given-names></name><name><surname>Hu</surname><given-names>Q</given-names></name><name><surname>Dong</surname><given-names>H</given-names></name><name><surname>Zhao</surname><given-names>X</given-names></name></person-group><article-title>ADP-based spacecraft attitude control under actuator misalignment and pointing constraints</article-title><source>IEEE Trans. Ind. Electron.</source><year>2022</year><volume>69</volume><fpage>9342</fpage><lpage>9352</lpage><pub-id pub-id-type="doi">10.1109/TIE.2021.3116571</pub-id></element-citation><mixed-citation id="mc-CR12" publication-type="journal">Yang, H., Hu, Q., Dong, H. &#x00026; Zhao, X. ADP-based spacecraft attitude control under actuator misalignment and pointing constraints. <italic>IEEE Trans. Ind. Electron.</italic><bold>69</bold>, 9342&#x02013;9352. 10.1109/TIE.2021.3116571 (2022).</mixed-citation></citation-alternatives></ref><ref id="CR13"><label>13.</label><citation-alternatives><element-citation id="ec-CR13" publication-type="journal"><person-group person-group-type="author"><name><surname>Su</surname><given-names>Y</given-names></name><name><surname>Shen</surname><given-names>S</given-names></name></person-group><article-title>Adaptive predefined-time fault-tolerant attitude tracking control for rigid spacecraft with guaranteed performance</article-title><source>Acta Astronaut.</source><year>2024</year><volume>214</volume><fpage>677</fpage><lpage>688</lpage><pub-id pub-id-type="doi">10.1016/j.actaastro.2023.11.015</pub-id></element-citation><mixed-citation id="mc-CR13" publication-type="journal">Su, Y. &#x00026; Shen, S. Adaptive predefined-time fault-tolerant attitude tracking control for rigid spacecraft with guaranteed performance. <italic>Acta Astronaut.</italic><bold>214</bold>, 677&#x02013;688. 10.1016/j.actaastro.2023.11.015 (2024).</mixed-citation></citation-alternatives></ref><ref id="CR14"><label>14.</label><citation-alternatives><element-citation id="ec-CR14" publication-type="journal"><person-group person-group-type="author"><name><surname>Chen</surname><given-names>W</given-names></name><name><surname>Hu</surname><given-names>Q</given-names></name></person-group><article-title>Sliding-mode-based attitude tracking control of spacecraft under reaction wheel uncertainties</article-title><source>IEEE/CAA J. Automat. Sin.</source><year>2023</year><volume>10</volume><fpage>1475</fpage><lpage>1487</lpage><pub-id pub-id-type="doi">10.1109/JAS.2022.105665</pub-id></element-citation><mixed-citation id="mc-CR14" publication-type="journal">Chen, W. &#x00026; Hu, Q. Sliding-mode-based attitude tracking control of spacecraft under reaction wheel uncertainties. <italic>IEEE/CAA J. Automat. Sin.</italic><bold>10</bold>, 1475&#x02013;1487. 10.1109/JAS.2022.105665 (2023).</mixed-citation></citation-alternatives></ref><ref id="CR15"><label>15.</label><citation-alternatives><element-citation id="ec-CR15" publication-type="journal"><person-group person-group-type="author"><name><surname>Zarourati</surname><given-names>M</given-names></name><name><surname>Mirshams</surname><given-names>M</given-names></name><name><surname>Tayefi</surname><given-names>M</given-names></name></person-group><article-title>Designing an adaptive robust observer for underactuation fault diagnosis of a remote sensing satellite</article-title><source>Int. J. Adapt. Control Signal Process.</source><year>2023</year><volume>37</volume><fpage>2812</fpage><lpage>2834</lpage><pub-id pub-id-type="doi">10.1002/acs.3661</pub-id></element-citation><mixed-citation id="mc-CR15" publication-type="journal">Zarourati, M., Mirshams, M. &#x00026; Tayefi, M. Designing an adaptive robust observer for underactuation fault diagnosis of a remote sensing satellite. <italic>Int. J. Adapt. Control Signal Process.</italic><bold>37</bold>, 2812&#x02013;2834. 10.1002/acs.3661 (2023).</mixed-citation></citation-alternatives></ref><ref id="CR16"><label>16.</label><citation-alternatives><element-citation id="ec-CR16" publication-type="journal"><person-group person-group-type="author"><name><surname>Zarourati</surname><given-names>M</given-names></name><name><surname>Mirshams</surname><given-names>M</given-names></name><name><surname>Tayefi</surname><given-names>M</given-names></name></person-group><article-title>Active underactuation fault-tolerant backstepping attitude tracking control of a satellite with interval error constraints</article-title><source>Adv. Control Appl. Eng. Ind. Syst.</source><year>2024</year><pub-id pub-id-type="doi">10.1002/adc2.215</pub-id></element-citation><mixed-citation id="mc-CR16" publication-type="journal">Zarourati, M., Mirshams, M. &#x00026; Tayefi, M. Active underactuation fault-tolerant backstepping attitude tracking control of a satellite with interval error constraints. <italic>Adv. Control Appl. Eng. Ind. Syst.</italic>10.1002/adc2.215 (2024).</mixed-citation></citation-alternatives></ref><ref id="CR17"><label>17.</label><citation-alternatives><element-citation id="ec-CR17" publication-type="journal"><person-group person-group-type="author"><name><surname>Jia</surname><given-names>Q</given-names></name><name><surname>Li</surname><given-names>G</given-names></name><name><surname>Yu</surname><given-names>D</given-names></name><name><surname>Ahn</surname><given-names>CK</given-names></name><name><surname>Zhang</surname><given-names>C</given-names></name></person-group><article-title>Learning Chebyshev neural network-based spacecraft attitude tracking control ensuring finite-time prescribed performance</article-title><source>Aerosp. Sci. Technol.</source><year>2024</year><volume>148</volume><fpage>109085</fpage><pub-id pub-id-type="doi">10.1016/j.ast.2024.109085</pub-id></element-citation><mixed-citation id="mc-CR17" publication-type="journal">Jia, Q., Li, G., Yu, D., Ahn, C. K. &#x00026; Zhang, C. Learning Chebyshev neural network-based spacecraft attitude tracking control ensuring finite-time prescribed performance. <italic>Aerosp. Sci. Technol.</italic><bold>148</bold>, 109085. 10.1016/j.ast.2024.109085 (2024).</mixed-citation></citation-alternatives></ref><ref id="CR18"><label>18.</label><citation-alternatives><element-citation id="ec-CR18" publication-type="journal"><person-group person-group-type="author"><name><surname>Zhao</surname><given-names>L</given-names></name><name><surname>Yu</surname><given-names>J</given-names></name><name><surname>Chen</surname><given-names>X</given-names></name></person-group><article-title>Neural-network-based adaptive finite-time output feedback control for spacecraft attitude tracking</article-title><source>IEEE Trans. Neural Netw. Learn. Syst.</source><year>2023</year><volume>34</volume><fpage>8116</fpage><lpage>8123</lpage><pub-id pub-id-type="doi">10.1109/TNNLS.2022.3144493</pub-id><pub-id pub-id-type="pmid">35108211</pub-id>
+</element-citation><mixed-citation id="mc-CR18" publication-type="journal">Zhao, L., Yu, J. &#x00026; Chen, X. Neural-network-based adaptive finite-time output feedback control for spacecraft attitude tracking. <italic>IEEE Trans. Neural Netw. Learn. Syst.</italic><bold>34</bold>, 8116&#x02013;8123. 10.1109/TNNLS.2022.3144493 (2023).<pub-id pub-id-type="pmid">35108211</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR19"><label>19.</label><citation-alternatives><element-citation id="ec-CR19" publication-type="journal"><person-group person-group-type="author"><name><surname>Fazlyab</surname><given-names>AR</given-names></name><name><surname>Fani Saberi</surname><given-names>F</given-names></name><name><surname>Kabganian</surname><given-names>M</given-names></name></person-group><article-title>Fault-tolerant attitude control of the satellite in the presence of simultaneous actuator and sensor faults</article-title><source>Sci. Rep.</source><year>2023</year><pub-id pub-id-type="doi">10.1038/s41598-023-48243-w</pub-id><pub-id pub-id-type="pmid">38012278</pub-id>
+</element-citation><mixed-citation id="mc-CR19" publication-type="journal">Fazlyab, A. R., Fani Saberi, F. &#x00026; Kabganian, M. Fault-tolerant attitude control of the satellite in the presence of simultaneous actuator and sensor faults. <italic>Sci. Rep.</italic>10.1038/s41598-023-48243-w (2023).<pub-id pub-id-type="pmid">38012278</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR20"><label>20.</label><citation-alternatives><element-citation id="ec-CR20" publication-type="book"><person-group person-group-type="author"><name><surname>Sidi</surname><given-names>MJ</given-names></name></person-group><source>Spacecraft Dynamics and Control</source><year>1997</year><publisher-loc>Cambridge</publisher-loc><publisher-name>Cambridge University Press</publisher-name></element-citation><mixed-citation id="mc-CR20" publication-type="book">Sidi, M. J. <italic>Spacecraft Dynamics and Control</italic> (Cambridge University Press, Cambridge, 1997).</mixed-citation></citation-alternatives></ref><ref id="CR21"><label>21.</label><citation-alternatives><element-citation id="ec-CR21" publication-type="journal"><person-group person-group-type="author"><name><surname>Ahmed</surname><given-names>J</given-names></name><name><surname>Coppola</surname><given-names>VT</given-names></name><name><surname>Bernstein</surname><given-names>DS</given-names></name></person-group><article-title>Adaptive asymptotic tracking of spacecraft attitude motion with inertia matrix identification</article-title><source>J. Guid. Control. Dyn.</source><year>1998</year><volume>21</volume><fpage>684</fpage><lpage>691</lpage><pub-id pub-id-type="doi">10.2514/2.4310</pub-id></element-citation><mixed-citation id="mc-CR21" publication-type="journal">Ahmed, J., Coppola, V. T. &#x00026; Bernstein, D. S. Adaptive asymptotic tracking of spacecraft attitude motion with inertia matrix identification. <italic>J. Guid. Control. Dyn.</italic><bold>21</bold>, 684&#x02013;691. 10.2514/2.4310 (1998).</mixed-citation></citation-alternatives></ref><ref id="CR22"><label>22.</label><citation-alternatives><element-citation id="ec-CR22" publication-type="journal"><person-group person-group-type="author"><name><surname>Javaid</surname><given-names>U</given-names></name><name><surname>Dong</surname><given-names>H</given-names></name><name><surname>Ijaz</surname><given-names>S</given-names></name><name><surname>Alkarkhi</surname><given-names>T</given-names></name><name><surname>Haque</surname><given-names>M</given-names></name></person-group><article-title>High-performance adaptive attitude control of spacecraft with sliding mode disturbance observer</article-title><source>IEEE Access</source><year>2022</year><volume>10</volume><fpage>41990</fpage><lpage>41999</lpage><pub-id pub-id-type="doi">10.1109/ACCESS.2022.3168600</pub-id></element-citation><mixed-citation id="mc-CR22" publication-type="journal">Javaid, U., Dong, H., Ijaz, S., Alkarkhi, T. &#x00026; Haque, M. High-performance adaptive attitude control of spacecraft with sliding mode disturbance observer. <italic>IEEE Access</italic><bold>10</bold>, 41990&#x02013;41999. 10.1109/ACCESS.2022.3168600 (2022).</mixed-citation></citation-alternatives></ref><ref id="CR23"><label>23.</label><citation-alternatives><element-citation id="ec-CR23" publication-type="journal"><person-group person-group-type="author"><name><surname>Cai</surname><given-names>W</given-names></name><name><surname>Liao</surname><given-names>XH</given-names></name><name><surname>Song</surname><given-names>YD</given-names></name></person-group><article-title>Indirect robust adaptive fault-tolerant control for attitude tracking of spacecraft</article-title><source>J. Guid. Control. Dyn.</source><year>2008</year><volume>31</volume><fpage>1456</fpage><lpage>1463</lpage><pub-id pub-id-type="doi">10.2514/1.31158</pub-id></element-citation><mixed-citation id="mc-CR23" publication-type="journal">Cai, W., Liao, X. H. &#x00026; Song, Y. D. Indirect robust adaptive fault-tolerant control for attitude tracking of spacecraft. <italic>J. Guid. Control. Dyn.</italic><bold>31</bold>, 1456&#x02013;1463. 10.2514/1.31158 (2008).</mixed-citation></citation-alternatives></ref><ref id="CR24"><label>24.</label><citation-alternatives><element-citation id="ec-CR24" publication-type="book"><person-group person-group-type="author"><name><surname>Wertz</surname><given-names>JR</given-names></name></person-group><source>Spacecraft Attitude Determination and Control</source><year>1995</year><publisher-name>Kluwer</publisher-name></element-citation><mixed-citation id="mc-CR24" publication-type="book">Wertz, J. R. <italic>Spacecraft Attitude Determination and Control</italic> (Kluwer, 1995).</mixed-citation></citation-alternatives></ref><ref id="CR25"><label>25.</label><citation-alternatives><element-citation id="ec-CR25" publication-type="book"><person-group person-group-type="author"><name><surname>Wang</surname><given-names>D</given-names></name><name><surname>Wu</surname><given-names>B</given-names></name><name><surname>Poh</surname><given-names>EK</given-names></name></person-group><source>Satellite Formation Flying</source><year>2017</year><publisher-name>Springer Singapore</publisher-name></element-citation><mixed-citation id="mc-CR25" publication-type="book">Wang, D., Wu, B. &#x00026; Poh, E. K. <italic>Satellite Formation Flying</italic> Vol. 87 (Springer Singapore, 2017).</mixed-citation></citation-alternatives></ref><ref id="CR26"><label>26.</label><citation-alternatives><element-citation id="ec-CR26" publication-type="book"><person-group person-group-type="author"><name><surname>Slotine</surname><given-names>J-JE</given-names></name><name><surname>Li</surname><given-names>W</given-names></name></person-group><source>Applied Nonlinear Control</source><year>2005</year><publisher-name>Prentice Education Taiwan Ltd.</publisher-name></element-citation><mixed-citation id="mc-CR26" publication-type="book">Slotine, J.-J.E. &#x00026; Li, W. <italic>Applied Nonlinear Control</italic> (Prentice Education Taiwan Ltd., 2005).</mixed-citation></citation-alternatives></ref><ref id="CR27"><label>27.</label><citation-alternatives><element-citation id="ec-CR27" publication-type="journal"><person-group person-group-type="author"><name><surname>Slotine</surname><given-names>JJE</given-names></name><name><surname>Coetsee</surname><given-names>JA</given-names></name></person-group><article-title>Adaptive sliding controller synthesis for non-linear systems</article-title><source>Int. J. Control</source><year>1986</year><volume>43</volume><fpage>1631</fpage><lpage>1651</lpage><pub-id pub-id-type="doi">10.1080/00207178608933564</pub-id></element-citation><mixed-citation id="mc-CR27" publication-type="journal">Slotine, J. J. E. &#x00026; Coetsee, J. A. Adaptive sliding controller synthesis for non-linear systems. <italic>Int. J. Control</italic><bold>43</bold>, 1631&#x02013;1651. 10.1080/00207178608933564 (1986).</mixed-citation></citation-alternatives></ref></ref-list></back></article>

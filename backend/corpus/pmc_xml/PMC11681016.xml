@@ -1,0 +1,1023 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Sci Rep</journal-id><journal-id journal-id-type="iso-abbrev">Sci Rep</journal-id><journal-title-group><journal-title>Scientific Reports</journal-title></journal-title-group><issn pub-type="epub">2045-2322</issn><publisher><publisher-name>Nature Publishing Group UK</publisher-name><publisher-loc>London</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">39730370</article-id><article-id pub-id-type="pmc">PMC11681016</article-id><article-id pub-id-type="publisher-id">75928</article-id><article-id pub-id-type="doi">10.1038/s41598-024-75928-7</article-id><article-categories><subj-group subj-group-type="heading"><subject>Article</subject></subj-group></article-categories><title-group><article-title>Uncovering the impact of outliers on clusters&#x02019; evolution in temporal data-sets: an empirical analysis</article-title></title-group><contrib-group><contrib contrib-type="author"><name><surname>Atif</surname><given-names>Muhammad</given-names></name><xref ref-type="aff" rid="Aff1">1</xref></contrib><contrib contrib-type="author"><name><surname>Farooq</surname><given-names>Muhammad</given-names></name><xref ref-type="aff" rid="Aff1">1</xref></contrib><contrib contrib-type="author"><name><surname>Shafiq</surname><given-names>Muhammad</given-names></name><xref ref-type="aff" rid="Aff2">2</xref></contrib><contrib contrib-type="author" corresp="yes"><contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-0776-2652</contrib-id><name><surname>Alballa</surname><given-names>Tmader</given-names></name><address><email>tsalballa@pnu.edu.sa</email></address><xref ref-type="aff" rid="Aff3">3</xref></contrib><contrib contrib-type="author"><name><surname>Abdualziz Alhabeeb</surname><given-names>Somayah</given-names></name><xref ref-type="aff" rid="Aff4">4</xref></contrib><contrib contrib-type="author"><name><surname>Abd El-Wahed Khalifa</surname><given-names>Hamide</given-names></name><xref ref-type="aff" rid="Aff4">4</xref><xref ref-type="aff" rid="Aff5">5</xref></contrib><aff id="Aff1"><label>1</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/02t2qwf81</institution-id><institution-id institution-id-type="GRID">grid.266976.a</institution-id><institution-id institution-id-type="ISNI">0000 0001 1882 0101</institution-id><institution>Department of Statistics, </institution><institution>University of Peshawar, </institution></institution-wrap>Peshawar, Pakistan </aff><aff id="Aff2"><label>2</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/057d2v504</institution-id><institution-id institution-id-type="GRID">grid.411112.6</institution-id><institution-id institution-id-type="ISNI">0000 0000 8755 7717</institution-id><institution>Institute of Numerical Sciences, </institution><institution>Kohat University of Science and Technology, </institution></institution-wrap>Kohat, Pakistan </aff><aff id="Aff3"><label>3</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/05b0cyh02</institution-id><institution-id institution-id-type="GRID">grid.449346.8</institution-id><institution-id institution-id-type="ISNI">0000 0004 0501 7602</institution-id><institution>Department of Mathematics, College of Science, </institution><institution>Princess Nourah bint Abdulrahman University, </institution></institution-wrap>P.O. Box84428, Riyadh, 11671 Saudi Arabia </aff><aff id="Aff4"><label>4</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/01wsfe280</institution-id><institution-id institution-id-type="GRID">grid.412602.3</institution-id><institution-id institution-id-type="ISNI">0000 0000 9421 8094</institution-id><institution>Department of Mathematics, College of Science, </institution><institution>Qassim University, </institution></institution-wrap>Buraydah, 51452, Saudi Arabia </aff><aff id="Aff5"><label>5</label>Giza, Egypt </aff></contrib-group><pub-date pub-type="epub"><day>28</day><month>12</month><year>2024</year></pub-date><pub-date pub-type="pmc-release"><day>28</day><month>12</month><year>2024</year></pub-date><pub-date pub-type="collection"><year>2024</year></pub-date><volume>14</volume><elocation-id>30674</elocation-id><history><date date-type="received"><day>18</day><month>2</month><year>2024</year></date><date date-type="accepted"><day>9</day><month>10</month><year>2024</year></date></history><permissions><copyright-statement>&#x000a9; The Author(s) 2024</copyright-statement><copyright-year>2024</copyright-year><license><ali:license_ref specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p><bold>Open Access</bold> This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article&#x02019;s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article&#x02019;s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link>.</license-p></license></permissions><abstract id="Abs1"><p id="Par1">This study investigates the impact of outliers on the evolution of clusters in temporal data-sets. Monitoring and tracing cluster transitions of temporal data sets allow us to observe how clusters evolve and change over time. By tracking the movement of data points between clusters, we can gain insights into the underlying patterns, trends, and dynamics of the data. This understanding is essential for making informed decisions and drawing meaningful conclusions from the clustering results. Cluster evolution refers to the changes that occur in the clustering results over time due to the arrival of new data points. The changes in cluster solutions are classified as external and internal transitions. The study employs the survival ratio and history cost function to investigate the effects of outliers on changes experienced by the clusters at successive time points. The results demonstrate that outliers have a significant impact on cluster evolution, and appropriate outlier handling techniques are necessary to obtain reliable clustering results. The findings of this study provide useful insights for practitioners and researchers in the field of stream clustering and can help guide the development of more robust and accurate stream clustering algorithms.</p></abstract><kwd-group xml:lang="en"><title>Keywords</title><kwd>Streaming data</kwd><kwd>Clustering</kwd><kwd>Outliers</kwd><kwd>Change detection</kwd><kwd>Statistical model</kwd><kwd>Stochastic systems</kwd><kwd>Transition</kwd></kwd-group><kwd-group kwd-group-type="npg-subject"><title>Subject terms</title><kwd>Mathematics and computing</kwd><kwd>Applied mathematics</kwd><kwd>Statistics</kwd></kwd-group><funding-group><award-group><funding-source><institution>Princess Nourah bint Abdulrahman University, Riyadh, Saudi Arabia</institution></funding-source><award-id>PNURSP2024R404</award-id><principal-award-recipient><name><surname>Alballa</surname><given-names>Tmader</given-names></name></principal-award-recipient></award-group></funding-group><custom-meta-group><custom-meta><meta-name>issue-copyright-statement</meta-name><meta-value>&#x000a9; Springer Nature Limited 2024</meta-value></custom-meta></custom-meta-group></article-meta></front><body><sec id="Sec1"><title>Introduction</title><p id="Par2">Modern applications often involve dynamic data streams that originate from various sources. Streaming data is becoming increasingly critical in numerous applications, including network intrusion detection, transaction streams, phone records, internet click-streams, social streams, and weather monitoring. As a result, researchers have been focusing on analyzing streaming data, exploring ways to effectively store, query, analyze, extract, and predict important information from data streams. Ongoing research is dedicated to identifying the best practices for managing evolving data streams<sup><xref ref-type="bibr" rid="CR1">1</xref>,<xref ref-type="bibr" rid="CR2">2</xref></sup>.</p><p id="Par3">To extract knowledge from massive volumes of continually generated streams, data stream mining is an active research area. In this context, several data stream algorithms have been proposed to perform unsupervised learning<sup><xref ref-type="bibr" rid="CR3">3</xref></sup>. One of these models in data mining study is the clustering approach. Streaming data arrives in fragments <inline-formula id="IEq1"><alternatives><tex-math id="M1">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$X_1,\ X_2, \ldots , X_n$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq1.gif"/></alternatives></inline-formula>, where each <inline-formula id="IEq2"><alternatives><tex-math id="M2">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$X_i$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq2.gif"/></alternatives></inline-formula> is a collection of points that can be clustered in the main memory<sup><xref ref-type="bibr" rid="CR4">4</xref></sup>. Clustering is the process of categorizing a set of diverse data objects into meaningful groups, based on their degree of similarity or proximity. Once the clusters are identified, each group is given a specific label or tag for easy identification<sup><xref ref-type="bibr" rid="CR5">5</xref></sup>. However, unlike the batch clustering algorithms, stream clusters are not static. Rather the cluster solutions evolve over time due to non-stationary continual generation of streaming data. Several models and algorithms have been introduced in the literature for monitoring changes in clustering solutions of streaming and temporal datasets. However, It should be noted that cluster analysis may not be suitable for analyzing all types of data; in fact, some types of data behaviour might significantly skew the results. One of these tendencies is brought on by the existence of outliers, which are described as anomalous numbers with the potential to significantly affect the study<sup><xref ref-type="bibr" rid="CR6">6</xref>,<xref ref-type="bibr" rid="CR7">7</xref></sup>. Properly identifying these outliers and calculating their actual impact on data behaviour are not always straightforward tasks<sup><xref ref-type="bibr" rid="CR8">8</xref></sup>. As a result, scholars often follow recommended practices that propose excluding these outliers, treating them as a hurdle that must be cleared before delving into the primary analysis<sup><xref ref-type="bibr" rid="CR9">9</xref>,<xref ref-type="bibr" rid="CR10">10</xref></sup>.</p><p id="Par4">The purpose of this paper is to examine the impact of outliers on the evolution of clustering solutions in streaming datasets. To our knowledge, so far, no study is conducted that analyze the impact of outliers on the clustering of temporal datasets and the transitions adopted by the clusters as a result of new data items. Due to the lack of literature and no guidance available in such complex situation we analyze the synthetic data along with the real-life examples and examine the cluster&#x02019;s evolution.</p></sec><sec id="Sec2"><title>Background</title><p id="Par5">In this section, an overview of the technical issues is covered along with a review of the literature on contemporary streaming clustering techniques. This section also provides a summary of the work&#x02019;s motivating factors and contributions.</p><sec id="Sec3"><title>A review of state-of-art methods</title><p id="Par6">In recent years, a number of techniques for clustering streaming data have been developed as shown in<sup><xref ref-type="bibr" rid="CR3">3</xref>,<xref ref-type="bibr" rid="CR11">11</xref>&#x02013;<xref ref-type="bibr" rid="CR16">16</xref></sup>. As one of the earliest algorithms, Chakrabarti et al.<sup><xref ref-type="bibr" rid="CR17">17</xref></sup> proposes the evolutionary clustering algorithm for clustering temporal datasets. This model generates a series of clustering solutions <inline-formula id="IEq3"><alternatives><tex-math id="M3">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\left\{ \xi _1, \xi _2, \ldots , \xi _n \right\}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq3.gif"/></alternatives></inline-formula> at corresponding time points <inline-formula id="IEq4"><alternatives><tex-math id="M4">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\left\{ t_1, t_2, \ldots , t_n \right\}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq4.gif"/></alternatives></inline-formula> from temporal datasets. Where <inline-formula id="IEq5"><alternatives><tex-math id="M5">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\xi _i = \left\{ C_1(t_i), C_2(t_i), \ldots , C_{k_i}(t_i) \right\}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq5.gif"/></alternatives></inline-formula> is the set of clusters obtained at time-stamp <inline-formula id="IEq6"><alternatives><tex-math id="M6">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_i$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq6.gif"/></alternatives></inline-formula>. The quality of the clustering sequence is then computed using the mathematical expression:<disp-formula id="Equ1"><label>1</label><alternatives><tex-math id="M7">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} \sum _{t=1}^{T} {\texttt {sq}}(\xi _t,\ M_t) - {\texttt {cp}} \sum _{t=2}^{t} {{\texttt {hc}}}(\xi _{t-1}, \ \xi _t) \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_75928_Article_Equ1.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq7"><alternatives><tex-math id="M8">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\texttt {sq}}(\xi _t,\ M_t)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq7.gif"/></alternatives></inline-formula> is the snapshot quality that returns the quality of clustering <inline-formula id="IEq8"><alternatives><tex-math id="M9">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\xi _t$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq8.gif"/></alternatives></inline-formula> with respect to proximity <inline-formula id="IEq9"><alternatives><tex-math id="M10">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$M_t.$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq9.gif"/></alternatives></inline-formula> Similarly, <inline-formula id="IEq10"><alternatives><tex-math id="M11">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\texttt {hc}}}(\xi _{t-1},\ \xi _t)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq10.gif"/></alternatives></inline-formula> is the history cost <inline-formula id="IEq11"><alternatives><tex-math id="M12">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\texttt {hc}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq11.gif"/></alternatives></inline-formula> function that compute the quality of clustering <inline-formula id="IEq12"><alternatives><tex-math id="M13">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\xi _t$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq12.gif"/></alternatives></inline-formula> at time point <italic>t</italic>. This is a metric used to evaluate the performance and stability of clustering algorithms over multiple iterations or time points in dynamic data environments. It measures the consistency and quality of clustering solutions by comparing the current clustering solution with the solutions from previous iterations or time points. The <inline-formula id="IEq13"><alternatives><tex-math id="M14">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\texttt {hc}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq13.gif"/></alternatives></inline-formula> function quantifies the degree of similarity between successive clustering solutions. A low <inline-formula id="IEq14"><alternatives><tex-math id="M15">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\texttt {hc}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq14.gif"/></alternatives></inline-formula> indicates that the current clustering solution is similar to previous solutions, suggesting stability and consistency in the clustering process. Conversely, a high value implies significant differences between the current and previous solutions, indicating instability or inconsistency in the clustering results. The <inline-formula id="IEq15"><alternatives><tex-math id="M16">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$cp &#x0003e; 0$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq15.gif"/></alternatives></inline-formula> is a user-defined parameter that trade-off between these two functions. The <italic>k</italic>-means and hierarchical clustering techniques are taken into consideration using this framework. This framework is extended to spectral clustering<sup><xref ref-type="bibr" rid="CR18">18</xref></sup>, density-based clustering<sup><xref ref-type="bibr" rid="CR19">19</xref></sup>, and Hierarchical Dirichlet Process with the Hidden Markov model<sup><xref ref-type="bibr" rid="CR20">20</xref></sup>.</p><p id="Par7">Denny and Squire<sup><xref ref-type="bibr" rid="CR21">21</xref></sup> proposed a technique that leverages self-organizing maps to identify changes in the cluster solutions of temporal data across two time periods. This approach was based on comparing the clustering results at various time intervals and tracking changes between the current and prior results. The algorithm is capable of tracing splitting and merging clusters at subsequent time points. However, this technique neglects the identification of the newly emerging and disappearing clusters. This problem was overcome by the Relative Density Self-Organizing Map (ReDSOM) introduced by Denny et al.<sup><xref ref-type="bibr" rid="CR22">22</xref></sup>, a visualization-based algorithm that compares clustering solutions of temporal datasets.</p><p id="Par8">Spiliopoulou et al.<sup><xref ref-type="bibr" rid="CR23">23</xref></sup> introduces the MONIC framework employed to model and track changes in clustering solutions of cumulative data streams. This framework compares the clustering solutions obtained at two successive time points and traces the changes in the new solution regarding the previous one. The changes adopted by the clusters are broadly classified into two categories, i.e. external and internal transitions. External transitions of clusters refer to changes that occur in the composition of clusters over time, particularly in response to the arrival of new data points. These changes involve the emergence, disappearance, splitting, merging, or survival of clusters. For example, in a scenario where new data points introduce a distinct pattern or trend, existing clusters may need to adjust their boundaries or merge with other clusters to better capture the evolving structure of the data. Conversely, if certain clusters become less representative of the data distribution or are no longer relevant, they may dissolve or split into smaller clusters. On the other hand, the internal transition includes changes in size, cohesion, and location of the survived candidates. These changes may occur due to shifts in the distribution of data points within the cluster, changes in the centroid or mean of the cluster, or fluctuations in the density or spread of data points. The notion of the MONIC framework is based on a non-symmetric matrix described as overlap and is represented by the following expression:<disp-formula id="Equ2"><label>2</label><alternatives><tex-math id="M17">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} {\texttt {Overlap}}(C_a(t_i), \ C_b(t_j)) = \frac{\left| C_a(t_i) \bigcap C_b(t_j) \right| }{\left| C_a(t_i) \right| } \, a = 1,2,\ldots ,\ k_1 \, \ b = 1,2,\ldots \, k_2 \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_75928_Article_Equ2.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq16"><alternatives><tex-math id="M18">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$C_a(t_i)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq16.gif"/></alternatives></inline-formula> belongs to the set of clusters obtained at first clustering and <inline-formula id="IEq17"><alternatives><tex-math id="M19">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$C_b(t_j)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq17.gif"/></alternatives></inline-formula> belongs to the set of clusters obtained at second clustering. This generates a matrix of order <inline-formula id="IEq18"><alternatives><tex-math id="M20">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$k_1*k_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq18.gif"/></alternatives></inline-formula>, where <inline-formula id="IEq19"><alternatives><tex-math id="M21">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$k_1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq19.gif"/></alternatives></inline-formula> and <inline-formula id="IEq20"><alternatives><tex-math id="M22">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$k_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq20.gif"/></alternatives></inline-formula> is the number of clusters from first and second clustering respectively. The value on the matrix&#x02019;s corresponding element is the similarity index between clusters and serves as an indicator for tracing the external transition. In contrast, cluster membership is assessed to trace the internal transition of the surviving clusters. The Monitoring Clusters Transition (MClusT) algorithm introduced by Oliveira and Gama<sup><xref ref-type="bibr" rid="CR24">24</xref></sup> visualizes the clusters&#x02019; transition on a bipartite graph using the conditional probabilities as the edge weights.<disp-formula id="Equ3"><label>3</label><alternatives><tex-math id="M23">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} {\texttt {weight}}(C_a(t_i), \ C_b(t_j))= &#x00026; P\left( X\epsilon C_b\left( t_j \right) \mid X\epsilon C_a\left( t_i \right) \right) \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_75928_Article_Equ3.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ4"><label>4</label><alternatives><tex-math id="M24">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned}= &#x00026; \frac{\sum P\left\{ X\epsilon \left( C_a\left( t_i \right) \bigcap C_b\left( t_j \right) \right) \right\} }{\sum P\left\{ X \epsilon C_a\left( t_i \right) \right\} } \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_75928_Article_Equ4.gif" position="anchor"/></alternatives></disp-formula>MClusT includes a taxonomy of transitions, a tracking method based on Graph Theory, and a transition detection algorithm. The conditional probabilities are measured for every possible pair of clusters obtained at consecutive time points in the stream. These conditional probabilities serve as an indicator for monitoring the cluster solutions.</p><p id="Par9">Monitoring and tracking changes in clusters of temporal data is essential in various domains, including finance, healthcare, and security, where real-time decision making is critical. The evolution of clusters over time can provide valuable insights into the underlying patterns and trends in the data, which can inform decision-making processes. For instance, in financial trading, monitoring the evolution of stock clusters can help traders identify potential investment opportunities and mitigate risks. In healthcare, monitoring the evolution of disease clusters can help medical practitioners identify emerging epidemics and devise appropriate intervention strategies. Atif et al.<sup><xref ref-type="bibr" rid="CR25">25</xref></sup> shows the significance and applications of monitoring and tracking changes in clusters using various real-life data-sets.</p></sec><sec id="Sec4"><title>Problem statement</title><p id="Par10">The problem addressed in this article is the impact of outliers on cluster evolution in temporal data-sets. Clustering is a fundamental technique for exploratory data analysis, which aims to group data points into meaningful clusters based on their similarity. However, clustering temporal data-sets requires methods that can capture the temporal dependencies between data points, and the presence of outliers can significantly impact the clustering structure and affect the clustering results. Outliers are data points that deviate significantly from the typical pattern of the data, and their presence can distort the clustering structure and affect the evolution of clusters over time. Although there have been significant efforts in the literature to develop methods for stream clustering and outlier detection, there is a lack of research on the impact of outliers on cluster evolution in temporal data-sets. Therefore, the problem addressed in this article is to investigate how outliers affect the changes experiences by clusters at successive time points in temporal data-sets. The study explores both external and internal transitions of cluster solutions. We aim to quantify the influence of outliers on cluster evolution and provide an empirical analysis of their impact using the survival ratio (<inline-formula id="IEq21"><alternatives><tex-math id="M25">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\texttt {SR}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq21.gif"/></alternatives></inline-formula>) and <inline-formula id="IEq22"><alternatives><tex-math id="M26">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\texttt {hc}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq22.gif"/></alternatives></inline-formula> function. The <inline-formula id="IEq23"><alternatives><tex-math id="M27">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\texttt {SR}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq23.gif"/></alternatives></inline-formula> is a metric used to assess the persistence of clusters across successive time points in dynamic data environments. It measures the proportion of clusters that maintain their existence or survival from one time point to the next. Our findings will have important implications for stream clustering and anomaly detection in temporal data-sets<sup><xref ref-type="bibr" rid="CR26">26</xref></sup>.</p></sec><sec id="Sec5"><title>Challenges, motivation and contributions</title><p id="Par11">This article faces several challenges related to the analysis of outlier impact on cluster evolution in temporal data-sets. One of the major challenges is the selection of appropriate metrics to quantify the influence of outliers on cluster evolution accurately. Usually unsupervised learning problems are challenging, especially in case of streaming data, where the cases are abundant but without true class labels. Because true labels are unavailable so changes in the clusters are hard to identify. In such a complex situation the simulation of streams and performance indicators were hard to identify. As stated earlier the presence of outliers may influence <inline-formula id="IEq24"><alternatives><tex-math id="M28">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\texttt {hc}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq24.gif"/></alternatives></inline-formula> function of clustering solutions. As a result very inconsistent clusters with historic datasets are obtained at successive time points. These challenges inspired us to compose this study, in which we examine the effects of outliers on the evolution of the cluster at discrete points in temporal datasets. To address these challenges, this article proposes an empirical analysis using the <inline-formula id="IEq25"><alternatives><tex-math id="M29">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\texttt {SR}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq25.gif"/></alternatives></inline-formula> and <inline-formula id="IEq26"><alternatives><tex-math id="M30">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\texttt {hc}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq26.gif"/></alternatives></inline-formula> function to quantify the impact of outliers on cluster evolution in simulated and real-life temporal data-sets.</p></sec><sec id="Sec6"><title>Data streams</title><p id="Par12">In the study, both synthetic and real-life streams were utilized to generate and validate the results. The synthetic streams were created with predetermined characteristics at two discrete time points, referred to as time point <inline-formula id="IEq27"><alternatives><tex-math id="M31">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq27.gif"/></alternatives></inline-formula> and time point <inline-formula id="IEq28"><alternatives><tex-math id="M32">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq28.gif"/></alternatives></inline-formula>. These synthetic streams allowed the researchers to control and manipulate the data to study the impact of outliers on cluster evolution under different scenarios. In the simulation of the data-sets, several parameters were considered to ensure the generation of diverse and representative data. These parameters encompassed the number of features or variables present in the dataset, the degree of separation between neighboring clusters, the covariance structure between variables, the number of true classes within the data, the number of clusters generated through clustering algorithms, and the presence of outliers. Each of these parameters played a crucial role in shaping the characteristics of the simulated datasets, thereby enabling a comprehensive evaluation of the impact of outliers on cluster evolution over time. By carefully controlling these parameters, we aimed to create datasets that accurately reflected the complexities and dynamics observed in real-world data scenarios. Additionally, real-life streams were incorporated into the study, providing actual data from real-world datasets. These real-life streams captured the complexity and diversity present in practical applications and enabled the assessment of the proposed outlier handling techniques on real-world data. Table <xref rid="Tab1" ref-type="table">1</xref> below represents synthetic and real-life streams that were used to generate and validate results of this study. All synthetic streams were simulated at two discrete points in time.<table-wrap id="Tab1"><label>Table 1</label><caption><p>Data streams used for generating results of the study.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Data-sets</th><th align="left">Instances</th><th align="left">Features</th><th align="left">Separation</th><th align="left">Clusters</th><th align="left">Predicted clusters</th><th align="left">Outliers</th><th align="left">% Outliers</th></tr></thead><tbody><tr><td align="left"><inline-formula id="IEq29"><alternatives><tex-math id="M33">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$D_1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq29.gif"/></alternatives></inline-formula> (Synthetic)</td><td align="left">24,000</td><td align="left">2</td><td align="left">&#x02212;&#x000a0;0.1</td><td align="left">3</td><td align="left">3</td><td align="left">No</td><td align="left">&#x02013;</td></tr><tr><td align="left"><inline-formula id="IEq30"><alternatives><tex-math id="M34">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$D_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq30.gif"/></alternatives></inline-formula> (Synthetic)</td><td align="left">24,000</td><td align="left">2</td><td align="left">&#x02212;&#x000a0;0.1</td><td align="left">3</td><td align="left">3</td><td align="left">Yes</td><td align="left">10</td></tr><tr><td align="left"><inline-formula id="IEq31"><alternatives><tex-math id="M35">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$D_3$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq31.gif"/></alternatives></inline-formula> (Synthetic)</td><td align="left">24,000</td><td align="left">2</td><td align="left">&#x02212;&#x000a0;0.1</td><td align="left">3</td><td align="left">3</td><td align="left">Yes</td><td align="left">20</td></tr><tr><td align="left"><inline-formula id="IEq32"><alternatives><tex-math id="M36">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$D_4$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq32.gif"/></alternatives></inline-formula> (Synthetic)</td><td align="left">24,000</td><td align="left">2</td><td align="left">&#x02212;&#x000a0;0.1</td><td align="left">3</td><td align="left">3</td><td align="left">Yes</td><td align="left">30</td></tr><tr><td align="left"><inline-formula id="IEq33"><alternatives><tex-math id="M37">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$D_5$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq33.gif"/></alternatives></inline-formula> (Synthetic)</td><td align="left">24,000</td><td align="left">2</td><td align="left">0.0</td><td align="left">3</td><td align="left">3</td><td align="left">No</td><td align="left">&#x02013;</td></tr><tr><td align="left"><inline-formula id="IEq34"><alternatives><tex-math id="M38">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$D_6$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq34.gif"/></alternatives></inline-formula> (Synthetic)</td><td align="left">24,000</td><td align="left">2</td><td align="left">0.0</td><td align="left">3</td><td align="left">3</td><td align="left">Yes</td><td align="left">10</td></tr><tr><td align="left"><inline-formula id="IEq35"><alternatives><tex-math id="M39">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$D_7$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq35.gif"/></alternatives></inline-formula> (Synthetic)</td><td align="left">24,000</td><td align="left">2</td><td align="left">0.0</td><td align="left">3</td><td align="left">3</td><td align="left">Yes</td><td align="left">20</td></tr><tr><td align="left"><inline-formula id="IEq36"><alternatives><tex-math id="M40">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$D_8$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq36.gif"/></alternatives></inline-formula> (Synthetic)</td><td align="left">24,000</td><td align="left">2</td><td align="left">0.0</td><td align="left">3</td><td align="left">3</td><td align="left">Yes</td><td align="left">30</td></tr><tr><td align="left"><inline-formula id="IEq37"><alternatives><tex-math id="M41">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$D_9$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq37.gif"/></alternatives></inline-formula> (Synthetic)</td><td align="left">24,000</td><td align="left">2</td><td align="left">0.1</td><td align="left">3</td><td align="left">3</td><td align="left">No</td><td align="left">&#x02013;</td></tr><tr><td align="left"><inline-formula id="IEq38"><alternatives><tex-math id="M42">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$D_{10}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq38.gif"/></alternatives></inline-formula> (Synthetic)</td><td align="left">24,000</td><td align="left">2</td><td align="left">0.1</td><td align="left">3</td><td align="left">3</td><td align="left">Yes</td><td align="left">10</td></tr><tr><td align="left"><inline-formula id="IEq39"><alternatives><tex-math id="M43">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$D_{11}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq39.gif"/></alternatives></inline-formula> (Synthetic)</td><td align="left">24,000</td><td align="left">2</td><td align="left">0.1</td><td align="left">3</td><td align="left">3</td><td align="left">Yes</td><td align="left">20</td></tr><tr><td align="left"><inline-formula id="IEq40"><alternatives><tex-math id="M44">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$D_{12}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq40.gif"/></alternatives></inline-formula> (Synthetic)</td><td align="left">24,000</td><td align="left">2</td><td align="left">0.1</td><td align="left">3</td><td align="left">3</td><td align="left">Yes</td><td align="left">30</td></tr><tr><td align="left"><inline-formula id="IEq41"><alternatives><tex-math id="M45">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$D_{13}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq41.gif"/></alternatives></inline-formula> (Real)</td><td align="left">&#x02013;</td><td align="left">&#x02013;</td><td align="left">&#x02013;</td><td align="left">&#x02013;</td><td align="left">&#x02013;</td><td align="left">&#x02013;</td><td align="left"/></tr></tbody></table><table-wrap-foot><p>All the synthetic streams were simulated at two time points. These streams were generated using covariance values of 0, 5, and 10 between the variables</p></table-wrap-foot></table-wrap></p></sec></sec><sec id="Sec7"><title>Methods</title><p id="Par13">This section provide a detailed discussion on the algorithms and techniques employed for outlier detection, cluster analysis, and data visualization. Additionally, we describe the statistical methods used for data analysis and interpretation.</p><sec id="Sec8"><title>Cluster analysis</title><p id="Par14">The <italic>k</italic>-means, <italic>k</italic>-modes, and Hierarchical clustering algorithms were implemented to the datasets for generating the cluster solutions. The true number of classes (i.e. number of clusters generated in respective simulation) was used as a relevant value of <italic>k</italic> in the streams. The usual Euclidean distance function was used as a dis-similarity measures between objects for generating the clustering solutions.</p></sec><sec id="Sec9"><title>Outlier detection techniques</title><p id="Par15">Outliers significantly impact the stability and accuracy of clustering algorithms. Therefore, robust outlier detection techniques are essential for ensuring the reliability of cluster analysis. Here are some popular distance-based outlier detection techniques:</p><p id="Par16">Distance-based is the most commonly used outlier detection technique. This detection techniques rely on measuring the distance between data points to identify outliers. These methods assume that outliers are typically located far away from the majority of the data points or exhibit unusually large distances from their nearest neighbors. Common distance metrics used in these methods include Euclidean distance, Mahalanobis distance, and Manhattan distance.</p><p id="Par17">Statistical techniques such as modified Z-scores, Grubbs&#x02019; test, Dixson&#x02019;s Q test, and interquartile range (IQR) can be used to detect outliers in the dataset. Statistical outlier detection methods are based on well-established statistical principles. These techniques focus on identifying data points that deviate significantly from the expected statistical properties of the dataset. These methods typically involve statistical models or hypothesis testing to detect observations that are unlikely to occur under a given distribution.</p><p id="Par18">Clustering-based outlier detection techniques, on the other hand, identify outliers by leveraging the clustering structure of the data. These methods partition the dataset into clusters and then identify observations that are distant from their respective cluster centroids or have low cluster membership probabilities. Similarly, density-based Methods identify outliers based on the density of data points within a given region. Outliers are often defined as points with significantly lower density compared to their neighbors.</p><p id="Par19">In our study, outliers are introduced into simulated datasets by strategically placing them at a distance from the cluster centroids. These outliers are defined as data points that deviate significantly from the typical behavior of the majority of observations in the dataset. Specifically, outliers are observations that lie at an abnormal distance from the center of their respective clusters or exhibit unusual patterns compared to the rest of the data. By simulating outliers in this manner, we aim to mimic real-world scenarios where anomalous observations exist in the data, challenging the clustering algorithms to accurately identify and differentiate them from the regular data points. This approach allows us to systematically evaluate the performance of outlier detection techniques and their impact on the evolution of clusters over time in streaming datasets.</p></sec><sec id="Sec10"><title>Generalized additive models</title><p id="Par20">Generalized Additive Models (GAMs) offer a flexible framework for modeling complex relationships between predictor variables and a response variable, allowing for nonlinear and nonparametric relationships to be captured effectively. Unlike traditional linear models, GAMs do not impose linearity assumptions on the predictor-response relationship, making them suitable for analyzing data with nonlinear or non-monotonic patterns. In GAMs, each predictor variable is allowed to have a smooth, nonlinear effect on the response variable, represented by smooth functions. These functions are estimated from the data, allowing for the identification of intricate relationships that may not be captured by linear models. Let <italic>Y</italic> denote the response variable, and <inline-formula id="IEq42"><alternatives><tex-math id="M46">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$X_1, X_2,\ldots , X_p$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq42.gif"/></alternatives></inline-formula> denote the predictor variables. Then, the GAM model can be expressed as follows:<disp-formula id="Equ5"><label>5</label><alternatives><tex-math id="M47">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} Y = f_1(X_1) + f_2(X_2) + \cdots + f_p(X_p) + \epsilon \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_75928_Article_Equ5.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq43"><alternatives><tex-math id="M48">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$f_1(X_1), f_2(X_2),\ldots , f_p(X_p)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq43.gif"/></alternatives></inline-formula> are smooth functions of the predictor variables and <inline-formula id="IEq44"><alternatives><tex-math id="M49">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\epsilon$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq44.gif"/></alternatives></inline-formula> represents the error term. GAMs are particularly useful in situations where the relationship between predictors and the response is unknown or difficult to specify a priori. By incorporating smooth functions, GAMs provide a flexible and interpretable approach to modeling complex data, making them a valuable tool in data analysis and predictive modeling.</p><p id="Par21">In this study, we employ the history <inline-formula id="IEq45"><alternatives><tex-math id="M50">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\texttt {hc}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq45.gif"/></alternatives></inline-formula> as the response variable. The predictor variables include the percentage of outliers in the dataset, the covariance structure, and the separation between neighboring clusters. These predictor variables are utilized to examine their impact on the behavior of the clustering algorithm and the evolution of clusters over time.</p></sec><sec id="Sec11"><title>Methodology</title><p id="Par22">Consistency of clusters over time is an important aspect of cluster analysis in temporal data-sets. The evolution of clusters over time can be influenced by various factors, including changes in the data distribution, emergence of new patterns, or the presence of outliers. Therefore, it is crucial to evaluate the consistency of cluster solutions over time and identify any significant changes or discrepancies in the clustering results. Atif and Leisch<sup><xref ref-type="bibr" rid="CR27">27</xref></sup> developed an R package <italic>clusTransition</italic> for monitoring and tracking changes in cluster solutions of temporal data-sets. In this research article, we investigate the consistency of cluster solutions over time and the impact of outliers on the evolution of these clusters. We utilize the <italic>clusTransition</italic> package to monitor and track the changes in cluster solutions of temporal data-sets and evaluate the consistency of the clustering results using various stability indices. By analyzing the consistency of cluster solutions over time, we can better understand the stability and reliability of the clustering results and identify any potential issues or challenges that may arise due to the presence of outliers.</p><p id="Par23">The <inline-formula id="IEq46"><alternatives><tex-math id="M51">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\texttt {hc}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq46.gif"/></alternatives></inline-formula> function is a useful measure for evaluating the consistency of cluster solutions over time, as it incorporates both the spatial proximity and temporal continuity of the clusters. By penalizing significant deviations from previous time points, the <inline-formula id="IEq47"><alternatives><tex-math id="M52">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\texttt {hc}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq47.gif"/></alternatives></inline-formula> function can identify instances where the underlying data distribution has changed significantly, leading to the emergence or dissolution of clusters. In this research article, we use the <inline-formula id="IEq48"><alternatives><tex-math id="M53">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\texttt {hc}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq48.gif"/></alternatives></inline-formula> function to assess the impact of outliers on the consistency of clusters over time and to evaluate the performance of our proposed method for handling outliers in temporal data-sets. In simple words the cluster solution should not deviate drastically from the clustering solution at previous time stamp. We used the <inline-formula id="IEq49"><alternatives><tex-math id="M54">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\texttt {hc}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq49.gif"/></alternatives></inline-formula> function as a performance measure i.e. the impact of outliers is investigated on the <inline-formula id="IEq50"><alternatives><tex-math id="M55">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\texttt {hc}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq50.gif"/></alternatives></inline-formula> function. The <inline-formula id="IEq51"><alternatives><tex-math id="M56">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\texttt {hc}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq51.gif"/></alternatives></inline-formula> is computed using equation given by:<disp-formula id="Equ6"><label>6</label><alternatives><tex-math id="M57">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} hc = \left\{ \sum _{i=1}^{n}w_{i}\left( C_{a}^{\prime}\left( t_i \right) - C_{b}^{\prime}\left( t_j \right) \right) \right\} ^{\frac{1}{2}} \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_75928_Article_Equ6.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq52"><alternatives><tex-math id="M58">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$C_{a}^{\prime}\left( t_i \right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq52.gif"/></alternatives></inline-formula> is the centroids of the clusters obtained at first clustering, <inline-formula id="IEq53"><alternatives><tex-math id="M59">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$C_{b}^{\prime}\left( t_j \right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq53.gif"/></alternatives></inline-formula> is the centroid of the clusters obtained at second clustering, and <inline-formula id="IEq54"><alternatives><tex-math id="M60">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w_i$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq54.gif"/></alternatives></inline-formula> is the weights assigned to these clusters and represents the cluster cohesion.</p><p id="Par24">Similarly, as the cluster at successive time points are simulated using same cluster centroids. This means that the clusters at time stamp <inline-formula id="IEq55"><alternatives><tex-math id="M61">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq55.gif"/></alternatives></inline-formula> should survive. So, ideally the clusters should survive from time point <inline-formula id="IEq56"><alternatives><tex-math id="M62">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq56.gif"/></alternatives></inline-formula> to time point <inline-formula id="IEq57"><alternatives><tex-math id="M63">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq57.gif"/></alternatives></inline-formula> and no transition should be detected. Hence, we should obtain a high survival ratio, which can be computed using equation given by:<disp-formula id="Equ7"><label>7</label><alternatives><tex-math id="M64">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} SR = \frac{\left| C_a\left( t_i \right) \epsilon \xi _i \mid C_b\left( t_j \right) \epsilon \xi _j \right| }{k_i} \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_75928_Article_Equ7.gif" position="anchor"/></alternatives></disp-formula>The generalized additive models was fitted to the data using <inline-formula id="IEq58"><alternatives><tex-math id="M65">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\texttt {hc}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq58.gif"/></alternatives></inline-formula> function as response variable and proportion of outliers and covariance structure as explanatory variables. The model can be represented from the mathematical expression given by:<disp-formula id="Equ8"><label>8</label><alternatives><tex-math id="M66">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} g\left( E\left( hc \right) \right) = \alpha + s\left( x_1 \right) + s\left( x_2 \right) \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_75928_Article_Equ8.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq59"><alternatives><tex-math id="M67">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\texttt {hc}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq59.gif"/></alternatives></inline-formula> is the dependent variable and <inline-formula id="IEq60"><alternatives><tex-math id="M68">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\texttt {g}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq60.gif"/></alternatives></inline-formula> is the link function that links the expected value of the dependent variable to the predictors <inline-formula id="IEq61"><alternatives><tex-math id="M69">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$x_1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq61.gif"/></alternatives></inline-formula> (proportion of outliers) and <inline-formula id="IEq62"><alternatives><tex-math id="M70">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$x_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq62.gif"/></alternatives></inline-formula> (covariance structure). The term <inline-formula id="IEq63"><alternatives><tex-math id="M71">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\texttt {s}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq63.gif"/></alternatives></inline-formula> is the non-parametric smoothing function, which means that the data solely determine the shape of the predictor function<sup><xref ref-type="bibr" rid="CR28">28</xref></sup>.</p></sec></sec><sec id="Sec12"><title>Results</title><p id="Par25">Supervised learning is evaluated by comparing the predicted class with the actual class labels of the resulting characteristic. However, in unsupervised learning, actual class labels are not provided to the learning algorithms, making it challenging to assess their effectiveness<sup><xref ref-type="bibr" rid="CR29">29</xref></sup>. To overcome this challenge, simulated datasets were used to achieve the study objectives, and streams were generated for covariance values of 1, 5, and 10 between variables. Due to a lack of relevant literature, identifying performance indicators in this research study posed a challenge. The study employed the survival ratio as a performance indicator to assess the impact of outliers on cluster transitions, as it is a measure of stability.</p><p id="Par26">Figure <xref rid="Fig1" ref-type="fig">1</xref> illustrates the impact of the survival threshold parameter on the external transitions of the clusters at successive time points for different levels of separation between neighboring clusters. The x-axis represents the percentage of outliers in the data set, while the lines in the figure indicate the user-defined survival threshold parameter. As shown in the figure, when the survival threshold parameter is set to values smaller than or equal to 0.8, significant changes in the clusters can be observed, consistent with previous findings<sup><xref ref-type="bibr" rid="CR23">23</xref></sup>. However, increasing the survival threshold parameter beyond 0.8 produces more stable clustering solutions that remain consistent with the data from earlier time periods. This suggests that the clustering solutions are resilient and not influenced by outliers in the data stream. Nevertheless, as noted in previous studies, even small values of the survival threshold parameter can result in changes in the clusters if there is a noticeable grouping structure. Therefore, careful selection of the survival threshold parameter is essential for ensuring the consistency of the clusters over time.<fig id="Fig1"><label>Fig. 1</label><caption><p>Clusters undergoing external transition in relation to the percentage of outliers for various separation values. The panels represents the separation between neighboring clusters.</p></caption><graphic xlink:href="41598_2024_75928_Fig1_HTML" id="MO1"/></fig></p><p id="Par27">Given the significance of the separation between neighboring clusters in cluster evolution, this study focuses on investigating the internal transitions for different separation values. The separation between clusters refers to the distance or dissimilarity between the centroids or representative points of adjacent clusters. By analyzing the internal transitions at varying separation values, we can gain insights into how the clustering structure and cohesion change as clusters evolve over time. The study explores the effects of different separation values on the internal transitions of clusters. This involves examining how the cohesion and dispersion of clusters are influenced by varying degrees of separation. By evaluating the changes in cluster characteristics, such as compactness, density, and connectivity, we can understand how different separation values impact the stability and quality of the clustering results.</p><p id="Par28">Table&#x000a0;<xref rid="Tab2" ref-type="table">2</xref> illustrates the calculated <inline-formula id="IEq64"><alternatives><tex-math id="M72">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\texttt {hc}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq64.gif"/></alternatives></inline-formula> values during the second clustering, employing different algorithms with a separation value (<inline-formula id="IEq65"><alternatives><tex-math id="M73">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\texttt {Sep}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq65.gif"/></alternatives></inline-formula>) set at &#x02212;&#x000a0;0.1. The numerical values in the table represent the computed <inline-formula id="IEq66"><alternatives><tex-math id="M74">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{\texttt {hc}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq66.gif"/></alternatives></inline-formula> values for each combination of the clustering algorithm and the outlier percentage. These values serve as indicators of how much the clustering solutions deviate or change. Higher <inline-formula id="IEq67"><alternatives><tex-math id="M75">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\texttt {hc}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq67.gif"/></alternatives></inline-formula> values signify more significant differences between the current clustering result and previous iterations, thus reflecting the stability and consistency of the clustering solutions. The table offers a comprehensive insight into the behavior of different clustering algorithms across varying outlier scenarios. It facilitates the evaluation of clustering algorithm performance for tasks involving covariance structure, assisting in the selection of suitable algorithms based on their stability and adaptation to different levels of outliers. As the percentage of outliers increases, the values of the <inline-formula id="IEq68"><alternatives><tex-math id="M76">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\texttt {hc}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq68.gif"/></alternatives></inline-formula> metric also tend to rise. Notably, partitioning algorithms exhibit improved performance in the presence of outliers within the data-set, particularly in relation to the cost function. Interestingly, the <italic>k</italic>-modes algorithm displays relatively minimal sensitivity to outliers when clustering temporal data-sets. Moreover, the covariance structure among variables also contributes to shaping the performance of clustering algorithms, influencing their ability to accurately trace the development of clusters over time.<table-wrap id="Tab2"><label>Table 2</label><caption><p>The history cost function for Sep = &#x02212;&#x000a0;0.1.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left" rowspan="2">Covariance structure</th><th align="left" rowspan="2">Clustering algorithm</th><th align="left" colspan="4">Percentage outlier</th></tr><tr><th align="left">0%</th><th align="left">10%</th><th align="left">20%</th><th align="left">30%</th></tr></thead><tbody><tr><td align="left" rowspan="3">1</td><td align="left"><italic>k</italic>-means</td><td align="left">0.009848</td><td align="left">0.40539</td><td align="left">0.749778</td><td align="left">1.10957</td></tr><tr><td align="left"><italic>k</italic>-modes</td><td align="left">0.001803</td><td align="left">0.35135</td><td align="left">0.617113</td><td align="left">1.03931</td></tr><tr><td align="left">Hierarchical</td><td align="left">0.064889</td><td align="left">0.59413</td><td align="left">0.874809</td><td align="left">1.21702</td></tr><tr><td align="left" rowspan="3">5</td><td align="left"><italic>k</italic>-means</td><td align="left">0.043138</td><td align="left">0.59923</td><td align="left">1.120076</td><td align="left">1.77752</td></tr><tr><td align="left"><italic>k</italic>-modes</td><td align="left">0.009355</td><td align="left">0.43520</td><td align="left">1.010960</td><td align="left">1.33251</td></tr><tr><td align="left">Hierarchical</td><td align="left">0.043138</td><td align="left">0.59923</td><td align="left">1.120076</td><td align="left">1.97223</td></tr><tr><td align="left" rowspan="3">10</td><td align="left"><italic>k</italic>-means</td><td align="left">0.105241</td><td align="left">0.76141</td><td align="left">1.199975</td><td align="left">2.35558</td></tr><tr><td align="left"><italic>k</italic>-modes</td><td align="left">0.053209</td><td align="left">0.44600</td><td align="left">1.109007</td><td align="left">2.06382</td></tr><tr><td align="left">Hierarchical</td><td align="left">0.314110</td><td align="left">0.93113</td><td align="left">2.001995</td><td align="left">2.80302</td></tr></tbody></table></table-wrap></p><p id="Par29">Tables&#x000a0;<xref rid="Tab3" ref-type="table">3</xref> and <xref rid="Tab4" ref-type="table">4</xref> illustrates the calculated <inline-formula id="IEq69"><alternatives><tex-math id="M77">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\texttt {hc}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq69.gif"/></alternatives></inline-formula> values during the second clustering, employing different algorithms with a separation value (<inline-formula id="IEq70"><alternatives><tex-math id="M78">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\texttt {Sep}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq70.gif"/></alternatives></inline-formula>) set at 0.0 and 0.1 respectively. Increasing the separation between neighboring clusters did not improves the cost function at successive time points.<table-wrap id="Tab3"><label>Table 3</label><caption><p>The history cost function for Sep = 0.0.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left" rowspan="2">Covariance Structure</th><th align="left" rowspan="2">Clustering Algorithm</th><th align="left" colspan="4">Percentage Outlier</th></tr><tr><th align="left">0%</th><th align="left">10%</th><th align="left">20%</th><th align="left">30%</th></tr></thead><tbody><tr><td align="left" rowspan="3">1</td><td align="left"><italic>k</italic>-means</td><td align="left">0.009848</td><td align="left">0.406339</td><td align="left">0.753031</td><td align="left">1.118398</td></tr><tr><td align="left"><italic>k</italic>-modes</td><td align="left">0.001152</td><td align="left">0.243116</td><td align="left">0.531101</td><td align="left">1.018011</td></tr><tr><td align="left">Hierarchical</td><td align="left">0.087455</td><td align="left">0.599012</td><td align="left">0.791879</td><td align="left">1.581890</td></tr><tr><td align="left" rowspan="3">5</td><td align="left"><italic>k</italic>-means</td><td align="left">0.021472</td><td align="left">0.616043</td><td align="left">1.129739</td><td align="left">1.707061</td></tr><tr><td align="left"><italic>k</italic>-modes</td><td align="left">0.010289</td><td align="left">0.299323</td><td align="left">1.078135</td><td align="left">1.580013</td></tr><tr><td align="left">Hierarchical</td><td align="left">0.202001</td><td align="left">0.818700</td><td align="left">1.262991</td><td align="left">1.881010</td></tr><tr><td align="left" rowspan="3">10</td><td align="left"><italic>k</italic>-means</td><td align="left">0.054572</td><td align="left">0.762432</td><td align="left">1.401809</td><td align="left">2.163485</td></tr><tr><td align="left"><italic>k</italic>-modes</td><td align="left">0.011496</td><td align="left">0.475380</td><td align="left">1.259730</td><td align="left">2.096893</td></tr><tr><td align="left">Hierarchical</td><td align="left">0.235972</td><td align="left">0.875691</td><td align="left">1.635974</td><td align="left">2.857663</td></tr></tbody></table></table-wrap><table-wrap id="Tab4"><label>Table 4</label><caption><p>The history cost function for Sep = 0.1.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left" rowspan="2">Covariance Structure</th><th align="left" rowspan="2">Clustering Algorithm</th><th align="left" colspan="4">Percentage Outlier</th></tr><tr><th align="left">0%</th><th align="left">10%</th><th align="left">20%</th><th align="left">30%</th></tr></thead><tbody><tr><td align="left" rowspan="3">1</td><td align="left"><italic>k</italic>-means</td><td align="left">0.009848</td><td align="left">0.404816</td><td align="left">0.77219</td><td align="left">1.105236</td></tr><tr><td align="left"><italic>k</italic>-modes</td><td align="left">0.009815</td><td align="left">0.201752</td><td align="left">0.47201</td><td align="left">0.512693</td></tr><tr><td align="left">Hierarchical</td><td align="left">0.017893</td><td align="left">0.462413</td><td align="left">0.87110</td><td align="left">1.209134</td></tr><tr><td align="left" rowspan="3">5</td><td align="left"><italic>k</italic>-means</td><td align="left">0.022492</td><td align="left">0.616478</td><td align="left">1.12365</td><td align="left">1.723328</td></tr><tr><td align="left"><italic>k</italic>-modes</td><td align="left">0.001532</td><td align="left">0.338619</td><td align="left">1.01522</td><td align="left">1.297188</td></tr><tr><td align="left">Hierarchical</td><td align="left">0.135296</td><td align="left">0.966807</td><td align="left">1.62001</td><td align="left">2.117320</td></tr><tr><td align="left" rowspan="3">10</td><td align="left"><italic>k</italic>-means</td><td align="left">0.053893</td><td align="left">0.751432</td><td align="left">1.39749</td><td align="left">2.253541</td></tr><tr><td align="left"><italic>k</italic>-modes</td><td align="left">0.009331</td><td align="left">0.504039</td><td align="left">1.18962</td><td align="left">1.993914</td></tr><tr><td align="left">Hierarchical</td><td align="left">0.334981</td><td align="left">1.700214</td><td align="left">1.89900</td><td align="left">2.821454</td></tr></tbody></table><table-wrap-foot><p>The history cost function <inline-formula id="IEq71"><alternatives><tex-math id="M79">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\texttt {hc}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq71.gif"/></alternatives></inline-formula> is computed using equation (3.1)</p></table-wrap-foot></table-wrap></p><p id="Par30">The hard clustering algorithm was used to generate the clusters from simulated datasets. The hard clustering algorithms divide a dataset into distinct, non-overlapping clusters, where each data point belongs to exactly one cluster. The absorption of new data items containing outliers by the initial clusters resulted in the detection of no external transitions. Nonetheless, the presence of outliers causes the cluster centres and their radii to be shifted, which leads to the identification of internal transitions among the surviving candidates. When outliers are present in a dataset, they can significantly affect the clustering results. Outliers are data points significantly different from the other points in the dataset and do not fit well into any existing clusters. As a result, when outliers are included in a cluster, the average distance between the members of that cluster increases. This increase in distance between the cluster members causes the cluster to become more diffuse, spreading out more widely than its ancestor clusters. As a result, the surviving clusters, after excluding outliers, may have a larger variance and less distinct boundaries, making it more difficult to separate them accurately from other clusters. This is particularly true if the dataset contains a high proportion of outliers.</p><sec id="Sec13"><title>Generalized additive model</title><p id="Par31">The Table&#x000a0;<xref rid="Tab5" ref-type="table">5</xref> refers to the results of a GAM that includes a smoothing term for the variable <inline-formula id="IEq72"><alternatives><tex-math id="M80">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\texttt {outliers}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq72.gif"/></alternatives></inline-formula>, and linear terms for <inline-formula id="IEq73"><alternatives><tex-math id="M81">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\texttt {separation}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq73.gif"/></alternatives></inline-formula> and <inline-formula id="IEq74"><alternatives><tex-math id="M82">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\texttt {covariance}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq74.gif"/></alternatives></inline-formula>. The <italic>p</italic> value for <inline-formula id="IEq75"><alternatives><tex-math id="M83">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\texttt {covariance}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq75.gif"/></alternatives></inline-formula> is less than 5.10e&#x02212;08, indicating strong evidence against the null hypothesis and is highly significant. Whereas, the <italic>p</italic> value for <inline-formula id="IEq76"><alternatives><tex-math id="M84">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\texttt {separation}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq76.gif"/></alternatives></inline-formula> is 0.998, which is greater than 0.05 and suggests that is not a statistically significant predictor of <inline-formula id="IEq77"><alternatives><tex-math id="M85">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\texttt {hc}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq77.gif"/></alternatives></inline-formula> function. This suggest that the separation between neighboring clusters does not affect the quality of clustering solutions in temporal datasets. However, the covariance structure between the variables significantly affect the clustering quality and its stability.</p><p id="Par32">In the case of a smoothing term for the variable <inline-formula id="IEq78"><alternatives><tex-math id="M86">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\texttt {outliers}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq78.gif"/></alternatives></inline-formula>, the <italic>p</italic> value is less than 0.0001 (represented as &#x0201c;<inline-formula id="IEq79"><alternatives><tex-math id="M87">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$&#x0003c;2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq79.gif"/></alternatives></inline-formula>e&#x02212;16&#x0201d;), which indicates that the smoothing term for <inline-formula id="IEq80"><alternatives><tex-math id="M88">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\texttt {outliers}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq80.gif"/></alternatives></inline-formula> is highly statistically significant. This clearly indicates that the presence of a high percentage of <inline-formula id="IEq81"><alternatives><tex-math id="M89">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\texttt {outlier}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq81.gif"/></alternatives></inline-formula> increase the <inline-formula id="IEq82"><alternatives><tex-math id="M90">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\texttt {hc}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq82.gif"/></alternatives></inline-formula> function.</p><p id="Par33">The <inline-formula id="IEq83"><alternatives><tex-math id="M91">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\texttt {hc}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq83.gif"/></alternatives></inline-formula> function is important in evolutionary clustering because it helps to ensure that the clustering algorithm is producing consistent and stable clustering solutions over time. A high <inline-formula id="IEq84"><alternatives><tex-math id="M92">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\texttt {hc}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq84.gif"/></alternatives></inline-formula> function is an indication that the updated clustering solution obtained as a result of new data is significantly different from the one generated initially. It is concluded that the presence of <inline-formula id="IEq85"><alternatives><tex-math id="M93">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\texttt {outliers}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq85.gif"/></alternatives></inline-formula> in the data stream resulted in low-quality clustering solutions that are highly unstable when new data points arrived at successive time points.<table-wrap id="Tab5"><label>Table 5</label><caption><p>The GAM model for <inline-formula id="IEq86"><alternatives><tex-math id="M94">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\texttt {hc}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq86.gif"/></alternatives></inline-formula> function as the response variable.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Parametric</th><th align="left">Estimate</th><th align="left">Std. Error</th><th align="left">Pr(&#x0003e;|t|)</th></tr></thead><tbody><tr><td align="left">Intercept</td><td align="left">0.536</td><td align="left">0.053</td><td align="left">2.45e&#x02212;11 ***</td></tr><tr><td align="left">cov</td><td align="left">0.0587745</td><td align="left">0.0083124</td><td align="left">5.10e&#x02212;08 ***</td></tr><tr><td align="left">sep</td><td align="left">&#x02212;&#x000a0;0.0009883</td><td align="left">0.3748288</td><td align="left">0.998</td></tr><tr><td align="left"/><td align="left">edf</td><td align="left">Ref.df</td><td align="left"><italic>p</italic> value</td></tr><tr><td align="left">s(outliers)</td><td align="left">1</td><td align="left">1</td><td align="left"><inline-formula id="IEq87"><alternatives><tex-math id="M95">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$&#x0003c;2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq87.gif"/></alternatives></inline-formula>e&#x02212;16 ***</td></tr></tbody></table><table-wrap-foot><p>Signif. codes: 0 &#x02018;***&#x02019; 0.001 &#x02018;**&#x02019; 0.01 &#x02018;*&#x02019; 0.05 &#x02018;.&#x02019; 0.1 &#x02018; &#x02019; 1</p></table-wrap-foot></table-wrap></p></sec></sec><sec id="Sec14"><title>Discussion</title><p id="Par34">Monitoring changes in cluster solutions is an important aspect of analyzing temporal datasets. There are several algorithms proposed to monitor changes in cluster solutions of temporal datasets. Initially a clustering solution is generated from the dataset, which is then updated as new data becomes available to reflect the changes in the data. This can be done by re-running the clustering algorithm on the updated the solution. Consequently, the clusters undergo certain changes. As mentioned previously, the changes are categorized into external and internal transitions. The external transitions include candidates that survive, split, merge, emerge anew, or disappear, while the internal transitions consist of changes in location and cohesion. Stability analysis is a technique used to assess the robustness of clustering solutions to historic data. It involves assessing the stability and quality of the clustering solution using various techniques after updating it as new data becomes available. The stability of clustering solution at successive time points is carried out by examining the <inline-formula id="IEq88"><alternatives><tex-math id="M96">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\texttt {hc}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq88.gif"/></alternatives></inline-formula> function.</p><p id="Par35">The <inline-formula id="IEq89"><alternatives><tex-math id="M97">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\texttt {hc}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq89.gif"/></alternatives></inline-formula> function in evolutionary clustering is a metric that is used to evaluate the performance of a clustering algorithm over multiple iterations. It is a measure of how well the clustering algorithm is able to maintain consistency and stability in the clustering solution over time. The <inline-formula id="IEq90"><alternatives><tex-math id="M98">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\texttt {hc}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq90.gif"/></alternatives></inline-formula> function works by comparing the clustering solutions from previous iterations of the algorithm to the current clustering solution. If the current solution is similar to the previous solutions, the <inline-formula id="IEq91"><alternatives><tex-math id="M99">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\texttt {hc}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq91.gif"/></alternatives></inline-formula> function will be low, indicating good performance. However, if the current solution is significantly different from the previous solutions, the <inline-formula id="IEq92"><alternatives><tex-math id="M100">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\texttt {hc}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq92.gif"/></alternatives></inline-formula> function will be high, indicating poor performance.</p><p id="Par36">Findings of the study reveals that the presence of outliers in the stream does not affect the external transition of the clusters at successive time points. However, the surviving candidates are more spread out than the initial clusters. Similarly, low quality clustering solutions were obtained, i.e. having high <inline-formula id="IEq93"><alternatives><tex-math id="M101">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\texttt {hc}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq93.gif"/></alternatives></inline-formula>, that were very inconsistent to the data of previous time point.</p><p id="Par37">The clustering algorithm produced low-quality solutions with high <inline-formula id="IEq94"><alternatives><tex-math id="M102">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\texttt {hc}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq94.gif"/></alternatives></inline-formula> values that were not consistent with the data from the previous time point.</p></sec><sec id="Sec15"><title>Real-life data-set</title><p id="Par38">The Melbourne House Prices dataset used in study was taken from Kaggle (Becker, 2021). This dataset comprises prices of properties sold in Melbourne between January 2016 and September 2017. The purpose of this data was to uncover the characteristics that impact property prices the most in the Melbourne Housing Market. This dataset has a total of 20 features (excluding the street address of houses) and 13580 observations. Houses with no price information have already been removed from the dataset. The dataset includes details on house selling prices, locations, and real estate brokerage firms. date of sale, year of construction, number of bathrooms, distance to city centre, size of the land, suburb, and the number of properties in the suburb are additional features.</p><p id="Par39">The house prices were clustered at respective time points and changes in cluster solution were monitored. Detailed profiling of the clusters were carried out on the other attributes. The optimal number of clusters at respective time points was estimated using silhouette statistic. The stream was discritized on the selling date of the property.</p><p id="Par40">The Changes by the clusters at successive time points are shown in Fig.&#x000a0;<xref rid="Fig2" ref-type="fig">2</xref> below. The algorithm failed to identify any external transition, and all clusters survived i.e. cluster <inline-formula id="IEq95"><alternatives><tex-math id="M103">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$C_{11}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq95.gif"/></alternatives></inline-formula> survived in <inline-formula id="IEq96"><alternatives><tex-math id="M104">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$C_{23}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq96.gif"/></alternatives></inline-formula>, cluster <inline-formula id="IEq97"><alternatives><tex-math id="M105">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$C_{12}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq97.gif"/></alternatives></inline-formula> survived in <inline-formula id="IEq98"><alternatives><tex-math id="M106">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$C_{22}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq98.gif"/></alternatives></inline-formula>, and cluster <inline-formula id="IEq99"><alternatives><tex-math id="M107">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$C_{13}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq99.gif"/></alternatives></inline-formula> survived in <inline-formula id="IEq100"><alternatives><tex-math id="M108">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$C_{23}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq100.gif"/></alternatives></inline-formula>. However, all surviving clusters underwent internal changes and spread out more than their ancestors.<fig id="Fig2"><label>Fig. 2</label><caption><p>Cluster&#x02019;s experiencing changes in Melbourne House Prices dataset containing outliers.</p></caption><graphic xlink:href="41598_2024_75928_Fig2_HTML" id="MO2"/></fig></p><p id="Par41">The <italic>k</italic>-Means method is affected by outliers since it seeks the average value among clusters. Figure <xref rid="Fig3" ref-type="fig">3</xref> below shows the box-plot for house prices which indicates that the house prices include a huge number of outliers. These outliers might affect the cluster solutions and may affect the cluster transitions. These outliers are removed and then the cluster solutions are traced and monitored.<fig id="Fig3"><label>Fig. 3</label><caption><p>Box-plot of Melbourne House Prices dataset.</p></caption><graphic xlink:href="41598_2024_75928_Fig3_HTML" id="MO3"/></fig></p><p id="Par42">Figure <xref rid="Fig4" ref-type="fig">4</xref> below illustrates the changes in clustering solution of house prices after removing the outliers from the data-set. There were 21% outliers in the house price variable. All of the three clusters survived, with no internal transition detected.<fig id="Fig4"><label>Fig. 4</label><caption><p>Cluster&#x02019;s experiencing changes in Melbourne House Prices dataset after removing outliers.</p></caption><graphic xlink:href="41598_2024_75928_Fig4_HTML" id="MO4"/></fig></p><p id="Par43">Table <xref rid="Tab6" ref-type="table">6</xref> below demonstrates the cluster profiling of number of rooms, Cars, and Building are of the property before and after removing the outliers from the data-set. It is evident that the outliers affect the centroid and a shift in location was observed. However, if the outliers are removed from the data then there is no differenc in the centroids of the clsuters.<table-wrap id="Tab6"><label>Table 6</label><caption><p>Cluster profiling of variables related to the prices of property.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Variables</th><th align="left">Outlier</th><th align="left"><inline-formula id="IEq101"><alternatives><tex-math id="M109">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$C_1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq101.gif"/></alternatives></inline-formula></th><th align="left"><inline-formula id="IEq102"><alternatives><tex-math id="M110">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$C_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq102.gif"/></alternatives></inline-formula></th><th align="left"><inline-formula id="IEq103"><alternatives><tex-math id="M111">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$C_3$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq103.gif"/></alternatives></inline-formula></th></tr></thead><tbody><tr><td align="left" rowspan="3">Rooms</td><td align="left">2016</td><td align="left">3.1</td><td align="left">2.5</td><td align="left">3.4</td></tr><tr><td align="left">2017 (with outliers)</td><td align="left">4.2</td><td align="left">2.8</td><td align="left">3.9</td></tr><tr><td align="left">2017 (without outliers)</td><td align="left">3.1</td><td align="left">2.6</td><td align="left">3.4</td></tr><tr><td align="left" rowspan="3">Car</td><td align="left">2016</td><td align="left">2.2</td><td align="left">1.3</td><td align="left">1.6</td></tr><tr><td align="left">2017 (with outliers)</td><td align="left">2.7</td><td align="left">1.7</td><td align="left">1.9</td></tr><tr><td align="left">2017 (without outliers)</td><td align="left">2.3</td><td align="left">1.7</td><td align="left">1.5</td></tr><tr><td align="left" rowspan="3">Building Area</td><td align="left">2016</td><td align="left">293.4</td><td align="left">109.4</td><td align="left">173.7</td></tr><tr><td align="left">2017 (with outliers)</td><td align="left">270.3</td><td align="left">123.2</td><td align="left">195</td></tr><tr><td align="left">2017 (without outliers)</td><td align="left">291.6</td><td align="left">112.2</td><td align="left">170.9</td></tr></tbody></table><table-wrap-foot><p>All the synthetic streams were simulated at two time points</p></table-wrap-foot></table-wrap></p></sec><sec id="Sec16"><title>Conclusion</title><p id="Par44">Cluster analysis, a type of unsupervised learning, effectively uncovers patterns within a data stream by evaluating similarities among its data elements. Given that the entire stream isn&#x02019;t accessible at once, many stream clustering methods adopt the windowing approach. This method involves segmenting the continuous data stream into discrete windows, allowing sequential processing of each window. New data continuously enters the stream while the oldest data exits, maintaining a fixed-size window that moves along the stream. This approach enables manageable chunk processing, aiding efficient analysis and clustering. Moreover, it conserves computational resources, making it feasible to handle large, continuous data streams in real-time. Subsequently, clustering solutions are generated at successive time points, and various algorithms have been developed to monitor and trace changes in these solutions over time, categorizing them as internal or external transitions. Although traditional batch clustering methods are known to be sensitive to outliers, the influence of outliers on stream clustering remains relatively unexplored. Consequently, there is a lack of comprehensive research and guidance on this subject. Hence, this study aims to address this gap by conducting a thorough analysis of how outliers impact the evolution of clusters in data streams.</p><p id="Par45">Based on the findings of this study, it appears that outliers present in a data stream do not exert a substantial influence on the external transitions of clusters. However, their presence does have a detrimental effect on the internal transitions of the surviving clusters. Consequently, most clusters tend to become more dispersed compared to their predecessors. Even though the streams were simulated having same centroids, a noticeable shift in position of generated clusters is observed due to outliers. This underscores the significant impact of outliers on the overall clustering solution, despite their seemingly limited effect on the external transition of clusters.</p></sec><sec id="Sec17"><title>Assumptions and limitations</title><p id="Par46">The study implements the MONIC framework, which assumes that every object must be classified into one and only one cluster. This assumption restricts the algorithm to only partitioning and hierarchical methods, as density-based algorithms assign some objects to outliers, which are not part of any cluster. If the dataset contains many outliers or noise, using only partitioning clustering algorithms may lead to less accurate results. Density-based clustering algorithms may be more effective with complex or irregular cluster shapes in the presence of outliers.</p><p id="Par47">Similarly, the parameter selection of partitioning algorithms may introduce potential biases. For instance, in our study, we employed the same number of clusters at time points <inline-formula id="IEq104"><alternatives><tex-math id="M112">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq104.gif"/></alternatives></inline-formula> and <inline-formula id="IEq105"><alternatives><tex-math id="M113">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_75928_Article_IEq105.gif"/></alternatives></inline-formula>. This decision inherently limits the emergence of new clusters between these time points. As a consequence, the clustering solution may not fully capture the evolving structure of the data, potentially biasing our analysis towards a more static representation of the underlying phenomena. This limitation underscores the need for careful consideration of parameter settings and highlights the importance of exploring alternative approaches to accommodate the dynamic nature of streaming data.</p><p id="Par48">Furthermore, we aimed to capture the complexity of the phenomenon as closely as possible, there are certain parameters that we may have overlooked. For instance, Atif et al.<sup><xref ref-type="bibr" rid="CR30">30</xref></sup> accounted for the impact of the number of variables on the evolution of clusters. However, dimensionality interacts with cluster sizes, leading to a complex relationship. Due to this complexity, we opted to focus solely on other factors and did not include dimensionality and cluster sizes in our analysis.</p><p id="Par49">In future this study can be extended to the density-based algorithms to asses the impact of outliers on cluster evolution. Implementation of the density-based algorithms can effectively overcome these limitations. Dimensionality and cluster sizes will be studied in future investigations to further understand their interactions in presence of outliers.</p></sec></body><back><fn-group><fn><p><bold>Publisher&#x02019;s note</bold></p><p>Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></fn></fn-group><ack><title>Acknowledgements</title><p>Princess Nourah bint Abdulrahman University Researchers Supporting Project Number (PNURSP2024R404), Princess Nourah bint Abdulrahman University, Riyadh, Saudi Arabia.</p></ack><notes notes-type="author-contribution"><title>Author contributions</title><p>M.A. wrote original draft; M.F. did methodology; M.S. did writing and editing; T.A. Conceptualization and supervision; S.A. did revision and editing; H.K. supervision and proof reading.</p></notes><notes notes-type="data-availability"><title>Data availability</title><p>All data generated or analysed during this study are included in this published article.</p></notes><notes><title>Declarations</title><notes id="FPar1" notes-type="COI-statement"><title>Competing interests</title><p id="Par53">The authors declare no competing interests.</p></notes></notes><ref-list id="Bib1"><title>References</title><ref id="CR1"><label>1.</label><citation-alternatives><element-citation id="ec-CR1" publication-type="journal"><person-group person-group-type="author"><name><surname>Ghesmoune</surname><given-names>M</given-names></name><name><surname>Lebbah</surname><given-names>M</given-names></name><name><surname>Azzag</surname><given-names>H</given-names></name></person-group><article-title>State-of-the-art on clustering data streams</article-title><source>Big Data Anal.</source><year>2016</year><volume>1</volume><fpage>13</fpage><pub-id pub-id-type="doi">10.1186/s41044-016-0011-3</pub-id></element-citation><mixed-citation id="mc-CR1" publication-type="journal">Ghesmoune, M., Lebbah, M. &#x00026; Azzag, H. State-of-the-art on clustering data streams. <italic>Big Data Anal.</italic><bold>1</bold>, 13. 10.1186/s41044-016-0011-3 (2016).</mixed-citation></citation-alternatives></ref><ref id="CR2"><label>2.</label><mixed-citation publication-type="other">O&#x02019;Callaghan, L., Mishra, N., Meyerson, A., Guha, S. &#x00026; Motwani, R. Streaming-data algorithms for high-quality clustering. In <italic>Proceedings 18th International Conference on Data Engineering</italic>, 685&#x02013;694. 10.1109/ICDE.2002.994785 (2002).</mixed-citation></ref><ref id="CR3"><label>3.</label><citation-alternatives><element-citation id="ec-CR3" publication-type="journal"><person-group person-group-type="author"><name><surname>Silva</surname><given-names>JA</given-names></name><etal/></person-group><article-title>Data stream clustering: A survey</article-title><source>ACM Comput. Surv.</source><year>2013</year><volume>46</volume><fpage>1</fpage><lpage>13</lpage><pub-id pub-id-type="doi">10.1145/2522968.2522981</pub-id></element-citation><mixed-citation id="mc-CR3" publication-type="journal">Silva, J. A. et al. Data stream clustering: A survey. <italic>ACM Comput. Surv.</italic><bold>46</bold>, 1&#x02013;13. 10.1145/2522968.2522981 (2013).</mixed-citation></citation-alternatives></ref><ref id="CR4"><label>4.</label><mixed-citation publication-type="other">Aparna, K. &#x00026; Nair, M.&#x000a0;K. Effect of outlier detection on clustering accuracy and computation time of chb k-means algorithm. In Behera, H.&#x000a0;S. &#x00026; Mohapatra, D.&#x000a0;P. (eds.) <italic>Computational Intelligence in Data Mining&#x02014;Volume 2</italic>, 25&#x02013;35 (Springer India, New Delhi, 2016).</mixed-citation></ref><ref id="CR5"><label>5.</label><citation-alternatives><element-citation id="ec-CR5" publication-type="journal"><person-group person-group-type="author"><name><surname>Ding</surname><given-names>S</given-names></name><name><surname>Li</surname><given-names>J</given-names></name><name><surname>Li</surname><given-names>J</given-names></name></person-group><article-title>Application of data mining in effect evaluation of lean management</article-title><source>Sci. Program.</source><year>2022</year><pub-id pub-id-type="doi">10.1155/2022/3101614</pub-id></element-citation><mixed-citation id="mc-CR5" publication-type="journal">Ding, S., Li, J. &#x00026; Li, J. Application of data mining in effect evaluation of lean management. <italic>Sci. Program.</italic>[SPACE]10.1155/2022/3101614 (2022).</mixed-citation></citation-alternatives></ref><ref id="CR6"><label>6.</label><citation-alternatives><element-citation id="ec-CR6" publication-type="book"><person-group person-group-type="author"><name><surname>Irizarry</surname><given-names>R</given-names></name><name><surname>Love</surname><given-names>M</given-names></name></person-group><source>Data Analysis for the Life Sciences with R</source><year>2016</year><publisher-name>CRC Press</publisher-name></element-citation><mixed-citation id="mc-CR6" publication-type="book">Irizarry, R. &#x00026; Love, M. <italic>Data Analysis for the Life Sciences with R</italic> (CRC Press, 2016).</mixed-citation></citation-alternatives></ref><ref id="CR7"><label>7.</label><citation-alternatives><element-citation id="ec-CR7" publication-type="book"><person-group person-group-type="author"><name><surname>Acock</surname><given-names>A</given-names></name></person-group><source>A Gentle Introduction to Stata</source><year>2014</year><edition>4</edition><publisher-name>Stata Press</publisher-name></element-citation><mixed-citation id="mc-CR7" publication-type="book">Acock, A. <italic>A Gentle Introduction to Stata</italic> 4th edn. (Stata Press, 2014).</mixed-citation></citation-alternatives></ref><ref id="CR8"><label>8.</label><mixed-citation publication-type="other">Adams, J., Hayunga, D., Mansi, S., Reeb, D. &#x00026; Verardi, V. Identifying and treating outliers in finance. <italic>Financial Manag.</italic><bold>48</bold>. 10.1111/fima.12269 (2019).</mixed-citation></ref><ref id="CR9"><label>9.</label><mixed-citation publication-type="other">Malhotra, N. <italic>Marketing Research: An Applied Orientation</italic>. Gobal edition (Pearson Education Limited., 2019).</mixed-citation></ref><ref id="CR10"><label>10.</label><citation-alternatives><element-citation id="ec-CR10" publication-type="journal"><person-group person-group-type="author"><name><surname>Garcia</surname><given-names>HE</given-names></name><name><surname>de Sevilha Gosling</surname><given-names>LM</given-names></name></person-group><article-title>Cluster analysis in practice: Dealing with outliers in managerial research</article-title><source>Rev. Adm. Contemp.</source><year>2021</year><volume>25</volume><fpage>e200081</fpage><pub-id pub-id-type="doi">10.1590/1982-7849rac2021200081</pub-id></element-citation><mixed-citation id="mc-CR10" publication-type="journal">Garcia, H. E. &#x00026; de Sevilha Gosling, L. M. Cluster analysis in practice: Dealing with outliers in managerial research. <italic>Rev. Adm. Contemp.</italic><bold>25</bold>, e200081. 10.1590/1982-7849rac2021200081 (2021).</mixed-citation></citation-alternatives></ref><ref id="CR11"><label>11.</label><citation-alternatives><element-citation id="ec-CR11" publication-type="journal"><person-group person-group-type="author"><name><surname>Mansalis</surname><given-names>S</given-names></name><name><surname>Ntoutsi</surname><given-names>E</given-names></name><name><surname>Pelekis</surname><given-names>N</given-names></name><name><surname>Theodoridis</surname><given-names>Y</given-names></name></person-group><article-title>An evaluation of data stream clustering algorithms</article-title><source>Stat. Anal. Data Min.</source><year>2018</year><volume>11</volume><fpage>167</fpage><lpage>187</lpage><pub-id pub-id-type="doi">10.1002/sam.11380</pub-id></element-citation><mixed-citation id="mc-CR11" publication-type="journal">Mansalis, S., Ntoutsi, E., Pelekis, N. &#x00026; Theodoridis, Y. An evaluation of data stream clustering algorithms. <italic>Stat. Anal. Data Min.</italic><bold>11</bold>, 167&#x02013;187. 10.1002/sam.11380 (2018).</mixed-citation></citation-alternatives></ref><ref id="CR12"><label>12.</label><mixed-citation publication-type="other">Zhang, T., Ramakrishnan, R. &#x00026; Livny, M. Birch: An efficient data clustering method for very large databases. In <italic>Proceedings of the 1996 ACM SIGMOD International Conference on Management of Data</italic>, SIGMOD &#x02019;96, 103&#x02013;114. 10.1145/233269.233324 (Association for Computing Machinery, New York, NY, USA, 1996).</mixed-citation></ref><ref id="CR13"><label>13.</label><mixed-citation publication-type="other">Grua, E.&#x000a0;M., Hoogendoorn, M., Malavolta, I., Lago, P. &#x00026; Eiben, A. Clustream-gt: Online clustering for personalization in the health domain. In <italic>IEEE/WIC/ACM International Conference on Web Intelligence</italic>, 270&#x02013;275 (2019).</mixed-citation></ref><ref id="CR14"><label>14.</label><mixed-citation publication-type="other">Cao, F., Estert, M., Qian, W. &#x00026; Zhou, A. <italic>Density-Based Clustering over an Evolving Data Stream with Noise</italic>, 328&#x02013;339.</mixed-citation></ref><ref id="CR15"><label>15.</label><mixed-citation publication-type="other">Kranen, P., Assent, I., Baldauf, C. &#x00026; Seidl, T. Self-adaptive anytime stream clustering. In <italic>2009 Ninth IEEE International Conference on Data Mining</italic>, 249&#x02013;258. 10.1109/ICDM.2009.47 (2009).</mixed-citation></ref><ref id="CR16"><label>16.</label><mixed-citation publication-type="other">Chen, Y. &#x00026; Tu, L. Density-based clustering for real-time stream data. In <italic>Proceedings of the 13th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</italic>, KDD &#x02019;07, 133-142 (Association for Computing Machinery, New York, NY, USA, 2007). 10.1145/1281192.1281210</mixed-citation></ref><ref id="CR17"><label>17.</label><mixed-citation publication-type="other">Chakrabarti, D., Kumar, R. &#x00026; Tomkins, A. <italic>Evolutionary clustering</italic> vol. 2006, 554&#x02013;560. 10.1007/978-0-387-30164-8_271 (2006).</mixed-citation></ref><ref id="CR18"><label>18.</label><citation-alternatives><element-citation id="ec-CR18" publication-type="journal"><person-group person-group-type="author"><name><surname>Chi</surname><given-names>Y</given-names></name><name><surname>Song</surname><given-names>X</given-names></name><name><surname>Zhou</surname><given-names>D</given-names></name><name><surname>Hino</surname><given-names>K</given-names></name><name><surname>Tseng</surname><given-names>BL</given-names></name></person-group><article-title>On evolutionary spectral clustering</article-title><source>ACM Trans. Knowl. Discov. Data</source><year>2009</year><volume>3</volume><fpage>1</fpage><lpage>30</lpage><pub-id pub-id-type="doi">10.1145/1631162.1631165</pub-id></element-citation><mixed-citation id="mc-CR18" publication-type="journal">Chi, Y., Song, X., Zhou, D., Hino, K. &#x00026; Tseng, B. L. On evolutionary spectral clustering. <italic>ACM Trans. Knowl. Discov. Data</italic><bold>3</bold>, 1&#x02013;30. 10.1145/1631162.1631165 (2009).</mixed-citation></citation-alternatives></ref><ref id="CR19"><label>19.</label><mixed-citation publication-type="other">Zhang, Y., Liu, H. &#x00026; Deng, B. Evolutionary clustering with dbscan. In <italic>2013 Ninth International Conference on Natural Computation (ICNC)</italic>, 923&#x02013;928. 10.1109/ICNC.2013.6818108 (2013).</mixed-citation></ref><ref id="CR20"><label>20.</label><mixed-citation publication-type="other">Xu, T., Zhang, Z., Yu, P.&#x000a0;S. &#x00026; Long, B. Evolutionary clustering by hierarchical Dirichlet process with hidden markov state. In <italic>2008 Eighth IEEE International Conference on Data Mining</italic>, 658&#x02013;667. 10.1109/ICDM.2008.24 (2008).</mixed-citation></ref><ref id="CR21"><label>21.</label><citation-alternatives><element-citation id="ec-CR21" publication-type="book"><person-group person-group-type="author"><collab>Denny &#x00026; Squire</collab></person-group><person-group person-group-type="editor"><name><surname>Ho</surname><given-names>TB</given-names></name><name><surname>Cheung</surname><given-names>D</given-names></name><name><surname>Liu</surname><given-names>H</given-names></name></person-group><article-title>D. M. Visualization of cluster changes by comparing self-organizing maps</article-title><source>Advances in Knowledge Discovery and Data Mining</source><year>2005</year><publisher-name>Springer</publisher-name><fpage>410</fpage><lpage>419</lpage></element-citation><mixed-citation id="mc-CR21" publication-type="book">Denny &#x00026; Squire D. M. Visualization of cluster changes by comparing self-organizing maps. In <italic>Advances in Knowledge Discovery and Data Mining</italic> (eds Ho, T. B. et al.) 410&#x02013;419 (Springer, 2005).</mixed-citation></citation-alternatives></ref><ref id="CR22"><label>22.</label><mixed-citation publication-type="other">Denny, Williams, G.J. &#x00026; Christen, P. Visualizing temporal cluster changes using relative density self-organizing maps. <italic>Knowledge Inf. Syst.</italic><bold>25</bold>, 281&#x02013;302. 10.1007/s10115-009-0264-5 (2010).</mixed-citation></ref><ref id="CR23"><label>23.</label><mixed-citation publication-type="other">Spiliopoulou, M., Ntoutsi, I., Theodoridis, Y. &#x00026; Schult, R. Monic: Modeling and monitoring cluster transitions. In <italic>Proceedings of the 12th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</italic>, KDD &#x02019;06, 706&#x02013;711 (Association for Computing Machinery, New York, NY, USA, 2006). 10.1145/1150402.1150491</mixed-citation></ref><ref id="CR24"><label>24.</label><citation-alternatives><element-citation id="ec-CR24" publication-type="book"><person-group person-group-type="author"><name><surname>Oliveira</surname><given-names>M</given-names></name><name><surname>Gama</surname><given-names>J</given-names></name></person-group><person-group person-group-type="editor"><name><surname>Cohen</surname><given-names>PR</given-names></name><name><surname>Adams</surname><given-names>NM</given-names></name><name><surname>Berthold</surname><given-names>MR</given-names></name></person-group><article-title>Bipartite graphs for monitoring clusters transitions</article-title><source>Advances in Intelligent Data Analysis IX</source><year>2010</year><publisher-name>Springer</publisher-name><fpage>114</fpage><lpage>124</lpage></element-citation><mixed-citation id="mc-CR24" publication-type="book">Oliveira, M. &#x00026; Gama, J. Bipartite graphs for monitoring clusters transitions. In <italic>Advances in Intelligent Data Analysis IX</italic> (eds Cohen, P. R. et al.) 114&#x02013;124 (Springer, 2010).</mixed-citation></citation-alternatives></ref><ref id="CR25"><label>25.</label><citation-alternatives><element-citation id="ec-CR25" publication-type="journal"><person-group person-group-type="author"><name><surname>Atif</surname><given-names>M</given-names></name><name><surname>Shafiq</surname><given-names>M</given-names></name><name><surname>Leisch</surname><given-names>F</given-names></name></person-group><article-title>Applications of monitoring and tracing the evolution of clustering solutions in dynamic datasets</article-title><source>J. Appl. Stat.</source><year>2023</year><volume>50</volume><fpage>1017</fpage><lpage>1035</lpage><pub-id pub-id-type="doi">10.1080/02664763.2021.2008882</pub-id><pub-id pub-id-type="pmid">36925905</pub-id>
+</element-citation><mixed-citation id="mc-CR25" publication-type="journal">Atif, M., Shafiq, M. &#x00026; Leisch, F. Applications of monitoring and tracing the evolution of clustering solutions in dynamic datasets. <italic>J. Appl. Stat.</italic><bold>50</bold>, 1017&#x02013;1035. 10.1080/02664763.2021.2008882 (2023).<pub-id pub-id-type="pmid">36925905</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR26"><label>26.</label><citation-alternatives><element-citation id="ec-CR26" publication-type="book"><person-group person-group-type="author"><name><surname>Tan</surname><given-names>P-N</given-names></name><name><surname>Steinbach</surname><given-names>M</given-names></name><name><surname>Kumar</surname><given-names>V</given-names></name></person-group><source>Introduction to Data Mining</source><year>2016</year><publisher-name>Pearson Education India</publisher-name></element-citation><mixed-citation id="mc-CR26" publication-type="book">Tan, P.-N., Steinbach, M. &#x00026; Kumar, V. <italic>Introduction to Data Mining</italic> (Pearson Education India, 2016).</mixed-citation></citation-alternatives></ref><ref id="CR27"><label>27.</label><citation-alternatives><element-citation id="ec-CR27" publication-type="journal"><person-group person-group-type="author"><name><surname>Atif</surname><given-names>M</given-names></name><name><surname>Leisch</surname><given-names>F</given-names></name></person-group><article-title>clusTransition: An R package for monitoring transition in cluster solutions of temporal datasets</article-title><source>PLoS ONE</source><year>2022</year><volume>17</volume><fpage>1</fpage><lpage>20</lpage><pub-id pub-id-type="doi">10.1371/journal.pone.0278146</pub-id></element-citation><mixed-citation id="mc-CR27" publication-type="journal">Atif, M. &#x00026; Leisch, F. clusTransition: An R package for monitoring transition in cluster solutions of temporal datasets. <italic>PLoS ONE</italic><bold>17</bold>, 1&#x02013;20. 10.1371/journal.pone.0278146 (2022).</mixed-citation></citation-alternatives></ref><ref id="CR28"><label>28.</label><citation-alternatives><element-citation id="ec-CR28" publication-type="book"><person-group person-group-type="author"><name><surname>Hastie</surname><given-names>T</given-names></name><name><surname>Tibshirani</surname><given-names>R</given-names></name><name><surname>Friedman</surname><given-names>J</given-names></name></person-group><source>The elements of Statistical Learning: Data Mining, Inference, and prediction</source><year>2009</year><edition>2</edition><publisher-name>Springer</publisher-name></element-citation><mixed-citation id="mc-CR28" publication-type="book">Hastie, T., Tibshirani, R. &#x00026; Friedman, J. <italic>The elements of Statistical Learning: Data Mining, Inference, and prediction</italic> 2nd edn. (Springer, 2009).</mixed-citation></citation-alternatives></ref><ref id="CR29"><label>29.</label><citation-alternatives><element-citation id="ec-CR29" publication-type="book"><person-group person-group-type="author"><name><surname>James</surname><given-names>G</given-names></name><name><surname>Witten</surname><given-names>D</given-names></name><name><surname>Hastie</surname><given-names>T</given-names></name><name><surname>Tibshirani</surname><given-names>R</given-names></name></person-group><source>An Introduction to Statistical Learning: with Applications in R. Springer Texts in Statistics</source><year>2013</year><publisher-name>Springer</publisher-name></element-citation><mixed-citation id="mc-CR29" publication-type="book">James, G., Witten, D., Hastie, T. &#x00026; Tibshirani, R. <italic>An Introduction to Statistical Learning: with Applications in R. Springer Texts in Statistics</italic> (Springer, 2013).</mixed-citation></citation-alternatives></ref><ref id="CR30"><label>30.</label><citation-alternatives><element-citation id="ec-CR30" publication-type="journal"><person-group person-group-type="author"><name><surname>Atif</surname><given-names>M</given-names></name><name><surname>Farooq</surname><given-names>M</given-names></name><name><surname>Abiad</surname><given-names>M</given-names></name><name><surname>Shafiq</surname><given-names>M</given-names></name></person-group><article-title>The least sample size essential for detecting changes in clustering solutions of streaming datasets</article-title><source>PLoS ONE</source><year>2024</year><volume>19</volume><fpage>1</fpage><lpage>14</lpage><pub-id pub-id-type="doi">10.1371/journal.pone.0297355</pub-id></element-citation><mixed-citation id="mc-CR30" publication-type="journal">Atif, M., Farooq, M., Abiad, M. &#x00026; Shafiq, M. The least sample size essential for detecting changes in clustering solutions of streaming datasets. <italic>PLoS ONE</italic><bold>19</bold>, 1&#x02013;14. 10.1371/journal.pone.0297355 (2024).</mixed-citation></citation-alternatives></ref></ref-list></back></article>

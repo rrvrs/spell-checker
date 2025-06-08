@@ -1,0 +1,578 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="1.3" xml:lang="en" article-type="other"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">APL Bioeng</journal-id><journal-id journal-id-type="iso-abbrev">APL Bioeng</journal-id><journal-id journal-id-type="coden">ABPID9</journal-id><journal-title-group><journal-title>APL Bioengineering</journal-title></journal-title-group><issn pub-type="epub">2473-2877</issn><publisher><publisher-name>AIP Publishing LLC</publisher-name></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">40401149</article-id><article-id pub-id-type="pmc">PMC12094799</article-id><article-id pub-id-type="doi">10.1063/5.0249434</article-id><article-id pub-id-type="publisher-id">5.0249434</article-id><article-id pub-id-type="publisher-manuscript">APB24-PS-BOTB2025-00473</article-id><article-categories><subj-group subj-group-type="heading"><subject>Perspectives</subject></subj-group></article-categories><title-group><article-title>Optimization frameworks for bespoke sensory encoding in neuroprosthetics</article-title><fn-group><fn fn-type="title-note"><p><bold>Note:</bold> This paper is part of the Special Topic on Bioengineering of the Brain.</p></fn></fn-group></title-group><contrib-group><contrib contrib-type="author"><contrib-id contrib-id-type="orcid">https://orcid.org/0009-0000-5510-5975</contrib-id><name><surname>Leong</surname><given-names>Franklin</given-names></name><xref rid="a1" ref-type="aff">1</xref></contrib><contrib contrib-type="author"><contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-4396-8217</contrib-id><name><surname>Micera</surname><given-names>Silvestro</given-names></name><xref rid="a1 a2 a3" ref-type="aff">1,2,3</xref><xref rid="cor1" ref-type="corresp">a)</xref><email specific-use="metadata" xlink:href="mailto:silvestro.micera@epfl.ch"/></contrib><contrib contrib-type="author" corresp="yes"><contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-2251-7142</contrib-id><name><surname>Shokur</surname><given-names>Solaiman</given-names></name><xref rid="a1 a2 a3 a4" ref-type="aff">1,2,3,4</xref><xref rid="cor1" ref-type="corresp">a)</xref><email specific-use="metadata" xlink:href="mailto:solaiman.shokur@santannapisa.it"/></contrib><aff id="a1"><label>1</label><institution>Translational Neural Engineering Laboratory (TNE Lab), Neuro-X Institute, EPFL</institution>, Geneva, <country>Switzerland</country></aff><aff id="a2"><label>2</label><institution>Modular Implantable Neurotechnologies (MINE) Laboratory, Universit&#x000e0; Vita-Salute San Raffaele and Scuola Superiore Sant'Anna</institution>, Milan, <country>Italy</country></aff><aff id="a3"><label>3</label><institution>Bioelectronics and Bioengineering Area, The BioRobotics Institute and Department of Excellence in Robotics and AI, Scuola Superiore Sant'Anna</institution>, Pisa, <country>Italy</country></aff><aff id="a4"><label>4</label><institution>Department of Clinical Neurosciences, University Hospital of Lausanne and University of Lausanne</institution>, Lausanne, <country>Switzerland</country></aff></contrib-group><author-notes><corresp id="cor1"><label>a)</label><bold>Authors to whom correspondence should be addressed:</bold>
+<email>silvestro.micera@epfl.ch</email> and <email>solaiman.shokur@santannapisa.it</email></corresp></author-notes><pub-date pub-type="collection"><month>6</month><year>2025</year></pub-date><pub-date pub-type="epub"><day>20</day><month>5</month><year>2025</year></pub-date><pub-date pub-type="pmc-release"><day>20</day><month>5</month><year>2025</year></pub-date><volume>9</volume><issue>2</issue><elocation-id seq="1">020901</elocation-id><history>
+<date date-type="received"><day>18</day><month>11</month><year>2024</year></date>
+<date date-type="accepted"><day>02</day><month>5</month><year>2025</year></date>
+</history><permissions><copyright-statement>&#x000a9; 2025 Author(s).</copyright-statement><copyright-year>2025</copyright-year><copyright-holder>Author(s)</copyright-holder><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>All article content, except where otherwise noted, is licensed under a Creative Commons Attribution (CC BY) license (<ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</ext-link>).</license-p></license></permissions><abstract><p>Restoring natural sensation via neuroprosthetics relies on the possibility of encoding complex and nuanced information. For example, an ideal brain&#x02013;machine interface with sensory feedback would provide the user with sensation about movement, pressure, curvature, texture, etc. Despite advances in neural interfaces that allow for complex stimulation patterns (e.g., multisite stimulation or the possibility of targeting a precise neural ensemble), a key question remains: How can we best exploit the potential of these technologies? The increasing number of electrodes coupled with more parameters being explored leads to an exponential increase in the number of possible combinations, making a brute-force approach, such as systematic search, impractical. This Perspective outlines three different optimization frameworks&#x02014;namely, the explicit, physiological, and self-optimized methods&#x02014;allowing one to potentially converge faster toward effective parameters. Although our focus will be on the somatosensory system, these frameworks are flexible and applicable to various sensory systems (e.g., vision) and stimulator types.</p></abstract><funding-group specific-use="FundRef"><award-group><funding-source>
+<named-content content-type="funder_name">Swiss national Science Foundation</named-content>
+</funding-source><award-id award-type="contract">10.003.473</award-id></award-group><award-group><funding-source>
+<named-content content-type="funder_name">Horizon Europe</named-content>
+</funding-source><award-id award-type="contract">101092612</award-id></award-group></funding-group><counts><page-count count="9"/></counts><custom-meta-group><custom-meta><meta-name>crossmark</meta-name><meta-value/></custom-meta></custom-meta-group></article-meta></front><body><sec id="s1"><label>I.</label><title>INTRODUCTION</title><p>In recent years, many noninvasive and implantable strategies have been proposed to restore a variety of sensations (e.g., vision,<xref rid="c1" ref-type="bibr"><sup>1</sup></xref> tactile,<xref rid="c2" ref-type="bibr"><sup>2</sup></xref> auditory<xref rid="c3" ref-type="bibr"><sup>3</sup></xref>). For example, somatosensory neuroprosthetics have been developed for upper limb,<xref rid="c4" ref-type="bibr"><sup>4&#x02013;6</sup></xref> lower limb,<xref rid="c7" ref-type="bibr"><sup>7,8</sup></xref> stroke,<xref rid="c9" ref-type="bibr"><sup>9</sup></xref> spinal cord injury<xref rid="c10" ref-type="bibr"><sup>10</sup></xref> with promising outcomes. Raspopovic <italic>et al.</italic> restored the sensation of force, stiffness, and shape in arm amputees using transversal intrafascicular multichannel electrodes (TIME),<xref rid="c4" ref-type="bibr"><sup>4</sup></xref> while Oddo <italic>et al.</italic> demonstrated the discrimination of different textures using microneurography and TIME.<xref rid="c11" ref-type="bibr"><sup>11</sup></xref> For noninvasive options, D'Anna <italic>et al.</italic> managed to utilized transcutaneous electrical nerve stimulation (TENS) to restore force feedback.<xref rid="c12" ref-type="bibr"><sup>12</sup></xref> Several studies with brain implants showed somatosensory restoration via intracortical microstimulation (ICMS) in both non-human primate<xref rid="c13" ref-type="bibr"><sup>13,14</sup></xref> and humans.<xref rid="c8" ref-type="bibr"><sup>8</sup></xref> Recently, the field has also begun to gravitate toward restoration of thermal sensation.<xref rid="c15" ref-type="bibr"><sup>15&#x02013;18</sup></xref></p><p>Sensory encoding refers to the process in which information from the environment is captured and converted into neuronal signals that are interpreted by the brain. The loss of sensory organs disrupts the biological sensory encoding pathways. However, an artificial sensor could replace the sensory organs.<xref rid="c15" ref-type="bibr"><sup>15,19</sup></xref> Coupled with neural interfaces that map the input from the sensor to stimulation (e.g., electrical, mechanical, thermal) of the nervous system, this allows for artificial restoration of the sensory encoding process.<xref rid="c4" ref-type="bibr"><sup>4,5,15,16,20,21</sup></xref></p><p>Although lost sensations can be partially restored through sensory encoding, it poses a fundamental challenge due to the subjective nature of personal perceptions. This is in contrast to the relatively more objective task of reading and decoding neural signals for motor neural prosthesis.<xref rid="c22" ref-type="bibr"><sup>22,23</sup></xref> This concept of the subjective nature of individual perceptions is also known as &#x0201c;qualia&#x0201d;&#x02014;exemplified by the idea that the personal experience of &#x0201c;what is red?&#x0201d; or &#x0201c;feeling pain&#x0201d; is hard to communicate and unique. The challenge in sensory restoration arises from the variability of the qualia, influenced by factors such as prior sensory experiences and neural plasticity. In addition, the placement of the neural interface inevitably varies between users, contributing to the elicitation of different perceptions.</p><p>The inherent subjectivity of sensory perception complicates the evaluation of stimulation strategies, making it challenging to determine their effectiveness. To mitigate this, researchers have developed objective assessment methods that minimize bias. For instance, Iberite and colleagues employed a matching task where artificial sensations from prosthetics were presented alongside reference natural sensations, allowing users to indicate whether they matched<xref rid="c15" ref-type="bibr"><sup>15</sup></xref>&#x02014;this is less susceptible to bias compared to asking participants to describe how the artificial sensation felt. Another strategy involves assessing the impact of sensory feedback on motor performance, such as moving blocks with varying thermal<xref rid="c18" ref-type="bibr"><sup>18</sup></xref> or fragility levels,<xref rid="c5" ref-type="bibr"><sup>5</sup></xref> as well as measuring the time taken to reach for an object.<xref rid="c24" ref-type="bibr"><sup>24</sup></xref> Finally, embodiment assessments serve as proxies for evaluating the efficacy of sensory feedback. Methods such as the cross-congruency paradigm<xref rid="c25" ref-type="bibr"><sup>25</sup></xref> and peripersonal space tests<xref rid="c26" ref-type="bibr"><sup>26</sup></xref> help determine the extent to which a prosthetic limb is integrated into the body schema. Together, these objective approaches offer a more comprehensive and reliable evaluation of sensory feedback in neuroprosthetics.</p><p>Beyond the evaluation of stimulation strategies, subjectivity also poses a fundamental challenge in optimizing stimulation parameters. A key question in sensory feedback is how to best encode sensory information through artificial stimulation to produce meaningful and naturalistic perceptions. Finding an effective set of parameters involves navigation in a very large search space. For example, considering ICMS of the somatosensory cortex [<xref rid="f1" ref-type="fig">Fig. 1(a)</xref>], two categories of stimulation parameters could be explored: the stimulation parameters [<xref rid="f1" ref-type="fig">Fig. 1(b)</xref>] and the stimulation sites [<xref rid="f1" ref-type="fig">Fig. 1(c)</xref>]. Typically, stimulation parameters such as pulse amplitude, pulse width, and stimulation frequency were modulated. Waveform shape, symmetry, cathodic or anodic first, and the use of mono/bipolar stimulation have also been investigated. Furthermore, in recent years, biomimetic patterns have been introduced.<xref rid="c27" ref-type="bibr"><sup>27,28</sup></xref> Biomimetic stimulation is a complex form of stimulation that mirrors the encoding methods utilized by the nervous system in nature. In addition to biomimicry, stimulation bursts have also been used and can be defined by parameters such as burst duration and interburst interval.<xref rid="c29" ref-type="bibr"><sup>29</sup></xref></p><fig position="float" fig-type="figure" id="f1"><label>FIG. 1.</label><caption><p>Sensory encoding of neural interface. (a) Examples of different types of neural interfaces. (b) Possible stimulation parameters that can be optimized. (c) Possible ways of selecting the stimulation sites.</p></caption><graphic xlink:href="ABPID9-000009-020901_1-g001" position="float"/></fig><p>When considering the stimulation sites, we can generally select a single electrode or multiple electrodes [<xref rid="f1" ref-type="fig">Fig. 1(c)</xref>]. The stimulation parameters are usually similar across the electrodes. Nevertheless, the discipline is increasingly focusing on investigating the spatiotemporal characteristics of neurons during stimulation.<xref rid="c30" ref-type="bibr"><sup>30</sup></xref> Initially, neuronal activity is captured through implants as specific stimuli are administered. Subsequently, they stimulate the implanted region guided by the recorded neuronal activity. For instance, one group of neurons may become active in the initial phase, whereas a different group might activate subsequently.</p><p>Most, if not all, of the parameters discussed are mutually exclusive; as such, this leads to an exponential increase in the number of possible combinations across the different parameters. Studies of computational models<xref rid="c8" ref-type="bibr"><sup>8</sup></xref> and animal models<xref rid="c31" ref-type="bibr"><sup>31,32</sup></xref> have helped narrow down this huge multidimensional search space. Nevertheless, to unlock the next tier of bespoke sensory encoding&#x02014;encompassing more natural sensation, precise, and stable somatotopy&#x02014;we need faster or automated methods to optimize the parameters, exploiting the extensive possibilities offered by the multiparameter and multisite stimulation.</p><p>To this end, in this Perspective, we first discuss the conventional approach of developing sensory encoding strategies, which involves devising encoding method with novel strategy or modality. Then, we elaborate on the three different optimization frameworks&#x02014;explicit, physiological, self-optimized&#x02014;for efficient optimization of stimulation parameters for the different sensory encoding strategies already explored through the conventional approach. Although we focused on the somatosensory system, these frameworks are designed to be adaptable across different sensory systems and types of stimulators. Finally, we explore how the different optimization frameworks could work in tandem.</p></sec><sec id="s2"><label>II.</label><title>CONVENTIONAL APPROACH</title><p>Traditionally, the development of sensory encoding strategies has been guided by theoretical models.<xref rid="c33" ref-type="bibr"><sup>33&#x02013;39</sup></xref> More recently, there has also been an increase in developmental efforts inspired by biological mechanisms observed in natural sensory processing.<xref rid="c8" ref-type="bibr"><sup>8,40&#x02013;43</sup></xref> Researchers identify potential stimulation parameters, such as those illustrated in <xref rid="f1" ref-type="fig">Fig. 1(b)</xref>, to encode sensory information. Then, these parameters are validated on human subjects through experimental trials.<xref rid="c11" ref-type="bibr"><sup>11,12,29,44</sup></xref> The effectiveness of these parameters is often assessed through post-stimulation psychophysical tests and post-experiment questionnaires, where subjects describe their sensory experiences, including aspects such as intensity, quality, and spatial localization.</p><p>Sensory encoding strategies can vary in complexity. For example, in tactile sensory feedback, early efforts focused on a simple mapping of force sensor values to the intensity of stimulation parameters.<xref rid="c45" ref-type="bibr"><sup>45</sup></xref> Then, apparent moving sensation could be elicited through sequential stimulation of multiple locations.<xref rid="c46" ref-type="bibr"><sup>46</sup></xref> More recently, complex stimulation patterns inspired by biomimicry have shown a marked improvement in the naturalness of the elicited tactile sensation. Saal and Bensmaia proposed a biomimetic approach to stimulate the peripheral nerve in 2015,<xref rid="c27" ref-type="bibr"><sup>27</sup></xref> where they subsequently released a biophysical model.<xref rid="c28" ref-type="bibr"><sup>28</sup></xref> Valle <italic>et al.</italic> validated the approach in multiple studies in which they based the stimulation parameters on the output of the biophysical model. This elicited a sensation in amputees that felt more natural compared to that elicited by a more naive method.<xref rid="c5" ref-type="bibr"><sup>5,8</sup></xref></p><p>Beyond increasing the complexity of stimulation, sensory encoding can be expanded by incorporating additional modalities. For example, rather than solely providing pressure or vibration feedback, researchers have explored thermal feedback to enhance the range of sensory information conveyed to users.<xref rid="c15" ref-type="bibr"><sup>15,16,18</sup></xref> Introducing new modalities can also unlock previously unattainable possibilities, such as encoding wetness sensations through thermal feedback.<xref rid="c17" ref-type="bibr"><sup>17</sup></xref></p></sec><sec id="s3"><label>III.</label><title>OPTIMIZATION FRAMEWORKS</title><p>Although the conventional approach is effective for identifying potential sensory encoding strategies, eliciting a bespoke sensation requires optimization. For instance, one might propose that a burst-stimulation approach is suitable for sensory encoding, but to maximize its potential, various parameters should be tuned. Optimization frameworks can be employed to fine-tune these parameters to elicit the desired sensation. <xref rid="f2" ref-type="fig">Figure 2</xref> highlights the different types of optimization framework. In general, the main components of an optimization framework consist of responses, optimizer, stimulator, and its stimulation parameters [<xref rid="f2" ref-type="fig">Fig. 2(a)</xref>]. This skeletal framework is applicable to different types of stimulation, ranging from invasive/noninvasive, brain/peripheral nerve stimulation, or even retinal and auditory stimulation. Upon stimulation, responses could be acquired. Such responses can be categorized into physiological or perceptual [<xref rid="f2" ref-type="fig">Fig. 2(b)</xref>]. Examples of physiological signals could be electroencephalogram (EEG) or electroneurography (ENG), while the most common measure of perceptual information is through psychophysical tests. The output of the responses is then relayed to an optimizer that decides on the stimulation parameters of the next iteration, closing the optimization loop. The end point of the optimization process is contingent on factors such as the maximum number of iterations or a specified time constraint.</p><fig position="float" fig-type="figure" id="f2"><label>FIG. 2.</label><caption><p>Frameworks for sensory encoding optimization. (a) Skeletal structure of a generic optimization framework. (b) Possible modality of responses that can be recorded. (c) Example of different frameworks depending on the combination of types of response and optimizer.</p></caption><graphic xlink:href="ABPID9-000009-020901_1-g002" position="float"/></fig><p>The crux of an optimization framework lies in the choice of responses and optimizer. Depending on the combination of responses and optimizer, we obtain three different optimization frameworks. <xref rid="f2" ref-type="fig">Figure 2(c)</xref> illustrates how the different combinations generate different optimization frameworks. Briefly, when we obtain perceptual data from the subject post-stimulation and we utilize algorithms for the tuning of stimulation parameters, we have the explicit framework. Changing the responses from perceptual to physiological signals results in a physiological framework. On the other hand, if we retain perceptual data but instead change the optimizer to the subject themselves, we get the self-optimized framework. In Sec. <xref rid="s4" ref-type="sec">IV&#x02013;</xref><xref rid="s6" ref-type="sec">VI</xref>, we elaborate on the different responses&#x02013;optimizer combinations and the pros and cons associated with each framework.</p></sec><sec id="s4"><label>IV.</label><title>EXPLICIT</title><p>Conventionally, perceptual responses are collected through psychophysical tests or questionnaires during the experimental process to assess the effectiveness of the stimulation applied.<xref rid="c47" ref-type="bibr"><sup>47&#x02013;49</sup></xref> This approach is logical considering that perceptual responses offer direct and valuable insights into the sensory experiences of the participants. It is therefore intuitive to utilize these perceptual responses as a means of optimization. This concept forms the basis of the explicit framework, in which perceptual responses are fed into an algorithmic optimizer as input [<xref rid="f2" ref-type="fig">Fig. 2(c)</xref>].</p><p>Some example studies utilizing the explicit frameworks include Borda <italic>et al.</italic>, who used reinforcement learning algorithms to adjust TENS parameters for lower limb sensory feedback. Participants provided real-time feedback on the sensations experienced, allowing the system to learn and optimize stimulation settings effectively.<xref rid="c50" ref-type="bibr"><sup>50</sup></xref> Multiple studies also used variations of Bayesian optimizations to adapt stimulation parameters.<xref rid="c7" ref-type="bibr"><sup>7,51,52</sup></xref> Their method efficiently navigated the complex parameter space to identify optimal settings. In visual prosthetics, Fauvel and Chalk combined simulation with limited human feedback to optimize stimulation parameters,<xref rid="c53" ref-type="bibr"><sup>53</sup></xref> while Lee <italic>et al.</italic> presented a user preference optimization approach using RankNet for exoskeleton control, which could easily be adapted to optimize sensory feedback parameters.<xref rid="c54" ref-type="bibr"><sup>54</sup></xref> Another common example is cochlear implant programming. In this process, an audiologist adjusts key stimulation parameters based on user feedback. First, the audiologist determines the T-levels (Threshold levels), which represent the softest sounds the user can detect. Next, they assess the C/M-levels (Comfort or Most Comfortable levels), which define the loudest sounds that remain comfortable for the user.<xref rid="c55" ref-type="bibr"><sup>55</sup></xref></p><p>A key consideration in the explicit framework is the trade-off between the amount of feedback required from the subject and the number of iterations that can be performed within practical constraints. Minimizing the need for extensive subject feedback&#x02014;shorter psychophysical tests&#x02014;allows for more iterations and rapid data generation, which is beneficial for data-driven optimization methods such as machine learning algorithms. However, insufficient feedback could prevent the algorithm from accurately identifying the optimal stimulation parameters, as it may lack critical information about the user's subjective experience. Therefore, domain expertise remains essential in designing the optimization protocol. Experts must determine the optimal balance between the quantity and quality of information needed from the subject and the feasible number of iterations within a limited time frame, ensuring both efficiency and effectiveness in the optimization process.</p><p>The explicit framework represents a significant advancement over conventional methods by incorporating real-time human feedback into the optimization of stimulation parameters. This approach enables a more dynamic and responsive refinement process, allowing for the identification of effective parameters. However, it also introduces new challenges, particularly in the design of experiments to balance the trade-offs between the quantity of user input and the number of iterations that can be conducted.</p></sec><sec id="s5"><label>V.</label><title>PHYSIOLOGICAL</title><p>While psychophysical tests have traditionally served as the gold standard for evaluating participants' perceptions, efforts to optimize stimulation parameters have been constrained by the speed at which individuals can complete them. In the explicit framework, the need for participants to finalize these psychophysical tests before applying the results in subsequent iterations presents a significant bottleneck in the process. In a bid to address this bottleneck, some researchers have turned to the measurement of physiological responses as proxy information for perceptions.<xref rid="c56" ref-type="bibr"><sup>56&#x02013;58</sup></xref> The physiological framework leverages computational algorithms to dynamically adjust and refine stimulation parameters based on proxy measures that correlate with the desired sensory perception as shown in <xref rid="f2" ref-type="fig">Fig. 2(c)</xref>. As this method bypasses the need for human feedback, theoretically it holds the potential to allow for the maximum number of iterations for optimization.</p><p>For example, in 2022, Eldeeb and Akcakaya used EEG signals to guide the adjustment of electrical stimulation parameters to generate different texture force profiles, demonstrating the potential of EEG as a proxy for the optimization of tactile sensory feedback.<xref rid="c56" ref-type="bibr"><sup>56</sup></xref> Apart from EEG, Birznieks and Vickery utilized microneurography and identified the neuronal code involved in vibrotactile frequency perception. In the future, adjusting stimulation parameters based on microneurography data could further enhance frequency perception.<xref rid="c59" ref-type="bibr"><sup>59,60</sup></xref> Other physiological signals such as those acquired from galvanic skin response and pupil dilation can also serve as optimization targets. In visual prosthetics, surrogate models have facilitated the optimization process. Our team employed an actor&#x02013;model framework to build a digital twin of the biological retina to optimize stimulation parameters for visual prosthetics, potentially enhancing the quality of perceived visual stimuli without requiring extensive subjective feedback.<xref rid="c57" ref-type="bibr"><sup>57</sup></xref> In deep brain stimulation for Parkinson's disease, genetic algorithms based on physiological measurements have also shown promising results.<xref rid="c61" ref-type="bibr"><sup>61</sup></xref> In cochlear implants, beyond determining T-levels and C/M-levels, objective measures such as Electrically Evoked Compound Action Potentials, recorded via Neural Response Telemetry, are often used to optimize stimulation parameters.<xref rid="c62" ref-type="bibr"><sup>62</sup></xref></p><p>The primary advantage of the physiological framework is its efficiency, enabling a highly iterative and adaptive approach that could quickly converge on optimal stimulation settings without direct human input. By utilizing proxy measurements&#x02014;such as neural activity patterns, physiological responses, or behavioral indicators&#x02014;the system can adjust parameters in real-time, continuously learning and improving over time. This makes the physiological framework suitable also for applications where sensory feedback needs to be fine-tuned regularly, such as in dynamic environments or with changing user conditions.</p><p>However, this framework also has limitations. A fundamental challenge is the reliance on proxy measures that may not always be perfectly correlated with subjective sensory experiences. For instance, physiological signals like EEG may provide indirect information on sensory perception but might not capture the full complexity or nuances of an individual's subjective experience. When the proxy measurement does not accurately reflect the target sensation, the optimization process potentially results in suboptimal or inconsistent sensory feedback. Therefore, the effectiveness of the closed-loop system heavily depends on the selection and accuracy of the proxy data used for optimization. Moreover, in contrast to the explicit framework where subjects need to concentrate on the perception they must report, the physiological framework lacks this requirement. Consequently, throughout the session, subjects might lose focus, which can potentially influence the physiological signal.<xref rid="c63" ref-type="bibr"><sup>63</sup></xref></p></sec><sec id="s6"><label>VI.</label><title>SELF-OPTIMIZED</title><p>While the explicit framework incorporates perceptual responses as input for optimization&#x02014;which could be more precise than physiological responses&#x02014;it simultaneously creates a bottleneck in the iterative process. On the other hand, the physiological framework boasts the potential for rapid iterations, but the reliance on optimization based on proxy information could become problematic.</p><p>The self-optimized framework offers promise to address the key limitations of the other two frameworks by empowering the subject to control the stimulation parameters. In this approach, the subject is provided with a target perception or sensation, and they adjust the stimulation parameters themselves until the desired perception is elicited. In contrast to the explicit framework, where explicit feedback is required, the self-optimized framework does not require the participants to respond. This framework leverages the subject's intuitive understanding of their own sensory experiences. At each iteration upon stimulation, the subject perceives the sensation and determines the trajectory for the upcoming set of stimulation parameters. Throughout the process, the researcher does not receive information about the perception of the subject.</p><p>Also in contrast to the physiological framework, the self-optimized framework allows for the rapid iterations possible while still accounting for the subject's feedback, albeit in an implicit form. Shokur <italic>et al.</italic> demonstrate this methodology by having subjects adjust vibrator stimulation parameters to elicit sensations that matched the experience of walking on specific surfaces. Participants manipulated the parameters until the tactile feedback felt congruent with the target surface, effectively personalizing the sensory encoding.<xref rid="c6" ref-type="bibr"><sup>6</sup></xref> The generalizability of this approach was further tested by Verbaarschot <italic>et al.</italic>, who showed that allowing subjects to tune their stimulation parameters improved their ability to identify different objects during tactile exploration. By directly controlling the parameters, the subjects achieved more accurate tactile sensations, enhancing object recognition.<xref rid="c10" ref-type="bibr"><sup>10</sup></xref></p><p>The self-optimized framework represents an interesting approach to optimizing stimulation parameters by placing control directly in the hands of the subject. This approach bypasses the need for explicit responses, thereby maximizing the number of iterations possible within a given timeframe. By eliminating the trade-off between user input and the number of iterations, the self-optimized framework has the potential to accelerate the optimization process while ensuring that the resulting parameters closely align with the subject's sensory experience. It is worth noting that the simultaneous optimization of parameters is contingent upon the setup, and by monitoring both hands, up to six parameters (3 dimensions per hand) can be optimized. Additionally, by integrating rotations into the tracking mechanism, the number of parameters subject to optimization could be increased. However, this could add complexity, potentially diminishing the framework's effectiveness. As this framework continues to evolve, it holds enormous potential for advancing sensory encoding techniques.</p></sec><sec id="s7"><label>VII.</label><title>COMBINATION</title><p>In Secs. <xref rid="s4" ref-type="sec">IV&#x02013;</xref><xref rid="s6" ref-type="sec">VI</xref>, we examined the explicit, physiological, and self-optimized frameworks independently. Each of these frameworks has their unique strengths in the optimization process but also contains limitations. Integrating these frameworks can help to mitigate the individual shortcomings, potentially leading to a more robust optimization process.</p><p>Ideally, the physiological framework holds a huge potential for optimizing stimulation parameters by allowing for rapid iterations. In practice, finding an ideal proxy measure that correlates well with the desired sensory perception is challenging; physiological signals may only partially capture the subjective experience of sensations, which can be complex and context-dependent. Integrating the physiological framework with either the explicit or self-optimized framework can help enhance these proxy measures. For instance, using EEG as a proxy, initial data could be gathered by having a group of subjects follow an explicit or self-optimized protocol, where subjects adjust parameters or provide feedback on their sensory experiences. During this process, EEG signals (or other physiological signals) can be recorded alongside the process. Once subjects perceive the desired sensation, concurrent EEG data can be analyzed to identify characteristic features that correspond well to that particular sensation. By examining EEG signals across multiple subjects, it might be possible to establish a robust map of EEG features that reliably correlate with certain sensations. These neurological markers can then be used as a proxy measure in future physiological frameworks for optimization.</p><p>Even with improved proxy measurements informed by explicit or self-optimized frameworks, it is likely that these physiological signals still may not capture all the complexities of sensory perception. To address this, a combination of frameworks can be applied sequentially to leverage the strengths of each. A practical method involves using the physiological framework for an initial broad parameter adjustment, taking advantage of its rapid and efficient nature for initial coarse tuning. This helps to narrow the parameter space. Following this initial stage, the explicit or self-optimizing framework can be utilized to refine the parameters, relying on direct user perceptual responses for greater precision. By integrating user feedback for fine-tuning, this combined approach compensates for the limitations of the physiological framework and avoids the extensive time demand of the explicit framework for preliminary tuning. In essence, this method balances the quick convergence of the physiological framework with the accuracy of the explicit framework.</p><p>The self-optimized framework, which integrates the subject's intuition and control over parameter adjustments, could similarly benefit from the combination with the explicit framework. In contrast to the other framework, the self-optimized framework requires the subject to control and determine the next stimulation parameters. However, without algorithmic guidance, users may choose parameter combinations arbitrarily or inefficiently, potentially overlooking optimal regions within the search space. To tackle this issue, the framework could periodically introduce guidance in the form of system-generated suggestions. For example, during the self-optimization process, brief psychophysical tests could periodically appear to capture the user's perceptual feedback. As more data accumulate from user responses, the system could analyze patterns to recommend parameter adjustments, directing the user's exploration toward specific areas in the parameter space where optimal results are more likely. This hybrid self-optimized approach blends subjects' intuitive adjustments with data-driven suggestions, thus ensuring a more comprehensive exploration of the parameter space while preserving users' autonomy over their sensory experience adjustments. This strategy improves both the speed and accuracy of the self-optimized framework by balancing algorithmic guidance with subject-driven exploration.</p></sec><sec id="s8"><label>VIII.</label><title>CONCLUSION</title><p>In conclusion, this Perspective provides a comprehensive overview of various frameworks to optimize stimulation parameters in sensory encoding, a pivotal aspect of neuroprosthetics in various sensory systems, including vision, auditory, and touch. As neuroprosthetic technology continues to evolve, facilitating more intricate and refined perceptions, understanding the strengths and limitations of each framework&#x02014;explicit, physiological, and self-optimized&#x02014;is imperative for advancing the field. Importantly, these frameworks are not isolated approaches, but can be integrated to harness their complementary strengths. Combining them can lead to more robust and efficient sensory feedback systems, ultimately enhancing the efficacy and user experience of neuroprosthetic devices.</p></sec></body><back><ack><title>ACKNOWLEDGMENTS</title><p>For the funding allocated to this research, we would like to thank the Bertarelli Foundation, the Swiss National Science Foundation with the CHRONOS and NESSO projects, the Horizon Europe Research &#x00026; Innovation Programme under grant 101092612 (Social and hUman ceNtered XR - SUN project) the #NEXTGENERATIONEU (NGEU) and the Ministry of University and Research (MUR), National Recovery and Resilience Plan (NRRP) with two projects: MNESYS (PE0000006)&#x02013;A Multiscale integrated approach to the study of the nervous system in health and disease (DN. 1553 11.10.2022) and THE (IECS00000017)&#x02013;Tuscany Health Ecosystem (DN. 1553 11.10.2022).</p></ack><sec sec-type="author-declarations"><title>AUTHOR DECLARATIONS</title><sec sec-type="COI-statement"><title>Conflict of Interest</title><p>S.M. holds shares in SensArs, which aims to developbionic limbs for amputees. S.M. and S.S. are the inventors of a thermal sensing device, sensory feedback system, and method using said thermal sensing device (Application No. EP22207038.5). S.M. and S.S. are cofounder of Action Potential neurotechnology, a startup working in nerve stimulationfor motor restoration.</p></sec><sec sec-type="author-contributions"><title>Author Contributions</title><p><bold>Franklin Leong:</bold> Conceptualization (equal); Visualization (equal); Writing &#x02013; original draft (equal); Writing &#x02013; review &#x00026; editing (equal). <bold>Silvestro Micera:</bold> Conceptualization (equal); Funding acquisition (lead); Supervision (equal); Writing &#x02013; original draft (equal); Writing &#x02013; review &#x00026; editing (equal). <bold>Solaiman Shokur:</bold> Conceptualization (equal); Funding acquisition (equal); Supervision (equal); Writing &#x02013; original draft (lead); Writing &#x02013; review &#x00026; editing (lead).</p></sec></sec><sec sec-type="data-availability"><title>DATA AVAILABILITY</title><p>Data sharing is not applicable to this article as no new data were created or analyzed in this study.</p></sec><ref-list content-type="numbered"><ref id="c1"><label>1.</label><mixed-citation publication-type="journal"><string-name><given-names>E.</given-names>
+<surname>Borda</surname></string-name> and <string-name><given-names>D.</given-names>
+<surname>Ghezzi</surname></string-name>, &#x0201c;<article-title>Advances in visual prostheses: Engineering and biological challenges</article-title>,&#x0201d; <source>Prog. Biomed. Eng.</source>
+<volume>4</volume>, <fpage>032003</fpage> (<year>2022</year>).<pub-id pub-id-type="doi">10.1088/2516-1091/ac812c</pub-id></mixed-citation></ref><ref id="c2"><label>2.</label><mixed-citation publication-type="journal"><string-name><given-names>S. J.</given-names>
+<surname>Bensmaia</surname></string-name>, <string-name><given-names>D. J.</given-names>
+<surname>Tyler</surname></string-name>, and <string-name><given-names>S.</given-names>
+<surname>Micera</surname></string-name>, &#x0201c;<article-title>Restoration of sensory information via bionic hands</article-title>,&#x0201d; <source>Nat. Biomed. Eng.</source>
+<volume>7</volume>, <fpage>443</fpage> (<year>2020</year>).<pub-id pub-id-type="doi">10.1038/s41551-020-00630-8</pub-id><pub-id pub-id-type="pmid">33230305</pub-id>
+</mixed-citation></ref><ref id="c3"><label>3.</label><mixed-citation publication-type="journal"><string-name><given-names>F.-G.</given-names>
+<surname>Zeng</surname></string-name>, <string-name><given-names>S.</given-names>
+<surname>Rebscher</surname></string-name>, <string-name><given-names>W.</given-names>
+<surname>Harrison</surname></string-name>, <string-name><given-names>X.</given-names>
+<surname>Sun</surname></string-name>, and <string-name><given-names>H.</given-names>
+<surname>Feng</surname></string-name>, &#x0201c;<article-title>Cochlear implants: System design, integration, and evaluation</article-title>,&#x0201d; <source>IEEE Rev. Biomed. Eng.</source>
+<volume>1</volume>, <fpage>115</fpage>&#x02013;<lpage>142</lpage> (<year>2008</year>).<pub-id pub-id-type="doi">10.1109/RBME.2008.2008250</pub-id><pub-id pub-id-type="pmid">19946565</pub-id>
+</mixed-citation></ref><ref id="c4"><label>4.</label><mixed-citation publication-type="journal"><string-name><given-names>S.</given-names>
+<surname>Raspopovic</surname></string-name>, <string-name><given-names>M.</given-names>
+<surname>Capogrosso</surname></string-name>, <string-name><given-names>F. M.</given-names>
+<surname>Petrini</surname></string-name>, <string-name><given-names>M.</given-names>
+<surname>Bonizzato</surname></string-name>, <string-name><given-names>J.</given-names>
+<surname>Rigosa</surname></string-name>, <string-name><given-names>G.</given-names>
+<surname>Di Pino</surname></string-name>, <string-name><given-names>J.</given-names>
+<surname>Carpaneto</surname></string-name>, <string-name><given-names>M.</given-names>
+<surname>Controzzi</surname></string-name>, <string-name><given-names>T.</given-names>
+<surname>Boretius</surname></string-name>, <string-name><given-names>E.</given-names>
+<surname>Fernandez</surname></string-name>, <string-name><given-names>G.</given-names>
+<surname>Granata</surname></string-name>, <string-name><given-names>C. M.</given-names>
+<surname>Oddo</surname></string-name>, <string-name><given-names>L.</given-names>
+<surname>Citi</surname></string-name>, <string-name><given-names>A. L.</given-names>
+<surname>Ciancio</surname></string-name>, <string-name><given-names>C.</given-names>
+<surname>Cipriani</surname></string-name>, <string-name><given-names>M. C.</given-names>
+<surname>Carrozza</surname></string-name>, <string-name><given-names>W.</given-names>
+<surname>Jensen</surname></string-name>, <string-name><given-names>E.</given-names>
+<surname>Guglielmelli</surname></string-name>, <string-name><given-names>T.</given-names>
+<surname>Stieglitz</surname></string-name>, <string-name><given-names>P. M.</given-names>
+<surname>Rossini</surname></string-name>, and <string-name><given-names>S.</given-names>
+<surname>Micera</surname></string-name>, &#x0201c;<article-title>Restoring natural sensory feedback in real-time bidirectional hand prostheses</article-title>,&#x0201d; <source>Sci. Transl. Med.</source>
+<volume>6</volume>, <fpage>222ra19</fpage> (<year>2014</year>).<pub-id pub-id-type="doi">10.1126/scitranslmed.3006820</pub-id></mixed-citation></ref><ref id="c5"><label>5.</label><mixed-citation publication-type="journal"><string-name><given-names>G.</given-names>
+<surname>Valle</surname></string-name>, <string-name><given-names>A.</given-names>
+<surname>Mazzoni</surname></string-name>, <string-name><given-names>F.</given-names>
+<surname>Iberite</surname></string-name>, <string-name><given-names>E.</given-names>
+<surname>D'Anna</surname></string-name>, <string-name><given-names>I.</given-names>
+<surname>Strauss</surname></string-name>, <string-name><given-names>G.</given-names>
+<surname>Granata</surname></string-name>, <string-name><given-names>M.</given-names>
+<surname>Controzzi</surname></string-name>, <string-name><given-names>F.</given-names>
+<surname>Clemente</surname></string-name>, <string-name><given-names>G.</given-names>
+<surname>Rognini</surname></string-name>, <string-name><given-names>C.</given-names>
+<surname>Cipriani</surname></string-name>, <string-name><given-names>T.</given-names>
+<surname>Stieglitz</surname></string-name>, <string-name><given-names>F. M.</given-names>
+<surname>Petrini</surname></string-name>, <string-name><given-names>P. M.</given-names>
+<surname>Rossini</surname></string-name>, and <string-name><given-names>S.</given-names>
+<surname>Micera</surname></string-name>, &#x0201c;<article-title>Biomimetic intraneural sensory feedback enhances sensation naturalness, tactile sensitivity, and manual dexterity in a bidirectional prosthesis</article-title>,&#x0201d; <source>Neuron</source>
+<volume>100</volume>, <fpage>37</fpage>&#x02013;<lpage>45.e7</lpage> (<year>2018</year>).<pub-id pub-id-type="doi">10.1016/j.neuron.2018.08.033</pub-id><pub-id pub-id-type="pmid">30244887</pub-id>
+</mixed-citation></ref><ref id="c6"><label>6.</label><mixed-citation publication-type="journal"><string-name><given-names>S.</given-names>
+<surname>Shokur</surname></string-name>, <string-name><given-names>S.</given-names>
+<surname>Gallo</surname></string-name>, <string-name><given-names>R. C.</given-names>
+<surname>Moioli</surname></string-name>, <string-name><given-names>A. R. C.</given-names>
+<surname>Donati</surname></string-name>, <string-name><given-names>E.</given-names>
+<surname>Morya</surname></string-name>, <string-name><given-names>H.</given-names>
+<surname>Bleuler</surname></string-name>, and <string-name><given-names>M. A. L.</given-names>
+<surname>Nicolelis</surname></string-name>, &#x0201c;<article-title>Assimilation of virtual legs and perception of floor texture by complete paraplegic patients receiving artificial tactile feedback</article-title>,&#x0201d; <source>Sci. Rep.</source>
+<volume>6</volume>, <fpage>32293</fpage> (<year>2016</year>).<pub-id pub-id-type="doi">10.1038/srep32293</pub-id><pub-id pub-id-type="pmid">27640345</pub-id>
+</mixed-citation></ref><ref id="c7"><label>7.</label><mixed-citation publication-type="journal"><string-name><given-names>G.</given-names>
+<surname>Aiello</surname></string-name>, <string-name><given-names>G.</given-names>
+<surname>Valle</surname></string-name>, and <string-name><given-names>S.</given-names>
+<surname>Raspopovic</surname></string-name>, &#x0201c;<article-title>Recalibration of neuromodulation parameters in neural implants with adaptive Bayesian optimization</article-title>,&#x0201d; <source>J. Neural Eng.</source>
+<volume>20</volume>, <fpage>026037</fpage> (<year>2023</year>).<pub-id pub-id-type="doi">10.1088/1741-2552/acc975</pub-id></mixed-citation></ref><ref id="c8"><label>8.</label><mixed-citation publication-type="journal"><string-name><given-names>G.</given-names>
+<surname>Valle</surname></string-name>, <string-name><given-names>N.</given-names>
+<surname>Katic Secerovic</surname></string-name>, <string-name><given-names>D.</given-names>
+<surname>Eggemann</surname></string-name>, <string-name><given-names>O.</given-names>
+<surname>Gorskii</surname></string-name>, <string-name><given-names>N.</given-names>
+<surname>Pavlova</surname></string-name>, <string-name><given-names>F. M.</given-names>
+<surname>Petrini</surname></string-name>, <string-name><given-names>P.</given-names>
+<surname>Cvancara</surname></string-name>, <string-name><given-names>T.</given-names>
+<surname>Stieglitz</surname></string-name>, <string-name><given-names>P.</given-names>
+<surname>Musienko</surname></string-name>, <string-name><given-names>M.</given-names>
+<surname>Bumbasirevic</surname></string-name>, and <string-name><given-names>S.</given-names>
+<surname>Raspopovic</surname></string-name>, &#x0201c;<article-title>Biomimetic computer-to-brain communication enhancing naturalistic touch sensations via peripheral nerve stimulation</article-title>,&#x0201d; <source>Nat. Commun.</source>
+<volume>15</volume>, <fpage>1151</fpage> (<year>2024</year>).<pub-id pub-id-type="doi">10.1038/s41467-024-45190-6</pub-id><pub-id pub-id-type="pmid">38378671</pub-id>
+</mixed-citation></ref><ref id="c9"><label>9.</label><mixed-citation publication-type="journal"><string-name><given-names>A.</given-names>
+<surname>Crema</surname></string-name>, <string-name><given-names>M.</given-names>
+<surname>Bassolino</surname></string-name>, <string-name><given-names>E.</given-names>
+<surname>Guanziroli</surname></string-name>, <string-name><given-names>M.</given-names>
+<surname>Colombo</surname></string-name>, <string-name><given-names>O.</given-names>
+<surname>Blanke</surname></string-name>, <string-name><given-names>A.</given-names>
+<surname>Serino</surname></string-name>, <string-name><given-names>S.</given-names>
+<surname>Micera</surname></string-name>, and <string-name><given-names>F.</given-names>
+<surname>Molteni</surname></string-name>, &#x0201c;<article-title>Neuromuscular electrical stimulation restores upper limb sensory-motor functions and body representations in chronic stroke survivors</article-title>,&#x0201d; <source>Med</source>
+<volume>3</volume>, <fpage>58</fpage>&#x02013;<lpage>74.e10</lpage> (<year>2022</year>).<pub-id pub-id-type="doi">10.1016/j.medj.2021.12.001</pub-id><pub-id pub-id-type="pmid">35590144</pub-id>
+</mixed-citation></ref><ref id="c10"><label>10.</label><mixed-citation publication-type="journal"><string-name><given-names>C. S.</given-names>
+<surname>Verbaarschot</surname></string-name>, <string-name><given-names>V.</given-names>
+<surname>Karapetyan</surname></string-name>, <string-name><given-names>C.</given-names>
+<surname>Greenspon</surname></string-name>, <string-name><given-names>M.</given-names>
+<surname>Boninger</surname></string-name>, <string-name><given-names>S.</given-names>
+<surname>Bensmaia</surname></string-name>, <string-name><given-names>B.</given-names>
+<surname>Sorger</surname></string-name>, and <string-name><given-names>R.</given-names>
+<surname>Gaunt</surname></string-name>, &#x0201c;<article-title>Conveying tactile object characteristics through customized intracortical microstimulation of the human somatosensory cortex</article-title>,&#x0201d; <source>Nat. Commun.</source>
+<volume>16</volume>(1), <fpage>4017</fpage> (<year>2025</year>).<pub-id pub-id-type="doi">10.1038/s41467-025-58616-6</pub-id><pub-id pub-id-type="pmid">40312384</pub-id>
+</mixed-citation></ref><ref id="c11"><label>11.</label><mixed-citation publication-type="journal"><string-name><given-names>C. M.</given-names>
+<surname>Oddo</surname></string-name>, <string-name><given-names>S.</given-names>
+<surname>Raspopovic</surname></string-name>, <string-name><given-names>F.</given-names>
+<surname>Artoni</surname></string-name>, <string-name><given-names>A.</given-names>
+<surname>Mazzoni</surname></string-name>, <string-name><given-names>G.</given-names>
+<surname>Spigler</surname></string-name>, <string-name><given-names>F.</given-names>
+<surname>Petrini</surname></string-name>, <string-name><given-names>F.</given-names>
+<surname>Giambattistelli</surname></string-name>, <string-name><given-names>F.</given-names>
+<surname>Vecchio</surname></string-name>, <string-name><given-names>F.</given-names>
+<surname>Miraglia</surname></string-name>, <string-name><given-names>L.</given-names>
+<surname>Zollo</surname></string-name>, <string-name><given-names>G.</given-names>
+<surname>Di Pino</surname></string-name>, <string-name><given-names>D.</given-names>
+<surname>Camboni</surname></string-name>, <string-name><given-names>M. C.</given-names>
+<surname>Carrozza</surname></string-name>, <string-name><given-names>E.</given-names>
+<surname>Guglielmelli</surname></string-name>, <string-name><given-names>P. M.</given-names>
+<surname>Rossini</surname></string-name>, <string-name><given-names>U.</given-names>
+<surname>Faraguna</surname></string-name>, and <string-name><given-names>S.</given-names>
+<surname>Micera</surname></string-name>, &#x0201c;<article-title>Intraneural stimulation elicits discrimination of textural features by artificial fingertip in intact and amputee humans</article-title>,&#x0201d; <source>eLife</source>
+<volume>5</volume>, <fpage>e09148</fpage> (<year>2016</year>).<pub-id pub-id-type="doi">10.7554/eLife.09148</pub-id><pub-id pub-id-type="pmid">26952132</pub-id>
+</mixed-citation></ref><ref id="c12"><label>12.</label><mixed-citation publication-type="journal"><string-name><given-names>E.</given-names>
+<surname>D'Anna</surname></string-name>, <string-name><given-names>F. M.</given-names>
+<surname>Petrini</surname></string-name>, <string-name><given-names>F.</given-names>
+<surname>Artoni</surname></string-name>, <string-name><given-names>I.</given-names>
+<surname>Popovic</surname></string-name>, <string-name><given-names>I.</given-names>
+<surname>Simani&#x00107;</surname></string-name>, <string-name><given-names>S.</given-names>
+<surname>Raspopovic</surname></string-name>, and <string-name><given-names>S.</given-names>
+<surname>Micera</surname></string-name>, &#x0201c;<article-title>A somatotopic bidirectional hand prosthesis with transcutaneous electrical nerve stimulation based sensory feedback</article-title>,&#x0201d; <source>Sci. Rep.</source>
+<volume>7</volume>, <fpage>10930</fpage> (<year>2017</year>).<pub-id pub-id-type="doi">10.1038/s41598-017-11306-w</pub-id><pub-id pub-id-type="pmid">28883640</pub-id>
+</mixed-citation></ref><ref id="c13"><label>13.</label><mixed-citation publication-type="book"><string-name><given-names>M.</given-names>
+<surname>Badi</surname></string-name>, <string-name><given-names>S.</given-names>
+<surname>Borgognon</surname></string-name>, <string-name><given-names>J. E.</given-names>
+<surname>O'Doherty</surname></string-name>, and <string-name><given-names>S.</given-names>
+<surname>Shokur</surname></string-name>, &#x0201c;<article-title>Cortical stimulation for somatosensory feedback: Translation from nonhuman primates to clinical applications</article-title>,&#x0201d; in <source><italic>Somatosensory Feedback for Neuroprosthetics</italic></source>, edited by <person-group person-group-type="editor"><string-name><given-names>B.</given-names>
+<surname>G&#x000fc;&#x000e7;l&#x000fc;</surname></string-name></person-group> (<publisher-name>Academic Press</publisher-name>, <year>2021</year>), Chap. 13, pp. <fpage>413</fpage>&#x02013;<lpage>441</lpage>.</mixed-citation></ref><ref id="c14"><label>14.</label><mixed-citation publication-type="journal"><string-name><given-names>J. E.</given-names>
+<surname>O'Doherty</surname></string-name>, <string-name><given-names>M. A.</given-names>
+<surname>Lebedev</surname></string-name>, <string-name><given-names>P. J.</given-names>
+<surname>Ifft</surname></string-name>, <string-name><given-names>K. Z.</given-names>
+<surname>Zhuang</surname></string-name>, <string-name><given-names>S.</given-names>
+<surname>Shokur</surname></string-name>, <string-name><given-names>H.</given-names>
+<surname>Bleuler</surname></string-name>, and <string-name><given-names>M. A. L.</given-names>
+<surname>Nicolelis</surname></string-name>, &#x0201c;<article-title>Active tactile exploration using a brain&#x02013;machine&#x02013;brain interface</article-title>,&#x0201d; <source>Nature</source>
+<volume>479</volume>, <fpage>228</fpage>&#x02013;<lpage>231</lpage> (<year>2011</year>).<pub-id pub-id-type="doi">10.1038/nature10489</pub-id><pub-id pub-id-type="pmid">21976021</pub-id>
+</mixed-citation></ref><ref id="c15"><label>15.</label><mixed-citation publication-type="journal"><string-name><given-names>F.</given-names>
+<surname>Iberite</surname></string-name>, <string-name><given-names>J.</given-names>
+<surname>Muheim</surname></string-name>, <string-name><given-names>O.</given-names>
+<surname>Akouissi</surname></string-name>, <string-name><given-names>S.</given-names>
+<surname>Gallo</surname></string-name>, <string-name><given-names>G.</given-names>
+<surname>Rognini</surname></string-name>, <string-name><given-names>F.</given-names>
+<surname>Morosato</surname></string-name>, <string-name><given-names>A.</given-names>
+<surname>Clerc</surname></string-name>, <string-name><given-names>M.</given-names>
+<surname>Kalff</surname></string-name>, <string-name><given-names>E.</given-names>
+<surname>Gruppioni</surname></string-name>, <string-name><given-names>S.</given-names>
+<surname>Micera</surname></string-name>, and <string-name><given-names>S.</given-names>
+<surname>Shokur</surname></string-name>, &#x0201c;<article-title>Restoration of natural thermal sensation in upper-limb amputees</article-title>,&#x0201d; <source>Science</source>
+<volume>380</volume>, <fpage>731</fpage>&#x02013;<lpage>735</lpage> (<year>2023</year>).<pub-id pub-id-type="doi">10.1126/science.adf6121</pub-id><pub-id pub-id-type="pmid">37200444</pub-id>
+</mixed-citation></ref><ref id="c16"><label>16.</label><mixed-citation publication-type="journal"><string-name><given-names>L. E.</given-names>
+<surname>Osborn</surname></string-name>, <string-name><given-names>R.</given-names>
+<surname>Venkatasubramanian</surname></string-name>, <string-name><given-names>M.</given-names>
+<surname>Himmtann</surname></string-name>, <string-name><given-names>C. W.</given-names>
+<surname>Moran</surname></string-name>, <string-name><given-names>J. M.</given-names>
+<surname>Pierce</surname></string-name>, <string-name><given-names>P.</given-names>
+<surname>Gajendiran</surname></string-name>, <string-name><given-names>J. M.</given-names>
+<surname>Wormley</surname></string-name>, <string-name><given-names>R. J.</given-names>
+<surname>Ung</surname></string-name>, <string-name><given-names>H. H.</given-names>
+<surname>Nguyen</surname></string-name>, <string-name><given-names>A. C. G.</given-names>
+<surname>Crego</surname></string-name>, <string-name><given-names>M. S.</given-names>
+<surname>Fifer</surname></string-name>, and <string-name><given-names>R. S.</given-names>
+<surname>Armiger</surname></string-name>, &#x0201c;<article-title>Evoking natural thermal perceptions using a thin-film thermoelectric device with high cooling power density and speed</article-title>,&#x0201d; <source>Nat. Biomed. Eng.</source>
+<volume>8</volume>, <fpage>1004</fpage>&#x02013;<lpage>1017</lpage> (<year>2023</year>).<pub-id pub-id-type="doi">10.1038/s41551-023-01070-w</pub-id><pub-id pub-id-type="pmid">37500749</pub-id>
+</mixed-citation></ref><ref id="c17"><label>17.</label><mixed-citation publication-type="journal"><string-name><given-names>M.</given-names>
+<surname>Ploumitsakou</surname></string-name>, <string-name><given-names>J.</given-names>
+<surname>Muheim</surname></string-name>, <string-name><given-names>A.</given-names>
+<surname>Felouzis</surname></string-name>, <string-name><given-names>N.-I.</given-names>
+<surname>Carbonell Mu&#x000f1;oz</surname></string-name>, <string-name><given-names>F.</given-names>
+<surname>Iberite</surname></string-name>, <string-name><given-names>O.</given-names>
+<surname>Akouissi</surname></string-name>, <string-name><given-names>F.</given-names>
+<surname>Morosato</surname></string-name>, <string-name><given-names>E.</given-names>
+<surname>Gruppioni</surname></string-name>, <string-name><given-names>D.</given-names>
+<surname>Filingeri</surname></string-name>, <string-name><given-names>S.</given-names>
+<surname>Micera</surname></string-name>, and <string-name><given-names>S.</given-names>
+<surname>Shokur</surname></string-name>, &#x0201c;<article-title>Remapping wetness perception in upper limb amputees</article-title>,&#x0201d; <source>Adv. Intell. Syst.</source>
+<volume>6</volume>, <fpage>2470017</fpage> (<year>2024</year>).<pub-id pub-id-type="doi">10.1002/aisy.202470017</pub-id></mixed-citation></ref><ref id="c18"><label>18.</label><mixed-citation publication-type="journal"><string-name><given-names>J.</given-names>
+<surname>Muheim</surname></string-name>, <string-name><given-names>F.</given-names>
+<surname>Iberite</surname></string-name>, <string-name><given-names>O.</given-names>
+<surname>Akouissi</surname></string-name>, <string-name><given-names>R.</given-names>
+<surname>Monney</surname></string-name>, <string-name><given-names>F.</given-names>
+<surname>Morosato</surname></string-name>, <string-name><given-names>E.</given-names>
+<surname>Gruppioni</surname></string-name>, <string-name><given-names>S.</given-names>
+<surname>Micera</surname></string-name>, and <string-name><given-names>S.</given-names>
+<surname>Shokur</surname></string-name>, &#x0201c;<article-title>A sensory-motor hand prosthesis with integrated thermal feedback</article-title>,&#x0201d; <source>Med</source>
+<volume>5</volume>, <fpage>118</fpage>&#x02013;<lpage>125.e5</lpage> (<year>2024</year>).<pub-id pub-id-type="doi">10.1016/j.medj.2023.12.006</pub-id><pub-id pub-id-type="pmid">38340707</pub-id>
+</mixed-citation></ref><ref id="c19"><label>19.</label><mixed-citation publication-type="journal"><string-name><given-names>W. W.</given-names>
+<surname>Lee</surname></string-name>, <string-name><given-names>Y. J.</given-names>
+<surname>Tan</surname></string-name>, <string-name><given-names>H.</given-names>
+<surname>Yao</surname></string-name>, <string-name><given-names>S.</given-names>
+<surname>Li</surname></string-name>, <string-name><given-names>H. H.</given-names>
+<surname>See</surname></string-name>, <string-name><given-names>M.</given-names>
+<surname>Hon</surname></string-name>, <string-name><given-names>K. A.</given-names>
+<surname>Ng</surname></string-name>, <string-name><given-names>B.</given-names>
+<surname>Xiong</surname></string-name>, <string-name><given-names>J. S.</given-names>
+<surname>Ho</surname></string-name>, and <string-name><given-names>B. C. K.</given-names>
+<surname>Tee</surname></string-name>, &#x0201c;<article-title>A neuro-inspired artificial peripheral nervous system for scalable electronic skins</article-title>,&#x0201d; <source>Sci. Rob.</source>
+<volume>4</volume>, <fpage>eaax2198</fpage> (<year>2019</year>).<pub-id pub-id-type="doi">10.1126/scirobotics.aax2198</pub-id></mixed-citation></ref><ref id="c20"><label>20.</label><mixed-citation publication-type="journal"><string-name><given-names>L.</given-names>
+<surname>da Cruz</surname></string-name>, <string-name><given-names>B. F.</given-names>
+<surname>Coley</surname></string-name>, <string-name><given-names>J.</given-names>
+<surname>Dorn</surname></string-name>, <string-name><given-names>F.</given-names>
+<surname>Merlini</surname></string-name>, <string-name><given-names>E.</given-names>
+<surname>Filley</surname></string-name>, <string-name><given-names>P.</given-names>
+<surname>Christopher</surname></string-name>, <string-name><given-names>F. K.</given-names>
+<surname>Chen</surname></string-name>, <string-name><given-names>V.</given-names>
+<surname>Wuyyuru</surname></string-name>, <string-name><given-names>J.</given-names>
+<surname>Sahel</surname></string-name>, <string-name><given-names>P.</given-names>
+<surname>Stanga</surname></string-name>, <string-name><given-names>M.</given-names>
+<surname>Humayun</surname></string-name>, <string-name><given-names>R. J.</given-names>
+<surname>Greenberg</surname></string-name>, <string-name><given-names>G.</given-names>
+<surname>Dagnelie</surname></string-name>, and <string-name><given-names>A. I. I. S.</given-names>
+<surname>Group</surname></string-name>, &#x0201c;<article-title>The Argus II epiretinal prosthesis system allows letter and word reading and long-term function in patients with profound vision loss</article-title>,&#x0201d; <source>Br. J. Ophthalmol.</source>
+<volume>97</volume>, <fpage>632</fpage>&#x02013;<lpage>636</lpage> (<year>2013</year>).<pub-id pub-id-type="doi">10.1136/bjophthalmol-2012-301525</pub-id><pub-id pub-id-type="pmid">23426738</pub-id>
+</mixed-citation></ref><ref id="c21"><label>21.</label><mixed-citation publication-type="journal"><string-name><given-names>P.</given-names>
+<surname>Vagni</surname></string-name>, <string-name><given-names>M. J. I.</given-names>
+<surname>Airaghi Leccardi</surname></string-name>, <string-name><given-names>C.-H.</given-names>
+<surname>Vila</surname></string-name>, <string-name><given-names>E. G.</given-names>
+<surname>Zollinger</surname></string-name>, <string-name><given-names>G.</given-names>
+<surname>Sherafatipour</surname></string-name>, <string-name><given-names>T. J.</given-names>
+<surname>Wolfensberger</surname></string-name>, and <string-name><given-names>D.</given-names>
+<surname>Ghezzi</surname></string-name>, &#x0201c;<article-title>POLYRETINA restores light responses in vivo in blind G&#x000f6;ttingen minipigs</article-title>,&#x0201d; <source>Nat. Commun.</source>
+<volume>13</volume>, <fpage>3678</fpage> (<year>2022</year>).<pub-id pub-id-type="doi">10.1038/s41467-022-31180-z</pub-id><pub-id pub-id-type="pmid">35760775</pub-id>
+</mixed-citation></ref><ref id="c22"><label>22.</label><mixed-citation publication-type="journal"><string-name><given-names>V.</given-names>
+<surname>de Seta</surname></string-name>, <string-name><given-names>E.</given-names>
+<surname>Colamarino</surname></string-name>, <string-name><given-names>F.</given-names>
+<surname>Pichiorri</surname></string-name>, <string-name><given-names>G.</given-names>
+<surname>Savina</surname></string-name>, <string-name><given-names>F.</given-names>
+<surname>Patarini</surname></string-name>, <string-name><given-names>A.</given-names>
+<surname>Riccio</surname></string-name>, <string-name><given-names>F.</given-names>
+<surname>Cincotti</surname></string-name>, <string-name><given-names>D.</given-names>
+<surname>Mattia</surname></string-name>, and <string-name><given-names>J.</given-names>
+<surname>Toppi</surname></string-name>, &#x0201c;<article-title>Brain and Muscle derived features to discriminate simple hand motor tasks for a rehabilitative BCI: Comparative study on healthy and post-stroke individuals</article-title>,&#x0201d; <source>J. Neural Eng.</source>
+<volume>21</volume>, <fpage>066015</fpage> (<year>2024</year>).<pub-id pub-id-type="doi">10.1088/1741-2552/ad8838</pub-id></mixed-citation></ref><ref id="c23"><label>23.</label><mixed-citation publication-type="journal"><string-name><given-names>V.</given-names>
+<surname>Mendez</surname></string-name>, <string-name><given-names>F.</given-names>
+<surname>Iberite</surname></string-name>, <string-name><given-names>S.</given-names>
+<surname>Shokur</surname></string-name>, and <string-name><given-names>S.</given-names>
+<surname>Micera</surname></string-name>, &#x0201c;<article-title>Current solutions and future trends for robotic prosthetic hands</article-title>,&#x0201d; <source>Annu. Rev. Controlled Rob. Auton. Syst.</source>
+<volume>4</volume>, <fpage>595</fpage>&#x02013;<lpage>627</lpage> (<year>2021</year>).<pub-id pub-id-type="doi">10.1146/annurev-control-071020-104336</pub-id></mixed-citation></ref><ref id="c24"><label>24.</label><mixed-citation publication-type="journal"><string-name><given-names>S. N.</given-names>
+<surname>Flesher</surname></string-name>, <string-name><given-names>J. E.</given-names>
+<surname>Downey</surname></string-name>, <string-name><given-names>J. M.</given-names>
+<surname>Weiss</surname></string-name>, <string-name><given-names>C. L.</given-names>
+<surname>Hughes</surname></string-name>, <string-name><given-names>A. J.</given-names>
+<surname>Herrera</surname></string-name>, <string-name><given-names>E. C.</given-names>
+<surname>Tyler-Kabara</surname></string-name>, <string-name><given-names>M. L.</given-names>
+<surname>Boninger</surname></string-name>, <string-name><given-names>J. L.</given-names>
+<surname>Collinger</surname></string-name>, and <string-name><given-names>R. A.</given-names>
+<surname>Gaunt</surname></string-name>, &#x0201c;<article-title>A brain-computer interface that evokes tactile sensations improves robotic arm control</article-title>,&#x0201d; <source>Science</source>
+<volume>372</volume>, <fpage>831</fpage>&#x02013;<lpage>836</lpage> (<year>2021</year>).<pub-id pub-id-type="doi">10.1126/science.abd0380</pub-id><pub-id pub-id-type="pmid">34016775</pub-id>
+</mixed-citation></ref><ref id="c25"><label>25.</label><mixed-citation publication-type="journal"><string-name><given-names>A.</given-names>
+<surname>Maravita</surname></string-name>, <string-name><given-names>C.</given-names>
+<surname>Spence</surname></string-name>, and <string-name><given-names>J.</given-names>
+<surname>Driver</surname></string-name>, &#x0201c;<article-title>Multisensory integration and the body schema: Close to hand and within reach</article-title>,&#x0201d; <source>Curr. Biol.</source>
+<volume>13</volume>, <fpage>R531</fpage>&#x02013;<lpage>R539</lpage> (<year>2003</year>).<pub-id pub-id-type="doi">10.1016/S0960-9822(03)00449-4</pub-id><pub-id pub-id-type="pmid">12842033</pub-id>
+</mixed-citation></ref><ref id="c26"><label>26.</label><mixed-citation publication-type="journal"><string-name><given-names>E.</given-names>
+<surname>Canzoneri</surname></string-name>, <string-name><given-names>M.</given-names>
+<surname>Marzolla</surname></string-name>, <string-name><given-names>A.</given-names>
+<surname>Amoresano</surname></string-name>, <string-name><given-names>G.</given-names>
+<surname>Verni</surname></string-name>, and <string-name><given-names>A.</given-names>
+<surname>Serino</surname></string-name>, &#x0201c;<article-title>Amputation and prosthesis implantation shape body and peripersonal space representations</article-title>,&#x0201d; <source>Sci. Rep.</source>
+<volume>3</volume>, <fpage>2844</fpage> (<year>2013</year>).<pub-id pub-id-type="doi">10.1038/srep02844</pub-id><pub-id pub-id-type="pmid">24088746</pub-id>
+</mixed-citation></ref><ref id="c27"><label>27.</label><mixed-citation publication-type="journal"><string-name><given-names>H. P.</given-names>
+<surname>Saal</surname></string-name> and <string-name><given-names>S. J.</given-names>
+<surname>Bensmaia</surname></string-name>, &#x0201c;<article-title>Biomimetic approaches to bionic touch through a peripheral nerve interface</article-title>,&#x0201d; <source>Neuropsychologia</source>
+<volume>79</volume>, <fpage>344</fpage>&#x02013;<lpage>353</lpage> (<year>2015</year>).<pub-id pub-id-type="doi">10.1016/j.neuropsychologia.2015.06.010</pub-id><pub-id pub-id-type="pmid">26092769</pub-id>
+</mixed-citation></ref><ref id="c28"><label>28.</label><mixed-citation publication-type="journal"><string-name><given-names>H. P.</given-names>
+<surname>Saal</surname></string-name>, <string-name><given-names>B. P.</given-names>
+<surname>Delhaye</surname></string-name>, <string-name><given-names>B. C.</given-names>
+<surname>Rayhaun</surname></string-name>, and <string-name><given-names>S. J.</given-names>
+<surname>Bensmaia</surname></string-name>, &#x0201c;<article-title>Simulating tactile signals from the whole hand with millisecond precision</article-title>,&#x0201d; <source>Proc. Natl. Acad. Sci. U. S. A.</source>
+<volume>114</volume>, <fpage>E5693</fpage>&#x02013;<lpage>E5702</lpage> (<year>2017</year>).<pub-id pub-id-type="doi">10.1073/pnas.1704856114</pub-id><pub-id pub-id-type="pmid">28652360</pub-id>
+</mixed-citation></ref><ref id="c29"><label>29.</label><mixed-citation publication-type="journal"><string-name><given-names>K. K. W.</given-names>
+<surname>Ng</surname></string-name>, <string-name><given-names>A.</given-names>
+<surname>So</surname></string-name>, <string-name><given-names>J. Y.</given-names>
+<surname>Fang</surname></string-name>, <string-name><given-names>I.</given-names>
+<surname>Birznieks</surname></string-name>, and <string-name><given-names>R. M.</given-names>
+<surname>Vickery</surname></string-name>, &#x0201c;<article-title>Multiplexing intensity and frequency sensations for artificial touch by modulating temporal features of electrical pulse trains</article-title>,&#x0201d; <source>Front. Neurosci.</source>
+<volume>18</volume>, <fpage>1125597</fpage> (<year>2024</year>).<pub-id pub-id-type="doi">10.3389/fnins.2024.1125597</pub-id><pub-id pub-id-type="pmid">38894940</pub-id>
+</mixed-citation></ref><ref id="c30"><label>30.</label><mixed-citation publication-type="journal"><string-name><given-names>G.</given-names>
+<surname>Valle</surname></string-name>, <string-name><given-names>A. H.</given-names>
+<surname>Alamri</surname></string-name>, <string-name><given-names>J. E.</given-names>
+<surname>Downey</surname></string-name>, <string-name><given-names>R.</given-names>
+<surname>Lienk&#x000e4;mper</surname></string-name>, <string-name><given-names>P. M.</given-names>
+<surname>Jordan</surname></string-name>, <string-name><given-names>A. R.</given-names>
+<surname>Sobinov</surname></string-name>, <string-name><given-names>L. J.</given-names>
+<surname>Endsley</surname></string-name>, <string-name><given-names>D.</given-names>
+<surname>Prasad</surname></string-name>, <string-name><given-names>M. L.</given-names>
+<surname>Boninger</surname></string-name>, <string-name><given-names>J. L.</given-names>
+<surname>Collinger</surname></string-name>, <string-name><given-names>P. C.</given-names>
+<surname>Warnke</surname></string-name>, <string-name><given-names>N. G.</given-names>
+<surname>Hatsopoulos</surname></string-name>, <string-name><given-names>L. E.</given-names>
+<surname>Miller</surname></string-name>, <string-name><given-names>R. A.</given-names>
+<surname>Gaunt</surname></string-name>, <string-name><given-names>C. M.</given-names>
+<surname>Greenspon</surname></string-name>, and <string-name><given-names>S. J.</given-names>
+<surname>Bensmaia</surname></string-name>, &#x0201c;<article-title>Tactile edges and motion via patterned microstimulation of the human somatosensory cortex</article-title>,&#x0201d; <source>Science</source>
+<volume>387</volume>, <fpage>315</fpage>&#x02013;<lpage>322</lpage> (<year>2025</year>).<pub-id pub-id-type="doi">10.1126/science.adq5978</pub-id><pub-id pub-id-type="pmid">39818881</pub-id>
+</mixed-citation></ref><ref id="c31"><label>31.</label><mixed-citation publication-type="journal"><string-name><given-names>H. P.</given-names>
+<surname>Saal</surname></string-name>, <string-name><given-names>M. A.</given-names>
+<surname>Harvey</surname></string-name>, and <string-name><given-names>S. J.</given-names>
+<surname>Bensmaia</surname></string-name>, &#x0201c;<article-title>Rate and timing of cortical responses driven by separate sensory channels</article-title>,&#x0201d; <source>eLife</source>
+<volume>4</volume>, <fpage>e10450</fpage> (<year>2015</year>).<pub-id pub-id-type="doi">10.7554/eLife.10450</pub-id><pub-id pub-id-type="pmid">26650354</pub-id>
+</mixed-citation></ref><ref id="c32"><label>32.</label><mixed-citation publication-type="journal"><string-name><given-names>K. H.</given-names>
+<surname>Long</surname></string-name>, <string-name><given-names>J. D.</given-names>
+<surname>Lieber</surname></string-name>, and <string-name><given-names>S. J.</given-names>
+<surname>Bensmaia</surname></string-name>, &#x0201c;<article-title>Texture is encoded in precise temporal spiking patterns in primate somatosensory cortex</article-title>,&#x0201d; <source>Nat. Commun.</source>
+<volume>13</volume>, <fpage>1311</fpage> (<year>2022</year>).<pub-id pub-id-type="doi">10.1038/s41467-022-28873-w</pub-id><pub-id pub-id-type="pmid">35288570</pub-id>
+</mixed-citation></ref><ref id="c33"><label>33.</label><mixed-citation publication-type="journal"><string-name><given-names>C. L.</given-names>
+<surname>Hughes</surname></string-name>, <string-name><given-names>S. N.</given-names>
+<surname>Flesher</surname></string-name>, <string-name><given-names>J. M.</given-names>
+<surname>Weiss</surname></string-name>, <string-name><given-names>M.</given-names>
+<surname>Boninger</surname></string-name>, <string-name><given-names>J. L.</given-names>
+<surname>Collinger</surname></string-name>, and <string-name><given-names>R. A.</given-names>
+<surname>Gaunt</surname></string-name>, &#x0201c;<article-title>Perception of microstimulation frequency in human somatosensory cortex</article-title>,&#x0201d; <source>eLife</source>
+<volume>10</volume>, <fpage>e65128</fpage> (<year>2021</year>).<pub-id pub-id-type="doi">10.7554/eLife.65128</pub-id><pub-id pub-id-type="pmid">34313221</pub-id>
+</mixed-citation></ref><ref id="c34"><label>34.</label><mixed-citation publication-type="journal"><string-name><given-names>T.</given-names>
+<surname>Lemaire</surname></string-name>, <string-name><given-names>E.</given-names>
+<surname>Vicari</surname></string-name>, <string-name><given-names>E.</given-names>
+<surname>Neufeld</surname></string-name>, <string-name><given-names>N.</given-names>
+<surname>Kuster</surname></string-name>, and <string-name><given-names>S.</given-names>
+<surname>Micera</surname></string-name>, &#x0201c;<article-title>MorphoSONIC: A morphologically structured intramembrane cavitation model reveals fiber-specific neuromodulation by ultrasound</article-title>,&#x0201d; <source>iScience</source>
+<volume>24</volume>, <fpage>103085</fpage> (<year>2021</year>).<pub-id pub-id-type="doi">10.1016/j.isci.2021.103085</pub-id><pub-id pub-id-type="pmid">34585122</pub-id>
+</mixed-citation></ref><ref id="c35"><label>35.</label><mixed-citation publication-type="journal"><string-name><given-names>M. S.</given-names>
+<surname>Beauchamp</surname></string-name>, <string-name><given-names>D.</given-names>
+<surname>Oswalt</surname></string-name>, <string-name><given-names>P.</given-names>
+<surname>Sun</surname></string-name>, <string-name><given-names>B. L.</given-names>
+<surname>Foster</surname></string-name>, <string-name><given-names>J. F.</given-names>
+<surname>Magnotti</surname></string-name>, <string-name><given-names>S.</given-names>
+<surname>Niketeghad</surname></string-name>, <string-name><given-names>N.</given-names>
+<surname>Pouratian</surname></string-name>, <string-name><given-names>W. H.</given-names>
+<surname>Bosking</surname></string-name>, and <string-name><given-names>D.</given-names>
+<surname>Yoshor</surname></string-name>, &#x0201c;<article-title>Dynamic stimulation of visual cortex produces form vision in sighted and blind humans</article-title>,&#x0201d; <source>Cell</source>
+<volume>181</volume>, <fpage>774</fpage>&#x02013;<lpage>783.e5</lpage> (<year>2020</year>).<pub-id pub-id-type="doi">10.1016/j.cell.2020.04.033</pub-id><pub-id pub-id-type="pmid">32413298</pub-id>
+</mixed-citation></ref><ref id="c36"><label>36.</label><mixed-citation publication-type="journal"><string-name><given-names>E. L.</given-names>
+<surname>Graczyk</surname></string-name>, <string-name><given-names>B. P.</given-names>
+<surname>Christie</surname></string-name>, <string-name><given-names>Q.</given-names>
+<surname>He</surname></string-name>, <string-name><given-names>D. J.</given-names>
+<surname>Tyler</surname></string-name>, and <string-name><given-names>S. J.</given-names>
+<surname>Bensmaia</surname></string-name>, &#x0201c;<article-title>Frequency shapes the quality of tactile percepts evoked through electrical stimulation of the nerves</article-title>,&#x0201d; <source>J. Neurosci.</source>
+<volume>42</volume>, <fpage>2052</fpage>&#x02013;<lpage>2064</lpage> (<year>2022</year>).<pub-id pub-id-type="doi">10.1523/JNEUROSCI.1494-21.2021</pub-id><pub-id pub-id-type="pmid">35074865</pub-id>
+</mixed-citation></ref><ref id="c37"><label>37.</label><mixed-citation publication-type="journal"><string-name><given-names>L. E.</given-names>
+<surname>Osborn</surname></string-name>, <string-name><given-names>A.</given-names>
+<surname>Dragomir</surname></string-name>, <string-name><given-names>J. L.</given-names>
+<surname>Betthauser</surname></string-name>, <string-name><given-names>C. L.</given-names>
+<surname>Hunt</surname></string-name>, <string-name><given-names>H. H.</given-names>
+<surname>Nguyen</surname></string-name>, <string-name><given-names>R. R.</given-names>
+<surname>Kaliki</surname></string-name>, and <string-name><given-names>N. V.</given-names>
+<surname>Thakor</surname></string-name>, &#x0201c;<article-title>Prosthesis with neuromorphic multilayered e-dermis perceives touch and pain</article-title>,&#x0201d; <source>Sci. Rob.</source>
+<volume>3</volume>, <fpage>eaat3818</fpage> (<year>2018</year>).<pub-id pub-id-type="doi">10.1126/scirobotics.aat3818</pub-id></mixed-citation></ref><ref id="c38"><label>38.</label><mixed-citation publication-type="journal"><string-name><given-names>M.</given-names>
+<surname>Beyeler</surname></string-name>, <string-name><given-names>G. M.</given-names>
+<surname>Boynton</surname></string-name>, <string-name><given-names>I.</given-names>
+<surname>Fine</surname></string-name>, and <string-name><given-names>A.</given-names>
+<surname>Rokem</surname></string-name>, &#x0201c;<article-title>pulse2percept: A Python-based simulation framework for bionic vision</article-title>,&#x0201d; <source>bioRxiv</source>
+<fpage>148015</fpage> (<year>2017</year>).<pub-id pub-id-type="doi">10.1101/148015</pub-id></mixed-citation></ref><ref id="c39"><label>39.</label><mixed-citation publication-type="journal"><string-name><given-names>E.</given-names>
+<surname>Losanno</surname></string-name>, <string-name><given-names>M.</given-names>
+<surname>Mender</surname></string-name>, <string-name><given-names>C.</given-names>
+<surname>Chestek</surname></string-name>, <string-name><given-names>S.</given-names>
+<surname>Shokur</surname></string-name>, and <string-name><given-names>S.</given-names>
+<surname>Micera</surname></string-name>, &#x0201c;<article-title>Neurotechnologies to restore hand functions</article-title>,&#x0201d; <source>Nat. Rev. Bioeng.</source>
+<volume>1</volume>, <fpage>390</fpage>&#x02013;<lpage>407</lpage> (<year>2023</year>).<pub-id pub-id-type="doi">10.1038/s44222-023-00054-4</pub-id></mixed-citation></ref><ref id="c40"><label>40.</label><mixed-citation publication-type="journal"><string-name><given-names>C. M.</given-names>
+<surname>Greenspon</surname></string-name>, <string-name><given-names>N. D.</given-names>
+<surname>Shelchkova</surname></string-name>, <string-name><given-names>G.</given-names>
+<surname>Valle</surname></string-name>, <string-name><given-names>T. G.</given-names>
+<surname>Hobbs</surname></string-name>, <string-name><given-names>E. I.</given-names>
+<surname>Berger-Wolf</surname></string-name>, <string-name><given-names>B. C.</given-names>
+<surname>Hutchison</surname></string-name>, <string-name><given-names>E.</given-names>
+<surname>Dogruoz</surname></string-name>, <string-name><given-names>C.</given-names>
+<surname>Verbarschott</surname></string-name>, <string-name><given-names>T.</given-names>
+<surname>Callier</surname></string-name>, <string-name><given-names>A. R.</given-names>
+<surname>Sobinov</surname></string-name>, <string-name><given-names>E. V.</given-names>
+<surname>Okorokova</surname></string-name>, <string-name><given-names>P. M.</given-names>
+<surname>Jordan</surname></string-name>, <string-name><given-names>D.</given-names>
+<surname>Prasad</surname></string-name>, <string-name><given-names>Q.</given-names>
+<surname>He</surname></string-name>, <string-name><given-names>F.</given-names>
+<surname>Liu</surname></string-name>, <string-name><given-names>J. P.</given-names>
+<surname>Miller</surname></string-name>, <string-name><given-names>R. C.</given-names>
+<surname>Lee</surname></string-name>, <string-name><given-names>D.</given-names>
+<surname>Satzer</surname></string-name>, <string-name><given-names>J.</given-names>
+<surname>Gonzalez-Martinez</surname></string-name>, <string-name><given-names>P. C.</given-names>
+<surname>Warnke</surname></string-name>, <string-name><given-names>L. E.</given-names>
+<surname>Miller</surname></string-name>, <string-name><given-names>M. L.</given-names>
+<surname>Boninger</surname></string-name>, <string-name><given-names>A. B.</given-names>
+<surname>Ajiboye</surname></string-name>, <string-name><given-names>E. L.</given-names>
+<surname>Graczyk</surname></string-name>, <string-name><given-names>J. E.</given-names>
+<surname>Downey</surname></string-name>, <string-name><given-names>J. L.</given-names>
+<surname>Collinger</surname></string-name>, <string-name><given-names>N. G.</given-names>
+<surname>Hatsopoulos</surname></string-name>, <string-name><given-names>R. A.</given-names>
+<surname>Gaunt</surname></string-name>, and <string-name><given-names>S. J.</given-names>
+<surname>Bensmaia</surname></string-name>, &#x0201c;<article-title>Tessellation of artificial touch via microstimulation of human somatosensory cortex</article-title>,&#x0201d; <source>bioRxiv</source>
+<fpage>2023.06.23.545425</fpage> (<year>2023</year>).<pub-id pub-id-type="doi">10.1101/2023.06.23.545425</pub-id></mixed-citation></ref><ref id="c41"><label>41.</label><mixed-citation publication-type="journal"><string-name><given-names>E.</given-names>
+<surname>Formento</surname></string-name>, <string-name><given-names>E.</given-names>
+<surname>D'Anna</surname></string-name>, <string-name><given-names>S.</given-names>
+<surname>Gribi</surname></string-name>, <string-name><given-names>S. P.</given-names>
+<surname>Lacour</surname></string-name>, and <string-name><given-names>S.</given-names>
+<surname>Micera</surname></string-name>, &#x0201c;<article-title>A biomimetic electrical stimulation strategy to induce asynchronous stochastic neural activity</article-title>,&#x0201d; <source>J. Neural Eng.</source>
+<volume>17</volume>, <fpage>046019</fpage> (<year>2020</year>).<pub-id pub-id-type="doi">10.1088/1741-2552/aba4fc</pub-id><pub-id pub-id-type="pmid">32650319</pub-id>
+</mixed-citation></ref><ref id="c42"><label>42.</label><mixed-citation publication-type="journal"><string-name><given-names>J. A.</given-names>
+<surname>George</surname></string-name>, <string-name><given-names>D. T.</given-names>
+<surname>Kluger</surname></string-name>, <string-name><given-names>T. S.</given-names>
+<surname>Davis</surname></string-name>, <string-name><given-names>S. M.</given-names>
+<surname>Wendelken</surname></string-name>, <string-name><given-names>E. V.</given-names>
+<surname>Okorokova</surname></string-name>, <string-name><given-names>Q.</given-names>
+<surname>He</surname></string-name>, <string-name><given-names>C. C.</given-names>
+<surname>Duncan</surname></string-name>, <string-name><given-names>D. T.</given-names>
+<surname>Hutchinson</surname></string-name>, <string-name><given-names>Z. C.</given-names>
+<surname>Thumser</surname></string-name>, <string-name><given-names>D. T.</given-names>
+<surname>Beckler</surname></string-name>, <string-name><given-names>P. D.</given-names>
+<surname>Marasco</surname></string-name>, <string-name><given-names>S. J.</given-names>
+<surname>Bensmaia</surname></string-name>, and <string-name><given-names>G. A.</given-names>
+<surname>Clark</surname></string-name>, &#x0201c;<article-title>Biomimetic sensory feedback through peripheral nerve stimulation improves dexterous use of a bionic hand</article-title>,&#x0201d; <source>Sci. Rob.</source>
+<volume>4</volume>, <fpage>eaax2352</fpage> (<year>2019</year>).<pub-id pub-id-type="doi">10.1126/scirobotics.aax2352</pub-id></mixed-citation></ref><ref id="c43"><label>43.</label><mixed-citation publication-type="journal"><string-name><given-names>R.</given-names>
+<surname>Blau</surname></string-name>, <string-name><given-names>A.</given-names>
+<surname>Abdal</surname></string-name>, <string-name><given-names>N.</given-names>
+<surname>Root</surname></string-name>, <string-name><given-names>A. X.</given-names>
+<surname>Chen</surname></string-name>, <string-name><given-names>T.</given-names>
+<surname>Rafeedi</surname></string-name>, <string-name><given-names>R.</given-names>
+<surname>Ramji</surname></string-name>, <string-name><given-names>Y.</given-names>
+<surname>Qie</surname></string-name>, <string-name><given-names>T.</given-names>
+<surname>Kim</surname></string-name>, <string-name><given-names>A.</given-names>
+<surname>Navarro</surname></string-name>, <string-name><given-names>J.</given-names>
+<surname>Chin</surname></string-name>, <string-name><given-names>L. L.</given-names>
+<surname>Becerra</surname></string-name>, <string-name><given-names>S. J.</given-names>
+<surname>Edmunds</surname></string-name>, <string-name><given-names>S. M.</given-names>
+<surname>Russman</surname></string-name>, <string-name><given-names>S. A.</given-names>
+<surname>Dayeh</surname></string-name>, <string-name><given-names>D. P.</given-names>
+<surname>Fenning</surname></string-name>, <string-name><given-names>R.</given-names>
+<surname>Rouw</surname></string-name>, and <string-name><given-names>D. J.</given-names>
+<surname>Lipomi</surname></string-name>, &#x0201c;<article-title>Conductive block copolymer elastomers and psychophysical thresholding for accurate haptic effects</article-title>,&#x0201d; <source>Sci. Rob.</source>
+<volume>9</volume>, <fpage>eadk3925</fpage> (<year>2024</year>).<pub-id pub-id-type="doi">10.1126/scirobotics.adk3925</pub-id></mixed-citation></ref><ref id="c44"><label>44.</label><mixed-citation publication-type="journal"><string-name><given-names>V.</given-names>
+<surname>Yem</surname></string-name> and <string-name><given-names>H.</given-names>
+<surname>Kajimoto</surname></string-name>, &#x0201c;<article-title>Comparative evaluation of tactile sensation by electrical and mechanical stimulation</article-title>,&#x0201d; <source>IEEE Trans. Haptic.</source>
+<volume>10</volume>, <fpage>130</fpage>&#x02013;<lpage>134</lpage> (<year>2017</year>).<pub-id pub-id-type="doi">10.1109/TOH.2016.2605084</pub-id></mixed-citation></ref><ref id="c45"><label>45.</label><mixed-citation publication-type="journal"><string-name><given-names>A. E.</given-names>
+<surname>Schultz</surname></string-name>, <string-name><given-names>P. D.</given-names>
+<surname>Marasco</surname></string-name>, and <string-name><given-names>T. A.</given-names>
+<surname>Kuiken</surname></string-name>, &#x0201c;<article-title>Vibrotactile detection thresholds for chest skin of amputees following targeted reinnervation surgery</article-title>,&#x0201d; <source>Brain Res.</source>
+<volume>1251</volume>, <fpage>121</fpage>&#x02013;<lpage>129</lpage> (<year>2009</year>).<pub-id pub-id-type="doi">10.1016/j.brainres.2008.11.039</pub-id><pub-id pub-id-type="pmid">19059226</pub-id>
+</mixed-citation></ref><ref id="c46"><label>46.</label><mixed-citation publication-type="journal"><string-name><given-names>A.</given-names>
+<surname>Scarpelli</surname></string-name>, <string-name><given-names>A.</given-names>
+<surname>Demofonti</surname></string-name>, <string-name><given-names>F.</given-names>
+<surname>Terracina</surname></string-name>, <string-name><given-names>A. L.</given-names>
+<surname>Ciancio</surname></string-name>, and <string-name><given-names>L.</given-names>
+<surname>Zollo</surname></string-name>, &#x0201c;<article-title>Evoking apparent moving sensation in the hand via transcutaneous electrical nerve stimulation</article-title>,&#x0201d; <source>Front. Neurosci.</source>
+<volume>14</volume>, <fpage>534</fpage> (<year>2020</year>).<pub-id pub-id-type="doi">10.3389/fnins.2020.00534</pub-id><pub-id pub-id-type="pmid">32625047</pub-id>
+</mixed-citation></ref><ref id="c47"><label>47.</label><mixed-citation publication-type="journal"><string-name><given-names>D.</given-names>
+<surname>Farina</surname></string-name>, <string-name><given-names>I.</given-names>
+<surname>Vujaklija</surname></string-name>, <string-name><given-names>R.</given-names>
+<surname>Br&#x000e5;nemark</surname></string-name>, <string-name><given-names>A. M. J.</given-names>
+<surname>Bull</surname></string-name>, <string-name><given-names>H.</given-names>
+<surname>Dietl</surname></string-name>, <string-name><given-names>B.</given-names>
+<surname>Graimann</surname></string-name>, <string-name><given-names>L. J.</given-names>
+<surname>Hargrove</surname></string-name>, <string-name><given-names>K.-P.</given-names>
+<surname>Hoffmann</surname></string-name>, <string-name><given-names>H. H.</given-names>
+<surname>Huang</surname></string-name>, <string-name><given-names>T.</given-names>
+<surname>Ingvarsson</surname></string-name>, <string-name><given-names>H. B.</given-names>
+<surname>Janusson</surname></string-name>, <string-name><given-names>K.</given-names>
+<surname>Kristj&#x000e1;nsson</surname></string-name>, <string-name><given-names>T.</given-names>
+<surname>Kuiken</surname></string-name>, <string-name><given-names>S.</given-names>
+<surname>Micera</surname></string-name>, <string-name><given-names>T.</given-names>
+<surname>Stieglitz</surname></string-name>, <string-name><given-names>A.</given-names>
+<surname>Sturma</surname></string-name>, <string-name><given-names>D.</given-names>
+<surname>Tyler</surname></string-name>, <string-name><given-names>R. F. f.</given-names>
+<surname>Weir</surname></string-name>, and <string-name><given-names>O. C.</given-names>
+<surname>Aszmann</surname></string-name>, &#x0201c;<article-title>Toward higher-performance bionic limbs for wider clinical use</article-title>,&#x0201d; <source>Nat. Biomed. Eng.</source>
+<volume>7</volume>, <fpage>473</fpage> (<year>2021</year>).<pub-id pub-id-type="doi">10.1038/s41551-021-00732-x</pub-id><pub-id pub-id-type="pmid">34059810</pub-id>
+</mixed-citation></ref><ref id="c48"><label>48.</label><mixed-citation publication-type="journal"><string-name><given-names>C.</given-names>
+<surname>Pasluosta</surname></string-name>, <string-name><given-names>P.</given-names>
+<surname>Kiele</surname></string-name>, <string-name><given-names>P.</given-names>
+<surname>&#x0010c;van&#x0010d;ara</surname></string-name>, <string-name><given-names>S.</given-names>
+<surname>Micera</surname></string-name>, <string-name><given-names>O. C.</given-names>
+<surname>Aszmann</surname></string-name>, and <string-name><given-names>T.</given-names>
+<surname>Stieglitz</surname></string-name>, &#x0201c;<article-title>Bidirectional bionic limbs: A perspective bridging technology and physiology</article-title>,&#x0201d; <source>J. Neural Eng.</source>
+<volume>19</volume>, <fpage>013001</fpage> (<year>2022</year>).<pub-id pub-id-type="doi">10.1088/1741-2552/ac4bff</pub-id></mixed-citation></ref><ref id="c49"><label>49.</label><mixed-citation publication-type="journal"><string-name><given-names>S. J.</given-names>
+<surname>Bensmaia</surname></string-name> and <string-name><given-names>L. E.</given-names>
+<surname>Miller</surname></string-name>, &#x0201c;<article-title>Restoring sensorimotor function through intracortical interfaces: Progress and looming challenges</article-title>,&#x0201d; <source>Nat. Rev. Neurosci.</source>
+<volume>15</volume>, <fpage>313</fpage>&#x02013;<lpage>325</lpage> (<year>2014</year>).<pub-id pub-id-type="doi">10.1038/nrn3724</pub-id><pub-id pub-id-type="pmid">24739786</pub-id>
+</mixed-citation></ref><ref id="c50"><label>50.</label><mixed-citation publication-type="journal"><string-name><given-names>L.</given-names>
+<surname>Borda</surname></string-name>, <string-name><given-names>N.</given-names>
+<surname>Gozzi</surname></string-name>, <string-name><given-names>G.</given-names>
+<surname>Preatoni</surname></string-name>, <string-name><given-names>G.</given-names>
+<surname>Valle</surname></string-name>, and <string-name><given-names>S.</given-names>
+<surname>Raspopovic</surname></string-name>, &#x0201c;<article-title>Automated calibration of somatosensory stimulation using reinforcement learning</article-title>,&#x0201d; <source>J. NeuroEng. Rehabil.</source>
+<volume>20</volume>, <fpage>131</fpage> (<year>2023</year>).<pub-id pub-id-type="doi">10.1186/s12984-023-01246-0</pub-id><pub-id pub-id-type="pmid">37752607</pub-id>
+</mixed-citation></ref><ref id="c51"><label>51.</label><mixed-citation publication-type="journal"><string-name><given-names>R.</given-names>
+<surname>Lorenz</surname></string-name>, <string-name><given-names>L. E.</given-names>
+<surname>Simmons</surname></string-name>, <string-name><given-names>R. P.</given-names>
+<surname>Monti</surname></string-name>, <string-name><given-names>J. L.</given-names>
+<surname>Arthur</surname></string-name>, <string-name><given-names>S.</given-names>
+<surname>Limal</surname></string-name>, <string-name><given-names>I.</given-names>
+<surname>Laakso</surname></string-name>, <string-name><given-names>R.</given-names>
+<surname>Leech</surname></string-name>, and <string-name><given-names>I. R.</given-names>
+<surname>Violante</surname></string-name>, &#x0201c;<article-title>Efficiently searching through large tACS parameter spaces using closed-loop Bayesian optimization</article-title>,&#x0201d; <source>Brain Stimul.</source>
+<volume>12</volume>, <fpage>1484</fpage>&#x02013;<lpage>1489</lpage> (<year>2019</year>).<pub-id pub-id-type="doi">10.1016/j.brs.2019.07.003</pub-id><pub-id pub-id-type="pmid">31289013</pub-id>
+</mixed-citation></ref><ref id="c52"><label>52.</label><mixed-citation publication-type="journal"><string-name><given-names>S.</given-names>
+<surname>Laferriere</surname></string-name>, <string-name><given-names>M.</given-names>
+<surname>Bonizzato</surname></string-name>, <string-name><given-names>S. L.</given-names>
+<surname>Cote</surname></string-name>, <string-name><given-names>N.</given-names>
+<surname>Dancause</surname></string-name>, and <string-name><given-names>G.</given-names>
+<surname>Lajoie</surname></string-name>, &#x0201c;<article-title>Hierarchical Bayesian optimization of spatiotemporal neurostimulations for targeted motor outputs</article-title>,&#x0201d; <source>IEEE Trans. Neural Syst. Rehabil. Eng.</source>
+<volume>28</volume>, <fpage>1452</fpage>&#x02013;<lpage>1460</lpage> (<year>2020</year>).<pub-id pub-id-type="doi">10.1109/TNSRE.2020.2987001</pub-id><pub-id pub-id-type="pmid">32286996</pub-id>
+</mixed-citation></ref><ref id="c53"><label>53.</label><mixed-citation publication-type="journal"><string-name><given-names>T.</given-names>
+<surname>Fauvel</surname></string-name> and <string-name><given-names>M.</given-names>
+<surname>Chalk</surname></string-name>, &#x0201c;<article-title>Human-in-the-loop optimization of visual prosthetic stimulation</article-title>,&#x0201d; <source>J. Neural Eng.</source>
+<volume>19</volume>, <fpage>036038</fpage> (<year>2022</year>).<pub-id pub-id-type="doi">10.1088/1741-2552/ac7615</pub-id></mixed-citation></ref><ref id="c54"><label>54.</label><mixed-citation publication-type="journal"><string-name><given-names>U. H.</given-names>
+<surname>Lee</surname></string-name>, <string-name><given-names>V. S.</given-names>
+<surname>Shetty</surname></string-name>, <string-name><given-names>P. W.</given-names>
+<surname>Franks</surname></string-name>, <string-name><given-names>J.</given-names>
+<surname>Tan</surname></string-name>, <string-name><given-names>G.</given-names>
+<surname>Evangelopoulos</surname></string-name>, <string-name><given-names>S.</given-names>
+<surname>Ha</surname></string-name>, and <string-name><given-names>E. J.</given-names>
+<surname>Rouse</surname></string-name>, &#x0201c;<article-title>User preference optimization for control of ankle exoskeletons using sample efficient active learning</article-title>,&#x0201d; <source>Sci. Rob.</source>
+<volume>8</volume>, <fpage>eadg3705</fpage> (<year>2023</year>).<pub-id pub-id-type="doi">10.1126/scirobotics.adg3705</pub-id></mixed-citation></ref><ref id="c55"><label>55.</label><mixed-citation publication-type="journal"><string-name><given-names>F.</given-names>
+<surname>Mosca</surname></string-name>, <string-name><given-names>R.</given-names>
+<surname>Grassia</surname></string-name>, and <string-name><given-names>C.</given-names>
+<surname>Leone</surname></string-name>, &#x0201c;<article-title>Longitudinal variations in fitting parameters for adult cochlear implant recipients</article-title>,&#x0201d; <source>Acta Otorhinolaryngologica Ital.</source>
+<volume>34</volume>, <fpage>111</fpage>&#x02013;<lpage>116</lpage> (<year>2014</year>).</mixed-citation></ref><ref id="c56"><label>56.</label><mixed-citation publication-type="journal"><string-name><given-names>S.</given-names>
+<surname>Eldeeb</surname></string-name> and <string-name><given-names>M.</given-names>
+<surname>Akcakaya</surname></string-name>, &#x0201c;<article-title>EEG guided electrical stimulation parameters generation from texture force profiles</article-title>,&#x0201d; <source>J. Neural Eng.</source>
+<volume>19</volume>, <fpage>066042</fpage> (<year>2022</year>).<pub-id pub-id-type="doi">10.1088/1741-2552/aca82e</pub-id></mixed-citation></ref><ref id="c57"><label>57.</label><mixed-citation publication-type="journal"><string-name><given-names>F.</given-names>
+<surname>Leong</surname></string-name>, <string-name><given-names>B.</given-names>
+<surname>Rahmani</surname></string-name>, <string-name><given-names>D.</given-names>
+<surname>Psaltis</surname></string-name>, <string-name><given-names>C.</given-names>
+<surname>Moser</surname></string-name>, and <string-name><given-names>D.</given-names>
+<surname>Ghezzi</surname></string-name>, &#x0201c;<article-title>An actor-model framework for visual sensory encoding</article-title>,&#x0201d; <source>Nat. Commun.</source>
+<volume>15</volume>, <fpage>808</fpage> (<year>2024</year>).<pub-id pub-id-type="doi">10.1038/s41467-024-45105-5</pub-id><pub-id pub-id-type="pmid">38280912</pub-id>
+</mixed-citation></ref><ref id="c58"><label>58.</label><mixed-citation publication-type="journal"><string-name><given-names>S.</given-names>
+<surname>Romeni</surname></string-name>, <string-name><given-names>L.</given-names>
+<surname>Toni</surname></string-name>, <string-name><given-names>F.</given-names>
+<surname>Artoni</surname></string-name>, and <string-name><given-names>S.</given-names>
+<surname>Micera</surname></string-name>, &#x0201c;<article-title>Decoding electroencephalographic responses to visual stimuli compatible with electrical stimulation</article-title>,&#x0201d; <source>APL Bioeng.</source>
+<volume>8</volume>, <fpage>026123</fpage> (<year>2024</year>).<pub-id pub-id-type="doi">10.1063/5.0195680</pub-id><pub-id pub-id-type="pmid">38894958</pub-id>
+</mixed-citation></ref><ref id="c59"><label>59.</label><mixed-citation publication-type="journal"><string-name><given-names>I.</given-names>
+<surname>Birznieks</surname></string-name> and <string-name><given-names>R. M.</given-names>
+<surname>Vickery</surname></string-name>, &#x0201c;<article-title>Spike timing matters in novel neuronal code involved in vibrotactile frequency perception</article-title>,&#x0201d; <source>Curr. Biol.</source>
+<volume>27</volume>, <fpage>1485</fpage>&#x02013;<lpage>1490.e2</lpage> (<year>2017</year>).<pub-id pub-id-type="doi">10.1016/j.cub.2017.04.011</pub-id><pub-id pub-id-type="pmid">28479322</pub-id>
+</mixed-citation></ref><ref id="c60"><label>60.</label><mixed-citation publication-type="journal"><string-name><given-names>R. M.</given-names>
+<surname>Vickery</surname></string-name>, <string-name><given-names>K. K. W.</given-names>
+<surname>Ng</surname></string-name>, <string-name><given-names>J. R.</given-names>
+<surname>Potas</surname></string-name>, <string-name><given-names>M. N.</given-names>
+<surname>Shivdasani</surname></string-name>, <string-name><given-names>S.</given-names>
+<surname>McIntyre</surname></string-name>, <string-name><given-names>S. S.</given-names>
+<surname>Nagi</surname></string-name>, and <string-name><given-names>I.</given-names>
+<surname>Birznieks</surname></string-name>, &#x0201c;<article-title>Tapping into the language of touch: Using non-invasive stimulation to specify tactile afferent firing patterns</article-title>,&#x0201d; <source>Front. Neurosci.</source>
+<volume>14</volume>, <fpage>500</fpage> (<year>2020</year>).<pub-id pub-id-type="doi">10.3389/fnins.2020.00500</pub-id><pub-id pub-id-type="pmid">32508581</pub-id>
+</mixed-citation></ref><ref id="c61"><label>61.</label><mixed-citation publication-type="journal"><string-name><given-names>X.-J.</given-names>
+<surname>Feng</surname></string-name>, <string-name><given-names>B.</given-names>
+<surname>Greenwald</surname></string-name>, <string-name><given-names>H.</given-names>
+<surname>Rabitz</surname></string-name>, <string-name><given-names>E.</given-names>
+<surname>Shea-Brown</surname></string-name>, and <string-name><given-names>R.</given-names>
+<surname>Kosut</surname></string-name>, &#x0201c;<article-title>Toward closed-loop optimization of deep brain stimulation for Parkinson's disease: Concepts and lessons from a computational model</article-title>,&#x0201d; <source>J. Neural Eng.</source>
+<volume>4</volume>, <fpage>L14</fpage>&#x02013;<lpage>L21</lpage> (<year>2007</year>).<pub-id pub-id-type="doi">10.1088/1741-2560/4/2/L03</pub-id><pub-id pub-id-type="pmid">17409470</pub-id>
+</mixed-citation></ref><ref id="c62"><label>62.</label><mixed-citation publication-type="journal"><string-name><given-names>B. A.</given-names>
+<surname>Holstad</surname></string-name>, <string-name><given-names>V. G.</given-names>
+<surname>Sonneveldt</surname></string-name>, <string-name><given-names>B. T.</given-names>
+<surname>Fears</surname></string-name>, <string-name><given-names>L. S.</given-names>
+<surname>Davidson</surname></string-name>, <string-name><given-names>R. J.</given-names>
+<surname>Aaron</surname></string-name>, <string-name><given-names>M.</given-names>
+<surname>Richter</surname></string-name>, <string-name><given-names>M.</given-names>
+<surname>Matusofsky</surname></string-name>, <string-name><given-names>C. A.</given-names>
+<surname>Brenner</surname></string-name>, <string-name><given-names>M. J.</given-names>
+<surname>Strube</surname></string-name>, and <string-name><given-names>M. W.</given-names>
+<surname>Skinner</surname></string-name>, &#x0201c;<article-title>Relation of electrically evoked compound action potential thresholds to behavioral T- and C-levels in children with cochlear implants</article-title>,&#x0201d; <source>Ear Hear.</source>
+<volume>30</volume>, <fpage>115</fpage>&#x02013;<lpage>127</lpage> (<year>2009</year>).<pub-id pub-id-type="doi">10.1097/AUD.0b013e3181906c0f</pub-id><pub-id pub-id-type="pmid">19125034</pub-id>
+</mixed-citation></ref><ref id="c63"><label>63.</label><mixed-citation publication-type="journal"><string-name><given-names>M.</given-names>
+<surname>Carrasco</surname></string-name>, &#x0201c;<article-title>How visual spatial attention alters perception</article-title>,&#x0201d; <source>Cogn. Process.</source>
+<volume>19</volume>, <fpage>77</fpage>&#x02013;<lpage>88</lpage> (<year>2018</year>).<pub-id pub-id-type="doi">10.1007/s10339-018-0883-4</pub-id><pub-id pub-id-type="pmid">30062667</pub-id>
+</mixed-citation></ref></ref-list></back></article>

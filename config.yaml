@@ -1,0 +1,52 @@
+# config.yaml
+
+# === Corpus Configuration ===
+corpus:
+  # Paths to training corpora for n-gram and frequency modeling
+  pmc_medline_abstracts: "backend/corpus/medline_abstracts.txt"
+  gutenberg_medical_dir: "backend/corpus/gutenberg_medical/"
+
+  # Optionally, a merged corpus file combining both sources
+  merged_corpus: "backend/corpus/medical_combined_corpus.txt"
+
+# === N-Gram Model Configuration ===
+ngram:
+  size: 2                      # Default n-gram size (2 = bigrams, 3 = trigrams)
+  min_freq_threshold: 5        # Minimum frequency to keep an n-gram
+  smoothing: "add-one"         # Smoothing method ('add-one', 'kneser-ney', 'none')
+  max_candidates: 5            # Max candidate corrections to suggest per error
+
+# === Edit Distance Configuration ===
+edit_distance:
+  max_distance: 2              # Maximum edit distance for candidate generation
+  allow_transpose: true        # Consider transpositions as single edits
+  substitution_cost: 1
+  insertion_cost: 1
+  deletion_cost: 1
+
+# === Error Detection & Correction ===
+error_handling:
+  confidence_threshold: 0.6    # Minimum confidence score to auto-correct
+  max_suggestions: 3           # Max suggestions shown to user per error
+  error_types:
+    typo: true
+    homophone: true
+    domain_specific: true     # Prioritize medical terms in corrections
+
+# === Domain Specific Prioritization ===
+domain:
+  medical_terms_file: "backend/corpus/medical_terms.txt"  # List of domain keywords
+  domain_weight: 2.0              # Multiplier to boost medical terms' suggestion rank
+
+# === Batch Processing / File Upload ===
+batch:
+  max_file_size_mb: 5
+  supported_formats: [".txt", ".docx"]
+  progress_update_interval: 0.5  # seconds
+
+# === Frontend Model Options ===
+frontend:
+  available_models:
+    - bigram
+    - trigram
+  default_model: bigram

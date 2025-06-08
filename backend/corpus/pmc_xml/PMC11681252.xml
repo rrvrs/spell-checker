@@ -1,0 +1,939 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="1.3" id="enb212035" xml:lang="en" article-type="review-article"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Eng Biol</journal-id><journal-id journal-id-type="iso-abbrev">Eng Biol</journal-id><journal-id journal-id-type="doi">10.1049/(ISSN)2398-6182</journal-id><journal-id journal-id-type="publisher-id">ENB2</journal-id><journal-title-group><journal-title>Engineering Biology</journal-title></journal-title-group><issn pub-type="epub">2398-6182</issn><publisher><publisher-name>John Wiley and Sons Inc.</publisher-name><publisher-loc>Hoboken</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmc">PMC11681252</article-id><article-id pub-id-type="doi">10.1049/enb2.12035</article-id><article-id pub-id-type="publisher-id">ENB212035</article-id><article-categories><subj-group subj-group-type="overline"><subject>Review</subject></subj-group><subj-group subj-group-type="heading"><subject>Review</subject></subj-group></article-categories><title-group><article-title>Engineering biology and automation&#x02013;Replicability as a design principle</article-title></title-group><contrib-group><contrib id="enb212035-cr-0001" contrib-type="author"><name><surname>Bultelle</surname><given-names>Matthieu</given-names></name><xref rid="enb212035-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="enb212035-cr-0002" contrib-type="author"><name><surname>Casas</surname><given-names>Alexis</given-names></name><xref rid="enb212035-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="enb212035-cr-0003" contrib-type="author" corresp="yes"><name><surname>Kitney</surname><given-names>Richard</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-6499-5209</contrib-id><xref rid="enb212035-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><address><email>r.kitney@imperial.ac.uk</email></address></contrib></contrib-group><aff id="enb212035-aff-0001">
+<label>
+<sup>1</sup>
+</label>
+<named-content content-type="organisation-division">Department of Bioengineering</named-content>
+<institution>Imperial College London</institution>
+<city>London</city>
+<country country="GB">UK</country>
+</aff><author-notes><corresp id="correspondenceTo">
+<label>*</label>
+<bold>Correspondence</bold>
+<break/>
+Richard Kitney, 3.16 RSM Department of Bioengineering, Imperial College, Exhibition Road, London SW7 2BX, UK.<break/>
+Email: <email>r.kitney@imperial.ac.uk</email>
+<break/>
+</corresp></author-notes><pub-date pub-type="epub"><day>12</day><month>7</month><year>2024</year></pub-date><pub-date pub-type="collection"><month>12</month><year>2024</year></pub-date><volume>8</volume><issue seq="10">4</issue><issue-id pub-id-type="doi">10.1049/enb2.v8.4</issue-id><fpage>53</fpage><lpage>68</lpage><history>
+<date date-type="rev-recd"><day>24</day><month>6</month><year>2024</year></date>
+<date date-type="received"><day>27</day><month>3</month><year>2024</year></date>
+<date date-type="accepted"><day>07</day><month>7</month><year>2024</year></date>
+</history><permissions><!--&#x000a9; 2024 The Author(s). Engineering Biology published by John Wiley & Sons Ltd on behalf of The Institution of Engineering and Technology.--><copyright-statement content-type="article-copyright">&#x000a9; 2024 The Author(s). <italic toggle="yes">Engineering Biology</italic> published by John Wiley &#x00026; Sons Ltd on behalf of The Institution of Engineering and Technology.</copyright-statement><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>This is an open access article under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link> License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions><self-uri content-type="pdf" xlink:href="file:ENB2-8-53.pdf"/><abstract><title>Abstract</title><p>Applications in engineering biology increasingly share the need to run operations on very large numbers of biological samples. This is a direct consequence of the application of good engineering practices, the limited predictive power of current computational models and the desire to investigate very large design spaces in order to solve the hard, important problems the discipline promises to solve. Automation has been proposed as a key component for running large numbers of operations on biological samples. This is because it is strongly associated with higher throughput, and with higher replicability (thanks to the reduction of human input). The authors focus on replicability and make the point that, far from being an additional burden for automation efforts, replicability should be considered central to the design of the automated pipelines processing biological samples at scale&#x02014;as trialled in biofoundries. There cannot be successful automation without effective error control. Design principles for an IT infrastructure that supports replicability are presented. Finally, the authors conclude with some perspectives regarding the evolution of automation in engineering biology. In particular, they speculate that the integration of hardware and software will show rapid progress, and offer users a degree of control and abstraction of the robotic infrastructure on a level significantly greater than experienced today.</p></abstract><abstract abstract-type="graphical"><p>Applications in engineering biology increasingly share the need to run operations on very large numbers of biological samples. Automation has been proposed as a key component for running large numbers of operations on biological samples. The authors make the point that, far from being an additional burden for automation efforts, replicability should be considered central to the design of the automated pipelines processing biological samples at scale&#x02014;as trialled in biofoundries.<boxed-text position="anchor" content-type="graphic"><graphic xlink:href="ENB2-8-53-g004.jpg" position="anchor" id="jats-graphic-1"/></boxed-text>
+</p></abstract><kwd-group><kwd id="enb212035-kwd-0001">automation</kwd><kwd id="enb212035-kwd-0002">bioinformatics</kwd><kwd id="enb212035-kwd-0003">synthetic biology</kwd></kwd-group><funding-group><award-group id="funding-0001"><funding-source><institution-wrap><institution>Engineering and Physical Sciences Research Council
+</institution><institution-id institution-id-type="doi">10.13039/501100000266</institution-id></institution-wrap></funding-source><award-id>EP/L011573/1</award-id><award-id>EP/S001859/1</award-id></award-group><award-group id="funding-0002"><funding-source><institution-wrap><institution>National Physical Laboratory
+</institution><institution-id institution-id-type="doi">10.13039/501100007851</institution-id></institution-wrap></funding-source><award-id>NPL 2937881</award-id></award-group></funding-group><counts><fig-count count="4"/><table-count count="1"/><page-count count="16"/><word-count count="12675"/></counts><custom-meta-group><custom-meta><meta-name>source-schema-version-number</meta-name><meta-value>2.0</meta-value></custom-meta><custom-meta><meta-name>cover-date</meta-name><meta-value>December 2024</meta-value></custom-meta><custom-meta><meta-name>details-of-publishers-convertor</meta-name><meta-value>Converter:WILEY_ML3GV2_TO_JATSPMC version:6.5.1 mode:remove_FC converted:28.12.2024</meta-value></custom-meta></custom-meta-group></article-meta><notes><p content-type="self-citation">
+<mixed-citation publication-type="journal" id="enb212035-cit-0145">
+<string-name>
+<surname>Bultelle</surname>, <given-names>M.</given-names>
+</string-name>, <string-name>
+<surname>Casas</surname>, <given-names>A.</given-names>
+</string-name>, <string-name>
+<surname>Kitney</surname>, <given-names>R.</given-names>
+</string-name>: <article-title>Engineering biology and automation&#x02013;replicability as a design principle</article-title>. <source>Eng. Biol</source>. <volume>8</volume>(<issue>4</issue>), <fpage>53</fpage>&#x02013;<lpage>68</lpage> (<year>2024</year>). <pub-id pub-id-type="doi">10.1049/enb2.12035</pub-id>
+</mixed-citation>
+</p></notes></front><body id="enb212035-body-0001"><sec id="enb212035-sec-0010"><label>1</label><title>ENGINEERING BIOLOGY AND THE NEED FOR SCALE</title><sec id="enb212035-sec-0020"><label>1.1</label><title>Overview</title><p>Engineering biology&#x02014;often called synthetic biology&#x02014;is known for its reliance on core engineering principles, and its wide range of applications [<xref rid="enb212035-bib-0001" ref-type="bibr">1</xref>]. The field has been singled out as a key technology for the global transition to a bio&#x02010;based economy (bioeconomy) [<xref rid="enb212035-bib-0002" ref-type="bibr">2</xref>, <xref rid="enb212035-bib-0003" ref-type="bibr">3</xref>]. In particular, it is expected to play a major role in the replacement of fossil&#x02010;based products and the greater use of renewable biological resources and wastes to produce chemicals, consumer and industrial goods, energy, and food [<xref rid="enb212035-bib-0004" ref-type="bibr">4</xref>].</p><p>Applications in engineering biology increasingly share a common practical need: that is, the need to run operations on biological samples at very large scales. This is the direct consequence of the application of good practices in engineering, the limited predictive power of existing computational models, and the desire to investigate very large design spaces in order to solve the hard, important problems the discipline promises to solve.</p><p>Automation, &#x02018;<italic toggle="yes">the use of</italic> machines <italic toggle="yes">and</italic> computers <italic toggle="yes">that can</italic> operate <italic toggle="yes">without</italic> needing human control&#x02019; [<xref rid="enb212035-bib-0005" ref-type="bibr">5</xref>], has been proposed as a key component for running large numbers of operations on biological samples because of the feature most associated with automation: higher throughput [<xref rid="enb212035-bib-0006" ref-type="bibr">6</xref>]. Automation is a dual&#x02010;headed concept [<xref rid="enb212035-bib-0007" ref-type="bibr">7</xref>]. Mechanisation (mechanised automation) is the replacement of human muscle power (material and energy transformation), while computerisation (computerised automation) is the replacement of cognitive tasks (mental activity and sensory processes). Because of our interest in the processing of biological samples, in the paper we mainly focus on the mechanised side of automation&#x02014;and only discuss software that supports mechanised tasks.</p><p>Higher throughput is not the only feature of automation of use in engineering biology. Because of the reduction of the influence of human operators, automation is also associated with higher replicability. Replicability is a core principle in engineering&#x02014;and a <italic toggle="yes">sine qua non</italic> for any industrial translation effort. Lack of replicability will stop any such effort at its research and development stage, if not earlier. In this paper, we make the point that replicability should be made a core principle of the design of the automated pipelines processing biological samples at scale in engineering biology. We also show that this demand should not be seen as an additional burden for automation efforts, but as an essential requirement for the successful unlocking of the benefits of automation. In particular, there cannot be successful automation without effective error control.</p></sec><sec id="enb212035-sec-0030"><label>1.2</label><title>Engineering biology</title><p>Several definitions of &#x02018;synthetic biology&#x02019; have emerged since its inception early this century. One of the earliest, and most used, was offered by the UK's Royal Academy of Engineering: &#x02018;<italic toggle="yes">the design and engineering of biologically based parts, novel devices and systems as well as the redesign of existing, natural biological systems</italic>&#x02019; [<xref rid="enb212035-bib-0008" ref-type="bibr">8</xref>]. A single definition has proved elusive however [<xref rid="enb212035-bib-0009" ref-type="bibr">9</xref>]. &#x02018;Engineering biology&#x02019; is a recent term introduced by the UK Engineering Biology Leadership Council [<xref rid="enb212035-bib-0010" ref-type="bibr">10</xref>] and places a greater importance on translation and commercialisation: It is the &#x02018;<italic toggle="yes">overarching term that incorporates basic research and development (synthetic biology) and industrial translation</italic>&#x02019;, with a view &#x02018;<italic toggle="yes">to translate biodesign into commercially viable operations and to scale them out to deliver widespread economic prosperity and associated societal benefits</italic>&#x02019;. For simplicity, henceforth in the paper we will use &#x02018;engineering biology&#x02019;.</p><p>Engineering biology is known for its methodology, and its emphasis on the principles of engineering. Practically, the discipline rests on two pillars. The first pillar is a powerful set of abstractions and modelling components to represent biological systems, coupled with conventions and good practices for their use. These abstractions and components originate in the life sciences (molecular biology, biochemistry, genetic engineering etc.) and often are a consensus in these scientific disciplines. For instance, the central dogma of molecular biology introduces three types of biological objects: DNA, mRNA, protein. DNA and mRNA are represented by their sequence of nucleotides, proteins represented by their sequence of amino acids. Secondary and tertiary structures are also standardised. Early proponents of synthetic biology, inspired by design in electronics, advocated the use of a part&#x02010;device&#x02010;system hierarchy [<xref rid="enb212035-bib-0011" ref-type="bibr">11</xref>, <xref rid="enb212035-bib-0012" ref-type="bibr">12</xref>] to describe the function of genetic elements. The adoption and expansion of this early form of functional analysis has since given rise to modern biodesign. The existence of these abstractions is a testament to the level of understanding of biological systems accumulated throughout the years, and to the power of the reductionist approach in biology. But it is easy to underestimate the power this offers&#x02014;nothing less than the ability to undertake systematic design, and a modelling language for biological processes. And it is upon this language that the second pillar is built: the ever&#x02010;growing set of foundational technologies, conventions, good practices and standards, used to build and design the &#x02018;<italic toggle="yes">biologically based parts, novel devices and systems</italic>&#x02019;.</p><p>The demonstration that biology is amenable to systematic modelling, the development of powerful foundational technologies, and a distinctive methodology, make the discipline stand out from other areas of biotechnology&#x02014;and provide strong backing for claims of a genuine paradigm shift [<xref rid="enb212035-bib-0013" ref-type="bibr">13</xref>].</p></sec><sec id="enb212035-sec-0040"><label>1.3</label><title>The need for scale in engineering biology</title><p>Applications in engineering biology often share common practical needs. For example, the need to build a large number of biological designs sharing a common genetic design; and the need to run experiments/assay at large scales as part of their development. These needs are the direct consequence of three factors:<list list-type="bullet"><list-item><p>
+<bold>The need to investigate large design spaces</bold> (Figure&#x000a0;<xref rid="enb212035-fig-0001" ref-type="fig">1</xref>). Biological applications require the controlled variation of the genetic content of a system, in conjunction with the variations of other study/design factors&#x02014;either to optimise the properties of the system or to ensure some measure of stability with regards to practical conditions.</p></list-item><list-item><p>
+<bold>The need to tackle biological complexity.</bold> This is due to the intrinsic complexity of biology, the insufficient predictiveness of models, and lack of principles for biodesign.</p></list-item><list-item><p>
+<bold>The application of good practices regarding design, testing and validation.</bold>
+</p></list-item></list>
+</p><fig position="float" fig-type="FIGURE" id="enb212035-fig-0001"><label>FIGURE 1</label><caption><p>Design space in engineering biology. The design space is the set of all combinations of the independent variables. It can be split into a subset with all the variations in the genetic design, and another including experimental conditions and protocols (parameters and sequence of actions).</p></caption><graphic xlink:href="ENB2-8-53-g001" position="anchor" id="jats-graphic-3"/></fig><p>The need to investigate large genetic design spaces can be illustrated with a simple example from metabolic engineering&#x02014;to be more precise from its most engineering&#x02010;influenced flavour of combinatorial pathway engineering [<xref rid="enb212035-bib-0014" ref-type="bibr">14</xref>, <xref rid="enb212035-bib-0015" ref-type="bibr">15</xref>]. The approach uses libraries of functional, preferably characterised [<xref rid="enb212035-bib-0016" ref-type="bibr">16</xref>, <xref rid="enb212035-bib-0017" ref-type="bibr">17</xref>], components to introduce genetic diversity [<xref rid="enb212035-bib-0018" ref-type="bibr">18</xref>, <xref rid="enb212035-bib-0019" ref-type="bibr">19</xref>, <xref rid="enb212035-bib-0020" ref-type="bibr">20</xref>, <xref rid="enb212035-bib-0021" ref-type="bibr">21</xref>]. It is very appealing because it yields, with only a few degrees of freedom, a large number of levels over which to tune intricate pathway expression. Because it enables a systematic, multifactorial approach, it does not require a deep knowledge of the pathway as the classic debugging approaches [<xref rid="enb212035-bib-0022" ref-type="bibr">22</xref>], which seek to remove pathway bottlenecks. But large design spaces quickly become inevitable with such a strategy. With a 5&#x02010;gene pathway such as violacein [<xref rid="enb212035-bib-0023" ref-type="bibr">23</xref>, <xref rid="enb212035-bib-0024" ref-type="bibr">24</xref>], a simple RBS&#x02010;based optimisation yields 100,000 possible combinations for a small library of 10 RBS. When designing biological components, the number of possibilities becomes enormous. A simple promoter with 50 base pairs yields 4<sup>50</sup> possible sequences, that is, a little bit over 10<sup>30</sup> combinations&#x02014;most of them ineffective as promoters.</p><p>In addition, there is a need to test the constructed biological systems for a combination of variations, including experimental conditions and protocols (parameters, and sequence of actions). Such testing may be carried out for the purpose of optimisation. For instance, the production of a metabolite of interest can be maximised by altering the type, timing and magnitude of an external stimulus. Alternatively, testing may be carried out to assess the stability of a design for a set of conditions such as a range of temperatures. In some cases, for example, the optimal combination of the components of a cell&#x02010;free system [<xref rid="enb212035-bib-0025" ref-type="bibr">25</xref>], this can represent a substantial augmentation of the design space. In the rest of the paper, we will use the term &#x02018;treatment&#x02019;, which is widely used in statistics, to mean the set of all the independent variables in the design of the application, and in whose effects the designers are interested. In engineering biology, one of its subsets consists of all the variations in the genetic design&#x02013;we will call it the &#x02018;genetic treatment&#x02019;.</p><p>The second point, tackling biological complexity, is reflected in the history of biodesign. Early this century, engineers advocated that engineering biology mirror the design abstraction hierarchy used in electronic circuit design. The appeal of this approach lay in its simplicity and its proven success with early toy systems [<xref rid="enb212035-bib-0026" ref-type="bibr">26</xref>, <xref rid="enb212035-bib-0027" ref-type="bibr">27</xref>]. This spurred a range of characterisation efforts [<xref rid="enb212035-bib-0028" ref-type="bibr">28</xref>, <xref rid="enb212035-bib-0029" ref-type="bibr">29</xref>] and the creation of repositories such as the iGEM Registry of Standardised Biological Parts [<xref rid="enb212035-bib-0030" ref-type="bibr">30</xref>], Addgene [<xref rid="enb212035-bib-0031" ref-type="bibr">31</xref>], SynBIS [<xref rid="enb212035-bib-0017" ref-type="bibr">17</xref>] and SynBioHub [<xref rid="enb212035-bib-0032" ref-type="bibr">32</xref>]. But it has now been shown that the assumptions behind modular and hierarchical design were often not met, and the performance of parts was highly context&#x02010;dependent and lacked predictability [<xref rid="enb212035-bib-0033" ref-type="bibr">33</xref>, <xref rid="enb212035-bib-0034" ref-type="bibr">34</xref>, <xref rid="enb212035-bib-0035" ref-type="bibr">35</xref>]. The breadth and impact of contextual issues is noteworthy: different behaviours in different growth media, pH or temperatures [<xref rid="enb212035-bib-0036" ref-type="bibr">36</xref>, <xref rid="enb212035-bib-0037" ref-type="bibr">37</xref>], DNA supercoiling [<xref rid="enb212035-bib-0038" ref-type="bibr">38</xref>], resource sharing [<xref rid="enb212035-bib-0039" ref-type="bibr">39</xref>], growth rate feedback [<xref rid="enb212035-bib-0040" ref-type="bibr">40</xref>, <xref rid="enb212035-bib-0041" ref-type="bibr">41</xref>], positional effects of the components [<xref rid="enb212035-bib-0035" ref-type="bibr">35</xref>], integration method [<xref rid="enb212035-bib-0042" ref-type="bibr">42</xref>, <xref rid="enb212035-bib-0043" ref-type="bibr">43</xref>] etc.</p><p>Biodesign still lacks a user&#x02010;friendly framework for design and troubleshooting [<xref rid="enb212035-bib-0034" ref-type="bibr">34</xref>]. Ilya and Del Vechio's suggested some guidelines [<xref rid="enb212035-bib-0044" ref-type="bibr">44</xref>]starting from a point assumed free of contextual effects, and then, iteration after iteration, model the interactions and compensate for them. Without validated models with good predictive power, even this approach to biodesign requires a great deal of assays to test and validate the designs.</p><p>Finally, unwanted variations need to be accounted for. Engineering biology is different from other fields of engineering&#x02014;in that biology is intrinsically stochastic [<xref rid="enb212035-bib-0045" ref-type="bibr">45</xref>, <xref rid="enb212035-bib-0046" ref-type="bibr">46</xref>]. For any given treatment, the behaviour of the system must be estimated by aggregating the measurements of several repeats, ideally to achieve some statistical significance. This simple requirement is often overlooked, as it is often unwieldy. A common heuristic with statistical tests such as <italic toggle="yes">t</italic>&#x02010;tests recommends using at least 30 samples; a handful of repeats are used instead. Good practice also suggests using design of experiment (DoE) methods to account for confounding factors. Methods such as blocking need additional samples; while other methods (e.g. randomisation) complicate the way the assays are run.</p><p>Engineering biology has to contend with some very specific demands of biological materials. Despite popular analogies [<xref rid="enb212035-bib-0012" ref-type="bibr">12</xref>] likening biochemical processes to computations (cells to computers and tissues to networks), biological samples and processes are subject to very specific constraints:<list list-type="bullet"><list-item><p>
+<bold>Biological processes are stochastic and irreversible.</bold> They cannot be stopped and resumed. Changing their speed may change their outcome.</p></list-item><list-item><p>
+<bold>Biological samples cannot be duplicated like data.</bold> Nor can they be built de novo to tight margins of error as for electronic components. Also, biological samples cannot be broken into subunits to be processed in parallel and then recombined.</p></list-item><list-item><p>
+<bold>Biological samples mutate with time.</bold> They divide and replicate imperfectly. Their genetic content is liable to mutate and they are subject to ageing.</p></list-item></list>
+</p><p>The consequences for the processing of biological samples are important. The processing of biological samples is irreversible, and subject to biological noise. It cannot be repeated. Failure is terminal. Different conditions cannot be applied to the same sample. The only form of repetition available is to create approximate copies of the samples through the error&#x02010;prone replication mechanism of the cells. Also, processing cannot be parallelised. The outcome is liable to change if any condition changes. Finally, the outcome will depend on the time when processing takes place and the protocol used.</p><p>It is against this backdrop of a rising need to process biological samples at scale, under specific constraints, that we discuss the use of automation in engineering biology. Specifically, we discuss how automation helps with regard to high throughput and replicability.</p></sec></sec><sec id="enb212035-sec-0050"><label>2</label><title>LABORATORY AUTOMATION AND HIGH THROUGHPUT</title><sec id="enb212035-sec-0060"><label>2.1</label><title>Laboratory automation and high throughput</title><p>The first aspect of automation we wish to discuss in the context of engineering biology is the feature most associated with automation in general: higher throughput [<xref rid="enb212035-bib-0006" ref-type="bibr">6</xref>].</p><p>To do this, we will first discuss the history of automation in the life sciences and biotechnology. The pharmaceuticals industry has been a key player in the development and adoption of laboratory robotic equipment due to their need for testing compounds against a very large number of targets&#x02014;so much so that the history of laboratory automation parallels the development of modern drug discovery [<xref rid="enb212035-bib-0047" ref-type="bibr">47</xref>]. This need was identified as early as in the mid 1980s when large Streptomycete libraries were successfully constructed and needed testing for antibiotic production under a variety of fermentation conditions [<xref rid="enb212035-bib-0048" ref-type="bibr">48</xref>]. In industrial terms, the stakes were high. Those pharmaceutical companies that had the ability to test quickly and efficiently had a genuine competitive edge over the pharmaceutical companies that could not. However, in the early 1990s, testing a collection of 250&#x000a0;k compounds would still take 2&#x000a0;years [<xref rid="enb212035-bib-0049" ref-type="bibr">49</xref>] at the state&#x02010;of&#x02010;the&#x02010;art rate of 2500 a week.</p><p>It is the gap between the pharmaceutical industry's needs for rapid drug discovery and screening, and the capacity of even the most advanced companies, that led to the birth of the discipline now known as high&#x02010;throughput screening (HTS) [<xref rid="enb212035-bib-0047" ref-type="bibr">47</xref>]. Technologies already used in medical diagnostics (robotics, liquid&#x02010;handling devices, automated measurement devices, system control etc.) were adapted to achieve the necessary integration of compound supply, assay operation and data management [<xref rid="enb212035-bib-0049" ref-type="bibr">49</xref>].</p><p>The standardisation of microplates [<xref rid="enb212035-bib-0050" ref-type="bibr">50</xref>] was a key catalyst in the development and adoption of automated platforms [<xref rid="enb212035-bib-0049" ref-type="bibr">49</xref>]. In the early 1990s, 96&#x02010;well microplates became the main compound&#x02010;handling and screening format in the industry. Assays were subsequently adapted to higher&#x02010;density microplates (384&#x02010;well, 1536&#x02010;well and higher), resulting in a significantly higher ability to process samples in parallel [<xref rid="enb212035-bib-0051" ref-type="bibr">51</xref>]. This in turn has led to a significant reduction in the quantities needed for the assays: while assays in single tubes need micrograms of compounds, assays on 1536&#x02010;well plates only use a few micrograms [<xref rid="enb212035-bib-0049" ref-type="bibr">49</xref>]. It is noteworthy that after automation and miniaturisation were leveraged to increase capacity, HTS focused on factors such as process quality, time, and cost [<xref rid="enb212035-bib-0052" ref-type="bibr">52</xref>], so more targets could reliably be identified. This was followed by a third phase with more flexible, target&#x02010;specific, screening strategies [<xref rid="enb212035-bib-0053" ref-type="bibr">53</xref>]. These trade&#x02010;offs between throughput, cost, time and data quality, and the need for smart techniques to navigate the large spaces will be familiar to anyone in engineering biology.</p><p>The wide adoption of robotic equipment in the pharmaceutical industry has been a clear source of inspiration for engineering biology. However, despite early claims that automation was revolutionising biology, or was going to [<xref rid="enb212035-bib-0054" ref-type="bibr">54</xref>], the promise remains unfulfilled. Academic laboratories have only minimally embraced automation tools [<xref rid="enb212035-bib-0055" ref-type="bibr">55</xref>]. The poor state of adoption should be seen against a seemingly favourable background. Many techniques employed in engineering biology are routine [<xref rid="enb212035-bib-0055" ref-type="bibr">55</xref>] and have been implemented in robotic labs [<xref rid="enb212035-bib-0006" ref-type="bibr">6</xref>]. Reasons for the slow adoption of automation include:<list list-type="bullet"><list-item><p>
+<bold>Costs.</bold> Setting up and running an automated infrastructure comes with high costs. Expenses include purchasing the automated robotic and high throughput equipment, all the consumables, and the software and support for the staff [<xref rid="enb212035-bib-0056" ref-type="bibr">56</xref>].</p></list-item><list-item><p>
+<bold>Expertise and training limitations.</bold> Automated infrastructures require new ways to work, which, in turn, requires additional training for the staff [<xref rid="enb212035-bib-0055" ref-type="bibr">55</xref>]. Expertise limitation was identified as an obstacle in HTS. The decision then was to create islands of automation [<xref rid="enb212035-bib-0049" ref-type="bibr">49</xref>].</p></list-item><list-item><p>
+<bold>Additional time for set&#x02010;up and optimisation of new protocols</bold> [<xref rid="enb212035-bib-0055" ref-type="bibr">55</xref>]. Automation should therefore be saved for tasks worth automating&#x02014;for instance tasks that will be performed a large number of times.</p></list-item><list-item><p>
+<bold>Lower precision of robotic platforms</bold> [<xref rid="enb212035-bib-0055" ref-type="bibr">55</xref>, <xref rid="enb212035-bib-0057" ref-type="bibr">57</xref>].</p></list-item><list-item><p>
+<bold>Lack of flexibility.</bold> Flexibility, defined as &#x02018;<italic toggle="yes">the capability of an automation system to be adapted to a new protocol with the minimum cost and downtime of the existing system</italic>&#x02019; [<xref rid="enb212035-bib-0058" ref-type="bibr">58</xref>], is a critical requirement for research laboratories&#x02013;where protocols are continuously modified. Commercial products are notoriously difficult to reconfigure. This has been one of the most frequent complaints of laboratory automation system users [<xref rid="enb212035-bib-0058" ref-type="bibr">58</xref>, <xref rid="enb212035-bib-0059" ref-type="bibr">59</xref>]. New generations of hardware manufacturers such as Opentrons [<xref rid="enb212035-bib-0060" ref-type="bibr">60</xref>] now put flexibility and programmatic access first [<xref rid="enb212035-bib-0061" ref-type="bibr">61</xref>].</p></list-item></list>
+</p><p>Despite&#x02014;or maybe because of&#x02014;the low level of automation in engineering biology, efforts proceed at a fast pace to unlock the benefits of automation. High&#x02010;throughput platforms are in greater use [<xref rid="enb212035-bib-0062" ref-type="bibr">62</xref>], and advanced development workflows, such as the design&#x02010;build&#x02010;test&#x02010;learn (DBTL) workflows, have been successfully automated [<xref rid="enb212035-bib-0063" ref-type="bibr">63</xref>, <xref rid="enb212035-bib-0064" ref-type="bibr">64</xref>]. It is worth stressing that these advances have taken place on the more open platforms&#x02014;indicating that some of the obstacles for a wider use of automation are being lifted. More studies are being published that use automation to achieve higher throughput. For example, Goldman and co&#x02010;authors [<xref rid="enb212035-bib-0065" ref-type="bibr">65</xref>] used automation as part of a DARPA&#x02010;backed replication study, which, in their opinion, allowed them to scale up the experiments &#x02018;<italic toggle="yes">by two orders of magnitude</italic>&#x02019;. The construction and cloning phases have been successfully automated, yielding significant improvements. The Edinburgh Foundry [<xref rid="enb212035-bib-0066" ref-type="bibr">66</xref>] has reported 20&#x000d7; improvements for DNA assembly reactions [<xref rid="enb212035-bib-0067" ref-type="bibr">67</xref>]. Another biofoundry, iBioFAB, has reported 10&#x000d7; improvement with their automated, multiplex genome&#x02010;scale engineering of <italic toggle="yes">Saccharomyces Cerevisiae</italic>. With automation, they could build up to 1000 TALEN constructs per day at &#x0003c;$3 each&#x02014;a 300&#x000d7; reduction in cost [<xref rid="enb212035-bib-0068" ref-type="bibr">68</xref>].</p></sec><sec id="enb212035-sec-0070"><label>2.2</label><title>Biofoundries as drivers of laboratory automation</title><p>Among the initiatives to spread the benefits of automation, the most comprehensive was the establishment of a network of biofoundries called the Global Biofoundry Alliance [<xref rid="enb212035-bib-0067" ref-type="bibr">67</xref>]. Some private companies also run their own biofoundries&#x02014;for example, Lesaffre [<xref rid="enb212035-bib-0069" ref-type="bibr">69</xref>] and Ginkgo Bioworks [<xref rid="enb212035-bib-0070" ref-type="bibr">70</xref>]. Although they are more limited in scope (R&#x00026;D and commercialisation), most of the points in the discussion here also apply to these private sector biofoundries. Biofoundries are specialised laboratories that combine&#x000a0;software&#x02010;based&#x000a0;design and automated or semi&#x02010;automated pipelines to build and test genetic devices [<xref rid="enb212035-bib-0071" ref-type="bibr">71</xref>]. To enable the rapid&#x000a0;design, construction and testing of genetically modified organisms, biofoundries are organised around the DBTL cycle [<xref rid="enb212035-bib-0067" ref-type="bibr">67</xref>].</p><p>Generally, their purpose is to help accelerate commercialisation of synthetic biology products and biomanufacturing process engineering and the transition towards sustainable bioeconomies and development bioeconomy [<xref rid="enb212035-bib-0072" ref-type="bibr">72</xref>]. This, in turn, requires the creation of &#x02018;<italic toggle="yes">beyond&#x02010;the&#x02010;lab</italic>&#x02019; capabilities tasked with application development, scale&#x02010;up, and commercialisation [<xref rid="enb212035-bib-0073" ref-type="bibr">73</xref>, <xref rid="enb212035-bib-0074" ref-type="bibr">74</xref>, <xref rid="enb212035-bib-0075" ref-type="bibr">75</xref>]. Biofoundries occupy a very specific place in the innovation ecosystem of their countries. Farzaneh [<xref rid="enb212035-bib-0076" ref-type="bibr">76</xref>] likened them to <italic toggle="yes">nucleating hubs</italic>&#x02019;. They generate and support webs linking academic researchers, industry (one of their core missions is to provide access to startups and SMEs to expensive, specialised equipment) and policy&#x02010;makers (government, standard bodies, and funding agencies). An example of such a hub is the London Biofoundry at SynbiCITE [<xref rid="enb212035-bib-0077" ref-type="bibr">77</xref>]&#x02014;the UK's industrial translation centre for synthetic biology/engineering biology. The need for such hubs has now been widely acknowledged by policy makers. Over 50 countries, including all the G7 nations, have adopted national strategies related to the bioeconomy and biofoundries [<xref rid="enb212035-bib-0056" ref-type="bibr">56</xref>, <xref rid="enb212035-bib-0075" ref-type="bibr">75</xref>].</p><p>Biofoundries are the natural continuation/evolution of all the efforts of automating mechanised laboratory processes. They offer physical locations, where all the constituent processes can be physically concentrated and integrated. Biofoundries typically contain equipment ranging from liquid&#x02010;handling equipment, DNA sequencing, automated controllable bioreactors to high&#x02010;throughput analytical equipment&#x02014;and are operated by specialised staff. They are also ideal testbeds for the integration of automated robotic platforms and dedicated software tools. These tools go beyond laboratory information management systems and support all stages of the DBTL cycle. Three classes of DBTL tools are of particular note:<list list-type="bullet"><list-item><p>
+<bold>Biological design tools.</bold> In conjunction with repositories of genetic parts, they let users generate large design spaces [<xref rid="enb212035-bib-0078" ref-type="bibr">78</xref>, <xref rid="enb212035-bib-0079" ref-type="bibr">79</xref>, <xref rid="enb212035-bib-0080" ref-type="bibr">80</xref>], and support their construction. These two in practice support the first two phases of the DBTL cycle.</p></list-item><list-item><p>
+<bold>Computational tools for the learning phase of the DBTL cycle.</bold> They suggest new experiments to investigate large design spaces efficiently. Many implement DoE strategies or optimal experimental design [<xref rid="enb212035-bib-0081" ref-type="bibr">81</xref>, <xref rid="enb212035-bib-0082" ref-type="bibr">82</xref>]. Machine learning tools also fall under this category [<xref rid="enb212035-bib-0083" ref-type="bibr">83</xref>].</p></list-item><list-item><p>
+<bold>Equipment programming software and interface drivers.</bold> These tools remain very piecemeal. The SILA2 standard (standing for &#x02018;Standardisation in Lab Automation 2&#x02019;) [<xref rid="enb212035-bib-0084" ref-type="bibr">84</xref>, <xref rid="enb212035-bib-0085" ref-type="bibr">85</xref>] has been adopted by some vendors to enable interoperability between pieces of equipment [<xref rid="enb212035-bib-0086" ref-type="bibr">86</xref>]. SynBioPython [<xref rid="enb212035-bib-0087" ref-type="bibr">87</xref>] is an initiative launched by the Global Biofoundry Alliance for all their software projects. Other solutions have been put forward for laboratory workflow automation, either commercial like Antha [<xref rid="enb212035-bib-0088" ref-type="bibr">88</xref>] or open source, such as Aquarium [<xref rid="enb212035-bib-0089" ref-type="bibr">89</xref>].</p></list-item></list>
+</p><p>The structure of the DBTL cycle shows why it is so powerful. The cycle uses an expansion&#x02010;reduction strategy (Figure&#x000a0;<xref rid="enb212035-fig-0002" ref-type="fig">2</xref>). The expansion portion (build and test phases) enables the controlled introduction of variations into the system, and does so in decoupled stages, to yield a combinatorial effect:<list list-type="bullet"><list-item><p>
+<bold>Build phase.</bold> The phase encompasses the genetic diversity necessary for the development of the application of interest. In practical terms it consists of the construction of libraries of genetic variants&#x02014;often assembled by reusing previously generated libraries. For instance, a library of plasmids can be assembled from existing libraries of components; or a bacterium can be transformed with previously assembled plasmids.</p></list-item><list-item><p>
+<bold>Test phase.</bold> This phase comprises two sub&#x02010;phases: a sample preparation phase, and an assay phase. The sample&#x02010;preparation phase generates the samples from biological material that was previously generated in the build phase. Variations in treatment (environmental parameters, stimuli type and magnitude etc.) are introduced in the assay phase. Samples are grouped and processed according to their genetic content and the treatment they receive.</p></list-item></list>
+</p><fig position="float" fig-type="FIGURE" id="enb212035-fig-0002"><label>FIGURE 2</label><caption><p>Implementation of the DBTL cycle in biofoundries. The DBTL cycle uses an expansion&#x02010;reduction strategy. The expansion portion (build and test phases) enables the controlled introduction of variations into the system, and does so in decoupled stages, to yield a combinatorial effect. The reduction portion (learn phase) identifies its most promising regions, so they can be targeted in later rounds.</p></caption><graphic xlink:href="ENB2-8-53-g003" position="anchor" id="jats-graphic-5"/></fig><p>The reduction portion (learn phase) reduces the need for brute force investigation of the design space and identifies its most promising regions, so they can be targeted in later rounds.</p><p>The power of the biofoundry approach lies in the effective targeting of the steps of the expansion portion of the DBTL cycle for mechanised automation. Biofoundries treat these steps as an opportunity for throughput multiplication and have automated the necessary workflows. The engineering principles of standardisation and reusability play a key role in the approach. Common DNA assembly workflows, already automated in biofoundries [<xref rid="enb212035-bib-0090" ref-type="bibr">90</xref>, <xref rid="enb212035-bib-0091" ref-type="bibr">91</xref>, <xref rid="enb212035-bib-0092" ref-type="bibr">92</xref>, <xref rid="enb212035-bib-0093" ref-type="bibr">93</xref>], use reusable biological components. The overall construction can be split into several stages performed by separate teams. Automated operations also use standardised protocols. The result is an effective trade&#x02010;off between the biological constraints, the resources of the biofoundry and the demands of the study.</p></sec></sec><sec id="enb212035-sec-0080"><label>3</label><title>AUTOMATION AND REPLICABILITY</title><sec id="enb212035-sec-0090"><label>3.1</label><title>Replicability</title><p>The other aspect of automation we wish to discuss in the context of engineering biology is replicability. Reproducibility, replicability, repeatability (the terms are often used, somewhat loosely, interchangeably) are key principles of the scientific method. For the findings of a study to be recognised and be considered by the wider research community, they should be repeated, preferably by separate researchers, with a high degree of reliability [<xref rid="enb212035-bib-0094" ref-type="bibr">94</xref>]. Replication studies vary, depending on what methodological factors they share. Some replication studies use identical methodologies and, ideally, identical equipment and protocols&#x02014;they can then be considered straightforward copies of the original study. Conversely, some replication studies use different methodologies. Replication using both identical and different methodologies is very strong evidence for the validity of the result.</p><p>Concerns about lack of reproducibility and replicability have been recently expressed in both scientific [<xref rid="enb212035-bib-0095" ref-type="bibr">95</xref>, <xref rid="enb212035-bib-0096" ref-type="bibr">96</xref>] and popular media [<xref rid="enb212035-bib-0097" ref-type="bibr">97</xref>]. A landmark editorial in Science [<xref rid="enb212035-bib-0098" ref-type="bibr">98</xref>] bluntly stated &#x02018;<italic toggle="yes">Recently, the scientific community was shaken by reports that a troubling proportion of peer&#x02010;reviewed preclinical studies are not reproducible</italic>&#x02019;. A subsequent Nature survey [<xref rid="enb212035-bib-0096" ref-type="bibr">96</xref>] of 1576 research scientists found that almost 70% of researchers (78% among biologists) had attempted, but failed, to reproduce other researchers' results in the laboratory. Worse still, 60% failed to replicate their own research. This state of concern is now referred to as the &#x02018;replication crisis&#x02019; and has led the National Academy of Sciences (NAS) to establish a committee on the &#x02018;<italic toggle="yes">Reproducibility and Replicability in Science</italic>&#x02019; [<xref rid="enb212035-bib-0094" ref-type="bibr">94</xref>]. In this paper, we use the definitions of reproducibility and replicability contained in the NAS report. Although definitions of reproducibility and replicability vary across science and engineering [<xref rid="enb212035-bib-0099" ref-type="bibr">99</xref>], the NAS definitions (See Table&#x000a0;<xref rid="enb212035-tbl-0001" ref-type="table">1</xref>) are extremely powerful&#x02014;as they decouple the concepts and make them complementary. Reproducibility is a quality feature of the analysis of the dataset (is the conclusion valid given the collected data?). Replicability is a quality of the outcome of the study (is its conclusion valid? Can it be reliably used in another setting?). Failure to reproduce results indicates issues with the study, including corrupted data or bugs in scripts. Failure to replicate results can result from sources ranging from faulty design (or worse, fraud) to natural randomness (possibly exacerbated by a lack of control of some variables) to, excitingly, a new discovery.</p><table-wrap position="float" id="enb212035-tbl-0001" content-type="TABLE"><label>TABLE 1</label><caption><p>Repeatability, reproducibility and replicability as defined by National Academy of Science (NAS) and the Association for Computing Machinery (ACM).</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><thead valign="bottom"><tr style="border-bottom:solid 1px #000000"><th align="left" valign="bottom" rowspan="1" colspan="1">Term</th><th align="left" valign="bottom" rowspan="1" colspan="1">ACM definition</th><th align="left" valign="bottom" rowspan="1" colspan="1">NAS definition</th></tr></thead><tbody valign="top"><tr><td align="left" valign="top" rowspan="1" colspan="1">Repeatability</td><td align="left" valign="top" rowspan="1" colspan="1">
+<p>
+<italic toggle="yes">&#x02018;The measurement can be obtained with stated precision by the same team using the same measurement procedure, the same measuring system, under the same operating conditions, in the same location on multiple trials.</italic>
+</p>
+<p>
+<italic toggle="yes">For computational experiments, this means that a researcher can reliably repeat her own computation.</italic>&#x02019;</p>
+</td><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Reproducibility</td><td align="left" valign="top" rowspan="1" colspan="1">
+<p>
+<italic toggle="yes">&#x02018;The measurement can be obtained with stated precision by a different team using the same measurement procedure, the same measuring system, under the same operating conditions, in the same or a different location on multiple trials.</italic>
+</p>
+<p>
+<italic toggle="yes">For computational experiments, this means that an independent group can obtain the same result using the author's own artefacts.&#x02019;</italic>
+</p>
+</td><td align="left" valign="top" rowspan="1" colspan="1">
+<p>
+<italic toggle="yes">&#x02018;Reproducibility is obtaining consistent results using the same input data; computational steps, methods, and code; and conditions of analysis.</italic>
+</p>
+<p>
+<italic toggle="yes">The definition is synonymous with &#x0201c;computational reproducibility&#x0201d;&#x02019;</italic>
+</p>
+</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Replicability</td><td align="left" valign="top" rowspan="1" colspan="1">
+<p>
+<italic toggle="yes">&#x02018;The measurement can be obtained with stated precision by a different team, a different measuring system, in a different location on multiple trials.</italic>
+</p>
+<p>
+<italic toggle="yes">For computational experiments, this means that an independent group can obtain the same result using artefacts which they develop completely independently.&#x02019;</italic>
+</p>
+</td><td align="left" valign="top" rowspan="1" colspan="1">
+<p>
+<italic toggle="yes">&#x02018;Replicability is obtaining consistent results across studies aimed at answering the same scientific question, each of which has obtained its own data.</italic>
+</p>
+<p>
+<italic toggle="yes">Two studies may be considered to have replicated if they obtain consistent results given the level of uncertainty inherent in the system under study.&#x02019;</italic>
+</p>
+</td></tr></tbody></table><table-wrap-foot id="enb212035-ntgp-0001"><fn id="enb212035-note-0001"><p>
+<italic toggle="yes">Note</italic>: The definitions from the ACM [<xref rid="enb212035-bib-0100" ref-type="bibr">100</xref>] have been included for comparison.</p></fn></table-wrap-foot></table-wrap><p>Despite its critical importance, there has been limited investigation into the replicability of publications in life sciences [<xref rid="enb212035-bib-0055" ref-type="bibr">55</xref>]. This also holds in engineering biology [<xref rid="enb212035-bib-0101" ref-type="bibr">101</xref>], where the most prominent replication studies have been in the context of iGEM interlab studies [<xref rid="enb212035-bib-0102" ref-type="bibr">102</xref>, <xref rid="enb212035-bib-0103" ref-type="bibr">103</xref>, <xref rid="enb212035-bib-0104" ref-type="bibr">104</xref>], and DARPA [<xref rid="enb212035-bib-0065" ref-type="bibr">65</xref>]&#x02014;using identical methodologies, but with noticeably different outcomes. A review on the topic of the estimation of the relation between mRNA and protein abundance [<xref rid="enb212035-bib-0105" ref-type="bibr">105</xref>] identified a wide range of causes for the discrepancies between published results. These causes predictably included methodological differences such as calibration issues. Noticeably, the discussion also included biological considerations such as temporal and spatial scales (e.g. cell populations and tissues vs. single cells), which had such an effect in practice that some studies did not measure the same properties.</p><p>Replicability is a core principle in engineering [<xref rid="enb212035-bib-0055" ref-type="bibr">55</xref>], and crucial for any industrial translation and production effort. The rapid development and manufacturing of COVID&#x02010;19 vaccines on a global scale [<xref rid="enb212035-bib-0106" ref-type="bibr">106</xref>, <xref rid="enb212035-bib-0107" ref-type="bibr">107</xref>] would never have been possible without a concurrent emphasis on replicability during the development and testing phases. This was equally true during the manufacturing phase that involved hundreds of sites manufacturing the vaccines and their components. Failure to replicate can be terminal to R&#x00026;D efforts&#x02014;more generally, insufficient replicability hampers such efforts. High&#x02010;throughput screening once again offers an example [<xref rid="enb212035-bib-0108" ref-type="bibr">108</xref>], as it has been accused of being a contributory factor to the decline in reduced productivity in the pharmaceutical industry (poor&#x02010;quality data and insufficient hit rate).</p><p>The link between automation and higher replicability can be described in an idealised scenario as follows. First, automation leads to higher throughput. As previously discussed, this leads to more processed samples, more collected data and a better statistical analysis. Second, automation reduces the input of human operators. Since human activities are significantly affected by stress, tediousness, repetition and fatigue [<xref rid="enb212035-bib-0055" ref-type="bibr">55</xref>, <xref rid="enb212035-bib-0109" ref-type="bibr">109</xref>], mechanisation is expected to lead to lower error rates for these operations&#x02014;especially for higher throughputs. Mechanisation is also expected to yield more homogeneous outputs. Humans vary considerably in their ability to learn and perform new motor skills [<xref rid="enb212035-bib-0110" ref-type="bibr">110</xref>] indeed, while some skills, such as micropipetting, have a massive influence on the output of experiments [<xref rid="enb212035-bib-0111" ref-type="bibr">111</xref>]. Note that mechanisation should not necessarily lead to more precise outcomes; occasionally, a skilled technician will perform more accurately.</p><p>The advantages of a reduction in human factors are not solely limited to mechanised automation. Some actions may be performed by a trained operator without software support, but the cognitive load and labour involved makes doing so inefficient even at modest scales. For instance, the generation and management of all construct sequences is best left to a dedicated infrastructure [<xref rid="enb212035-bib-0112" ref-type="bibr">112</xref>]. Quality control for construction steps are also best automated with a dedicated sequence&#x02010;matching software [<xref rid="enb212035-bib-0113" ref-type="bibr">113</xref>]. Also, while some tasks are not automatable, others can only be performed by machines/computers [<xref rid="enb212035-bib-0114" ref-type="bibr">114</xref>]. The design and learn phases supply many examples of such tasks: for example, bioinformatics tasks such as a BLAST database search [<xref rid="enb212035-bib-0115" ref-type="bibr">115</xref>], or the construction of a phylogenetic tree [<xref rid="enb212035-bib-0116" ref-type="bibr">116</xref>].</p></sec><sec id="enb212035-sec-0100"><label>3.2</label><title>Replicability in practice&#x02013;A case study</title><p>The relationship between automation, high throughput and replicability is, unfortunately, more complicated than the basic version in Section&#x000a0;<xref rid="enb212035-sec-0090" ref-type="sec">3.1</xref>. Poor replicability can easily spoil automation efforts. As appealing as reducing human influence and increasing throughput are, careless deployment of automation is liable to introduce new uncontrolled errors and new confounding variables. The results can be contaminated, or even result in useless data. These pitfalls of automation can, for example, be illustrated with a recent study conducted by the authors of this paper [<xref rid="enb212035-bib-0117" ref-type="bibr">117</xref>] on the topic of the automation of liquid handling.</p><p>Liquid handling is the most common step in all protocols in engineering biology. Liquid&#x02010;handling operations are labour&#x02010;intensive and inefficient when performed manually [<xref rid="enb212035-bib-0058" ref-type="bibr">58</xref>]. Liquid&#x02010;handling platforms are therefore central to the transformation of research laboratories and their adoption of automation. Robotic liquid&#x02010;handling platforms all have the usual automation advantages over manual operations: they increase the throughput and perform consistently and without fatigue [<xref rid="enb212035-bib-0118" ref-type="bibr">118</xref>]. Achieving reliable, robust, repetitive, and high&#x02010;speed operation is not without its challenges. A wide range of physical factors play a role in the dispensation of liquids with air&#x02010;cushion pipettes. Ewald [<xref rid="enb212035-bib-0119" ref-type="bibr">119</xref>] listed density and viscosity of the pipetted liquid, pre&#x02010;wetting and environmental factors such as relative humidity, vapour pressure, system temperature, air pressure and altitude as the most important. To compensate for the influence of these factors, calibration is often necessary [<xref rid="enb212035-bib-0120" ref-type="bibr">120</xref>]. Some factors such as evaporation control, viscous material handling, calibration, clogging detection, air bubbles dissolution and system integration [<xref rid="enb212035-bib-0118" ref-type="bibr">118</xref>] are harder to compensate for. Clogging of tubes, valves and pipetting heads can be caused by viscous material, dust and particles or accumulation of liquid debris. Air bubbles may form during aspiration or dispensing and cause inaccuracies in volume handling.</p><p>Although valid low&#x02010;level explanations, these factors are not practical enough to help with protocol design and testing. Albert [<xref rid="enb212035-bib-0121" ref-type="bibr">121</xref>] took a more actionable view of liquid&#x02010;handling errors and developed an error classification framework, linking physical and mechanical factors with observable effects. The framework is based around three sources of errors:<list list-type="bullet"><list-item><p>
+<bold>Equipment related errors.</bold> The types of tips are critical to the accuracy of volume transfer&#x02014;material, shape, fit, and wettability being the most important factors. A tip unsuited to the material being dispensed can also cause random contamination.</p></list-item><list-item><p>
+<bold>Pipetting Methods.</bold> Forward mode, where the entire aspirated reagent in the tip is discharged, is suitable for aqueous reagents with or without small amounts of proteins or surfactants. Reverse mode, where more reagent is aspirated into the tip than is dispensed, is suitable for viscous or foaming liquids. Pipetting methods are generally unsuitable to liquids that are non&#x02010;aqueous or complex (i.e. with one or more components or additives, such as salts, sugars, detergents, surfactants, or proteins).</p></list-item><list-item><p>
+<bold>Liquid&#x02010;dispensing schemes.</bold> The sequential dispensing scheme first aspirates a relatively large volume of the reagent, before dispensing the reagent into several wells as per protocol. Tips must not touch any liquid present in the wells to avoid contamination or dilution. The serial dilution scheme only travels back and forth between wells and the reservoirs. Issues occur if the reagents are not properly mixed before the transfer, and also include potential contamination. Iterative schemes transferring between wells on the same plate (for instance, column by column) spread errors across the plate and are contamination&#x02010;prone.</p></list-item></list>
+</p><p>Albert's framework led the authors of this review to conduct their own study in the London Biofoundry [<xref rid="enb212035-bib-0122" ref-type="bibr">122</xref>] at SynbiCITE, and to investigate the reliable automation of liquid handling and identify the classes of errors introduced. They did so from the standpoint of the construction of the standard curve for lycopene in dimethyl sulfoxide (DMSO). Since lycopene is a carotenoid of industrial interest and DMSO is a popular extractant, the study also had industrial relevance. The development of a standard curve necessitated the development of flexible liquid&#x02010;handling methods that were generalisable to other automated applications. Because lycopene in DMSO is a complex, atypical mix, it magnified and revealed issues with automated liquid&#x02010;handling protocols&#x02014;and stress&#x02010;tested them.</p><p>Once the protocols were confirmed, they achieved higher throughput and could use data analysis methods, which was necessary due to the challenging nature of the mix. Probably the most generalisable aspect of the study related to the control of errors. Several sources of error were identified during development of the protocol, which had to be separated by design, and tightly controlled with their own dedicated protocols:<list list-type="bullet"><list-item><p>
+<bold>Mix preparation.</bold> The age of the mix was a major confounding variable.</p></list-item><list-item><p>
+<bold>Dilution errors.</bold> Some dilution schemes were proven superior to others. A popular iterative dilution scheme was shown to introduce new correlated errors, and was, at best, only to be used for scoping. Direct dilution was shown to be very suitable, due to its predictable errors and its highly programmatic nature.</p></list-item><list-item><p>
+<bold>Measurements.</bold> The way measurements were conducted had to be adapted to the properties of the mix. In particular the time scale of the measurements and the number repeats had to account for all solubility issues.</p></list-item></list>
+</p><p>The study also identified several additional topics worth noting. First, even for such a simple application, plate design quickly became beyond manual implementation, due to the associated human cognitive load. Second, the importance of some factors of the study on the outcome of the assays was such that, in addition to precise protocols for their control, the authors recommended monitoring the value of these parameters. This effectively introduced additional quality control steps. Finally, there was a clear need for a communication strategy, so anyone willing to reuse the constructed curve, or recreate one on their own setup, could do so reliably and not introduce uncontrolled errors into their own pipeline.</p><p>Even at its modest scale, the study showed that replicability and error control should be taken into account from the beginning&#x02014;when an automated pipeline is developed and deployed into production. This is important, because it implies that successful automation requires more than solving the reasons for limited adoption of automated platforms (listed in Section&#x000a0;<xref rid="enb212035-sec-0060" ref-type="sec">2.1</xref>), and which are being resolved already, as equipment is getting more flexible and more precise, and expertise limitations ease as dedicated training programs are developed.</p></sec></sec><sec id="enb212035-sec-0110"><label>4</label><title>REPLICABILITY&#x02010;SUPPORTING INFRASTRUCTURES</title><p>In this section, we discuss how a dedicated IT infrastructure should be used to support automation, and why replicability should be a core element of its design.</p><p>For the sake of simplicity, we assume that an automated pipeline has already been designed and validated. And, we will focus on using it to produce biological samples, run assays on the samples and produce data at large throughput. Many of the ideas and principles we will describe also apply to the development of automated protocols, and the transfer of protocols to another setup or facility. Elements of the infrastructure can still be used to prevent the introduction of higher&#x02010;level errors into the development process. Effectively, protocol development can be modelled as a design study (as shown in Figure&#x000a0;<xref rid="enb212035-fig-0001" ref-type="fig">1</xref>). But instead of a design space comprising many genetic variations, the design space then mainly consists of protocol parameters.</p><p>By &#x02018;<italic toggle="yes">designed and validated already</italic>&#x02019;, it is assumed that pipeline achieves the desired goal in terms of throughput and quality of outcome. Variations of outcomes are then a combination of the stochasticity of the biological systems and process variations (e.g. measurement accuracy), and are considered acceptable for the task at hand. Process variations will decrease as robotic platforms improve; biological stochasticity on the other hand will not.</p><p>The pipeline may be only partly automated and, therefore, subject to significant influence from human operators. It may be organised around islands of automation. Or it may be fully automated, and free from human influence. But its design and good operation rely on a core assumption: all the protocols governing the operation of the pipeline are strictly adhered to.</p><p>We call unwanted deviations from this assumption higher&#x02010;level errors, to distinguish them from the expected low&#x02010;level process errors&#x02014;which the design of the pipeline has striven to control. Examples of higher&#x02010;level errors abound in the industrial world. Food poisoning may occur in fast food restaurants caused by a break of the cold chain outside of the premises. In the medical world, dosage and prescription errors can be devastating and are tragically common [<xref rid="enb212035-bib-0123" ref-type="bibr">123</xref>]. Such errors can appear in even the most sophisticated environments. Misconfigured systems bring down popular websites. In 1999, after almost 10&#x000a0;months of travel to Mars, the Mars Climate Orbiter burnt and broke into pieces&#x02014;because someone failed to use metric units! Even activities based on mastering probabilities of events can fall foul. Casinos, so adept at controlling risk when it comes to their customers, fall victim to less predictable events such as staff misbehaviour&#x02014;endangering their gambling licences in the process. In engineering biology, higher&#x02010;level errors include:<list list-type="bullet"><list-item><p>
+<bold>Direct human input errors.</bold> These errors may be punctual and considered independent. Or they can be the product of repeated operations under fatigue, and therefore liable to be correlated. Responsibility may be shared, as in the case when some settings were changed by a previous user, but the operator failed to check.</p></list-item><list-item><p>
+<bold>Instrument failures.</bold> These errors may affect a few wells or entire plates, and range in severity from partial (the hardest to detect) to complete (the easiest to detect).</p></list-item><list-item><p>
+<bold>Unexpected data.</bold> Instruments may return unexpected values, or no values at all. As with the instrument failures, these errors may apply to a few wells or entire plates.</p></list-item></list>
+</p><p>More subtle errors relating to drifting conditions in the pipeline and failure to conduct checks for the drifting conditions may occur. This is typically the case with the calibration of instruments. In the previously&#x02010;mentioned liquid&#x02010;handling study, the researchers were forced to add quality control steps into their pipeline to make sure of the state of the mix of lycopene and DMSO. More generally, protocols should be applied in their entirety. Although this is beyond the scope of this discussion, there is a clear need to develop effective communication strategies in engineering biology to impress on all the participants the importance of the protocol steps and the influence on some of their parameters on the outcome.</p><p>In all cases, these higher&#x02010;level errors are caused either by human operations, unvalidated software operations, or hardware malfunction. The cause for these errors may be very far removed, if they took place much earlier in the workflow or in other locations. They result in irrecoverable operations on samples&#x02014;not to mention wasted resources and time. If the errors are not spotted in time, which is often hard to do, this will result in bad data being collected and poorly replicable results.</p><p>It is the authors of this paper's opinion that any dedicated IT infrastructure aiming to support automation&#x02014;beside the usual mission of storing experimental and procedural data, and letting scientists visualise them and compute what analytics is deemed necessary&#x02014;should also be actively involved in the reduction of high&#x02010;level errors and nuisance human factors so fewer assays are wasted, and collected data are of higher quality.</p><p>Such an infrastructure would go beyond that presented by Peccoud and co&#x02010;authors [<xref rid="enb212035-bib-0124" ref-type="bibr">124</xref>], which is only concerned with the logging, storage and subsequent statistical analysis of all experimental and procedural factors &#x02018;<italic toggle="yes">to unwind how different factors contribute to the variation of data by planning and documenting data collection which help associate the controlled variable of interest with the observed variation in experimental outcomes</italic>&#x02019;. The capacity to run <italic toggle="yes">post hoc</italic> analysis, which Peccoud and co&#x02010;authors demonstrate with identification the influence of media preparation on cell viability in their process, is obviously a requisite for an infrastructure supporting replicability. But it does not help with ensuring/enforcing that protocols are followed and that the assays are conducted as intended. At best, it can only identify when the protocols were not followed&#x02014;provided the relevant information was logged.</p><p>Figure&#x000a0;<xref rid="enb212035-fig-0003" ref-type="fig">3</xref> presents a high&#x02010;level model of how automation of workflows currently takes place in a biofoundry (the most likely setting for the deployment of such an infrastructure), and how the software infrastructure, and its components, should evolve to fully support automation. Automation of a workflow involves the integration of separate automated tasks into automated pipelines. Every automated task has two components&#x02014;a software layer, coupled to a mechanised layer as shown in Figure&#x000a0;<xref rid="enb212035-fig-0003" ref-type="fig">3</xref> (top section). Instructions for the task are communicated to the mechanised layer by the software layer, so that the automated platform performs the specified task. Practically, this corresponds to the automation of a single task&#x02014;at best an island of automation. We call this &#x02018;Level 1 integration&#x02019;. Figure&#x000a0;<xref rid="enb212035-fig-0003" ref-type="fig">3</xref> (middle section) shows a generic workflow, with four tasks performed sequentially on one microplate, and integrated into a single automated workflow. A typical example would be plate creation; culture followed by the application of a stimulus; another round of culture; and finally some measurement. Information flows are denoted by black arrows. Flows of physical objects (the microplates) are denoted by white arrows. As previously, the instructions for any task in the workflow are transmitted to the software layer of the task and then to its mechanised layer. There is now a chaperoning IT infrastructure that oversees the collection and storage of all the data (operational and experimental data). This is the type of infrastructure described by Peccoud and co&#x02010;authors, which we call &#x02018;Level 2 integration&#x02019;.</p><fig position="float" fig-type="FIGURE" id="enb212035-fig-0003"><label>FIGURE 3</label><caption><p>Automated tasks and automated pipeline. (1&#x02013;Top): Every automated task has two components&#x02014;a software layer, coupled to a mechanised layer. Instructions for the task are communicated to the mechanised layer by the software layer. (2&#x02013;Middle): Multiple tasks are connected into an integrated automated pipeline. Information flows are denoted by black arrows, and flows of physical objects by white arrows. There is now a chaperoning IT infrastructure in charge of collecting all the generated data and storing them. (3&#x02013;Bottom): the IT infrastructure needed to support replicability contains an orchestrator, charged with sending the instructions to the various automated platforms, monitoring the advancement of the workflow, and validating the content of the information passed between components.</p></caption><graphic xlink:href="ENB2-8-53-g002" position="anchor" id="jats-graphic-7"/></fig><p>Finally, Figure&#x000a0;<xref rid="enb212035-fig-0003" ref-type="fig">3</xref> (bottom section) presents the type of IT infrastructure, which we call &#x02018;Level 3 integration&#x02019;, needed to support replicability. Note the addition of the orchestrator. Beside collecting all the generated data and storing them, the orchestrator also sends the instructions in the order of the workflow; monitors the advancement of the workflow; and validates the information passed between components. The infrastructure is built on three sets of technologies sharing two common attributes:<list list-type="bullet"><list-item><p>
+<bold>Efficient interfacing.</bold> They interface the modular components of the experimental workflow, the components of the data flow, and the instructions of the user(s).</p></list-item><list-item><p>
+<bold>Standardisation.</bold> They standardise these interfaces, and offer opportunities for validation against initial specifications, and thus error&#x02010;control.</p></list-item></list>
+</p><p>The first set of technologies concern data management and information exchange. Data will need to be structured in a way that reflects the history of transformations (lineage) of the plates and their samples&#x02014;and makes this history available for data analysis and monitoring. The infrastructure should also deal with operations related to data integrity and standardisation. These are backend&#x02010;type operations that may not seem of major importance in a scientific study, but carry a significant cognitive load and cause practical errors when conducted at even modest scales. These include data import (from local or external sources, or from the various measuring devices), identifying missing or erroneous data (e.g. with the wrong data type), cleaning them, before converting them to a settled format and storing them. The use of standards is an essential aspect of improving replicability. Standards are the enablers of all integration efforts. They act like invisible glue between the different processes in the experimental pipeline. Several data standards are in wide use in engineering biology&#x02014;together with more general standards in communication systems and computing. These standards are shown in purple in Figure&#x000a0;<xref rid="enb212035-fig-0003" ref-type="fig">3</xref>. Supporting common, existing data formats is particularly important when sharing data and results&#x02014;hence, indirectly, for replicability. Data standards of note in engineering biology include sequence standards, such as SBOL [<xref rid="enb212035-bib-0125" ref-type="bibr">125</xref>] and FASTA [<xref rid="enb212035-bib-0126" ref-type="bibr">126</xref>], and raw data formats such as DICOM&#x02010;SB [<xref rid="enb212035-bib-0127" ref-type="bibr">127</xref>]. Standards do not only apply to information. The pipeline in Figure&#x000a0;<xref rid="enb212035-fig-0003" ref-type="fig">3</xref> also requires a set of physical standards (in orange), such as SLAS [<xref rid="enb212035-bib-0050" ref-type="bibr">50</xref>], that address the physical objects travelling through the pipeline and their interfacing with the robotic equipment. From an error&#x02010;control point of view, they help prevent/reduce equipment malfunction and breakage.</p><p>The second set of technologies concerns the standardisation of the instructions sent to the automated platforms and protocol description in general. A subtle benefit of automation is to force protocols to be written precisely, before they are implemented, run on the automated platforms and shared. An automated protocol requires writing an unambiguous sequence of actions, and assigning its most important parameters. When this is done, running the protocols on automated platforms involves little human involvement, which reduces potential errors caused by human variability, and fulfils one of the core promises of automation.</p><p>This is, unfortunately, not enough. The problems are apparent during protocol transfer and adaptation (from manual to automated, or from one platform to another), which is rarely a straightforward affair. Liquid handling provides examples of these dangers [<xref rid="enb212035-bib-0065" ref-type="bibr">65</xref>, <xref rid="enb212035-bib-0128" ref-type="bibr">128</xref>]. Issues occur when parameters associated with protocols developed on different platforms are transported to a different setting&#x02014;leading to an incomplete or a conflicting set of parameters. Another possible source of errors is poorly designed instrument interfaces. Recent approaches, such as programmatically open platforms like Opentrons [<xref rid="enb212035-bib-0060" ref-type="bibr">60</xref>], or platform&#x02010;agnostic languages, such as LabOP [<xref rid="enb212035-bib-0129" ref-type="bibr">129</xref>] and PyLabRobot [<xref rid="enb212035-bib-0130" ref-type="bibr">130</xref>] are exciting and very promising technologies in this regard. They still leave open the possibility of incomplete protocol description however&#x02014;thus introducing confounding variables in the running of the pipeline. There is therefore a clear need for a community&#x02010;wide set of good practices and associated communication strategies regarding protocol description. As previously mentioned, it should contain an element dealing with the influence on some of their parameters on the outcome&#x02014;and the importance of assigning them adequate values.</p><p>The last set of technologies concern orchestration&#x02014;they appear in Figure&#x000a0;<xref rid="enb212035-fig-0003" ref-type="fig">3</xref> (bottom section) as an additional layer (in pale red) labelled &#x02018;Orchestrator&#x02019;. With complex workflows, several plates may be involved and interact with each other. For instance, sacrificial plates may be made for destructive measurements. There may be branching conditions conditional on the values collected during several measurement steps. Complex plate patterns may be used. Finally, engineering biology projects may use several workflows, while working at large scales. The demands in terms of time and cognitive load that are placed onto the human operators rapidly become overwhelming. An orchestrator will be in charge of dispatching the instructions to the various equipment of the biofoundry and ensure that all operations are conducted in the right order and with the right logic. This is a powerful, and much needed, capacity when combined with LabOp protocols for instance.</p><p>An orchestrator is software that can execute workflows, assign tasks to resources, and schedules, runs and monitors the tasks [<xref rid="enb212035-bib-0131" ref-type="bibr">131</xref>]. Popular schedulers include Apache Airflow [<xref rid="enb212035-bib-0132" ref-type="bibr">132</xref>], Azkaban [<xref rid="enb212035-bib-0133" ref-type="bibr">133</xref>], and Oozie [<xref rid="enb212035-bib-0134" ref-type="bibr">134</xref>]. They have become very common in data processing applications [<xref rid="enb212035-bib-0135" ref-type="bibr">135</xref>]. But no one has reported their deployment in biofoundries or in the context of processing biological samples. This state of affairs is not altogether surprising, as orchestrators have been developed for data processing applications, and lack the capacity to directly connect to hardware. This situation is, however, unlikely to continue. An initiative to use orchestrators is being conducted at the London Biofoundry&#x02014;led by the authors of this paper with results yet to be published. The resources of their biofoundry (equipment, staff etc.) were modelled to expand and adapt the functionalities of the orchestrator, while SILA2 was used for the drivers. It is therefore reasonable to expect workflow orchestrators to become mainstays of biofoundries in the years to come.</p></sec><sec id="enb212035-sec-0120"><label>5</label><title>DISCUSSION AND CONCLUSIONS</title><p>In this paper, we have presented a review of laboratory automation in engineering biology. Adoption of automation is a direct consequence of a common practical need shared by applications in engineering biology: the need to run operations on biological samples at very large scales. We have made the point that replicability should be made a core principle of the design of the automated pipelines processing biological samples at scale, alongside high throughput. In particular, we have shown that replicability should not be seen as an additional burden for automation efforts, but as an essential requirement for the successful unlocking of the benefits of automation. It is from this viewpoint that suggestions have been made for the design of future automated pipelines with error&#x02010;prevention in mind.</p><p>In the course of this review, several of the drivers behind the evolution of automation in engineering biology have been listed. It can be safely assumed that some of the drivers behind infrastructure evolution will continue to drive the field in the coming years. They are:<list list-type="bullet"><list-item><p>
+<bold>Better automation of existing tasks and the automation of new tasks on new types of platforms.</bold> This includes more flexible, programmatically open platforms, the greater adoption of solutions like LabOp, and greater sharing of protocols.</p></list-item><list-item><p>
+<bold>Better integration and interfacing of automated tasks to allow for ever more complex workflows.</bold> This includes a greater adoption of data formats, as well as communication protocols, such as SILA2, to link devices. Biofoundries will remain the locations of choice for trialling these efforts.</p></list-item><list-item><p>
+<bold>Larger adoption of good practices imported from computing and other engineering fields.</bold> This includes large project management, standardised training material, and a greater emphasis on the communication of errors and their control.</p></list-item></list>
+</p><p>Although improvements in each stream of work will be gradual, their compound effect will lead to an inflection point, where infrastructure will be regarded as code (or error&#x02010;correcting code when replicability is added into the mix). When this happens, operators will have a totally abstracted interaction with the infrastructure similar to the interaction with a computer. This will be followed in rapid succession by a search for greater fluidity between operators and the infrastructure they command. It is a safe bet that interfaces based on large language models will appear to help drive biofoundries and make the interaction even more fluid.</p><p>It is worth noting, that inasmuch as it is possible with biological samples (some transportation or rebuilding may be needed), workflows could be physically distributed and driven from a remote location. This is essential when testing in different facilities is needed.</p><p>In contrast to these exciting developments, progress in two important areas of automation in engineering biology is harder to predict.</p><p>The first area relates to throughput. Despite the obvious advancements in productivity, throughput remains limited by the available resources&#x02014;typically the number of robotic platforms used to process the samples in parallel, and possibly staff number. The time it takes to conduct an operation cannot be reduced beyond what the biology allows. In 2016, Rogers and Church [<xref rid="enb212035-bib-0136" ref-type="bibr">136</xref>] contrasted the already enormous capacity of designing and constructing genetic variants (billions of a day, with multiplexing genome engineering techniques such as MAGE [<xref rid="enb212035-bib-0137" ref-type="bibr">137</xref>]), with existing evaluation capacity (a few thousands of variants a day). This makes the assay phase in the DBTL cycle the critical, limiting phase for all engineering applications&#x02014;one which will require breakthroughs in high&#x02010;throughput analytics and automation [<xref rid="enb212035-bib-0138" ref-type="bibr">138</xref>], for instance further miniaturisation. The second area relates to the learn phase of the DBTL cycle. As is often the case with machine learning, lack of data (itself the consequence of limited throughput, and lack of focus on replicability in historic data) is a bottleneck. An alternative would be to use biology in such a way that it selects the most promising regions of designs [<xref rid="enb212035-bib-0139" ref-type="bibr">139</xref>, <xref rid="enb212035-bib-0140" ref-type="bibr">140</xref>]. Whether these approaches based on directed evolution can be considered part of engineering biology is open to discussion. Using biology in such a manner can nonetheless, be done in a rational, controllable, and albeit limited, way&#x02014;for instance, as part of a scoping study to bootstrap DBTL cycles when toxicity is an issue [<xref rid="enb212035-bib-0141" ref-type="bibr">141</xref>]. Currently, efforts to develop an &#x02018;<italic toggle="yes">engineering theory of evolution</italic>&#x02019; [<xref rid="enb212035-bib-0142" ref-type="bibr">142</xref>], remain a theoretical exercise aiming to place under a common umbrella a large, disparate, set of techniques with proven successes, but patchy predictive power.</p><p>We now wish to address the limited focus of the paper&#x02014;namely on a certain type of applications (mainly microbial), and on automation in biofoundries. A simple reason for this focus is that such applications have, historically, been the ones of most interest to the engineering biology community, and the most active regarding automation. In their 2023 polemic, Hanson and De Lorenzo [<xref rid="enb212035-bib-0143" ref-type="bibr">143</xref>] warn against a myopic focus on such applications and solutions&#x02014;highlighting quite rightly the bottleneck in the testing phase, and more controversially limitations of the DBTL approach. This deserves a response.</p><p>It is our belief that the principles discussed in this paper, in the context of biofoundries, naturally extend to other settings and applications in engineering biology. First, the idea of biofoundries has not been marketed as being unique. Biofoundries are nonetheless essential components of a wider ecosystem of facilities supporting the bioeconomy [<xref rid="enb212035-bib-0075" ref-type="bibr">75</xref>]. It is therefore not incompatible with dedicated testing facilities. Second, consider another field of application of engineering biology with enormous implications for humanity: agriculture. Agriculture is amenable to automation&#x02014;driverless, GPS&#x02010;tracked tractors are in wide use already. There are also moves to push agriculture in a direction where crops are grown in optimised environments, identified after a few rounds down a DBTL cycle, either in indoor settings or in greenhouses. Finally, agricultural research also has its own type of testing facilities. They are not organised around microbial cultures like biofoundries&#x02014;but necessitate much larger areas of land, operate very long experiments and are subject to different regulations due to their interaction with the outside environment instead. Rothamsted Research [<xref rid="enb212035-bib-0144" ref-type="bibr">144</xref>] (in Harpenden, UK) is a good example of such facilities. Founded in 1843, it is one of the oldest agricultural research institutions in the world&#x02014;and has been a major player in the British (pre&#x02010;)bioeconomy landscape since then. It is also widely regarded as a shining example of integration in a pre&#x02010;computer age. In 1919, the institution hired Ronald Fisher to analyse the vast (for the time) amount of data they collected. This, in turn, led to the creation of a theory that lies at the heart of modern statistics: experimental design&#x02014;a theory further developed by many of the luminaries who later worked at the institution.</p><p>In the end, the fundamentals of the problems remain identical. The physical and time scales may vary, as will the multiple facilities needed for building, testing, learning and ultimately producing. But the method for solving the problems remains the same: iterative searches in a design space, as described with the DBTL cycle. In the absence of reliable modelling, this means building and testing a very large number of samples&#x02014;and, nowadays, using high&#x02010;throughput automation. High throughput and replicability are bound together in a co&#x02010;dependent, symbiotic relationship. Practitioners of engineering biology should therefore treat them&#x000a0;accordingly&#x02014;and do so from the very start of their projects.</p></sec><sec id="enb212035-sec-0130"><title>AUTHOR CONTRIBUTIONS</title><p>
+<bold>Matthieu Bultelle</bold>: Writing &#x02013; original draft; Writing &#x02013; review &#x00026; editing. <bold>Alexis Casas</bold>: Writing &#x02013; review &#x00026; editing. <bold>Richard Kitney</bold>: Supervision; writing &#x02013; review &#x00026; editing.</p></sec><sec sec-type="COI-statement" id="enb212035-sec-0150"><title>CONFLICT OF INTEREST STATEMENT</title><p>Neither co&#x02010;Editor&#x02010;in&#x02010;Chief was involved in the handling of the&#x000a0;article or its peer review process. An Associate Editor has&#x000a0;taken full responsibility of the editorial process for the article.</p><p>[Correction added on 22 Jul 2024, after first online publication. The conflict of interest section is updated.]</p></sec></body><back><ack id="enb212035-sec-0140"><title>ACKNOWLEDGEMENTS</title><p>We would like to acknowledge the support of the project described in the paper by grants from: The UK Government Department of Business, Energy and Industrial Strategy (via the U.K.&#x02019;s National Physical Laboratory) NPL 2937881. The Engineering and Physical Sciences Research Council (UK) EP/L011573/1 and EP/S001859/1.</p></ack><sec sec-type="data-availability" id="enb212035-sec-0170"><title>DATA AVAILABILITY STATEMENT</title><p>Data sharing not applicable to this article as no datasets were generated or analysed during the current study.</p></sec><ref-list content-type="cited-references" id="enb212035-bibl-0001"><title>REFERENCES</title><ref id="enb212035-bib-0001"><label>1</label><mixed-citation publication-type="journal" id="enb212035-cit-0001">
+<string-name>
+<surname>Voigt</surname>, <given-names>C.A.</given-names>
+</string-name>: <article-title>Synthetic biology 2020&#x02013;2030: six commercially&#x02010;available products that are changing our world</article-title>. <source>Nat. Commun.</source>
+<volume>11</volume>(<issue>1</issue>), <elocation-id>6379</elocation-id> (<year>2020</year>). <pub-id pub-id-type="doi">10.1038/s41467-020-20122-2</pub-id>
+<pub-id pub-id-type="pmid">33311504</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0002"><label>2</label><mixed-citation publication-type="miscellaneous" id="enb212035-cit-0002">
+<collab collab-type="authors">OECD</collab>
+: <article-title>Artificial Intelligence in Science: Challenges, Opportunities and the Future of Research&#x02019; (Organisation for Economic Co&#x02010;operation and Development</article-title> (<year>2023</year>)</mixed-citation></ref><ref id="enb212035-bib-0003"><label>3</label><mixed-citation publication-type="journal" id="enb212035-cit-0003">
+<string-name>
+<surname>Flores Bueso</surname>, <given-names>Y.</given-names>
+</string-name>, <string-name>
+<surname>Tangney</surname>, <given-names>M.</given-names>
+</string-name>: <article-title>Synthetic biology in the driving seat of the bioeconomy</article-title>. <source>Trends Biotechnol.</source>
+<volume>35</volume>(<issue>5</issue>), <fpage>373</fpage>&#x02013;<lpage>378</lpage> (<year>2017</year>). <pub-id pub-id-type="doi">10.1016/j.tibtech.2017.02.002</pub-id>
+<pub-id pub-id-type="pmid">28249675</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0004"><label>4</label><mixed-citation publication-type="book" id="enb212035-cit-0004">
+<source>Safeguarding the Bioeconomy</source>. <publisher-name>National Academies Press</publisher-name> (<year>2020</year>)</mixed-citation></ref><ref id="enb212035-bib-0005"><label>5</label><mixed-citation publication-type="book" id="enb212035-cit-0005">
+<source>Cambridge Dictionary | English Dictionary</source>. <publisher-name>Translations &#x00026; Thesaurus</publisher-name>, <ext-link xlink:href="https://dictionary.cambridge.org/" ext-link-type="uri">https://dictionary.cambridge.org/</ext-link>. Accessed March 2024</mixed-citation></ref><ref id="enb212035-bib-0006"><label>6</label><mixed-citation publication-type="journal" id="enb212035-cit-0006">
+<string-name>
+<surname>Holland</surname>, <given-names>I.</given-names>
+</string-name>, <string-name>
+<surname>Davies</surname>, <given-names>J.A.</given-names>
+</string-name>: <article-title>Automation in the life science research laboratory</article-title>. <source>Front. Bioeng. Biotechnol.</source>
+<volume>8</volume> (<year>2020</year>). <pub-id pub-id-type="doi">10.3389/fbioe.2020.571777</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0007"><label>7</label><mixed-citation publication-type="journal" id="enb212035-cit-0007">
+<string-name>
+<surname>Frohm</surname>, <given-names>J.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Levels of automation in manufacturing</article-title>. <source>Ergon. &#x02010; Int. J. Ergon. Hum. Factors</source>
+<volume>30</volume>(<issue>3</issue>) (<year>2008</year>)</mixed-citation></ref><ref id="enb212035-bib-0008"><label>8</label><mixed-citation publication-type="book" id="enb212035-cit-0008">
+<collab collab-type="authors">UK Synthetic Biology Roadmap coordination Group</collab>
+, et&#x000a0;al.: <source>A Synthetic Biology Roadmap for the UK</source>. <publisher-name>TSB Technology Strategy Board</publisher-name> (<year>2012</year>)</mixed-citation></ref><ref id="enb212035-bib-0009"><label>9</label><mixed-citation publication-type="journal" id="enb212035-cit-0009">
+<string-name>
+<surname>Clarke</surname>, <given-names>L.</given-names>
+</string-name>: <article-title>Synthetic biology, engineering biology, market expectation</article-title>. <source>Eng. Biol.</source>
+<volume>4</volume>(<issue>3</issue>), <fpage>33</fpage>&#x02013;<lpage>36</lpage> (<year>2020</year>). Wiley Online Library. <pub-id pub-id-type="doi">10.1049/enb.2020.0021</pub-id> Accessed March 2024<pub-id pub-id-type="pmid">36968158</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0010"><label>10</label><mixed-citation publication-type="miscellaneous" id="enb212035-cit-0010">
+<article-title>Engineering Biology Leadership Council &#x02010; Innovate UK Business Connect</article-title>. <ext-link xlink:href="https://iuk.ktn-uk.org/programme/engineering-biology-leadership-council/" ext-link-type="uri">https://iuk.ktn&#x02010;uk.org/programme/engineering&#x02010;biology&#x02010;leadership&#x02010;council/</ext-link>, Accessed March 2024</mixed-citation></ref><ref id="enb212035-bib-0011"><label>11</label><mixed-citation publication-type="journal" id="enb212035-cit-0011">
+<string-name>
+<surname>Endy</surname>, <given-names>D.</given-names>
+</string-name>: <article-title>Foundations for engineering biology</article-title>. <source>Nature</source>
+<volume>438</volume>(<issue>7067</issue>), <fpage>449</fpage>&#x02013;<lpage>453</lpage> (<year>2005</year>). <pub-id pub-id-type="doi">10.1038/nature04342</pub-id>
+<pub-id pub-id-type="pmid">16306983</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0012"><label>12</label><mixed-citation publication-type="journal" id="enb212035-cit-0012">
+<string-name>
+<surname>Andrianantoandro</surname>, <given-names>E.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Synthetic biology: new engineering rules for an emerging discipline</article-title>. <source>Mol. Syst. Biol.</source>
+<volume>2</volume>(<issue>1</issue>), 2006.0028 (<year>2006</year>). <pub-id pub-id-type="doi">10.1038/msb4100073</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0013"><label>13</label><mixed-citation publication-type="journal" id="enb212035-cit-0013">
+<string-name>
+<surname>Clarke</surname>, <given-names>L.J.</given-names>
+</string-name>: <article-title>Synthetic biology UK: progress, paradigms and prospects</article-title>. <source>Eng. Biol.</source>
+<volume>1</volume>(<issue>2</issue>), <fpage>66</fpage>&#x02013;<lpage>70</lpage> (<year>2017</year>). <pub-id pub-id-type="doi">10.1049/enb.2017.0022</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0014"><label>14</label><mixed-citation publication-type="journal" id="enb212035-cit-0014">
+<string-name>
+<surname>Yadav</surname>, <given-names>V.G.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>The future of metabolic engineering and synthetic biology: towards a systematic practice</article-title>. <source>Metab. Eng.</source>
+<volume>14</volume>(<issue>3</issue>), <fpage>233</fpage>&#x02013;<lpage>241</lpage> (<year>2012</year>). <pub-id pub-id-type="doi">10.1016/j.ymben.2012.02.001</pub-id>
+<pub-id pub-id-type="pmid">22629571</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0015"><label>15</label><mixed-citation publication-type="journal" id="enb212035-cit-0015">
+<string-name>
+<surname>Xu</surname>, <given-names>P.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Improving metabolic pathway efficiency by statistical model&#x02010;based multivariate regulatory metabolic engineering</article-title>. <source>ACS Synth. Biol.</source>
+<volume>6</volume>(<issue>1</issue>), <fpage>148</fpage>&#x02013;<lpage>158</lpage> (<year>2017</year>). <pub-id pub-id-type="doi">10.1021/acssynbio.6b00187</pub-id>
+<pub-id pub-id-type="pmid">27490704</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0016"><label>16</label><mixed-citation publication-type="journal" id="enb212035-cit-0016">
+<string-name>
+<surname>Canton</surname>, <given-names>B.</given-names>
+</string-name>, <string-name>
+<surname>Labno</surname>, <given-names>A.</given-names>
+</string-name>, <string-name>
+<surname>Endy</surname>, <given-names>D.</given-names>
+</string-name>: <article-title>Refinement and standardization of synthetic biological parts and devices</article-title>. <source>Nat. Biotechnol.</source>
+<volume>26</volume>(<issue>7</issue>), <fpage>787</fpage>&#x02013;<lpage>793</lpage> (<year>2008</year>). <pub-id pub-id-type="doi">10.1038/nbt1413</pub-id>
+<pub-id pub-id-type="pmid">18612302</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0017"><label>17</label><mixed-citation publication-type="book" id="enb212035-cit-0017">
+<string-name>
+<surname>Bultelle</surname>, <given-names>M.</given-names>
+</string-name>, <string-name>
+<surname>de Murieta</surname>, <given-names>I.S.</given-names>
+</string-name>, <string-name>
+<surname>Kitney</surname>, <given-names>R.</given-names>
+</string-name>: <part-title>Introducing SynBIS &#x02014; the synthetic biology information system</part-title>. In: <source>IET/SynbiCITE Engineering Biology Conference&#x02019; IET/SynbiCITE Engineering Biology Conference</source>, pp. <fpage>1</fpage>&#x02013;<lpage>2</lpage> (<year>2016</year>)</mixed-citation></ref><ref id="enb212035-bib-0018"><label>18</label><mixed-citation publication-type="journal" id="enb212035-cit-0018">
+<string-name>
+<surname>Blazeck</surname>, <given-names>J.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Controlling promoter strength and regulation in Saccharomyces cerevisiae using synthetic hybrid promoters</article-title>. <source>Biotechnol. Bioeng.</source>
+<volume>109</volume>(<issue>11</issue>), <fpage>2884</fpage>&#x02013;<lpage>2895</lpage> (<year>2012</year>). <pub-id pub-id-type="doi">10.1002/bit.24552</pub-id>
+<pub-id pub-id-type="pmid">22565375</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0019"><label>19</label><mixed-citation publication-type="journal" id="enb212035-cit-0019">
+<string-name>
+<surname>Salis</surname>, <given-names>H.M.</given-names>
+</string-name>, <string-name>
+<surname>Mirsky</surname>, <given-names>E.A.</given-names>
+</string-name>, <string-name>
+<surname>Voigt</surname>, <given-names>C.A.</given-names>
+</string-name>: <article-title>Automated design of synthetic ribosome binding sites to control protein expression</article-title>. <source>Nat. Biotechnol.</source>
+<volume>27</volume>(<issue>10</issue>), <fpage>946</fpage>&#x02013;<lpage>950</lpage> (<year>2009</year>). <pub-id pub-id-type="doi">10.1038/nbt.1568</pub-id>
+<pub-id pub-id-type="pmid">19801975</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0020"><label>20</label><mixed-citation publication-type="journal" id="enb212035-cit-0020">
+<string-name>
+<surname>Ajikumar</surname>, <given-names>P.K.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Isoprenoid pathway optimization for taxol precursor overproduction in Escherichia coli</article-title>. <source>Science</source>
+<volume>330</volume>(<issue>6000</issue>), <fpage>70</fpage>&#x02013;<lpage>74</lpage> (<year>2010</year>). <pub-id pub-id-type="doi">10.1126/science.1191652</pub-id>
+<pub-id pub-id-type="pmid">20929806</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0021"><label>21</label><mixed-citation publication-type="journal" id="enb212035-cit-0021">
+<string-name>
+<surname>Hanson</surname>, <given-names>G.</given-names>
+</string-name>, <string-name>
+<surname>Coller</surname>, <given-names>J.</given-names>
+</string-name>: <article-title>Codon optimality, bias and usage in translation and mRNA decay</article-title>. <source>Nat. Rev. Mol. Cell Biol.</source>
+<volume>19</volume>(<issue>1</issue>), <fpage>20</fpage>&#x02013;<lpage>30</lpage> (<year>2018</year>). <pub-id pub-id-type="doi">10.1038/nrm.2017.91</pub-id>
+<pub-id pub-id-type="pmid">29018283</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0022"><label>22</label><mixed-citation publication-type="journal" id="enb212035-cit-0022">
+<string-name>
+<surname>Naseri</surname>, <given-names>G.</given-names>
+</string-name>, <string-name>
+<surname>Koffas</surname>, <given-names>M.A.G.</given-names>
+</string-name>: <article-title>Application of combinatorial optimization strategies in synthetic biology</article-title>. <source>Nat. Commun.</source>
+<volume>11</volume>(<issue>1</issue>), <elocation-id>2446</elocation-id> (<year>2020</year>). <pub-id pub-id-type="doi">10.1038/s41467-020-16175-y</pub-id>
+<pub-id pub-id-type="pmid">32415065</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0023"><label>23</label><mixed-citation publication-type="journal" id="enb212035-cit-0023">
+<string-name>
+<surname>Misawa</surname>, <given-names>N.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Elucidation of the Erwinia uredovora carotenoid biosynthetic pathway by functional analysis of gene products expressed in Escherichia coli</article-title>. <source>J. Bacteriol.</source>
+<volume>172</volume>(<issue>12</issue>), <fpage>6704</fpage>&#x02013;<lpage>6712</lpage> (<year>1990</year>). <pub-id pub-id-type="doi">10.1128/jb.172.12.6704-6712.1990</pub-id>
+<pub-id pub-id-type="pmid">2254247</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0024"><label>24</label><mixed-citation publication-type="journal" id="enb212035-cit-0024">
+<string-name>
+<surname>Myeong</surname>, <given-names>N.R.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Complete genome sequence of antibiotic and anticancer agent violacein producing <italic toggle="yes">Massilia</italic> sp. strain NR 4&#x02010;1</article-title>. <source>J. Biotechnol.</source>
+<volume>223</volume>, <fpage>36</fpage>&#x02013;<lpage>37</lpage> (<year>2016</year>). <pub-id pub-id-type="doi">10.1016/j.jbiotec.2016.02.027</pub-id>
+<pub-id pub-id-type="pmid">26916415</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0025"><label>25</label><mixed-citation publication-type="journal" id="enb212035-cit-0025">
+<string-name>
+<surname>Spice</surname>, <given-names>A.J.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Improving the reaction mix of a <italic toggle="yes">Pichia pastoris</italic> cell&#x02010;free system using a design of experiments approach to minimise experimental effort</article-title>. <source>Synth. Syst. Biotechnol.</source>
+<volume>5</volume>(<issue>3</issue>), <fpage>137</fpage>&#x02013;<lpage>144</lpage> (<year>2020</year>). <pub-id pub-id-type="doi">10.1016/j.synbio.2020.06.003</pub-id>
+<pub-id pub-id-type="pmid">32637667</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0026"><label>26</label><mixed-citation publication-type="journal" id="enb212035-cit-0026">
+<string-name>
+<surname>Elowitz</surname>, <given-names>M.B.</given-names>
+</string-name>, <string-name>
+<surname>Leibler</surname>, <given-names>S.</given-names>
+</string-name>: <article-title>A synthetic oscillatory network of transcriptional regulators</article-title>. <source>Nature</source>
+<volume>403</volume>(<issue>6767</issue>), <fpage>335</fpage>&#x02013;<lpage>338</lpage> (<year>2000</year>). <pub-id pub-id-type="doi">10.1038/35002125</pub-id>
+<pub-id pub-id-type="pmid">10659856</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0027"><label>27</label><mixed-citation publication-type="journal" id="enb212035-cit-0027">
+<string-name>
+<surname>Gardner</surname>, <given-names>T.S.</given-names>
+</string-name>, <string-name>
+<surname>Cantor</surname>, <given-names>C.R.</given-names>
+</string-name>, <string-name>
+<surname>Collins</surname>, <given-names>J.J.</given-names>
+</string-name>: <article-title>Construction of a genetic toggle switch in Escherichia coli</article-title>. <source>Nature</source>
+<volume>403</volume>(<issue>6767</issue>), <fpage>339</fpage>&#x02013;<lpage>342</lpage> (<year>2000</year>). <pub-id pub-id-type="doi">10.1038/35002131</pub-id>
+<pub-id pub-id-type="pmid">10659857</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0028"><label>28</label><mixed-citation publication-type="journal" id="enb212035-cit-0028">
+<string-name>
+<surname>Group</surname>, <given-names>T.B.F.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Engineering life: building a FAB for biology</article-title>. <source>Sci. Am.</source>
+<volume>294</volume>(<issue>6</issue>), <fpage>44</fpage>&#x02013;<lpage>51</lpage> (<year>2006</year>). <pub-id pub-id-type="doi">10.1038/scientificamerican0606-44</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0029"><label>29</label><mixed-citation publication-type="journal" id="enb212035-cit-0029">
+<string-name>
+<surname>Purnick</surname>, <given-names>P.E.M.</given-names>
+</string-name>, <string-name>
+<surname>Weiss</surname>, <given-names>R.</given-names>
+</string-name>: <article-title>The second wave of synthetic biology: from modules to systems</article-title>. <source>Nat. Rev. Mol. Cell Biol.</source>
+<volume>10</volume>(<issue>6</issue>), <fpage>410</fpage>&#x02013;<lpage>422</lpage> (<year>2009</year>). <pub-id pub-id-type="doi">10.1038/nrm2698</pub-id>
+<pub-id pub-id-type="pmid">19461664</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0030"><label>30</label><mixed-citation publication-type="miscellaneous" id="enb212035-cit-0030">
+<article-title>parts.igem.org</article-title>. <ext-link xlink:href="https://parts.igem.org/Main_Page" ext-link-type="uri">https://parts.igem.org/Main_Page</ext-link>, Accessed March 2024</mixed-citation></ref><ref id="enb212035-bib-0031"><label>31</label><mixed-citation publication-type="journal" id="enb212035-cit-0031">
+<string-name>
+<surname>Kamens</surname>, <given-names>J.</given-names>
+</string-name>: <article-title>The Addgene repository: an international nonprofit plasmid and data resource</article-title>. <source>Nucleic Acids Res.</source>
+<volume>43</volume>(<issue>D1</issue>), <fpage>D1152</fpage>&#x02013;<lpage>D1157</lpage> (<year>2015</year>). <pub-id pub-id-type="doi">10.1093/nar/gku893</pub-id>
+<pub-id pub-id-type="pmid">25392412</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0032"><label>32</label><mixed-citation publication-type="journal" id="enb212035-cit-0032">
+<string-name>
+<surname>McLaughlin</surname>, <given-names>J.A.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>SynBioHub: a standards&#x02010;enabled design repository for synthetic biology</article-title>. <source>ACS Synth. Biol.</source>
+<volume>7</volume>(<issue>2</issue>), <fpage>682</fpage>&#x02013;<lpage>688</lpage> (<year>2018</year>). <pub-id pub-id-type="doi">10.1021/acssynbio.7b00403</pub-id>
+<pub-id pub-id-type="pmid">29316788</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0033"><label>33</label><mixed-citation publication-type="journal" id="enb212035-cit-0033">
+<string-name>
+<surname>Cardinale</surname>, <given-names>S.</given-names>
+</string-name>, <string-name>
+<surname>Arkin</surname>, <given-names>A.P.</given-names>
+</string-name>: <article-title>Contextualizing context for synthetic biology &#x02013; identifying causes of failure of synthetic biological systems</article-title>. <source>Biotechnol. J.</source>
+<volume>7</volume>(<issue>7</issue>), <fpage>856</fpage>&#x02013;<lpage>866</lpage> (<year>2012</year>). <pub-id pub-id-type="doi">10.1002/biot.201200085</pub-id>
+<pub-id pub-id-type="pmid">22649052</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0034"><label>34</label><mixed-citation publication-type="journal" id="enb212035-cit-0034">
+<string-name>
+<surname>Moschner</surname>, <given-names>C.</given-names>
+</string-name>, <string-name>
+<surname>Wedd</surname>, <given-names>C.</given-names>
+</string-name>, <string-name>
+<surname>Bakshi</surname>, <given-names>S.</given-names>
+</string-name>: <article-title>The context matrix: navigating biological complexity for advanced biodesign</article-title>. <source>Front. Bioeng. Biotechnol.</source>
+<volume>10</volume> (<year>2022</year>). <pub-id pub-id-type="doi">10.3389/fbioe.2022.954707</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0035"><label>35</label><mixed-citation publication-type="journal" id="enb212035-cit-0035">
+<string-name>
+<surname>Del Vecchio</surname>, <given-names>D.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Future systems and control research in synthetic biology</article-title>. <source>Annu. Rev. Control</source>
+<volume>45</volume>, <fpage>5</fpage>&#x02013;<lpage>17</lpage> (<year>2018</year>). <pub-id pub-id-type="doi">10.1016/j.arcontrol.2018.04.007</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0036"><label>36</label><mixed-citation publication-type="journal" id="enb212035-cit-0036">
+<string-name>
+<surname>Chory</surname>, <given-names>E.J.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Enabling high&#x02010;throughput biology with flexible open&#x02010;source automation</article-title>. <source>Mol. Syst. Biol.</source>
+<volume>17</volume>(<issue>3</issue>), <elocation-id>e9942</elocation-id> (<year>2021</year>). <pub-id pub-id-type="doi">10.15252/msb.20209942</pub-id>
+<pub-id pub-id-type="pmid">33764680</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0037"><label>37</label><mixed-citation publication-type="journal" id="enb212035-cit-0037">
+<string-name>
+<surname>Boo</surname>, <given-names>A.</given-names>
+</string-name>, <string-name>
+<surname>Ellis</surname>, <given-names>T.</given-names>
+</string-name>, <string-name>
+<surname>Stan</surname>, <given-names>G.&#x02010;B.</given-names>
+</string-name>: <article-title>Host&#x02010;aware synthetic biology</article-title>. <source>Curr. Opin. Syst. Biol.</source>
+<volume>14</volume>, <fpage>66</fpage>&#x02013;<lpage>72</lpage> (<year>2019</year>). <pub-id pub-id-type="doi">10.1016/j.coisb.2019.03.001</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0038"><label>38</label><mixed-citation publication-type="journal" id="enb212035-cit-0038">
+<string-name>
+<surname>Yeung</surname>, <given-names>E.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Biophysical constraints arising from compositional context in synthetic gene networks</article-title>. <source>Cell Syst</source>
+<volume>5</volume>(<issue>1</issue>), <fpage>11</fpage>&#x02013;<lpage>24.e12</lpage> (<year>2017</year>). <pub-id pub-id-type="doi">10.1016/j.cels.2017.06.001</pub-id>
+<pub-id pub-id-type="pmid">28734826</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0039"><label>39</label><mixed-citation publication-type="journal" id="enb212035-cit-0039">
+<string-name>
+<surname>Borkowski</surname>, <given-names>O.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Overloaded and stressed: whole&#x02010;cell considerations for bacterial synthetic biology</article-title>. <source>Curr. Opin. Microbiol.</source>
+<volume>33</volume>, <fpage>123</fpage>&#x02013;<lpage>130</lpage> (<year>2016</year>). <pub-id pub-id-type="doi">10.1016/j.mib.2016.07.009</pub-id>
+<pub-id pub-id-type="pmid">27494248</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0040"><label>40</label><mixed-citation publication-type="journal" id="enb212035-cit-0040">
+<string-name>
+<surname>Nikolados</surname>, <given-names>E.&#x02010;M.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Growth defects and loss&#x02010;of&#x02010;function in synthetic gene circuits</article-title>. <source>ACS Synth. Biol.</source>
+<volume>8</volume>(<issue>6</issue>), <fpage>1231</fpage>&#x02013;<lpage>1240</lpage> (<year>2019</year>). <pub-id pub-id-type="doi">10.1021/acssynbio.8b00531</pub-id>
+<pub-id pub-id-type="pmid">31181895</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0041"><label>41</label><mixed-citation publication-type="journal" id="enb212035-cit-0041">
+<string-name>
+<surname>Zhang</surname>, <given-names>R.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Topology&#x02010;dependent interference of synthetic gene circuit function by growth feedback</article-title>. <source>Nat. Chem. Biol.</source>
+<volume>16</volume>(<issue>6</issue>), <fpage>695</fpage>&#x02013;<lpage>701</lpage> (<year>2020</year>). <pub-id pub-id-type="doi">10.1038/s41589-020-0509-x</pub-id>
+<pub-id pub-id-type="pmid">32251409</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0042"><label>42</label><mixed-citation publication-type="journal" id="enb212035-cit-0042">
+<string-name>
+<surname>Block</surname>, <given-names>D.H.S.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Regulatory consequences of gene translocation in bacteria</article-title>. <source>Nucleic Acids Res.</source>
+<volume>40</volume>(<issue>18</issue>), <fpage>8979</fpage>&#x02013;<lpage>8992</lpage> (<year>2012</year>). <pub-id pub-id-type="doi">10.1093/nar/gks694</pub-id>
+<pub-id pub-id-type="pmid">22833608</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0043"><label>43</label><mixed-citation publication-type="journal" id="enb212035-cit-0043">
+<string-name>
+<surname>Sauer</surname>, <given-names>C.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Effect of genome position on heterologous gene expression in Bacillus subtilis: an unbiased analysis</article-title>. <source>ACS Synth. Biol.</source>&#x000a0;<volume>5</volume>(<issue>9</issue>), <fpage>942</fpage>&#x02013;<lpage>947</lpage> (<year>2016</year>). <pub-id pub-id-type="doi">10.1021/acssynbio.6b00065</pub-id>
+<pub-id pub-id-type="pmid">27197833</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0044"><label>44</label><mixed-citation publication-type="journal" id="enb212035-cit-0044">
+<string-name>
+<surname>Ilia</surname>, <given-names>K.</given-names>
+</string-name>, <string-name>
+<surname>Del Vecchio</surname>, <given-names>D.</given-names>
+</string-name>: <article-title>Squaring a circle: to what extent are traditional circuit analogies impeding synthetic biology?</article-title>
+<source>GEN Biotechnol.</source>
+<volume>1</volume>(<issue>2</issue>), <fpage>150</fpage>&#x02013;<lpage>155</lpage> (<year>2022</year>). <pub-id pub-id-type="doi">10.1089/genbio.2021.0014</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0045"><label>45</label><mixed-citation publication-type="journal" id="enb212035-cit-0045">
+<string-name>
+<surname>Paulsson</surname>, <given-names>J.</given-names>
+</string-name>: <article-title>Models of stochastic gene expression</article-title>. <source>Phys. Life Rev.</source>
+<volume>2</volume>(<issue>2</issue>), <fpage>157</fpage>&#x02013;<lpage>175</lpage> (<year>2005</year>). <pub-id pub-id-type="doi">10.1016/j.plrev.2005.03.003</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0046"><label>46</label><mixed-citation publication-type="journal" id="enb212035-cit-0046">
+<string-name>
+<surname>Raj</surname>, <given-names>A.</given-names>
+</string-name>, <string-name>
+<surname>Oudenaarden</surname>, <given-names>A.van</given-names>
+</string-name>: <article-title>Nature, nurture, or chance: stochastic gene expression and its consequences</article-title>. <source>Cell</source>
+<volume>135</volume>(<issue>2</issue>), <fpage>216</fpage>&#x02013;<lpage>226</lpage> (<year>2008</year>). <pub-id pub-id-type="doi">10.1016/j.cell.2008.09.050</pub-id>
+<pub-id pub-id-type="pmid">18957198</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0047"><label>47</label><mixed-citation publication-type="journal" id="enb212035-cit-0047">
+<string-name>
+<surname>Bogue</surname>, <given-names>R.</given-names>
+</string-name>: <article-title>Robots in the laboratory: a review of applications</article-title>. <source>Ind. Robot Int. J.</source>
+<volume>39</volume>(<issue>2</issue>), <fpage>113</fpage>&#x02013;<lpage>119</lpage> (<year>2012</year>). <pub-id pub-id-type="doi">10.1108/01439911211203382</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0048"><label>48</label><mixed-citation publication-type="journal" id="enb212035-cit-0048">
+<string-name>
+<surname>Pereira</surname>, <given-names>D.A.</given-names>
+</string-name>, <string-name>
+<surname>Williams</surname>, <given-names>J.A.</given-names>
+</string-name>: <article-title>Origin and evolution of high throughput screening</article-title>. <source>Br. J. Pharmacol.</source>
+<volume>152</volume>(<issue>1</issue>), <fpage>53</fpage>&#x02013;<lpage>61</lpage> (<year>2007</year>). <pub-id pub-id-type="doi">10.1038/sj.bjp.0707373</pub-id>
+<pub-id pub-id-type="pmid">17603542</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0049"><label>49</label><mixed-citation publication-type="journal" id="enb212035-cit-0049">
+<string-name>
+<surname>Major</surname>, <given-names>J.</given-names>
+</string-name>: <article-title>Challenges and opportunities in high throughput screening: implications for new technologies</article-title>. <source>J. Biomol. Screen</source>
+<volume>3</volume>(<issue>1</issue>), <fpage>13</fpage>&#x02013;<lpage>17</lpage> (<year>1998</year>). <pub-id pub-id-type="doi">10.1177/108705719800300102</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0050"><label>50</label><mixed-citation publication-type="miscellaneous" id="enb212035-cit-0050">
+<article-title>ANSI/SLAS microplate standards</article-title>. <ext-link xlink:href="https://www.slas.org/education/ansi-slas-microplate-standards/" ext-link-type="uri">https://www.slas.org/education/ansi&#x02010;slas&#x02010;microplate&#x02010;standards/</ext-link> Accessed March 2024</mixed-citation></ref><ref id="enb212035-bib-0051"><label>51</label><mixed-citation publication-type="journal" id="enb212035-cit-0051">
+<string-name>
+<surname>Klumpp</surname>, <given-names>M.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Readout technologies for highly miniaturized kinase assays applicable to high&#x02010;throughput screening in a 1536&#x02010;well format</article-title>. <source>J. Biomol. Screen</source>
+<volume>11</volume>(<issue>6</issue>), <fpage>617</fpage>&#x02013;<lpage>633</lpage> (<year>2006</year>). <pub-id pub-id-type="doi">10.1177/1087057106288444</pub-id>
+<pub-id pub-id-type="pmid">16760365</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0052"><label>52</label><mixed-citation publication-type="journal" id="enb212035-cit-0052">
+<string-name>
+<surname>Mayr</surname>, <given-names>L.M.</given-names>
+</string-name>, <string-name>
+<surname>Fuerst</surname>, <given-names>P.</given-names>
+</string-name>: <article-title>The future of high&#x02010;throughput screening</article-title>. <source>SLAS Discov.</source>
+<volume>13</volume>(<issue>6</issue>), <fpage>443</fpage>&#x02013;<lpage>448</lpage> (<year>2008</year>). <pub-id pub-id-type="doi">10.1177/1087057108319644</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0053"><label>53</label><mixed-citation publication-type="journal" id="enb212035-cit-0053">
+<string-name>
+<surname>Fox</surname>, <given-names>S.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>High throughput screening 2002: moving toward increased success rates</article-title>. <source>J. Biomol. Screen</source>
+<volume>7</volume>(<issue>4</issue>), <fpage>313</fpage>&#x02013;<lpage>316</lpage> (<year>2002</year>). <pub-id pub-id-type="doi">10.1089/108705702320351150</pub-id>
+<pub-id pub-id-type="pmid">12230884</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0054"><label>54</label><mixed-citation publication-type="journal" id="enb212035-cit-0054">
+<string-name>
+<surname>Gl&#x000f6;kler</surname>, <given-names>J.</given-names>
+</string-name>, <string-name>
+<surname>Sch&#x000fc;tze</surname>, <given-names>T.</given-names>
+</string-name>, <string-name>
+<surname>Konthur</surname>, <given-names>Z.</given-names>
+</string-name>: <article-title>Automation in the high&#x02010;throughput selection of random combinatorial libraries&#x02014;different approaches for select applications</article-title>. <source>Molecules</source>
+<volume>15</volume>(<issue>4</issue>), <fpage>2478</fpage>&#x02013;<lpage>2490</lpage> (<year>2010</year>). <pub-id pub-id-type="doi">10.3390/molecules15042478</pub-id>
+<pub-id pub-id-type="pmid">20428057</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0055"><label>55</label><mixed-citation publication-type="journal" id="enb212035-cit-0055">
+<string-name>
+<surname>Jessop&#x02010;Fabre</surname>, <given-names>M.M.</given-names>
+</string-name>, <string-name>
+<surname>Sonnenschein</surname>, <given-names>N.</given-names>
+</string-name>: <article-title>Improving reproducibility in synthetic biology</article-title>. <source>Front. Bioeng. Biotechnol.</source>
+<volume>7</volume> (<year>2019</year>). <pub-id pub-id-type="doi">10.3389/fbioe.2019.00018</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0056"><label>56</label><mixed-citation publication-type="journal" id="enb212035-cit-0056">
+<string-name>
+<surname>Holowko</surname>, <given-names>M.B.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Building a biofoundry</article-title>. <source>Synth. Biol.</source>
+<volume>6</volume>(<issue>1</issue>), <elocation-id>ysaa026</elocation-id> (<year>2021</year>). <pub-id pub-id-type="doi">10.1093/synbio/ysaa026</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0057"><label>57</label><mixed-citation publication-type="journal" id="enb212035-cit-0057">
+<string-name>
+<surname>Zielinski</surname>, <given-names>D.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>iPipet: sample handling using a tablet</article-title>. <source>Nat. Methods</source>
+<volume>11</volume>(<issue>8</issue>), <fpage>784</fpage>&#x02013;<lpage>785</lpage> (<year>2014</year>). <pub-id pub-id-type="doi">10.1038/nmeth.3028</pub-id>
+<pub-id pub-id-type="pmid">25075904</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0058"><label>58</label><mixed-citation publication-type="journal" id="enb212035-cit-0058">
+<string-name>
+<surname>Najmabadi</surname>, <given-names>P.</given-names>
+</string-name>, <string-name>
+<surname>Goldenberg</surname>, <given-names>A.A.</given-names>
+</string-name>, <string-name>
+<surname>Emili</surname>, <given-names>A.</given-names>
+</string-name>: <article-title>Hardware flexibility of laboratory automation systems: analysis and new flexible automation architectures</article-title>. <source>JALA J. Assoc. Lab. Autom.</source>
+<volume>11</volume>(<issue>4</issue>), <fpage>203</fpage>&#x02013;<lpage>216</lpage> (<year>2006</year>). <pub-id pub-id-type="doi">10.1016/j.jala.2006.05.014</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0059"><label>59</label><mixed-citation publication-type="journal" id="enb212035-cit-0059">
+<string-name>
+<surname>Linshiz</surname>, <given-names>G.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>PaR&#x02010;PaR laboratory automation platform</article-title>. <source>ACS Synth. Biol.</source>
+<volume>2</volume>(<issue>5</issue>), <fpage>216</fpage>&#x02013;<lpage>222</lpage> (<year>2013</year>). <pub-id pub-id-type="doi">10.1021/sb300075t</pub-id>
+<pub-id pub-id-type="pmid">23654257</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0060"><label>60</label><mixed-citation publication-type="miscellaneous" id="enb212035-cit-0060">
+<article-title>Opentrons | lab automation | lab robots for life scientists</article-title>. <ext-link xlink:href="https://opentrons.com/" ext-link-type="uri">https://opentrons.com/</ext-link> Accessed March 2024</mixed-citation></ref><ref id="enb212035-bib-0061"><label>61</label><mixed-citation publication-type="journal" id="enb212035-cit-0061">
+<string-name>
+<surname>May</surname>, <given-names>M.</given-names>
+</string-name>: <article-title>A DIY approach to automating your lab</article-title>. <source>Nature</source>
+<volume>569</volume>(<issue>7757</issue>), <fpage>587</fpage>&#x02013;<lpage>588</lpage> (<year>2019</year>). <pub-id pub-id-type="doi">10.1038/d41586-019-01590-z</pub-id>
+<pub-id pub-id-type="pmid">31110319</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0062"><label>62</label><mixed-citation publication-type="journal" id="enb212035-cit-0062">
+<string-name>
+<surname>Kelwick</surname>, <given-names>R.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Developments in the tools and methodologies of synthetic biology</article-title>. <source>Front. Bioeng. Biotechnol.</source>
+<volume>2</volume> (<year>2014</year>). <pub-id pub-id-type="doi">10.3389/fbioe.2014.00060</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0063"><label>63</label><mixed-citation publication-type="journal" id="enb212035-cit-0063">
+<string-name>
+<surname>Carbonell</surname>, <given-names>P.</given-names>
+</string-name>, <string-name>
+<surname>Radivojevic</surname>, <given-names>T.</given-names>
+</string-name>, <string-name>
+<surname>Garc&#x000ed;a Mart&#x000ed;n</surname>, <given-names>H.</given-names>
+</string-name>: <article-title>Opportunities at the intersection of synthetic biology, machine learning, and automation</article-title>. <source>ACS Synth. Biol.</source>
+<volume>8</volume>(<issue>7</issue>), <fpage>1474</fpage>&#x02013;<lpage>1477</lpage> (<year>2019</year>). <pub-id pub-id-type="doi">10.1021/acssynbio.8b00540</pub-id>
+<pub-id pub-id-type="pmid">31319671</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0064"><label>64</label><mixed-citation publication-type="journal" id="enb212035-cit-0064">
+<string-name>
+<surname>Opgenorth</surname>, <given-names>P.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Lessons from two design&#x02013;build&#x02013;test&#x02013;learn cycles of dodecanol production in Escherichia coli aided by machine learning</article-title>. <source>ACS Synth. Biol.</source>
+<volume>8</volume>(<issue>6</issue>), <fpage>1337</fpage>&#x02013;<lpage>1351</lpage> (<year>2019</year>). <pub-id pub-id-type="doi">10.1021/acssynbio.9b00020</pub-id>
+<pub-id pub-id-type="pmid">31072100</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0065"><label>65</label><mixed-citation publication-type="journal" id="enb212035-cit-0065">
+<string-name>
+<surname>Goldman</surname>, <given-names>R.P.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Highly&#x02010;automated, high&#x02010;throughput replication of yeast&#x02010;based logic circuit design assessments</article-title>. <source>Synth. Biol.</source>
+<volume>7</volume>(<issue>1</issue>), <elocation-id>ysac018</elocation-id> (<year>2022</year>). <pub-id pub-id-type="doi">10.1093/synbio/ysac018</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0066"><label>66</label><mixed-citation publication-type="miscellaneous" id="enb212035-cit-0066">
+<article-title>Edinburgh Genome Foundry</article-title>. <ext-link xlink:href="https://onehealthgenomics.ed.ac.uk/facilities-and-technologies/edinburgh-genome-foundry" ext-link-type="uri">https://onehealthgenomics.ed.ac.uk/facilities&#x02010;and&#x02010;technologies/edinburgh&#x02010;genome&#x02010;foundry</ext-link> Accessed March 2024</mixed-citation></ref><ref id="enb212035-bib-0067"><label>67</label><mixed-citation publication-type="journal" id="enb212035-cit-0067">
+<string-name>
+<surname>Hillson</surname>, <given-names>N.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Building a global alliance of biofoundries</article-title>. <source>Nat. Commun.</source>
+<volume>10</volume>(<issue>1</issue>), <elocation-id>2040</elocation-id> (<year>2019</year>). <pub-id pub-id-type="doi">10.1038/s41467-019-10079-2</pub-id>
+<pub-id pub-id-type="pmid">31068573</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0068"><label>68</label><mixed-citation publication-type="journal" id="enb212035-cit-0068">
+<string-name>
+<surname>Si</surname>, <given-names>T.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Automated multiplex genome&#x02010;scale engineering in yeast</article-title>. <source>Nat. Commun.</source>
+<volume>8</volume>(<issue>1</issue>), <elocation-id>15187</elocation-id> (<year>2017</year>). <pub-id pub-id-type="doi">10.1038/ncomms15187</pub-id>
+<pub-id pub-id-type="pmid">28469255</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0069"><label>69</label><mixed-citation publication-type="miscellaneous" id="enb212035-cit-0069">
+<article-title>Lesaffre: global key player in fermentation</article-title>. <ext-link xlink:href="https://www.lesaffre.com/" ext-link-type="uri">https://www.lesaffre.com/</ext-link> Accessed March 2024</mixed-citation></ref><ref id="enb212035-bib-0070"><label>70</label><mixed-citation publication-type="miscellaneous" id="enb212035-cit-0070">
+<article-title>The organism company</article-title>. <ext-link xlink:href="https://www.ginkgobioworks.com/" ext-link-type="uri">https://www.ginkgobioworks.com/</ext-link> Accessed March 2024</mixed-citation></ref><ref id="enb212035-bib-0071"><label>71</label><mixed-citation publication-type="journal" id="enb212035-cit-0071">
+<string-name>
+<surname>Tellechea&#x02010;Luzardo</surname>, <given-names>J.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Fast biofoundries: coping with the challenges of biomanufacturing</article-title>. <source>Trends Biotechnol.</source>
+<volume>40</volume>(<issue>7</issue>), <fpage>831</fpage>&#x02013;<lpage>842</lpage> (<year>2022</year>). <pub-id pub-id-type="doi">10.1016/j.tibtech.2021.12.006</pub-id>
+<pub-id pub-id-type="pmid">35012773</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0072"><label>72</label><mixed-citation publication-type="journal" id="enb212035-cit-0072">
+<string-name>
+<surname>Watkins</surname>, <given-names>A.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Public biofoundries as innovation intermediaries: the integration of translation, sustainability, and responsibility</article-title>. <source>J. Technol. Transf.</source> (<year>2023</year>). <pub-id pub-id-type="doi">10.1007/s10961-023-10039-5</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0073"><label>73</label><mixed-citation publication-type="journal" id="enb212035-cit-0073">
+<string-name>
+<surname>Clarke</surname>, <given-names>L.J.</given-names>
+</string-name>, <string-name>
+<surname>Kitney</surname>, <given-names>R.I.</given-names>
+</string-name>: <article-title>Synthetic biology in the UK &#x02013; an outline of plans and progress</article-title>. <source>Synth. Syst. Biotechnol.</source>
+<volume>1</volume>(<issue>4</issue>), <fpage>243</fpage>&#x02013;<lpage>257</lpage> (<year>2016</year>). <pub-id pub-id-type="doi">10.1016/j.synbio.2016.09.003</pub-id>
+<pub-id pub-id-type="pmid">29062950</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0074"><label>74</label><mixed-citation publication-type="journal" id="enb212035-cit-0074">
+<string-name>
+<surname>Kitney</surname>, <given-names>R.</given-names>
+</string-name>, <string-name>
+<surname>Freemont</surname>, <given-names>P.</given-names>
+</string-name>: <article-title>Synthetic biology &#x02013; the state of play</article-title>. <source>FEBS Lett.</source>
+<volume>586</volume>(<issue>15</issue>), <fpage>2029</fpage>&#x02013;<lpage>2036</lpage> (<year>2012</year>). <pub-id pub-id-type="doi">10.1016/j.febslet.2012.06.002</pub-id>
+<pub-id pub-id-type="pmid">22704968</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0075"><label>75</label><mixed-citation publication-type="journal" id="enb212035-cit-0075">
+<string-name>
+<surname>Kitney</surname>, <given-names>R.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Enabling the advanced bioeconomy through public policy supporting biofoundries and engineering biology</article-title>. <source>Trends Biotechnol.</source>
+<volume>37</volume>(<issue>9</issue>), <fpage>917</fpage>&#x02013;<lpage>920</lpage> (<year>2019</year>). <pub-id pub-id-type="doi">10.1016/j.tibtech.2019.03.017</pub-id>
+<pub-id pub-id-type="pmid">31036350</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0076"><label>76</label><mixed-citation publication-type="journal" id="enb212035-cit-0076">
+<string-name>
+<surname>Farzaneh</surname>, <given-names>T.</given-names>
+</string-name>, <string-name>
+<surname>Freemont</surname>, <given-names>P.S.</given-names>
+</string-name>: <article-title>Biofoundries are a nucleating hub for industrial translation</article-title>. <source>Synth. Biol.</source>
+<volume>6</volume>(<issue>1</issue>), <elocation-id>ysab013</elocation-id> (<year>2021</year>). <pub-id pub-id-type="doi">10.1093/synbio/ysab013</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0077"><label>77</label><mixed-citation publication-type="miscellaneous" id="enb212035-cit-0077">
+<article-title>SynbiCITE</article-title>. <ext-link xlink:href="http://synbicite.com/" ext-link-type="uri">http://synbicite.com/</ext-link> Accessed March 2024</mixed-citation></ref><ref id="enb212035-bib-0078"><label>78</label><mixed-citation publication-type="journal" id="enb212035-cit-0078">
+<string-name>
+<surname>Otero&#x02010;Muras</surname>, <given-names>I.</given-names>
+</string-name>, <string-name>
+<surname>Carbonell</surname>, <given-names>P.</given-names>
+</string-name>: <article-title>Automated engineering of synthetic metabolic pathways for efficient biomanufacturing</article-title>. <source>Metab. Eng.</source>
+<volume>63</volume>, <fpage>61</fpage>&#x02013;<lpage>80</lpage> (<year>2021</year>). <pub-id pub-id-type="doi">10.1016/j.ymben.2020.11.012</pub-id>
+<pub-id pub-id-type="pmid">33316374</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0079"><label>79</label><mixed-citation publication-type="journal" id="enb212035-cit-0079">
+<string-name>
+<surname>Fern&#x000e1;ndez&#x02010;Castan&#x000e9;</surname>, <given-names>A.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Computer&#x02010;aided design for metabolic engineering</article-title>. <source>J. Biotechnol.</source>
+<volume>192</volume>, <fpage>302</fpage>&#x02013;<lpage>313</lpage> (<year>2014</year>). <pub-id pub-id-type="doi">10.1016/j.jbiotec.2014.03.029</pub-id>
+<pub-id pub-id-type="pmid">24704607</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0080"><label>80</label><mixed-citation publication-type="journal" id="enb212035-cit-0080">
+<string-name>
+<surname>H&#x000e9;risson</surname>, <given-names>J.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>The automated Galaxy&#x02010;SynBioCAD pipeline for synthetic biology design and engineering</article-title>. <source>Nat. Commun.</source>
+<volume>13</volume>(<issue>1</issue>), <elocation-id>5082</elocation-id> (<year>2022</year>). <pub-id pub-id-type="doi">10.1038/s41467-022-32661-x</pub-id>
+<pub-id pub-id-type="pmid">36038542</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0081"><label>81</label><mixed-citation publication-type="journal" id="enb212035-cit-0081">
+<string-name>
+<surname>Smucker</surname>, <given-names>B.</given-names>
+</string-name>, <string-name>
+<surname>Krzywinski</surname>, <given-names>M.</given-names>
+</string-name>, <string-name>
+<surname>Altman</surname>, <given-names>N.</given-names>
+</string-name>: <article-title>Optimal experimental design</article-title>. <source>Nat. Methods</source>
+<volume>15</volume>(<issue>8</issue>), <fpage>559</fpage>&#x02013;<lpage>560</lpage> (<year>2018</year>). <pub-id pub-id-type="doi">10.1038/s41592-018-0083-2</pub-id>
+<pub-id pub-id-type="pmid">30065369</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0082"><label>82</label><mixed-citation publication-type="journal" id="enb212035-cit-0082">
+<string-name>
+<surname>Gilman</surname>, <given-names>J.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Statistical design of experiments for synthetic biology</article-title>. <source>ACS Synth. Biol.</source>
+<volume>10</volume>(<issue>1</issue>), <fpage>1</fpage>&#x02013;<lpage>18</lpage> (<year>2021</year>). <pub-id pub-id-type="doi">10.1021/acssynbio.0c00385</pub-id>
+<pub-id pub-id-type="pmid">33406821</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0083"><label>83</label><mixed-citation publication-type="book" id="enb212035-cit-0083">
+<string-name>
+<surname>Sieow</surname>, <given-names>B.F.&#x02010;L.</given-names>
+</string-name>, et&#x000a0;al.: <part-title>Synthetic biology meets machine learning</part-title>. In: <person-group person-group-type="editor">
+<string-name>
+<surname>Selvarajoo</surname>, <given-names>K.</given-names>
+</string-name>
+</person-group> (ed.) <source>Computational Biology and Machine Learning for Metabolic Engineering and Synthetic Biology</source>, pp. <fpage>21</fpage>&#x02013;<lpage>39</lpage>. <publisher-name>Springer US</publisher-name> (<year>2023</year>)</mixed-citation></ref><ref id="enb212035-bib-0084"><label>84</label><mixed-citation publication-type="miscellaneous" id="enb212035-cit-0084">
+<article-title>SiLA rapid integration</article-title>. <ext-link xlink:href="https://sila-standard.com/" ext-link-type="uri">https://sila&#x02010;standard.com/</ext-link> Accessed March 2024</mixed-citation></ref><ref id="enb212035-bib-0085"><label>85</label><mixed-citation publication-type="miscellaneous" id="enb212035-cit-0085">
+<article-title>SiLA2 | GitLab</article-title>. <ext-link xlink:href="https://gitlab.com/SiLA2" ext-link-type="uri">https://gitlab.com/SiLA2</ext-link> Accessed March 2024</mixed-citation></ref><ref id="enb212035-bib-0086"><label>86</label><mixed-citation publication-type="journal" id="enb212035-cit-0086">
+<string-name>
+<surname>Porr</surname>, <given-names>M.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Implementing a digital infrastructure for the lab using a central laboratory server and the SiLA2 communication standard</article-title>. <source>Eng. Life Sci.</source>
+<volume>21</volume>(<issue>3&#x02013;4</issue>), <fpage>208</fpage>&#x02013;<lpage>219</lpage> (<year>2021</year>). <pub-id pub-id-type="doi">10.1002/elsc.202000053</pub-id>
+<pub-id pub-id-type="pmid">33716619</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0087"><label>87</label><mixed-citation publication-type="journal" id="enb212035-cit-0087">
+<string-name>
+<surname>Yeoh</surname>, <given-names>J.W.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>SynBiopython: an open&#x02010;source software library for Synthetic Biology</article-title>. <source>Synth. Biol.</source>
+<volume>6</volume>(<issue>1</issue>), <elocation-id>ysab001</elocation-id> (<year>2021</year>). <pub-id pub-id-type="doi">10.1093/synbio/ysab001</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0088"><label>88</label><mixed-citation publication-type="miscellaneous" id="enb212035-cit-0088">
+<article-title>Synthace: the life science experiment platform for R&#x00026;D teams</article-title>. <ext-link xlink:href="https://www.synthace.com" ext-link-type="uri">https://www.synthace.com</ext-link> Accessed March 2024</mixed-citation></ref><ref id="enb212035-bib-0089"><label>89</label><mixed-citation publication-type="journal" id="enb212035-cit-0089">
+<string-name>
+<surname>Vrana</surname>, <given-names>J.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Aquarium: open&#x02010;source laboratory software for design, execution and data management</article-title>. <source>Synth. Biol.</source>
+<volume>6</volume>(<issue>1</issue>), <elocation-id>ysab006</elocation-id> (<year>2021</year>). <pub-id pub-id-type="doi">10.1093/synbio/ysab006</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0090"><label>90</label><mixed-citation publication-type="journal" id="enb212035-cit-0090">
+<string-name>
+<surname>Storch</surname>, <given-names>M.</given-names>
+</string-name>, <string-name>
+<surname>Haines</surname>, <given-names>M.C.</given-names>
+</string-name>, <string-name>
+<surname>Baldwin</surname>, <given-names>G.S.</given-names>
+</string-name>: <article-title>DNA&#x02010;BOT: a low&#x02010;cost, automated DNA assembly platform for synthetic biology</article-title>. <source>Synth. Biol.</source>
+<volume>5</volume>(<issue>1</issue>), <elocation-id>ysaa010</elocation-id> (<year>2020</year>). <pub-id pub-id-type="doi">10.1093/synbio/ysaa010</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0091"><label>91</label><mixed-citation publication-type="journal" id="enb212035-cit-0091">
+<string-name>
+<surname>Walsh</surname>, <given-names>D.I.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Standardizing automated DNA assembly: best practices, metrics, and protocols using robots</article-title>. <source>SLAS Technol. Transl. Life Sci. Innov.</source>
+<volume>24</volume>(<issue>3</issue>), <fpage>282</fpage>&#x02013;<lpage>290</lpage> (<year>2019</year>). <pub-id pub-id-type="doi">10.1177/2472630318825335</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0092"><label>92</label><mixed-citation publication-type="journal" id="enb212035-cit-0092">
+<string-name>
+<surname>Ma</surname>, <given-names>Y.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Automated high&#x02010;throughput DNA synthesis and assembly</article-title>. <source>Heliyon</source>
+<volume>10</volume>(<issue>6</issue>), <elocation-id>e26967</elocation-id> (<year>2024</year>). <pub-id pub-id-type="doi">10.1016/j.heliyon.2024.e26967</pub-id>
+<pub-id pub-id-type="pmid">38500977</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0093"><label>93</label><mixed-citation publication-type="journal" id="enb212035-cit-0093">
+<string-name>
+<surname>Bryant</surname>, <given-names>J.A.</given-names>, <suffix>Jr.</suffix>
+</string-name>, et&#x000a0;al.: <article-title>AssemblyTron: flexible automation of DNA assembly with Opentrons OT&#x02010;2 lab robots</article-title>. <source>Synth. Biol</source>
+<volume>8</volume>(<issue>1</issue>), <elocation-id>ysac032</elocation-id> (<year>2023</year>). <pub-id pub-id-type="doi">10.1093/synbio/ysac032</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0094"><label>94</label><mixed-citation publication-type="book" id="enb212035-cit-0094">
+<collab collab-type="authors">National Academies of Sciences, Engineering, and Medicine; Policy and Global Affairs; Committee on Science, Engineering, Medicine, and Public Policy; Board on Research Data and Information; Division on Engineering and Physical Sciences; Committee on Applied and Theoretical Statistics; Board on Mathematical Sciences and Analytics; Division on Earth and Life Studies; Nuclear and Radiation Studies Board; Division of Behavioral and Social Sciences and Education; Committee on National Statistics; Board on Behavioral, Cognitive, and Sensory Sciences; Committee on Reproducibility and Replicability in Science</collab>
+: <source>Reproducibility and Replicability in Science</source>. <publisher-name>National Academies Press (US)</publisher-name> (<year>2019</year>)</mixed-citation></ref><ref id="enb212035-bib-0095"><label>95</label><mixed-citation publication-type="journal" id="enb212035-cit-0095">
+<string-name>
+<surname>Ioannidis</surname>, <given-names>J.P.A.</given-names>
+</string-name>: <article-title>Why most published research findings are false</article-title>. <source>PLoS Med.</source>
+<volume>2</volume>(<issue>8</issue>), <fpage>4</fpage>&#x02013;<lpage>13</lpage> (<year>2005</year>). <pub-id pub-id-type="doi">10.1080/09332480.2019.1579573</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0096"><label>96</label><mixed-citation publication-type="journal" id="enb212035-cit-0096">
+<string-name>
+<surname>Baker</surname>, <given-names>M.</given-names>
+</string-name>: <article-title>1,500 scientists lift the lid on reproducibility</article-title>. <source>Nature</source>
+<volume>533</volume>(<issue>7604</issue>), <fpage>452</fpage>&#x02013;<lpage>454</lpage> (<year>2016</year>). <pub-id pub-id-type="doi">10.1038/533452a</pub-id>
+<pub-id pub-id-type="pmid">27225100</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0097"><label>97</label><mixed-citation publication-type="journal" id="enb212035-cit-0097">
+<article-title>How science goes wrong</article-title>. <source>Economist</source> (<year>2013</year>)</mixed-citation></ref><ref id="enb212035-bib-0098"><label>98</label><mixed-citation publication-type="journal" id="enb212035-cit-0098">
+<string-name>
+<surname>McNutt</surname>, <given-names>M.</given-names>
+</string-name>: <article-title>Reproducibility</article-title>. <source>Science</source>
+<volume>343</volume>(<issue>6168</issue>), <elocation-id>229</elocation-id> (<year>2014</year>). <pub-id pub-id-type="doi">10.1126/science.1250475</pub-id>
+<pub-id pub-id-type="pmid">24436391</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0099"><label>99</label><mixed-citation publication-type="journal" id="enb212035-cit-0099">
+<string-name>
+<surname>Plesser</surname>, <given-names>H.E.</given-names>
+</string-name>: <article-title>Reproducibility vs. Replicability: a brief history of a confused terminology</article-title>. <source>Front. Neuroinf.</source>
+<volume>11</volume>, <elocation-id>76</elocation-id> (<year>2018</year>). <pub-id pub-id-type="doi">10.3389/fninf.2017.00076</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0100"><label>100</label><mixed-citation publication-type="miscellaneous" id="enb212035-cit-0100">
+<article-title>Artifact Review and Badging &#x02010; Current</article-title>. <ext-link xlink:href="https://www.acm.org/publications/policies/artifact-review-and-badging-current" ext-link-type="uri">https://www.acm.org/publications/policies/artifact&#x02010;review&#x02010;and&#x02010;badging&#x02010;current</ext-link> Accessed March 2024</mixed-citation></ref><ref id="enb212035-bib-0101"><label>101</label><mixed-citation publication-type="journal" id="enb212035-cit-0101">
+<string-name>
+<surname>Lux</surname>, <given-names>M.W.</given-names>
+</string-name>, <string-name>
+<surname>Strychalski</surname>, <given-names>E.A.</given-names>
+</string-name>, <string-name>
+<surname>Vora</surname>, <given-names>G.J.</given-names>
+</string-name>: <article-title>Advancing reproducibility can ease the &#x0201c;hard truths&#x0201d; of synthetic biology</article-title>. <source>Synth. Biol.</source>
+<volume>8</volume>(<issue>1</issue>), <elocation-id>ysad014</elocation-id> (<year>2023</year>). <pub-id pub-id-type="doi">10.1093/synbio/ysad014</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0102"><label>102</label><mixed-citation publication-type="journal" id="enb212035-cit-0102">
+<string-name>
+<surname>Beal</surname>, <given-names>J.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Quantification of bacterial fluorescence using independent calibrants</article-title>. <source>PLoS One</source>
+<volume>13</volume>(<issue>6</issue>), <elocation-id>e0199432</elocation-id> (<year>2018</year>). <pub-id pub-id-type="doi">10.1371/journal.pone.0199432</pub-id>
+<pub-id pub-id-type="pmid">29928012</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0103"><label>103</label><mixed-citation publication-type="journal" id="enb212035-cit-0103">
+<string-name>
+<surname>Cole</surname>, <given-names>S.D.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Quantification of interlaboratory cell&#x02010;free protein synthesis variability</article-title>. <source>ACS Synth. Biol.</source>
+<volume>8</volume>(<issue>9</issue>), <fpage>2080</fpage>&#x02013;<lpage>2091</lpage> (<year>2019</year>). <pub-id pub-id-type="doi">10.1021/acssynbio.9b00178</pub-id>
+<pub-id pub-id-type="pmid">31386355</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0104"><label>104</label><mixed-citation publication-type="journal" id="enb212035-cit-0104">
+<string-name>
+<surname>Beal</surname>, <given-names>J.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Robust estimation of bacterial cell count from optical density</article-title>. <source>Commun. Biol.</source>
+<volume>3</volume>(<issue>1</issue>), <fpage>1</fpage>&#x02013;<lpage>29</lpage> (<year>2020</year>). <pub-id pub-id-type="doi">10.1038/s42003-020-01127-5</pub-id>
+<pub-id pub-id-type="pmid">31925316</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0105"><label>105</label><mixed-citation publication-type="journal" id="enb212035-cit-0105">
+<string-name>
+<surname>Liu</surname>, <given-names>Y.</given-names>
+</string-name>, <string-name>
+<surname>Beyer</surname>, <given-names>A.</given-names>
+</string-name>, <string-name>
+<surname>Aebersold</surname>, <given-names>R.</given-names>
+</string-name>: <article-title>On the dependency of cellular protein levels on mRNA abundance</article-title>. <source>Cell</source>
+<volume>165</volume>(<issue>3</issue>), <fpage>535</fpage>&#x02013;<lpage>550</lpage> (<year>2016</year>). <pub-id pub-id-type="doi">10.1016/j.cell.2016.03.014</pub-id>
+<pub-id pub-id-type="pmid">27104977</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0106"><label>106</label><mixed-citation publication-type="journal" id="enb212035-cit-0106">
+<string-name>
+<surname>Bown</surname>, <given-names>C.P.</given-names>
+</string-name>, <string-name>
+<surname>Bollyky</surname>, <given-names>T.J.</given-names>
+</string-name>: <article-title>How COVID&#x02010;19 vaccine supply chains emerged in the midst of a pandemic</article-title>. <source>World Econ.</source>
+<volume>45</volume>(<issue>2</issue>), <fpage>468</fpage>&#x02013;<lpage>522</lpage> (<year>2022</year>). <pub-id pub-id-type="doi">10.1111/twec.13183</pub-id>
+<pub-id pub-id-type="pmid">34548749</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0107"><label>107</label><mixed-citation publication-type="journal" id="enb212035-cit-0107">
+<string-name>
+<surname>Louden</surname>, <given-names>E.M.</given-names>
+</string-name>: <article-title>Scaling up the global COVID&#x02010;19 vaccination program: production, allocation, and distribution with an emphasis on equity</article-title>. <source>Yale J. Biol. Med.</source>
+<volume>95</volume>(<issue>3</issue>), <fpage>379</fpage>&#x02013;<lpage>387</lpage> (<year>2022</year>)<pub-id pub-id-type="pmid">36187418</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0108"><label>108</label><mixed-citation publication-type="journal" id="enb212035-cit-0108">
+<string-name>
+<surname>Macarron</surname>, <given-names>R.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Impact of high&#x02010;throughput screening in biomedical research</article-title>. <source>Nat. Rev. Drug Discov.</source>
+<volume>10</volume>(<issue>3</issue>), <fpage>188</fpage>&#x02013;<lpage>195</lpage> (<year>2011</year>). <pub-id pub-id-type="doi">10.1038/nrd3368</pub-id>
+<pub-id pub-id-type="pmid">21358738</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0109"><label>109</label><mixed-citation publication-type="journal" id="enb212035-cit-0109">
+<string-name>
+<surname>Yeow</surname>, <given-names>J.A.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Effects of stress, repetition, fatigue and work environment on human error in manufacturing industries</article-title>. <source>J. Appl. Sci.</source>&#x000a0;<volume>14</volume>(<issue>24</issue>), <fpage>3464</fpage>&#x02013;<lpage>3471</lpage> (<year>2014</year>). <pub-id pub-id-type="doi">10.3923/jas.2014.3464.3471</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0110"><label>110</label><mixed-citation publication-type="journal" id="enb212035-cit-0110">
+<string-name>
+<surname>Anderson</surname>, <given-names>D.I.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Individual differences in motor skill learning: past, present and future</article-title>. <source>Hum. Mov. Sci.</source>
+<volume>78</volume>, <elocation-id>102818</elocation-id> (<year>2021</year>). <pub-id pub-id-type="doi">10.1016/j.humov.2021.102818</pub-id>
+<pub-id pub-id-type="pmid">34049152</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0111"><label>111</label><mixed-citation publication-type="journal" id="enb212035-cit-0111">
+<string-name>
+<surname>Miller</surname>, <given-names>J.S.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Micropipetting: an important laboratory skill for molecular biology</article-title>. <source>Am. Biol. Teach.</source>
+<volume>66</volume>(<issue>4</issue>), <fpage>291</fpage>&#x02013;<lpage>296</lpage> (<year>2004</year>). <pub-id pub-id-type="doi">10.1662/0002-7685(2004)066[0291:mailsf]2.0.co;2</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0112"><label>112</label><mixed-citation publication-type="journal" id="enb212035-cit-0112">
+<string-name>
+<surname>Mante</surname>, <given-names>J.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Synthetic biology knowledge system</article-title>. <source>ACS Synth. Biol.</source>
+<volume>10</volume>(<issue>9</issue>), <fpage>2276</fpage>&#x02013;<lpage>2285</lpage> (<year>2021</year>). <pub-id pub-id-type="doi">10.1021/acssynbio.1c00188</pub-id>
+<pub-id pub-id-type="pmid">34387462</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0113"><label>113</label><mixed-citation publication-type="journal" id="enb212035-cit-0113">
+<string-name>
+<surname>Casas</surname>, <given-names>A.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Removing the bottleneck: introducing cMatch &#x02010; a lightweight tool for construct&#x02010;matching in synthetic biology</article-title>. <source>Front. Bioeng. Biotechnol.</source>
+<volume>9</volume> (<year>2022</year>). <pub-id pub-id-type="doi">10.3389/fbioe.2021.785131</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0114"><label>114</label><mixed-citation publication-type="miscellaneous" id="enb212035-cit-0114">
+<string-name>
+<surname>Frohm</surname>, <given-names>J.</given-names>
+</string-name>, <string-name>
+<surname>Lindstr&#x000f6;m</surname>, <given-names>V.</given-names>
+</string-name>, <string-name>
+<surname>Bellgran</surname>, <given-names>M.</given-names>
+</string-name>: <article-title>A model for parallel levels of automation within manufacturing</article-title>. (<year>2005</year>)</mixed-citation></ref><ref id="enb212035-bib-0115"><label>115</label><mixed-citation publication-type="journal" id="enb212035-cit-0115">
+<string-name>
+<surname>Altschul</surname>, <given-names>S.F.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Basic local alignment search tool</article-title>. <source>J. Mol. Biol.</source>&#x000a0;<volume>215</volume>(<issue>3</issue>), <fpage>403</fpage>&#x02013;<lpage>410</lpage> (<year>1990</year>). <pub-id pub-id-type="doi">10.1006/jmbi.1990.9999</pub-id>
+<pub-id pub-id-type="pmid">2231712</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0116"><label>116</label><mixed-citation publication-type="journal" id="enb212035-cit-0116">
+<string-name>
+<surname>Kapli</surname>, <given-names>P.</given-names>
+</string-name>, <string-name>
+<surname>Yang</surname>, <given-names>Z.</given-names>
+</string-name>, <string-name>
+<surname>Telford</surname>, <given-names>M.J.</given-names>
+</string-name>: <article-title>Phylogenetic tree building in the genomic age</article-title>. <source>Nat. Rev. Genet.</source>
+<volume>21</volume>(<issue>7</issue>), <fpage>428</fpage>&#x02013;<lpage>444</lpage> (<year>2020</year>). <pub-id pub-id-type="doi">10.1038/s41576-020-0233-0</pub-id>
+<pub-id pub-id-type="pmid">32424311</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0117"><label>117</label><mixed-citation publication-type="journal" id="enb212035-cit-0117">
+<string-name>
+<surname>Bultelle</surname>, <given-names>M.</given-names>
+</string-name>, <string-name>Casas, A.</string-name>, <string-name>
+<surname>Kitney</surname>, <given-names>R.</given-names>
+</string-name>: <article-title>Development of an automated standard for lycopene &#x02010; wider lessons for the development of automated protocols &#x02010; submitted 17&#x02010;Jan&#x02010;2024 &#x02010; in review</article-title>. <source>ACS Synth. Biol</source>. (<year>2024</year>)., Submitted 17&#x02010;Jan&#x02010;2024&#x02010;In Review</mixed-citation></ref><ref id="enb212035-bib-0118"><label>118</label><mixed-citation publication-type="journal" id="enb212035-cit-0118">
+<string-name>
+<surname>Kong</surname>, <given-names>F.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Automatic liquid handling for life science: a critical review of the current state of the art</article-title>. <source>J. Lab. Autom.</source>
+<volume>17</volume>(<issue>3</issue>), <fpage>169</fpage>&#x02013;<lpage>185</lpage> (<year>2012</year>). <pub-id pub-id-type="doi">10.1177/2211068211435302</pub-id>
+<pub-id pub-id-type="pmid">22357568</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0119"><label>119</label><mixed-citation publication-type="miscellaneous" id="enb212035-cit-0119">
+<string-name>
+<surname>Ewald</surname>, <given-names>K.</given-names>
+</string-name>, <string-name>
+<surname>Eppendorf</surname>, <given-names>A.</given-names>
+</string-name>: <article-title>Influence of Physical Parameters on the Dispensed Volume of Air&#x02010;Cushion Pipett</article-title>. <ext-link xlink:href="https://www.eppendorf.com/product-media/doc/en/112929_Userguide/Eppendorf_Liquid-Handling_Userguide_021_Reference-family_Research-family_Research-pro_Influence-physical-parameters-dispensed-volume-air-cushion-pipette.pdf" ext-link-type="uri">https://www.eppendorf.com/product&#x02010;media/doc/en/112929_Userguide/Eppendorf_Liquid&#x02010;Handling_Userguide_021_Reference&#x02010;family_Research&#x02010;family_Research&#x02010;pro_Influence&#x02010;physical&#x02010;parameters&#x02010;dispensed&#x02010;volume&#x02010;air&#x02010;cushion&#x02010;pipette.pdf</ext-link> (<year>2015</year>). Accessed March 2024</mixed-citation></ref><ref id="enb212035-bib-0120"><label>120</label><mixed-citation publication-type="journal" id="enb212035-cit-0120">
+<string-name>
+<surname>Batista</surname>, <given-names>E.</given-names>
+</string-name>, <string-name>
+<surname>Filipe</surname>, <given-names>E.</given-names>
+</string-name>, <string-name>
+<surname>Mickan</surname>, <given-names>B.</given-names>
+</string-name>: <article-title>Volume calibration of 10 00 &#x003bc;l micropipettes. Inter&#x02010;laboratory comparison</article-title>. <source>Accred Qual. Assur.</source>
+<volume>13</volume>(<issue>4</issue>), <fpage>261</fpage>&#x02013;<lpage>266</lpage> (<year>2008</year>). <pub-id pub-id-type="doi">10.1007/s00769-008-0362-1</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0121"><label>121</label><mixed-citation publication-type="journal" id="enb212035-cit-0121">
+<string-name>
+<surname>Albert</surname>, <given-names>A.</given-names>
+</string-name>: <article-title>Minimizing Liquid Delivery risk: automated Liquid handlers as sources of error</article-title>. <source>Am. Lab.</source>
+<volume>39</volume>(<issue>13</issue>), <fpage>8</fpage> (<year>2007</year>)</mixed-citation></ref><ref id="enb212035-bib-0122"><label>122</label><mixed-citation publication-type="miscellaneous" id="enb212035-cit-0122">
+<article-title>Engineering Biology Facilities</article-title>. <ext-link xlink:href="https://www.londonbiofoundry.org" ext-link-type="uri">https://www.londonbiofoundry.org</ext-link> Accessed March 2024</mixed-citation></ref><ref id="enb212035-bib-0123"><label>123</label><mixed-citation publication-type="journal" id="enb212035-cit-0123">
+<string-name>
+<surname>Da Silva</surname>, <given-names>B.A.</given-names>
+</string-name>, <string-name>
+<surname>Krishnamurthy</surname>, <given-names>M.</given-names>
+</string-name>: <article-title>The alarming reality of medication error: a patient case and review of Pennsylvania and National data</article-title>. <source>J. Community Hosp. Intern. Med. Perspect.</source>
+<volume>6</volume>(<issue>4</issue>), <elocation-id>31758</elocation-id> (<year>2016</year>). <pub-id pub-id-type="doi">10.3402/jchimp.v6.31758</pub-id>
+<pub-id pub-id-type="pmid">27609720</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0124"><label>124</label><mixed-citation publication-type="journal" id="enb212035-cit-0124">
+<string-name>
+<surname>Peccoud</surname>, <given-names>J.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Organizing laboratory information to analyze the&#x000a0;reproducibility of experimental workflows</article-title>. <source>bioRxiv</source>, 2022&#x02013;04 (<year>2022</year>)</mixed-citation></ref><ref id="enb212035-bib-0125"><label>125</label><mixed-citation publication-type="journal" id="enb212035-cit-0125">
+<string-name>
+<surname>Galdzicki</surname>, <given-names>M.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>The Synthetic Biology Open Language (SBOL) provides a community standard for communicating designs in synthetic biology</article-title>. <source>Nat. Biotechnol.</source>
+<volume>32</volume>(<issue>6</issue>), <fpage>545</fpage>&#x02013;<lpage>550</lpage> (<year>2014</year>). <pub-id pub-id-type="doi">10.1038/nbt.2891</pub-id>
+<pub-id pub-id-type="pmid">24911500</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0126"><label>126</label><mixed-citation publication-type="journal" id="enb212035-cit-0126">
+<string-name>
+<surname>Lipman</surname>, <given-names>D.J.</given-names>
+</string-name>, <string-name>
+<surname>Pearson</surname>, <given-names>W.R.</given-names>
+</string-name>: <article-title>Rapid and sensitive protein similarity searches</article-title>. <source>Science</source>
+<volume>227</volume>(<issue>4693</issue>), <fpage>1435</fpage>&#x02013;<lpage>1441</lpage> (<year>1985</year>). <pub-id pub-id-type="doi">10.1126/science.2983426</pub-id>
+<pub-id pub-id-type="pmid">2983426</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0127"><label>127</label><mixed-citation publication-type="journal" id="enb212035-cit-0127">
+<string-name>
+<surname>Sainz de Murieta</surname>, <given-names>I.</given-names>
+</string-name>, <string-name>
+<surname>Bultelle</surname>, <given-names>M.</given-names>
+</string-name>, <string-name>
+<surname>Kitney</surname>, <given-names>R.I.</given-names>
+</string-name>: <article-title>Toward the first data acquisition standard in synthetic biology</article-title>. <source>ACS Synth. Biol.</source>
+<volume>5</volume>(<issue>8</issue>), <fpage>817</fpage>&#x02013;<lpage>826</lpage> (<year>2016</year>). <pub-id pub-id-type="doi">10.1021/acssynbio.5b00222</pub-id>
+<pub-id pub-id-type="pmid">26854090</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0128"><label>128</label><mixed-citation publication-type="journal" id="enb212035-cit-0128">
+<string-name>
+<surname>Chavez</surname>, <given-names>M.</given-names>
+</string-name>, <string-name>
+<surname>Ho</surname>, <given-names>J.</given-names>
+</string-name>, <string-name>
+<surname>Tan</surname>, <given-names>C.</given-names>
+</string-name>: <article-title>Reproducibility of high&#x02010;throughput plate&#x02010;reader experiments in synthetic biology</article-title>. <source>ACS Synth. Biol.</source>
+<volume>6</volume>(<issue>2</issue>), <fpage>375</fpage>&#x02013;<lpage>380</lpage> (<year>2017</year>). <pub-id pub-id-type="doi">10.1021/acssynbio.6b00198</pub-id>
+<pub-id pub-id-type="pmid">27797498</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0129"><label>129</label><mixed-citation publication-type="journal" id="enb212035-cit-0129">
+<string-name>
+<surname>Bartley</surname>, <given-names>B.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Building an open representation for biological protocols</article-title>. <source>ACM J. Emerg. Technol. Comput. Syst.</source>
+<volume>19</volume>(<issue>3</issue>), <fpage>1</fpage>&#x02013;<lpage>21</lpage> (<year>2023</year>). <pub-id pub-id-type="doi">10.1145/3604568</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0130"><label>130</label><mixed-citation publication-type="journal" id="enb212035-cit-0130">
+<string-name>
+<surname>Wierenga</surname>, <given-names>R.P.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>PyLabRobot: an open&#x02010;source, hardware&#x02010;agnostic interface for liquid&#x02010;handling robots and accessories</article-title>. <source>Device</source>
+<volume>1</volume>(<issue>4</issue>), <elocation-id>100111</elocation-id> (<year>2023</year>). <pub-id pub-id-type="doi">10.1016/j.device.2023.100111</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0131"><label>131</label><mixed-citation publication-type="miscellaneous" id="enb212035-cit-0131">
+<string-name>
+<surname>Garg</surname>, <given-names>S.</given-names>
+</string-name>, <string-name>
+<surname>Wang</surname>, <given-names>S.</given-names>
+</string-name>, <string-name>
+<surname>Ranjan</surname>, <given-names>R.</given-names>
+</string-name>: <article-title>Orchestration Tools for Big Data</article-title> (<year>2018</year>)</mixed-citation></ref><ref id="enb212035-bib-0132"><label>132</label><mixed-citation publication-type="miscellaneous" id="enb212035-cit-0132">
+<article-title>Apache Airflow</article-title>. <ext-link xlink:href="https://airflow.apache.org/" ext-link-type="uri">https://airflow.apache.org/</ext-link> Accessed March 2024</mixed-citation></ref><ref id="enb212035-bib-0133"><label>133</label><mixed-citation publication-type="miscellaneous" id="enb212035-cit-0133">
+<article-title>Azkaban</article-title>. <ext-link xlink:href="https://azkaban.github.io/" ext-link-type="uri">https://azkaban.github.io/</ext-link> Accessed March 2024</mixed-citation></ref><ref id="enb212035-bib-0134"><label>134</label><mixed-citation publication-type="miscellaneous" id="enb212035-cit-0134">
+<article-title>Oozie &#x02010; Apache Oozie Workflow Scheduler for Hadoop</article-title>. <ext-link xlink:href="https://oozie.apache.org/" ext-link-type="uri">https://oozie.apache.org/</ext-link> Accessed March 2024</mixed-citation></ref><ref id="enb212035-bib-0135"><label>135</label><mixed-citation publication-type="journal" id="enb212035-cit-0135">
+<string-name>
+<surname>Barika</surname>, <given-names>M.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Orchestrating big data analysis workflows in the cloud: research challenges, survey, and future directions</article-title>. <source>ACM Comput. Surv. CSUR</source>
+<volume>52</volume>(<issue>5</issue>), <fpage>1</fpage>&#x02013;<lpage>41</lpage> (<year>2019</year>). <pub-id pub-id-type="doi">10.1145/3332301</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0136"><label>136</label><mixed-citation publication-type="journal" id="enb212035-cit-0136">
+<string-name>
+<surname>Rogers</surname>, <given-names>J.K.</given-names>
+</string-name>, <string-name>
+<surname>Church</surname>, <given-names>G.M.</given-names>
+</string-name>: <article-title>Multiplexed engineering in biology</article-title>. <source>Trends Biotechnol.</source>
+<volume>34</volume>(<issue>3</issue>), <fpage>198</fpage>&#x02013;<lpage>206</lpage> (<year>2016</year>). <pub-id pub-id-type="doi">10.1016/j.tibtech.2015.12.004</pub-id>
+<pub-id pub-id-type="pmid">26897356</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0137"><label>137</label><mixed-citation publication-type="journal" id="enb212035-cit-0137">
+<string-name>
+<surname>Wang</surname>, <given-names>H.H.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Programming cells by multiplex genome engineering and accelerated evolution</article-title>. <source>Nature</source>
+<volume>460</volume>(<issue>7257</issue>), <fpage>894</fpage>&#x02013;<lpage>898</lpage> (<year>2009</year>). <pub-id pub-id-type="doi">10.1038/nature08187</pub-id>
+<pub-id pub-id-type="pmid">19633652</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0138"><label>138</label><mixed-citation publication-type="journal" id="enb212035-cit-0138">
+<string-name>
+<surname>Philp</surname>, <given-names>J.</given-names>
+</string-name>: <article-title>6 Digitalisation in the bioeconomy: convergence for the bio&#x02010;based industries</article-title>. <source>Digit. Sci. Technol. Innov</source>, <fpage>143</fpage> (<year>2020</year>)</mixed-citation></ref><ref id="enb212035-bib-0139"><label>139</label><mixed-citation publication-type="journal" id="enb212035-cit-0139">
+<string-name>
+<surname>Cobb</surname>, <given-names>R.E.</given-names>
+</string-name>, <string-name>
+<surname>Sun</surname>, <given-names>N.</given-names>
+</string-name>, <string-name>
+<surname>Zhao</surname>, <given-names>H.</given-names>
+</string-name>: <article-title>Directed evolution as a powerful synthetic biology tool</article-title>. <source>Methods</source>
+<volume>60</volume>(<issue>1</issue>), <fpage>81</fpage>&#x02013;<lpage>90</lpage> (<year>2013</year>). <pub-id pub-id-type="doi">10.1016/j.ymeth.2012.03.009</pub-id>
+<pub-id pub-id-type="pmid">22465795</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0140"><label>140</label><mixed-citation publication-type="journal" id="enb212035-cit-0140">
+<string-name>
+<surname>Wang</surname>, <given-names>Y.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>Directed evolution: methodologies and applications</article-title>. <source>Chem. Rev.</source>
+<volume>121</volume>(<issue>20</issue>), <fpage>12384</fpage>&#x02013;<lpage>12444</lpage> (<year>2021</year>). <pub-id pub-id-type="doi">10.1021/acs.chemrev.1c00260</pub-id>
+<pub-id pub-id-type="pmid">34297541</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0141"><label>141</label><mixed-citation publication-type="journal" id="enb212035-cit-0141">
+<string-name>
+<surname>Casas</surname>, <given-names>A.</given-names>
+</string-name>, et&#x000a0;al.: <article-title>PASIV: a pooled approach&#x02010;based workflow to overcome toxicity&#x02010;induced design of experiments failures and inefficiencies</article-title>. <source>ACS Synth. Biol.</source>
+<volume>11</volume>(<issue>3</issue>), <fpage>1272</fpage>&#x02013;<lpage>1291</lpage> (<year>2022</year>). <pub-id pub-id-type="doi">10.1021/acssynbio.1c00562</pub-id>
+<pub-id pub-id-type="pmid">35261238</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0142"><label>142</label><mixed-citation publication-type="journal" id="enb212035-cit-0142">
+<string-name>
+<surname>Castle</surname>, <given-names>S.D.</given-names>
+</string-name>, <string-name>
+<surname>Grierson</surname>, <given-names>C.S.</given-names>
+</string-name>, <string-name>
+<surname>Gorochowski</surname>, <given-names>T.E.</given-names>
+</string-name>: <article-title>Towards an engineering theory of evolution</article-title>. <source>Nat. Commun.</source>
+<volume>12</volume>(<issue>1</issue>), <elocation-id>3326</elocation-id> (<year>2021</year>). <pub-id pub-id-type="doi">10.1038/s41467-021-23573-3</pub-id>
+<pub-id pub-id-type="pmid">34099656</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0143"><label>143</label><mixed-citation publication-type="journal" id="enb212035-cit-0143">
+<string-name>
+<surname>Hanson</surname>, <given-names>A.D.</given-names>
+</string-name>, <string-name>
+<surname>Lorenzo</surname>, <given-names>V.de</given-names>
+</string-name>: <article-title>Synthetic biology&#x02500;high time to deliver?</article-title>
+<source>ACS Synth. Biol.</source>
+<volume>12</volume>(<issue>6</issue>), <fpage>1579</fpage>&#x02013;<lpage>1582</lpage> (<year>2023</year>). <pub-id pub-id-type="doi">10.1021/acssynbio.3c00238</pub-id>
+<pub-id pub-id-type="pmid">37322887</pub-id>
+</mixed-citation></ref><ref id="enb212035-bib-0144"><label>144</label><mixed-citation publication-type="miscellaneous" id="enb212035-cit-0144">
+<article-title>Rothamsted research: advancing sustainable agriculture</article-title>. <ext-link xlink:href="https://www.rothamsted.ac.uk/" ext-link-type="uri">https://www.rothamsted.ac.uk/</ext-link> Accessed March 2024</mixed-citation></ref></ref-list></back></article>

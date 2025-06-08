@@ -1,0 +1,986 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Algorithms Mol Biol</journal-id><journal-id journal-id-type="iso-abbrev">Algorithms Mol Biol</journal-id><journal-title-group><journal-title>Algorithms for Molecular Biology : AMB</journal-title></journal-title-group><issn pub-type="epub">1748-7188</issn><publisher><publisher-name>BioMed Central</publisher-name><publisher-loc>London</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">40188341</article-id><article-id pub-id-type="pmc">PMC11972476</article-id>
+<article-id pub-id-type="publisher-id">275</article-id><article-id pub-id-type="doi">10.1186/s13015-025-00275-9</article-id><article-categories><subj-group subj-group-type="heading"><subject>Research</subject></subj-group></article-categories><title-group><article-title>Unbiased anchors for reliable genome-wide synteny detection</article-title></title-group><contrib-group><contrib contrib-type="author" corresp="yes"><name><surname>K&#x000e4;ther</surname><given-names>Karl K.</given-names></name><address><email>karl@bioinf.uni-leipzig.de</email></address><xref ref-type="aff" rid="Aff1">1</xref><xref ref-type="aff" rid="Aff7">7</xref></contrib><contrib contrib-type="author"><name><surname>Remmel</surname><given-names>Andreas</given-names></name><xref ref-type="aff" rid="Aff2">2</xref><xref ref-type="aff" rid="Aff7">7</xref></contrib><contrib contrib-type="author"><name><surname>Lemke</surname><given-names>Steffen</given-names></name><xref ref-type="aff" rid="Aff2">2</xref><xref ref-type="aff" rid="Aff7">7</xref></contrib><contrib contrib-type="author"><name><surname>Stadler</surname><given-names>Peter F.</given-names></name><xref ref-type="aff" rid="Aff1">1</xref><xref ref-type="aff" rid="Aff3">3</xref><xref ref-type="aff" rid="Aff4">4</xref><xref ref-type="aff" rid="Aff5">5</xref><xref ref-type="aff" rid="Aff6">6</xref><xref ref-type="aff" rid="Aff7">7</xref></contrib><aff id="Aff1"><label>1</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/03s7gtk40</institution-id><institution-id institution-id-type="GRID">grid.9647.c</institution-id><institution-id institution-id-type="ISNI">0000 0004 7669 9786</institution-id><institution>Bioinformatics Group, Department of Computer Science, and Interdisciplinary Center for Bioinformatics, </institution><institution>Leipzig University, </institution></institution-wrap>H&#x000e4;rtelstrasse 16-18, D-04017 Leipzig, Germany </aff><aff id="Aff2"><label>2</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/00b1c9541</institution-id><institution-id institution-id-type="GRID">grid.9464.f</institution-id><institution-id institution-id-type="ISNI">0000 0001 2290 1502</institution-id><institution>Zoology Department, </institution><institution>University of Hohenheim, </institution></institution-wrap>10587 Stuttgart, Germany </aff><aff id="Aff3"><label>3</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/00ez2he07</institution-id><institution-id institution-id-type="GRID">grid.419532.8</institution-id><institution-id institution-id-type="ISNI">0000 0004 0491 7940</institution-id><institution>Max Planck Institute for Mathematics in the Sciences, </institution></institution-wrap>Inselstra&#x000df;e 22, D-04103 Leipzig, Germany </aff><aff id="Aff4"><label>4</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/03prydq77</institution-id><institution-id institution-id-type="GRID">grid.10420.37</institution-id><institution-id institution-id-type="ISNI">0000 0001 2286 1424</institution-id><institution>Department of Theoretical Chemistry, </institution><institution>University of Vienna, </institution></institution-wrap>W&#x000e4;hringerstra&#x000df;e 17, A-1090 Wien, Austria </aff><aff id="Aff5"><label>5</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/059yx9a68</institution-id><institution-id institution-id-type="GRID">grid.10689.36</institution-id><institution-id institution-id-type="ISNI">0000 0004 9129 0751</institution-id><institution>Facultad de Ciencias, </institution><institution>Universidad National de Colombia, </institution></institution-wrap>Bogot&#x000e1;, Colombia </aff><aff id="Aff6"><label>6</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/035b05819</institution-id><institution-id institution-id-type="GRID">grid.5254.6</institution-id><institution-id institution-id-type="ISNI">0000 0001 0674 042X</institution-id><institution>Center for non-coding RNA in Technology and Health, </institution><institution>University of Copenhagen, </institution></institution-wrap>Ridebanevej 9, DK-1870 Frederiksberg, Denmark </aff><aff id="Aff7"><label>7</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/01arysc35</institution-id><institution-id institution-id-type="GRID">grid.209665.e</institution-id><institution-id institution-id-type="ISNI">0000 0001 1941 1940</institution-id><institution>Santa Fe Institute, </institution></institution-wrap>1399 Hyde Park Rd., Santa Fe, NM 87501 USA </aff></contrib-group><pub-date pub-type="epub"><day>5</day><month>4</month><year>2025</year></pub-date><pub-date pub-type="pmc-release"><day>5</day><month>4</month><year>2025</year></pub-date><pub-date pub-type="collection"><year>2025</year></pub-date><volume>20</volume><elocation-id>5</elocation-id><history><date date-type="received"><day>13</day><month>9</month><year>2024</year></date><date date-type="accepted"><day>12</day><month>3</month><year>2025</year></date></history><permissions><copyright-statement>&#x000a9; The Author(s) 2025</copyright-statement><copyright-year>2025</copyright-year><license><ali:license_ref specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p><bold>Open Access</bold> This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article's Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article's Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link>.</license-p></license></permissions><abstract id="Abs1"><p id="Par1">Orthology inference lies at the foundation of comparative genomics research. The correct identification of loci which descended from a common ancestral sequence is not only complicated by sequence divergence but also duplication and other genome rearrangements. The conservation of gene order, i.e. synteny, is used in conjunction with sequence similarity as an additional factor for orthology determination. Current approaches, however, rely on genome annotations and are therefore limited. Here we present an annotation-free approach and compare it to synteny analysis with annotations. We find that our approach works better in closely related genomes whereas there is a better performance with annotations for more distantly related genomes. Overall, the presented algorithm offers a useful alternative to annotation-based methods and can outperform them in many cases.</p><sec><title>Supplementary Information</title><p>The online version contains supplementary material available at 10.1186/s13015-025-00275-9.</p></sec></abstract><kwd-group xml:lang="en"><title>Keywords</title><kwd>Synteny</kwd><kwd>Anchor</kwd><kwd>k-mer</kwd></kwd-group><funding-group><award-group><funding-source><institution>DFG</institution></funding-source><award-id>502862570</award-id></award-group></funding-group><funding-group><award-group><funding-source><institution>Universit&#x000e4;t Leipzig (1039)</institution></funding-source></award-group><open-access><p>Open Access funding enabled and organized by Projekt DEAL.</p></open-access></funding-group><custom-meta-group><custom-meta><meta-name>issue-copyright-statement</meta-name><meta-value>&#x000a9; BioMed Central Ltd., part of Springer Nature 2025</meta-value></custom-meta></custom-meta-group></article-meta></front><body><sec id="Sec1"><title>Introduction</title><p id="Par2">The identification of orthologous sequence elements is the fundamental task in comparative genomics. Orthology assignments form the basis of most approaches in phylogenetics and phylogenomics [<xref ref-type="bibr" rid="CR1">1</xref>&#x02013;<xref ref-type="bibr" rid="CR3">3</xref>], underly sequence annotation workflows and serve as starting points for the a wide array of downstream analyses in computational evolutionary biology. The most common, albeit not always reliable method to establish orthology is sequence similarity, most commonly by means of pairwise best matches [<xref ref-type="bibr" rid="CR4">4</xref>&#x02013;<xref ref-type="bibr" rid="CR6">6</xref>]. Genomes, however, rapidly evolve through sequence duplications, and hence even the genome of very closely related organisms are not entirely composed of 1-1 orthologs, as exemplified by human- and chimp-specific KRAB-ZNF genes [<xref ref-type="bibr" rid="CR7">7</xref>]. In more distantly related species, parts of the genome will have diverged beyond the detection limit of sequence similarity searches. This is a critical issue in particular for the investigation of rapidly evolving features, including some classical structured ncRNAs [<xref ref-type="bibr" rid="CR8">8</xref>] and most long non-coding RNAs [<xref ref-type="bibr" rid="CR9">9</xref>]. Unidentified orthologs leads to systematic biases, such as underestimated gene ages [<xref ref-type="bibr" rid="CR10">10</xref>] and overestimates of taxon-specific innovations [<xref ref-type="bibr" rid="CR11">11</xref>]. In case of repeat-like gene families, which in particular also include tRNAs and clusters of histone genes, sequence similarity is insufficient to establish orthology due to various mechanisms of concerted evolution that keep paralogous gene effectively identical in sequence [<xref ref-type="bibr" rid="CR12">12</xref>].</p><p id="Par3">The most common interpretation of the notion of synteny in modern genomics defines <italic>syntenic regions</italic> (in two different genomes or in same genome) as genomic intervals that harbour multiple homologous genomic features in preserved order and relative orientation [<xref ref-type="bibr" rid="CR13">13</xref>, <xref ref-type="bibr" rid="CR14">14</xref>]. Synteny thus is defined relative to a concept of homology, which is interpreted here in the strict sense of [<xref ref-type="bibr" rid="CR15">15</xref>] as descent from a common ancestor. Again following [<xref ref-type="bibr" rid="CR15">15</xref>], two genes or other genomic features are orthologs if their last common ancestor was a speciation event, and paralogs if they trace back to a duplication within an ancestral genome. Although not strictly speaking part of the definition, synteny will almost always be the consequence of preserving an ancestral gene order. Synteny thus is a very strong indication of homology at the level of genome organization. This parallels the use of sequence similarity as a means of inferring homology at the level of genes and other sequence features. As a consequence, synteny can supplement similarity information in several ways: first, limiting homology searches to small regions between syntenically conserved anchors increases sensitivity because the search space is smaller. Sequence similarities that are undetectable in genome-wide comparisons may become readily observable. Paralogous loci, in particular those that are subject to concerted evolution and are thus effectively indistinguishable by sequence similarity, can can be disambiguated due to their location between unambiguous orthologous &#x0201c;anchors&#x0201d; [<xref ref-type="bibr" rid="CR16">16</xref>]. Moreover, synteny itself has recently been discussed as source of phylogentic information [<xref ref-type="bibr" rid="CR17">17</xref>].</p><p id="Par4">The computational problem of inferring syntenic regions takes as its input ordered lists of loci for each genome or genomic region and an assignment of homologous loci, usually quantified by a measure of (sequence) similarity such as blast bit score, see e.g. [<xref ref-type="bibr" rid="CR18">18</xref>] for a recent review of the different approaches. Software tools commonly used in comparative genomics to map synteny at a genome-wide scale, such as DAGchainer [<xref ref-type="bibr" rid="CR19">19</xref>] and MCScanX [<xref ref-type="bibr" rid="CR20">20</xref>], require genome annotations as input, even though the underlying algorithms are agnostic to the biological nature of the homologous loci. In practise, these methods are thus effectively restricted to protein coding genes. The focus of many studies on distant genomes, moreover, also suggest a restriction to the best conserved sequences, i.e., to protein coding genes.</p><p id="Par5">For a pair of closely related genomes <italic>G</italic> and <italic>H</italic>, synteny anchors in essence describe all the DNA that inherited without duplications or deletions from their common ancestor, and this defines the unique part of their genome-wide alignment. Genome-wide alignments therefore can be used to determine orthology in this limit. Despite major progress in the last years [<xref ref-type="bibr" rid="CR21">21</xref>], pipelines for multiple genome alignments are very resource-intensive. It is therefore of practical interest to identify synteny anchors without the need to first produce complete alignments which necessarily involves the handling of non-unique homologies. Starting from synteny anchors in fact may be a means of reducing the computational cost of genome alignment pipelines.</p><p id="Par6">Synteny can be assessed by directly comparing genomic sequences, resulting in synteny plots. Unambiguous pairwise best (blast) matches then serve as &#x0201c;synteny anchors&#x0201d; identifying positions in two genomes that are unambigously orthologous to each other. This idea was used e.g. in [<xref ref-type="bibr" rid="CR16">16</xref>] to help disambiguate orthology of tRNA genes. Annotation-based methods drastically reduce the computational efforts. A restriction to protein-coding genes, morever, allows to perform homology assessemnts at the level of amino-acid sequences. This boosts sensitivity and thus expands the phylogenetic scope. On the otherhand, the annotation-based approach limits the resolution of the synteny maps since the number of coding genes in a genome is bounded to a few ten thousands. This restriction is not necessary, however, if more closely related genomes are considered and high resolution is desirable. This is the case in particular if small local rearrangements or the emergence of genomic innovations is in the focus.</p><p id="Par7">In [<xref ref-type="bibr" rid="CR22">22</xref>] synteny anchors were considered from a more formal point of view and it was shown that potential synteny anchors comprise &#x0201c;sufficiently unique&#x0201d; sequences in each genome. That is, in order to be a good candidate for having a unique ortholog in a related species, a sequence also needs to be sufficiently different from all other loci in its own genome. This suggest that synteny detection can be split into three stages: <list list-type="order"><list-item><p id="Par8">pre-computation of anchor candidates in each genome;</p></list-item><list-item><p id="Par9">pairwise cross-species comparisons limited to anchor candidates and identification of rearrangements between two species;</p></list-item><list-item><p id="Par10">assessment of consistent synteny across multiple species and phylogenetic placement of rearrangement events.</p></list-item></list>An efficient pre-computation of anchor candidates requires a fast means of identifying likely regions of &#x0201c;sufficiently unique&#x0201d; DNA, as well as a fast way to checking that the candidates indeed are sufficiently different from all other genomic regions. Such an approach has potential advantages: Just like annotation data, anchor candidates can be pre-computed independently for each genome and stored as simple annotation track. In contrast to gene annotations, however, anchor candidates are not biased <italic>a priori</italic> towards sequences with particular biological functions. Therefore, they can be expected to yield a higher and more uniform coverage. Nevertheless we cannot expect a uniform distribution for anchor candidates; after all, it has long been known that repetitive elements exhibit a non-uniform genomic distribution [<xref ref-type="bibr" rid="CR23">23</xref>].</p><p id="Par11">In this contribution we are primarily concerned with the first step of synteny detection. We further subdivide the task into two stages: (1) identification of an initial set of anchor candidates and (2) extraction of true anchors from the candidate set. For the latter, we shall see that a simple blast comparison is sufficient to verify that a piece of genomic sequence has no other similar match in the same genome. The more difficult task is the rapid identification of moderate size regions that serve as initial candidates. This task is tackled here with the help of <italic>k</italic>-mer statistics. We then describe an implementation of this approach which we refer to as the AncST (<bold>Anc</bold>hor <bold>S</bold>ynteny <bold>T</bold>ool) and compare the use of nucleic acid anchors with the use of annotation-based (protein) anchors.</p></sec><sec id="Sec2"><title>Methods</title><sec id="Sec3"><title>Theory</title><p id="Par12">The theoretical foundation for the anchor-based approach was sketched in the conference proceedings contribution [<xref ref-type="bibr" rid="CR22">22</xref>]. Here we give a somewhat more formal account. A genome <italic>G</italic> is represented as a string over the DNA alphabet <inline-formula id="IEq1"><alternatives><tex-math id="d33e426">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\{A,C,G,T\}$$\end{document}</tex-math><mml:math id="d33e431"><mml:mrow><mml:mo stretchy="false">{</mml:mo><mml:mi>A</mml:mi><mml:mo>,</mml:mo><mml:mi>C</mml:mi><mml:mo>,</mml:mo><mml:mi>G</mml:mi><mml:mo>,</mml:mo><mml:mi>T</mml:mi><mml:mo stretchy="false">}</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq1.gif"/></alternatives></inline-formula> with an additional &#x0201c;line break&#x0201d; character marking the ends of assembly fragments (chromosomes, scaffolds, or contigs). The set <italic>S</italic>(<italic>G</italic>) of all contiguous DNA sequences present in <italic>G</italic> comprises all substrings of <italic>G</italic> that do not contain a line break as well as their reverse complements. DNA sequences are compared by a metric distance function <italic>d</italic>, which in practise is derived from sequence alignments.</p><p id="Par13">In order to determine whether a string <inline-formula id="IEq2"><alternatives><tex-math id="d33e464">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w\in S(G)$$\end{document}</tex-math><mml:math id="d33e469"><mml:mrow><mml:mi>w</mml:mi><mml:mo>&#x02208;</mml:mo><mml:mi>S</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>G</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq2.gif"/></alternatives></inline-formula> is &#x0201c;sufficiently unique&#x0201d; in the genome <italic>G</italic> to serve as a synteny anchor, we compare <italic>w</italic> to all non-overlapping subsequences. We write <inline-formula id="IEq3"><alternatives><tex-math id="d33e487">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$G\setminus \{w\}$$\end{document}</tex-math><mml:math id="d33e492"><mml:mrow><mml:mi>G</mml:mi><mml:mo lspace="0.15em" rspace="0.15em" stretchy="false">\</mml:mo><mml:mo stretchy="false">{</mml:mo><mml:mi>w</mml:mi><mml:mo stretchy="false">}</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq3.gif"/></alternatives></inline-formula> for the genome with the query <italic>w</italic> removed from the genome in one its location of origin, which in practice is achieved by replacing <italic>w</italic> by &#x0201c;line breaks&#x0201d;. This is necessary since <italic>w</italic> necessarily has small distances to its substrings. Note that <inline-formula id="IEq4"><alternatives><tex-math id="d33e514">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w\in S(G\setminus \{w\})$$\end{document}</tex-math><mml:math id="d33e519"><mml:mrow><mml:mi>w</mml:mi><mml:mo>&#x02208;</mml:mo><mml:mi>S</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>G</mml:mi><mml:mo lspace="0.15em" rspace="0.15em" stretchy="false">\</mml:mo><mml:mo stretchy="false">{</mml:mo><mml:mi>w</mml:mi><mml:mo stretchy="false">}</mml:mo><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq4.gif"/></alternatives></inline-formula> whenever the genome <italic>G</italic> contains a second copy of <italic>w</italic>. By definition, if <inline-formula id="IEq5"><alternatives><tex-math id="d33e544">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w'\in S(G{\setminus }\{w\})$$\end{document}</tex-math><mml:math id="d33e549"><mml:mrow><mml:msup><mml:mi>w</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo>&#x02208;</mml:mo><mml:mi>S</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>G</mml:mi><mml:mo lspace="0.15em" rspace="0.15em" stretchy="false">\</mml:mo><mml:mrow><mml:mo stretchy="false">{</mml:mo><mml:mi>w</mml:mi><mml:mo stretchy="false">}</mml:mo></mml:mrow><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq5.gif"/></alternatives></inline-formula>, then the reverse complement of <inline-formula id="IEq6"><alternatives><tex-math id="d33e573">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w'$$\end{document}</tex-math><mml:math id="d33e578"><mml:msup><mml:mi>w</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq6.gif"/></alternatives></inline-formula> is also contained in <inline-formula id="IEq7"><alternatives><tex-math id="d33e584">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$S(G\setminus \{w\})$$\end{document}</tex-math><mml:math id="d33e589"><mml:mrow><mml:mi>S</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>G</mml:mi><mml:mo lspace="0.15em" rspace="0.15em" stretchy="false">\</mml:mo><mml:mo stretchy="false">{</mml:mo><mml:mi>w</mml:mi><mml:mo stretchy="false">}</mml:mo><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq7.gif"/></alternatives></inline-formula>. This suggests to quantify the &#x0201c;uniqueness&#x0201d; of <italic>w</italic> in <italic>G</italic> by its distance <inline-formula id="IEq8"><alternatives><tex-math id="d33e612">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d(w,w')$$\end{document}</tex-math><mml:math id="d33e617"><mml:mrow><mml:mi>d</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:msup><mml:mi>w</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq8.gif"/></alternatives></inline-formula> to all <inline-formula id="IEq9"><alternatives><tex-math id="d33e631">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w'\in S(G\setminus \{w\})$$\end{document}</tex-math><mml:math id="d33e636"><mml:mrow><mml:msup><mml:mi>w</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo>&#x02208;</mml:mo><mml:mi>S</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>G</mml:mi><mml:mo lspace="0.15em" rspace="0.15em" stretchy="false">\</mml:mo><mml:mrow><mml:mo stretchy="false">{</mml:mo><mml:mi>w</mml:mi><mml:mo stretchy="false">}</mml:mo></mml:mrow><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq9.gif"/></alternatives></inline-formula>. In practise, <inline-formula id="IEq10"><alternatives><tex-math id="d33e660">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d(w,w')$$\end{document}</tex-math><mml:math id="d33e665"><mml:mrow><mml:mi>d</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:msup><mml:mi>w</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq10.gif"/></alternatives></inline-formula> can be computed of course by means of fast, index-based method of sequence comparison. The leads us to</p><sec id="FPar1"><title>Definition 1</title><p id="Par14">A string <inline-formula id="IEq11"><alternatives><tex-math id="d33e683">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w\in S(G)$$\end{document}</tex-math><mml:math id="d33e688"><mml:mrow><mml:mi>w</mml:mi><mml:mo>&#x02208;</mml:mo><mml:mi>S</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>G</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq11.gif"/></alternatives></inline-formula> is <inline-formula id="IEq12"><alternatives><tex-math id="d33e700">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d_0$$\end{document}</tex-math><mml:math id="d33e705"><mml:msub><mml:mi>d</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq12.gif"/></alternatives></inline-formula>-unique in <italic>G</italic> if <inline-formula id="IEq13"><alternatives><tex-math id="d33e714">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\displaystyle \min _{w'\in S(G\setminus \{w\})} d(w,w') &#x0003e; d_0$$\end{document}</tex-math><mml:math id="d33e719"><mml:mstyle displaystyle="true" scriptlevel="0"><mml:mrow><mml:munder><mml:mo movablelimits="true">min</mml:mo><mml:mrow><mml:msup><mml:mi>w</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo>&#x02208;</mml:mo><mml:mi>S</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>G</mml:mi><mml:mo lspace="0.15em" rspace="0.15em" stretchy="false">\</mml:mo><mml:mrow><mml:mo stretchy="false">{</mml:mo><mml:mi>w</mml:mi><mml:mo stretchy="false">}</mml:mo></mml:mrow><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:munder><mml:mi>d</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:msup><mml:mi>w</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo>&#x0003e;</mml:mo><mml:msub><mml:mi>d</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:mrow></mml:mstyle></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq13.gif"/></alternatives></inline-formula>.</p><p>It follows directly from the definition that if <italic>w</italic> is <inline-formula id="IEq14"><alternatives><tex-math id="d33e767">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d_0$$\end{document}</tex-math><mml:math id="d33e772"><mml:msub><mml:mi>d</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq14.gif"/></alternatives></inline-formula>-unique in <italic>G</italic> then it is also <inline-formula id="IEq15"><alternatives><tex-math id="d33e781">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d_0'$$\end{document}</tex-math><mml:math id="d33e786"><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mo>&#x02032;</mml:mo></mml:msubsup></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq15.gif"/></alternatives></inline-formula>-unique for all <inline-formula id="IEq16"><alternatives><tex-math id="d33e793">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d_0'\le d_0$$\end{document}</tex-math><mml:math id="d33e798"><mml:mrow><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mo>&#x02032;</mml:mo></mml:msubsup><mml:mo>&#x02264;</mml:mo><mml:msub><mml:mi>d</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq16.gif"/></alternatives></inline-formula>.</p><p>The key idea behind synteny anchors is to identify regions within a genome <italic>G</italic> that can be guaranteed to be unique reciprocal matches with another genome without having to compute complete pairwise comparisons of all genomes. More formally, <inline-formula id="IEq17"><alternatives><tex-math id="d33e815">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w\in S(G)$$\end{document}</tex-math><mml:math id="d33e820"><mml:mrow><mml:mi>w</mml:mi><mml:mo>&#x02208;</mml:mo><mml:mi>S</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>G</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq17.gif"/></alternatives></inline-formula> and <inline-formula id="IEq18"><alternatives><tex-math id="d33e832">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y\in S(H)$$\end{document}</tex-math><mml:math id="d33e837"><mml:mrow><mml:mi>y</mml:mi><mml:mo>&#x02208;</mml:mo><mml:mi>S</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>H</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq18.gif"/></alternatives></inline-formula> are reciprocal best matches if <inline-formula id="IEq19"><alternatives><tex-math id="d33e849">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d(w,y)&#x0003c;d(w,y')$$\end{document}</tex-math><mml:math id="d33e854"><mml:mrow><mml:mi>d</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:mi>y</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo>&#x0003c;</mml:mo><mml:mi>d</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:msup><mml:mi>y</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq19.gif"/></alternatives></inline-formula> for all <inline-formula id="IEq20"><alternatives><tex-math id="d33e879">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y'\in S(H)$$\end{document}</tex-math><mml:math id="d33e884"><mml:mrow><mml:msup><mml:mi>y</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo>&#x02208;</mml:mo><mml:mi>S</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>H</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq20.gif"/></alternatives></inline-formula> and <inline-formula id="IEq21"><alternatives><tex-math id="d33e900">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d(w,y)&#x0003c;d(w',y)$$\end{document}</tex-math><mml:math id="d33e905"><mml:mrow><mml:mi>d</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:mi>y</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo>&#x0003c;</mml:mo><mml:mi>d</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:msup><mml:mi>w</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo>,</mml:mo><mml:mi>y</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq21.gif"/></alternatives></inline-formula> for all <inline-formula id="IEq22"><alternatives><tex-math id="d33e930">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w'\in {S(H)}$$\end{document}</tex-math><mml:math id="d33e935"><mml:mrow><mml:msup><mml:mi>w</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo>&#x02208;</mml:mo><mml:mrow><mml:mi>S</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>H</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq22.gif"/></alternatives></inline-formula>. Here we are interested in a slightly weaker property:</p></sec><sec id="FPar2"><title>Definition 2</title><p id="Par17">Let <italic>G</italic> and <italic>H</italic> be two genomes, <inline-formula id="IEq23"><alternatives><tex-math id="d33e960">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w\in S(G)$$\end{document}</tex-math><mml:math id="d33e965"><mml:mrow><mml:mi>w</mml:mi><mml:mo>&#x02208;</mml:mo><mml:mi>S</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>G</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq23.gif"/></alternatives></inline-formula> and <inline-formula id="IEq24"><alternatives><tex-math id="d33e977">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y\in S(H)$$\end{document}</tex-math><mml:math id="d33e982"><mml:mrow><mml:mi>y</mml:mi><mml:mo>&#x02208;</mml:mo><mml:mi>S</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>H</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq24.gif"/></alternatives></inline-formula>. Then <italic>w</italic> and <italic>y</italic> are <italic>anchor matches</italic> if <inline-formula id="IEq25"><alternatives><tex-math id="d33e1004">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d(w,y)&#x0003c;d(w',y)$$\end{document}</tex-math><mml:math id="d33e1009"><mml:mrow><mml:mi>d</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:mi>y</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo>&#x0003c;</mml:mo><mml:mi>d</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:msup><mml:mi>w</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo>,</mml:mo><mml:mi>y</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq25.gif"/></alternatives></inline-formula> for all <inline-formula id="IEq26"><alternatives><tex-math id="d33e1034">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w'\in S(G\setminus \{w\})$$\end{document}</tex-math><mml:math id="d33e1039"><mml:mrow><mml:msup><mml:mi>w</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo>&#x02208;</mml:mo><mml:mi>S</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>G</mml:mi><mml:mo lspace="0.15em" rspace="0.15em" stretchy="false">\</mml:mo><mml:mrow><mml:mo stretchy="false">{</mml:mo><mml:mi>w</mml:mi><mml:mo stretchy="false">}</mml:mo></mml:mrow><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq26.gif"/></alternatives></inline-formula> and <inline-formula id="IEq27"><alternatives><tex-math id="d33e1062">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d(w,y)&#x0003c;d(w,y')$$\end{document}</tex-math><mml:math id="d33e1067"><mml:mrow><mml:mi>d</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:mi>y</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo>&#x0003c;</mml:mo><mml:mi>d</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:msup><mml:mi>y</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq27.gif"/></alternatives></inline-formula> for all <inline-formula id="IEq28"><alternatives><tex-math id="d33e1092">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y'\in S({H}\setminus \{y\})$$\end{document}</tex-math><mml:math id="d33e1097"><mml:mrow><mml:msup><mml:mi>y</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo>&#x02208;</mml:mo><mml:mi>S</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>H</mml:mi><mml:mo lspace="0.15em" rspace="0.15em" stretchy="false">\</mml:mo><mml:mrow><mml:mo stretchy="false">{</mml:mo><mml:mi>y</mml:mi><mml:mo stretchy="false">}</mml:mo></mml:mrow><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq28.gif"/></alternatives></inline-formula>.</p><p>The idea here is that <italic>w</italic> and <italic>y</italic> define unique genomic locations up to slight shifts within the alignment of <italic>w</italic> and <italic>y</italic>. The following simple observation forms the basis our approach:</p></sec><sec id="FPar3"><title>Lemma 1</title><p id="Par19">Let <inline-formula id="IEq29"><alternatives><tex-math id="d33e1138">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w\in S(G)$$\end{document}</tex-math><mml:math id="d33e1143"><mml:mrow><mml:mi>w</mml:mi><mml:mo>&#x02208;</mml:mo><mml:mi>S</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>G</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq29.gif"/></alternatives></inline-formula> be a <inline-formula id="IEq30"><alternatives><tex-math id="d33e1155">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d_0^G$$\end{document}</tex-math><mml:math id="d33e1160"><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mi>G</mml:mi></mml:msubsup></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq30.gif"/></alternatives></inline-formula>-unique substring in the genome <italic>G</italic> and <inline-formula id="IEq31"><alternatives><tex-math id="d33e1170">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y\in S(H)$$\end{document}</tex-math><mml:math id="d33e1175"><mml:mrow><mml:mi>y</mml:mi><mml:mo>&#x02208;</mml:mo><mml:mi>S</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>H</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq31.gif"/></alternatives></inline-formula> be a <inline-formula id="IEq32"><alternatives><tex-math id="d33e1187">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d_0^H$$\end{document}</tex-math><mml:math id="d33e1192"><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mi>H</mml:mi></mml:msubsup></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq32.gif"/></alternatives></inline-formula>-unique substring in <italic>H</italic> and assume that <inline-formula id="IEq33"><alternatives><tex-math id="d33e1203">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d(w,y)\le \min (d_0^G,d_0^H)/2$$\end{document}</tex-math><mml:math id="d33e1208"><mml:mrow><mml:mi>d</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:mi>y</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo>&#x02264;</mml:mo><mml:mo movablelimits="true">min</mml:mo><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mi>G</mml:mi></mml:msubsup><mml:mo>,</mml:mo><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mi>H</mml:mi></mml:msubsup><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo stretchy="false">/</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq33.gif"/></alternatives></inline-formula>. Then <italic>w</italic> and <italic>y</italic> form an anchor match.</p></sec><sec id="FPar4"><title>Proof</title><p id="Par20">Set <inline-formula id="IEq34"><alternatives><tex-math id="d33e1251">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d_1{:}{=}\min (d_0^G,d_0^H)/2$$\end{document}</tex-math><mml:math id="d33e1256"><mml:mrow><mml:msub><mml:mi>d</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>:</mml:mo><mml:mo>=</mml:mo><mml:mo movablelimits="true">min</mml:mo><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mi>G</mml:mi></mml:msubsup><mml:mo>,</mml:mo><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mi>H</mml:mi></mml:msubsup><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo stretchy="false">/</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq34.gif"/></alternatives></inline-formula>. For any <inline-formula id="IEq35"><alternatives><tex-math id="d33e1284">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y'\in S(H)$$\end{document}</tex-math><mml:math id="d33e1289"><mml:mrow><mml:msup><mml:mi>y</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo>&#x02208;</mml:mo><mml:mi>S</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>H</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq35.gif"/></alternatives></inline-formula>, the definition of <inline-formula id="IEq36"><alternatives><tex-math id="d33e1304">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d_0^G$$\end{document}</tex-math><mml:math id="d33e1309"><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mi>G</mml:mi></mml:msubsup></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq36.gif"/></alternatives></inline-formula>-uniqueness and the triangle inequality yields <inline-formula id="IEq37"><alternatives><tex-math id="d33e1316">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d_0^G&#x0003c; d(w,w')\le d(w,y)+d(w,y')$$\end{document}</tex-math><mml:math id="d33e1321"><mml:mrow><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mi>G</mml:mi></mml:msubsup><mml:mo>&#x0003c;</mml:mo><mml:mi>d</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:msup><mml:mi>w</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo>&#x02264;</mml:mo><mml:mi>d</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:mi>y</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo>+</mml:mo><mml:mi>d</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:msup><mml:mi>y</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq37.gif"/></alternatives></inline-formula>. Thus <inline-formula id="IEq38"><alternatives><tex-math id="d33e1363">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d(w,y)&#x0003c;d_1$$\end{document}</tex-math><mml:math id="d33e1368"><mml:mrow><mml:mi>d</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:mi>y</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo>&#x0003c;</mml:mo><mml:msub><mml:mi>d</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq38.gif"/></alternatives></inline-formula> implies <inline-formula id="IEq39"><alternatives><tex-math id="d33e1386">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d_0^G-d(w,y)&#x0003c; d_0^G-d_1 &#x0003c; d(w,y')$$\end{document}</tex-math><mml:math id="d33e1391"><mml:mrow><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mi>G</mml:mi></mml:msubsup><mml:mo>-</mml:mo><mml:mi>d</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:mi>y</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo>&#x0003c;</mml:mo><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mi>G</mml:mi></mml:msubsup><mml:mo>-</mml:mo><mml:msub><mml:mi>d</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>&#x0003c;</mml:mo><mml:mi>d</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:msup><mml:mi>y</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq39.gif"/></alternatives></inline-formula>. Analogously, we obtain <inline-formula id="IEq40"><alternatives><tex-math id="d33e1430">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d_0^H-d_1 &#x0003c; d(w',y)$$\end{document}</tex-math><mml:math id="d33e1435"><mml:mrow><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mi>H</mml:mi></mml:msubsup><mml:mo>-</mml:mo><mml:msub><mml:mi>d</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>&#x0003c;</mml:mo><mml:mi>d</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:msup><mml:mi>w</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo>,</mml:mo><mml:mi>y</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq40.gif"/></alternatives></inline-formula>. Since <inline-formula id="IEq41"><alternatives><tex-math id="d33e1459">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d_0^G-d_1 \ge d_0^G/2\ge d_1$$\end{document}</tex-math><mml:math id="d33e1464"><mml:mrow><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mi>G</mml:mi></mml:msubsup><mml:mo>-</mml:mo><mml:msub><mml:mi>d</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>&#x02265;</mml:mo><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mi>G</mml:mi></mml:msubsup><mml:mo stretchy="false">/</mml:mo><mml:mn>2</mml:mn><mml:mo>&#x02265;</mml:mo><mml:msub><mml:mi>d</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq41.gif"/></alternatives></inline-formula> and <inline-formula id="IEq42"><alternatives><tex-math id="d33e1488">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d_0^H-d_1 \ge d_0^H/2\ge d_1$$\end{document}</tex-math><mml:math id="d33e1493"><mml:mrow><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mi>H</mml:mi></mml:msubsup><mml:mo>-</mml:mo><mml:msub><mml:mi>d</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>&#x02265;</mml:mo><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mi>H</mml:mi></mml:msubsup><mml:mo stretchy="false">/</mml:mo><mml:mn>2</mml:mn><mml:mo>&#x02265;</mml:mo><mml:msub><mml:mi>d</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq42.gif"/></alternatives></inline-formula> we have <inline-formula id="IEq43"><alternatives><tex-math id="d33e1517">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d(w,y)&#x0003c;d(w,y')$$\end{document}</tex-math><mml:math id="d33e1522"><mml:mrow><mml:mi>d</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:mi>y</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo>&#x0003c;</mml:mo><mml:mi>d</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:msup><mml:mi>y</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq43.gif"/></alternatives></inline-formula> for all <inline-formula id="IEq44"><alternatives><tex-math id="d33e1547">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y'\in S(H{\setminus }\{y\})$$\end{document}</tex-math><mml:math id="d33e1552"><mml:mrow><mml:msup><mml:mi>y</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo>&#x02208;</mml:mo><mml:mi>S</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>H</mml:mi><mml:mo lspace="0.15em" rspace="0.15em" stretchy="false">\</mml:mo><mml:mrow><mml:mo stretchy="false">{</mml:mo><mml:mi>y</mml:mi><mml:mo stretchy="false">}</mml:mo></mml:mrow><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq44.gif"/></alternatives></inline-formula> and <inline-formula id="IEq45"><alternatives><tex-math id="d33e1576">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d(w,y)&#x0003c;d(w',y)$$\end{document}</tex-math><mml:math id="d33e1581"><mml:mrow><mml:mi>d</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:mi>y</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo>&#x0003c;</mml:mo><mml:mi>d</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:msup><mml:mi>w</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo>,</mml:mo><mml:mi>y</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq45.gif"/></alternatives></inline-formula> for all <inline-formula id="IEq46"><alternatives><tex-math id="d33e1606">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w'\in S(G{\setminus }\{w\})$$\end{document}</tex-math><mml:math id="d33e1611"><mml:mrow><mml:msup><mml:mi>w</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo>&#x02208;</mml:mo><mml:mi>S</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>G</mml:mi><mml:mo lspace="0.15em" rspace="0.15em" stretchy="false">\</mml:mo><mml:mrow><mml:mo stretchy="false">{</mml:mo><mml:mi>w</mml:mi><mml:mo stretchy="false">}</mml:mo></mml:mrow><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq46.gif"/></alternatives></inline-formula>. Hence <italic>w</italic> and <italic>y</italic> form an anchor match. <inline-formula id="IEq47"><alternatives><tex-math id="d33e1640">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\square $$\end{document}</tex-math><mml:math id="d33e1645"><mml:mo>&#x025a1;</mml:mo></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq47.gif"/></alternatives></inline-formula></p><p>Synteny anchors therefore can be computed by first identifying a set <inline-formula id="IEq48"><alternatives><tex-math id="d33e1650">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$C(G,d_0^G)$$\end{document}</tex-math><mml:math id="d33e1655"><mml:mrow><mml:mi>C</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>G</mml:mi><mml:mo>,</mml:mo><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mi>G</mml:mi></mml:msubsup><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq48.gif"/></alternatives></inline-formula> of <inline-formula id="IEq49"><alternatives><tex-math id="d33e1670">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d_0^G$$\end{document}</tex-math><mml:math id="d33e1675"><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mi>G</mml:mi></mml:msubsup></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq49.gif"/></alternatives></inline-formula>-unique sequences in each genome <italic>G</italic>. Different cutoffs <inline-formula id="IEq50"><alternatives><tex-math id="d33e1685">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d_0^G$$\end{document}</tex-math><mml:math id="d33e1690"><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mi>G</mml:mi></mml:msubsup></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq50.gif"/></alternatives></inline-formula> may be used for different genomes. In the second step, anchor matches are identified as pairs (<italic>w</italic>,&#x000a0;<italic>y</italic>) such that <inline-formula id="IEq51"><alternatives><tex-math id="d33e1704">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w\in C(G,d_0^G)$$\end{document}</tex-math><mml:math id="d33e1709"><mml:mrow><mml:mi>w</mml:mi><mml:mo>&#x02208;</mml:mo><mml:mi>C</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>G</mml:mi><mml:mo>,</mml:mo><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mi>G</mml:mi></mml:msubsup><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq51.gif"/></alternatives></inline-formula>, <inline-formula id="IEq52"><alternatives><tex-math id="d33e1726">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y\in C(H,d_0^H)$$\end{document}</tex-math><mml:math id="d33e1731"><mml:mrow><mml:mi>y</mml:mi><mml:mo>&#x02208;</mml:mo><mml:mi>C</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>H</mml:mi><mml:mo>,</mml:mo><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mi>H</mml:mi></mml:msubsup><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq52.gif"/></alternatives></inline-formula> and <inline-formula id="IEq53"><alternatives><tex-math id="d33e1748">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d(w,y)&#x0003c;d_1 = \min (d_0^G,d_0^H)/2$$\end{document}</tex-math><mml:math id="d33e1753"><mml:mrow><mml:mi>d</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:mi>y</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo>&#x0003c;</mml:mo><mml:msub><mml:mi>d</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo movablelimits="true">min</mml:mo><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mi>G</mml:mi></mml:msubsup><mml:mo>,</mml:mo><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mi>H</mml:mi></mml:msubsup><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo stretchy="false">/</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq53.gif"/></alternatives></inline-formula> accoring to Lemma&#x000a0;<xref ref-type="sec" rid="FPar3">1</xref>. Empirically, it seems sufficient to ensure that <italic>y</italic> closer to <italic>w</italic> than to any <inline-formula id="IEq54"><alternatives><tex-math id="d33e1800">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y'\in S(H\setminus \{y\})$$\end{document}</tex-math><mml:math id="d33e1805"><mml:mrow><mml:msup><mml:mi>y</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo>&#x02208;</mml:mo><mml:mi>S</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>H</mml:mi><mml:mo lspace="0.15em" rspace="0.15em" stretchy="false">\</mml:mo><mml:mrow><mml:mo stretchy="false">{</mml:mo><mml:mi>y</mml:mi><mml:mo stretchy="false">}</mml:mo></mml:mrow><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq54.gif"/></alternatives></inline-formula> and <italic>w</italic> is closer to <italic>y</italic> than to any <inline-formula id="IEq55"><alternatives><tex-math id="d33e1834">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w'\in S(H\setminus \{w\})$$\end{document}</tex-math><mml:math id="d33e1839"><mml:mrow><mml:msup><mml:mi>w</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo>&#x02208;</mml:mo><mml:mi>S</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>H</mml:mi><mml:mo lspace="0.15em" rspace="0.15em" stretchy="false">\</mml:mo><mml:mrow><mml:mo stretchy="false">{</mml:mo><mml:mi>w</mml:mi><mml:mo stretchy="false">}</mml:mo></mml:mrow><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq55.gif"/></alternatives></inline-formula> by some safety margin <inline-formula id="IEq56"><alternatives><tex-math id="d33e1862">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\varepsilon $$\end{document}</tex-math><mml:math id="d33e1867"><mml:mi>&#x003b5;</mml:mi></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq56.gif"/></alternatives></inline-formula>. This amount to choosing a more relaxed threshold <inline-formula id="IEq57"><alternatives><tex-math id="d33e1872">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d_1=\min (d_0^G,d_0^H)(1-\varepsilon )$$\end{document}</tex-math><mml:math id="d33e1877"><mml:mrow><mml:msub><mml:mi>d</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo movablelimits="true">min</mml:mo><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mi>G</mml:mi></mml:msubsup><mml:mo>,</mml:mo><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mi>H</mml:mi></mml:msubsup><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:mi>&#x003b5;</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq57.gif"/></alternatives></inline-formula>.</p></sec></sec><sec id="Sec4"><title>Algorithmic considerations and implementation</title><p id="Par22">There are two main practical challenges in developing an annotation-free synteny detection pipleline: (1) Candidate sets <inline-formula id="IEq58"><alternatives><tex-math id="d33e1913">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$C(G,d_0^G)$$\end{document}</tex-math><mml:math id="d33e1918"><mml:mrow><mml:mi>C</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>G</mml:mi><mml:mo>,</mml:mo><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mi>G</mml:mi></mml:msubsup><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq58.gif"/></alternatives></inline-formula> for synteny anchors must be determined without explicitly comparing each substring <italic>w</italic> of a fixed length <inline-formula id="IEq59"><alternatives><tex-math id="d33e1936">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\ell $$\end{document}</tex-math><mml:math id="d33e1941"><mml:mi>&#x02113;</mml:mi></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq59.gif"/></alternatives></inline-formula> against the rest of the genome <inline-formula id="IEq60"><alternatives><tex-math id="d33e1945">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$S(G\setminus \{w\})$$\end{document}</tex-math><mml:math id="d33e1950"><mml:mrow><mml:mi>S</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>G</mml:mi><mml:mo lspace="0.15em" rspace="0.15em" stretchy="false">\</mml:mo><mml:mo stretchy="false">{</mml:mo><mml:mi>w</mml:mi><mml:mo stretchy="false">}</mml:mo><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq60.gif"/></alternatives></inline-formula>. This will be achieved by a preprocessing based on k-mer distributions. (2) The comparison of the candidate sets <inline-formula id="IEq61"><alternatives><tex-math id="d33e1967">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$C(G,d_0^G)$$\end{document}</tex-math><mml:math id="d33e1972"><mml:mrow><mml:mi>C</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>G</mml:mi><mml:mo>,</mml:mo><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mi>G</mml:mi></mml:msubsup><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq61.gif"/></alternatives></inline-formula> and <inline-formula id="IEq62"><alternatives><tex-math id="d33e1988">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$C(H,d_0^H)$$\end{document}</tex-math><mml:math id="d33e1993"><mml:mrow><mml:mi>C</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>H</mml:mi><mml:mo>,</mml:mo><mml:msubsup><mml:mi>d</mml:mi><mml:mn>0</mml:mn><mml:mi>H</mml:mi></mml:msubsup><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq62.gif"/></alternatives></inline-formula> in two genomes needs to be evaluated efficiently.</p><sec id="Sec5"><title>Anchor candidates from <italic>k</italic>-mer counts</title><p id="Par23">Similar strings are expected to contain a large fraction of common substrings than dissimilar ones. This simple consideration gives rise several related measures of repetitiveness of a sequence such as the Lempel-Ziv complexity [<xref ref-type="bibr" rid="CR24">24</xref>] and the match complexity [<xref ref-type="bibr" rid="CR25">25</xref>, <xref ref-type="bibr" rid="CR26">26</xref>], which are based on a decomposition of <italic>G</italic> into maximal substrings that have at least one other match in the genome, or the the length of the shortest unique substring starting at <italic>i</italic> [<xref ref-type="bibr" rid="CR27">27</xref>]. The uniqueness of a substring of length <italic>k</italic>, on the other hand, is easily quantified as its the total number of occurrances of the <italic>k</italic>-mer starting at <italic>i</italic> in the genome:<disp-formula id="Equ1"><label>1</label><alternatives><tex-math id="d33e2044">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$ h_{k} (i): = |\{ j:G[j,j + k - 1] = G[i,i + k - 1]\} |.{\text{ }} $$\end{document}</tex-math><mml:math id="d33e2050" display="block"><mml:mrow><mml:msub><mml:mi>h</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>i</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo>:</mml:mo><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="false">|</mml:mo><mml:mrow><mml:mo stretchy="false">{</mml:mo><mml:mi>j</mml:mi><mml:mo>:</mml:mo><mml:mi>G</mml:mi><mml:mrow><mml:mo stretchy="false">[</mml:mo><mml:mi>j</mml:mi><mml:mo>,</mml:mo><mml:mi>j</mml:mi><mml:mo>+</mml:mo><mml:mi>k</mml:mi><mml:mo>-</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false">]</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mi>G</mml:mi><mml:mrow><mml:mo stretchy="false">[</mml:mo><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>i</mml:mi><mml:mo>+</mml:mo><mml:mi>k</mml:mi><mml:mo>-</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false">]</mml:mo></mml:mrow><mml:mo stretchy="false">}</mml:mo></mml:mrow><mml:mo stretchy="false">|</mml:mo></mml:mrow><mml:mo>.</mml:mo><mml:mspace width="0.333333em"/></mml:mrow></mml:math><graphic xlink:href="13015_2025_275_Article_Equ1.gif" position="anchor"/></alternatives></disp-formula>Its inverse, <inline-formula id="IEq63"><alternatives><tex-math id="d33e2106">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1/h_k(i)$$\end{document}</tex-math><mml:math id="d33e2111"><mml:mrow><mml:mn>1</mml:mn><mml:mo stretchy="false">/</mml:mo><mml:msub><mml:mi>h</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>i</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq63.gif"/></alternatives></inline-formula>, serves as position-wise <italic>mappability score</italic>, with a value of 1 indicating uniqueness in the genome. Uniqueness in the genome, however, does not imply that there no <italic>k</italic>-mers that are distinct but very similar. In fact, if <inline-formula id="IEq64"><alternatives><tex-math id="d33e2134">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$k\gg 2\log _2 n$$\end{document}</tex-math><mml:math id="d33e2139"><mml:mrow><mml:mi>k</mml:mi><mml:mo>&#x0226b;</mml:mo><mml:mn>2</mml:mn><mml:msub><mml:mo>log</mml:mo><mml:mn>2</mml:mn></mml:msub><mml:mi>n</mml:mi></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq64.gif"/></alternatives></inline-formula> for genome length <italic>n</italic>, we expect <inline-formula id="IEq65"><alternatives><tex-math id="d33e2153">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$h_k(i)$$\end{document}</tex-math><mml:math id="d33e2158"><mml:mrow><mml:msub><mml:mi>h</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>i</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq65.gif"/></alternatives></inline-formula> to be small almost everywhere (except for very recently duplicated sequences). We can expect, however, that similar sequences frequently contain the same short subsequences. The similarity of a substring <italic>w</italic> with the rest of its genome thus should correlate with the total <italic>genomic</italic> frequency of <italic>k</italic>-mers contained in <italic>w</italic>. Conversely, a sequence that is very different from all other genome regions is expected to be composed of &#x0201c;moderate size&#x0201d; <italic>k</italic>-mers most of which are underrepresented in the genome. Moderate size here means long enough to be &#x0201c;informative&#x0201d; i.e., rare in the genome, but short enough not to be unique with very high probability. Moreover, we are interested in anchor candidates with a length <inline-formula id="IEq66"><alternatives><tex-math id="d33e2187">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\ell $$\end{document}</tex-math><mml:math id="d33e2192"><mml:mi>&#x02113;</mml:mi></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq66.gif"/></alternatives></inline-formula> sufficient to have unambiguously identifyable homologs. As a <italic>measure of rareness</italic> for the sequence window <inline-formula id="IEq67"><alternatives><tex-math id="d33e2200">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w=G[i,i+\ell -1]$$\end{document}</tex-math><mml:math id="d33e2205"><mml:mrow><mml:mi>w</mml:mi><mml:mo>=</mml:mo><mml:mi>G</mml:mi><mml:mo stretchy="false">[</mml:mo><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>i</mml:mi><mml:mo>+</mml:mo><mml:mi>&#x02113;</mml:mi><mml:mo>-</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false">]</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq67.gif"/></alternatives></inline-formula> we use the total number<disp-formula id="Equ2"><label>2</label><alternatives><tex-math id="d33e2224">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$  f_{{\ell ,k}} (i): = \sum\limits_{{j = 0}}^{{\ell  - k}} {h_{k} } \left( {i + j} \right)  $$\end{document}</tex-math><mml:math id="d33e2230" display="block"><mml:mrow><mml:msub><mml:mi>f</mml:mi><mml:mrow><mml:mi>&#x02113;</mml:mi><mml:mo>,</mml:mo><mml:mi>k</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>i</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo>:</mml:mo><mml:mo>=</mml:mo><mml:munderover><mml:mo movablelimits="false">&#x02211;</mml:mo><mml:mrow><mml:mrow><mml:mi>j</mml:mi><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:mrow><mml:mrow><mml:mi>&#x02113;</mml:mi><mml:mo>-</mml:mo><mml:mi>k</mml:mi></mml:mrow></mml:munderover><mml:msub><mml:mi>h</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mfenced close=")" open="("><mml:mrow><mml:mi>i</mml:mi><mml:mo>+</mml:mo><mml:mi>j</mml:mi></mml:mrow></mml:mfenced></mml:mrow></mml:math><graphic xlink:href="13015_2025_275_Article_Equ2.gif" position="anchor"/></alternatives></disp-formula>of genomic occurrances <inline-formula id="IEq68"><alternatives><tex-math id="d33e2268">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$h_k(j)$$\end{document}</tex-math><mml:math id="d33e2273"><mml:mrow><mml:msub><mml:mi>h</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>j</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq68.gif"/></alternatives></inline-formula> of the <italic>k</italic>-mers found in the sequence window <italic>w</italic>. Good anchor candidates are expected to have small values of <inline-formula id="IEq69"><alternatives><tex-math id="d33e2292">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$f_{\ell ,k}(i)$$\end{document}</tex-math><mml:math id="d33e2297"><mml:mrow><mml:msub><mml:mi>f</mml:mi><mml:mrow><mml:mi>&#x02113;</mml:mi><mml:mo>,</mml:mo><mml:mi>k</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>i</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq69.gif"/></alternatives></inline-formula>.</p><p id="Par24">We used GenMap [<xref ref-type="bibr" rid="CR28">28</xref>] to count the <italic>k</italic>-mer frequencies <inline-formula id="IEq70"><alternatives><tex-math id="d33e2324">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$h_k(i)$$\end{document}</tex-math><mml:math id="d33e2329"><mml:mrow><mml:msub><mml:mi>h</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>i</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq70.gif"/></alternatives></inline-formula>. As in the preliminary data reported in [<xref ref-type="bibr" rid="CR22">22</xref>] we use <inline-formula id="IEq71"><alternatives><tex-math id="d33e2346">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$k=13$$\end{document}</tex-math><mml:math id="d33e2351"><mml:mrow><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mn>13</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq71.gif"/></alternatives></inline-formula> as default and do not allow mismatches. Assuming a uniform nucleotide distribution, this choice of <italic>k</italic> amounts to about 2 expected occurrances of a random <italic>k</italic>-mer in the <italic>D. mel.</italic> genome. In general we suggest to set <inline-formula id="IEq72"><alternatives><tex-math id="d33e2367">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$k\approx \log _4(n)$$\end{document}</tex-math><mml:math id="d33e2372"><mml:mrow><mml:mi>k</mml:mi><mml:mo>&#x02248;</mml:mo><mml:msub><mml:mo>log</mml:mo><mml:mn>4</mml:mn></mml:msub><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>n</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq72.gif"/></alternatives></inline-formula>. We set the interval length to <inline-formula id="IEq73"><alternatives><tex-math id="d33e2387">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\ell =500$$\end{document}</tex-math><mml:math id="d33e2392"><mml:mrow><mml:mi>&#x02113;</mml:mi><mml:mo>=</mml:mo><mml:mn>500</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq73.gif"/></alternatives></inline-formula> and consider only starting position <italic>i</italic> every 250 nts. Only the windows within the 15th percentile of aggregated <italic>k</italic>-mer frequencies <inline-formula id="IEq74"><alternatives><tex-math id="d33e2406">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$f_{\ell ,k}(i)$$\end{document}</tex-math><mml:math id="d33e2411"><mml:mrow><mml:msub><mml:mi>f</mml:mi><mml:mrow><mml:mi>&#x02113;</mml:mi><mml:mo>,</mml:mo><mml:mi>k</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>i</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq74.gif"/></alternatives></inline-formula> are kept and overlapping ones combined. The particular choice of the cutoff is derived from preliminary computational experiments and provides &#x02013; in the authors&#x02019; opinion &#x02013; a useful tradeoff between sensitivity and computational cost. In order to increase the robustness of the result, we considered potential anchor candidates with different k-mer profiles, we further pre-process the candidate anchor windows by using <inline-formula id="IEq75"><alternatives><tex-math id="d33e2427">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$k=15$$\end{document}</tex-math><mml:math id="d33e2432"><mml:mrow><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mn>15</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq75.gif"/></alternatives></inline-formula>, <inline-formula id="IEq76"><alternatives><tex-math id="d33e2439">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\ell =500$$\end{document}</tex-math><mml:math id="d33e2444"><mml:mrow><mml:mi>&#x02113;</mml:mi><mml:mo>=</mml:mo><mml:mn>500</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq76.gif"/></alternatives></inline-formula>, starting position <italic>i</italic> every 250 nts and taking again the 15th percentile as well as <inline-formula id="IEq77"><alternatives><tex-math id="d33e2455">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$k=21$$\end{document}</tex-math><mml:math id="d33e2460"><mml:mrow><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mn>21</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq77.gif"/></alternatives></inline-formula> allowing for up to two mismatches.</p><p id="Par25">If a new candidate window overlaps with less than 30% of an existing one, we discard it and otherwise extend the existing one. In order to test the robustness of this approach we evaluated these different values of <italic>k</italic> and the number of mismatches. Overall we found the method to be robust. Details on the parameter optimization can found in Additional File&#x000a0;1.</p><p id="Par26">The resulting anchor candidates are then compared against the same genome <italic>G</italic> with blast using a word size 11 and an E-value threshold of <inline-formula id="IEq78"><alternatives><tex-math id="d33e2483">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$E=0.001$$\end{document}</tex-math><mml:math id="d33e2488"><mml:mrow><mml:mi>E</mml:mi><mml:mo>=</mml:mo><mml:mn>0.001</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq78.gif"/></alternatives></inline-formula>. By default, blast returns multiple matches that may be partially overlapping. In order to extract the best match of the full query sequence <italic>w</italic> we extracted chains, i.e., non-overlapping hits that are consecutive on both query and target [<xref ref-type="bibr" rid="CR29">29</xref>]. The bit-scores of chained fragments are summed up to yield the total score of such as fragmented alignment. For practical computations we used the chainer with clasp [<xref ref-type="bibr" rid="CR30">30</xref>]. The results of the chaining step were then compared with the query. All chains that substantially overlap the query are discarded and the best remaining chain, <inline-formula id="IEq79"><alternatives><tex-math id="d33e2511">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w'$$\end{document}</tex-math><mml:math id="d33e2516"><mml:msup><mml:mi>w</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq79.gif"/></alternatives></inline-formula>, was used to determine the level of uniqueness in the genome. In practice we divide the sequences in regions associated with a score as can be seen Fig.&#x000a0;<xref rid="Fig1" ref-type="fig">1</xref>. Thus, we collect all not chained alignments which are not substantially overlapping with the original locus and assign each nucleotide in the query sequence the maximum score produced by any alignment covering it.</p><p id="Par27">Since we compare an anchor candidate against possible homologs, the blast bit-score <inline-formula id="IEq80"><alternatives><tex-math id="d33e2534">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s(w,w')$$\end{document}</tex-math><mml:math id="d33e2539"><mml:mrow><mml:mi>s</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:msup><mml:mi>w</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq80.gif"/></alternatives></inline-formula> is directly related to the corresponding metric distance measure <inline-formula id="IEq81"><alternatives><tex-math id="d33e2553">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d(w,w')= \alpha \ell - s(w,w')$$\end{document}</tex-math><mml:math id="d33e2558"><mml:mrow><mml:mi>d</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:msup><mml:mi>w</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mi>&#x003b1;</mml:mi><mml:mi>&#x02113;</mml:mi><mml:mo>-</mml:mo><mml:mi>s</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>w</mml:mi><mml:mo>,</mml:mo><mml:msup><mml:mi>w</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq81.gif"/></alternatives></inline-formula>, where <inline-formula id="IEq82"><alternatives><tex-math id="d33e2588">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha $$\end{document}</tex-math><mml:math id="d33e2593"><mml:mi>&#x003b1;</mml:mi></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq82.gif"/></alternatives></inline-formula> is position-wise bit-score for self-comparison of the query of length <inline-formula id="IEq83"><alternatives><tex-math id="d33e2597">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\ell $$\end{document}</tex-math><mml:math id="d33e2602"><mml:mi>&#x02113;</mml:mi></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq83.gif"/></alternatives></inline-formula>, i.e., <inline-formula id="IEq84"><alternatives><tex-math id="d33e2607">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha =2$$\end{document}</tex-math><mml:math id="d33e2612"><mml:mrow><mml:mi>&#x003b1;</mml:mi><mml:mo>=</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq84.gif"/></alternatives></inline-formula> for uniformly distributed nucleotide sequences. It is possible, therefore, to use the bitscores directly without converting them to a distance measure. The end result of this preprocessing step is a set of anchor candidates <italic>w</italic>, each associated with similarity score <inline-formula id="IEq85"><alternatives><tex-math id="d33e2622">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_0(w)$$\end{document}</tex-math><mml:math id="d33e2627"><mml:mrow><mml:msub><mml:mi>s</mml:mi><mml:mn>0</mml:mn></mml:msub><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>w</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq85.gif"/></alternatives></inline-formula> at which <italic>w</italic> is unique in its own genome.</p><p id="Par28">The anchor candidates arguably represents a less biased set of potential synteny anchors than those employed in annotation-based approaches since we avoid the restrictions to protein coding genes, which are unevenly distribution in gene-rich and gene-poor genomic regions. This alleviated at least in part by the inclusion of non-coding elements, as shown already in [<xref ref-type="bibr" rid="CR22">22</xref>], even though our method also recovers most protein-coding loci. We therefore also avoid the biases inherent in gene models and databases that underly automated genome annotation pipelines [<xref ref-type="bibr" rid="CR31">31</xref>]. The analysis of the positional distribution of the anchors in Additional File&#x000a0;7 indeed shows that neither anchor candidates nor annotated ORFs are distributed uniformally. AncST anchors, however, consistently deviate less from a uniform distribution.</p></sec></sec><sec id="Sec6"><title>Computations of pairwise anchors</title><p id="Par29">In order to obtain anchors for a pair of genomes, we again use blast with the same parameters comparing only the anchor candidates of <italic>G</italic> and <italic>H</italic> with each other. Using <inline-formula id="IEq86"><alternatives><tex-math id="d33e2667">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d(x,y)=\alpha \ell -s(x,y)$$\end{document}</tex-math><mml:math id="d33e2672"><mml:mrow><mml:mi>d</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>x</mml:mi><mml:mo>,</mml:mo><mml:mi>y</mml:mi><mml:mo stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:mi>&#x003b1;</mml:mi><mml:mi>&#x02113;</mml:mi><mml:mo>-</mml:mo><mml:mi>s</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>x</mml:mi><mml:mo>,</mml:mo><mml:mi>y</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq86.gif"/></alternatives></inline-formula> yields the threshold <inline-formula id="IEq87"><alternatives><tex-math id="d33e2697">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s(x,y)&#x0003e;\max (s^{G}_{0}(x),s^{0}_H)/2+\alpha \ell /2$$\end{document}</tex-math><mml:math id="d33e2702"><mml:mrow><mml:mi>s</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>x</mml:mi><mml:mo>,</mml:mo><mml:mi>y</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo>&#x0003e;</mml:mo><mml:mo movablelimits="true">max</mml:mo><mml:mo stretchy="false">(</mml:mo><mml:msubsup><mml:mi>s</mml:mi><mml:mn>0</mml:mn><mml:mi>G</mml:mi></mml:msubsup><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>x</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo>,</mml:mo><mml:msubsup><mml:mi>s</mml:mi><mml:mi>H</mml:mi><mml:mn>0</mml:mn></mml:msubsup><mml:mo stretchy="false">)</mml:mo><mml:mo stretchy="false">/</mml:mo><mml:mn>2</mml:mn><mml:mo>+</mml:mo><mml:mi>&#x003b1;</mml:mi><mml:mi>&#x02113;</mml:mi><mml:mo stretchy="false">/</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq87.gif"/></alternatives></inline-formula> for a guaranteed anchor match of <italic>x</italic> and <italic>y</italic>. In practise this is overly conservative, hence we follow our preliminary work [<xref ref-type="bibr" rid="CR22">22</xref>] and define a pair of candidates <inline-formula id="IEq88"><alternatives><tex-math id="d33e2757">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$x\in S(G)$$\end{document}</tex-math><mml:math id="d33e2762"><mml:mrow><mml:mi>x</mml:mi><mml:mo>&#x02208;</mml:mo><mml:mi>S</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>G</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq88.gif"/></alternatives></inline-formula> and <inline-formula id="IEq89"><alternatives><tex-math id="d33e2774">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y\in S(H)$$\end{document}</tex-math><mml:math id="d33e2779"><mml:mrow><mml:mi>y</mml:mi><mml:mo>&#x02208;</mml:mo><mml:mi>S</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>H</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq89.gif"/></alternatives></inline-formula> and an an anchor match if <inline-formula id="IEq90"><alternatives><tex-math id="d33e2791">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s(x,y)&#x0003e; \max (s^{G}_{0}(x)+\sqrt{s^{G}_{0}(x)}, s^{H}_{0}(y)+\sqrt{s^{H}_{0}(y)})$$\end{document}</tex-math><mml:math id="d33e2796"><mml:mrow><mml:mi>s</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>x</mml:mi><mml:mo>,</mml:mo><mml:mi>y</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo>&#x0003e;</mml:mo><mml:mo movablelimits="true">max</mml:mo><mml:mo stretchy="false">(</mml:mo><mml:msubsup><mml:mi>s</mml:mi><mml:mn>0</mml:mn><mml:mi>G</mml:mi></mml:msubsup><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>x</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo>+</mml:mo><mml:msqrt><mml:mrow><mml:msubsup><mml:mi>s</mml:mi><mml:mn>0</mml:mn><mml:mi>G</mml:mi></mml:msubsup><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>x</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:msqrt><mml:mo>,</mml:mo><mml:msubsup><mml:mi>s</mml:mi><mml:mn>0</mml:mn><mml:mi>H</mml:mi></mml:msubsup><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>y</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo>+</mml:mo><mml:msqrt><mml:mrow><mml:msubsup><mml:mi>s</mml:mi><mml:mn>0</mml:mn><mml:mi>H</mml:mi></mml:msubsup><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>y</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:msqrt><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq90.gif"/></alternatives></inline-formula> as is depicted in Fig.&#x000a0;<xref rid="Fig1" ref-type="fig">1</xref>. The additional square root term is introduced here to account for variance of the score estimates. If a search with <italic>x</italic> against the anchor candidates of genome <italic>H</italic> or a search with <italic>y</italic> as query against the anchor candidates of <italic>G</italic> returns more than one blast hit, we use the more conservative threshold <inline-formula id="IEq91"><alternatives><tex-math id="d33e2884">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s(x,y)&#x0003e; 2\max (s^{G}_0(x),s^{H}_0(y))$$\end{document}</tex-math><mml:math id="d33e2889"><mml:mrow><mml:mi>s</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>x</mml:mi><mml:mo>,</mml:mo><mml:mi>y</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo>&#x0003e;</mml:mo><mml:mn>2</mml:mn><mml:mo movablelimits="true">max</mml:mo><mml:mo stretchy="false">(</mml:mo><mml:msubsup><mml:mi>s</mml:mi><mml:mn>0</mml:mn><mml:mi>G</mml:mi></mml:msubsup><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>x</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo>,</mml:mo><mml:msubsup><mml:mi>s</mml:mi><mml:mn>0</mml:mn><mml:mi>H</mml:mi></mml:msubsup><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>y</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq91.gif"/></alternatives></inline-formula>. We use a minimum value of <inline-formula id="IEq92"><alternatives><tex-math id="d33e2932">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s(x,y)=40$$\end{document}</tex-math><mml:math id="d33e2937"><mml:mrow><mml:mi>s</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>x</mml:mi><mml:mo>,</mml:mo><mml:mi>y</mml:mi><mml:mo stretchy="false">)</mml:mo><mml:mo>=</mml:mo><mml:mn>40</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq92.gif"/></alternatives></inline-formula> in the absence significant blast hits, roughly reflecting the lower bound on significant bit scores, in order to not over-estimate the uniqueness.<fig id="Fig1"><label>Fig. 1</label><caption><p>Pairwise Anchor Matches. For each anchor candidate in both genomes <bold>A</bold> and <bold>B</bold> the bit scores of the best matches in the same genome are precomputed (numbers inside the lines). Possible Anchor matches are obtained from a blast search and clasp chaining. Only matches with scores significantly better than their within-genome thresholds are retained as anchor matches</p></caption><graphic xlink:href="13015_2025_275_Fig1_HTML" id="MO1"/></fig></p><p id="Par30">Since the boundaries of anchor candidates are determined independently in each genome, there is no guarantee that anchor candidates in two genomes overlap with (nearly) there full length. This may lead to blast matches of an anchor candidate <italic>w</italic> in <italic>G</italic> with two or more non-overlapping candidates in <italic>H</italic> that are separated by a large genomic distance. This situation is indicative of a genomic rearrangement or an in insertion within the anchor sequence. There are two strategies to handle such cases: (i) the long anchor candidate <italic>w</italic> in <italic>G</italic> can be omitted altogether, or (ii) we may split <italic>w</italic> into two or more smaller anchor candidates, each matching a unique locus in <italic>H</italic>. In the current implementation, we omit the such candidates altogether. The outcome of this step is a set of pairwise synteny anchors that are in near perfect 1-1 correspondence.</p><sec id="Sec7"><title>Anchors for multiple genomes</title><p id="Par31">Pairwise anchors computed for a set of genomes can be consolidated easily into clusters spanning multiple genomes. To this end we define the <italic>anchor graph</italic> whose vertices are the anchor candidates of each genome that are included in pairwise anchor. Each pairwise anchor forms an edge. Each connected component of this graph correspond to a single locus with a single ortholog in each of the genomes. Note that it is possible for a long anchor candidate in <italic>G</italic> to match two or more anchor candidates in <italic>H</italic> as long as these matches are in close genomic proximity and correspond to essentially disjoint blast alignments. In the present implementation we do not check whether such matches form a proper chain, although such as feature will likely be added in future versions of the pipeline.</p><p id="Par32">In order to check the efficiency of this simple approach we check for transitivity: if (<italic>w</italic>,&#x000a0;<italic>y</italic>) is an anchor match for <italic>G</italic> and <italic>H</italic> and (<italic>y</italic>,&#x000a0;<italic>z</italic>) is an anchor match for <italic>H</italic> and <italic>J</italic>, then we also expect (<italic>w</italic>,&#x000a0;<italic>z</italic>) to be an anchor match from <italic>G</italic> and <italic>J</italic>. However, the transitively implied match (<italic>w</italic>,&#x000a0;<italic>z</italic>) is not always present. On our test set of 16 insect genomes, 30,322 of 129,155 clusters were missing some anchor matches. Overall, we found that about 1/3 of the transitively implied anchor matches were missing. This may have multiple reason. In particular, the phylogenetic distance may be large enough for a match to fall below the detection limit of blast. Another reason is the candidates differ substantially in size, with <italic>y</italic> being the largest, so that the overlap between <italic>w</italic> and <italic>z</italic> may be too small. To assess to what extent a lack of transitivity can be explained by such effects rather than failure of orthology, we recomputed the similarity of such implied but missing matches directly using blast and clasp and found that indeed half of the transitively inferred anchor matches do not yield alignments or only alignments with insignificant similarity scores.<fig id="Fig2"><label>Fig. 2</label><caption><p>Syntenic regions of halo at a margin of 50 kb up- and downstream of all potential blastp hits of the <italic>halo</italic>-like genes from D. mel. Chromosome names are indicated after species names on the left and drawn as black horizontal lines with elements on them on the right. Colored elements and blue lines indicate anchors and their alignments, respectively. Alignments are drawn from pairwise alignments and anchors get the same color if they share an alignment. Genomic distances are drawn to scale. Drawn with pygenomeviz [<xref ref-type="bibr" rid="CR32">32</xref>]</p></caption><graphic xlink:href="13015_2025_275_Fig2_HTML" id="MO2"/></fig></p><p id="Par33">In order the test the overall reliability of the AncST pipeline, we proceeded as follows. For each inferred anchor match (<italic>w</italic>,&#x000a0;<italic>y</italic>) with <inline-formula id="IEq93"><alternatives><tex-math id="d33e3120">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w\in S(G)$$\end{document}</tex-math><mml:math id="d33e3125"><mml:mrow><mml:mi>w</mml:mi><mml:mo>&#x02208;</mml:mo><mml:mi>S</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>G</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq93.gif"/></alternatives></inline-formula> and <inline-formula id="IEq94"><alternatives><tex-math id="d33e3137">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y\in S(H)$$\end{document}</tex-math><mml:math id="d33e3142"><mml:mrow><mml:mi>y</mml:mi><mml:mo>&#x02208;</mml:mo><mml:mi>S</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>H</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq94.gif"/></alternatives></inline-formula>, we determined the best matches <inline-formula id="IEq95"><alternatives><tex-math id="d33e3155">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y^*$$\end{document}</tex-math><mml:math id="d33e3160"><mml:msup><mml:mi>y</mml:mi><mml:mo>&#x02217;</mml:mo></mml:msup></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq95.gif"/></alternatives></inline-formula> of <italic>w</italic> in the genome <italic>H</italic> and the best match <inline-formula id="IEq96"><alternatives><tex-math id="d33e3172">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w^*$$\end{document}</tex-math><mml:math id="d33e3177"><mml:msup><mml:mi>w</mml:mi><mml:mo>&#x02217;</mml:mo></mml:msup></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq96.gif"/></alternatives></inline-formula> of <italic>y</italic> in genome <italic>G</italic>. Again blast and clasp were used as described above to check whether our implementation correctly infers reciprocal best matches. For 14% of the anchor matches we found that <italic>w</italic> and <inline-formula id="IEq97"><alternatives><tex-math id="d33e3199">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w^*$$\end{document}</tex-math><mml:math id="d33e3204"><mml:msup><mml:mi>w</mml:mi><mml:mo>&#x02217;</mml:mo></mml:msup></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq97.gif"/></alternatives></inline-formula> and/or <italic>y</italic> and <inline-formula id="IEq98"><alternatives><tex-math id="d33e3213">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y^*$$\end{document}</tex-math><mml:math id="d33e3218"><mml:msup><mml:mi>y</mml:mi><mml:mo>&#x02217;</mml:mo></mml:msup></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq98.gif"/></alternatives></inline-formula> are separated by more than 10000nt and thus there is a better hit outside of the originally inferred syntenic region. Of these cases, about 62% were transitively inferred matches. These cases can largely be attributed to a combination of genome rearrangements/assembly artefacts and the somewhat arbitrary boundaries of our anchor candidates defined by the initial k-mer filter. This is similar to situations in which one candidate <italic>w</italic> in <italic>G</italic> finds multiple distant matches in another genomes&#x02019; set of anchor candidates. In fact, the subsequences of the anchor candidates that produce best matches outside of the inferred syntenic regions do often not substantially overlap with the subsequence originally inferred as syntenic at a median of 17% overlap of the combined length of the subsequences. In conclusion, AncST produces many high-confidence reciprocal best matches with a tolerable fraction of false positives. Future work may include the curation of the problematic cases as to define phylogenetically informed boundaries of the anchor candidates to disambiguate the matches. In practice, these cases are not to substantially influence downstream analyses because larger syntenic regions are defined by collinear chaining of clusters. Rearrangements are thus detectable as breaks in co-linearity for a subset of the genomes that are represented in the cluster. This would also make is easy to identify isolated spurious matches.</p><p id="Par34">The algorithms for identifying anchor candidates, determining anchor matches, and extracting consistent anchors are implemented in AncST using python. As an example for the output produced by AncST, Fig.&#x000a0;<xref rid="Fig2" ref-type="fig">2</xref> shows the genomic region of <italic>halo</italic>[<xref ref-type="bibr" rid="CR33">33</xref>]-like genes. The computation of the anchor candidates and pairwise matches for the test dataset described in Additional File&#x000a0;2 required less than 16&#x000a0;h on a HPC slurm cluster with 160 available cores. The most time intensive steps were the mappability computation with GenMap and blast searches of potential candidates against their own genomes at around 5.12 and 4.77 hours. While for this dataset the pairwise comparisons took around 2.45 hours, this step dominates rhe running time for larger datasets. The most memory intensive step is the mappability computation with GenMap. The anchors for all 16 species including information about alignments consume 646 MB of memory in total. Note that the anchor candidate computation step can be seen as preprocessing step that only need to be performed once per genome, while pairwise comparisons of annotation or anchor-candidates must be performed between all pairs of genomes.</p></sec></sec></sec><sec id="Sec8"><title>Comparison of annotation-based and anchor-based synteny</title><p id="Par35">By design we expect AncST to work well at pairwise phylogenetic distances where large fractions of the genome are alignable as nucleic acid sequences. Clearly, no anchor matches will be detectable beyond the signficance threshold of blast alignments. At large phylogenetic distances, on the other hand, the comparison of aminoacid sequences of annotated ORFs is expected to be superior because aminoacid alignments can identify homology of highly diverged sequences. Of course, protein-based synteny detection is, by definition, limited to annotated ORFs which serve as widely-spaced anchors.</p><p id="Par36">Since no ground truth is know, we compare AncST with a ORF annotation synteny assessment. We use MCScanX [<xref ref-type="bibr" rid="CR20">20</xref>], which is probably the most widely used tool to infer collinear chains of homologs, to extract syntenic regions. MCScanX is not an end-to-end solution, but requires the homology data as input. Following the workflow described in [<xref ref-type="bibr" rid="CR34">34</xref>] for the annotation-based approach, we performed reciprocal pairwise blast comparisons for all proteomes including self-comparisons. The respective parameters can be found in the supplement (7). The anchor matches computed by AncST are also used directly as input for MCScanX. Since the main interest is in the identification of orthologous genomic material only unambiguous alignments are considered, i.e., all pairwise collinear chains that overlap in the MCScanX output are excluded. As test data set, we use 16 genomes covering Diptera, Lepitoptera, and Coleoptera. This set includes four widely studied model species and eight additional genomes from different families with RefSeq annotations. Details on this data set can be found in Additional File&#x000a0;3. The computationally most expensive part in the evaluation of AncST was the blast-based comparison of annotated ORF sequences in the <italic>MCScanX</italic> workflow.<fig id="Fig3"><label>Fig. 3</label><caption><p>Hive view of the MCScanX collinearity file generated with synvisio [<xref ref-type="bibr" rid="CR35">35</xref>]. L.h.s.: nucleic acid comparison with AncST (anchor-based), r.h.s.: ORF annotation based. Full species names are found in Table&#x000a0;&#x000a0;2. Gray lines show pairwise alignment blocks of the connected species. Colors on genomes represent different chromosomes/scaffolds/contigs involved in the comparisons</p></caption><graphic xlink:href="13015_2025_275_Fig3_HTML" id="MO3"/></fig></p><p id="Par37">Figure&#x000a0;<xref rid="Fig3" ref-type="fig">3</xref> give a first visual impression of the results, using Chromosome X of <italic>D. melanogaster</italic> as an example. Both anchor- and annotation-based data show clear regions of synteny between the five <italic>Drosophila</italic> species (1&#x02013;5) as well as to/between <italic>Lucilia cuprina</italic> (6), <italic>Musca vetustissima</italic> (7) and <italic>Eupeodes corollae</italic> (8) and <italic>Episyrphus balteatus</italic> (9). The anchor-based approach recovers most of the annotation-based result except for the phylogenetically distant species Condylostylus longicornis and spurious matches on some contigs. Otherwise only rather minor discrepancies regarding some of the more fragmented genomes are notable.</p><p id="Par38">We compare the annotation-based data and the anchor-based data using the the amount of genomic DNA in regions chained by MCScanX as performance measure. For simplicitly, we multiply the size of amino acid matches by 3 to convert them to length scales in terms of nucleotides. The total length of unambigously aligned genomic sequence is then used as performance measure for the synteny detection methods. In a addition to the fraction of the genome recovered by each method, we also assess their overlap. In order to determine the robustness of the comparisons between performance measures we considered variations of our accounting. In particular, we considered a re-evaluation of contiguous syntenic intervals produced by MCScanX, and we considered a variation of the MCScanX parameters. The details are given in Additional Files 3 and 4. Not surprisingly, the number of anchor pairs decreases with phylogenetic distance. Details are given in Additional File&#x000a0;5.</p><p id="Par39">As expected, there are many AncST anchors in syntenic alignments which are not covered by annotated ORFs. Here we only refer to those elements of both approaches which are unambiguous aligned and thus have exactly one match in a colinearity chain in one or more target genomes. For example, AncST anchors in D. melanogaster cover about 86% of genomic positions of D. melanogaster annotated ORFs, while annotated ORFs only cover about 20% of genomic postitions of AncST anchors. Globally for the 16 species, 65% of annotated ORFs overlap with anchors at a nucleotide coverage of 69%. This matches <italic>a priori</italic> expectations, since a sizeable fraction of the annotated ORFs covers highly conserved regions that are too similar between paralogs to serve as anchors. Moreover, recent gene duplications, as well coding genes under concerted evolution [<xref ref-type="bibr" rid="CR36">36</xref>] do not qualify. Conversely, 60% of all anchors overlap with annotated ORFs, at a nucleotide coverage of 29%. We observe that the unambiguous colinearity chains are more densely covered by AncST anchors (<inline-formula id="IEq99"><alternatives><tex-math id="d33e3393">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$21\pm 15\%$$\end{document}</tex-math><mml:math id="d33e3398"><mml:mrow><mml:mn>21</mml:mn><mml:mo>&#x000b1;</mml:mo><mml:mn>15</mml:mn><mml:mo>%</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq99.gif"/></alternatives></inline-formula>) than by annotated ORFs (<inline-formula id="IEq100"><alternatives><tex-math id="d33e3406">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$7\pm 9\%$$\end{document}</tex-math><mml:math id="d33e3411"><mml:mrow><mml:mn>7</mml:mn><mml:mo>&#x000b1;</mml:mo><mml:mn>9</mml:mn><mml:mo>%</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13015_2025_275_Article_IEq100.gif"/></alternatives></inline-formula>). This is also reflected by differences in the length of AncST anchors (mean 1897, median 1150), compared to the length distribution of annotated ORFs in these chains (mean 907, median 626). Thus, the length measurement employed employed in Fig.&#x000a0;<xref rid="Fig4" ref-type="fig">4</xref> overestimates the overlap fraction of AncST with annotation-based ones to some extend.<fig id="Fig4"><label>Fig. 4</label><caption><p>Excess of overlapping anchor/ORF lengths in filtered MCScanX co-linear chains as log-ratio of the overlap length fractions of AncST with annotated ORFs and vice versa</p></caption><graphic xlink:href="13015_2025_275_Fig4_HTML" id="MO4"/></fig></p><p id="Par40">In order to visualize these results per species in Fig.&#x000a0;<xref rid="Fig4" ref-type="fig">4</xref> we proceed as follows: For each species, we extract the anchors and annotated ORFs in colinear MCScanX chains and retain only elements that have unique orthologs in other species. From these subsets, we compute the relative overlap of AncST anchors with annotated ORFs and <italic>vice versa</italic>; thus we ask how much of the genomic positions of these anchors and ORFs are also covered by the other type. Then we take the ratio of these fractions with AncST anchors and take the logarithm as to display an excess of nucleotides of AncST anchors not covered by annotated ORFs as a positive value and vice versa as negative. In Additional File&#x000a0;4 a corresponding figure can be found considering not genomic positions but aligned nucleotides and the respective excesses thereof.<fig id="Fig5"><label>Fig. 5</label><caption><p>Log-ratio of the number of unambiguously aligned nucleotides between AncST- and annotation-based between two species. Blue color indicates that AncST identifies more 1-1 matches than the annotation based approach. Gray color indicates that there are no co-linear chains based on AncST</p></caption><graphic xlink:href="13015_2025_275_Fig5_HTML" id="MO5"/></fig></p><p id="Par41">Here we opted to show the differences in aligned nucleotide lengths for all pairs in Fig.&#x000a0;<xref rid="Fig5" ref-type="fig">5</xref> since it clearly shows at which rough phylogenetic distance annotated ORFs recover more synteny blocks than AncST anchors. In summary, the annotation-based approach is clearly superior for large evolutionary distances where nucleic acid alignments become insensitive while amino acid sequences are still informative. The annotation-free anchor-based approach, which by construction operates on nucleic acid comparisons, yields better results for small and moderate phylogenetic distances where the amount of conserved non-coding DNA exceeds the genomic fraction of annotated ORFs.</p><p id="Par42">The accounting used for the results outline above is deliberately designed to avoid any biases in favor of our method. Since AncST anchors are computed with the expectation that they align unambiguously, the Markov Clustering process employed by MCScanX with the given thresholds of chain length and E-value may exclude potential chains of AncST anchors, which then do not enter the chain significance calculation. Furthermore, we multiplied the length aligned protein sequences by a factor of 3 for conversion to nucleotide lengths, which is an overestimate since we ignore any mismatches in proteins. In order so see how robust these results are, we ran MCScanX with the alternative parameter settings and used an alternative, less stringent accounting strategy described in detail in Additional File&#x000a0;4. We observe that this skews the outcome significantly in favour of AncST anchors. We suggest that the truth about which approach covers more DNA with their alignments lies somewhere in between the overestimation of the length measurement in favour of AncST anchors and their underestimation of relative alignment length.</p></sec><sec id="Sec9"><title>Application</title><p id="Par43">As a showcase example we traced the Hox genes across the 16 species. The Hox gene cluster is well known for its highly conserved syteny in animal phyla. Nevertheless, more detailed analysis shows that exceptions are not uncommon and different lineages have variations, such as cluster breaks, inversions as well as duplications [<xref ref-type="bibr" rid="CR37">37</xref>]. Figure&#x000a0;<xref rid="Fig6" ref-type="fig">6</xref> shows the result for species which did not display fragmentation of the resultant target regions. The full figure as well as additional tables describing the complete results can be found in the online supplement linked in section&#x000a0;7. The full methodology is described in Additional File&#x000a0;6. Expectedly, there is a dense syntenic correspondence between closely aligned species while the number of alignments drops sharply for species which are only distantly related. Nevertheless, our approach shows the usefulness of AncST anchors in (1) finding potential candidate regions and loci and (2) labelling the candidates as decribed in more detail in Additional File&#x000a0;6.</p><p id="Par44">Many potential rearrangements can be identified directly in this figure. Some have been reported before, such as the relocation of Ubx in D. busckii [<xref ref-type="bibr" rid="CR38">38</xref>], while others have not been notices to our knowledge: It seems like a recent shift in the order of the two Hox clusters has occurred between D. melanogaster and D. yakuba, which is likely due to inversions of the two clusters.<fig id="Fig6"><label>Fig. 6</label><caption><p>Syntenic regions of Hox gene clusters across 14 species. Annotation of loci&#x02019;s gene identities (if not an original OrthoDB) was based on a combination of sequence similarity and synteny as further described and evaluated in Additional File&#x000a0;6. Annotations such as gene* are structured as: best blast hit | best hit according to synteny | annotation in protein tree and collapsed to one annotation if the three criteria agree. NaN indicates missing data. Genomic distances are drawn to scale. Blue lines indicate forward alignments between the anchors indicated as arrows of different colors and green lines indicate reverse alignments. The colors of the anchors are the same if they share an alignemnt. The graphic was generated with pygenomeviz [<xref ref-type="bibr" rid="CR32">32</xref>]</p></caption><graphic xlink:href="13015_2025_275_Fig6_HTML" id="MO6"/></fig></p></sec><sec id="Sec10"><title>Discussion and conclusions</title><p id="Par45">Established methods to determine genomic synteny rely on orthologous protein coding genes and thus depend on the quality and completeness of gene annotations. As an alternative, AncST implements a novel approach that operates directly on un-annoated genomic DNA sequences. It starts from the identification of sufficiently unique DNA which can be pre-computed independently for each genome with much less effort than completing a high quality annotation of protein-coding genes. Even recent advances in homology-based annotation of coding sequences such as miniprot [<xref ref-type="bibr" rid="CR39">39</xref>] cannot overcome that fact that only a small fraction of eukaryotic genomes is coding and annotation-based anchors thus are necessarily sparse.</p><p id="Par46">The resulting anchor-candidates are then compared pairwisely between genomes using blast and a subsequent chaining of the hits. We find that this approach has the advantage of identifying significantly more syntenic DNA between closely related genomes. On the other hand, it fails for very large phylogenetic distances at which even even reading frames are no longer easy to align at nucleotide level, i.e., where the additional information of predicted protein sequences is required to establish homology. A direct comparison of the two approaches indicates that AncST performs favorably at least within the genus <italic>Drosophila</italic>.</p><p id="Par47">The much denser map of synteny anchors computed for not-too-distant genomes provides additional power, in particular to track genomic innovations. The example of the <italic>Hox</italic> clusters not only traces the conservation of the gene clusters and its occasional break-ups, but also shows that the non-coding DNA between the coding regions is packed with synteny anchors.</p><p id="Par48">Interesting theoretical and algorithmic questions remain for future research. Even though the <italic>k</italic>-mer statistics yields practically useful anchor candidates, it would be interesting to better understand its limitations and, in particular, to what extent it may overlook additional anchor candidates. Moreover, further processing of candidate anchors may be desirable: current anchor candidates may contain short subsequences that are repetitive and thus may yield spurious anchor matches. This begs the question whether anchor candidates can be locally optimized with sufficient efficiency to yield practicable improvements. We chose a statistic based on <italic>k</italic>-mer counts because it seems less straightforward to devise aggregate measures for moderate size intervals from Lempel-Ziv complexity and its variants, which are computed form their own intrinsic partition of the genome [<xref ref-type="bibr" rid="CR26">26</xref>]. It will be an interesting topic for future work to see if such measures can be adapted, or even combined with <italic>k</italic>-mer counts, to provide a more accurate selection of anchor candidates.</p><p id="Par49">The computational approach outlined here focuses on anchors that are very different from all other loci, and thus in particular excludes <italic>near-identical</italic> duplicated regions in the same genome. Nevertheless, genome or chromosome duplications can be detected by comparison with anchors from an non-duplicated genome if anchor candidates are compared against a target genome. Phylogenetically older duplications pose little problems as long as genomes sharing the duplication are compared: in this scenario more rapidly diverging DNA will provide unique anchors even if the most slowly evolving paralogs do not yet yield anchor sequences. Very recent duplications cannot be handled with the current approach since the duplicated sequences have not yet diverged to a point where they yield anchor sequences. It would be interesting, therefore, to extend the anchor-based approach to account for anchors with a very small number of similar matches in the same genome. A simpler, albeit not particularly elegant, approach is to subdivide a genome into smaller pieces and to check for synteny-based anchors within such regions only.</p><p id="Par50">For down-stream applications it is also of interest to obtain robust multiple alignments of anchor-matches. Here we have only used the consistency of clusters of pairwise matches as a means of validating the anchor-based approach. The consistency of co-linear anchor matches could be used first to determine conserved syntenies and, in conjunction with the reconstruction of ancestral anchor-orders, also a means of tracking of local rearrangements. Regarding algorithms for such purposes, ideas such as ancestral adjacencies [<xref ref-type="bibr" rid="CR40">40</xref>] or optimization problems considered in conjunction with clusters of phylogenetic footprints [<xref ref-type="bibr" rid="CR41">41</xref>] might be of interest. In a similar vein, such &#x0201c;stacks&#x0201d; of orthologous anchors may also be helpful to improve multiple genome alignments since they naturally subdivide the problem in smaller alignment problems.</p></sec><sec id="Sec11" sec-type="supplementary-material"><title>Supplementary Information</title><p>
+<supplementary-material content-type="local-data" id="MOESM1"><media xlink:href="13015_2025_275_MOESM1_ESM.tar"><caption><p>Supplementary Material 1.</p></caption></media></supplementary-material><supplementary-material content-type="local-data" id="MOESM2"><media xlink:href="13015_2025_275_MOESM2_ESM.pdf"><caption><p>Supplementary Material 2.</p></caption></media></supplementary-material></p></sec></body><back><fn-group><fn><p><bold>Publisher's Note</bold></p><p>Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></fn></fn-group><notes notes-type="author-contribution"><title>Author contributions</title><p>P.F.S. and S.L. conceived the study, K.K.K. and P.F.S. developed the theoretical foundations, K.K.K. implemented the pipeline and performed the computational experiments, and wrote the first draft of the manuscript. A.R. and S.L. contributed showcase applications. All authors contributed the analysis and interpretation of the data and the writing of the manuscript. All authors participated in revising the manuscript during the review process.</p></notes><notes notes-type="funding-information"><title>Funding</title><p>Open Access funding enabled and organized by Projekt DEAL. This work was funded by the German Research Foundation as part of SPP 2349 <italic>&#x0201c;Genomic Basis of Evolutionary Innovations (GEvol)&#x0201d;</italic> (grant no. 502862570 to S.L. and P.F.S.).</p></notes><notes notes-type="data-availability"><title>Data availability</title><p>Supplementary material can be found on <ext-link ext-link-type="uri" xlink:href="https://zenodo.org/records/13749422">Zenodo</ext-link> (<ext-link ext-link-type="uri" xlink:href="https://zenodo.org/records/13749422">https://zenodo.org/records/13749422</ext-link>). The data archive contains all relevant parameter settings, the anchors and alignemnts in binary and text format as well as all necessary code and data to reproduce relevant figures as well as the underlying data in table format for the heatmaps and pygenomewiz figures. A prototype of the pipeline is available at <ext-link ext-link-type="uri" xlink:href="https://github.com/Norsbus/AncST">https://github.com/Norsbus/AncST</ext-link>. We are also working on a website providing precomputed AncST anchors for different sets of species. A protoype is available at <ext-link ext-link-type="uri" xlink:href="http://anchored.bioinf.uni-leipzig.de:8080/">http://anchored.bioinf.uni-leipzig.de:8080/</ext-link>.</p></notes><notes><title>Declarations</title><notes id="FPar5" notes-type="COI-statement"><title>Competing interests</title><p id="Par55">The authors declare that they have no Conflict of interest as defined by BMC, or other interests that might be perceived to influence the results and/or discussion reported in this paper.</p></notes></notes><ref-list id="Bib1"><title>References</title><ref id="CR1"><label>1.</label><citation-alternatives><element-citation id="ec-CR1" publication-type="journal"><person-group person-group-type="author"><name><surname>Koonin</surname><given-names>EV</given-names></name></person-group><article-title>Orthologs, paralogs, and evolutionary genomics</article-title><source>Annu Rev Genet</source><year>2005</year><volume>39</volume><fpage>309</fpage><lpage>338</lpage><pub-id pub-id-type="pmid">16285863</pub-id>
+</element-citation><mixed-citation id="mc-CR1" publication-type="journal">Koonin EV. Orthologs, paralogs, and evolutionary genomics. Annu Rev Genet. 2005;39:309&#x02013;38.<pub-id pub-id-type="pmid">16285863</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR2"><label>2.</label><citation-alternatives><element-citation id="ec-CR2" publication-type="journal"><person-group person-group-type="author"><name><surname>Gabald&#x000f3;n</surname><given-names>T</given-names></name><name><surname>Koonin</surname><given-names>EV</given-names></name></person-group><article-title>Functional and evolutionary implications of gene orthology</article-title><source>Nat Rev Genet</source><year>2013</year><volume>14</volume><fpage>360</fpage><lpage>366</lpage><pub-id pub-id-type="pmid">23552219</pub-id>
+</element-citation><mixed-citation id="mc-CR2" publication-type="journal">Gabald&#x000f3;n T, Koonin EV. Functional and evolutionary implications of gene orthology. Nat Rev Genet. 2013;14:360&#x02013;6.<pub-id pub-id-type="pmid">23552219</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR3"><label>3.</label><citation-alternatives><element-citation id="ec-CR3" publication-type="journal"><person-group person-group-type="author"><name><surname>Kirilenko</surname><given-names>BM</given-names></name><name><surname>Munegowda</surname><given-names>C</given-names></name><name><surname>Osipova</surname><given-names>E</given-names></name><name><surname>Jebb</surname><given-names>D</given-names></name><name><surname>Sharma</surname><given-names>V</given-names></name><name><surname>Blumer</surname><given-names>M</given-names></name><etal/></person-group><article-title>Integrating gene annotation with orthology inference at scale</article-title><source>Science</source><year>2023</year><volume>380</volume><fpage>eabn3107</fpage><pub-id pub-id-type="pmid">37104600</pub-id>
+</element-citation><mixed-citation id="mc-CR3" publication-type="journal">Kirilenko BM, Munegowda C, Osipova E, Jebb D, Sharma V, Blumer M, et al. Integrating gene annotation with orthology inference at scale. Science. 2023;380:eabn3107.<pub-id pub-id-type="pmid">37104600</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR4"><label>4.</label><citation-alternatives><element-citation id="ec-CR4" publication-type="journal"><person-group person-group-type="author"><name><surname>Ward</surname><given-names>N</given-names></name><name><surname>Moreno-Hagelsieb</surname><given-names>G</given-names></name></person-group><article-title>Quickly Finding Orthologs as Reciprocal Best Hits with BLAT, LAST, and UBLAST: How Much Do We Miss?</article-title><source>PLoS ONE</source><year>2014</year><volume>9</volume><fpage>e101850</fpage><pub-id pub-id-type="pmid">25013894</pub-id>
+</element-citation><mixed-citation id="mc-CR4" publication-type="journal">Ward N, Moreno-Hagelsieb G. Quickly Finding Orthologs as Reciprocal Best Hits with BLAT, LAST, and UBLAST: How Much Do We Miss? PLoS ONE. 2014;9: e101850.<pub-id pub-id-type="pmid">25013894</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR5"><label>5.</label><citation-alternatives><element-citation id="ec-CR5" publication-type="journal"><person-group person-group-type="author"><name><surname>Nichio</surname><given-names>BTL</given-names></name><name><surname>Marchaukoski</surname><given-names>JN</given-names></name><name><surname>Raittz</surname><given-names>RT</given-names></name></person-group><article-title>New tools in orthology analysis: a brief review of promising perspectives</article-title><source>Front Genet</source><year>2017</year><volume>8</volume><fpage>165</fpage><pub-id pub-id-type="pmid">29163633</pub-id>
+</element-citation><mixed-citation id="mc-CR5" publication-type="journal">Nichio BTL, Marchaukoski JN, Raittz RT. New tools in orthology analysis: a brief review of promising perspectives. Front Genet. 2017;8:165.<pub-id pub-id-type="pmid">29163633</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR6"><label>6.</label><citation-alternatives><element-citation id="ec-CR6" publication-type="journal"><person-group person-group-type="author"><name><surname>Schaller</surname><given-names>D</given-names></name><name><surname>Gei&#x000df;</surname><given-names>M</given-names></name><name><surname>Stadler</surname><given-names>PF</given-names></name><name><surname>Hellmuth</surname><given-names>M</given-names></name></person-group><article-title>Complete characterization of incorrect orthology assignments in best match graphs</article-title><source>J Math Biol</source><year>2021</year><volume>82</volume><fpage>20</fpage><pub-id pub-id-type="pmid">33606106</pub-id>
+</element-citation><mixed-citation id="mc-CR6" publication-type="journal">Schaller D, Gei&#x000df; M, Stadler PF, Hellmuth M. Complete characterization of incorrect orthology assignments in best match graphs. J Math Biol. 2021;82:20 <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/2006.02249">ArXiv: 2006.02249</ext-link>.<pub-id pub-id-type="pmid">33606106</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR7"><label>7.</label><citation-alternatives><element-citation id="ec-CR7" publication-type="journal"><person-group person-group-type="author"><name><surname>Nowick</surname><given-names>KN</given-names></name><name><surname>Fields</surname><given-names>C</given-names></name><name><surname>Gernat</surname><given-names>T</given-names></name><name><surname>Caetano-Anolles</surname><given-names>D</given-names></name><name><surname>Kholina</surname><given-names>N</given-names></name><name><surname>Stubbs</surname><given-names>L</given-names></name></person-group><article-title>Gain, loss and divergence in primate zinc-finger genes: a rich resource for evolution of gene regulatory differences between species</article-title><source>PLoS One</source><year>2011</year><volume>6</volume><fpage>e21553</fpage><pub-id pub-id-type="pmid">21738707</pub-id>
+</element-citation><mixed-citation id="mc-CR7" publication-type="journal">Nowick KN, Fields C, Gernat T, Caetano-Anolles D, Kholina N, Stubbs L. Gain, loss and divergence in primate zinc-finger genes: a rich resource for evolution of gene regulatory differences between species. PLoS One. 2011;6: e21553.<pub-id pub-id-type="pmid">21738707</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR8"><label>8.</label><citation-alternatives><element-citation id="ec-CR8" publication-type="journal"><person-group person-group-type="author"><name><surname>Menzel</surname><given-names>P</given-names></name><name><surname>Gorodkin</surname><given-names>J</given-names></name><name><surname>Stadler</surname><given-names>PF</given-names></name></person-group><article-title>The tedious task of finding homologous non-coding RNA genes</article-title><source>RNA</source><year>2009</year><volume>15</volume><fpage>2075</fpage><lpage>2082</lpage><pub-id pub-id-type="pmid">19861422</pub-id>
+</element-citation><mixed-citation id="mc-CR8" publication-type="journal">Menzel P, Gorodkin J, Stadler PF. The tedious task of finding homologous non-coding RNA genes. RNA. 2009;15:2075&#x02013;82.<pub-id pub-id-type="pmid">19861422</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR9"><label>9.</label><citation-alternatives><element-citation id="ec-CR9" publication-type="journal"><person-group person-group-type="author"><name><surname>Nitsche</surname><given-names>A</given-names></name><name><surname>Rose</surname><given-names>D</given-names></name><name><surname>Fasold</surname><given-names>M</given-names></name><name><surname>Reiche</surname><given-names>K</given-names></name><name><surname>Stadler</surname><given-names>PF</given-names></name></person-group><article-title>Comparison of splice sites reveals that long non-coding RNAs are evolutionarily well conserved</article-title><source>RNA</source><year>2015</year><volume>21</volume><fpage>801</fpage><lpage>812</lpage><pub-id pub-id-type="pmid">25802408</pub-id>
+</element-citation><mixed-citation id="mc-CR9" publication-type="journal">Nitsche A, Rose D, Fasold M, Reiche K, Stadler PF. Comparison of splice sites reveals that long non-coding RNAs are evolutionarily well conserved. RNA. 2015;21:801&#x02013;12.<pub-id pub-id-type="pmid">25802408</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR10"><label>10.</label><citation-alternatives><element-citation id="ec-CR10" publication-type="journal"><person-group person-group-type="author"><name><surname>Moyers</surname><given-names>BA</given-names></name><name><surname>Zhang</surname><given-names>J</given-names></name></person-group><article-title>Further simulations and analyses demonstrate open problems of phylostratigraphy</article-title><source>Genome Biol Evol</source><year>2017</year><volume>9</volume><issue>6</issue><fpage>1519</fpage><lpage>1527</lpage><pub-id pub-id-type="pmid">28637261</pub-id>
+</element-citation><mixed-citation id="mc-CR10" publication-type="journal">Moyers BA, Zhang J. Further simulations and analyses demonstrate open problems of phylostratigraphy. Genome Biol Evol. 2017;9(6):1519&#x02013;27.<pub-id pub-id-type="pmid">28637261</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR11"><label>11.</label><citation-alternatives><element-citation id="ec-CR11" publication-type="journal"><person-group person-group-type="author"><name><surname>Vakirlis</surname><given-names>N</given-names></name><name><surname>Carvunis</surname><given-names>AR</given-names></name><name><surname>McLysaght</surname><given-names>A</given-names></name></person-group><article-title>Synteny-based analyses indicate that sequence divergence is not the main source of orphan genes</article-title><source>eLife</source><year>2000</year><volume>9</volume><fpage>e53500</fpage></element-citation><mixed-citation id="mc-CR11" publication-type="journal">Vakirlis N, Carvunis AR, McLysaght A. Synteny-based analyses indicate that sequence divergence is not the main source of orphan genes. eLife. 2000;9: e53500.</mixed-citation></citation-alternatives></ref><ref id="CR12"><label>12.</label><citation-alternatives><element-citation id="ec-CR12" publication-type="journal"><person-group person-group-type="author"><name><surname>Liao</surname><given-names>D</given-names></name></person-group><article-title>Concerted evolution: molecular mechanisms and biological implications</article-title><source>Am J Hum Genet</source><year>1999</year><volume>64</volume><fpage>24</fpage><lpage>30</lpage><pub-id pub-id-type="pmid">9915939</pub-id>
+</element-citation><mixed-citation id="mc-CR12" publication-type="journal">Liao D. Concerted evolution: molecular mechanisms and biological implications. Am J Hum Genet. 1999;64:24&#x02013;30.<pub-id pub-id-type="pmid">9915939</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR13"><label>13.</label><citation-alternatives><element-citation id="ec-CR13" publication-type="journal"><person-group person-group-type="author"><name><surname>Nadeau</surname><given-names>JH</given-names></name><name><surname>Taylor</surname><given-names>BA</given-names></name></person-group><article-title>Lengths of chromosomal segments conserved since divergence of man and mouse</article-title><source>Proc Natl Acad Sci USA</source><year>1984</year><volume>81</volume><issue>3</issue><fpage>814</fpage><lpage>818</lpage><pub-id pub-id-type="pmid">6583681</pub-id>
+</element-citation><mixed-citation id="mc-CR13" publication-type="journal">Nadeau JH, Taylor BA. Lengths of chromosomal segments conserved since divergence of man and mouse. Proc Natl Acad Sci USA. 1984;81(3):814&#x02013;8.<pub-id pub-id-type="pmid">6583681</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR14"><label>14.</label><citation-alternatives><element-citation id="ec-CR14" publication-type="journal"><person-group person-group-type="author"><name><surname>Poyatos</surname><given-names>JF</given-names></name><name><surname>Hurst</surname><given-names>LD</given-names></name></person-group><article-title>The determinants of gene order conservation in yeasts</article-title><source>Genome Biol</source><year>2007</year><volume>8</volume><fpage>R233</fpage><pub-id pub-id-type="pmid">17983469</pub-id>
+</element-citation><mixed-citation id="mc-CR14" publication-type="journal">Poyatos JF, Hurst LD. The determinants of gene order conservation in yeasts. Genome Biol. 2007;8:R233.<pub-id pub-id-type="pmid">17983469</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR15"><label>15.</label><citation-alternatives><element-citation id="ec-CR15" publication-type="journal"><person-group person-group-type="author"><name><surname>Fitch</surname><given-names>WM</given-names></name></person-group><article-title>Homology: a personal view on some of the problems</article-title><source>Trends Genet</source><year>2000</year><volume>16</volume><issue>5</issue><fpage>227</fpage><lpage>231</lpage><pub-id pub-id-type="pmid">10782117</pub-id>
+</element-citation><mixed-citation id="mc-CR15" publication-type="journal">Fitch WM. Homology: a personal view on some of the problems. Trends Genet. 2000;16(5):227&#x02013;31.<pub-id pub-id-type="pmid">10782117</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR16"><label>16.</label><citation-alternatives><element-citation id="ec-CR16" publication-type="journal"><person-group person-group-type="author"><name><surname>Velandia-Huerto</surname><given-names>CA</given-names></name><name><surname>Berkemer</surname><given-names>SJ</given-names></name><name><surname>Hoffmann</surname><given-names>A</given-names></name><name><surname>Retzlaff</surname><given-names>N</given-names></name><name><surname>Romero Marroqu&#x000ed;n</surname><given-names>LC</given-names></name><name><surname>Hern&#x000e1;ndez Rosales</surname><given-names>M</given-names></name><etal/></person-group><article-title>Orthologs, turn-over, and remolding of tRNAs in primates and fruit flies</article-title><source>BMC Genom</source><year>2016</year><volume>17</volume><fpage>617</fpage></element-citation><mixed-citation id="mc-CR16" publication-type="journal">Velandia-Huerto CA, Berkemer SJ, Hoffmann A, Retzlaff N, Romero Marroqu&#x000ed;n LC, Hern&#x000e1;ndez Rosales M, et al. Orthologs, turn-over, and remolding of tRNAs in primates and fruit flies. BMC Genom. 2016;17:617.</mixed-citation></citation-alternatives></ref><ref id="CR17"><label>17.</label><citation-alternatives><element-citation id="ec-CR17" publication-type="journal"><person-group person-group-type="author"><name><surname>Steenwyk</surname><given-names>JL</given-names></name><name><surname>King</surname><given-names>N</given-names></name></person-group><article-title>The promise and pitfalls of synteny in phylogenomics</article-title><source>PLoS Biol</source><year>2024</year><volume>22</volume><issue>5</issue><fpage>e3002632</fpage><pub-id pub-id-type="pmid">38768403</pub-id>
+</element-citation><mixed-citation id="mc-CR17" publication-type="journal">Steenwyk JL, King N. The promise and pitfalls of synteny in phylogenomics. PLoS Biol. 2024;22(5): e3002632.<pub-id pub-id-type="pmid">38768403</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR18"><label>18.</label><citation-alternatives><element-citation id="ec-CR18" publication-type="journal"><person-group person-group-type="author"><name><surname>El-Mabrouk</surname><given-names>N</given-names></name></person-group><article-title>Predicting the evolution of syntenies&#x02013;an algorithmic review</article-title><source>Algorithms</source><year>2021</year><volume>14</volume><issue>5</issue><fpage>152</fpage></element-citation><mixed-citation id="mc-CR18" publication-type="journal">El-Mabrouk N. Predicting the evolution of syntenies&#x02013;an algorithmic review. Algorithms. 2021;14(5):152.</mixed-citation></citation-alternatives></ref><ref id="CR19"><label>19.</label><citation-alternatives><element-citation id="ec-CR19" publication-type="journal"><person-group person-group-type="author"><name><surname>Haas</surname><given-names>BJ</given-names></name><name><surname>Delcher</surname><given-names>AL</given-names></name><name><surname>Wortman</surname><given-names>JR</given-names></name><name><surname>Salzberg</surname><given-names>SL</given-names></name></person-group><article-title>DAGchainer: a tool for mining segmental genome duplications and synteny</article-title><source>Bioinformatics</source><year>2004</year><volume>20</volume><issue>18</issue><fpage>3643</fpage><lpage>3646</lpage><pub-id pub-id-type="pmid">15247098</pub-id>
+</element-citation><mixed-citation id="mc-CR19" publication-type="journal">Haas BJ, Delcher AL, Wortman JR, Salzberg SL. DAGchainer: a tool for mining segmental genome duplications and synteny. Bioinformatics. 2004;20(18):3643&#x02013;6.<pub-id pub-id-type="pmid">15247098</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR20"><label>20.</label><citation-alternatives><element-citation id="ec-CR20" publication-type="journal"><person-group person-group-type="author"><name><surname>Wang</surname><given-names>Y</given-names></name><name><surname>Tang</surname><given-names>H</given-names></name><name><surname>DeBarry</surname><given-names>JD</given-names></name><name><surname>Tan</surname><given-names>X</given-names></name><name><surname>Li</surname><given-names>J</given-names></name><name><surname>Wang</surname><given-names>X</given-names></name><etal/></person-group><article-title>MCScanX: a toolkit for detection and evolutionary analysis of gene synteny and collinearity</article-title><source>Nucleic Acids Res</source><year>2012</year><volume>40</volume><issue>7</issue><fpage>e49</fpage><pub-id pub-id-type="pmid">22217600</pub-id>
+</element-citation><mixed-citation id="mc-CR20" publication-type="journal">Wang Y, Tang H, DeBarry JD, Tan X, Li J, Wang X, et al. MCScanX: a toolkit for detection and evolutionary analysis of gene synteny and collinearity. Nucleic Acids Res. 2012;40(7): e49.<pub-id pub-id-type="pmid">22217600</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR21"><label>21.</label><citation-alternatives><element-citation id="ec-CR21" publication-type="journal"><person-group person-group-type="author"><name><surname>Armstrong</surname><given-names>J</given-names></name><name><surname>Hickey</surname><given-names>G</given-names></name><name><surname>Diekhans</surname><given-names>M</given-names></name><name><surname>Fiddes</surname><given-names>IT</given-names></name><name><surname>Novak</surname><given-names>AM</given-names></name><name><surname>Deran</surname><given-names>A</given-names></name><etal/></person-group><article-title>Progressive cactus is a multiple-genome aligner for the thousand-genome era</article-title><source>Nature</source><year>2020</year><volume>587</volume><fpage>246</fpage><lpage>251</lpage><pub-id pub-id-type="pmid">33177663</pub-id>
+</element-citation><mixed-citation id="mc-CR21" publication-type="journal">Armstrong J, Hickey G, Diekhans M, Fiddes IT, Novak AM, Deran A, et al. Progressive cactus is a multiple-genome aligner for the thousand-genome era. Nature. 2020;587:246&#x02013;51.<pub-id pub-id-type="pmid">33177663</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR22"><label>22.</label><mixed-citation publication-type="other">Kaether K, Lemke S, Stadler PF. Annotation-free Identification of Potential Synteny Anchors. In: Rojas I, Valenzuela O, Rojas&#x000a0;Ruiz F, Herrera LJ, Ortu&#x000f1;o F, editors. International Work-Conference on Bioinformatics and Biomedical Engineering (IWWBIO&#x02019;23). vol. 13919 of Lect. Notes Comp. Sci. Cham: Springer; 2023;217&#x02013;230.</mixed-citation></ref><ref id="CR23"><label>23.</label><citation-alternatives><element-citation id="ec-CR23" publication-type="journal"><person-group person-group-type="author"><name><surname>Soriano</surname><given-names>P</given-names></name><name><surname>Meunier-Rotival</surname><given-names>M</given-names></name><name><surname>Bernardi</surname><given-names>G</given-names></name></person-group><article-title>The distribution of interspersed repeats is nonuniform and conserved in the mouse and human genomes</article-title><source>Proc Natl Acad Sci USA</source><year>1983</year><volume>80</volume><issue>7</issue><fpage>1816</fpage><lpage>1820</lpage><pub-id pub-id-type="pmid">6572942</pub-id>
+</element-citation><mixed-citation id="mc-CR23" publication-type="journal">Soriano P, Meunier-Rotival M, Bernardi G. The distribution of interspersed repeats is nonuniform and conserved in the mouse and human genomes. Proc Natl Acad Sci USA. 1983;80(7):1816&#x02013;20.<pub-id pub-id-type="pmid">6572942</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR24"><label>24.</label><citation-alternatives><element-citation id="ec-CR24" publication-type="journal"><person-group person-group-type="author"><name><surname>Lempel</surname><given-names>A</given-names></name><name><surname>Ziv</surname><given-names>J</given-names></name></person-group><article-title>On the complexity of finite sequences</article-title><source>IEEE Trans Inf Theory</source><year>1976</year><volume>22</volume><fpage>75</fpage><lpage>81</lpage></element-citation><mixed-citation id="mc-CR24" publication-type="journal">Lempel A, Ziv J. On the complexity of finite sequences. IEEE Trans Inf Theory. 1976;22:75&#x02013;81.</mixed-citation></citation-alternatives></ref><ref id="CR25"><label>25.</label><citation-alternatives><element-citation id="ec-CR25" publication-type="journal"><person-group person-group-type="author"><name><surname>Odenthal-Hesse</surname><given-names>L</given-names></name><name><surname>Dutheil</surname><given-names>JY</given-names></name><name><surname>Kl&#x000f6;tzl</surname><given-names>F</given-names></name><name><surname>Haubold</surname><given-names>B</given-names></name></person-group><article-title>hotspot: software to support sperm-typing for investigating recombination hotspots</article-title><source>Bioinformatics</source><year>2016</year><volume>32</volume><fpage>2554</fpage><lpage>2555</lpage><pub-id pub-id-type="pmid">27153632</pub-id>
+</element-citation><mixed-citation id="mc-CR25" publication-type="journal">Odenthal-Hesse L, Dutheil JY, Kl&#x000f6;tzl F, Haubold B. hotspot: software to support sperm-typing for investigating recombination hotspots. Bioinformatics. 2016;32:2554&#x02013;5.<pub-id pub-id-type="pmid">27153632</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR26"><label>26.</label><citation-alternatives><element-citation id="ec-CR26" publication-type="journal"><person-group person-group-type="author"><name><surname>Pirogov</surname><given-names>A</given-names></name><name><surname>Pfaffelhuber</surname><given-names>P</given-names></name><name><surname>B&#x000f6;rsch-Haubold</surname><given-names>A</given-names></name><name><surname>Haubold</surname><given-names>B</given-names></name></person-group><article-title>High-complexity regions in mammalian genomes are enriched for developmental genes</article-title><source>Bioinformatics</source><year>2019</year><volume>35</volume><issue>11</issue><fpage>1813</fpage><lpage>1819</lpage><pub-id pub-id-type="pmid">30395202</pub-id>
+</element-citation><mixed-citation id="mc-CR26" publication-type="journal">Pirogov A, Pfaffelhuber P, B&#x000f6;rsch-Haubold A, Haubold B. High-complexity regions in mammalian genomes are enriched for developmental genes. Bioinformatics. 2019;35(11):1813&#x02013;9.<pub-id pub-id-type="pmid">30395202</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR27"><label>27.</label><citation-alternatives><element-citation id="ec-CR27" publication-type="journal"><person-group person-group-type="author"><name><surname>Haubold</surname><given-names>B</given-names></name><name><surname>Wiehe</surname><given-names>T</given-names></name></person-group><article-title>How repetitive are genomes?</article-title><source>BMC Bioinf</source><year>2006</year><volume>7</volume><fpage>541</fpage></element-citation><mixed-citation id="mc-CR27" publication-type="journal">Haubold B, Wiehe T. How repetitive are genomes? BMC Bioinf. 2006;7:541.</mixed-citation></citation-alternatives></ref><ref id="CR28"><label>28.</label><citation-alternatives><element-citation id="ec-CR28" publication-type="journal"><person-group person-group-type="author"><name><surname>Pockrandt</surname><given-names>C</given-names></name><name><surname>Alzamel</surname><given-names>M</given-names></name><name><surname>Iliopoulos</surname><given-names>CS</given-names></name><name><surname>Reinert</surname><given-names>K</given-names></name></person-group><article-title>GenMap: ultra-fast computation of genome mappability</article-title><source>Bioinformatics</source><year>2020</year><volume>36</volume><issue>12</issue><fpage>3687</fpage><lpage>3692</lpage><pub-id pub-id-type="pmid">32246826</pub-id>
+</element-citation><mixed-citation id="mc-CR28" publication-type="journal">Pockrandt C, Alzamel M, Iliopoulos CS, Reinert K. GenMap: ultra-fast computation of genome mappability. Bioinformatics. 2020;36(12):3687&#x02013;92.<pub-id pub-id-type="pmid">32246826</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR29"><label>29.</label><mixed-citation publication-type="other">Abouelhoda MI, Ohlebusch E. Multiple genome alignment: Chaining algorithms revisited. In: Combinatorial Pattern Matching: 14th Annual Symposium, CPM 2003 Morelia, Michoac&#x000e1;n, Mexico, June 25&#x02013;27, 2003 Proceedings 14. Springer; 2003;1&#x02013;16.</mixed-citation></ref><ref id="CR30"><label>30.</label><citation-alternatives><element-citation id="ec-CR30" publication-type="journal"><person-group person-group-type="author"><name><surname>Otto</surname><given-names>C</given-names></name><name><surname>Hoffmann</surname><given-names>S</given-names></name><name><surname>Gorodkin</surname><given-names>J</given-names></name><name><surname>Stadler</surname><given-names>PF</given-names></name></person-group><article-title>Fast local fragment chaining using sum-of-pair gap costs</article-title><source>Alg Mol Biol</source><year>2011</year><volume>6</volume><fpage>4</fpage></element-citation><mixed-citation id="mc-CR30" publication-type="journal">Otto C, Hoffmann S, Gorodkin J, Stadler PF. Fast local fragment chaining using sum-of-pair gap costs. Alg Mol Biol. 2011;6:4.</mixed-citation></citation-alternatives></ref><ref id="CR31"><label>31.</label><citation-alternatives><element-citation id="ec-CR31" publication-type="journal"><person-group person-group-type="author"><name><surname>Salzberg</surname><given-names>SL</given-names></name></person-group><article-title>Next-generation genome annotation: we still struggle to get it right</article-title><source>Genom Biol</source><year>2019</year><volume>20</volume><issue>1</issue><fpage>92</fpage></element-citation><mixed-citation id="mc-CR31" publication-type="journal">Salzberg SL. Next-generation genome annotation: we still struggle to get it right. Genom Biol. 2019;20(1):92.</mixed-citation></citation-alternatives></ref><ref id="CR32"><label>32.</label><mixed-citation publication-type="other">Shimoyama Y. pyGenomeViz: a genome visualization python package for comparative genomics; 2024.</mixed-citation></ref><ref id="CR33"><label>33.</label><citation-alternatives><element-citation id="ec-CR33" publication-type="journal"><person-group person-group-type="author"><name><surname>Cohen</surname><given-names>RS</given-names></name></person-group><article-title>Halo: a guiding light for transport</article-title><source>Curr Biol</source><year>2003</year><volume>13</volume><issue>22</issue><fpage>R869</fpage><lpage>R870</lpage><pub-id pub-id-type="pmid">14614840</pub-id>
+</element-citation><mixed-citation id="mc-CR33" publication-type="journal">Cohen RS. Halo: a guiding light for transport. Curr Biol. 2003;13(22):R869&#x02013;70.<pub-id pub-id-type="pmid">14614840</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR34"><label>34.</label><mixed-citation publication-type="other">Wang Y, Tang H, Wang X, Sun Y, Joseph PV, Paterson AH. Detection of colinear blocks and synteny and evolutionary analyses based on utilization of MCScanX. Nature Protocols. 2024;1&#x02013;24.</mixed-citation></ref><ref id="CR35"><label>35.</label><mixed-citation publication-type="other">Bandi VK. SynVisio: a multiscale tool to explore genomic conservation; 2020.</mixed-citation></ref><ref id="CR36"><label>36.</label><citation-alternatives><element-citation id="ec-CR36" publication-type="journal"><person-group person-group-type="author"><name><surname>Wang</surname><given-names>S</given-names></name><name><surname>Magoulas</surname><given-names>C</given-names></name><name><surname>Hickey</surname><given-names>D</given-names></name></person-group><article-title>Concerted evolution within a trypsin gene cluster in Drosophila</article-title><source>Mol Biol Evol</source><year>1999</year><volume>16</volume><fpage>1117</fpage><lpage>1124</lpage><pub-id pub-id-type="pmid">10486967</pub-id>
+</element-citation><mixed-citation id="mc-CR36" publication-type="journal">Wang S, Magoulas C, Hickey D. Concerted evolution within a trypsin gene cluster in Drosophila. Mol Biol Evol. 1999;16:1117&#x02013;24.<pub-id pub-id-type="pmid">10486967</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR37"><label>37.</label><citation-alternatives><element-citation id="ec-CR37" publication-type="journal"><person-group person-group-type="author"><name><surname>Mulhair</surname><given-names>PO</given-names></name><name><surname>Holland</surname><given-names>PW</given-names></name></person-group><article-title>Evolution of the insect Hox gene cluster: comparative analysis across 243 species</article-title><source>Sem Cell Dev Biol</source><year>2024</year><volume>152</volume><fpage>4</fpage><lpage>15</lpage></element-citation><mixed-citation id="mc-CR37" publication-type="journal">Mulhair PO, Holland PW. Evolution of the insect Hox gene cluster: comparative analysis across 243 species. Sem Cell Dev Biol. 2024;152:4&#x02013;15.</mixed-citation></citation-alternatives></ref><ref id="CR38"><label>38.</label><citation-alternatives><element-citation id="ec-CR38" publication-type="journal"><person-group person-group-type="author"><name><surname>Negre</surname><given-names>B</given-names></name><name><surname>Ruiz</surname><given-names>A</given-names></name></person-group><article-title>HOM-C evolution in Drosophila: is there a need for Hox gene clustering?</article-title><source>TRENDS Genet</source><year>2007</year><volume>23</volume><issue>2</issue><fpage>55</fpage><lpage>59</lpage><pub-id pub-id-type="pmid">17188778</pub-id>
+</element-citation><mixed-citation id="mc-CR38" publication-type="journal">Negre B, Ruiz A. HOM-C evolution in Drosophila: is there a need for Hox gene clustering? TRENDS Genet. 2007;23(2):55&#x02013;9.<pub-id pub-id-type="pmid">17188778</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR39"><label>39.</label><citation-alternatives><element-citation id="ec-CR39" publication-type="journal"><person-group person-group-type="author"><name><surname>Li</surname><given-names>H</given-names></name></person-group><article-title>Protein-to-genome alignment with miniprot</article-title><source>Bioinformatics</source><year>2023</year><volume>39</volume><fpage>btad014</fpage><pub-id pub-id-type="pmid">36648328</pub-id>
+</element-citation><mixed-citation id="mc-CR39" publication-type="journal">Li H. Protein-to-genome alignment with miniprot. Bioinformatics. 2023;39:btad014.<pub-id pub-id-type="pmid">36648328</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR40"><label>40.</label><citation-alternatives><element-citation id="ec-CR40" publication-type="journal"><person-group person-group-type="author"><name><surname>Fritzsch</surname><given-names>G</given-names></name><name><surname>Schlegel</surname><given-names>M</given-names></name><name><surname>Stadler</surname><given-names>PF</given-names></name></person-group><article-title>Alignments of mitochondrial genome arrangements: applications to metazoan phylogeny</article-title><source>J Theor Biol</source><year>2006</year><volume>240</volume><fpage>511</fpage><lpage>520</lpage><pub-id pub-id-type="pmid">16325206</pub-id>
+</element-citation><mixed-citation id="mc-CR40" publication-type="journal">Fritzsch G, Schlegel M, Stadler PF. Alignments of mitochondrial genome arrangements: applications to metazoan phylogeny. J Theor Biol. 2006;240:511&#x02013;20.<pub-id pub-id-type="pmid">16325206</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR41"><label>41.</label><citation-alternatives><element-citation id="ec-CR41" publication-type="journal"><person-group person-group-type="author"><name><surname>Fried</surname><given-names>C</given-names></name><name><surname>Hordijk</surname><given-names>W</given-names></name><name><surname>Prohaska</surname><given-names>SJ</given-names></name><name><surname>Stadler</surname><given-names>CR</given-names></name><name><surname>Stadler</surname><given-names>PF</given-names></name></person-group><article-title>The footprint sorting problem</article-title><source>J Chem Inf Comput Sci</source><year>2004</year><volume>44</volume><fpage>332</fpage><lpage>338</lpage><pub-id pub-id-type="pmid">15032508</pub-id>
+</element-citation><mixed-citation id="mc-CR41" publication-type="journal">Fried C, Hordijk W, Prohaska SJ, Stadler CR, Stadler PF. The footprint sorting problem. J Chem Inf Comput Sci. 2004;44:332&#x02013;8.<pub-id pub-id-type="pmid">15032508</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR42"><label>42.</label><citation-alternatives><element-citation id="ec-CR42" publication-type="journal"><person-group person-group-type="author"><name><surname>Misof</surname><given-names>B</given-names></name><name><surname>Liu</surname><given-names>S</given-names></name><name><surname>Meusemann</surname><given-names>K</given-names></name><name><surname>Peters</surname><given-names>RS</given-names></name><name><surname>Donath</surname><given-names>A</given-names></name><name><surname>Mayer</surname><given-names>C</given-names></name><etal/></person-group><article-title>Phylogenomics resolves the timing and pattern of insect evolution</article-title><source>Science</source><year>2014</year><volume>346</volume><issue>6210</issue><fpage>763</fpage><lpage>767</lpage><pub-id pub-id-type="pmid">25378627</pub-id>
+</element-citation><mixed-citation id="mc-CR42" publication-type="journal">Misof B, Liu S, Meusemann K, Peters RS, Donath A, Mayer C, et al. Phylogenomics resolves the timing and pattern of insect evolution. Science. 2014;346(6210):763&#x02013;7.<pub-id pub-id-type="pmid">25378627</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR43"><label>43.</label><citation-alternatives><element-citation id="ec-CR43" publication-type="journal"><person-group person-group-type="author"><name><surname>Emms</surname><given-names>DM</given-names></name><name><surname>Kelly</surname><given-names>S</given-names></name></person-group><article-title>OrthoFinder: phylogenetic orthology inference for comparative genomics</article-title><source>Genome Biol</source><year>2019</year><volume>20</volume><fpage>238</fpage><pub-id pub-id-type="pmid">31727128</pub-id>
+</element-citation><mixed-citation id="mc-CR43" publication-type="journal">Emms DM, Kelly S. OrthoFinder: phylogenetic orthology inference for comparative genomics. Genome Biol. 2019;20:238.<pub-id pub-id-type="pmid">31727128</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR44"><label>44.</label><citation-alternatives><element-citation id="ec-CR44" publication-type="journal"><person-group person-group-type="author"><name><surname>Capella-Guti&#x000e9;rrez</surname><given-names>S</given-names></name><name><surname>Silla-Mart&#x000ed;nez</surname><given-names>JM</given-names></name><name><surname>Gabald&#x000f3;n</surname><given-names>T</given-names></name></person-group><article-title>trimAl: a tool for automated alignment trimming in large-scale phylogenetic analyses</article-title><source>Bioinformatics</source><year>2009</year><volume>25</volume><issue>15</issue><fpage>1972</fpage><lpage>1973</lpage><pub-id pub-id-type="pmid">19505945</pub-id>
+</element-citation><mixed-citation id="mc-CR44" publication-type="journal">Capella-Guti&#x000e9;rrez S, Silla-Mart&#x000ed;nez JM, Gabald&#x000f3;n T. trimAl: a tool for automated alignment trimming in large-scale phylogenetic analyses. Bioinformatics. 2009;25(15):1972&#x02013;3.<pub-id pub-id-type="pmid">19505945</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR45"><label>45.</label><citation-alternatives><element-citation id="ec-CR45" publication-type="journal"><person-group person-group-type="author"><name><surname>Nguyen</surname><given-names>LT</given-names></name><name><surname>Schmidt</surname><given-names>HA</given-names></name><name><surname>Von Haeseler</surname><given-names>A</given-names></name><name><surname>Minh</surname><given-names>BQ</given-names></name></person-group><article-title>IQ-TREE: a fast and effective stochastic algorithm for estimating maximum-likelihood phylogenies</article-title><source>Mol Biol Evolut</source><year>2015</year><volume>32</volume><issue>1</issue><fpage>268</fpage><lpage>274</lpage></element-citation><mixed-citation id="mc-CR45" publication-type="journal">Nguyen LT, Schmidt HA, Von Haeseler A, Minh BQ. IQ-TREE: a fast and effective stochastic algorithm for estimating maximum-likelihood phylogenies. Mol Biol Evolut. 2015;32(1):268&#x02013;74.</mixed-citation></citation-alternatives></ref><ref id="CR46"><label>46.</label><citation-alternatives><element-citation id="ec-CR46" publication-type="journal"><person-group person-group-type="author"><name><surname>Edgar</surname><given-names>RC</given-names></name></person-group><article-title>MUSCLE: a multiple sequence alignment method with reduced time and space complexity</article-title><source>BMC Bioinf</source><year>2004</year><volume>5</volume><fpage>1</fpage><lpage>19</lpage></element-citation><mixed-citation id="mc-CR46" publication-type="journal">Edgar RC. MUSCLE: a multiple sequence alignment method with reduced time and space complexity. BMC Bioinf. 2004;5:1&#x02013;19.</mixed-citation></citation-alternatives></ref><ref id="CR47"><label>47.</label><mixed-citation publication-type="other">Letunic I, Bork P. Interactive Tree of Life (iTOL) v6: recent updates to the phylogenetic tree display and annotation tool. Nucleic Acids Research. 2024;gkae268.</mixed-citation></ref></ref-list></back></article>

@@ -1,0 +1,484 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Sci Rep</journal-id><journal-id journal-id-type="iso-abbrev">Sci Rep</journal-id><journal-title-group><journal-title>Scientific Reports</journal-title></journal-title-group><issn pub-type="epub">2045-2322</issn><publisher><publisher-name>Nature Publishing Group UK</publisher-name><publisher-loc>London</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">40000783</article-id><article-id pub-id-type="pmc">PMC11861698</article-id>
+<article-id pub-id-type="publisher-id">90974</article-id><article-id pub-id-type="doi">10.1038/s41598-025-90974-5</article-id><article-categories><subj-group subj-group-type="heading"><subject>Article</subject></subj-group></article-categories><title-group><article-title>Comparison of cryogenic and non-cryogenic droplet impact dynamics at low Weber numbers</article-title></title-group><contrib-group><contrib contrib-type="author"><name><surname>Tretola</surname><given-names>Giovanni</given-names></name><xref ref-type="aff" rid="Aff1"/></contrib><contrib contrib-type="author" corresp="yes"><name><surname>Vogiatzaki</surname><given-names>Konstantina</given-names></name><address><email>konstantina.vogiatzaki@eng.ox.ac.uk</email></address><xref ref-type="aff" rid="Aff1"/></contrib><aff id="Aff1"><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/052gg0110</institution-id><institution-id institution-id-type="GRID">grid.4991.5</institution-id><institution-id institution-id-type="ISNI">0000 0004 1936 8948</institution-id><institution>Department of Engineering Science, </institution><institution>University of Oxford, </institution></institution-wrap>Parks Road, Oxford, OX1 3PJ UK </aff></contrib-group><pub-date pub-type="epub"><day>25</day><month>2</month><year>2025</year></pub-date><pub-date pub-type="pmc-release"><day>25</day><month>2</month><year>2025</year></pub-date><pub-date pub-type="collection"><year>2025</year></pub-date><volume>15</volume><elocation-id>6726</elocation-id><history><date date-type="received"><day>19</day><month>1</month><year>2024</year></date><date date-type="accepted"><day>17</day><month>2</month><year>2025</year></date></history><permissions><copyright-statement>&#x000a9; The Author(s) 2025</copyright-statement><copyright-year>2025</copyright-year><license><ali:license_ref specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p><bold>Open Access</bold> This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article&#x02019;s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article&#x02019;s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link>.</license-p></license></permissions><abstract id="Abs1"><p id="Par1">Cryogenic fluids are crucial in applications such as rockets, cryosurgery and energy storage, where they can come in contact with surfaces. Thus, their impact dynamics are of interest. Experiments under cryogenic conditions are very expensive and not always accurate, mainly due to limitations of equipment operating in very low temperatures. Although simulation tools can provide useful insights, currently very few commercial and open-source software tailored for ultra low temperature conditions exist. In this work we present a novel numerical framework used to provide insight into the impact dynamics of cryogenic droplets with solid surfaces. Our aim is to explore whatever conclusions for droplet spreading dynamics from the current literature for droplets at non-cryogenic conditions can be applied to cryogenic droplets as well. We explore different impacting conditions, varying the initial impact velocity, of cryogenic and non-cryogenic cases, while maintaining the same Weber, Ohnesorge and Reynolds numbers between cryogenic and non-cryogenic cases. The impact on a solid surface is investigated first for a water droplet and then for a liquid oxygen droplet moving into gaseous nitrogen. For the latter, the ambient temperature and pressure are below the oxygen critical point, limiting the investigation at a sub-critical regime. The algebraic volume of fluid method with adaptive mesh refinement is employed. Numerical treatments to improve the interface description are also implemented. The simulations have been performed in OpenFOAM with a newly developed code. The results obtained are analysed both qualitatively and quantitatively, comparing the droplet morphology evolution for the two fluids. Differences are observed mainly in the receding stage, once the droplet has reached the maximum spreading, with the receding stage of the cryogenic case characterised by a faster dynamic.</p></abstract><kwd-group kwd-group-type="npg-subject"><title>Subject terms</title><kwd>Engineering</kwd><kwd>Mechanical engineering</kwd></kwd-group><funding-group><award-group><funding-source><institution-wrap><institution-id institution-id-type="FundRef">501100000266</institution-id><institution>RCUK | Engineering and Physical Sciences Research Council (EPSRC)</institution></institution-wrap></funding-source><award-id>EP/Y004930/1</award-id><award-id>EP/S001824/2</award-id></award-group></funding-group><custom-meta-group><custom-meta><meta-name>issue-copyright-statement</meta-name><meta-value>&#x000a9; Springer Nature Limited 2025</meta-value></custom-meta></custom-meta-group></article-meta></front><body><sec id="Sec1"><title>Introduction</title><p id="Par2">The interest in the study of cryogenic applications has recently increased among the academic and industrial community, due to the potential use of cryogenic liquids to a range of fields including energy storage, cooling, quantum computing and even biomedical applications like cryosurgery. Interaction of cryogenic liquid droplets and jets with solid surfaces is one of the more intriguing areas within the cryogenic field that however only limited research has been performed, mostly from the experimental side. For example an interesting application involving impact dynamics is in cryosurgery, where the extreme cold produced by liquid nitrogen (LN<inline-formula id="IEq1"><alternatives><tex-math id="M1">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq1.gif"/></alternatives></inline-formula>) vaporisation is used to destroy abnormal tissues. LN<inline-formula id="IEq2"><alternatives><tex-math id="M2">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq2.gif"/></alternatives></inline-formula> is applied directly to the cancer cells with a spraying device. Various physical phenomena occur during the impact of a non-cryogenic liquid droplet on a solid substrate, such as the spreading, fingering, air entrapment, coalescence, shedding, solidification, bouncing, and splashing. Several reviews are present in literature that classify these different phenomena (see for example<sup><xref ref-type="bibr" rid="CR1">1</xref></sup>) using non-dimensional numbers. Physically these phenomena are mostly controlled by the fluid properties, the surface properties and the impact velocity. If the same non dimentional parameters also control the impact of cryogenic fluids has not been fully investigated yet.</p><p id="Par3">Numerical simulations are fundamental to highlight the role of the different physics behind droplet impact since they can provide insight into processes that experimentation is hard. Several numerical approaches have been proposed in the literature over the years for the modelling of multiphase interfacial phenomena with non-cryogenic fluids. For example, great effort has been dedicated to correctly account for the transport of the interface and the consideration of the capillary forces. The role of the capillary forces is important both in cases with low velocity impact where capillary forces dominate throughout the process as well as to high impact case where although in the initial stages of the impact inertia is dominant as the droplets spread and slow down, capillarity becomes significant<sup><xref ref-type="bibr" rid="CR2">2</xref>&#x02013;<xref ref-type="bibr" rid="CR4">4</xref></sup>.</p><p id="Par4">Regarding cryogenic droplets impact, literature both from the numerical and the experimental side is very limited and mostly focusing on phenomena relevant to heat transfer and phase change but not impact dynamics. The evaporation process for single liquid nitrogen droplets when submerged into a non&#x02013;cryogenic liquid has been studied by Rebelo et al.<sup><xref ref-type="bibr" rid="CR5">5</xref></sup>, showing the influence of the initial droplet size and of the surface tension on the evaporation rate. Van Limbeek et al.<sup><xref ref-type="bibr" rid="CR6">6</xref></sup> studied experimentally the impact of a single liquid nitrogen drop on a smooth sapphire prism through high-speed frustrated total internal reflection imaging. Changing the prism temperature and drops impact velocity a phase diagram of the impact characteristics was observed. They showed how also in these conditions the cooling power of a drop is strongly related to the wetting behaviour of the impacting drops.</p><p id="Par5">In this investigation, we focus on the spreading behaviour of cryogenic droplets, providing novel insight into whether the current literature established for non-cryogenic conditions can be applied to the case of cryogenic drops. In this regards, different impacting conditions are applied to a cryogenic and non&#x02013;cryogenic cases, characterised by the same Weber (<italic>We</italic>), Ohnesorge (<italic>Oh</italic>) and Reynolds (<italic>Re</italic>) numbers. The influence of the impact conditions on both the cryogenic and non cryogenic frameworks is investigated varying the initial impact velocity. To the authors&#x02019; knowledge, this is the first numerical investigation focusing on the simulation of the impact dynamics of cryogenic droplets and how they differ in comparison to a non cryogenic case droplet impact. First, the impact of a water droplet on a flat, solid surface is investigated. Then, the impact behaviour onto a solid surface of a liquid oxygen (<inline-formula id="IEq3"><alternatives><tex-math id="M3">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\text{ LO}_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq3.gif"/></alternatives></inline-formula>) droplet moving into gaseous <inline-formula id="IEq4"><alternatives><tex-math id="M4">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\text{ N}_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq4.gif"/></alternatives></inline-formula> is simulated at the same conditions. The algebraic volume of fluid (VoF) method is employed with a new adaptive mesh refinement technique on the interface region. Numerical treatments to improve the interface description are implemented as well. The simulations have been performed in OpenFOAM with a newly developed code tailored for liquid/solid interaction. The results obtained are analysed both from a qualitative and quantitative point of view.</p></sec><sec id="Sec2"><title>Methods</title><p id="Par6">
+<fig id="Fig1"><label>Fig. 1</label><caption><p>(<bold>a</bold>) Initial droplet configuration and numerical domain. (<bold>b</bold>) Snapshots of the adaptive mesh refinement: the snapshot is taken before the impact, where most of the refinement is concentrated around the interface and at the wall.</p></caption><graphic xlink:href="41598_2025_90974_Fig1_HTML" id="MO1"/></fig>
+<table-wrap id="Tab1"><label>Table 1</label><caption><p>Transport properties and operating condition investigated.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left" rowspan="2">Cases</th><th align="left" colspan="4">
+<inline-formula id="IEq5"><alternatives><tex-math id="M5">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\text{ LO}_2\text{-N }_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq5.gif"/></alternatives></inline-formula>
+</th><th align="left" colspan="4">Water&#x02013;air</th><th align="left" colspan="3">Nondimensional parameters</th></tr><tr><th align="left"><inline-formula id="IEq6"><alternatives><tex-math id="M6">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d_{0}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq6.gif"/></alternatives></inline-formula> (mm)</th><th align="left"><inline-formula id="IEq7"><alternatives><tex-math id="M7">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$u_{0}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq7.gif"/></alternatives></inline-formula> (m/s)</th><th align="left">
+<inline-formula id="IEq8"><alternatives><tex-math id="M8">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\rho _l/\rho _g$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq8.gif"/></alternatives></inline-formula>
+</th><th align="left">
+<inline-formula id="IEq9"><alternatives><tex-math id="M9">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\mu _l/\mu _g$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq9.gif"/></alternatives></inline-formula>
+</th><th align="left"><inline-formula id="IEq10"><alternatives><tex-math id="M10">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d_{0}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq10.gif"/></alternatives></inline-formula> (mm)</th><th align="left"><inline-formula id="IEq11"><alternatives><tex-math id="M11">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$u_{0}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq11.gif"/></alternatives></inline-formula> (m/s)</th><th align="left">
+<inline-formula id="IEq12"><alternatives><tex-math id="M12">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\rho _l/\rho _g$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq12.gif"/></alternatives></inline-formula>
+</th><th align="left">
+<inline-formula id="IEq13"><alternatives><tex-math id="M13">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\mu _l/\mu _g$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq13.gif"/></alternatives></inline-formula>
+</th><th align="left">
+<italic>We</italic>
+</th><th align="left">
+<italic>Re</italic>
+</th><th align="left">
+<italic>Oh</italic>
+</th></tr></thead><tbody><tr><td align="left">1</td><td align="left">0.9465</td><td align="left">0.567</td><td align="left">438</td><td align="left">47.3</td><td align="left">2.05</td><td align="left">1</td><td align="left">847</td><td align="left">46</td><td align="left">28.38</td><td align="left">2400</td><td align="left">
+<inline-formula id="IEq14"><alternatives><tex-math id="M14">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$2.2\times 10^{-3}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq14.gif"/></alternatives></inline-formula>
+</td></tr><tr><td align="left">2</td><td align="left">0.9465</td><td align="left">1.134</td><td align="left">438</td><td align="left">47.3</td><td align="left">2.05</td><td align="left">2</td><td align="left">847</td><td align="left">46</td><td align="left">113.52</td><td align="left">4800</td><td align="left">
+<inline-formula id="IEq15"><alternatives><tex-math id="M15">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$2.2\times 10^{-3}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq15.gif"/></alternatives></inline-formula>
+</td></tr><tr><td align="left">3</td><td align="left">0.9465</td><td align="left">2.268</td><td align="left">438</td><td align="left">47.3</td><td align="left">2.05</td><td align="left">4</td><td align="left">847</td><td align="left">46</td><td align="left">454.08</td><td align="left">9600</td><td align="left">
+<inline-formula id="IEq16"><alternatives><tex-math id="M16">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$2.2\times 10^{-3}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq16.gif"/></alternatives></inline-formula>
+</td></tr></tbody></table></table-wrap>
+</p><p id="Par7">The details of the numerical methodology adopted in this study are presented in the supplementary material. In the supplementary material more details are presented: in Sec. 1 the governing equations, in Sec. 2 the numerical framework for the interface treatment and in Sec. 3 the adaptive mesh refinement strategy. Here only the main points of the methodology and the set-up employed are included. Our suggested framework is designed for simulations of compressible and immiscible fluids. The interface tracking of the two-phase flow is performed with the Volume of Fluid (VoF) method as basis using the Open Source code OpenFOAM<sup><xref ref-type="bibr" rid="CR7">7</xref></sup>. The native solver <italic>compressibleInterFOAM</italic> was used as starting point and modifications were made to account for the interface treatment. More details about the implementation into the method and the influence of these modifications, along with the validation of the implemented solver, can be found in previous studies<sup><xref ref-type="bibr" rid="CR8">8</xref>,<xref ref-type="bibr" rid="CR9">9</xref></sup>.</p><p id="Par8">The impact conditions are defined in terms of Weber and Reynolds numbers. The first non dimensional number represents the ratio between the fluid inertia and the surface tension force and is defined as <inline-formula id="IEq17"><alternatives><tex-math id="M17">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$We = \rho _l u_{0}^2 d_{0} /\sigma$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq17.gif"/></alternatives></inline-formula>, where <inline-formula id="IEq18"><alternatives><tex-math id="M18">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$u_{0}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq18.gif"/></alternatives></inline-formula> is the initial impact velocity, <inline-formula id="IEq19"><alternatives><tex-math id="M19">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d_{0}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq19.gif"/></alternatives></inline-formula> the initial droplet diameter, <inline-formula id="IEq20"><alternatives><tex-math id="M20">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\rho _l$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq20.gif"/></alternatives></inline-formula> the liquid density and <inline-formula id="IEq21"><alternatives><tex-math id="M21">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sigma$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq21.gif"/></alternatives></inline-formula> the surface tension. The Reynolds number represents the ratio of inertial forces to viscous forces, is defined as <inline-formula id="IEq22"><alternatives><tex-math id="M22">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$Re = \rho _l u_{0} d_{0} /\mu _l$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq22.gif"/></alternatives></inline-formula>, where <inline-formula id="IEq23"><alternatives><tex-math id="M23">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\mu _l$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq23.gif"/></alternatives></inline-formula> is the liquid dynamic viscosity. The numerical domain and initial configuration is shown in Fig. <xref rid="Fig1" ref-type="fig">1</xref>a. The domain has an extension of <inline-formula id="IEq24"><alternatives><tex-math id="M24">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$L_{X} = L_{Y} = 4 \times d$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq24.gif"/></alternatives></inline-formula> and <inline-formula id="IEq25"><alternatives><tex-math id="M25">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$L_{Z} = 2.5 \times d$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq25.gif"/></alternatives></inline-formula>. On the x and y direction 160 cells are used, while 100 on the z direction. A level of refinement of 7 is employed, which means that the cell is halved up to 7 times. The refinement is based on the following variables:<list list-type="bullet"><list-item><p id="Par9">gradient of volume fraction <inline-formula id="IEq26"><alternatives><tex-math id="M26">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq26.gif"/></alternatives></inline-formula>;</p></list-item><list-item><p id="Par10">vorticity magnitude;</p></list-item><list-item><p id="Par11">distance from the solid surface;</p></list-item></list>and when the first two are above a certain threshold, and the last one below, the cell is refined. An example of a section of the refined grid is shown in Fig.&#x000a0;<xref rid="Fig1" ref-type="fig">1</xref>b. In the supplementary material is shown a comparison between a case where only the interface is refined versus the refinement strategy here reported.</p><p id="Par12">At the initial time step, the spherical droplet is set <inline-formula id="IEq27"><alternatives><tex-math id="M27">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$0.1 \times d_0$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq27.gif"/></alternatives></inline-formula> away from the solid wall. The velocity field within the droplet is initialised with the initial velocity of the moving droplet <inline-formula id="IEq28"><alternatives><tex-math id="M28">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$u_0$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq28.gif"/></alternatives></inline-formula>. The top and lateral boundaries are treated as open boundaries, while on the bottom boundary the no-slip boundary condition is applied for the velocity fields, while a Neumann boundary condition is satisfied for the other fields. Applying this condition for the volume fraction means that we neglect the influence of the contact angle on the boundary, as the focus of this study is only on the influence of the cryogenic fluids on the impact behaviour. Moreover, exact values or guidelines for cryogenic contact angles do not currently exist. In a future study a sensitivity analysis of the contact angle influence will be performed.</p><p id="Par13">The conditions investigated are summarised in Table <xref rid="Tab1" ref-type="table">1</xref>. The cryogenic case and the non&#x02013;cryogenic case have the same non dimensional parameters, characterised by the <italic>We</italic>, <italic>Re</italic> and <italic>Oh</italic>. Although the non dimensional parameters are constant, at cryogenic conditions, the gaseous phase is characterised by lower viscosity and higher density compared to the non&#x02013;cryogenic case and the surface tension is lower.<fig id="Fig2"><label>Fig. 2</label><caption><p>Evolution of the <inline-formula id="IEq29"><alternatives><tex-math id="M29">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha = 0.5$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq29.gif"/></alternatives></inline-formula> iso-surface for the different cases. Left column: cryogenic case; right column: non&#x02013;cryogenic case. From top to bottom: increases the impact <italic>We</italic> number. The different time steps are observed every <inline-formula id="IEq30"><alternatives><tex-math id="M30">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t^* = 0.7$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq30.gif"/></alternatives></inline-formula>.</p></caption><graphic xlink:href="41598_2025_90974_Fig2_HTML" id="MO2"/></fig></p></sec><sec id="Sec3"><title>Results</title><p id="Par14">The operating point investigated falls into the rebound regime (based on the categorisation of non-cryogenic fluids). Figure <xref rid="Fig2" ref-type="fig">2</xref> shows the evolution over time of the droplet as the iso-surface <inline-formula id="IEq31"><alternatives><tex-math id="M31">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha = 0.5$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq31.gif"/></alternatives></inline-formula>. The initial dynamics of the spreading are similar for the two cases and follow a non-splashing regime, as expected at this operating point<sup><xref ref-type="bibr" rid="CR10">10</xref></sup>. At the initial stages, for both cases the droplet is forming a circular crown at the side. Once the maximum spreading diameter has been reached, differences start arising between the cases: for the non-cryogenic case the droplet starts receding keeping a disk shape, until it reaches the centre of the disk where a liquid jets formation is observed. For the cryogenic case, the shape is less regular and the jet formation at the centre happens earlier than the non&#x02013;cryogenic case. For both the cryogenic and non cryogenic cases, the increase of the initial impact velocity results into a further spreading.<fig id="Fig3"><label>Fig. 3</label><caption><p>Focus on the differences at the interface during the impact. Left column: cryogenic case; right column: non&#x02013;cryogenic case.</p></caption><graphic xlink:href="41598_2025_90974_Fig3_HTML" id="MO3"/></fig></p><p id="Par15">Figure <xref rid="Fig3" ref-type="fig">3</xref> shows a zoom in to the droplet edge during the spreading for the cryogenic and non-cryogenic cases, for two different impact conditions. More instabilities are observed at the edge of the rim when <italic>We</italic> is increased up to 454.08. The formations of fingers is observed for both the cryogenic and non cryogenic impact while the droplet still spreads. The fact that more instabilities are observed for the cryogenic case is due to the lower value of surface tension characterising the cryogenic fluids, although the <italic>Oh</italic> number is kept constant between the cases (see Table&#x000a0;<xref rid="Tab1" ref-type="table">1</xref>).<fig id="Fig4"><label>Fig. 4</label><caption><p>Velocity distribution at the mid section. For each case, the velocity is normalised by the corresponding impact velocity&#x000a0; <inline-formula id="IEq32"><alternatives><tex-math id="M32">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$u_{0}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq32.gif"/></alternatives></inline-formula>, see Table <xref rid="Tab1" ref-type="table">1</xref>.</p></caption><graphic xlink:href="41598_2025_90974_Fig4_HTML" id="MO4"/></fig></p><p id="Par16">To analyse the source of these differences, the velocity distribution (normalised with the corresponding impact velocity <inline-formula id="IEq33"><alternatives><tex-math id="M33">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$u_{0}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq33.gif"/></alternatives></inline-formula>, see Table <xref rid="Tab1" ref-type="table">1</xref>) at the mid section at different time steps is shown in Fig. <xref rid="Fig4" ref-type="fig">4</xref>. The spreading is very similar for both cases, with the velocity peak of <inline-formula id="IEq34"><alternatives><tex-math id="M34">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$|u| &#x0003e; u_0$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq34.gif"/></alternatives></inline-formula> present at the lamella extending at the wall. Once the maximum spreading is reached, the cryogenic case recedes faster. For the lower <italic>We</italic> cases (first column), the edges are larger for the cryogenic case and when the droplets recedes to the centre, resulting into a large blob with higher velocity at the tip. The non&#x02013;cryogenic case instead presents a higher velocity in the gaseous phase, right above the droplet, which emerges from the receding in an elongated shape. Increasing the <italic>We</italic>, the recoil is not observed yet and the lamella velocity decreases after the first impact. When the non cryogenic fluids are considered (second row), the velocity are higher during the spreading.</p><p id="Par17">Figure <xref rid="Fig5" ref-type="fig">5</xref> shows the wet surface area at the wall <inline-formula id="IEq35"><alternatives><tex-math id="M35">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$A_w$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq35.gif"/></alternatives></inline-formula> over the time for the cryogenic (C) and non&#x02013;cryogenic (NC) cases. The area is normalised by the initial droplet surface <inline-formula id="IEq36"><alternatives><tex-math id="M36">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$A_{d,0}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq36.gif"/></alternatives></inline-formula>. In non-dimensional terms, the wet area is identical for the non-cryogenic and the cryogenic cases, fixing <italic>We</italic> and <italic>Re</italic>. Increasing the impact velocity, the wet area increases as well, and the peak value is reached at a later time. Furthermore, when absolute time is considered, once the peak is reached, the cryogenic case shows a faster decay than the non&#x02013;cryogenic.<fig id="Fig5"><label>Fig. 5</label><caption><p>Wet area over time for the different cases. The grey circles indicate the instant when the maximum spreading is reached.</p></caption><graphic xlink:href="41598_2025_90974_Fig5_HTML" id="MO5"/></fig></p><p id="Par18">A further analysis of the morphology is obtained through the centre of mass and the mass velocity of the droplet, defined as:<list list-type="bullet"><list-item><p id="Par19">Centre of mass of the droplet <inline-formula id="IEq37"><alternatives><tex-math id="M37">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\mathscr {C}}_d$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq37.gif"/></alternatives></inline-formula>: <disp-formula id="Equ1"><alternatives><tex-math id="M38">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\mathscr {C}}_d = \left( {\mathscr {C}}_{d,x},{\mathscr {C}}_{d,y},{\mathscr {C}}_{d,z}\right) = \frac{\int _{V} \alpha \textbf{x}dx }{\int _V \alpha dx }$$\end{document}</tex-math><graphic xlink:href="41598_2025_90974_Article_Equ1.gif" position="anchor"/></alternatives></disp-formula></p></list-item><list-item><p id="Par20">Droplet velocity <inline-formula id="IEq38"><alternatives><tex-math id="M39">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\textbf{u}_d$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq38.gif"/></alternatives></inline-formula>: <disp-formula id="Equ2"><alternatives><tex-math id="M40">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\textbf{u}_d = \left( u_{d,x},u_{d,y},u_{d,z}\right) = \frac{\int _{V} \alpha \textbf{u}dx }{\int _V \alpha dx }$$\end{document}</tex-math><graphic xlink:href="41598_2025_90974_Article_Equ2.gif" position="anchor"/></alternatives></disp-formula></p></list-item></list>Figure <xref rid="Fig6" ref-type="fig">6</xref> shows the evolution trend over time of the droplet centre of mass and velocity magnitude and components for the different cases.<fig id="Fig6"><label>Fig. 6</label><caption><p>Comparison of profile over time between the different cases of: (<bold>a</bold>) centre of mass, (<bold>b</bold>) droplet velocity magnitude, (<bold>c</bold>) vertical component droplet velocity, (<bold>d</bold>) radial component droplet velocity.</p></caption><graphic xlink:href="41598_2025_90974_Fig6_HTML" id="MO6"/></fig></p><p id="Par21">Looking at the centre of mass, an increase after reaching the minimum is observed only for <inline-formula id="IEq39"><alternatives><tex-math id="M41">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$We = 28.38$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq39.gif"/></alternatives></inline-formula>(being the only case when rebound is observed). For the same reason the same trend is observed for the droplet velocity magnitude <inline-formula id="IEq40"><alternatives><tex-math id="M42">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$|u_d|$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq40.gif"/></alternatives></inline-formula>. The main differences, both increasing <inline-formula id="IEq41"><alternatives><tex-math id="M43">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$u_{0}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq41.gif"/></alternatives></inline-formula> and moving from cryogenic and non cryogenic cases, are observed for the radial component <inline-formula id="IEq42"><alternatives><tex-math id="M44">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$u_{d,r}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq42.gif"/></alternatives></inline-formula>. Increasing <italic>We</italic>, the maximum value reached increases as well, with the inversion of sign not reached when <inline-formula id="IEq43"><alternatives><tex-math id="M45">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$We = 113.52$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq43.gif"/></alternatives></inline-formula>. Furthermore, the radial velocity is higher for the non cryogenic case.</p><p id="Par22">The ratio between the viscous and the capillary forces on the interface is defined as <inline-formula id="IEq44"><alternatives><tex-math id="M46">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$r_{f} = |\textbf{f}_{\mu ,I}/ \textbf{f}_\sigma |$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq44.gif"/></alternatives></inline-formula>, where <inline-formula id="IEq45"><alternatives><tex-math id="M47">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\textbf{f}_{\mu ,I} = \tau \cdot \textbf{n}_I$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq45.gif"/></alternatives></inline-formula> represents the viscous force on the interface. This ratio is integrated over the interface area, to represent the global ratio, and its trend over time is showed in Fig. <xref rid="Fig7" ref-type="fig">7</xref> for the different cases.<fig id="Fig7"><label>Fig. 7</label><caption><p>Ratio between viscous and capillary forces on the interface over time for the different cases.</p></caption><graphic xlink:href="41598_2025_90974_Fig7_HTML" id="MO7"/></fig></p><p id="Par23">For both the cryogenic and non cryogenic cases the value is well below 1, which is the threshold of the viscous forces over the capillary ones. This is in agreement with the rebound regime observed for all the cases. Nevertheless, the absolute values, at the same <italic>We</italic>, are higher for the non cryogenic cases. This explains the different interface deformation observed in Fig. <xref rid="Fig2" ref-type="fig">2</xref>.</p></sec><sec id="Sec4"><title>Discussion</title><p id="Par24">In this study, the spreading behaviour for cryogenic droplets onto solid surfaces is reported using numerical simulations. Furthermore, the influence of the We and Re numbers on the impact is analysed and is compared to the influence of the same parameters for non cryogenic conditions. Heat transfer is not considered, focusing only on the morphology of the impact. First the shape of liquid droplet during the impact is analysed. The differences between the cases arise during the receding stage, where the cryogenic droplet recedes faster towards the centre than the non&#x02013;cryogenic one. As a result, a larger blob is rising after the liquid edge reaches the centre of the droplet. Although in non&#x02013;dimensional terms the receding times coincided, in absolute term the receding stage is slower for the non&#x02013;cryogenic droplet, which means that the liquid keeps in contact with the surface longer. From an application point of view, this can make a considerable difference, for example in cryo&#x02013;surgery as this implies a higher contact time with the infected tissue. To quantify the impact, the comparison then focused on the wet area <inline-formula id="IEq46"><alternatives><tex-math id="M48">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$A_w$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq46.gif"/></alternatives></inline-formula> and on the droplet shape parameters as the centre of mass and velocity, <inline-formula id="IEq47"><alternatives><tex-math id="M49">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\mathscr {C}}_d$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq47.gif"/></alternatives></inline-formula> and <inline-formula id="IEq48"><alternatives><tex-math id="M50">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$|u_d|$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_90974_Article_IEq48.gif"/></alternatives></inline-formula>. In non-dimensional terms, the spreading is identical for the non-cryogenic and the cryogenic cases, fixing <italic>We</italic> and <italic>Re</italic>. It is worth noting that, when absolute time is considered, once the peak is reached, the cryogenic case shows a faster decay than the non&#x02013;cryogenic. When the morphology of the droplet is considered, the lower surface tension for the cryogenic cases results in a greater instability of the interface, despite the same <italic>Oh</italic>. This difference results in the receding stage, once the initial kinetic energy of the droplet is dissipated. This can be due to the gaseous phase, as at cryogenic conditions the gaseous phases are characterised by lower viscosity and higher density compared to non&#x02013;cryogenic conditions. In future investigations a wide range of operating conditions will be studied, introducing also various contact angles. Nevertheless, it is not clear if existent models of dynamic contact angles can be used for cryogenic fluids and thus further research is required.</p></sec><sec id="Sec5" sec-type="supplementary-material"><title>Supplementary Information</title><p>
+<supplementary-material content-type="local-data" id="MOESM1"><media xlink:href="41598_2025_90974_MOESM1_ESM.pdf"><caption><p>Supplementary Information.</p></caption></media></supplementary-material>
+</p></sec></body><back><fn-group><fn><p><bold>Publisher&#x02019;s note</bold></p><p>Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></fn></fn-group><sec><title>Supplementary Information</title><p>The online version contains supplementary material available at 10.1038/s41598-025-90974-5.</p></sec><ack><title>Acknowledgements</title><p>The authors would like to acknowledge the financial support by the UK Engineering and Physical Science Research Council through the grants EP/Y004930/1 and EP/S001824/2, and the use of the University of Oxford Advanced Research Computing (ARC) facility in carrying out this work http:://dx.doi.org/10.5281/zenodo.22558 .</p></ack><notes notes-type="author-contribution"><title>Author contributions</title><p>G.T. collected the data and performed the post processing of the results K.V. conceived and designed the study. G.T. and K.V. developed the numerical tools and analysed the results. All authors reviewed the manuscript.</p></notes><notes notes-type="data-availability"><title>Data availability</title><p>The datasets analysed during the current study is available from the corresponding author on reasonable request.</p></notes><notes><title>Declarations</title><notes id="FPar1" notes-type="COI-statement"><title>Competing interests</title><p id="Par27">The authors declare no competing interests.</p></notes></notes><ref-list id="Bib1"><title>References</title><ref id="CR1"><label>1.</label><citation-alternatives><element-citation id="ec-CR1" publication-type="journal"><person-group person-group-type="author"><name><surname>Josserand</surname><given-names>C</given-names></name><name><surname>Thoroddsen</surname><given-names>S</given-names></name></person-group><article-title>Drop impact on a solid surface</article-title><source>Annu. Rev. Fluid Mech.</source><year>2016</year><volume>48</volume><fpage>365</fpage><lpage>391</lpage><pub-id pub-id-type="doi">10.1146/annurev-fluid-122414-034401</pub-id></element-citation><mixed-citation id="mc-CR1" publication-type="journal">Josserand, C. &#x00026; Thoroddsen, S. Drop impact on a solid surface. <italic>Annu. Rev. Fluid Mech.</italic><bold>48</bold>, 365&#x02013;391. 10.1146/annurev-fluid-122414-034401 (2016).</mixed-citation></citation-alternatives></ref><ref id="CR2"><label>2.</label><citation-alternatives><element-citation id="ec-CR2" publication-type="journal"><person-group person-group-type="author"><name><surname>Pasandideh-Fard</surname><given-names>M</given-names></name><name><surname>Qiao</surname><given-names>YM</given-names></name><name><surname>Chandra</surname><given-names>S</given-names></name><name><surname>Mostaghimi</surname><given-names>J</given-names></name></person-group><article-title>Capillary effects during droplet impact on a solid surface</article-title><source>Phys. Fluids</source><year>1996</year><volume>8</volume><fpage>650</fpage><lpage>659</lpage><pub-id pub-id-type="doi">10.1063/1.868850</pub-id></element-citation><mixed-citation id="mc-CR2" publication-type="journal">Pasandideh-Fard, M., Qiao, Y. M., Chandra, S. &#x00026; Mostaghimi, J. Capillary effects during droplet impact on a solid surface. <italic>Phys. Fluids</italic><bold>8</bold>, 650&#x02013;659. 10.1063/1.868850 (1996).</mixed-citation></citation-alternatives></ref><ref id="CR3"><label>3.</label><citation-alternatives><element-citation id="ec-CR3" publication-type="journal"><person-group person-group-type="author"><name><surname>Yokoi</surname><given-names>K</given-names></name><name><surname>Vadillo</surname><given-names>D</given-names></name><name><surname>Hinch</surname><given-names>J</given-names></name><name><surname>Hutchings</surname><given-names>I</given-names></name></person-group><article-title>Numerical studies of the influence of the dynamic contact angle on a droplet impacting on a dry surface</article-title><source>Phys. Fluids</source><year>2009</year><volume>21</volume><fpage>072102</fpage><pub-id pub-id-type="doi">10.1063/1.3158468</pub-id></element-citation><mixed-citation id="mc-CR3" publication-type="journal">Yokoi, K., Vadillo, D., Hinch, J. &#x00026; Hutchings, I. Numerical studies of the influence of the dynamic contact angle on a droplet impacting on a dry surface. <italic>Phys. Fluids</italic><bold>21</bold>, 072102. 10.1063/1.3158468 (2009).</mixed-citation></citation-alternatives></ref><ref id="CR4"><label>4.</label><citation-alternatives><element-citation id="ec-CR4" publication-type="journal"><person-group person-group-type="author"><name><surname>Aboukhedr</surname><given-names>M</given-names></name><name><surname>Georgoulas</surname><given-names>A</given-names></name><name><surname>Marengo</surname><given-names>M</given-names></name><name><surname>Gavaises</surname><given-names>M</given-names></name><name><surname>Vogiatzaki</surname><given-names>K</given-names></name></person-group><article-title>Simulation of micro-flow dynamics at low capillary numbers using adaptive interface compression</article-title><source>Comput. Fluids</source><year>2018</year><volume>165</volume><fpage>13</fpage><lpage>32</lpage><pub-id pub-id-type="doi">10.1016/j.compfluid.2018.01.009</pub-id></element-citation><mixed-citation id="mc-CR4" publication-type="journal">Aboukhedr, M., Georgoulas, A., Marengo, M., Gavaises, M. &#x00026; Vogiatzaki, K. Simulation of micro-flow dynamics at low capillary numbers using adaptive interface compression. <italic>Comput. Fluids</italic><bold>165</bold>, 13&#x02013;32. 10.1016/j.compfluid.2018.01.009 (2018).</mixed-citation></citation-alternatives></ref><ref id="CR5"><label>5.</label><citation-alternatives><element-citation id="ec-CR5" publication-type="journal"><person-group person-group-type="author"><name><surname>Rebelo</surname><given-names>N</given-names></name><name><surname>Zhao</surname><given-names>H</given-names></name><name><surname>Nadal</surname><given-names>F</given-names></name><name><surname>Garner</surname><given-names>C</given-names></name><name><surname>Williams</surname><given-names>A</given-names></name></person-group><article-title>Evaporation of liquid nitrogen droplets in superheated immiscible liquids</article-title><source>Int. J. Heat Mass Transf.</source><year>2019</year><volume>143</volume><fpage>118575</fpage><pub-id pub-id-type="doi">10.1016/j.ijheatmasstransfer.2019.118575</pub-id></element-citation><mixed-citation id="mc-CR5" publication-type="journal">Rebelo, N., Zhao, H., Nadal, F., Garner, C. &#x00026; Williams, A. Evaporation of liquid nitrogen droplets in superheated immiscible liquids. <italic>Int. J. Heat Mass Transf.</italic><bold>143</bold>, 118575. 10.1016/j.ijheatmasstransfer.2019.118575 (2019).</mixed-citation></citation-alternatives></ref><ref id="CR6"><label>6.</label><citation-alternatives><element-citation id="ec-CR6" publication-type="journal"><person-group person-group-type="author"><name><surname>van Limbeek</surname><given-names>MA</given-names></name><name><surname>Nes</surname><given-names>TH</given-names></name><name><surname>Vanapalli</surname><given-names>S</given-names></name></person-group><article-title>Impact dynamics and heat transfer characteristics of liquid nitrogen drops on a sapphire prism</article-title><source>Int. J. Heat Mass Transf.</source><year>2020</year><volume>148</volume><fpage>118999</fpage><pub-id pub-id-type="doi">10.1016/j.ijheatmasstransfer.2019.118999</pub-id></element-citation><mixed-citation id="mc-CR6" publication-type="journal">van Limbeek, M. A., Nes, T. H. &#x00026; Vanapalli, S. Impact dynamics and heat transfer characteristics of liquid nitrogen drops on a sapphire prism. <italic>Int. J. Heat Mass Transf.</italic><bold>148</bold>, 118999. 10.1016/j.ijheatmasstransfer.2019.118999 (2020).</mixed-citation></citation-alternatives></ref><ref id="CR7"><label>7.</label><mixed-citation publication-type="other">OpenCFD. <italic> OpenFOAM - The Open Source CFD Toolbox - User&#x02019;s Guide</italic>. OpenCFD Ltd.,London, UK ( 2018).</mixed-citation></ref><ref id="CR8"><label>8.</label><citation-alternatives><element-citation id="ec-CR8" publication-type="journal"><person-group person-group-type="author"><name><surname>Tretola</surname><given-names>G</given-names></name><name><surname>Vogiatzaki</surname><given-names>K</given-names></name></person-group><article-title>Numerical treatment of the interface in two phase flows using a compressible framework in OpenFOAM: Demonstration on a high velocity droplet impact case</article-title><source>Fluids</source><year>2021</year><pub-id pub-id-type="doi">10.3390/fluids6020078</pub-id></element-citation><mixed-citation id="mc-CR8" publication-type="journal">Tretola, G. &#x00026; Vogiatzaki, K. Numerical treatment of the interface in two phase flows using a compressible framework in OpenFOAM: Demonstration on a high velocity droplet impact case. <italic>Fluids</italic>[SPACE]10.3390/fluids6020078 (2021).</mixed-citation></citation-alternatives></ref><ref id="CR9"><label>9.</label><citation-alternatives><element-citation id="ec-CR9" publication-type="journal"><person-group person-group-type="author"><name><surname>Tretola</surname><given-names>G</given-names></name><name><surname>Vogiatzaki</surname><given-names>K</given-names></name></person-group><article-title>Unveiling the dynamics of ultra high velocity droplet impact on solid surfaces</article-title><source>Sci. Rep.</source><year>2022</year><volume>12</volume><fpage>7416</fpage><pub-id pub-id-type="doi">10.1038/s41598-022-11188-7</pub-id><pub-id pub-id-type="pmid">35523801</pub-id>
+</element-citation><mixed-citation id="mc-CR9" publication-type="journal">Tretola, G. &#x00026; Vogiatzaki, K. Unveiling the dynamics of ultra high velocity droplet impact on solid surfaces. <italic>Sci. Rep.</italic><bold>12</bold>, 7416. 10.1038/s41598-022-11188-7 (2022).<pub-id pub-id-type="pmid">35523801</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR10"><label>10.</label><citation-alternatives><element-citation id="ec-CR10" publication-type="journal"><person-group person-group-type="author"><name><surname>Jian</surname><given-names>Z</given-names></name><name><surname>Josserand</surname><given-names>C</given-names></name><name><surname>Popinet</surname><given-names>S</given-names></name><name><surname>Ray</surname><given-names>P</given-names></name><name><surname>Zaleski</surname><given-names>S</given-names></name></person-group><article-title>Two mechanisms of droplet splashing on a solid substrate</article-title><source>J. Fluid Mech.</source><year>2017</year><pub-id pub-id-type="doi">10.1017/jfm.2017.768</pub-id></element-citation><mixed-citation id="mc-CR10" publication-type="journal">Jian, Z., Josserand, C., Popinet, S., Ray, P. &#x00026; Zaleski, S. Two mechanisms of droplet splashing on a solid substrate. <italic>J. Fluid Mech.</italic>[SPACE]10.1017/jfm.2017.768 (2017).</mixed-citation></citation-alternatives></ref></ref-list></back></article>

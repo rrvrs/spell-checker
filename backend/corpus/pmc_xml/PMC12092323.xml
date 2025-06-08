@@ -1,0 +1,700 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">J Imaging Inform Med</journal-id><journal-id journal-id-type="iso-abbrev">J Imaging Inform Med</journal-id><journal-title-group><journal-title>Journal of Imaging Informatics in Medicine</journal-title></journal-title-group><issn pub-type="ppub">2948-2925</issn><issn pub-type="epub">2948-2933</issn><publisher><publisher-name>Springer International Publishing</publisher-name><publisher-loc>Cham</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">39443395</article-id><article-id pub-id-type="pmc">PMC12092323</article-id>
+<article-id pub-id-type="publisher-id">1301</article-id><article-id pub-id-type="doi">10.1007/s10278-024-01301-9</article-id><article-categories><subj-group subj-group-type="heading"><subject>Original Paper</subject></subj-group></article-categories><title-group><article-title>Deep Learning Segmentation of Chromogenic Dye RNAscope From Breast Cancer Tissue</article-title></title-group><contrib-group><contrib contrib-type="author" corresp="yes"><contrib-id contrib-id-type="orcid">http://orcid.org/0009-0009-3329-407X</contrib-id><name><surname>Davidson</surname><given-names>Andrew</given-names></name><address><email>andrew.davidson@pg.canterbury.ac.nz</email></address><xref ref-type="aff" rid="Aff1">1</xref></contrib><contrib contrib-type="author"><name><surname>Morley-Bunker</surname><given-names>Arthur</given-names></name><xref ref-type="aff" rid="Aff2">2</xref></contrib><contrib contrib-type="author"><name><surname>Wiggins</surname><given-names>George</given-names></name><xref ref-type="aff" rid="Aff2">2</xref></contrib><contrib contrib-type="author"><name><surname>Walker</surname><given-names>Logan</given-names></name><xref ref-type="aff" rid="Aff2">2</xref></contrib><contrib contrib-type="author"><name><surname>Harris</surname><given-names>Gavin</given-names></name><xref ref-type="aff" rid="Aff3">3</xref></contrib><contrib contrib-type="author"><name><surname>Mukundan</surname><given-names>Ramakrishnan</given-names></name><xref ref-type="aff" rid="Aff1">1</xref></contrib><contrib contrib-type="author"><name><surname>Investigators</surname><given-names>kConFab</given-names></name><xref ref-type="aff" rid="Aff4">4</xref><xref ref-type="aff" rid="Aff5">5</xref></contrib><aff id="Aff1"><label>1</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/03y7q9t39</institution-id><institution-id institution-id-type="GRID">grid.21006.35</institution-id><institution-id institution-id-type="ISNI">0000 0001 2179 4063</institution-id><institution>Department of Computer Science and Software Engineering, </institution><institution>University of Canterbury, </institution></institution-wrap>Christchurch, New Zealand </aff><aff id="Aff2"><label>2</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/01jmxt844</institution-id><institution-id institution-id-type="GRID">grid.29980.3a</institution-id><institution-id institution-id-type="ISNI">0000 0004 1936 7830</institution-id><institution>Department of Pathology and Biomedical Science, </institution><institution>University of Otago, </institution></institution-wrap>Christchurch, New Zealand </aff><aff id="Aff3"><label>3</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/00wspbn44</institution-id><institution-id institution-id-type="GRID">grid.413344.5</institution-id><institution-id institution-id-type="ISNI">0000 0004 0384 1542</institution-id><institution>Canterbury Health Laboratories, </institution></institution-wrap>Christchurch, New Zealand </aff><aff id="Aff4"><label>4</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/01ej9dk98</institution-id><institution-id institution-id-type="GRID">grid.1008.9</institution-id><institution-id institution-id-type="ISNI">0000 0001 2179 088X</institution-id><institution>Sir Peter MacCallum Department of Oncology, </institution><institution>The University of Melbourne, </institution></institution-wrap>Melbourne, Victoria Australia </aff><aff id="Aff5"><label>5</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/02a8bt934</institution-id><institution-id institution-id-type="GRID">grid.1055.1</institution-id><institution-id institution-id-type="ISNI">0000 0004 0397 8434</institution-id><institution>Peter MacCallum Cancer Center, </institution></institution-wrap>Melbourne, Victoria Australia </aff></contrib-group><pub-date pub-type="epub"><day>23</day><month>10</month><year>2024</year></pub-date><pub-date pub-type="pmc-release"><day>23</day><month>10</month><year>2024</year></pub-date><pub-date pub-type="collection"><month>6</month><year>2025</year></pub-date><volume>38</volume><issue>3</issue><fpage>1704</fpage><lpage>1721</lpage><history><date date-type="received"><day>25</day><month>4</month><year>2024</year></date><date date-type="rev-recd"><day>9</day><month>10</month><year>2024</year></date><date date-type="accepted"><day>10</day><month>10</month><year>2024</year></date></history><permissions><copyright-statement>&#x000a9; The Author(s) 2024</copyright-statement><copyright-year>2024</copyright-year><license><ali:license_ref specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p><bold>Open Access</bold> This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article&#x02019;s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article&#x02019;s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link>.</license-p></license></permissions><abstract id="Abs1"><p id="Par1">RNAscope staining of breast cancer tissue allows pathologists to deduce genetic characteristics of the cancer by inspection at the microscopic level, which can lead to better diagnosis and treatment. Chromogenic RNAscope staining is easy to fit into existing pathology workflows, but manually analyzing the resulting tissue samples is time consuming. There is also a lack of peer-reviewed, performant solutions for automated analysis of chromogenic RNAscope staining. This paper covers the development and optimization of a novel deep learning method focused on accurate segmentation of RNAscope dots (which signify gene expression) from breast cancer tissue. The deep learning network is convolutional and uses ConvNeXt as its backbone. The upscaling portions of the network use custom, heavily regularized blocks to prevent overfitting and early convergence on suboptimal solutions. The resulting network is modest in size for a segmentation network and able to function well with little training data. This deep learning network was also able to outperform manual expert annotation at finding the positions of RNAscope dots, having a final <inline-formula id="IEq1"><alternatives><tex-math id="d33e206">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\varvec{F}_\textbf{1}$$\end{document}</tex-math><mml:math id="d33e211"><mml:msub><mml:mrow><mml:mi mathvariant="bold-italic">F</mml:mi></mml:mrow><mml:mn mathvariant="bold">1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq1.gif"/></alternatives></inline-formula>-score of 0.745. In comparison, the expert inter-rater <inline-formula id="IEq2"><alternatives><tex-math id="d33e220">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\varvec{F}_\textbf{1}$$\end{document}</tex-math><mml:math id="d33e225"><mml:msub><mml:mrow><mml:mi mathvariant="bold-italic">F</mml:mi></mml:mrow><mml:mn mathvariant="bold">1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq1.gif"/></alternatives></inline-formula>-score was 0.596.</p></abstract><kwd-group xml:lang="en"><title>Keywords</title><kwd>Computational pathology</kwd><kwd>Image segmentation</kwd><kwd>Cancer</kwd><kwd>RNAscope</kwd><kwd>Deep learning</kwd><kwd>Machine learning</kwd></kwd-group><funding-group><award-group><funding-source><institution>University of Canterbury</institution></funding-source></award-group><open-access><p>Open Access funding enabled and organized by CAUL and its Member Institutions</p></open-access></funding-group><custom-meta-group><custom-meta><meta-name>issue-copyright-statement</meta-name><meta-value>&#x000a9; Society for Imaging Informatics in Medicine 2025</meta-value></custom-meta></custom-meta-group></article-meta></front><body><sec id="Sec1"><title>Background</title><sec id="Sec2"><title>Overview</title><p id="Par2">According to the World Health Organization (WHO) data from 2020 [<xref ref-type="bibr" rid="CR1">1</xref>], breast cancer was the world&#x02019;s most widespread form of cancer with 7.8 million women diagnosed over the past 5 years. If diagnosed early, treatment can be highly effective for patients. Various cancer features including oestrogen receptor status, progesterone receptor status, HER2 status, and intrinsic subtype (e.g. basal, luminal A, luminal B, normal-like) give insight into which treatments will be effective [<xref ref-type="bibr" rid="CR2">2</xref>]. Therefore, it is important for these features to be classified reliably to improve patient outcomes. The number of cancer cases in recent years has been increasing and is projected to continue doing so [<xref ref-type="bibr" rid="CR3">3</xref>], placing further pressure on pathology services, which are already under significant strain [<xref ref-type="bibr" rid="CR4">4</xref>]. Fewer pathologists coupled with a growing workload could negatively impact the efficiency of patient care. There is a growing need for new tools that can help pathologists rapidly diagnose patients within the healthcare system.</p><p id="Par3">Presently, pathologists will generally examine small areas of interest from each tissue slide as examining all the available tissue is labour intensive and time consuming. With the introduction of whole slide imaging [<xref ref-type="bibr" rid="CR5">5</xref>, <xref ref-type="bibr" rid="CR6">6</xref>], there is a wealth of high quality tissue slide data available. When combined with proper ground truth annotations, this provides the data needed to train deep learning quantification methods that could ease the pathology workload. It should be noted that the methods presented in this paper are experimental and are for Research Use Only (RUO).<fig id="Fig1"><label>Fig. 1</label><caption><p>A small area of haematoxylin and chromogenic RNAscope stained breast cancer tissue, showing RNAscope dots (annotated with black arrows) with varying shape, size, and hue</p></caption><graphic xlink:href="10278_2024_1301_Fig1_HTML" id="MO1"/></fig></p></sec><sec id="Sec3"><title>RNAscope</title><p id="Par4">RNAscope is an RNA <italic>in situ</italic> hybridization assay that can be used to visually assess the level of gene expression in a tissue sample [<xref ref-type="bibr" rid="CR7">7</xref>]. The RNAscope probes bind to RNA containing a user-defined gene sequence, and then an amplifying detection reagent produces a visible stained dot at the site of hybridization. These dots represent single RNA transcripts that have been detected by RNAscope. Practically, this means that RNAscope staining will produce tissue samples containing coloured dots, and the number of dots (or transcripts) per nucleus indicates the level of expression of whichever gene was chosen. This makes it useful for breast cancer diagnosis, since some of the aforementioned statuses can be found by assessing the expression of specific genes in the cancer tissue. For example, the level of expression of the Erb-B2 Receptor Tyrosine Kinase 2 (<italic>ERBB2</italic>) gene, also referred to as <italic>HER2</italic>, is an important indicator.</p><p id="Par5">This study focuses on the chromogenic RNAscope dye (3,3&#x02018;-Diaminobenzidine, DAB), as this detection method allows for standard bright-field microscopy evaluation that is commonly used by pathologists. Chromogenic RNAscope dye can simply be used with haematoxylin staining which helps to identify morphological structures within a tissue section, including cell nuclei. The stained tissue section can then be scanned under normal laboratory conditions to produce a slide image.</p><p id="Par6">The most difficult and time-consuming cases to assess and quantify gene expression on are those that contain little to no RNAscope staining. Intense staining is easy to detect and clearly shows high expression of the target gene(s). Therefore, this study focused on areas of tissue with little to no RNAscope staining. This made the segmentation task more difficult for a few reasons; these images had very low representation of the positive class (RNAscope stained areas), the RNAscope dots varied in size, colour, and shape (seen in Fig.&#x000a0;<xref rid="Fig1" ref-type="fig">1</xref>), and the amount of annotated data was small. Therefore, the target segmentation method had to be able to function with little training data, be sensitive to an underrepresented positive class, and be sensitive to structures of varying characteristics.</p><p id="Par7">This paper covers the development of a deep learning segmentation method to accurately quantify RNAscope staining in breast cancer tissue. Our motivation was to produce a robust method that was not calibrated around the best quality tissue, and that was not limited to RNAscope signals that were well defined and intense. As such, this study used archival FFPE (formalin fixed paraffin embedded) tissue samples that researchers might typically encounter, which may contain compromised RNA. This meant that the stained images incorporated a wider range of signal intensities. The tissue samples were stained with chromogenic RNAscope and haematoxylin.</p></sec></sec><sec id="Sec4"><title>Related Work</title><p id="Par8">ConvNeXt [<xref ref-type="bibr" rid="CR8">8</xref>] is a family of convolutional neural network architectures which are built for classification. They are an improvement on the ResNet architecture, using design cues from vision transformers, which are another type of network architecture that were state of the art at the time. ConvNeXt is fully convolutional, making it comparatively simple and efficient compared to vision transformers.</p><p id="Par9">U-net++ [<xref ref-type="bibr" rid="CR9">9</xref>] is a deep learning segmentation network architecture. It shares the same general &#x02018;U&#x02019; shape as a U-net with downsampling layers on the left side of the &#x02018;U&#x02019; and upsampling layers on the right. However, U-net++ modifies the bridging skip connections between the downsampling and upsampling layers by adding additional upsampling pathways that are heavily interconnected. These additional pathways aim to decrease the semantic gap between the downscaling backbone and upscaling layers and, in doing so, make it easier for useful features to make it into the final output layers without being lost.</p><p id="Par10">Morley-Bunker et al. recently conducted a study [<xref ref-type="bibr" rid="CR10">10</xref>] comparing existing methods for quantifying chromogenic RNAscope staining from digital slide images of colorectal cancer tissue. These tissues were also stained with haematoxylin, to give definition to the nuclei. Most of the methods compared in the study were not fully automated and required the user to either verify every RNAscope candidate or manually select RNAscope positions. The open-source method that required the least user input was Trainable WEKA Segmentation [<xref ref-type="bibr" rid="CR11">11</xref>], but this was still not considered fully automated in the study due to the number of user steps required. It also could not reliably isolate individual RNAscope dots, sometimes outputting clusters instead. The closed-source, commercial methods tested also required user configuration to function and did not outperform the open-source methods by most metrics assessed.<fig id="Fig2"><label>Fig. 2</label><caption><p>This figure contains a visualization of expert annotations that were used to assess manual annotation agreement. The black diamonds represent one set of annotations, and the red diamonds represent the other. Each tissue region is shown with no annotations on the left side and with annotations on the right side</p></caption><graphic xlink:href="10278_2024_1301_Fig2_HTML" id="MO2"/></fig></p><p id="Par11">Jamalzadeh et al. developed QuantISH [<xref ref-type="bibr" rid="CR12">12</xref>], which is a method for quantification of chromogenic RNAscope and haematoxylin stained tissue. It works by firstly using colour deconvolution to separate the brown chromogenic RNAscope stain from the blue haematoxylin, which relies on set colour values for each stain. The brown RNAscope channel is masked, and the resulting regions are expanded. This RNAscope mask is then used to measure the RNAscope intensity in each cell. This method allows for quantification of gene expression at a cell-by-cell basis, but does not isolate the RNAscope staining into individual dots, which are a more exact indicator of the level of gene expression.</p><p id="Par12">Davidson et al. recently published a grey level texture feature-based method for chromogenic RNAscope segmentation [<xref ref-type="bibr" rid="CR13">13</xref>]. This method was able to perform similarly to manual expert annotation. Given the high level of difficulty of this problem, we thought it was worth developing a more nuanced deep learning method. Aside from the grey level texture feature method, the existing solutions for chromogenic RNAscope segmentation are either not sufficiently automated to be convenient, do not allow for individual dot counting, or are closed-source with no published, peer-reviewed accuracy metrics.</p></sec><sec id="Sec5"><title>Method</title><sec id="Sec6"><title>Data Acquisition</title><p id="Par13">A total of 40 stained whole slide images of tissue microarrays were obtained, with each consisting of 26 to 116 tissue cores. The tissues were scanned at 40x magnification (0.25 microns per pixel). All of these samples used the brown chromogenic RNAscope stain colour and were provided in the Aperio (.svs) format. Each tissue core on each tissue microarray was extracted from a different tissue block, each of which were from different patients. This meant that every tissue core was from a different patient, with the tissue sample having varying age and storage conditions, which contributed to the variability of the dataset. A control probe for the bacterial gene dapB was used to confirm absence of staining with negative control TMA sections.<fig id="Fig3"><label>Fig. 3</label><caption><p>A ConvNeXt block (left) compared to the custom upscaling block used in this paper (right). The differing layers are coloured. Batch normalization and activation layers were added in the custom block, which also uses DropOut regularization instead of DropPath</p></caption><graphic xlink:href="10278_2024_1301_Fig3_HTML" id="MO3"/></fig></p></sec><sec id="Sec7"><title>Expert Annotation of RNAscope Dots</title><p id="Par14">The same expert annotations from the previous study by Davidson et al. on using grey level texture features for RNAscope segmentation [<xref ref-type="bibr" rid="CR13">13</xref>] were used in this study. The dataset provides both a baseline inter-rater agreement metric to compare against and a limited amount of annotated training data. Specifically, there are a total of 144 480x480 pixel non-overlapping patches of haematoxylin and chromogenic RNAscope stained tissue annotated with RNAscope positions. 133/144 of these patches are from different patients. The annotations were done by a trained pathology scientist and an anatomical pathologist, with an overlap of 19 patches annotated by both, which contained a total of 472&#x02013;607 dots by each annotator. A sample of the two sets of overlapping annotations is shown in Fig.&#x000a0;<xref rid="Fig2" ref-type="fig">2</xref>. The agreement between the two experts with 5 pixel tolerance was assessed to be 0.596. This score may appear low, but it is expected due to the difficult nature of the problem and the fact that annotations must both be matching and be very near each other to count as true positives. Due to the coordinate format of the ground truth data, post-processing will be done on the segmentation maps produced by the deep learning networks investigated later in this paper to convert them into a comparable format.</p></sec><sec id="Sec8"><title>Overview</title><p id="Par15">We developed a deep learning segmentation network architecture to accurately segment RNAscope dots. Multiple design considerations were made to account for the small dataset, including the use of regularization layers, feature throughput in the network, and training data augmentation. The backbone (downsampling section) of the network is an implementation of ConvNeXt [<xref ref-type="bibr" rid="CR8">8</xref>], while the upscaling layers instead use a custom convolutional block that has been designed for strong regularization to facilitate convergence even with small datasets that suffer from heavy class imbalance. The overall network structure partially follows the U-net++ [<xref ref-type="bibr" rid="CR9">9</xref>] pattern, with some adjustments to fit the network design of the ConvNeXt backbone. We also developed an artificial data generation pipeline. All functionality was implemented in Python, mainly using the Tensorflow [<xref ref-type="bibr" rid="CR14">14</xref>] and Keras [<xref ref-type="bibr" rid="CR15">15</xref>] libraries.</p></sec><sec id="Sec9"><title>Backbone</title><p id="Par16">The backbone of the network is an implementation of ConvNeXt. The amount of convolutional blocks at each resolution follows the ConvNeXt-base specification, which gives an intermediate level of depth. The proposed network architecture in this paper would work for any size specification of ConvNeXt; the &#x02018;base&#x02019; size was simply chosen as it was the largest backbone size that would allow the entire model to function with batch size 4 within 8GB of VRAM, as this matched the testing environment.<fig id="Fig4"><label>Fig. 4</label><caption><p>The final upsampling section of the network architecture detailed in this paper, which includes the network output. The upsampling layers are shown in green, and the ConvNeXt blocks are shown in blue</p></caption><graphic xlink:href="10278_2024_1301_Fig4_HTML" id="MO4"/></fig></p></sec><sec id="Sec10"><title>Upscaling Layers</title><p id="Par17">The upscaling layers of the network use a custom block which is based on the ConvNeXt block, but modified to increase regularization while still allowing for convergence. Each upscaling layer is preceded by only a single convolutional block, as their purpose is largely to organize incoming features; most of the advanced feature extraction should be done in the backbone, which contains more convolutional blocks. Upscaling regularization was done to provide robustness against any single feature in the network overfitting to the limited training data, as these features could freely move through the skip connections and upscaling layers to the end of the network otherwise. Since there is only one block before each upscaling layer compared to the 3&#x02013;27 blocks before each downsampling layer, DropPath (stochastic depth regularization which randomly skips entire blocks) as proposed by the original ConvNeXt paper [<xref ref-type="bibr" rid="CR8">8</xref>] is potentially less effective for the upscaling blocks. The output changes caused by the entire convolutional block before an upscaling layer being skipped on some iterations would likely destabilize the learning surface. For this reason, DropOut, which operates on a feature-by-feature basis, was also investigated as an alternative to DropPath for these upscaling blocks. When enabled, it is applied before the skip connection branch (as seen in Fig.&#x000a0;<xref rid="Fig3" ref-type="fig">3</xref>) as opposed to DropPath, which is applied only to the convolutional layers in the ConvNeXt block. The usage of DropPath in a wider scope necessitated some further changes to the block to allow for convergence. The layer normalization layer was switched to batch normalization, and a second batch normalization layer was added along the skip connection path. Batch normalization is applied across the batch axis, whereas layer normalization is applied along the feature axis as described in [<xref ref-type="bibr" rid="CR16">16</xref>]. This change was adopted since the network would not converge using layer normalization, but it would converge with batch normalization. Although batch normalization has the drawback of being dependent on batch size, which must be small in segmentation networks due to memory constraints, we speculate that it performs better in this case since it directly represents the differing distributions (mean and standard deviation) for each separate feature, whereas layer normalization first normalizes across the feature axis, which has the effect of squishing the outgoing values for features that have lower standard deviation than the other features. Even though layer normalization does introduce trainable bias and gain which would theoretically offset this disadvantage with the correct weights, it requires training of a second set of weights to do so and therefore makes it more difficult for convergence to occur. However, to be certain, more detailed analysis would be required. Finally, an additional activation function was added at the very end of the block to account for the additional batch normalization layer added to the skip pathway. The resulting block can be seen in Fig.&#x000a0;<xref rid="Fig3" ref-type="fig">3</xref>, alongside the original ConvNeXt block it was based on. Either DropPath or DropOut can be enabled on this modified block.<fig id="Fig5"><label>Fig. 5</label><caption><p>The custom U-net++ based architecture that is described in this paper. It uses a ConvNeXt backbone, which is attached to heavily interlinked, custom blocks (red) that filter and upsample the outputs from multiple points in the backbone. The final layers use ConvNeXt blocks between the last two upsamples, ending with an output segmentation map</p></caption><graphic xlink:href="10278_2024_1301_Fig5_HTML" id="MO5"/></fig><fig id="Fig6"><label>Fig. 6</label><caption><p>An example of the input (left) and output (right) of the post-processing applied to the raw outputs from the deep learning network. Binarization with a configurable grey threshold is applied, and then the watershed transform is used to reduce the remaining pixel clusters into singular dots, provided that their area meets the area threshold</p></caption><graphic xlink:href="10278_2024_1301_Fig6_HTML" id="MO6"/></fig></p></sec><sec id="Sec11"><title>Overall Structure</title><p id="Par18">The overall network is partially structured based on the U-net++ architecture [<xref ref-type="bibr" rid="CR9">9</xref>], which is a more heavily interconnected variant of U-net. To apply this architecture effectively with a ConvNeXt backbone, some changes were made. ConvNeXt begins with a 4x4, 4 stride convolution, which results in downsampling by a factor of 4. The U-net++ architecture is only applied past this point, as it significantly reduces the amount of parameters to train, allowing for more depth in other parts of the network. It also circumvents the issue of requiring several expensive and difficult to train 4x upsampling layers. We hypothesized that only applying the U-net++ architecture to the deeper layers would still retain much of the ability to facilitate better feature movement through the network, as the most important and large-scale features reside in the deeper layers of the network. This design means that deep supervision as proposed in the U-net++ paper is not viable, as there is only one full-resolution output. To reach a full resolution output from the end of the nested layers, the output must be upscaled by a factor of 4. Since learning to upscale 4x to an accurate segmentation with no incoming skip connections is a difficult task with a large semantic gap, more convolutional blocks were added to this part of the network compared to the rest of the upscaling layers. The structure is similar to the downsampling portion of the network; two times over, the output is passed through 2D transpose convolution with a stride of 2 to double the resolution, followed by 3 ConvNeXt blocks. For this section, DropPath can be optionally applied within the ConvNeXt blocks, or DropOut can be applied in between them. The exact structure of the final 4x upsampling layers can be seen in Fig.&#x000a0;<xref rid="Fig4" ref-type="fig">4</xref>. The full network structure can be seen in Fig.&#x000a0;<xref rid="Fig5" ref-type="fig">5</xref>.</p><p id="Par19">The resulting network aims to incorporate the efficiency and good feature representation of ConvNeXt with the improved feature propagation of U-net++ into a single, heavily regularized network. This network is therefore applicable to medical segmentation tasks that require heavy regularization due to class imbalance and/or a low amount of quality, annotated training data.</p></sec><sec id="Sec12"><title>Post-Processing</title><p id="Par20">The raw output from the deep learning network most often contained detections that were made up of clusters of multiple pixels. The desired output format was a single co-ordinate value for each RNAscope dot, which could then be directly compared against the ground truth. Therefore, post-processing operations were added to convert the segmentation maps outputted by the deep learning segmentation network into individual RNAscope dot co-ordinates. An example of the input and output of this process is shown in Fig.&#x000a0;<xref rid="Fig6" ref-type="fig">6</xref>. Firstly, a binary threshold with a configurable threshold value (referred to later as the grey threshold) is applied to the segmentation map to reduce the number of unique values in the image to two, so that the watershed transform can be subsequently used. Then, the watershed transform is applied to find each cluster of pixels and extract their central co-ordinates to use as RNAscope dot positions. The connected-pixel threshold (thereafter referred to as area threshold) of the watershed transform, which controls how many pixels must be in a cluster for it to be detected, was left configurable. Further discussion of the grey threshold and area threshold values is included in Section &#x0201c;<xref rid="Sec14" ref-type="sec">Results and Discussion</xref>&#x0201d; (Results and Discussion).<fig id="Fig7"><label>Fig. 7</label><caption><p>The main steps in the process for generating additional RNAscope segmentation training data. <bold>A</bold> shows an input image which has not undergone any processing yet. <bold>B</bold> shows the RNAscope dots from the input image that were detected and annotated using a texture feature-based method [<xref ref-type="bibr" rid="CR13">13</xref>]. <bold>C</bold> shows the image once multiple, artificial RNAscope dots have been added using image processing techniques that are described in this section. <bold>D</bold> shows how the positions of the generated dots are recorded with perfect accuracy, providing many additional RNAscope dots for use as training data</p></caption><graphic xlink:href="10278_2024_1301_Fig7_HTML" id="MO7"/></fig><fig id="Fig8"><label>Fig. 8</label><caption><p>An assortment of small patches showing the varying appearance of RNAscope dots, which are annotated with black arrows. In the leftmost image, the RNAscope dots are pale, yellow circles. In the middle image, there is both pale yellow circles (bottom left) and darker dots in the centre. The rightmost image shows RNAscope dots that present as a dark dot with a yellow tinge around their edges</p></caption><graphic xlink:href="10278_2024_1301_Fig8_HTML" id="MO8"/></fig></p></sec><sec id="Sec13"><title>Data Generation</title><p id="Par21">A texture feature-based RNAscope segmentation method developed by Davidson et al. [<xref ref-type="bibr" rid="CR13">13</xref>] was used in combination with image processing techniques to generate additional training data for use in network training, since there were only 144 patches properly annotated with ground truth data. The texture feature-based segmentation method was used to annotate the existing, natural dots on the patches. It works by extracting a set of grey-level texture features around each potential candidate pixel and then evaluating the resulting feature vector using a support vector classifier which was trained to detect RNAscope dots. This gives a prediction for each pixel, which can then be collated into a segmentation map. Processing of the resulting segmentation map to obtain RNAscope dot co-ordinates is discussed in the following paragraph. Image processing techniques were used to add additional RNAscope dots, which, by virtue of being artificially added, could also be annotated with full accuracy. The method was applied to a total of 1071 candidate patches that had been identified for potential expert annotation but did not end up being annotated. Figure&#x000a0;<xref rid="Fig7" ref-type="fig">7</xref> shows the major steps in the data generation process.</p><p id="Par22">As the first step in the data generation process, the feature-based RNAscope segmentation method [<xref ref-type="bibr" rid="CR13">13</xref>] was applied to the candidate patches to annotate any dots that already naturally existed in the patches. It uses grey-level texture features to predict which pixels in each patch contain RNAscope dots, producing a segmentation map. For post-processing of the raw segmentation maps, a similar approach to that described in Section &#x0201c;<xref rid="Sec12" ref-type="sec">Post-Processing</xref>&#x0201d; (Post-Processing) was taken. A 5x5 circular Gaussian blur was first applied, and then a binary threshold at a cut-off value of 148. The watershed transform was then used to find individual RNAscope dot co-ordinates, with area threshold set to 0. This process was configured to be highly selective to mitigate the possibility of many false positives making it into the generated data. Following this, extra dots were added to each patch. This was done since the RNAscope dots are normally not visually complicated, but are often indistinct against a complicated background which leads to the segmentation problem being difficult. The aim was to replicate two common types of RNAscope dot: a simple radial dot that is yellow or brown and a dark dot with yellow tinges around the edge. Real examples of both types of these dots are shown in Fig.&#x000a0;<xref rid="Fig8" ref-type="fig">8</xref>.<fig id="Fig9"><label>Fig. 9</label><caption><p>A demonstration of the areas effected by cardinal scaling during artificial dot creation. Each of the four directions, which have a starting radial length of 4 pixels, is randomly scaled to extend by 0&#x02013;3 pixels</p></caption><graphic xlink:href="10278_2024_1301_Fig9_HTML" id="MO9"/></fig><fig id="Fig10"><label>Fig. 10</label><caption><p>Artificially generated RNAscope dots (annotated with black arrows). The left image shows only the first type of generated dot without a dark centre, and the right image shows both types of generated dot</p></caption><graphic xlink:href="10278_2024_1301_Fig10_HTML" id="MO10"/></fig></p><p id="Par23">The dots are created by firstly initializing an empty 3-channel (BGR) image, which will be used as a subtractive mask that can be applied over a region of a patch. The mask values are initialized to 0. A random colour between light yellow (225, 253, 255) to dark brown (160, 200, 217) is calculated using linear interpolation, with the same random value being used to interpolate all 3 channels. The centre pixel of the mask is set to the opposite of the selected colour (<inline-formula id="IEq3"><alternatives><tex-math id="d33e510">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$255 - value$$\end{document}</tex-math><mml:math id="d33e515"><mml:mrow><mml:mn>255</mml:mn><mml:mo>-</mml:mo><mml:mi>v</mml:mi><mml:mi>a</mml:mi><mml:mi>l</mml:mi><mml:mi>u</mml:mi><mml:mi>e</mml:mi></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq3.gif"/></alternatives></inline-formula> on each channel) to allow it to be applied subtractively. Next, a circular Gaussian blur with kernel size 9x9 pixels is applied, which gives the basic desired fade out pattern but considerably darkens the dot. To counteract the darkening, the values in the mask are multiplied such that the central pixel regains its initial value before the blurring. If this dot is meant to replicate the dark type of dot from Fig.&#x000a0;<xref rid="Fig8" ref-type="fig">8</xref>, the same process of creating, blurring (using a smaller 5x5 pixel circular kernel), and multiplying a dot is followed with a new mask. The colour (200, 210, 215) is used instead to give significant darkening of at least 40 on each channel. This secondary mask is then added to the first mask, with a random x and/or y offset of -1 to 1 pixel to replicate the commonly off-centre nature of the yellow tinges behind this type of dot.</p><p id="Par24">Finally, random perturbations are applied to the dot to represent the variation in real dots more accurately. Each cardinal direction from the centre dot is randomly stretched by 0&#x02013;3 pixels as shown in Fig.&#x000a0;<xref rid="Fig9" ref-type="fig">9</xref>, the entire dot is scaled by an x and y factor (described in the following sentences), some random noise which is randomly selected from 0.975&#x02013;1.025 for each pixel is multiplied onto each colour channel, and lastly the dot is rotated by a random integer angle (0&#x000b0;- 359&#x000b0;). The scale factor is calculated as a random number from 0.25&#x02013;0.5 separately for the x and y axis, with a single random number <inline-formula id="IEq4"><alternatives><tex-math id="d33e534">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$r'$$\end{document}</tex-math><mml:math id="d33e539"><mml:msup><mml:mi>r</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq4.gif"/></alternatives></inline-formula> calculated according to Eq.&#x000a0;<xref rid="Equ1" ref-type="disp-formula">1</xref> added to both. The reason for adding a squared uniform random value (which will most frequently be a low value) to both dimensions is to represent the low frequency of cases where a substantially larger dot appear in real images. Some examples of the resulting dots can be seen in Fig.&#x000a0;<xref rid="Fig10" ref-type="fig">10</xref>.<disp-formula id="Equ1"><label>1</label><alternatives><tex-math id="d33e551">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} r'= &#x00026;   0.4r^{2}~\text {where}~\textit{r}~\text {is a uniform random}\nonumber \\  &#x00026;   \text {number from 0 to 1.} \end{aligned}$$\end{document}</tex-math><mml:math id="d33e557" display="block"><mml:mrow><mml:mtable><mml:mtr><mml:mtd columnalign="right"><mml:mrow><mml:msup><mml:mi>r</mml:mi><mml:mo>&#x02032;</mml:mo></mml:msup><mml:mo>=</mml:mo></mml:mrow></mml:mtd><mml:mtd columnalign="left"><mml:mrow><mml:mn>0.4</mml:mn><mml:msup><mml:mi>r</mml:mi><mml:mn>2</mml:mn></mml:msup><mml:mspace width="3.33333pt"/><mml:mtext>where</mml:mtext><mml:mspace width="3.33333pt"/><mml:mi mathvariant="italic">r</mml:mi><mml:mspace width="3.33333pt"/><mml:mtext>is a uniform random</mml:mtext></mml:mrow></mml:mtd></mml:mtr><mml:mtr><mml:mtd columnalign="right"><mml:mrow/></mml:mtd><mml:mtd columnalign="left"><mml:mrow><mml:mtext>number from 0 to 1.</mml:mtext></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:math><graphic xlink:href="10278_2024_1301_Article_Equ1.gif" position="anchor"/></alternatives></disp-formula>Since the characteristics of dots within a patch tend to be similar, the generated dots are designed to follow a similar pattern. Therefore, some values for parameters involved in creating these dots are controlled separately for each patch. Although the primary colour is randomly selected from yellow to dark brown (as previously defined), each patch is only allowed to select from a randomly selected, continuous 20% of this range. There is a 25% chance of the secondary (dark-centred) dot type being present in the patch; otherwise, there will be none at all. If the patch is selected to have these secondary dots, the probability of each generated dot being of the secondary type is randomly selected to be 0&#x02013;50%. To represent how most patches have either few dots (0&#x02013;5) or many dots (20+), the number of dots to add for a patch, <italic>n</italic>, is calculated according to formula <xref rid="Equ2" ref-type="disp-formula">2</xref> which gives an exponential scale from 2 to 64. The dots are placed at random x and y co-ordinates on the patch, with the random x and y values being recalculated until the co-ordinate is at least 3 pixels away from any other existing dot.<disp-formula id="Equ2"><label>2</label><alternatives><tex-math id="d33e595">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} n= &#x00026;   round(2^{1 + 5r})~\text {where}~\textit{r}~\text {is a uniform}\nonumber \\  &#x00026;   \text {random number from 0 to 1} \end{aligned}$$\end{document}</tex-math><mml:math id="d33e601" display="block"><mml:mrow><mml:mtable><mml:mtr><mml:mtd columnalign="right"><mml:mrow><mml:mi>n</mml:mi><mml:mo>=</mml:mo></mml:mrow></mml:mtd><mml:mtd columnalign="left"><mml:mrow><mml:mi>r</mml:mi><mml:mi>o</mml:mi><mml:mi>u</mml:mi><mml:mi>n</mml:mi><mml:mi>d</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:msup><mml:mn>2</mml:mn><mml:mrow><mml:mn>1</mml:mn><mml:mo>+</mml:mo><mml:mn>5</mml:mn><mml:mi>r</mml:mi></mml:mrow></mml:msup><mml:mo stretchy="false">)</mml:mo><mml:mspace width="3.33333pt"/><mml:mtext>where</mml:mtext><mml:mspace width="3.33333pt"/><mml:mi mathvariant="italic">r</mml:mi><mml:mspace width="3.33333pt"/><mml:mtext>is a uniform</mml:mtext></mml:mrow></mml:mtd></mml:mtr><mml:mtr><mml:mtd columnalign="right"><mml:mrow/></mml:mtd><mml:mtd columnalign="left"><mml:mrow><mml:mtext>random number from 0 to 1</mml:mtext></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:math><graphic xlink:href="10278_2024_1301_Article_Equ2.gif" position="anchor"/></alternatives></disp-formula><fig id="Fig11"><label>Fig. 11</label><caption><p>The validation intersection over union during training of the deep learning network with different loss functions</p></caption><graphic xlink:href="10278_2024_1301_Fig11_HTML" id="MO11"/></fig><table-wrap id="Tab1"><label>Table 1</label><caption><p>The best <inline-formula id="IEq5"><alternatives><tex-math id="d33e655">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e660"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-scores of the deep learning network when trained using each loss function</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Loss function</th><th align="left">Best <inline-formula id="IEq6"><alternatives><tex-math id="d33e676">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e681"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score</th></tr></thead><tbody><tr><td align="left">Dice loss</td><td align="left">0.003</td></tr><tr><td align="left">Tversky loss (<inline-formula id="IEq7"><alternatives><tex-math id="d33e697">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha =0.6$$\end{document}</tex-math><mml:math id="d33e702"><mml:mrow><mml:mi>&#x003b1;</mml:mi><mml:mo>=</mml:mo><mml:mn>0.6</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq7.gif"/></alternatives></inline-formula>)</td><td align="left">0.663</td></tr><tr><td align="left">Tversky loss (<inline-formula id="IEq8"><alternatives><tex-math id="d33e715">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha =0.7$$\end{document}</tex-math><mml:math id="d33e720"><mml:mrow><mml:mi>&#x003b1;</mml:mi><mml:mo>=</mml:mo><mml:mn>0.7</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq8.gif"/></alternatives></inline-formula>)</td><td align="left">0.678</td></tr><tr><td align="left">Binary cross-entropy</td><td align="left">0.576</td></tr><tr><td align="left">Jaccard loss</td><td align="left">0.068</td></tr></tbody></table></table-wrap></p></sec></sec><sec id="Sec14"><title>Results and Discussion</title><sec id="Sec15"><title>Training Configuration</title><p id="Par25">The deep learning segmentation method was trained on 115 randomly selected patches from the aforementioned annotated patches from both experts and evaluated against the same set of 19 patches that were used to assess expert inter-rater agreement, which were also kept separate from the training data selection pool. The training dataset was drawn entirely from separate tissue cores (and therefore patients) to those used in the validation dataset. Because validation metrics were not used for early stopping, model selection, or anything else aside from extraction of results, the validation set was not kept stratified from the evaluation dataset. We recognize that this would introduce some bias to the hyperparameter tuning process, but only for the high level loss and regularization hyperparameters that were tuned, so the impact and potential for overfitting would be minor. Due to the large size of the patches (480x480 pixels), they were subdivided during training and evaluation. Further details on the patch subdivision are in the appendices (Online Resource 1). For all tests, AdaDelta [<xref ref-type="bibr" rid="CR17">17</xref>] (a adaptive stochastic gradient descent technique) was used as the optimizer, as this was found to produce good results during network development. The optimizer hyperparameters used were <inline-formula id="IEq9"><alternatives><tex-math id="d33e748">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$rho=0.975$$\end{document}</tex-math><mml:math id="d33e753"><mml:mrow><mml:mi>r</mml:mi><mml:mi>h</mml:mi><mml:mi>o</mml:mi><mml:mo>=</mml:mo><mml:mn>0.975</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq9.gif"/></alternatives></inline-formula> and <inline-formula id="IEq10"><alternatives><tex-math id="d33e762">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$learning\_rate=0.005$$\end{document}</tex-math><mml:math id="d33e767"><mml:mrow><mml:mi>l</mml:mi><mml:mi>e</mml:mi><mml:mi>a</mml:mi><mml:mi>r</mml:mi><mml:mi>n</mml:mi><mml:mi>i</mml:mi><mml:mi>n</mml:mi><mml:mi>g</mml:mi><mml:mi>_</mml:mi><mml:mi>r</mml:mi><mml:mi>a</mml:mi><mml:mi>t</mml:mi><mml:mi>e</mml:mi><mml:mo>=</mml:mo><mml:mn>0.005</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq10.gif"/></alternatives></inline-formula>. A batch size of 4 and input image dimensions of 224x224 pixels were used for all tests.</p><p id="Par26">Since there are readily available ConvNeXt weights which are trained extensively on ImageNet [<xref ref-type="bibr" rid="CR18">18</xref>], these were used as a starting point for the backbone weights. Given the broad nature of the ImageNet dataset, some of the patterns learned from it were thought likely to be transferable to RNAscope segmentation. The exact weights used were the convnext_base_21k_1k_224_fe weights (pretrained on ImageNet-21k and then on ImageNet-1k, with the final classification layers removed) provided by Sayak Paul on Kaggle [<xref ref-type="bibr" rid="CR19">19</xref>]. The non-backbone layers were initialized with random weights. Because of the mix of pre-trained weights and newly initialized weights, there was potential for the early epochs of training to destroy the learnt patterns in the pre-trained backbone section. The non-backbone layers would require some epochs to reach useful weights and therefore would not initially allow the backbone layers to be correctly penalized/rewarded based on their ability to recognize useful features. To prevent this loss of feature recognition capability, the backbone layers were locked for the first segment of training, and only the non-backbone layers had their weights trained. Later segments allowed all layers to be trained, which allowed the backbone weights to be fine-tuned. Input images were normalized using the ImageNet normalization statistics to ensure the pre-trained weights were utilized well.</p><p id="Par27">The ground truth masks contained a 5-pixel cross pattern over each RNAscope dot location to mitigate the low positive class representation in the dataset. Stain normalization was not used on the images, since the RNAscope stain in this dataset was so underrepresented that it was removed by stain normalization entirely in many cases. Some data augmentations were also applied during training: rotation of up to 90 degrees and vertical and/or horizontal flips.<fig id="Fig12"><label>Fig. 12</label><caption><p>The loss during training of the deep learning network with different loss functions</p></caption><graphic xlink:href="10278_2024_1301_Fig12_HTML" id="MO12"/></fig><fig id="Fig13"><label>Fig. 13</label><caption><p>The validation loss during training of the deep learning network with different loss functions</p></caption><graphic xlink:href="10278_2024_1301_Fig13_HTML" id="MO13"/></fig></p><p id="Par28">Several sets of tests were run to evaluate which loss function and regularization methods produced the most stable training and best results. The results of these tests are detailed in the following subsections. The results of some less significant sets of tests are instead in the appendices (Online Resource 1).</p></sec><sec id="Sec16"><title>Loss Functions</title><p id="Par29">The first set of tests examined loss functions. As we were developing a segmentation network, loss functions that represented the segmentation problem well were sought after. The heavy class imbalance involved in RNAscope segmentation was also taken into consideration; a loss function weighting each pixel and class equally would be unlikely to perform well for this task. Using such a function would likely lead to the network being trained to ignore the positive class entirely and to predict only negatives, as it could obtain a score of more than 99% by that type of metric.</p><p id="Par30">The loss functions selected for comparison were binary cross-entropy, Jaccard loss, Dice loss, and Tversky loss. Binary cross-entropy does not account for class imbalance and was speculated to perform poorly, but was added for the sake of comparison. Jaccard and Dice loss both incentivize overlap (intersection) between predictions and ground truth, while penalizing over-detection. Tversky loss is similar to Dice loss, but allows the user to set the weighting of recall (<inline-formula id="IEq11"><alternatives><tex-math id="d33e819">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha $$\end{document}</tex-math><mml:math id="d33e824"><mml:mi>&#x003b1;</mml:mi></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq11.gif"/></alternatives></inline-formula>) and precision (<inline-formula id="IEq12"><alternatives><tex-math id="d33e828">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\beta $$\end{document}</tex-math><mml:math id="d33e833"><mml:mi>&#x003b2;</mml:mi></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq12.gif"/></alternatives></inline-formula>) in the formula, which must sum to a total of one. This allows for tuning of sensitivity to match the problem. Dice loss is identical to Tversky loss with <inline-formula id="IEq13"><alternatives><tex-math id="d33e837">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha =0.5$$\end{document}</tex-math><mml:math id="d33e842"><mml:mrow><mml:mi>&#x003b1;</mml:mi><mml:mo>=</mml:mo><mml:mn>0.5</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq13.gif"/></alternatives></inline-formula> and <inline-formula id="IEq14"><alternatives><tex-math id="d33e849">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\beta =0.5$$\end{document}</tex-math><mml:math id="d33e854"><mml:mrow><mml:mi>&#x003b2;</mml:mi><mml:mo>=</mml:mo><mml:mn>0.5</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq14.gif"/></alternatives></inline-formula>. Tversky loss was tested with <inline-formula id="IEq15"><alternatives><tex-math id="d33e861">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha =0.6$$\end{document}</tex-math><mml:math id="d33e866"><mml:mrow><mml:mi>&#x003b1;</mml:mi><mml:mo>=</mml:mo><mml:mn>0.6</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq7.gif"/></alternatives></inline-formula> and <inline-formula id="IEq16"><alternatives><tex-math id="d33e874">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha =0.7$$\end{document}</tex-math><mml:math id="d33e879"><mml:mrow><mml:mi>&#x003b1;</mml:mi><mml:mo>=</mml:mo><mml:mn>0.7</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq8.gif"/></alternatives></inline-formula> (increased sensitivity/recall).</p><p id="Par31">These tests were run for 1024 epochs, split into two halves. For the first half, the pre-trained ImageNet backbone weights were locked, and only the upscaling layers were trained. For the final half, all layers were trained. DropPath was disabled for the ConvNeXt backbone section, and DropOut (<inline-formula id="IEq17"><alternatives><tex-math id="d33e888">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$r=0.15$$\end{document}</tex-math><mml:math id="d33e893"><mml:mrow><mml:mi>r</mml:mi><mml:mo>=</mml:mo><mml:mn>0.15</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq17.gif"/></alternatives></inline-formula>) was enabled for the upscaling and final layers of the network. The validation intersection over union throughout training for each loss function test is shown in Fig.&#x000a0;<xref rid="Fig11" ref-type="fig">11</xref>, and the best post-processing <inline-formula id="IEq18"><alternatives><tex-math id="d33e903">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e908"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score for each test is shown in Table <xref rid="Tab1" ref-type="table">1</xref>. The loss and validation loss during training are shown in Figs.&#x000a0;<xref rid="Fig12" ref-type="fig">12</xref> and <xref rid="Fig13" ref-type="fig">13</xref>, respectively.</p><p id="Par32">Binary cross-entropy loss performed surprisingly well given that it does not account for class imbalance, weighting each pixel evenly. It was able to reach a validation binary intersection over union score of 0.107 after 1024 epochs, as shown in Fig.&#x000a0;<xref rid="Fig11" ref-type="fig">11</xref>, and was noticeably more stable than the other loss functions. Intersection over union loss functions are known to be unstable [<xref ref-type="bibr" rid="CR20">20</xref>], and this is evident in Fig.&#x000a0;<xref rid="Fig11" ref-type="fig">11</xref>; the Dice loss and Jaccard loss were so unstable that they failed to converge on a good solution. The modified sensitivity weighting of Tversky loss allowed it to converge despite its inherent instability, and its superior representation of the optimization problem at hand allowed it to produce better <inline-formula id="IEq19"><alternatives><tex-math id="d33e935">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e940"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-scores than binary cross-entropy. Although Tversky loss with <inline-formula id="IEq20"><alternatives><tex-math id="d33e946">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha =0.7$$\end{document}</tex-math><mml:math id="d33e951"><mml:mrow><mml:mi>&#x003b1;</mml:mi><mml:mo>=</mml:mo><mml:mn>0.7</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq8.gif"/></alternatives></inline-formula> ended with a lower validation intersection over union than binary cross-entropy, its <inline-formula id="IEq21"><alternatives><tex-math id="d33e959">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e964"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score after post-processing was much higher; it was 0.678, compared to just 0.576 for binary cross-entropy. This implies that Tversky loss learns a more robust representation of the problem, even if its pixel-wise accuracy is not as high. Given the large amount of training instability when using Tversky loss, it was deemed likely that more regularization would improve outcomes. This will be explored in the following sets of tests.<fig id="Fig14"><label>Fig. 14</label><caption><p>The <inline-formula id="IEq22"><alternatives><tex-math id="d33e976">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e981"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score of the deep learning network trained with Tversky loss (<inline-formula id="IEq23"><alternatives><tex-math id="d33e987">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha =0.6$$\end{document}</tex-math><mml:math id="d33e992"><mml:mrow><mml:mi>&#x003b1;</mml:mi><mml:mo>=</mml:mo><mml:mn>0.6</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq7.gif"/></alternatives></inline-formula>) when using differing grey thresholds and area thresholds for segmentation post-processing. The max <inline-formula id="IEq24"><alternatives><tex-math id="d33e999">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1004"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score is at the area threshold of 0 pixels and grey threshold of 254</p></caption><graphic xlink:href="10278_2024_1301_Fig14_HTML" id="MO14"/></fig></p><p id="Par33">The two best performing networks were those that used Tversky loss. Surface plots of the <inline-formula id="IEq25"><alternatives><tex-math id="d33e1014">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1019"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score at different grey threshold and area threshold values (as defined in Section &#x0201c;<xref rid="Sec12" ref-type="sec">Post-Processing</xref>&#x0201d;) for both networks trained using Tversky loss are shown in Figs.&#x000a0;<xref rid="Fig14" ref-type="fig">14</xref> and <xref rid="Fig15" ref-type="fig">15</xref>. These decision surface plots demonstrate that these classifiers may not generalize well using the peak threshold values; any deviation in the size of segmentation detections (impacting area threshold) or value (impacting grey threshold) would cause the <inline-formula id="IEq26"><alternatives><tex-math id="d33e1034">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1039"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula> score to drop significantly. However, both graphs display a larger plateau around area threshold 5, grey threshold 250 which would solve this generalization issue.<fig id="Fig15"><label>Fig. 15</label><caption><p>The <inline-formula id="IEq27"><alternatives><tex-math id="d33e1052">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1057"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score of the deep learning network trained with Tversky loss (<inline-formula id="IEq28"><alternatives><tex-math id="d33e1063">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha =0.7$$\end{document}</tex-math><mml:math id="d33e1068"><mml:mrow><mml:mi>&#x003b1;</mml:mi><mml:mo>=</mml:mo><mml:mn>0.7</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq8.gif"/></alternatives></inline-formula>) when using differing grey thresholds and area thresholds for segmentation post-processing. The max <inline-formula id="IEq29"><alternatives><tex-math id="d33e1075">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1080"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score is at the area threshold of 0 pixels and grey threshold of 254</p></caption><graphic xlink:href="10278_2024_1301_Fig15_HTML" id="MO15"/></fig></p><p id="Par34">While the network using Tversky loss with <inline-formula id="IEq30"><alternatives><tex-math id="d33e1090">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha =0.7$$\end{document}</tex-math><mml:math id="d33e1095"><mml:mrow><mml:mi>&#x003b1;</mml:mi><mml:mo>=</mml:mo><mml:mn>0.7</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq8.gif"/></alternatives></inline-formula> had a slightly higher best <inline-formula id="IEq31"><alternatives><tex-math id="d33e1102">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1107"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score (0.678) than the network using Tversky loss with <inline-formula id="IEq32"><alternatives><tex-math id="d33e1113">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha =0.6$$\end{document}</tex-math><mml:math id="d33e1118"><mml:mrow><mml:mi>&#x003b1;</mml:mi><mml:mo>=</mml:mo><mml:mn>0.6</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq7.gif"/></alternatives></inline-formula> (0.663), its validation intersection over union was less stable and appeared to be over-fitting. Therefore, Tversky loss with <inline-formula id="IEq33"><alternatives><tex-math id="d33e1125">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha =0.6$$\end{document}</tex-math><mml:math id="d33e1130"><mml:mrow><mml:mi>&#x003b1;</mml:mi><mml:mo>=</mml:mo><mml:mn>0.6</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq7.gif"/></alternatives></inline-formula> was selected for use in the remaining tests.</p></sec><sec id="Sec17"><title>Backbone Regularization</title><p id="Par35">The second set of tests examined the impact of enabling the DropPath regularization layers existing in the ConvNeXt backbone. As with the previous loss function test, DropOut (<inline-formula id="IEq34"><alternatives><tex-math id="d33e1141">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$r=0.15$$\end{document}</tex-math><mml:math id="d33e1146"><mml:mrow><mml:mi>r</mml:mi><mml:mo>=</mml:mo><mml:mn>0.15</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq17.gif"/></alternatives></inline-formula>) was enabled for the upscaling and final layers of the network. The backbone layers were locked for the first half of training again, but the total number of epochs was increased to 2048 to ensure any over-fitting would be evident. Backbone DropPath values of 0.0, 0.1, and 0.2 were tested. The validation intersection over union during training is shown in Fig.&#x000a0;<xref rid="Fig16" ref-type="fig">16</xref>. The best <inline-formula id="IEq35"><alternatives><tex-math id="d33e1156">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1161"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score for each test is shown in Table <xref rid="Tab2" ref-type="table">2</xref>. The loss and validation loss during training are shown in Figs.&#x000a0;<xref rid="Fig17" ref-type="fig">17</xref> and <xref rid="Fig18" ref-type="fig">18</xref>, respectively.<fig id="Fig16"><label>Fig. 16</label><caption><p>The validation intersection over union during training of the deep learning network with different levels of backbone (downscaling layer) regularization</p></caption><graphic xlink:href="10278_2024_1301_Fig16_HTML" id="MO16"/></fig></p><p id="Par36">Enabling DropPath in the backbone layers improved training performance in terms of validation intersection over union, validation loss, and <inline-formula id="IEq36"><alternatives><tex-math id="d33e1186">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1191"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score. Heavier regularization resulted in slower convergence but better performance by the end of training. The performance increase was expected, given the unstable nature of Tversky loss as an intersection-over-union based metric, which was also demonstrated in Fig.&#x000a0;<xref rid="Fig11" ref-type="fig">11</xref>. Over the increased 2048 epoch training period, the network with DropPath <inline-formula id="IEq37"><alternatives><tex-math id="d33e1200">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d=0.0$$\end{document}</tex-math><mml:math id="d33e1205"><mml:mrow><mml:mi>d</mml:mi><mml:mo>=</mml:mo><mml:mn>0.0</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq37.gif"/></alternatives></inline-formula> was clearly overfitting, and the network with <inline-formula id="IEq38"><alternatives><tex-math id="d33e1212">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d=0.1$$\end{document}</tex-math><mml:math id="d33e1217"><mml:mrow><mml:mi>d</mml:mi><mml:mo>=</mml:mo><mml:mn>0.1</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq38.gif"/></alternatives></inline-formula> was beginning to overfit and decrease in validation intersection over union by the end of training. For this length of training, DropPath <inline-formula id="IEq39"><alternatives><tex-math id="d33e1224">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d=0.2$$\end{document}</tex-math><mml:math id="d33e1229"><mml:mrow><mml:mi>d</mml:mi><mml:mo>=</mml:mo><mml:mn>0.2</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq39.gif"/></alternatives></inline-formula> appeared to work very well, as it was the most stable, did not overfit, and performed the best by the end of training. Increasing DropPath further would result in slower training convergence. DropPath <inline-formula id="IEq40"><alternatives><tex-math id="d33e1237">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d=0.2$$\end{document}</tex-math><mml:math id="d33e1242"><mml:mrow><mml:mi>d</mml:mi><mml:mo>=</mml:mo><mml:mn>0.2</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq39.gif"/></alternatives></inline-formula> for the backbone layers was used for the remaining tests.<table-wrap id="Tab2"><label>Table 2</label><caption><p>The best <inline-formula id="IEq41"><alternatives><tex-math id="d33e1255">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1260"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-scores of the deep learning network when trained using different backbone DropPath probabilities</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Backbone regularization</th><th align="left">Best <inline-formula id="IEq42"><alternatives><tex-math id="d33e1276">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1281"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score</th></tr></thead><tbody><tr><td align="left">DropPath (<inline-formula id="IEq43"><alternatives><tex-math id="d33e1292">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d=0.1$$\end{document}</tex-math><mml:math id="d33e1297"><mml:mrow><mml:mi>d</mml:mi><mml:mo>=</mml:mo><mml:mn>0.1</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq38.gif"/></alternatives></inline-formula>)</td><td align="left">0.681</td></tr><tr><td align="left">DropPath (<inline-formula id="IEq44"><alternatives><tex-math id="d33e1310">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d=0.2$$\end{document}</tex-math><mml:math id="d33e1315"><mml:mrow><mml:mi>d</mml:mi><mml:mo>=</mml:mo><mml:mn>0.2</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq39.gif"/></alternatives></inline-formula>)</td><td align="left">0.712</td></tr><tr><td align="left">None</td><td align="left">0.649</td></tr></tbody></table></table-wrap></p><p id="Par37">The <inline-formula id="IEq45"><alternatives><tex-math id="d33e1331">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1336"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score for the network trained with backbone DropPath of 0.2 at different area threshold and grey threshold values is shown in Fig.&#x000a0;<xref rid="Fig19" ref-type="fig">19</xref>. As expected, this shows that this more heavily regularized segmentation network produces more robust and generalizable classifications; minor changes to size of detections (impacting area threshold) or major changes to value (impacting grey threshold) would not significantly change the <inline-formula id="IEq46"><alternatives><tex-math id="d33e1345">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1350"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score.</p></sec><sec id="Sec18"><title>Upscaling Node Regularization</title><p id="Par38">The next set of tests examined the viability of using DropPath regularization for the upscaling nodes (the nodes coloured red on Fig.&#x000a0;<xref rid="Fig5" ref-type="fig">5</xref>) instead of DropOut. The network only converged with DropOut; further details on this set of tests are included in the appendices (Online Resource 1). Additionally, details on an inconclusive set of tests on regularization of the final layers (as depicted in Fig.&#x000a0;<xref rid="Fig4" ref-type="fig">4</xref>) are also contained in the appendices (Online Resource 1).</p></sec><sec id="Sec19"><title>Generated Data</title><p id="Par39">The final set of tests investigated the effect of using artificial training data generated by the method described in Section &#x0201c;<xref rid="Sec13" ref-type="sec">Data Generation</xref>&#x0201d;. This data generation method was used to generate 1071 patches for use as additional training data. Given the simpler nature of the generated images, they were used to make the early phases of training easier and entirely removed by the end of training. The exact amount of generated samples at each phase of training for this set of tests is shown in Table <xref rid="Tab3" ref-type="table">3</xref>. Each of the 115 real patches was sampled 4 times per epoch to give 460 real samples each epoch, whereas each generated patch was only sampled once, with the patch count varying each phase. The backbone layer weights of the network were only locked for phase 1.</p><p id="Par40">As previously discussed, DropOut (<inline-formula id="IEq47"><alternatives><tex-math id="d33e1378">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$r=0.15$$\end{document}</tex-math><mml:math id="d33e1383"><mml:mrow><mml:mi>r</mml:mi><mml:mo>=</mml:mo><mml:mn>0.15</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq17.gif"/></alternatives></inline-formula>) was enabled for the upscaling layers of the network. Different regularization methods for the final section of the network (as shown in Fig.&#x000a0;<xref rid="Fig4" ref-type="fig">4</xref>) were also tested: DropOut <inline-formula id="IEq48"><alternatives><tex-math id="d33e1393">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$r=0.15$$\end{document}</tex-math><mml:math id="d33e1398"><mml:mrow><mml:mi>r</mml:mi><mml:mo>=</mml:mo><mml:mn>0.15</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq17.gif"/></alternatives></inline-formula>, DropPath <inline-formula id="IEq49"><alternatives><tex-math id="d33e1405">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d=0.1$$\end{document}</tex-math><mml:math id="d33e1410"><mml:mrow><mml:mi>d</mml:mi><mml:mo>=</mml:mo><mml:mn>0.1</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq38.gif"/></alternatives></inline-formula>, DropPath <inline-formula id="IEq50"><alternatives><tex-math id="d33e1417">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d=0.2$$\end{document}</tex-math><mml:math id="d33e1422"><mml:mrow><mml:mi>d</mml:mi><mml:mo>=</mml:mo><mml:mn>0.2</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq39.gif"/></alternatives></inline-formula>, and no regularization. Due to the inconclusive nature of the previous final section regularization test (in the appendices), each test was run 10 times, and the metrics were then averaged for each set of parameters. One test using no generated data and equivalent training length was added for comparison. The validation intersection over union during training is shown in Fig.&#x000a0;<xref rid="Fig20" ref-type="fig">20</xref>. The best <inline-formula id="IEq51"><alternatives><tex-math id="d33e1433">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1438"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score for each test is shown in Table <xref rid="Tab4" ref-type="table">4</xref>. The loss and validation loss during training are shown in Figs.&#x000a0;<xref rid="Fig21" ref-type="fig">21</xref> and <xref rid="Fig22" ref-type="fig">22</xref>, respectively.<fig id="Fig17"><label>Fig. 17</label><caption><p>The loss during training of the deep learning network with different levels of backbone (downscaling layer) regularization</p></caption><graphic xlink:href="10278_2024_1301_Fig17_HTML" id="MO17"/></fig><fig id="Fig18"><label>Fig. 18</label><caption><p>The validation loss during training of the deep learning network with different levels of backbone (downscaling layer) regularization</p></caption><graphic xlink:href="10278_2024_1301_Fig18_HTML" id="MO18"/></fig></p><p id="Par41">The <inline-formula id="IEq52"><alternatives><tex-math id="d33e1470">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1475"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score for one instance (out of 10) of the highest performing configuration (using generated data and no final section regularization) at different area threshold and grey threshold values is shown in Fig.&#x000a0;<xref rid="Fig23" ref-type="fig">23</xref>. Although there was a small amount of variation between instances, the decision surface for this instance shows good generalizability in both area threshold and grey threshold, which correspond to generalizability in detection size and intensity, respectively. The <inline-formula id="IEq53"><alternatives><tex-math id="d33e1484">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1489"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score only begins to significantly drop at area thresholds of 4 or higher and is stable across any grey threshold.</p><p id="Par42">Inclusion of the generated data facilitated much faster convergence initially, with the no artificial data tests consistently performing worse in the first 500 epochs. This changed around 1000 epochs in, with the no artificial data tests having converged better at this time. By the end of training, the artificial data tests again managed to converge better, which is also evident in their higher final <inline-formula id="IEq54"><alternatives><tex-math id="d33e1497">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1502"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score. Including the simpler generated data appears to have been helpful for boosting performance, and altering the training phase scheme to shorten or omit phases 3&#x02013;5 could help to prevent the slow training around epoch 1000. This would come with the risk of destabilizing the training process since the change in training data would happen less gradually, but having less (albeit more major) changes in training set could also increase stability. The average <inline-formula id="IEq55"><alternatives><tex-math id="d33e1508">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1513"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score for the tests with no final section regularization was the highest, implying that there is sufficient and more effective regularization conducted in the earlier layers of the network.</p><p id="Par43">A final test was conducted to evaluate the performance of the network when trained entirely on one expert&#x02019;s annotated data and then tested against the other expert&#x02019;s annotated data. Any patches with annotations by both experts were used in the training dataset, with the corresponding expert&#x02019;s annotations used as ground truth. This resulted in one test having a training dataset of 113 patches and a test dataset of 31 patches and the other test having a training dataset of 50 patches and a test dataset of 94 patches. This test was intended to assess how well the deep learning network could generalize the subjective annotations of a single expert; however, the results should be interpreted as indicative only. This is because the network&#x02019;s capability to generalize would be limited when trained using only a single expert&#x02019;s data, especially with as few as 50 training images. The results of these tests are shown in Table <xref rid="Tab5" ref-type="table">5</xref>. Generated data was used according to the training phases in Table <xref rid="Tab3" ref-type="table">3</xref>.<fig id="Fig19"><label>Fig. 19</label><caption><p>The <inline-formula id="IEq56"><alternatives><tex-math id="d33e1533">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1538"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score of the deep learning network trained with backbone DropPath (<inline-formula id="IEq57"><alternatives><tex-math id="d33e1544">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d=0.2$$\end{document}</tex-math><mml:math id="d33e1549"><mml:mrow><mml:mi>d</mml:mi><mml:mo>=</mml:mo><mml:mn>0.2</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq39.gif"/></alternatives></inline-formula>) when using differing grey thresholds and area thresholds for segmentation post-processing. The max <inline-formula id="IEq58"><alternatives><tex-math id="d33e1556">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1561"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score is at the area threshold of 2 pixels and grey threshold of 253</p></caption><graphic xlink:href="10278_2024_1301_Fig19_HTML" id="MO19"/></fig><table-wrap id="Tab3"><label>Table 3</label><caption><p>The amount of each type of training sample used in each phase of network training when using generated data</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Phase</th><th align="left">Real samples</th><th align="left">Generated samples</th><th align="left">Epochs</th></tr></thead><tbody><tr><td align="left">1</td><td align="left">460</td><td align="left">1071</td><td align="left">128</td></tr><tr><td align="left">2</td><td align="left">460</td><td align="left">460</td><td align="left">128</td></tr><tr><td align="left">3</td><td align="left">460</td><td align="left">230</td><td align="left">128</td></tr><tr><td align="left">4</td><td align="left">460</td><td align="left">115</td><td align="left">128</td></tr><tr><td align="left">5</td><td align="left">460</td><td align="left">58</td><td align="left">128</td></tr><tr><td align="left">6</td><td align="left">460</td><td align="left">0</td><td align="left">1024</td></tr></tbody></table></table-wrap></p><p id="Par44">
+<fig id="Fig20"><label>Fig. 20</label><caption><p>The validation intersection over union during training of the deep learning network using generated data and differing final section regularization methods. Due to the larger number of patches per epoch in early phases of tests using artificial data, the epoch data has been standardized to a length of 460 training samples per epoch for these runs to make them directly comparable with the test with no artificial data</p></caption><graphic xlink:href="10278_2024_1301_Fig20_HTML" id="MO20"/></fig>
+<table-wrap id="Tab4"><label>Table 4</label><caption><p>The best <inline-formula id="IEq59"><alternatives><tex-math id="d33e1660">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1665"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-scores of the deep learning network when trained using generated data and differing final section regularization methods</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Final section regularization</th><th align="left">Best <inline-formula id="IEq60"><alternatives><tex-math id="d33e1682">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1687"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score</th><th align="left">Generated data used</th></tr></thead><tbody><tr><td align="left">DropOut (<inline-formula id="IEq61"><alternatives><tex-math id="d33e1700">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$r=0.15$$\end{document}</tex-math><mml:math id="d33e1705"><mml:mrow><mml:mi>r</mml:mi><mml:mo>=</mml:mo><mml:mn>0.15</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq17.gif"/></alternatives></inline-formula>)</td><td align="left">0.737</td><td align="left">Yes</td></tr><tr><td align="left">DropPath (<inline-formula id="IEq62"><alternatives><tex-math id="d33e1720">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d=0.1$$\end{document}</tex-math><mml:math id="d33e1725"><mml:mrow><mml:mi>d</mml:mi><mml:mo>=</mml:mo><mml:mn>0.1</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq38.gif"/></alternatives></inline-formula>)</td><td align="left">0.737</td><td align="left">Yes</td></tr><tr><td align="left">DropPath (<inline-formula id="IEq63"><alternatives><tex-math id="d33e1740">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d=0.2$$\end{document}</tex-math><mml:math id="d33e1745"><mml:mrow><mml:mi>d</mml:mi><mml:mo>=</mml:mo><mml:mn>0.2</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq39.gif"/></alternatives></inline-formula>)</td><td align="left">0.740</td><td align="left">Yes</td></tr><tr><td align="left">None</td><td align="left">0.745</td><td align="left">Yes</td></tr><tr><td align="left">None</td><td align="left">0.722</td><td align="left">No</td></tr></tbody></table></table-wrap>
+</p><p id="Par45">
+<fig id="Fig21"><label>Fig. 21</label><caption><p>The loss during training of the deep learning network using generated data and differing final section regularization methods. Due to the larger number of patches per epoch in early phases of tests using artificial data, the epoch data has been standardized to a length of 460 training samples per epoch for these runs to make them directly comparable with the test with no artificial data</p></caption><graphic xlink:href="10278_2024_1301_Fig21_HTML" id="MO21"/></fig>
+<fig id="Fig22"><label>Fig. 22</label><caption><p>The validation loss during training of the deep learning network using generated data and differing final section regularization methods. Due to the larger number of patches per epoch in early phases of tests using artificial data, the epoch data has been standardized to a length of 460 training samples per epoch for these runs to make them directly comparable with the test with no artificial data</p></caption><graphic xlink:href="10278_2024_1301_Fig22_HTML" id="MO22"/></fig>
+<fig id="Fig23"><label>Fig. 23</label><caption><p>The <inline-formula id="IEq64"><alternatives><tex-math id="d33e1795">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1800"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score of one instance of the deep learning network trained with generated data and no final section regularization when using differing grey thresholds and area thresholds for segmentation post-processing. The max <inline-formula id="IEq65"><alternatives><tex-math id="d33e1806">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1811"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score is at the area threshold of 2 pixels and grey threshold of 246</p></caption><graphic xlink:href="10278_2024_1301_Fig23_HTML" id="MO23"/></fig>
+</p><p id="Par46">The first generalization test, which had a much larger amount of available training data, showed decent performance with an <inline-formula id="IEq66"><alternatives><tex-math id="d33e1822">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1827"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score of 0.624. The second test showed much worse performance, with an <inline-formula id="IEq67"><alternatives><tex-math id="d33e1833">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1838"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score of only 0.314. Overall, these results show that the deep learning network has the potential to learn features that generalize well, but that it cannot train well on as few as 50 training patches.</p></sec><sec id="Sec20"><title>Comparison to Literature</title><p id="Par47">Most of the existing methods for RNAscope dot segmentation are not properly automated or do not fully segment RNAscope dots, instead leaving some groups as clusters [<xref ref-type="bibr" rid="CR10">10</xref>]. The commercial methods do not have a verified accuracy for correct identification of RNAscope dot positions, and the mechanisms by which they operate are not in the public domain. Compared to these existing methods, our deep learning method offers a fully automated approach with no user configuration required, which segments every RNAscope dot rather than leaving some groups as clusters. The feature-based segmentation method by Davidson et al. [<xref ref-type="bibr" rid="CR13">13</xref>] offered an automated, full RNAscope dot segmentation and therefore was directly comparable to our method. Table <xref rid="Tab6" ref-type="table">6</xref> shows a comparison of our method to expert performance and to the grey level texture feature method developed by Davidson et al. Our deep learning method outperformed both other methods by a considerable margin.</p></sec></sec><sec id="Sec21"><title>Conclusion</title><p id="Par48">This paper covered the development and optimization of a novel deep learning network for accurately segmenting chromogenic RNAscope staining from breast cancer tissue. This network utilized a ConvNeXt backbone, with custom, highly regularized blocks used for subsequent upscaling. Several hyperparameters were optimized to give significantly improved performance. A data generation method was also designed to provide additional training data and was shown to improve final segmentation performance. The final network was able to function well with little training data and was robust to overfitting. It was able to correctly identify RNAscope dots with an <inline-formula id="IEq68"><alternatives><tex-math id="d33e1861">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1866"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score of 0.745, outperforming the expert inter-rater agreement <inline-formula id="IEq69"><alternatives><tex-math id="d33e1872">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1877"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score of 0.596. Our study demonstrates the potential utility of automated RNAscope segmentation and quantification methods which, with further development and validation, would be needed to add RNAscope and other similar technologies into routine pathology workflows.</p></sec><sec id="Sec22"><title>Future Work</title><p id="Par49">One aspect of the study that we think could be improved in future work is the assessment metric, which was <inline-formula id="IEq70"><alternatives><tex-math id="d33e1887">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1892"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score based on matching pairs within 5 pixels. We think that a fairer metric would be to count the number of detected RNAscope dots within each cell and use the number of dots in each cell to assign a gene expression classification to that cell (e.g. 0 = none, 1 = low, 2&#x02013;3 = medium, 4+ = high). Then, the classification agreement across each cell between predictions and ground truth could be assessed to give an accuracy score. This approach would have the advantage of adding some leniency (dots would only need to be within the same cell as their ground truth counterpart), while still assessing the localization of dot detection, which is important since the RNAscope dot density may be different in tumour and non-tumour regions of the tissue image. A limitation of this approach is that it would require nucleus segmentation and subsequent nuclear boundary extrusion to find the boundaries of each cell.<table-wrap id="Tab5"><label>Table 5</label><caption><p>A comparison of the <inline-formula id="IEq71"><alternatives><tex-math id="d33e1904">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1909"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-scores of the deep learning network when trained on the patches annotated by one expert and tested on the patches annotated by the other expert (excluding those patches that were annotated by both experts)</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Number of training patches</th><th align="left">Number of test patches</th><th align="left"><inline-formula id="IEq72"><alternatives><tex-math id="d33e1927">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1932"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score</th></tr></thead><tbody><tr><td align="left">113</td><td align="left">31</td><td align="left">0.624</td></tr><tr><td align="left">50</td><td align="left">94</td><td align="left">0.314</td></tr></tbody></table><table-wrap-foot><p>Generated data was used to aid the training process, with backbone DropPath rate set to 0.2, upscaling layer DropOut rate set to 0.15, and no DropPath or DropOut regularization in the final layers</p></table-wrap-foot></table-wrap><table-wrap id="Tab6"><label>Table 6</label><caption><p>A comparison of the <inline-formula id="IEq73"><alternatives><tex-math id="d33e1961">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1966"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-scores of different methods on the same dataset</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Method</th><th align="left"><inline-formula id="IEq74"><alternatives><tex-math id="d33e1981">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_1$$\end{document}</tex-math><mml:math id="d33e1986"><mml:msub><mml:mi>F</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="10278_2024_1301_Article_IEq5.gif"/></alternatives></inline-formula>-score</th></tr></thead><tbody><tr><td align="left">Experts</td><td align="left">0.596</td></tr><tr><td align="left">Davidson et al. [<xref ref-type="bibr" rid="CR13">13</xref>]</td><td align="left">0.571</td></tr><tr><td align="left">This paper</td><td align="left">0.745</td></tr></tbody></table></table-wrap></p><p id="Par50">Another limitation of this study was the limited availability of annotated training data. Only 144 annotated patches of breast cancer tissue from 133 unique patients were available, and all tissue used was from archival FFPE samples. The annotations were done by two experts. A more robust dataset including fresh tissue samples, more expert annotators, or more annotated patches of data would improve the generalizability of the model.</p></sec></body><back><fn-group><fn><p><bold>Publisher's Note</bold></p><p>Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></fn></fn-group><ack><title>Acknowledgements</title><p>Breast FFPE tissue microarrays were obtained from the Kathleen Cunningham Consortium for Research into Familial Breast Cancer (kConFab) [<xref ref-type="bibr" rid="CR21">21</xref>] and the Cancer Society Tissue Bank and stained with haematoxylin and chromogenic RNAscope dyes at the University of Otago, Christchurch. The RNAscope dot positions on a total of 144 480x480 pixel non-overlapping patches of tissue from the aforementioned tissue microarrays were annotated by a trained pathology scientist (A.M-B.) and an anatomical pathologist (GH). We wish to thank Heather Thorne, Eveline Niedermayr, Sharon Guo, all the kConFab research nurses and staff, the heads and staff of the Family Cancer Clinics, and the Clinical Follow Up Study (which has received funding from the NHMRC, the National Breast Cancer Foundation, Cancer Australia, and the National Institute of Health (USA)) for their contributions to this resource, and the many families who contribute to kConFab. kConFab is supported by a grant from the National Breast Cancer Foundation and previously by the National Health and Medical Research Council (NHMRC), the Queensland Cancer Fund, the Cancer Councils of New South Wales, Victoria, Tasmania and South Australia, and the Cancer Foundation of Western Australia.</p></ack><notes notes-type="funding-information"><title>Funding</title><p>Open Access funding enabled and organized by CAUL and its Member Institutions.</p></notes><notes notes-type="data-availability"><title>Data Availability</title><p>The data used in this study, which was sourced from tissue samples provided by kConFab, is not permitted to be made publicly available.</p></notes><notes><title>Declarations</title><notes id="FPar1"><title>Ethics Approval</title><p id="Par54">This study involving human participants was reviewed and approved by the University of Otago Human Ethics Committee (Health) - H14/088. This study was performed in line with the principles of the Declaration of Helsinki.</p></notes><notes id="FPar2"><title>Consent to Participate</title><p id="Par55">Informed consent was obtained from all study participants for this study.</p></notes><notes id="FPar3" notes-type="COI-statement"><title>Conflict of Interest</title><p id="Par56">The authors declare no competing interests.</p></notes></notes><ref-list id="Bib1"><title>References</title><ref id="CR1"><label>1.</label><mixed-citation publication-type="other">Breast cancer. World Health Organization (2021). <ext-link ext-link-type="uri" xlink:href="https://www.who.int/news-room/fact-sheets/detail/breast-cancer">https://www.who.int/news-room/fact-sheets/detail/breast-cancer</ext-link></mixed-citation></ref><ref id="CR2"><label>2.</label><citation-alternatives><element-citation id="ec-CR2" publication-type="journal"><person-group person-group-type="author"><name><surname>Waks</surname><given-names>AG</given-names></name><name><surname>Winer</surname><given-names>EP</given-names></name></person-group><article-title>Breast Cancer Treatment: A Review</article-title><source>JAMA.</source><year>2019</year><volume>321</volume><issue>3</issue><fpage>288</fpage><lpage>300</lpage><pub-id pub-id-type="doi">10.1001/jama.2018.19323</pub-id><pub-id pub-id-type="pmid">30667505</pub-id>
+</element-citation><mixed-citation id="mc-CR2" publication-type="journal">Waks, A.G., Winer, E.P.: Breast Cancer Treatment: A Review. JAMA. <bold>321</bold>(3), 288&#x02013;300 (2019) 10.1001/jama.2018.19323<pub-id pub-id-type="pmid">30667505</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR3"><label>3.</label><citation-alternatives><element-citation id="ec-CR3" publication-type="journal"><person-group person-group-type="author"><name><surname>Arnold</surname><given-names>M</given-names></name><name><surname>Morgan</surname><given-names>E</given-names></name><name><surname>Rumgay</surname><given-names>H</given-names></name><name><surname>Mafra</surname><given-names>A</given-names></name><name><surname>Singh</surname><given-names>D</given-names></name><name><surname>Laversanne</surname><given-names>M</given-names></name><name><surname>Vignat</surname><given-names>J</given-names></name><name><surname>Gralow</surname><given-names>JR</given-names></name><name><surname>Cardoso</surname><given-names>F</given-names></name><name><surname>Siesling</surname><given-names>S</given-names></name><name><surname>Soerjomataram</surname><given-names>I</given-names></name></person-group><article-title>Current and future burden of breast cancer: Global statistics for 2020 and 2040</article-title><source>The Breast.</source><year>2022</year><volume>66</volume><fpage>15</fpage><lpage>23</lpage><pub-id pub-id-type="doi">10.1016/j.breast.2022.08.010</pub-id><pub-id pub-id-type="pmid">36084384</pub-id>
+</element-citation><mixed-citation id="mc-CR3" publication-type="journal">Arnold, M., Morgan, E., Rumgay, H., Mafra, A., Singh, D., Laversanne, M., Vignat, J., Gralow, J.R., Cardoso, F., Siesling, S., Soerjomataram, I.: Current and future burden of breast cancer: Global statistics for 2020 and 2040. The Breast. <bold>66</bold>, 15&#x02013;23 (2022) 10.1016/j.breast.2022.08.010<pub-id pub-id-type="pmid">36084384</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR4"><label>4.</label><mixed-citation publication-type="other">Rozario, S.Y., Sarkar, M., Farlie, M.K., Lazarus, M.D.: Responding to the healthcare workforce shortage: A scoping review exploring anatomical pathologists&#x02019; professional identities over time. Anatomical Sciences Education. <bold>n/a</bold>(n/a) (2023). 10.1002/ase.2260. <ext-link ext-link-type="uri" xlink:href="https://anatomypubs.onlinelibrary.wiley.com/doi/pdf/10.1002/ase.2260">https://anatomypubs.onlinelibrary.wiley.com/doi/pdf/10.1002/ase.2260</ext-link></mixed-citation></ref><ref id="CR5"><label>5.</label><mixed-citation publication-type="other">Graschew, G., Roelofs, T.A., Rakowsky, S., Schlag, P.M.: E-health and telemedicine. International Journal of Computer Assisted Radiology and Surgery. <bold>1</bold>(1), 119&#x02013;135 (2006). 10.1007/s11548-006-0012-1</mixed-citation></ref><ref id="CR6"><label>6.</label><mixed-citation publication-type="other">Ghaznavi, F., Evans, A., Madabhushi, A., Feldman, M.: Digital imaging in pathology: Whole-slide imaging and beyond. Annual Review of Pathology: Mechanisms of Disease. <bold>8</bold>(1), 331&#x02013;359 (2013). 10.1146/annurev-pathol-011811-120902. <pub-id pub-id-type="doi">10.1146/annurev-pathol-011811-120902</pub-id>. PMID: 23157334</mixed-citation></ref><ref id="CR7"><label>7.</label><mixed-citation publication-type="other">Wang, F., Flanagan, J., Su, N., Wang, L.-C., Bui, S., Nielson, A., Wu, X., Vo, H.-T., Ma, X.-J., Luo, Y.: Rnascope: a novel in situ rna analysis platform for formalin-fixed, paraffin-embedded tissues. The Journal of molecular diagnostics : JMD. <bold>14</bold>(1), 22&#x02013;29 (2012). 10.1016/j.jmoldx.2011.08.002 . 22166544[pmid]</mixed-citation></ref><ref id="CR8"><label>8.</label><mixed-citation publication-type="other">Liu, Z., Mao, H., Wu, C., Feichtenhofer, C., Darrell, T., Xie, S.: A convnet for the 2020s. CoRR. <bold>abs/2201.03545</bold> (2022). <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/2201.03545">arXiv:2201.03545</ext-link></mixed-citation></ref><ref id="CR9"><label>9.</label><mixed-citation publication-type="other">Zhou, Z., Siddiquee, M.M.R., Tajbakhsh, N., Liang, J.: Unet++: A nested u-net architecture for medical image segmentation. CoRR. <bold>abs/1807.10165</bold> (2018) <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/1807.10165">arXiv:1807.10165</ext-link></mixed-citation></ref><ref id="CR10"><label>10.</label><mixed-citation publication-type="other">Morley-Bunker, A.E., Wiggins, G.A.R., Currie, M.J., Morrin, H.R., Whitehead, M.R., Eglinton, T., Pearson, J., Walker, L.C.: Rnascope compatibility with image analysis platforms for the quantification of tissue-based colorectal cancer biomarkers in archival formalin-fixed paraffin-embedded tissue. Acta Histochemica. <bold>123</bold>(6), 151765 (2021). 10.1016/j.acthis.2021.151765</mixed-citation></ref><ref id="CR11"><label>11.</label><mixed-citation publication-type="other">Arganda-Carreras, I., Kaynig, V., Rueden, C., Eliceiri, K.W., Schindelin, J., Cardona, A., Sebastian&#x000a0;Seung, H.: Trainable Weka Segmentation: a machine learning tool for microscopy pixel classification. Bioinformatics. <bold>33</bold>(15), 2424&#x02013;2426 (2017). 10.1093/bioinformatics/btx180. <ext-link ext-link-type="uri" xlink:href="https://academic.oup.com/bioinformatics/article-pdf/33/15/2424/50756582/bioinformatics_33_15_2424.pdf">https://academic.oup.com/bioinformatics/article-pdf/33/15/2424/50756582/bioinformatics_33_15_2424.pdf</ext-link></mixed-citation></ref><ref id="CR12"><label>12.</label><mixed-citation publication-type="other">Jamalzadeh, S., H&#x000e4;kkinen, A., Andersson, N., Huhtinen, K., Laury, A., Hietanen, S., Hynninen, J., Oikkonen, J., Carpen, O., Virtanen, A., Hautaniemi, S.: Quantish: Rna in situ hybridization image analysis framework for quantifying cell type-specific target rna expression and variability. Laboratory Investigation. <bold>102</bold>, 1&#x02013;9 (2022). 10.1038/s41374-022-00743-5</mixed-citation></ref><ref id="CR13"><label>13.</label><mixed-citation publication-type="other">Davidson, A., Morley-Bunker, A., Wiggins, G., Walker, L., Harris, G., Mukundan, R., Investigators: Grey level texture features for segmentation of chromogenic dye rnascope from breast cancer tissue. ArXiv. <bold>abs/2401.15886</bold> (2024) [cs.CV]</mixed-citation></ref><ref id="CR14"><label>14.</label><mixed-citation publication-type="other">Abadi, M., Agarwal, A., Barham, P., Brevdo, E., Chen, Z., Citro, C., Corrado, G.S., Davis, A., Dean, J., Devin, M., Ghemawat, S., Goodfellow, I., Harp, A., Irving, G., Isard, M., Jia, Y., Jozefowicz, R., Kaiser, L., Kudlur, M., Levenberg, J., Man&#x000e9;, D., Monga, R., Moore, S., Murray, D., Olah, C., Schuster, M., Shlens, J., Steiner, B., Sutskever, I., Talwar, K., Tucker, P., Vanhoucke, V., Vasudevan, V., Vi&#x000e9;gas, F., Vinyals, O., Warden, P., Wattenberg, M., Wicke, M., Yu, Y., Zheng, X.: TensorFlow: Large-Scale Machine Learning on Heterogeneous Systems. Software available from tensorflow.org (2015). <ext-link ext-link-type="uri" xlink:href="https://www.tensorflow.org/">https://www.tensorflow.org/</ext-link></mixed-citation></ref><ref id="CR15"><label>15.</label><mixed-citation publication-type="other">Chollet, F., et al.: Keras (2015). <ext-link ext-link-type="uri" xlink:href="https://keras.io">https://keras.io</ext-link></mixed-citation></ref><ref id="CR16"><label>16.</label><mixed-citation publication-type="other">Ba, J., Kiros, J.R., Hinton, G.E.: Layer normalization. ArXiv. <bold>abs/1607.06450</bold> (2016)</mixed-citation></ref><ref id="CR17"><label>17.</label><mixed-citation publication-type="other">Zeiler, M.D.: Adadelta: An adaptive learning rate method. ArXiv. <bold>abs/1212.5701</bold> (2012)</mixed-citation></ref><ref id="CR18"><label>18.</label><mixed-citation publication-type="other">Deng, J., Dong, W., Socher, R., Li, L.-J., Li, K., Fei-Fei, L.: Imagenet: A large-scale hierarchical image database. In: 2009 IEEE Conference on Computer Vision and Pattern Recognition, pp. 248&#x02013;255 (2009). 10.1109/CVPR.2009.5206848</mixed-citation></ref><ref id="CR19"><label>19.</label><mixed-citation publication-type="other">Paul, S.: convnext &#x02014; kaggle.com. <ext-link ext-link-type="uri" xlink:href="https://www.kaggle.com/models/spsayakpaul/convnext">https://www.kaggle.com/models/spsayakpaul/convnext</ext-link>. [Accessed 04-03-2024] (2022)</mixed-citation></ref><ref id="CR20"><label>20.</label><mixed-citation publication-type="other">Huang, Y., Tang, Z., Chen, D., Su, K., Chen, C.: Batching soft iou for training semantic segmentation networks. IEEE Signal Processing Letters. <bold>27</bold>, 66&#x02013;70 (2020). 10.1109/LSP.2019.2956367</mixed-citation></ref><ref id="CR21"><label>21.</label><mixed-citation publication-type="other">Thorne, H., Mitchell, G., Fox, o.b.o.t.k.c. Stephen: kConFab: A Familial Breast Cancer Consortium Facilitating Research and Translational Oncology. JNCI Monographs. <bold>2011</bold>(43), 79&#x02013;81 (2011). 10.1093/jncimonographs/lgr042. <ext-link ext-link-type="uri" xlink:href="https://academic.oup.com/jncimono/article-pdf/2011/43/79/2785591/lgr042.pdf">https://academic.oup.com/jncimono/article-pdf/2011/43/79/2785591/lgr042.pdf</ext-link></mixed-citation></ref></ref-list></back></article>

@@ -1,0 +1,814 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="1.3" id="mrm30345" xml:lang="en" article-type="research-article"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Magn Reson Med</journal-id><journal-id journal-id-type="iso-abbrev">Magn Reson Med</journal-id><journal-id journal-id-type="doi">10.1002/(ISSN)1522-2594</journal-id><journal-id journal-id-type="publisher-id">MRM</journal-id><journal-title-group><journal-title>Magnetic Resonance in Medicine</journal-title></journal-title-group><issn pub-type="ppub">0740-3194</issn><issn pub-type="epub">1522-2594</issn><publisher><publisher-name>John Wiley and Sons Inc.</publisher-name><publisher-loc>Hoboken</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">39497463</article-id><article-id pub-id-type="pmc">PMC11680738</article-id>
+<article-id pub-id-type="doi">10.1002/mrm.30345</article-id><article-id pub-id-type="publisher-id">MRM30345</article-id><article-categories><subj-group subj-group-type="overline"><subject>Research Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Imaging Methodology</subject></subj-group></article-categories><title-group><article-title>Low&#x02010;rank iterative infilling for zero echo&#x02010;time (ZTE) imaging</article-title><alt-title alt-title-type="left-running-head">HUO et al.</alt-title></title-group><contrib-group><contrib id="mrm30345-cr-0001" contrib-type="author"><name><surname>Huo</surname><given-names>Zimu</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0009-0008-3426-326X</contrib-id><xref rid="mrm30345-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="mrm30345-cr-0002" contrib-type="author"><name><surname>de Arcos</surname><given-names>Jos&#x000e9;</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-1855-4285</contrib-id><xref rid="mrm30345-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="mrm30345-cr-0003" contrib-type="author"><name><surname>Wiesinger</surname><given-names>Florian</given-names></name><xref rid="mrm30345-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref><xref rid="mrm30345-aff-0004" ref-type="aff">
+<sup>4</sup>
+</xref></contrib><contrib id="mrm30345-cr-0004" contrib-type="author"><name><surname>Kaggie</surname><given-names>Joshua D.</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0001-6706-3442</contrib-id><xref rid="mrm30345-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="mrm30345-cr-0005" contrib-type="author" corresp="yes"><name><surname>Graves</surname><given-names>Martin J.</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0003-4327-3052</contrib-id><xref rid="mrm30345-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><address><email>mjg40@cam.ac.uk</email></address></contrib></contrib-group><aff id="mrm30345-aff-0001">
+<label>
+<sup>1</sup>
+</label>
+<named-content content-type="organisation-division">Department of Radiology</named-content>
+<institution>University of Cambridge, Cambridge Biomedical Campus</institution>
+<city>Cambridge</city>
+<country country="GB">UK</country>
+</aff><aff id="mrm30345-aff-0002">
+<label>
+<sup>2</sup>
+</label>
+<institution>GE HealthCare</institution>
+<city>Amersham</city>
+<country country="GB">UK</country>
+</aff><aff id="mrm30345-aff-0003">
+<label>
+<sup>3</sup>
+</label>
+<institution>GE HealthCare</institution>
+<city>Munich</city>
+<country country="DE">Germany</country>
+</aff><aff id="mrm30345-aff-0004">
+<label>
+<sup>4</sup>
+</label>
+<named-content content-type="organisation-division">Department of Neuroimaging, Psychology and Neuroscience</named-content>
+<institution>King's College London</institution>
+<city>London</city>
+<country country="GB">UK</country>
+</aff><author-notes><corresp id="correspondenceTo">
+<label>*</label>
+<bold>Correspondence</bold>
+<break/>
+Martin J. Graves Box 218, Department of Radiology, University of Cambridge. Cambridge Biomedical Campus, Hills Road, Cambridge CB2 0QQ, UK.<break/>
+Email: <email>mjg40@cam.ac.uk</email>
+<break/>
+</corresp></author-notes><pub-date pub-type="epub"><day>04</day><month>11</month><year>2024</year></pub-date><pub-date pub-type="ppub"><month>3</month><year>2025</year></pub-date><volume>93</volume><issue seq="190">3</issue><issue-id pub-id-type="doi">10.1002/mrm.v93.3</issue-id><fpage>1149</fpage><lpage>1162</lpage><history>
+<date date-type="rev-recd"><day>11</day><month>9</month><year>2024</year></date>
+<date date-type="received"><day>12</day><month>4</month><year>2024</year></date>
+<date date-type="accepted"><day>27</day><month>9</month><year>2024</year></date>
+</history><permissions><!--&#x000a9; 2025 International Society for Magnetic Resonance in Medicine.--><copyright-statement content-type="article-copyright">&#x000a9; 2024 The Author(s). <italic toggle="yes">Magnetic Resonance in Medicine</italic> published by Wiley Periodicals LLC on behalf of International Society for Magnetic Resonance in Medicine.</copyright-statement><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>This is an open access article under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link> License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions><self-uri content-type="pdf" xlink:href="file:MRM-93-1149.pdf"/><abstract id="mrm30345-abs-0001"><title>Abstract</title><sec id="mrm30345-sec-0001"><title>Purpose</title><p>A new referenceless low&#x02010;rank reconstruction technique has been introduced to address the issue of missing samples within the Zero Echo Time (ZTE) dead&#x02010;time gap.</p></sec><sec id="mrm30345-sec-0002"><title>Methods</title><p>The proposed method reformulates the in&#x02010;filling of the missing samples as an inverse problem subject to low&#x02010;rank constraints. Its performance and robustness are evaluated through a comparative analysis that combines Monte Carlo computational simulations and data obtained from in vivo experiments.</p></sec><sec id="mrm30345-sec-0003"><title>Results</title><p>The proposed method is tested for dead&#x02010;time gaps ranging up to 4.5 Nyquist dwells, across signal&#x02010;to&#x02010;noise ratio levels of 5, 10, 15, and 20 dB. Consistently superior performance is observed across all cases compared to algebraic and parallel imaging methods. The speed for convergence decreases exponentially as the dead&#x02010;time gap expands.</p></sec><sec id="mrm30345-sec-0004"><title>Conclusion</title><p>The proposed method enables artifact&#x02010;free reconstruction up to dead&#x02010;time gap of 4 Nyquist dwells and thereby supports ZTE imaging up to an imaging bandwidth of <mml:math id="jats-math-1" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x000b1;</mml:mo><mml:mn>41</mml:mn><mml:mo>.</mml:mo><mml:mn>67</mml:mn></mml:mrow></mml:mrow></mml:math> kHz (assuming transmit and receive switching less than 30 <mml:math id="jats-math-2" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>&#x003bc;</mml:mi></mml:mrow></mml:mrow></mml:math>s). It demonstrates superior performance compared to algebraic and parallel imaging methods.</p></sec></abstract><kwd-group kwd-group-type="author-generated"><kwd id="mrm30345-kwd-0001">dead&#x02010;time gap</kwd><kwd id="mrm30345-kwd-0002">low rank</kwd><kwd id="mrm30345-kwd-0003">ZTE</kwd></kwd-group><funding-group><award-group id="funding-0001"><funding-source><institution-wrap><institution>NIHR Cambridge Biomedical Research Centre
+</institution><institution-id institution-id-type="doi">10.13039/501100018956</institution-id></institution-wrap></funding-source><award-id>NIHR203312</award-id></award-group><award-group id="funding-0002"><funding-source><institution-wrap><institution>Gates Cambridge Trust
+</institution><institution-id institution-id-type="doi">10.13039/501100005370</institution-id></institution-wrap></funding-source></award-group></funding-group><counts><fig-count count="10"/><table-count count="1"/><page-count count="14"/><word-count count="5897"/></counts><custom-meta-group><custom-meta><meta-name>source-schema-version-number</meta-name><meta-value>2.0</meta-value></custom-meta><custom-meta><meta-name>cover-date</meta-name><meta-value>March 2025</meta-value></custom-meta><custom-meta><meta-name>details-of-publishers-convertor</meta-name><meta-value>Converter:WILEY_ML3GV2_TO_JATSPMC version:6.5.1 mode:remove_FC converted:27.12.2024</meta-value></custom-meta></custom-meta-group></article-meta><notes><p content-type="self-citation">
+<mixed-citation publication-type="journal" id="mrm30345-cit-1001">
+<string-name>
+<surname>Huo</surname>
+<given-names>Z</given-names>
+</string-name>, <string-name>
+<surname>de Arcos</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Wiesinger</surname>
+<given-names>F</given-names>
+</string-name>, <string-name>
+<surname>Kaggie</surname>
+<given-names>JD</given-names>
+</string-name>, <string-name>
+<surname>Graves</surname>
+<given-names>MJ</given-names>
+</string-name>. <article-title>Low&#x02010;rank iterative infilling for zero echo&#x02010;time (ZTE) imaging</article-title>. <source>Magn Reson Med</source>. <year>2025</year>;<volume>93</volume>(<issue>3</issue>):<fpage>1149</fpage>&#x02010;<lpage>1162</lpage>. doi: <pub-id pub-id-type="doi">10.1002/mrm.30345</pub-id>
+</mixed-citation>
+</p></notes></front><body id="mrm30345-body-0001"><sec id="mrm30345-sec-0005"><label>1</label><title>INTRODUCTION</title><p>Methods for imaging tissues with short and ultra&#x02010;short transverse relaxation times (<mml:math id="jats-math-3" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mrow><mml:mi mathvariant="normal">T</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow><mml:mrow><mml:mo>&#x02217;</mml:mo></mml:mrow></mml:msubsup></mml:mrow></mml:mrow></mml:math>), on the order of a few milliseconds, have gained increasing attention for their potential in clinical diagnosis and research.<xref rid="mrm30345-bib-0001" ref-type="bibr">
+<sup>1</sup>
+</xref>, <xref rid="mrm30345-bib-0002" ref-type="bibr">
+<sup>2</sup>
+</xref>, <xref rid="mrm30345-bib-0003" ref-type="bibr">
+<sup>3</sup>
+</xref>, <xref rid="mrm30345-bib-0004" ref-type="bibr">
+<sup>4</sup>
+</xref> In recent years several specialized sequences have been developed to capture signals from tissues characterized by extremely short <mml:math id="jats-math-4" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mrow><mml:mi mathvariant="normal">T</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow><mml:mrow><mml:mo>&#x02217;</mml:mo></mml:mrow></mml:msubsup></mml:mrow></mml:mrow></mml:math> components including bone, tendon, myelin, lung, and teeth.<xref rid="mrm30345-bib-0005" ref-type="bibr">
+<sup>5</sup>
+</xref>, <xref rid="mrm30345-bib-0006" ref-type="bibr">
+<sup>6</sup>
+</xref>, <xref rid="mrm30345-bib-0007" ref-type="bibr">
+<sup>7</sup>
+</xref>, <xref rid="mrm30345-bib-0008" ref-type="bibr">
+<sup>8</sup>
+</xref>, <xref rid="mrm30345-bib-0009" ref-type="bibr">
+<sup>9</sup>
+</xref>, <xref rid="mrm30345-bib-0010" ref-type="bibr">
+<sup>10</sup>
+</xref>, <xref rid="mrm30345-bib-0011" ref-type="bibr">
+<sup>11</sup>
+</xref>, <xref rid="mrm30345-bib-0012" ref-type="bibr">
+<sup>12</sup>
+</xref>, <xref rid="mrm30345-bib-0013" ref-type="bibr">
+<sup>13</sup>
+</xref>, <xref rid="mrm30345-bib-0014" ref-type="bibr">
+<sup>14</sup>
+</xref>, <xref rid="mrm30345-bib-0015" ref-type="bibr">
+<sup>15</sup>
+</xref> Unlike conventional MR methods, which lack signal from short <mml:math id="jats-math-5" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mrow><mml:mi mathvariant="normal">T</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow><mml:mrow><mml:mo>&#x02217;</mml:mo></mml:mrow></mml:msubsup></mml:mrow></mml:mrow></mml:math> tissues, zero or ultrashort echo time sequences allow for the measurement of ultra&#x02010;short <mml:math id="jats-math-6" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mrow><mml:mi mathvariant="normal">T</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow><mml:mrow><mml:mo>&#x02217;</mml:mo></mml:mrow></mml:msubsup></mml:mrow></mml:mrow></mml:math> tissues within a range of 10 <mml:math id="jats-math-7" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>&#x003bc;</mml:mi></mml:mrow></mml:mrow></mml:math>s to 1 ms.<xref rid="mrm30345-bib-0015" ref-type="bibr">
+<sup>15</sup>
+</xref>, <xref rid="mrm30345-bib-0016" ref-type="bibr">
+<sup>16</sup>
+</xref>, <xref rid="mrm30345-bib-0017" ref-type="bibr">
+<sup>17</sup>
+</xref>, <xref rid="mrm30345-bib-0018" ref-type="bibr">
+<sup>18</sup>
+</xref>, <xref rid="mrm30345-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref>, <xref rid="mrm30345-bib-0020" ref-type="bibr">
+<sup>20</sup>
+</xref>, <xref rid="mrm30345-bib-0021" ref-type="bibr">
+<sup>21</sup>
+</xref>
+</p><p>One effective technique is Zero Echo Time imaging (ZTE),<xref rid="mrm30345-bib-0022" ref-type="bibr">
+<sup>22</sup>
+</xref> where radiofrequency (RF) excitation is performed during spatial encoding. Maximum scan efficiency is obtained by reducing the time between RF excitation and signal acquisition. These immediate short readouts provide improved sensitivity to short&#x02010;short <mml:math id="jats-math-8" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mrow><mml:mi mathvariant="normal">T</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow><mml:mrow><mml:mo>&#x02217;</mml:mo></mml:mrow></mml:msubsup></mml:mrow></mml:mrow></mml:math> signals while minimizing sensitivity to <mml:math id="jats-math-9" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mrow><mml:mi mathvariant="normal">B</mml:mi></mml:mrow><mml:mrow><mml:mn>0</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math> off&#x02010;resonance and eddy currents, albeit at the expense of nonselective excitation. However, the application of an encoding gradient during the short RF excitation pulse leads to a dead&#x02010;time gap, i.e., missing samples, in the center of <italic toggle="yes">k</italic>&#x02010;space. The number of missing samples increases when wider imaging bandwidths are used. These missing Fourier coefficients can result in spatially varying signal modulations due to convolution with a sinc function.</p><p>In ZTE imaging, increasing the imaging bandwidth reduces chemical shift artifacts and improves overall image quality.<xref rid="mrm30345-bib-0023" ref-type="bibr">
+<sup>23</sup>
+</xref> On our clinical MR system, the shortest achievable dead&#x02010;time gap, corresponds to three missing samples along each radial spoke using a readout bandwidth of <mml:math id="jats-math-10" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>31.25 kHz (or five missing samples on a two times oversampled grid). At a wider bandwidth of <mml:math id="jats-math-11" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>62.5 kHz, this increases to five missing samples (nine missing samples on a two times oversampled grid). This increase in the dead&#x02010;time gap affects image quality and necessitates in&#x02010;filling of the missing samples.</p><p>Several sequence&#x02010;based solutions have been proposed to address the missing points in the free induction decay. The Water&#x02010; and Fat&#x02010;Suppressed Proton Projection MRI (WASPI) method uses a separate short acquisition with reduced amplitude gradients, i.e., a lower bandwidth, to sample the missing samples.<xref rid="mrm30345-bib-0024" ref-type="bibr">
+<sup>24</sup>
+</xref> The pointwise encoding time reduction with radial acquisition uses a relatively slow single&#x02010;point acquisition method.<xref rid="mrm30345-bib-0025" ref-type="bibr">
+<sup>25</sup>
+</xref> In an attempt to balance acquisition time and image quality, Hybrid Filling of the Dead&#x02010;Time Gap for Faster Zero Echo Time Imaging method merges WASPI and pointwise encoding time reduction with radial acquisition techniques.<xref rid="mrm30345-bib-0026" ref-type="bibr">
+<sup>26</sup>
+</xref> All these techniques introduce an nonideal point spread function (PSF) and potentially cause phase inconsistencies due to motion when combined with ZTE data.</p><p>Another group of methods based on image reconstruction and data recovery have also been proposed to infill the dead&#x02010;time gap, often using the acquired data to synthesize the missing samples. One common approach is the algebraic method,<xref rid="mrm30345-bib-0027" ref-type="bibr">
+<sup>27</sup>
+</xref> which utilizes the idea of explicitly filling the missing data points by leveraging information outside the dead&#x02010;time gap. This method formulates a system of linear equations based on readout oversampling for estimating the missing points. This has been shown to be computationally efficient as these equations only need to be solved once. However, diametric spokes are needed, which require that each radial center&#x02010;out spoke has a mirrored opposite counterpart, reducing the acquisition efficiency, and the reconstruction becomes ill&#x02010;conditioned when dead&#x02010;time gaps exceed three missing points.<xref rid="mrm30345-bib-0028" ref-type="bibr">
+<sup>28</sup>
+</xref> The Stoch&#x02013;Olejniczak algorithm specifically targets minimizing the real signal outside the nominal field&#x02010;of&#x02010;view (FOV) instead of minimizing the norm of the signal as for the algebraic method.<xref rid="mrm30345-bib-0029" ref-type="bibr">
+<sup>29</sup>
+</xref>, <xref rid="mrm30345-bib-0030" ref-type="bibr">
+<sup>30</sup>
+</xref> Recently, parallel imaging&#x02010;based algorithms inspired by generalized auto&#x02010;calibrating partially parallel acquisition (GRAPPA)<xref rid="mrm30345-bib-0031" ref-type="bibr">
+<sup>31</sup>
+</xref>, <xref rid="mrm30345-bib-0032" ref-type="bibr">
+<sup>32</sup>
+</xref> and sensitivity encoding technique (SENSE)<xref rid="mrm30345-bib-0033" ref-type="bibr">
+<sup>33</sup>
+</xref>, <xref rid="mrm30345-bib-0034" ref-type="bibr">
+<sup>34</sup>
+</xref> have been introduced to fill the dead&#x02010;time gap. The ZINFANDEL method involves using a <italic toggle="yes">k</italic>&#x02010;space interpolation kernel to fill the missing data using the coil sensitivity information, that is, the kernel exploits local <italic toggle="yes">k</italic>&#x02010;space correlations across coil channels.<xref rid="mrm30345-bib-0032" ref-type="bibr">
+<sup>32</sup>
+</xref> The kernel is trained on a small subset of radial spokes in close proximity to the dead&#x02010;time gap. As interpolation is directly performed along each radial spoke, the kernel weights vary with angle, requiring recalibration of these weights for each missing data point. The conjugate gradient SENSE (CG SENSE) method demonstrates the implicit filling of small dead&#x02010;time gaps during iterative reconstruction, much like filling missing lines of <italic toggle="yes">k</italic>&#x02010;space in traditional parallel imaging.<xref rid="mrm30345-bib-0034" ref-type="bibr">
+<sup>34</sup>
+</xref>
+</p><p>Here, we propose to reformulate the ZTE dead&#x02010;time infilling as an inverse problem subject to low&#x02010;rank constraints. The proposed method leverages the finite support information acquired through twice&#x02010;readout oversampling used in algebraic reconstruction techniques. It further refines this support using low&#x02010;rank techniques by recognizing that the image does not occupy the entire nominal FOV, thereby allowing for a potentially narrower support. This approach also integrates coil sensitivity information, akin to the methods employed in ZINFANDEL and CG SENSE, to inform the reconstruction. We used the P&#x02010;LORAKS framework modified for non&#x02010;Cartesian data. Additionally, we demonstrate that only low&#x02010;resolution data is required for the infilling task, significantly reducing computational burden and memory usage. This study begins with computer simulations aimed at optimizing the reconstruction parameters for the proposed method. Subsequently, we conducted a comparative analysis between our proposed method and established techniques, such as the algebraic method, Stoch&#x02013;Olejniczak algorithm, ZINFANDEL, and CG SENSE, evaluating their performance across various gap sizes and noise levels. Finally, we validate these methods through in vivo acquisitions.</p></sec><sec id="mrm30345-sec-0006"><label>2</label><title>THEORY</title><sec id="mrm30345-sec-0007"><label>2.1</label><title>ZTE pulse sequence and dead&#x02010;time gap</title><p>The ZTE sequence maintains a constant gradient amplitude throughout a single repetition time (TR).<xref rid="mrm30345-bib-0022" ref-type="bibr">
+<sup>22</sup>
+</xref> Once the desired gradient amplitude is reached, a short duration hard RF pulse is played. Following this, the coil switches from transmit to receive mode acquiring the free induction decay signal as shown in Figure&#x000a0;<xref rid="mrm30345-fig-0001" ref-type="fig">1</xref>. However, due to the finite RF pulse duration and the time taken for RF switching, it is not possible to sample the free induction decay near the <italic toggle="yes">k</italic>&#x02010;space origin. This limitation imposes a finite dead&#x02010;time <mml:math id="jats-math-12" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:msub><mml:mrow><mml:mi>t</mml:mi></mml:mrow><mml:mrow><mml:mi>d</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math>, during which the signal cannot be sampled. The time missed during data acquisition is referred to as the dead&#x02010;time, and the number of missing samples is calculated as the ratio of the dead&#x02010;time <mml:math id="jats-math-13" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x00394;</mml:mi><mml:msub><mml:mrow><mml:mi>t</mml:mi></mml:mrow><mml:mrow><mml:mi>d</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math> and the dwell time <mml:math id="jats-math-14" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mrow><mml:mi>d</mml:mi></mml:mrow><mml:mrow><mml:mi>t</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math> = <mml:math id="jats-math-15" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mn>1</mml:mn><mml:mo stretchy="false">/</mml:mo><mml:mtext>RBW</mml:mtext></mml:mrow></mml:mrow></mml:math>, where RBW is the total receiver bandwidth. In this work, the dead&#x02010;time gap is always referred to as the number of missing samples, i.e., Nyquist dwells, on the nominal grid with no oversampling factors.</p><fig position="float" fig-type="FIGURE" id="mrm30345-fig-0001"><label>FIGURE 1</label><caption><p>Schematic of a zero echo time (ZTE) sequence for (A) one repetition time and (B) the three&#x02010;dimensional radial ZTE trajectory in the x&#x02010;y plane. The total dead&#x02010;time is determined by the radiofrequency (RF) pulse duration and the RF amplifier blanking time. This gap prevents several low&#x02010;frequency Fourier coefficients from being acquired, which in turn can lead to substantial reconstruction artifacts.</p></caption><graphic xlink:href="MRM-93-1149-g002" position="anchor" id="jats-graphic-1"/></fig><p>Figure&#x000a0;<xref rid="mrm30345-fig-0002" ref-type="fig">2</xref> demonstrates the effect of a dead&#x02010;time gap of two Nyquist dwells on a simulated two&#x02010;dimensional (2D) image. In Figure&#x000a0;<xref rid="mrm30345-fig-0002" ref-type="fig">2C</xref>, the one&#x02010;dimensional (1D) projections of the ground truth, zero&#x02010;filled data, and their difference, derived from a single spoke pair are presented. The net effect of setting the center three Nyquist dwells to zero is equal to convolving the ground truth image with a sinc function, resulting in ringing artifacts around the object. The absence of the low&#x02010;frequency Fourier coefficients translates, through Fourier transformation, into amplitude modulations within the image domain. This leads to a considerable reduction in image contrast.</p><fig position="float" fig-type="FIGURE" id="mrm30345-fig-0002"><label>FIGURE 2</label><caption><p>Overview of the effects of the dead&#x02010;time gap in the two&#x02010;dimensional simulated spherical phantom. The image comprises a white circle (radius: 80 pixels) and a gray circle (radius: 40 pixels), both centered within a 256 by 256 pixel&#x02010;sized image. For simplicity, the image is undersampled with a radial mask that nulls the central Fourier coefficients within a radius of three samples. (A) The ground truth magnitude image. (B) The corrupted image, illustrating a dead&#x02010;time gap of two samples with no oversampling. (C) The one&#x02010;dimensional projection of the ground truth signal from a single spoke pair. (A) Ground truth; (B) zero&#x02010;filled; (C) one&#x02010;dimensional projection.</p></caption><graphic xlink:href="MRM-93-1149-g001" position="anchor" id="jats-graphic-3"/></fig></sec><sec id="mrm30345-sec-0008"><label>2.2</label><title>Algebraic method</title><p>In the algebraic method, the reconstruction aims to recover the missing samples from each radial spoke and its opposite counterpart.<xref rid="mrm30345-bib-0027" ref-type="bibr">
+<sup>27</sup>
+</xref> The 1D projection of the image will be represented by a vector <mml:math id="jats-math-16" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mover accent="true"><mml:mrow><mml:mi>x</mml:mi></mml:mrow><mml:mo>^</mml:mo></mml:mover></mml:mrow></mml:mrow></mml:math>. The image is acquired with multiple receiver coils denoted by a sensitivity encoding operator S. The Fourier encoding of each radial spoke is represented as a discrete Fourier encoding matrix F, where each row captures the positive or negative frequency attributes within a signal. The dead&#x02010;time gap within the ZTE radial sampling can be denoted by a diagonal sampling mask, referred to as D. In this representation, elements obtained through sampling are denoted as one, while those located within the dead&#x02010;time gap are assigned a value of zero. Consequently, the forward model can be succinctly expressed using the above sequence of linear operators: 
+<disp-formula id="mrm30345-disp-0001">
+<label>(1)</label>
+<mml:math id="jats-math-17" display="block" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>&#x00177;</mml:mi><mml:mo>=</mml:mo><mml:mtext>DFS</mml:mtext><mml:mover accent="true"><mml:mrow><mml:mi>x</mml:mi></mml:mrow><mml:mo>^</mml:mo></mml:mover><mml:mo>+</mml:mo><mml:mi>n</mml:mi><mml:mo>.</mml:mo></mml:mrow></mml:mrow></mml:math>
+</disp-formula>
+</p><p>Here, <mml:math id="jats-math-18" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>&#x00177;</mml:mi></mml:mrow></mml:mrow></mml:math> signifies the 1D radial <italic toggle="yes">k</italic>&#x02010;space data and <italic toggle="yes">n</italic> represents the complex white Gaussian noise inherent in the measurements. When data is collected at a frequency higher than the object's bandwidth, the object only occupies a specific area in the FOV, allowing us to assume that outside this region, values should be zero. By using an oversampled grid, we can represent the knowledge that regions beyond the regular frequency band should be zeros using a diagonal matrix T, where one corresponds to elements within the frequency band, and zero corresponds to elements outside the band. A graphical illustration of the ZTE algebraic reconstruction is provided in Figure&#x000a0;<xref rid="mrm30345-fig-0003" ref-type="fig">3</xref>. 
+<disp-formula id="mrm30345-disp-0002">
+<label>(2)</label>
+<mml:math id="jats-math-19" display="block" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>&#x00177;</mml:mi><mml:mo>=</mml:mo><mml:mtext>DFTS</mml:mtext><mml:mover accent="true"><mml:mrow><mml:mi>x</mml:mi></mml:mrow><mml:mo>^</mml:mo></mml:mover><mml:mo>+</mml:mo><mml:mi>n</mml:mi><mml:mo>.</mml:mo></mml:mrow></mml:mrow></mml:math>
+</disp-formula>
+</p><fig position="float" fig-type="FIGURE" id="mrm30345-fig-0003"><label>FIGURE 3</label><caption><p>The illustration of the algebraic and Stoch&#x02013;Olejniczak methods. In this context, the image domain is denoted by &#x0201c;t,&#x0201d; while the <italic toggle="yes">k</italic>&#x02010;space domain is denoted by &#x0201c;k.&#x0201d; In the algebraic method, a system of linear equations is established to identify the missing low&#x02010;frequency k&#x02010;space coefficients (in region D) that minimize the norm of the signal outside the nominal field of view (in region T). The Stoch&#x02013;Olejniczak method determines the optimal coefficients that minimize only the real part of the signal in region T.</p></caption><graphic xlink:href="MRM-93-1149-g008" position="anchor" id="jats-graphic-5"/></fig><p>The algebraic method relies on solving the inverse of the system matrix A = DFTS. This process is repeated for all radial spokes and their opposite counterparts and reconstructed on a per&#x02010;coil basis. To reduce sensitivity to noise, additional regularization techniques such as Tikhonov regularization and truncated singular value decomposition (SVD) can be employed.<xref rid="mrm30345-bib-0027" ref-type="bibr">
+<sup>27</sup>
+</xref>, <xref rid="mrm30345-bib-0028" ref-type="bibr">
+<sup>28</sup>
+</xref>
+</p></sec><sec id="mrm30345-sec-0009"><label>2.3</label><title>Stoch&#x02013;Olejniczak method</title><p>The Stoch&#x02013;Olejniczak algorithm, akin to algebraic methods, employs image support from two times oversampling to estimate missing data.<xref rid="mrm30345-bib-0029" ref-type="bibr">
+<sup>29</sup>
+</xref>, <xref rid="mrm30345-bib-0030" ref-type="bibr">
+<sup>30</sup>
+</xref> In algebraic reconstruction, a system of linear equations is formulated by identifying the missing low&#x02010;frequency <italic toggle="yes">k</italic>&#x02010;space coefficients that minimize the norm of the signal outside the nominal FOV. Conversely, the Stoch&#x02013;Olejniczak algorithm exclusively minimizes the real signal outside the nominal FOV, potentially providing immunity to any phase errors. Another notable distinction is its requirement for only a single spoke, rather than a radial spoke pair.</p></sec><sec id="mrm30345-sec-0010"><label>2.4</label><title>ZINFANDEL</title><p>Recently, the ZINFANDEL method has been introduced, drawing inspiration from the GRAPPA parallel imaging algorithm to address missing samples.<xref rid="mrm30345-bib-0031" ref-type="bibr">
+<sup>31</sup>
+</xref>, <xref rid="mrm30345-bib-0032" ref-type="bibr">
+<sup>32</sup>
+</xref> In the original Cartesian GRAPPA reconstruction method, the challenge of reconstruction is formulated as an interpolation problem in <italic toggle="yes">k</italic>&#x02010;space, where neighboring data points are utilized to fill the missing samples in <italic toggle="yes">k</italic>&#x02010;space. GRAPPA involves training a <italic toggle="yes">k</italic>&#x02010;space interpolation kernel using fully sampled low&#x02010;resolution calibration data. The calibration process seeks a set of weights that best aligns with the calibration data through a least&#x02010;squares approach. ZINFANDEL, however, operates differently by directly applying the interpolation kernel to the radial spokes. The calibration data is obtained directly from sampled radial data points in proximity to the dead&#x02010;time gap. The calibration region is kept small to ensure the kernel's angular variation remains minimal, maintaining stability in its operation on the radial data points.</p></sec><sec id="mrm30345-sec-0011"><label>2.5</label><title>CG SENSE</title><p>The dead&#x02010;time gap can also be filled implicitly during iterative CG SENSE reconstruction reformulated as follows<xref rid="mrm30345-bib-0034" ref-type="bibr">
+<sup>34</sup>
+</xref>: 
+<disp-formula id="mrm30345-disp-0003">
+<label>(3)</label>
+<mml:math id="jats-math-20" display="block" overflow="scroll"><mml:mrow><mml:munder><mml:mrow><mml:mi>min</mml:mi></mml:mrow><mml:mrow><mml:mi>x</mml:mi></mml:mrow></mml:munder><mml:mspace width="0.3em"/><mml:mo>&#x02551;</mml:mo><mml:mtext>DFS</mml:mtext><mml:mi>x</mml:mi><mml:mo form="prefix">&#x02212;</mml:mo><mml:mi>y</mml:mi><mml:msup><mml:mrow><mml:mo>&#x02551;</mml:mo></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msup><mml:mo>+</mml:mo><mml:mi>&#x003bb;</mml:mi><mml:mo>&#x02551;</mml:mo><mml:mi>x</mml:mi><mml:msub><mml:mrow><mml:mo>&#x02551;</mml:mo></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msub><mml:mo>.</mml:mo></mml:mrow></mml:math>
+</disp-formula>
+</p><p>The vector <italic toggle="yes">x</italic> is obtained by flattening the true image. In this case the operator <italic toggle="yes">F</italic> denotes the nonuniform Fourier transform. This can be solved using normal equation, but the inverse of the system matrix DFS is computationally demanding, the problem is typically solved in an iterative fashion. A numerically fast method to solve problem subject to the L2 norm is given by the conjugate gradient algorithm (Algorithm&#x000a0;<xref rid="mrm30345-fea-0001" ref-type="boxed-text">1</xref>).</p></sec><sec id="mrm30345-sec-0012"><label>2.6</label><title>Low&#x02010;rank iterative infilling</title><boxed-text position="float" content-type="Algorithm" id="mrm30345-fea-0001"><label>Algorithm 1</label><caption><title>Low Rank Iterative Infilling for ZTE Data</title></caption><p>
+<boxed-text position="anchor" id="mrm30345-blkfxd-0001" content-type="graphic"><graphic xlink:href="MRM-93-1149-g007.jpg" position="anchor" id="jats-graphic-7"/></boxed-text>
+</p></boxed-text><p>The theory of structured low&#x02010;rank interpolation and its relationship with an annihilating filter has been extensively studied.<xref rid="mrm30345-bib-0035" ref-type="bibr">
+<sup>35</sup>
+</xref> If the image <mml:math id="jats-math-21" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>x</mml:mi></mml:mrow></mml:mrow></mml:math> has finite support within the FOV, then there exists a smooth spatial domain annihilating function <mml:math id="jats-math-22" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>&#x00125;</mml:mi></mml:mrow></mml:mrow></mml:math>, which is nonzero outside the support of the image <mml:math id="jats-math-23" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>x</mml:mi></mml:mrow></mml:mrow></mml:math> and zero within the finite support region. Consequently, when this filter is applied to the image, the product is zero, hence, 
+<disp-formula id="mrm30345-disp-0004">
+<label>(4)</label>
+<mml:math id="jats-math-24" display="block" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>x</mml:mi><mml:mo>&#x000b7;</mml:mo><mml:mi>&#x00125;</mml:mi><mml:mo>=</mml:mo><mml:mn>0</mml:mn><mml:mo>.</mml:mo></mml:mrow></mml:mrow></mml:math>
+</disp-formula>
+</p><p>Using the duality of Fourier transform, the spatial domain multiplication translates into a convolution with <mml:math id="jats-math-25" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>h</mml:mi></mml:mrow></mml:mrow></mml:math> in the Fourier domain, 
+<disp-formula id="mrm30345-disp-0005">
+<label>(5)</label>
+<mml:math id="jats-math-26" display="block" overflow="scroll"><mml:mrow><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>F</mml:mi><mml:mo>&#x000b7;</mml:mo><mml:mi>x</mml:mi><mml:mo stretchy="false">)</mml:mo><mml:mo>&#x02217;</mml:mo><mml:mi>h</mml:mi><mml:mo>=</mml:mo><mml:mn>0</mml:mn><mml:mo>.</mml:mo></mml:mrow></mml:mrow></mml:math>
+</disp-formula>
+</p><p>The <mml:math id="jats-math-27" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x02217;</mml:mo></mml:mrow></mml:mrow></mml:math> symbol denotes convolution. Since <mml:math id="jats-math-28" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>&#x00125;</mml:mi></mml:mrow></mml:mrow></mml:math> is spatially smooth by definition, the filter <mml:math id="jats-math-29" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>h</mml:mi></mml:mrow></mml:mrow></mml:math> is band&#x02010;limited. Equations of this form, where one side is set to zero, are referred to as annihilation relations. The data <mml:math id="jats-math-30" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>x</mml:mi></mml:mrow></mml:mrow></mml:math> can be predicted using a local linear model from the shift invariant coefficients of the filter <mml:math id="jats-math-31" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>h</mml:mi></mml:mrow></mml:mrow></mml:math> (i.e., predict the value of the target coefficient using the weighted sum of other samples in the local neighborhood of k&#x02010;space). For instance, consider a local <italic toggle="yes">k</italic>&#x02010;space region consisting of three samples, denoted as <mml:math id="jats-math-32" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mrow><mml:mi>k</mml:mi></mml:mrow><mml:mrow><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math>, <mml:math id="jats-math-33" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mrow><mml:mi>k</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math>, and <mml:math id="jats-math-34" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mrow><mml:mi>k</mml:mi></mml:mrow><mml:mrow><mml:mn>3</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math>, with corresponding filter coefficients <mml:math id="jats-math-35" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mrow><mml:mi>w</mml:mi></mml:mrow><mml:mrow><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math>, <mml:math id="jats-math-36" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mrow><mml:mi>w</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math>, and <mml:math id="jats-math-37" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mrow><mml:mi>w</mml:mi></mml:mrow><mml:mrow><mml:mn>3</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math>, such that <mml:math id="jats-math-38" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mrow><mml:mo>&#x02211;</mml:mo></mml:mrow><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:mn>3</mml:mn></mml:mrow></mml:msubsup><mml:msub><mml:mrow><mml:mi>w</mml:mi></mml:mrow><mml:mrow><mml:mi>i</mml:mi></mml:mrow></mml:msub><mml:msub><mml:mrow><mml:mi>k</mml:mi></mml:mrow><mml:mrow><mml:mi>i</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:mrow></mml:math> (i.e., annihilation). Given all the filter coefficients and knowing the values of samples <mml:math id="jats-math-39" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mrow><mml:mi>k</mml:mi></mml:mrow><mml:mrow><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math> and <mml:math id="jats-math-40" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mrow><mml:mi>k</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math> we can explicitly determine the missing sample <mml:math id="jats-math-41" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mrow><mml:mi>k</mml:mi></mml:mrow><mml:mrow><mml:mn>3</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math> as follows: <mml:math id="jats-math-42" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mrow><mml:mi>k</mml:mi></mml:mrow><mml:mrow><mml:mn>3</mml:mn></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mo form="prefix">&#x02212;</mml:mo><mml:mfrac><mml:mrow><mml:msub><mml:mrow><mml:mi>w</mml:mi></mml:mrow><mml:mrow><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:msub><mml:mrow><mml:mi>k</mml:mi></mml:mrow><mml:mrow><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mrow><mml:mi>w</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msub><mml:msub><mml:mrow><mml:mi>k</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msub></mml:mrow><mml:mrow><mml:msub><mml:mrow><mml:mi>w</mml:mi></mml:mrow><mml:mrow><mml:mn>3</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mfrac></mml:mrow></mml:mrow></mml:math>. Structured low&#x02010;rank algorithms aim to implicitly determine the local relationships in <italic toggle="yes">k</italic>&#x02010;space by using a low&#x02010;rank Hankel matrix of the data as a prior (without explicitly computing the filter coefficients). To do this, the convolution in Equation (<xref rid="mrm30345-disp-0005" ref-type="disp-formula">5</xref>) can be rewritten as matrix multiplication, which requires each small <italic toggle="yes">k</italic>&#x02010;space patch at each <italic toggle="yes">k</italic>&#x02010;space location to be flattened into a row vector and concatenating all the row vectors to form a 2D Hankel matrix. This process is referred to as the Hankel transformation, which we will denote by the symbol <mml:math id="jats-math-43" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>H</mml:mi></mml:mrow></mml:mrow></mml:math>, 
+<disp-formula id="mrm30345-disp-0006">
+<label>(6)</label>
+<mml:math id="jats-math-44" display="block" overflow="scroll"><mml:mrow><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>H</mml:mi><mml:mi>F</mml:mi><mml:mi>x</mml:mi><mml:mo stretchy="false">)</mml:mo><mml:mo form="prefix">&#x000d7;</mml:mo><mml:mi>h</mml:mi><mml:mo>=</mml:mo><mml:mn>0</mml:mn><mml:mo>.</mml:mo></mml:mrow></mml:mrow></mml:math>
+</disp-formula>
+</p><p>The Hankel matrix exhibits a null&#x02010;space vector associated with the filter coefficients <mml:math id="jats-math-45" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>h</mml:mi></mml:mrow></mml:mrow></mml:math>. Given that it is possible to derive a large set of linearly independent equations as seen in Equations (<xref rid="mrm30345-disp-0005" ref-type="disp-formula">5</xref>) and (<xref rid="mrm30345-disp-0006" ref-type="disp-formula">6</xref>), the Hankel matrix consequently possesses a nontrivial null&#x02010;space and is low rank.</p><p>The low&#x02010;rank&#x02010;based method will recover the missing data by enforcing self&#x02010;consistency among neighboring <italic toggle="yes">k</italic>&#x02010;space points in Cartesian space when minimizing the rank of the structured Hankel matrix. The self&#x02010;consistency refers to the annihilation relationship being satisfied for all locations in <italic toggle="yes">k</italic>&#x02010;space. Directly solving rank problems is computationally challenging and falls under the category of non&#x02010;deterministic polynomial time (NP)&#x02010;hard problems.<xref rid="mrm30345-bib-0036" ref-type="bibr">
+<sup>36</sup>
+</xref>, <xref rid="mrm30345-bib-0037" ref-type="bibr">
+<sup>37</sup>
+</xref> To address this, the nonconvex rank function is replaced with its convex relaxation, which is replacing the nonconvex rank function with its convex approximation, known as the nuclear norm.<xref rid="mrm30345-bib-0038" ref-type="bibr">
+<sup>38</sup>
+</xref> Thus, the problem of the missing data in the center of <italic toggle="yes">k</italic>&#x02010;space is reformulated as a structured locally low&#x02010;rank nuclear norm minimization problem, as expressed by the following: 
+<disp-formula id="mrm30345-disp-0007">
+<label>(7)</label>
+<mml:math id="jats-math-46" display="block" overflow="scroll"><mml:mrow><mml:munder><mml:mrow><mml:mi>min</mml:mi></mml:mrow><mml:mrow><mml:mi>x</mml:mi></mml:mrow></mml:munder><mml:mspace width="0.3em"/><mml:mo>&#x02551;</mml:mo><mml:mtext>DFS</mml:mtext><mml:mi>x</mml:mi><mml:mo form="prefix">&#x02212;</mml:mo><mml:mi>y</mml:mi><mml:mo stretchy="false">|</mml:mo><mml:msup><mml:mrow><mml:mo stretchy="false">|</mml:mo></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msup><mml:mo>+</mml:mo><mml:mi>&#x003bb;</mml:mi><mml:mo>&#x02551;</mml:mo><mml:mtext>HFS</mml:mtext><mml:mi>x</mml:mi><mml:mo stretchy="false">|</mml:mo><mml:msub><mml:mrow><mml:mo stretchy="false">|</mml:mo></mml:mrow><mml:mrow><mml:mo>&#x02217;</mml:mo></mml:mrow></mml:msub><mml:mo>.</mml:mo></mml:mrow></mml:math>
+</disp-formula>
+</p><p>Here, <italic toggle="yes">H</italic> represents the matrix lifting operator, which converts three&#x02010;dimensional (3D) Cartesian data into a structured Hankel matrix and * denotes the nuclear norm. The P&#x02010;LORAKS framework necessitates that data be structured on a Cartesian grid. Therefore, we start by converting the non&#x02010;Cartesian radial data into a 3D Cartesian grid. Subsequently, the Cartesian data are organized into GRAPPA&#x02010;like kernels. Each kernel is then flattened, creating columns within a 2D Hankel matrix, as described in prior studies.<xref rid="mrm30345-bib-0038" ref-type="bibr">
+<sup>38</sup>
+</xref>, <xref rid="mrm30345-bib-0039" ref-type="bibr">
+<sup>39</sup>
+</xref> This process is iterated by convolving the kernel across either the entire <italic toggle="yes">k</italic>&#x02010;space or a predefined center region. In instances where a fully sampled ZTE acquisition is in use, only the center data is absent, thus only the center volume is needed. To enforce self&#x02010;consistency and low rankness, we apply the Singular Value Thresholding to the Hankel matrix, employing either hard or soft thresholding on the singular values. Subsequently, the Cartesian data is inverse&#x02010;transformed into non&#x02010;Cartesian space to maintain data consistency by replacing the data with the acquired data. The operation as indicated by Figure&#x000a0;<xref rid="mrm30345-fig-0004" ref-type="fig">4</xref> is iteratively repeated until convergence is achieved. This can be solved efficiently using Projection&#x02010;onto&#x02010;Convex&#x02010;Sets algorithm.<xref rid="mrm30345-bib-0038" ref-type="bibr">
+<sup>38</sup>
+</xref>, <xref rid="mrm30345-bib-0039" ref-type="bibr">
+<sup>39</sup>
+</xref> The pseudo&#x02010;code is provided in Algorithm&#x000a0;1.</p><fig position="float" fig-type="FIGURE" id="mrm30345-fig-0004"><label>FIGURE 4</label><caption><p>Schematic of the proposed low rank reconstruction. The z&#x02010;dimension is ignored in the flow chart for simplicity. To enforce self&#x02010;consistency, the Cartesian data is reorganized into a structured Hankel matrix, where singular value thresholding is performed to shrink the singular values to a predefined range. Data consistency is enforced by transforming the Cartesian data back to the non&#x02010;Cartesian space, where synthesized data is replaced with the acquired measurements.</p></caption><graphic xlink:href="MRM-93-1149-g005" position="anchor" id="jats-graphic-9"/></fig></sec></sec><sec sec-type="methods" id="mrm30345-sec-0014"><label>3</label><title>METHODS</title><sec id="mrm30345-sec-0015"><label>3.1</label><title>3D simulation</title><p>To compare the performance of the infilling methods, we conducted computer simulations employing a 128 <mml:math id="jats-math-47" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x000d7;</mml:mo></mml:mrow></mml:mrow></mml:math> 128 <mml:math id="jats-math-48" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x000d7;</mml:mo></mml:mrow></mml:mrow></mml:math> 128 digital brain phantom.<xref rid="mrm30345-bib-0040" ref-type="bibr">
+<sup>40</sup>
+</xref> The 3D brain dataset was then encoded with simulated 3D four&#x02010;channel receive coil profiles. The code used to simulate the coil profiles are obtained from Michigan Image Reconstruction Toolbox (MIRT).<xref rid="mrm30345-bib-0041" ref-type="bibr">
+<sup>41</sup>
+</xref> This Cartesian dataset was subsequently sampled utilizing a 3D radial phyllotaxis trajectory, modified to sample the opposing radial spoke.<xref rid="mrm30345-bib-0042" ref-type="bibr">
+<sup>42</sup>
+</xref>
+</p><p>Given the computational intensity inherent in full 3D datasets, reducing the computation cost of a nonuniform Fourier transform (NUFFT) and SVD becomes imperative. We first perform parameter optimization for the proposed low&#x02010;rank reconstruction, specifically assessing the reconstruction performance as a function of the center volumetric dimension, given that the dead&#x02010;time gap impacts solely the central portion of <italic toggle="yes">k</italic>&#x02010;space. This optimization is done by conducting an exhaustive search across potential volume dimensions, ranging from 5 to 64, to observe the associated reconstruction performance.</p><p>Following the parameter optimization, this study then commences by investigating the infilling performance in relation to different gap sizes, while also considering its performance dependence on the system noise levels. The radial data was radially undersampled with varying dead&#x02010;time gap sizes from 1 to 4.5 Nyquist dwells. Additionally, complex white Gaussian noise to simulate signal&#x02010;to&#x02010;noise ratios (SNRs) of 5, 10, 15, and 20 dB was introduced to the radial <italic toggle="yes">k</italic>&#x02010;space data to evaluate the robustness of the reconstruction methods. This noise was added along the radial spoke. SNR calculations are based on the ratio, in logarithmic scale, between the average squared magnitude of the noise&#x02010;free image and that exclusively stemming from the noise in the realization: 
+<disp-formula id="mrm30345-disp-0008">
+<label>(8)</label>
+<mml:math id="jats-math-49" display="block" overflow="scroll"><mml:mrow><mml:mtext>SNR (dB)</mml:mtext><mml:mo>=</mml:mo><mml:mn>10</mml:mn><mml:msub><mml:mrow><mml:mi>log</mml:mi></mml:mrow><mml:mrow><mml:mn>10</mml:mn></mml:mrow></mml:msub><mml:mfenced separators="" open="(" close=")"><mml:mrow><mml:mfrac><mml:mrow><mml:mo>&#x02211;</mml:mo><mml:msup><mml:mrow><mml:mi>x</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow><mml:mrow><mml:mo>&#x02211;</mml:mo><mml:msup><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:msup><mml:mrow><mml:mi>F</mml:mi></mml:mrow><mml:mrow><mml:mi>H</mml:mi></mml:mrow></mml:msup><mml:mi>&#x1d4a9;</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:mi>&#x003bc;</mml:mi><mml:mo>,</mml:mo><mml:msup><mml:mrow><mml:mi>&#x003c3;</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msup><mml:mo stretchy="false">)</mml:mo><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mfrac></mml:mrow></mml:mfenced><mml:mo>,</mml:mo></mml:mrow></mml:math>
+</disp-formula>
+where <mml:math id="jats-math-50" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>&#x003bc;</mml:mi></mml:mrow></mml:mrow></mml:math> is the mean of the generated complex white Gaussian noise and <mml:math id="jats-math-51" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>&#x003c3;</mml:mi></mml:mrow></mml:mrow></mml:math> is the noise SD. The mean is set to zero, and the <mml:math id="jats-math-52" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>&#x003c3;</mml:mi></mml:mrow></mml:mrow></mml:math> is determined through manual tuning based on the desired SNR levels. Identical noise is applied across all correction methods within a single realization. Each reconstruction technique is assessed using 20 different noise realizations for each SNR level and gap size, and the averaged result is reported.</p></sec><sec id="mrm30345-sec-0016"><label>3.2</label><title>In vivo imaging experiments</title><p>The method was evaluated using acquisitions from a healthy volunteer, with UK ethical approval.Informed consent was obtained from the volunteer. The data was acquired on a 3.0 T scanner (Signa Premier XT, GE HealthCare, Waukesha, WI) using a 48&#x02010;channel head&#x02010;coil. The in vivo brain image is acquired with an isotropic spatial resolution of 0.89 mm and a FOV of 235 mm. The product ZTE acquisition, using WASPI for the center of <italic toggle="yes">k</italic>&#x02010;space, served as the ground truth for the in vivo acquisition. The bi&#x02010;directional sampling paths have been adapted from Archimedean spirals to sample the opposing radial spokes. The flip angle was set to 1&#x000b0;, and the readout bandwidth was set to <mml:math id="jats-math-53" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>15.6, <mml:math id="jats-math-54" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>20.8, <mml:math id="jats-math-55" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>31.25, <mml:math id="jats-math-56" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>41.67, and <mml:math id="jats-math-57" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>55.56 kHz with two times readout oversampling. Dead&#x02010;time gaps of 2, 2.5, 3, 3.5, and 4.5 Nyquist dwells are introduced under this setting, respectively. Coil compression is used to reduce the coils from 48 channels down to eight channels.<xref rid="mrm30345-bib-0043" ref-type="bibr">
+<sup>43</sup>
+</xref>
+</p></sec><sec id="mrm30345-sec-0017"><label>3.3</label><title>Image reconstruction</title><p>The reconstruction was conducted offline using Matlab (MATLAB and Statistics Toolbox Release 2022b, The MathWorks, Inc., Natick, MA). The non&#x02010;Cartesian data was reconstructed on a 2<mml:math id="jats-math-58" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x000d7;</mml:mo></mml:mrow></mml:mrow></mml:math> oversampled grid. We used in&#x02010;house implementations of algebraic, ZINFANDEL, and low&#x02010;rank methods. The Stoch&#x02013;Olejniczak method is obtained from a Github open&#x02010;source implementation.<xref rid="mrm30345-bib-0030" ref-type="bibr">
+<sup>30</sup>
+</xref> For the ZINFANDEL reconstruction, we employed kernel parameters as proposed by the original author, utilizing a calibration size comprising of 16 readout samples within the nearest five radial spokes, alongside a 1D kernel length of 5.<xref rid="mrm30345-bib-0032" ref-type="bibr">
+<sup>32</sup>
+</xref> The CG SENSE reconstruction is modified based on the gpuNUFFT Matlab package.<xref rid="mrm30345-bib-0044" ref-type="bibr">
+<sup>44</sup>
+</xref> For the algebraic, Stoch&#x02013;Olejniczak, ZINFANDEL, and CG SENSE, we applied Tikhonov regularization. The optimal value of Tikhonov regularization was found using a parameter sweep between <mml:math id="jats-math-59" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>&#x003bb;</mml:mi><mml:mo>&#x02208;</mml:mo><mml:mo stretchy="false">[</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mn>1</mml:mn><mml:mi mathvariant="normal">e</mml:mi><mml:mo form="prefix">&#x02212;</mml:mo><mml:mn>10</mml:mn><mml:mo stretchy="false">]</mml:mo></mml:mrow></mml:mrow></mml:math>.</p><p>We implemented the P&#x02010;LORAKS C&#x02010;matrix with a 3D isotropic kernel of size 5 as the matrix lifting operator.<xref rid="mrm30345-bib-0035" ref-type="bibr">
+<sup>35</sup>
+</xref>, <xref rid="mrm30345-bib-0039" ref-type="bibr">
+<sup>39</sup>
+</xref>, <xref rid="mrm30345-bib-0045" ref-type="bibr">
+<sup>45</sup>
+</xref> A hard threshold singular value threshold was employed that zeroed out singular values below 1.5% of the highest singular value. Only the first 20% of each radial spoke were used to grid the data onto a low resolution <italic toggle="yes">k</italic>&#x02010;space Cartesian grid of 26 <mml:math id="jats-math-60" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x000d7;</mml:mo></mml:mrow></mml:mrow></mml:math> 26 <mml:math id="jats-math-61" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x000d7;</mml:mo></mml:mrow></mml:mrow></mml:math> 26. These parameters have been observed to perform well for gap sizes less than 4.5. For the NUFFT operation, we used a conjugate gradient based NUFFT operation with 10 iterations for all reconstruction methods. All reconstructions differ only by the Fourier coefficients within the dead&#x02010;time gap; the region outside the dead&#x02010;time gap was kept constant.</p><p>The reconstruction error is calculated using the squared error of the ground truth magnitude image a and the reconstructed magnitude image b:
+<disp-formula id="mrm30345-disp-0009">
+<label>(9)</label>
+<mml:math id="jats-math-62" display="block" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x02016;</mml:mo><mml:mi mathvariant="bold">a</mml:mi><mml:mo form="prefix">&#x02212;</mml:mo><mml:mi mathvariant="bold">b</mml:mi><mml:msub><mml:mrow><mml:mo>&#x02016;</mml:mo></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:msqrt><mml:mrow><mml:munderover><mml:mrow><mml:mo>&#x02211;</mml:mo></mml:mrow><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:mi>n</mml:mi></mml:mrow></mml:munderover><mml:msup><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:msub><mml:mrow><mml:mi>a</mml:mi></mml:mrow><mml:mrow><mml:mi>i</mml:mi></mml:mrow></mml:msub><mml:mo form="prefix">&#x02212;</mml:mo><mml:msub><mml:mrow><mml:mi>b</mml:mi></mml:mrow><mml:mrow><mml:mi>i</mml:mi></mml:mrow></mml:msub><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:msqrt><mml:mo>.</mml:mo></mml:mrow></mml:mrow></mml:math>
+</disp-formula>
+</p></sec></sec><sec sec-type="results" id="mrm30345-sec-0018"><label>4</label><title>RESULTS</title><p>Figure&#x000a0;<xref rid="mrm30345-fig-0005" ref-type="fig">5</xref> demonstrates the parameter selection and convergence rate of the low rank infilling method. Figure&#x000a0;<xref rid="mrm30345-fig-0005" ref-type="fig">5B</xref>, demonstrates that only approximately 20%&#x02013;25% of the data on each radial spoke is required for reconstruction, which greatly alleviates the computational load. Meanwhile, Figure&#x000a0;<xref rid="mrm30345-fig-0005" ref-type="fig">5C</xref> showcases the convergence rate of the low rank method across different gap sizes. The algorithm stops when the relative change in <italic toggle="yes">k</italic>&#x02010;space, assessed via Euclidean distance, drops below 1e<mml:math id="jats-math-63" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x02212;</mml:mo></mml:mrow></mml:mrow></mml:math>6. The necessary steps for the low rank method to converge increases exponentially with each Nyquist dwell.</p><fig position="float" fig-type="FIGURE" id="mrm30345-fig-0005"><label>FIGURE 5</label><caption><p>Effect of dead&#x02010;time gap on low&#x02010;rank reconstruction. (A) The singular values at every even dead&#x02010;time gaps while omitting the visualization of the odd ones for clarity. (B) The relationship between the performance of low&#x02010;rank reconstruction and the central volume dimension. Notably, a small portion of the central volume suffices for artifact&#x02010;free reconstruction, ensuring optimal efficiency. (C) The convergence rate in relation to different dead&#x02010;time gaps. Convergence is assessed by quantifying the energy difference between the current estimation and the ground truth in k&#x02010;space, measured through the sum of the L2 norm of the real and imaginary components.</p></caption><graphic xlink:href="MRM-93-1149-g006" position="anchor" id="jats-graphic-11"/></fig><p>Figure&#x000a0;<xref rid="mrm30345-fig-0006" ref-type="fig">6</xref> shows the low&#x02010;rank reconstruction of the simulated digital brain phantom for Zero Filled, Algebraic, Stoch&#x02013;Olejniczak, ZINFANDEL, CG SENSE, and low&#x02010;rank methods across dead&#x02010;time gaps ranging from 1 to 4.5 Nyquist dwells at a SNR of 10 dB. The algebraic method starts to fail for dead&#x02010;time gaps larger than three Nyquist dwells when it begins over estimating the energy within the dead&#x02010;time gap. The CG SENSE and low&#x02010;rank methods outperform the algebraic, Stoch&#x02013;Olejniczak, ZINFANDEL approach, demonstrating superior image quality when infilling larger dead&#x02010;time gaps.</p><fig position="float" fig-type="FIGURE" id="mrm30345-fig-0006"><label>FIGURE 6</label><caption><p>An example of the digital brain simulations across dead&#x02010;time gaps ranging from 1 to 4.5 Nyquist dwells at signal&#x02010;to&#x02010;noise ratio (SNR) of 10 dB. The figure presents the reconstruction outcomes for Zero Filled, Algebraic, ZINFANDEL, and low&#x02010;rank methods across dead&#x02010;time gaps ranging from 1 to 4.5 Nyquist dwells at an SNR of 10 dB.</p></caption><graphic xlink:href="MRM-93-1149-g004" position="anchor" id="jats-graphic-13"/></fig><p>Figure&#x000a0;<xref rid="mrm30345-fig-0007" ref-type="fig">7</xref> illustrates the quantitative analysis of the simulation. When the dead&#x02010;time gap remains under two Nyquist dwells, all correction methods effectively fill the missing samples. However, if the dead&#x02010;time gap surpasses 2.5 Nyquist dwells, the algebraic method becomes ill&#x02010;conditioned, causing the squared error to diverge. The proposed method exhibits artifact&#x02010;free reconstruction up to a dead&#x02010;time gap up to four Nyquist dwells.</p><fig position="float" fig-type="FIGURE" id="mrm30345-fig-0007"><label>FIGURE 7</label><caption><p>Quantitative analysis of the three&#x02010;dimensional brain simulation. The squared errors is plotted against dead&#x02010;time gaps spanning 1&#x02013;4.5 Nyquist dwells at four different signal&#x02010;to&#x02010;noise ratios (SNRs). Notably, when dead&#x02010;time gap exceeds three Nyquist dwells, the squared errors for algebraic method are beyond acceptable thresholds. Consequently, these values are deliberately omitted from the figure to ensure the clarity of the depicted data trends.</p></caption><graphic xlink:href="MRM-93-1149-g003" position="anchor" id="jats-graphic-15"/></fig><p>Figure&#x000a0;<xref rid="mrm30345-fig-0008" ref-type="fig">8</xref> depicts the reconstruction outcomes for in vivo brain data. The image SNR is measured using the signal from the center patch of the brain and the noise from background from the WASPI filled ZTE data. The SNR is estimated to be 15.57, 14.44, 13.03, 11.73, 10.02 dB for bandwidth of <mml:math id="jats-math-64" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>15.6, <mml:math id="jats-math-65" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>20.8, <mml:math id="jats-math-66" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>31.25, <mml:math id="jats-math-67" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>41.67, and <mml:math id="jats-math-68" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>55.56 kHz, respectively. The WASPI acquisition serves as a reference to the &#x0201c;elusive&#x0201d; ground truth, due to the challenge posed by a nonideal PSF in all current methods. Notably, CG SENSE and the low&#x02010;rank method demonstrate comparable and superior results compared to the algebraic, Stoch&#x02013;Olejniczak, and ZINFANDEL method. Low&#x02010;rank methods offer an additional advantage for filling large gap sizes because they do not introduce extra noise.</p><fig position="float" fig-type="FIGURE" id="mrm30345-fig-0008"><label>FIGURE 8</label><caption><p>Reconstruction result with data collected using bi&#x02010;directional radial sampling path for a normal volunteer. Both the low rank and conjugated sensitivity encoding technique (CG SENSE) methods are effective within a bandwidth of <mml:math id="jats-math-69" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>41.67 kHz. The CG SENSE method displayed structured noise at bandwidth of <mml:math id="jats-math-70" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>55.58 kHz. The SNR has been determined to be 15.57 dB for bandwidths of <mml:math id="jats-math-71" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>15.6 kHz, 14.44 dB for <mml:math id="jats-math-72" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>20.8 kHz, 13.03 dB for <mml:math id="jats-math-73" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>31.25 kHz, 11.73 dB for <mml:math id="jats-math-74" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>41.67 kHz, and 10.02 dB for <mml:math id="jats-math-75" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x000b1;</mml:mo></mml:mrow></mml:mrow></mml:math>55.56 kHz. (A) Reconstruction; (B) Difference map.</p></caption><graphic xlink:href="MRM-93-1149-g009" position="anchor" id="jats-graphic-17"/></fig></sec><sec sec-type="discussion" id="mrm30345-sec-0019"><label>5</label><title>DISCUSSION</title><p>The inverse problem presented in this work differs from the conventional parallel imaging reconstruction problem.<xref rid="mrm30345-bib-0031" ref-type="bibr">
+<sup>31</sup>
+</xref> Conventional methods involve acquiring a fully sampled low&#x02010;resolution region in the center of <italic toggle="yes">k</italic>&#x02010;space. This central region is then utilized to estimate either the GRAPPA kernels or coil sensitivity profiles. However, within the ZTE acquisition, this low&#x02010;resolution signal is inherently not present. Yet, we have shown that this problem can be solved with low rank, similar to methods used within conventional parallel imaging.</p><p>In ZTE imaging, a significant challenge emerges from the large and continuous dead&#x02010;time gaps. Unlike conventional parallel imaging techniques that strategically undersample by excluding alternate lines in Cartesian imaging or radial spokes in Non&#x02010;Cartesian radial imaging, ZTE has a continuous absence of samples within the dead&#x02010;time gaps in the low frequency portions of <italic toggle="yes">k</italic>&#x02010;space. Such dead&#x02010;time gaps pose challenges as they severely compromise the conditioning of the inverse problem. Furthermore, as the gap size grows, the correlation between the reconstructed data and the originally acquired data diminishes rapidly, introducing significant noise amplification and artifact in the image domain. This ill&#x02010;conditioning becomes particularly evident in algebraic methods, where dead&#x02010;time gaps exceeding three Nyquist dwells result in complete failure. However, techniques like Stoch&#x02013;Olejniczak, ZINFANDEL, CG SENSE, and low&#x02010;rank methods demonstrate effectiveness in mitigating these challenges. ZINFANDEL and CG SENSE utilize coil sensitivity information within a radial interpolation kernel to efficiently fill larger dead&#x02010;time gaps with high accuracy, leveraging more available information. In contrast, the low&#x02010;rank method proposed in this work employs both coil sensitivity information and finite image support prior. To address the issue of radial undersampling and further improve the reconstruction, it is possible to introduce additional information, such as virtual coil augmentation, into the low rank reconstruction framework.</p><p>In conventional parallel imaging, the acceleration is limited to <mml:math id="jats-math-76" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x000d7;</mml:mo></mml:mrow></mml:mrow></mml:math>3 per encoding dimension. Beyond <mml:math id="jats-math-77" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo form="prefix">&#x000d7;</mml:mo></mml:mrow></mml:mrow></mml:math>3 acceleration, noise amplification starts growing exponentially, and can only be compensated via averaging to a certain extent.<xref rid="mrm30345-bib-0046" ref-type="bibr">
+<sup>46</sup>
+</xref> In ZTE, the natural oversampling occurring at the center of the radial <italic toggle="yes">k</italic>&#x02010;space results in an averaging effect, where the interpolation errors are averaged during the gridding process. So, one would anticipate the ability to bridge larger gap sizes than what is typically assumed by conventional wisdom.</p><p>This study categorizes reconstruction methods into implicit and explicit types based on their approaches to infilling the dead&#x02010;time gaps. Specifically, the algebraic, Stoch&#x02013;Olejniczak, ZINFANDEL and low&#x02010;rank methods adopt an explicit strategy, confining their infilling solely to dead&#x02010;time gaps and thereby preserving the integrity of the sampled signal. In contrast, the CG SENSE method employs an implicit approach, iteratively filling these gaps within the image domain. A notable distinction lies in the artifact distribution: the ZINFANDEL and low&#x02010;rank methods induce low&#x02010;frequency modulations, which are less perceptible due to their restriction to lower frequencies. In comparison, the CG SENSE method generates artifacts and noise across a broader frequency range, resulting in more conspicuous artifacts in the final output. A summary is presented in Table&#x000a0;<xref rid="mrm30345-tbl-0001" ref-type="table">1</xref>.</p><table-wrap position="float" id="mrm30345-tbl-0001" content-type="TABLE"><label>TABLE 1</label><caption><p>Comparison of different reconstruction methods.</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="left" style="border-right:solid 1px #000000; border-bottom:solid 1px #000000" span="1"/><col align="left" style="border-right:solid 1px #000000; border-bottom:solid 1px #000000" span="1"/><col align="left" style="border-right:solid 1px #000000; border-bottom:solid 1px #000000" span="1"/><col align="left" style="border-right:solid 1px #000000; border-bottom:solid 1px #000000" span="1"/><thead valign="bottom"><tr style="border-bottom:solid 1px #000000"><th align="left" valign="bottom" rowspan="1" colspan="1">Method</th><th align="left" valign="bottom" rowspan="1" colspan="1">Type</th><th align="left" valign="bottom" rowspan="1" colspan="1">Time per reconstruction</th><th align="left" valign="bottom" rowspan="1" colspan="1">Artifacts/noise distribution</th><th align="left" valign="bottom" rowspan="1" colspan="1">Key characteristics</th></tr></thead><tbody valign="top"><tr><td align="left" valign="top" rowspan="1" colspan="1">Algebraic</td><td align="left" valign="top" rowspan="1" colspan="1">Explicit</td><td align="left" valign="top" rowspan="1" colspan="1">
+<mml:math id="jats-math-78" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x0223c;</mml:mo></mml:mrow></mml:mrow></mml:math>10 s</td><td align="left" valign="top" rowspan="1" colspan="1">Low&#x02010;frequency modulation may diverge</td><td align="left" valign="top" rowspan="1" colspan="1">System matrix solving once Matrix multiplication per radial spoke pair</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Stoch&#x02013;Olejniczak</td><td align="left" valign="top" rowspan="1" colspan="1">Explicit</td><td align="left" valign="top" rowspan="1" colspan="1">
+<mml:math id="jats-math-79" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x0223c;</mml:mo></mml:mrow></mml:mrow></mml:math>2 min</td><td align="left" valign="top" rowspan="1" colspan="1">Low&#x02010;frequency modulation</td><td align="left" valign="top" rowspan="1" colspan="1">System matrix solving once Matrix multiplication per radial spoke</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">ZINFANDEL</td><td align="left" valign="top" rowspan="1" colspan="1">Explicit</td><td align="left" valign="top" rowspan="1" colspan="1">
+<mml:math id="jats-math-80" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x0223c;</mml:mo></mml:mrow></mml:mrow></mml:math>1.2 min per Nyquist dwell</td><td align="left" valign="top" rowspan="1" colspan="1">Low&#x02010;frequency modulation</td><td align="left" valign="top" rowspan="1" colspan="1">Training new kernel for each spoke and gap size</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">CG SENSE</td><td align="left" valign="top" rowspan="1" colspan="1">Implicit</td><td align="left" valign="top" rowspan="1" colspan="1">
+<mml:math id="jats-math-81" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mo>&#x0223c;</mml:mo></mml:mrow></mml:mrow></mml:math>4 min &#x0003c;5 iterations for gap size &#x0003c;3 More iterations needed for larger gap</td><td align="left" valign="top" rowspan="1" colspan="1">Broad frequency structured low&#x02010;frequency noise</td><td align="left" valign="top" rowspan="1" colspan="1">Requires coil sensitivity profiles</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Low&#x02010;rank</td><td align="left" valign="top" rowspan="1" colspan="1">Explicit</td><td align="left" valign="top" rowspan="1" colspan="1">Few seconds per iteration; convergence slows exponentially with larger gaps</td><td align="left" valign="top" rowspan="1" colspan="1">Low&#x02010;frequency modulation</td><td align="left" valign="top" rowspan="1" colspan="1">Only uses the center volume</td></tr></tbody></table></table-wrap><p>For both phantom and in vivo experiments, obtaining a genuine ground truth image in ZTE imaging poses challenges due to the dead&#x02010;time gap and always on gradient, causing an inevitable deviation of the imaging PSF from the truth. Notably, some residual low spatial frequency differences exist between the reconstruction methods and the reference for the in vivo brain data as shown in Figure&#x000a0;<xref rid="mrm30345-fig-0008" ref-type="fig">8</xref>. This can be attributed, partially, to the different <mml:math id="jats-math-82" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mrow><mml:mi mathvariant="normal">T</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow><mml:mrow><mml:mo>&#x02217;</mml:mo></mml:mrow></mml:msubsup></mml:mrow></mml:mrow></mml:math> weighting, slice profile, and gradient spoiling effect introduced by the WASPI acquisition.</p><p>The iterative reconstruction approach can implicitly fill missing data even without specific constraints at very small dead&#x02010;time gaps of one and two. This occurs due to the finite width of the gridding kernel used in the NUFFT operations. Although the absence of low&#x02010;frequency Fourier coefficients reduces the total energy of the signal, the missing data is always partially filled when regridded in <italic toggle="yes">k</italic>&#x02010;space. Regridding inevitably causes an increase in the overall energy of the image and <italic toggle="yes">k</italic>&#x02010;space as the signal within the dead&#x02010;time gap is partially filled and samples outside the dead&#x02010;time gap are not affected. As a result, when the gap sizes are significantly large, the overall image energy is closer to zero, resulting in a drastically slower rate of convergence. To address this issue, one could integrate a DC estimate using pointwise encoding time reduction with radial acquisition.</p><p>The algebraic reconstruction has the quickest computation time as the system matrix requires solving only once. In our CPU&#x02010;based implementation, the reconstruction averaged around 10 s. Longer computational time, around 2 min, is observed for the Stoch&#x02013;Olejniczak method. This is partially due to the need to perform matrix multiplication on every radial spoke, rather than on pairs of radial spokes as is done in the algebraic method. Both algebraic and Stoch&#x02013;Olejniczak support parallel computing to further improve the speed. The computation time for algebraic and Stoch&#x02010;Olejniczak methods is directly proportional to the number and length of radial spokes and is not affected by the size of the dead&#x02010;time gap. Our implementation of the ZINFANDEL technique, which required training a new kernel for each radial spoke and gap size, resulted in computation time approximately 1.2 min per Nyquist dwell and scales linearly with the increase in the dead&#x02010;time gap. The adaptability of the ZINFANDEL technique extends to filling data gaps, particularly beneficial in cases involving angular under&#x02010;sampling. The CG SENSE method requires less than five iterations to converge at gap size smaller than three Nyquist dwells. However, increasingly more iterations are required at large dead&#x02010;time gaps. While the computational demands of 3D low&#x02010;rank processing can be substantial, focusing solely on the center volume for infilling effectively reduces these demands. Using only the low&#x02010;resolution <italic toggle="yes">k</italic>&#x02010;space data significantly accelerates NUFFT processing and subsequent SVDs. This modification leads to a considerable reduction in computation time, down to 1.33 s with GPU&#x02010;based NUFFT operations per iteration. However, the number of iterations for convergence grow exponentially as the size of the dead&#x02010;time gap increases: 0.5 min for a gap of two Nyquist dwells, 1.7 min for a gap of 2.5 Nyquist dwells, and 5.6 min for a gap of three Nyquist dwells.</p><p>One limitation of the proposed method is its slow convergence rate. The slow convergence rate is attributed, at least partially, to the fact that the low&#x02010;rank technique addresses the more challenging task of estimating linear dependence relationships from the Hankel matrix. In contrast, the SENSE&#x02010;based technique simplifies this process by explicitly deriving the linear dependence from the prescan data.<xref rid="mrm30345-bib-0047" ref-type="bibr">
+<sup>47</sup>
+</xref> To accelerate convergence, one possible approach is to initialize the starting point with other infilling methods. Furthermore, determining the optimal rank necessitates a parameter sweep to identify the optimal rank, which can be time&#x02010;consuming. An example of the reconstruction against rank is shown in Figure&#x000a0;<xref rid="mrm30345-fig-0009" ref-type="fig">9</xref>. As the dead&#x02010;time gap increases, the algorithm becomes increasingly sensitive to the rank.</p><fig position="float" fig-type="FIGURE" id="mrm30345-fig-0009"><label>FIGURE 9</label><caption><p>Reconstruction error versus rank. (A) The relationship between reconstruction error and rank. The algorithm demonstrates increased sensitivity to rank as the dead&#x02010;time gap increases. (B) Reconstruction outcome when the rank is below the optimal value. (C) The result at the optimal rank. (D) The reconstruction result when the rank exceeds the optimal value. (A) Reconstruction error versus rank; (B) Under estimate rank: 30; (C) Optimal estimate rank: 60; (D) Over estimate rank: 300.</p></caption><graphic xlink:href="MRM-93-1149-g010" position="anchor" id="jats-graphic-19"/></fig><p>We also simplify the scope of this work to fully sampled data. Nevertheless, we anticipate that the proposed method will perform comparably well in undersampled scenarios, as it relies primarily on the low&#x02010;resolution center of <italic toggle="yes">k</italic>&#x02010;space, where the Nyquist rate is significantly lower. Additionally, this study does not account for factors such as motion artifacts and varying contrast due to different magnetization preparations (e.g., <mml:math id="jats-math-83" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mrow><mml:mi mathvariant="normal">T</mml:mi></mml:mrow><mml:mrow><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math>, <mml:math id="jats-math-84" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mrow><mml:mi mathvariant="normal">T</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math>, diffusion). Further investigation is also needed on how low&#x02010;frequency modulations affect parametric mapping.<xref rid="mrm30345-bib-0048" ref-type="bibr">
+<sup>48</sup>
+</xref> Addressing these factors is beyond the current scope and represents an important aspect for future research.</p><p>There will be applications, such as those involving the lung, that require higher bandwidth, where difficulties will remain for any reconstruction process due to limitations in infilling the increased empty data. The use of CG SENSE leads to significant noise amplifications, and the low&#x02010;rank approach struggles to restore certain low&#x02010;frequency components in the Fourier spectrum.</p></sec><sec sec-type="conclusions" id="mrm30345-sec-0020"><label>6</label><title>CONCLUSION</title><p>In our study, we introduce a low rank iterative infilling method for ZTE image reconstruction. This iterative infilling approach enables artifact&#x02010;free reconstruction, without the need for gathering additional data and performs well within dead&#x02010;time gap 4.5 Nyquist dwells. It demonstrated superior performance than the algebraic, Stoch&#x02013;Olejniczak, ZINFANDEL, and the CG SENSE method.</p></sec><sec id="mrm30345-sec-0021"><title>FUNDING INFORMATION</title><p>This work was supported by the Gates Cambridge Foundation and the NIHR Cambridge Biomedical Research Centre (NIHR203312*).</p></sec><sec sec-type="COI-statement" id="mrm30345-sec-0023"><title>CONFLICT OF INTEREST STATEMENT</title><p>Dr. Jos&#x000e9; de Arcos and Dr. Florian Wiesinger are employees of General Electric (GE).</p></sec></body><back><ack id="mrm30345-sec-0022"><title>ACKNOWLEDGMENTS</title><p>This research was supported by the NIHR Cambridge Biomedical Research Centre (NIHR203312). The views expressed are those of the authors and not necessarily those of the NIHR or the Department of Health and Social Care.</p></ack><sec sec-type="data-availability" id="mrm30345-sec-1001"><title>DATA AVAILABILITY STATEMENT</title><p>The reconstruction code for the algebraic, ZINFANDEL, and low&#x02010;rank methods, along with example data, can be found in <ext-link xlink:href="https://github.com/ZimuHuo/LRII" ext-link-type="uri" specific-use="software is-supplemented-by">https://github.com/ZimuHuo/LRII</ext-link>.</p></sec><ref-list id="mrm30345-bibl-0001" content-type="cited-references"><title>REFERENCES</title><ref id="mrm30345-bib-0001"><label>1</label><mixed-citation publication-type="journal" id="mrm30345-cit-0001">
+<string-name>
+<surname>Weiger</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Pruessmann</surname>
+<given-names>KP</given-names>
+</string-name>. <article-title>MRI with zero echo time</article-title>. <source>eMagRes</source>. <year>2012</year>;<volume>1</volume>:<fpage>311</fpage>&#x02010;<lpage>321</lpage>.</mixed-citation></ref><ref id="mrm30345-bib-0002"><label>2</label><mixed-citation publication-type="journal" id="mrm30345-cit-0002">
+<string-name>
+<surname>du</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Carl</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Bydder</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Takahashi</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Chung</surname>
+<given-names>CB</given-names>
+</string-name>, <string-name>
+<surname>Bydder</surname>
+<given-names>GM</given-names>
+</string-name>. <article-title>Qualitative and quantitative ultrashort echo time (UTE) imaging of cortical bone</article-title>. <source>J Magn Reson</source>. <year>2010</year>;<volume>207</volume>:<fpage>304</fpage>&#x02010;<lpage>311</lpage>.<pub-id pub-id-type="pmid">20980179</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0003"><label>3</label><mixed-citation publication-type="journal" id="mrm30345-cit-0003">
+<string-name>
+<surname>Weiger</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Pruessmann</surname>
+<given-names>KP</given-names>
+</string-name>. <article-title>Short&#x02010;T2 MRI: principles and recent advances</article-title>. <source>Prog Nucl Magn Reson Spectrosc</source>. <year>2019</year>;<volume>114&#x02013;115</volume>:<fpage>237</fpage>&#x02010;<lpage>270</lpage>.</mixed-citation></ref><ref id="mrm30345-bib-0004"><label>4</label><mixed-citation publication-type="journal" id="mrm30345-cit-0004">
+<string-name>
+<surname>Weiger</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Pruessmann</surname>
+<given-names>KP</given-names>
+</string-name>. <article-title>Zero echo time (ZTE) MRI</article-title>. <source>MRI Short Ultrashort T2 Tissue</source>. <year>2023</year>;<volume>1</volume>:<fpage>53</fpage>&#x02010;<lpage>66</lpage>.</mixed-citation></ref><ref id="mrm30345-bib-0005"><label>5</label><mixed-citation publication-type="journal" id="mrm30345-cit-0005">
+<string-name>
+<surname>Gatehouse</surname>
+<given-names>PD</given-names>
+</string-name>, <string-name>
+<surname>Thomas</surname>
+<given-names>RW</given-names>
+</string-name>, <string-name>
+<surname>Robson</surname>
+<given-names>MD</given-names>
+</string-name>, <string-name>
+<surname>Hamilton</surname>
+<given-names>G</given-names>
+</string-name>, <string-name>
+<surname>Herlihy</surname>
+<given-names>AH</given-names>
+</string-name>, <string-name>
+<surname>Bydder</surname>
+<given-names>GM</given-names>
+</string-name>. <article-title>Magnetic resonance imaging of the knee with ultrashort TE pulse sequences</article-title>. <source>Magn Reson Imaging</source>. <year>2004</year>;<volume>22</volume>:<fpage>1061</fpage>&#x02010;<lpage>1067</lpage>.<pub-id pub-id-type="pmid">15527992</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0006"><label>6</label><mixed-citation publication-type="journal" id="mrm30345-cit-0006">
+<string-name>
+<surname>Filho</surname>
+<given-names>GH</given-names>
+</string-name>, <string-name>
+<surname>du</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Pak</surname>
+<given-names>BC</given-names>
+</string-name>, et al. <article-title>Quantitative characterization of the Achilles tendon in cadaveric specimens: T1 and T2* measurements using ultrashort&#x02010;TE MRI at 3 T</article-title>. <source>Am J Roentgenol</source>. <year>2009</year>;<volume>192</volume>:<fpage>W117</fpage>&#x02010;<lpage>W124</lpage>.<pub-id pub-id-type="pmid">19234239</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0007"><label>7</label><mixed-citation publication-type="journal" id="mrm30345-cit-0007">
+<string-name>
+<surname>du</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Pak</surname>
+<given-names>BC</given-names>
+</string-name>, <string-name>
+<surname>Znamirowski</surname>
+<given-names>R</given-names>
+</string-name>, et al. <article-title>Magic angle effect in magnetic resonance imaging of the Achilles tendon and enthesis</article-title>. <source>Magn Reson Imaging</source>. <year>2009</year>;<volume>27</volume>:<fpage>557</fpage>&#x02010;<lpage>564</lpage>.<pub-id pub-id-type="pmid">19022600</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0008"><label>8</label><mixed-citation publication-type="journal" id="mrm30345-cit-0008">
+<string-name>
+<surname>Waldman</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Rees</surname>
+<given-names>JH</given-names>
+</string-name>, <string-name>
+<surname>Brock</surname>
+<given-names>CS</given-names>
+</string-name>, <string-name>
+<surname>Robson</surname>
+<given-names>MD</given-names>
+</string-name>, <string-name>
+<surname>Gatehouse</surname>
+<given-names>PD</given-names>
+</string-name>, <string-name>
+<surname>Bydder</surname>
+<given-names>GM</given-names>
+</string-name>. <article-title>MRI of the brain with ultra&#x02010;short echo&#x02010;time pulse sequences</article-title>. <source>Neuroradiology</source>. <year>2003</year>;<volume>45</volume>:<fpage>887</fpage>&#x02010;<lpage>892</lpage>.<pub-id pub-id-type="pmid">14508620</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0009"><label>9</label><mixed-citation publication-type="journal" id="mrm30345-cit-0009">
+<string-name>
+<surname>Robson</surname>
+<given-names>MD</given-names>
+</string-name>, <string-name>
+<surname>Gatehouse</surname>
+<given-names>PD</given-names>
+</string-name>, <string-name>
+<surname>So</surname>
+<given-names>PW</given-names>
+</string-name>, <string-name>
+<surname>Bell</surname>
+<given-names>JD</given-names>
+</string-name>, <string-name>
+<surname>Bydder</surname>
+<given-names>GM</given-names>
+</string-name>. <article-title>Contrast enhancement of short T2 tissues using ultrashort TE (UTE) pulse sequences</article-title>. <source>Clin Radiol</source>. <year>2004</year>;<volume>59</volume>:<fpage>720</fpage>&#x02010;<lpage>726</lpage>.<pub-id pub-id-type="pmid">15262547</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0010"><label>10</label><mixed-citation publication-type="journal" id="mrm30345-cit-0010">
+<string-name>
+<surname>Robson</surname>
+<given-names>MD</given-names>
+</string-name>, <string-name>
+<surname>Bydder</surname>
+<given-names>GM</given-names>
+</string-name>. <article-title>Clinical ultrashort echo time imaging of bone and other connective tissues</article-title>. <source>NMR Biomed</source>. <year>2006</year>;<volume>19</volume>:<fpage>765</fpage>&#x02010;<lpage>780</lpage>.<pub-id pub-id-type="pmid">17075960</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0011"><label>11</label><mixed-citation publication-type="journal" id="mrm30345-cit-0011">
+<string-name>
+<surname>Gruwel</surname>
+<given-names>MLH</given-names>
+</string-name>, <string-name>
+<surname>Latta</surname>
+<given-names>P</given-names>
+</string-name>, <string-name>
+<surname>Tanasiewicz</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Volotovskyy</surname>
+<given-names>V</given-names>
+</string-name>, <string-name>
+<surname>&#x00160;ramek</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Tomanek</surname>
+<given-names>B</given-names>
+</string-name>. <article-title>MR imaging of teeth using a silent single point imaging technique</article-title>. <source>Appl Phys A</source>. <year>2007</year>;<volume>88</volume>:<fpage>763</fpage>&#x02010;<lpage>767</lpage>.</mixed-citation></ref><ref id="mrm30345-bib-0012"><label>12</label><mixed-citation publication-type="journal" id="mrm30345-cit-0012">
+<string-name>
+<surname>Wood</surname>
+<given-names>TC</given-names>
+</string-name>, <string-name>
+<surname>Damestani</surname>
+<given-names>NL</given-names>
+</string-name>, <string-name>
+<surname>Lawrence</surname>
+<given-names>AJ</given-names>
+</string-name>, et al. <article-title>Silent myelin&#x02010;weighted magnetic resonance imaging</article-title>. <source>Wellcome Open Res</source>. <year>2020</year>;<volume>5</volume>:<fpage>74</fpage>.<pub-id pub-id-type="pmid">32832700</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0013"><label>13</label><mixed-citation publication-type="journal" id="mrm30345-cit-0013">
+<string-name>
+<surname>Florian</surname>
+<given-names>W</given-names>
+</string-name>, <string-name>
+<surname>Anne</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Beatriz</surname>
+<given-names>SA</given-names>
+</string-name>. <article-title>Looping star</article-title>. <source>Magn Reson Med</source>. <year>2018</year>;<volume>81</volume>:<fpage>57</fpage>&#x02010;<lpage>68</lpage>.<pub-id pub-id-type="pmid">30106186</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0014"><label>14</label><mixed-citation publication-type="journal" id="mrm30345-cit-0014">
+<string-name>
+<surname>Ljungberg</surname>
+<given-names>E</given-names>
+</string-name>, <string-name>
+<surname>Damestani</surname>
+<given-names>NL</given-names>
+</string-name>, <string-name>
+<surname>Wood</surname>
+<given-names>TC</given-names>
+</string-name>, et al. <article-title>Silent zero TE MR neuroimaging: current state&#x02010;of&#x02010;the&#x02010;art and future directions</article-title>. <source>Prog Nucl Magn Reson Spectrosc</source>. <year>2021</year>;<volume>123</volume>:<fpage>73</fpage>&#x02010;<lpage>93</lpage>.<pub-id pub-id-type="pmid">34078538</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0015"><label>15</label><mixed-citation publication-type="journal" id="mrm30345-cit-0015">
+<string-name>
+<surname>Gibiino</surname>
+<given-names>F</given-names>
+</string-name>, <string-name>
+<surname>Sacolick</surname>
+<given-names>L</given-names>
+</string-name>, <string-name>
+<surname>Menini</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Landini</surname>
+<given-names>L</given-names>
+</string-name>, <string-name>
+<surname>Wiesinger</surname>
+<given-names>F</given-names>
+</string-name>. <article-title>Free&#x02010;breathing, zero&#x02010;TE MR lung imaging</article-title>. <source>Magn Reson Mater Phys Biol Med</source>. <year>2015</year>;<volume>28</volume>:<fpage>207</fpage>&#x02010;<lpage>215</lpage>.</mixed-citation></ref><ref id="mrm30345-bib-0016"><label>16</label><mixed-citation publication-type="journal" id="mrm30345-cit-0016">
+<string-name>
+<surname>Benlala</surname>
+<given-names>I</given-names>
+</string-name>, <string-name>
+<surname>Albat</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Blanchard</surname>
+<given-names>E</given-names>
+</string-name>, et al. <article-title>Quantification of MRI T2 interstitial lung disease signal&#x02010;intensity volume in idiopathic pulmonary fibrosis: a pilot study</article-title>. <source>J Magn Reson Imaging</source>. <year>2021</year>;<volume>53</volume>:<fpage>1500</fpage>&#x02010;<lpage>1507</lpage>.<pub-id pub-id-type="pmid">33241628</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0017"><label>17</label><mixed-citation publication-type="journal" id="mrm30345-cit-0017">
+<string-name>
+<surname>Sodhi</surname>
+<given-names>KS</given-names>
+</string-name>, <string-name>
+<surname>Khandelwal</surname>
+<given-names>N</given-names>
+</string-name>, <string-name>
+<surname>Saxena</surname>
+<given-names>AK</given-names>
+</string-name>, et al. <article-title>Rapid lung MRI in children with pulmonary infections: time to change our diagnostic algorithms</article-title>. <source>J Magn Reson Imaging</source>. <year>2016</year>;<volume>43</volume>:<fpage>1196</fpage>&#x02010;<lpage>1206</lpage>.<pub-id pub-id-type="pmid">26546472</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0018"><label>18</label><mixed-citation publication-type="journal" id="mrm30345-cit-0018">
+<string-name>
+<surname>Liszewski</surname>
+<given-names>MC</given-names>
+</string-name>, <string-name>
+<surname>Ciet</surname>
+<given-names>P</given-names>
+</string-name>, <string-name>
+<surname>Lee</surname>
+<given-names>EY</given-names>
+</string-name>. <article-title>MR imaging of lungs and Airways in Children</article-title>. <source>Magn Reson Imaging Clin N Am</source>. <year>2019</year>;<volume>27</volume>:<fpage>201</fpage>&#x02010;<lpage>225</lpage>.<pub-id pub-id-type="pmid">30910094</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0019"><label>19</label><mixed-citation publication-type="journal" id="mrm30345-cit-0019">
+<string-name>
+<surname>Liszewski</surname>
+<given-names>MC</given-names>
+</string-name>, <string-name>
+<surname>G&#x000f6;rkem</surname>
+<given-names>S</given-names>
+</string-name>, <string-name>
+<surname>Sodhi</surname>
+<given-names>KS</given-names>
+</string-name>, <string-name>
+<surname>Lee</surname>
+<given-names>EY</given-names>
+</string-name>. <article-title>Lung magnetic resonance imaging for pneumonia in children</article-title>. <source>Pediatr Radiol</source>. <year>2017</year>;<volume>47</volume>:<fpage>1420</fpage>&#x02010;<lpage>1430</lpage>.<pub-id pub-id-type="pmid">29043418</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0020"><label>20</label><mixed-citation publication-type="journal" id="mrm30345-cit-0020">
+<string-name>
+<surname>Weatherley</surname>
+<given-names>ND</given-names>
+</string-name>, <string-name>
+<surname>Eaden</surname>
+<given-names>JA</given-names>
+</string-name>, <string-name>
+<surname>Stewart</surname>
+<given-names>NJ</given-names>
+</string-name>, et al. <article-title>Experimental and quantitative imaging techniques in interstitial lung disease</article-title>. <source>Thorax</source>. <year>2019</year>;<volume>74</volume>:<fpage>611</fpage>&#x02010;<lpage>619</lpage>.<pub-id pub-id-type="pmid">30886067</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0021"><label>21</label><mixed-citation publication-type="journal" id="mrm30345-cit-0021">
+<string-name>
+<surname>Wiesinger</surname>
+<given-names>F</given-names>
+</string-name>, <string-name>
+<surname>Sacolick</surname>
+<given-names>LI</given-names>
+</string-name>, <string-name>
+<surname>Menini</surname>
+<given-names>A</given-names>
+</string-name>, et al. <article-title>Zero TE MR bone imaging in the head</article-title>. <source>Magn Reson Med</source>. <year>2016</year>;<volume>75</volume>:<fpage>107</fpage>&#x02010;<lpage>114</lpage>.<pub-id pub-id-type="pmid">25639956</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0022"><label>22</label><mixed-citation publication-type="journal" id="mrm30345-cit-0022">
+<string-name>
+<surname>Madio</surname>
+<given-names>DP</given-names>
+</string-name>, <string-name>
+<surname>Lowe</surname>
+<given-names>IJ</given-names>
+</string-name>. <article-title>Ultra&#x02010;fast imaging using low flip angles and fids</article-title>. <source>Magn Reson Med</source>. <year>1995</year>;<volume>34</volume>:<fpage>525</fpage>&#x02010;<lpage>529</lpage>.<pub-id pub-id-type="pmid">8524019</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0023"><label>23</label><mixed-citation publication-type="journal" id="mrm30345-cit-0023">
+<string-name>
+<surname>Engstr&#x000f6;m</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>McKinnon</surname>
+<given-names>G</given-names>
+</string-name>, <string-name>
+<surname>Cozzini</surname>
+<given-names>C</given-names>
+</string-name>, <string-name>
+<surname>Wiesinger</surname>
+<given-names>F</given-names>
+</string-name>. <article-title>In&#x02010;phase zero TE musculoskeletal imaging</article-title>. <source>Magn Reson Med</source>. <year>2020</year>;<volume>83</volume>:<fpage>195</fpage>&#x02010;<lpage>202</lpage>.<pub-id pub-id-type="pmid">31429994</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0024"><label>24</label><mixed-citation publication-type="journal" id="mrm30345-cit-0024">
+<string-name>
+<surname>Wu</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name>
+<surname>Dai</surname>
+<given-names>G</given-names>
+</string-name>, <string-name>
+<surname>Ackerman</surname>
+<given-names>JL</given-names>
+</string-name>, et al. <article-title>Water&#x02010; and fat&#x02010;suppressed proton projection MRI (WASPI) of rat femur bone</article-title>. <source>Magn Reson Med</source>. <year>2007</year>;<volume>57</volume>:<fpage>554</fpage>&#x02010;<lpage>567</lpage>.<pub-id pub-id-type="pmid">17326184</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0025"><label>25</label><mixed-citation publication-type="journal" id="mrm30345-cit-0025">
+<string-name>
+<surname>Grodzki</surname>
+<given-names>DM</given-names>
+</string-name>, <string-name>
+<surname>Jakob</surname>
+<given-names>PM</given-names>
+</string-name>, <string-name>
+<surname>Bjoern</surname>
+<given-names>H</given-names>
+</string-name>. <article-title>Ultrashort echo time imaging using pointwise encoding time reduction with radial acquisition (PETRA)</article-title>. <source>Magn Reson Med</source>. <year>2011</year>;<volume>67</volume>:<fpage>510</fpage>&#x02010;<lpage>518</lpage>.<pub-id pub-id-type="pmid">21721039</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0026"><label>26</label><mixed-citation publication-type="journal" id="mrm30345-cit-0026">
+<string-name>
+<surname>Froidevaux</surname>
+<given-names>R</given-names>
+</string-name>, <string-name>
+<surname>Weiger</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>R&#x000f6;sler</surname>
+<given-names>MB</given-names>
+</string-name>, <string-name>
+<surname>Brunner</surname>
+<given-names>DO</given-names>
+</string-name>, <string-name>
+<surname>Pruessmann</surname>
+<given-names>KP</given-names>
+</string-name>. <article-title>HYFI: hybrid filling of the dead&#x02010;time gap for faster zero echo time imaging</article-title>. <source>NMR Biomed</source>. <year>2021</year>;<volume>34</volume>:<fpage>1</fpage>&#x02010;<lpage>14</lpage>.</mixed-citation></ref><ref id="mrm30345-bib-0027"><label>27</label><mixed-citation publication-type="journal" id="mrm30345-cit-0027">
+<string-name>
+<surname>Kuethe</surname>
+<given-names>DO</given-names>
+</string-name>, <string-name>
+<surname>Caprihan</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Lowe</surname>
+<given-names>IJ</given-names>
+</string-name>, <string-name>
+<surname>Madio</surname>
+<given-names>DP</given-names>
+</string-name>, <string-name>
+<surname>Gach</surname>
+<given-names>HM</given-names>
+</string-name>. <article-title>Transforming NMR data despite missing points</article-title>. <source>J Magn Reson</source>. <year>1999</year>;<volume>139</volume>:<fpage>18</fpage>&#x02010;<lpage>25</lpage>.<pub-id pub-id-type="pmid">10388580</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0028"><label>28</label><mixed-citation publication-type="journal" id="mrm30345-cit-0028">
+<string-name>
+<surname>Weiger</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Brunner</surname>
+<given-names>DO</given-names>
+</string-name>, <string-name>
+<surname>Tabbert</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Pavan</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Schmid</surname>
+<given-names>T</given-names>
+</string-name>, <string-name>
+<surname>Pruessmann</surname>
+<given-names>KP</given-names>
+</string-name>. <article-title>Exploring the bandwidth limits of ZTE imaging: spatial response, out&#x02010;of&#x02010;band signals, and noise propagation</article-title>. <source>Magn Reson Med</source>. <year>2015</year>;<volume>74</volume>:<fpage>1236</fpage>&#x02010;<lpage>1247</lpage>.<pub-id pub-id-type="pmid">25359329</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0029"><label>29</label><mixed-citation publication-type="journal" id="mrm30345-cit-0029">
+<string-name>
+<surname>Grzegorz</surname>
+<given-names>S</given-names>
+</string-name>, <string-name>
+<surname>Zbigniew</surname>
+<given-names>O</given-names>
+</string-name>. <article-title>Missing first points and phase artifact mutually entangled in FT NMR data&#x02014;noniterative solution</article-title>. <source>J Magn Reson</source>. <year>2005</year>;<volume>173</volume>:<fpage>140</fpage>&#x02010;<lpage>152</lpage>.<pub-id pub-id-type="pmid">15705522</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0030"><label>30</label><mixed-citation publication-type="book" id="mrm30345-cit-0030">
+<string-name>
+<surname>Corum</surname>
+<given-names>CA</given-names>
+</string-name>. <part-title>Robust and computationally efficient missing point and phase estimation for multi&#x02010;channel acquisition with ZTE sequences</part-title>. <source>Joint Annual Meeting ISMRM: ISMRT 31st Annual Meeting</source>. <publisher-name>ISMRM</publisher-name>; <year>2020</year>.</mixed-citation></ref><ref id="mrm30345-bib-0031"><label>31</label><mixed-citation publication-type="journal" id="mrm30345-cit-0031">
+<string-name>
+<surname>Griswold</surname>
+<given-names>MA</given-names>
+</string-name>, <string-name>
+<surname>Jakob</surname>
+<given-names>PM</given-names>
+</string-name>, <string-name>
+<surname>Heidemann</surname>
+<given-names>RM</given-names>
+</string-name>, et al. <article-title>Generalized autocalibrating partially parallel acquisitions (GRAPPA)</article-title>. <source>Magn Reson Med</source>. <year>2002</year>;<volume>47</volume>:<fpage>1202</fpage>&#x02010;<lpage>1210</lpage>.<pub-id pub-id-type="pmid">12111967</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0032"><label>32</label><mixed-citation publication-type="book" id="mrm30345-cit-0032">
+<string-name>
+<surname>Wood</surname>
+<given-names>TC</given-names>
+</string-name>, <string-name>
+<surname>Ljunberg</surname>
+<given-names>E</given-names>
+</string-name>, <string-name>
+<surname>Chiew</surname>
+<given-names>M</given-names>
+</string-name>. <part-title>ZTE inflling from auto&#x02010;calibration neighbourhood elements</part-title>. <source>ISMRM and SMRT Annual Meeting and Exhibition</source>. <publisher-name>ISMRM</publisher-name>; <year>2021</year>.</mixed-citation></ref><ref id="mrm30345-bib-0033"><label>33</label><mixed-citation publication-type="journal" id="mrm30345-cit-0033">
+<string-name>
+<surname>Pruessmann</surname>
+<given-names>KP</given-names>
+</string-name>, <string-name>
+<surname>Weiger</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>B&#x000f6;rnert</surname>
+<given-names>P</given-names>
+</string-name>, <string-name>
+<surname>Boesiger</surname>
+<given-names>P</given-names>
+</string-name>. <article-title>Advances in sensitivity encoding with arbitrary k&#x02010;space trajectories</article-title>. <source>Magn Reson Med</source>. <year>2001</year>;<volume>46</volume>:<fpage>638</fpage>&#x02010;<lpage>651</lpage>.<pub-id pub-id-type="pmid">11590639</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0034"><label>34</label><mixed-citation publication-type="miscellaneous" id="mrm30345-cit-0034">
+<string-name>
+<surname>Wood</surname>
+<given-names>TC</given-names>
+</string-name>. <article-title>Implicit ZTE dead&#x02010;time gap filling with iterative reconstruction</article-title>. <year>2021</year>.</mixed-citation></ref><ref id="mrm30345-bib-0035"><label>35</label><mixed-citation publication-type="journal" id="mrm30345-cit-0035">
+<string-name>
+<surname>Haldar</surname>
+<given-names>JP</given-names>
+</string-name>, <string-name>
+<surname>Setsompop</surname>
+<given-names>K</given-names>
+</string-name>. <article-title>Linear predictability in magnetic resonance imaging reconstruction: leveraging shift&#x02010;invariant Fourier structure for faster and better imaging</article-title>. <source>IEEE Signal Process Mag</source>. <year>2020</year>;<volume>37</volume>:<fpage>69</fpage>&#x02010;<lpage>82</lpage>.<pub-id pub-id-type="pmid">33746468</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0036"><label>36</label><mixed-citation publication-type="journal" id="mrm30345-cit-0036">
+<string-name>
+<surname>Jian&#x02010;Feng</surname>
+<given-names>C</given-names>
+</string-name>, <string-name>
+<surname>Cand&#x000e8;s</surname>
+<given-names>EJ</given-names>
+</string-name>, <string-name>
+<surname>Zuowei</surname>
+<given-names>S</given-names>
+</string-name>. <article-title>A singular value thresholding algorithm for matrix completion</article-title>. <source>SIAM J Optim</source>. <year>2010</year>;<volume>20</volume>:<fpage>1956</fpage>&#x02010;<lpage>1982</lpage>.</mixed-citation></ref><ref id="mrm30345-bib-0037"><label>37</label><mixed-citation publication-type="journal" id="mrm30345-cit-0037">
+<string-name>
+<surname>Candes</surname>
+<given-names>EJ</given-names>
+</string-name>, <string-name>
+<surname>Tao</surname>
+<given-names>T</given-names>
+</string-name>. <article-title>The power of convex relaxation: near&#x02010;optimal matrix completion</article-title>. <source>IEEE Trans Inform Theory</source>. <year>2010</year>;<volume>56</volume>:<fpage>2053</fpage>&#x02010;<lpage>2080</lpage>.</mixed-citation></ref><ref id="mrm30345-bib-0038"><label>38</label><mixed-citation publication-type="journal" id="mrm30345-cit-0038">
+<string-name>
+<surname>Shin</surname>
+<given-names>PJ</given-names>
+</string-name>, <string-name>
+<surname>Larson</surname>
+<given-names>PE</given-names>
+</string-name>, <string-name>
+<surname>Ohliger</surname>
+<given-names>MA</given-names>
+</string-name>, et al. <article-title>Calibrationless parallel imaging reconstruction based on structured low&#x02010;rank matrix completion: calibrationless parallel imaging</article-title>. <source>Magn Reson Med</source>. <year>2014</year>;<volume>72</volume>:<fpage>959</fpage>&#x02010;<lpage>970</lpage>.<pub-id pub-id-type="pmid">24248734</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0039"><label>39</label><mixed-citation publication-type="journal" id="mrm30345-cit-0039">
+<string-name>
+<surname>Haldar</surname>
+<given-names>JP</given-names>
+</string-name>. <article-title>Low&#x02010;rank modeling of local k&#x02010;space neighborhoods (LORAKS) for constrained MRI</article-title>. <source>IEEE Trans Med Imaging</source>. <year>2014</year>;<volume>33</volume>:<fpage>668</fpage>&#x02010;<lpage>681</lpage>.<pub-id pub-id-type="pmid">24595341</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0040"><label>40</label><mixed-citation publication-type="journal" id="mrm30345-cit-0040">
+<string-name>
+<surname>Collins</surname>
+<given-names>DL</given-names>
+</string-name>, <string-name>
+<surname>Zijdenbos</surname>
+<given-names>AP</given-names>
+</string-name>, <string-name>
+<surname>Kollokian</surname>
+<given-names>V</given-names>
+</string-name>, et al. <article-title>Design and construction of a realistic digital brain phantom</article-title>. <source>IEEE Trans Med Imaging</source>. <year>1998</year>;<volume>17</volume>:<fpage>463</fpage>&#x02010;<lpage>468</lpage>.<pub-id pub-id-type="pmid">9735909</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0041"><label>41</label><mixed-citation publication-type="miscellaneous" id="mrm30345-cit-0041">
+<string-name>
+<surname>Fessler</surname>
+<given-names>J</given-names>
+</string-name>. <article-title>Michigan image reconstruction toolbox</article-title>. <year>2023</year>; Accessed September 30, 2023. <ext-link xlink:href="https://web.eecs.umich.edu/fessler/code" ext-link-type="uri">https://web.eecs.umich.edu/fessler/code</ext-link>
+</mixed-citation></ref><ref id="mrm30345-bib-0042"><label>42</label><mixed-citation publication-type="journal" id="mrm30345-cit-0042">
+<string-name>
+<surname>Piccini</surname>
+<given-names>D</given-names>
+</string-name>, <string-name>
+<surname>Littmann</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Nielles&#x02010;Vallespin</surname>
+<given-names>S</given-names>
+</string-name>, <string-name>
+<surname>Zenge</surname>
+<given-names>MO</given-names>
+</string-name>. <article-title>Spiral phyllotaxis: the natural way to construct a 3D radial trajectory in MRI</article-title>. <source>Magn Reson Med</source>. <year>2011</year>;<volume>66</volume>:<fpage>1049</fpage>&#x02010;<lpage>1056</lpage>.<pub-id pub-id-type="pmid">21469185</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0043"><label>43</label><mixed-citation publication-type="journal" id="mrm30345-cit-0043">
+<string-name>
+<surname>Zhang</surname>
+<given-names>T</given-names>
+</string-name>, <string-name>
+<surname>Pauly</surname>
+<given-names>JM</given-names>
+</string-name>, <string-name>
+<surname>Vasanawala</surname>
+<given-names>SS</given-names>
+</string-name>, <string-name>
+<surname>Lustig</surname>
+<given-names>M</given-names>
+</string-name>. <article-title>Coil compression for accelerated imaging with Cartesian sampling</article-title>. <source>Magn Reson Med</source>. <year>2013</year>;<volume>69</volume>:<fpage>571</fpage>&#x02010;<lpage>582</lpage>.<pub-id pub-id-type="pmid">22488589</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0044"><label>44</label><mixed-citation publication-type="book" id="mrm30345-cit-0044">
+<string-name>
+<surname>Florian</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Andreas</surname>
+<given-names>S</given-names>
+</string-name>. <part-title>gpuNUFFT &#x02010; an open source GPU library for 3D regridding with direct Matlab interface</part-title>. <source>Joint Annual Meeting</source>. <publisher-name>ISMRM</publisher-name>; <year>2014</year>.</mixed-citation></ref><ref id="mrm30345-bib-0045"><label>45</label><mixed-citation publication-type="journal" id="mrm30345-cit-0045">
+<string-name>
+<surname>Haldar</surname>
+<given-names>JP</given-names>
+</string-name>, <string-name>
+<surname>Zhuo</surname>
+<given-names>J</given-names>
+</string-name>. <article-title>P&#x02010;LORAKS: low&#x02010;rank modeling of local k&#x02010;space neighborhoods with parallel imaging data</article-title>. <source>Magn Reson Med</source>. <year>2016</year>;<volume>75</volume>:<fpage>1499</fpage>&#x02010;<lpage>1514</lpage>.<pub-id pub-id-type="pmid">25952136</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0046"><label>46</label><mixed-citation publication-type="journal" id="mrm30345-cit-0046">
+<string-name>
+<surname>Wiesinger</surname>
+<given-names>F</given-names>
+</string-name>, <string-name>
+<surname>Boesiger</surname>
+<given-names>P</given-names>
+</string-name>, <string-name>
+<surname>Pruessmann</surname>
+<given-names>KP</given-names>
+</string-name>. <article-title>Electrodynamics and ultimate SNR in parallel MR imaging</article-title>. <source>Magn Reson Med</source>. <year>2004</year>;<volume>52</volume>:<fpage>376</fpage>&#x02010;<lpage>390</lpage>.<pub-id pub-id-type="pmid">15282821</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0047"><label>47</label><mixed-citation publication-type="journal" id="mrm30345-cit-0047">
+<string-name>
+<surname>Kim</surname>
+<given-names>TH</given-names>
+</string-name>, <string-name>
+<surname>Setsompop</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Haldar</surname>
+<given-names>JP</given-names>
+</string-name>. <article-title>LORAKS makes better SENSE: phase&#x02010;constrained partial fourier SENSE reconstruction without phase calibration</article-title>. <source>Magn Reson Med</source>. <year>2017</year>;<volume>77</volume>:<fpage>1021</fpage>&#x02010;<lpage>1035</lpage>.<pub-id pub-id-type="pmid">27037836</pub-id>
+</mixed-citation></ref><ref id="mrm30345-bib-0048"><label>48</label><mixed-citation publication-type="journal" id="mrm30345-cit-0048">
+<string-name>
+<surname>Kwon</surname>
+<given-names>SH</given-names>
+</string-name>, <string-name>
+<surname>Lawrence</surname>
+<given-names>D</given-names>
+</string-name>. <article-title>k&#x02010;space weighted image contrast (KWIC) for contrast manipulation in projection reconstruction MRI</article-title>. <source>Magn Reson Med</source>. <year>2000</year>;<volume>44</volume>:<fpage>825</fpage>&#x02010;<lpage>832</lpage>.<pub-id pub-id-type="pmid">11108618</pub-id>
+</mixed-citation></ref></ref-list></back></article>

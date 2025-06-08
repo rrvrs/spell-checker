@@ -1,0 +1,1043 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" dtd-version="1.3" xml:lang="EN" article-type="research-article"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">J Chem Inf Model</journal-id><journal-id journal-id-type="iso-abbrev">J Chem Inf Model</journal-id><journal-id journal-id-type="publisher-id">ci</journal-id><journal-id journal-id-type="coden">jcisd8</journal-id><journal-title-group><journal-title>Journal of Chemical Information and Modeling</journal-title></journal-title-group><issn pub-type="ppub">1549-9596</issn><issn pub-type="epub">1549-960X</issn><publisher><publisher-name>American Chemical Society</publisher-name></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">39888859</article-id><article-id pub-id-type="pmc">PMC11863389</article-id>
+<article-id pub-id-type="doi">10.1021/acs.jcim.4c00857</article-id><article-categories><subj-group><subject>Article</subject></subj-group></article-categories><title-group><article-title>MechBERT: Language
+Models for Extracting Chemical
+and Property Relationships about Mechanical Stress and Strain</article-title></title-group><contrib-group><contrib contrib-type="author" id="ath1"><name><surname>Kumar</surname><given-names>Pankaj</given-names></name><xref rid="aff1" ref-type="aff">&#x02020;</xref><xref rid="aff2" ref-type="aff">&#x02021;</xref><xref rid="aff3" ref-type="aff">&#x000a7;</xref></contrib><contrib contrib-type="author" id="ath2"><name><surname>Kabra</surname><given-names>Saurabh</given-names></name><xref rid="aff2" ref-type="aff">&#x02021;</xref><xref rid="notes1" ref-type="notes">&#x02225;</xref></contrib><contrib contrib-type="author" corresp="yes" id="ath3"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0002-1552-8743</contrib-id><name><surname>Cole</surname><given-names>Jacqueline M.</given-names></name><xref rid="cor1" ref-type="other">*</xref><xref rid="aff1" ref-type="aff">&#x02020;</xref><xref rid="aff2" ref-type="aff">&#x02021;</xref><xref rid="aff3" ref-type="aff">&#x000a7;</xref></contrib><aff id="aff1"><label>&#x02020;</label>Cavendish
+Laboratory, Department of Physics, <institution>University
+of Cambridge</institution>, J. J. Thomson Avenue, Cambridge CB3 0HE. <country>U.K.</country></aff><aff id="aff2"><label>&#x02021;</label>ISIS
+Neutron and Muon Source, <institution>STFC Rutherford
+Appleton Laboratory</institution>, Harwell Science
+and Innovation Campus, Didcot OX11 0QX, <country>U.K.</country></aff><aff id="aff3"><label>&#x000a7;</label>Research
+Complex at Harwell, <institution>Rutherford Appleton
+Laboratory</institution>, Harwell Science and Innovation
+Campus, Didcot OX11 0FA, <country>U.K.</country></aff></contrib-group><author-notes><corresp id="cor1"><label>*</label>Email: <email>jmc61@cam.ac.uk</email>. Phone: <phone>+44 (0)1223 337470</phone>.</corresp></author-notes><pub-date pub-type="epub"><day>31</day><month>01</month><year>2025</year></pub-date><pub-date pub-type="collection"><day>24</day><month>02</month><year>2025</year></pub-date><volume>65</volume><issue>4</issue><fpage>1873</fpage><lpage>1888</lpage><history><date date-type="received"><day>16</day><month>05</month><year>2024</year></date><date date-type="accepted"><day>20</day><month>01</month><year>2025</year></date><date date-type="rev-recd"><day>19</day><month>01</month><year>2025</year></date></history><permissions><copyright-statement>&#x000a9; 2025 The Authors. Published by American Chemical Society</copyright-statement><copyright-year>2025</copyright-year><copyright-holder>The Authors</copyright-holder><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>Permits the broadest form of re-use including for commercial purposes, provided that author attribution and integrity are maintained (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</ext-link>).</license-p></license></permissions><abstract><p content-type="toc-graphic"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c00857_0014" id="ab-tgr1"/></p><p>Language models are
+transforming materials-aware natural-language
+processing by enabling the extraction of dynamic, context-rich information
+from unstructured text, thus, moving beyond the limitations of traditional
+information-extraction methods. Moreover, small language models are
+on the rise because some of them can perform better than large language
+models (LLMs) when given domain-specific question-answer tasks, especially
+about an application area that relies on a highly specialized vernacular,
+such as materials science. We therefore present a new class of MechBERT
+language models for understanding mechanical stress and strain in
+materials. These employ Bidirectional Encoder Representations for
+transformer (BERT) architectures. We showcase four MechBERT models,
+all of which were pretrained on a corpus of documents that are textually
+rich in chemicals and their stress&#x02013;strain properties and were
+fine-tuned on question-answering tasks. We evaluated the level of
+performance of our models on domain-specific as well as general English-language
+question-answer tasks and also explored the influence of the size
+and type of BERT architectures on model performance. We find that
+our MechBERT models outperform BERT-based models of the same size
+and maintain relevancy better than much larger BERT-based models when
+tasked with domain-specific question-answering tasks within the stress&#x02013;strain
+engineering sector. These small language models also enable much faster
+processing and require a much smaller fraction of data to pretrain
+them, affording them greater operational efficiency and energy sustainability
+than LLMs.</p></abstract><funding-group><award-group><funding-source><institution-wrap><institution>Basic Energy Sciences</institution><institution-id institution-id-type="doi">10.13039/100006151</institution-id></institution-wrap></funding-source><award-id>DE-AC02-06CH11357</award-id></award-group></funding-group><funding-group><award-group><funding-source><institution-wrap><institution>ISIS Neutron and Muon Source</institution><institution-id institution-id-type="doi">10.13039/501100021200</institution-id></institution-wrap></funding-source><award-id>NA</award-id></award-group></funding-group><funding-group><award-group><funding-source><institution-wrap><institution>Royal Academy of Engineering</institution><institution-id institution-id-type="doi">10.13039/501100000287</institution-id></institution-wrap></funding-source><award-id>RCSRF1819710</award-id></award-group></funding-group><custom-meta-group><custom-meta><meta-name>document-id-old-9</meta-name><meta-value>ci4c00857</meta-value></custom-meta><custom-meta><meta-name>document-id-new-14</meta-name><meta-value>ci4c00857</meta-value></custom-meta><custom-meta><meta-name>ccc-price</meta-name><meta-value/></custom-meta></custom-meta-group></article-meta></front><body><sec id="sec1"><title>Introduction</title><p>The automatic generation
+of material databases from the scientific
+literature has largely followed a step-by-step approach to data extraction.
+Thus far, information-extraction pipelines have been used to sequentially
+process an input through many different natural-language-processing
+(NLP) stages, including tokenization, chemical-named-entity recognition,
+text parsing, and relation extraction.<sup><xref ref-type="bibr" rid="ref1">1</xref></sup> With domain-specific adaptations, this approach has demonstrated
+capability in extracting reliable experimental data at large scales,
+which are efficiently organized into databases suitable for data-driven
+research.<sup><xref ref-type="bibr" rid="ref2">2</xref></sup> To this end, the &#x02018;chemistry-aware&#x02019;
+NLP-based text-mining tool, ChemDataExtractor,<sup><xref ref-type="bibr" rid="ref3">3</xref>&#x02212;<xref ref-type="bibr" rid="ref6">6</xref></sup> has shown particular utility in
+autogenerating large repositories of experimental data on chemicals
+and their properties that suit various domains of materials science;
+see, for example, autogenerated databases of experimental measurements
+for thermoelectrics,<sup><xref ref-type="bibr" rid="ref7">7</xref></sup> refractive indices
+and dielectric constants,<sup><xref ref-type="bibr" rid="ref8">8</xref></sup> molecules exhibiting
+thermally activated delayed fluorescence,<sup><xref ref-type="bibr" rid="ref9">9</xref></sup> semiconductors,<sup><xref ref-type="bibr" rid="ref10">10</xref></sup> magnetism,<sup><xref ref-type="bibr" rid="ref11">11</xref></sup> batteries,<sup><xref ref-type="bibr" rid="ref12">12</xref></sup> photovoltaics,<sup><xref ref-type="bibr" rid="ref13">13</xref></sup> and photocatalysis for water-splitting applications.<sup><xref ref-type="bibr" rid="ref6">6</xref></sup></p><p>These methods have also been employed in
+our recent work on stress-engineering
+materials to curate a repository of related properties,<sup><xref ref-type="bibr" rid="ref14">14</xref></sup> where grain-size and yield-strength values are
+associated in the postprocessing stage of database autogeneration
+and used to statistically validate the Hall&#x02013;Petch relation<sup><xref ref-type="bibr" rid="ref15">15</xref></sup> at a much larger scale compared to other work
+which is all manual.</p><p>While these methods directly enable data-driven
+research, a sequential
+NLP-based approach to information extraction of experimental data
+can experience limitations and have significant shortcomings. Methods
+used for text parsing and relation extraction need to account for
+all the nuances in the text; a rule-based approach is time-consuming
+to construct, requires expert knowledge, and has limited adaptability
+when applied to varied sentences or domains; and machine-learning-based
+methods require a large amount of manually annotated experimental
+data for the specific task at hand, which are rarely available. Chemical-named-entity
+recognition and tokenization processes experience similar challenges,
+and the sequential nature of conventional NLP-based information extraction
+means that errors, at any stage of the pipeline, propagate and reduce
+the overall quality of an eventual knowledge base.</p><p>Another practical
+limitation of conventional NLP-based methods
+is that they focus on the extraction of independent-property information.
+Yet, if one is to properly extract material relations accurately with
+complete information, complex knowledge representations of the target
+properties and their connection to one another in the text need to
+be developed which is an exceedingly difficult task as is often reflected
+in the final precision and recall metrics of autogenerated databases.
+For example, Isazawa and Cole implemented a nested knowledge representation
+for the extraction of photocatalysis data; in which, the F-score for
+the primary property remained high, but nested relations containing
+experimental conditions exhibited much lower F-scores, dipping to
+around 15% in some cases.<sup><xref ref-type="bibr" rid="ref6">6</xref></sup> When designing
+a knowledge representation for stress&#x02013;strain properties, not
+only do factors related to manufacturing, processing, experimental,
+and measuring conditions need to be considered; but also, the semantic
+interrelations between mechanical properties, such as yield strength,
+tensile strength, and Young&#x02019;s modulus, which are equally complex
+and diverse. A lack of such knowledge representations can lead to
+false positives in the extracted data, especially when multiple properties
+are discussed within the same text; accurately associating extracted
+values with the correct property being referenced becomes increasingly
+challenging. Therefore, the task of conceptualizing and programming
+a complete knowledge representation for properties found on the stress&#x02013;strain
+curve is crucial, yet it is nontrivial, and its inherent difficulty
+will be evident in the final precision and recall metrics of a resulting
+stress-engineering database.</p><p>Fortunately, the field of NLP,
+and in particular the statistical
+modeling of language, has been rapidly progressing. Recent research
+has focused on large language models that are mostly built on the
+Transformer architecture,<sup><xref ref-type="bibr" rid="ref16">16</xref></sup> such as Bidirectional
+Encoder Representations from Transformers (BERT),<sup><xref ref-type="bibr" rid="ref17">17</xref></sup> the Generative Pretrained Transformer (GPT) series of language
+models,<sup><xref ref-type="bibr" rid="ref18">18</xref>,<xref ref-type="bibr" rid="ref19">19</xref></sup> the Robustly optimized BERT pretraining
+approach (RoBERTa),<sup><xref ref-type="bibr" rid="ref20">20</xref></sup> and the Text-to-Text
+Transfer Transformer (T5).<sup><xref ref-type="bibr" rid="ref21">21</xref></sup> These have
+all demonstrated state-of-the-art performance on a variety of natural-language
+tasks, from question-answering to text generation. BERT-based models
+and others tackle natural-language tasks in two stages. First, the
+model is pretrained on a large set of unlabeled text to learn the
+general-purpose language representations, allowing the model to understand
+the context and meaning of language, even when supplied with unseen
+sentences. The pretrained model is then fine-tuned for a specific
+task using labeled data, allowing the embedded knowledge to be repurposed
+for different tasks depending on the use case.</p><p>In the context
+of information extraction from the scientific literature,
+a pretrained language model can be fine-tuned for question-answering
+tasks where the embedded knowledge can be utilized for extractive
+purposes. This approach alleviates many of the aforementioned problems
+that are encountered with the conventional NLP-based information-extraction
+pipeline. In particular, stages such as tokenization, named entity
+recognition, and text parsing are learnt simultaneously when pretraining
+a language model, thereby precluding the need for individual methods
+or expertly crafted rules to be developed for each; furthermore, the
+semantic connection between properties is automatically learned from
+the unlabeled text during the pretraining process, removing the need
+to manually design complex knowledge representations and enabling
+more accurate extraction of material properties from the text. Thus,
+language models have the potential to address some of the shortcomings
+of sequential NLP extraction pipelines.</p><p>However, general-purpose
+language models, such as BERT, may struggle
+to capture domain-specific characteristics. As such, specialized BERT
+models, tailored to the unique linguistic patterns of a particular
+field, have been developed and demonstrate superior performance on
+downstream, domain-specific, tasks. For instance, BioBERT,<sup><xref ref-type="bibr" rid="ref22">22</xref></sup> FinBERT,<sup><xref ref-type="bibr" rid="ref23">23</xref></sup> SciBERT,<sup><xref ref-type="bibr" rid="ref24">24</xref></sup> and ChemBERTa<sup><xref ref-type="bibr" rid="ref25">25</xref></sup> (or
+even CamemBERT<sup><xref ref-type="bibr" rid="ref26">26</xref></sup> for the French language)
+have all been pretrained on text from their respective fields and
+achieved high performance in later natural-language tasks. Notably,
+BatteryBERT<sup><xref ref-type="bibr" rid="ref27">27</xref></sup> and OpticalBERT<sup><xref ref-type="bibr" rid="ref28">28</xref></sup> have surpassed other BERT-based models and conventional
+information-extraction pipelines. In contrast to other domains, no
+such model has been reported that is specialized for stress&#x02013;strain
+information. Therefore, it is natural to question whether a similar
+type of BERT model could be useful for information extraction of stress&#x02013;strain-related
+properties.</p><p>To this end, four BERT models are developed in this
+study using
+different pretraining corpora, with a focus on text that contains
+stress&#x02013;strain information, which is sourced from the scientific
+literature. Due to the nature of the corpora, including a plethora
+of mechanical properties, the four models are aptly named as a class
+of <italic>MechBERT</italic> models. Once parameters have been optimized
+for fine-tuning, it will be demonstrated that the domain-specific
+models perform better than other BERT-based models for extractive
+tasks within the field of stress engineering while also maintaining
+performance on general English-language question-answering data sets.</p><p>For evaluation, a domain-specific question-answering data set was
+curated with the help of an annotation tool that has been purpose
+built in this work. The results herein will cement the importance
+of corpus specificity in pretraining language models for improved
+performance on downstream tasks within that domain; with MechBERT
+models outperforming language models that are not only pretrained
+on many more data but which are also significantly larger in terms
+of their number of model parameters. As such, our MechBERT models
+have the potential to be integrated into information extraction systems
+to overcome the limitations of sequential NLP extraction methods.</p><p>While this paper focuses on the development of MechBERT models
+and assessment of their effectiveness for stress&#x02013;strain engineering
+information-extraction tasks, it is worth highlighting the broader
+applicability and importance that these material-domain-specific MechBERT
+models have for the mechanical engineering community. Our MechBERT
+models provide a foundation that can be fine-tuned to enhance performance
+across a wide range of downstream tasks tailored to the specific needs
+of this field. <xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref> illustrates example use cases in which a stress&#x02013;strain engineering
+language model, further optimized through fine-tuning, could be applied.
+Therefore, our overarching development of domain-specific MechBERT
+models offers a vehicle for the materials-engineering research community
+to interact with carefully crafted language models about the mechanical
+properties of chemicals and tailor them for their bespoke needs.</p><fig id="fig1" position="float"><label>Figure 1</label><caption><p>Examples
+of a few different use cases of our MechBERT models. In
+this study, we fine-tune MechBERT for extractive question-answering,
+which helps facilitate information extraction. Other researchers may
+find successful application of our MechBERT models in a variety of
+NLP tasks, including named entity recognition, similarity measurement,
+and classification tasks.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c00857_0001" id="gr1" position="float"/></fig></sec><sec id="sec2"><title>Methods</title><p>To explore the benefits of domain-specific
+language models for
+information extraction of properties found on the stress&#x02013;strain
+curve, four models were developed in this study: PureMechBERT-cased,
+PureMechBERT-uncased, MechBERT-cased, and MechBERT-uncased. These
+models were fine-tuned for question-answering tasks, as this enables
+the embedded knowledge to be used for extractive tasks. This section
+will detail the pretraining and fine-tuning processes of these language
+models alongside training-data preparation and a tool that we have
+built for creating question-answering data sets.</p><sec id="sec2.1"><title>Model Overview</title><p>The model architecture follows the original
+model that was discussed by Devlin et al.<sup><xref ref-type="bibr" rid="ref17">17</xref></sup> to ensure consistency and allow for fair comparison. Pretraining
+model parameters are chosen such that the total number of parameters
+matches that of the original BERT models. The HuggingFace implementation
+of BERT, found in their <italic>Transformer</italic> package,<sup><xref ref-type="bibr" rid="ref29">29</xref></sup> was used, and the relevant parameters are listed
+in <xref rid="tbl1" ref-type="other">Table <xref rid="tbl1" ref-type="other">1</xref></xref>. Each BERT
+model has a total of 110 million parameters, and the four BERT models
+were pretrained on different corpora; PureMechBERT models were pretrained
+on only the domain-specific corpus, while MechBERT models were further
+pretrained starting from the weights of the original BERT<sub>BASE</sub> model.</p><table-wrap id="tbl1" position="float"><label>Table 1</label><caption><title>Summary of the Main Configuration
+Parameters That Define the Architecture of the BERT Model</title></caption><table frame="hsides" rules="groups" border="0"><colgroup><col align="left"/><col align="left"/></colgroup><thead><tr><th style="border:none;" align="center">parameter</th><th style="border:none;" align="center">value</th></tr></thead><tbody><tr><td style="border:none;" align="left">vocabulary size</td><td style="border:none;" align="left">30,522</td></tr><tr><td style="border:none;" align="left">hidden size</td><td style="border:none;" align="left">768</td></tr><tr><td style="border:none;" align="left">hidden layers</td><td style="border:none;" align="left">12</td></tr><tr><td style="border:none;" align="left">attention
+heads</td><td style="border:none;" align="left">12</td></tr><tr><td style="border:none;" align="left">dropout probability</td><td style="border:none;" align="left">0.1</td></tr><tr><td style="border:none;" align="left">transformer version</td><td style="border:none;" align="left">4.25.1</td></tr></tbody></table></table-wrap><p>Alternative
+model architectures were also considered for our domain-specific
+language models, including certain increasingly popular Generative
+Pretrained Transformer (GPT) language models.<sup><xref ref-type="bibr" rid="ref18">18</xref>,<xref ref-type="bibr" rid="ref19">19</xref></sup> However, many downstream domain-specific tasks, such as extractive
+question answering or chemical entity recognition, require precise,
+factual answers. In such cases, other transformer-based language model
+architectures can be more suitable, as GPT models tend to be quite
+susceptible to producing hallucinations, or they can necessitate additional
+postprocessing to ensure accuracy. Therefore, we utilize the BERT
+architecture in this study. Nonetheless, due to the widespread popularity
+of tools such as ChatGPT, further discussion and comparison between
+ChatGPT and our MechBERT models are provided in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c00857/suppl_file/ci4c00857_si_001.pdf">Supporting Information</ext-link> of this paper.</p></sec><sec id="sec2.2"><title>Pretraining Corpus</title><p>In this study, the pretraining corpus
+is composed of scientific articles that have been published by Elsevier,
+Springer Nature, and Wiley. For the former two publishers, the previously
+cultivated corpus by Kumar et al.<sup><xref ref-type="bibr" rid="ref14">14</xref></sup> is
+further extended to contain more general stress&#x02013;strain information
+through the use of additional search queries for relevant mechanical
+properties, following the method discussed therein. The text from
+each Elsevier and Springer Nature article was extracted using the
+reader package of ChemDataExtractor<sup><xref ref-type="bibr" rid="ref3">3</xref></sup> and
+then combined into a single text file.</p><p>Unique to this study,
+access to the Wiley API was granted and was integrated into the article
+retrieval pipeline. However, this API is limited and does not provide
+an interface to search the Wiley article repositories; as such, the
+DOI of relevant articles had to be searched for separately. While
+other APIs, such as CrossRefAPI,<sup><xref ref-type="bibr" rid="ref30">30</xref></sup> could
+be used for the search process, it was found that articles not relevant
+to the search query would often be returned via such an approach,
+which would negatively skew pretraining toward irrelevant text. Instead,
+the online Wiley search engine was used directly to gather a list
+of relevant DOIs; although, the number of relevant articles identified
+comprised less than 1% of the overall pretraining corpus.</p><p>Additionally,
+the Wiley API provides full-text articles only as
+Portable Document Format (PDF) files, which often causes difficulties
+in retrieving the contained text. Nonetheless, the plain text of these
+PDF files was extracted using PDFDataExtractor<sup><xref ref-type="bibr" rid="ref31">31</xref></sup> and consolidated into a single text file, as the inclusion
+of any additional text data is useful for pretraining each language
+model. Overall, the domain-specific text corpus consists of approximately
+1.2 billion tokens sourced from over 400,000 articles, and the relative
+contribution of papers from each publisher is shown in <xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>. In contrast, the original
+BERT<sub>BASE</sub> model was pretrained on a corpus of 3.3 billion
+tokens that had been sourced from English Wikipedia and the Book Corpus.<sup><xref ref-type="bibr" rid="ref32">32</xref></sup> While the domain-specific corpus used in this
+study is smaller than this corpus of generic English text, it is still
+within the range of optimal parameter/training token allocation.<sup><xref ref-type="bibr" rid="ref33">33</xref></sup></p><fig id="fig2" position="float"><label>Figure 2</label><caption><p>Percentage contribution of each publisher to the domain-specific
+text corpus curated in this study.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c00857_0002" id="gr2" position="float"/></fig><p>A word-cloud visualization was generated to illustrate
+the vocabulary
+distribution of our domain-specific corpus. As shown in <xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>, high-frequency terms are
+emphasized, including &#x0201c;stress&#x0201d;, &#x0201c;fracture&#x0201d;,
+&#x0201c;tensile&#x0201d;, &#x0201c;strength&#x0201d;, and even the commonly
+used units for tensile properties, &#x0201c;MPa&#x0201d;. These further
+highlight the uniqueness of the collected text compared to other general
+purpose corpora, enabling the language model to learn the distinct
+linguistic patterns that are prevalent in the scientific literature,
+especially those concerning stress&#x02013;strain property information.</p><fig id="fig3" position="float"><label>Figure 3</label><caption><p>Word cloud
+of the most frequent words contained within our domain-specific
+corpus.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c00857_0003" id="gr3" position="float"/></fig></sec><sec id="sec2.3"><title>Tokenization</title><p>To
+prepare the corpus for pretraining
+the language models, the text was tokenized using WordPiece embeddings,<sup><xref ref-type="bibr" rid="ref34">34</xref></sup> following the approach used by the original
+BERT model.<sup><xref ref-type="bibr" rid="ref17">17</xref></sup> These are subword representations
+that allow for the tokenization of a corpus using a smaller vocabulary;
+thus, they are more computationally efficient.</p><p>For the MechBERT
+models, the original cased and uncased BERT WordPiece tokenizers were
+used, whereas new tokenizers were trained for the PureMechBERT models.
+The training made use of the HuggingFace libraries<sup><xref ref-type="bibr" rid="ref29">29</xref></sup> and the domain-specific corpus to generate a vocabulary
+of the same size for both cased and uncased variants. The entire corpus
+was tokenized using the respective WordPiece tokenizers of each model
+to convert the text into appropriate input embeddings for the BERT
+architecture.<sup><xref ref-type="bibr" rid="ref17">17</xref></sup></p><p>As the vocabularies
+were obtained directly from the corresponding
+corpus, they are valuable tools for the comparison of different training
+sets used in distinct language models. The vocabulary overlap between
+three distinct language models is shown in <xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>. This highlights the level of uniqueness
+between PureMechBERT, BERT,<sup><xref ref-type="bibr" rid="ref17">17</xref></sup> and MatSciBERT,<sup><xref ref-type="bibr" rid="ref35">35</xref></sup> the latter being a BERT model that was trained
+on a corpus that encompasses all of material science. The MatSciBERT
+model was specifically chosen for comparison, as its material-science-focused
+corpus includes alloys and ceramics, which are often the target of
+stress&#x02013;strain studies. Consequently, the PureMechBERT vocabulary
+has a greater overlap with MatSciBERT than with BERT, with 53 and
+39% overlapping word pieces, respectively. Qualitatively, the vocabularies
+of PureMechBERT and MatSciBERT models are more similar than they are
+to those of BERT owing to the scientific nature of their corpora.
+Still, their significant differences from the foundational language
+model suggest that specialized terms that are unique to the scientific
+corpora are prevalent. Alongside the word cloud in <xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>, <xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref> demonstrates the focus of the corpus toward
+stress&#x02013;strain information, which in turn will be reflected
+in the pretrained language model.</p><fig id="fig4" position="float"><label>Figure 4</label><caption><p>Overlap of the different vocabularies
+used for BERT,<sup><xref ref-type="bibr" rid="ref17">17</xref></sup> MatSciBERT,<sup><xref ref-type="bibr" rid="ref35">35</xref></sup> and
+PureMechBERT models.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c00857_0004" id="gr4" position="float"/></fig></sec><sec id="sec2.4"><title>Pretraining</title><p>Following
+text processing and tokenization,
+the next stage involves pretraining the four language models: cased
+and uncased variants of both PureMechBERT and MechBERT. The PureMechBERT
+models were initialized from scratch and were trained solely on the
+stress&#x02013;strain corpus that was curated in this work. In contrast,
+MechBERT models were initialized from the pretrained weights of the
+original cased and uncased BERT<sub>BASE</sub> models. This was followed
+by further training on the domain-specific corpus, meaning that knowledge
+from both general and scientific texts is embedded into those models.</p><p>During the pretraining stage, the masked language modeling objective
+was used for all models. This involves masking 15% of tokens within
+the pretraining corpus at random and requires the model to correctly
+predict the masked words. The HuggingFace Transformers library<sup><xref ref-type="bibr" rid="ref29">29</xref></sup> provided the implementation for this task. The
+original BERT paper also employed next-sentence prediction for pretraining;<sup><xref ref-type="bibr" rid="ref17">17</xref></sup> however, Liu et al. demonstrated that this does
+not correspond to a significant difference in the overall performance.<sup><xref ref-type="bibr" rid="ref20">20</xref></sup> As such, this task was removed from the pretraining
+objective in this study to reduce the overall computational cost.</p><p>Pretraining was performed using NVIDIA A100 GPUs within the Polaris
+cluster at the Argonne Leadership Computing Facility (ALCF), Illinois,
+USA. A total of ten computing nodes were used, each containing four
+GPUs. Pretraining took between 15 and 20 h to complete for each variant.
+DeepSpeed<sup><xref ref-type="bibr" rid="ref36">36</xref></sup> was employed to distribute
+training across multiple nodes, resulting in more efficient processing
+and a reduction in the time taken for pretraining. Moreover, a critical
+factor in pretraining is the cumulative number of training sequences
+that are processed. The original BERT model and other domain-specific
+adaptations, such as BatteryBERT<sup><xref ref-type="bibr" rid="ref27">27</xref></sup> and
+OpticalBERT,<sup><xref ref-type="bibr" rid="ref28">28</xref></sup> pretrained their models
+for 1 million steps with a batch size of 512, resulting in the processing
+of 2.56 &#x000d7; 10<sup>8</sup> sequences in total.<sup><xref ref-type="bibr" rid="ref17">17</xref></sup> In this work, pretraining was optimized while maintaining
+the overall exposure to training sequences. To this end, a total batch
+size of 2048 was used, and the training steps were reduced to 125,000
+and 187,500 for MechBERT and PureMechBERT models, respectively. This
+approach maintained model performance while reducing the total pretraining
+time. The increased exposure to training sequences for the PureMechBERT
+models accommodated their initialization from scratch. This also aligned
+with BatteryBERT models that were trained from scratch, which were
+trained for a total of 1.5 million steps with a batch size of 256.<sup><xref ref-type="bibr" rid="ref27">27</xref></sup></p></sec><sec id="sec2.5"><title>Fine-Tuning for Question Answering</title><p>During the fine-tuning
+stage of language-model constructions, the pretrained model architecture
+was kept largely the same with the learned weights being &#x0201c;frozen&#x0201d;.
+Only the parameters associated with task-specific input and output
+layers were adjusted using labeled data. For information extraction,
+the models were fine-tuned for the question-answering tasks. This
+involved adding a single output layer, often referred to as the &#x0201c;answer
+head&#x0201d;, as suggested in the original BERT paper.<sup><xref ref-type="bibr" rid="ref17">17</xref></sup> This layer receives questions and context pairs
+that have been encoded by the pretrained BERT model. The answer head
+predicts the location of an answer span within the context by identifying
+the token positions <italic>i</italic> and <italic>j</italic> (where <italic>i</italic> &#x02264; <italic>j</italic>) that exhibit the highest
+dot product scores with learned start and end vectors, i.e., maximizing <italic>S</italic>&#x000b7;<italic>T</italic><sub><italic>i</italic></sub> + <italic>E</italic>&#x000b7;<italic>T</italic><sub><italic>j</italic></sub> for <italic>j</italic> &#x02265; <italic>i</italic>, where <italic>T</italic><sub><italic>i</italic></sub> is the final hidden vector for the <italic>i</italic><sup>th</sup> input token, and <italic>S</italic> and <italic>E</italic> are the start and end vectors, respectively. By comparing
+these predicted answer locations with the &#x0201c;ground-truth&#x0201d;
+labels provided in an annotated training data set, solely the parameters
+of the new answer head need to be optimized, meaning that a minimal
+number of parameters need to be learnt from scratch. This approach
+allows the model to use the knowledge learnt during pretraining without
+additional extensive training. Indeed, fine-tuning is much less computationally
+expensive than pretraining and can be completed within a few GPU node
+hours.</p><p>All models were fine-tuned on the Stanford Question and
+Answering Data set (SQuAD) v2.<sup><xref ref-type="bibr" rid="ref37">37</xref></sup> This data
+set is used as a benchmark for question-answering systems and contains
+150,000 question-context pairs that have been annotated with crowd-sourced
+answers. Of these, 50,000 questions are unanswerable and have been
+labeled as such; this is in contrast to its predecessor, SQuAD v1,<sup><xref ref-type="bibr" rid="ref38">38</xref></sup> which only includes answerable question-context
+pairs and has been employed in related studies, e.g., by Huang et
+al. in BatteryBERT<sup><xref ref-type="bibr" rid="ref27">27</xref></sup> and Zhao et al. in
+OpticalBERT.<sup><xref ref-type="bibr" rid="ref28">28</xref></sup> However, in real-world applications,
+information-extraction systems will frequently encounter passages
+of text that miss the target information. A suitable model must not
+only correctly find an answer span within the context but also identify
+instances where no answer exists. Therefore, our models were primarily
+fine-tuned on SQuAD version 2.0 for information extraction purposes.
+To allow for comparison with other studies that used SQuAD v1, an
+additional set of fine-tuned models on this data set was produced.
+Fine-tuning was carried out using the training scripts provided by
+HuggingFace.<sup><xref ref-type="bibr" rid="ref29">29</xref></sup></p><p>Determining the best
+hyperparameters for fine-tuning a model can
+be a time-consuming and inefficient process, particularly when using
+a random or grid-search manual approach, which can easily overlook
+the best set of parameters. To this end, the computationally inexpensive
+nature of fine-tuning was leveraged to find the optimal set of hyperparameters
+by using Bayesian optimization to guide the search. The search space
+of parameters used in this study is listed in <xref rid="tbl2" ref-type="other">Table <xref rid="tbl2" ref-type="other">2</xref></xref>, with the goal of maximizing the exact-match
+evaluation metric which reflects the percentage of correctly answered
+questions. This was facilitated by the Weights &#x00026; Biases (W&#x00026;B)
+framework.<sup><xref ref-type="bibr" rid="ref39">39</xref></sup></p><table-wrap id="tbl2" position="float"><label>Table 2</label><caption><title>Search
+Space for Finding the Optimal
+Hyperparameters for Fine-Tuning of BERT-Based Models</title></caption><table frame="hsides" rules="groups" border="0"><colgroup><col align="left"/><col align="left"/><col align="left"/></colgroup><thead><tr><th style="border:none;" align="center">hyperparameter</th><th style="border:none;" align="center">min</th><th style="border:none;" align="center">max</th></tr></thead><tbody><tr><td style="border:none;" align="left">learning rate</td><td style="border:none;" align="left">1&#x000a0;&#x000d7;&#x000a0;10<sup>&#x02013;8</sup></td><td style="border:none;" align="left">1&#x000a0;&#x000d7;&#x000a0;10<sup>&#x02013;4</sup></td></tr><tr><td style="border:none;" align="left">number
+of epochs</td><td style="border:none;" align="left">1</td><td style="border:none;" align="left">20</td></tr><tr><td style="border:none;" align="left">batch size</td><td style="border:none;" align="left">4</td><td style="border:none;" align="left">256</td></tr></tbody></table></table-wrap><p>An initial set of hyperparameter
+configurations was chosen at random
+to gather sample data to construct a surrogate model. In the W&#x00026;B
+framework, this utilizes a Gaussian process regression model that
+captures the relationship between hyperparameter selection and the
+exact match score. Using the surrogate model and expected improvement,
+hyperparameters are suggested that balance ones that are expected
+to perform well and the ones that explore new regions of the hyperparameter
+space. Iteratively, models are fine-tuned using the newly suggested
+configurations, and the resulting exact match score is used to update
+the surrogate model. This continually improves its ability to estimate
+performance given a set of hyperparameters, and therefore, it becomes
+more capable of guiding the search toward the most optimal set that
+maximizes the exact match score. After approximately 100 iterations,
+the &#x0201c;best&#x0201d; configuration that achieved the highest exact
+match score was selected for the final models.</p></sec><sec id="sec2.6"><title>Domain-Specific Question-Answering
+Evaluation Data</title><p>To evaluate the performance of our language
+models on domain-specific
+question-answering tasks, a custom data set was created, following
+the format of the SQuAD data sets. A total of 411 questions and answers
+were manually generated, with context paragraphs sourced from articles
+that were not in the pretraining corpus. Of these, 65 questions are
+unanswerable and were labeled as such. A sample entry from the evaluation
+set is shown in <xref rid="fig5" ref-type="fig">Figure <xref rid="fig5" ref-type="fig">5</xref></xref> and consists of a question-context pair with the corresponding ground-truth
+answer. The <italic>&#x0201c;answer_start&#x0201d;</italic> field specifies
+the starting-character index of the answer, allowing for easy conversion
+to a starting-token index, irrespective of the tokenizer choice, to
+enable more versatility when assessing different models. This field
+is also useful in cases where the initial token of an answer appears
+multiple times in a sequence, as it allows for the answer span to
+be accurately identified. To account for unanswerable questions, a
+Boolean field named <italic>&#x0201c;is_impossible&#x0201d;</italic> was included; if false, the answer resides within the context, and
+the model should predict the answer span; if true, the question does
+not have a corresponding answer in the given context. The questions
+within our data set have been written to primarily focus on the extraction
+of material-property information. As such, an underlying understanding
+of the knowledge representations between properties within the context
+is required for accurate answers to be found.</p><fig id="fig5" position="float"><label>Figure 5</label><caption><p>Example SQuAD-like entry
+in our domain-specific evaluation set.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c00857_0005" id="gr5" position="float"/></fig><p>Approaching the task of creating such data sets
+without any tool
+assistance can be tedious and prone to error. Manually typing each
+field and its contents leads to a higher risk of mislabeling, which
+does not allow for fair evaluation. Therefore, to facilitate the creation
+of SQuAD-like data sets, a web tool was designed to streamline the
+process of annotating context with questions and answers. On the frontend,
+the JavaScript library for handling web interfaces, ReactJS,<sup><xref ref-type="bibr" rid="ref40">40</xref></sup> was implemented. The backend was written in
+Python and utilizes the Django framework.<sup><xref ref-type="bibr" rid="ref41">41</xref></sup> The interface and annotation steps are exemplified in <xref rid="fig6" ref-type="fig">Figure <xref rid="fig6" ref-type="fig">6</xref></xref>, and the web app has been
+made openly available on GitHub.<sup><xref ref-type="bibr" rid="ref42">42</xref></sup></p><fig id="fig6" position="float"><label>Figure 6</label><caption><p>Example usage
+of the QA Annotator Web Tool that was created for
+this work.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c00857_0006" id="gr6" position="float"/></fig></sec></sec><sec id="sec3"><title>Results</title><p>The pretraining
+progress of each model is shown in <xref rid="fig7" ref-type="fig">Figure <xref rid="fig7" ref-type="fig">7</xref></xref>, which depicts the evolution
+of the loss value, a unitless measure of the relative error between
+the prediction of masked tokens made by the model and their actual
+value, over the number of pretraining steps. While not mathematically
+conclusive, a decreasing loss suggests that the models are continuously
+learning and improving during the pretraining stage. For all models,
+the loss curves trend downward and level off without completely stagnating,
+indicating that the number of pretraining steps is sufficient and
+balances learning while preventing overfitting. Interestingly, in <xref rid="fig7" ref-type="fig">Figure <xref rid="fig7" ref-type="fig">7</xref></xref>a, the loss curves
+for the PureMechBERT models initially begin to converge at a loss
+value of around 5.5. This indicates an initial difficulty in accurately
+performing the masked language modeling task, and thus, a difficulty
+in successfully learning the linguistic patterns within the domain-specific
+corpus, perhaps due to these models being initialized from scratch.
+However, after around 25,000 pretraining steps, these models overcome
+a local minima and proceed to converge to a loss value of around 1,
+which aligns with the loss of MechBERT models and similar BERT models
+that have been developed for the scientific domain.<sup><xref ref-type="bibr" rid="ref27">27</xref>,<xref ref-type="bibr" rid="ref28">28</xref></sup> The loss values of cased BERT models are all lower than their uncased
+counterparts, highlighting that the case of tokens provides valuable
+information for predicting masked tokens, and this may be reflected
+in the performance of downstream tasks. For a more comprehensive evaluation,
+the relative performance of BERT models fine-tuned for question-answering
+tasks was evaluated.</p><fig id="fig7" position="float"><label>Figure 7</label><caption><p>Evolution of loss during pretraining of each model.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c00857_0007" id="gr7" position="float"/></fig><sec id="sec3.1"><title>Fine-Tuning Optimization</title><p>The optimal hyperparameter
+configuration for fine-tuning each BERT model is detailed in <xref rid="tbl3" ref-type="other">Table <xref rid="tbl3" ref-type="other">3</xref></xref>. During the search,
+over 100 different configurations were tested for each model, with
+each iteration aiming to improve the exact match score on the SQuAD
+v1 and v2 data sets. This exploration revealed the significant impact
+of hyperparameter selection; across all models, the average standard
+deviation of the exact-match score was 6.1%, with highs of 18.4%.
+In other words, for a given data set and pretrained model, an information-extraction
+system built with carefully selected hyperparameters could achieve
+almost 20% fewer errors compared to a suboptimally configured system.</p><table-wrap id="tbl3" position="float"><label>Table 3</label><caption><title>Optimal Hyperparameter Configurations
+for Fine-Tuning on SQuAD v1 and v2</title></caption><table frame="hsides" rules="groups" border="0"><colgroup><col align="left"/><col align="left"/><col align="left"/><col align="char" char="."/><col align="char" char="."/></colgroup><thead><tr><th style="border:none;" align="center">dataset</th><th style="border:none;" align="center">model</th><th style="border:none;" align="center">learning rate</th><th style="border:none;" align="center" char=".">epochs</th><th style="border:none;" align="center" char=".">batch size</th></tr></thead><tbody><tr><td rowspan="4" style="border:none;" align="left">SQuAD v1</td><td style="border:none;" align="left">MechBERT Cased</td><td style="border:none;" align="left">5.75409064017&#x000a0;&#x000d7;&#x000a0;10<sup>&#x02013;5</sup></td><td style="border:none;" align="char" char=".">3</td><td style="border:none;" align="char" char=".">60</td></tr><tr><td style="border:none;" align="left">MechBERT Uncased</td><td style="border:none;" align="left">6.69796562345&#x000a0;&#x000d7;&#x000a0;10<sup>&#x02013;5</sup></td><td style="border:none;" align="char" char=".">3</td><td style="border:none;" align="char" char=".">44</td></tr><tr><td style="border:none;" align="left">PureMechBERT Cased</td><td style="border:none;" align="left">2.34149250752&#x000a0;&#x000d7;&#x000a0;10<sup>&#x02013;5</sup></td><td style="border:none;" align="char" char=".">4</td><td style="border:none;" align="char" char=".">24</td></tr><tr><td style="border:none;" align="left">PureMechBERT
+Uncased</td><td style="border:none;" align="left">6.65858503326&#x000a0;&#x000d7;&#x000a0;10<sup>&#x02013;5</sup></td><td style="border:none;" align="char" char=".">3</td><td style="border:none;" align="char" char=".">140</td></tr><tr><td rowspan="4" style="border:none;" align="left">SQuAD v2</td><td style="border:none;" align="left">MechBERT Cased</td><td style="border:none;" align="left">6.40600319349&#x000a0;&#x000d7;&#x000a0;10<sup>&#x02013;5</sup></td><td style="border:none;" align="char" char=".">2</td><td style="border:none;" align="char" char=".">128</td></tr><tr><td style="border:none;" align="left">MechBERT
+Uncased</td><td style="border:none;" align="left">1.494572498569&#x000a0;&#x000d7;&#x000a0;10<sup>&#x02013;4</sup></td><td style="border:none;" align="char" char=".">2</td><td style="border:none;" align="char" char=".">23</td></tr><tr><td style="border:none;" align="left">PureMechBERT Cased</td><td style="border:none;" align="left">4.90973747641&#x000a0;&#x000d7;&#x000a0;10<sup>&#x02013;5</sup></td><td style="border:none;" align="char" char=".">3</td><td style="border:none;" align="char" char=".">76</td></tr><tr><td style="border:none;" align="left">PureMechBERT Uncased</td><td style="border:none;" align="left">3.80820446232&#x000a0;&#x000d7;&#x000a0;10<sup>&#x02013;5</sup></td><td style="border:none;" align="char" char=".">4</td><td style="border:none;" align="char" char=".">60</td></tr></tbody></table></table-wrap><p>The variability in exact-match scores across
+different fine-tuning
+configurations is further illustrated in <xref rid="fig8" ref-type="fig">Figure <xref rid="fig8" ref-type="fig">8</xref></xref>; this showcases the top 100 performing hyperparameter
+configurations for fine-tuning MechBERT cased models on SQuAD v1 and
+v2, with the best performing model parameters being highlighted in
+red. Similar figures for each model can be found in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c00857/suppl_file/ci4c00857_si_001.pdf">Supporting Information</ext-link>. These further highlight
+the benefit of the extensive hyperparameter search performed herein.
+In particular, they demonstrate the advantage of Bayesian optimization
+over other methods, such as grid searching, where the optimal configuration
+may lie outside the predefined value ranges. For instance, grid-search
+approaches typically test a smaller set of parameter values, such
+as batch sizes of 16 and 32; learning rates of 5 &#x000d7; 10<sup>&#x02013;5</sup>, 3 &#x000d7; 10<sup>&#x02013;5</sup>, and 2 &#x000d7; 10<sup>&#x02013;5</sup>; or number of epochs ranging from 1 to 4.<sup><xref ref-type="bibr" rid="ref27">27</xref>,<xref ref-type="bibr" rid="ref28">28</xref></sup> If a similar method was employed in this study, the resulting performance
+of the fine-tuned models would be very different, and the best model
+configuration would be overlooked. In contrast, Bayesian optimization
+explores the hyperparameter space more efficiently and leads to the
+identification of configurations that significantly improve the model
+performance.</p><fig id="fig8" position="float"><label>Figure 8</label><caption><p>Summary of the top 100 hyperparameters found during the
+optimization
+of fine-tuned MechBERT cased models. All configurations are compared
+using the exact-match score and the best performing model is highlighted
+in red.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c00857_0008" id="gr8" position="float"/></fig><p>With these optimized hyperparameters,
+our eight fine-tuned models
+were evaluated for question-answering tasks to demonstrate their capability
+for use in information extraction. This evaluation encompassed both
+general-language and domain-specific tasks, using both SQuAD and a
+data set custom-built for this study. For comparison, the best performing
+BERT models that have been fine-tuned in related studies of material
+properties are sourced and tested against the same criteria.</p></sec><sec id="sec3.2"><title>Evaluating
+Question-Answering Performance</title><p>Performance
+was evaluated by tasking each model to identify the relevant answer
+to a given question within a context paragraph. These are provided
+in an evaluation data set that also contains the &#x0201c;ground-truth&#x0201d;
+answer to the question. If the predicted answer is identical to the
+ground-truth in its entirety, then it is considered to be correct
+and is assigned a score of 1. Conversely, if any part of the prediction
+deviates from the ground-truth, it is considered to be incorrect and
+assigned a score of 0. This is analogous to labeling the predicted
+answer as a &#x0201c;True Positive&#x0201d; or &#x0201c;False Positive&#x0201d;
+depending on its correctness. The exact-match score of a model is
+determined by calculating the percentage of predictions that have
+been correctly made. However, since an answer is correct or not, this
+metric does not consider answers that are mostly correct. For instance,
+the question &#x0201c;<italic>What is the Ultimate Tensile Strength
+(UTS) of Material X?</italic>&#x0201d; given a sentence &#x0201c;<italic>Material X has an UTS of 500 MPa</italic>&#x0201d; can be answered
+as either &#x0201c;<italic>500 MPa</italic>&#x0201d; or &#x0201c;<italic>UTS of 500 MPa</italic>&#x0201d; which are both correct, but only
+the one matching the ground-truth would be accepted, resulting in
+a potential false-positive labeling. To account for this, the general-language
+SQuAD data set owners crowd sourced their ground-truth answers, and
+as such, these data sets have multiple variations of answers to a
+single question. This allows the predictions to be compared to a greater
+variety of human-annotated answers, minimizing the possibility of
+factually correct predictions being disregarded. A byproduct of this
+approach is that the human-level performance can be deduced by comparing
+the crowd-sourced answers to each other; this demonstrated that humans
+performing question-answering tasks achieve an exact-match score ranging
+from 77 to 86% with little difference being observed between the SQuAD
+data set versions.</p><p>The domain-specific data set does not contain
+multiple variations of answers, as it was constructed using annotations
+from a single person (the first author of this paper). Instead, the
+F1 score can be used as a more reliable evaluation metric where each
+individual token in the prediction is compared to the ground-truth
+answer to calculate precision and recall. The definitions of precision,
+recall, and F1 score follow closely to the ones used in related papers.<sup><xref ref-type="bibr" rid="ref27">27</xref>,<xref ref-type="bibr" rid="ref28">28</xref></sup> In this case, precision describes the percentage of predicted tokens
+that are in the ground-truth and are correct, i.e., the accuracy,
+and recall captures the completeness of predictions by measuring the
+percentage of ground-truth tokens that appear in the predicted answer.
+As usual, the F1 score balances both precision and recall to determine
+the ability of the model to give accurate and complete answers and
+allows for evaluation that is not strictly &#x0201c;all-or-nothing&#x0201d;,
+unlike the exact-match score. These metrics are calculated using the
+following:<disp-formula id="eq1"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c00857_m001" position="anchor"/><label>1</label></disp-formula><disp-formula id="eq2"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c00857_m002" position="anchor"/><label>2</label></disp-formula><disp-formula id="eq3"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c00857_m003" position="anchor"/><label>3</label></disp-formula></p><sec id="sec3.1.1"><title>Evaluating General Text Question-Answering
+Performance</title><p>Summaries of the evaluation metrics on the general
+English-language
+data sets, SQuAD v1 and v2, are listed in <xref rid="tbl4" ref-type="other">Tables <xref rid="tbl4" ref-type="other">4</xref></xref> and <xref rid="tbl5" ref-type="other">5</xref>, respectively.
+Interestingly, all cased models in this study outperform their uncased
+counterparts, reflecting the trend in the loss function observed in
+their pretraining. This stands to reason since the cased variants
+have been provided with additional information such as the capitalization
+of proper nouns to help perform the masked-language modeling task,
+which also seems to carry over for question-answering tasks. Both
+cased and uncased versions of the MechBERT models maintain a similar
+level of performance to the BERT<sub>BASE</sub> model, with the cased
+version performing marginally better when dealing with only answerable
+questions (SQuAD v1). At the same time, MechBERT models perform slightly
+better than the BERT<sub>BASE</sub> models with the inclusion of unanswerable
+questions (SQuAD v2). This result may be due to the more optimized
+approach used to fine-tune the MechBERT models. Despite the pretraining
+corpus in this study being largely focused on scientific texts that
+are &#x0201c;out-of-scope&#x0201d; for the general English language
+question-answering task at hand, the further pretraining of MechBERT
+from the original BERT weights does not negatively impact the performance
+of our models on downstream general question-answering tasks.</p><table-wrap id="tbl4" position="float"><label>Table 4</label><caption><title>Model Performance on SQuAD v1</title></caption><table frame="hsides" rules="groups" border="0"><colgroup><col align="left"/><col align="char" char="."/><col align="char" char="."/></colgroup><thead><tr><th style="border:none;" align="center">model</th><th style="border:none;" align="center" char=".">exact-match (%)</th><th style="border:none;" align="center" char=".">F1 score
+(%)</th></tr></thead><tbody><tr><td style="border:none;" align="left">MechBERT Cased</td><td style="border:none;" align="char" char=".">81.41</td><td style="border:none;" align="char" char=".">88.61</td></tr><tr><td style="border:none;" align="left">MechBERT
+Uncased</td><td style="border:none;" align="char" char=".">80.41</td><td style="border:none;" align="char" char=".">87.95</td></tr><tr><td style="border:none;" align="left">PureMechBERT Cased</td><td style="border:none;" align="char" char=".">76.81</td><td style="border:none;" align="char" char=".">84.79</td></tr><tr><td style="border:none;" align="left">PureMechBERT Uncased</td><td style="border:none;" align="char" char=".">75.18</td><td style="border:none;" align="char" char=".">83.85</td></tr><tr><td style="border:none;" align="left">BERT<sub>BASE</sub><sup><xref ref-type="bibr" rid="ref17">17</xref></sup></td><td style="border:none;" align="char" char=".">80.80</td><td style="border:none;" align="char" char=".">88.50</td></tr><tr><td style="border:none;" align="left">BatteryOnlyBERT Cased<sup><xref ref-type="bibr" rid="ref27">27</xref></sup></td><td style="border:none;" align="char" char=".">79.61</td><td style="border:none;" align="char" char=".">87.30</td></tr><tr><td style="border:none;" align="left">BatteryOnlyBERT Uncased<sup><xref ref-type="bibr" rid="ref27">27</xref></sup></td><td style="border:none;" align="char" char=".">79.53</td><td style="border:none;" align="char" char=".">87.22</td></tr><tr><td style="border:none;" align="left">MatSciBERT<xref rid="t4fn1" ref-type="table-fn">a</xref><sup><xref ref-type="bibr" rid="ref35">35</xref></sup></td><td style="border:none;" align="char" char=".">77.42</td><td style="border:none;" align="char" char=".">85.73</td></tr></tbody></table><table-wrap-foot><fn id="t4fn1"><label>a</label><p>The MatSciBERT model was fine-tuned
+following the guidelines of the BERT<sub>BASE</sub> model.</p></fn></table-wrap-foot></table-wrap><table-wrap id="tbl5" position="float"><label>Table 5</label><caption><title>Model Performance
+on SQuAD v2</title></caption><table frame="hsides" rules="groups" border="0"><colgroup><col align="left"/><col align="char" char="."/><col align="char" char="."/></colgroup><thead><tr><th style="border:none;" align="center">model</th><th style="border:none;" align="center" char=".">exact-match (%)</th><th style="border:none;" align="center" char=".">F1 score (%)</th></tr></thead><tbody><tr><td style="border:none;" align="left">MechBERT Cased</td><td style="border:none;" align="char" char=".">74.84</td><td style="border:none;" align="char" char=".">77.95</td></tr><tr><td style="border:none;" align="left">MechBERT Uncased</td><td style="border:none;" align="char" char=".">74.78</td><td style="border:none;" align="char" char=".">77.89</td></tr><tr><td style="border:none;" align="left">PureMechBERT Cased</td><td style="border:none;" align="char" char=".">71.77</td><td style="border:none;" align="char" char=".">74.84</td></tr><tr><td style="border:none;" align="left">PureMechBERT Uncased</td><td style="border:none;" align="char" char=".">71.06</td><td style="border:none;" align="char" char=".">74.52</td></tr><tr><td style="border:none;" align="left">BERT<sub>BASE</sub> Cased<sup><xref ref-type="bibr" rid="ref17">17</xref>,<xref ref-type="bibr" rid="ref43">43</xref></sup></td><td style="border:none;" align="char" char=".">71.15</td><td style="border:none;" align="char" char=".">74.67</td></tr><tr><td style="border:none;" align="left">BERT<sub>BASE</sub> Uncased<sup><xref ref-type="bibr" rid="ref17">17</xref>,<xref ref-type="bibr" rid="ref43">43</xref></sup></td><td style="border:none;" align="char" char=".">73.68</td><td style="border:none;" align="char" char=".">77.88</td></tr><tr><td style="border:none;" align="left">MatSciBERT<xref rid="t5fn1" ref-type="table-fn">a</xref><sup><xref ref-type="bibr" rid="ref35">35</xref></sup></td><td style="border:none;" align="char" char=".">73.14</td><td style="border:none;" align="char" char=".">76.46</td></tr></tbody></table><table-wrap-foot><fn id="t5fn1"><label>a</label><p>The MatSciBERT
+model was fine-tuned
+following the guidelines of the BERT<sub>BASE</sub> model.</p></fn></table-wrap-foot></table-wrap><p>However, PureMechBERT models perform
+worse than MechBERT models
+since they were pretrained from scratch on purely the domain-specific
+corpus, which only shares 39% of the original BERT vocabulary. Thus,
+the general English-language knowledge that was already embedded into
+the original BERT weights is not present in PureMechBERT models, meaning
+that PureMechBERT models are not suited for downstream tasks that
+are primarily focused on general language. Moreover, the corpus used
+to pretrained PureMechBERT models is relatively small, meaning that
+these pretrained models were not supplied with enough samples of general
+English-language patterns to properly tackle such tasks. In comparison,
+BatteryBERT pretrains models from scratch (BatteryOnlyBERT) using
+a corpus that is almost 40% larger than those of PureMechBERT models;<sup><xref ref-type="bibr" rid="ref27">27</xref></sup> hence, performing better on question-answering
+tasks from SQuAD v1.</p><p>Overall, the results that evaluate the
+performance of our language
+models against general English-language question-answering tasks follow
+expectations. Across the board, models struggle with data sets containing
+unanswerable questions due to their added difficulty, and, as such,
+the exact-match scores are significantly lower for SQuAD v2 which
+is demonstrated in <xref rid="fig9" ref-type="fig">Figure <xref rid="fig9" ref-type="fig">9</xref></xref>. Extending the pretraining of a BERT model does improve the
+model's performance, with MechBERT performing slightly better
+than
+BERT<sub>BASE</sub> models. However, the overall improvements are
+minimal, which is, in part, due to the relatively small pretraining
+corpus used in this work. PureMechBERT models perform worse for general
+English-language question-answering tasks.</p><fig id="fig9" position="float"><label>Figure 9</label><caption><p>Model performance on
+general English-language question-answering
+from the SQuAD data sets. The best performing model on both tasks
+is the case variant of the MechBERT models.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c00857_0009" id="gr9" position="float"/></fig><p>However, to properly assess the benefit of the
+pretraining of the
+BERT models developed in this study, evaluation on a domain-specific
+question-answering set is required, as is discussed in the following
+section.</p></sec><sec id="sec3.1.2"><title>Evaluating Domain-Specific Question-Answering
+Performance</title><p>Our domain-specific data set consists of questions
+that are more
+relevant to stress&#x02013;strain information and, as such, are better
+equipped to evaluate the ability of our models to perform extractive
+tasks in the scientific domain. <xref rid="tbl6" ref-type="other">Table <xref rid="tbl6" ref-type="other">6</xref></xref> provides a summary of the evaluation metrics for each
+model, which are visualized in <xref rid="fig10" ref-type="fig">Figure <xref rid="fig10" ref-type="fig">10</xref></xref>. The metrics of all models that were tested
+can be found in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c00857/suppl_file/ci4c00857_si_001.pdf">Supporting Information</ext-link>. Note that, while the exact-match score may seem to be relatively
+low, this is a result of the question-answering data set containing
+only a single variation of an answer, as opposed to the multiple variations
+of answers that are contained in the general English-language SQuAD
+data sets described previously. Therefore, the F1 score gives a more
+complete description of model performance when assessing domain-specific
+question-answering on our evaluation data set.</p><table-wrap id="tbl6" position="float"><label>Table 6</label><caption><title>Performance of Each Fine-Tuned Model
+on the Domain-Specific Question-Answering Dataset<xref rid="t6fn1" ref-type="table-fn">a</xref></title></caption><table frame="hsides" rules="groups" border="0"><colgroup><col align="left"/><col align="left"/><col align="char" char="."/><col align="char" char="."/></colgroup><thead><tr><th style="border:none;" align="center">model version</th><th style="border:none;" align="center">model</th><th style="border:none;" align="center" char=".">exact</th><th style="border:none;" align="center" char=".">F1</th></tr></thead><tbody><tr><td rowspan="6" style="border:none;" align="left">SQuAD v1</td><td style="border:none;" align="left">MechBERT Cased</td><td style="border:none;" align="char" char=".">69.36</td><td style="border:none;" align="char" char=".">82.32</td></tr><tr><td style="border:none;" align="left">MechBERT Uncased</td><td style="border:none;" align="char" char=".">69.08</td><td style="border:none;" align="char" char=".">82.51</td></tr><tr><td style="border:none;" align="left">PureMechBERT Cased</td><td style="border:none;" align="char" char=".">69.36</td><td style="border:none;" align="char" char=".">83.50</td></tr><tr><td style="border:none;" align="left">PureMechBERT
+Uncased</td><td style="border:none;" align="char" char=".">67.92</td><td style="border:none;" align="char" char=".">81.75</td></tr><tr><td style="border:none;" align="left">BERT<sub>BASE</sub> Cased</td><td style="border:none;" align="char" char=".">40.75</td><td style="border:none;" align="char" char=".">60.91</td></tr><tr><td style="border:none;" align="left">BERT<sub>BASE</sub> Uncased</td><td style="border:none;" align="char" char=".">43.06</td><td style="border:none;" align="char" char=".">63.09</td></tr><tr><td rowspan="6" style="border:none;" align="left">SQuAD v2</td><td style="border:none;" align="left">MechBERT Cased</td><td style="border:none;" align="char" char=".">63.99</td><td style="border:none;" align="char" char=".">75.46</td></tr><tr><td style="border:none;" align="left">MechBERT Uncased</td><td style="border:none;" align="char" char=".">66.42</td><td style="border:none;" align="char" char=".">77.92</td></tr><tr><td style="border:none;" align="left">PureMechBERT Cased</td><td style="border:none;" align="char" char=".">67.88</td><td style="border:none;" align="char" char=".">78.58</td></tr><tr><td style="border:none;" align="left">PureMechBERT
+Uncased</td><td style="border:none;" align="char" char=".">63.75</td><td style="border:none;" align="char" char=".">75.12</td></tr><tr><td style="border:none;" align="left">BERT<sub>BASE</sub> Cased</td><td style="border:none;" align="char" char=".">40.15</td><td style="border:none;" align="char" char=".">53.19</td></tr><tr><td style="border:none;" align="left">BERT<sub>BASE</sub> Uncased</td><td style="border:none;" align="char" char=".">46.72</td><td style="border:none;" align="char" char=".">58.67</td></tr></tbody></table><table-wrap-foot><fn id="t6fn1"><label>a</label><p>The models fine-tuned
+on SQuAD v1
+are evaluated only on the answerable questions in the dataset. Models
+fine-tuned on SQuAD v2 are evaluated on the entire dataset.</p></fn></table-wrap-foot></table-wrap><fig id="fig10" position="float"><label>Figure 10</label><caption><p>Exact-match and F1 scores on the domain-specific
+data sets that
+contain 411 questions related to stress&#x02013;strain information.
+The &#x0201c;<italic>SQuAD v1-Like</italic>&#x0201d; results were derived
+from models fine-tuned on SQuAD v1 and were only evaluated on the
+answerable questions in the data set. The &#x0201c;<italic>SQuAD v2-Like</italic>&#x0201d; results were from models fine-tuned on SQuAD v2 that were
+evaluated for all questions, including unanswerable ones.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c00857_0010" id="gr10" position="float"/></fig><p>It is clear that the domain-specific pretraining
+of a BERT
+model
+massively improves its performance when given domain-specific question&#x02013;answer
+tasks, with all MechBERT variations performing over 20% better than
+their BERT<sub>BASE</sub> counterparts on our question-answering data
+set. Pretraining on the scientific text that describes stress-related
+properties embeds more useful knowledge into the language model, which
+significantly improves performance on downstream tasks within the
+target domain. This itself is an expected result; however, it is noteworthy
+that the PureMechBERT models maintain a similar level of proficiency
+to the MechBERT models, given that they are pretrained on a fraction
+of the data. In fact, PureMechBERT cased models, fine-tuned on both
+SQuAD v1 and v2, perform best when they are subjected to domain-specific
+question-answering tasks with F1 scores of 83.50 and 78.78%, respectively.
+As such, the relevancy of the pretraining corpus to the target domain
+of downstream tasks may hold greater importance than purely the amount
+and variety of pretraining data.</p><p>To determine whether the performance
+improvements of our language
+models are due to the corpus being generally scientific or if the
+topic specificity is of more importance, scientifically aligned BERT
+models were evaluated on the domain-specific question-answering data
+set. For this, we performed an evaluation on our models, once fine-tuned
+on question-answering tasks from SQuAD v1; this is so they could be
+compared directly to the best performing models found by Huang et
+al.<sup><xref ref-type="bibr" rid="ref27">27</xref></sup> and Zhao et al.<sup><xref ref-type="bibr" rid="ref28">28</xref></sup> which are specialized for the scientific domains of batteries
+and optical materials, respectively. Also included in our evaluation
+was the MatSciBERT<sup><xref ref-type="bibr" rid="ref35">35</xref></sup> model, which was pretrained
+on scientific language from the overarching domain of material science.
+A categorized scatter plot of the resulting performance metrics on
+the domain-specific evaluation data set is illustrated in <xref rid="fig11" ref-type="fig">Figure <xref rid="fig11" ref-type="fig">11</xref></xref>. Overall, BERT
+models that were pretrained on more scientific data performed better
+than the BERT<sub>BASE</sub> models that were pretrained on only the
+general English language. With increased domain specificity of the
+pretraining corpus, MechBERT models were able to outperform other
+scientific BERT models; for example, exact-match scores for PureMechBERT
+and MechBERT also afford the highest F1 scores, as shown in <xref rid="fig11" ref-type="fig">Figure <xref rid="fig11" ref-type="fig">11</xref></xref>. This result further
+highlights the impact of specialized pretraining, which can significantly
+improve the performance of extractive tasks within the domain of interest.
+This is particularly useful when incorporating language models into
+information-extraction systems, where the encountered context will
+be specific to the target domain; as such, a model with a depth of
+knowledge regarding language patterns in a particular domain is preferred.</p><fig id="fig11" position="float"><label>Figure 11</label><caption><p>Scatter
+plot depicting the domain-specific question-answering performance
+metrics of various cased and uncased BERT models fine-tuned on question-answering
+tasks from the SQuAD v1 data set. MechBERT includes all models created
+in this study, the BatteryBERT pretrained on only text pertaining
+to Battery by Huang et al.,<sup><xref ref-type="bibr" rid="ref27">27</xref></sup> OpticalBERT
+includes models trained by Zhao et al.,<sup><xref ref-type="bibr" rid="ref28">28</xref></sup> BERT represents the original base models by Devlin et al.<sup><xref ref-type="bibr" rid="ref17">17</xref></sup> and MatSciBERT from Gupta et al.<sup><xref ref-type="bibr" rid="ref35">35</xref></sup></p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c00857_0011" id="gr11" position="float"/></fig></sec><sec id="sec3.1.3"><title>Evaluating the Influence
+of the Size and Type of BERT Architecture
+on Domain-Specific Question-Answering Performance</title><p>During
+the course of this study, improvements to the BERT architecture were
+being developed, owing to the fast-moving nature of the field. Larger
+foundational BERT models that had been pretrained with many more data
+and with modified architectures were showcasing state-of-the-art results
+in question-answering tasks. To this end, the SQuAD v2 variants of
+the fine-tuned MechBERT models were compared to updated foundational
+language models that are primarily based on the BERT architecture,
+such as RoBERTa<sup><xref ref-type="bibr" rid="ref20">20</xref></sup> and DeBERTa,<sup><xref ref-type="bibr" rid="ref44">44</xref>,<xref ref-type="bibr" rid="ref45">45</xref></sup> using fine-tuned versions of these models produced by the Deepset
+team.<sup><xref ref-type="bibr" rid="ref43">43</xref></sup><xref rid="fig12" ref-type="fig">Figure <xref rid="fig12" ref-type="fig">12</xref></xref>a presents a performance comparison of BERT
+models that had been pretrained with a similar number of parameters
+employed in this study (approximately 110 million). <xref rid="fig12" ref-type="fig">Figure <xref rid="fig12" ref-type="fig">12</xref></xref>b presents the performance
+levels of BERT models that had been pretrained with many more parameters
+(exceeding 340 million parameters) relative to that of our MechBERT
+models.</p><fig id="fig12" position="float"><label>Figure 12</label><caption><p>Performance metrics of various BERT-based models when evaluated
+on domain-specific question-answering tasks. MatSciBERT,<sup><xref ref-type="bibr" rid="ref35">35</xref></sup> DeBERTa v3,<sup><xref ref-type="bibr" rid="ref45">45</xref></sup> BERT,<sup><xref ref-type="bibr" rid="ref17">17</xref></sup> RoBERTa,<sup><xref ref-type="bibr" rid="ref20">20</xref></sup> and SciBERT<sup><xref ref-type="bibr" rid="ref24">24</xref></sup> have approximately the same model size as our
+MechBERT models. DeBERTa<sub>LARGE</sub> v3, RoBERTa<sub>LARGE</sub>, and BERT<sub>LARGE</sub> are three times larger than our MechBERT
+model architecture.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c00857_0012" id="gr12" position="float"/></fig><p><xref rid="fig11" ref-type="fig">Figure <xref rid="fig11" ref-type="fig">11</xref></xref>a shows
+that the newer foundational BERT-model architectures demonstrate enhanced
+performance over the original BERT models, with F1 scores of 63.46
+and 74.82% being achieved on the domain-specific evaluation set for
+RoBERTa and DeBERTa v3, respectively. Indeed, the up-to-date foundational
+BERT architecture and improved pretraining objectives employed in
+the general English-language model, DeBERTa v3<sup><xref ref-type="bibr" rid="ref45">45</xref></sup> even outperforms SciBERT which was pretrained on the scientific
+literature and is thus theoretically more suited to domain-specific
+question-answering tasks. The MatSciBERT model, with a pretraining
+corpus that is closely related to MechBERT models, also demonstrates
+good performance. Nonetheless, MechBERT models maintain the best performance,
+exceeding the next best model by 7.78% in an exact-match score and
+3.76% in the F1 score. This superior performance is due to the specialized
+pretraining corpus and reinforces our conclusions made above. To reiterate,
+the domain-specificity of the corpus is crucial for the performance
+of BERT-based language models in downstream tasks within the target
+domain, as opposed to the size of the pretraining corpus alone.</p><p><xref rid="fig12" ref-type="fig">Figure <xref rid="fig12" ref-type="fig">12</xref></xref>b presents
+the level of performance of BERT models that had been pretrained on
+many more parameters (exceeding 340 million) relative to that of our
+MechBERT models. There is a prevailing assumption that larger foundational
+language models are more capable, given that they have been constructed
+using many more parameters and have been pretrained on a far more
+extensive corpus (of the order of 160 GB) and that they should therefore
+perform better on question-answering tasks than smaller language models.
+For example, the large variants, RoBERTa<sub>LARGE</sub> and DeBERTa<sub>LARGE</sub> v3, achieve significantly improved F1 scores of 84.03
+and 90.75% when fine-tuned with question-answering tasks from the
+general English-language SQuAD v2 data sets, respectively.<sup><xref ref-type="bibr" rid="ref20">20</xref>,<xref ref-type="bibr" rid="ref45">45</xref></sup> Notably, all MechBERT language models are at least three times smaller
+in terms of the number of parameters, and PureMechBERT models were
+pretrained with only 7.4 GB of text data. Nonetheless, all variants
+of our MechBERT models can compete with these larger BERT-based models.
+For example, the PureMechBERT cased model outperforms RoBERTa<sub>LARGE</sub> and BERT<sub>LARGE</sub> on domain-specific question-answering
+by 7.63 and 8.22% in F1 score, and 7.54 and 9.24% in exact-match score,
+respectively. In doing so, the smaller models are also able to process
+the samples at six times the speed of the larger models, making them
+more appealing for an information-extraction system that needs to
+balance precision with performance. This finding is also important
+from an energy sustainability perspective; smaller language models
+could offer a better economy through more modest energy consumption.</p><p>The only foundational language model that was deemed to be superior
+to the ones developed in this study is DeBERTa<sub>LARGE</sub> v3,
+as illustrated in <xref rid="fig12" ref-type="fig">Figure <xref rid="fig12" ref-type="fig">12</xref></xref>b. This is a direct result of the introduction of disentangled
+attention and a modified pretraining objective in the development
+of DeBERTa<sub>LARGE</sub> v3. In the original BERT models, a standard
+self-attention mechanism is used, and the pretraining objective is
+masked language modeling. In contrast, DeBERTa v3 disentangles this
+attention mechanism into two, one for word content and one for position,
+and uses the Replaced Token Detection pretraining objective.<sup><xref ref-type="bibr" rid="ref45">45</xref></sup> These architectural differences result in improved
+model performance for downstream tasks and present a potential avenue
+for further improvements for our MechBERT models. Nevertheless, the
+difference between PureMechBERT and DeBERTa v3 (2.19% in exact-match
+score and 3.9% in F1 score) is smaller than the difference between
+the MechBERT models and other large BERT-based models. Our models
+outperform BERT-based models of the same size and maintain relevancy
+when compared to larger BERT models for use in downstream tasks within
+stress&#x02013;strain-related domains. We have therefore demonstrated
+that our MechBERT models are powerful tools within the stress-engineering
+materials domain for extractive use cases. Moreover, they can compete
+with other state-of-the-art language models while being smaller in
+size, enabling faster processing and requiring a relatively small
+fraction of data to pretrain them. Our small language models therefore
+stand to offer a &#x0201c;win&#x02013;win&#x0201d; formula of greater
+operational efficiency by more energy-sustainable means.</p></sec></sec><sec id="sec3.3"><title>BERT Viz</title><p>The BERT architecture contains multiple attention
+heads that are used to process different aspects of a text sequence
+and learn the interrelations between words. A visualization of these
+attention patterns provides an intuitive view of how a language model
+views linguistic patterns and relationships. The attention patterns
+produced by the 12 attention heads in BERT and PureMechBERT models
+were obtained using the BertViz software<sup><xref ref-type="bibr" rid="ref46">46</xref></sup> on an example sentence sourced from the materials-engineering literature.
+For instance, <xref rid="fig13" ref-type="fig">Figure <xref rid="fig13" ref-type="fig">13</xref></xref> portrays a side-by-side view of how the BERT and PureMechBERT models
+relate the word <italic>&#x0201c;tensile&#x0201d;</italic> to other
+tokens in the sentence and provides a visual comparison of the understanding
+of scientific terminology by each model. The self-attention in this
+visualization is represented by a line connecting each token in the
+sequence, with a different color being used to distinguish the different
+attention heads. The weight of the connection reflects the attention
+score; more opaque colors represent stronger relations between the
+respective tokens. For the BERT<sub>BASE</sub> model, which was primarily
+pretrained on general English-language text, the relation of the word
+&#x0201c;<italic>tensile</italic>&#x0201d; is mostly focused on adjacent
+words, with no significant connections to mentions of material properties.
+In stark contrast, the attention heads in the PureMechBERT models
+display a high attention score between &#x0201c;<italic>tensile</italic>&#x0201d; and mentions of tensile properties, such as &#x0201c;<italic>UTS</italic>&#x0201d;, &#x0201c;<italic>YS</italic>&#x0201d;, and &#x0201c;<italic>ductility</italic>&#x0201d;.</p><fig id="fig13" position="float"><label>Figure 13</label><caption><p>Visualization of attention<sup><xref ref-type="bibr" rid="ref46">46</xref></sup> for BERT<sub>BASE</sub> and PureMechBERT models on the
+example sentence: &#x0201c;The
+corresponding tensile properties displayed low strength (570 MPa yield
+strength (YS) and 1011 MPa UTS) and high ductility (35.6% TEL)&#x0201d;.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c00857_0013" id="gr13" position="float"/></fig><p>As such, there is evidence that domain-specific
+pretraining allows
+the PureMechBERT models to capture the unique contextual relations
+between stress&#x02013;strain properties which a general purpose language
+model cannot see. Qualitatively, this suggests that the PureMechBERT
+models, and MechBERT models to a lesser extent, have embedded knowledge
+of tensile properties and their representations within text that can
+be utilized for downstream tasks; from this, we presume that the same
+is true of other stress&#x02013;strain properties. Moreover, it is
+worth remembering that these models have been learned from unlabeled
+text automatically, without the laborious task of manually designing
+such complex representations, thereby overcoming the limitations present
+in conventional information-extraction systems.</p></sec></sec><sec id="sec4"><title>Conclusions</title><p>In summary, four language models based
+on the BERT architecture
+have been pretrained using text sourced from the stress&#x02013;strain-related
+scientific literature: MechBERT cased and uncased models were initialized
+from the original BERT weights, while PureMechBERT cased and uncased
+models were initialized from scratch. These models were fine-tuned
+for general English-language question-answering tasks using the SQuAD
+v1 and v2 data sets, resulting in eight fine-tuned models ready for
+extractive use cases. Bayesian optimization was employed to discover
+the best hyperparameter combination for fine-tuning, which proved
+to be useful as the exact-match score could deviate by 6.1% on average
+depending on the model configuration. Evaluation was conducted using
+the general English-language SQuAD data sets, and it was found that
+the further pretraining did not negatively affect the performance
+of MechBERT models and, in most cases, offered improvements when compared
+to the original BERT models.</p><p>An additional evaluation set was
+constructed using an annotation
+tool that was custom-built for this work which followed the guidelines
+of the SQuAD data sets. This contained questions and answers that
+specifically relate to stress&#x02013;strain properties, with the context
+being sourced from articles that are not in the pretraining corpus;
+as such, the data set is better equipped to evaluate the performance
+of the language models on domain-specific downstream tasks.</p><p>It was found that the MechBERT models outperform others on question-answering
+tasks within the materials-engineering domain. The best-performing
+model, for both SQuAD v1 and v2 versions, was the PureMechBERT cased
+variant. This outperformed other models, even those that were larger
+and pretrained on more data, demonstrating the significant benefit
+of focused pretraining for use cases within a specific field. To the
+best of our knowledge, these models are the first Transformer-based
+language models that are specialized in stress&#x02013;strain information
+and showcase elevated performance for in-domain extractive tasks.</p><p>This paper has exemplified an alternative approach to information
+extraction in domains of research that rely on specialist vernacular;
+this approach overcomes the problems faced with conventional NLP-based
+methods through the use of domain-specific language models. The variants
+of our MechBERT models automatically learn the linguistic patterns
+of scientific text. Meanwhile, an understanding of stress&#x02013;strain
+property semantic relations is embedded into the model, owing to the
+specificity of the pretraining corpus; a task that is complex and
+difficult to approach manually. A visualization of the attention patterns
+of MechBERT models provides evidence that some understanding of tensile
+properties and their semantic relation to one another is embedded
+during the pretraining stages of the language models. The same level
+of understanding is not present in general English-language BERT models.
+As such, it is reasonable to assume that the domain-specific knowledge
+representations have automatically been learned and can be utilized
+for not only information-extraction purposes but also other downstream
+NLP tasks.</p><p>The extractive capabilities of these property-specific
+language
+models have been showcased; it has been demonstrated that MechBERT
+variants outperform related models on question-answering tasks surrounding
+stress&#x02013;strain information, with an increase of 25.39% (answerable
+questions) and 22.59% (unanswerable questions included) in the F1
+score over BERT<sub>BASE</sub> counterparts. Due to the nature by
+which extractive questions target information about materials and
+their associated properties, the improvements in performance highlight
+that the stages which one would normally associate with a conventional
+information-extraction pipeline have been properly learnt by the language
+model, and they can therefore be successfully implemented for the
+purpose of information extraction. While further testing is required
+to determine the efficacy of these language models in a fully fledged
+information-extraction system, initial results show that MechBERT
+models are capable of achieving an F1 score of up to 83.50% in extractive
+tasks within the domain.</p><p>As a secondary observation, the significant
+impact of specialized
+pretraining for downstream performance within that domain has been
+realized. PureMechBERT models have been found to outperform other
+language models on the domain-specific evaluation set, even those
+that have more pretraining data that are still closely related, such
+as MatSciBERT,<sup><xref ref-type="bibr" rid="ref35">35</xref></sup> SciBERT,<sup><xref ref-type="bibr" rid="ref24">24</xref></sup> and other scientifically aligned BERT models. PureMechBERT
+impressively outperformed larger BERT-based language models, such
+as BERT<sub>LARGE</sub> and RoBERTa<sub>LARGE</sub>, in domain-specific
+question-answering tasks. These large variants are three times the
+size of our MechBERT models, in terms of model parameters and have
+been pretrained on many more data; for example, the RoBERTa and DeBERTa
+v3 models have been pretrained on a total of 160 GB of text data.<sup><xref ref-type="bibr" rid="ref20">20</xref>,<xref ref-type="bibr" rid="ref45">45</xref></sup> In comparison, the PureMechBERT models have been pretrained on only
+a 7.4 GB corpus, i.e., less than 5% of the larger models; yet they
+are still able to achieve better results on the domain-specific data
+set by 7.63 and 7.54% in F1 score and exact-match score, respectively,
+when compared to RoBERTa<sub>LARGE</sub>. Our PureMechBERT model is
+able to outperform the DeBERTa v3 model of the same size; although,
+it is beaten by the large DeBERTa v3 variant. Despite this, the disparity
+between PureMechBERT and DeBERTa<sub>LARGE</sub> v3 models (3.9% F1
+score and 2.19% exact-match score) is smaller than that between the
+PureMechBERT model and other large BERT models. Moreover, since PureMechBERT
+is a much smaller model than DeBERTa<sub>LARGE</sub> v3, it is able
+to process samples at a rate six times faster. This is valuable for
+information-extraction systems, which need to balance precision with
+performance. This finding has pertinent implications for language-model
+applications from a perspective of improving the operational efficiency
+of AI-based processes while simultaneously gaining energy sustainability.</p></sec></body><back><notes notes-type="data-availability" id="notes2"><title>Data Availability Statement</title><p>All of the scripts
+used to pretrain the MechBERT and PureMechBERT models are available
+online, as is the code that was used to process and evaluate the models.<sup><xref ref-type="bibr" rid="ref48">48</xref></sup> The QAannotation tool used to create the domain-specific
+evaluation data set is available online.<sup><xref ref-type="bibr" rid="ref42">42</xref></sup> The evaluation data set itself is provided in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c00857/suppl_file/ci4c00857_si_001.pdf">Supporting Information</ext-link>. The pretrained and fine-tuned models
+are available on the Molecular Engineering Group HuggingFace.<sup><xref ref-type="bibr" rid="ref49">49</xref></sup></p></notes><notes id="notes3" notes-type="si"><title>Supporting Information Available</title><p>The Supporting Information is
+available free of charge at <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/10.1021/acs.jcim.4c00857?goto=supporting-info">https://pubs.acs.org/doi/10.1021/acs.jcim.4c00857</ext-link>.<list id="silist" list-type="simple"><list-item><p>Details on pretraining
+hyperparameters, fine-tuning
+hyperparameter optimization, domain-specific evaluation summary for
+all models tested; document object identifiers (DOIs) for each paper
+that was used as the input corpus that trained the MechBERT models
+(partitioned into three DOI lists that pertain to papers from three
+publishing houses); and discussion and comparison between ChatGPT
+and our MechBERT models in the context of extractive question-answering
+for research studies (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c00857/suppl_file/ci4c00857_si_001.pdf">PDF</ext-link>)</p></list-item></list></p></notes><sec sec-type="supplementary-material"><title>Supplementary Material</title><supplementary-material content-type="local-data" id="sifile1"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c00857_si_001.pdf"><caption><p>ci4c00857_si_001.pdf</p></caption></media></supplementary-material></sec><notes notes-type="" id="notes1"><title>Author Present Address</title><p><sup>&#x02225;</sup> Neutron Sciences Directorate, One Bethel Valley Rd, Oak Ridge,
+Tennessee 37831, United States</p></notes><notes notes-type="" id="notes4"><title>Author Contributions</title><p>J.M.C. conceived
+the overarching project. J.M.C., S.K., and P.K. designed the study.
+P.K. performed the model pretraining and fine-tuning, data extraction,
+and analyzed the data under the PhD supervision of J.M.C. and cosupervision
+of S.K. P.K. drafted the manuscript with assistance from J.M.C. The
+final manuscript was read and approved by all authors.</p></notes><notes notes-type="COI-statement" id="notes5"><p>The authors
+declare no competing financial interest.</p></notes><ack><title>Acknowledgments</title><p>J.M.C. is grateful
+for the BASF/Royal Academy of
+Engineering Research Chair in Data-Driven Molecular Engineering of
+Functional Materials, which is partly sponsored by the Science and
+Technology Facilities Council (STFC) via the ISIS Neutron and Muon
+Source; this Chair also supports a PhD studentship (for P.K.). Shu
+Huang and Taketomo Isazawa from the Molecular Engineering group, Cavendish
+Laboratory, University of Cambridge, are thanked for their technical
+assistance. The authors are indebted to the Argonne Leadership Computing
+Facility, which is a DOE Office of Science Facility, for use of its
+research resources, under contract No. DE-AC02-06CH11357.</p></ack><ref-list><title>References</title><ref id="ref1"><mixed-citation publication-type="journal" id="cit1"><name><surname>Olivetti</surname><given-names>E. A.</given-names></name>; <name><surname>Cole</surname><given-names>J. M.</given-names></name>; <name><surname>Kim</surname><given-names>E.</given-names></name>; <name><surname>Kononova</surname><given-names>O.</given-names></name>; <name><surname>Ceder</surname><given-names>G.</given-names></name>; <name><surname>Han</surname><given-names>T. Y.-J.</given-names></name>; <name><surname>Hiszpanski</surname><given-names>A. M.</given-names></name>
+<article-title>Data-driven materials research enabled
+by natural language processing and information extraction</article-title>. <source>Appl. Phys. Rev.</source>
+<year>2020</year>, <volume>7</volume>, <fpage>041317</fpage><pub-id pub-id-type="doi">10.1063/5.0021106</pub-id>.</mixed-citation></ref><ref id="ref2"><mixed-citation publication-type="journal" id="cit2"><name><surname>Cole</surname><given-names>J. M.</given-names></name>
+<article-title>A Design-to-Device
+Pipeline for Data-Driven Materials Discovery</article-title>. <source>Acc. Chem. Res.</source>
+<year>2020</year>, <volume>53</volume>, <fpage>599</fpage>&#x02013;<lpage>610</lpage>. <pub-id pub-id-type="doi">10.1021/acs.accounts.9b00470</pub-id>.<pub-id pub-id-type="pmid">32096410</pub-id>
+</mixed-citation></ref><ref id="ref3"><mixed-citation publication-type="journal" id="cit3"><name><surname>Swain</surname><given-names>M. C.</given-names></name>; <name><surname>Cole</surname><given-names>J. M.</given-names></name>
+<article-title>ChemDataExtractor: A Toolkit for
+Automated Extraction
+of Chemical Information from the Scientific Literature</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2016</year>, <volume>56</volume>, <fpage>1894</fpage>&#x02013;<lpage>1904</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.6b00207</pub-id>.<pub-id pub-id-type="pmid">27669338</pub-id>
+</mixed-citation></ref><ref id="ref4"><mixed-citation publication-type="journal" id="cit4"><name><surname>Mavra&#x0010d;i&#x00107;</surname><given-names>J.</given-names></name>; <name><surname>Court</surname><given-names>C. J.</given-names></name>; <name><surname>Isazawa</surname><given-names>T.</given-names></name>; <name><surname>Elliott</surname><given-names>S. R.</given-names></name>; <name><surname>Cole</surname><given-names>J. M.</given-names></name>
+<article-title>ChemDataExtractor
+2.0: Autopopulated Ontologies for Materials Science</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2021</year>, <volume>61</volume>, <fpage>4280</fpage>&#x02013;<lpage>4289</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.1c00446</pub-id>.<pub-id pub-id-type="pmid">34529432</pub-id>
+</mixed-citation></ref><ref id="ref5"><mixed-citation publication-type="journal" id="cit5"><name><surname>Isazawa</surname><given-names>T.</given-names></name>; <name><surname>Cole</surname><given-names>J. M.</given-names></name>
+<article-title>Single Model for Organic and Inorganic
+Chemical Named
+Entity Recognition in ChemDataExtractor</article-title>. <source>J.
+Chem. Inf. Model.</source>
+<year>2022</year>, <volume>62</volume>, <fpage>1207</fpage>&#x02013;<lpage>1213</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.1c01199</pub-id>.<pub-id pub-id-type="pmid">35199519</pub-id>
+</mixed-citation></ref><ref id="ref6"><mixed-citation publication-type="journal" id="cit6"><name><surname>Isazawa</surname><given-names>T.</given-names></name>; <name><surname>Cole</surname><given-names>J. M.</given-names></name>
+<article-title>Automated Construction of a Photocatalysis
+Dataset
+for Water-Splitting Applications</article-title>. <source>Sci. Data</source>
+<year>2023</year>, <volume>10</volume>, <fpage>651</fpage><pub-id pub-id-type="doi">10.1038/s41597-023-02511-6</pub-id>.<pub-id pub-id-type="pmid">37739960</pub-id>
+</mixed-citation></ref><ref id="ref7"><mixed-citation publication-type="journal" id="cit7"><name><surname>Sierepeklis</surname><given-names>O.</given-names></name>; <name><surname>Cole</surname><given-names>J. M.</given-names></name>
+<article-title>A thermoelectric materials database
+auto-generated
+from the scientific literature using ChemDataExtractor</article-title>. <source>Sci. Data</source>
+<year>2022</year>, <volume>9</volume>, <fpage>648</fpage><pub-id pub-id-type="doi">10.1038/s41597-022-01752-1</pub-id>.<pub-id pub-id-type="pmid">36272983</pub-id>
+</mixed-citation></ref><ref id="ref8"><mixed-citation publication-type="journal" id="cit8"><name><surname>Zhao</surname><given-names>J.</given-names></name>; <name><surname>Cole</surname><given-names>J. M.</given-names></name>
+<article-title>A database of refractive
+indices and dielectric constants
+auto-generated using ChemDataExtractor</article-title>. <source>Sci.
+Data</source>
+<year>2022</year>, <volume>9</volume>, <fpage>192</fpage><pub-id pub-id-type="doi">10.1038/s41597-022-01295-5</pub-id>.<pub-id pub-id-type="pmid">35504964</pub-id>
+</mixed-citation></ref><ref id="ref9"><mixed-citation publication-type="journal" id="cit9"><name><surname>Huang</surname><given-names>D.</given-names></name>; <name><surname>Cole</surname><given-names>J. M.</given-names></name>
+<article-title>A database of thermally activated
+delayed fluorescent
+molecules auto-generated from scientific literature with ChemDataExtractor</article-title>. <source>Sci. Data</source>
+<year>2024</year>, <volume>11</volume>, <fpage>80</fpage><pub-id pub-id-type="doi">10.1038/s41597-023-02897-3</pub-id>.<pub-id pub-id-type="pmid">38233439</pub-id>
+</mixed-citation></ref><ref id="ref10"><mixed-citation publication-type="journal" id="cit10"><name><surname>Dong</surname><given-names>Q.</given-names></name>; <name><surname>Cole</surname><given-names>J. M.</given-names></name>
+<article-title>Auto-generated database
+of semiconductor band gaps
+using ChemDataExtractor</article-title>. <source>Sci. Data</source>
+<year>2022</year>, <volume>9</volume>, <fpage>193</fpage><pub-id pub-id-type="doi">10.1038/s41597-022-01294-6</pub-id>.<pub-id pub-id-type="pmid">35504897</pub-id>
+</mixed-citation></ref><ref id="ref11"><mixed-citation publication-type="journal" id="cit11"><name><surname>Court</surname><given-names>C. J.</given-names></name>; <name><surname>Cole</surname><given-names>J. M.</given-names></name>
+<article-title>Auto-generated materials database
+of Curie and N&#x000e9;el
+temperatures via semi-supervised relationship extraction</article-title>. <source>Sci. Data</source>
+<year>2018</year>, <volume>5</volume>, <fpage>180111</fpage><pub-id pub-id-type="doi">10.1038/sdata.2018.111</pub-id>.<pub-id pub-id-type="pmid">29917013</pub-id>
+</mixed-citation></ref><ref id="ref12"><mixed-citation publication-type="journal" id="cit12"><name><surname>Huang</surname><given-names>S.</given-names></name>; <name><surname>Cole</surname><given-names>J. M.</given-names></name>
+<article-title>A database of battery
+materials auto-generated using
+ChemDataExtractor</article-title>. <source>Sci. Data</source>
+<year>2020</year>, <volume>7</volume>, <fpage>260</fpage><pub-id pub-id-type="doi">10.1038/s41597-020-00602-2</pub-id>.<pub-id pub-id-type="pmid">32764659</pub-id>
+</mixed-citation></ref><ref id="ref13"><mixed-citation publication-type="journal" id="cit13"><name><surname>Beard</surname><given-names>E. J.</given-names></name>; <name><surname>Sivaraman</surname><given-names>G.</given-names></name>; <name><surname>V&#x000e1;zquez-Mayagoitia</surname><given-names>A.</given-names></name>; <name><surname>Vishwanath</surname><given-names>V.</given-names></name>; <name><surname>Cole</surname><given-names>J. M.</given-names></name>
+<article-title>Comparative dataset of experimental and computational
+attributes of UV/vis absorption spectra</article-title>. <source>Sci.
+Data</source>
+<year>2019</year>, <volume>6</volume>, <fpage>307</fpage><pub-id pub-id-type="doi">10.1038/s41597-019-0306-0</pub-id>.<pub-id pub-id-type="pmid">31804487</pub-id>
+</mixed-citation></ref><ref id="ref14"><mixed-citation publication-type="journal" id="cit14"><name><surname>Kumar</surname><given-names>P.</given-names></name>; <name><surname>Kabra</surname><given-names>S.</given-names></name>; <name><surname>Cole</surname><given-names>J. M.</given-names></name>
+<article-title>Auto-generating
+databases of Yield
+Strength and Grain Size using ChemDataExtractor</article-title>. <source>Scientific Data</source>
+<year>2022</year>, <volume>9</volume>, <fpage>292</fpage><pub-id pub-id-type="doi">10.1038/s41597-022-01301-w</pub-id>.</mixed-citation></ref><ref id="ref15"><mixed-citation publication-type="journal" id="cit15"><name><surname>Hall</surname><given-names>E. O.</given-names></name>
+<article-title>The Deformation
+and Ageing of Mild Steel: III Discussion of Results</article-title>. <source>Proceedings of the Physical Society. Section B</source>
+<year>1951</year>, <volume>64</volume>, <fpage>747</fpage>&#x02013;<lpage>753</lpage>. <pub-id pub-id-type="doi">10.1088/0370-1301/64/9/303</pub-id>.</mixed-citation></ref><ref id="ref16"><mixed-citation publication-type="book" id="cit16"><person-group person-group-type="allauthors"><name><surname>Vaswani</surname><given-names>A.</given-names></name>; <name><surname>Shazeer</surname><given-names>N.</given-names></name>; <name><surname>Parmar</surname><given-names>N.</given-names></name>; <name><surname>Uszkoreit</surname><given-names>J.</given-names></name>; <name><surname>Jones</surname><given-names>L.</given-names></name>; <name><surname>Gomez</surname><given-names>A. N.</given-names></name>; <name><surname>Kaiser</surname><given-names>L.</given-names></name>; <name><surname>Polosukhin</surname><given-names>I.</given-names></name></person-group><article-title>Attention
+is All You Need</article-title>. In <source>NIPS'17: Proceedings
+of the 31st International Conference
+on Neural Information Processing Systems</source>; <publisher-name>Curran Associates Inc.</publisher-name>, <year>2017</year>.</mixed-citation></ref><ref id="ref17"><mixed-citation publication-type="book" id="cit17"><person-group person-group-type="allauthors"><name><surname>Devlin</surname><given-names>J.</given-names></name>; <name><surname>Chang</surname><given-names>M.-W.</given-names></name>; <name><surname>Lee</surname><given-names>K.</given-names></name>; <name><surname>Toutanova</surname><given-names>K.</given-names></name></person-group><article-title>BERT: Pre-training of Deep Bidirectional
+Transformers for Language Understanding</article-title>. In <source>Proceedings of the 2019 Conference of the North American Chapter
+of the Association for Computational Linguistics</source>; <publisher-name>Human Language Technologies, Vol. 1 (Long and Short Papers)</publisher-name>: <publisher-loc>Minneapolis, MN</publisher-loc>, <year>2019</year>; pp <fpage>4171</fpage>&#x02013;<lpage>4186</lpage>.</mixed-citation></ref><ref id="ref18"><mixed-citation publication-type="book" id="cit18"><person-group person-group-type="allauthors"><name><surname>Brown</surname><given-names>T. B.</given-names></name></person-group><etal/><article-title>Language Models are Few-Shot Learners</article-title>. In <source>NIPS'20: Proceedings of the 34th International Conference on
+Neural
+Information Processing Systems</source>; <publisher-name>Curran Associates
+Inc.</publisher-name>, <year>2020</year>.</mixed-citation></ref><ref id="ref19"><mixed-citation publication-type="journal" id="cit19"><name><surname>Radford</surname><given-names>A.</given-names></name>; <name><surname>Wu</surname><given-names>J.</given-names></name>; <name><surname>Child</surname><given-names>R.</given-names></name>; <name><surname>Luan</surname><given-names>D.</given-names></name>; <name><surname>Amodei</surname><given-names>D.</given-names></name>; <name><surname>Sutskever</surname><given-names>I.</given-names></name>
+<article-title>Language Models
+are Unsupervised Multitask Learners</article-title>. <source>OpenAI
+Blog</source>
+<year>2019</year>, <volume>1</volume>, <fpage>9</fpage>.</mixed-citation></ref><ref id="ref20"><mixed-citation publication-type="journal" id="cit20"><person-group person-group-type="allauthors"><name><surname>Liu</surname><given-names>Y.</given-names></name>; <name><surname>Ott</surname><given-names>M.</given-names></name>; <name><surname>Goyal</surname><given-names>N.</given-names></name>; <name><surname>Du</surname><given-names>J.</given-names></name>; <name><surname>Joshi</surname><given-names>M.</given-names></name>; <name><surname>Chen</surname><given-names>D.</given-names></name>; <name><surname>Levy</surname><given-names>O.</given-names></name>; <name><surname>Lewis</surname><given-names>M.</given-names></name>; <name><surname>Zettlemoyer</surname><given-names>L.</given-names></name>; <name><surname>Stoyanov</surname><given-names>V.</given-names></name></person-group><article-title>RoBERTa:
+A Robustly
+Optimized BERT Pretraining Approach</article-title>. <year>2019</year>, arXiv:1907.11692.</mixed-citation></ref><ref id="ref21"><mixed-citation publication-type="journal" id="cit21"><person-group person-group-type="allauthors"><name><surname>Raffel</surname><given-names>C.</given-names></name>; <name><surname>Shazeer</surname><given-names>N.</given-names></name>; <name><surname>Roberts</surname><given-names>A.</given-names></name>; <name><surname>Lee</surname><given-names>K.</given-names></name>; <name><surname>Narang</surname><given-names>S.</given-names></name>; <name><surname>Matena</surname><given-names>M.</given-names></name>; <name><surname>Zhou</surname><given-names>Y.</given-names></name>; <name><surname>Li</surname><given-names>W.</given-names></name>; <name><surname>Liu</surname><given-names>P. J.</given-names></name></person-group><article-title>Exploring the Limits of Transfer Learning with a
+Unified Text-to-Text Transformer</article-title>. <year>2023</year>, arXiv:1910.10683.</mixed-citation></ref><ref id="ref22"><mixed-citation publication-type="journal" id="cit22"><name><surname>Lee</surname><given-names>J.</given-names></name>; <name><surname>Yoon</surname><given-names>W.</given-names></name>; <name><surname>Kim</surname><given-names>S.</given-names></name>; <name><surname>Kim</surname><given-names>D.</given-names></name>; <name><surname>Kim</surname><given-names>S.</given-names></name>; <name><surname>So</surname><given-names>C. H.</given-names></name>; <name><surname>Kang</surname><given-names>J.</given-names></name>
+<article-title>BioBERT: a pre-trained
+biomedical
+language representation model for biomedical text mining</article-title>. <source>Bioinformatics</source>
+<year>2020</year>, <volume>36</volume>, <fpage>1234</fpage>&#x02013;<lpage>1240</lpage>. <pub-id pub-id-type="doi">10.1093/bioinformatics/btz682</pub-id>.<pub-id pub-id-type="pmid">31501885</pub-id>
+</mixed-citation></ref><ref id="ref23"><mixed-citation publication-type="journal" id="cit23"><name><surname>Huang</surname><given-names>A.</given-names></name>; <name><surname>Wang</surname><given-names>H.</given-names></name>; <name><surname>Yang</surname><given-names>Y.</given-names></name>
+<article-title>FinBERT&#x02014;A Deep
+Learning Approach
+to Extracting Textual Information</article-title>. <source>SSRN Electron.
+J.</source>
+<year>2023</year>, <volume>40</volume>, <fpage>806</fpage>&#x02013;<lpage>841</lpage>. <pub-id pub-id-type="doi">10.1111/1911-3846.12832</pub-id>.</mixed-citation></ref><ref id="ref24"><mixed-citation publication-type="book" id="cit24"><person-group person-group-type="allauthors"><name><surname>Beltagy</surname><given-names>I.</given-names></name>; <name><surname>Lo</surname><given-names>K.</given-names></name>; <name><surname>Cohan</surname><given-names>A.</given-names></name></person-group><article-title>SciBERT:
+A Pretrained Language Model
+for Scientific Text</article-title>. In <source>Proceedings of the
+2019 Conference on Empirical Methods in Natural Language Processing
+and the 9th International Joint Conference on Natural Language Processing
+(EMNLP-IJCNLP)</source>; <publisher-name>Association for Computational
+Linguistics</publisher-name>: <publisher-loc>Hong Kong, China</publisher-loc>, <year>2019</year>; pp <fpage>3615</fpage>&#x02013;<lpage>3620</lpage>.</mixed-citation></ref><ref id="ref25"><mixed-citation publication-type="journal" id="cit25"><person-group person-group-type="allauthors"><name><surname>Chithrananda</surname><given-names>S.</given-names></name>; <name><surname>Grand</surname><given-names>G.</given-names></name>; <name><surname>Ramsundar</surname><given-names>B.</given-names></name></person-group><article-title>ChemBERTa:
+Large-Scale
+Self-Supervised Pretraining for Molecular Property Prediction</article-title>. <year>2020</year>, arXiv:2010.09885.</mixed-citation></ref><ref id="ref26"><mixed-citation publication-type="book" id="cit26"><person-group person-group-type="allauthors"><name><surname>Martin</surname><given-names>L.</given-names></name>; <name><surname>Muller</surname><given-names>B.</given-names></name>; <name><surname>Ortiz Su&#x000e1;rez</surname><given-names>P. J.</given-names></name>; <name><surname>Dupont</surname><given-names>Y.</given-names></name>; <name><surname>Romary</surname><given-names>L.</given-names></name>; <name><surname>de la Clergerie</surname><given-names>E.</given-names></name>; <name><surname>Seddah</surname><given-names>D.</given-names></name>; <name><surname>Sagot</surname><given-names>B.</given-names></name></person-group><article-title>CamemBERT: a Tasty
+French Language Model</article-title>. In <source>Proceedings of the
+58th Annual Meeting of the Association for Computational Linguistics</source>; <publisher-name>Association for Computational Linguistics</publisher-name>, <year>2020</year>.</mixed-citation></ref><ref id="ref27"><mixed-citation publication-type="journal" id="cit27"><name><surname>Huang</surname><given-names>S.</given-names></name>; <name><surname>Cole</surname><given-names>J. M.</given-names></name>
+<article-title>BatteryBERT: A Pretrained
+Language Model for Battery
+Database Enhancement</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2022</year>, <volume>62</volume>, <fpage>6365</fpage>&#x02013;<lpage>6377</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.2c00035</pub-id>.<pub-id pub-id-type="pmid">35533012</pub-id>
+</mixed-citation></ref><ref id="ref28"><mixed-citation publication-type="journal" id="cit28"><name><surname>Zhao</surname><given-names>J.</given-names></name>; <name><surname>Huang</surname><given-names>S.</given-names></name>; <name><surname>Cole</surname><given-names>J. M.</given-names></name>
+<article-title>OpticalBERT
+and OpticalTable-SQA:
+Text- and Table-Based Language Models for the Optical-Materials Domain</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2023</year>, <volume>63</volume>, <fpage>1961</fpage>&#x02013;<lpage>1981</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.2c01259</pub-id>.<pub-id pub-id-type="pmid">36940385</pub-id>
+</mixed-citation></ref><ref id="ref29"><mixed-citation publication-type="journal" id="cit29"><person-group person-group-type="allauthors"><name><surname>Wolf</surname><given-names>T.</given-names></name></person-group><etal/><article-title>HuggingFace&#x02019;s Transformers: State-of-the-art Natural Language
+Processing</article-title>. <year>2020</year>, arXiv:1910.03771.</mixed-citation></ref><ref id="ref30"><mixed-citation publication-type="weblink" id="cit30"><uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.crossref.org/">http://www.crossref.org/</uri> (accessed
+April 2024).</mixed-citation></ref><ref id="ref31"><mixed-citation publication-type="journal" id="cit31"><name><surname>Zhu</surname><given-names>M.</given-names></name>; <name><surname>Cole</surname><given-names>J. M.</given-names></name>
+<article-title>PDFDataExtractor:
+A Tool for Reading Scientific Text
+and Interpreting Metadata from the Typeset Literature in the Portable
+Document Format</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2022</year>, <volume>62</volume>, <fpage>1633</fpage>&#x02013;<lpage>1643</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.1c01198</pub-id>.<pub-id pub-id-type="pmid">35349259</pub-id>
+</mixed-citation></ref><ref id="ref32"><mixed-citation publication-type="book" id="cit32"><person-group person-group-type="allauthors"><name><surname>Zhu</surname><given-names>Y.</given-names></name>; <name><surname>Kiros</surname><given-names>R.</given-names></name>; <name><surname>Zemel</surname><given-names>R.</given-names></name>; <name><surname>Salakhutdinov</surname><given-names>R.</given-names></name>; <name><surname>Urtasun</surname><given-names>R.</given-names></name>; <name><surname>Torralba</surname><given-names>A.</given-names></name>; <name><surname>Fidler</surname><given-names>S.</given-names></name></person-group><article-title>Aligning Books
+and Movies:
+Towards Story-like Visual Explanations by Watching Movies and Reading
+Books</article-title>. In <source>2015 IEEE International Conference
+on Computer Vision (ICCV)</source>; <publisher-name>IEEE</publisher-name>, <year>2015</year>.</mixed-citation></ref><ref id="ref33"><mixed-citation publication-type="book" id="cit33"><person-group person-group-type="allauthors"><name><surname>Hoffmann</surname><given-names>J.</given-names></name></person-group><etal/><article-title>Training Compute-Optimal Large Language Models</article-title>. In <source>Proceedings of the 36th International Conference on Neural Information
+Processing Systems</source>; <publisher-name>Curran Associates Inc.</publisher-name>, <year>2022</year>.</mixed-citation></ref><ref id="ref34"><mixed-citation publication-type="journal" id="cit34"><person-group person-group-type="allauthors"><name><surname>Wu</surname><given-names>Y.</given-names></name></person-group><etal/><article-title>Google&#x02019;s Neural Machine Translation System: Bridging the Gap
+between Human and Machine Translation</article-title>. <year>2016</year>, arXiv:1609.08144.</mixed-citation></ref><ref id="ref35"><mixed-citation publication-type="journal" id="cit35"><name><surname>Gupta</surname><given-names>T.</given-names></name>; <name><surname>Zaki</surname><given-names>M.</given-names></name>; <name><surname>Krishnan</surname><given-names>N. M. A.</given-names></name>; <name><surname>Mausam</surname></name>
+<article-title>MatSciBERT:
+A materials domain language
+model for text mining and information extraction</article-title>. <source>npj Comput. Mater.</source>
+<year>2022</year>, <volume>8</volume>, <fpage>102</fpage><pub-id pub-id-type="doi">10.1038/s41524-022-00784-w</pub-id>.</mixed-citation></ref><ref id="ref36"><mixed-citation publication-type="book" id="cit36"><person-group person-group-type="allauthors"><name><surname>Rasley</surname><given-names>J.</given-names></name>; <name><surname>Rajbhandari</surname><given-names>S.</given-names></name>; <name><surname>Ruwase</surname><given-names>O.</given-names></name>; <name><surname>He</surname><given-names>Y.</given-names></name></person-group><article-title>DeepSpeed: System Optimizations
+Enable Training Deep Learning Models with Over 100 Billion Parameters</article-title>. In <source>Proceedings of the 26th ACM SIGKDD International Conference
+on Knowledge Discovery &#x00026; Data Mining</source>; <publisher-name>Association for Computing Machinery</publisher-name>: <publisher-loc>New York, NY</publisher-loc>, <year>2020</year>; pp <fpage>3505</fpage>&#x02013;<lpage>3506</lpage>.</mixed-citation></ref><ref id="ref37"><mixed-citation publication-type="book" id="cit37"><person-group person-group-type="allauthors"><name><surname>Rajpurkar</surname><given-names>P.</given-names></name>; <name><surname>Jia</surname><given-names>R.</given-names></name>; <name><surname>Liang</surname><given-names>P.</given-names></name></person-group><article-title>Know What You Don&#x02019;t Know: Unanswerable
+Questions for SQuAD</article-title>. In <source>Proceedings of the
+56th Annual Meeting of the Association for Computational Linguistics
+(Volume 2: Short Papers)</source>; <publisher-name>Association for
+Computational Linguistics</publisher-name>, <year>2018</year>.</mixed-citation></ref><ref id="ref38"><mixed-citation publication-type="book" id="cit38"><person-group person-group-type="allauthors"><name><surname>Rajpurkar</surname><given-names>P.</given-names></name>; <name><surname>Zhang</surname><given-names>J.</given-names></name>; <name><surname>Lopyrev</surname><given-names>K.</given-names></name>; <name><surname>Liang</surname><given-names>P.</given-names></name></person-group><article-title>SQuAD: 100,000+ Questions for Machine
+Comprehension of Text</article-title>. In <source>Proceedings of the
+2016 Conference on Empirical Methods in Natural Language Processing</source>; <publisher-name>Association for Computational Linguistics</publisher-name>, <year>2016</year>.</mixed-citation></ref><ref id="ref39"><mixed-citation publication-type="weblink" id="cit39"><person-group person-group-type="allauthors"><name><surname>Biewald</surname><given-names>L.</given-names></name></person-group><source>Experiment Tracking with
+Weights and Biases</source>. <year>2020</year>. <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.wandb.com/">https://www.wandb.com/</uri>.</mixed-citation></ref><ref id="ref40"><mixed-citation publication-type="weblink" id="cit40"><uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://github.com/facebook/react">http://github.com/facebook/react</uri> (accessed April 2024).</mixed-citation></ref><ref id="ref41"><mixed-citation publication-type="book" id="cit41"><source>Django Software Foundation
+version 2.2, Django</source>. <year>2019</year>. <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://djangoproject.com">https://djangoproject.com</uri>.</mixed-citation></ref><ref id="ref42"><mixed-citation publication-type="weblink" id="cit42"><person-group person-group-type="allauthors"><name><surname>Kumar</surname><given-names>P.</given-names></name></person-group><uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://github.com/gh-PankajKumar/QA-Annotator">http://github.com/gh-PankajKumar/QA-Annotator</uri> (accessed April 2024).</mixed-citation></ref><ref id="ref43"><mixed-citation publication-type="weblink" id="cit43"><person-group person-group-type="allauthors"><name><surname>Pietsch</surname><given-names>M.</given-names></name>; <name><surname>M&#x000f6;ller</surname><given-names>T.</given-names></name>; <name><surname>Kostic</surname><given-names>B.</given-names></name>; <name><surname>Risch</surname><given-names>J.</given-names></name>; <name><surname>Pippi</surname><given-names>M.</given-names></name>; <name><surname>Jobanputra</surname><given-names>M.</given-names></name>; <name><surname>Zanzottera</surname><given-names>S.</given-names></name>; <name><surname>Cerza</surname><given-names>S.</given-names></name>; <name><surname>Blagojevic</surname><given-names>V.</given-names></name>; <name><surname>Stadelmann</surname><given-names>T.</given-names></name>; <name><surname>Soni</surname><given-names>T.</given-names></name>; <name><surname>Lee</surname><given-names>S.</given-names></name></person-group><source>deepset (deepset) &#x02014; huggingface.co</source>. <year>2019</year>. <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://huggingface.co/deepset">https://huggingface.co/deepset</uri> (accessed March 2024).</mixed-citation></ref><ref id="ref44"><mixed-citation publication-type="journal" id="cit44"><person-group person-group-type="allauthors"><name><surname>He</surname><given-names>P.</given-names></name>; <name><surname>Liu</surname><given-names>X.</given-names></name>; <name><surname>Gao</surname><given-names>J.</given-names></name>; <name><surname>Chen</surname><given-names>W.</given-names></name></person-group><article-title>DeBERTa: Decoding-enhanced BERT with Disentangled
+Attention. International Conference on Learning Representations</article-title>. <year>2021</year>, arXiv:2006.03654.</mixed-citation></ref><ref id="ref45"><mixed-citation publication-type="journal" id="cit45"><person-group person-group-type="allauthors"><name><surname>He</surname><given-names>P.</given-names></name>; <name><surname>Gao</surname><given-names>J.</given-names></name>; <name><surname>Chen</surname><given-names>W.</given-names></name></person-group><article-title>DeBERTaV3: Improving DeBERTa using
+ELECTRA-Style Pre-Training with Gradient-Disentangled Embedding Sharing</article-title>. <year>2023</year>, arXiv:2111.09543.</mixed-citation></ref><ref id="ref46"><mixed-citation publication-type="book" id="cit46"><person-group person-group-type="allauthors"><name><surname>Vig</surname><given-names>J.</given-names></name></person-group><article-title>A Multiscale Visualization
+of Attention in the Transformer Model</article-title>. In <source>Proceedings of the 57th Annual Meeting of the Association for Computational
+Linguistics: System Demonstrations</source>; <publisher-name>Association
+for Computational Linguistics</publisher-name>: <publisher-loc>Florence,
+Italy</publisher-loc>, <year>2019</year>; pp <fpage>37</fpage>&#x02013;<lpage>42</lpage>.</mixed-citation></ref><ref id="ref48"><mixed-citation publication-type="weblink" id="cit48"><person-group><name><surname>Kumar</surname><given-names>P.</given-names></name></person-group><uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/gh-PankajKumar/MechBERT-codebase/">https://github.com/gh-PankajKumar/MechBERT-codebase/</uri>, accessed
+Jan 28, 2025</mixed-citation></ref><ref id="ref49"><mixed-citation publication-type="weblink" id="cit49"><source>Cambridge Molecular Engineering
+(Molecular Engineering)</source>. <year>2024</year>. <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://huggingface.co/CambridgeMolecularEngineering">https://huggingface.co/CambridgeMolecularEngineering</uri>, accessed Jan 28, 2025.</mixed-citation></ref></ref-list></back></article>

@@ -1,0 +1,661 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="1.3" xml:lang="en" article-type="research-article"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Qatar Med J</journal-id><journal-id journal-id-type="iso-abbrev">Qatar Med J</journal-id><journal-title-group><journal-title>Qatar Medical Journal</journal-title></journal-title-group><issn pub-type="ppub">0253-8253</issn><issn pub-type="epub">2227-0426</issn><publisher><publisher-name>HBKU Press</publisher-name><publisher-loc>Qatar</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">40401232</article-id><article-id pub-id-type="pmc">PMC12093402</article-id><article-id pub-id-type="publisher-id">qmj.2025.15</article-id><article-id pub-id-type="doi">10.5339/qmj.2025.15</article-id><article-categories><subj-group subj-group-type="heading"><subject>Research Paper</subject></subj-group></article-categories><title-group><article-title>Machine learning-based assessment of seizure risk predictors in myelomeningocele patients: A single-center retrospective cohort study</article-title><alt-title alt-title-type="rrh">Machine learning-based assessment of seizure risk predictors in myelomeningocele patients: A single-center retrospective</alt-title><alt-title alt-title-type="lrh">Al Rifai et al.</alt-title></title-group><contrib-group><contrib contrib-type="author"><name><surname>Al Rifai</surname><given-names>Maher</given-names></name><xref rid="aff1" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="caf1" ref-type="corresp">*</xref></contrib><contrib contrib-type="author"><name><surname>Jarrar</surname><given-names>Sultan</given-names></name><xref rid="aff1" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib contrib-type="author"><name><surname>Barbarawi</surname><given-names>Mohammad</given-names></name><xref rid="aff1" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib contrib-type="author"><name><surname>Jamous</surname><given-names>Mohammad</given-names></name><xref rid="aff1" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib contrib-type="author"><name><surname>Daoud</surname><given-names>Suleiman</given-names></name><xref rid="aff1" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib contrib-type="author"><name><surname>Jaradat</surname><given-names>Amer</given-names></name><xref rid="aff1" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib contrib-type="author"><name><surname>Ghammaz</surname><given-names>Owais</given-names></name><xref rid="aff1" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib contrib-type="author"><name><surname>Hatem Abulsebaa</surname><given-names>Bashar</given-names></name><xref rid="aff1" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib contrib-type="author"><name><surname>Alsumadi</surname><given-names>Qutaiba</given-names></name><xref rid="aff1" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib contrib-type="author"><name><surname>Ali Shibli</surname><given-names>Tala</given-names></name><xref rid="aff1" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib contrib-type="author"><name><surname>Osamah Alqudah</surname><given-names>Ahmad</given-names></name><xref rid="aff1" ref-type="aff">
+<sup>1</sup>
+</xref></contrib></contrib-group><aff id="aff1">
+<sup>1</sup>Jordan University of Science and Technology, Ar-Ramtha, Irbid, Jordan<break/>*Correspondence: Maher Al Rifai. Email: <email xlink:href="Alrifaimd@gmail.com">Alrifaimd@gmail.com</email></aff><author-notes><corresp id="caf1">*<email xlink:href="Alrifaimd@gmail.com">Alrifaimd@gmail.com</email></corresp></author-notes><pub-date pub-type="collection"><year>2025</year></pub-date><pub-date pub-type="epub"><day>13</day><month>3</month><year>2025</year></pub-date><volume>2025</volume><issue>1</issue><elocation-id>15</elocation-id><history><date date-type="received"><day>21</day><month>4</month><year>2024</year></date><date date-type="accepted"><day>08</day><month>12</month><year>2024</year></date></history><permissions><copyright-statement>&#x000a9;&#x000a0;2025 Al Rifai, Jarrar, Barbarawi, Jamous, Daoud, Jaradat, et al., licensee HBKU Press.</copyright-statement><copyright-year>2025</copyright-year><copyright-holder>HBKU Press.</copyright-holder><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license CC BY 4.0</ext-link>, which permits unrestricted use, distribution and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions><abstract><sec><title>Background</title><p>Myelomeningocele (MMC) is a severe congenital malformation of the CNS (central nervous system) that often leads to seizures due to factors such as shunt complications and hydrocephalus. This study aims to develop a machine learning model to predict the likelihood of seizures in MMC patients by analyzing various predictors.</p></sec><sec><title>Methods</title><p>This retrospective study involved 103 MMC patients. Factors such as demographics, MMC location, shunt history, and imaging were analyzed using the random forest classifier, the support vector classifier, and logistic regression. Model performance was assessed through bootstrap estimates, cross-validation, classification reports, and area under the curve (AUC). </p></sec><sec><title>Results</title><p>Of the evaluated patients, 11 experienced seizures. The key influencing factors included gestational age, sacral location, hydrocephalus, shunt history, and corpus callosum dysgenesis. Machine learning (ML) models predicted seizure risk with an accuracy of 86&#x02013;92% and an AUC ranging from 0.764 to 0.865. Significant predictors were imaging findings, shunt infection history, and gestational age. </p></sec><sec><title>Conclusion</title><p>ML models effectively predict seizure risk in MMC patients, with certain variables showing strong associations and significant impact.</p></sec></abstract><kwd-group><title>Keywords:</title><kwd>Myelomeningocele</kwd><kwd>seizure</kwd><kwd>machine learning</kwd><kwd>ventriculoperitoneal shunt</kwd></kwd-group></article-meta></front><body><sec sec-type="intro"><title>Introduction</title><p>Myelomeningocele (MMC), also known as open spina bifida, is a serious congenital malformation of the central nervous system, posing significant challenges in terms of morbidity and mortality. This prevalent birth defect has a profound and lasting impact, leading to significant lifelong morbidity.<sup>
+<xref rid="bib1" ref-type="bibr">1</xref>
+</sup> On a global scale, approximately 300,000 infants are born annually with neural tube defects. The incidence of such defects varies worldwide, ranging from 0.17 to 6.39 per 1,000 live births. In Jordan, the estimated incidence of congenital malformations is 1.1 per 1,000 live births, highlighting the regional impact on the Jordanian population.<sup>
+<xref rid="bib2" ref-type="bibr">2</xref>
+</sup>
+</p><p>The majority of individuals diagnosed with MMC also experience hydrocephalus (HC), which is characterized by the abnormal and progressive accumulation of cerebrospinal fluid in the brain's ventricles. This condition, along with associated factors such as Chiari II malformation, symptoms of tethered cord, lower extremity contractures, and other related brain malformations, significantly influences the overall severity of patient outcomes. The introduction of the ventriculoperitoneal (VP) shunt has enhanced the prospect of long-term survival for infants with open spina bifida. However, shunted HC is prevalent and correlates with cognitive impairments, particularly impacting executive functions.<sup>
+<xref rid="bib3" ref-type="bibr">3</xref>&#x02013;<xref rid="bib7" ref-type="bibr">7</xref>
+</sup> The VP shunt has proven effective in prolonging the lifespan of individuals with HC. However, it requires meticulous maintenance to prevent complications associated with the shunt.<sup>
+<xref rid="bib7" ref-type="bibr">7</xref>
+</sup> Annually, approximately 14,000 shunt revisions are performed, reflecting the elevated incidence of shunt complications. These complications not only contribute to patient morbidity but also impose a considerable financial burden on healthcare systems. Moreover, similar to any procedure involving the implantation of foreign bodies, there are inherent risks of infection and mechanical dysfunction that can result in serious repercussions.<sup>
+<xref rid="bib8" ref-type="bibr">8</xref>,<xref rid="bib9" ref-type="bibr">9</xref>
+</sup>
+</p><p>Seizures are commonly observed in children born with MMC. The increased incidence of seizures in individuals with MMC and HC may be attributed to various factors, including minor cortical injury during shunt insertion, complications such as infections or shunt malfunctions, and the underlying pathology associated with the development of HC.<sup>
+<xref rid="bib10" ref-type="bibr">10</xref>
+</sup> MMC is associated with the occurrence of seizures, particularly in children, where the development of seizures is often associated with the presence of other cerebral malformations and mental retardation. Moreover, the risk of seizures is increased by factors such as shunt dysfunction and infection.<sup>
+<xref rid="bib11" ref-type="bibr">11</xref>
+</sup> Several studies have previously identified the predictors of seizures in MMC patients. Some findings have indicated a reduced incidence of seizures in MMC patients who do not require a VP shunt, in stark contrast to shunted patients who exhibit a significantly higher incidence of seizures. Other predictors identified in the literature that may influence seizure risk include falx dysgenesis, lumbar MMC, cortical atrophy, and mental retardation.<sup>
+<xref rid="bib10" ref-type="bibr">10</xref>,<xref rid="bib12" ref-type="bibr">12</xref>,<xref rid="bib13" ref-type="bibr">13</xref>
+</sup>
+</p><p>To the best of our knowledge, there has been no prior research using a machine learning model to predict the risk of seizures in patients with MMC. Although previous studies have explored the descriptive characteristics of seizures and identified potential predictors in this patient population, none have used a machine learning approach for a comprehensive risk assessment and prediction. This study marks the pioneering effort in developing a robust machine learning model for predicting seizures in patients with a history of MMC. To the best of our knowledge, no earlier research has pursued this avenue, making this study the first of its kind to explore the potential of machine learning in predicting seizures among the MMC patient population.</p></sec><sec sec-type="methods"><title>Methods</title><sec><title>Data collection and patient characteristics</title><p>We conducted a retrospective, observational, single-center cohort study at King Abdullah University Hospital (KAUH), the main tertiary care hospital in Northern Jordan. The study adhered to the guidelines set forth by the Transparent Reporting of a Multivariable Prediction Model for Individual Prognosis or Diagnosis (TRIPOD) statement, which provides guidelines for reporting and developing predictive models.<sup>
+<xref rid="bib14" ref-type="bibr">14</xref>
+</sup> The Research Committee of the Faculty of Medicine and the Institutional Review Board at Jordan University of Science and Technology approved the study, and the Institutional Review Board provided the ethical approval (2023/164/88). The ethics committee approved a waiver of consent from the patients as the study did not involve any therapeutic interventions and the outcomes planned were routinely registered for all patients. The study included all patients diagnosed with MMC at KAUH between June 2009 and September 2023. We conducted a comprehensive review of patient charts to collect information on several key factors: demographic information (age and gender), gestational age (full-term defined as children born &#x02265;&#x000a0;37 weeks or preterm defined as children born &#x0003c;&#x000a0;37 weeks), mode of delivery (normal vaginal delivery or cesarean section), level of MMC defect (thoracic, thoracolumbar, lumbar, lumbosacral, or sacral), presence of HC, shunt history (shunt placement, number of shunt revisions, or history of shunt infection), shunt location (frontal, parietal, or occipital), and presence of seizures. For patients with a history of seizures, we collected further data, including seizure type (generalized or focal seizures), the total number of seizures, the age of onset of the first seizure, and current medications taken by the patient. Furthermore, we reviewed neuroimaging data, including findings from computed tomography and magnetic resonance imaging, to identify any central nervous system abnormalities.</p></sec><sec><title>Machine learning analysis</title><p>Three machine learning (ML) ensembles were used in this study: the random forest classifier (RFC), the support vector classifier (SVC), and logistic regression (LR). These algorithms were selected due to their effectiveness in handling complex, multidimensional datasets and their ability to model nonlinear relationships. The RFC is a decision tree-based ML model, where each node of the decision tree divides the dataset into two groups using a cutoff value within one of the features. By creating an ensemble of randomized decision trees, each of which overfits the data and aggregates the results to achieve improved classification, the RFC technique mitigates the impact of the overfitting problem. The SVC is a powerful supervised ML technique that aims to find the optimal hyperplane to separate data into different classes. It is well suited for both classification and regression applications. In this approach, trees for prediction are sequentially constructed, with each subsequent tree designed to reduce errors from its predecessors. Subsequently, ML models were trained on a dataset with a binary classification output that predicted the target variable Presence of Seizures using 27 features including demographic information, perinatal history, the level of MMC, the presence of HC, shunt history, shunt location, and neuroimaging findings. The dataset was then randomly divided into a training set (<italic>n</italic>&#x000a0;=&#x000a0;72) and a testing set (<italic>n</italic>&#x000a0;=&#x000a0;31) in a 7:3 ratio. In this study, missing values were estimated by applying the imputation method, which involved filling all null variables with zero values using the &#x0201c;fillna()&#x0201d; method with the &#x0201c;inplace&#x000a0;=&#x000a0;True&#x0201d; parameter. The contribution of each feature in predicting SFS status was calculated using the permutation importance method, in which a greater decrease in mean accuracy represents higher importance in the model's predictions. Receiver-operating characteristic (ROC) curves and area under the curve (AUC) scores were calculated to evaluate the discriminatory power of different models. The roc_curve function from the sklearn.metrics module was used to compute the FPR (false positive rate) and TPR (true positive rate) for each model. Predicted probabilities for the positive class were obtained using the predict_proba method of each model. AUC scores were calculated using the roc_auc_score function. A custom plotting function plot_roc_curve was defined to visualize the ROC curves for multiple models. Additionally, the model's performance was evaluated using a mean bootstrap estimate with a 95% confidence interval, 10-fold cross-validation, and a classification report for precision, recall, and fig1-score. All ML implementations were processed using the scikit-learn 0.18 package in Python.</p></sec><sec><title>Statistical analysis</title><p>Data analyses were performed using the IBM Statistical Package for the Social Sciences (SPSS) software for Windows, version 26.0. Descriptive measures were reported as means&#x000a0;&#x000b1;&#x000a0;standard deviations for continuous data that met the normality assumption, according to the Shapiro&#x02013;Wilk test. In cases where the normality assumption was not satisfied, medians with the first and third quartiles (Q1&#x02013;Q3) were used. Categorical data were reported as frequencies and percentages (%). Continuous data were compared using the Student's t test for normally distributed variables, while the Mann&#x02013;Whitney U-test was used for those that were not normally distributed. For categorical data, comparisons were made using the &#x003c7;<sup>
+<xref rid="bib2" ref-type="bibr">2</xref>
+</sup> test or Fisher's exact test if any cell had an expected count of less than 5. Effect sizes for numerical variables were calculated using Cohen's d for normally distributed numerical variables, while rank&#x02013;biserial correlation was used if the normality assumption was violated. Effect sizes for categorical variables were calculated using Cram&#x000e9;r's V. The selection of variables included in the model was based on a separate bivariate analysis, which included all variables that yielded a <italic>p</italic> value of &#x0003c;&#x000a0;0.1. The goodness of fit was assessed using Nagelkerke R2. The variables in the model were evaluated for multicollinearity using the variance inflation factor. Statistical significance was considered at a two-sided <italic>p</italic> value of &#x02264;&#x000a0;0.05. Effect sizes were considered statistically significant4 at <italic>p</italic> values &#x02265;&#x000a0;0.3.</p></sec></sec><sec><title>Results</title><p>Our analysis of the demographic and clinical characteristics of patients with MMC, as summarized in <xref rid="tbl1" ref-type="table">Table 1</xref>, revealed several significant findings. Notably, there was a tendency for a higher proportion of females among patients with seizures (81.8%) compared to those without seizures (56.5%), although this difference was not statistically significant (<italic>p</italic>&#x000a0;=&#x000a0;0.107). The median age of patients with seizures was 8 years, which was similar to that of patients without seizures (7 years), with no statistically significant difference (<italic>p</italic>&#x000a0;=&#x000a0;0.945). However, patients with seizures had a significantly higher prevalence of preterm birth (60%) compared to those without seizures (20.5%) (<italic>p</italic>&#x000a0;=&#x000a0;0.018). HC patients with seizures had a significantly higher rate of HC (100%) compared to those without seizures (70.7%) (<italic>p</italic>&#x000a0;=&#x000a0;0.036). Patients with seizures had a significantly higher rate of shunt placement (100%) compared to those without seizures (70.7%), with a <italic>p</italic> value of 0.036. Additionally, patients with seizures had a higher median number of shunt revisions (2) compared to those without seizures (0) (<italic>p</italic>&#x000a0;&#x02264;&#x000a0;0.001), with a significant effect size of 0.573. Furthermore, a history of shunt infection was significantly more common among patients with seizures (72.7%) than in those without seizures (26.1%) (<italic>p</italic>&#x000a0;=&#x000a0;0.002), with a significant effect size of 0.311. Patients with seizures did not differ significantly from those without seizures in terms of the level of MMC, with <italic>p</italic> values above 0.05. However, there was a significantly higher prevalence of seizures (27.4%) in patients with sacral MMC compared to those without seizures (5.7%) (<italic>p</italic>&#x000a0;=&#x000a0;0.031). Furthermore, patients with seizures had significantly higher rates of frontal shunt placement (63.6%) compared to those without seizures (20.7%) (<italic>p</italic>&#x000a0;=&#x000a0;0.023). Conversely, the rate of occipital shunt placement was lower in patients with seizures (27.3%) compared to those without seizures (64.6%), with a <italic>p</italic> value of 0.023. Notably, patients with seizures did not significantly differ from those without seizures in terms of most neuroimaging findings, as evidenced by <italic>p</italic> values above 0.05. However, there was a significantly higher prevalence of corpus callosum dysgenesis (72.7%) in patients with seizures compared to those without seizures (29.3%) (<italic>p</italic>&#x000a0;=&#x000a0;0.004).</p><p>
+<xref rid="tbl2" ref-type="table">Table 2</xref> shows the relationship between shunt location and the history of shunt infection, as well as the number of shunt revisions. Patients with frontal shunt placement had a significantly higher incidence of shunt infection (50%) compared to those with parietal or occipital shunts (<italic>p</italic>&#x000a0;&#x02264;&#x000a0;0.001). Moreover, these patients had a higher median number of shunt revisions (2) (<italic>p</italic>&#x000a0;&#x02264;&#x000a0;0.001). In contrast, patients with parietal shunts had a relatively lower incidence of shunt infection (9.4%) (<italic>p</italic>&#x000a0;=&#x000a0;0.024). The median number of shunt revisions in patients with parietal shunt (1) did not show a statistically significant difference (<italic>p</italic>&#x000a0;=&#x000a0;0.339). Furthermore, patients with occipital shunts had a significantly higher incidence of shunt infection (40.6%) compared to those with parietal shunts (<italic>p</italic>&#x000a0;&#x02264;&#x000a0;0.001), while their median number of shunt revisions (0) was statistically significant (<italic>p</italic>&#x000a0;=&#x000a0;0.003). Both frontal and occipital shunt patients had significant effect sizes of more than 0.3 when calculated by the rank&#x02013;biserial correlation in relation to the number of shunt revisions. Moreover, patients with occipital shunt had a Cram&#x000e9;r's V of 0.305, indicating a significant effect size.</p><p>The characteristics of seizures observed in patients with MMC (<italic>n</italic>&#x000a0;=&#x000a0;11) are presented in <xref rid="tbl3" ref-type="table">Table 3</xref>.</p><p>Among the patients with available data (<italic>n</italic>&#x000a0;=&#x000a0;9), the majority of seizures were generalized (77.8%), while a smaller proportion were focal (22.2%). The median number of seizures among patients with available data (<italic>n</italic>&#x000a0;=&#x000a0;9) was 1, with an interquartile range of 1. The median age of onset of the first seizure among patients with available data (<italic>n</italic>&#x000a0;=&#x000a0;9) was 1.42 years, with an interquartile range of 1.73. Several anti-epileptic medications were administered to patients with available data (<italic>n</italic>&#x000a0;=&#x000a0;9). Valproic acid (33.3%) and phenobarbital (55.6%) were the most commonly prescribed medications, while smaller proportions of patients received phenytoin (11.1%), levetiracetam (22.2%), and carbamazepine (11.1%).</p><sec><title>Predicting Seizures using ML</title><p>All metrics that evaluated the ML algorithms are presented in <xref rid="tbl4" ref-type="table">Table 4</xref>. The RFC model was performed on the testing set, which had a mean bootstrap estimate of 0.89 with a 95% CI of [0.81&#x02013;0.97], a 10-fold cross-validation of 0.893, an accuracy of 0.87, and an AUC of 0.856. In contrast, the SVM model predicted on the testing set had a mean bootstrap estimate of 0.84 with a 95% CI of [0.72&#x02013;0.95], a 10-fold cross-validation of 0.866, an accuracy of 0.85, and an AUC of 0.749. The LR model had a mean bootstrap estimate of 0.86 with a 95% CI of [0.75&#x02013;0.95], a 10-fold cross-validation of 0.856, an accuracy of 0.87, and an AUC of 0.800. The ROC curves of all MLMs are shown in <xref rid="fig1" ref-type="fig">Figure 1</xref>. The most contributing features in predicting seizures in the RFC model are shown in <xref rid="fig2" ref-type="fig">Figure 2</xref>, with image findings identified as the highest contributing factor, followed by the history of shunt infection and gestational age.</p></sec></sec><sec><title>Discussion</title><p>Seizures are commonly observed in individuals born with MMC. In cases involving HC, the occurrence of seizures has been reported to vary between 14.7% and 29%. Conversely, children with MMC but without shunts experience a significantly lower incidence of seizures, approximately ranging from 2% to 8%.<sup>
+<xref rid="bib11" ref-type="bibr">11</xref>
+</sup> Notably, certain studies have demonstrated a correlation between the occurrence of seizures in the MMC population and unfavorable neurodevelopmental outcomes, coupled with more pronounced brain malformations.<sup>
+<xref rid="bib12" ref-type="bibr">12</xref>,<xref rid="bib13" ref-type="bibr">13</xref>,<xref rid="bib15" ref-type="bibr">15</xref>&#x02013;<xref rid="bib17" ref-type="bibr">17</xref>
+</sup> A significant proportion, ranging from 6% to 59%, of children requiring ventricular shunts face an elevated risk of developing seizures compared to the general population, as shown by various investigations.<sup>
+<xref rid="bib12" ref-type="bibr">12</xref>,<xref rid="bib18" ref-type="bibr">18</xref>&#x02013;<xref rid="bib32" ref-type="bibr">32</xref>
+</sup> The increased susceptibility to seizures in this context may be attributed to several contributing factors, including HC, treatment modalities, and any associated complications. Findings from multiple studies suggest that factors such as shunt insertion, the frequency of shunt revisions, a history of shunt infection, and possibly the location of the shunt can collectively increase the risk of seizures.<sup>
+<xref rid="bib22" ref-type="bibr">22</xref>,<xref rid="bib33" ref-type="bibr">33</xref>&#x02013;<xref rid="bib35" ref-type="bibr">35</xref>
+</sup>
+</p><p>This study revealed a significant association between gestational age and the risk of seizures in patients with MMC. Notably, among the 10 patients who experienced seizures, 60% were born preterm, while only 20.5% of the 78 patients without seizures were preterm. This finding is consistent with previous research and establishes a statistically significant association. Previous studies have consistently highlighted that preterm infants are at an increased risk of seizures, with rates as high as 22.2%, compared to a significantly lower incidence of 0.5% in full-term infants.<sup>
+<xref rid="bib36" ref-type="bibr">36</xref>,<xref rid="bib37" ref-type="bibr">37</xref>
+</sup>
+</p><p>The significance of MMC location in our study was evident in the sacral region in relation to seizures. This finding contradicts two previous studies, which reported a significant increase in the risk of seizures associated with lumbar MMC. However, these studies did not provide an explanation for this observed relationship.<sup>
+<xref rid="bib13" ref-type="bibr">13</xref>,<xref rid="bib38" ref-type="bibr">38</xref>
+</sup>
+</p><p>HC is a common complication associated with MMC, affecting approximately 65&#x02013;85% of individuals.<sup>
+<xref rid="bib39" ref-type="bibr">39</xref>&#x02013;<xref rid="bib41" ref-type="bibr">41</xref>
+</sup> Our findings are consistent with this trend, as 65 out of 92 patients (70.7%) without seizures developed HC. Conversely, all 11 patients (100%) with seizures presented with HC. The location of MMC plays a significant role in determining the incidence of HC, as highlighted by Laurence and Lorber. According to their findings, the risk of HC is highest when MMC is located in the lumbar region (80%), followed by the thoracolumbar region (70%), the sacral region (50%), and the thoracic region that exhibits the lowest risk (43%).<sup>
+<xref rid="bib40" ref-type="bibr">40</xref>,<xref rid="bib41" ref-type="bibr">41</xref>
+</sup>
+</p><p>Chadduck and Adametz proposed various etiologies that may increase the risk of seizures in patients requiring shunt placement. One such factor is the insertion of the tube into the ventricular system, which may induce cortical injury. Shunt-related complications, including infection and malfunction, are identified as additional risk factors for the development of seizures. Notably, the underlying indication for the need for shunt placement emerges as an important etiological factor, potentially resulting in the most significant influence on seizure susceptibility.<sup>
+<xref rid="bib10" ref-type="bibr">10</xref>
+</sup> In a study conducted by Bourgeois et al. involving patients with HC, including those with MMC, it was found that 28.6% of patients who experienced seizures had their initial seizure before shunt insertion. In contrast, seizures were reported in the remaining 71.4% of cases following the insertion of the shunt, indicating a significant impact of the shunting procedure on the onset of epilepsy. Nevertheless, other studies suggest that there is no significant difference in the incidence of epilepsy between MMC patients with and without HC. This finding emphasizes the potential role of underlying pathological conditions in influencing these outcomes.<sup>
+<xref rid="bib12" ref-type="bibr">12</xref>,<xref rid="bib17" ref-type="bibr">17</xref>,<xref rid="bib33" ref-type="bibr">33</xref>
+</sup>
+</p><p>The increase in seizure rates among patients undergoing recurrent shunt revisions can be attributed to two primary factors. Firstly, each shunt insertion has the potential to cause cortical injury. The cumulative effect of multiple shunt procedures may contribute to an elevated risk of developing seizures.<sup>
+<xref rid="bib10" ref-type="bibr">10</xref>
+</sup> This association emphasizes the importance of considering the procedural impact on cortical structures and their risk for neurological outcomes. Secondly, the increase in intracranial pressure, particularly when it remains uncontrolled, is considered another significant contributor to the increased incidence of seizures observed in this study. Elevated intracranial pressure, a potential consequence of recurrent shunt revisions, is believed to induce damage, further emphasizing the balance required in managing intracranial pressure. Both mechanisms involving direct cortical impact and alterations in intracranial pressure illustrate the relationship between shunt revisions and seizure susceptibility.<sup>
+<xref rid="bib10" ref-type="bibr">10</xref>
+</sup>
+</p><p>As the pioneering study in developing an ML model to predict seizures in MMC patients, our research holds importance in advancing medical care for MMC patients. This predictive tool has the potential to transform patient management by facilitating early identification of individuals who are at an increased risk of seizures. By using advanced algorithms to analyze patient data, the model could offer valuable insights for physicians, enabling targeted interventions for improved patient care. Early detection and personalized interventions may lead to a reduction in both the frequency and severity of seizures, ultimately enhancing outcomes for individuals with MMC.</p><p>The limitations of our study include a relatively small sample size, which highlights the need for future investigations involving larger and more diverse cohorts to strengthen the statistical significance of the observed variables and to further clarify the relationship between seizures and MMC. Additionally, a larger sample size is crucial for refining the predictive ability of our machine learning model, thereby improving its robustness and generalizability. The external validation of our pioneering ML model is essential, as it represents a novel approach in this field. The development of additional models by different research groups would contribute to broader validation. Moreover, since our research is based on a single-center study, our findings may have inherent biases, necessitating caution in generalizing the results. Therefore, conducting multi-center studies would provide a more comprehensive understanding of seizures in patients with MMC.</p></sec><sec><title>Conclusion</title><p>In this study, ML techniques effectively predicted the risk of seizures in MMC patients, achieving accuracy rates between 86% and 92% and AUC values between 0.764 and 0.865. Key predictors included image findings, a history of shunt infection, and gestational age. Descriptive analysis revealed multiple variables that influence the risk of seizures, including gestational age, sacral MMC, HC, shunt placement, number of shunt revisions, a history of shunt infection, and corpus callosum dysgenesis. A significant relationship was observed between shunt location and the history of shunt infection. Additionally, a relationship was observed between shunt location and the number of shunt revisions, with frontal VP shunts associated with a higher median number of shunt revisions and occipital shunts linked to a lower median number of revisions. Effect size measurements emphasized strong associations and significant effect sizes for multiple variables.</p><sec id="FPar1"><title>Authors' contribution</title><p>All authors made a significant contribution to this work, whether in the conception, study design, execution, data acquisition, analysis, and interpretation, or in all these areas. They participated in drafting, revising, or critically reviewing the manuscript; gave final approval for the version to be published; consented to the journal to which the article has been submitted; and accepted responsibility for all aspects of the work.</p></sec><sec id="FPar2"><title>Ethics approval</title><p>This study was approved by the ethics committee of Jordan University of Science and Technology.</p></sec><sec sec-type="COI-statement"><title>Competing interests</title><p>The authors declare that they have no competing interests.</p></sec></sec></body><back><ref-list><title>References</title><ref id="bib1"><label>1.</label><element-citation publication-type="book">
+<person-group person-group-type="author"><name><surname>Sahni</surname><given-names>M</given-names></name><name><surname>Alsaleem</surname><given-names>M</given-names></name><name><surname>Ohri</surname><given-names>A</given-names></name></person-group>
+<article-title>Meningomyelocele. StatPearls</article-title>
+<publisher-name>Treasure Island (FL): StatPearls Publishing; 2023</publisher-name>
+</element-citation></ref><ref id="bib2"><label>2.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Bakaniene</surname><given-names>I</given-names></name><name><surname>Z&#x002c7;iukiene</surname><given-names>L</given-names></name><name><surname>Vasiliauskiene</surname><given-names>V</given-names></name><name><surname>Prasauskiene</surname><given-names>A</given-names></name></person-group>
+<article-title>Participation of children with Spina bifida: a scoping review using the International Classification of Functioning, Disability and Health for Children and Youth (ICF-CY) as a reference framework</article-title>
+<source>Medicina (Kaunas)</source>
+<year>2018</year>
+<month>May</month>
+<day>30</day>
+<volume>54</volume>
+<issue>(3)</issue>
+<fpage>40</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.3390/medicina54030040</pub-id>
+<pub-id pub-id-type="pmid">30344271</pub-id>
+</element-citation></ref><ref id="bib3"><label>3.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Copp</surname><given-names>AJ</given-names></name><name><surname>Adzick</surname><given-names>NS</given-names></name><name><surname>Chitty</surname><given-names>LS</given-names></name><name><surname>Fletcher</surname><given-names>JM</given-names></name><name><surname>Holmbeck</surname><given-names>GN</given-names></name><name><surname>Shaw</surname><given-names>GM</given-names></name></person-group>
+<article-title>Spina bifida</article-title>
+<source>Nat Rev Dis Primers</source>
+<year>2015</year>
+<month>Apr</month>
+<day>30</day>
+<issue>1</issue>
+<fpage>15007</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.1038/nrdp.2015.7</pub-id>
+<pub-id pub-id-type="pmid">27189655</pub-id>
+</element-citation></ref><ref id="bib4"><label>4.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Hampton</surname><given-names>LE</given-names></name><name><surname>Fletcher</surname><given-names>JM</given-names></name><name><surname>Cirino</surname><given-names>PT</given-names></name><name><surname>Blaser</surname><given-names>S</given-names></name><name><surname>Kramer</surname><given-names>LA</given-names></name><name><surname>Drake</surname><given-names>J</given-names></name></person-group>
+<etal/>
+<article-title>Hydrocephalus status in spina bifida: an evaluation of variations in neuropsychological outcomes</article-title>
+<source>J Neurosurg Pediatr</source>
+<year>2011</year>
+<month>Sep</month>
+<volume>8</volume>
+<issue>(3)</issue>
+<fpage>289&#x02013;8</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.3171/2011.6.peds10584</pub-id>
+<pub-id pub-id-type="pmid">21882921</pub-id>
+</element-citation></ref><ref id="bib5"><label>5.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Wetzel</surname><given-names>JS</given-names></name><name><surname>Heaner</surname><given-names>DP</given-names></name><name><surname>Gabel</surname><given-names>BC</given-names></name><name><surname>Tubbs</surname><given-names>RS</given-names></name><name><surname>Chern</surname><given-names>JJ</given-names></name></person-group>
+<article-title>Clinical evaluation and surveillance imaging of children with myelomeningocele and shunted hydrocephalus: a follow-up study</article-title>
+<source>J Neurosurg Pediatr</source>
+<year>2019</year>
+<month>Feb</month>
+<day>1</day>
+<volume>23</volume>
+<issue>(2)</issue>
+<fpage>153&#x02013;8</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.3171/2018.7.peds1826</pub-id>
+<pub-id pub-id-type="pmid">30497223</pub-id>
+</element-citation></ref><ref id="bib6"><label>6.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Zabel</surname><given-names>TA</given-names></name><name><surname>Jacobson</surname><given-names>LA</given-names></name><name><surname>Zachik</surname><given-names>C</given-names></name><name><surname>Levey</surname><given-names>E</given-names></name><name><surname>Kinsman</surname><given-names>S</given-names></name><name><surname>Mahone</surname><given-names>EM</given-names></name></person-group>
+<article-title>Parent- and self-ratings of executive functions in adolescents and young adults with spina bifida</article-title>
+<source>Clin Neuropsychol</source>
+<year>2011</year>
+<month>Aug</month>
+<volume>25</volume>
+<issue>(6)</issue>
+<fpage>926&#x02013;41</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.1080/13854046.2011.586002</pub-id>
+<pub-id pub-id-type="pmid">21955110</pub-id>
+</element-citation></ref><ref id="bib7"><label>7.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Bowman</surname><given-names>RM</given-names></name><name><surname>McLone</surname><given-names>DG</given-names></name><name><surname>Grant</surname><given-names>JA</given-names></name><name><surname>Tomita</surname><given-names>T</given-names></name><name><surname>Ito</surname><given-names>JA</given-names></name></person-group>
+<article-title>Spina bifida outcome: a 25-year prospective</article-title>
+<source>Pediatr Neurosurg</source>
+<year>2001</year>
+<month>Mar</month>
+<volume>34</volume>
+<issue>(3)</issue>
+<fpage>114&#x02013;20</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.1159/000056005</pub-id>
+<pub-id pub-id-type="pmid">11359098</pub-id>
+</element-citation></ref><ref id="bib8"><label>8.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Blount</surname><given-names>JP</given-names></name><name><surname>Campbell</surname><given-names>JA</given-names></name><name><surname>Haines</surname><given-names>SJ</given-names></name></person-group>
+<article-title>Complications in ventricular cerebrospinal fluid shunting</article-title>
+<source>Neurosurg Clin N Am [online]</source>
+<year>1993</year>
+<month>Oct</month>
+<volume>4</volume>
+<issue>(4)</issue>
+<fpage>633&#x02013;56</fpage>
+<comment>Available from: <ext-link xlink:href="https://pubmed.ncbi.nlm.nih.gov/8241787" ext-link-type="uri">https://pubmed.ncbi.nlm.nih.gov/8241787</ext-link>/</comment>
+<pub-id pub-id-type="pmid">8241787</pub-id>
+</element-citation></ref><ref id="bib9"><label>9.</label><element-citation publication-type="book">
+<person-group person-group-type="author"><name><surname>Maghrabi</surname><given-names>Y</given-names></name><name><surname>Baeesa</surname><given-names>S</given-names></name></person-group>
+<article-title>Shunts and shunt complications. In: Hydrocephalus</article-title>
+<publisher-name>Springer International Publishing;</publisher-name>
+<year>2017</year>
+<fpage>p. 209&#x02013;21</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.1007/978-3-319-61304-8_16</pub-id>
+</element-citation></ref><ref id="bib10"><label>10.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Chadduck</surname><given-names>W</given-names></name><name><surname>Adametz</surname><given-names>J</given-names></name></person-group>
+<article-title>Incidence of seizures in patients with myelomeningocele: a multifactorial analysis</article-title>
+<source>Surg Neurol</source>
+<year>1988</year>
+<month>Oct</month>
+<volume>30</volume>
+<issue>4</issue>
+<fpage>281&#x02013;5</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.1016/0090-3019(88)90300-x</pub-id>
+<pub-id pub-id-type="pmid">3175838</pub-id>
+</element-citation></ref><ref id="bib11"><label>11.</label><element-citation publication-type="book">
+<person-group person-group-type="author"><name><surname>Is&#x000b8;ik</surname><given-names>U</given-names></name></person-group>
+<article-title>Seizures in children with myelomeningocele. In: <italic>The Spina bifida</italic></article-title>
+<publisher-name>Milan: Springer</publisher-name>
+<year>2008</year>
+<fpage>p. 297&#x02013;301</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.1007/978-88-470-0651-5_25</pub-id>
+</element-citation></ref><ref id="bib12"><label>12.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Noetzel</surname><given-names>MJ</given-names></name><name><surname>Blake</surname><given-names>JN</given-names></name></person-group>
+<article-title>Prognosis for seizure control and remission in children with myelomeningocele</article-title>
+<source>Dev Med Child Neurol</source>
+<year>1991</year>
+<month>Sep</month>
+<volume>33</volume>
+<issue>9</issue>
+<fpage>803&#x02013;10</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.1111/j.1469-8749.1991.tb14964.x</pub-id>
+<pub-id pub-id-type="pmid">1936632</pub-id>
+</element-citation></ref><ref id="bib13"><label>13.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Karakas</surname><given-names>C</given-names></name><name><surname>Fidan</surname><given-names>E</given-names></name><name><surname>Arya</surname><given-names>K</given-names></name><name><surname>Webber</surname><given-names>T</given-names></name><name><surname>Cracco</surname><given-names>JB</given-names></name></person-group>
+<article-title>Frequency, predictors, and outcome of seizures in patients with myelomeningocele: single-center retrospective cohort study</article-title>
+<source>J Child Neurol</source>
+<year>2022</year>
+<month>Jan</month>
+<volume>37</volume>
+<issue>1</issue>
+<fpage>80&#x02013;8</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.1177/08830738211053132</pub-id>
+<pub-id pub-id-type="pmid">34817276</pub-id>
+</element-citation></ref><ref id="bib14"><label>14.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Collins</surname><given-names>GS</given-names></name><name><surname>Reitsma</surname><given-names>JB</given-names></name><name><surname>Altman</surname><given-names>DG</given-names></name><name><surname>Moons</surname><given-names>K</given-names></name></person-group>
+<article-title>Transparent reporting of a multivariable prediction model for individual prognosis or diagnosis (TRIPOD): the TRIPOD Statement</article-title>
+<source>BMJ</source>
+<year>2015</year>
+<month>Jan</month>
+<volume>7:</volume>
+<comment>350:g7594</comment>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.1136/bmj.g7594</pub-id>
+</element-citation></ref><ref id="bib15"><label>15.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Yoshida</surname><given-names>F</given-names></name><name><surname>Morioka</surname><given-names>T</given-names></name><name><surname>Hashiguchi</surname><given-names>K</given-names></name><name><surname>Kawamura</surname><given-names>T</given-names></name><name><surname>Miyagi</surname><given-names>Y</given-names></name><name><surname>Nagata</surname><given-names>S</given-names></name></person-group>
+<etal/>
+<article-title>Epilepsy in patients with spina bifida in the lumbosacral region</article-title>
+<source>Neurosurg Rev</source>
+<year>2006</year>
+<month>Oct</month>
+<volume>29</volume>
+<issue>4</issue>
+<fpage>327&#x02013;32. Discussion 332</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.1007/s10143-006-0035-7</pub-id>
+<pub-id pub-id-type="pmid">16933125</pub-id>
+</element-citation></ref><ref id="bib16"><label>16.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Brown</surname><given-names>TM</given-names></name><name><surname>Ris</surname><given-names>MD</given-names></name><name><surname>Beebe</surname><given-names>D</given-names></name><name><surname>Ammerman</surname><given-names>RT</given-names></name><name><surname>Oppenheimer</surname><given-names>SG</given-names></name><name><surname>Yeates</surname><given-names>KO</given-names></name></person-group>
+<etal/>
+<article-title>Factors of biological risk and reserve associated with executive behaviors in children and adolescents with spina bifida myelomeningocele</article-title>
+<source>Child Neuropsychol</source>
+<year>2008</year>
+<month>Mar</month>
+<volume>14</volume>
+<issue>2</issue>
+<fpage>118&#x02013;34</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.1080/09297040601147605</pub-id>
+<pub-id pub-id-type="pmid">18306076</pub-id>
+</element-citation></ref><ref id="bib17"><label>17.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Bourgeois</surname><given-names>M</given-names></name><name><surname>Sainte-Rose</surname><given-names>C</given-names></name><name><surname>Cinalli</surname><given-names>G</given-names></name><name><surname>Maixner</surname><given-names>W</given-names></name><name><surname>Malucci</surname><given-names>C</given-names></name><name><surname>Zerah</surname><given-names>M</given-names></name></person-group>
+<etal/>
+<article-title>Epilepsy in children with shunted hydrocephalus</article-title>
+<source>J Neurosurg</source>
+<year>1999</year>
+<month>Feb</month>
+<volume>90</volume>
+<issue>2</issue>
+<fpage>274&#x02013;81</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.3171/jns.1999.90.2.0274</pub-id>
+<pub-id pub-id-type="pmid">9950498</pub-id>
+</element-citation></ref><ref id="bib18"><label>18.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Copeland</surname><given-names>GP</given-names></name><name><surname>Foy</surname><given-names>PM</given-names></name><name><surname>Shaw</surname><given-names>M</given-names></name></person-group>
+<article-title>The incidence of epilepsy after ventricular shunting operations</article-title>
+<source>Surg Neurol</source>
+<year>1982</year>
+<month>Apr</month>
+<volume>17</volume>
+<issue>4</issue>
+<fpage>279&#x02013;81</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.1016/0090-3019(82)90122-7</pub-id>
+<pub-id pub-id-type="pmid">7079952</pub-id>
+</element-citation></ref><ref id="bib19"><label>19.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Dan</surname><given-names>NG</given-names></name><name><surname>Wade</surname><given-names>MJ</given-names></name></person-group>
+<article-title>The incidence of epilepsy after ventricular shunting procedures</article-title>
+<source>J Neurosurg</source>
+<year>1986</year>
+<month>Jul</month>
+<volume>65</volume>
+<issue>1</issue>
+<fpage>19&#x02013;21</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.3171/jns.1986.65.1.0019</pub-id>
+<pub-id pub-id-type="pmid">3712024</pub-id>
+</element-citation></ref><ref id="bib20"><label>20.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Fernell</surname><given-names>E</given-names></name><name><surname>Hagberg</surname><given-names>B</given-names></name><name><surname>Hagberg</surname><given-names>G</given-names></name><name><surname>Hult</surname><given-names>G</given-names></name><name><surname>Wendt</surname><given-names>L</given-names></name></person-group>
+<article-title>Epidemiology of infantile hydrocephalus in Sweden: a clinical follow-up study in children born at term</article-title>
+<source>Neuropediatrics</source>
+<year>1988</year>
+<month>Aug</month>
+<volume>19</volume>
+<issue>3</issue>
+<fpage>135&#x02013;142</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.1055/s-2008-1052417</pub-id>
+<pub-id pub-id-type="pmid">2464773</pub-id>
+</element-citation></ref><ref id="bib21"><label>21.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Graebner</surname><given-names>RW</given-names></name><name><surname>Celesia</surname><given-names>GG</given-names></name></person-group>
+<article-title>EEG findings in hydrocephalus and their relation to shunting procedures. Electroencephalogr</article-title>
+<source>Clin Neurophysiol</source>
+<year>1973</year>
+<month>Nov</month>
+<volume>35</volume>
+<issue>5</issue>
+<fpage>517&#x02013;21</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.1016/0013-4694(73)90028-x</pub-id>
+</element-citation></ref><ref id="bib22"><label>22.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Hosking</surname><given-names>GP</given-names></name></person-group>
+<article-title>Fits in hydrocephalic children</article-title>
+<source>Arch Dis Child</source>
+<year>1974</year>
+<month>Aug</month>
+<volume>49</volume>
+<issue>8</issue>
+<fpage>633&#x02013;5</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.1136/adc.49.8.633</pub-id>
+<pub-id pub-id-type="pmid">4607401</pub-id>
+</element-citation></ref><ref id="bib23"><label>23.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Johnson</surname><given-names>DL</given-names></name><name><surname>Conry</surname><given-names>J</given-names></name><name><surname>O'Donnell</surname><given-names>R</given-names></name></person-group>
+<article-title>Epileptic seizure as a sign of cerebrospinal fluid shunt malfunction</article-title>
+<source>Pediatr Neurosurg</source>
+<year>1996</year>
+<volume>24</volume>
+<issue>5</issue>
+<fpage>223&#x02013;7</fpage>
+<comment>discussion 227&#x02013;8</comment>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.1159/000121043</pub-id>
+<pub-id pub-id-type="pmid">8933565</pub-id>
+</element-citation></ref><ref id="bib24"><label>24.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Leggate</surname><given-names>JRS</given-names></name><name><surname>Baxter</surname><given-names>P</given-names></name><name><surname>Minns</surname><given-names>RA</given-names></name><name><surname>Steers</surname><given-names>AJ</given-names></name><name><surname>Brown</surname><given-names>JK</given-names></name><name><surname>Shaw</surname><given-names>JF</given-names></name></person-group>
+<etal/>
+<article-title>Role of a separate subcutaneous cerebro-spinal fluid reservoir in the management of hydrocephalus</article-title>
+<source>Br J Neurosurg</source>
+<day>1988</day>
+<volume>2</volume>
+<issue>3</issue>
+<fpage>327&#x02013;37</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.3109/02688698809001003</pub-id>
+<pub-id pub-id-type="pmid">3267316</pub-id>
+</element-citation></ref><ref id="bib25"><label>25.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Marossero</surname><given-names>F</given-names></name><name><surname>Massarotti</surname><given-names>M</given-names></name><name><surname>Migliore</surname><given-names>A</given-names></name></person-group>
+<article-title>[EEG abnormalities in infantile hydrocephalic subjects after ventriculo-atrial shunts]</article-title>
+<source>Riv Neurol [online]</source>
+<year>1970</year>
+<month>Jul-Aug</month>
+<volume>40</volume>
+<issue>4</issue>
+<fpage>239&#x02013;41</fpage>
+<comment>Available from: <ext-link xlink:href="https://pubmed.ncbi.nlm.nih.gov/5503717" ext-link-type="uri">https://pubmed.ncbi.nlm.nih.gov/5503717</ext-link>/</comment>
+<pub-id pub-id-type="pmid">5503717</pub-id>
+</element-citation></ref><ref id="bib26"><label>26.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Noetzel</surname><given-names>MJ</given-names></name><name><surname>Blake</surname><given-names>JN</given-names></name></person-group>
+<article-title>Seizures in children with congenital hydrocephalus: long-term outcome</article-title>
+<source>Neurology</source>
+<year>1992</year>
+<month>Jul</month>
+<volume>42</volume>
+<issue>7</issue>
+<fpage>1277&#x02013;81</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.1212/wnl.42.7.1277</pub-id>
+<pub-id pub-id-type="pmid">1620333</pub-id>
+</element-citation></ref><ref id="bib27"><label>27.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Pampiglione</surname><given-names>G</given-names></name><name><surname>Laurence</surname><given-names>KM</given-names></name></person-group>
+<article-title>Electroencephalographic and clinico-pathological observations in hydrocephalic children</article-title>
+<source>Arch Dis Child</source>
+<year>1962</year>
+<month>Oct</month>
+<volume>37</volume>
+<issue>195</issue>
+<fpage>491&#x02013;9</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.1136/adc.37.195.491</pub-id>
+<pub-id pub-id-type="pmid">21032394</pub-id>
+</element-citation></ref><ref id="bib28"><label>28.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Saukkonen</surname><given-names>A</given-names></name><name><surname>Serlo</surname><given-names>W</given-names></name><name><surname>von</surname><given-names>Wend</given-names></name></person-group>
+<article-title>L. Epilepsy in hydrocephalic children</article-title>
+<source>Acta Paediatr Scand</source>
+<year>1990</year>
+<month>Feb</month>
+<volume>79</volume>
+<issue>2</issue>
+<fpage>212&#x02013;8</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.1111/j.1651-2227.1990.tb11441.x</pub-id>
+<pub-id pub-id-type="pmid">2321484</pub-id>
+</element-citation></ref><ref id="bib29"><label>29.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Stellman</surname><given-names>GR</given-names></name><name><surname>Bannister</surname><given-names>CM</given-names></name><name><surname>Hillier</surname><given-names>V</given-names></name></person-group>
+<article-title>The incidence of seizure disorder in children with acquired and congenital hydrocephalus</article-title>
+<source>Kinderchir</source>
+<year>1986</year>
+<month>Dec:</month>
+<volume>41</volume>
+<issue>Suppl 1</issue>
+<fpage>38&#x02013;41</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.1055/s-2008-1043396</pub-id>
+</element-citation></ref><ref id="bib30"><label>30.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Talwar</surname><given-names>D</given-names></name><name><surname>Baldwin</surname><given-names>MA</given-names></name><name><surname>Horbatt</surname><given-names>CI</given-names></name></person-group>
+<article-title>Epilepsy in children with meningomyelocele</article-title>
+<source>Pediatr Neurol</source>
+<year>1995</year>
+<month>Jul</month>
+<volume>13</volume>
+<issue>1</issue>
+<fpage>29&#x02013;32</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.1016/0887-8994(95)00088-w</pub-id>
+<pub-id pub-id-type="pmid">7575845</pub-id>
+</element-citation></ref><ref id="bib31"><label>31.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Varfis</surname><given-names>G</given-names></name><name><surname>Berney</surname><given-names>J</given-names></name><name><surname>Beaumanoir</surname><given-names>A</given-names></name></person-group>
+<article-title>Electro-clinical follow-up of shunted hydrocephalic children</article-title>
+<source>Childs Brain</source>
+<year>1977</year>
+<volume>3</volume>
+<issue>3</issue>
+<fpage>129&#x02013;39</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.1159/000119661</pub-id>
+<pub-id pub-id-type="pmid">405183</pub-id>
+</element-citation></ref><ref id="bib32"><label>32.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Venes</surname><given-names>JL</given-names></name><name><surname>Dauser</surname><given-names>RC</given-names></name><name><surname>Epilepsy</surname><given-names>followin</given-names></name></person-group>
+<article-title>ventricular shunt placement</article-title>
+<source>J Neurosurg</source>
+<year>1987</year>
+<month>Jan</month>
+<volume>66</volume>
+<issue>1</issue>
+<fpage>154&#x02013;5</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.3171/jns.1987.66.1.0154</pub-id>
+<pub-id pub-id-type="pmid">3783253</pub-id>
+</element-citation></ref><ref id="bib33"><label>33.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Bartoshesky</surname><given-names>LE</given-names></name><name><surname>Haller</surname><given-names>J</given-names></name><name><surname>Scott</surname><given-names>RM</given-names></name><name><surname>Wojick</surname><given-names>C</given-names></name></person-group>
+<article-title>Seizures in children with meningomyelocele</article-title>
+<source>Am J Dis Child</source>
+<year>1985</year>
+<month>Apr</month>
+<volume>139</volume>
+<issue>4</issue>
+<fpage>400&#x02013;2</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.1001/archpedi.1985.02140060082035</pub-id>
+<pub-id pub-id-type="pmid">2579544</pub-id>
+</element-citation></ref><ref id="bib34"><label>34.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Finney</surname><given-names>HL</given-names></name><name><surname>Arlant</surname><given-names>PA</given-names></name></person-group>
+<article-title>Focal seizure disorder secondary to multiple shunt revisions. A case report</article-title>
+<source>Childs Brain</source>
+<year>1977</year>
+<volume>3</volume>
+<issue>1</issue>
+<fpage>62&#x02013;4</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.1159/000119650</pub-id>
+<pub-id pub-id-type="pmid">403063</pub-id>
+</element-citation></ref><ref id="bib35"><label>35.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Majewska</surname><given-names>Z</given-names></name><name><surname>Szelozyn&#x02032;ska</surname><given-names>K</given-names></name></person-group>
+<article-title>Epileptic fits in children with hydrocephalus</article-title>
+<source>Acta Univ Carol Med Monogr</source>
+<year>1976</year>
+<issue>75</issue>
+<fpage>92&#x02013;3</fpage>
+<pub-id pub-id-type="pmid">1052652</pub-id>
+</element-citation></ref><ref id="bib36"><label>36.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Scher</surname><given-names>MS</given-names></name></person-group>
+<article-title>Neonatal seizure classification: a fetal perspective concerning childhood epilepsy</article-title>
+<source>Epilepsy Res</source>
+<year>2006</year>
+<month>Aug</month>
+<volume>70</volume>
+<issue>Suppl 1</issue>
+<fpage>S41&#x02013;57</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.1016/j.eplepsyres.2005.11.020</pub-id>
+<pub-id pub-id-type="pmid">16889942</pub-id>
+</element-citation></ref><ref id="bib37"><label>37.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Sheth</surname><given-names>RD</given-names></name><name><surname>Hobbs</surname><given-names>GR</given-names></name><name><surname>Mullett</surname><given-names>M</given-names></name></person-group>
+<article-title>Neonatal seizures</article-title>
+<source>J Perinatol</source>
+<year>1999</year>
+<volume>19</volume>
+<issue>1</issue>
+<fpage>40&#x02013;3</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.1038/sj.jp.7200107</pub-id>
+<pub-id pub-id-type="pmid">10685200</pub-id>
+</element-citation></ref><ref id="bib38"><label>38.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Okurowska-Zawada</surname><given-names>B</given-names></name><name><surname>Sobaniec</surname><given-names>W</given-names></name><name><surname>Ku&#x00142;ak</surname><given-names>W</given-names></name><name><surname>Smigielska-Kuzia</surname><given-names>J</given-names></name><name><surname>Paszko-Patej</surname><given-names>G</given-names></name><name><surname>Sienkiewicz</surname><given-names>D</given-names></name></person-group>
+<etal/>
+<article-title>Clinical-electroencephalographic analysis of brain bioelectrical activity in children with myelomeningocele and internal hydrocephalus</article-title>
+<source>Adv Med Sci [online]</source>
+<year>2007</year>
+<volume>52</volume>
+<issue>Suppl 1</issue>
+<fpage>200&#x02013;3</fpage>
+<comment>Available from: <ext-link xlink:href="https://pubmed.ncbi.nlm.nih.gov/18229665" ext-link-type="uri">https://pubmed.ncbi.nlm.nih.gov/18229665</ext-link>/</comment>
+<pub-id pub-id-type="pmid">18229665</pub-id>
+</element-citation></ref><ref id="bib39"><label>39.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Stein</surname><given-names>SC</given-names></name><name><surname>Schut</surname><given-names>L</given-names></name></person-group>
+<article-title>Hydrocephalus in myelomeningocele</article-title>
+<source>Pediatr Neurosurg</source>
+<year>1979</year>
+<volume>5</volume>
+<issue>4</issue>
+<fpage>413&#x02013;9</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.1159/000119836</pub-id>
+</element-citation></ref><ref id="bib40"><label>40.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Laurence</surname><given-names>KM</given-names></name></person-group>
+<article-title>The natural history of spina bifida cystica</article-title>
+<source>Proc R Soc Med [online]</source>
+<year>1960</year>
+<month>Dec</month>
+<volume>53</volume>
+<issue>12</issue>
+<fpage>1055&#x02013;56</fpage>
+<comment>Available from: <ext-link xlink:href="https://pubmed.ncbi.nlm.nih.gov/13759508" ext-link-type="uri">https://pubmed.ncbi.nlm.nih.gov/13759508</ext-link>/</comment>
+<pub-id pub-id-type="pmid">13759508</pub-id>
+</element-citation></ref><ref id="bib41"><label>41.</label><element-citation publication-type="journal">
+<person-group person-group-type="author"><name><surname>Lorber</surname><given-names>J</given-names></name></person-group>
+<article-title>Systematic ventriculographic studies in infants born with meningomyelocele and encephalocele: the incidence and development of hydrocephalus</article-title>
+<source>Arch Dis Child</source>
+<year>1961</year>
+<month>Aug</month>
+<volume>36</volume>
+<issue>188</issue>
+<fpage>381&#x02013;9</fpage>
+<comment>doi: </comment><pub-id pub-id-type="doi">10.1136/adc.36.188.381</pub-id>
+<pub-id pub-id-type="pmid">13763491</pub-id>
+</element-citation></ref></ref-list></back><floats-group><fig position="float" id="fig1"><label>Figure 1.</label><caption><p>ROC curve for ML algorithms.</p></caption><graphic xlink:href="qmj-2025-015-g001" position="float"/></fig><fig position="float" id="fig2"><label>Figure 2.</label><caption><p>Permutation feature importance method determining the most contributing factors in the RFC model.</p></caption><graphic xlink:href="qmj-2025-015-g002" position="float"/></fig><table-wrap position="float" id="tbl1"><label>Table 1.</label><caption><p>Demsographic and clinical characteristic analysis in MMC patients: patients without seizures versus patients with seizures.</p></caption><table frame="hsides" rules="groups"><thead><tr><td align="left" rowspan="1" colspan="1">Patient characteristics, <italic>n</italic> (%) (total <italic>n</italic> with available data)</td><td align="left" rowspan="1" colspan="1">All patients (<italic>n</italic>=103)</td><td align="left" rowspan="1" colspan="1">No seizure (<italic>n</italic>=92)</td><td align="left" rowspan="1" colspan="1">Seizure (<italic>n</italic>=11)</td><td align="left" rowspan="1" colspan="1">
+<italic>p</italic>
+</td><td align="left" rowspan="1" colspan="1">Cram&#x000e9;r&#x02019;s V/rank-biserial correlation</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr></thead><tbody><tr><td align="left" rowspan="1" colspan="1">Demographics (<italic>n</italic>=103)</td><td align="left" rowspan="1" colspan="1">(<italic>n</italic>=103)</td><td align="left" rowspan="1" colspan="1">(<italic>n</italic>=92)</td><td align="left" rowspan="1" colspan="1">(<italic>n</italic>=11)</td><td align="left" rowspan="1" colspan="1">
+</td><td align="left" rowspan="1" colspan="1">
+</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Gender</td><td align="left" rowspan="1" colspan="1">
+</td><td align="left" rowspan="1" colspan="1">
+</td><td align="left" rowspan="1" colspan="1">
+</td><td align="left" rowspan="1" colspan="1">0.107</td><td align="left" rowspan="1" colspan="1">0.159</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Female</td><td align="left" rowspan="1" colspan="1">61 (59.2)</td><td align="left" rowspan="1" colspan="1">52 (56.5)</td><td align="left" rowspan="1" colspan="1">9 (81.8)</td><td align="left" rowspan="1" colspan="1">
+</td><td align="left" rowspan="1" colspan="1">
+</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Male</td><td align="left" rowspan="1" colspan="1">42 (40.8)</td><td align="left" rowspan="1" colspan="1">40 (43.5)</td><td align="left" rowspan="1" colspan="1">2 (18.2)</td><td align="left" rowspan="1" colspan="1">
+</td><td align="left" rowspan="1" colspan="1">
+</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Age, median (IQR)</td><td align="left" rowspan="1" colspan="1">7 (4.0)</td><td align="left" rowspan="1" colspan="1">7.00 (4.0)</td><td align="left" rowspan="1" colspan="1">8 (1.5)</td><td align="left" rowspan="1" colspan="1">0.178</td><td align="left" rowspan="1" colspan="1">0.249</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Perinatal history (<italic>n</italic>=88)</td><td align="left" rowspan="1" colspan="1">(<italic>n</italic>=88)</td><td align="left" rowspan="1" colspan="1">(<italic>n</italic>=78)</td><td align="left" rowspan="1" colspan="1">(<italic>n</italic>=10)</td><td align="left" rowspan="1" colspan="1">
+</td><td align="left" rowspan="1" colspan="1">
+</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Gestational age, preterm</td><td align="left" rowspan="1" colspan="1">22 (25.0)</td><td align="left" rowspan="1" colspan="1">16 (20.5)</td><td align="left" rowspan="1" colspan="1">6 (60)</td><td align="left" rowspan="1" colspan="1">0.018<sup>*</sup>
+</td><td align="left" rowspan="1" colspan="1">0.289</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Mode of delivery (cesarean)</td><td align="left" rowspan="1" colspan="1">66 (75.0)</td><td align="left" rowspan="1" colspan="1">57 (73.1)</td><td align="left" rowspan="1" colspan="1">9 (90)</td><td align="left" rowspan="1" colspan="1">0.422</td><td align="left" rowspan="1" colspan="1">0.124</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">MMC level (<italic>n</italic>=98)</td><td align="left" rowspan="1" colspan="1">(<italic>n</italic>=98)</td><td align="left" rowspan="1" colspan="1">(<italic>n</italic>=87)</td><td align="left" rowspan="1" colspan="1">(<italic>n</italic>=11)</td><td align="left" rowspan="1" colspan="1">
+</td><td align="left" rowspan="1" colspan="1">
+</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Thoracic</td><td align="left" rowspan="1" colspan="1">3 (3.1)</td><td align="left" rowspan="1" colspan="1">2 (2.3)</td><td align="left" rowspan="1" colspan="1">1 (9.1)</td><td align="left" rowspan="1" colspan="1">0.331</td><td align="left" rowspan="1" colspan="1">0.124</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Thoracolumbar</td><td align="left" rowspan="1" colspan="1">16 (16.3)</td><td align="left" rowspan="1" colspan="1">13 (14.9)</td><td align="left" rowspan="1" colspan="1">3 (27.3)</td><td align="left" rowspan="1" colspan="1">0.414</td><td align="left" rowspan="1" colspan="1">0.105</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Lumbar</td><td align="left" rowspan="1" colspan="1">32 (32.7)</td><td align="left" rowspan="1" colspan="1">29 (33.3)</td><td align="left" rowspan="1" colspan="1">3 (27.3)</td><td align="left" rowspan="1" colspan="1">0.671</td><td align="left" rowspan="1" colspan="1">0.041</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Lumbosacral</td><td align="left" rowspan="1" colspan="1">32 (32.7)</td><td align="left" rowspan="1" colspan="1">31 (35.6)</td><td align="left" rowspan="1" colspan="1">1 (9.1)</td><td align="left" rowspan="1" colspan="1">0.143</td><td align="left" rowspan="1" colspan="1">0.179</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Sacral</td><td align="left" rowspan="1" colspan="1">8 (8.2)</td><td align="left" rowspan="1" colspan="1">5 (5.7)</td><td align="left" rowspan="1" colspan="1">3 (27.3)</td><td align="left" rowspan="1" colspan="1">0.031<sup>*</sup>
+</td><td align="left" rowspan="1" colspan="1">0.248</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Hydrocephalus (<italic>n</italic>=103)</td><td align="left" rowspan="1" colspan="1">76 (73.8)</td><td align="left" rowspan="1" colspan="1">65 (70.7)</td><td align="left" rowspan="1" colspan="1">11 (100)</td><td align="left" rowspan="1" colspan="1">0.036<sup>*</sup>
+</td><td align="left" rowspan="1" colspan="1">0.206</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Shunt placement (<italic>n</italic>=103)</td><td align="left" rowspan="1" colspan="1">76 (73.8)</td><td align="left" rowspan="1" colspan="1">65 (70.7)</td><td align="left" rowspan="1" colspan="1">11 (100)</td><td align="left" rowspan="1" colspan="1">0.036<sup>*</sup>
+</td><td align="left" rowspan="1" colspan="1">0.206</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Frontal shunt</td><td align="left" rowspan="1" colspan="1">26 (33.8)</td><td align="left" rowspan="1" colspan="1">19 (29.2)</td><td align="left" rowspan="1" colspan="1">7 (63.6)</td><td align="left" rowspan="1" colspan="1">0.023<sup>*</sup>
+</td><td align="left" rowspan="1" colspan="1">0.258</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Parietal shunt</td><td align="left" rowspan="1" colspan="1">9 (11.7)</td><td align="left" rowspan="1" colspan="1">8 (12.3)</td><td align="left" rowspan="1" colspan="1">1 (9.9)</td><td align="left" rowspan="1" colspan="1">0.389</td><td align="left" rowspan="1" colspan="1">0.033</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Occipital shunt</td><td align="left" rowspan="1" colspan="1">45 (58.4)</td><td align="left" rowspan="1" colspan="1">42 (64.6)</td><td align="left" rowspan="1" colspan="1">3 (27.3)</td><td align="left" rowspan="1" colspan="1">0.023<sup>*</sup>
+</td><td align="left" rowspan="1" colspan="1">0.258</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Shunt history (<italic>n</italic>=103)</td><td align="left" rowspan="1" colspan="1">(<italic>n</italic>=103)</td><td align="left" rowspan="1" colspan="1">(<italic>n</italic>=92)</td><td align="left" rowspan="1" colspan="1">(<italic>n</italic>=11)</td><td align="left" rowspan="1" colspan="1">
+</td><td align="left" rowspan="1" colspan="1">
+</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Number of shunt revisions, median (IQR)</td><td align="left" rowspan="1" colspan="1">0.00 (1.00)</td><td align="left" rowspan="1" colspan="1">0.00 (1.00)</td><td align="left" rowspan="1" colspan="1">2.00 (1.50)</td><td align="left" rowspan="1" colspan="1">&#x000a0;&#x0003c;&#x000a0;0.001<sup>*</sup>
+</td><td align="left" rowspan="1" colspan="1">0.573<sup>*</sup>
+</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">History of shunt infection</td><td align="left" rowspan="1" colspan="1">32 (31.1)</td><td align="left" rowspan="1" colspan="1">24 (26.1)</td><td align="left" rowspan="1" colspan="1">8 (72.7)</td><td align="left" rowspan="1" colspan="1">0.002<sup>*</sup>
+</td><td align="left" rowspan="1" colspan="1">0.311<sup>*</sup>
+</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Neuroimaging findings (<italic>n</italic>=103)</td><td align="left" rowspan="1" colspan="1">73 (70.9)</td><td align="left" rowspan="1" colspan="1">64 (69.6)</td><td align="left" rowspan="1" colspan="1">9 (81.8)</td><td align="left" rowspan="1" colspan="1">0.398</td><td align="left" rowspan="1" colspan="1">0.083</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Suprasellar arachnoid cyst</td><td align="left" rowspan="1" colspan="1">1 (1.0)</td><td align="left" rowspan="1" colspan="1">1 (1.1)</td><td align="left" rowspan="1" colspan="1">0 (0)</td><td align="left" rowspan="1" colspan="1">0.728</td><td align="left" rowspan="1" colspan="1">0.034</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Absent septum pellucidum</td><td align="left" rowspan="1" colspan="1">15 (14.6)</td><td align="left" rowspan="1" colspan="1">13 (14.1)</td><td align="left" rowspan="1" colspan="1">2 (18.2)</td><td align="left" rowspan="1" colspan="1">0.791</td><td align="left" rowspan="1" colspan="1">0.035</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Corpus callosum dysgenesis</td><td align="left" rowspan="1" colspan="1">35 (34.0)</td><td align="left" rowspan="1" colspan="1">27 (29.3)</td><td align="left" rowspan="1" colspan="1">8 (72.7)</td><td align="left" rowspan="1" colspan="1">0.004<sup>*</sup>
+</td><td align="left" rowspan="1" colspan="1">0.283</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Cerebellar malformation</td><td align="left" rowspan="1" colspan="1">64 (62.1)</td><td align="left" rowspan="1" colspan="1">59 (64.1)</td><td align="left" rowspan="1" colspan="1">5 (45.5)</td><td align="left" rowspan="1" colspan="1">0.227</td><td align="left" rowspan="1" colspan="1">0.119</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Falx dysgenesis</td><td align="left" rowspan="1" colspan="1">4 (3.9)</td><td align="left" rowspan="1" colspan="1">3 (3.3)</td><td align="left" rowspan="1" colspan="1">1 (9.1)</td><td align="left" rowspan="1" colspan="1">0.344</td><td align="left" rowspan="1" colspan="1">0.093</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Aqueduct stenosis</td><td align="left" rowspan="1" colspan="1">2 (1.9)</td><td align="left" rowspan="1" colspan="1">2 (2.2)</td><td align="left" rowspan="1" colspan="1">0 (0)</td><td align="left" rowspan="1" colspan="1">0.621</td><td align="left" rowspan="1" colspan="1">0.049</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Intracranial cyst</td><td align="left" rowspan="1" colspan="1">1 (1.0)</td><td align="left" rowspan="1" colspan="1">1 (1.1)</td><td align="left" rowspan="1" colspan="1">0 (0)</td><td align="left" rowspan="1" colspan="1">0.728</td><td align="left" rowspan="1" colspan="1">0.034</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Subdural collection</td><td align="left" rowspan="1" colspan="1">1 (1.0)</td><td align="left" rowspan="1" colspan="1">1 (1.1)</td><td align="left" rowspan="1" colspan="1">0 (0)</td><td align="left" rowspan="1" colspan="1">0.728</td><td align="left" rowspan="1" colspan="1">0.034</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Enlarged subarachnoid space</td><td align="left" rowspan="1" colspan="1">2 (1.9)</td><td align="left" rowspan="1" colspan="1">2 (2.2)</td><td align="left" rowspan="1" colspan="1">0 (0)</td><td align="left" rowspan="1" colspan="1">0.621</td><td align="left" rowspan="1" colspan="1">0.049</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Heterotopia</td><td align="left" rowspan="1" colspan="1">2 (1.9)</td><td align="left" rowspan="1" colspan="1">2 (2.2)</td><td align="left" rowspan="1" colspan="1">0 (0)</td><td align="left" rowspan="1" colspan="1">0.621</td><td align="left" rowspan="1" colspan="1">0.049</td></tr><tr><td colspan="6" rowspan="1">
+<hr/>
+</td></tr></tbody></table><table-wrap-foot><fn><p>Note: <sup>*</sup>Statistical significance was determined with a <italic>p</italic> value &#x02264;&#x000a0;0.05. Cram&#x000e9;r's V or rank&#x02013;biserial correlation values &#x02265;&#x000a0;0.3 indicated a statistically significant effect size. Descriptive measures included a median with the interquartile range since the normality assumption was violated according to the Shapiro&#x02013;Wilk test. For analysis of <italic>p</italic> values, the chi-square test was used for categorical variables, while the Mann&#x02013;Whitney U test was used for non-normally distributed numerical variables. Effect sizes were calculated using the rank&#x02013;biserial correlation for numerical variables and Cram&#x000e9;r's V for categorical variables.</p></fn><fn><p>IQR: interquartile range (Q3&#x02013;Q1), MMC: myelomeningocele.</p></fn></table-wrap-foot></table-wrap><table-wrap position="float" id="tbl2"><label>Table 2.</label><caption><p>Relationship of shunt location with the history of shunt infection and the number of shunt revisions.</p></caption><table frame="hsides" rules="groups"><thead><tr><td align="left" rowspan="1" colspan="1">Shunt location (<italic>n</italic>=76)</td><td align="left" rowspan="1" colspan="1">History of shunt infection, <italic>n</italic> (%) (<italic>n</italic>=32)</td><td align="left" rowspan="1" colspan="1">
+<italic>p</italic>
+</td><td align="left" rowspan="1" colspan="1">Cram&#x000e9;r&#x02019;s V</td><td align="left" rowspan="1" colspan="1">Number of shunt revisions, median (IQR)</td><td align="left" rowspan="1" colspan="1">
+<italic>p</italic>
+</td><td align="left" rowspan="1" colspan="1">Rank-biserial correlation</td></tr><tr><td colspan="7" rowspan="1">
+<hr/>
+</td></tr></thead><tbody><tr><td align="left" rowspan="1" colspan="1">Frontal (<italic>n</italic>=26)</td><td align="left" rowspan="1" colspan="1">16 (50)</td><td align="left" rowspan="1" colspan="1">&#x000a0;&#x0003c;&#x000a0;0.001<sup>*</sup>
+</td><td align="left" rowspan="1" colspan="1">0.289</td><td align="left" rowspan="1" colspan="1">2.00 (2.00)</td><td align="left" rowspan="1" colspan="1">&#x000a0;&#x0003c;&#x000a0;0.001<sup>*</sup>
+</td><td align="left" rowspan="1" colspan="1">0.533<sup>*</sup>
+</td></tr><tr><td colspan="7" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Parietal (<italic>n</italic>=9)</td><td align="left" rowspan="1" colspan="1">3 (9.4)</td><td align="left" rowspan="1" colspan="1">0.024<sup>*</sup>
+</td><td align="left" rowspan="1" colspan="1">0.061</td><td align="left" rowspan="1" colspan="1">1.00 (4.00)</td><td align="left" rowspan="1" colspan="1">0.339</td><td align="left" rowspan="1" colspan="1">0.190</td></tr><tr><td colspan="7" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Occipital (<italic>n</italic>=45)</td><td align="left" rowspan="1" colspan="1">13 (40.6)</td><td align="left" rowspan="1" colspan="1">&#x000a0;&#x0003c;&#x000a0;0.001<sup>*</sup>
+</td><td align="left" rowspan="1" colspan="1">0.305<sup>*</sup>
+</td><td align="left" rowspan="1" colspan="1">0 (1.00)</td><td align="left" rowspan="1" colspan="1">0.003<sup>*</sup>
+</td><td align="left" rowspan="1" colspan="1">0.379<sup>*</sup>
+</td></tr><tr><td colspan="7" rowspan="1">
+<hr/>
+</td></tr></tbody></table><table-wrap-foot><fn><p>Note: <sup>*</sup>Statistical significance was determined with a <italic>p</italic> value &#x02264;&#x000a0;0.05. Cram&#x000e9;r's V or rank&#x02013;biserial correlation values &#x02265;&#x000a0; 0.3 indicated a statistically significant effect size. Descriptive measures included a median with the interquartile range since the normality assumption was violated according to the Shapiro&#x02013;Wilk test. For analysis of <italic>p</italic> values, the chi-square test was used for categorical variables, while the Mann&#x02013;Whitney U test was used for non-normally distributed numerical variables. Effect sizes were calculated using the rank&#x02013;biserial correlation for numerical variables and Cram&#x000e9;r's V for categorical variables.</p></fn><fn><p>IQR: interquartile range (Q3&#x02013;Q1).</p></fn></table-wrap-foot></table-wrap><table-wrap position="float" id="tbl3"><label>Table 3.</label><caption><p>Characteristics of seizures.</p></caption><table frame="hsides" rules="groups"><thead><tr><td align="left" rowspan="1" colspan="1">Characteristics of seizures (total <italic>n</italic> with available data)</td><td align="left" rowspan="1" colspan="1">Patients with seizures (<italic>n</italic> =11)</td></tr><tr><td colspan="2" rowspan="1">
+<hr/>
+</td></tr></thead><tbody><tr><td align="left" rowspan="1" colspan="1">Type of seizure (<italic>n</italic>=9)</td><td align="left" rowspan="1" colspan="1">
+</td></tr><tr><td colspan="2" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Focal, <italic>n</italic> (%)</td><td align="left" rowspan="1" colspan="1">2 (22.2)</td></tr><tr><td colspan="2" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Generalized, <italic>n</italic> (%)</td><td align="left" rowspan="1" colspan="1">7 (77.8)</td></tr><tr><td colspan="2" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Number of seizures, median (IQR) (<italic>n</italic>=9)</td><td align="left" rowspan="1" colspan="1">1.00 (1.00)</td></tr><tr><td colspan="2" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Age of onset of the first seizure, median (IQR) (<italic>n</italic>=9)</td><td align="left" rowspan="1" colspan="1">1.42 (1.73)</td></tr><tr><td colspan="2" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Medications (<italic>n</italic>=9)</td><td align="left" rowspan="1" colspan="1">
+</td></tr><tr><td colspan="2" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Valproic acid, <italic>n</italic> (%)</td><td align="left" rowspan="1" colspan="1">3 (33.3)</td></tr><tr><td colspan="2" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Phenobarbital, <italic>n</italic> (%)</td><td align="left" rowspan="1" colspan="1">5 (55.6)</td></tr><tr><td colspan="2" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Phenytoin, <italic>n</italic> (%)</td><td align="left" rowspan="1" colspan="1">1 (11.1)</td></tr><tr><td colspan="2" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Levetiracetam, <italic>n</italic> (%)</td><td align="left" rowspan="1" colspan="1">2 (22.2)</td></tr><tr><td colspan="2" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">Carbamazepine, <italic>n</italic> (%)</td><td align="left" rowspan="1" colspan="1">1 (11.1)</td></tr><tr><td colspan="2" rowspan="1">
+<hr/>
+</td></tr></tbody></table><table-wrap-foot><fn><p>Note: Descriptive measures included a median with the interquartile range since the normality assumption was violated according to the Shapiro&#x02013;Wilk test.</p></fn><fn><p>IQR: interquartile range (Q3&#x02013;Q1).</p></fn></table-wrap-foot></table-wrap><table-wrap position="float" id="tbl4"><label>Table 4.</label><caption><p>Performance of machine learning algorithms.</p></caption><table frame="hsides" rules="groups"><thead><tr><td align="left" rowspan="1" colspan="1">ML algorithm</td><td align="left" rowspan="1" colspan="1">10-fold cross-validation</td><td align="left" rowspan="1" colspan="1">Accuracy</td><td align="left" rowspan="1" colspan="1">Mean bootstrap estimate [95% CI]</td><td align="left" rowspan="1" colspan="1">AUC</td></tr><tr><td colspan="5" rowspan="1">
+<hr/>
+</td></tr></thead><tbody><tr><td align="left" rowspan="1" colspan="1">RFC</td><td align="left" rowspan="1" colspan="1">0.893</td><td align="left" rowspan="1" colspan="1">0.87</td><td align="left" rowspan="1" colspan="1">0.89 [0.81-0.97]</td><td align="left" rowspan="1" colspan="1">0.856</td></tr><tr><td colspan="5" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">SVM</td><td align="left" rowspan="1" colspan="1">0.866</td><td align="left" rowspan="1" colspan="1">0.85</td><td align="left" rowspan="1" colspan="1">0.84 [0.72-0.95]</td><td align="left" rowspan="1" colspan="1">0.749</td></tr><tr><td colspan="5" rowspan="1">
+<hr/>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">LR</td><td align="left" rowspan="1" colspan="1">0.856</td><td align="left" rowspan="1" colspan="1">0.87</td><td align="left" rowspan="1" colspan="1">0.86 [0.75-0.95]</td><td align="left" rowspan="1" colspan="1">0.800</td></tr><tr><td colspan="5" rowspan="1">
+<hr/>
+</td></tr></tbody></table><table-wrap-foot><fn><p>ML: machine learning, CI: confidence Interval, AUC: area under the curve, RFC: random forest classifier, SVM: support vector machine, LR: logistic regression.</p></fn></table-wrap-foot></table-wrap></floats-group></article>

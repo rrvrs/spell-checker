@@ -1,0 +1,2180 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="1.3" id="smtd202401123" xml:lang="en" article-type="research-article"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Small Methods</journal-id><journal-id journal-id-type="iso-abbrev">Small Methods</journal-id><journal-id journal-id-type="doi">10.1002/(ISSN)2366-9608</journal-id><journal-id journal-id-type="publisher-id">SMTD</journal-id><journal-title-group><journal-title>Small Methods</journal-title></journal-title-group><issn pub-type="epub">2366-9608</issn><publisher><publisher-name>John Wiley and Sons Inc.</publisher-name><publisher-loc>Hoboken</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">39533496</article-id><article-id pub-id-type="pmc">PMC12103232</article-id>
+<article-id pub-id-type="doi">10.1002/smtd.202401123</article-id><article-id pub-id-type="publisher-id">SMTD202401123</article-id><article-categories><subj-group subj-group-type="overline"><subject>Research Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Special Section: Research Article</subject></subj-group></article-categories><title-group><article-title>Sainsc: A Computational Tool for Segmentation&#x02010;Free Analysis of In Situ Capture Data</article-title></title-group><contrib-group><contrib id="smtd202401123-cr-0001" contrib-type="author"><name><surname>M&#x000fc;ller&#x02010;B&#x000f6;tticher</surname><given-names>Niklas</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0001-5103-7282</contrib-id><xref rid="smtd202401123-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="smtd202401123-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="smtd202401123-cr-0002" contrib-type="author"><name><surname>Tiesmeyer</surname><given-names>Sebastian</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-0492-1523</contrib-id><xref rid="smtd202401123-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="smtd202401123-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="smtd202401123-cr-0003" contrib-type="author"><name><surname>Eils</surname><given-names>Roland</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-0034-4036</contrib-id><xref rid="smtd202401123-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="smtd202401123-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="smtd202401123-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref></contrib><contrib id="smtd202401123-cr-0004" contrib-type="author" corresp="yes"><name><surname>Ishaque</surname><given-names>Naveed</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-8426-901X</contrib-id><xref rid="smtd202401123-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><address><email>naveed.ishaque@bih-charite.de</email></address></contrib></contrib-group><aff id="smtd202401123-aff-0001">
+<label>
+<sup>1</sup>
+</label>
+<named-content content-type="organisation-division">Center of Digital Health</named-content>
+<institution>Berlin Institute of Health at Charit&#x000e9; &#x02013; Universit&#x000e4;tsmedizin Berlin</institution>
+<named-content content-type="street">Charit&#x000e9;platz 1</named-content>
+<postal-code>10117</postal-code>
+<city>Berlin</city>
+<country country="DE">Germany</country>
+</aff><aff id="smtd202401123-aff-0002">
+<label>
+<sup>2</sup>
+</label>
+<named-content content-type="organisation-division">Department of Mathematics and Computer Science</named-content>
+<institution>Freie Universit&#x000e4;t Berlin</institution>
+<named-content content-type="street">Arnimallee 14</named-content>
+<postal-code>14195</postal-code>
+<city>Berlin</city>
+<country country="DE">Germany</country>
+</aff><aff id="smtd202401123-aff-0003">
+<label>
+<sup>3</sup>
+</label>
+<named-content content-type="organisation-division">Health Data Science Unit</named-content>
+<institution>Heidelberg University Hospital and BioQuant</institution>
+<institution>University of Heidelberg</institution>
+<named-content content-type="street">Im Neuenheimer Feld 267</named-content>
+<postal-code>69120</postal-code>
+<city>Heidelberg</city>
+<country country="DE">Germany</country>
+</aff><author-notes><corresp id="correspondenceTo">
+<label>*</label>E&#x02010;mail: <email>naveed.ishaque@bih-charite.de</email>
+<break/>
+</corresp></author-notes><pub-date pub-type="epub"><day>12</day><month>11</month><year>2024</year></pub-date><pub-date pub-type="ppub"><day>17</day><month>5</month><year>2025</year></pub-date><volume>9</volume><issue seq="140">5</issue><issue-id pub-id-type="doi">10.1002/smtd.v9.5</issue-id><issue-title content-type="special-issue-title">Special Section: Advances in Technologies and Methods in Single&#x02010;Cell Spatial Transcriptomics</issue-title><elocation-id>2401123</elocation-id><history>
+<date date-type="rev-recd"><day>23</day><month>9</month><year>2024</year></date>
+<date date-type="received"><day>22</day><month>7</month><year>2024</year></date>
+</history><permissions><!--&#x000a9; 2025 Wiley&#x02010;VCH GmbH--><copyright-statement content-type="article-copyright">&#x000a9; 2024 The Author(s). Small Methods published by Wiley&#x02010;VCH GmbH</copyright-statement><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>This is an open access article under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link> License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions><self-uri content-type="pdf" xlink:href="file:SMTD-9-2401123.pdf"/><abstract><title>Abstract</title><p>Spatially resolved transcriptomics (SRT) has become the method of choice for characterising the complexity of biomedical tissue samples. Until recently, scientists were restricted to SRT methods that can profile a limited set of target genes at high spatial resolution or transcriptome&#x02010;wide but at a low spatial resolution. Through recent developments, there are now methods that offer both subcellular spatial resolution and full transcriptome coverage. However, utilising these new methods' high spatial resolution and gene resolution remains elusive due to several factors, including low detection efficiency and high computational costs. Here, we present Sainsc (Segmentation&#x02010;free analysis of in situ capture data), which combines a cell&#x02010;segmentation&#x02010;free approach with efficient data processing of transcriptome&#x02010;wide nanometre&#x02010;resolution spatial data. Sainsc can generate cell&#x02010;type maps with accurate cell&#x02010;type assignment at the nanometre scale, together with corresponding maps of the assignment scores that facilitate interpretation of the local confidence of cell&#x02010;type assignment. We demonstrate its utility and accuracy for different tissues and technologies. Compared to other methods, Sainsc requires lower computational resources and has scalable performance, enabling interactive data exploration. Sainsc is compatible with common data analysis frameworks and is available as open&#x02010;source software in multiple programming languages.</p></abstract><abstract id="smtd202401123-abs-0001" abstract-type="graphical"><p>Spatially resolved transcriptomics methods can now profile the entire transcriptome, at full organism scale with nanometre resolution. Analysis frameworks that can efficiently and intuitively process the massive data generated by these methods are lacking. Here Sainsc is presented, a computational tool for cell segmentation&#x02010;free analysis of spatially resolved transcriptomics data. Sainsc is robust, scalable, and available as open&#x02010;source software.
+<boxed-text position="anchor" content-type="graphic"><graphic xlink:href="SMTD-9-2401123-g003.jpg" position="anchor" id="jats-graphic-1"/></boxed-text>
+</p></abstract><kwd-group kwd-group-type="author-generated"><kwd id="smtd202401123-kwd-0001">bioinformatics</kwd><kwd id="smtd202401123-kwd-0002">cell type annotation</kwd><kwd id="smtd202401123-kwd-0003">in situ capture spatial transcriptomics</kwd><kwd id="smtd202401123-kwd-0004">segmentation&#x02010;free</kwd><kwd id="smtd202401123-kwd-0005">spatial biology</kwd><kwd id="smtd202401123-kwd-0006">spatial omics</kwd></kwd-group><funding-group><award-group id="funding-0001"><funding-source>Federal Ministry of Education and Research of Germany</funding-source><award-id>031L0265</award-id></award-group><award-group id="funding-0002"><funding-source><institution-wrap><institution>Bundesministerium f&#x000fc;r Bildung und Forschung
+</institution><institution-id institution-id-type="doi">10.13039/501100002347</institution-id></institution-wrap></funding-source><award-id>031L0265</award-id></award-group></funding-group><counts><fig-count count="6"/><table-count count="0"/><page-count count="11"/><word-count count="8415"/></counts><custom-meta-group><custom-meta><meta-name>source-schema-version-number</meta-name><meta-value>2.0</meta-value></custom-meta><custom-meta><meta-name>cover-date</meta-name><meta-value>May 17, 2025</meta-value></custom-meta><custom-meta><meta-name>details-of-publishers-convertor</meta-name><meta-value>Converter:WILEY_ML3GV2_TO_JATSPMC version:6.5.6 mode:remove_FC converted:24.05.2025</meta-value></custom-meta></custom-meta-group></article-meta><notes><p content-type="self-citation">
+<mixed-citation publication-type="journal" id="smtd202401123-cit-0046">
+<string-name>
+<given-names>N.</given-names>
+<surname>M&#x000fc;ller&#x02010;B&#x000f6;tticher</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Tiesmeyer</surname>
+</string-name>, <string-name>
+<given-names>R.</given-names>
+<surname>Eils</surname>
+</string-name>, <string-name>
+<given-names>N.</given-names>
+<surname>Ishaque</surname>
+</string-name>, <article-title>Sainsc: A Computational Tool for Segmentation&#x02010;Free Analysis of In Situ Capture Data</article-title>. <source>Small Methods</source>
+<year>2025</year>, <volume>9</volume>, <elocation-id>2401123</elocation-id>. <pub-id pub-id-type="doi">10.1002/smtd.202401123</pub-id>
+</mixed-citation>
+</p></notes></front><body><sec id="smtd202401123-sec-0010"><label>1</label><title>Introduction</title><p>Spatially resolved transcriptomics (SRT) is gaining popularity as a powerful tool for characterizing the complexity of biomedical tissue samples.<sup>[</sup>
+<xref rid="smtd202401123-bib-0001" ref-type="bibr">
+<sup>1</sup>
+</xref>
+<sup>]</sup> This cutting&#x02010;edge technology allows researchers to map gene expression within the spatial context of tissue architecture, providing unprecedented insights into cellular heterogeneity and tissue organization.<sup>[</sup>
+<xref rid="smtd202401123-bib-0002" ref-type="bibr">
+<sup>2</sup>
+</xref>
+<sup>]</sup> Unlike single&#x02010;cell RNA sequencing, spatial transcriptomics preserves spatial information, enabling the identification of cellular niches within tissues and organs. The spatial context is crucial for understanding complex biological processes such as development, disease progression, and response to therapy.<sup>[</sup>
+<xref rid="smtd202401123-bib-0003" ref-type="bibr">
+<sup>3</sup>
+</xref>
+<sup>]</sup>
+</p><p>SRT methods can be categorized broadly into two groups.<sup>[</sup>
+<xref rid="smtd202401123-bib-0002" ref-type="bibr">
+<sup>2</sup>
+</xref>, <xref rid="smtd202401123-bib-0004" ref-type="bibr">
+<sup>4</sup>
+</xref>
+<sup>]</sup> The first is imaging&#x02010;based methods that offer single&#x02010;molecule resolution through in situ hybridization (ISH)<sup>[</sup>
+<xref rid="smtd202401123-bib-0005" ref-type="bibr">
+<sup>5</sup>
+</xref>, <xref rid="smtd202401123-bib-0006" ref-type="bibr">
+<sup>6</sup>
+</xref>
+<sup>]</sup> or in situ sequencing (ISS)<sup>[</sup>
+<xref rid="smtd202401123-bib-0007" ref-type="bibr">
+<sup>7</sup>
+</xref>, <xref rid="smtd202401123-bib-0008" ref-type="bibr">
+<sup>8</sup>
+</xref>
+<sup>]</sup> for a selected number of target genes, normally in the range of 100&#x02013;1000s. The second is in situ capture methods that incorporate spatial barcodes onto transcripts before sequencing, allowing whole transcriptome coverage but at limited spatial resolution<sup>[</sup>
+<xref rid="smtd202401123-bib-0009" ref-type="bibr">
+<sup>9</sup>
+</xref>, <xref rid="smtd202401123-bib-0010" ref-type="bibr">
+<sup>10</sup>
+</xref>
+<sup>]</sup> (e.g., 100&#x000a0;&#x000b5;m inter&#x02010;spot distance for Visium). The low spatial resolution of in situ capture methods complicates the spatial analysis of single cells, requiring deconvolution, imputation, and integration with external single&#x02010;cell transcriptomics resources.<sup>[</sup>
+<xref rid="smtd202401123-bib-0011" ref-type="bibr">
+<sup>11</sup>
+</xref>, <xref rid="smtd202401123-bib-0012" ref-type="bibr">
+<sup>12</sup>
+</xref>, <xref rid="smtd202401123-bib-0013" ref-type="bibr">
+<sup>13</sup>
+</xref>
+<sup>]</sup> However, recent advancements in spatial transcriptomics have revolutionized the field by offering full transcriptome profiling at nanometre resolution through profiling methods such as Stereo&#x02010;seq, Seq&#x02010;Scope, Open&#x02010;ST, and Nova&#x02010;ST.<sup>[</sup>
+<xref rid="smtd202401123-bib-0014" ref-type="bibr">
+<sup>14</sup>
+</xref>, <xref rid="smtd202401123-bib-0015" ref-type="bibr">
+<sup>15</sup>
+</xref>, <xref rid="smtd202401123-bib-0016" ref-type="bibr">
+<sup>16</sup>
+</xref>, <xref rid="smtd202401123-bib-0017" ref-type="bibr">
+<sup>17</sup>
+</xref>
+<sup>]</sup> These high&#x02010;resolution techniques provide unique benefits, such as resolving transcriptome&#x02010;wide expression at subcellular levels, in some cases within the sub&#x02010;micron range.</p><p>However, these advancements also present several challenges. The sheer volume of data generated by these high&#x02010;resolution methods requires robust and scalable computational tools for efficient data processing and analysis. Furthermore, measured gene expression is sparse, potentially arising from a combination of low capture efficiency and a smaller total capture area compared with lower&#x02010;resolution methods.<sup>[</sup>
+<xref rid="smtd202401123-bib-0018" ref-type="bibr">
+<sup>18</sup>
+</xref>
+<sup>]</sup> In the previous generation of supra&#x02010;cellular spatial resolution in situ capture SRTs, deconvolution of cell types was a common task. With the increased sub&#x02010;cellular spatial resolution of newer methods, there is the potential to assign gene expression at the single&#x02010;cell level.<sup>[</sup>
+<xref rid="smtd202401123-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref>
+<sup>]</sup> However, accurate cell segmentation remains elusive,<sup>[</sup>
+<xref rid="smtd202401123-bib-0020" ref-type="bibr">
+<sup>20</sup>
+</xref>
+<sup>]</sup> making the correct assignment of measured transcripts to individual cells a nontrivial task. Addressing these computational challenges is essential for the widespread adoption and effective utilization of high&#x02010;resolution spatial transcriptomics in biomedical research.</p><p>To address the current computational challenges in processing and analyzing data from these methods, we developed Sainsc (pronounced &#x0201c;science,&#x0201d; segmentation&#x02010;free analysis of in situ capture data), which combines a cell segmentation&#x02010;free approach with efficient data processing of transcriptome&#x02010;wide nanometre resolution SRT data. Sainsc is tightly integrated with common data structures and frameworks for single&#x02010;cell and spatial data analysis in Python, rendering it highly accessible while outsourcing the computationally demanding tasks to the Rust programming language enabling efficient and scalable computational performance in analyzing full transcriptome nanometre&#x02010;scale data in native resolution. Furthermore, its segmentation&#x02010;free approach builds upon a Kernel Density Estimation (KDE) of gene expression, which reduces data sparsity and is suitable for classification tasks.<sup>[</sup>
+<xref rid="smtd202401123-bib-0021" ref-type="bibr">
+<sup>21</sup>
+</xref>
+<sup>]</sup>
+</p><p>We apply Sainsc to SRT data of several tissues, identifying cells missed by segmentation&#x02010;based analysis, show practical applications of spatial maps of the assignment score to explain the confidence of the model results, and demonstrate generalisability across profiling methods. Furthermore, Sainsc shows significant computational performance advantages over other competing tools, facilitating more efficient exploratory data analysis. Our implementation adheres to common data formats and analysis frameworks in the field to ensure interoperability, and the code is openly available on GitHub as Python and Julia packages.</p></sec><sec id="smtd202401123-sec-0020"><label>2</label><title>Result</title><sec id="smtd202401123-sec-0030"><label>2.1</label><title>Sainsc&#x02014;A Computation Tool for Segmentation&#x02010;Free Analysis of In Situ Capture Data</title><p>The Sainsc workflow was inspired by the SSAM and SSAM&#x02010;lite algorithms.<sup>[</sup>
+<xref rid="smtd202401123-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref>, <xref rid="smtd202401123-bib-0022" ref-type="bibr">
+<sup>22</sup>
+</xref>
+<sup>]</sup> Briefly, SSAM models spatial gene expression as a density by applying the KDE, which can then be used for robust and accurate cell&#x02010;type assignment across the tissue. The computational steps can be broadly broken down into reading data, quality control, data preprocessing, modeling spatial gene expression, generating or acquiring cell&#x02010;type&#x02010;specific gene expression patterns, and assigning cell types to pixels to generate a cell&#x02010;type map (<bold>Figure</bold>&#x000a0;<xref rid="smtd202401123-fig-0001" ref-type="fig">
+<bold>1</bold>
+</xref>). Sainsc was developed to support efficient processing of in situ capture SRT data at native resolution while supporting imaging&#x02010;based SRT data by binning detected transcripts.</p><fig position="float" fig-type="Figure" id="smtd202401123-fig-0001"><label>Figure 1</label><caption><p>Sainsc workflow. Sainsc takes gene counts from spatially resolved transcriptomics platforms as input and models 2D gene expression using Kernel Density Estimation. Using reference cell&#x02010;type signatures (either from prior knowledge or calculated <italic toggle="yes">de novo</italic> from the data), it models cell&#x02010;type assignments using cosine similarity of the gene expression with the reference signatures. Each spot gets assigned a cell type and an assignment score is calculated to estimate the confidence of the assignment.</p></caption><graphic xlink:href="SMTD-9-2401123-g004" position="anchor" id="jats-graphic-3"/></fig><p>Sainsc's primary implementation is in Python and leans on Rust for optimized data structures, data processing, and safe multi&#x02010;threading support. The Rust elements enable computational efficiency, while the Python wrapper (using PyO3 for interfacing with Rust) enables accessibility to most computational life scientists. The main workflow is wrapped with a Python API and is provided with a broad range of convenience and plotting functions. Furthermore, we provide a Julia implementation of Sainsc's main functionality given its increasing popularity in the bioinformatics community.<sup>[</sup>
+<xref rid="smtd202401123-bib-0023" ref-type="bibr">
+<sup>23</sup>
+</xref>
+<sup>]</sup> To ensure interoperability with the wider ecosystem of spatial and single&#x02010;cell analysis tools, Sainsc provides native support for reading established file formats (e.g., GEM files) and can output to community standard data structures (e.g., AnnData and SpatialData formats).<sup>[</sup>
+<xref rid="smtd202401123-bib-0024" ref-type="bibr">
+<sup>24</sup>
+</xref>, <xref rid="smtd202401123-bib-0025" ref-type="bibr">
+<sup>25</sup>
+</xref>
+<sup>]</sup>
+</p><p>The Sainsc workflow comprises as follows; first, data are read into a custom Rust data structure (a hash map of sparse matrices of equal shape). The reading function supports popular file formats and creates a pixel structure representing the native resolution of the in situ capture SRT data. A sparse data format was chosen for memory&#x02010;efficient handling of sparse in situ capture SRT data. To support imaging&#x02010;based SRT or unsupported file formats, the Rust data structure can be constructed by providing a Python DataFrame. The optional next step involves filtering genes by count and visualizing gene expression over the tissue to select the region of interest for analysis. Then we model the gene expression density over the tissue by applying the KDE to all selected genes in Rust. Here, a kernel function (Sainsc has built&#x02010;in support for Gaussian and Epanechnikov) and the kernel bandwidth (in pixels or micrometers) are defined and the kernel is pre&#x02010;computed once, stored, and subsequently applied as required. To accelerate computation and prevent gene expression signal leakage, the Gaussian kernel is cropped at twice the bandwidth (by default). After the KDE is applied, the user can view the density of total gene expression over the tissue. The cell&#x02010;type map is generated in the final step. This step requires a cell&#x02010;type&#x02010;specific gene expression signature matrix, which can either be provided by the user (e.g., from existing single&#x02010;cell RNAseq data) or computed <italic toggle="yes">de novo</italic> from the data. <italic toggle="yes">De novo</italic> computation of cell&#x02010;type signatures from the SRT data follows a procedure similar to that of SSAM, where local maxima of gene expression are considered representative of cell gene expression profiles and clustered to identify cell&#x02010;type&#x02010;specific signatures.<sup>[</sup>
+<xref rid="smtd202401123-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref>
+<sup>]</sup> To minimize the memory and runtime requirements for the pixel&#x02010;level cell&#x02010;type assignment, only the subset of genes defined in the signature matrix are used, and small windows (by default, 500&#x000a0;&#x000d7;&#x000a0;500 with padding according to the kernel radius) are analyzed in parallel. Sainsc uses cosine similarity to identify the most similar cell&#x02010;type signature for cell&#x02010;type assignment to each element,<sup>[</sup>
+<xref rid="smtd202401123-bib-0026" ref-type="bibr">
+<sup>26</sup>
+</xref>
+<sup>]</sup> which is then rendered as a colored pixel on the cell&#x02010;type map.</p><p>Cell&#x02010;type classification often entails variable class resolutions. For example, certain classes like neural endothelial cells are well&#x02010;defined with distinct transcriptional profiles. In contrast, other classes, such as various inhibitory or cortical&#x02010;pyramidal subtypes, require a much finer class resolution within the dataset. Therefore, the similarity between signatures may vary strongly. To effectively account for this, we have adopted a normalization strategy for the standard cosine similarity score. This adapted &#x0201c;assignment score&#x0201d; better reflects the local class resolution by scaling the difference in cosine similarity between the two best&#x02010;scoring cell types according to an upper bound based on the similarity between the two best signatures for each pixel.</p><p>To investigate the accuracy of spatial cell&#x02010;type assignment and assignment score we applied Sainsc to a synthetic dataset.<sup>[</sup>
+<xref rid="smtd202401123-bib-0027" ref-type="bibr">
+<sup>27</sup>
+</xref>
+<sup>]</sup> (Figure <xref rid="smtd202401123-supinfo-0001" ref-type="">S1</xref>, Supporting Information). The simulated data consisted of 100 replicates of 500&#x000a0;&#x000d7;&#x000a0;500 grids, containing 625 cells each assigned one of nine cell types of the mouse kidney. Spots were assigned gene expression based on the cell identity of the spot using a Poisson process with parameters inferred from single&#x02010;cell RNAseq data, and zero inflation was introduced uniformly at random, setting 20% of spots to zero counts. Sainsc demonstrated comparable accuracy to TopACT (both run at native resolution) and outperformed robust cell type decomposition (RCTD) with a bin size of 20 (Figure <xref rid="smtd202401123-supinfo-0001" ref-type="">S1A,B</xref>, Supporting Information).<sup>[</sup>
+<xref rid="smtd202401123-bib-0028" ref-type="bibr">
+<sup>28</sup>
+</xref>
+<sup>]</sup> Investigating the effect of filtering spots based on assignment scores revealed that the spots with the above median assignment scores obtained 0.995 accuracy for all but one cell type (Figure <xref rid="smtd202401123-supinfo-0001" ref-type="">S1C</xref>). The spatial maps of the assignment score revealed distributions that visually corresponded to a realistic representation of cellular architecture given the ground truth setting (Figure <xref rid="smtd202401123-supinfo-0001" ref-type="">S1D&#x02013;G</xref>, Supporting Information).</p></sec><sec id="smtd202401123-sec-0040"><label>2.2</label><title>Sainsc Reconstructs Accurate Cell&#x02010;Type Maps of Mouse Whole Embryo and Mouse Brain at Sub&#x02010;Micron Resolution</title><p>To investigate the usability of Sainsc with challenging real&#x02010;world data, we applied it to a section of an E16.5 whole mouse embryo data profiled using Stereo&#x02010;seq.<sup>[</sup>
+<xref rid="smtd202401123-bib-0014" ref-type="bibr">
+<sup>14</sup>
+</xref>
+<sup>]</sup> The sample has 28633 genes detected in 10582619673 reads generated over a large field of view (&#x02248;1.4&#x000a0;&#x000d7;&#x000a0;0.9&#x000a0;cm), representing one of the largest in situ capture SRT datasets. We used Sainsc to perform both unsupervised and supervised analysis at native resolution and compared the output to previously published cell&#x02010;type maps (<bold>Figure</bold>&#x000a0;<xref rid="smtd202401123-fig-0002" ref-type="fig">
+<bold>2</bold>
+</xref>). The supervised analysis resulted in highly similar cell&#x02010;type maps (Figure&#x000a0;<xref rid="smtd202401123-fig-0002" ref-type="fig">2A,B</xref>). We observed increased sensitivity across the section, including the choroid plexus cells at the fourth ventricle, which was further validated by its marker gene <italic toggle="yes">Ttr</italic> (Figure&#x000a0;<xref rid="smtd202401123-fig-0002" ref-type="fig">2D,E</xref>). We believe that this increased sensitivity is a direct consequence of the cell segmentation&#x02010;free analysis of gene expression in Sainsc. Most notably, Sainsc was able to identify many more erythrocytes compared to the original study, with the highest accumulation of signal in expected organs: the spleen, liver, and umbilical cord. Interestingly, we found erythrocytes in the choroid plexus at the fourth ventricle (Figure&#x000a0;<xref rid="smtd202401123-fig-0002" ref-type="fig">2D</xref>). We have previously demonstrated that current cell&#x02010;segmentation algorithms struggle with segmenting choroid plexus cells.<sup>[</sup>
+<xref rid="smtd202401123-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref>
+<sup>]</sup> The choroid plexus produces and secretes the majority of the cerebral spinal fluid and consists of ependymal cells surrounding a core of capillaries,<sup>[</sup>
+<xref rid="smtd202401123-bib-0029" ref-type="bibr">
+<sup>29</sup>
+</xref>
+<sup>]</sup> rationalizing Sainsc's detection of erythrocytes adjacent to ependymal cells. The prediction of erythrocytes by Sainsc was supported by the expression of erythrocyte marker gene encoding for hemoglobin beta adult S chain (<italic toggle="yes">Hbb&#x02010;bs</italic>) (Figure&#x000a0;<xref rid="smtd202401123-fig-0002" ref-type="fig">2F</xref>).</p><fig position="float" fig-type="Figure" id="smtd202401123-fig-0002"><label>Figure 2</label><caption><p>Sainsc enables whole organism (mouse embryo) cell type assignment at subcellular resolution. A) Segmentation&#x02010;based cell&#x02010;type assignment from Chen et al.<sup>[</sup>
+<xref rid="smtd202401123-bib-0014" ref-type="bibr">
+<sup>14</sup>
+</xref>
+<sup>]</sup> B) a supervised cell&#x02010;type map using Sainsc with cell&#x02010;type signatures extracted from the segmentation&#x02010;based data and C) an unsupervised cell&#x02010;type map using Sainsc with de novo signatures. D&#x02013;F) Choroid plexus region of the fourth ventricle for Sainsc supervised cell type assignment showing D) the structuring of the choroid plexus and its supply with erythrocytes highlighted by the expression of marker genes E) <italic toggle="yes">Ttr</italic> (choroid plexus) and F) <italic toggle="yes">Hbb&#x02010;bs</italic> (erythrocytes). G&#x02013;L) Distribution of erythrocytes throughout the embryo G) in the unsupervised approach (cluster 13) validated by H) the erythrocyte marker gene <italic toggle="yes">Hbb&#x02010;bs</italic>. I&#x02013;L) The region showing parts of the spleen and liver for I) the unsupervised approach, the expression of J) hepatocyte marker albumin (<italic toggle="yes">Alb</italic>), and K) erythrocyte marker <italic toggle="yes">Hbb&#x02010;bs</italic>, and L) erythrocytes and hepatocytes in the supervised cell&#x02010;type assignment M,N) Assignment of Cluster 23 and 28 correspond to chondrocytes and ossification activity, respectively as validated by the expression (KDE) of O) <italic toggle="yes">Sox9</italic>, P) <italic toggle="yes">Col2a1</italic>, Q) <italic toggle="yes">Col1a1</italic>, and R) <italic toggle="yes">Col1a2</italic>.</p></caption><graphic xlink:href="SMTD-9-2401123-g006" position="anchor" id="jats-graphic-5"/></fig><p>While using existing cell&#x02010;type&#x02010;specific signatures can be a convenient way to transfer cell&#x02010;type labels, inherent differences between profiling technologies may warrant the need for unsupervised analysis. Here, Sainsc employs an unsupervised clustering approach to generate cell&#x02010;type signatures from the tissue itself in the same manner as the SSAM algorithm.<sup>[</sup>
+<xref rid="smtd202401123-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref>
+<sup>]</sup> Briefly, under the assumption that positions of high gene expression are likely to be within cells, we sample these using local maxima detection. The local maxima are filtered based on their distance from each other to avoid sampling too many positions from the same cell. The gene expression profiles at these loci are then processed using standard single&#x02010;cell workflows and clustered using the Leiden algorithm. These clusters are representative of cell&#x02010;type&#x02010;specific gene expression patterns, and signatures are obtained by averaging the gene expression of each cluster. The unsupervised analysis of the mouse embryo section identified 33 clusters that corresponded to the expected organ structure (Figure&#x000a0;<xref rid="smtd202401123-fig-0002" ref-type="fig">2C</xref>). The unsupervised analysis also resulted in superior detection of erythrocytes in the spleen and liver (Figure&#x000a0;<xref rid="smtd202401123-fig-0002" ref-type="fig">2G&#x02013;L</xref>). Erythrocytes are difficult to identify in a DAPI segmentation&#x02010;based analysis due to the lack of a nucleus in mature erythrocytes. We were also able to correctly distinguish ossifying regions (as demonstrated by expression of <italic toggle="yes">Col1a1</italic> and <italic toggle="yes">Col1a2</italic>)<sup>[</sup>
+<xref rid="smtd202401123-bib-0030" ref-type="bibr">
+<sup>30</sup>
+</xref>
+<sup>]</sup> from other chondrocytes (expression of marker genes <italic toggle="yes">Sox9</italic> and <italic toggle="yes">Col2a1</italic>)<sup>[</sup>
+<xref rid="smtd202401123-bib-0031" ref-type="bibr">
+<sup>31</sup>
+</xref>
+<sup>]</sup> (Figure&#x000a0;<xref rid="smtd202401123-fig-0002" ref-type="fig">2M&#x02013;R</xref>). These subclusters were previously reported by unsupervised analysis using FICTURE on the same dataset.<sup>[</sup>
+<xref rid="smtd202401123-bib-0032" ref-type="bibr">
+<sup>32</sup>
+</xref>
+<sup>]</sup>
+</p><p>To further demonstrate the performance of Sainsc in delineating complex cell&#x02010;type organization, we applied Sainsc to mouse brain samples. First, we analyzed a Stereo&#x02010;seq dataset of a mouse brain coronal section. By performing supervised analysis using cell&#x02010;type signatures derived from the segmentation&#x02010;based analysis of the same tissue, we identified all major anatomical regions of the brain (<bold>Figure</bold>&#x000a0;<xref rid="smtd202401123-fig-0003" ref-type="fig">
+<bold>3</bold>A</xref>,<xref rid="smtd202401123-fig-0003" ref-type="fig">B</xref>). Furthermore, we identified similar distributions of cell types in another mouse brain coronal section profiled by another full&#x02010;transcriptome sub&#x02010;micron resolution in situ capture SRT technology, Nova&#x02010;ST (Figure&#x000a0;<xref rid="smtd202401123-fig-0003" ref-type="fig">3C</xref>).<sup>[</sup>
+<xref rid="smtd202401123-bib-0017" ref-type="bibr">
+<sup>17</sup>
+</xref>
+<sup>]</sup> To further investigate the intricate cellular patterns, we generated a cell&#x02010;type map using signatures from Yao et al.,<sup>[</sup>
+<xref rid="smtd202401123-bib-0033" ref-type="bibr">
+<sup>33</sup>
+</xref>
+<sup>]</sup> which contains cell&#x02010;type&#x02010;specific gene expression signatures for layer&#x02010;specific neurons in the isocortex and hippocampal formation regions of the cortical plate. The cell&#x02010;type map finely resolved the locations of numerous layer&#x02010; and region&#x02010;specific neurons as well as the fine lining of vascular and leptomeningeal cells (VLMC) at the border of the tissue (Figure&#x000a0;<xref rid="smtd202401123-fig-0003" ref-type="fig">3D&#x02013;Q</xref>). This demonstrates that Sainsc can leverage cell&#x02010;type signatures obtained by different technologies, such as single&#x02010;cell RNAseq (scRNAseq) or other SRT technologies, to generate subcellular cell&#x02010;type classification.</p><fig position="float" fig-type="Figure" id="smtd202401123-fig-0003"><label>Figure 3</label><caption><p>Sainsc accurately resolves cortical layering in Stereo&#x02010;seq data and identifies rare cell types in mouse brain sections. A,B) Comparison of segmentation&#x02010;based (left) and Sainsc (right) cell&#x02010;type maps of a coronal section of the mouse brain profiled by Stereo&#x02010;seq. C) Cell&#x02010;type signatures are transferrable to different technologies as demonstrated by cell&#x02010;type assignment in a coronal brain section profiled with Nova&#x02010;ST. D&#x02013;Q) Using scRNAseq&#x02010;based signatures Sainsc resolves the intricate structures of the cortical plate as shown for E&#x02013;P) the neuronal layers of the cortical plate and Q) the surrounding VLMC. R) Localization of identified border&#x02010;associated macrophages (cyan) is close to meningeal and vascular cells (red). Vascular subclasses include ABC NN, VLMC NN, Peri NN, Endo NN, and SMC NN. ABC, arachnoid barrier cells; CTX, isocortex; Endo, endothelial cells; ENT, entorhinal area, ENTl, lateral entorhinal area; IT, intratelencephalic; NN, non&#x02010;neuronal; Peri, pericytes; PT, pyramidal tract; SMC, smooth muscle cells; TPE, temporal association, perirhinal, and ectorhinal areas; VLMC, vascular leptomeningeal cells.</p></caption><graphic xlink:href="SMTD-9-2401123-g005" position="anchor" id="jats-graphic-7"/></fig><p>Prior studies have highlighted the difficulty of finding rare cells such as macrophages in the central nervous system.<sup>[</sup>
+<xref rid="smtd202401123-bib-0027" ref-type="bibr">
+<sup>27</sup>
+</xref>
+<sup>]</sup> To investigate the localization of border&#x02010;associated macrophages (BAMs), we annotated spots using the cell&#x02010;type signatures of Yao et al.<sup>[</sup>
+<xref rid="smtd202401123-bib-0034" ref-type="bibr">
+<sup>34</sup>
+</xref>
+<sup>]</sup> The identified BAMs were distributed in the expected meningeal regions and perivascular space (Figure&#x000a0;<xref rid="smtd202401123-fig-0003" ref-type="fig">3R</xref>).<sup>[</sup>
+<xref rid="smtd202401123-bib-0035" ref-type="bibr">
+<sup>35</sup>
+</xref>
+<sup>]</sup> In particular, we identified BAMs localizing to the VLMC border layer that were not reported in a previous characterization of macrophage distribution in the same dataset.<sup>[</sup>
+<xref rid="smtd202401123-bib-0027" ref-type="bibr">
+<sup>27</sup>
+</xref>
+<sup>]</sup> The observed localization of BAMs is consistent with coronal sections of the mouse brain profiled using MERFISH.<sup>[</sup>
+<xref rid="smtd202401123-bib-0036" ref-type="bibr">
+<sup>36</sup>
+</xref>
+<sup>]</sup>
+</p></sec><sec id="smtd202401123-sec-0050"><label>2.3</label><title>Sainsc Effectively Analyses Imaging&#x02010;Based SRT Data</title><p>Imaging&#x02010;based SRT platforms with high sensitivity and larger gene panels are increasingly becoming commercially available. To demonstrate the applicability of Sainsc to these methods, we used it to analyze a publicly available Xenium dataset of a coronal section of the mouse brain (<bold>Figure</bold>&#x000a0;<xref rid="smtd202401123-fig-0004" ref-type="fig">
+<bold>4</bold>
+</xref>). We compared the cell&#x02010;type map produced by Sainsc to the cell types annotated in a previous study that used differentially expressed marker genes from scRNAseq data (Figure&#x000a0;<xref rid="smtd202401123-fig-0004" ref-type="fig">4A,B</xref>).<sup>[</sup>
+<xref rid="smtd202401123-bib-0020" ref-type="bibr">
+<sup>20</sup>
+</xref>, <xref rid="smtd202401123-bib-0034" ref-type="bibr">
+<sup>34</sup>
+</xref>, <xref rid="smtd202401123-bib-0036" ref-type="bibr">
+<sup>36</sup>
+</xref>
+<sup>]</sup> To ensure comparability, gene expression signatures were calculated from the segmented and annotated Xenium data and used for supervised cell&#x02010;type annotation with Sainsc. The resultant cell&#x02010;type maps showed remarkable similarity; however, we noted several differences. We observed inconsistent annotations in the anatomical region corresponding to the zona incerta (ZI) in the hypothalamus (Figure&#x000a0;<xref rid="smtd202401123-fig-0004" ref-type="fig">4D,E,L</xref>). The ZI region contains GABAergic inhibitory neurons that have a shared developmental origin with GABAergic inhibitory neurons in the thalamic reticular nucleus (RT).<sup>[</sup>
+<xref rid="smtd202401123-bib-0034" ref-type="bibr">
+<sup>34</sup>
+</xref>, <xref rid="smtd202401123-bib-0037" ref-type="bibr">
+<sup>37</sup>
+</xref>
+<sup>]</sup> Salas et al.<sup>[</sup>
+<xref rid="smtd202401123-bib-0020" ref-type="bibr">
+<sup>20</sup>
+</xref>
+<sup>]</sup> annotated neurons in the ZI as &#x0201c;inhibitory GABA mixed 2&#x0201d;, however, Sainsc more accurately annotated these as &#x0201c;RT ZI Gaba&#x0201d; with a high assignment score (Figure&#x000a0;<xref rid="smtd202401123-fig-0004" ref-type="fig">4D</xref>).</p><fig position="float" fig-type="Figure" id="smtd202401123-fig-0004"><label>Figure 4</label><caption><p>Sainsc is applicable to Xenium and the assignment score guides the identification of unrepresented cell types and regions. A) Reference cell&#x02010;type map based on segmentation, B) Sainsc's supervised cell&#x02010;type assignment, and C) assignment score of a Xenium coronal mouse brain section. D&#x02013;G) Zoom in on the RT and ZI regions showing D) the original cell&#x02010;type assignments, E) Sainsc cell&#x02010;type assignments, F) Sainsc assignment score, and G) KDE of total gene expression. H&#x02013;K) Misassigned cell type in the paraventricular nucleus of the thalamus (PVT), showing H) the original cell&#x02010;type assignments, I) Sainsc cell&#x02010;type assignments, J) Sainsc assignment score, and K) KDE of marker gene for PVT neurons, <italic toggle="yes">Bcl11b</italic>. L) Anatomical annotations of a similar section of the mouse brain from the Allen Mouse Brain Atlas and Allen Reference Atlas, mouse.brain&#x02010;map.org (<ext-link xlink:href="https://atlas.brain-map.org/atlas?atlas=1&#x00026;plate=100960236" ext-link-type="uri">https://atlas.brain&#x02010;map.org/atlas?atlas=1&#x00026;plate=100960236</ext-link>, P56, Coronal section 72 of 132).<sup>[</sup>
+<xref rid="smtd202401123-bib-0038" ref-type="bibr">
+<sup>38</sup>
+</xref>, <xref rid="smtd202401123-bib-0039" ref-type="bibr">
+<sup>39</sup>
+</xref>, <xref rid="smtd202401123-bib-0040" ref-type="bibr">
+<sup>40</sup>
+</xref>, <xref rid="smtd202401123-bib-0041" ref-type="bibr">
+<sup>41</sup>
+</xref>
+<sup>]</sup>
+</p></caption><graphic xlink:href="SMTD-9-2401123-g002" position="anchor" id="jats-graphic-9"/></fig><p>Furthermore, we observed inconsistent annotations in the anatomical region corresponding to the paraventricular nucleus of the thalamus (PVT, Figure&#x000a0;<xref rid="smtd202401123-fig-0004" ref-type="fig">4H&#x02013;L</xref>). The PVT region contains glutamatergic neurons. Salas et al.<sup>[</sup>
+<xref rid="smtd202401123-bib-0020" ref-type="bibr">
+<sup>20</sup>
+</xref>
+<sup>]</sup> annotated neurons in the PVT as &#x0201c;Thal Glut Neurons,&#x0201d; however, Sainsc annotated these as &#x0201c;MEA&#x02010;COA&#x02010;BMA Slc17a6 Glut.&#x0201d; The &#x0201c;Thal Glut Neurons&#x0201d; and &#x0201c;MEA&#x02010;COA&#x02010;BMA Slc17a6 Glut&#x0201d; gene expression signatures are highly similar (cosine similarity 0.79). In the Sainsc analysis, the assignment score of the PVT region was much lower than that of the surrounding thalamus (Figure&#x000a0;<xref rid="smtd202401123-fig-0004" ref-type="fig">4J</xref>), which led us to suspect that the combination of the cell&#x02010;type signature matrix and Xenium gene panel was not optimal for annotating the PVT region. While we cannot change the gene panel, we investigated the effect of changing the cell&#x02010;type signature matrix. We chose to reannotate the sample using cell&#x02010;type signatures from the Yao et&#x000a0;al. single&#x02010;cell RNA&#x02010;seq study, which included the signature of a PVT&#x02010;specific neuronal class, &#x0201c;PVT&#x02010;PT Ntrk1 Glut,&#x0201d; with the marker gene <italic toggle="yes">Bcl11b</italic>.<sup>[</sup>
+<xref rid="smtd202401123-bib-0034" ref-type="bibr">
+<sup>34</sup>
+</xref>
+<sup>]</sup> Using this signature matrix, Sainsc correctly annotated the PVT region to contain the &#x0201c;PVT&#x02010;PT Ntrk1 Glut&#x0201d; neuronal class with a high assignment score (Figure&#x000a0;<xref rid="smtd202401123-fig-0004" ref-type="fig">4M,N</xref>), which was validated by expression of the marker <italic toggle="yes">Bcl11b</italic> (Figure&#x000a0;<xref rid="smtd202401123-fig-0004" ref-type="fig">4K</xref>).</p><p>We compared the performance of Sainsc to SSAM, which was developed for the segmentation&#x02010;free analysis of imaging&#x02010;based SRT data. The Xenium whole mouse brain slice dataset was reanalyzed with equivalent parameters for both methods using 1&#x000a0;&#x000b5;m sized&#x02010;bins and a bandwidth of 2.5&#x000a0;&#x000b5;m, as recommended for SSAM. The cell&#x02010;type assignments were highly similar with an adjusted Rand index of 0.86 and a normalized mutual information of 0.86 between SSAM (with &#x0201c;fast KDE&#x0201d;) and Sainsc (Figure <xref rid="smtd202401123-supinfo-0001" ref-type="">S2A</xref>, Supporting Information). Furthermore, Sainsc demonstrated much better scalability than SSAM. SSAM with the &#x0201c;fast KDE&#x0201d; option finished the analysis in 23&#x000a0;min using up to 561 GB of RAM. Using the default KDE calculation in SSAM did not terminate the analysis within 7 days. Sainsc was able to perform the same analysis in less than 3&#x000a0;min (9&#x000d7; faster) using only 4.2 GB RAM (135&#x000d7; less) (Figure <xref rid="smtd202401123-supinfo-0001" ref-type="">S2B&#x02013;D</xref>, Supporting Information).</p></sec><sec id="smtd202401123-sec-0060"><label>2.4</label><title>Computational Performance</title><p>A major problem associated with the newest generation of in situ capture SRT methods is handling and processing the large volumes of data generated. The combination of high spatial resolution and full transcriptome coverage increases processing time and memory requirements. Efficient data processing enables exploratory data analysis, e.g. by interactively modifying parameters to improve the output. We measured Sainsc's runtime and memory usage for varying dataset sizes by subsetting the tissue area and the number of detected transcripts, as well as varying numbers of genes and cell&#x02010;type signatures when analysing the Stereo&#x02010;seq mouse hemibrain section with 8 threads. Sainsc demonstrated scalable performance for wall time and CPU time concerning all parameters (<bold>Figure</bold>&#x000a0;<xref rid="smtd202401123-fig-0005" ref-type="fig">
+<bold>5</bold>A</xref>,<xref rid="smtd202401123-fig-0005" ref-type="fig">B,D</xref>,<xref rid="smtd202401123-fig-0005" ref-type="fig">E</xref>). While the memory usage also depends on these parameters, its increase with the number of genes and cell&#x02010;type signatures is more moderate than with the number of transcripts and the sample area (Figure&#x000a0;<xref rid="smtd202401123-fig-0005" ref-type="fig">5C,F</xref>), demonstrating that memory usage is mostly dependent on the size of the dataset but not the analytical parameters. Often, only a few thousand highly/spatially variable genes are used for clustering and cell&#x02010;type assignment. Sainsc's wall time for a typical run (e.g., 2000 genes and 30 cell types) is less than 10&#x000a0;minutes, including data loading, therefore it effectively enables interactive data exploration.</p><fig position="float" fig-type="Figure" id="smtd202401123-fig-0005"><label>Figure 5</label><caption><p>Sainsc is scalable and has low computational resource requirements. A) Wall time, B) CPU time, and C) maximum memory usage when analyzing Stereo&#x02010;seq coronal hemibrain data with downsampled tissue area and number of transcripts, and D) wall time, E) CPU time, and F) maximum memory usage for varying number of genes and cell types. Comparison of G) runtime and H) maximum memory usage of Sainsc, TopACT, and FICTURE. Comparison of I) runtime and J) maximum memory usage for Sainsc (Python and Julia implementation) and FICTURE with an increasing number of threads used for analysis. d.n.f.; did not finish.</p></caption><graphic xlink:href="SMTD-9-2401123-g001" position="anchor" id="jats-graphic-11"/></fig><p>Two recent computational tools, FICTURE and TopACT,<sup>[</sup>
+<xref rid="smtd202401123-bib-0027" ref-type="bibr">
+<sup>27</sup>
+</xref>, <xref rid="smtd202401123-bib-0032" ref-type="bibr">
+<sup>32</sup>
+</xref>
+<sup>]</sup> have also demonstrated accurate performance for creating cell&#x02010;type maps for SRT data. FICTURE claims to be efficient, while TopACT does not report processing time or memory requirements. We compared the computational performance of Sainsc with that of FICTURE and TopACT applied to the Stereo&#x02010;seq mouse brain sample (Figure&#x000a0;<xref rid="smtd202401123-fig-0005" ref-type="fig">5G,H</xref>). To ensure comparability between FICTURE and Sainsc, we ran FICTURE using one core and 8 cores (as used by Sainsc) and Sainsc with 7972 genes and 19708 genes (as used by FICTURE). We recorded wall time and maximum memory usage in processing the Stereo&#x02010;seq adult mouse coronal hemibrain sample (Figure&#x000a0;<xref rid="smtd202401123-fig-0005" ref-type="fig">5G,H</xref>). For all metrics, Sainsc performed similar to FICTURE and was substantially better than TopACT. In multi&#x02010;threaded mode, the wall time of Sainsc was less than 2&#x000a0;hours while FICTURE took &#x02248;2.6&#x000a0;hours. TopACT running with 8 processes did not finish the analysis in the allotted time and the job was cancelled after 7 days. Furthermore, Sainsc required similar maximum memory usage to FICTURE in single&#x02010;threaded mode. The reduced runtime of FICTURE in multi&#x02010;threaded mode compared to its single&#x02010;threaded equivalent comes at a cost of increased memory usage however, &#x02248;50% more than Sainsc. TopACT used substantially more memory (&#x02248;83 GB of RAM) during its runtime than either Sainsc or FICTURE. Additionally, Sainsc can further reduce the wall time by increasing the number of threads used for the analysis with only a small increase in memory usage, while for FICTURE the decreased runtime is minor compared to the increased memory consumption (Figure&#x000a0;<xref rid="smtd202401123-fig-0005" ref-type="fig">5I,J</xref>).</p><p>Julia has been described as having the interactivity and syntax of scripting languages with the speed of compiled languages.<sup>[</sup>
+<xref rid="smtd202401123-bib-0042" ref-type="bibr">
+<sup>42</sup>
+</xref>
+<sup>]</sup> Therefore, we also implemented the core functionality of Sainsc into a Julia package, Sainsc.jl. To demonstrate the correspondence between the Julia and the Python/Rust implementation we analyzed the Stereo&#x02010;seq mouse coronal hemibrain section with signatures obtained from segmented data and achieved near identical results (Figure <xref rid="smtd202401123-supinfo-0001" ref-type="">S3</xref>, Supporting Information, discordantly classified pixels: 9.2&#x000a0;&#x000d7;&#x000a0;10<sup>&#x02212;5</sup>%; median absolute difference of assigned pixels for the assignment score: 7.5&#x000a0;&#x000d7;&#x000a0;10<sup>&#x02212;9</sup>, for the cosine similarity: 0, and for the total mRNA KDE: 2.4&#x000a0;&#x000d7;&#x000a0;10<sup>&#x02212;7</sup>) while utilizing similar computational resources (Figure&#x000a0;<xref rid="smtd202401123-fig-0005" ref-type="fig">5I,J</xref>).</p></sec></sec><sec id="smtd202401123-sec-0070"><label>3</label><title>Discussion</title><p>The most recent wave of high&#x02010;resolution full&#x02010;transcriptome in situ captures SRT methods is an attractive choice for characterizing cellular heterogeneity in tissue sections, however, to date there is a lack of performant methods to analyze these types of data. Furthermore, as there is no &#x0201c;one size fits all&#x0201d; workflow, analysis needs to be exploratory and interactive, e.g., to optimize the clustering parameters to obtain the correct number of clusters or to test the efficacy of annotating spatial gene expression from signature sets obtained from different single&#x02010;cell studies. Such an interactive analysis paradigm demands fast and efficient algorithms with minimal computational requirements.</p><p>In this study, we present a novel computational tool, Sainsc. Applying Sainsc to simulated data, we achieved top&#x02010;tier classification accuracy and demonstrated that our cell&#x02010;type assignment score can be used as a filter to improve the confidence of the results. We then accurately mapped the cellular landscape at the whole&#x02010;organism level, improving on previous segmentation&#x02010;based analysis. We demonstrate that Sainsc was the most computationally performant when analysing the mouse brain requiring only &#x02248;1&#x000a0;hour of CPU wall time and &#x02248;5&#x000a0;GB of memory. The moderate resource requirements of our implementation will facilitate exploratory analysis of extremely large datasets. Furthermore, Sainsc's annotations can easily be scaled up to several hundred cell types by integrating the expression landscape of thousands of genes.</p><p>We demonstrate the additional utility of the assignment score for interpreting the quality of the results. While annotating cell types based on gene expression signatures obtained from single&#x02010;cell RNAseq is a quick way to contextualize new data in the light of prior knowledge, we show that when the gene panels or cell type definitions differ from the reference source, it can result in lower confidence cell&#x02010;type assignment. To the best of our knowledge, we are the first to demonstrate the value of a visual map of the assignment score to effectively evaluate and improve assignment confidence at the organ and organism scales.</p><p>We also compared Sainsc to two other existing tools in this space, TopACT and FICTURE. While TopACT was highly accurate, its computational inefficiency makes it unsuitable for exploratory analysis. We were unable to complete the analysis of the mouse coronal hemibrain Stereo&#x02010;seq sample with TopACT in under seven days. FICTURE performed similarly to Sainsc on the same gene set, however, in our analysis we noticed that if chosen appropriately, much fewer genes are necessary to distinguish cell types accurately (e.g., for the Xenium dataset 248 genes are sufficient to separate 47 cell types). This reduced number of genes comes with great performance benefits for Sainsc, especially in terms of runtime. Taken together, we believe that Sainsc is currently the only computational tool capable of accurately analysing such large datasets with resource requirements that approach the scope of consumer electronics. Further emphasis is placed on efficiency when considering the spatial genomics field is going: toward 3D cell atlas,<sup>[</sup>
+<xref rid="smtd202401123-bib-0043" ref-type="bibr">
+<sup>43</sup>
+</xref>
+<sup>]</sup> multi&#x02010;omics,<sup>[</sup>
+<xref rid="smtd202401123-bib-0044" ref-type="bibr">
+<sup>44</sup>
+</xref>
+<sup>]</sup> and entire human organs.<sup>[</sup>
+<xref rid="smtd202401123-bib-0045" ref-type="bibr">
+<sup>45</sup>
+</xref>
+<sup>]</sup> We believe Sainsc is uniquely suited to be further developed to meet the even higher computational needs of increasingly complex experiments without sacrificing accuracy.</p></sec><sec id="smtd202401123-sec-0080"><label>4</label><title>Experimental Section</title><p>All analyses were performed in Python (v3.10.14) with Sainsc (v0.0.1, compiled using rustc v1.76.0, unless otherwise specified) and the following main packages; pandas (v2.2.2), polars (v0.20.31), scipy (v1.14.0), numpy (v1.26.4), scanpy (v1.10.2), squidpy (v1.5.0), anndata (v0.10.8).</p><sec id="smtd202401123-sec-0110"><title>Sainsc&#x02014;Gene Expression Estimation</title><p>Sainsc adopts the estimation of gene expression in 2D based on kernel density estimation from SSAM.<sup>[</sup>
+<xref rid="smtd202401123-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref>
+<sup>]</sup> In short, the gene expression density <mml:math id="jats-math-1" display="inline"><mml:mrow><mml:mover accent="true"><mml:mi>p</mml:mi><mml:mo>&#x0005e;</mml:mo></mml:mover></mml:mrow></mml:math> is estimated as
+<disp-formula id="smtd202401123-disp-0001">
+<label>(1)</label>
+<mml:math id="jats-math-2" display="block"><mml:mrow><mml:mrow><mml:mover accent="true"><mml:mi>p</mml:mi><mml:mo>&#x0005e;</mml:mo></mml:mover><mml:mfenced open="(" close=")"><mml:mi>x</mml:mi></mml:mfenced><mml:mo linebreak="badbreak">=</mml:mo><mml:mfrac><mml:mn>1</mml:mn><mml:mi>N</mml:mi></mml:mfrac><mml:mspace width="0.33em"/><mml:munderover><mml:mo>&#x02211;</mml:mo><mml:mi>i</mml:mi><mml:mi>N</mml:mi></mml:munderover><mml:msub><mml:mi>&#x003ba;</mml:mi><mml:mi>h</mml:mi></mml:msub><mml:mfenced separators="" open="(" close=")"><mml:mrow><mml:mi>x</mml:mi><mml:mo>&#x02212;</mml:mo><mml:msub><mml:mi>x</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:mfenced></mml:mrow></mml:mrow></mml:math>
+</disp-formula>where &#x003ba;<sub>
+<italic toggle="yes">h</italic>
+</sub> is the kernel function in dependence of the bandwidth <italic toggle="yes">h</italic>, <italic toggle="yes">N</italic> the number of data points, and <italic toggle="yes">x<sub>i</sub>
+</italic> the location of the <italic toggle="yes">i</italic>th spot of the given gene. As a simplification, however, a discrete space (pixels) was only considered for both the gene expression and the estimated density, which allows for precomputed kernel &#x0201c;masks&#x0201d; and efficient calculation.</p></sec><sec id="smtd202401123-sec-0120"><title>Sainsc&#x02014;Cell&#x02010;Type Assignment</title><p>Cell&#x02010;type assignment to each spot (pixel) is based on cosine similarity. The cosine similarity measures the similarity of two vectors via their angle and can be efficiently computed using the inner product.
+<disp-formula id="smtd202401123-disp-0002">
+<label>(2)</label>
+<mml:math id="jats-math-3" display="block"><mml:mrow><mml:mrow><mml:msub><mml:mi>S</mml:mi><mml:mi>c</mml:mi></mml:msub><mml:mfenced separators="" open="(" close=")"><mml:mrow><mml:mover accent="true"><mml:mi>x</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover><mml:mo>,</mml:mo><mml:mover accent="true"><mml:mi>y</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover></mml:mrow></mml:mfenced><mml:mo linebreak="badbreak">=</mml:mo><mml:mi>cos</mml:mi><mml:mfenced separators="" open="(" close=")"><mml:msub><mml:mi>&#x003b8;</mml:mi><mml:mrow><mml:mi>x</mml:mi><mml:mi>y</mml:mi></mml:mrow></mml:msub></mml:mfenced><mml:mo linebreak="goodbreak">=</mml:mo><mml:mfrac><mml:mrow><mml:mover accent="true"><mml:mi>x</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover><mml:mo>&#x000b7;</mml:mo><mml:mover accent="true"><mml:mi>y</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover></mml:mrow><mml:mrow><mml:mrow><mml:mo stretchy="false">&#x02225;</mml:mo></mml:mrow><mml:mover accent="true"><mml:mi>x</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover><mml:msub><mml:mo stretchy="false">&#x02225;</mml:mo><mml:mn>2</mml:mn></mml:msub><mml:mrow><mml:mo stretchy="false">&#x02225;</mml:mo></mml:mrow><mml:mover accent="true"><mml:mi>y</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover><mml:msub><mml:mo stretchy="false">&#x02225;</mml:mo><mml:mn>2</mml:mn></mml:msub></mml:mrow></mml:mfrac></mml:mrow></mml:mrow></mml:math>
+</disp-formula>
+</p><p>The cosine similarity is calculated between a pixel and each cell&#x02010;type signature, and the most similar cell type is assigned.</p></sec><sec id="smtd202401123-sec-0130"><title>Sainsc&#x02014;Assignment Score</title><p>Let <mml:math id="jats-math-4" display="inline"><mml:mrow><mml:mover accent="true"><mml:mi>p</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover></mml:mrow></mml:math> be the gene expression of a pixel (for all genes under consideration) and <mml:math id="jats-math-5" display="inline"><mml:mrow><mml:mover accent="true"><mml:mi>a</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover></mml:mrow></mml:math> / <mml:math id="jats-math-6" display="inline"><mml:mrow><mml:mover accent="true"><mml:mi>b</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover></mml:mrow></mml:math> the signatures of the most and 2nd most similar cell types, respectively. The assignment score is defined as
+<disp-formula id="smtd202401123-disp-0003">
+<label>(3)</label>
+<mml:math id="jats-math-7" display="block"><mml:mrow><mml:mrow><mml:mi>A</mml:mi><mml:mi>S</mml:mi><mml:mo linebreak="badbreak">=</mml:mo><mml:mfrac><mml:mrow><mml:msub><mml:mi>S</mml:mi><mml:mi>c</mml:mi></mml:msub><mml:mfenced separators="" open="(" close=")"><mml:mrow><mml:mover accent="true"><mml:mi>p</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover><mml:mo>,</mml:mo><mml:mover accent="true"><mml:mi>a</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover></mml:mrow></mml:mfenced><mml:mo>&#x02212;</mml:mo><mml:msub><mml:mi>S</mml:mi><mml:mi>c</mml:mi></mml:msub><mml:mfenced separators="" open="(" close=")"><mml:mrow><mml:mover accent="true"><mml:mi>p</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover><mml:mo>,</mml:mo><mml:mover accent="true"><mml:mi>b</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover></mml:mrow></mml:mfenced></mml:mrow><mml:mrow><mml:munder><mml:mi>max</mml:mi><mml:mi>x</mml:mi></mml:munder><mml:msub><mml:mi>S</mml:mi><mml:mi>c</mml:mi></mml:msub><mml:mfenced separators="" open="(" close=")"><mml:mrow><mml:mover accent="true"><mml:mi>x</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover><mml:mo>,</mml:mo><mml:mover accent="true"><mml:mi>a</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover></mml:mrow></mml:mfenced><mml:mo>&#x02212;</mml:mo><mml:msub><mml:mi>S</mml:mi><mml:mi>c</mml:mi></mml:msub><mml:mfenced separators="" open="(" close=")"><mml:mrow><mml:mover accent="true"><mml:mi>x</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover><mml:mo>,</mml:mo><mml:mover accent="true"><mml:mi>b</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover></mml:mrow></mml:mfenced></mml:mrow></mml:mfrac></mml:mrow></mml:mrow></mml:math>
+</disp-formula>where <mml:math id="jats-math-8" display="inline"><mml:mrow><mml:mrow><mml:munder><mml:mi>max</mml:mi><mml:mi>x</mml:mi></mml:munder><mml:msub><mml:mi>S</mml:mi><mml:mi>c</mml:mi></mml:msub><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mrow><mml:mover accent="true"><mml:mi>x</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover><mml:mo>,</mml:mo><mml:mover accent="true"><mml:mi>a</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover></mml:mrow><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo>&#x02212;</mml:mo><mml:msub><mml:mi>S</mml:mi><mml:mi>c</mml:mi></mml:msub><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mrow><mml:mover accent="true"><mml:mi>x</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover><mml:mo>,</mml:mo><mml:mover accent="true"><mml:mi>b</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover></mml:mrow><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math> is the upper bound of the difference in cosine similarities given <mml:math id="jats-math-9" display="inline"><mml:mrow><mml:mover accent="true"><mml:mi>a</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover></mml:mrow></mml:math> and <mml:math id="jats-math-10" display="inline"><mml:mrow><mml:mover accent="true"><mml:mi>b</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover></mml:mrow></mml:math>. Assuming non&#x02010;negative gene expression the following must hold 0&#x000b0; &#x02264; &#x02005;&#x003b8;<sub>
+<italic toggle="yes">pa</italic>
+</sub> &#x02264; &#x02005;&#x003b8;<sub>
+<italic toggle="yes">pb</italic>
+</sub> &#x02264; 90&#x000b0;. For simplicity, we assume normalized cell&#x02010;type signatures, i.e., <mml:math id="jats-math-11" display="inline"><mml:mrow><mml:mrow><mml:mrow><mml:mo stretchy="false">&#x02225;</mml:mo></mml:mrow><mml:mover accent="true"><mml:mi>a</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover><mml:msub><mml:mo stretchy="false">&#x02225;</mml:mo><mml:mn>2</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:mrow></mml:math> and <mml:math id="jats-math-12" display="inline"><mml:mrow><mml:mrow><mml:mrow><mml:mo stretchy="false">&#x02225;</mml:mo></mml:mrow><mml:mover accent="true"><mml:mi>b</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover><mml:msub><mml:mo stretchy="false">&#x02225;</mml:mo><mml:mn>2</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:mrow></mml:math>.
+<disp-formula id="smtd202401123-disp-0004">
+<label>(4)</label>
+<mml:math id="jats-math-13" display="block"><mml:mrow><mml:mtable displaystyle="true"><mml:mtr><mml:mtd columnalign="right"><mml:mrow><mml:msub><mml:mi>S</mml:mi><mml:mi>c</mml:mi></mml:msub><mml:mfenced separators="" open="(" close=")"><mml:mrow><mml:mover accent="true"><mml:mi>x</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover><mml:mo>,</mml:mo><mml:mover accent="true"><mml:mi>a</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover></mml:mrow></mml:mfenced><mml:mo linebreak="badbreak">&#x02212;</mml:mo><mml:msub><mml:mi>S</mml:mi><mml:mi>c</mml:mi></mml:msub><mml:mspace width="0.33em"/><mml:mfenced separators="" open="(" close=")"><mml:mrow><mml:mover accent="true"><mml:mi>x</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover><mml:mo>,</mml:mo><mml:mover accent="true"><mml:mi>b</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover></mml:mrow></mml:mfenced></mml:mrow></mml:mtd><mml:mtd><mml:mo>=</mml:mo></mml:mtd><mml:mtd columnalign="left"><mml:mrow><mml:mi>cos</mml:mi><mml:mfenced separators="" open="(" close=")"><mml:msub><mml:mi>&#x003b8;</mml:mi><mml:mrow><mml:mi>x</mml:mi><mml:mi>a</mml:mi></mml:mrow></mml:msub></mml:mfenced><mml:mspace width="0.33em"/><mml:mo linebreak="badbreak">&#x02212;</mml:mo><mml:mspace width="0.33em"/><mml:mi>cos</mml:mi><mml:mfenced separators="" open="(" close=")"><mml:msub><mml:mi>&#x003b8;</mml:mi><mml:mrow><mml:mi>x</mml:mi><mml:mi>b</mml:mi></mml:mrow></mml:msub></mml:mfenced><mml:mo linebreak="goodbreak">=</mml:mo><mml:mfrac><mml:mrow><mml:mover accent="true"><mml:mi>x</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover><mml:mo>&#x000b7;</mml:mo><mml:mover accent="true"><mml:mi>a</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover></mml:mrow><mml:mrow><mml:mrow><mml:mo stretchy="false">&#x02225;</mml:mo></mml:mrow><mml:mover accent="true"><mml:mi>a</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover><mml:msub><mml:mo stretchy="false">&#x02225;</mml:mo><mml:mn>2</mml:mn></mml:msub><mml:mrow><mml:mo stretchy="false">&#x02225;</mml:mo></mml:mrow><mml:mover accent="true"><mml:mi>x</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover><mml:msub><mml:mo stretchy="false">&#x02225;</mml:mo><mml:mn>2</mml:mn></mml:msub></mml:mrow></mml:mfrac><mml:mspace width="0.33em"/><mml:mo linebreak="goodbreak">&#x02212;</mml:mo><mml:mspace width="0.33em"/><mml:mfrac><mml:mrow><mml:mover accent="true"><mml:mi>x</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover><mml:mo>&#x000b7;</mml:mo><mml:mover accent="true"><mml:mi>b</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover></mml:mrow><mml:mrow><mml:mrow><mml:mo stretchy="false">&#x02225;</mml:mo></mml:mrow><mml:mover accent="true"><mml:mi>b</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover><mml:msub><mml:mo stretchy="false">&#x02225;</mml:mo><mml:mn>2</mml:mn></mml:msub><mml:mrow><mml:mo stretchy="false">&#x02225;</mml:mo></mml:mrow><mml:mover accent="true"><mml:mi>x</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover><mml:msub><mml:mo stretchy="false">&#x02225;</mml:mo><mml:mn>2</mml:mn></mml:msub></mml:mrow></mml:mfrac></mml:mrow></mml:mtd></mml:mtr><mml:mtr><mml:mtd/><mml:mtd><mml:mo linebreak="newline">=</mml:mo></mml:mtd><mml:mtd columnalign="left"><mml:mrow><mml:mfrac><mml:mrow><mml:msub><mml:mo>&#x02211;</mml:mo><mml:mi>i</mml:mi></mml:msub><mml:msub><mml:mi>a</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:msub><mml:mi>x</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow><mml:mrow><mml:mrow><mml:mo stretchy="false">&#x02225;</mml:mo></mml:mrow><mml:mover accent="true"><mml:mi>x</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover><mml:msub><mml:mo stretchy="false">&#x02225;</mml:mo><mml:mn>2</mml:mn></mml:msub></mml:mrow></mml:mfrac><mml:mspace width="0.33em"/><mml:mo linebreak="badbreak">&#x02212;</mml:mo><mml:mspace width="0.33em"/><mml:mfrac><mml:mrow><mml:msub><mml:mo>&#x02211;</mml:mo><mml:mi>i</mml:mi></mml:msub><mml:msub><mml:mi>b</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:msub><mml:mi>x</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow><mml:mrow><mml:mrow><mml:mo stretchy="false">&#x02225;</mml:mo></mml:mrow><mml:mover accent="true"><mml:mi>x</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover><mml:msub><mml:mo stretchy="false">&#x02225;</mml:mo><mml:mn>2</mml:mn></mml:msub></mml:mrow></mml:mfrac><mml:mo linebreak="goodbreak">=</mml:mo><mml:mfrac><mml:mrow><mml:msub><mml:mo>&#x02211;</mml:mo><mml:mi>i</mml:mi></mml:msub><mml:msub><mml:mi>a</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:msub><mml:mi>x</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>&#x02212;</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:msub><mml:mi>x</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow><mml:mrow><mml:mrow><mml:mo stretchy="false">&#x02225;</mml:mo></mml:mrow><mml:mover accent="true"><mml:mi>x</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover><mml:msub><mml:mo stretchy="false">&#x02225;</mml:mo><mml:mn>2</mml:mn></mml:msub></mml:mrow></mml:mfrac></mml:mrow></mml:mtd></mml:mtr><mml:mtr><mml:mtd/><mml:mtd><mml:mo linebreak="newline">=</mml:mo></mml:mtd><mml:mtd columnalign="left"><mml:mrow><mml:mfrac><mml:mrow><mml:msub><mml:mo>&#x02211;</mml:mo><mml:mi>i</mml:mi></mml:msub><mml:msub><mml:mi>x</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mfenced separators="" open="(" close=")"><mml:mrow><mml:msub><mml:mi>a</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>&#x02212;</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:mfenced></mml:mrow><mml:mrow><mml:mrow><mml:mo stretchy="false">&#x02225;</mml:mo></mml:mrow><mml:mover accent="true"><mml:mi>x</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover><mml:msub><mml:mo stretchy="false">&#x02225;</mml:mo><mml:mn>2</mml:mn></mml:msub></mml:mrow></mml:mfrac><mml:mo linebreak="badbreak">=</mml:mo><mml:mfrac><mml:mover accent="true"><mml:mi>x</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover><mml:mrow><mml:mrow><mml:mo stretchy="false">&#x02225;</mml:mo></mml:mrow><mml:mover accent="true"><mml:mi>x</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover><mml:msub><mml:mo stretchy="false">&#x02225;</mml:mo><mml:mn>2</mml:mn></mml:msub></mml:mrow></mml:mfrac><mml:mspace width="0.33em"/><mml:mo>&#x000b7;</mml:mo><mml:mfenced separators="" open="(" close=")"><mml:mrow><mml:mover accent="true"><mml:mi>a</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover><mml:mo>&#x02212;</mml:mo><mml:mover accent="true"><mml:mi>b</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover></mml:mrow></mml:mfenced></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:math>
+</disp-formula>
+</p><p>The inner product of <mml:math id="jats-math-14" display="inline"><mml:mrow><mml:mover accent="true"><mml:mi>x</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover></mml:mrow></mml:math> and <mml:math id="jats-math-15" display="inline"><mml:mrow><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mrow><mml:mover accent="true"><mml:mi>a</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover><mml:mo>&#x02212;</mml:mo><mml:mover accent="true"><mml:mi>b</mml:mi><mml:mo>&#x020d7;</mml:mo></mml:mover></mml:mrow><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math> is maximal for colinear vectors and therefore <mml:math id="jats-math-16" display="inline"><mml:mrow><mml:mrow><mml:msub><mml:mi>x</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="true">{</mml:mo><mml:mtable><mml:mtr><mml:mtd><mml:mrow><mml:msub><mml:mi>a</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>&#x02212;</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:mspace width="0.33em"/><mml:msub><mml:mi>a</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>&#x02212;</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>&#x0003e;</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mrow><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mspace width="0.33em"/><mml:mi>o</mml:mi><mml:mi>t</mml:mi><mml:mi>h</mml:mi><mml:mi>e</mml:mi><mml:mi>r</mml:mi><mml:mi>w</mml:mi><mml:mi>i</mml:mi><mml:mi>s</mml:mi><mml:mi>e</mml:mi></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:mrow></mml:math> (where negative dimensions are set to 0 due to the non&#x02010;negativity constraint).</p></sec><sec id="smtd202401123-sec-0140"><title>Sainsc.jl</title><p>Conceptually, the Julia implementation was equivalent to the Python/Rust implementation, and most data structures (e.g., hashmap of same&#x02010;sized sparse matrices for counts) and processing steps (e.g., processing the data in chunks when generating the cell&#x02010;type map) were &#x0201c;identical.&#x0201d; As the ecosystem was still young and evolving, Sainsc.jl integrates with multiple single cell/spatial transcriptomics frameworks, including Muon.jl which allows writing the gene expression of local maxima to h5ad files, which can then be easily read from Python.</p><p>To compare the Julia with the Python/Rust implementation of Sainsc we analyzed the Stereo&#x02010;seq hemibrain dataset in Julia (v1.10.4) with Sainsc.jl (commit ea4cfdf031d937da783cf55351a33d693d4a5618) using the same parameters as described with the segmentation&#x02010;based cell&#x02010;type signatures. Results were plotted in Python to make them visually comparable.</p></sec><sec id="smtd202401123-sec-0150"><title>Synthetic Data</title><p>To compare Sainsc to TopACT the simulated was used data from the TopACT publication.<sup>[</sup>
+<xref rid="smtd202401123-bib-0027" ref-type="bibr">
+<sup>27</sup>
+</xref>
+<sup>]</sup> Briefly, 625 cell centers were sampled from a uniform distribution and placed within a 500&#x000a0;&#x000d7;&#x000a0;500 grid and the cell outlines were defined by their Voronoi diagram. Each cell was at random assigned a cell type based on the corresponding cell type abundances. The gene expression for each spot was imputed based on a Poisson process and the corresponding cell type average gene expression profile. The 20% of spots were randomly chosen and their gene expression was set to zero to model the zero inflation. For Sainsc the bandwidth was set to five for the Gaussian kernel (truncated at 2&#x000d7; bandwidth) and to ten for the Epanechnikov kernel. The average cell&#x02010;type expression was used as cell&#x02010;type signatures for Sainsc and the accuracy was calculated using <italic toggle="yes">sklearn.metrics.accuracy_score</italic>. Results for TopACT and RCTD were taken from the publication.</p></sec><sec id="smtd202401123-sec-0160"><title>Stereo&#x02010;Seq Analysis</title><p>All Stereo&#x02010;seq datasets were analyzed at native resolution with 500&#x000a0;nm/px (equivalent to the 500&#x000a0;nm bead&#x02010;to&#x02010;bead distance). A Gaussian kernel with bandwidth 8&#x000a0;px (4&#x000a0;&#x000b5;m) truncated at two bandwidths was used throughout.</p></sec><sec id="smtd202401123-sec-0170"><title>Stereo&#x02010;Seq Analysis&#x02014;Embryo</title><p>The E16.5 E1S3 embryo data from the original Stereo&#x02010;seq publication was cropped and masked to the region of interest. The cell&#x02010;type assignment was performed and for visualization, the background was filtered based on cell&#x02010;type&#x02010;specific and global thresholds for the KDE of the total mRNA. For the supervised analysis signatures were extracted from the segmented data provided in the original publication by selecting the top 2000 highly variable genes (HVG) (<italic toggle="yes">scanpy.pp.highly_variable</italic> with flavor &#x0201c;seurat_v3&#x0201d;) and averaged across all cells per cell type.</p></sec><sec id="smtd202401123-sec-0180"><title>Stereo&#x02010;Seq Analysis&#x02014;Embryo Unsupervised</title><p>For the de novo analysis the data was read as 50&#x000a0;&#x000d7;&#x000a0;50 bins to identify spatially&#x02010;variable genes. The bins (&#x0201c;cells&#x0201d;) were filtered to contain more than 1000 counts and genes with less than 100 counts were excluded. The top 10000 HVG were identified using <italic toggle="yes">scanpy.pp.highly_variable</italic> with flavor &#x0201c;seurat_v3&#x0201d;. A spatial neighbor graph was built using <italic toggle="yes">squidpy.gr.spatial_neighbors</italic> (coord_type = &#x0201c;grid&#x0201d;, n_rings = 1, n_neighs = 4) and the top 2000 spatially&#x02010;variable genes by Moran's I of the 10000 HVGs were identified using <italic toggle="yes">squidpy.gr.spatial_autocorr</italic> (with mode = &#x0201c;moran&#x0201d;). Next, the data was loaded at native resolution (500&#x000a0;nm), and the local maxima identified (s<italic toggle="yes">ainsc.LazyKDE.find_local_maxima</italic> with min_dist = 4 and min_area = 60). The local maxima were loaded as AnnData objects using the previously identified SVGs, the counts per &#x0201c;cell&#x0201d; normalized (<italic toggle="yes">scanpy.pp.normalize_total</italic>) and log&#x02010;transformed (scanpy.pp.log1p). The data was PCA transformed (<italic toggle="yes">scanpy.pp.pca</italic>) and the neighborhood graph, based on the latent dimensions, was constructed (<italic toggle="yes">scanpy.pp.neighbors</italic>). The data was then clustered using Leiden community detection (<italic toggle="yes">scanpy.tl.leiden</italic> with resolution = 2). The &#x0201c;cell&#x02010;type&#x0201d; signatures were created as average per cluster and used for cell&#x02010;type assignment.</p></sec><sec id="smtd202401123-sec-0190"><title>Stereo&#x02010;Seq Analysis&#x02014;Coronal Mouse Hemibrain</title><p>To compare Sainsc to the segmentation&#x02010;based cell type assignment of the mouse coronal hemibrain section, signatures were extracted as average per cell type for the differentially expressed genes (7972) reported in Yao et al.<sup>[</sup>
+<xref rid="smtd202401123-bib-0034" ref-type="bibr">
+<sup>34</sup>
+</xref>
+<sup>]</sup> To demonstrate the efficiency in identifying the isocortex layers cell&#x02010;type signatures from scRNA&#x02010;seq data from Yao et al.<sup>[</sup>
+<xref rid="smtd202401123-bib-0033" ref-type="bibr">
+<sup>33</sup>
+</xref>
+<sup>]</sup> were calculated per &#x0201c;subclass&#x0201d; (downsampled to 5000 cells per subclass) for the differentially expressed genes reported in the same study.</p></sec><sec id="smtd202401123-sec-0200"><title>Stereo&#x02010;Seq Analysis&#x02014;Border&#x02010;Associated Macrophage Detection</title><p>To detect border&#x02010;associated macrophages (BAM), we generated cell&#x02010;type signatures from the Allen brain atlas (10&#x000d7; Genomics Chromium v2 data) from Yao et al.<sup>[</sup>
+<xref rid="smtd202401123-bib-0034" ref-type="bibr">
+<sup>34</sup>
+</xref>
+<sup>]</sup> for all subclasses (downsampled to max. 500 cells per subclass) resulting in 279 signatures. Using the differentially expressed genes from the same publication the Stereo&#x02010;seq brain was annotated as previously described. The binary map of BAM assigned spots was labeled as connected regions using <italic toggle="yes">skimage.measure.label</italic> and the centroids extracted using <italic toggle="yes">skimage.measure.regionprops_table</italic> and filtered for regions with an area of at least 60 pixels.</p></sec><sec id="smtd202401123-sec-0210"><title>Xenium Analysis</title><p>The Xenium brain dataset from 10X genomics (replicate 1) was analyzed by binning all transcript counts to 500&#x000a0;nm. The cell&#x02010;type signatures were based on the segmented Xenium dataset by Salas et al.<sup>[</sup>
+<xref rid="smtd202401123-bib-0020" ref-type="bibr">
+<sup>20</sup>
+</xref>
+<sup>]</sup> A Gaussian kernel with a bandwidth 8&#x000a0;px (4&#x000a0;&#x000b5;m) truncated at two bandwidths was used. To correctly assign cell types in the PVT region we used cell&#x02010;type signatures generated from downsampled scRNAseq data<sup>[</sup>
+<xref rid="smtd202401123-bib-0034" ref-type="bibr">
+<sup>34</sup>
+</xref>
+<sup>]</sup> based on the &#x0201c;class&#x0201d;&#x02010;level. Additionally, the &#x0201c;PVT&#x02010;PT Ntrk1 Glut&#x0201d; subclass was added to the signatures, and the analysis repeated as described above.</p></sec><sec id="smtd202401123-sec-0220"><title>Nova&#x02010;ST Analysis</title><p>NovaST data was binned to 500&#x000a0;nm and analyzed using the signatures based on the Stereo&#x02010;seq segmented mouse hemibrain slice for the differentially expressed genes defined in Yao et al.<sup>[</sup>
+<xref rid="smtd202401123-bib-0034" ref-type="bibr">
+<sup>34</sup>
+</xref>
+<sup>]</sup> with a Gaussian kernel of bandwidth, 8&#x000a0;px truncated at 2 bandwidths.</p></sec><sec id="smtd202401123-sec-0230"><title>Comparison to SSAM</title><p>To compare Sainsc to SSAM (v1.0.1) we analysed the Xenium brain dataset. The pixel size was set to 1&#x000a0;&#x000b5;m and the bandwidths to 2.5&#x000a0;&#x000b5;m (both SSAM defaults). The truncation of the Gaussian kernel was set to 4&#x000d7;bandwidths for sainsc (fixed parameter for SSAM). The cell types were classified using the signatures obtained from the segmented Xenium data (see above). SSAM was run in both, default and &#x0201c;fast KDE&#x0201d; mode. To evaluate the concordance of the cell type assignment the adjusted Rand index (<italic toggle="yes">sklearn.metrics. adjusted_rand_score</italic>) and the normalized mutual information was calculated (<italic toggle="yes">sklearn.metrics.normalized_mutual_info_score</italic>) for all foreground pixels (total mRNA KDE &#x0003e;0.1). The runtime comparison was done as described below while using 512 GB memory for SSAM and 16 GB memory for Sainsc.</p></sec><sec id="smtd202401123-sec-0240"><title>Benchmarking and Runtime Performance Metrics</title><p>The Stereo&#x02010;seq mouse brain sample was used to benchmark the scalability of Sainsc (v0.1.0 with polar v1.2.0) and compare the runtime performance against other methods. To calculate runtime performance metrics jobs were submitted using slurm <italic toggle="yes">sbatch</italic> to a single compute node exclusively (&#x02010;N&#x000a0;1 &#x02013;exclusive) with 8 CPUs (&#x02010;n 8, unless otherwise specified) with each node consisting of a Dell PowerEdge C6420 with 2x Intel Xeon Gold 6252@ 2.1&#x000a0;GHz. Jobs were assigned 64 GB of RAM, unless otherwise specified. The metrics were calculated from the slurm job information (using &#x0201c;ElapsedRaw&#x0201d; as wall time, &#x0201c;TotalCPU&#x0201d; as CPU time, and &#x0201c;MaxRSS&#x0201d; as maximum memory usage) for the entire workflow including data loading, pre&#x02010;processing, and &#x0201c;spot&#x0201d;&#x02010;wise cell&#x02010;type/factor assignment.</p></sec><sec id="smtd202401123-sec-0250"><title>Benchmark&#x02014;Sainsc</title><p>Sainsc was run with eight threads, and a Gaussian kernel of bandwidth eight truncated at two bandwidths. To evaluate scalability in terms of analyzed tissue area and number of transcripts, the tissue was cropped to the specified fraction of the area (cropping equally along both axis) and the transcripts were subsampled on a per&#x02010;gene basis. To compare the scalability with the number of genes and cell types, cell&#x02010;type signatures from Yao et al.<sup>[</sup>
+<xref rid="smtd202401123-bib-0033" ref-type="bibr">
+<sup>33</sup>
+</xref>
+<sup>]</sup> and genes appearing in both the data and the signatures were randomly subsampled. Jobs for the scalability analysis were submitted with 32 GB of RAM. For the comparison with FICTURE and TopACT cell&#x02010;type assignment was performed for the 42 &#x0201c;subclasses&#x0201d; defined in Yao et al.<sup>[</sup>
+<xref rid="smtd202401123-bib-0033" ref-type="bibr">
+<sup>33</sup>
+</xref>
+<sup>]</sup> and the number of genes for the signatures was varied; 7972 (differentially expressed genes from Yao et al. that are detected in the data), and the 19708 genes as used by FICTURE after its default filtering. For the multi&#x02010;threading comparison jobs were submitted with the indicated number of threads.</p></sec><sec id="smtd202401123-sec-0260"><title>Benchmark&#x02014;FICTURE</title><p>For FICTURE (v0.0.3.1)<sup>[</sup>
+<xref rid="smtd202401123-bib-0032" ref-type="bibr">
+<sup>32</sup>
+</xref>
+<sup>]</sup> the Makefile was generated using the <italic toggle="yes">run_together</italic> command and non&#x02010;essential processing steps were removed (e.g., plotting and bulk differential gene expression) resulting in an analysis consisting of the main steps <italic toggle="yes">make_spatial_minibatch, make_dge, fit_model, transform</italic>, and <italic toggle="yes">slda_decode</italic>. Furthermore, the <italic toggle="yes">sort</italic> commands were adjusted to a buffer size of 4&#x000a0;GB (&#x02010;S 4G). The analysis was performed with 42 factors (corresponding to the 42 cell types used for the other tools) and a width of 15 (corresponding to 8.7&#x000a0;&#x000b5;m side&#x02010;to&#x02010;side width of the hexagon following the original publication) while keeping other parameters at the default. The <italic toggle="yes">make</italic> command was run with 1 job in the case of single&#x02010;threaded FICTURE and with 2 jobs otherwise (&#x02010;j 1 and &#x02010;j 2 respectively).</p></sec><sec id="smtd202401123-sec-0270"><title>Benchmark&#x02014;TopACT</title><p>TopACT (v1.1.0)<sup>[</sup>
+<xref rid="smtd202401123-bib-0027" ref-type="bibr">
+<sup>27</sup>
+</xref>
+<sup>]</sup> was trained on single&#x02010;cell data from Yao et al.<sup>[</sup>
+<xref rid="smtd202401123-bib-0033" ref-type="bibr">
+<sup>33</sup>
+</xref>
+<sup>]</sup> The data was subsampled to at most 1000 cells per cell type leaving &#x02248;37000 cells prior to running the analysis. For classification all pixels within the convex hull around the gene expression were considered and the classification was run in parallel on eight processes for a radius from 3 to 9 (min_scale and max_scale parameters, respectively) following the original publication, and the job was submitted using 128&#x000a0;GB of memory.</p></sec></sec><sec sec-type="COI-statement" id="smtd202401123-sec-0290"><title>Conflict of Interest</title><p>The authors declare no conflict of interest.</p></sec><sec id="smtd202401123-sec-0300"><title>Author Contributions</title><p>N.I. conceived the study. N.M.&#x02010;B. implemented Sainsc, Sainsc.jl, and performed data analysis and interpretation. S.T. assisted with the interpretation of mouse brain results and provided critical comments and feedback. N.I. and N.M.&#x02010;B. wrote the manuscript. All authors commented on and critically revised the manuscript.</p></sec><sec sec-type="supplementary-material"><title>Supporting information</title><supplementary-material id="smtd202401123-supinfo-0001" position="float" content-type="local-data"/><supplementary-material id="smtd202401123-supitem-0001" position="float" content-type="local-data"><caption><p>Supporting Information</p></caption><media xlink:href="SMTD-9-2401123-s001.docx"/></supplementary-material><supplementary-material id="smtd202401123-supitem-0002" position="float" content-type="local-data"><caption><p>Supporting Information</p></caption><media xlink:href="SMTD-9-2401123-s002.zip"/></supplementary-material></sec></body><back><ack id="smtd202401123-sec-0280"><title>Acknowledgements</title><p>This research received funding from the Federal Ministry of Education and Research of Germany in the framework of SAGE (project number 031L0265). The authors thank Alexander Malt for the review and feedback on the Sainsc user guide and documentation, and Sergio Marco Salas, Paulo Czarnewski, and Christophe Avenel for assistance with the analysis of the Xenium dataset.</p><p>Open access funding enabled and organized by Projekt DEAL.</p></ack><sec sec-type="data-availability" id="smtd202401123-sec-0320"><title>Data Availability Statement</title><p>All data used in this study is publicly available. Stereo&#x02010;seq mouse brain and embryo data was downloaded from the original Stereo&#x02010;seq study (<ext-link xlink:href="https://db.cngb.org/stomics/mosta/" ext-link-type="uri" specific-use="software is-supplemented-by">https://db.cngb.org/stomics/mosta/</ext-link>).<sup>[</sup>
+<xref rid="smtd202401123-bib-0014" ref-type="bibr">
+<sup>14</sup>
+</xref>
+<sup>]</sup> Xenium mouse brain data was obtained from 10x Genomics (<ext-link xlink:href="https://www.10xgenomics.com/datasets/fresh-frozen-mouse-brain-replicates-1-standard" ext-link-type="uri" specific-use="software is-supplemented-by">https://www.10xgenomics.com/datasets/fresh&#x02010;frozen&#x02010;mouse&#x02010;brain&#x02010;replicates&#x02010;1&#x02010;standard</ext-link>). The cell annotation based on segmentation of the Xenium dataset from Salas et al.<sup>[</sup>
+<xref rid="smtd202401123-bib-0020" ref-type="bibr">
+<sup>20</sup>
+</xref>
+<sup>]</sup> is available from Zenodo (<ext-link xlink:href="https://doi.org/10.5281/zenodo.13821309" ext-link-type="uri" specific-use="dataset is-supplemented-by">https://doi.org/10.5281/zenodo.13821309</ext-link>). Nova&#x02010;ST mouse brain data<sup>[</sup>
+<xref rid="smtd202401123-bib-0017" ref-type="bibr">
+<sup>17</sup>
+</xref>
+<sup>]</sup> was downloaded from Gene Expression Omnibus (<ext-link xlink:href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM8093729" ext-link-type="uri" specific-use="software is-supplemented-by">https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM8093729</ext-link>). The scRNAseq data for the isocortex and hippocampal formation from Yao et al.<sup>[</sup>
+<xref rid="smtd202401123-bib-0033" ref-type="bibr">
+<sup>33</sup>
+</xref>
+<sup>]</sup> was downloaded from the NeMO Archive (<ext-link xlink:href="https://assets.nemoarchive.org/dat-jb2f34y" ext-link-type="uri" specific-use="software is-supplemented-by">https://assets.nemoarchive.org/dat&#x02010;jb2f34y</ext-link>) and for the whole mouse brain from Yao et al.<sup>[</sup>
+<xref rid="smtd202401123-bib-0034" ref-type="bibr">
+<sup>34</sup>
+</xref>
+<sup>]</sup> (<ext-link xlink:href="https://portal.brain-map.org/atlases-and-data/bkp/abc-atlas" ext-link-type="uri" specific-use="software is-supplemented-by">https://portal.brain&#x02010;map.org/atlases&#x02010;and&#x02010;data/bkp/abc&#x02010;atlas</ext-link>). The Sainsc Python package is available at <ext-link xlink:href="https://github.com/HiDiHlabs/sainsc" ext-link-type="uri" specific-use="software is-supplemented-by">https://github.com/HiDiHlabs/sainsc</ext-link> and the Julia implementation at <ext-link xlink:href="https://github.com/niklasmueboe/Sainsc.jl" ext-link-type="uri" specific-use="software is-supplemented-by">https://github.com/niklasmueboe/Sainsc.jl</ext-link>. The analysis code to reproduce the results of this study is deposited at <ext-link xlink:href="https://github.com/HiDiHlabs/sainsc-study" ext-link-type="uri" specific-use="software is-supplemented-by">https://github.com/HiDiHlabs/sainsc&#x02010;study</ext-link>.</p></sec><ref-list id="smtd202401123-bibl-0001"><ref id="smtd202401123-bib-0001"><label>1</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0001">
+<string-name>
+<given-names>V.</given-names>
+<surname>Marx</surname>
+</string-name>, <source>Nat. Methods</source>
+<year>2021</year>, <volume>18</volume>, <fpage>9</fpage>.<pub-id pub-id-type="pmid">33408395</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0002"><label>2</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0002">
+<string-name>
+<given-names>A.</given-names>
+<surname>Rao</surname>
+</string-name>, <string-name>
+<given-names>D.</given-names>
+<surname>Barkley</surname>
+</string-name>, <string-name>
+<given-names>G. S.</given-names>
+<surname>Fran&#x000e7;a</surname>
+</string-name>, <string-name>
+<given-names>I.</given-names>
+<surname>Yanai</surname>
+</string-name>, <source>Nature</source>
+<year>2021</year>, <volume>596</volume>, <fpage>211</fpage>.<pub-id pub-id-type="pmid">34381231</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0003"><label>3</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0003">
+<string-name>
+<given-names>C. G.</given-names>
+<surname>Williams</surname>
+</string-name>, <string-name>
+<given-names>H. J.</given-names>
+<surname>Lee</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>Asatsuma</surname>
+</string-name>, <string-name>
+<given-names>R.</given-names>
+<surname>Vento&#x02010;Tormo</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Haque</surname>
+</string-name>, <source>Genome Med.</source>
+<year>2022</year>, <volume>14</volume>, <fpage>68</fpage>.<pub-id pub-id-type="pmid">35761361</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0004"><label>4</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0004">
+<string-name>
+<given-names>M.</given-names>
+<surname>Asp</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Bergenstr&#x000e5;hle</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Lundeberg</surname>
+</string-name>, <source>BioEssays</source>
+<year>2020</year>, <volume>42</volume>, <elocation-id>1900221</elocation-id>.</mixed-citation></ref><ref id="smtd202401123-bib-0005"><label>5</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0005">
+<string-name>
+<given-names>E.</given-names>
+<surname>Lubeck</surname>
+</string-name>, <string-name>
+<given-names>A. F.</given-names>
+<surname>Coskun</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>Zhiyentayev</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Ahmad</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Cai</surname>
+</string-name>, <source>Nat. Methods</source>
+<year>2014</year>, <volume>11</volume>, <fpage>360</fpage>.<pub-id pub-id-type="pmid">24681720</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0006"><label>6</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0006">
+<string-name>
+<given-names>K. H.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name>
+<given-names>A. N.</given-names>
+<surname>Boettiger</surname>
+</string-name>, <string-name>
+<given-names>J. R.</given-names>
+<surname>Moffitt</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name>
+<given-names>X.</given-names>
+<surname>Zhuang</surname>
+</string-name>, <source>Science</source>
+<year>2015</year>, <volume>348</volume>, <elocation-id>aaa6090</elocation-id>.<pub-id pub-id-type="pmid">25858977</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0007"><label>7</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0007">
+<string-name>
+<given-names>R.</given-names>
+<surname>Ke</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Mignardi</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Pacureanu</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Svedlund</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Botling</surname>
+</string-name>, <string-name>
+<given-names>C.</given-names>
+<surname>W&#x000e4;hlby</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Nilsson</surname>
+</string-name>, <source>Nat. Methods</source>
+<year>2013</year>, <volume>10</volume>, <fpage>857</fpage>.<pub-id pub-id-type="pmid">23852452</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0008"><label>8</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0008">
+<string-name>
+<given-names>J. H.</given-names>
+<surname>Lee</surname>
+</string-name>, <string-name>
+<given-names>E. R.</given-names>
+<surname>Daugharthy</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Scheiman</surname>
+</string-name>, <string-name>
+<given-names>R.</given-names>
+<surname>Kalhor</surname>
+</string-name>, <string-name>
+<given-names>J. L.</given-names>
+<surname>Yang</surname>
+</string-name>, <string-name>
+<given-names>T. C.</given-names>
+<surname>Ferrante</surname>
+</string-name>, <string-name>
+<given-names>R.</given-names>
+<surname>Terry</surname>
+</string-name>, <string-name>
+<given-names>S. S. F.</given-names>
+<surname>Jeanty</surname>
+</string-name>, <string-name>
+<given-names>C.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name>
+<given-names>R.</given-names>
+<surname>Amamoto</surname>
+</string-name>, <string-name>
+<given-names>D. T.</given-names>
+<surname>Peters</surname>
+</string-name>, <string-name>
+<given-names>B. M.</given-names>
+<surname>Turczyk</surname>
+</string-name>, <string-name>
+<given-names>A. H.</given-names>
+<surname>Marblestone</surname>
+</string-name>, <string-name>
+<given-names>S. A.</given-names>
+<surname>Inverso</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Bernard</surname>
+</string-name>, <string-name>
+<given-names>P.</given-names>
+<surname>Mali</surname>
+</string-name>, <string-name>
+<given-names>X.</given-names>
+<surname>Rios</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Aach</surname>
+</string-name>, <string-name>
+<given-names>G. M.</given-names>
+<surname>Church</surname>
+</string-name>, <source>Science</source>
+<year>2014</year>, <volume>343</volume>, <fpage>1360</fpage>.<pub-id pub-id-type="pmid">24578530</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0009"><label>9</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0009">
+<string-name>
+<given-names>P. L.</given-names>
+<surname>St&#x000e5;hl</surname>
+</string-name>, <string-name>
+<given-names>F.</given-names>
+<surname>Salm&#x000e9;n</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Vickovic</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Lundmark</surname>
+</string-name>, <string-name>
+<given-names>J. F.</given-names>
+<surname>Navarro</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Magnusson</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Giacomello</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Asp</surname>
+</string-name>, <string-name>
+<given-names>J. O.</given-names>
+<surname>Westholm</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Huss</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Mollbrink</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Linnarsson</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Codeluppi</surname>
+</string-name>, <string-name>
+<given-names>&#x000c5;.</given-names>
+<surname>Borg</surname>
+</string-name>, <string-name>
+<given-names>F.</given-names>
+<surname>Pont&#x000e9;n</surname>
+</string-name>, <string-name>
+<given-names>P. I.</given-names>
+<surname>Costea</surname>
+</string-name>, <string-name>
+<given-names>P.</given-names>
+<surname>Sahl&#x000e9;n</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Mulder</surname>
+</string-name>, <string-name>
+<given-names>O.</given-names>
+<surname>Bergmann</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Lundeberg</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Fris&#x000e9;n</surname>
+</string-name>, <source>Science</source>
+<year>2016</year>, <volume>353</volume>, <fpage>78</fpage>.<pub-id pub-id-type="pmid">27365449</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0010"><label>10</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0010">
+<string-name>
+<given-names>S. G.</given-names>
+<surname>Rodriques</surname>
+</string-name>, <string-name>
+<given-names>R. R.</given-names>
+<surname>Stickels</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Goeva</surname>
+</string-name>, <string-name>
+<given-names>C. A.</given-names>
+<surname>Martin</surname>
+</string-name>, <string-name>
+<given-names>E.</given-names>
+<surname>Murray</surname>
+</string-name>, <string-name>
+<given-names>C. R.</given-names>
+<surname>Vanderburg</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Welch</surname>
+</string-name>, <string-name>
+<given-names>L. M.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name>
+<given-names>F.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name>
+<given-names>E. Z.</given-names>
+<surname>Macosko</surname>
+</string-name>, <source>Science</source>
+<year>2019</year>, <volume>363</volume>, <fpage>1463</fpage>.<pub-id pub-id-type="pmid">30923225</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0011"><label>11</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0011">
+<string-name>
+<given-names>L.</given-names>
+<surname>Yan</surname>
+</string-name>, <string-name>
+<given-names>X.</given-names>
+<surname>Sun</surname>
+</string-name>, <source>Bioinformatics</source>
+<year>2023</year>, <volume>39</volume>, <elocation-id>btac805</elocation-id>.<pub-id pub-id-type="pmid">36515467</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0012"><label>12</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0012">
+<string-name>
+<given-names>H.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Zhou</surname>
+</string-name>, <string-name>
+<given-names>Z.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name>
+<given-names>X.</given-names>
+<surname>Liao</surname>
+</string-name>, <string-name>
+<given-names>B.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name>
+<given-names>R.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Sun</surname>
+</string-name>, <string-name>
+<given-names>X.</given-names>
+<surname>Gao</surname>
+</string-name>, <source>Nat. Commun.</source>
+<year>2023</year>, <volume>14</volume>, <fpage>1548</fpage>.<pub-id pub-id-type="pmid">36941264</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0013"><label>13</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0013">
+<string-name>
+<given-names>B.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name>
+<given-names>W.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name>
+<given-names>C.</given-names>
+<surname>Guo</surname>
+</string-name>, <string-name>
+<given-names>H.</given-names>
+<surname>Xu</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Fang</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Hu</surname>
+</string-name>, <string-name>
+<given-names>X.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name>
+<given-names>X.</given-names>
+<surname>Yao</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Tang</surname>
+</string-name>, <string-name>
+<given-names>K.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name>
+<given-names>X.</given-names>
+<surname>Zhao</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Lin</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Cheng</surname>
+</string-name>, <string-name>
+<given-names>F.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>Xue</surname>
+</string-name>, <string-name>
+<given-names>K.</given-names>
+<surname>Qu</surname>
+</string-name>, <source>Nat. Methods</source>
+<year>2022</year>, <volume>19</volume>, <fpage>662</fpage>.<pub-id pub-id-type="pmid">35577954</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0014"><label>14</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0014">
+<string-name>
+<given-names>A.</given-names>
+<surname>Chen</surname>
+</string-name>, et&#x000a0;al., <source>Cell</source>
+<year>2022</year>, <volume>185</volume>, <fpage>1777</fpage>.<pub-id pub-id-type="pmid">35512705</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0015"><label>15</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0015">
+<string-name>
+<given-names>C.&#x02010;S.</given-names>
+<surname>Cho</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Xi</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Si</surname>
+</string-name>, <string-name>
+<given-names>S.&#x02010;R.</given-names>
+<surname>Park</surname>
+</string-name>, <string-name>
+<given-names>J.&#x02010;E.</given-names>
+<surname>Hsu</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Kim</surname>
+</string-name>, <string-name>
+<given-names>G.</given-names>
+<surname>Jun</surname>
+</string-name>, <string-name>
+<given-names>H. M.</given-names>
+<surname>Kang</surname>
+</string-name>, <string-name>
+<given-names>J. H.</given-names>
+<surname>Lee</surname>
+</string-name>, <source>Cell</source>
+<year>2021</year>, <volume>184</volume>, <fpage>3559</fpage>.<pub-id pub-id-type="pmid">34115981</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0016"><label>16</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0016">
+<string-name>
+<given-names>M.</given-names>
+<surname>Schott</surname>
+</string-name>, <string-name>
+<given-names>D.</given-names>
+<surname>Le&#x000f3;n&#x02010;Peri&#x000f1;&#x000e1;n</surname>
+</string-name>, <string-name>
+<given-names>E.</given-names>
+<surname>Splendiani</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Strenger</surname>
+</string-name>, <string-name>
+<given-names>J. R.</given-names>
+<surname>Licha</surname>
+</string-name>, <string-name>
+<given-names>T. M.</given-names>
+<surname>Pentimalli</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Schallenberg</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Alles</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Samut Tagliaferro</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Boltengagen</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Ehrig</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Abbiati</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Dommerich</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Pagani</surname>
+</string-name>, <string-name>
+<given-names>E.</given-names>
+<surname>Ferretti</surname>
+</string-name>, <string-name>
+<given-names>G.</given-names>
+<surname>Macino</surname>
+</string-name>, <string-name>
+<given-names>N.</given-names>
+<surname>Karaiskos</surname>
+</string-name>, <string-name>
+<given-names>N.</given-names>
+<surname>Rajewsky</surname>
+</string-name>, <source>Cell</source>
+<year>2024</year>, <volume>184</volume>, <fpage>3953</fpage>.</mixed-citation></ref><ref id="smtd202401123-bib-0017"><label>17</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0017">
+<string-name>
+<given-names>S.</given-names>
+<surname>Poovathingal</surname>
+</string-name>, <string-name>
+<given-names>K.</given-names>
+<surname>Davie</surname>
+</string-name>, <string-name>
+<given-names>L. E.</given-names>
+<surname>Borm</surname>
+</string-name>, <string-name>
+<given-names>R.</given-names>
+<surname>Vandepoel</surname>
+</string-name>, <string-name>
+<given-names>N.</given-names>
+<surname>Poulvellarie</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Verfaillie</surname>
+</string-name>, <string-name>
+<given-names>N.</given-names>
+<surname>Corthout</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Aerts</surname>
+</string-name>, <source>Cell Rep. Methods</source>
+<year>2024</year>, <volume>4</volume>, <elocation-id>100831</elocation-id>.<pub-id pub-id-type="pmid">39111312</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0018"><label>18</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0018">
+<string-name>
+<given-names>Y.</given-names>
+<surname>You</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name>
+<given-names>Z.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Jia</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Lu</surname>
+</string-name>, <string-name>
+<given-names>W.</given-names>
+<surname>Ren</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Xu</surname>
+</string-name>, <string-name>
+<given-names>X.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name>
+<given-names>F.</given-names>
+<surname>Jiang</surname>
+</string-name>, <string-name>
+<given-names>G.</given-names>
+<surname>Peng</surname>
+</string-name>, <string-name>
+<given-names>A. S.</given-names>
+<surname>Kumar</surname>
+</string-name>, <string-name>
+<given-names>M. E.</given-names>
+<surname>Ritchie</surname>
+</string-name>, <string-name>
+<given-names>X.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Tian</surname>
+</string-name>, <source>Nat. Methods</source>
+<year>2024</year>, <volume>21</volume>, <fpage>1743</fpage>.<pub-id pub-id-type="pmid">38965443</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0019"><label>19</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0019">
+<string-name>
+<given-names>J.</given-names>
+<surname>Park</surname>
+</string-name>, <string-name>
+<given-names>W.</given-names>
+<surname>Choi</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Tiesmeyer</surname>
+</string-name>, <string-name>
+<given-names>B.</given-names>
+<surname>Long</surname>
+</string-name>, <string-name>
+<given-names>L. E.</given-names>
+<surname>Borm</surname>
+</string-name>, <string-name>
+<given-names>E.</given-names>
+<surname>Garren</surname>
+</string-name>, <string-name>
+<given-names>T. N.</given-names>
+<surname>Nguyen</surname>
+</string-name>, <string-name>
+<given-names>B.</given-names>
+<surname>Tasic</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Codeluppi</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>Graf</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Schlesner</surname>
+</string-name>, <string-name>
+<given-names>O.</given-names>
+<surname>Stegle</surname>
+</string-name>, <string-name>
+<given-names>R.</given-names>
+<surname>Eils</surname>
+</string-name>, <string-name>
+<given-names>N.</given-names>
+<surname>Ishaque</surname>
+</string-name>, <source>Nat. Commun.</source>
+<year>2021</year>, <volume>12</volume>, <fpage>3545</fpage>.<pub-id pub-id-type="pmid">34112806</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0020"><label>20</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0020">
+<string-name>
+<given-names>S. M.</given-names>
+<surname>Salas</surname>
+</string-name>, <string-name>
+<given-names>P.</given-names>
+<surname>Czarnewski</surname>
+</string-name>, <string-name>
+<given-names>L. B.</given-names>
+<surname>Kuemmerle</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Helgadottir</surname>
+</string-name>, <string-name>
+<given-names>C.</given-names>
+<surname>Matsson&#x02010;Langseth</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Tiesmeyer</surname>
+</string-name>, <string-name>
+<given-names>C.</given-names>
+<surname>Avenel</surname>
+</string-name>, <string-name>
+<given-names>H.</given-names>
+<surname>Rehman</surname>
+</string-name>, <string-name>
+<given-names>K.</given-names>
+<surname>Tiklova</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Andersson</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Chatzinikolaou</surname>
+</string-name>, <string-name>
+<given-names>F. J.</given-names>
+<surname>Theis</surname>
+</string-name>, <string-name>
+<given-names>M. D.</given-names>
+<surname>Luecken</surname>
+</string-name>, <string-name>
+<given-names>C.</given-names>
+<surname>W&#x000e4;hlby</surname>
+</string-name>, <string-name>
+<given-names>N.</given-names>
+<surname>Ishaque</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Nilsson</surname>
+</string-name>, <source>bioRxiv</source>
+<year>2023</year>, <pub-id pub-id-type="doi">10.1101/2023.02.13.528102</pub-id>.</mixed-citation></ref><ref id="smtd202401123-bib-0021"><label>21</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0021">
+<string-name>
+<given-names>C.</given-names>
+<surname>Taylor</surname>
+</string-name>, <source>Vistas Astron</source>
+<year>1997</year>, <volume>41</volume>, <fpage>411</fpage>.</mixed-citation></ref><ref id="smtd202401123-bib-0022"><label>22</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0022">
+<string-name>
+<given-names>S.</given-names>
+<surname>Tiesmeyer</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Sahay</surname>
+</string-name>, <string-name>
+<given-names>N.</given-names>
+<surname>M&#x000fc;ller&#x02010;B&#x000f6;tticher</surname>
+</string-name>, <string-name>
+<given-names>R.</given-names>
+<surname>Eils</surname>
+</string-name>, <string-name>
+<given-names>S. D.</given-names>
+<surname>Mackowiak</surname>
+</string-name>, <string-name>
+<given-names>N.</given-names>
+<surname>Ishaque</surname>
+</string-name>, <source>Front. Genet.</source>
+<year>2022</year>, <volume>13</volume>, <elocation-id>785877</elocation-id>.<pub-id pub-id-type="pmid">35295943</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0023"><label>23</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0023">
+<string-name>
+<given-names>E.</given-names>
+<surname>Roesch</surname>
+</string-name>, <string-name>
+<given-names>J. G.</given-names>
+<surname>Greener</surname>
+</string-name>, <string-name>
+<given-names>A. L.</given-names>
+<surname>MacLean</surname>
+</string-name>, <string-name>
+<given-names>H.</given-names>
+<surname>Nassar</surname>
+</string-name>, <string-name>
+<given-names>C.</given-names>
+<surname>Rackauckas</surname>
+</string-name>, <string-name>
+<given-names>T. E.</given-names>
+<surname>Holy</surname>
+</string-name>, <string-name>
+<given-names>M. P. H.</given-names>
+<surname>Stumpf</surname>
+</string-name>, <source>Nat. Methods</source>
+<year>2023</year>, <volume>20</volume>, <fpage>655</fpage>.<pub-id pub-id-type="pmid">37024649</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0024"><label>24</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0024">
+<string-name>
+<given-names>I.</given-names>
+<surname>Virshup</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Rybakov</surname>
+</string-name>, <string-name>
+<given-names>F. J.</given-names>
+<surname>Theis</surname>
+</string-name>, <string-name>
+<given-names>P.</given-names>
+<surname>Angerer</surname>
+</string-name>, <string-name>
+<given-names>F. A.</given-names>
+<surname>Wolf</surname>
+</string-name>, <source>bioRxiv</source>
+<year>2021</year>, <pub-id pub-id-type="doi">10.1101/2021.12.16.473007</pub-id>.</mixed-citation></ref><ref id="smtd202401123-bib-0025"><label>25</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0025">
+<string-name>
+<given-names>L.</given-names>
+<surname>Marconato</surname>
+</string-name>, <string-name>
+<given-names>G.</given-names>
+<surname>Palla</surname>
+</string-name>, <string-name>
+<given-names>K. A.</given-names>
+<surname>Yamauchi</surname>
+</string-name>, <string-name>
+<given-names>I.</given-names>
+<surname>Virshup</surname>
+</string-name>, <string-name>
+<given-names>E.</given-names>
+<surname>Heidari</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>Treis</surname>
+</string-name>, <string-name>
+<given-names>W.&#x02010;M.</given-names>
+<surname>Vierdag</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Toth</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Stockhaus</surname>
+</string-name>, <string-name>
+<given-names>R. B.</given-names>
+<surname>Shrestha</surname>
+</string-name>, <string-name>
+<given-names>B.</given-names>
+<surname>Rombaut</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Pollaris</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Lehner</surname>
+</string-name>, <string-name>
+<given-names>H.</given-names>
+<surname>V&#x000f6;hringer</surname>
+</string-name>, <string-name>
+<given-names>I.</given-names>
+<surname>Kats</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Saeys</surname>
+</string-name>, <string-name>
+<given-names>S. K.</given-names>
+<surname>Saka</surname>
+</string-name>, <string-name>
+<given-names>W.</given-names>
+<surname>Huber</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Gerstung</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Moore</surname>
+</string-name>, <string-name>
+<given-names>F. J.</given-names>
+<surname>Theis</surname>
+</string-name>, <string-name>
+<given-names>O.</given-names>
+<surname>Stegle</surname>
+</string-name>, <source>Nat. Methods</source>
+<year>2024</year>, <pub-id pub-id-type="doi">10.1038/s41592-024-02212-x</pub-id>.</mixed-citation></ref><ref id="smtd202401123-bib-0026"><label>26</label><mixed-citation publication-type="book" id="smtd202401123-cit-0026">
+<string-name>
+<given-names>P.</given-names>
+<surname>Melville</surname>
+</string-name>, <string-name>
+<given-names>V. R. S.</given-names>
+<surname>Sindhwani</surname>
+</string-name>, <source>Encyclopedia of Machine Learning and Data Mining</source>, (eds. <person-group person-group-type="editor">
+<string-name>
+<given-names>C.</given-names>
+<surname>Sammut</surname>
+</string-name>
+</person-group>, <person-group person-group-type="editor">
+<string-name>
+<given-names>G. I.</given-names>
+<surname>Webb</surname>
+</string-name>
+</person-group>), <publisher-name>Springer US</publisher-name>, <publisher-loc>Boston, MA</publisher-loc>, <year>2017</year>, pp. <fpage>1056</fpage>&#x02013;<lpage>1066</lpage>.</mixed-citation></ref><ref id="smtd202401123-bib-0027"><label>27</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0027">
+<string-name>
+<given-names>K.</given-names>
+<surname>Benjamin</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Bhandari</surname>
+</string-name>, <string-name>
+<given-names>J. D.</given-names>
+<surname>Kepple</surname>
+</string-name>, <string-name>
+<given-names>R.</given-names>
+<surname>Qi</surname>
+</string-name>, <string-name>
+<given-names>Z.</given-names>
+<surname>Shang</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Xing</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>An</surname>
+</string-name>, <string-name>
+<given-names>N.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Hou</surname>
+</string-name>, <string-name>
+<given-names>T. L.</given-names>
+<surname>Crockford</surname>
+</string-name>, <string-name>
+<given-names>O.</given-names>
+<surname>McCallion</surname>
+</string-name>, <string-name>
+<given-names>F.</given-names>
+<surname>Issa</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Hester</surname>
+</string-name>, <string-name>
+<given-names>U.</given-names>
+<surname>Tillmann</surname>
+</string-name>, <string-name>
+<given-names>H. A.</given-names>
+<surname>Harrington</surname>
+</string-name>, <string-name>
+<given-names>K. R.</given-names>
+<surname>Bull</surname>
+</string-name>, <source>Nature</source>
+<year>2024</year>, <volume>630</volume>, <fpage>943</fpage>.<pub-id pub-id-type="pmid">38898271</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0028"><label>28</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0028">
+<string-name>
+<given-names>D. M.</given-names>
+<surname>Cable</surname>
+</string-name>, <string-name>
+<given-names>E.</given-names>
+<surname>Murray</surname>
+</string-name>, <string-name>
+<given-names>L. S.</given-names>
+<surname>Zou</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Goeva</surname>
+</string-name>, <string-name>
+<given-names>E. Z.</given-names>
+<surname>Macosko</surname>
+</string-name>, <string-name>
+<given-names>F.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name>
+<given-names>R. A.</given-names>
+<surname>Irizarry</surname>
+</string-name>, <source>Nat. Biotechnol.</source>
+<year>2022</year>, <volume>40</volume>, <fpage>517</fpage>.<pub-id pub-id-type="pmid">33603203</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0029"><label>29</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0029">
+<string-name>
+<given-names>M. P.</given-names>
+<surname>Lun</surname>
+</string-name>, <string-name>
+<given-names>E. S.</given-names>
+<surname>Monuki</surname>
+</string-name>, <string-name>
+<given-names>M. K.</given-names>
+<surname>Lehtinen</surname>
+</string-name>, <source>Nat. Rev. Neurosci.</source>
+<year>2015</year>, <volume>16</volume>, <fpage>445</fpage>.<pub-id pub-id-type="pmid">26174708</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0030"><label>30</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0030">
+<string-name>
+<given-names>A.</given-names>
+<surname>Ben Shoham</surname>
+</string-name>, et&#x000a0;al., <source>Dev. Camb. Engl.</source>
+<year>2016</year>, <volume>143</volume>, <fpage>3933</fpage>.</mixed-citation></ref><ref id="smtd202401123-bib-0031"><label>31</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0031">
+<string-name>
+<given-names>L.&#x02010;J.</given-names>
+<surname>Ng</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Wheatley</surname>
+</string-name>, <string-name>
+<given-names>G. E. O.</given-names>
+<surname>Muscat</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Conway&#x02010;Campbell</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Bowles</surname>
+</string-name>, <string-name>
+<given-names>E.</given-names>
+<surname>Wright</surname>
+</string-name>, <string-name>
+<given-names>D. M.</given-names>
+<surname>Bell</surname>
+</string-name>, <string-name>
+<given-names>P. P. L.</given-names>
+<surname>Tam</surname>
+</string-name>, <string-name>
+<given-names>K. S. E.</given-names>
+<surname>Cheah</surname>
+</string-name>, <string-name>
+<given-names>P.</given-names>
+<surname>Koopman</surname>
+</string-name>, <source>Dev. Biol.</source>
+<year>1997</year>, <volume>183</volume>, <fpage>108</fpage>.<pub-id pub-id-type="pmid">9119111</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0032"><label>32</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0032">
+<string-name>
+<given-names>Y.</given-names>
+<surname>Si</surname>
+</string-name>, <string-name>
+<given-names>C.</given-names>
+<surname>Lee</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Hwang</surname>
+</string-name>, <string-name>
+<given-names>J. H.</given-names>
+<surname>Yun</surname>
+</string-name>, <string-name>
+<given-names>W.</given-names>
+<surname>Cheng</surname>
+</string-name>, <string-name>
+<given-names>C.&#x02010;S.</given-names>
+<surname>Cho</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Quiros</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Nusrat</surname>
+</string-name>, <string-name>
+<given-names>W.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name>
+<given-names>G.</given-names>
+<surname>Jun</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Z&#x000f6;llner</surname>
+</string-name>, <string-name>
+<given-names>J. H.</given-names>
+<surname>Lee</surname>
+</string-name>, <string-name>
+<given-names>H. M.</given-names>
+<surname>Kang</surname>
+</string-name>, <source>Nat. Methods</source>
+<year>2024</year>, <volume>21</volume>, <fpage>1843</fpage>.<pub-id pub-id-type="pmid">39266749</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0033"><label>33</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0033">
+<string-name>
+<given-names>Z.</given-names>
+<surname>Yao</surname>
+</string-name>, <string-name>
+<given-names>C. T. J.</given-names>
+<surname>van Velthoven</surname>
+</string-name>, <string-name>
+<given-names>T. N.</given-names>
+<surname>Nguyen</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Goldy</surname>
+</string-name>, <string-name>
+<given-names>A. E.</given-names>
+<surname>Sedeno&#x02010;Cortes</surname>
+</string-name>, <string-name>
+<given-names>F.</given-names>
+<surname>Baftizadeh</surname>
+</string-name>, <string-name>
+<given-names>D.</given-names>
+<surname>Bertagnolli</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>Casper</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Chiang</surname>
+</string-name>, <string-name>
+<given-names>K.</given-names>
+<surname>Crichton</surname>
+</string-name>, <string-name>
+<given-names>S.&#x02010;L.</given-names>
+<surname>Ding</surname>
+</string-name>, <string-name>
+<given-names>O.</given-names>
+<surname>Fong</surname>
+</string-name>, <string-name>
+<given-names>E.</given-names>
+<surname>Garren</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Glandon</surname>
+</string-name>, <string-name>
+<given-names>N. W.</given-names>
+<surname>Gouwens</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Gray</surname>
+</string-name>, <string-name>
+<given-names>L. T.</given-names>
+<surname>Graybuck</surname>
+</string-name>, <string-name>
+<given-names>M. J.</given-names>
+<surname>Hawrylycz</surname>
+</string-name>, <string-name>
+<given-names>D.</given-names>
+<surname>Hirschstein</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Kroll</surname>
+</string-name>, <string-name>
+<given-names>K.</given-names>
+<surname>Lathia</surname>
+</string-name>, <string-name>
+<given-names>C.</given-names>
+<surname>Lee</surname>
+</string-name>, <string-name>
+<given-names>B.</given-names>
+<surname>Levi</surname>
+</string-name>, <string-name>
+<given-names>D.</given-names>
+<surname>McMillen</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Mok</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>Pham</surname>
+</string-name>, <string-name>
+<given-names>Q.</given-names>
+<surname>Ren</surname>
+</string-name>, <string-name>
+<given-names>C.</given-names>
+<surname>Rimorin</surname>
+</string-name>, <string-name>
+<given-names>N.</given-names>
+<surname>Shapovalova</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Sulc</surname>
+</string-name>, et&#x000a0;al., <source>Cell</source>
+<year>2021</year>, <volume>184</volume>, <fpage>3222</fpage>.<pub-id pub-id-type="pmid">34004146</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0034"><label>34</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0034">
+<string-name>
+<given-names>Z.</given-names>
+<surname>Yao</surname>
+</string-name>, <string-name>
+<given-names>C. T. J.</given-names>
+<surname>van Velthoven</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Kunst</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name>
+<given-names>D.</given-names>
+<surname>McMillen</surname>
+</string-name>, <string-name>
+<given-names>C.</given-names>
+<surname>Lee</surname>
+</string-name>, <string-name>
+<given-names>W.</given-names>
+<surname>Jung</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Goldy</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Abdelhak</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Aitken</surname>
+</string-name>, <string-name>
+<given-names>K.</given-names>
+<surname>Baker</surname>
+</string-name>, <string-name>
+<given-names>P.</given-names>
+<surname>Baker</surname>
+</string-name>, <string-name>
+<given-names>E.</given-names>
+<surname>Barkan</surname>
+</string-name>, <string-name>
+<given-names>D.</given-names>
+<surname>Bertagnolli</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Bhandiwad</surname>
+</string-name>, <string-name>
+<given-names>C.</given-names>
+<surname>Bielstein</surname>
+</string-name>, <string-name>
+<given-names>P.</given-names>
+<surname>Bishwakarma</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Campos</surname>
+</string-name>, <string-name>
+<given-names>D.</given-names>
+<surname>Carey</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>Casper</surname>
+</string-name>, <string-name>
+<given-names>A. B.</given-names>
+<surname>Chakka</surname>
+</string-name>, <string-name>
+<given-names>R.</given-names>
+<surname>Chakrabarty</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Chavan</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Clark</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Close</surname>
+</string-name>, <string-name>
+<given-names>K.</given-names>
+<surname>Crichton</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Daniel</surname>
+</string-name>, <string-name>
+<given-names>P.</given-names>
+<surname>DiValentin</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>Dolbeare</surname>
+</string-name>, et&#x000a0;al., <source>Nature</source>
+<year>2023</year>, <volume>624</volume>, <fpage>317</fpage>.<pub-id pub-id-type="pmid">38092916</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0035"><label>35</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0035">
+<string-name>
+<given-names>I.</given-names>
+<surname>Dermitzakis</surname>
+</string-name>, <string-name>
+<given-names>P.</given-names>
+<surname>Theotokis</surname>
+</string-name>, <string-name>
+<given-names>P.</given-names>
+<surname>Evangelidis</surname>
+</string-name>, <string-name>
+<given-names>E.</given-names>
+<surname>Delilampou</surname>
+</string-name>, <string-name>
+<given-names>N.</given-names>
+<surname>Evangelidis</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Chatzisavvidou</surname>
+</string-name>, <string-name>
+<given-names>E.</given-names>
+<surname>Avramidou</surname>
+</string-name>, <string-name>
+<given-names>M. E.</given-names>
+<surname>Manthou</surname>
+</string-name>, <source>Curr. Issues Mol. Biol.</source>
+<year>2023</year>, <volume>45</volume>, <fpage>4285</fpage>.<pub-id pub-id-type="pmid">37232741</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0036"><label>36</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0036">
+<string-name>
+<given-names>M.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name>
+<given-names>X.</given-names>
+<surname>Pan</surname>
+</string-name>, <string-name>
+<given-names>W.</given-names>
+<surname>Jung</surname>
+</string-name>, <string-name>
+<given-names>A. R.</given-names>
+<surname>Halpern</surname>
+</string-name>, <string-name>
+<given-names>S. W.</given-names>
+<surname>Eichhorn</surname>
+</string-name>, <string-name>
+<given-names>Z.</given-names>
+<surname>Lei</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Cohen</surname>
+</string-name>, <string-name>
+<given-names>K. A.</given-names>
+<surname>Smith</surname>
+</string-name>, <string-name>
+<given-names>B.</given-names>
+<surname>Tasic</surname>
+</string-name>, <string-name>
+<given-names>Z.</given-names>
+<surname>Yao</surname>
+</string-name>, <string-name>
+<given-names>H.</given-names>
+<surname>Zeng</surname>
+</string-name>, <string-name>
+<given-names>X.</given-names>
+<surname>Zhuang</surname>
+</string-name>, <source>Nature</source>
+<year>2023</year>, <volume>624</volume>, <fpage>343</fpage>.<pub-id pub-id-type="pmid">38092912</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0037"><label>37</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0037">
+<string-name>
+<given-names>K. W.</given-names>
+<surname>Govek</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name>
+<given-names>P.</given-names>
+<surname>Sgourdou</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Yao</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Woodhouse</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name>
+<given-names>M. V.</given-names>
+<surname>Fuccillo</surname>
+</string-name>, <string-name>
+<given-names>D. J.</given-names>
+<surname>Epstein</surname>
+</string-name>, <string-name>
+<given-names>P. G.</given-names>
+<surname>Camara</surname>
+</string-name>, <source>Cell Rep.</source>
+<year>2022</year>, <volume>41</volume>, <elocation-id>111768</elocation-id>.<pub-id pub-id-type="pmid">36476860</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0038"><label>38</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0038">
+<string-name>
+<given-names>T. L.</given-names>
+<surname>Daigle</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Madisen</surname>
+</string-name>, <string-name>
+<given-names>T. A.</given-names>
+<surname>Hage</surname>
+</string-name>, <string-name>
+<given-names>M. T.</given-names>
+<surname>Valley</surname>
+</string-name>, <string-name>
+<given-names>U.</given-names>
+<surname>Knoblich</surname>
+</string-name>, <string-name>
+<given-names>R. S.</given-names>
+<surname>Larsen</surname>
+</string-name>, <string-name>
+<given-names>M. M.</given-names>
+<surname>Takeno</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Huang</surname>
+</string-name>, <string-name>
+<given-names>H.</given-names>
+<surname>Gu</surname>
+</string-name>, <string-name>
+<given-names>R.</given-names>
+<surname>Larsen</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Mills</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Bosma&#x02010;Moody</surname>
+</string-name>, <string-name>
+<given-names>L. A.</given-names>
+<surname>Siverts</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Walker</surname>
+</string-name>, <string-name>
+<given-names>L. T.</given-names>
+<surname>Graybuck</surname>
+</string-name>, <string-name>
+<given-names>Z.</given-names>
+<surname>Yao</surname>
+</string-name>, <string-name>
+<given-names>O.</given-names>
+<surname>Fong</surname>
+</string-name>, <string-name>
+<given-names>T. N.</given-names>
+<surname>Nguyen</surname>
+</string-name>, <string-name>
+<given-names>E.</given-names>
+<surname>Garren</surname>
+</string-name>, <string-name>
+<given-names>G. H.</given-names>
+<surname>Lenz</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Chavarha</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Pendergraft</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Harrington</surname>
+</string-name>, <string-name>
+<given-names>K. E.</given-names>
+<surname>Hirokawa</surname>
+</string-name>, <string-name>
+<given-names>J. A.</given-names>
+<surname>Harris</surname>
+</string-name>, <string-name>
+<given-names>P. R.</given-names>
+<surname>Nicovich</surname>
+</string-name>, <string-name>
+<given-names>M. J.</given-names>
+<surname>McGraw</surname>
+</string-name>, <string-name>
+<given-names>D. R.</given-names>
+<surname>Ollerenshaw</surname>
+</string-name>, <string-name>
+<given-names>K. A.</given-names>
+<surname>Smith</surname>
+</string-name>, <string-name>
+<given-names>C. A.</given-names>
+<surname>Baker</surname>
+</string-name>, et&#x000a0;al., <source>Cell</source>
+<year>2018</year>, <volume>174</volume>, <fpage>465</fpage>.<pub-id pub-id-type="pmid">30007418</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0039"><label>39</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0039">
+<string-name>
+<given-names>E. S.</given-names>
+<surname>Lein</surname>
+</string-name>, <string-name>
+<given-names>M. J.</given-names>
+<surname>Hawrylycz</surname>
+</string-name>, <string-name>
+<given-names>N.</given-names>
+<surname>Ao</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Ayres</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Bensinger</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Bernard</surname>
+</string-name>, <string-name>
+<given-names>A. F.</given-names>
+<surname>Boe</surname>
+</string-name>, <string-name>
+<given-names>M. S.</given-names>
+<surname>Boguski</surname>
+</string-name>, <string-name>
+<given-names>K. S.</given-names>
+<surname>Brockway</surname>
+</string-name>, <string-name>
+<given-names>E. J.</given-names>
+<surname>Byrnes</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name>
+<given-names>T.&#x02010;M.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Chi Chin</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Chong</surname>
+</string-name>, <string-name>
+<given-names>B. E.</given-names>
+<surname>Crook</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Czaplinska</surname>
+</string-name>, <string-name>
+<given-names>C. N.</given-names>
+<surname>Dang</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Datta</surname>
+</string-name>, <string-name>
+<given-names>N. R.</given-names>
+<surname>Dee</surname>
+</string-name>, <string-name>
+<given-names>A. L.</given-names>
+<surname>Desaki</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>Desta</surname>
+</string-name>, <string-name>
+<given-names>E.</given-names>
+<surname>Diep</surname>
+</string-name>, <string-name>
+<given-names>T. A.</given-names>
+<surname>Dolbeare</surname>
+</string-name>, <string-name>
+<given-names>M. J.</given-names>
+<surname>Donelan</surname>
+</string-name>, <string-name>
+<given-names>H.&#x02010;W.</given-names>
+<surname>Dong</surname>
+</string-name>, <string-name>
+<given-names>J. G.</given-names>
+<surname>Dougherty</surname>
+</string-name>, <string-name>
+<given-names>B. J.</given-names>
+<surname>Duncan</surname>
+</string-name>, <string-name>
+<given-names>A. J.</given-names>
+<surname>Ebbert</surname>
+</string-name>, <string-name>
+<given-names>G.</given-names>
+<surname>Eichele</surname>
+</string-name>, et&#x000a0;al., <source>Nature</source>
+<year>2007</year>, <volume>445</volume>, <fpage>168</fpage>.<pub-id pub-id-type="pmid">17151600</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0040"><label>40</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0040">
+<string-name>
+<given-names>J. A.</given-names>
+<surname>Harris</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Mihalas</surname>
+</string-name>, <string-name>
+<given-names>K. E.</given-names>
+<surname>Hirokawa</surname>
+</string-name>, <string-name>
+<given-names>J. D.</given-names>
+<surname>Whitesell</surname>
+</string-name>, <string-name>
+<given-names>H.</given-names>
+<surname>Choi</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Bernard</surname>
+</string-name>, <string-name>
+<given-names>P.</given-names>
+<surname>Bohn</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Caldejon</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Casal</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Cho</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Feiner</surname>
+</string-name>, <string-name>
+<given-names>D.</given-names>
+<surname>Feng</surname>
+</string-name>, <string-name>
+<given-names>N.</given-names>
+<surname>Gaudreault</surname>
+</string-name>, <string-name>
+<given-names>C. R.</given-names>
+<surname>Gerfen</surname>
+</string-name>, <string-name>
+<given-names>N.</given-names>
+<surname>Graddis</surname>
+</string-name>, <string-name>
+<given-names>P. A.</given-names>
+<surname>Groblewski</surname>
+</string-name>, <string-name>
+<given-names>A. M.</given-names>
+<surname>Henry</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Ho</surname>
+</string-name>, <string-name>
+<given-names>R.</given-names>
+<surname>Howard</surname>
+</string-name>, <string-name>
+<given-names>J. E.</given-names>
+<surname>Knox</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Kuan</surname>
+</string-name>, <string-name>
+<given-names>X.</given-names>
+<surname>Kuang</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Lecoq</surname>
+</string-name>, <string-name>
+<given-names>P.</given-names>
+<surname>Lesnar</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Luviano</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>McConoughey</surname>
+</string-name>, <string-name>
+<given-names>M. T.</given-names>
+<surname>Mortrud</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Naeemi</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Ng</surname>
+</string-name>, et&#x000a0;al., <source>Nature</source>
+<year>2019</year>, <volume>575</volume>, <fpage>195</fpage>.<pub-id pub-id-type="pmid">31666704</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0041"><label>41</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0041">
+<string-name>
+<given-names>S. W.</given-names>
+<surname>Oh</surname>
+</string-name>, <string-name>
+<given-names>J. A.</given-names>
+<surname>Harris</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Ng</surname>
+</string-name>, <string-name>
+<given-names>B.</given-names>
+<surname>Winslow</surname>
+</string-name>, <string-name>
+<given-names>N.</given-names>
+<surname>Cain</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Mihalas</surname>
+</string-name>, <string-name>
+<given-names>Q.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name>
+<given-names>C.</given-names>
+<surname>Lau</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Kuan</surname>
+</string-name>, <string-name>
+<given-names>A. M.</given-names>
+<surname>Henry</surname>
+</string-name>, <string-name>
+<given-names>M. T.</given-names>
+<surname>Mortrud</surname>
+</string-name>, <string-name>
+<given-names>B.</given-names>
+<surname>Ouellette</surname>
+</string-name>, <string-name>
+<given-names>T. N.</given-names>
+<surname>Nguyen</surname>
+</string-name>, <string-name>
+<given-names>S. A.</given-names>
+<surname>Sorensen</surname>
+</string-name>, <string-name>
+<given-names>C. R.</given-names>
+<surname>Slaughterbeck</surname>
+</string-name>, <string-name>
+<given-names>W.</given-names>
+<surname>Wakeman</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name>
+<given-names>D.</given-names>
+<surname>Feng</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Ho</surname>
+</string-name>, <string-name>
+<given-names>E.</given-names>
+<surname>Nicholas</surname>
+</string-name>, <string-name>
+<given-names>K. E.</given-names>
+<surname>Hirokawa</surname>
+</string-name>, <string-name>
+<given-names>P.</given-names>
+<surname>Bohn</surname>
+</string-name>, <string-name>
+<given-names>K. M.</given-names>
+<surname>Joines</surname>
+</string-name>, <string-name>
+<given-names>H.</given-names>
+<surname>Peng</surname>
+</string-name>, <string-name>
+<given-names>M. J.</given-names>
+<surname>Hawrylycz</surname>
+</string-name>, <string-name>
+<given-names>J. W.</given-names>
+<surname>Phillips</surname>
+</string-name>, <string-name>
+<given-names>J. G.</given-names>
+<surname>Hohmann</surname>
+</string-name>, <string-name>
+<given-names>P.</given-names>
+<surname>Wohnoutka</surname>
+</string-name>, <string-name>
+<given-names>C. R.</given-names>
+<surname>Gerfen</surname>
+</string-name>, <string-name>
+<given-names>C.</given-names>
+<surname>Koch</surname>
+</string-name>, et&#x000a0;al., <source>Nature</source>
+<year>2014</year>, <volume>508</volume>, <fpage>207</fpage>.<pub-id pub-id-type="pmid">24695228</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0042"><label>42</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0042">
+<string-name>
+<given-names>J. M.</given-names>
+<surname>Perkel</surname>
+</string-name>, <source>Nature</source>
+<year>2019</year>, <volume>572</volume>, <fpage>141</fpage>.<pub-id pub-id-type="pmid">31363196</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0043"><label>43</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0043">
+<string-name>
+<given-names>H.</given-names>
+<surname>Shi</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>He</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Zhou</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Huang</surname>
+</string-name>, <string-name>
+<given-names>K.</given-names>
+<surname>Maher</surname>
+</string-name>, <string-name>
+<given-names>B.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name>
+<given-names>Z.</given-names>
+<surname>Tang</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Luo</surname>
+</string-name>, <string-name>
+<given-names>P.</given-names>
+<surname>Tan</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Wu</surname>
+</string-name>, <string-name>
+<given-names>Z.</given-names>
+<surname>Lin</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Ren</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Thapa</surname>
+</string-name>, <string-name>
+<given-names>X.</given-names>
+<surname>Tang</surname>
+</string-name>, <string-name>
+<given-names>K. Y.</given-names>
+<surname>Chan</surname>
+</string-name>, <string-name>
+<given-names>B. E.</given-names>
+<surname>Deverman</surname>
+</string-name>, <string-name>
+<given-names>H.</given-names>
+<surname>Shen</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name>
+<given-names>X.</given-names>
+<surname>Wang</surname>
+</string-name>, <source>Nature</source>
+<year>2023</year>, <volume>622</volume>, <fpage>552</fpage>.<pub-id pub-id-type="pmid">37758947</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0044"><label>44</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0044">
+<string-name>
+<given-names>P.</given-names>
+<surname>Kiessling</surname>
+</string-name>, <string-name>
+<given-names>C.</given-names>
+<surname>Kuppe</surname>
+</string-name>, <source>Genome Med.</source>
+<year>2024</year>, <volume>16</volume>, <fpage>14</fpage>.<pub-id pub-id-type="pmid">38238823</pub-id>
+</mixed-citation></ref><ref id="smtd202401123-bib-0045"><label>45</label><mixed-citation publication-type="journal" id="smtd202401123-cit-0045">
+<string-name>
+<given-names>A.</given-names>
+<surname>Erickson</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>He</surname>
+</string-name>, <string-name>
+<given-names>E.</given-names>
+<surname>Berglund</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Marklund</surname>
+</string-name>, <string-name>
+<given-names>R.</given-names>
+<surname>Mirzazadeh</surname>
+</string-name>, <string-name>
+<given-names>N.</given-names>
+<surname>Schultz</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Kvastad</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Andersson</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Bergenstr&#x000e5;hle</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Bergenstr&#x000e5;hle</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Larsson</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Alonso Galicia</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Shamikh</surname>
+</string-name>, <string-name>
+<given-names>E.</given-names>
+<surname>Basmaci</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>D&#x000ed;az De St&#x000e5;hl</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>Rajakumar</surname>
+</string-name>, <string-name>
+<given-names>D.</given-names>
+<surname>Doultsinos</surname>
+</string-name>, <string-name>
+<given-names>K.</given-names>
+<surname>Thrane</surname>
+</string-name>, <string-name>
+<given-names>A. L.</given-names>
+<surname>Ji</surname>
+</string-name>, <string-name>
+<given-names>P. A.</given-names>
+<surname>Khavari</surname>
+</string-name>, <string-name>
+<given-names>F.</given-names>
+<surname>Tarish</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Tanoglidi</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Maaskola</surname>
+</string-name>, <string-name>
+<given-names>R.</given-names>
+<surname>Colling</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>Mirtti</surname>
+</string-name>, <string-name>
+<given-names>F. C.</given-names>
+<surname>Hamdy</surname>
+</string-name>, <string-name>
+<given-names>D. J.</given-names>
+<surname>Woodcock</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>Helleday</surname>
+</string-name>, <string-name>
+<given-names>I. G.</given-names>
+<surname>Mills</surname>
+</string-name>, <string-name>
+<given-names>A. D.</given-names>
+<surname>Lamb</surname>
+</string-name>, et&#x000a0;al., <source>Nature</source>
+<year>2022</year>, <volume>608</volume>, <fpage>360</fpage>.<pub-id pub-id-type="pmid">35948708</pub-id>
+</mixed-citation></ref></ref-list></back></article>

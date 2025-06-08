@@ -1,0 +1,1198 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="1.3" id="smtd202401224" xml:lang="en" article-type="research-article"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Small Methods</journal-id><journal-id journal-id-type="iso-abbrev">Small Methods</journal-id><journal-id journal-id-type="doi">10.1002/(ISSN)2366-9608</journal-id><journal-id journal-id-type="publisher-id">SMTD</journal-id><journal-title-group><journal-title>Small Methods</journal-title></journal-title-group><issn pub-type="epub">2366-9608</issn><publisher><publisher-name>John Wiley and Sons Inc.</publisher-name><publisher-loc>Hoboken</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">39523740</article-id><article-id pub-id-type="pmc">PMC12103230</article-id>
+<article-id pub-id-type="doi">10.1002/smtd.202401224</article-id><article-id pub-id-type="publisher-id">SMTD202401224</article-id><article-categories><subj-group subj-group-type="overline"><subject>Research Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Research Article</subject></subj-group></article-categories><title-group><article-title>Bayesian Learning Aided Theoretical Optimization of IrPdPtRhRu High Entropy Alloy Catalysts for the Hydrogen Evolution Reaction</article-title></title-group><contrib-group><contrib id="smtd202401224-cr-0001" contrib-type="author"><name><surname>Huang</surname><given-names>Linke</given-names></name><xref rid="smtd202401224-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="smtd202401224-cr-0002" contrib-type="author"><name><surname>Gariepy</surname><given-names>Zachary</given-names></name><xref rid="smtd202401224-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="smtd202401224-cr-0003" contrib-type="author"><name><surname>Halpren</surname><given-names>Ethan</given-names></name><xref rid="smtd202401224-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="smtd202401224-cr-0004" contrib-type="author"><name><surname>Du</surname><given-names>Li</given-names></name><xref rid="smtd202401224-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="smtd202401224-cr-0005" contrib-type="author"><name><surname>Shan</surname><given-names>Chung Hsuan</given-names></name><xref rid="smtd202401224-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="smtd202401224-cr-0006" contrib-type="author"><name><surname>Yang</surname><given-names>Chuncheng</given-names></name><xref rid="smtd202401224-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="smtd202401224-cr-0007" contrib-type="author" corresp="yes"><name><surname>Chen</surname><given-names>Zhi Wen</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-0155-2101</contrib-id><xref rid="smtd202401224-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><address><email>zhiw.chen@utoronto.ca</email></address></contrib><contrib id="smtd202401224-cr-0008" contrib-type="author" corresp="yes"><name><surname>Singh</surname><given-names>Chandra Veer</given-names></name><xref rid="smtd202401224-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="smtd202401224-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref><address><email>chandraveer.singh@utoronto.ca</email></address></contrib></contrib-group><aff id="smtd202401224-aff-0001">
+<label>
+<sup>1</sup>
+</label>
+<named-content content-type="organisation-division">Department of Materials Science &#x00026; Engineering</named-content>
+<institution>University of Toronto</institution>
+<named-content content-type="street">184 College Street, Suite 140</named-content>
+<city>Toronto</city>
+<named-content content-type="country-part">ON</named-content>
+<postal-code>M5S 3E4</postal-code>
+<country country="CA">Canada</country>
+</aff><aff id="smtd202401224-aff-0002">
+<label>
+<sup>2</sup>
+</label>
+<named-content content-type="organisation-division">Key Laboratory of Automobile Materials</named-content>
+<named-content content-type="organisation-division">Ministry of Education</named-content>
+<named-content content-type="organisation-division">and School of Materials Science and Engineering</named-content>
+<institution>Jilin University</institution>
+<city>Changchun</city>
+<postal-code>130022</postal-code>
+<country country="CN">P. R. China</country>
+</aff><aff id="smtd202401224-aff-0003">
+<label>
+<sup>3</sup>
+</label>
+<named-content content-type="organisation-division">Department of Mechanical &#x00026; Industrial Engineering</named-content>
+<institution>University of Toronto</institution>
+<named-content content-type="street">5 King's College Road</named-content>
+<city>Toronto</city>
+<named-content content-type="country-part">ON</named-content>
+<postal-code>M5S 3G8</postal-code>
+<country country="CA">Canada</country>
+</aff><author-notes><corresp id="correspondenceTo">
+<label>*</label>E&#x02010;mail: <email>zhiw.chen@utoronto.ca</email>; <email>chandraveer.singh@utoronto.ca</email>
+<break/>
+</corresp></author-notes><pub-date pub-type="epub"><day>10</day><month>11</month><year>2024</year></pub-date><pub-date pub-type="ppub"><day>17</day><month>5</month><year>2025</year></pub-date><volume>9</volume><issue seq="320">5</issue><issue-id pub-id-type="doi">10.1002/smtd.v9.5</issue-id><issue-title content-type="special-issue-title">Special Section: Advances in Technologies and Methods in Single&#x02010;Cell Spatial Transcriptomics</issue-title><elocation-id>2401224</elocation-id><history>
+<date date-type="rev-recd"><day>19</day><month>10</month><year>2024</year></date>
+<date date-type="received"><day>05</day><month>8</month><year>2024</year></date>
+</history><permissions><!--&#x000a9; 2025 Wiley&#x02010;VCH GmbH--><copyright-statement content-type="article-copyright">&#x000a9; 2024 The Author(s). Small Methods published by Wiley&#x02010;VCH GmbH</copyright-statement><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>This is an open access article under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link> License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions><self-uri content-type="pdf" xlink:href="file:SMTD-9-2401224.pdf"/><abstract><title>Abstract</title><p>The complex compositional space of high entropy alloys (HEAs) has shown a great potential to reduce the cost and further increase the catalytic activity for hydrogen evolution reaction (HER) by compositional optimization. Without uncovering the specifics of the HER mechanism on a given HEA surface, it is unfeasible to apply compositional modifications to enhance the performance and save costs. In this work, a combination of density functional theory and Bayesian machine learning is used to demonstrate the unique catalytic mechanism of IrPdPtRhRu HEA catalysts for HER. At high coverage of underpotential&#x02010;deposited hydrogen, a <italic toggle="yes">d</italic>&#x02010;band investigation of the active sites of the HEA surface is conducted to elucidate the superior catalytic performance through electronic interactions between elements. At low coverage, a novel Bayesian learning with oversampling approach is then outlined to optimize the HEA composition for performance improvement and cost reduction. This approach proves more efficacious and efficient and yields higher&#x02010;quality structures with less training set bias compared with neural&#x02010;network optimization. The proposed HEA optimization theoretically outperforms benchmark Pt catalysts&#x02019; overpotential by &#x02248;40% at a 15% reduced synthesis cost comparing to the equiatomic ratio HEA.</p></abstract><abstract id="smtd202401224-abs-0001" abstract-type="graphical"><p>High&#x02010;entropy alloys (HEAs) can offer cost&#x02010;effective and enhanced catalytic performance for hydrogen evolution reaction (HER) through compositional optimization. This study combines density functional theory and Bayesian machine learning to elucidate unique catalytic mechanisms of IrPdPtRhRu HEA. A novel Bayesian approach improves composition optimization, achieving superior catalytic efficiency and reducing synthesis costs compared to equiatomic HEAs and Pt benchmarks.
+<boxed-text position="anchor" content-type="graphic"><graphic xlink:href="SMTD-9-2401224-g004.jpg" position="anchor" id="jats-graphic-1"/></boxed-text>
+</p></abstract><kwd-group kwd-group-type="author-generated"><kwd id="smtd202401224-kwd-0001">Bayesian Learning</kwd><kwd id="smtd202401224-kwd-0002">cost reduction</kwd><kwd id="smtd202401224-kwd-0003">high entropy alloys catalyst</kwd><kwd id="smtd202401224-kwd-0004">hydrogen evolution reaction</kwd><kwd id="smtd202401224-kwd-0005">theoretical composition optimization</kwd></kwd-group><funding-group><award-group id="funding-0001"><funding-source>Nature Science and Engineer Research Council of Canada (NSERC)</funding-source></award-group><award-group id="funding-0002"><funding-source>Science and Technology Development Program of Jilin Province, China</funding-source><award-id>20230402058GH</award-id></award-group><award-group id="funding-0003"><funding-source><institution-wrap><institution>University of Toronto
+</institution><institution-id institution-id-type="doi">10.13039/501100003579</institution-id></institution-wrap></funding-source></award-group></funding-group><counts><fig-count count="5"/><table-count count="1"/><page-count count="8"/><word-count count="5350"/></counts><custom-meta-group><custom-meta><meta-name>source-schema-version-number</meta-name><meta-value>2.0</meta-value></custom-meta><custom-meta><meta-name>cover-date</meta-name><meta-value>May 17, 2025</meta-value></custom-meta><custom-meta><meta-name>details-of-publishers-convertor</meta-name><meta-value>Converter:WILEY_ML3GV2_TO_JATSPMC version:6.5.6 mode:remove_FC converted:24.05.2025</meta-value></custom-meta></custom-meta-group></article-meta><notes><p content-type="self-citation">
+<mixed-citation publication-type="journal" id="smtd202401224-cit-0042">
+<string-name>
+<given-names>L.</given-names>
+<surname>Huang</surname>
+</string-name>, <string-name>
+<given-names>Z.</given-names>
+<surname>Gariepy</surname>
+</string-name>, <string-name>
+<given-names>E.</given-names>
+<surname>Halpren</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Du</surname>
+</string-name>, <string-name>
+<given-names>C. H.</given-names>
+<surname>Shan</surname>
+</string-name>, <string-name>
+<given-names>C.</given-names>
+<surname>Yang</surname>
+</string-name>, <string-name>
+<given-names>Z. W.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name>
+<given-names>C. V.</given-names>
+<surname>Singh</surname>
+</string-name>, <article-title>Bayesian Learning Aided Theoretical Optimization of IrPdPtRhRu High Entropy Alloy Catalysts for the Hydrogen Evolution Reaction</article-title>. <source>Small Methods</source>
+<year>2025</year>, <volume>9</volume>, <elocation-id>2401224</elocation-id>. <pub-id pub-id-type="doi">10.1002/smtd.202401224</pub-id>
+</mixed-citation>
+</p></notes></front><body><sec id="smtd202401224-sec-0010"><label>1</label><title>Introduction</title><p>Global awareness of climate change has been steadily rising for decades due to social pressure and devastating potential health effects on humans.<sup>[</sup>
+<xref rid="smtd202401224-bib-0001" ref-type="bibr">
+<sup>1</sup>
+</xref>, <xref rid="smtd202401224-bib-0002" ref-type="bibr">
+<sup>2</sup>
+</xref>, <xref rid="smtd202401224-bib-0003" ref-type="bibr">
+<sup>3</sup>
+</xref>, <xref rid="smtd202401224-bib-0004" ref-type="bibr">
+<sup>4</sup>
+</xref>, <xref rid="smtd202401224-bib-0005" ref-type="bibr">
+<sup>5</sup>
+</xref>
+<sup>]</sup> Although climate change stems from countless industries and chemical reactions, it is well known the oil/gas industry paired with the automotive industry are large contributors to global warming due to the polluting byproducts of gas&#x02010;powered engines.<sup>[</sup>
+<xref rid="smtd202401224-bib-0006" ref-type="bibr">
+<sup>6</sup>
+</xref>, <xref rid="smtd202401224-bib-0007" ref-type="bibr">
+<sup>7</sup>
+</xref>
+<sup>]</sup> Therefore, alternative energy carriers should be explored, especially hydrogen with the highest energy density of 142&#x000a0;MJ&#x000a0;kg<sup>&#x02212;1</sup>.<sup>[</sup>
+<xref rid="smtd202401224-bib-0008" ref-type="bibr">
+<sup>8</sup>
+</xref>, <xref rid="smtd202401224-bib-0009" ref-type="bibr">
+<sup>9</sup>
+</xref>, <xref rid="smtd202401224-bib-0010" ref-type="bibr">
+<sup>10</sup>
+</xref>
+<sup>]</sup> To accelerate the application of hydrogen energy, the most efficient commercial water electrolyzers often employ a polymer exchange membrane to conduct protons and pure Pt cathodes to catalyze the hydrogen evolution reaction (HER).<sup>[</sup>
+<xref rid="smtd202401224-bib-0011" ref-type="bibr">
+<sup>11</sup>
+</xref>, <xref rid="smtd202401224-bib-0012" ref-type="bibr">
+<sup>12</sup>
+</xref>, <xref rid="smtd202401224-bib-0013" ref-type="bibr">
+<sup>13</sup>
+</xref>
+<sup>]</sup> Nevertheless, the widespread adoption of Pt is impeded by its exorbitant cost and limited availability, obstructing its viability for large&#x02010;scale applications. Thus, the imperative lies in crafting high&#x02010;performance, economically viable Pt&#x02010;based catalysts to propel the advancement of a hydrogen economy.</p><p>Recent innovations in HER catalysts have shown that more efficient conversion can be obtained through multi&#x02010;component alloy catalysts such as high entropy alloys (HEAs).<sup>[</sup>
+<xref rid="smtd202401224-bib-0014" ref-type="bibr">
+<sup>14</sup>
+</xref>, <xref rid="smtd202401224-bib-0015" ref-type="bibr">
+<sup>15</sup>
+</xref>, <xref rid="smtd202401224-bib-0016" ref-type="bibr">
+<sup>16</sup>
+</xref>
+<sup>]</sup> Noble metal HEAs exhibit superior catalytic activity due to their high intrinsic activity and stability.<sup>[</sup>
+<xref rid="smtd202401224-bib-0017" ref-type="bibr">
+<sup>17</sup>
+</xref>, <xref rid="smtd202401224-bib-0018" ref-type="bibr">
+<sup>18</sup>
+</xref>, <xref rid="smtd202401224-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref>
+<sup>]</sup> On the other hand, HEAs with a combination of noble and non&#x02010;noble metal and pure non&#x02010;noble metal have gained attention for their cost&#x02010;effectiveness and comparable catalytic performance in certain reactions.<sup>[</sup>
+<xref rid="smtd202401224-bib-0020" ref-type="bibr">
+<sup>20</sup>
+</xref>, <xref rid="smtd202401224-bib-0021" ref-type="bibr">
+<sup>21</sup>
+</xref>, <xref rid="smtd202401224-bib-0022" ref-type="bibr">
+<sup>22</sup>
+</xref>, <xref rid="smtd202401224-bib-0023" ref-type="bibr">
+<sup>23</sup>
+</xref>
+<sup>]</sup> In particular, the Kitagawa group experimentally synthesized an&#x000a0;IrPdPtRhRu HEA nanoparticle (NP), which showed a better catalytic performance (activity and stability) compared with traditional Pt catalysts.<sup>[</sup>
+<xref rid="smtd202401224-bib-0015" ref-type="bibr">
+<sup>15</sup>
+</xref>
+<sup>]</sup> However, the application of HEA catalysts is still in its nascent stages. The vast compositional space and structural complexity present significant challenges for further exploration in the realm of HEA catalysts.<sup>[</sup>
+<xref rid="smtd202401224-bib-0024" ref-type="bibr">
+<sup>24</sup>
+</xref>
+<sup>]</sup> Most computational studies leverage density functional theory (DFT)&#x02010;informed machine learning (ML) models to discern trends and optimize specific material properties.<sup>[</sup>
+<xref rid="smtd202401224-bib-0024" ref-type="bibr">
+<sup>24</sup>
+</xref>, <xref rid="smtd202401224-bib-0025" ref-type="bibr">
+<sup>25</sup>
+</xref>, <xref rid="smtd202401224-bib-0026" ref-type="bibr">
+<sup>26</sup>
+</xref>, <xref rid="smtd202401224-bib-0027" ref-type="bibr">
+<sup>27</sup>
+</xref>, <xref rid="smtd202401224-bib-0028" ref-type="bibr">
+<sup>28</sup>
+</xref>, <xref rid="smtd202401224-bib-0029" ref-type="bibr">
+<sup>29</sup>
+</xref>, <xref rid="smtd202401224-bib-0030" ref-type="bibr">
+<sup>30</sup>
+</xref>, <xref rid="smtd202401224-bib-0031" ref-type="bibr">
+<sup>31</sup>
+</xref>
+<sup>]</sup> However, a potential limitation of these approaches is that the atomic models are often constrained to the nearest&#x02010;neighbor scale, offering limited variation in the local chemical environment due to the periodic boundary conditions. This can reduce their direct applicability to experimental settings. Furthermore, while some research groups have focused on optimizing compositions, they frequently neglect the economic aspects of HEA synthesis. This oversight significantly contributes to the limited commercial viability of technologies such as proton exchange membrane water electrolyzers and fuel cells.<sup>[</sup>
+<xref rid="smtd202401224-bib-0013" ref-type="bibr">
+<sup>13</sup>
+</xref>, <xref rid="smtd202401224-bib-0014" ref-type="bibr">
+<sup>14</sup>
+</xref>
+<sup>]</sup> Therefore, compositional modifications should be implemented to maximize catalytic performance whilst minimizing cost. This would represent a step in the direction towards making hydrogen fuel for automobiles competitive&#x000a0;with&#x000a0;gas engines or Li battery stacks.<sup>[</sup>
+<xref rid="smtd202401224-bib-0011" ref-type="bibr">
+<sup>11</sup>
+</xref>, <xref rid="smtd202401224-bib-0012" ref-type="bibr">
+<sup>12</sup>
+</xref>, <xref rid="smtd202401224-bib-0013" ref-type="bibr">
+<sup>13</sup>
+</xref>
+<sup>]</sup> Moreover, industry viability, scalability, and cost need to be considered to achieve disruption in the automotive industry.</p><p>In this work, the HEA system of IrPdPtRhRu was selected as our model system. Through DFT simulations, we unravel the mechanism of HER, shedding light on the crucial role of surface coverage in determining HER performance. Furthermore, a novel Bayesian ML and oversampling technique is presented to optimize the HEA composition, which resulted in a 40% superior theoretical overpotential compared to Pt, a 15% reduction in cost, and improved resistance to raw resource market volatility. The novel optimization method was found to be 400% more efficient in compositional exploration with a deeper and less biased understanding of ideal catalyst surfaces compared to traditional non&#x02010;Bayesian ML methods.</p></sec><sec id="smtd202401224-sec-0020"><label>2</label><title>Results and Discussion</title><p>For efficient catalysis of the HER, it is important to consider the unique surface effects that occur on certain platinum group metals (PGMs).<sup>[</sup>
+<xref rid="smtd202401224-bib-0032" ref-type="bibr">
+<sup>32</sup>
+</xref>, <xref rid="smtd202401224-bib-0033" ref-type="bibr">
+<sup>33</sup>
+</xref>, <xref rid="smtd202401224-bib-0034" ref-type="bibr">
+<sup>34</sup>
+</xref>, <xref rid="smtd202401224-bib-0035" ref-type="bibr">
+<sup>35</sup>
+</xref>, <xref rid="smtd202401224-bib-0036" ref-type="bibr">
+<sup>36</sup>
+</xref>
+<sup>]</sup> The impact of H* coverage (&#x003b8;<sub>H</sub>) has been extensively explored in the literature, with consensus indicating distinct mechanisms between high H* coverage (&#x003b8;<sub>H</sub> &#x02248; 0.7&#x02013;1.0) and low coverage (&#x003b8;<sub>H</sub> &#x02248; 0.0&#x02013;0.4).<sup>[</sup>
+<xref rid="smtd202401224-bib-0034" ref-type="bibr">
+<sup>34</sup>
+</xref>, <xref rid="smtd202401224-bib-0036" ref-type="bibr">
+<sup>36</sup>
+</xref>
+<sup>]</sup> At higher coverage, underpotential&#x02010;deposited hydrogen (H<sub>UPD</sub>) in the FCC hollow sites is&#x000a0;strongly bound and inactive. Consequently, overpotential&#x02010;deposited hydrogen (H<sub>OPD</sub>) in the top sites becomes the active hydrogen atoms.<sup>[</sup>
+<xref rid="smtd202401224-bib-0034" ref-type="bibr">
+<sup>34</sup>
+</xref>, <xref rid="smtd202401224-bib-0036" ref-type="bibr">
+<sup>36</sup>
+</xref>
+<sup>]</sup> At lower coverage, the electronic structure of the surface is different due to lower electron counts originating from the absence of H<sub>UPD</sub> atoms. To fully explore the reaction mechanism of HER on HEA systems, we investigated these two cases separately.</p><sec id="smtd202401224-sec-0030"><label>2.1</label><title>High Surface Coverage</title><sec id="smtd202401224-sec-0040"><label>2.1.1</label><title>Theoretical Explanation of IrPdPtRhRu Catalytic Superiority</title><p>Slab models (Figure <xref rid="smtd202401224-supinfo-0001" ref-type="">S1</xref>, Supporting Information) of IrPdPtRhRu(111) and pure Pt(111) were first generated. A full monolayer of H<sub>UPD</sub> on the FCC hollow sites was included to represent the maximum scenario of H<sub>UPD</sub> coverage as a simplification to have a uniform electronic environment for H<sub>OPD</sub> adsorption, as displayed in Figure <xref rid="smtd202401224-supinfo-0001" ref-type="">S2</xref> (Supporting Information). The adsorption energy of H<sub>OPD</sub> at top sites was computed for a coverage of <mml:math id="jats-math-1" display="inline"><mml:mrow><mml:mfrac><mml:mn>1</mml:mn><mml:mn>16</mml:mn></mml:mfrac></mml:mrow></mml:math> monolayer of H<sub>OPD</sub> with the presence of a full monolayer of H<sub>UPD</sub>. Unlike the state&#x02010;of&#x02010;the&#x02010;art catalyst of Pt, which typically exhibits a uniform adsorption energy value, the IrPdPtRhRu surfaces displayed a distribution of &#x00394;<italic toggle="yes">G<sub>H</sub>
+</italic> values due to the unique local chemical environments present at each top site. On pure Pt (111), the H<sub>OPD</sub> has a computed hydrogen&#x02010;adsorption free energy (&#x00394;<italic toggle="yes">G<sub>H</sub>
+</italic>) = &#x02005;0.35&#x02005;<italic toggle="yes">eV</italic>, which is in good agreement with values reported by Santos et al.<sup>[</sup>
+<xref rid="smtd202401224-bib-0037" ref-type="bibr">
+<sup>37</sup>
+</xref>
+<sup>]</sup> The distribution of computed values for &#x00394;<italic toggle="yes">G<sub>H</sub>
+</italic> of H<sub>OPD</sub> is shown in <bold>Figure</bold>
+<xref rid="smtd202401224-fig-0001" ref-type="fig">
+<bold>1</bold>a</xref>. The HEA top sites provide a broad distribution of adsorption free energy near 0&#x000a0;eV, encompassing a more extensive array of optimal active sites. The negative tail of the distribution with median value lower than the overall distribution will be the major adsorption sites of H* during HER (denoted as low &#x00394;<italic toggle="yes">G</italic> tail in Figure&#x000a0;<xref rid="smtd202401224-fig-0001" ref-type="fig">1a</xref>).<sup>[</sup>
+<xref rid="smtd202401224-bib-0016" ref-type="bibr">
+<sup>16</sup>
+</xref>, <xref rid="smtd202401224-bib-0038" ref-type="bibr">
+<sup>38</sup>
+</xref>
+<sup>]</sup> In contrast, pure Pt surface lacks such a distribution of &#x00394;<italic toggle="yes">G<sub>H</sub>
+</italic> values, and thus does not exhibit this beneficial effect. Consequently, the substantial improvement in the median &#x00394;<italic toggle="yes">G<sub>H</sub>
+</italic> between pure Pt and the low &#x00394;<italic toggle="yes">G</italic> tail of IrPdPtRhRu HEA provides a compelling explanation for the HEA's superior catalytic performance.</p><fig position="float" fig-type="Figure" id="smtd202401224-fig-0001"><label>Figure 1</label><caption><p>a) The distribution of &#x00394;<italic toggle="yes">G<sub>H</sub>
+</italic> values of <mml:math id="jats-math-2" display="inline"><mml:mrow><mml:mrow><mml:mfrac><mml:mn>1</mml:mn><mml:mn>16</mml:mn></mml:mfrac><mml:mspace width="0.33em"/><mml:mi>M</mml:mi><mml:mi>L</mml:mi></mml:mrow></mml:mrow></mml:math> of H<sub>OPD</sub> on IrPdPtRhRu (111) and pure Pt (111) containing 1ML of H<sub>UPD</sub> in the FCC hollow sites. b) The &#x00394;<italic toggle="yes">G<sub>H</sub>
+</italic> values for each top site element of the HEA. The charge density difference of 1 monolayer H<sub>UPD</sub> adsorbed on c) IrPdPtRhRu and the yellow isosurface represents electron accumulation and the cyan isosurface represents electron depletion with an isosurface level of 0.01. d) The projected density of states (PDOS) for three superior HEA top sites and the top site of pure Pt. As seen in inset (b), Ru is the optimal top site in high coverage scenarios, with Ir, Pt, and Rh also offering adsorption sites preferable to pure Pt. Although Ru bonds stronger than Ir to H<sub>OPD</sub>, the inverse case is true for H<sub>UPD</sub>, as displayed in inset (c). The repulsion between H<sub>UPD</sub> and H<sub>OPD</sub> atoms is a significant contributor to the weak bonding of H<sub>OPD</sub> to the top sites, but this effect is alleviated by increasing the physical distance between H<sub>UPD</sub> and H<sub>OPD</sub>. This result shows how noble metal surfaces can be engineered to create more optimal active sites for the H<sub>OPD</sub> intermediate based on atomic radii. Embedding atoms with larger radii into noble metal surfaces can be a strategy that should be further explored for cases where there is a high coverage of H<sub>UPD</sub>.</p></caption><graphic xlink:href="SMTD-9-2401224-g001" position="anchor" id="jats-graphic-3"/></fig></sec><sec id="smtd202401224-sec-0050"><label>2.1.2</label><title>Insights into the Electronic Structure of IrPdPtRhRu</title><p>The charge density differences were explored to understand the trends in bond strength between the H<sub>OPD</sub> of IrPdPtRhRu and Pt surfaces. As seen in Figure&#x000a0;<xref rid="smtd202401224-fig-0001" ref-type="fig">1c</xref>, H<sub>UPD</sub> atoms are bonded the strongest to Ir, with Ru possessing the second strongest bond. The Pd atoms don't participate in bonding, likely because they possess a filled d&#x02010;state. The Ir and Ru atoms have three unfilled 5<italic toggle="yes">d</italic> orbitals and three unfilled 4<italic toggle="yes">d</italic> orbitals, respectively, the most unfilled <italic toggle="yes">d</italic>&#x02010;orbitals of the available atoms. Despite a bonding stronger to H<sub>UPD</sub>, the Ir top sites did not bond as strongly to H<sub>OPD</sub> as the Ru top sites. This result supports the theory that atomic radius can be used to minimize coulombic repulsion between H<sub>OPD</sub> and H<sub>UPD</sub> atoms. For all Ru top sites, there was a correlation between the &#x00394;<italic toggle="yes">G<sub>H</sub>
+</italic> of H<sub>UPD</sub> and the &#x00394;<italic toggle="yes">G</italic> of H<sub>OPD</sub>. The more electrons the Ru atom transferred to H<sub>UPD</sub>, the stronger it bonded to H<sub>OPD</sub>. This is possibly due to the interaction with H<sub>UPD</sub> causing the <italic toggle="yes">d</italic>&#x02010;band to shift upwards. Figure <xref rid="smtd202401224-supinfo-0001" ref-type="">S3</xref> (Supporting Information) shows how H<sub>UPD</sub> bonding on pure Pt is symmetrical with minimal charge redistribution in contrast.</p><p>Santos et&#x000a0;al. explained that, in addition to &#x00394;<italic toggle="yes">G<sub>H</sub>
+</italic> &#x02248; 0&#x02005;eV, a good HER catalyst will also have a <italic toggle="yes">d</italic>&#x02010;band that spans across the Fermi level.<sup>[</sup>
+<xref rid="smtd202401224-bib-0037" ref-type="bibr">
+<sup>37</sup>
+</xref>
+<sup>]</sup> This contributes to lowering the activation energy of H*. The electronic structure of three top sites from IrPdPtRhRu was compared with the pure Ru, Ir, and Pt top site, shown in Figure&#x000a0;<xref rid="smtd202401224-fig-0001" ref-type="fig">1d</xref> and Figure <xref rid="smtd202401224-supinfo-0001" ref-type="">S4</xref> (Supporting Information). The projected density of states (PDOS) are calculated for the FCC(111) surfaces (HCP(0001) for pure Ru) with a monolayer of H<sub>UPD</sub> in the FCC hollow sites before the H<sub>OPD</sub> was adsorbed. The results suggested that the d&#x02010;band center of Ru, Ir, and Pt sites in the HEA follows the expected trend of pure metals and a correlation exists between higher <italic toggle="yes">d</italic>&#x02010;band centers and stronger adsorption energies within the HEA, consistent with traditional <italic toggle="yes">d</italic>&#x02010;band theory. Notably, while pure Ru has a <italic toggle="yes">d</italic>&#x02010;band center closest to the Fermi level compared to Pt and Ir, the adsorption behavior does not strictly follow trend. Ru exhibits the strongest adsorption at the FCC site but the weakest at the atop site (Table <xref rid="smtd202401224-supinfo-0001" ref-type="">S1</xref>, Supporting Information), highlighting that the adsorption behavior in HEA sites is not solely determined by individual elements but also influenced by the synergistic interactions among them. Furthermore, the lower &#x00394;<italic toggle="yes">G<sub>H</sub>
+</italic> reaction sites in the HEA exhibit stronger hybridization of anti&#x02010;bonding states between the H 1s and metal d orbitals, while the superior sites have d&#x02010;bands that span more of the Fermi level, enhancing their activity.<sup>[</sup>
+<xref rid="smtd202401224-bib-0029" ref-type="bibr">
+<sup>29</sup>
+</xref>
+<sup>]</sup>
+</p></sec></sec><sec id="smtd202401224-sec-0060"><label>2.2</label><title>Low Surface Coverage</title><sec id="smtd202401224-sec-0070"><label>2.2.1</label><title>Database Generation and Machine Learning Modeling</title><p>The workflow of Section&#x000a0;<xref rid="smtd202401224-sec-0060" ref-type="sec">2.2</xref> is visualized as shown in Figure <xref rid="smtd202401224-supinfo-0001" ref-type="">S5</xref> (Supporting Information). To study the active hydrogen species contributing to the HER at low surface coverage, a database with 800 adsorption models of <mml:math id="jats-math-3" display="inline"><mml:mrow><mml:mfrac><mml:mn>1</mml:mn><mml:mn>16</mml:mn></mml:mfrac></mml:mrow></mml:math> monolayer of H<sub>OPD</sub> at top site is generated for ML modeling, composition and cost analysis, and optimization. The average DFT computed &#x00394;<italic toggle="yes">G<sub>H</sub>
+</italic> of the database across all surfaces was &#x02212;0.321 with a 0.114&#x000a0;eV standard deviation. For machine learning analysis, the 15 nearest atoms to the hydrogen adsorbate were extracted and over 60 unique numeric atomic descriptors were initially evaluated and screened. Three ML models were trained on the database: a regular neural network (NN) for benchmark comparisons, a Bayesian Gaussian process regressor (GPR) for novel optimization methodologies, and a graph neural network (GNN) for maximum modeling accuracy. More details of model design and feature engineering are shown in Section <xref rid="smtd202401224-supinfo-0001" ref-type="">SII</xref> (Supporting Information). The benchmark NN model obtained a mean absolute error (MAE) accuracy of 0.079&#x000a0;eV but struggled to accurately predict the rare data region between &#x02013;0.050&#x02013;0.200&#x000a0;eV. By applying the Synthetic Minority Over&#x02010;sampling with Gaussian Noise (SMOGN) technique developed by Branco et&#x000a0;al., the dataset size was increased by &#x0223c;50 data points (Figure <xref rid="smtd202401224-supinfo-0001" ref-type="">S7</xref>, Supporting Information)<sup>[</sup>
+<xref rid="smtd202401224-bib-0039" ref-type="bibr">
+<sup>39</sup>
+</xref>
+<sup>]</sup> and the GPR model obtained an MAE score of 0.084&#x000a0;eV with improved predictive capabilities of low represented &#x00394;<italic toggle="yes">G<sub>H</sub>
+</italic> regions (<bold>Figure</bold>
+<xref rid="smtd202401224-fig-0002" ref-type="fig">
+<bold>2</bold>a,b</xref>). Since the least represented &#x00394;<italic toggle="yes">G<sub>H</sub>
+</italic> regions were &#x02212;0.05&#x02013;0.2&#x000a0;eV, the over&#x02010;sampling technique improved the Bayesian model's ability to predict optimal &#x00394;<italic toggle="yes">G<sub>H</sub>
+</italic> configurations, while retaining a comparable accuracy against the benchmark NN. Applying the Atomistic Line Graph Neural Network (ALIGNN) model developed by K. Choudhary,<sup>[</sup>
+<xref rid="smtd202401224-bib-0040" ref-type="bibr">
+<sup>40</sup>
+</xref>
+<sup>]</sup> an average MAE value of 0.025&#x000a0;eV was obtained (Figure&#x000a0;<xref rid="smtd202401224-fig-0002" ref-type="fig">2c</xref>). The superior accuracy can be attributed to graph&#x02010;based models&#x02019; ability to capture larger degrees of spatial and angular information due to the inherent nature of node and edge&#x02010;based feature design relative to array&#x02010;based feature design. Unlike the NN and ALIGNN model, the GPR oversampling created three distinct clusters visible in the parity plots. This is due to the data points in rarer regions that created clusters of additional data points in the 0, 0.1, and 0.3&#x000a0;eV ranges (Figure&#x000a0;<xref rid="smtd202401224-fig-0002" ref-type="fig">2b</xref>). Comparing to ALIGNN which required the information of the whole slab model as input, sacrificing accuracy for optimizing viable feature sets was necessary for the GPR and NN models. Therefore, graph&#x02010;based models were not utilized to reduce the computational cost for further compositional space exploration and optimization study.</p><fig position="float" fig-type="Figure" id="smtd202401224-fig-0002"><label>Figure 2</label><caption><p>a) Parity plot of the NN used for benchmark comparison. b) Parity plot of the GPR with SMOGN oversampling. c) Parity plot of the ALIGNN model. All outer red lines represent 1 standard deviation of the predicted MAE scores for each model.</p></caption><graphic xlink:href="SMTD-9-2401224-g003" position="anchor" id="jats-graphic-5"/></fig></sec><sec id="smtd202401224-sec-0080"><label>2.2.2</label><title>Composition Optimization of HEA by Machine Learning</title><p>To investigate the composition space of the IrPdPtRhRu HEA, we initially examine the efficacy of NN and GPR models in identifying local chemical environments that can have a more optimal overpotential by populating the confusion matrix. The <italic toggle="yes">&#x02206;G</italic>
+<sub>H</sub> distribution with the variation of each metal component for the DFT&#x02010;calculated adsorption database is visualized in Figure <xref rid="smtd202401224-supinfo-0001" ref-type="">S8</xref> (Supporting Information). The data show fewer samples at extreme low (&#x0003c;6.7%) and high (&#x0003e;33.3%) compositions, suggesting potential sampling bias. Consequently, the correlation between metal composition variation and HER performance (<italic toggle="yes">&#x02206;G</italic>
+<sub>H</sub>) from the database is weak. Therefore, we focused on analyzing compositions predicted by ML models to have more promising performance. The NN and GPR models exhibit a sensitivity of 63% and 68%, respectively at a cutoff overpotential of |0.17 V|, and sensitivity of 36% and 50% with a more stringent cutoff of |0.09 V|. The abnormal increase of the sensitivity with reducing cutoff might be caused by sampling bias, but GPR overall shows a stronger ability to capture optimal adsorption sites. The two models were then tasked with predicting random compositions of the 15 nearest atoms to the hydrogen adsorbate sorted by distance (Section <xref rid="smtd202401224-supinfo-0001" ref-type="">SIIC</xref>, Supporting Information) to identify 20&#x000a0;000 unique structures with desirable predicted overpotentials (&#x0003c; |0.09 V|). Comparing the structures predicted by the NN and GPR, the application of SMOGN to the Bayesian model offered two benefits not seen in the benchmark ML optimization. First, composition exploration was 400% more efficient compared to the NN exploration (<bold>Figure</bold>
+<xref rid="smtd202401224-fig-0003" ref-type="fig">
+<bold>3</bold>c</xref>). To discover 20&#x000a0;000 unique 15&#x02010;atom local chemical environments with expected overpotentials close to 0 (&#x02212;0.09 to 0.09&#x000a0;V), the GPR model parsed 100&#x000a0;000 datapoints whereas the NN parsed 400&#x000a0;000 datapoints. Secondly, the GPR model achieved a higher compositional variety with a more balanced distribution of Rh, Pd, and Pt&#x02010;top site structures, arising from the application of SMOGN oversampling technique. The optimized composition proposed by GPR model displayed a reduced training set bias correlated to the trend of the original database compared to the NN model, which exhibited a strong preference for Rh&#x02010;top sites. As seen in Figure&#x000a0;<xref rid="smtd202401224-fig-0003" ref-type="fig">3a,b</xref>, both models tend to predict a higher percentage of Pd and Rh with decreasing cutoff distance from the adsorbate, the GPR displayed smaller bias towards Rh. For Ir, the NN and Bayesian optimizations contained larger proportions compared to experimental surfaces but almost 0 Ir binding sites. This suggests Ir is beneficial as a neighbor atom for HER but a suboptimal binding site location. These findings suggest that our GPR model provided an effective broadening of the compositional search space beyond the limitations observed in the original database. Comparative analysis with experimental compositions from XRF by the Kitagawa group, the original computed database, and the NN &#x00026; GPR model predictions revealed key insights into the elemental distribution optimal for HER catalysis.<sup>[</sup>
+<xref rid="smtd202401224-bib-0015" ref-type="bibr">
+<sup>15</sup>
+</xref>
+<sup>]</sup> While the optimized structures by both models maintained similar Ru percentages to the database, they contained &#x02248;5% less Ru and an increased composition of Pd and Pt than the experimental measurement, indicating a potential area for further optimization (Figure&#x000a0;<xref rid="smtd202401224-fig-0003" ref-type="fig">3d</xref>). The difference between the ML&#x02010;optimized compositions and the DFT study of high&#x02010;coverage study in Section&#x000a0;<xref rid="smtd202401224-sec-0030" ref-type="sec">2.1</xref> is attributed to the presence of monolayer H<sub>UPD</sub> coverage. The H<sub>UPD</sub> hollow site adsorption resulted in a different electronic surface structure that is not present in the ML training database and thus was not considered in the optimized structures, which indicated the dependence of HEA's catalytic behavior for HER on the surface coverage(&#x003b8;<sub>H</sub>).</p><fig position="float" fig-type="Figure" id="smtd202401224-fig-0003"><label>Figure 3</label><caption><p>a) Average NN predicted composition of optimized surfaces based on proximity to adsorbate. b) Average GPR predicted composition of optimized surfaces based on proximity to adsorbate. c) Surface discovery efficiency of a SMOGN&#x02010;based GPR model and a baseline NN model. d) NN and GPR optimized surface compositions compared to the un&#x02010;optimized database and experimental surface composition obtained by XRF.<sup>[</sup>
+<xref rid="smtd202401224-bib-0015" ref-type="bibr">
+<sup>15</sup>
+</xref>
+<sup>]</sup>
+</p></caption><graphic xlink:href="SMTD-9-2401224-g002" position="anchor" id="jats-graphic-7"/></fig><p>To verify the reliability of the NN and GPR models, 6 GPR&#x02010;optimized structures and 3 NN&#x02010;optimized structures were extracted and simulated in DFT (Section <xref rid="smtd202401224-supinfo-0001" ref-type="">SIID</xref>, Supporting Information). The 6 GPR&#x02010;predicted structures possessed desirable ML predicted overpotentials (&#x0003c; |0.09 V|) with Pt or Pd binding sites to ensure the Bayesian model was not overestimating the performance of the rare surfaces in the database. Three of the structures with these criteria were extracted from the top 10% highest certainty predictions and three of the structures were extracted from the bottom 10% lowest certainty structures to be compared and highlight the benefits of utilizing a Bayesian model uncertainty quantification as illustrated in Figure <xref rid="smtd202401224-supinfo-0001" ref-type="">S9</xref> (Supporting Information). Through performing feature space analysis over the original dataset, it is revealed that the high&#x02010;certainty structures have a greater average data density around them in comparison to the low&#x02010;certainty predictions (See Figure <xref rid="smtd202401224-supinfo-0001" ref-type="">S10</xref>, Supporting Information), while the high data&#x02010;density region could be inherently correlated to local chemical environments that are more thermodynamically favorable. Such potential difference in reliability is further confirmed by DFT calculation: the high&#x02010;certainty predictions possessed a lower MAE than the low&#x02010;certainty predictions. The average DFT calculated overpotential of high&#x02010;certainty structures was 0.10&#x000a0;V with an MAE of 0.042&#x000a0;V. The low&#x02010;certainty structures had an average DFT overpotential of 0.18&#x000a0;V with an MAE of 0.16&#x000a0;V. For the NN&#x02010;optimized structures that were randomly selected (2 Pd and 1 Pt binding sites), the average DFT overpotential value was 0.14&#x000a0;V with an MAE of 0.13&#x000a0;V. This result highlights the unique ability of Bayesian models to generate high&#x02010;confidence ML&#x02010;designed surfaces that outperform traditional NN optimizations. In both optimization applications, a deviation from equiatomic composition suggests the experimental catalytic performance can be improved if minor tweaks to the Kitagawa group's one&#x02010;pot polyol process are applied.</p></sec><sec id="smtd202401224-sec-0090"><label>2.2.3</label><title>Techno&#x02010;Economic Analysis</title><p>The techno&#x02010;economic analysis of HEA compositions considered historic metal ore prices, processed precursor reagent pricings, and molar compositions for the synthesis cost and the absolute overpotential for catalytic performance. Historic data on the metal ore costs were obtained from the Johnson Matthey Spot price of each PGM dating back to 2013 for Asian, European (EU), and American markets (Figure <xref rid="smtd202401224-supinfo-0001" ref-type="">S11</xref>, Supporting Information) and the average is displayed in <bold>Figure</bold>
+<xref rid="smtd202401224-fig-0004" ref-type="fig">
+<bold>4</bold>a</xref>.<sup>[</sup>
+<xref rid="smtd202401224-bib-0041" ref-type="bibr">
+<sup>41</sup>
+</xref>
+<sup>]</sup> It is shown that the price of Rh metal ore is significantly larger than the other four elements. Sharing the same dominant producer (South Africa), the price of Rh displayed a much larger volatility than any other four elements due to the small size of market and its limited production as a byproduct of the mining of Pd, Pt, and Ni. Considering the growing market and industrial demand associated with its application in catalysts for automotive and chemical industries, the price of Rh and its chemical precursor is expected to remain fluctuating in the future. The relative high price and volatility makes Rh the major variable for the synthesis cost of the HEA nanoparticles.</p><fig position="float" fig-type="Figure" id="smtd202401224-fig-0004"><label>Figure 4</label><caption><p>a) Historic value of transition metals from 2013 to present based on Johnson Matthey Spot Pricing as an average value across American, EU, and Asia markets. b) DFT computed overpotential (absolute value) and cost per synthesis (USD) based on chemical precursor pricing as of April 4, 2023 obtained from Fisher Scientific reagents.</p></caption><graphic xlink:href="SMTD-9-2401224-g005" position="anchor" id="jats-graphic-9"/></fig><p>The price of metal reagents was obtained from Sigma Aldridge or Fisher Scientific. The exact metal precursors were selected based on the methods used by the Kitagawa group<sup>[</sup>
+<xref rid="smtd202401224-bib-0015" ref-type="bibr">
+<sup>15</sup>
+</xref>
+<sup>]</sup> in the one&#x02010;pot polyol process (see Figure <xref rid="smtd202401224-supinfo-0001" ref-type="">S12</xref>, Supporting Information for details). The cost per synthesis was calculated based on the number of mols in 50&#x000a0;mL, molecular weight, and the cost per gram of precursor used to obtain a specific compositional ratio shown in Equation&#x000a0;(<xref rid="smtd202401224-disp-0001" ref-type="disp-formula">1</xref>).
+<disp-formula id="smtd202401224-disp-0001">
+<label>(1)</label>
+<mml:math id="jats-math-4" display="block"><mml:mrow><mml:mrow><mml:munderover><mml:mo>&#x02211;</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mn>5</mml:mn></mml:munderover><mml:mfenced separators="" open="[" close="]"><mml:mrow><mml:mi>m</mml:mi><mml:mi>o</mml:mi><mml:mi>l</mml:mi><mml:mi>s</mml:mi><mml:mspace width="0.16em"/><mml:mi>o</mml:mi><mml:mi>f</mml:mi><mml:mspace width="0.16em"/><mml:mi>p</mml:mi><mml:mi>r</mml:mi><mml:mi>e</mml:mi><mml:mi>c</mml:mi><mml:mi>u</mml:mi><mml:mi>r</mml:mi><mml:mi>s</mml:mi><mml:mi>o</mml:mi><mml:mi>r</mml:mi><mml:mspace width="0.16em"/><mml:mi>i</mml:mi></mml:mrow></mml:mfenced><mml:mo>&#x02217;</mml:mo><mml:mfenced separators="" open="[" close="]"><mml:mrow><mml:mi>p</mml:mi><mml:mi>r</mml:mi><mml:mi>e</mml:mi><mml:mi>c</mml:mi><mml:mi>u</mml:mi><mml:mi>r</mml:mi><mml:mi>s</mml:mi><mml:mi>o</mml:mi><mml:mi>r</mml:mi><mml:mspace width="0.16em"/><mml:msub><mml:mi>M</mml:mi><mml:mi>w</mml:mi></mml:msub></mml:mrow></mml:mfenced><mml:mo>&#x02217;</mml:mo><mml:mfenced separators="" open="[" close="]"><mml:mrow><mml:mi>c</mml:mi><mml:mi>o</mml:mi><mml:mi>s</mml:mi><mml:mi>t</mml:mi><mml:mspace width="0.16em"/><mml:mi>p</mml:mi><mml:mi>e</mml:mi><mml:mi>r</mml:mi><mml:mspace width="0.16em"/><mml:mi>g</mml:mi><mml:mspace width="0.16em"/><mml:mi>p</mml:mi><mml:mi>r</mml:mi><mml:mi>e</mml:mi><mml:mi>c</mml:mi><mml:mi>u</mml:mi><mml:mi>r</mml:mi><mml:mi>s</mml:mi><mml:mi>o</mml:mi><mml:mi>r</mml:mi></mml:mrow></mml:mfenced></mml:mrow></mml:mrow></mml:math>
+</disp-formula>where <italic toggle="yes">i</italic> is one of five constituent elements of the optimized IrPdPtRhRu HEA (see Figure <xref rid="smtd202401224-supinfo-0001" ref-type="">S13</xref>, Supporting Information for sample calculations).</p><p>As the baseline data, the experimental synthesis conditions detailed by the Kitagawa group <sup>[</sup>
+<xref rid="smtd202401224-bib-0015" ref-type="bibr">
+<sup>15</sup>
+</xref>
+<sup>]</sup> were used which comprises an equimolar ratio of the five metal precursors resulting in an approximate cost per synthesis of $95 USD and the corresponding computational overpotential was calculated as the mean absolute overpotential of 111 surface data points in the database. The cost of synthesizing a pure Pt nanoparticle using the same one&#x02010;pot polyol process was $49. The pure Pt datapoint was calculated using the same DFT parameters as the HEA for direct comparison and resulted in a 0.17&#x000a0;V overpotential which aligns with the literature.<sup>[</sup>
+<xref rid="smtd202401224-bib-0036" ref-type="bibr">
+<sup>36</sup>
+</xref>
+<sup>]</sup> The compositions of &#x0201c;NN&#x02010;predictions&#x0201d; and &#x0201c;high/low certainty predictions&#x0201d; refer to the optimized structures predicted by NN and GPR models. The overpotentials are calculated as the average of DFT calculation for the selected structures in Section&#x000a0;<xref rid="smtd202401224-sec-0080" ref-type="sec">2.2.2</xref> and the synthesis cost is calculated according to Equation&#x000a0;(<xref rid="smtd202401224-disp-0001" ref-type="disp-formula">1</xref>).</p><p>Due to the relatively low price of Pt ore and chemical precursors, the pure Pt catalyst remains the cheapest catalyst considered, but is no longer the top&#x02010;performing catalyst. The NN&#x02010;predicted structures outperformed the pure Pt catalyst, while the high Rh compositions of the surfaces make it the most expensive among all candidates. The high and low&#x02010;certainty predictions both displayed &#x02248;15% reduction in the cost of synthesis in comparison to the un&#x02010;optimized database (&#x0201c;equiatomic ratio&#x0201d;), and the high&#x02010;certainty predictions show 65% theoretical overpotential improvement over equiatomic composition and 40% over the benchmark Pt catalyst.</p><p>Based on DFT and ML investigation of high and low &#x003b8;<sub>H</sub> environments, the compositional insights derived from this study theoretically improved HER overpotential from 0.29 to 0.10&#x000a0;eV while reducing synthesis costs from &#x02248;$95 to &#x02248;$82 per synthesis with facile scalability and price stability. Experimental adjustments to the one&#x02010;pot polyol synthesis methods can be found in <bold>Table</bold>
+<xref rid="smtd202401224-tbl-0001" ref-type="table">
+<bold>1</bold>
+</xref> below:</p><table-wrap position="float" id="smtd202401224-tbl-0001" content-type="Table"><label>Table 1</label><caption><p>Experimental parameters and the resulting composition versus recommended adjustments.</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><thead><tr style="border-bottom:solid 1px #000000"><th align="left" rowspan="1" colspan="1">Metal</th><th align="center" rowspan="1" colspan="1">Initial Molarities/Composition [%]</th><th align="center" rowspan="1" colspan="1">XRF Determined Compositional Variance from initial molarities [%]</th><th align="center" rowspan="1" colspan="1">GPR recommended initial Composition [%]</th></tr></thead><tbody><tr><td align="left" rowspan="1" colspan="1">Pt</td><td align="center" rowspan="1" colspan="1">20.00</td><td align="center" rowspan="1" colspan="1">19.51 &#x000b1; 0.29</td><td align="center" rowspan="1" colspan="1">22.50</td></tr><tr><td align="left" rowspan="1" colspan="1">Pd</td><td align="center" rowspan="1" colspan="1">20.00</td><td align="center" rowspan="1" colspan="1">20.74 &#x000b1; 0.31</td><td align="center" rowspan="1" colspan="1">24.50</td></tr><tr><td align="left" rowspan="1" colspan="1">Ir</td><td align="center" rowspan="1" colspan="1">20.00</td><td align="center" rowspan="1" colspan="1">19.06 &#x000b1; 0.40</td><td align="center" rowspan="1" colspan="1">18.00</td></tr><tr><td align="left" rowspan="1" colspan="1">Rh</td><td align="center" rowspan="1" colspan="1">20.00</td><td align="center" rowspan="1" colspan="1">19.93 &#x000b1; 0.13</td><td align="center" rowspan="1" colspan="1">15.00</td></tr><tr><td align="left" rowspan="1" colspan="1">Ru</td><td align="center" rowspan="1" colspan="1">20.00</td><td align="center" rowspan="1" colspan="1">20.75 &#x000b1; 0.30</td><td align="center" rowspan="1" colspan="1">20.00</td></tr></tbody></table><permissions><copyright-holder>John Wiley &#x00026; Sons, Ltd.</copyright-holder></permissions></table-wrap></sec></sec></sec><sec id="smtd202401224-sec-0100"><label>3</label><title>Conclusion</title><p>In the current work, an experimentally synthesized IrPdPtRhRu HEA with exceptional HER catalytic performance was computationally studied to reveal how it breaks <italic toggle="yes">d</italic>&#x02010;band theory trends, and an alternative explanation for the HEA's superior performance is proposed. The HEA was then optimized through a novel Bayesian oversampling approach that explored the compositional space of the HEA more efficiently than traditional non&#x02010;Bayesian ML models. The framework trained a GPR on an 800 datapoints dataset and obtained an &#x02248;0.084&#x000a0;eV MAE score. The performance&#x02010;optimized HEA composition was lastly put through a techno&#x02010;economic analysis. By performing a dual cost and performance optimization of the HEA through DFT and Bayesian ML, exact experimental synthesis adjustments were proposed to synthesize IrPdPtRhRu HEA with a theoretical 40% superior overpotential compared to Pt(111) and &#x02248;15% reduced synthesis cost than the equiatomic ratio. This study also provided an analysis of saturated versus non&#x02010;saturated &#x003b8;<sub>H</sub> environment catalytic influences. The work presented the first&#x02010;ever investigation into the benefits of SMOGN oversampling paired with Bayesian learning for catalytic compositional optimization. Future works can focus on further refinement of Bayesian models through the application of Bayesian GNNs and experimental validation of the suggested compositional adjustments.</p></sec><sec sec-type="COI-statement" id="smtd202401224-sec-0120"><title>Conflict of Interest</title><p>The authors declare no conflict of interest.</p></sec><sec id="smtd202401224-sec-0130"><title>Author Contributions</title><p>L.H., Z.G., Z.W.C., and C.V.S. conceived and designed the study. Z.G., E.H., and J.S. simulated the VASP dataset. L.H. and Z.G. performed all data analytics and modeling. Advanced DFT analysis was performed by L.H., E.H., and Z.G. The paper was written by L.H., Z.G., E.H., Z.W.C., and C.V.S. All authors discussed and revised the manuscript.</p></sec><sec sec-type="supplementary-material"><title>Supporting information</title><supplementary-material id="smtd202401224-supinfo-0001" position="float" content-type="local-data"/><supplementary-material id="smtd202401224-supitem-0001" position="float" content-type="local-data"><caption><p>Supporting Information</p></caption><media xlink:href="SMTD-9-2401224-s001.docx"/></supplementary-material></sec></body><back><ack id="smtd202401224-sec-0110"><title>Acknowledgements</title><p>The authors acknowledge financial support from the Nature Science and Engineer Research Council of Canada (NSERC), the Science and Technology Development Program of Jilin Province, China (No. 20230402058GH), and the University of Toronto. The authors also acknowledge Compute Canada and Compute Ontario for providing computing resources at the SciNet, CalculQuebec.</p></ack><sec sec-type="data-availability" id="smtd202401224-sec-0150"><title>Data Availability Statement</title><p>The data that support the findings of this study are available from the corresponding author upon reasonable request.</p></sec><ref-list id="smtd202401224-bibl-0001"><ref id="smtd202401224-bib-0001"><label>1</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0001">
+<string-name>
+<given-names>L.</given-names>
+<surname>Kemp</surname>
+</string-name>, <string-name>
+<given-names>C.</given-names>
+<surname>Xu</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Depledge</surname>
+</string-name>, <string-name>
+<given-names>K. L.</given-names>
+<surname>Ebi</surname>
+</string-name>, <string-name>
+<given-names>G.</given-names>
+<surname>Gibbins</surname>
+</string-name>, <string-name>
+<given-names>T. A.</given-names>
+<surname>Kohler</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Rockstr&#x000f6;m</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Scheffer</surname>
+</string-name>, <string-name>
+<given-names>H. J.</given-names>
+<surname>Schellnhuber</surname>
+</string-name>, <string-name>
+<given-names>W.</given-names>
+<surname>Steffen</surname>
+</string-name>, <string-name>
+<given-names>T. M.</given-names>
+<surname>Lenton</surname>
+</string-name>, <source>Proc. Natl. Acad. Sci. USA</source>
+<year>2022</year>, <volume>119</volume>, <elocation-id>e2108146119</elocation-id>.<pub-id pub-id-type="pmid">35914185</pub-id>
+</mixed-citation></ref><ref id="smtd202401224-bib-0002"><label>2</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0002">
+<string-name>
+<given-names>G.&#x02010;R.</given-names>
+<surname>Walther</surname>
+</string-name>, <string-name>
+<given-names>E.</given-names>
+<surname>Post</surname>
+</string-name>, <string-name>
+<given-names>P.</given-names>
+<surname>Convey</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Menzel</surname>
+</string-name>, <string-name>
+<given-names>C.</given-names>
+<surname>Parmesan</surname>
+</string-name>, <string-name>
+<given-names>T. J. C.</given-names>
+<surname>Beebee</surname>
+</string-name>, <string-name>
+<given-names>J.&#x02010;M.</given-names>
+<surname>Fromentin</surname>
+</string-name>, <string-name>
+<given-names>O.</given-names>
+<surname>Hoegh&#x02010;Guldberg</surname>
+</string-name>, <string-name>
+<given-names>F.</given-names>
+<surname>Bairlein</surname>
+</string-name>, <source>Nature</source>
+<year>2002</year>, <volume>416</volume>, <fpage>389</fpage>.<pub-id pub-id-type="pmid">11919621</pub-id>
+</mixed-citation></ref><ref id="smtd202401224-bib-0003"><label>3</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0003">
+<string-name>
+<given-names>Robert</given-names>
+<surname>van Woesik</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>Shlesinger</surname>
+</string-name>, <string-name>
+<given-names>A. G.</given-names>
+<surname>Grottoli</surname>
+</string-name>, <string-name>
+<given-names>R. J.</given-names>
+<surname>Toonen</surname>
+</string-name>, <string-name>
+<given-names>R. V.</given-names>
+<surname>Thurber</surname>
+</string-name>, <string-name>
+<given-names>M. E.</given-names>
+<surname>Warner</surname>
+</string-name>, <string-name>
+<given-names>A. M.</given-names>
+<surname>Hulver</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Chapron</surname>
+</string-name>, <string-name>
+<given-names>R. H.</given-names>
+<surname>McLachlan</surname>
+</string-name>, <string-name>
+<given-names>R.</given-names>
+<surname>Albright</surname>
+</string-name>, <string-name>
+<given-names>E.</given-names>
+<surname>Crandall</surname>
+</string-name>, <string-name>
+<given-names>T. M.</given-names>
+<surname>DeCarlo</surname>
+</string-name>, <string-name>
+<given-names>M. K.</given-names>
+<surname>Donovan</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Eirin&#x02010;Lopez</surname>
+</string-name>, <string-name>
+<given-names>H. B.</given-names>
+<surname>Harrison</surname>
+</string-name>, <string-name>
+<given-names>S. F.</given-names>
+<surname>Heron</surname>
+</string-name>, <string-name>
+<given-names>D.</given-names>
+<surname>Huang</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Humanes</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>Krueger</surname>
+</string-name>, <string-name>
+<given-names>J. S.</given-names>
+<surname>Madin</surname>
+</string-name>, <string-name>
+<given-names>D.</given-names>
+<surname>Manzello</surname>
+</string-name>, <string-name>
+<given-names>L. C.</given-names>
+<surname>McManus</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Matz</surname>
+</string-name>, <string-name>
+<given-names>E. M.</given-names>
+<surname>Muller</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Rodriguez&#x02010;Lanetty</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Vega&#x02010;Rodriguez</surname>
+</string-name>, <string-name>
+<given-names>C. R.</given-names>
+<surname>Voolstra</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Zaneveld</surname>
+</string-name>, <source>Global Change Biology</source>
+<year>2022</year>, <volume>28</volume>, <fpage>4229</fpage>.<pub-id pub-id-type="pmid">35475552</pub-id>
+</mixed-citation></ref><ref id="smtd202401224-bib-0004"><label>4</label><mixed-citation publication-type="miscellaneous" id="smtd202401224-cit-0004">
+<collab collab-type="authors">U.S. Government Accountability Office</collab>
+, <article-title>
+Climate Change Risks to National Security
+</article-title>
+<year>2022</year>, <ext-link xlink:href="https://www.gao.gov/products/gao-22-105830" ext-link-type="uri">https://www.gao.gov/products/gao-22-105830</ext-link>.</mixed-citation></ref><ref id="smtd202401224-bib-0005"><label>5</label><mixed-citation publication-type="miscellaneous" id="smtd202401224-cit-0005">
+<collab collab-type="authors">European Commission</collab>
+, <article-title>
+2050 long&#x02010;term strategy
+</article-title>
+<year>2020</year>, <ext-link xlink:href="https://climate.ec.europa.eu/eu-action/climate-strategies-targets/2050-long-termstrategy_en" ext-link-type="uri">https://climate.ec.europa.eu/eu-action/climate-strategies-targets/2050-long-termstrategy_en</ext-link>.</mixed-citation></ref><ref id="smtd202401224-bib-0006"><label>6</label><mixed-citation publication-type="miscellaneous" id="smtd202401224-cit-0006">
+<collab collab-type="authors">U.S. Environmental Protection Agency</collab>
+., <article-title>
+EPA's Report on the Environment (ROE)
+</article-title>. <year>2022</year>, <ext-link xlink:href="https://www.epa.gov/reportenvironment" ext-link-type="uri">https://www.epa.gov/reportenvironment</ext-link>.</mixed-citation></ref><ref id="smtd202401224-bib-0007"><label>7</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0007">
+<string-name>
+<given-names>D.</given-names>
+<surname>Osberghaus</surname>
+</string-name>, <string-name>
+<given-names>C.</given-names>
+<surname>Fugger</surname>
+</string-name>, <source>Global Environ. Change</source>
+<year>2022</year>, <volume>74</volume>, <elocation-id>102515</elocation-id>.</mixed-citation></ref><ref id="smtd202401224-bib-0008"><label>8</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0008">
+<string-name>
+<given-names>M.</given-names>
+<surname>Bharathidasan</surname>
+</string-name>, <string-name>
+<given-names>V.</given-names>
+<surname>Indragandhi</surname>
+</string-name>, <string-name>
+<given-names>V.</given-names>
+<surname>Suresh</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Jasinski</surname>
+</string-name>, <string-name>
+<given-names>Z.</given-names>
+<surname>Leonowicz</surname>
+</string-name>, <source>Energy Rep.</source>
+<year>2022</year>, <volume>8</volume>, <fpage>9662</fpage>.</mixed-citation></ref><ref id="smtd202401224-bib-0009"><label>9</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0009">
+<string-name>
+<given-names>Q.</given-names>
+<surname>Guo</surname>
+</string-name>, <string-name>
+<given-names>H.</given-names>
+<surname>Zhou</surname>
+</string-name>, <string-name>
+<given-names>W.</given-names>
+<surname>Lin</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Nojavan</surname>
+</string-name>, <source>J. Energy Storage</source>
+<year>2022</year>, <volume>48</volume>, <elocation-id>103973</elocation-id>.</mixed-citation></ref><ref id="smtd202401224-bib-0010"><label>10</label><mixed-citation publication-type="miscellaneous" id="smtd202401224-cit-0010">
+<string-name>
+<given-names>U.</given-names>
+<surname>Bossel</surname>
+</string-name>, <string-name>
+<given-names>B.</given-names>
+<surname>Eliasson</surname>
+</string-name>, <article-title>
+Energy and the Hydrogen Economy
+</article-title>
+<year>2003</year>, <ext-link xlink:href="https://afdc.energy.gov/files/pdfs/hyd_economy_bossel_eliasson.pdf" ext-link-type="uri">https://afdc.energy.gov/files/pdfs/hyd_economy_bossel_eliasson.pdf</ext-link>.</mixed-citation></ref><ref id="smtd202401224-bib-0011"><label>11</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0011">
+<string-name>
+<given-names>S. K.</given-names>
+<surname>Dash</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Chakraborty</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Roccotelli</surname>
+</string-name>, <string-name>
+<given-names>U.</given-names>
+<surname>Kumar Sahu</surname>
+</string-name>, <source>Sustainability</source>
+<year>2022</year>, <volume>14</volume>, <fpage>8285</fpage>.</mixed-citation></ref><ref id="smtd202401224-bib-0012"><label>12</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0012">
+<string-name>
+<given-names>T.</given-names>
+<surname>Selmi</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Khadhraoui</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Cherif</surname>
+</string-name>, <source>Environ. Sci. Pollut. Res.</source>
+<year>2022</year>, <volume>29</volume>, <elocation-id>78121</elocation-id>.</mixed-citation></ref><ref id="smtd202401224-bib-0013"><label>13</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0013">
+<string-name>
+<given-names>M. A.</given-names>
+<surname>Aminudin</surname>
+</string-name>, <string-name>
+<given-names>S. K.</given-names>
+<surname>Kamarudin</surname>
+</string-name>, <string-name>
+<given-names>B. H.</given-names>
+<surname>Lim</surname>
+</string-name>, <string-name>
+<given-names>E. H.</given-names>
+<surname>Majilan</surname>
+</string-name>, <string-name>
+<given-names>M. S.</given-names>
+<surname>Masdar</surname>
+</string-name>, <string-name>
+<given-names>N.</given-names>
+<surname>Shaari</surname>
+</string-name>, <source>Int. J. Hydrogen Energy</source>
+<year>2023</year>, <volume>48</volume>, <fpage>4371</fpage>.</mixed-citation></ref><ref id="smtd202401224-bib-0014"><label>14</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0014">
+<string-name>
+<given-names>G.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name>
+<given-names>K.</given-names>
+<surname>Ming</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Kang</surname>
+</string-name>, <string-name>
+<given-names>Q.</given-names>
+<surname>Huang</surname>
+</string-name>, <string-name>
+<given-names>Z.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name>
+<given-names>X.</given-names>
+<surname>Zheng</surname>
+</string-name>, <string-name>
+<given-names>X.</given-names>
+<surname>Bi</surname>
+</string-name>, <source>Electrochim. Acta</source>
+<year>2018</year>, <volume>279</volume>, <fpage>19</fpage>.</mixed-citation></ref><ref id="smtd202401224-bib-0015"><label>15</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0015">
+<string-name>
+<given-names>D.</given-names>
+<surname>Wu</surname>
+</string-name>, <string-name>
+<given-names>K.</given-names>
+<surname>Kusada</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>Yamamoto</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>Toriyama</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Matsumura</surname>
+</string-name>, <string-name>
+<given-names>I.</given-names>
+<surname>Gueye</surname>
+</string-name>, <string-name>
+<given-names>O.</given-names>
+<surname>Seo</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Kim</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Hiroi</surname>
+</string-name>, <string-name>
+<given-names>O.</given-names>
+<surname>Sakata</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Kawaguchi</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Kubota</surname>
+</string-name>, <string-name>
+<given-names>H.</given-names>
+<surname>Kitagawa</surname>
+</string-name>, <source>Chem. Sci.</source>
+<year>2020</year>, <volume>11</volume>, <elocation-id>12731</elocation-id>.<pub-id pub-id-type="pmid">34094468</pub-id>
+</mixed-citation></ref><ref id="smtd202401224-bib-0016"><label>16</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0016">
+<string-name>
+<given-names>Z. W.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name>
+<given-names>P.</given-names>
+<surname>Ou</surname>
+</string-name>, <string-name>
+<given-names>J. E.</given-names>
+<surname>Huang</surname>
+</string-name>, <string-name>
+<given-names>Z.i</given-names>
+<surname>Wen</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name>
+<given-names>X.</given-names>
+<surname>Yao</surname>
+</string-name>, <string-name>
+<given-names>G.</given-names>
+<surname>Cai</surname>
+</string-name>, <string-name>
+<given-names>C. C.</given-names>
+<surname>Yang</surname>
+</string-name>, <string-name>
+<given-names>C. V.</given-names>
+<surname>Singh</surname>
+</string-name>, <string-name>
+<given-names>Q.</given-names>
+<surname>Jiang</surname>
+</string-name>, <source>Nat. Commun.</source>
+<year>2024</year>, <volume>15</volume>, <fpage>359</fpage>.<pub-id pub-id-type="pmid">38191599</pub-id>
+</mixed-citation></ref><ref id="smtd202401224-bib-0017"><label>17</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0017">
+<string-name>
+<given-names>H.</given-names>
+<surname>Guo</surname>
+</string-name>, <string-name>
+<given-names>Z.</given-names>
+<surname>Guo</surname>
+</string-name>, <string-name>
+<given-names>K.</given-names>
+<surname>Chu</surname>
+</string-name>, <string-name>
+<given-names>W.</given-names>
+<surname>Zong</surname>
+</string-name>, <string-name>
+<given-names>H.</given-names>
+<surname>Zhu</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name>
+<given-names>C.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Hofkens</surname>
+</string-name>, <string-name>
+<given-names>F.</given-names>
+<surname>Lai</surname>
+</string-name>, <source>Adv. Funct. Mater.</source>
+<year>2023</year>, <volume>33</volume>, <elocation-id>2308229</elocation-id>.</mixed-citation></ref><ref id="smtd202401224-bib-0018"><label>18</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0018">
+<string-name>
+<given-names>D.</given-names>
+<surname>Wu</surname>
+</string-name>, <string-name>
+<given-names>K.</given-names>
+<surname>Kusada</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Nanba</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Koyama</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>Yamamoto</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>Toriyama</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Matsumura</surname>
+</string-name>, <string-name>
+<given-names>O.</given-names>
+<surname>Seo</surname>
+</string-name>, <string-name>
+<given-names>I.</given-names>
+<surname>Gueye</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Kim</surname>
+</string-name>, <string-name>
+<given-names>L. S.</given-names>
+<surname>Rosantha Kumara</surname>
+</string-name>, <string-name>
+<given-names>O.</given-names>
+<surname>Sakata</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Kawaguchi</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Kubota</surname>
+</string-name>, <string-name>
+<given-names>H.</given-names>
+<surname>Kitagawa</surname>
+</string-name>, <source>J. Am. Chem. Soc.</source>
+<year>2022</year>, <volume>144</volume>, <fpage>3365</fpage>.<pub-id pub-id-type="pmid">35166532</pub-id>
+</mixed-citation></ref><ref id="smtd202401224-bib-0019"><label>19</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0019">
+<string-name>
+<given-names>H.</given-names>
+<surname>Minamihara</surname>
+</string-name>, <string-name>
+<given-names>K.</given-names>
+<surname>Kusada</surname>
+</string-name>, <string-name>
+<given-names>D.</given-names>
+<surname>Wu</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>Yamamoto</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>Toriyama</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Matsumura</surname>
+</string-name>, <string-name>
+<given-names>L. S. R.</given-names>
+<surname>Kumara</surname>
+</string-name>, <string-name>
+<given-names>K.</given-names>
+<surname>Ohara</surname>
+</string-name>, <string-name>
+<given-names>O.</given-names>
+<surname>Sakata</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Kawaguchi</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Kubota</surname>
+</string-name>, <string-name>
+<given-names>H.</given-names>
+<surname>Kitagawa</surname>
+</string-name>, <source>J. Am. Chem. Soc.</source>
+<year>2022</year>, <volume>144</volume>, <elocation-id>11525</elocation-id>.<pub-id pub-id-type="pmid">35749353</pub-id>
+</mixed-citation></ref><ref id="smtd202401224-bib-0020"><label>20</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0020">
+<string-name>
+<given-names>J.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name>
+<given-names>C.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Huang</surname>
+</string-name>, <string-name>
+<given-names>X.</given-names>
+<surname>Xiang</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Xiong</surname>
+</string-name>, <string-name>
+<given-names>B.</given-names>
+<surname>Xu</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Ma</surname>
+</string-name>, <string-name>
+<given-names>H.</given-names>
+<surname>Fu</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Kai</surname>
+</string-name>, <string-name>
+<given-names>X.</given-names>
+<surname>Kang</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Zhao</surname>
+</string-name>, <source>Joule</source>
+<year>2023</year>, <volume>7</volume>, <fpage>1832</fpage>.</mixed-citation></ref><ref id="smtd202401224-bib-0021"><label>21</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0021">
+<string-name>
+<given-names>H.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Sun</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Pan</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Xiong</surname>
+</string-name>, <string-name>
+<given-names>H.</given-names>
+<surname>Du</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Yu</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Feng</surname>
+</string-name>, <string-name>
+<given-names>Z.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Lai</surname>
+</string-name>, <string-name>
+<given-names>B.</given-names>
+<surname>Huang</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Wang</surname>
+</string-name>, <source>Appl. Catal., B</source>
+<year>2022</year>, <volume>312</volume>, <elocation-id>121431</elocation-id>.</mixed-citation></ref><ref id="smtd202401224-bib-0022"><label>22</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0022">
+<string-name>
+<given-names>X.</given-names>
+<surname>Cui</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name>
+<given-names>X.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name>
+<given-names>X.</given-names>
+<surname>Tian</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name>
+<given-names>G.</given-names>
+<surname>Zhang</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Ding</surname>
+</string-name>, <string-name>
+<given-names>W.</given-names>
+<surname>Hu</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Chen</surname>
+</string-name>, <source>ACS Nano</source>
+<year>2024</year>, <volume>18</volume>, <fpage>2948</fpage>.<pub-id pub-id-type="pmid">38227484</pub-id>
+</mixed-citation></ref><ref id="smtd202401224-bib-0023"><label>23</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0023">
+<string-name>
+<given-names>Y.</given-names>
+<surname>Men</surname>
+</string-name>, <string-name>
+<given-names>D.</given-names>
+<surname>Wu</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Hu</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name>
+<given-names>P.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Jia</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name>
+<given-names>G.</given-names>
+<surname>Cheng</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Chen</surname>
+</string-name>, <string-name>
+<given-names>W.</given-names>
+<surname>Luo</surname>
+</string-name>, <source>Angew. Chem., Int. Ed. Engl.</source>
+<year>2023</year>, <volume>62</volume>, <elocation-id>202217976</elocation-id>.</mixed-citation></ref><ref id="smtd202401224-bib-0024"><label>24</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0024">
+<string-name>
+<given-names>M.</given-names>
+<surname>Lao</surname>
+</string-name>, <string-name>
+<given-names>P.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Jiang</surname>
+</string-name>, <string-name>
+<given-names>H.</given-names>
+<surname>Pan</surname>
+</string-name>, <string-name>
+<given-names>S. X.</given-names>
+<surname>Dou</surname>
+</string-name>, <string-name>
+<given-names>W.</given-names>
+<surname>Sun</surname>
+</string-name>, <source>Nano Energy</source>
+<year>2022</year>, <volume>98</volume>, <elocation-id>107231</elocation-id>.</mixed-citation></ref><ref id="smtd202401224-bib-0025"><label>25</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0025">
+<string-name>
+<given-names>T.</given-names>
+<surname>L&#x000f6;ffler</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Ludwig</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Rossmeisl</surname>
+</string-name>, <string-name>
+<given-names>W.</given-names>
+<surname>Schuhmann</surname>
+</string-name>, <source>Angew. Chem., Int. Ed.</source>
+<year>2021</year>, <volume>60</volume>, <elocation-id>26894</elocation-id>.</mixed-citation></ref><ref id="smtd202401224-bib-0026"><label>26</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0026">
+<string-name>
+<given-names>T. A. A.</given-names>
+<surname>Batchelor</surname>
+</string-name>, <string-name>
+<given-names>J. K.</given-names>
+<surname>Pedersen</surname>
+</string-name>, <string-name>
+<given-names>S. H.</given-names>
+<surname>Winther</surname>
+</string-name>, <string-name>
+<given-names>I. E.</given-names>
+<surname>Castelli</surname>
+</string-name>, <string-name>
+<given-names>K. W.</given-names>
+<surname>Jacobsen</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Rossmeisl</surname>
+</string-name>, <source>Joule</source>
+<year>2019</year>, <volume>3</volume>, <fpage>834</fpage>.</mixed-citation></ref><ref id="smtd202401224-bib-0027"><label>27</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0027">
+<string-name>
+<given-names>W. A.</given-names>
+<surname>Saidi</surname>
+</string-name>, <string-name>
+<given-names>W.</given-names>
+<surname>Shadid</surname>
+</string-name>, <string-name>
+<given-names>G.</given-names>
+<surname>Veser</surname>
+</string-name>, <source>J. Phys. Chem. Lett.</source>
+<year>2021</year>, <volume>12</volume>, <fpage>5185</fpage>.<pub-id pub-id-type="pmid">34038141</pub-id>
+</mixed-citation></ref><ref id="smtd202401224-bib-0028"><label>28</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0028">
+<string-name>
+<given-names>J. K.</given-names>
+<surname>Pedersen</surname>
+</string-name>, <string-name>
+<given-names>C. M.</given-names>
+<surname>Clausen</surname>
+</string-name>, <string-name>
+<given-names>O. A.</given-names>
+<surname>Krysiak</surname>
+</string-name>, <string-name>
+<given-names>B.</given-names>
+<surname>Xiao</surname>
+</string-name>, <string-name>
+<given-names>T. A. A.</given-names>
+<surname>Batchelor</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>L&#x000f6;ffler</surname>
+</string-name>, <string-name>
+<given-names>V. A.</given-names>
+<surname>Mints</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Banko</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Arenz</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Savan</surname>
+</string-name>, <string-name>
+<given-names>W.</given-names>
+<surname>Schuhmann</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Ludwig</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Rossmeisl</surname>
+</string-name>, <source>Angew. Chem., Int. Ed. Engl.</source>
+<year>2021</year>, <volume>60</volume>, <elocation-id>24144</elocation-id>.<pub-id pub-id-type="pmid">34506069</pub-id>
+</mixed-citation></ref><ref id="smtd202401224-bib-0029"><label>29</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0029">
+<string-name>
+<given-names>R. B.</given-names>
+<surname>Araujo</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>Edvinsson</surname>
+</string-name>, <source>ACS Catal.</source>
+<year>2024</year>, <volume>14</volume>, <fpage>3742</fpage>.<pub-id pub-id-type="pmid">38510666</pub-id>
+</mixed-citation></ref><ref id="smtd202401224-bib-0030"><label>30</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0030">
+<string-name>
+<given-names>J. K.</given-names>
+<surname>Pedersen</surname>
+</string-name>, <string-name>
+<given-names>T. A. A.</given-names>
+<surname>Batchelor</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Bagger</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Rossmeisl</surname>
+</string-name>, <source>ACS Catal.</source>
+<year>2020</year>, <volume>10</volume>, <fpage>2169</fpage>.</mixed-citation></ref><ref id="smtd202401224-bib-0031"><label>31</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0031">
+<string-name>
+<given-names>C.</given-names>
+<surname>Sun</surname>
+</string-name>, <string-name>
+<given-names>R.</given-names>
+<surname>Goel</surname>
+</string-name>, <string-name>
+<given-names>A. R.</given-names>
+<surname>Kulkarni</surname>
+</string-name>, <source>Langmuir</source>
+<year>2024</year>, <volume>40</volume>, <fpage>3691</fpage>.<pub-id pub-id-type="pmid">38314715</pub-id>
+</mixed-citation></ref><ref id="smtd202401224-bib-0032"><label>32</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0032">
+<string-name>
+<given-names>G.</given-names>
+<surname>Jerkiewicz</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Zolfaghari</surname>
+</string-name>, <source>J. Electrochem. Soc.</source>
+<year>1996</year>, <volume>143</volume>, <fpage>1240</fpage>.</mixed-citation></ref><ref id="smtd202401224-bib-0033"><label>33</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0033">
+<string-name>
+<given-names>Z.&#x02010;J.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name>
+<given-names>M.&#x02010;X.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name>
+<given-names>J.&#x02010;H.</given-names>
+<surname>Yu</surname>
+</string-name>, <string-name>
+<given-names>X.&#x02010;B.</given-names>
+<surname>Ge</surname>
+</string-name>, <string-name>
+<given-names>Y.&#x02010;H.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name>
+<given-names>W.&#x02010;H.</given-names>
+<surname>Wang</surname>
+</string-name>, <source>Adv. Mater.</source>
+<year>2020</year>, <volume>32</volume>, <elocation-id>1906384</elocation-id>.</mixed-citation></ref><ref id="smtd202401224-bib-0034"><label>34</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0034">
+<string-name>
+<given-names>A.</given-names>
+<surname>Lasia</surname>
+</string-name>, <source>Int. J. Hydrogen Energy</source>
+<year>2019</year>, <volume>44</volume>, <elocation-id>19484</elocation-id>.</mixed-citation></ref><ref id="smtd202401224-bib-0035"><label>35</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0035">
+<string-name>
+<given-names>J.</given-names>
+<surname>Greeley</surname>
+</string-name>, <string-name>
+<given-names>T. F.</given-names>
+<surname>Jaramillo</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Bonde</surname>
+</string-name>, <string-name>
+<given-names>I.</given-names>
+<surname>Chorkendorff</surname>
+</string-name>, <string-name>
+<given-names>J. K.</given-names>
+<surname>N&#x000f8;rskov</surname>
+</string-name>, <source>Nat. Mater.</source>
+<year>2006</year>, <volume>5</volume>, <fpage>909</fpage>.<pub-id pub-id-type="pmid">17041585</pub-id>
+</mixed-citation></ref><ref id="smtd202401224-bib-0036"><label>36</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0036">
+<string-name>
+<given-names>E.</given-names>
+<surname>Sk&#x000fa;lason</surname>
+</string-name>, <string-name>
+<given-names>G. S.</given-names>
+<surname>Karlberg</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Rossmeisl</surname>
+</string-name>, <string-name>
+<given-names>T.</given-names>
+<surname>Bligaard</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Greeley</surname>
+</string-name>, <string-name>
+<given-names>H.</given-names>
+<surname>J&#x000f3;nsson</surname>
+</string-name>, <string-name>
+<given-names>J. K.</given-names>
+<surname>N&#x000f8;rskov</surname>
+</string-name>, <source>Phys. Chem. Chem. Phys.</source>
+<year>2007</year>, <volume>9</volume>, <fpage>3241</fpage>.<pub-id pub-id-type="pmid">17579732</pub-id>
+</mixed-citation></ref><ref id="smtd202401224-bib-0037"><label>37</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0037">
+<string-name>
+<given-names>E.</given-names>
+<surname>Santos</surname>
+</string-name>, <string-name>
+<given-names>P.</given-names>
+<surname>Hindelang</surname>
+</string-name>, <string-name>
+<given-names>P.</given-names>
+<surname>Quaino</surname>
+</string-name>, <string-name>
+<given-names>E. N.</given-names>
+<surname>Schulz</surname>
+</string-name>, <string-name>
+<given-names>G.</given-names>
+<surname>Soldano</surname>
+</string-name>, <string-name>
+<given-names>W.</given-names>
+<surname>Schmickler</surname>
+</string-name>, <source>Chemphyschem</source>
+<year>2011</year>, <volume>12</volume>, <fpage>2274</fpage>.<pub-id pub-id-type="pmid">21710676</pub-id>
+</mixed-citation></ref><ref id="smtd202401224-bib-0038"><label>38</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0038">
+<string-name>
+<given-names>X.</given-names>
+<surname>Zhou</surname>
+</string-name>, <string-name>
+<given-names>W. A.</given-names>
+<surname>Curtin</surname>
+</string-name>, <source>Acta Mater.</source>
+<year>2020</year>, <volume>200</volume>, <fpage>932</fpage>.</mixed-citation></ref><ref id="smtd202401224-bib-0039"><label>39</label><mixed-citation publication-type="miscellaneous" id="smtd202401224-cit-0039">
+<string-name>
+<given-names>P.</given-names>
+<surname>Branco</surname>
+</string-name>, <string-name>
+<given-names>L.</given-names>
+<surname>Torgo</surname>
+</string-name>, <string-name>
+<given-names>R. P.</given-names>
+<surname>Ribeiro</surname>
+</string-name>, in <article-title>
+Proceedings of the First International Workshop on Learning with Imbalanced Domains: Theory and Applications
+</article-title>, (Ed: <person-group person-group-type="editor">
+<string-name>
+<given-names>T.</given-names>
+<surname>Paula Branco Lu&#x000ed;s</surname>
+</string-name>
+</person-group>, <person-group person-group-type="editor">
+<string-name>
+<given-names>M.</given-names>
+<surname>Nuno</surname>
+</string-name>
+</person-group>) Proceedings of Machine Learning Research 74, ECML-PKDD, Skopje, Macedonia, <year>2017</year>, p. <fpage>36</fpage>&#x02013;<lpage>50</lpage>.</mixed-citation></ref><ref id="smtd202401224-bib-0040"><label>40</label><mixed-citation publication-type="journal" id="smtd202401224-cit-0040">
+<string-name>
+<given-names>K.</given-names>
+<surname>Choudhary</surname>
+</string-name>, <string-name>
+<given-names>B.</given-names>
+<surname>DeCost</surname>
+</string-name>, <source>npj Comput. Mater.</source>
+<year>2021</year>, <volume>7</volume>, <fpage>185</fpage>.</mixed-citation></ref><ref id="smtd202401224-bib-0041"><label>41</label><mixed-citation publication-type="miscellaneous" id="smtd202401224-cit-0041">
+<string-name>
+<given-names>J.</given-names>
+<surname>Matthey</surname>
+</string-name>, <article-title>PGM management</article-title>. Available from: <ext-link xlink:href="https://matthey.com/products-and-markets/pgms-and-circularity/pgm-management" ext-link-type="uri">https://matthey.com/products&#x02010;and&#x02010;markets/pgms&#x02010;and&#x02010;circularity/pgm&#x02010;management</ext-link>, (accessed: April 2023)</mixed-citation></ref></ref-list></back></article>

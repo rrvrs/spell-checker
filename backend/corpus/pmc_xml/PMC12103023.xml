@@ -1,0 +1,908 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">BMC Bioinformatics</journal-id><journal-id journal-id-type="iso-abbrev">BMC Bioinformatics</journal-id><journal-title-group><journal-title>BMC Bioinformatics</journal-title></journal-title-group><issn pub-type="epub">1471-2105</issn><publisher><publisher-name>BioMed Central</publisher-name><publisher-loc>London</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmc">PMC12103023</article-id><article-id pub-id-type="publisher-id">6128</article-id><article-id pub-id-type="doi">10.1186/s12859-025-06128-x</article-id><article-categories><subj-group subj-group-type="heading"><subject>Research</subject></subj-group></article-categories><title-group><article-title>Gene2role: a role-based gene embedding method for comparative analysis of signed gene regulatory networks</article-title></title-group><contrib-group><contrib contrib-type="author" equal-contrib="yes"><name><surname>Zeng</surname><given-names>Xin</given-names></name><xref ref-type="aff" rid="Aff1">1</xref><xref ref-type="aff" rid="Aff2">2</xref></contrib><contrib contrib-type="author" corresp="yes" equal-contrib="yes"><name><surname>Liu</surname><given-names>Shu</given-names></name><address><email>liu-shu627@g.ecc.u-tokyo.ac.jp</email></address><xref ref-type="aff" rid="Aff3">3</xref></contrib><contrib contrib-type="author"><name><surname>Liu</surname><given-names>Bowen</given-names></name><xref ref-type="aff" rid="Aff1">1</xref><xref ref-type="aff" rid="Aff2">2</xref></contrib><contrib contrib-type="author"><name><surname>Zhang</surname><given-names>Weihang</given-names></name><xref ref-type="aff" rid="Aff1">1</xref><xref ref-type="aff" rid="Aff2">2</xref></contrib><contrib contrib-type="author"><name><surname>Xu</surname><given-names>Wanzhe</given-names></name><xref ref-type="aff" rid="Aff1">1</xref><xref ref-type="aff" rid="Aff2">2</xref></contrib><contrib contrib-type="author"><name><surname>Toriumi</surname><given-names>Fujio</given-names></name><xref ref-type="aff" rid="Aff3">3</xref></contrib><contrib contrib-type="author" corresp="yes"><name><surname>Nakai</surname><given-names>Kenta</given-names></name><address><email>knakai@ims.u-tokyo.ac.jp</email></address><xref ref-type="aff" rid="Aff1">1</xref><xref ref-type="aff" rid="Aff2">2</xref></contrib><aff id="Aff1"><label>1</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/057zh3y96</institution-id><institution-id institution-id-type="GRID">grid.26999.3d</institution-id><institution-id institution-id-type="ISNI">0000 0001 2169 1048</institution-id><institution>Department of Computational Biology and Medical Sciences, </institution><institution>The University of Tokyo, </institution></institution-wrap>Kashiwa, 277-8563 Japan </aff><aff id="Aff2"><label>2</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/057zh3y96</institution-id><institution-id institution-id-type="GRID">grid.26999.3d</institution-id><institution-id institution-id-type="ISNI">0000 0001 2151 536X</institution-id><institution>Human Genome Center, The Institute of Medical Science, </institution><institution>The University of Tokyo, </institution></institution-wrap>Tokyo, 108-8639 Japan </aff><aff id="Aff3"><label>3</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/057zh3y96</institution-id><institution-id institution-id-type="GRID">grid.26999.3d</institution-id><institution-id institution-id-type="ISNI">0000 0001 2169 1048</institution-id><institution>Department of Systems Innovation, </institution><institution>The University of Tokyo, </institution></institution-wrap>Tokyo, 113-8654 Japan </aff></contrib-group><pub-date pub-type="epub"><day>24</day><month>5</month><year>2025</year></pub-date><pub-date pub-type="pmc-release"><day>24</day><month>5</month><year>2025</year></pub-date><pub-date pub-type="collection"><year>2025</year></pub-date><volume>26</volume><elocation-id>134</elocation-id><history><date date-type="received"><day>15</day><month>9</month><year>2024</year></date><date date-type="accepted"><day>1</day><month>4</month><year>2025</year></date></history><permissions><copyright-statement>&#x000a9; The Author(s) 2025</copyright-statement><copyright-year>2025</copyright-year><license><ali:license_ref specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p><bold>Open Access</bold> This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article's Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article's Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link>.</license-p></license></permissions><abstract id="Abs1"><sec><title>Background</title><p id="Par1">Understanding the dynamics of gene regulatory networks (GRNs) across various cellular states is crucial for deciphering the underlying mechanisms governing cell behavior and functionality. However, current comparative analytical methods, which often focus on simple topological information such as the degree of genes, are limited in their ability to fully capture the similarities and differences among the complex GRNs.</p></sec><sec><title>Results</title><p id="Par2">We present Gene2role, a gene embedding approach that leverages multi-hop topological information from genes within signed GRNs. Initially, we demonstrated the effectiveness of Gene2role in capturing the intricate topological nuances of genes using GRNs inferred from four distinct data sources. Then, applying Gene2role to integrated GRNs allowed us to identify genes with significant topological changes across cell types or states, offering a fresh perspective beyond traditional differential gene expression analyses. Additionally, we quantified the stability of gene modules between two cellular states by measuring the changes in the gene embeddings within these modules.</p></sec><sec><title>Conclusions</title><p id="Par3">Our method augments the existing toolkit for probing the dynamic regulatory landscape, thereby opening new avenues for understanding gene behavior and interaction patterns across cellular transitions.</p></sec><sec><title>Supplementary Information</title><p>The online version contains supplementary material available at 10.1186/s12859-025-06128-x.</p></sec></abstract><kwd-group xml:lang="en"><title>Keywords</title><kwd>Graph representation learning</kwd><kwd>Gene module analysis</kwd><kwd>Gene regulatory network analysis</kwd></kwd-group><funding-group><award-group><funding-source><institution-wrap><institution-id institution-id-type="FundRef">http://dx.doi.org/10.13039/501100002241</institution-id><institution>Japan Science and Technology Gene topological representation in signed gene regulatory netwoAgency</institution></institution-wrap></funding-source><award-id>JPMJSP2108</award-id></award-group></funding-group><custom-meta-group><custom-meta><meta-name>issue-copyright-statement</meta-name><meta-value>&#x000a9; BioMed Central Ltd., part of Springer Nature 2025</meta-value></custom-meta></custom-meta-group></article-meta></front><body><sec id="Sec1"><title>Background</title><p id="Par4">Gene expression, a meticulously precise and intricately regulated process, is pivotal in maintaining cellular identity and facilitating differentiation. Within this complex regulatory framework lies a network of gene-to-gene interactions, known as the gene regulatory network (GRN). This network comprises nodes, representing genes, and edges, denoting the regulatory relationships between these genes. The nature of these regulatory relationships, whether activation or inhibition, is indicated by the sign of the edges.</p><p id="Par5">GRNs can be constructed using a variety of methods based on diverse data sources [<xref ref-type="bibr" rid="CR1">1</xref>]. First, GRNs can be built by collecting validated gene regulatory information from the literature. Due to its reliance on manually curated and experimentally verified data, this approach tends to produce relatively small networks, thereby limiting our exploration of the comprehensive regulatory relationships inside cells. Single-cell RNA sequencing (scRNA-seq) advancements have facilitated the reconstruction of GRNs encompassing thousands of genes by identifying gene co-expression patterns across various conditions or tissues [<xref ref-type="bibr" rid="CR2">2</xref>]. For instance, EEISP [<xref ref-type="bibr" rid="CR3">3</xref>] constructs GRNs from scRNA-seq data based on co-dependency and mutual exclusivity of gene expression. However, this co-expression-based method struggles to differentiate direct from indirect gene regulatory relationships, complicating the accurate depiction of cellular dynamics. More recently, progress in single-cell multi-omics technology has further enhanced our ability to construct GRNs [<xref ref-type="bibr" rid="CR4">4</xref>]. For example, CellOracle [<xref ref-type="bibr" rid="CR5">5</xref>] integrates scATAC-seq and scRNA-seq data, leveraging transcription factor (TF) binding motifs and co-expression information to infer GRNs, providing a more detailed and comprehensive understanding of gene regulatory mechanisms.</p><p id="Par6">Downstream analysis of Gene Regulatory Networks (GRNs) is pivotal in uncovering gene functions. Prevalent analytical approaches emphasize the topology of cell type-specific GRNs to identify key transcription factors [<xref ref-type="bibr" rid="CR6">6</xref>, <xref ref-type="bibr" rid="CR7">7</xref>] and gene modules [<xref ref-type="bibr" rid="CR8">8</xref>, <xref ref-type="bibr" rid="CR9">9</xref>]. However, these typical approaches, which focus on analyzing a single network, often overlook the comparative analysis between GRNs across different cell states or types, thereby missing critical insights into the dynamics of regulatory mechanisms. Although methods exist for comparing GRNs between cell states [<xref ref-type="bibr" rid="CR5">5</xref>, <xref ref-type="bibr" rid="CR10">10</xref>], they often focus solely on the direct topological information of genes, overlooking deeper structural connections (e.g., 1-hop and 2-hop neighbors), resulting in a shallow understanding of the complexity inherent in GRNs. To overcome this challenge, graph embedding techniques, which consider multi-hop connectivity, have been developed to project genes into an embedding space. These approaches preserve a richer representation of the original GRN information, thereby enabling a more precise quantification of gene distances. However, current graph embedding approaches for GRNs rely on proximity principles [<xref ref-type="bibr" rid="CR11">11</xref>&#x02013;<xref ref-type="bibr" rid="CR13">13</xref>], hindering the projection of genes from separate networks into closely positioned spaces for comparative analysis. Role-based network embedding methods such as struc2vec [<xref ref-type="bibr" rid="CR14">14</xref>] and SignedS2V [<xref ref-type="bibr" rid="CR15">15</xref>] have introduced an advanced perspective by constructing a multi-layer weighted graph that reflects structural similarities among nodes at various depths. These methods facilitate embedding diverse networks into a unified space, allowing for nuanced comparisons of topological similarities across networks. Applying such advanced methodologies to compare GRNs among different cell states or types could significantly enhance our understanding of GRN dynamics.</p><p id="Par7">In this article, we introduce Gene2role, the first method to apply role-based graph embedding approaches for signed GRNs, employing the frameworks from struc2vec [<xref ref-type="bibr" rid="CR14">14</xref>] and SignedS2V [<xref ref-type="bibr" rid="CR15">15</xref>]. We conducted experiments on GRNs generated from one simulated network, manually curated networks, single-cell co-expression networks and single-cell multi-omics networks. These experiments demonstrated the ability of Gene2role to capture the topological information of GRNs. Additionally, we used Gene2role embeddings to analyze genes that exhibit structural variations across multiple GRNs and assessed the stability of gene modules across different cell states.</p></sec><sec id="Sec2"><title>Materials and methods</title><p id="Par8">The overall conceptual framework, shown in Fig.&#x000a0;<xref rid="Fig1" ref-type="fig">1</xref>, consists of three major parts: network construction, embedding generation, and downstream analysis. Firstly, we introduce the network construction process from four data sources in &#x000a0;&#x0201c;<xref rid="Sec3" ref-type="sec">Network preparation</xref>&#x0201d; section. Then, we introduce the embedding generation framework in &#x000a0;&#x0201c;<xref rid="Sec4" ref-type="sec">Gene topological representation in signed gene regulatory network (GRN)</xref>&#x02013;<xref rid="Sec5" ref-type="sec">Gene topological similarity calculation</xref>&#x0201d; sections, which applies SignedS2V to represent the topological features of genes in the signed GRN and to calculate the similarity between genes. Next, we explain the details of the gene embedding procedure in &#x000a0;&#x0201c;<xref rid="Sec6" ref-type="sec">Multilayer graph construction</xref>&#x02013;<xref rid="Sec8" ref-type="sec">Embedding learning</xref>&#x0201d; sections that adopts the struc2vec framework. The hyperparameters for experiments in our study are shown in &#x000a0;&#x0201c;<xref rid="Sec9" ref-type="sec">Hyperparameter for GRNs embedding experiments.</xref>&#x0201d; section. We showcase the downstream analysis based on gene embeddings at the gene and module levels, as depicted in &#x0201c;<xref rid="Sec10" ref-type="sec">Identification of differentially topological genes (DTGs)</xref>&#x0201d; and &#x0201c;<xref rid="Sec11" ref-type="sec">Gene module stability analysis</xref>&#x0201d; sections, respectively. Finally, we provide information about baseline methods and evaluation metrics in &#x0201c;<xref rid="Sec12" ref-type="sec">Baseline methods</xref>&#x0201d; and &#x0201c;<xref rid="Sec13" ref-type="sec">Evaluation metrics</xref>&#x0201d; sections.<fig id="Fig1"><label>Fig.&#x000a0;1</label><caption><p>Overview of the Gene2role framework. Gene2role is a multi-scale analysis framework for GRNs using a role-based graph embedding approach, which includes three components: network construction (left), embedding generation (middle), and downstream analysis (right). In network construction, one or more GRNs inferred by various methods are built, such as single-cell co-expression networks and single-cell multi-omics networks. In embedding generation, first, each gene is mapped to a 2-dimensional vector degree representing the number of positive and negative links. Next, the similarity between genes is evaluated using a series of distance functions that integrate multi-hop local topology information around the genes. Finally, the embedding is learned using the struc2vec framework. In downstream analysis, gene-level and gene-module-level analyses are performed. In gene-level analysis, differentially topological genes (such as G2) are extracted by comparing the distances of embeddings between GRNs. In gene-module-level analysis, the stability analysis of gene modules is performed by comparing the average distance between two GRNs and the proportion of genes that exist only in one of the GRNs (NA%) for pre-extracted gene modules. GRN, Gene regulatory network</p></caption><graphic xlink:href="12859_2025_6128_Fig1_HTML" id="MO1"/></fig></p><sec id="Sec3"><title>Network preparation</title><p id="Par9">We constructed a simple simulated network to mimic the scale-free characteristics of GRNs, which comprises 31 genes. The four curated networks&#x02014;hematopoietic stem cell (HSC) [<xref ref-type="bibr" rid="CR16">16</xref>], mammalian cortical area development (mCAD) [<xref ref-type="bibr" rid="CR17">17</xref>], ventral spinal cord (VSC) [<xref ref-type="bibr" rid="CR18">18</xref>], and gonadal sex determination (GSD) [<xref ref-type="bibr" rid="CR19">19</xref>]&#x02014;containing between 5 and 19 genes, were downloaded from BEELINE [<xref ref-type="bibr" rid="CR20">20</xref>].</p><p id="Par10">For single-cell RNA-seq data, we utilized the count matrices and cell type annotation data from two previous studies. Specifically, the dataset for human glioblastoma, as reported by [<xref ref-type="bibr" rid="CR3">3</xref>], was collected at two distinct stages: the glioblastoma stem-like cells (0-h) stage and the serum-induced differentiated (12-h) stage. The datasets for human bone marrow mononuclear cells (BMMC) and human peripheral blood mononuclear cells (PBMC) were collected from [<xref ref-type="bibr" rid="CR21">21</xref>]. In the BMMC dataset, only Granulocyte&#x02013;Macrophage Progenitors (GMPs) and CD14&#x02009;+&#x02009;monocytes were kept, while in the PBMC dataset, all ten cell types were retained. For each cell type, count matrices were generated using 2000 highly variable genes. Subsequently, cell type-specific GRNs were constructed utilizing the EEISP [<xref ref-type="bibr" rid="CR3">3</xref>] and Spearman correlation (Supplementary Note <xref rid="MOESM1" ref-type="media">1</xref>).</p><p id="Par11">Single-cell multi-omics networks were obtained from CellOracle [<xref ref-type="bibr" rid="CR5">5</xref>], which inferred them by integrating scRNA-seq data [<xref ref-type="bibr" rid="CR22">22</xref>] and sci-ATAC-seq data [<xref ref-type="bibr" rid="CR23">23</xref>] derived from differentiating mouse myeloid progenitors. In brief, this dataset encompasses the differentiation of myeloid progenitors across 24 cell states, primarily highlighting the process of megakaryocyte and erythroid progenitors (MEPs) differentiating into erythrocytes, as well as GMPs differentiating into granulocytes. Within these networks, only connections exhibiting a <italic>p</italic>-value less than 0.01 were considered. Moreover, a selection criterion was applied to maintain only the top 2000 edges, chosen based on their highest absolute coefficient values. Consequently, these networks were composed of between 521 and 642 genes. The sign of edges was established based on the positive or negative values of their coefficient.</p><p id="Par12">The detailed information on the networks utilized in the experiments described in this paper can be found in (Supplementary Table <xref rid="MOESM1" ref-type="media">1</xref>).</p></sec><sec id="Sec4"><title>Gene topological representation in signed gene regulatory network (GRN)</title><p id="Par13">Given a signed GRN represented as <inline-formula id="IEq1"><alternatives><tex-math id="d33e391">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${G} = \left( {V,E^{ + } ,E^{ - } } \right)$$\end{document}</tex-math><mml:math id="d33e396"><mml:mrow><mml:mi>G</mml:mi><mml:mo>=</mml:mo><mml:mfenced close=")" open="("><mml:mrow><mml:mi>V</mml:mi><mml:mo>,</mml:mo><mml:msup><mml:mi>E</mml:mi><mml:mo>+</mml:mo></mml:msup><mml:mo>,</mml:mo><mml:msup><mml:mi>E</mml:mi><mml:mo>-</mml:mo></mml:msup></mml:mrow></mml:mfenced></mml:mrow></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq1.gif"/></alternatives></inline-formula>, where <inline-formula id="IEq2"><alternatives><tex-math id="d33e413">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${V} = \left\{ {v_{1} ,v_{2} , \cdots ,v_{n} } \right\}$$\end{document}</tex-math><mml:math id="d33e418"><mml:mrow><mml:mi>V</mml:mi><mml:mo>=</mml:mo><mml:mfenced close="}" open="{"><mml:mrow><mml:msub><mml:mi>v</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>v</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mo>&#x022ef;</mml:mo><mml:mo>,</mml:mo><mml:msub><mml:mi>v</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mfenced></mml:mrow></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq2.gif"/></alternatives></inline-formula> denotes the set of genes. The sets <inline-formula id="IEq3"><alternatives><tex-math id="d33e439">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{E}}^{ + } = \left\{ {{{e}}_{{{i}}} {{|e}}_{{{i}}} \in V \times V} \right\}$$\end{document}</tex-math><mml:math id="d33e444"><mml:mrow><mml:msup><mml:mrow><mml:mi>E</mml:mi></mml:mrow><mml:mo>+</mml:mo></mml:msup><mml:mo>=</mml:mo><mml:mfenced close="}" open="{"><mml:mrow><mml:msub><mml:mi>e</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:msub><mml:mrow><mml:mo stretchy="false">|</mml:mo><mml:mi>e</mml:mi></mml:mrow><mml:mi>i</mml:mi></mml:msub><mml:mo>&#x02208;</mml:mo><mml:mi>V</mml:mi><mml:mo>&#x000d7;</mml:mo><mml:mi>V</mml:mi></mml:mrow></mml:mfenced></mml:mrow></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq3.gif"/></alternatives></inline-formula> and <inline-formula id="IEq4"><alternatives><tex-math id="d33e468">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${{E}}^{ - } = \left\{ {{{e}}_{{{i}}} {{|e}}_{{{i}}} \in V \times V} \right\}$$\end{document}</tex-math><mml:math id="d33e473"><mml:mrow><mml:msup><mml:mrow><mml:mi>E</mml:mi></mml:mrow><mml:mo>-</mml:mo></mml:msup><mml:mo>=</mml:mo><mml:mfenced close="}" open="{"><mml:mrow><mml:msub><mml:mi>e</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:msub><mml:mrow><mml:mo stretchy="false">|</mml:mo><mml:mi>e</mml:mi></mml:mrow><mml:mi>i</mml:mi></mml:msub><mml:mo>&#x02208;</mml:mo><mml:mi>V</mml:mi><mml:mo>&#x000d7;</mml:mo><mml:mi>V</mml:mi></mml:mrow></mml:mfenced></mml:mrow></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq4.gif"/></alternatives></inline-formula> represent the positive and negative interactions between genes, respectively. To capture the topological nuances of each gene within the GRN, we introduce the concept of the signed-degree <inline-formula id="IEq5"><alternatives><tex-math id="d33e497">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{d}}$$\end{document}</tex-math><mml:math id="d33e502"><mml:mrow><mml:mi mathvariant="bold-italic">d</mml:mi></mml:mrow></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq5.gif"/></alternatives></inline-formula>, which is a 2-dimensional vector defined as:<disp-formula id="Equ1"><label>1</label><alternatives><tex-math id="d33e509">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{d}} = \left[ {d^{ + } ,d^{ - } } \right]$$\end{document}</tex-math><mml:math id="d33e515" display="block"><mml:mrow><mml:mrow><mml:mi mathvariant="bold-italic">d</mml:mi></mml:mrow><mml:mo>=</mml:mo><mml:mfenced close="]" open="["><mml:mrow><mml:msup><mml:mi>d</mml:mi><mml:mo>+</mml:mo></mml:msup><mml:mo>,</mml:mo><mml:msup><mml:mi>d</mml:mi><mml:mo>-</mml:mo></mml:msup></mml:mrow></mml:mfenced></mml:mrow></mml:math><graphic xlink:href="12859_2025_6128_Article_Equ1.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq6"><alternatives><tex-math id="d33e532">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d^{ + }$$\end{document}</tex-math><mml:math id="d33e537"><mml:msup><mml:mi>d</mml:mi><mml:mo>+</mml:mo></mml:msup></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq6.gif"/></alternatives></inline-formula> and <inline-formula id="IEq7"><alternatives><tex-math id="d33e543">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d^{ - }$$\end{document}</tex-math><mml:math id="d33e548"><mml:msup><mml:mi>d</mml:mi><mml:mo>-</mml:mo></mml:msup></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq7.gif"/></alternatives></inline-formula> are the positive and negative degrees, respectively. By adopting the signed-degree <inline-formula id="IEq8"><alternatives><tex-math id="d33e554">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{d}}$$\end{document}</tex-math><mml:math id="d33e559"><mml:mrow><mml:mi mathvariant="bold-italic">d</mml:mi></mml:mrow></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq5.gif"/></alternatives></inline-formula>, we map each gene from the signed GRNs to a point on the plane.</p></sec><sec id="Sec5"><title>Gene topological similarity calculation</title><p id="Par14">To quantify the topological similarity between genes within a GRN, we introduced the distance function named Exponential Biased Euclidean Distance (EBED), which evaluates the zero-hop distance (<inline-formula id="IEq9"><alternatives><tex-math id="d33e569">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$D_{0}$$\end{document}</tex-math><mml:math id="d33e574"><mml:msub><mml:mi>D</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq9.gif"/></alternatives></inline-formula>) between the signed-degrees of two genes, <inline-formula id="IEq10"><alternatives><tex-math id="d33e580">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{d}}_{{\varvec{u}}}^{{\varvec{C}}}$$\end{document}</tex-math><mml:math id="d33e585"><mml:msubsup><mml:mrow><mml:mi mathvariant="bold-italic">d</mml:mi></mml:mrow><mml:mrow><mml:mrow><mml:mi mathvariant="bold-italic">u</mml:mi></mml:mrow></mml:mrow><mml:mrow><mml:mi mathvariant="bold-italic">C</mml:mi></mml:mrow></mml:msubsup></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq10.gif"/></alternatives></inline-formula> and <inline-formula id="IEq11"><alternatives><tex-math id="d33e599">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{d}}_{{\varvec{v}}}^{{\varvec{C}}}$$\end{document}</tex-math><mml:math id="d33e604"><mml:msubsup><mml:mrow><mml:mi mathvariant="bold-italic">d</mml:mi></mml:mrow><mml:mrow><mml:mrow><mml:mi mathvariant="bold-italic">v</mml:mi></mml:mrow></mml:mrow><mml:mrow><mml:mi mathvariant="bold-italic">C</mml:mi></mml:mrow></mml:msubsup></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq11.gif"/></alternatives></inline-formula>, as follows:<disp-formula id="Equ2"><label>2</label><alternatives><tex-math id="d33e618">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$D_{{0\left( {u, v} \right)}} = \mathrm{EBED}\left( {{\varvec{d}}_{u} ,{\varvec{d}}_{v} } \right)$$\end{document}</tex-math><mml:math id="d33e624" display="block"><mml:mrow><mml:msub><mml:mi>D</mml:mi><mml:mrow><mml:mn>0</mml:mn><mml:mfenced close=")" open="("><mml:mrow><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:mfenced></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mi mathvariant="normal">EBED</mml:mi><mml:mfenced close=")" open="("><mml:mrow><mml:msub><mml:mrow><mml:mi mathvariant="bold-italic">d</mml:mi></mml:mrow><mml:mi>u</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mrow><mml:mi mathvariant="bold-italic">d</mml:mi></mml:mrow><mml:mi>v</mml:mi></mml:msub></mml:mrow></mml:mfenced></mml:mrow></mml:math><graphic xlink:href="12859_2025_6128_Article_Equ2.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ3"><label>3</label><alternatives><tex-math id="d33e652">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\text{EBED}\left( {{\varvec{d}}_{u} ,{\varvec{d}}_{v} } \right) = {\text{exp}}(\sqrt {\left( {\text{log}\frac{{d_{u}^{ + } + 1}}{{d_{v}^{ + } + 1}}} \right)^{2} + \left( {\text{log}\frac{{d_{u}^{ - } + 1}}{{d_{v}^{ - } + 1}}} \right)^{2} }$$\end{document}</tex-math><mml:math id="d33e658" display="block"><mml:mrow><mml:mtext>EBED</mml:mtext><mml:mfenced close=")" open="("><mml:mrow><mml:msub><mml:mrow><mml:mi mathvariant="bold-italic">d</mml:mi></mml:mrow><mml:mi>u</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mrow><mml:mi mathvariant="bold-italic">d</mml:mi></mml:mrow><mml:mi>v</mml:mi></mml:msub></mml:mrow></mml:mfenced><mml:mrow><mml:mo>=</mml:mo><mml:mtext>exp</mml:mtext><mml:mo stretchy="false">(</mml:mo></mml:mrow><mml:msqrt><mml:mrow><mml:msup><mml:mfenced close=")" open="("><mml:mrow><mml:mtext>log</mml:mtext><mml:mfrac><mml:mrow><mml:msubsup><mml:mi>d</mml:mi><mml:mrow><mml:mi>u</mml:mi></mml:mrow><mml:mo>+</mml:mo></mml:msubsup><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:msubsup><mml:mi>d</mml:mi><mml:mrow><mml:mi>v</mml:mi></mml:mrow><mml:mo>+</mml:mo></mml:msubsup><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:mfrac></mml:mrow></mml:mfenced><mml:mn>2</mml:mn></mml:msup><mml:mo>+</mml:mo><mml:msup><mml:mfenced close=")" open="("><mml:mrow><mml:mtext>log</mml:mtext><mml:mfrac><mml:mrow><mml:msubsup><mml:mi>d</mml:mi><mml:mrow><mml:mi>u</mml:mi></mml:mrow><mml:mo>-</mml:mo></mml:msubsup><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:msubsup><mml:mi>d</mml:mi><mml:mrow><mml:mi>v</mml:mi></mml:mrow><mml:mo>-</mml:mo></mml:msubsup><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:mfrac></mml:mrow></mml:mfenced><mml:mn>2</mml:mn></mml:msup></mml:mrow></mml:msqrt></mml:mrow></mml:math><graphic xlink:href="12859_2025_6128_Article_Equ3.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par15">The rationale behind using EBED stems from the observation that GRNs are scale-free networks, and the degrees of their genes often follow a power-law distribution [<xref ref-type="bibr" rid="CR24">24</xref>]. The EBED function initially employs a logarithmic transformation of the degrees to mitigate the effects of this distribution, then computes the Euclidean distance. An exponential function is subsequently applied to counterbalance the log transformation, thereby preserving the original proportionality of distances.</p><p id="Par16">The topological identity of a gene is influenced not only by its direct connections but also by the broader topology that includes multi-hop neighborhoods. We define <inline-formula id="IEq12"><alternatives><tex-math id="d33e734">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${R}_{k}\left(u\right)$$\end{document}</tex-math><mml:math id="d33e739"><mml:mrow><mml:msub><mml:mi>R</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mfenced close=")" open="("><mml:mi>u</mml:mi></mml:mfenced></mml:mrow></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq12.gif"/></alternatives></inline-formula> as the sorted sequence of degrees for genes that are <inline-formula id="IEq13"><alternatives><tex-math id="d33e748">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$k$$\end{document}</tex-math><mml:math id="d33e753"><mml:mi>k</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq13.gif"/></alternatives></inline-formula> hops away from gene <inline-formula id="IEq14"><alternatives><tex-math id="d33e757">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$u$$\end{document}</tex-math><mml:math id="d33e762"><mml:mi>u</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq14.gif"/></alternatives></inline-formula>. Since the length of sorted sequence can be different for two genes, we employ dynamic time warping (DTW) [<xref ref-type="bibr" rid="CR25">25</xref>] to calculate the <inline-formula id="IEq15"><alternatives><tex-math id="d33e769">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$k$$\end{document}</tex-math><mml:math id="d33e774"><mml:mi>k</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq13.gif"/></alternatives></inline-formula>-hop distance (<inline-formula id="IEq16"><alternatives><tex-math id="d33e779">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$D_{k} ,k &#x0003e; 0$$\end{document}</tex-math><mml:math id="d33e784"><mml:mrow><mml:msub><mml:mi>D</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:mi>k</mml:mi><mml:mo>&#x0003e;</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq16.gif"/></alternatives></inline-formula>) between gene <inline-formula id="IEq17"><alternatives><tex-math id="d33e795">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$u$$\end{document}</tex-math><mml:math id="d33e800"><mml:mi>u</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq14.gif"/></alternatives></inline-formula> and <inline-formula id="IEq18"><alternatives><tex-math id="d33e804">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v$$\end{document}</tex-math><mml:math id="d33e809"><mml:mi>v</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq18.gif"/></alternatives></inline-formula> using EBED as distance function:<disp-formula id="Equ4"><label>4</label><alternatives><tex-math id="d33e813">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$D_{k} \left( {u,v} \right) = \text{DTW}\left( {\text{EBED},R_{k} \left( u \right),R_{k} \left( v \right)} \right)$$\end{document}</tex-math><mml:math id="d33e819" display="block"><mml:mrow><mml:msub><mml:mi>D</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mfenced close=")" open="("><mml:mrow><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:mfenced><mml:mo>=</mml:mo><mml:mtext>DTW</mml:mtext><mml:mfenced close=")" open="("><mml:mrow><mml:mtext>EBED</mml:mtext><mml:mo>,</mml:mo><mml:msub><mml:mi>R</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mfenced close=")" open="("><mml:mi>u</mml:mi></mml:mfenced><mml:mo>,</mml:mo><mml:msub><mml:mi>R</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mfenced close=")" open="("><mml:mi>v</mml:mi></mml:mfenced></mml:mrow></mml:mfenced></mml:mrow></mml:math><graphic xlink:href="12859_2025_6128_Article_Equ4.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par17">Then, the <inline-formula id="IEq19"><alternatives><tex-math id="d33e849">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$k$$\end{document}</tex-math><mml:math id="d33e854"><mml:mi>k</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq13.gif"/></alternatives></inline-formula>-hop topological similarity between gene <inline-formula id="IEq20"><alternatives><tex-math id="d33e858">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$u$$\end{document}</tex-math><mml:math id="d33e863"><mml:mi>u</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq14.gif"/></alternatives></inline-formula> and <inline-formula id="IEq21"><alternatives><tex-math id="d33e867">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v$$\end{document}</tex-math><mml:math id="d33e872"><mml:mi>v</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq18.gif"/></alternatives></inline-formula> can be calculated using the recursive formulation:<disp-formula id="Equ5"><label>5</label><alternatives><tex-math id="d33e876">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$f_{0} \left( {u,v} \right) = D_{0} \left( {u,v} \right);\;f_{k} \left( {u,v} \right) = f_{k - 1} \left( {u,v} \right) + D_{k} \left( {u,v} \right)$$\end{document}</tex-math><mml:math id="d33e882" display="block"><mml:mrow><mml:msub><mml:mi>f</mml:mi><mml:mn>0</mml:mn></mml:msub><mml:mfenced close=")" open="("><mml:mrow><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:mfenced><mml:mo>=</mml:mo><mml:msub><mml:mi>D</mml:mi><mml:mn>0</mml:mn></mml:msub><mml:mfenced close=")" open="("><mml:mrow><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:mfenced><mml:mo>&#x0037e;</mml:mo><mml:mspace width="0.277778em"/><mml:msub><mml:mi>f</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mfenced close=")" open="("><mml:mrow><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:mfenced><mml:mo>=</mml:mo><mml:msub><mml:mi>f</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mfenced close=")" open="("><mml:mrow><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:mfenced><mml:mo>+</mml:mo><mml:msub><mml:mi>D</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mfenced close=")" open="("><mml:mrow><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:mfenced></mml:mrow></mml:math><graphic xlink:href="12859_2025_6128_Article_Equ5.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par18">In this context, a lower value of <inline-formula id="IEq22"><alternatives><tex-math id="d33e936">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$f_{k} \left( {u,v} \right)$$\end{document}</tex-math><mml:math id="d33e941"><mml:mrow><mml:msub><mml:mi>f</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mfenced close=")" open="("><mml:mrow><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:mfenced></mml:mrow></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq22.gif"/></alternatives></inline-formula> indicates a higher degree of similarity in the topology between gene <inline-formula id="IEq23"><alternatives><tex-math id="d33e953">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$u$$\end{document}</tex-math><mml:math id="d33e958"><mml:mi>u</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq14.gif"/></alternatives></inline-formula> and <inline-formula id="IEq24"><alternatives><tex-math id="d33e962">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v$$\end{document}</tex-math><mml:math id="d33e967"><mml:mi>v</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq18.gif"/></alternatives></inline-formula>.</p></sec><sec id="Sec6"><title>Multilayer graph construction</title><p id="Par19">Next, we construct a multilayer weighted graph that encodes the topological information between genes. Each layer contains <inline-formula id="IEq25"><alternatives><tex-math id="d33e975">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\left| V \right|$$\end{document}</tex-math><mml:math id="d33e980"><mml:mfenced close="|" open="|"><mml:mi>V</mml:mi></mml:mfenced></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq25.gif"/></alternatives></inline-formula> genes, where the weight <inline-formula id="IEq26"><alternatives><tex-math id="d33e985">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w_{k} \left( {u,v} \right)$$\end{document}</tex-math><mml:math id="d33e990"><mml:mrow><mml:msub><mml:mi>w</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mfenced close=")" open="("><mml:mrow><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:mfenced></mml:mrow></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq26.gif"/></alternatives></inline-formula> for a link in the <inline-formula id="IEq27"><alternatives><tex-math id="d33e1002">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$k$$\end{document}</tex-math><mml:math id="d33e1007"><mml:mi>k</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq13.gif"/></alternatives></inline-formula>-th layer (<inline-formula id="IEq28"><alternatives><tex-math id="d33e1011">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$k &#x0003e; 0$$\end{document}</tex-math><mml:math id="d33e1016"><mml:mrow><mml:mi>k</mml:mi><mml:mo>&#x0003e;</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq28.gif"/></alternatives></inline-formula>) between gene <inline-formula id="IEq29"><alternatives><tex-math id="d33e1023">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$u$$\end{document}</tex-math><mml:math id="d33e1028"><mml:mi>u</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq14.gif"/></alternatives></inline-formula> and <inline-formula id="IEq30"><alternatives><tex-math id="d33e1033">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v$$\end{document}</tex-math><mml:math id="d33e1038"><mml:mi>v</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq18.gif"/></alternatives></inline-formula> is computed as:<disp-formula id="Equ6"><label>6</label><alternatives><tex-math id="d33e1042">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w_{{k\left( {u,{ }v} \right)}} = { }e^{{ - f_{k} \left( {u,v} \right)}} { },{ }$$\end{document}</tex-math><mml:math id="d33e1048" display="block"><mml:mrow><mml:msub><mml:mi>w</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mfenced close=")" open="("><mml:mrow><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mrow/><mml:mi>v</mml:mi></mml:mrow></mml:mfenced></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow/><mml:msup><mml:mi>e</mml:mi><mml:mrow><mml:mo>-</mml:mo><mml:msub><mml:mi>f</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mfenced close=")" open="("><mml:mrow><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:mfenced></mml:mrow></mml:msup><mml:mrow/><mml:mo>,</mml:mo><mml:mrow/></mml:mrow></mml:math><graphic xlink:href="12859_2025_6128_Article_Equ6.gif" position="anchor"/></alternatives></disp-formula>where a smaller value of <inline-formula id="IEq31"><alternatives><tex-math id="d33e1079">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$f_{k} \left( {u,v} \right)$$\end{document}</tex-math><mml:math id="d33e1084"><mml:mrow><mml:msub><mml:mi>f</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mfenced close=")" open="("><mml:mrow><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:mfenced></mml:mrow></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq22.gif"/></alternatives></inline-formula> indicates a higher topological similarity between gene <inline-formula id="IEq32"><alternatives><tex-math id="d33e1096">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$u$$\end{document}</tex-math><mml:math id="d33e1101"><mml:mi>u</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq14.gif"/></alternatives></inline-formula> and <inline-formula id="IEq33"><alternatives><tex-math id="d33e1105">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v$$\end{document}</tex-math><mml:math id="d33e1110"><mml:mi>v</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq18.gif"/></alternatives></inline-formula>, thereby resulting in a greater weight for their link. For inter-layer connections, only the same genes are connected through directed links, with the weights of these links defined by:<disp-formula id="Equ7"><label>7</label><alternatives><tex-math id="d33e1114">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${ }w\left( {u_{k} ,{ }u_{k + 1} } \right) = \log \left( {{\Gamma }k\left( u \right) + { }e} \right),{ }k = 0, \cdots ,k^{{{\text{max}} - 1}} ,$$\end{document}</tex-math><mml:math id="d33e1120" display="block"><mml:mrow><mml:mrow/><mml:mi>w</mml:mi><mml:mfenced close=")" open="("><mml:mrow><mml:msub><mml:mi>u</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:mrow/><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mfenced><mml:mo>=</mml:mo><mml:mo>log</mml:mo><mml:mfenced close=")" open="("><mml:mrow><mml:mi mathvariant="normal">&#x00393;</mml:mi><mml:mi>k</mml:mi><mml:mfenced close=")" open="("><mml:mi>u</mml:mi></mml:mfenced><mml:mo>+</mml:mo><mml:mrow/><mml:mi>e</mml:mi></mml:mrow></mml:mfenced><mml:mo>,</mml:mo><mml:mrow/><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mo>&#x022ef;</mml:mo><mml:mo>,</mml:mo><mml:msup><mml:mi>k</mml:mi><mml:mrow><mml:mtext>max</mml:mtext><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup><mml:mo>,</mml:mo></mml:mrow></mml:math><graphic xlink:href="12859_2025_6128_Article_Equ7.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ8"><label>8</label><alternatives><tex-math id="d33e1167">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w\left( {u_{k} ,{ }u_{k - 1} } \right) = { }1,{ }k = 1, \cdots ,k^{{{\text{max}}}} ,$$\end{document}</tex-math><mml:math id="d33e1173" display="block"><mml:mrow><mml:mi>w</mml:mi><mml:mfenced close=")" open="("><mml:mrow><mml:msub><mml:mi>u</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:mrow/><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mfenced><mml:mo>=</mml:mo><mml:mrow/><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mrow/><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mo>&#x022ef;</mml:mo><mml:mo>,</mml:mo><mml:msup><mml:mi>k</mml:mi><mml:mtext>max</mml:mtext></mml:msup><mml:mo>,</mml:mo></mml:mrow></mml:math><graphic xlink:href="12859_2025_6128_Article_Equ8.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq34"><alternatives><tex-math id="d33e1207">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w\left( {u_{k} ,{ }u_{k + 1} } \right)$$\end{document}</tex-math><mml:math id="d33e1212"><mml:mrow><mml:mi>w</mml:mi><mml:mfenced close=")" open="("><mml:mrow><mml:msub><mml:mi>u</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:mrow/><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mfenced></mml:mrow></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq34.gif"/></alternatives></inline-formula> corresponds to the weight between <inline-formula id="IEq35"><alternatives><tex-math id="d33e1230">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$u_{k}$$\end{document}</tex-math><mml:math id="d33e1235"><mml:msub><mml:mi>u</mml:mi><mml:mi>k</mml:mi></mml:msub></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq35.gif"/></alternatives></inline-formula> and <inline-formula id="IEq36"><alternatives><tex-math id="d33e1241">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$u_{k + 1}$$\end{document}</tex-math><mml:math id="d33e1246"><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq36.gif"/></alternatives></inline-formula>, and <inline-formula id="IEq37"><alternatives><tex-math id="d33e1255">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w\left( {u_{k} ,{ }u_{k - 1} } \right)$$\end{document}</tex-math><mml:math id="d33e1260"><mml:mrow><mml:mi>w</mml:mi><mml:mfenced close=")" open="("><mml:mrow><mml:msub><mml:mi>u</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:mrow/><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mfenced></mml:mrow></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq37.gif"/></alternatives></inline-formula> corresponds to the weight between <inline-formula id="IEq38"><alternatives><tex-math id="d33e1278">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$u_{k}$$\end{document}</tex-math><mml:math id="d33e1283"><mml:msub><mml:mi>u</mml:mi><mml:mi>k</mml:mi></mml:msub></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq35.gif"/></alternatives></inline-formula> and <inline-formula id="IEq39"><alternatives><tex-math id="d33e1290">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$u_{k - 1}$$\end{document}</tex-math><mml:math id="d33e1295"><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq39.gif"/></alternatives></inline-formula>. <inline-formula id="IEq40"><alternatives><tex-math id="d33e1304">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\Gamma }k\left( u \right)$$\end{document}</tex-math><mml:math id="d33e1309"><mml:mrow><mml:mi mathvariant="normal">&#x00393;</mml:mi><mml:mi>k</mml:mi><mml:mfenced close=")" open="("><mml:mi>u</mml:mi></mml:mfenced></mml:mrow></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq40.gif"/></alternatives></inline-formula> denotes the number of links from gene <inline-formula id="IEq41"><alternatives><tex-math id="d33e1318">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$u$$\end{document}</tex-math><mml:math id="d33e1323"><mml:mi>u</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq14.gif"/></alternatives></inline-formula> with weight exceeding the average link weight in the <inline-formula id="IEq42"><alternatives><tex-math id="d33e1327">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$k$$\end{document}</tex-math><mml:math id="d33e1332"><mml:mi>k</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq13.gif"/></alternatives></inline-formula>-th layer. A high number of genes within the <inline-formula id="IEq43"><alternatives><tex-math id="d33e1336">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$k$$\end{document}</tex-math><mml:math id="d33e1341"><mml:mi>k</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq13.gif"/></alternatives></inline-formula>-th layer share topological similarity with gene <inline-formula id="IEq44"><alternatives><tex-math id="d33e1345">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$u$$\end{document}</tex-math><mml:math id="d33e1350"><mml:mi>u</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq14.gif"/></alternatives></inline-formula> leads to an increased <inline-formula id="IEq45"><alternatives><tex-math id="d33e1355">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\Gamma }k\left( u \right)$$\end{document}</tex-math><mml:math id="d33e1360"><mml:mrow><mml:mi mathvariant="normal">&#x00393;</mml:mi><mml:mi>k</mml:mi><mml:mfenced close=")" open="("><mml:mi>u</mml:mi></mml:mfenced></mml:mrow></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq40.gif"/></alternatives></inline-formula>, subsequently increasing the probability for searching topologically similar genes in the deeper layer. By setting <inline-formula id="IEq46"><alternatives><tex-math id="d33e1369">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w\left( {u_{k} ,{ }u_{k + 1} } \right)$$\end{document}</tex-math><mml:math id="d33e1374"><mml:mrow><mml:mi>w</mml:mi><mml:mfenced close=")" open="("><mml:mrow><mml:msub><mml:mi>u</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:mrow/><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mfenced></mml:mrow></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq34.gif"/></alternatives></inline-formula> to be greater than <inline-formula id="IEq47"><alternatives><tex-math id="d33e1392">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w\left( {u_{k} ,{ }u_{k - 1} } \right)$$\end{document}</tex-math><mml:math id="d33e1397"><mml:mrow><mml:mi>w</mml:mi><mml:mfenced close=")" open="("><mml:mrow><mml:msub><mml:mi>u</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:mrow/><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mfenced></mml:mrow></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq37.gif"/></alternatives></inline-formula>, we encourage the exploration path in random walks to delve deeper rather than merely skimming the surface, aiming to uncover a wide range of topological relations between genes.</p></sec><sec id="Sec7"><title>Sequence generation by random walk</title><p id="Par20">Context sequences are generated using random walk on the weighted multilayer graph. The transition probability from gene <inline-formula id="IEq48"><alternatives><tex-math id="d33e1419">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$u$$\end{document}</tex-math><mml:math id="d33e1424"><mml:mi>u</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq14.gif"/></alternatives></inline-formula> to <inline-formula id="IEq49"><alternatives><tex-math id="d33e1428">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v$$\end{document}</tex-math><mml:math id="d33e1433"><mml:mi>v</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq18.gif"/></alternatives></inline-formula> on layer <inline-formula id="IEq50"><alternatives><tex-math id="d33e1437">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$k$$\end{document}</tex-math><mml:math id="d33e1442"><mml:mi>k</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq13.gif"/></alternatives></inline-formula>, denoted as <inline-formula id="IEq51"><alternatives><tex-math id="d33e1446">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$p_{k} \left( {u,v} \right)$$\end{document}</tex-math><mml:math id="d33e1451"><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mfenced close=")" open="("><mml:mrow><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:mfenced></mml:mrow></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq51.gif"/></alternatives></inline-formula>, is determined by dividing <inline-formula id="IEq52"><alternatives><tex-math id="d33e1463">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w_{k} \left( {u,v} \right)$$\end{document}</tex-math><mml:math id="d33e1468"><mml:mrow><mml:msub><mml:mi>w</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mfenced close=")" open="("><mml:mrow><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:mfenced></mml:mrow></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq26.gif"/></alternatives></inline-formula> by the sum of the weights of all links connected to u within the layer:<disp-formula id="Equ9"><label>9</label><alternatives><tex-math id="d33e1481">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$p_{k} \left( {u,v} \right) = q\frac{{w_{{k\left( {u,{ }v} \right)}} }}{{\mathop \sum \nolimits_{{{{t}} \in {{V}},{{t}} \ne {{u}}}} w_{{k\left( {u,{{ t}}} \right)}} }}$$\end{document}</tex-math><mml:math id="d33e1487" display="block"><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mfenced close=")" open="("><mml:mrow><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:mfenced><mml:mo>=</mml:mo><mml:mi>q</mml:mi><mml:mfrac><mml:msub><mml:mi>w</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mfenced close=")" open="("><mml:mrow><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mrow/><mml:mi>v</mml:mi></mml:mrow></mml:mfenced></mml:mrow></mml:msub><mml:mrow><mml:msub><mml:mo>&#x02211;</mml:mo><mml:mrow><mml:mi>t</mml:mi><mml:mo>&#x02208;</mml:mo><mml:mi>V</mml:mi><mml:mo>,</mml:mo><mml:mi>t</mml:mi><mml:mo>&#x02260;</mml:mo><mml:mi>u</mml:mi></mml:mrow></mml:msub><mml:msub><mml:mi>w</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mfenced close=")" open="("><mml:mrow><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mi>t</mml:mi></mml:mrow></mml:mfenced></mml:mrow></mml:msub></mml:mrow></mml:mfrac></mml:mrow></mml:math><graphic xlink:href="12859_2025_6128_Article_Equ9.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par21">Here, <inline-formula id="IEq53"><alternatives><tex-math id="d33e1533">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$q$$\end{document}</tex-math><mml:math id="d33e1538"><mml:mi>q</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq53.gif"/></alternatives></inline-formula> represents the intra-layer transition probability, set at 0.8. The inter-layer transition probability is set to <inline-formula id="IEq54"><alternatives><tex-math id="d33e1542">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1 - q$$\end{document}</tex-math><mml:math id="d33e1547"><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq54.gif"/></alternatives></inline-formula>, with the probabilities for upward and downward transitions being defined respectively as:<disp-formula id="Equ10"><label>10</label><alternatives><tex-math id="d33e1554">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$p_{k} \left( {u_{k} ,u_{k + 1} } \right) = \left( {1 - q} \right)\frac{{w\left( {u_{k} ,u_{k + 1} } \right)}}{{w\left( {u_{k} ,u_{k + 1} } \right) + w\left( {u_{k} ,u_{k - 1} } \right)}}$$\end{document}</tex-math><mml:math id="d33e1560" display="block"><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mfenced close=")" open="("><mml:mrow><mml:msub><mml:mi>u</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mfenced><mml:mo>=</mml:mo><mml:mfenced close=")" open="("><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:mfenced><mml:mfrac><mml:mrow><mml:mi>w</mml:mi><mml:mfenced close=")" open="("><mml:mrow><mml:msub><mml:mi>u</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mfenced></mml:mrow><mml:mrow><mml:mi>w</mml:mi><mml:mfenced close=")" open="("><mml:mrow><mml:msub><mml:mi>u</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mfenced><mml:mo>+</mml:mo><mml:mi>w</mml:mi><mml:mfenced close=")" open="("><mml:mrow><mml:msub><mml:mi>u</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mfenced></mml:mrow></mml:mfrac></mml:mrow></mml:math><graphic xlink:href="12859_2025_6128_Article_Equ10.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ11"><label>11</label><alternatives><tex-math id="d33e1627">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$p_{k} \left( {u_{k} ,u_{k - 1} } \right) = \left( {1 - q} \right)\frac{{w\left( {u_{k} ,u_{k - 1} } \right)}}{{w\left( {u_{k} ,u_{k + 1} } \right) + w\left( {u_{k} ,u_{k - 1} } \right)}}$$\end{document}</tex-math><mml:math id="d33e1633" display="block"><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mfenced close=")" open="("><mml:mrow><mml:msub><mml:mi>u</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mfenced><mml:mo>=</mml:mo><mml:mfenced close=")" open="("><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:mi>q</mml:mi></mml:mrow></mml:mfenced><mml:mfrac><mml:mrow><mml:mi>w</mml:mi><mml:mfenced close=")" open="("><mml:mrow><mml:msub><mml:mi>u</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mfenced></mml:mrow><mml:mrow><mml:mi>w</mml:mi><mml:mfenced close=")" open="("><mml:mrow><mml:msub><mml:mi>u</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mfenced><mml:mo>+</mml:mo><mml:mi>w</mml:mi><mml:mfenced close=")" open="("><mml:mrow><mml:msub><mml:mi>u</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mfenced></mml:mrow></mml:mfrac></mml:mrow></mml:math><graphic xlink:href="12859_2025_6128_Article_Equ11.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par22">The transition probabilities ensure that every possible path originating from gene <inline-formula id="IEq55"><alternatives><tex-math id="d33e1702">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$u$$\end{document}</tex-math><mml:math id="d33e1707"><mml:mi>u</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq14.gif"/></alternatives></inline-formula> is considered, with their probabilities summing to 1, reflecting the comprehensive exploration of connections both within and across layers.</p></sec><sec id="Sec8"><title>Embedding learning</title><p id="Par23">The Skip-Gram model [<xref ref-type="bibr" rid="CR26">26</xref>] is finally used to create gene embeddings from the generated context sequences. The fundamental principle of this model is that the meaning of a word is determined by the words located closer to it in sentences. By leveraging this model, we can learn embeddings that encapsulate rich topological information, as context sequences consist of genes that are topologically similar. Importantly, this results in genes with similar topological structures being projected into closely situated points in the embedding space.</p></sec><sec id="Sec9"><title>Hyperparameter for GRNs embedding experiments.</title><p id="Par24">For each experiment, we adjusted the parameters based on its complexity and the number of integrated networks (Supplementary Note <xref rid="MOESM1" ref-type="media">2</xref>).</p></sec><sec id="Sec10"><title>Identification of differentially topological genes (DTGs)</title><p id="Par25">Gene2role emphasizes the topological information of genes, allowing for genes that are distant or even unconnected from each other in a GRN to be positioned closely in the embedding space. To analyze the embedding of the same gene <inline-formula id="IEq56"><alternatives><tex-math id="d33e1729">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$u$$\end{document}</tex-math><mml:math id="d33e1734"><mml:mi>u</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq14.gif"/></alternatives></inline-formula> from <inline-formula id="IEq57"><alternatives><tex-math id="d33e1738">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$C$$\end{document}</tex-math><mml:math id="d33e1743"><mml:mi>C</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq57.gif"/></alternatives></inline-formula> cell types, we first determine the center of embeddings denoted as <inline-formula id="IEq58"><alternatives><tex-math id="d33e1747">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{\text{cen}}}_{{{u}}}$$\end{document}</tex-math><mml:math id="d33e1752"><mml:msub><mml:mrow><mml:mtext>cen</mml:mtext></mml:mrow><mml:mi>u</mml:mi></mml:msub></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq58.gif"/></alternatives></inline-formula>. For each cell type, we calculate the Euclidean distance <inline-formula id="IEq59"><alternatives><tex-math id="d33e1759">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d_{u}^{c}$$\end{document}</tex-math><mml:math id="d33e1764"><mml:msubsup><mml:mi>d</mml:mi><mml:mrow><mml:mi>u</mml:mi></mml:mrow><mml:mi>c</mml:mi></mml:msubsup></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq59.gif"/></alternatives></inline-formula> from the embedding <inline-formula id="IEq60"><alternatives><tex-math id="d33e1772">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{\text{emb}}}_{u}^{c}$$\end{document}</tex-math><mml:math id="d33e1777"><mml:msubsup><mml:mrow><mml:mtext>emb</mml:mtext></mml:mrow><mml:mrow><mml:mi>u</mml:mi></mml:mrow><mml:mi>c</mml:mi></mml:msubsup></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq60.gif"/></alternatives></inline-formula> of gene <inline-formula id="IEq61"><alternatives><tex-math id="d33e1787">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$u$$\end{document}</tex-math><mml:math id="d33e1792"><mml:mi>u</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq14.gif"/></alternatives></inline-formula> to the <inline-formula id="IEq62"><alternatives><tex-math id="d33e1796">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{\text{cen}}}_{{{u}}}$$\end{document}</tex-math><mml:math id="d33e1801"><mml:msub><mml:mrow><mml:mtext>cen</mml:mtext></mml:mrow><mml:mi>u</mml:mi></mml:msub></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq58.gif"/></alternatives></inline-formula>:<disp-formula id="Equ12"><label>12</label><alternatives><tex-math id="d33e1808">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\varvec{\text{cen}}}_{u} = \frac{1}{C}\mathop \sum \limits_{c = 1}^{C} {\varvec{\text{emb}}}_{u}^{c}$$\end{document}</tex-math><mml:math id="d33e1814" display="block"><mml:mrow><mml:msub><mml:mrow><mml:mtext>cen</mml:mtext></mml:mrow><mml:mi>u</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mfrac><mml:mn>1</mml:mn><mml:mi>C</mml:mi></mml:mfrac><mml:munderover><mml:mo movablelimits="false">&#x02211;</mml:mo><mml:mrow><mml:mi>c</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mi>C</mml:mi></mml:munderover><mml:msubsup><mml:mrow><mml:mtext>emb</mml:mtext></mml:mrow><mml:mrow><mml:mi>u</mml:mi></mml:mrow><mml:mi>c</mml:mi></mml:msubsup></mml:mrow></mml:math><graphic xlink:href="12859_2025_6128_Article_Equ12.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ13"><label>13</label><alternatives><tex-math id="d33e1839">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d_{u}^{c} = \parallel{\varvec{\text{emb}}}_{u}^{c} - {\varvec{\text{cen}}}_{u}\parallel_2$$\end{document}</tex-math><mml:math id="d33e1845" display="block"><mml:mrow><mml:msubsup><mml:mi>d</mml:mi><mml:mrow><mml:mi>u</mml:mi></mml:mrow><mml:mi>c</mml:mi></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false">&#x02016;</mml:mo><mml:msubsup><mml:mrow><mml:mtext>emb</mml:mtext></mml:mrow><mml:mrow><mml:mi>u</mml:mi></mml:mrow><mml:mi>c</mml:mi></mml:msubsup><mml:mo>-</mml:mo><mml:msub><mml:mrow><mml:mtext>cen</mml:mtext></mml:mrow><mml:mi>u</mml:mi></mml:msub><mml:msub><mml:mo stretchy="false">&#x02016;</mml:mo><mml:mn>2</mml:mn></mml:msub></mml:mrow></mml:math><graphic xlink:href="12859_2025_6128_Article_Equ13.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par26">We then determine the average distance <inline-formula id="IEq63"><alternatives><tex-math id="d33e1873">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\overline{{d_{u} }}$$\end{document}</tex-math><mml:math id="d33e1878"><mml:mover><mml:msub><mml:mi>d</mml:mi><mml:mi>u</mml:mi></mml:msub><mml:mo>&#x000af;</mml:mo></mml:mover></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq63.gif"/></alternatives></inline-formula>, to provide a summary measure of the distance of gene <inline-formula id="IEq64"><alternatives><tex-math id="d33e1886">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$u$$\end{document}</tex-math><mml:math id="d33e1891"><mml:mi>u</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq14.gif"/></alternatives></inline-formula> embeddings from the centroid across all cell types.<disp-formula id="Equ14"><label>14</label><alternatives><tex-math id="d33e1895">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\overline{{d_{u} }} = \frac{1}{C}\mathop \sum \limits_{c = 1}^{C} d_{u}^{c}$$\end{document}</tex-math><mml:math id="d33e1901" display="block"><mml:mrow><mml:mover><mml:msub><mml:mi>d</mml:mi><mml:mi>u</mml:mi></mml:msub><mml:mo>&#x000af;</mml:mo></mml:mover><mml:mo>=</mml:mo><mml:mfrac><mml:mn>1</mml:mn><mml:mi>C</mml:mi></mml:mfrac><mml:munderover><mml:mo movablelimits="false">&#x02211;</mml:mo><mml:mrow><mml:mi>c</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mi>C</mml:mi></mml:munderover><mml:msubsup><mml:mi>d</mml:mi><mml:mrow><mml:mi>u</mml:mi></mml:mrow><mml:mi>c</mml:mi></mml:msubsup></mml:mrow></mml:math><graphic xlink:href="12859_2025_6128_Article_Equ14.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par27">For C&#x02009;=&#x02009;2, genes with the largest distances ranking in the top 10% are defined as DTGs. For C&#x02009;&#x0003e;&#x02009;2, we further calculate the standard deviation <inline-formula id="IEq65"><alternatives><tex-math id="d33e1928">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sigma_{u}$$\end{document}</tex-math><mml:math id="d33e1933"><mml:msub><mml:mi>&#x003c3;</mml:mi><mml:mi>u</mml:mi></mml:msub></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq65.gif"/></alternatives></inline-formula> to quantify the topological variability of gene <inline-formula id="IEq66"><alternatives><tex-math id="d33e1939">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$u$$\end{document}</tex-math><mml:math id="d33e1944"><mml:mi>u</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq14.gif"/></alternatives></inline-formula>:<disp-formula id="Equ15"><label>15</label><alternatives><tex-math id="d33e1948">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\upsigma }_{u} = \sqrt {\frac{1}{C}\mathop \sum \limits_{c = 1}^{C} \left( {d_{u}^{c} - \overline{{d_{u} }} } \right)^{2} }$$\end{document}</tex-math><mml:math id="d33e1954" display="block"><mml:mrow><mml:msub><mml:mi mathvariant="normal">&#x003c3;</mml:mi><mml:mi>u</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:msqrt><mml:mrow><mml:mfrac><mml:mn>1</mml:mn><mml:mi>C</mml:mi></mml:mfrac><mml:munderover><mml:mo movablelimits="false">&#x02211;</mml:mo><mml:mrow><mml:mi>c</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mi>C</mml:mi></mml:munderover><mml:msup><mml:mfenced close=")" open="("><mml:mrow><mml:msubsup><mml:mi>d</mml:mi><mml:mrow><mml:mi>u</mml:mi></mml:mrow><mml:mi>c</mml:mi></mml:msubsup><mml:mo>-</mml:mo><mml:mover><mml:msub><mml:mi>d</mml:mi><mml:mi>u</mml:mi></mml:msub><mml:mo>&#x000af;</mml:mo></mml:mover></mml:mrow></mml:mfenced><mml:mn>2</mml:mn></mml:msup></mml:mrow></mml:msqrt></mml:mrow></mml:math><graphic xlink:href="12859_2025_6128_Article_Equ15.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par28">Genes located in the top 5th percentile of average distances are classified as DTGs. Additionally, genes whose standard deviation exceeds a certain empirical threshold are also identified as DTGs. The high average distances indicate that these genes consistently exhibit significant differences across all cell states, suggesting a universal role change. Conversely, a high standard deviation points to substantial variability in specific cell states, implying that these genes may only undergo significant role changes under certain conditions, while remaining relatively stable in others.</p><p id="Par29">When comparing DTGs with differentially expressed genes (DEGs), we identified DEGs using Seurat [<xref ref-type="bibr" rid="CR27">27</xref>] pipeline (Supplementary Note <xref rid="MOESM1" ref-type="media">3</xref>).</p></sec><sec id="Sec11"><title>Gene module stability analysis</title><p id="Par30">To quantify the stability of gene modules between two cell types or states, we initially define an anchor cell type (<inline-formula id="IEq67"><alternatives><tex-math id="d33e2004">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$c_{1}$$\end{document}</tex-math><mml:math id="d33e2009"><mml:msub><mml:mi>c</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq67.gif"/></alternatives></inline-formula>). Then, we use the Louvain algorithm, a proximity-based clustering method, to organize the GRN of the anchor cell type into gene modules; Within these modules, genes typically collaborate in certain specific functions [<xref ref-type="bibr" rid="CR9">9</xref>]. Gene modules containing fewer than 10 genes will be excluded. For each remaining gene module <inline-formula id="IEq68"><alternatives><tex-math id="d33e2018">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$m$$\end{document}</tex-math><mml:math id="d33e2023"><mml:mi>m</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq68.gif"/></alternatives></inline-formula>, we calculate the average distance (<inline-formula id="IEq69"><alternatives><tex-math id="d33e2027">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\overline{{d_{{c_{1}^{m} }} }}$$\end{document}</tex-math><mml:math id="d33e2032"><mml:mover><mml:msub><mml:mi>d</mml:mi><mml:msubsup><mml:mi>c</mml:mi><mml:mrow><mml:mn>1</mml:mn></mml:mrow><mml:mi>m</mml:mi></mml:msubsup></mml:msub><mml:mo>&#x000af;</mml:mo></mml:mover></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq69.gif"/></alternatives></inline-formula>) of genes between the two cell types using the following equation:<disp-formula id="Equ16"><label>16</label><alternatives><tex-math id="d33e2044">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\overline{{d_{{c_{1}^{m} }} }} = \frac{1}{{\left| {G_{{c_{1}^{m} }} \cap G_{{c_{2} }} } \right|}}\mathop \sum \limits_{{u \in { }G_{{c_{1}^{m} }} \cap G_{c2} }} \parallel{\varvec{\text{emb}}}_{u}^{{c_{1} }} - {\varvec{\text{emb}}}_{u}^{{c_{2} }}\parallel_2 { }$$\end{document}</tex-math><mml:math id="d33e2050" display="block"><mml:mrow><mml:mover><mml:msub><mml:mi>d</mml:mi><mml:msubsup><mml:mi>c</mml:mi><mml:mrow><mml:mn>1</mml:mn></mml:mrow><mml:mi>m</mml:mi></mml:msubsup></mml:msub><mml:mo>&#x000af;</mml:mo></mml:mover><mml:mo>=</mml:mo><mml:mfrac><mml:mn>1</mml:mn><mml:mfenced close="|" open="|"><mml:mrow><mml:msub><mml:mi>G</mml:mi><mml:msubsup><mml:mi>c</mml:mi><mml:mrow><mml:mn>1</mml:mn></mml:mrow><mml:mi>m</mml:mi></mml:msubsup></mml:msub><mml:mo>&#x02229;</mml:mo><mml:msub><mml:mi>G</mml:mi><mml:msub><mml:mi>c</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:msub></mml:mrow></mml:mfenced></mml:mfrac><mml:munder><mml:mo movablelimits="false">&#x02211;</mml:mo><mml:mrow><mml:mi>u</mml:mi><mml:mo>&#x02208;</mml:mo><mml:mrow/><mml:msub><mml:mi>G</mml:mi><mml:msubsup><mml:mi>c</mml:mi><mml:mrow><mml:mn>1</mml:mn></mml:mrow><mml:mi>m</mml:mi></mml:msubsup></mml:msub><mml:mo>&#x02229;</mml:mo><mml:msub><mml:mi>G</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mn>2</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:munder><mml:mo stretchy="false">&#x02016;</mml:mo><mml:msubsup><mml:mrow><mml:mtext>emb</mml:mtext></mml:mrow><mml:mrow><mml:mi>u</mml:mi></mml:mrow><mml:mn>1</mml:mn></mml:msubsup><mml:mo>-</mml:mo><mml:msubsup><mml:mrow><mml:mtext>emb</mml:mtext></mml:mrow><mml:mrow><mml:mi>u</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup><mml:msub><mml:mo stretchy="false">&#x02016;</mml:mo><mml:mn>2</mml:mn></mml:msub><mml:mrow/></mml:mrow></mml:math><graphic xlink:href="12859_2025_6128_Article_Equ16.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par31"><inline-formula id="IEq70"><alternatives><tex-math id="d33e2125">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$G_{{c_{1}^{m} }}$$\end{document}</tex-math><mml:math id="d33e2130"><mml:msub><mml:mi>G</mml:mi><mml:msubsup><mml:mi>c</mml:mi><mml:mrow><mml:mn>1</mml:mn></mml:mrow><mml:mi>m</mml:mi></mml:msubsup></mml:msub></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq70.gif"/></alternatives></inline-formula> is the gene set for module <inline-formula id="IEq71"><alternatives><tex-math id="d33e2140">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$m$$\end{document}</tex-math><mml:math id="d33e2145"><mml:mi>m</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq68.gif"/></alternatives></inline-formula> in cell type <inline-formula id="IEq72"><alternatives><tex-math id="d33e2149">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$c_{1}$$\end{document}</tex-math><mml:math id="d33e2154"><mml:msub><mml:mi>c</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq67.gif"/></alternatives></inline-formula>, and <inline-formula id="IEq73"><alternatives><tex-math id="d33e2160">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$G_{{c_{2} }}$$\end{document}</tex-math><mml:math id="d33e2165"><mml:msub><mml:mi>G</mml:mi><mml:msub><mml:mi>c</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:msub></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq73.gif"/></alternatives></inline-formula> is the whole gene set in cell type <inline-formula id="IEq74"><alternatives><tex-math id="d33e2173">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$c_{2}$$\end{document}</tex-math><mml:math id="d33e2178"><mml:msub><mml:mi>c</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq74.gif"/></alternatives></inline-formula>. <inline-formula id="IEq75"><alternatives><tex-math id="d33e2184">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\left| \cdot \right|$$\end{document}</tex-math><mml:math id="d33e2189"><mml:mfenced close="|" open="|"><mml:mo>&#x000b7;</mml:mo></mml:mfenced></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq75.gif"/></alternatives></inline-formula> represents the size of set.</p><p id="Par32">Moreover, the absence of gene embeddings in cell types other than the anchor may indicate significant changes in their roles. To quantify these changes, we define <inline-formula id="IEq76"><alternatives><tex-math id="d33e2196">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\text{NA}\%_{{c_{1}^{m} }}$$\end{document}</tex-math><mml:math id="d33e2201"><mml:mrow><mml:mtext>NA</mml:mtext><mml:msub><mml:mo>%</mml:mo><mml:msubsup><mml:mi>c</mml:mi><mml:mrow><mml:mn>1</mml:mn></mml:mrow><mml:mi>m</mml:mi></mml:msubsup></mml:msub></mml:mrow></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq76.gif"/></alternatives></inline-formula> as the percentage of genes within a gene module <inline-formula id="IEq77"><alternatives><tex-math id="d33e2213">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$m$$\end{document}</tex-math><mml:math id="d33e2218"><mml:mi>m</mml:mi></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq68.gif"/></alternatives></inline-formula> that only occur in the anchor cell type <inline-formula id="IEq78"><alternatives><tex-math id="d33e2222">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$c_{1}$$\end{document}</tex-math><mml:math id="d33e2227"><mml:msub><mml:mi>c</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="12859_2025_6128_Article_IEq67.gif"/></alternatives></inline-formula>.<disp-formula id="Equ17"><label>17</label><alternatives><tex-math id="d33e2233">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\text{NA}{{\% }}_{{c_{1}^{m} }} = 1 - \frac{{\left| {G_{{c_{1}^{m} }} \cap G_{{c_{2} }} } \right|}}{{\left| {G_{{c_{1}^{m} }} } \right|}}$$\end{document}</tex-math><mml:math id="d33e2239" display="block"><mml:mrow><mml:mtext>NA</mml:mtext><mml:msub><mml:mo>%</mml:mo><mml:msubsup><mml:mi>c</mml:mi><mml:mrow><mml:mn>1</mml:mn></mml:mrow><mml:mi>m</mml:mi></mml:msubsup></mml:msub><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:mfrac><mml:mfenced close="|" open="|"><mml:mrow><mml:msub><mml:mi>G</mml:mi><mml:msubsup><mml:mi>c</mml:mi><mml:mrow><mml:mn>1</mml:mn></mml:mrow><mml:mi>m</mml:mi></mml:msubsup></mml:msub><mml:mo>&#x02229;</mml:mo><mml:msub><mml:mi>G</mml:mi><mml:msub><mml:mi>c</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:msub></mml:mrow></mml:mfenced><mml:mfenced close="|" open="|"><mml:msub><mml:mi>G</mml:mi><mml:msubsup><mml:mi>c</mml:mi><mml:mrow><mml:mn>1</mml:mn></mml:mrow><mml:mi>m</mml:mi></mml:msubsup></mml:msub></mml:mfenced></mml:mfrac></mml:mrow></mml:math><graphic xlink:href="12859_2025_6128_Article_Equ17.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par33">We combine the average gene distance and NA% as a measure to assess the overall change in roles of gene modules that were initially clustered together in anchor cell type when observed in another cell type.</p><p id="Par34">To assess the biological functions of a gene module, we employed the <italic>compareCluster</italic> function from the clusterProfiler package [<xref ref-type="bibr" rid="CR28">28</xref>]. This analysis employed the <italic>enrichGO</italic> function (Supplementary Note <xref rid="MOESM1" ref-type="media">6</xref>), which targets biological processes (BPs) using org.Hs.eg.db and org.Mm.eg.db as the gene ontology database for dataset from human and mouse, respectively. We apply the Benjamini&#x02013;Hochberg method to adjust <italic>p</italic>-values, with a <italic>q</italic>-value cutoff set at 0.05 to determine significance. The top five significant Gene Ontology (GO) terms for each gene module were retained for further analysis and visualization.</p><sec id="Sec12"><title>Baseline methods</title><p id="Par35">We compared Gene2role to two graph embedding methods: struc2vec [<xref ref-type="bibr" rid="CR14">14</xref>] and BESIDE [<xref ref-type="bibr" rid="CR29">29</xref>], as well as the well-established benchmark end-to-end approach: Graph Neural Networks (GNNs). In brief, struc2vec is a role-based embedding method that does not consider sign information, whereas BESIDE considers the sign information and is based on proximity embedding. We selected SDGNN [<xref ref-type="bibr" rid="CR30">30</xref>] for signed GRNs and GCN [<xref ref-type="bibr" rid="CR31">31</xref>] for unsigned GRNs, and extracted embeddings from a topology structure-related task.</p></sec><sec id="Sec13"><title>Evaluation metrics</title><p id="Par36">The topological features of a gene in a signed GRN were evaluated using the following metrics: degree centrality (&#x02009;+), degree centrality (&#x02212;), betweenness centrality, eigenvector centrality, degree assortativity (&#x02009;+), degree assortativity (&#x02212;), clustering coefficient (&#x02009;+), clustering coefficient (&#x02212;) (Supplementary Note <xref rid="MOESM1" ref-type="media">4</xref>).</p></sec></sec></sec><sec id="Sec14"><title>Results</title><sec id="Sec15"><title>Gene2role captures the topological information of GRNs</title><p id="Par37">To verify that Gene2role accurately captures the topological information of genes within GRNs, we analyzed GRNs derived from four distinct data sources: 1. one simulated network, and 2. four curated networks based on experimentally validated interactions (&#x0201c;<xref rid="Sec16" ref-type="sec">Simulated and curated GRN</xref>&#x0201d; section), 3. co-expression networks generated from single-cell RNA sequencing data (&#x0201c;<xref rid="Sec17" ref-type="sec">Single-cell co-expression network</xref>&#x0201d; section), 4. multi-omics networks derived from multi-omics data (&#x0201c;<xref rid="Sec18" ref-type="sec">Single-cell multi-omics network</xref>&#x0201d; section).</p><sec id="Sec16"><title>Simulated and curated GRN</title><p id="Par38">To provide a clear overview of our network embedding study, we selected one simulated network (Fig.&#x000a0;<xref rid="Fig2" ref-type="fig">2</xref>A) and four simple curated networks (Fig.&#x000a0;<xref rid="Fig2" ref-type="fig">2</xref>C, Supplementary Fig.&#x000a0;<xref rid="MOESM1" ref-type="media">1</xref>A, C, E) for analysis. We compared Gene2role to two other methods, struc2vec [<xref ref-type="bibr" rid="CR14">14</xref>] and BESIDE [<xref ref-type="bibr" rid="CR29">29</xref>], by setting the embedding dimension to 2 for all networks (Fig.&#x000a0;<xref rid="Fig2" ref-type="fig">2</xref>B, D, Supplementary Fig.&#x000a0;<xref rid="MOESM1" ref-type="media">1</xref>B, D, F). Overall, Gene2role effectively positioned genes with similar connectivity patterns&#x02014;marked by both positive and negative edges&#x02014;within proximity in the embedding space. In contrast, the disregard of edge sign in struc2vec limited its ability to accurately capture the topological nuances of genes. BESIDE, despite considering edge signs, its proximity-based embedding strategies, which bring genes with positive connections closer together while pushing those with negative connections farther apart, failed to capture the topological information of genes. For example, in the simulated network, genes S9 and S15 were closely positioned by Gene2role due to their single negative edge. Gene S0 was projected near genes S6-S8 and S10-S14, reflecting their equal distance to negative edges. Conversely, although struc2vec closely aligned genes with similar positive topological information, it overlooked the S9 and S15 due to its exclusive focus on positive connections. BESIDE placed S9 far from S1 and S15 far from S2 due to their respective negative connections, clearly demonstrating how the method handles negative links between genes. Additionally, in the HSC network, despite their spatial separation, Gene2role clustered Fli1, Eklf, cJun, and EgrNab together due to their shared configuration of one negative and one or two positive edges. Struc2vec, however, placed cJun and EgrNab, each with a single positive edge, distantly from Fli1 and Eklf, which both had two positive edges, indicating a disregard for edge sign complexity. In contrast, although BESIDE grouped Fli1 and Eklf together, it also mixed in other genes, demonstrating its inability to effectively capture topological information. Furthermore, in the GSD network, Gene2role positioned DHH and PGD2 adjacent to each other because of their only positive linkage to a single gene and without any negative links. Struc2vec similarly grouped FGF9 with DHH and PGD2 solely based on their single positive edge, overlooking the negative edge. Conversely, BESIDE, by considering network proximity and edge signs, positioned AMH and FGF9 near PGD2 and DHH.<fig id="Fig2"><label>Fig.&#x000a0;2</label><caption><p>Analysis of GRN embeddings from networks derived through various methods. <bold>A</bold>, <bold>C</bold> Simulated tree GRN (<bold>A</bold>) and HSC network (<bold>C</bold>). <bold>B</bold>, <bold>D</bold> 2D embeddings for networks from <bold>A</bold> and <bold>C</bold>, respectively. The embeddings were generated by Gene2role, struc2vec, and BESIDE, respectively. <bold>E</bold>, <bold>G</bold> K-means (K&#x02009;=&#x02009;10) clustering of embeddings from B cells in human PBMC dataset (<bold>E</bold>) and Ery_0 stage in multi-omics dataset (<bold>G</bold>) displayed in UMAP.<bold> F</bold>, <bold>H</bold> Heatmap displaying the average values of 8 network feature metrics for the 10 clusters of genes from <bold>E</bold> and <bold>G</bold> within the GRN. The color scaling within each row is determined by the maximum and minimum values of that row. UMAP, Uniform manifold approximation and projection</p></caption><graphic xlink:href="12859_2025_6128_Fig2_HTML" id="MO2"/></fig></p><p id="Par39">We also compared Gene2role to GNNs and found that both approaches exhibit similar tendencies on curated networks (Supplementary Fig.&#x000a0;<xref rid="MOESM1" ref-type="media">1</xref>G). However, in the simulated network, GNNs failed to accurately capture the distinct connection patterns, as demonstrated by their inability to effectively differentiate between genes S0 and S1. This limitation might arise from the inherent nature of message passing in GNNs, where topological information can only propagate through a specific number of hops. Consequently, GNNs cannot effectively compare genes that are not directly connected.</p></sec><sec id="Sec17"><title>Single-cell co-expression network</title><p id="Par40">Having demonstrated the effectiveness of Gene2role in simple networks, we extended our exploration to more complex GRNs derived from single-cell RNA-seq data. We first applied Gene2role to a GRN that was inferred from B cells in the human PBMC dataset using EEISP. To explore the topological characteristics of neighboring genes within the gene embeddings, we empirically clustered the gene embeddings into ten groups using the K-means algorithm (Fig.&#x000a0;<xref rid="Fig2" ref-type="fig">2</xref>E, Supplementary Note <xref rid="MOESM1" ref-type="media">5</xref>). We then calculated the average value of eight topological metrics for the genes within each cluster, reflecting their interconnectedness within the original GRN. The heatmap revealed unique metric enrichment across the clusters (Fig.&#x000a0;<xref rid="Fig2" ref-type="fig">2</xref>F), highlighting the distinct topological attributes inherent to each cluster. Notably, genes in cluster 6 exhibited significant prominence in positive degree centrality, indicating that they were central genes with a high density of positive interactions. In contrast, cluster 7 was distinguished by its considerable negative degree centrality and minimal positive connections, suggesting a group of genes primarily linked by negative edges. Cluster 2, enriched with high positive degree assortativity but minimal negative degree centrality, predominantly comprised genes positioned on the outer edges with positive links. Furthermore, cluster 9, characterized by the lowest negative degree assortativity and minimal negative degree centrality, was identified as a peripheral cluster primarily connected through negative relationships.</p><p id="Par41">To test the performance of our method across different GRN inference approaches, we applied Gene2role to the GRN inferred from B cells in the human PBMC dataset using Spearman correlation, a widely used baseline method for GRN construction [<xref ref-type="bibr" rid="CR32">32</xref>, <xref ref-type="bibr" rid="CR33">33</xref>]. The gene distribution across clusters demonstrated a consistent topological structure, mirroring the patterns discerned in the EEISP results (Supplementary Fig.&#x000a0;<xref rid="MOESM1" ref-type="media">1</xref>H, I). For instance, the characteristics of cluster 7 were similar to those of cluster 6 in the EEISP-derived clusters, delineating a hub of genes with densely packed positive linkages. Similarly, cluster 5 corresponded to the previously identified cluster 7, characterized by a richness in negative interactions. Additionally, cluster 0 shared traits with cluster 2, encompassing genes predominantly linked through positive edges and situated at the periphery of the GRN. Finally, the genes within cluster 1 resembled those in cluster 9, forming a peripheral group predominantly characterized by negative edges.</p></sec><sec id="Sec18"><title>Single-cell multi-omics network</title><p id="Par42">We further explored more sophisticated GRNs that were inferred by integrating single-cell RNA-seq and single-cell ATAC-seq data. We used Gene2role to analyze the Ery_0 stage of the multi-omics GRNs, which were collected from CellOracle. We segmented genes into ten groups using K-means and calculated the average value of eight key metrics for each cluster (Fig.&#x000a0;<xref rid="Fig2" ref-type="fig">2</xref>G, H). Genes in cluster 0 functioned as a hub predominantly associated with positive edges, whereas genes in cluster 9 functioned as their negative-edge counterpart. Cluster 8, characterized by high negative degree assortativity and low centrality, represented a group of genes on the periphery of the negative network. Conversely, cluster 2, lacking negative connections and possessing the highest positive clustering coefficient, comprised a cohesive group of genes with similar functions and low degrees of connectivity.</p></sec></sec><sec id="Sec19"><title>Identification of DTGs between paired states using Gene2role embeddings</title><p id="Par43">Given the ability of Gene2role to group genes by topological patterns, we merged GRNs from two cell types to explore the gene role changes across these networks. We applied Gene2role to the human glioblastoma dataset, which comprised GRNs from 0-h and 12-h stages. We computed the pairwise distances for each gene and extracted the DTGs by the top 10% largest distances (Fig.&#x000a0;<xref rid="Fig3" ref-type="fig">3</xref>A). 66 DTGs were identified and 50 of them were overlapped with DEGs (Fig.&#x000a0;<xref rid="Fig3" ref-type="fig">3</xref>B). For instance, there was a significant drop in CD164 expression and its network connections at 12-h stage (Supplementary Fig.&#x000a0;<xref rid="MOESM1" ref-type="media">2</xref>A, B), which aligns with its known role in glioblastoma proliferation [<xref ref-type="bibr" rid="CR34">34</xref>]. Additionally, we observed that although 16 genes exhibited minor expression differences between the two cell types, their connection patterns within GRNs underwent significant changes. Specifically, the expression levels of DKK3 remained consistent between both cell types (Fig.&#x000a0;<xref rid="Fig3" ref-type="fig">3</xref>C); however, its network connectivity diminished at the 12-h stage (Fig.&#x000a0;<xref rid="Fig3" ref-type="fig">3</xref>D). Moreover, we identified that 397 genes that underwent significant changes in expression levels, yet their topological structures within the GRNs remained unchanged. For instance, while the expression level of EGR1 decreased, its network connectivity was maintained (Supplementary Fig.&#x000a0;<xref rid="MOESM1" ref-type="media">2</xref>C, D).<fig id="Fig3"><label>Fig.&#x000a0;3</label><caption><p>Distinctive analysis of DTGs in comparison with DEGs across two cell types. <bold>A</bold> histogram of the frequency distribution of Gene2role embedding pair distances in GRNs at 0-h and 12-h stage within a human glioblastoma dataset, with the top 10th percentile of average distances designated as DTGs. <bold>B</bold>, <bold>E</bold>, and <bold>H</bold> Venn diagrams depict the intersection between DEGs and DTGs identified in human glioblastoma at 0-h and 12-h stage (<bold>B</bold>), in human PBMCs comparing na&#x000ef;ve CD4 T cells with mature CD4 T cells (<bold>E</bold>), and in human BMMC comparing GMPs with CD14&#x02009;+&#x02009;Monocytes (<bold>H</bold>), respectively. <bold>C</bold>, <bold>F</bold>, and <bold>I</bold> Examples of genes that are exclusively DTGs not overlapping with DEGs from the intersecting sets in <bold>B</bold>, <bold>E</bold>, and <bold>H</bold>, respectively. <bold>D</bold>, <bold>G</bold>, <bold>J</bold> 1-hop network structures corresponding to the DTG shown in <bold>C</bold>, <bold>F</bold>, and <bold>I</bold>. DTGs, differentially topological genes; DEGs, differentially expressed genes; PBMC, peripheral blood mononuclear cells; BMMC, human bone marrow mononuclear cells; GMPs, granulocyte-macrophage progenitors</p></caption><graphic xlink:href="12859_2025_6128_Fig3_HTML" id="MO3"/></fig></p><p id="Par44">We extended our application of Gene2role to analyze the topological shifts of genes between na&#x000ef;ve CD4 T cells and mature CD4 T cells within the human PBMC dataset. We discovered that 87 DTGs overlapped with DEGs, indicating a robust pattern across cell types (Fig.&#x000a0;<xref rid="Fig3" ref-type="fig">3</xref>E). For example, CARD16 showcased an increase in both expression level and connectivity when comparing na&#x000ef;ve to mature CD4 T cells (Supplementary Fig.&#x000a0;<xref rid="MOESM1" ref-type="media">2</xref>E, F). Furthermore, despite 90 genes showing only minor expression differences between these two cell types, significant alterations in their network connectivity were evident. A case in point is PSTPIP2, which maintained consistent expression levels across both cell types (Fig.&#x000a0;<xref rid="Fig3" ref-type="fig">3</xref>F), yet its network connectivity notably decreased in mature CD4 T cells (Fig.&#x000a0;<xref rid="Fig3" ref-type="fig">3</xref>G). In addition, an analysis revealed that 716 genes experienced significant shifts in expression levels without corresponding changes in their topological structures within the GRNs. SP140, for instance, exhibited an increased expression level, while its network position remained stable (Supplementary Fig.&#x000a0;<xref rid="MOESM1" ref-type="media">2</xref>G, H).</p><p id="Par45">In the analysis of GMPs and CD14&#x02009;+&#x02009;Monocytes from the human BMMC dataset, we identified 57 DTGs that overlapped with DEGs (Fig.&#x000a0;<xref rid="Fig3" ref-type="fig">3</xref>H), including genes such as ETS1 that displayed significant alterations in both expression levels and topological structures (Supplementary Fig.&#x000a0;<xref rid="MOESM1" ref-type="media">2</xref>I, J). Conversely, 16 DTGs, which were not DEGs, such as RAGEF1B, showed significant topological changes without a corresponding shift in expression levels (Fig.&#x000a0;<xref rid="Fig3" ref-type="fig">3</xref>I, J). Moreover, within the DEGs, 524 genes, exemplified by RETN, underwent substantial changes in expression while their topological configurations were preserved (Supplementary Fig.&#x000a0;<xref rid="MOESM1" ref-type="media">2</xref>K, L).</p></sec><sec id="Sec20"><title>Identification of DTGs among cell types</title><p id="Par46">Having analyzed gene role changes between two cell types, we extended our study to merged GRNs from multiple cell types. We applied Gene2role to the integrated GRNs from the human PBMC dataset, which comprise 10 cell types. Initially, we identified 33 DTGs by focusing on the top 5th percentile of average distances (Fig.&#x000a0;<xref rid="Fig4" ref-type="fig">4</xref>A). These genes exhibited significant variability across the 10 cell types. For instance, the gene FGFBP2 had a higher count of negative edges in NK cells and central memory CD8 T cells compared to other cell types, while it showed the fewest positive edges in B cells (Supplementary Fig.&#x000a0;<xref rid="MOESM1" ref-type="media">3</xref>A). Moreover, analysis revealed that seven genes exhibited a standard deviation in topological distance exceeding 0.4, yet an average distance below 3.1, indicative of substantial structural dispersion among these cell types. For example, TNFRSF13B functioned as a hub gene in B cells, conventional dendritic cells (cDCs), and plasmacytoid dendritic cells (pDCs), but maintained fewer connections in other cell types (Fig.&#x000a0;<xref rid="Fig4" ref-type="fig">4</xref>B).<fig id="Fig4"><label>Fig.&#x000a0;4</label><caption><p>Comparative analysis of gene distance across multiple cell types. <bold>A</bold> Scatter plot of the average and standard deviation of gene distances within human PBMC dataset across 10 cell types, with genes in the top 5th percentile of average distances or standard deviation greater than 0.4 were categorized as DTGs. <bold>B</bold> 1-hop network structures of TNFRSF13B in ten GRNs from human PBMC datase. <bold>C</bold> Scatter plot of the average and standard deviations of gene distances between each pair of adjacent cell types in the differentiation trajectory of MEPs. <bold>D</bold> Heatmap of two patterns of gene role changes during MEP differentiation: the top heatmap represents genes with high variance and low average distance, while the bottom heatmap depicts genes with low variance but high average distance. <bold>E</bold> 1-hop network structures of TNFRSF13B in eleven GRNs from multi-omics dataset. MEPs, Megakaryocyte-erythroid progenitors</p></caption><graphic xlink:href="12859_2025_6128_Fig4_HTML" id="MO4"/></fig></p><p id="Par47">Subsequently, we used Gene2role embeddings to investigate significant topological changes in genes during the differentiation of MEPs and GMPs in the multi-omics dataset. For each gene, we calculated the average and standard deviation of distance between adjacent cellular state across 11 sequential stages during erythrocyte differentiation. By focusing on the top 5th percentile of genes in terms of average distance or genes with high standard deviation of distance, we identified two distinct patterns of DTGs (Fig.&#x000a0;<xref rid="Fig4" ref-type="fig">4</xref>C, D). The first pattern, characterized by a high standard deviation in distance but a relatively small average distance, suggests that the roles of these genes may remain unchanged during certain developmental stages, only to shift abruptly thereafter. For instance, Top2a exhibited no significant topological changes from the Ery_0 to Ery_4 stages but underwent noticeable changes post-Ery_5 (Supplementary Fig.&#x000a0;<xref rid="MOESM1" ref-type="media">3</xref>B), suggesting a role shift after this stage. The second pattern is characterized by consistently large changes in role distance throughout development, indicating dynamic and substantial fluctuations in role of genes. For example, the gene Gata1 exhibited significant periodic fluctuations in the number of its connections (Fig.&#x000a0;<xref rid="Fig4" ref-type="fig">4</xref>E). Previous studies, such as [<xref ref-type="bibr" rid="CR35">35</xref>], have shown that Gata1 promotes the differentiation of erythroid cells, and our findings corroborate its dynamic involvement in this process.</p><p id="Par48">Similarly, we calculated the average distance and standard deviation of each gene between seven adjacent cellular states during granulocyte differentiation. We observed topological shift patterns similar to those identified in erythrocyte differentiation (Supplementary Fig.&#x000a0;<xref rid="MOESM1" ref-type="media">4</xref>A, B). For example, structural variations in the gene Smarcc1 were primarily observed before the Gran_0 stage and stabilized between Gran_0 and Gran_2, suggesting a temporal shift in its topological significance (Supplementary Fig.&#x000a0;<xref rid="MOESM1" ref-type="media">4</xref>C). Additionally, Eif3g exhibited continuous changes throughout its development, reinforcing its active role in the differentiation process (Supplementary Fig.&#x000a0;<xref rid="MOESM1" ref-type="media">4</xref>D).</p></sec><sec id="Sec21"><title>Evaluation of gene module stability</title><p id="Par49">After analyzing topological variations of the same gene across different GRNs, we focused on the overall topological changes in a single gene module between two GRNs. In the human glioblastoma dataset, we designated the 0-h stage as the anchor cell type, clustered the GRN into seven gene modules, and calculated the average pairwise gene embedding distance and NA% between the 0-h and 12-h stages. Each gene module, characterized by distinct NA% and average distances, suggests shifts in the roles of these gene modules during differentiation (Fig.&#x000a0;<xref rid="Fig5" ref-type="fig">5</xref>A). For example, gene module 5 exhibited a relatively large mean distance and high NA%, suggesting substantial changes in the topological structure of the genes within this module. GO analysis for gene module 5 highlighted metabolic processes, notably cholesterol and sterol biosynthesis (Fig.&#x000a0;<xref rid="Fig5" ref-type="fig">5</xref>B). Consequently, we infer that the changes in the topological structure of gene module 5 may indicate reduced sterol biosynthesis capabilities within the cells at the 12-h stage. Previous research has demonstrated that patient-derived glioblastoma stem cells (GSCs) activate cholesterol biosynthesis more extensively than differentiated glioblastoma cells [<xref ref-type="bibr" rid="CR36">36</xref>]. Conversely, gene module 0 exhibited a lower mean distance and NA%, indicating minimal changes in the topological structure of the genes within this module. GO analysis revealed that gene module 0 was enriched in fundamental cellular processes, including chromosome segregation and nuclear division (Fig.&#x000a0;<xref rid="Fig5" ref-type="fig">5</xref>B). This observation suggests that the functions of chromosome segregation and nuclear division are relatively stable between the 0-h and 12-h stages. Additionally, when we designated the 12-h stage as the anchor cell type, the clustering resulted in five main gene modules. We observed that gene module 1 was relatively stable between the 0-h and 12-h stages (Supplementary Fig.&#x000a0;<xref rid="MOESM1" ref-type="media">5</xref>A), exhibiting similar biological processes to those of gene module 0 when 0-h served as the anchor cell type (Supplementary Fig.&#x000a0;<xref rid="MOESM1" ref-type="media">5</xref>B). This observation suggests that they may represent the same gene module, consistently maintaining a stable topological structure and biological function throughout the differentiation process. In contrast, gene module 9, characterized by its enrichment in biological functions related to extracellular matrix and structure organization, was relatively unstable.<fig id="Fig5"><label>Fig.&#x000a0;5</label><caption><p>Gene module stability analysis using Gene2role embeddings. <bold>A</bold> Scatter plot depicting the mean distance and the percentage of genes exclusively found in the anchor cell type (NA%) for seven gene modules in a human glioblastoma dataset, using the 0-h stage as the anchor cell type and comparing against the 12-h stage. <bold>B</bold> Dot plot of the top 5 significant biological processes from the GO analysis for gene modules 0 and 5 in <bold>A</bold>. <bold>C</bold> Scatter plot for twelve gene modules during MEP differentiation, with the Ery_0 stage as the anchor cell type and comparing against the Ery_9 stage, illustrating the mean distance and percent of genes unique to the anchor cell type (NA%). <bold>D</bold> Dot plot for the top 5 significant biological processes from the GO analysis of gene modules 7 and 9 in <bold>C</bold></p></caption><graphic xlink:href="12859_2025_6128_Fig5_HTML" id="MO5"/></fig></p><p id="Par50">To explore gene module stability during erythrocyte differentiation, we established Ery_0 stage as the anchor cell type and identified 12 gene modules. We calculated the average distances and NA% for Ery_3 (Supplementary Fig.&#x000a0;<xref rid="MOESM1" ref-type="media">5</xref>C), Ery_6 (Supplementary Fig.&#x000a0;<xref rid="MOESM1" ref-type="media">5</xref>D), and Ery_9 (Fig.&#x000a0;<xref rid="Fig5" ref-type="fig">5</xref>C) in relation to the Ery_0 stage across the 11 gene modules. We observed that several gene modules, including gene module 9, maintained stable positions throughout the development process. GO analysis indicated that gene module 9 was enriched in biological processes related to erythrocyte differentiation homeostasis, suggesting a continuous role in driving erythrocyte differentiation (Fig.&#x000a0;<xref rid="Fig5" ref-type="fig">5</xref>D). In contrast, gene module 7 experienced significant role changes and was involved in biological processes related to immune regulation, suggesting that its immunomodulatory functions may be diminished during differentiation.</p><p id="Par51">By setting GMP_0 as the anchor cell type and computing the average distances and NA% from Gran_3 stage, we further explored the stability of 11 gene modules during granulocytes differentiation (Supplementary Fig.&#x000a0;<xref rid="MOESM1" ref-type="media">5</xref>E). Similarly, we observed that gene module 2, which was enriched in biological processes related to mononuclear cell differentiation, was unstable during granulocytes differentiation (Supplementary Fig.&#x000a0;<xref rid="MOESM1" ref-type="media">5</xref>F). This observation suggests that roles of genes driving mononuclear cell differentiation has changed during granulocyte differentiation. Gene module 6, which was stable and enriched in fundamental metabolic processes, implies that this module provides essential metabolites during differentiation.</p></sec></sec><sec id="Sec22"><title>Discussion</title><p id="Par52">In this study, we introduced Gene2role, the first gene embedding method that utilizes the topological attributes of genes within gene regulatory networks (GRNs). Our findings demonstrate that Gene2role effectively captures the topological information within GRNs constructed from four distinct data sources. By facilitating the integration of GRNs across various cell states and types, Gene2role enables robust comparative analysis at two levels: first, it identifies genes exhibiting significant topological discrepancies among cell types; secondly, it evaluates the stability of gene modules across two cellular states. It is worth noting that the quality of our graph embeddings heavily depends on the quality of the GRNs. As improved GRN construction methods become available, Gene2role can generate more precise embeddings, enabling a broader range of downstream analyses.</p><p id="Par53">Our analysis of DTGs between two cell types across multiple datasets consistently revealed three gene patterns: those exhibiting significant changes in both expression and topology, those with altered expression but stable topology, and those with stable expression but significant topological changes. These observations suggest a relative independence between changes in gene roles within cellular networks and alterations in their expression level. Notably, genes with stable expression but significant topological changes may undergo functional changes that traditional differential gene expression analyses often overlook. Thus, our method provides a valuable complementary perspective by focusing on topological shifts within GRNs. One limitation of our method is that it identifies only those genes with structural variations that maintain at least one connection in the networks. Consequently, it may miss changes in genes that are embedded in some cell types but absent in others. Future research could focus on inductively quantifying distances for genes selectively connected across different cell types to enhance our comprehension of how gene role changes across cellular contexts.</p><p id="Par54">We examined topological shifts within gene modules to assess their stability across two cellular states. Combined with GO analysis, this stability assessment enables a nuanced understanding of the relationship between the functional dynamics of gene modules and shifts in cellular states. For instance, in analyzing erythrocyte differentiation from the multi-omics dataset, we observed that gene module 9 maintained a low average distance and NA% between Ery_0 and Ery_9, and it was implicated in the promotion of erythrocyte differentiation by GO analysis (Fig.&#x000a0;<xref rid="Fig5" ref-type="fig">5</xref>D). Hence, this gene module may play a stable role in driving erythrocyte differentiation. In our stability analysis of a gene module between two cellular states, we focused on the proximity structures with the anchor cell type. However, a deeper investigation into the proximity information in the non-anchor cell type could reveal proximity-based shifts between cell types. By comprehensively investigating the topological and proximity shifts between cell types, we can further discern the coherence or dysfunction of gene modules, thus providing specific insights into their stability.</p><p id="Par55">Although our method has been tested only on GRNs inferred from single-cell RNA-seq and multi-omics datasets, it is equally applicable to spatial transcriptomics data [<xref ref-type="bibr" rid="CR37">37</xref>]. Recent analyses of spatial transcriptomics have concentrated on inferring spatial domains by integrating expression, spatial, and histological information [<xref ref-type="bibr" rid="CR38">38</xref>, <xref ref-type="bibr" rid="CR39">39</xref>]. These spatial domains can serve as a basis for identifying spatial GRNs as inputs for our method, thereby enabling a deeper understanding of topological variations among GRNs in spatial contexts.</p></sec><sec id="Sec23"><title>Conclusions</title><p id="Par56">We introduced Gene2role, a method that captures the topological information of genes within GRNs and provides insights into gene function changes that may be missed by traditional expression analyses. Our method successfully identified genes with significant topological shifts across various cell types and states, revealing functional dynamics beyond changes in expression. In the future, Gene2role could be extended to analyze biological networks generated by other data types, such as spatial transcriptomics, to further explore gene regulation in diverse biological contexts.</p></sec><sec id="Sec24" sec-type="supplementary-material"><title>Supplementary Information</title><p>
+<supplementary-material content-type="local-data" id="MOESM1"><media xlink:href="12859_2025_6128_MOESM1_ESM.docx"><caption><p>Supplementary material 1 (DOCX 11562 KB)</p></caption></media></supplementary-material></p></sec></body><back><fn-group><fn><p><bold>Publisher's Note</bold></p><p>Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></fn><fn><p>Xin Zeng and Shu Liu have contributed equally to this work.</p></fn></fn-group><ack><title>Acknowledgements</title><p>Computational resources were provided by the supercomputer system SHIROKANE at the Human Genome Center, Institute of Medical Science, the University of Tokyo.</p></ack><notes notes-type="author-contribution"><title>Author contributions</title><p>Conceptualization, X.Z., S.L.; Data Curation, X.Z.; Formal Analysis, X.Z.; Investigation, X.Z., S.L.; Algorithm Optimization, X.Z., S.L., B.L., W.Z., W.X.; Writing &#x02013; Original Draft, X.Z. and S.L.; Writing &#x02013; Review &#x00026; Editing, X.Z., S.L., F.T., and K.N.; Resources, F.T., K.N.; Supervision, F.T. and K.N.</p></notes><notes notes-type="data-availability"><title>Availability of data and materials</title><p>The edgelists of curated networks were downloaded from BEELINE [<xref ref-type="bibr" rid="CR20">20</xref>]. For single-cell RNA-seq data, the count matrix and metadata of human glioblastoma, human PBMC, and human BMMC were collected from GEO databaset (GSE144623, GSE139369). The edgelists generated from multi-omics data were collected from CellOrcle [<xref ref-type="bibr" rid="CR5">5</xref>]. Codes and processed data generated for this project is available on GitHub (<ext-link ext-link-type="uri" xlink:href="https://github.com/liushu2019/Gene2Role">https://github.com/liushu2019/Gene2Role</ext-link>) and Figshare (<ext-link ext-link-type="uri" xlink:href="https://figshare.com/articles/dataset/data/25852915?file=46401100">https://figshare.com/articles/dataset/data/25852915?file=46401100</ext-link>)</p></notes><notes><title>Declarations</title><notes id="FPar1"><title>Ethics approval and consent to participate</title><p id="Par57">Not applicable.</p></notes><notes id="FPar2"><title>Consent for publication</title><p id="Par58">Not applicable.</p></notes><notes id="FPar3" notes-type="COI-statement"><title>Competing interests</title><p id="Par59">The authors declare no competing interests.</p></notes></notes><ref-list id="Bib1"><title>References</title><ref id="CR1"><label>1.</label><citation-alternatives><element-citation id="ec-CR1" publication-type="journal"><person-group person-group-type="author"><name><surname>Emmert-Streib</surname><given-names>F</given-names></name><name><surname>Dehmer</surname><given-names>M</given-names></name><name><surname>Haibe-Kains</surname><given-names>B</given-names></name></person-group><article-title>Gene regulatory networks and their applications: understanding biological and medical problems in terms of networks</article-title><source>Front Cell Dev Biol</source><year>2014</year><pub-id pub-id-type="doi">10.3389/fcell.2014.00038/abstract</pub-id><pub-id pub-id-type="pmid">25364745</pub-id>
+</element-citation><mixed-citation id="mc-CR1" publication-type="journal">Emmert-Streib F, Dehmer M, Haibe-Kains B. Gene regulatory networks and their applications: understanding biological and medical problems in terms of networks. Front Cell Dev Biol. 2014. 10.3389/fcell.2014.00038/abstract.<pub-id pub-id-type="pmid">25364745</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR2"><label>2.</label><citation-alternatives><element-citation id="ec-CR2" publication-type="journal"><person-group person-group-type="author"><name><surname>Akers</surname><given-names>K</given-names></name><name><surname>Murali</surname><given-names>TM</given-names></name></person-group><article-title>Gene regulatory network inference in single-cell biology</article-title><source>Curr Opin Syst Biol</source><year>2021</year><volume>26</volume><fpage>87</fpage><lpage>97</lpage><pub-id pub-id-type="doi">10.1016/j.coisb.2021.04.007</pub-id></element-citation><mixed-citation id="mc-CR2" publication-type="journal">Akers K, Murali TM. Gene regulatory network inference in single-cell biology. Curr Opin Syst Biol. 2021;26:87&#x02013;97.</mixed-citation></citation-alternatives></ref><ref id="CR3"><label>3.</label><citation-alternatives><element-citation id="ec-CR3" publication-type="journal"><person-group person-group-type="author"><name><surname>Nakajima</surname><given-names>N</given-names></name><name><surname>Hayashi</surname><given-names>T</given-names></name><name><surname>Fujiki</surname><given-names>K</given-names></name><name><surname>Shirahige</surname><given-names>K</given-names></name><name><surname>Akiyama</surname><given-names>T</given-names></name><name><surname>Akutsu</surname><given-names>T</given-names></name><etal/></person-group><article-title>Codependency and mutual exclusivity for gene community detection from sparse single-cell transcriptome data</article-title><source>Nucl Acids Res</source><year>2021</year><volume>49</volume><issue>18</issue><fpage>e104</fpage><lpage>e104</lpage><pub-id pub-id-type="doi">10.1093/nar/gkab601</pub-id><pub-id pub-id-type="pmid">34291282</pub-id>
+</element-citation><mixed-citation id="mc-CR3" publication-type="journal">Nakajima N, Hayashi T, Fujiki K, Shirahige K, Akiyama T, Akutsu T, et al. Codependency and mutual exclusivity for gene community detection from sparse single-cell transcriptome data. Nucl Acids Res. 2021;49(18):e104&#x02013;e104.<pub-id pub-id-type="pmid">34291282</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR4"><label>4.</label><citation-alternatives><element-citation id="ec-CR4" publication-type="journal"><person-group person-group-type="author"><name><surname>Badia-i-Mompel</surname><given-names>P</given-names></name><name><surname>Wessels</surname><given-names>L</given-names></name><name><surname>M&#x000fc;ller-Dott</surname><given-names>S</given-names></name><name><surname>Trimbour</surname><given-names>R</given-names></name><name><surname>Ramirez Flores</surname><given-names>RO</given-names></name><name><surname>Argelaguet</surname><given-names>R</given-names></name><etal/></person-group><article-title>Gene regulatory network inference in the era of single-cell multi-omics</article-title><source>Nat Rev Genet</source><year>2023</year><volume>24</volume><issue>11</issue><fpage>739</fpage><lpage>754</lpage><pub-id pub-id-type="doi">10.1038/s41576-023-00618-5</pub-id><pub-id pub-id-type="pmid">37365273</pub-id>
+</element-citation><mixed-citation id="mc-CR4" publication-type="journal">Badia-i-Mompel P, Wessels L, M&#x000fc;ller-Dott S, Trimbour R, Ramirez Flores RO, Argelaguet R, et al. Gene regulatory network inference in the era of single-cell multi-omics. Nat Rev Genet. 2023;24(11):739&#x02013;54.<pub-id pub-id-type="pmid">37365273</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR5"><label>5.</label><citation-alternatives><element-citation id="ec-CR5" publication-type="journal"><person-group person-group-type="author"><name><surname>Kamimoto</surname><given-names>K</given-names></name><name><surname>Stringa</surname><given-names>B</given-names></name><name><surname>Hoffmann</surname><given-names>CM</given-names></name><name><surname>Jindal</surname><given-names>K</given-names></name><name><surname>Solnica-Krezel</surname><given-names>L</given-names></name><name><surname>Morris</surname><given-names>SA</given-names></name></person-group><article-title>Dissecting cell identity via network inference and in silico gene perturbation</article-title><source>Nature</source><year>2023</year><volume>614</volume><issue>7949</issue><fpage>742</fpage><lpage>751</lpage><pub-id pub-id-type="doi">10.1038/s41586-022-05688-9</pub-id><pub-id pub-id-type="pmid">36755098</pub-id>
+</element-citation><mixed-citation id="mc-CR5" publication-type="journal">Kamimoto K, Stringa B, Hoffmann CM, Jindal K, Solnica-Krezel L, Morris SA. Dissecting cell identity via network inference and in silico gene perturbation. Nature. 2023;614(7949):742&#x02013;51.<pub-id pub-id-type="pmid">36755098</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR6"><label>6.</label><citation-alternatives><element-citation id="ec-CR6" publication-type="journal"><person-group person-group-type="author"><name><surname>Aibar</surname><given-names>S</given-names></name><name><surname>Gonz&#x000e1;lez-Blas</surname><given-names>CB</given-names></name><name><surname>Moerman</surname><given-names>T</given-names></name><name><surname>Huynh-Thu</surname><given-names>VA</given-names></name><name><surname>Imrichova</surname><given-names>H</given-names></name><name><surname>Hulselmans</surname><given-names>G</given-names></name><etal/></person-group><article-title>SCENIC: single-cell regulatory network inference and clustering</article-title><source>Nat Methods</source><year>2017</year><volume>14</volume><issue>11</issue><fpage>1083</fpage><lpage>1086</lpage><pub-id pub-id-type="doi">10.1038/nmeth.4463</pub-id><pub-id pub-id-type="pmid">28991892</pub-id>
+</element-citation><mixed-citation id="mc-CR6" publication-type="journal">Aibar S, Gonz&#x000e1;lez-Blas CB, Moerman T, Huynh-Thu VA, Imrichova H, Hulselmans G, et al. SCENIC: single-cell regulatory network inference and clustering. Nat Methods. 2017;14(11):1083&#x02013;6.<pub-id pub-id-type="pmid">28991892</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR7"><label>7.</label><mixed-citation publication-type="other">Zeng X, Gyoja F, Cui Y, Loza M, Kusakabe TG, Nakai K. Comparative single-cell transcriptomic analysis reveals key differentiation drivers and potential origin of vertebrate retina. bioRxiv; 2023. 10.1101/2023.12.03.569795.</mixed-citation></ref><ref id="CR8"><label>8.</label><citation-alternatives><element-citation id="ec-CR8" publication-type="journal"><person-group person-group-type="author"><name><surname>Langfelder</surname><given-names>P</given-names></name><name><surname>Horvath</surname><given-names>S</given-names></name></person-group><article-title>WGCNA: an R package for weighted correlation network analysis</article-title><source>BMC Bioinform</source><year>2008</year><volume>9</volume><issue>1</issue><fpage>559</fpage><pub-id pub-id-type="doi">10.1186/1471-2105-9-559</pub-id></element-citation><mixed-citation id="mc-CR8" publication-type="journal">Langfelder P, Horvath S. WGCNA: an R package for weighted correlation network analysis. BMC Bioinform. 2008;9(1):559.</mixed-citation></citation-alternatives></ref><ref id="CR9"><label>9.</label><citation-alternatives><element-citation id="ec-CR9" publication-type="journal"><person-group person-group-type="author"><name><surname>Lemoine</surname><given-names>GG</given-names></name><name><surname>Scott-Boyer</surname><given-names>MP</given-names></name><name><surname>Ambroise</surname><given-names>B</given-names></name><name><surname>P&#x000e9;rin</surname><given-names>O</given-names></name><name><surname>Droit</surname><given-names>A</given-names></name></person-group><article-title>GWENA: gene co-expression networks analysis and extended modules characterization in a single Bioconductor package</article-title><source>BMC Bioinform</source><year>2021</year><volume>22</volume><issue>1</issue><fpage>267</fpage><pub-id pub-id-type="doi">10.1186/s12859-021-04179-4</pub-id></element-citation><mixed-citation id="mc-CR9" publication-type="journal">Lemoine GG, Scott-Boyer MP, Ambroise B, P&#x000e9;rin O, Droit A. GWENA: gene co-expression networks analysis and extended modules characterization in a single Bioconductor package. BMC Bioinform. 2021;22(1):267.</mixed-citation></citation-alternatives></ref><ref id="CR10"><label>10.</label><citation-alternatives><element-citation id="ec-CR10" publication-type="journal"><person-group person-group-type="author"><name><surname>Duren</surname><given-names>Z</given-names></name><name><surname>Lu</surname><given-names>WS</given-names></name><name><surname>Arthur</surname><given-names>JG</given-names></name><name><surname>Shah</surname><given-names>P</given-names></name><name><surname>Xin</surname><given-names>J</given-names></name><name><surname>Meschi</surname><given-names>F</given-names></name><etal/></person-group><article-title>Sc-compReg enables the comparison of gene regulatory networks between conditions using single-cell data</article-title><source>Nat Commun</source><year>2021</year><volume>12</volume><issue>1</issue><fpage>4763</fpage><pub-id pub-id-type="doi">10.1038/s41467-021-25089-2</pub-id><pub-id pub-id-type="pmid">34362918</pub-id>
+</element-citation><mixed-citation id="mc-CR10" publication-type="journal">Duren Z, Lu WS, Arthur JG, Shah P, Xin J, Meschi F, et al. Sc-compReg enables the comparison of gene regulatory networks between conditions using single-cell data. Nat Commun. 2021;12(1):4763.<pub-id pub-id-type="pmid">34362918</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR11"><label>11.</label><citation-alternatives><element-citation id="ec-CR11" publication-type="journal"><person-group person-group-type="author"><name><surname>Wang</surname><given-names>J</given-names></name><name><surname>Ma</surname><given-names>A</given-names></name><name><surname>Ma</surname><given-names>Q</given-names></name><name><surname>Xu</surname><given-names>D</given-names></name><name><surname>Joshi</surname><given-names>T</given-names></name></person-group><article-title>Inductive inference of gene regulatory network using supervised and semi-supervised graph neural networks</article-title><source>Comput Struct Biotechnol J</source><year>2020</year><volume>18</volume><fpage>3335</fpage><lpage>3343</lpage><pub-id pub-id-type="doi">10.1016/j.csbj.2020.10.022</pub-id><pub-id pub-id-type="pmid">33294129</pub-id>
+</element-citation><mixed-citation id="mc-CR11" publication-type="journal">Wang J, Ma A, Ma Q, Xu D, Joshi T. Inductive inference of gene regulatory network using supervised and semi-supervised graph neural networks. Comput Struct Biotechnol J. 2020;18:3335&#x02013;43.<pub-id pub-id-type="pmid">33294129</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR12"><label>12.</label><citation-alternatives><element-citation id="ec-CR12" publication-type="journal"><person-group person-group-type="author"><name><surname>Wu</surname><given-names>YH</given-names></name><name><surname>Huang</surname><given-names>YA</given-names></name><name><surname>Li</surname><given-names>JQ</given-names></name><name><surname>You</surname><given-names>ZH</given-names></name><name><surname>Hu</surname><given-names>PW</given-names></name><name><surname>Hu</surname><given-names>L</given-names></name><etal/></person-group><article-title>Knowledge graph embedding for profiling the interaction between transcription factors and their target genes</article-title><source>PLoS Comput Biol</source><year>2023</year><volume>19</volume><issue>6</issue><fpage>1011207</fpage><pub-id pub-id-type="doi">10.1371/journal.pcbi.1011207</pub-id></element-citation><mixed-citation id="mc-CR12" publication-type="journal">Wu YH, Huang YA, Li JQ, You ZH, Hu PW, Hu L, et al. Knowledge graph embedding for profiling the interaction between transcription factors and their target genes. PLoS Comput Biol. 2023;19(6):1011207.</mixed-citation></citation-alternatives></ref><ref id="CR13"><label>13.</label><citation-alternatives><element-citation id="ec-CR13" publication-type="journal"><person-group person-group-type="author"><name><surname>Gao</surname><given-names>Z</given-names></name><name><surname>Su</surname><given-names>Y</given-names></name><name><surname>Xia</surname><given-names>J</given-names></name><name><surname>Cao</surname><given-names>RF</given-names></name><name><surname>Ding</surname><given-names>Y</given-names></name><name><surname>Zheng</surname><given-names>CH</given-names></name><etal/></person-group><article-title>DeepFGRN: inference of gene regulatory network with regulation type based on directed graph embedding</article-title><source>Brief Bioinform</source><year>2024</year><volume>25</volume><issue>3</issue><fpage>143</fpage><pub-id pub-id-type="doi">10.1093/bib/bbae143</pub-id></element-citation><mixed-citation id="mc-CR13" publication-type="journal">Gao Z, Su Y, Xia J, Cao RF, Ding Y, Zheng CH, et al. DeepFGRN: inference of gene regulatory network with regulation type based on directed graph embedding. Brief Bioinform. 2024;25(3):143.</mixed-citation></citation-alternatives></ref><ref id="CR14"><label>14.</label><mixed-citation publication-type="other">Ribeiro LFR, Savarese PHP, Figueiredo DR. struc2vec: learning node representations from structural identity. In: Proceedings of the 23rd ACM SIGKDD international conference on knowledge discovery and data mining; 2017. pp. 385&#x02013;94.</mixed-citation></ref><ref id="CR15"><label>15.</label><mixed-citation publication-type="other">Liu S, Toriumi F, Zeng X, Nishiguchi M, Nakai K. SignedS2V: structural embedding method for signed networks. In: Cherifi H, Mantegna RN, Rocha LM, Cherifi C, Miccich&#x000e8; S, editors. Complex networks and their applications XI. Studies in computational intelligence, vol. 1077. Cham: Springer; 2023. pp. 337&#x02013;49. 10.1007/978-3-031-21127-0_28.</mixed-citation></ref><ref id="CR16"><label>16.</label><citation-alternatives><element-citation id="ec-CR16" publication-type="journal"><person-group person-group-type="author"><name><surname>Krumsiek</surname><given-names>J</given-names></name><name><surname>Marr</surname><given-names>C</given-names></name><name><surname>Schroeder</surname><given-names>T</given-names></name><name><surname>Theis</surname><given-names>FJ</given-names></name></person-group><article-title>Hierarchical differentiation of myeloid progenitors is encoded in the transcription factor network</article-title><source>PLoS ONE</source><year>2011</year><volume>6</volume><issue>8</issue><fpage>e22649</fpage><pub-id pub-id-type="doi">10.1371/journal.pone.0022649</pub-id><pub-id pub-id-type="pmid">21853041</pub-id>
+</element-citation><mixed-citation id="mc-CR16" publication-type="journal">Krumsiek J, Marr C, Schroeder T, Theis FJ. Hierarchical differentiation of myeloid progenitors is encoded in the transcription factor network. PLoS ONE. 2011;6(8):e22649.<pub-id pub-id-type="pmid">21853041</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR17"><label>17.</label><citation-alternatives><element-citation id="ec-CR17" publication-type="journal"><person-group person-group-type="author"><name><surname>Giacomantonio</surname><given-names>CE</given-names></name><name><surname>Goodhill</surname><given-names>GJ</given-names></name></person-group><article-title>A Boolean model of the gene regulatory network underlying mammalian cortical area development</article-title><source>PLoS Comput Biol</source><year>2010</year><volume>6</volume><issue>9</issue><fpage>e1000936</fpage><pub-id pub-id-type="doi">10.1371/journal.pcbi.1000936</pub-id><pub-id pub-id-type="pmid">20862356</pub-id>
+</element-citation><mixed-citation id="mc-CR17" publication-type="journal">Giacomantonio CE, Goodhill GJ. A Boolean model of the gene regulatory network underlying mammalian cortical area development. PLoS Comput Biol. 2010;6(9):e1000936.<pub-id pub-id-type="pmid">20862356</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR18"><label>18.</label><citation-alternatives><element-citation id="ec-CR18" publication-type="journal"><person-group person-group-type="author"><name><surname>Lovrics</surname><given-names>A</given-names></name><name><surname>Gao</surname><given-names>Y</given-names></name><name><surname>Juh&#x000e1;sz</surname><given-names>B</given-names></name><name><surname>Bock</surname><given-names>I</given-names></name><name><surname>Byrne</surname><given-names>HM</given-names></name><name><surname>Dinny&#x000e9;s</surname><given-names>A</given-names></name><etal/></person-group><article-title>Boolean modelling reveals new regulatory connections between transcription factors orchestrating the development of the ventral spinal cord</article-title><source>PLoS ONE</source><year>2014</year><volume>9</volume><issue>11</issue><fpage>e111430</fpage><pub-id pub-id-type="doi">10.1371/journal.pone.0111430</pub-id><pub-id pub-id-type="pmid">25398016</pub-id>
+</element-citation><mixed-citation id="mc-CR18" publication-type="journal">Lovrics A, Gao Y, Juh&#x000e1;sz B, Bock I, Byrne HM, Dinny&#x000e9;s A, et al. Boolean modelling reveals new regulatory connections between transcription factors orchestrating the development of the ventral spinal cord. PLoS ONE. 2014;9(11):e111430.<pub-id pub-id-type="pmid">25398016</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR19"><label>19.</label><citation-alternatives><element-citation id="ec-CR19" publication-type="journal"><person-group person-group-type="author"><name><surname>R&#x000ed;os</surname><given-names>O</given-names></name><name><surname>Frias</surname><given-names>S</given-names></name><name><surname>Rodr&#x000ed;guez</surname><given-names>A</given-names></name><name><surname>Kofman</surname><given-names>S</given-names></name><name><surname>Merchant</surname><given-names>H</given-names></name><name><surname>Torres</surname><given-names>L</given-names></name><etal/></person-group><article-title>A Boolean network model of human gonadal sex determination</article-title><source>Theor Biol Med Model</source><year>2015</year><volume>12</volume><issue>1</issue><fpage>26</fpage><pub-id pub-id-type="doi">10.1186/s12976-015-0023-0</pub-id><pub-id pub-id-type="pmid">26573569</pub-id>
+</element-citation><mixed-citation id="mc-CR19" publication-type="journal">R&#x000ed;os O, Frias S, Rodr&#x000ed;guez A, Kofman S, Merchant H, Torres L, et al. A Boolean network model of human gonadal sex determination. Theor Biol Med Model. 2015;12(1):26.<pub-id pub-id-type="pmid">26573569</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR20"><label>20.</label><citation-alternatives><element-citation id="ec-CR20" publication-type="journal"><person-group person-group-type="author"><name><surname>Pratapa</surname><given-names>A</given-names></name><name><surname>Jalihal</surname><given-names>AP</given-names></name><name><surname>Law</surname><given-names>JN</given-names></name><name><surname>Bharadwaj</surname><given-names>A</given-names></name><name><surname>Murali</surname><given-names>TM</given-names></name></person-group><article-title>Benchmarking algorithms for gene regulatory network inference from single-cell transcriptomic data</article-title><source>Nat Methods</source><year>2020</year><volume>17</volume><issue>2</issue><fpage>147</fpage><lpage>154</lpage><pub-id pub-id-type="doi">10.1038/s41592-019-0690-6</pub-id><pub-id pub-id-type="pmid">31907445</pub-id>
+</element-citation><mixed-citation id="mc-CR20" publication-type="journal">Pratapa A, Jalihal AP, Law JN, Bharadwaj A, Murali TM. Benchmarking algorithms for gene regulatory network inference from single-cell transcriptomic data. Nat Methods. 2020;17(2):147&#x02013;54.<pub-id pub-id-type="pmid">31907445</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR21"><label>21.</label><citation-alternatives><element-citation id="ec-CR21" publication-type="journal"><person-group person-group-type="author"><name><surname>Granja</surname><given-names>JM</given-names></name><name><surname>Klemm</surname><given-names>S</given-names></name><name><surname>McGinnis</surname><given-names>LM</given-names></name><name><surname>Kathiria</surname><given-names>AS</given-names></name><name><surname>Mezger</surname><given-names>A</given-names></name><name><surname>Corces</surname><given-names>MR</given-names></name><etal/></person-group><article-title>Single-cell multiomic analysis identifies regulatory programs in mixed-phenotype acute leukemia</article-title><source>Nat Biotechnol</source><year>2019</year><volume>37</volume><issue>12</issue><fpage>1458</fpage><lpage>1465</lpage><pub-id pub-id-type="doi">10.1038/s41587-019-0332-7</pub-id><pub-id pub-id-type="pmid">31792411</pub-id>
+</element-citation><mixed-citation id="mc-CR21" publication-type="journal">Granja JM, Klemm S, McGinnis LM, Kathiria AS, Mezger A, Corces MR, et al. Single-cell multiomic analysis identifies regulatory programs in mixed-phenotype acute leukemia. Nat Biotechnol. 2019;37(12):1458&#x02013;65.<pub-id pub-id-type="pmid">31792411</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR22"><label>22.</label><citation-alternatives><element-citation id="ec-CR22" publication-type="journal"><person-group person-group-type="author"><name><surname>Paul</surname><given-names>F</given-names></name><name><surname>Arkin</surname><given-names>Y</given-names></name><name><surname>Giladi</surname><given-names>A</given-names></name><name><surname>Jaitin</surname><given-names>DA</given-names></name><name><surname>Kenigsberg</surname><given-names>E</given-names></name><name><surname>Keren-Shaul</surname><given-names>H</given-names></name><etal/></person-group><article-title>Transcriptional heterogeneity and lineage commitment in myeloid progenitors</article-title><source>Cell</source><year>2015</year><volume>163</volume><issue>7</issue><fpage>1663</fpage><lpage>1677</lpage><pub-id pub-id-type="doi">10.1016/j.cell.2015.11.013</pub-id><pub-id pub-id-type="pmid">26627738</pub-id>
+</element-citation><mixed-citation id="mc-CR22" publication-type="journal">Paul F, Arkin Y, Giladi A, Jaitin DA, Kenigsberg E, Keren-Shaul H, et al. Transcriptional heterogeneity and lineage commitment in myeloid progenitors. Cell. 2015;163(7):1663&#x02013;77.<pub-id pub-id-type="pmid">26627738</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR23"><label>23.</label><citation-alternatives><element-citation id="ec-CR23" publication-type="journal"><person-group person-group-type="author"><name><surname>Cusanovich</surname><given-names>DA</given-names></name><name><surname>Hill</surname><given-names>AJ</given-names></name><name><surname>Aghamirzaie</surname><given-names>D</given-names></name><name><surname>Daza</surname><given-names>RM</given-names></name><name><surname>Pliner</surname><given-names>HA</given-names></name><name><surname>Berletch</surname><given-names>JB</given-names></name><etal/></person-group><article-title>A single-cell atlas of in vivo mammalian chromatin accessibility</article-title><source>Cell</source><year>2018</year><volume>174</volume><issue>5</issue><fpage>1309</fpage><lpage>1324.e18</lpage><pub-id pub-id-type="doi">10.1016/j.cell.2018.06.052</pub-id><pub-id pub-id-type="pmid">30078704</pub-id>
+</element-citation><mixed-citation id="mc-CR23" publication-type="journal">Cusanovich DA, Hill AJ, Aghamirzaie D, Daza RM, Pliner HA, Berletch JB, et al. A single-cell atlas of in vivo mammalian chromatin accessibility. Cell. 2018;174(5):1309-1324.e18.<pub-id pub-id-type="pmid">30078704</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR24"><label>24.</label><citation-alternatives><element-citation id="ec-CR24" publication-type="journal"><person-group person-group-type="author"><name><surname>Barab&#x000e1;si</surname><given-names>AL</given-names></name><name><surname>Oltvai</surname><given-names>ZN</given-names></name></person-group><article-title>Network biology: understanding the cell&#x02019;s functional organization</article-title><source>Nat Rev Genet</source><year>2004</year><volume>5</volume><issue>2</issue><fpage>101</fpage><lpage>113</lpage><pub-id pub-id-type="doi">10.1038/nrg1272</pub-id><pub-id pub-id-type="pmid">14735121</pub-id>
+</element-citation><mixed-citation id="mc-CR24" publication-type="journal">Barab&#x000e1;si AL, Oltvai ZN. Network biology: understanding the cell&#x02019;s functional organization. Nat Rev Genet. 2004;5(2):101&#x02013;13.<pub-id pub-id-type="pmid">14735121</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR25"><label>25.</label><mixed-citation publication-type="other">Salvador S, Chan P. FastDTW: toward accurate dynamic time warping in linear time and space. 2007.</mixed-citation></ref><ref id="CR26"><label>26.</label><mixed-citation publication-type="other">Mikolov T, Chen K, Corrado G, Dean J. Efficient estimation of word representations in vector space. 2013. <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/1301.3781">http://arxiv.org/abs/1301.3781</ext-link>.</mixed-citation></ref><ref id="CR27"><label>27.</label><citation-alternatives><element-citation id="ec-CR27" publication-type="journal"><person-group person-group-type="author"><name><surname>Hao</surname><given-names>Y</given-names></name><name><surname>Hao</surname><given-names>S</given-names></name><name><surname>Andersen-Nissen</surname><given-names>E</given-names></name><name><surname>Mauck</surname><given-names>WM</given-names></name><name><surname>Zheng</surname><given-names>S</given-names></name><name><surname>Butler</surname><given-names>A</given-names></name><etal/></person-group><article-title>Integrated analysis of multimodal single-cell data</article-title><source>Cell</source><year>2021</year><volume>184</volume><issue>13</issue><fpage>3573</fpage><lpage>3587</lpage><pub-id pub-id-type="doi">10.1016/j.cell.2021.04.048</pub-id><pub-id pub-id-type="pmid">34062119</pub-id>
+</element-citation><mixed-citation id="mc-CR27" publication-type="journal">Hao Y, Hao S, Andersen-Nissen E, Mauck WM, Zheng S, Butler A, et al. Integrated analysis of multimodal single-cell data. Cell. 2021;184(13):3573&#x02013;87.<pub-id pub-id-type="pmid">34062119</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR28"><label>28.</label><citation-alternatives><element-citation id="ec-CR28" publication-type="journal"><person-group person-group-type="author"><name><surname>Yu</surname><given-names>G</given-names></name><name><surname>Wang</surname><given-names>LG</given-names></name><name><surname>Han</surname><given-names>Y</given-names></name><name><surname>He</surname><given-names>QY</given-names></name></person-group><article-title>clusterProfiler: an R package for comparing biological themes among gene clusters</article-title><source>OMICS J Integr Biol.</source><year>2012</year><volume>16</volume><issue>5</issue><fpage>284</fpage><lpage>287</lpage><pub-id pub-id-type="doi">10.1089/omi.2011.0118</pub-id></element-citation><mixed-citation id="mc-CR28" publication-type="journal">Yu G, Wang LG, Han Y, He QY. clusterProfiler: an R package for comparing biological themes among gene clusters. OMICS J Integr Biol. 2012;16(5):284&#x02013;7.</mixed-citation></citation-alternatives></ref><ref id="CR29"><label>29.</label><mixed-citation publication-type="other">Chen Y, Qian T, Liu H, Sun K. &#x0201c;Bridge&#x0201d;: enhanced signed directed network embedding. In: Proceedings of the 27th ACM international conference on information and knowledge management. Torino: ACM; 2018. pp. 773&#x02013;82. 10.1145/3269206.3271738.</mixed-citation></ref><ref id="CR30"><label>30.</label><citation-alternatives><element-citation id="ec-CR30" publication-type="journal"><person-group person-group-type="author"><name><surname>Huang</surname><given-names>J</given-names></name><name><surname>Shen</surname><given-names>H</given-names></name><name><surname>Hou</surname><given-names>L</given-names></name><name><surname>Cheng</surname><given-names>X</given-names></name></person-group><article-title>SDGNN: learning node representation for signed directed networks</article-title><source>AAAI</source><year>2021</year><volume>35</volume><issue>1</issue><fpage>196</fpage><lpage>203</lpage><pub-id pub-id-type="doi">10.1609/aaai.v35i1.16093</pub-id></element-citation><mixed-citation id="mc-CR30" publication-type="journal">Huang J, Shen H, Hou L, Cheng X. SDGNN: learning node representation for signed directed networks. AAAI. 2021;35(1):196&#x02013;203.</mixed-citation></citation-alternatives></ref><ref id="CR31"><label>31.</label><mixed-citation publication-type="other">Kipf TN, Welling M. Semi-supervised classification with graph convolutional networks. 2017. <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/1609.02907">http://arxiv.org/abs/1609.02907</ext-link>.</mixed-citation></ref><ref id="CR32"><label>32.</label><citation-alternatives><element-citation id="ec-CR32" publication-type="journal"><person-group person-group-type="author"><name><surname>Vandenbon</surname><given-names>A</given-names></name></person-group><article-title>Evaluation of critical data processing steps for reliable prediction of gene co-expression from large collections of RNA-seq data</article-title><source>PLoS ONE</source><year>2022</year><volume>17</volume><issue>1</issue><fpage>e0263344</fpage><pub-id pub-id-type="doi">10.1371/journal.pone.0263344</pub-id><pub-id pub-id-type="pmid">35089979</pub-id>
+</element-citation><mixed-citation id="mc-CR32" publication-type="journal">Vandenbon A. Evaluation of critical data processing steps for reliable prediction of gene co-expression from large collections of RNA-seq data. PLoS ONE. 2022;17(1):e0263344.<pub-id pub-id-type="pmid">35089979</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR33"><label>33.</label><citation-alternatives><element-citation id="ec-CR33" publication-type="journal"><person-group person-group-type="author"><name><surname>Algabri</surname><given-names>YA</given-names></name><name><surname>Li</surname><given-names>L</given-names></name><name><surname>Liu</surname><given-names>ZP</given-names></name></person-group><article-title>scGENA: a single-cell gene coexpression network analysis framework for clustering cell types and revealing biological mechanisms</article-title><source>Bioengineering</source><year>2022</year><volume>9</volume><issue>8</issue><fpage>353</fpage><pub-id pub-id-type="doi">10.3390/bioengineering9080353</pub-id><pub-id pub-id-type="pmid">36004879</pub-id>
+</element-citation><mixed-citation id="mc-CR33" publication-type="journal">Algabri YA, Li L, Liu ZP. scGENA: a single-cell gene coexpression network analysis framework for clustering cell types and revealing biological mechanisms. Bioengineering. 2022;9(8):353.<pub-id pub-id-type="pmid">36004879</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR34"><label>34.</label><citation-alternatives><element-citation id="ec-CR34" publication-type="journal"><person-group person-group-type="author"><name><surname>Wang</surname><given-names>CC</given-names></name><name><surname>Hueng</surname><given-names>DY</given-names></name><name><surname>Huang</surname><given-names>AF</given-names></name><name><surname>Chen</surname><given-names>WL</given-names></name><name><surname>Huang</surname><given-names>SM</given-names></name><name><surname>Yi-Hsin</surname><given-names>CJ</given-names></name></person-group><article-title>CD164 regulates proliferation, progression, and invasion of human glioblastoma cells</article-title><source>Oncotarget</source><year>2019</year><volume>10</volume><issue>21</issue><fpage>2041</fpage><lpage>2054</lpage><pub-id pub-id-type="doi">10.18632/oncotarget.26724</pub-id><pub-id pub-id-type="pmid">31007847</pub-id>
+</element-citation><mixed-citation id="mc-CR34" publication-type="journal">Wang CC, Hueng DY, Huang AF, Chen WL, Huang SM, Yi-Hsin CJ. CD164 regulates proliferation, progression, and invasion of human glioblastoma cells. Oncotarget. 2019;10(21):2041&#x02013;54.<pub-id pub-id-type="pmid">31007847</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR35"><label>35.</label><citation-alternatives><element-citation id="ec-CR35" publication-type="journal"><person-group person-group-type="author"><name><surname>Fujiwara</surname><given-names>Y</given-names></name><name><surname>Browne</surname><given-names>CP</given-names></name><name><surname>Cunniff</surname><given-names>K</given-names></name><name><surname>Goff</surname><given-names>SC</given-names></name><name><surname>Orkin</surname><given-names>SH</given-names></name></person-group><article-title>Arrested development of embryonic red cell precursors in mouse embryos lacking transcription factor GATA-1</article-title><source>Proc Natl Acad Sci USA</source><year>1996</year><volume>93</volume><issue>22</issue><fpage>12355</fpage><lpage>12358</lpage><pub-id pub-id-type="doi">10.1073/pnas.93.22.12355</pub-id><pub-id pub-id-type="pmid">8901585</pub-id>
+</element-citation><mixed-citation id="mc-CR35" publication-type="journal">Fujiwara Y, Browne CP, Cunniff K, Goff SC, Orkin SH. Arrested development of embryonic red cell precursors in mouse embryos lacking transcription factor GATA-1. Proc Natl Acad Sci USA. 1996;93(22):12355&#x02013;8.<pub-id pub-id-type="pmid">8901585</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR36"><label>36.</label><citation-alternatives><element-citation id="ec-CR36" publication-type="journal"><person-group person-group-type="author"><name><surname>Gu</surname><given-names>D</given-names></name><name><surname>Zhou</surname><given-names>F</given-names></name><name><surname>You</surname><given-names>H</given-names></name><name><surname>Gao</surname><given-names>J</given-names></name><name><surname>Kang</surname><given-names>T</given-names></name><name><surname>Dixit</surname><given-names>D</given-names></name><etal/></person-group><article-title>Sterol regulatory element-binding protein 2 maintains glioblastoma stem cells by keeping the balance between cholesterol biosynthesis and uptake</article-title><source>Neuro Oncol</source><year>2023</year><volume>25</volume><issue>9</issue><fpage>1578</fpage><lpage>1591</lpage><pub-id pub-id-type="doi">10.1093/neuonc/noad060</pub-id><pub-id pub-id-type="pmid">36934350</pub-id>
+</element-citation><mixed-citation id="mc-CR36" publication-type="journal">Gu D, Zhou F, You H, Gao J, Kang T, Dixit D, et al. Sterol regulatory element-binding protein 2 maintains glioblastoma stem cells by keeping the balance between cholesterol biosynthesis and uptake. Neuro Oncol. 2023;25(9):1578&#x02013;91.<pub-id pub-id-type="pmid">36934350</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR37"><label>37.</label><citation-alternatives><element-citation id="ec-CR37" publication-type="journal"><person-group person-group-type="author"><name><surname>Larsson</surname><given-names>L</given-names></name><name><surname>Fris&#x000e9;n</surname><given-names>J</given-names></name><name><surname>Lundeberg</surname><given-names>J</given-names></name></person-group><article-title>Spatially resolved transcriptomics adds a new dimension to genomics</article-title><source>Nat Methods</source><year>2021</year><volume>18</volume><issue>1</issue><fpage>15</fpage><lpage>18</lpage><pub-id pub-id-type="doi">10.1038/s41592-020-01038-7</pub-id><pub-id pub-id-type="pmid">33408402</pub-id>
+</element-citation><mixed-citation id="mc-CR37" publication-type="journal">Larsson L, Fris&#x000e9;n J, Lundeberg J. Spatially resolved transcriptomics adds a new dimension to genomics. Nat Methods. 2021;18(1):15&#x02013;8.<pub-id pub-id-type="pmid">33408402</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR38"><label>38.</label><citation-alternatives><element-citation id="ec-CR38" publication-type="journal"><person-group person-group-type="author"><name><surname>Long</surname><given-names>Y</given-names></name><name><surname>Ang</surname><given-names>KS</given-names></name><name><surname>Li</surname><given-names>M</given-names></name><name><surname>Chong</surname><given-names>KLK</given-names></name><name><surname>Sethi</surname><given-names>R</given-names></name><name><surname>Zhong</surname><given-names>C</given-names></name><etal/></person-group><article-title>Spatially informed clustering, integration, and deconvolution of spatial transcriptomics with GraphST</article-title><source>Nat Commun</source><year>2023</year><volume>14</volume><issue>1</issue><fpage>1155</fpage><pub-id pub-id-type="doi">10.1038/s41467-023-36796-3</pub-id><pub-id pub-id-type="pmid">36859400</pub-id>
+</element-citation><mixed-citation id="mc-CR38" publication-type="journal">Long Y, Ang KS, Li M, Chong KLK, Sethi R, Zhong C, et al. Spatially informed clustering, integration, and deconvolution of spatial transcriptomics with GraphST. Nat Commun. 2023;14(1):1155.<pub-id pub-id-type="pmid">36859400</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR39"><label>39.</label><mixed-citation publication-type="other">Yang Y, Cui Y, Zeng X, Zhang Y, Loza M, Park SJ, et al. STAIG: spatial transcriptomics analysis via image-aided graph contrastive learning for domain exploration and alignment-free integration. Bioinformatics. 2023. 10.1101/2023.12.18.572279.</mixed-citation></ref></ref-list></back></article>

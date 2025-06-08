@@ -1,0 +1,892 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Sci Rep</journal-id><journal-id journal-id-type="iso-abbrev">Sci Rep</journal-id><journal-title-group><journal-title>Scientific Reports</journal-title></journal-title-group><issn pub-type="epub">2045-2322</issn><publisher><publisher-name>Nature Publishing Group UK</publisher-name><publisher-loc>London</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">40188207</article-id><article-id pub-id-type="pmc">PMC11972291</article-id><article-id pub-id-type="publisher-id">96568</article-id><article-id pub-id-type="doi">10.1038/s41598-025-96568-5</article-id><article-categories><subj-group subj-group-type="heading"><subject>Article</subject></subj-group></article-categories><title-group><article-title>Service recommendation method based on text view and interaction view</article-title></title-group><contrib-group><contrib contrib-type="author" corresp="yes"><name><surname>Yu</surname><given-names>Ting</given-names></name><address><email>yuting@jxnhu.edu.cn</email></address><xref ref-type="aff" rid="Aff1"/></contrib><contrib contrib-type="author"><name><surname>Wang</surname><given-names>Yaqi</given-names></name><xref ref-type="aff" rid="Aff1"/></contrib><contrib contrib-type="author"><name><surname>Cheng</surname><given-names>Fangying</given-names></name><xref ref-type="aff" rid="Aff1"/></contrib><contrib contrib-type="author"><name><surname>Liang</surname><given-names>Tian</given-names></name><xref ref-type="aff" rid="Aff1"/></contrib><contrib contrib-type="author"><name><surname>Liu</surname><given-names>Hongbing</given-names></name><xref ref-type="aff" rid="Aff1"/></contrib><aff id="Aff1">School of Information Engineering, Jiaxing Nanhu University, Jiaxing, People&#x02019;s Republic of China </aff></contrib-group><pub-date pub-type="epub"><day>5</day><month>4</month><year>2025</year></pub-date><pub-date pub-type="pmc-release"><day>5</day><month>4</month><year>2025</year></pub-date><pub-date pub-type="collection"><year>2025</year></pub-date><volume>15</volume><elocation-id>11679</elocation-id><history><date date-type="received"><day>9</day><month>2</month><year>2025</year></date><date date-type="accepted"><day>28</day><month>3</month><year>2025</year></date></history><permissions><copyright-statement>&#x000a9; The Author(s) 2025</copyright-statement><copyright-year>2025</copyright-year><license><ali:license_ref specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p><bold>Open Access</bold> This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article&#x02019;s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article&#x02019;s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link>.</license-p></license></permissions><abstract id="Abs1"><p id="Par1">With the increasing prosperity of web service-sharing platforms, more and more software developers are integrating and reusing Web services when developing applications. This approach not only meets the needs of developers but also is cost-effective and widely used in the field of software development. Usually, software developers can browse, evaluate, and select corresponding Web services from a web service-sharing platform to create various applications with rich functionality. However, a large number of candidate Web services have placed a heavy burden on the selection decisions of software developers. Existing web service recommendation systems often face two challenges. Firstly, developers discover services by inputting development requirements, but the user&#x02019;s input is arbitrary and can not fully reflect the user&#x02019;s intention. Secondly, the application service interaction record is too sparse, reaching 99.9%, making it particularly difficult to extract services that meet the requirements. To address the above challenges, in this paper, we propose a service recommendation method based on text and interaction views (SRTI). Firstly, SRTI employs graph neural network algorithms to deeply mine the historical records, extract the features of applications and services, and calculate their preferences. Secondly, SRTI uses Transformer to analysis develop requirements and uses fully connected neural networks to deeply mine the matching degree between candidate services and development requirements. Finally, we integrate the above two to obtain the final service list. Extensive experiments on real-world datasets have shown that SRTI outperforms several state-of-the-art methods in service recommendation.</p></abstract><kwd-group kwd-group-type="npg-subject"><title>Subject terms</title><kwd>Engineering</kwd><kwd>Mathematics and computing</kwd></kwd-group><custom-meta-group><custom-meta><meta-name>issue-copyright-statement</meta-name><meta-value>&#x000a9; Springer Nature Limited 2025</meta-value></custom-meta></custom-meta-group></article-meta></front><body><sec id="Sec1"><title>Introduction</title><p id="Par2">With the development of Web 2.0, users are increasingly inclined to develop applications and create value through various services on the internet, such as product ordering, online chatting, etc. The number of Web services is showing a rapid growth trend, and enterprises such as Baidu and Google also publish Web services to users through methods such as service-oriented architecture (SOA)<sup><xref ref-type="bibr" rid="CR1">1</xref></sup> and service-oriented computing (SOC)<sup><xref ref-type="bibr" rid="CR2">2</xref></sup> to obtain additional economic benefits. At the same time, the development of Web 2.0 technology has provided technical support for the use of Web services, making them aimed at a wider user group rather than limited to a few professional users. The rapid development of big data, cloud computing, and artificial intelligence has provided a deployment platform for Web services. Any user can publish web service interfaces online and develop new value-added services. By calling and synthesizing these Web services, new applications can be generated.</p><p id="Par3">Generally, service recommendation systems rely on the description requirements of the developers for historical invocation records to estimate the probability of services invoked by applications. Therefore, the existing works on service recommendation could be divide into two scenarios. One is based on the developer&#x02019;s input text description, the other is based on the historical invocation records between applications and services. As for the first case, the works calculate the matching degree between the target application and candidate services. However, the text description provided by services&#x02019; documents is usually short, vague or inaccurate, resulting in low accuracy of such approaches. As for the second scenario, for the target application, several services have been selected already, the service recommendation system tries to recomend needed services. However, These approaches are more sensitive to data sparsity, which leads to a decrease in the recommendation accuracy.</p><p id="Par4">In a real-world application development scenario, there are various types of information between applications and services, including explicit structural information, implicit structural information, explicit semantic information, and implicit semantic information. Explicit structural information refers to the structural information between applications and services that can be retrieved directly from repositories, e.g., invocation relationships. Implicit structural information refers to the structural information between applications and services that cannot be directly captured from the repositories but needs to be mined and inferred with techniques, e.g., collaboration and conflict relationships between services. Explicit semantic information refers to the semantic information of requirements and application or service descriptions without considering the relevance between contexts. Implicit semantic information refers to the latent semantic information of requirements and application or service descriptions by considering the relevance between contexts.</p><p id="Par5">The large number of candidate services often makes it difficult for developers to make a decision, especially for those who do not have much background knowledge of the services. Moreover, It is difficult to fully mine and utilize various types of information between applications and services. For example, if a developer intends to complete an application with four functions {mapping, message, monitoring, payment}, as shown in Fig.&#x000a0;<xref rid="Fig1" ref-type="fig">1</xref>, the developer first enters these four keywords and then searches for a set of candidate services from the service repository using the keywords, which means traversing a large number of services in the service repository<sup><xref ref-type="bibr" rid="CR3">3</xref>&#x02013;<xref ref-type="bibr" rid="CR6">6</xref></sup>. Therefore, despite extensive research in this field, there are still the following challenges:<list list-type="order"><list-item><p id="Par7">Users are not professionals in the service field and cannot accurately describe the functions of the required services.</p></list-item><list-item><p id="Par8">There are a large number of services in the service repository, and the proportion of these services being invoked is very small. Most services are immersed in the repository, so how to accurately mine services that meet the requirements is another major challenge.</p></list-item></list><fig id="Fig1"><label>Fig. 1</label><caption><p>The process of service recommendation.</p></caption><graphic xlink:href="41598_2025_96568_Fig1_HTML" id="MO1"/></fig></p><p id="Par6">Considering the above challenges, we have improved the existing service recommendation method and proposed a Service Recommendation method based on Text and Interaction views (SRTI). The contribution of our paper is as follows: <list list-type="order"><list-item><p id="Par9">We consider historical invocation records and utilize various auxiliary information to delve deeper into the expected functionality of the application to be developed.</p></list-item><list-item><p id="Par10">We consider development requirements information and employ the Transformer model to explore the relationships between words.</p></list-item><list-item><p id="Par11">We conducted extensive experiments on real-world datasets. The results demonstrate the effectiveness of our proposed method.</p></list-item></list>The remaining paper is structured as follows. &#x0201c;<xref rid="Sec2" ref-type="sec">Related works</xref>&#x0201d; section introduces the related works. The proposed SRTI method is introduced in detail in &#x0201c;<xref rid="Sec6" ref-type="sec">Service recommendation method based on text and interaction views</xref>&#x0201d; section. Afterwards, &#x0201c;<xref rid="Sec11" ref-type="sec">Results and discussion</xref>&#x0201d; section gives the experimental results and disscussion. Finally, we summarize the paper and put forward our future work.</p></sec><sec id="Sec2"><title>Related works</title><p id="Par12">In recent years, more and more researchers have devoted themselves to the development of application based on service recommendation from multiple perspectives. In this section, we summarize the progress of existing service recommendation work from three aspects: service recommendation based on development requirements, service recommendation based on collaborative filtering and service recommendation based on graph neural networks.</p><sec id="Sec3"><title>Service recommendation based on develop requirements</title><p id="Par13">The service recommendation method based on text requirements mainly extracts and matches features from the development requirements and service descriptions.</p><p id="Par14">For example, Naim et al.<sup><xref ref-type="bibr" rid="CR7">7</xref></sup> combined probabilistic topic model and pattern mining to conduct in-depth analysis of service description documents and proposed a content-based semantic extraction method to obtain the maximum common semantics of the service set. However, it is challenging to determine the number of topics in the topic modelling of Web service. That is to say, the number of topics needs to be specified in advance before training to generate the implicit topic vector distribution of the description document. Meanwhile, it is necessary to adjust the number of topics to obtain the best service recommendation performance. To overcome some shortcomings of the topic model, Gu et al.<sup><xref ref-type="bibr" rid="CR8">8</xref></sup> used the topic model to build the semantic service pack repository and proposed a service pack recommendation model based on composite semantics. Besides, Pugazhenthi et al.<sup><xref ref-type="bibr" rid="CR9">9</xref></sup> used the ConceptNet knowledge graph to connect natural language words and phrases through the edges with labels (representing the type of edges) and weights (representing the credibility of edges) to enhance the data representation in the recommendation system and used mutual information maximization to align word level and entity level semantic spaces. Compared with existing methods, this method has strong language representation and feature extraction capabilities for text. In addition, Li et al.<sup><xref ref-type="bibr" rid="CR10">10</xref></sup> proposed an unsupervised Bayesian statistical model to realize semantic matching between possible text type queries (words, phrases, sentences, paragraphs) and texts in web service descriptions by mapping words and sentences in the same semantic space. Nguyen et al.<sup><xref ref-type="bibr" rid="CR11">11</xref></sup> proposed an attention probability matrix factorization model, which injects attention scores and development requirement context similarity into the matrix factorization structure for training to obtain a service recommendation list. In summation, the service recommendation based on develop requirements primarily focus on one-to-one relations only, i.e., application and service. They rely heavy on the text information, when the service description information is insufficient, the recommendation effect is not very satisfactory.</p></sec><sec id="Sec4"><title>Service recommendation based on collaborative filtering</title><p id="Par15">Collaborative filtering based on the historical invocation application-service records used in the recommendation systems<sup><xref ref-type="bibr" rid="CR12">12</xref>&#x02013;<xref ref-type="bibr" rid="CR14">14</xref></sup>. These method uses the historical records for analysis to find similar neighboor of applications or services.</p><p id="Par16">In particular, Ren et al.<sup><xref ref-type="bibr" rid="CR15">15</xref></sup> proposed a location-aware collaborative filtering method that maps location features into a high-dimensional dense embedding vector to correct the prediction quality of the service. Their approach effectively improves the predictive quality of the service. However, the extracted intrinsic features are usually not related to the domain, which leads to poor recommendation effects. Considering this shortcoming, Cui et al.<sup><xref ref-type="bibr" rid="CR16">16</xref></sup> proposed a model based on the time correlation coefficient. Using the cuckoo search algorithm, they improved the Kmeans algorithm (CSK-means) to design an effective personalized recommendation model (PTCCF) based on preference patterns. Besides, Khelloufi et al. et al.<sup><xref ref-type="bibr" rid="CR17">17</xref></sup> proposed a service recommendation system based on the social relationship between device owners in which the recommendation was based on different relationships between service requesters and service providers. The experimental results showed that in the SIoT environment, incorporating users&#x02019; social relationships into service recommendations can improve the accuracy and diversity of provided services. Wang et al.<sup><xref ref-type="bibr" rid="CR18">18</xref></sup> proposed a user-trust-based collaborative filtering approach (TBCF), which combines User-Item-Trust (UIT) records with traditional CF-based models to improve the robustness of recommendations while maintaining recommendation accuracy. Bouazza et al.<sup><xref ref-type="bibr" rid="CR19">19</xref></sup> proposed an IoT recommendation system based on a hybrid technique (i.e., collaborative filtering and knowledgebased techniques). In particular, the authors proposed to use collaborative filtering and ontology to recommend IoT services that suit IoT services consumers&#x02019; needs. However, the above approach relies on the historical usage records between applications and services. Unfortunately, historical usage data is very sparse. Most applications use no more than three APIs, and only 10% of the existing services are used by applications, which makes it difficult to recommend appropriate services when the scale of data is very large.</p></sec><sec id="Sec5"><title>Service recommendation based on graph neural networks</title><p id="Par17">With the rapid development of graph neural networks, applying various graph neural network technologies to service recommendation has become a trend. Unlike methods based on text requirements, methods based on graph neural networks mine information from historical interactions between services or requirements (users) to make recommendations.</p><p id="Par18">For example, inspired by Zhu et al.<sup><xref ref-type="bibr" rid="CR20">20</xref></sup>, the bilinear graph neural network was introduced into web service classification, and the multiplication-based bilinear news aggregator was used to capture the interaction between service nodes in the neighborhood. Then, combined with multidimensional QoS attribute information, the XDeepFM model<sup><xref ref-type="bibr" rid="CR21">21</xref></sup> is used to integrate explicit higher-order interaction modules, implicit interaction modules, and traditional FM modules. In the above methods, graph neural networks can effectively solve the problem of data sparsity in service classification methods based on functional semantics. However, the existing graph neural network methods ignore the possible interaction information between adjacent service nodes. When such interaction exists, extracting the interaction information can further enhance the representation of the target service node. Therefore, Wang et al.<sup><xref ref-type="bibr" rid="CR5">5</xref></sup> proposed a knowledge graph-based deep random walk unsupervised service recommendation method, which comprehensively considers the service domain and the correlation between development requirements and services. By designing an entity biased random walk process, the development requirements&#x02019; preferences for each service are dynamically adjusted. Besides, Shi et al.<sup><xref ref-type="bibr" rid="CR22">22</xref></sup> proposed a two-step service graph convolutional network model. In the first step, predict the potential connection between APIs and mashups based on the similarity of text content. Based on the common calling relationship between mashups and APIs, edges were added between the two, and an attention-based RTM (Attention RTM) model was trained for web service link prediction. The second step is to apply two GCN layers with ReLU activation function to learn node features for Web services.</p><p id="Par19">Moreover, Recent advancements in recommender systems have addressed challenges in federated and adversarial settings. For example, Yuan et al.<sup><xref ref-type="bibr" rid="CR23">23</xref>,<xref ref-type="bibr" rid="CR24">24</xref></sup> investigated interaction-level membership inference attacks and poisoning attacks using synthetic users, highlighting privacy risks and proposing countermeasures. Heterogeneity in federated systems has also been explored<sup><xref ref-type="bibr" rid="CR25">25</xref></sup>. On the adversarial front, Chen et al.<sup><xref ref-type="bibr" rid="CR26">26</xref></sup> studied manipulation of visually-aware systems through adversarial item promotion. Additionally, the integration of large language models (LLMs) into federated systems has been examined<sup><xref ref-type="bibr" rid="CR27">27</xref></sup>.</p></sec></sec><sec id="Sec6"><title>Service recommendation method based on text and interaction views</title><p id="Par20">In this section, we formulate the service recommendation problem and related key concepts. Table&#x000a0;<xref rid="Tab1" ref-type="table">1</xref> shows the main symbols and their explanations.<table-wrap id="Tab1"><label>Table 1</label><caption><p>Symbols used in this work.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Symbol</th><th align="left">Description</th></tr></thead><tbody><tr><td align="left"><italic>S</italic></td><td align="left">Service set</td></tr><tr><td align="left"><italic>s</italic></td><td align="left">A service</td></tr><tr><td align="left"><inline-formula id="IEq1"><alternatives><tex-math id="d33e393">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_{name}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq1.gif"/></alternatives></inline-formula></td><td align="left">The name of service s</td></tr><tr><td align="left"><inline-formula id="IEq2"><alternatives><tex-math id="d33e403">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_{des}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq2.gif"/></alternatives></inline-formula></td><td align="left">The description of service s</td></tr><tr><td align="left"><inline-formula id="IEq3"><alternatives><tex-math id="d33e413">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_t$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq3.gif"/></alternatives></inline-formula>=(<inline-formula id="IEq4"><alternatives><tex-math id="d33e419">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_{t_1},s_{t_2},\ldots ,s_{t_n}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq4.gif"/></alternatives></inline-formula>)</td><td align="left">The tags of service <italic>s</italic></td></tr><tr><td align="left"><italic>ST</italic></td><td align="left">The tag set of <italic>S</italic></td></tr><tr><td align="left"><italic>A</italic></td><td align="left">Application set</td></tr><tr><td align="left"><italic>a</italic></td><td align="left">An application</td></tr><tr><td align="left"><inline-formula id="IEq5"><alternatives><tex-math id="d33e457">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$a_{name}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq5.gif"/></alternatives></inline-formula></td><td align="left">The name of application <italic>a</italic></td></tr><tr><td align="left"><inline-formula id="IEq6"><alternatives><tex-math id="d33e470">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$a_{des}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq6.gif"/></alternatives></inline-formula></td><td align="left">The description of application <italic>a</italic></td></tr><tr><td align="left"><inline-formula id="IEq7"><alternatives><tex-math id="d33e483">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$a_t$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq7.gif"/></alternatives></inline-formula>=(<inline-formula id="IEq8"><alternatives><tex-math id="d33e489">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$a_{t_1},a_{t_2},\ldots ,a_{t_m}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq8.gif"/></alternatives></inline-formula>)</td><td align="left">The tags of application <italic>a</italic></td></tr><tr><td align="left"><italic>AT</italic></td><td align="left">The tag set of <italic>A</italic></td></tr></tbody></table></table-wrap></p><sec id="FPar1"><title>Definition 1</title><p id="Par21">(<italic>Service</italic>) A service <italic>s</italic> is a collection of publicly accessable functions, formalized as a 3-tuple, i.e., <inline-formula id="IEq9"><alternatives><tex-math id="d33e521">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s=&#x0003c;s_{name};s_{des};(s_{t_1},s_{t_2},\ldots ,s_{t_n})&#x0003e;$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq9.gif"/></alternatives></inline-formula>, where <inline-formula id="IEq10"><alternatives><tex-math id="d33e527">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_{name}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq10.gif"/></alternatives></inline-formula>, <inline-formula id="IEq11"><alternatives><tex-math id="d33e533">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_{des}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq11.gif"/></alternatives></inline-formula>, <inline-formula id="IEq12"><alternatives><tex-math id="d33e540">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(s_{t_1},t_{t_2},\ldots ,s_{t_n})$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq12.gif"/></alternatives></inline-formula> represent the name, text description and tag sets of <italic>s</italic>, respectively.</p></sec><sec id="FPar2"><title>Definition 2</title><p id="Par22">(<italic>Application</italic>) Among various realizations of service composition, applications represent the data-centric, lightweight Web applications that are usually designed and developed in an agile, visual, and interactive manner. An application implies easy, fast integration of Web APIs (i.e., Web services) to satisfy a broader set of requirements, collectively realizing new functionality.</p><p>An application <italic>a</italic> is the composition of two or more services to provide functionality or commercial value, formalized as a 4-tuple, i.e., <inline-formula id="IEq13"><alternatives><tex-math id="d33e561">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$a=&#x0003c;a_{name}; a_{des};(s_1,s_2\ldots s_n);(a_{t_1},a_{t_2},\ldots ,a_{t_m})&#x0003e;$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq13.gif"/></alternatives></inline-formula>, where <inline-formula id="IEq14"><alternatives><tex-math id="d33e567">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$a_{name}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq14.gif"/></alternatives></inline-formula>, <inline-formula id="IEq15"><alternatives><tex-math id="d33e573">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$a_{des}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq15.gif"/></alternatives></inline-formula>, <inline-formula id="IEq16"><alternatives><tex-math id="d33e579">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(a_{t_1},a_{t_2},\ldots ,a_{t_m})$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq16.gif"/></alternatives></inline-formula> represent the name, text description and tag sets of <italic>a</italic> and <inline-formula id="IEq17"><alternatives><tex-math id="d33e589">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(s_1,s_2\ldots s_n)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq17.gif"/></alternatives></inline-formula> represents the services invoked by <italic>a</italic>. Applications frequently act as a bridge between a diverse set of services given by different providers.</p></sec><sec id="FPar3"><title>Definition 3</title><p id="Par24">(<italic>Service repository</italic>) All the services from the service set <inline-formula id="IEq18"><alternatives><tex-math id="d33e605">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$S=\{s_1,s_2,\ldots ,s_p\}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq18.gif"/></alternatives></inline-formula>. All the applications constitute a set <inline-formula id="IEq19"><alternatives><tex-math id="d33e611">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$A=\{a_1,a_2,\ldots ,a_q\}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq19.gif"/></alternatives></inline-formula>. A service repository is the union of <italic>S</italic> and <italic>A</italic>, i.e., <inline-formula id="IEq20"><alternatives><tex-math id="d33e624">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$R=S\cup A$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq20.gif"/></alternatives></inline-formula>.</p><p>Table&#x000a0;<xref rid="Tab2" ref-type="table">2</xref> shows an example of an application and a service from the data.<table-wrap id="Tab2"><label>Table 2</label><caption><p>An example of an application and a service.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Application: EasyWeather</th><th align="left"/><th align="left">Service: Instagram graph API</th><th align="left"/></tr></thead><tbody><tr><td align="left">Attribute</td><td align="left">Value</td><td align="left">Attribute</td><td align="left">Value</td></tr><tr><td align="left">Name</td><td align="left">EasyWeather</td><td align="left">Name</td><td align="left">Instagram Graph API</td></tr><tr><td align="left">Tag</td><td align="left">Web</td><td align="left">Tag</td><td align="left">Photos, Mobile, Social</td></tr><tr><td align="left">Description</td><td align="left">EasyWeather is a lightweight and versatile jQuery plugin displaying weather information for any location</td><td align="left">description</td><td align="left">Instagram is a photo sharing iPhone app and service. Users take photos and can share them with Instagram contacts, as well as friends on other social networks like Twitter and Facebook</td></tr><tr><td align="left">Invoked services</td><td align="left">World Weather Online, Yahoo Weather, OpenWeatherMap, Weather Underground, Forecast</td><td align="left"/><td align="left"/></tr></tbody></table></table-wrap></p></sec><sec id="FPar4"><title>Definition 4</title><p id="Par26">(<italic>Application-service invocation records</italic>) Give the application set <inline-formula id="IEq21"><alternatives><tex-math id="d33e704">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$A=\{a_1,a_2,\ldots a_p\}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq21.gif"/></alternatives></inline-formula> and the service set <inline-formula id="IEq22"><alternatives><tex-math id="d33e710">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$S=\{s_1,s_2,\ldots s_q\}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq22.gif"/></alternatives></inline-formula>, application service invocation matrix <inline-formula id="IEq23"><alternatives><tex-math id="d33e716">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$Y\in R^{p\times q}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq23.gif"/></alternatives></inline-formula> is defined based on the application service invocation records. For example, application <italic>a</italic> and service <italic>s</italic>, when <inline-formula id="IEq24"><alternatives><tex-math id="d33e729">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y_ {(a, s)}=1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq24.gif"/></alternatives></inline-formula> means that <italic>s</italic> has been invoked by <italic>a</italic>, otherwise, <inline-formula id="IEq25"><alternatives><tex-math id="d33e741">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y_ {(a, s)}=0$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq25.gif"/></alternatives></inline-formula>.</p><p><bold>Problem Definition:</bold>
+<italic>Given the develop requirements</italic>
+<inline-formula id="IEq26"><alternatives><tex-math id="d33e754">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$a'_{des}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq26.gif"/></alternatives></inline-formula>
+<italic>of the application</italic>
+<italic>a</italic>
+<italic>and the previous invocation records between application set</italic>
+<italic>A</italic>
+<italic>and services set</italic>
+<italic>S</italic>, <italic>for an application</italic>
+<inline-formula id="IEq27"><alternatives><tex-math id="d33e782">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$a'=&#x0003c;a'_{name}; a'_{des}; (s_1,s_2\ldots s_p); (a'_{t_1},a'_{t_2},\ldots ,a'_{t_m})&#x0003e;$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq27.gif"/></alternatives></inline-formula>, <italic>the problem to be addressed is to find the Top-K services, i.e.,</italic>
+<inline-formula id="IEq28"><alternatives><tex-math id="d33e792">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(s_{p+1},s_{p+2}\ldots s_{p+k})$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq28.gif"/></alternatives></inline-formula>
+<italic>for</italic>
+<inline-formula id="IEq29"><alternatives><tex-math id="d33e801">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$a'$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq29.gif"/></alternatives></inline-formula>
+<italic>in</italic>
+<italic>S</italic>, <italic>which are most likely to be invoked by</italic>
+<inline-formula id="IEq30"><alternatives><tex-math id="d33e817">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$a'$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq30.gif"/></alternatives></inline-formula>.</p></sec><sec id="Sec7"><title>Framework</title><p id="Par28">Figure&#x000a0;<xref rid="Fig2" ref-type="fig">2</xref> shows the overall framework of SRTI proposed in this article. Firstly, the Transformer model is used to extract the characteristics of application development requirements. Then, a deep neural network is used to deeply mine the matching degree between candidate services and development intentions, and the application&#x02019;s text preferences for each service can then be obtained. Secondly, the application-service-tag network graph is obtained through the application service history invocation records. The KGAT model is employed to deeply mine the application-service invocation information, extract the application and service features, and obtain the structural preferences of the application for each service. Finally, integrate the above two to obtain the final service recommendation list.<fig id="Fig2"><label>Fig. 2</label><caption><p>The framework of SRTI.</p></caption><graphic xlink:href="41598_2025_96568_Fig2_HTML" id="MO2"/></fig></p></sec><sec id="Sec8"><title>Service recommendation based on text View</title><p id="Par29">Since the Transformer<sup><xref ref-type="bibr" rid="CR28">28</xref></sup> model was proposed, tattention-basedased neural network has achieved tremendous success in many fields. The encoder part of Transformer has a strong ability to learn the interactive information between sequence elements. Inspired by this, we use a Transformer encoder to extract features from text, enabling the model to better understand the development requirements. The framework of Transformer as shown in Fig.&#x000a0;<xref rid="Fig3" ref-type="fig">3</xref>.<fig id="Fig3"><label>Fig. 3</label><caption><p>The framework of transformer.</p></caption><graphic xlink:href="41598_2025_96568_Fig3_HTML" id="MO3"/></fig></p><p id="Par30">Given the development requirements <inline-formula id="IEq31"><alternatives><tex-math id="d33e857">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$a_{des}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq31.gif"/></alternatives></inline-formula>, the Transformer encoder extracts feature representations for all words, and the output can be expressed as <inline-formula id="IEq32"><alternatives><tex-math id="d33e863">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$vec_{a_{des}}=\{vec_1,vec_2,\ldots ,vec_L\}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq32.gif"/></alternatives></inline-formula>. Where <italic>L</italic> represents the length of development requirements, <inline-formula id="IEq33"><alternatives><tex-math id="d33e872">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$vec_i$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq33.gif"/></alternatives></inline-formula> represents the representation of the word in position <italic>i</italic>.</p><p id="Par31">The encoder consists of <italic>N</italic> identical layers, each containing two sub layers, namely self-attention mechanism and fully connected feedforward network. Assuming the input is <italic>g</italic>, the sub layers apply residual connections, and then perform layer normalization to calculate the output, which can be represented as <inline-formula id="IEq34"><alternatives><tex-math id="d33e889">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$LayerNorm(g+SubLayer(g))$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq34.gif"/></alternatives></inline-formula>, where <italic>SubLayer</italic> represents a self-attention mechanism and a fully connected feedforward network.</p><p id="Par32">Since each layer of the encoder is the same, the <italic>l</italic>th layer is selected for a brief introduction. The input of layer <italic>l</italic> is the output of the previous layer. The input of the first layer is an embedding representation of the document requirements <inline-formula id="IEq35"><alternatives><tex-math id="d33e906">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$vec_{a_{des}}=X$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq35.gif"/></alternatives></inline-formula>. In the self-attention mechanism, query <italic>Q</italic>, keyword <italic>K</italic>, and value <italic>V</italic> are all linear projections of <inline-formula id="IEq36"><alternatives><tex-math id="d33e922">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$vec_{a_{des}}^{l-1}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq36.gif"/></alternatives></inline-formula> with different parameter matrices. The output of self-attention is calculated based on scaled dot product attention, and the calculation process is as follows:<disp-formula id="Equ1"><label>1</label><alternatives><tex-math id="d33e928">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} Att(Q,K,V)=Softmax\left( \frac{Q^TK}{\sqrt{d_e}}\right) V \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_96568_Article_Equ1.gif" position="anchor"/></alternatives></disp-formula>In addition, the Transformer encoder implements self-attention by parallel computing the <italic>h</italic> heads, where each head calculates attention based on Eq.&#x000a0;(<xref rid="Equ1" ref-type="disp-formula">1</xref>). The output of multi-head attention is a concatenation of <italic>h</italic> heads, followed by linear projection, as follows:<disp-formula id="Equ2"><label>2</label><alternatives><tex-math id="d33e945">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} \begin{aligned} MultiHead(Q,K,V)=f(H_1,H_2,\ldots H_h)W^M \\ H_i=ATT(QW_i^Q,KW_i^K,VW_i^V) \end{aligned} \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_96568_Article_Equ2.gif" position="anchor"/></alternatives></disp-formula>where <italic>f</italic> represents the concatenate operation, <inline-formula id="IEq37"><alternatives><tex-math id="d33e955">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$W^M, W_i^Q, W_i^K, W_i^V$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq37.gif"/></alternatives></inline-formula> represents the parameter matrix. After the self-attention mechanism sublayer, the fully connected sublayer obtains the output of self-attention, represented as follows:<disp-formula id="Equ3"><label>3</label><alternatives><tex-math id="d33e961">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} FFN(X_l)=ReLU(E_{ATT}^lW_1+b_1)W_2+b_2 \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_96568_Article_Equ3.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq38"><alternatives><tex-math id="d33e968">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$W_1, W_2, b_1, b_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq38.gif"/></alternatives></inline-formula> represents trainable parameters. After N-layer encoding, the Transformer encoder obtains the develop requirements representation <inline-formula id="IEq39"><alternatives><tex-math id="d33e974">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$vec_{a_{des}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq39.gif"/></alternatives></inline-formula>. Then <inline-formula id="IEq40"><alternatives><tex-math id="d33e981">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$vec_{a_{des}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq40.gif"/></alternatives></inline-formula> is fed into the DNN layer to further extract non-linear interactions of text features. This process can be expressed as:<disp-formula id="Equ4"><label>4</label><alternatives><tex-math id="d33e987">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} vf_{a_{des}}=W_i(vec_{a_{des}})+b_i \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_96568_Article_Equ4.gif" position="anchor"/></alternatives></disp-formula>Finally, the learned vector <inline-formula id="IEq41"><alternatives><tex-math id="d33e994">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$vf_{a_{des}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq41.gif"/></alternatives></inline-formula> is input into the sigmoid function and the output is <inline-formula id="IEq42"><alternatives><tex-math id="d33e1000">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y_{a,s}[a,s]$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq42.gif"/></alternatives></inline-formula>. <inline-formula id="IEq43"><alternatives><tex-math id="d33e1006">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y_{a,s}[a,s]$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq43.gif"/></alternatives></inline-formula> represents the probability of service <italic>s</italic> being selected by application <italic>a</italic>, and this process is defined as follows:<disp-formula id="Equ5"><label>5</label><alternatives><tex-math id="d33e1019">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} y_{a,s}[a,s]=sigmoid(W_{a,s}vf_{a_{des}})+b_{a,s} \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_96568_Article_Equ5.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq44"><alternatives><tex-math id="d33e1026">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$W_{a,s}, b_{a,s}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq44.gif"/></alternatives></inline-formula> represents the weight matrix and bias.</p><p id="Par33">In order to train the model task, binary Cross entropy loss (BCELoss) is adopted, which is defined as follows:<disp-formula id="Equ6"><label>6</label><alternatives><tex-math id="d33e1034">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} L_{a,s}=\frac{1}{\vert S \vert }\sum _{s\in S}(y_{a,s}[a,s]log\hat{y}_{a,s}[a,s]+(1-y_{a,s})log(1-\hat{y}_{a,s}))+\lambda _1\Vert \Theta \Vert _2^2 \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_96568_Article_Equ6.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq45"><alternatives><tex-math id="d33e1041">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y_{a,s}[a,s]$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq45.gif"/></alternatives></inline-formula> represents whether application <italic>a</italic> has actually invoked service <italic>s</italic>. If application <italic>a</italic> has invoked service <italic>s</italic>, then <inline-formula id="IEq46"><alternatives><tex-math id="d33e1060">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y_{a,s}[a,s]=1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq46.gif"/></alternatives></inline-formula>, otherwise, <inline-formula id="IEq47"><alternatives><tex-math id="d33e1066">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y_{a,s}[a,s]=0$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq47.gif"/></alternatives></inline-formula>. <inline-formula id="IEq48"><alternatives><tex-math id="d33e1072">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\hat{y}_{a,s}[a,s]$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq48.gif"/></alternatives></inline-formula> represents the probability of service <italic>s</italic> being selected by application <italic>a</italic>.</p></sec><sec id="Sec9"><title>Service recommendation based on interaction view</title><p id="Par34">Based on the historical invocation records, an application-service-tag network graph <inline-formula id="IEq49"><alternatives><tex-math id="d33e1089">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$G=(V,E)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq49.gif"/></alternatives></inline-formula> can be constructed, where <inline-formula id="IEq50"><alternatives><tex-math id="d33e1095">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$V=\{v_1,v_2,\ldots ,v_z\}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq50.gif"/></alternatives></inline-formula> represents the node set, and <inline-formula id="IEq51"><alternatives><tex-math id="d33e1101">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$E=\{e_{i,j}=1\}_{i,j=1}^Z=E_{a,s}\cup E_{s,t}\cup E_{a,t}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq51.gif"/></alternatives></inline-formula> represents the set of edges. The application set <italic>A</italic>, service set <italic>S</italic>, and tag set <italic>T</italic> are used to construct the node set <inline-formula id="IEq52"><alternatives><tex-math id="d33e1117">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$V=A\cup S\cup T$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq52.gif"/></alternatives></inline-formula>. For edge set <italic>E</italic>, if there is an invocation between application <italic>a</italic> and service <italic>s</italic>, they are connected in the graph, thus forming edge set <inline-formula id="IEq53"><alternatives><tex-math id="d33e1132">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$E_{a,s}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq53.gif"/></alternatives></inline-formula>, and if tag <italic>t</italic> belongs to a certain service <italic>s</italic>, then these two are connected in the graph, forming an edge set <inline-formula id="IEq54"><alternatives><tex-math id="d33e1145">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$E_{s,t}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq54.gif"/></alternatives></inline-formula>. Similarly, if tag <italic>t</italic> belongs to an application <italic>a</italic>, then the two are connected in the graph, forming an edge set <inline-formula id="IEq55"><alternatives><tex-math id="d33e1157">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$E_{a,t}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq55.gif"/></alternatives></inline-formula>. Figure&#x000a0;<xref rid="Fig4" ref-type="fig">4</xref> shows an example of a application-service-tag graph.<fig id="Fig4"><label>Fig. 4</label><caption><p>The example of application-service-tag graph.</p></caption><graphic xlink:href="41598_2025_96568_Fig4_HTML" id="MO4"/></fig></p><p id="Par35">After constructing the application service heterogeneous graph, we build a service knowledge graph, as shown in Fig.&#x000a0;<xref rid="Fig5" ref-type="fig">5</xref>. As can be seen from Fig.&#x000a0;<xref rid="Fig5" ref-type="fig">5</xref>. The relation between service and application was &#x0201c;used&#x0201d;, and the relation between service and tag was &#x0201c;belong_to&#x0201d;. In addition, the relation between application and tag is &#x0201c;belong_to&#x0201d;, and if two services have been invoked by the same application, then the relation between the two services is &#x0201c;co-invocation&#x0201d;.<fig id="Fig5"><label>Fig. 5</label><caption><p>Relations in the knowlege graph.</p></caption><graphic xlink:href="41598_2025_96568_Fig5_HTML" id="MO5"/></fig></p><p id="Par36">Then we employ the graph neural network KGAT<sup><xref ref-type="bibr" rid="CR29">29</xref></sup> to extract historical application and service representations. KGAT mainly consists of three parts, namely the embedding layer, attention propagation layer, and feature representation generation. Finally, the feature representation of applications and services can be obtained through KGAT.</p><p id="Par37">(1) Embedding layer</p><p id="Par38">The embedding layer is a module used to obtain vector representations of entities and relationships in a knowledge graph. KGAT uses TransR<sup><xref ref-type="bibr" rid="CR30">30</xref></sup> to embed entities and relationships in the knowledge graph. Given the graph <italic>G</italic>, for a triplet <inline-formula id="IEq56"><alternatives><tex-math id="d33e1206">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(h,r,t)\in G$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq56.gif"/></alternatives></inline-formula>, the calculation process is as follows:<disp-formula id="Equ7"><label>7</label><alternatives><tex-math id="d33e1212">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} En(h,r,t)=\Vert W_re_h+e_r+W_re_r\Vert _2^2 \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_96568_Article_Equ7.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq57"><alternatives><tex-math id="d33e1219">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$W_r\in R^{k\times d}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq57.gif"/></alternatives></inline-formula> is a transformation matrix of relationship <italic>r</italic>. For triplets (<italic>h</italic>,&#x000a0;<italic>r</italic>,&#x000a0;<italic>t</italic>), <italic>h</italic> and <italic>t</italic> represent applications or services, and <italic>r</italic> represents their relationships in the knowledge graph. Its loss function is defined as follows:<disp-formula id="Equ8"><label>8</label><alternatives><tex-math id="d33e1248">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} L=\sum _{(h,r,t,t')}-ln\sigma (En(h,r,t')-En(h,r,t)) \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_96568_Article_Equ8.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq58"><alternatives><tex-math id="d33e1255">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$T=\{(h,r,t,t')|((h,r,t)\in G,(h,r,t')\notin G)\}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq58.gif"/></alternatives></inline-formula>. <inline-formula id="IEq59"><alternatives><tex-math id="d33e1261">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(h,r,t')$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq59.gif"/></alternatives></inline-formula> is a triplet constructed by randomly replacing an entity in a valid triplet. <inline-formula id="IEq60"><alternatives><tex-math id="d33e1267">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sigma (\cdot )$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq60.gif"/></alternatives></inline-formula> indicates the activation function.</p><p id="Par39">(2) Attention transportation layer</p><p id="Par40">The attention propagation layer transfers information from neighboring nodes to target nodes to capture the interaction patterns between nodes. It is mainly divided into three parts: information propagation, knowledge perception attention, and information aggregation. Knowledge dissemination models the propagation of information from one entity to another, with all entities being influenced by the surrounding entities in the graph network structure. To represent first-order connections of entities, KGAT uses the ego network<sup><xref ref-type="bibr" rid="CR31">31</xref></sup>. Knowledge perception attention utilizes relational attention mechanisms to achieve communication between each pair of entities. Information aggregation aggregates entity representations and their ego network representations into new representations. At this stage, three types of aggregations are used, namely GCN aggregator, the GraphSage aggregator, and Bi-Interaction aggregator. Then, propagate to multiple layers to explore higher-order connectivity information.</p><p id="Par41">(3) Feature representation generation</p><p id="Par42">After performing L-order propagation, for application node <italic>a</italic> and service node <italic>s</italic>, the overall characteristics are represented as follows:<disp-formula id="Equ9"><label>9</label><alternatives><tex-math id="d33e1291">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} e_a^*= &#x00026; e_a^0\Vert e_a^1\Vert \cdots \Vert e_a^L \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_96568_Article_Equ9.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ10"><label>10</label><alternatives><tex-math id="d33e1297">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} e_s^*= &#x00026; e_s^0\Vert e_s^1\Vert \cdots \Vert e_s^L \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_96568_Article_Equ10.gif" position="anchor"/></alternatives></disp-formula>Where <inline-formula id="IEq61"><alternatives><tex-math id="d33e1304">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\Vert$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq61.gif"/></alternatives></inline-formula> represents the concatenate operation.</p><p id="Par43">Finally, the preference of application <italic>a</italic> for service <italic>s</italic> can be expressed as:<disp-formula id="Equ11"><label>11</label><alternatives><tex-math id="d33e1318">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} sim_{a,s}=e_a^{*T}\cdot a_s^* \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_96568_Article_Equ11.gif" position="anchor"/></alternatives></disp-formula></p></sec><sec id="Sec10"><title>Model fusion</title><p id="Par44">Considering both textual information and historical invocation records, we can obtain two preferences, the final service recommendation can be obtained as follows:<disp-formula id="Equ12"><label>12</label><alternatives><tex-math id="d33e1328">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} p_a^s=(1-\alpha )*sim_{a,s}+\alpha *\hat{y}_{a,s}[a,s] \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_96568_Article_Equ12.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq62"><alternatives><tex-math id="d33e1335">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$0\le \alpha \le 1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq62.gif"/></alternatives></inline-formula>, <inline-formula id="IEq63"><alternatives><tex-math id="d33e1341">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq63.gif"/></alternatives></inline-formula> represents the importance of service preferences obtained based on application history invocation records.</p><p id="Par45">All services in the candidate service set are sorted according to to their <inline-formula id="IEq64"><alternatives><tex-math id="d33e1349">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$p_a^s$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq64.gif"/></alternatives></inline-formula>. The result will be provided to developers with supplementary information, such as the description of services. For example, if a developer enters a requirement description as let users virtually explore different destinations around the world, Depending on the destination, the web application supplies pictures and information on the historical background, significance, popularity, and more. The approach will generate a list containing three dimensions such as Top-K sequence, service name, service description, etc. Top-K indicates the recommended order of services. A sample of the recommendation result is shown in Table&#x000a0;<xref rid="Tab3" ref-type="table">3</xref>.<table-wrap id="Tab3"><label>Table 3</label><caption><p>A sample recommendation result.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Top-K</th><th align="left">Service name</th><th align="left">Serivce description</th></tr></thead><tbody><tr><td align="left">1</td><td align="left">Facebook</td><td align="left">The API allows applications to use the social connections and profile information <inline-formula id="IEq65"><alternatives><tex-math id="d33e1384">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\ldots$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq65.gif"/></alternatives></inline-formula></td></tr><tr><td align="left">2</td><td align="left">Flickr</td><td align="left">The Flickr API can be used to retrieve photos from the Flickr photo sharing service <inline-formula id="IEq66"><alternatives><tex-math id="d33e1397">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\ldots$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq66.gif"/></alternatives></inline-formula></td></tr><tr><td align="left">3</td><td align="left">GeoNames</td><td align="left">The GeoNames covers all countries and contains over eight million placenames <inline-formula id="IEq67"><alternatives><tex-math id="d33e1410">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\ldots$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq67.gif"/></alternatives></inline-formula></td></tr><tr><td align="left">4</td><td align="left">Google Maps</td><td align="left">The Google Maps API allow for the embedding of Google Maps onto web pages <inline-formula id="IEq68"><alternatives><tex-math id="d33e1423">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\ldots$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq68.gif"/></alternatives></inline-formula></td></tr><tr><td align="left">5</td><td align="left">Google Geocoding</td><td align="left">Geocoding API provides a direct way to access a geocoder via an HTTP request <inline-formula id="IEq69"><alternatives><tex-math id="d33e1436">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\ldots$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq69.gif"/></alternatives></inline-formula></td></tr><tr><td align="left"><inline-formula id="IEq70"><alternatives><tex-math id="d33e1444">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\ldots$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq70.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq71"><alternatives><tex-math id="d33e1451">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\ldots$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq71.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq72"><alternatives><tex-math id="d33e1458">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\ldots$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq72.gif"/></alternatives></inline-formula></td></tr></tbody></table></table-wrap></p><p id="Par46">The algorithm for SRTI is as follows.<fig position="anchor" id="Figa"><label>Algorithm 1</label><caption><p>The algorithm of SRTI.</p></caption><graphic position="anchor" xlink:href="41598_2025_96568_Figa_HTML" id="MO6"/></fig></p></sec></sec><sec id="Sec11"><title>Results and discussion</title><p id="Par48">In this section, we evaluated SRTI performance on real-world datasets. Specifically, the experiment aims to answer the following three research questions:<list list-type="bullet"><list-item><p id="Par49"><bold>RQ1:</bold> Is SRTI better than other comparison methods in service recommendation tasks?</p></list-item><list-item><p id="Par50"><bold>RQ2:</bold> Can the text view and interaction view in the SRTI method capture information effectively?</p></list-item><list-item><p id="Par51"><bold>RQ3:</bold> How do the parameters in SRTI affect the recommendation results?</p></list-item></list></p><p id="Par52">All experiments were developed in Python and conducted on a personal computer equipped with a 2.4GHz Intel Core i5 CPU, 8 GB RAM, and macOS High Sierra.</p><sec id="Sec12"><title>Dataset</title><p id="Par53">We have crawled 22,016 services and 6438 applications from ProgrammableWeb, the world&#x02019;s largest online Web service registry. Applications and services without function descriptions, services without invoked, and applications with fewer than three component services are deleted from the original dataset. The final experimental dataset contains 6347 applications and 1623 services, the statistics of the dataset is shown in Table&#x000a0;<xref rid="Tab4" ref-type="table">4</xref>. The sparsity of the application service invocation matrix is 99.87%. We randomly divide the whole data set into five parts, use one of them as the test set, and combine the other four parts as the training set. We run the algorithm five times, and finally take the average value of the five times as the final result.<table-wrap id="Tab4"><label>Table 4</label><caption><p>Statistics of the experimental dataset.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left"/><th align="left">Value</th></tr></thead><tbody><tr><td align="left">#Applications</td><td align="left">6437</td></tr><tr><td align="left">#Services</td><td align="left">1623</td></tr><tr><td align="left">#Application tags</td><td align="left">416</td></tr><tr><td align="left">#Service tags</td><td align="left">365</td></tr><tr><td align="left">#Services per application</td><td align="left">2.03</td></tr><tr><td align="left">#Tags per application</td><td align="left">2.93</td></tr><tr><td align="left">#Tags per service</td><td align="left">2.40</td></tr><tr><td align="left">#Sparsity</td><td align="left">99.9%</td></tr></tbody></table></table-wrap></p></sec><sec id="Sec13"><title>Evaluation metric</title><p id="Par54">Figure&#x000a0;<xref rid="Fig6" ref-type="fig">6</xref> shows the distribution of the number of services invoked by applications in the dataset. It can be seen that more than 95.3% of applications invoke less than five services. Therefore, the variable K in the Top-K services was set from 1 to 5.<fig id="Fig6"><label>Fig. 6</label><caption><p>The distribution of the number of services invoked by applications.</p></caption><graphic xlink:href="41598_2025_96568_Fig6_HTML" id="MO7"/></fig></p><p id="Par55">We measured the results by <italic>Precision</italic>@<italic>K</italic>, <italic>Recall</italic>@<italic>K</italic> and <italic>NDCG</italic>@<italic>k</italic> discussed as follows.<disp-formula id="Equ13"><label>13</label><alternatives><tex-math id="d33e1590">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} Precision@k=\frac{1}{n}\sum _{a=1}^{n}\frac{|top_a(k) \cap test_a|}{k} \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_96568_Article_Equ13.gif" position="anchor"/></alternatives></disp-formula>The data in the training set is usually divided into positive samples and negative samples. In specific examples, positive samples refer to the services invoked by the application, while negative samples refer to the services not invoked by the application. Precision@k represents the proportion of predicted positive samples that are actually positive. As shown in Eq.&#x000a0;(<xref rid="Equ13" ref-type="disp-formula">13</xref>), where <inline-formula id="IEq73"><alternatives><tex-math id="d33e1600">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$top_a(k)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq73.gif"/></alternatives></inline-formula> represents the top <italic>k</italic> services recommended to the application <italic>a</italic>, and <inline-formula id="IEq74"><alternatives><tex-math id="d33e1613">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$test_a$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq74.gif"/></alternatives></inline-formula> represents the services actually invoked by application <italic>a</italic> in the test set.<disp-formula id="Equ14"><label>14</label><alternatives><tex-math id="d33e1622">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} Recall@k=\frac{1}{n}\sum _{a=1}^{n}\frac{|top_a(k) \cap test_a|}{|test_a|} \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_96568_Article_Equ14.gif" position="anchor"/></alternatives></disp-formula>Recall@k represents the proportion of predicted positive samples in the actual positive sample.<disp-formula id="Equ15"><label>15</label><alternatives><tex-math id="d33e1629">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} DCG@k= &#x00026; \sum _{i=1}^k \frac{2^{rel_i}-1}{log_2(1+i)} \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_96568_Article_Equ15.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ16"><label>16</label><alternatives><tex-math id="d33e1635">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} NDCG@k= &#x00026; \frac{DCG@k}{IDCG@k} \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_96568_Article_Equ16.gif" position="anchor"/></alternatives></disp-formula>Normalized Discounted Cummulative Gain (<italic>NDCG</italic>) is a measure of accuracy from information retrieval as shown in Eq.&#x000a0;(<xref rid="Equ16" ref-type="disp-formula">16</xref>), <italic>DCG</italic> is accumulated from the top of the result list to the bottom, with the gain of each result discounted at lower ranks.</p></sec><sec id="Sec14"><title>Baselines</title><p id="Par56">The comparison methods selected in the study are as follows:<list list-type="bullet"><list-item><p id="Par57">FISM<sup><xref ref-type="bibr" rid="CR32">32</xref></sup>: FISM is a service-based method and it learns the similarity among services in latent factors, which aims to improve the predefined similarity in neighborhood-based methods for one-class collaborative filtering.</p></list-item><list-item><p id="Par58">SPR<sup><xref ref-type="bibr" rid="CR33">33</xref></sup>: The SPR method utilizes application description and call information to mine important lexical features of services, further bridging the lexical gap between application developers and service providers. At the same time, it uses the Author Topic Model (ATM) to reconstruct the service configuration file.</p></list-item><list-item><p id="Par59">APR<sup><xref ref-type="bibr" rid="CR34">34</xref></sup>: APR is an adversarial personalized ranking method based on BPR. It includes an additional objective function to boost performance.</p></list-item><list-item><p id="Par60">LightGCN<sup><xref ref-type="bibr" rid="CR35">35</xref></sup>: LightGCN is a recommendation method based on simplified and enhanced graph convolutional networks, which only includes the most important components of GCN. The node representation can be obtained by linearly propagating the embedding of applications and services on the application service interaction graph, and finally use the weighted sum of application and service embedding as the final prediction score.</p></list-item><list-item><p id="Par61">SGL<sup><xref ref-type="bibr" rid="CR36">36</xref></sup>: SGL augments data using random walk and feature dropout to generate multiple views. It enhances LightGCN with self-supervised contrastive learning.</p></list-item><list-item><p id="Par62">MTFM<sup><xref ref-type="bibr" rid="CR37">37</xref></sup>: MTFM utilizes semantic components to generate requirement representations and introduces feature interaction components to model feature interactions between applications and services, thereby generating service lists.</p></list-item></list></p></sec><sec id="Sec15"><title>Performance (RQ1)</title><p id="Par63">Figure&#x000a0;<xref rid="Fig7" ref-type="fig">7</xref> shows the performance comparison of different methods in terms of accuracy and recall. Due to the low density of application-service invocation records, the overall performance of indicators such as service recommendation accuracy is not high. As shown in Fig.&#x000a0;<xref rid="Fig7" ref-type="fig">7</xref>, the methods such as FISM, SPR, and APR do not perform well in terms of accuracy or recall. The SPR method is superior to FISM in that it reconstructs and characterizes user profiles using application descriptions and contextual information that may affect user selection of Web services. LightGCN performs better than APR, because it uses graph convolution to obtain features and aggregates the features of neighbor nodes. SGL employs contrastive learning to learn representations of applications and services and performs better than LightGCN. MTFM comprehensively considers the historical invocation records and the text information, and it also introduces multi-task learning to recommend services. However, the matrix factorization method in MTFM is also limited by the influence of data sparsity. The dataset used in this paper is very sparse, reaching 99.9%. Our proposed method achieved the best results, which to some extent reveals that our method can effectively handle the problems caused by data sparsity and unsatisfactory text.<fig id="Fig7"><label>Fig. 7</label><caption><p>Performance comparison of different methods.</p></caption><graphic xlink:href="41598_2025_96568_Fig7_HTML" id="MO8"/></fig></p></sec><sec id="Sec16"><title>Ablation experiments (RQ2)</title><p id="Par64">When recommending services for applications, the SRTI method not only analyzes the textual information, but also takes into account historical service invocation record information. In order to prove the necessity of considering the above factors, two variants of SRTI were designed, namely SRTI-T and SRTI-I. SRTI-T is obtained by removing development requirements, and SRTI-I is obtained by removing historical invocation record information. As shown in Fig.&#x000a0;<xref rid="Fig8" ref-type="fig">8</xref>: (1) Among all variants, the SRTI method has the best performance, which proves the effectiveness of comprehensively considering development requirements and recording historical invocation records. (2) The suboptimal performance of SRTI-T indicates that considering historical invocation records is crucial for recommendation. (3) SRTI-I has the worst performance, and service recommendation should not only consider the textual information of the service.(4) From the experimental results, it can be seen that the experimental results of SRTI-I and SRTI-T are still superior to the comparative methods. Overall, the SRTI method provides an effective solution for creating application recommendation services.<fig id="Fig8"><label>Fig. 8</label><caption><p>Performance of SRTI variants.</p></caption><graphic xlink:href="41598_2025_96568_Fig8_HTML" id="MO9"/></fig></p></sec><sec id="Sec17"><title>Parameter analysis (RQ3)</title><p id="Par65">The impact of dimension <italic>d</italic>. By changing <inline-formula id="IEq75"><alternatives><tex-math id="d33e1737">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d=\{48,64,\ldots ,160\}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq75.gif"/></alternatives></inline-formula>, the effect of the length of potential features on model performance is studied. When k=1, the values of Precision and NDCG are the same, so only Precision is displayed here. Figure&#x000a0;<xref rid="Fig9" ref-type="fig">9</xref> shows how the effects of various indicators on service recommendation change as <italic>d</italic> increases. As shown Fig.&#x000a0;<xref rid="Fig9" ref-type="fig">9</xref>, the value gradually increases with the increase of <italic>d</italic>. However, when <inline-formula id="IEq76"><alternatives><tex-math id="d33e1756">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d=128$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq76.gif"/></alternatives></inline-formula>, the metric value reaches its highest value and gradually decreases as <italic>d</italic> increases. As can be seen from Fig.&#x000a0;<xref rid="Fig9" ref-type="fig">9</xref>, it is intuitive that having too few potential features (for example, dimension d = 10) limits the model&#x02019;s ability to extract relevant information, thus leading to poor performance. However, an excessive number of potential features will lead to overtting, which reduces the performance of the model.</p><p id="Par66">The impact of parameter <inline-formula id="IEq77"><alternatives><tex-math id="d33e1770">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq77.gif"/></alternatives></inline-formula>. By changing <inline-formula id="IEq78"><alternatives><tex-math id="d33e1776">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha =\{0.1,0.2,\ldots ,0.9\}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq78.gif"/></alternatives></inline-formula>, the performance on service recommendation was studied. <inline-formula id="IEq79"><alternatives><tex-math id="d33e1782">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq79.gif"/></alternatives></inline-formula> represents the importance of application&#x02019;s preferences for services learned from invocation records. It can be seen that both invocation records and text information make contribution to service recommendation, however, the degrees of contribution of invocation records and text information to the service recommendation results are different. As shown in Fig.&#x000a0;<xref rid="Fig10" ref-type="fig">10</xref>, when the alpha <inline-formula id="IEq80"><alternatives><tex-math id="d33e1791">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq80.gif"/></alternatives></inline-formula> equals to 0.7, the performance is best.<fig id="Fig9"><label>Fig. 9</label><caption><p>Recommendation performance with <italic>d</italic>.</p></caption><graphic xlink:href="41598_2025_96568_Fig9_HTML" id="MO10"/></fig><fig id="Fig10"><label>Fig. 10</label><caption><p>Recommendation performance with <inline-formula id="IEq81"><alternatives><tex-math id="d33e1815">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_96568_Article_IEq81.gif"/></alternatives></inline-formula>.</p></caption><graphic xlink:href="41598_2025_96568_Fig10_HTML" id="MO11"/></fig></p></sec></sec><sec id="Sec18"><title>Threats to validity</title><sec id="Sec19"><title>Threats to internal validity</title><p id="Par67">The threat to internal validity is related to the parameter selection and implementation of SRTI and other baselines. We froze the mode once all parameters were set in the validation set and then used an independent test set to obtain the final experimental results. For the baseline approaches, we made some modifications based on their published open-source code and adapted it to the input and output formats required by the experiments. During the modification process, each line of code was developed and reviewed by an author. All authors have rich experience in code development, so the implementation of all approaches was basically non-threatening.</p></sec><sec id="Sec20"><title>Threats to external validity</title><p id="Par68">The threat of external validity is related to the generalizability of the approach. Currently, SRTI is only evaluated on the PWeb dataset, which can be a potential threat due to the missing documentation of some services and applications or the lack of usage records for some services. This disables the dataset from encompassing all services and applications on the PWeb. In the future, we plan to obtain more services and applications from other publicly available sites to enrich our dataset. In addition, due to operational policy changes, the PWeb website shut down. down its services, which prevented us from further expanding and updating the dataset from it.</p></sec></sec><sec id="Sec21"><title>Conclusions</title><p id="Par69">The reuse of Web services provides an effective method for software developers to quickly and economically create applications. However, traditional keyword-based web service recommendation methods impose a heavy burden on developers in making service selection decisions, especially when they lack any professional background knowledge. Considering these challenges, in this paper, we propose a Service Recommendation method based on Text and Interaction views (SRTI). In SRTI, we comprehensively consider the textual information and historical invocation records of development requirements. Finally, we validated the effectiveness of SRTI through a set of real data experiments from ProgrammableWeb. Diversity can also affect developer satisfaction. In future research, we plan to explore long tail services to improve the diversity of service recommendations and developer satisfaction. In addition, we plan to introduce more dimensions in SRTI, such as service privacy, time cost, etc. SRTI was evaluated on the ProgrammableWeb dataset due to its relevance and availability for the specific task at hand. In future work, we plan to evaluate SRTI on additional datasets from different domains to better understand its performance in varied contexts. Future research will focus more on validating the SRTI method in practical situations to ensure its relevance and effectiveness in real-world scenarios.</p></sec></body><back><fn-group><fn><p><bold>Publisher&#x02019;s note</bold></p><p>Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></fn></fn-group><ack><title>Acknowledgements</title><p>This work is supported by the Research Project of Humanities and Social Sciences of the Ministry of Education (No. 24YJCZH400), Scientific Research Foundation of Zhejiang Provincial Education Department (No. Y202454485) and Jiaxing Science and Technology Bureau of China (No. 2024AY40018).</p></ack><notes notes-type="author-contribution"><title>Author contributions</title><p>Ting Yu: Conceptualization, Methodology, Writing-original draft. Yaqi Wang: Validation. Fangying Cheng: Validation. Tian Liang: Supervision. Hongbing Liu: Investigation.</p></notes><notes notes-type="data-availability"><title>Data availability</title><p>The datasets used and generated during the current study are available from the corresponding author upon reasonable request.</p></notes><notes><title>Declarations</title><notes id="FPar5" notes-type="COI-statement"><title>Competing interests</title><p id="Par73">The authors declare no competing interests.</p></notes></notes><ref-list id="Bib1"><title>References</title><ref id="CR1"><label>1.</label><citation-alternatives><element-citation id="ec-CR1" publication-type="journal"><person-group person-group-type="author"><name><surname>Niknejad</surname><given-names>N</given-names></name><etal/></person-group><article-title>Understanding service-oriented architecture (soa): A systematic literature review and directions for further investigation</article-title><source>Inf. Syst.</source><year>2020</year><volume>91</volume><fpage>101491</fpage></element-citation><mixed-citation id="mc-CR1" publication-type="journal">Niknejad, N. et al. Understanding service-oriented architecture (soa): A systematic literature review and directions for further investigation. <italic>Inf. Syst.</italic><bold>91</bold>, 101491 (2020).</mixed-citation></citation-alternatives></ref><ref id="CR2"><label>2.</label><citation-alternatives><element-citation id="ec-CR2" publication-type="journal"><person-group person-group-type="author"><name><surname>Qi</surname><given-names>L</given-names></name><etal/></person-group><article-title>Finding all you need: Web apis recommendation in web of things through keywords search</article-title><source>IEEE Trans. Comput. Soc. Syst.</source><year>2019</year><volume>6</volume><fpage>1063</fpage><lpage>1072</lpage></element-citation><mixed-citation id="mc-CR2" publication-type="journal">Qi, L. et al. Finding all you need: Web apis recommendation in web of things through keywords search. <italic>IEEE Trans. Comput. Soc. Syst.</italic><bold>6</bold>, 1063&#x02013;1072 (2019).</mixed-citation></citation-alternatives></ref><ref id="CR3"><label>3.</label><mixed-citation publication-type="other">Pandharbale, P., Mohanty, S.&#x000a0;N. &#x00026; Jagadev, A.&#x000a0;K. Study of recent web service recommendation methods. In <italic>2020 2nd International Conference on Innovative Mechanisms for Industry Applications (ICIMIA)</italic> 692&#x02013;695 (IEEE, 2020).</mixed-citation></ref><ref id="CR4"><label>4.</label><citation-alternatives><element-citation id="ec-CR4" publication-type="journal"><person-group person-group-type="author"><name><surname>Qi</surname><given-names>L</given-names></name><etal/></person-group><article-title>Compatibility-aware web api recommendation for mashup creation via textual description mining</article-title><source>ACM Trans. Multimed. Comput. Commun. Appl.</source><year>2021</year><volume>17</volume><fpage>1</fpage><lpage>19</lpage></element-citation><mixed-citation id="mc-CR4" publication-type="journal">Qi, L. et al. Compatibility-aware web api recommendation for mashup creation via textual description mining. <italic>ACM Trans. Multimed. Comput. Commun. Appl.</italic><bold>17</bold>, 1&#x02013;19 (2021).</mixed-citation></citation-alternatives></ref><ref id="CR5"><label>5.</label><citation-alternatives><element-citation id="ec-CR5" publication-type="journal"><person-group person-group-type="author"><name><surname>Wang</surname><given-names>X</given-names></name><name><surname>Liu</surname><given-names>X</given-names></name><name><surname>Liu</surname><given-names>J</given-names></name><name><surname>Chen</surname><given-names>X</given-names></name><name><surname>Wu</surname><given-names>H</given-names></name></person-group><article-title>A novel knowledge graph embedding based api recommendation method for mashup development</article-title><source>World Wide Web</source><year>2021</year><volume>24</volume><fpage>869</fpage><lpage>894</lpage></element-citation><mixed-citation id="mc-CR5" publication-type="journal">Wang, X., Liu, X., Liu, J., Chen, X. &#x00026; Wu, H. A novel knowledge graph embedding based api recommendation method for mashup development. <italic>World Wide Web</italic><bold>24</bold>, 869&#x02013;894 (2021).</mixed-citation></citation-alternatives></ref><ref id="CR6"><label>6.</label><citation-alternatives><element-citation id="ec-CR6" publication-type="journal"><person-group person-group-type="author"><name><surname>Lian</surname><given-names>S</given-names></name><name><surname>Tang</surname><given-names>M</given-names></name></person-group><article-title>Api recommendation for mashup creation based on neural graph collaborative filtering</article-title><source>Connect. Sci.</source><year>2022</year><volume>34</volume><fpage>124</fpage><lpage>138</lpage></element-citation><mixed-citation id="mc-CR6" publication-type="journal">Lian, S. &#x00026; Tang, M. Api recommendation for mashup creation based on neural graph collaborative filtering. <italic>Connect. Sci.</italic><bold>34</bold>, 124&#x02013;138 (2022).</mixed-citation></citation-alternatives></ref><ref id="CR7"><label>7.</label><mixed-citation publication-type="other">Na&#x000ef;m, H., Aznag, M., Durand, N. &#x00026; Quafafou, M. Semantic pattern mining based web service recommendation. In <italic>Service-Oriented Computing: 14th International Conference, ICSOC 2016, Banff, AB, Canada, October 10&#x02013;13, 2016, Proceedings 14</italic> 417&#x02013;432 (Springer, 2016).</mixed-citation></ref><ref id="CR8"><label>8.</label><citation-alternatives><element-citation id="ec-CR8" publication-type="journal"><person-group person-group-type="author"><name><surname>Gu</surname><given-names>Q</given-names></name><name><surname>Cao</surname><given-names>J</given-names></name><name><surname>Liu</surname><given-names>Y</given-names></name></person-group><article-title>Csbr: A compositional semantics-based service bundle recommendation approach for mashup development</article-title><source>IEEE Trans. Serv. Comput.</source><year>2021</year><volume>15</volume><fpage>3170</fpage><lpage>3183</lpage></element-citation><mixed-citation id="mc-CR8" publication-type="journal">Gu, Q., Cao, J. &#x00026; Liu, Y. Csbr: A compositional semantics-based service bundle recommendation approach for mashup development. <italic>IEEE Trans. Serv. Comput.</italic><bold>15</bold>, 3170&#x02013;3183 (2021).</mixed-citation></citation-alternatives></ref><ref id="CR9"><label>9.</label><mixed-citation publication-type="other">Pugazhenthi, T. &#x00026; Liang, H. Improving conversational recommender systems via knowledge graph-based semantic fusion with historical interaction data. In <italic>2022 IEEE International Conference on Big Data (Big Data)</italic> 4303&#x02013;4312 (IEEE, 2022).</mixed-citation></ref><ref id="CR10"><label>10.</label><citation-alternatives><element-citation id="ec-CR10" publication-type="journal"><person-group person-group-type="author"><name><surname>Li</surname><given-names>S</given-names></name><name><surname>Luo</surname><given-names>H</given-names></name><name><surname>Zhao</surname><given-names>G</given-names></name><name><surname>Tang</surname><given-names>M</given-names></name><name><surname>Liu</surname><given-names>X</given-names></name></person-group><article-title>bi-directional Bayesian probabilistic model based hybrid grained semantic matchmaking for web service discovery</article-title><source>World Wide Web</source><year>2022</year><volume>25</volume><fpage>445</fpage><lpage>470</lpage></element-citation><mixed-citation id="mc-CR10" publication-type="journal">Li, S., Luo, H., Zhao, G., Tang, M. &#x00026; Liu, X. bi-directional Bayesian probabilistic model based hybrid grained semantic matchmaking for web service discovery. <italic>World Wide Web</italic><bold>25</bold>, 445&#x02013;470 (2022).</mixed-citation></citation-alternatives></ref><ref id="CR11"><label>11.</label><citation-alternatives><element-citation id="ec-CR11" publication-type="journal"><person-group person-group-type="author"><name><surname>Nguyen</surname><given-names>M</given-names></name><name><surname>Yu</surname><given-names>J</given-names></name><name><surname>Nguyen</surname><given-names>T</given-names></name><name><surname>Han</surname><given-names>Y</given-names></name></person-group><article-title>Attentional matrix factorization with context and co-invocation for service recommendation</article-title><source>Expert Syst. Appl.</source><year>2021</year><volume>186</volume><fpage>115698</fpage></element-citation><mixed-citation id="mc-CR11" publication-type="journal">Nguyen, M., Yu, J., Nguyen, T. &#x00026; Han, Y. Attentional matrix factorization with context and co-invocation for service recommendation. <italic>Expert Syst. Appl.</italic><bold>186</bold>, 115698 (2021).</mixed-citation></citation-alternatives></ref><ref id="CR12"><label>12.</label><citation-alternatives><element-citation id="ec-CR12" publication-type="journal"><person-group person-group-type="author"><name><surname>Zhang</surname><given-names>Y</given-names></name><name><surname>Yin</surname><given-names>C</given-names></name><name><surname>Wu</surname><given-names>Q</given-names></name><name><surname>He</surname><given-names>Q</given-names></name><name><surname>Zhu</surname><given-names>H</given-names></name></person-group><article-title>Location-aware deep collaborative filtering for service recommendation</article-title><source>IEEE Trans. Syst. Man Cybern. Syst.</source><year>2019</year><volume>51</volume><fpage>3796</fpage><lpage>3807</lpage></element-citation><mixed-citation id="mc-CR12" publication-type="journal">Zhang, Y., Yin, C., Wu, Q., He, Q. &#x00026; Zhu, H. Location-aware deep collaborative filtering for service recommendation. <italic>IEEE Trans. Syst. Man Cybern. Syst.</italic><bold>51</bold>, 3796&#x02013;3807 (2019).</mixed-citation></citation-alternatives></ref><ref id="CR13"><label>13.</label><citation-alternatives><element-citation id="ec-CR13" publication-type="journal"><person-group person-group-type="author"><name><surname>Botangen</surname><given-names>KA</given-names></name><name><surname>Yu</surname><given-names>J</given-names></name><name><surname>Sheng</surname><given-names>QZ</given-names></name><name><surname>Han</surname><given-names>Y</given-names></name><name><surname>Yongchareon</surname><given-names>S</given-names></name></person-group><article-title>Geographic-aware collaborative filtering for web service recommendation</article-title><source>Expert Syst. Appl.</source><year>2020</year><volume>151</volume><fpage>113347</fpage></element-citation><mixed-citation id="mc-CR13" publication-type="journal">Botangen, K. A., Yu, J., Sheng, Q. Z., Han, Y. &#x00026; Yongchareon, S. Geographic-aware collaborative filtering for web service recommendation. <italic>Expert Syst. Appl.</italic><bold>151</bold>, 113347 (2020).</mixed-citation></citation-alternatives></ref><ref id="CR14"><label>14.</label><citation-alternatives><element-citation id="ec-CR14" publication-type="journal"><person-group person-group-type="author"><name><surname>Zhou</surname><given-names>Q</given-names></name><etal/></person-group><article-title>Hybrid collaborative filtering model for consumer dynamic service recommendation based on mobile cloud information system</article-title><source>Inf. Process. Manag.</source><year>2022</year><volume>59</volume><fpage>102871</fpage></element-citation><mixed-citation id="mc-CR14" publication-type="journal">Zhou, Q. et al. Hybrid collaborative filtering model for consumer dynamic service recommendation based on mobile cloud information system. <italic>Inf. Process. Manag.</italic><bold>59</bold>, 102871 (2022).</mixed-citation></citation-alternatives></ref><ref id="CR15"><label>15.</label><citation-alternatives><element-citation id="ec-CR15" publication-type="journal"><person-group person-group-type="author"><name><surname>Ren</surname><given-names>L</given-names></name><name><surname>Wang</surname><given-names>W</given-names></name></person-group><article-title>An svm-based collaborative filtering approach for top-n web services recommendation</article-title><source>Future Gen. Comput. Syst.</source><year>2018</year><volume>78</volume><fpage>531</fpage><lpage>543</lpage></element-citation><mixed-citation id="mc-CR15" publication-type="journal">Ren, L. &#x00026; Wang, W. An svm-based collaborative filtering approach for top-n web services recommendation. <italic>Future Gen. Comput. Syst.</italic><bold>78</bold>, 531&#x02013;543 (2018).</mixed-citation></citation-alternatives></ref><ref id="CR16"><label>16.</label><citation-alternatives><element-citation id="ec-CR16" publication-type="journal"><person-group person-group-type="author"><name><surname>Cui</surname><given-names>Z</given-names></name><etal/></person-group><article-title>Personalized recommendation system based on collaborative filtering for iot scenarios</article-title><source>IEEE Trans. Serv. Comput.</source><year>2020</year><volume>13</volume><fpage>685</fpage><lpage>695</lpage></element-citation><mixed-citation id="mc-CR16" publication-type="journal">Cui, Z. et al. Personalized recommendation system based on collaborative filtering for iot scenarios. <italic>IEEE Trans. Serv. Comput.</italic><bold>13</bold>, 685&#x02013;695 (2020).</mixed-citation></citation-alternatives></ref><ref id="CR17"><label>17.</label><citation-alternatives><element-citation id="ec-CR17" publication-type="journal"><person-group person-group-type="author"><name><surname>Khelloufi</surname><given-names>A</given-names></name><etal/></person-group><article-title>A social-relationships-based service recommendation system for siot devices</article-title><source>IEEE Internet Things J.</source><year>2020</year><volume>8</volume><fpage>1859</fpage><lpage>1870</lpage></element-citation><mixed-citation id="mc-CR17" publication-type="journal">Khelloufi, A. et al. A social-relationships-based service recommendation system for siot devices. <italic>IEEE Internet Things J.</italic><bold>8</bold>, 1859&#x02013;1870 (2020).</mixed-citation></citation-alternatives></ref><ref id="CR18"><label>18.</label><citation-alternatives><element-citation id="ec-CR18" publication-type="journal"><person-group person-group-type="author"><name><surname>Wang</surname><given-names>F</given-names></name><etal/></person-group><article-title>Robust collaborative filtering recommendation with user-item-trust records</article-title><source>IEEE Trans. Comput. Soc. Syst.</source><year>2021</year><volume>9</volume><fpage>986</fpage><lpage>996</lpage></element-citation><mixed-citation id="mc-CR18" publication-type="journal">Wang, F. et al. Robust collaborative filtering recommendation with user-item-trust records. <italic>IEEE Trans. Comput. Soc. Syst.</italic><bold>9</bold>, 986&#x02013;996 (2021).</mixed-citation></citation-alternatives></ref><ref id="CR19"><label>19.</label><citation-alternatives><element-citation id="ec-CR19" publication-type="journal"><person-group person-group-type="author"><name><surname>Bouazza</surname><given-names>H</given-names></name><name><surname>Said</surname><given-names>B</given-names></name><name><surname>Laallam</surname><given-names>FZ</given-names></name></person-group><article-title>A hybrid iot services recommender system using social iot</article-title><source>J. King Saud Univ. Comput. Inf. Sci.</source><year>2022</year><volume>34</volume><fpage>5633</fpage><lpage>5645</lpage></element-citation><mixed-citation id="mc-CR19" publication-type="journal">Bouazza, H., Said, B. &#x00026; Laallam, F. Z. A hybrid iot services recommender system using social iot. <italic>J. King Saud Univ. Comput. Inf. Sci.</italic><bold>34</bold>, 5633&#x02013;5645 (2022).</mixed-citation></citation-alternatives></ref><ref id="CR20"><label>20.</label><mixed-citation publication-type="other">Zhu, H. <italic>et al.</italic> Bilinear graph neural network with neighbor interactions. arXiv preprint <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/2002.03575">arXiv:2002.03575</ext-link> (2020).</mixed-citation></ref><ref id="CR21"><label>21.</label><mixed-citation publication-type="other">Lian, J. <italic>et al.</italic> xdeepfm: Combining explicit and implicit feature interactions for recommender systems. In <italic>Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery &#x00026; Data Mining</italic> 1754&#x02013;1763 (2018).</mixed-citation></ref><ref id="CR22"><label>22.</label><citation-alternatives><element-citation id="ec-CR22" publication-type="journal"><person-group person-group-type="author"><name><surname>Shi</surname><given-names>M</given-names></name><etal/></person-group><article-title>Web service network embedding based on link prediction and convolutional learning</article-title><source>IEEE Trans. Serv. Comput.</source><year>2021</year><volume>15</volume><fpage>3620</fpage><lpage>3633</lpage></element-citation><mixed-citation id="mc-CR22" publication-type="journal">Shi, M. et al. Web service network embedding based on link prediction and convolutional learning. <italic>IEEE Trans. Serv. Comput.</italic><bold>15</bold>, 3620&#x02013;3633 (2021).</mixed-citation></citation-alternatives></ref><ref id="CR23"><label>23.</label><mixed-citation publication-type="other">Yuan, W. et al. Interaction-level membership inference attack against federated recommender systems. In <italic>Proceedings of the ACM Web Conference</italic> 1053&#x02013;1062 (2023).</mixed-citation></ref><ref id="CR24"><label>24.</label><mixed-citation publication-type="other">Yuan, W., Nguyen, Q. V.&#x000a0;H., He, T., Chen, L. &#x00026; Yin, H. Manipulating federated recommender systems: Poisoning with synthetic users and its countermeasures. In <italic>Proceedings of the 46th International ACM SIGIR Conference on Research and Development in Information Retrieval</italic> 1690&#x02013;1699 (2023).</mixed-citation></ref><ref id="CR25"><label>25.</label><mixed-citation publication-type="other">Yuan, W. <italic>et al.</italic> Hetefedrec: Federated recommender systems with model heterogeneity. In <italic>2024 IEEE 40th International Conference on Data Engineering (ICDE)</italic> 1324&#x02013;1337 (IEEE, 2024).</mixed-citation></ref><ref id="CR26"><label>26.</label><citation-alternatives><element-citation id="ec-CR26" publication-type="journal"><person-group person-group-type="author"><name><surname>Chen</surname><given-names>L</given-names></name><etal/></person-group><article-title>Adversarial item promotion on visually-aware recommender systems by guided diffusion</article-title><source>ACM Trans. Inf. Syst.</source><year>2024</year><volume>42</volume><fpage>1</fpage><lpage>26</lpage></element-citation><mixed-citation id="mc-CR26" publication-type="journal">Chen, L. et al. Adversarial item promotion on visually-aware recommender systems by guided diffusion. <italic>ACM Trans. Inf. Syst.</italic><bold>42</bold>, 1&#x02013;26 (2024).</mixed-citation></citation-alternatives></ref><ref id="CR27"><label>27.</label><mixed-citation publication-type="other">Zhao, J. <italic>et al.</italic><italic>Llm-based federated recommendation</italic>. arXiv preprint <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/2402.09959">arXiv:2402.09959</ext-link> (2024).</mixed-citation></ref><ref id="CR28"><label>28.</label><mixed-citation publication-type="other">Waswani, A. <italic>et al.</italic> Attention is all you need. In <italic>NIPS</italic> (2017).</mixed-citation></ref><ref id="CR29"><label>29.</label><mixed-citation publication-type="other">Wang, X., He, X., Cao, Y., Liu, M. &#x00026; Chua, T.-S. Kgat: Knowledge graph attention network for recommendation. In <italic>Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery &#x00026; Data Mining</italic> 950&#x02013;958 (2019).</mixed-citation></ref><ref id="CR30"><label>30.</label><mixed-citation publication-type="other">Lin, Y., Liu, Z., Sun, M., Liu, Y. &#x00026; Zhu, X. Learning entity and relation embeddings for knowledge graph completion. In <italic>Proceedings of the AAAI Conference on Artificial Intelligence</italic> vol.&#x000a0;29 (2015).</mixed-citation></ref><ref id="CR31"><label>31.</label><mixed-citation publication-type="other">Qiu, J. <italic>et al.</italic> Deepinf: Social influence prediction with deep learning. In <italic>Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery &#x00026; Data Mining</italic> 2110&#x02013;2119 (2018).</mixed-citation></ref><ref id="CR32"><label>32.</label><mixed-citation publication-type="other">Kabbur, S., Ning, X. &#x00026; Karypis, G. Fism: factored item similarity models for top-n recommender systems. In <italic>Proceedings of the 19th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</italic> 659&#x02013;667 (2013).</mixed-citation></ref><ref id="CR33"><label>33.</label><citation-alternatives><element-citation id="ec-CR33" publication-type="journal"><person-group person-group-type="author"><name><surname>Zhong</surname><given-names>Y</given-names></name><name><surname>Fan</surname><given-names>Y</given-names></name><name><surname>Tan</surname><given-names>W</given-names></name><name><surname>Zhang</surname><given-names>J</given-names></name></person-group><article-title>Web service recommendation with reconstructed profile from mashup descriptions</article-title><source>IEEE Trans. Autom. Sci. Eng.</source><year>2016</year><volume>15</volume><fpage>468</fpage><lpage>478</lpage></element-citation><mixed-citation id="mc-CR33" publication-type="journal">Zhong, Y., Fan, Y., Tan, W. &#x00026; Zhang, J. Web service recommendation with reconstructed profile from mashup descriptions. <italic>IEEE Trans. Autom. Sci. Eng.</italic><bold>15</bold>, 468&#x02013;478 (2016).</mixed-citation></citation-alternatives></ref><ref id="CR34"><label>34.</label><mixed-citation publication-type="other">He, X., He, Z., Du, X. &#x00026; Chua, T.-S. Adversarial personalized ranking for recommendation. In <italic>The 41st International ACM SIGIR Conference on Research &#x00026; Development in Information Retrieval</italic> 355&#x02013;364 (2018).</mixed-citation></ref><ref id="CR35"><label>35.</label><mixed-citation publication-type="other">He, X. <italic>et al.</italic> Lightgcn: Simplifying and powering graph convolution network for recommendation. In <italic>Proceedings of the 43rd International ACM SIGIR Conference on Research and Development in Information Retrieval</italic> 639&#x02013;648 (2020).</mixed-citation></ref><ref id="CR36"><label>36.</label><mixed-citation publication-type="other">Wu, J. <italic>et al.</italic> Self-supervised graph learning for recommendation. In <italic>Proceedings of the 44th International ACM SIGIR Conference on Research and Development in Information Retrieval</italic> 726&#x02013;735 (2021).</mixed-citation></ref><ref id="CR37"><label>37.</label><citation-alternatives><element-citation id="ec-CR37" publication-type="journal"><person-group person-group-type="author"><name><surname>Wu</surname><given-names>H</given-names></name><name><surname>Duan</surname><given-names>Y</given-names></name><name><surname>Yue</surname><given-names>K</given-names></name><name><surname>Zhang</surname><given-names>L</given-names></name></person-group><article-title>Mashup-oriented web api recommendation via multi-model fusion and multi-task learning</article-title><source>IEEE Trans. Serv. Comput.</source><year>2021</year><volume>15</volume><fpage>3330</fpage><lpage>3343</lpage></element-citation><mixed-citation id="mc-CR37" publication-type="journal">Wu, H., Duan, Y., Yue, K. &#x00026; Zhang, L. Mashup-oriented web api recommendation via multi-model fusion and multi-task learning. <italic>IEEE Trans. Serv. Comput.</italic><bold>15</bold>, 3330&#x02013;3343 (2021).</mixed-citation></citation-alternatives></ref></ref-list></back></article>

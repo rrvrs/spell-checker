@@ -1,0 +1,813 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" dtd-version="1.3" xml:lang="EN" article-type="research-article"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">J Chem Inf Model</journal-id><journal-id journal-id-type="iso-abbrev">J Chem Inf Model</journal-id><journal-id journal-id-type="publisher-id">ci</journal-id><journal-id journal-id-type="coden">jcisd8</journal-id><journal-title-group><journal-title>Journal of Chemical Information and Modeling</journal-title></journal-title-group><issn pub-type="ppub">1549-9596</issn><issn pub-type="epub">1549-960X</issn><publisher><publisher-name>American Chemical Society</publisher-name></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">39887323</article-id><article-id pub-id-type="pmc">PMC11863368</article-id>
+<article-id pub-id-type="doi">10.1021/acs.jcim.4c02236</article-id><article-categories><subj-group><subject>Article</subject></subj-group></article-categories><title-group><article-title>Impact of Varying
+Velocities and Solvation Boxes on
+Alchemical Free-Energy Simulations</article-title></title-group><contrib-group><contrib contrib-type="author" id="ath1"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0002-0860-9916</contrib-id><name><surname>Wang</surname><given-names>Meiting</given-names></name><xref rid="aff1" ref-type="aff">&#x02020;</xref><xref rid="aff2" ref-type="aff">&#x02021;</xref></contrib><contrib contrib-type="author" id="ath2"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0002-9641-1634</contrib-id><name><surname>Jiang</surname><given-names>Hao</given-names></name><xref rid="aff2" ref-type="aff">&#x02021;</xref></contrib><contrib contrib-type="author" corresp="yes" id="ath3"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0001-7653-8489</contrib-id><name><surname>Ryde</surname><given-names>Ulf</given-names></name><xref rid="cor1" ref-type="other">*</xref><xref rid="aff2" ref-type="aff">&#x02021;</xref></contrib><aff id="aff1"><label>&#x02020;</label>School
+of Medical Engineering &#x00026; Xinxiang Key Laboratory of Biomedical
+Information Research &#x00026; Henan International Joint Laboratory of
+Neural Information Analysis and Drug Intelligent Design &#x00026; Xinxiang
+Key Laboratory of Biomedical Information Research, <institution>Xinxiang Medical University</institution>, Xinxiang 453003, <country>China</country></aff><aff id="aff2"><label>&#x02021;</label>Department
+of Computational Chemistry, <institution>Lund University</institution>, Chemical Centre, P.O. Box 124, Lund SE-221 00, <country>Sweden</country></aff></contrib-group><author-notes><corresp id="cor1"><label>*</label>E-mail: <email>ulf.ryde@compchem.lu.se</email>.</corresp></author-notes><pub-date pub-type="epub"><day>31</day><month>01</month><year>2025</year></pub-date><pub-date pub-type="collection"><day>24</day><month>02</month><year>2025</year></pub-date><volume>65</volume><issue>4</issue><fpage>2107</fpage><lpage>2115</lpage><history><date date-type="received"><day>05</day><month>12</month><year>2024</year></date><date date-type="accepted"><day>23</day><month>01</month><year>2025</year></date><date date-type="rev-recd"><day>22</day><month>01</month><year>2025</year></date></history><permissions><copyright-statement>&#x000a9; 2025 The Authors. Published by American Chemical Society</copyright-statement><copyright-year>2025</copyright-year><copyright-holder>The Authors</copyright-holder><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>Permits the broadest form of re-use including for commercial purposes, provided that author attribution and integrity are maintained (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</ext-link>).</license-p></license></permissions><abstract><p content-type="toc-graphic"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02236_0002" id="ab-tgr1"/></p><p>Alchemical free-energy perturbation (FEP) is an accurate
+and thermodynamically
+stringent way to estimate relative energies for the binding of small
+ligands to biological macromolecules. It has repeatedly been pointed
+out that a single simulation normally stays near the starting point
+in phase space and therefore underestimates the uncertainty of the
+results. Therefore, it is better to run an ensemble of independent
+simulations. Traditionally, such an ensemble has been generated by
+using different starting velocities. We argue that it is better to
+use also other random choices made during the setup of the simulations,
+in particular the solvation of the solute. We show here that such
+solvent-induced independent simulations (SIS) sometimes give a larger
+standard deviation and slightly different results for the binding
+of 42 ligands to five different proteins, viz. human N-terminal bromodomain
+4, the Leu99Ala mutant of T4 lysozyme, dihydrofolate reductase, blood-clotting
+factor Xa, and ferritin. SIS does not involve any increase in the
+time consumption. Therefore, we strongly recommend the use of SIS
+(in addition to different velocities) to start independent simulations.
+Other random or uncertain choices in the setup of the simulated systems,
+e.g., the selection of residues with alternative conformations or
+positions of added protons, may also be used to enhance the variation
+in independent simulations.</p></abstract><funding-group><award-group><funding-source><institution-wrap><institution>National Natural Science Foundation of China</institution><institution-id institution-id-type="doi">10.13039/501100001809</institution-id></institution-wrap></funding-source><award-id>22303076</award-id></award-group></funding-group><funding-group><award-group><funding-source><institution-wrap><institution>Henan Education Department</institution><institution-id institution-id-type="doi">NA</institution-id></institution-wrap></funding-source><award-id>23A150007</award-id></award-group></funding-group><funding-group><award-group><funding-source><institution-wrap><institution>China Scholarship Council</institution><institution-id institution-id-type="doi">10.13039/501100004543</institution-id></institution-wrap></funding-source><award-id>202108410209</award-id></award-group></funding-group><funding-group><award-group><funding-source><institution-wrap><institution>Vetenskapsr&#x000c3;&#x000a5;det</institution><institution-id institution-id-type="doi">10.13039/501100004359</institution-id></institution-wrap></funding-source><award-id>2022-04978)</award-id></award-group></funding-group><custom-meta-group><custom-meta><meta-name>document-id-old-9</meta-name><meta-value>ci4c02236</meta-value></custom-meta><custom-meta><meta-name>document-id-new-14</meta-name><meta-value>ci4c02236</meta-value></custom-meta><custom-meta><meta-name>ccc-price</meta-name><meta-value/></custom-meta></custom-meta-group></article-meta></front><body><sec id="sec1"><title>Introduction</title><p>A major goal of computational biochemistry
+is to calculate the
+free energy for the binding of small molecules to biological macromolecules.<sup><xref ref-type="bibr" rid="ref1">1</xref>,<xref ref-type="bibr" rid="ref2">2</xref></sup> In particular, this is of central interest in drug development.
+Consequently, many computational methods have been developed with
+this aim,<sup><xref ref-type="bibr" rid="ref1">1</xref></sup> ranging from molecular docking
+and scoring,<sup><xref ref-type="bibr" rid="ref3">3</xref>,<xref ref-type="bibr" rid="ref4">4</xref></sup> via simulation-based methods like
+MM/PBSA, MM/GBSA (molecular mechanics combined with Poisson&#x02013;Boltzmann
+or generalized Born and surface-area solvation)<sup><xref ref-type="bibr" rid="ref5">5</xref>&#x02212;<xref ref-type="bibr" rid="ref7">7</xref></sup> and linear interaction
+energy,<sup><xref ref-type="bibr" rid="ref8">8</xref>,<xref ref-type="bibr" rid="ref9">9</xref></sup> to alchemical free-energy perturbation (FEP)<sup><xref ref-type="bibr" rid="ref10">10</xref>&#x02212;<xref ref-type="bibr" rid="ref12">12</xref></sup> and nonequilibrium approaches.<sup><xref ref-type="bibr" rid="ref13">13</xref>,<xref ref-type="bibr" rid="ref14">14</xref></sup> In the FEP
+methods, a ligand is slowly converted to another ligand or to a noninteracting
+molecule during molecular-dynamics (MD) or Monte Carlo simulations
+and the free energies are calculated by methods like the exponential
+averaging,<sup><xref ref-type="bibr" rid="ref15">15</xref></sup> thermodynamic integration,<sup><xref ref-type="bibr" rid="ref16">16</xref></sup> Bennett acceptance ratio (BAR)<sup><xref ref-type="bibr" rid="ref17">17</xref></sup> or multistate BAR (MBAR).<sup><xref ref-type="bibr" rid="ref18">18</xref></sup> Several
+studies have shown that FEP approaches can reach an accuracy of 4
+kJ/mol or better for well-behaving systems.<sup><xref ref-type="bibr" rid="ref19">19</xref>&#x02212;<xref ref-type="bibr" rid="ref24">24</xref></sup> FEP methods are based on an exact statistical-mechanics framework
+and therefore, the accuracy is limited only by the accuracy of the
+force field and the extent of phase-space sampling.<sup><xref ref-type="bibr" rid="ref10">10</xref>&#x02212;<xref ref-type="bibr" rid="ref12">12</xref></sup></p><p>MD simulations
+are very sensitive to the simulation parameters.
+A small perturbation of the simulation will grow exponentially with
+the simulation time (the Lyapunov instability).<sup><xref ref-type="bibr" rid="ref25">25</xref></sup> The simulations depend on many types of factors, e.g.,
+the random seed, program parameters and force-field parameters.<sup><xref ref-type="bibr" rid="ref26">26</xref>,<xref ref-type="bibr" rid="ref27">27</xref></sup> It has repeatedly been pointed out that the phase-space sampling
+of MD simulations is rather slow, so that the system stays close to
+the starting state and results obtained with limited sampling depend
+on the starting conditions.<sup><xref ref-type="bibr" rid="ref28">28</xref>&#x02212;<xref ref-type="bibr" rid="ref32">32</xref></sup> In particular, the precision of binding free energies estimated
+from a single simulation typically underestimates the true uncertainty.<sup><xref ref-type="bibr" rid="ref33">33</xref>&#x02212;<xref ref-type="bibr" rid="ref40">40</xref></sup> Consequently, it has been recommended that several independent simulations
+with different starting conditions should be run and that the uncertainty
+should be estimated from the spread of the results from these simulations.<sup><xref ref-type="bibr" rid="ref33">33</xref>,<xref ref-type="bibr" rid="ref34">34</xref>,<xref ref-type="bibr" rid="ref36">36</xref>,<xref ref-type="bibr" rid="ref37">37</xref>,<xref ref-type="bibr" rid="ref39">39</xref>&#x02212;<xref ref-type="bibr" rid="ref41">41</xref></sup> In particular, it has
+been shown that such an approach is more efficient that running a
+single FEP simulation for longer time.<sup><xref ref-type="bibr" rid="ref28">28</xref>,<xref ref-type="bibr" rid="ref31">31</xref>,<xref ref-type="bibr" rid="ref33">33</xref>,<xref ref-type="bibr" rid="ref34">34</xref>,<xref ref-type="bibr" rid="ref41">41</xref>&#x02212;<xref ref-type="bibr" rid="ref44">44</xref></sup></p><p>Independent simulations are typically generated by employing
+different
+random seeds when assigning the starting velocities of the MD simulations.<sup><xref ref-type="bibr" rid="ref28">28</xref>,<xref ref-type="bibr" rid="ref29">29</xref>,<xref ref-type="bibr" rid="ref31">31</xref>,<xref ref-type="bibr" rid="ref32">32</xref>,<xref ref-type="bibr" rid="ref37">37</xref>,<xref ref-type="bibr" rid="ref40">40</xref>,<xref ref-type="bibr" rid="ref44">44</xref></sup> MD simulations are normally started from a crystal
+structure with a cocrystallized or a docked ligand, providing coordinates
+for the macromolecule, the ligand and some solvent molecules. However,
+the velocities need also to be specified when starting MD simulations
+and these are completely unknown. Therefore, they are normally assigned
+random values and directions, following a Boltzmann distribution.
+Therefore, it is natural and simple to exploit this randomness when
+constructing an ensemble of independent simulations. By employing
+the starting time when constructing the random seed, such a procedure
+can be made completely automatic.</p><p>However, there are also other
+parts of the setup of a MD simulation
+that involve random or at least highly arbitrary or uncertain steps.<sup><xref ref-type="bibr" rid="ref34">34</xref></sup> In particular, the crystal or docked structures
+contains only a limited number of solvent molecules and therefore
+many additional solvent molecules need to be added before the MD simulation
+can be started. The standard approach is to overlay the solute with
+an equilibrated periodic box of solvent molecules, taken from a equilibrated
+MD simulation of the pure solvent, removing solvent molecules that
+clash with the solute.<sup><xref ref-type="bibr" rid="ref45">45</xref></sup> Naturally, this
+is a very crude approach, because it gives no proper hydrogen bonds
+between the solute and solvent, and the solvent structure needs to
+relax and shrink toward the solute during the initial equilibration
+of the starting structure. Moreover, the approach is completely arbitrary
+in the meaning that any snapshot from an equilibrated solvent simulation
+would apply equally well and any rotation or translation of the solvent
+box or the protein would produce different results (in terms of both
+the solvent positions and the number of solvent molecules).</p><p>Therefore, it seems natural to employ also this uncertainty when
+setting up independent MD simulations. In this study, we compare these
+two approaches to generate independent simulations. As test cases,
+we calculate relative binding free energies of 42 ligands binding
+to five different proteins, viz. the human N-terminal bromodomain
+(BRD4),<sup><xref ref-type="bibr" rid="ref38">38</xref></sup> Leu99Ala mutant of bacteriophage
+T4 lysozyme,<sup><xref ref-type="bibr" rid="ref46">46</xref></sup> dihydrofolate reductase,<sup><xref ref-type="bibr" rid="ref47">47</xref>,<xref ref-type="bibr" rid="ref48">48</xref></sup> blood-clotting factor Xa<sup><xref ref-type="bibr" rid="ref49">49</xref></sup> and ferritin.<sup><xref ref-type="bibr" rid="ref50">50</xref></sup> We compare the relative binding affinities and
+the precision obtained with the two approaches.</p></sec><sec id="sec2"><title>Theory and Methods</title><sec id="sec2.1"><title>Simulation Details</title><p>We have calculated relative binding
+free energies of four ligands binding to BRD4<sup><xref ref-type="bibr" rid="ref38">38</xref></sup> and seven ligands binding to the Leu99Ala mutant of bacteriophage
+T4 lysozyme<sup><xref ref-type="bibr" rid="ref46">46</xref></sup> (the proteins and the ligands
+are shown in <xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>). The simulations were based on the protein databank structures
+4BJX (BRD4) and 181L (lysozyme). We employed the protein preparation
+wizard in Maestro software<sup><xref ref-type="bibr" rid="ref51">51</xref></sup> to add protons
+and flip side chains of Asn and Gln residues in the two proteins.
+All Arg, Lys, Asp and Glu residues were assumed charged. The protonation
+of the His residues was determined by considering the surrounding
+environment and hydrogen-bond network. There is only one His residue
+in each of the two proteins and our investigations suggest that both
+are protonated only on the NE2 atom. The ligands were docked into
+the proteins using Molecular Operating Environment (MOE2019).<sup><xref ref-type="bibr" rid="ref52">52</xref></sup></p><fig id="fig1" position="float"><label>Figure 1</label><caption><p>Schematic structures of the two proteins and structure
+formulas
+of the ligands. For the BRD4 ligands, all ligands have the same general
+scaffold (right) and only the R-group is varied (left; the pink line
+shows where the ring systems are connected to the scaffold).</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02236_0001" id="gr3" position="float"/></fig><p>All simulations in this study were carried out
+with the AMBER 22
+software.<sup><xref ref-type="bibr" rid="ref45">45</xref>,<xref ref-type="bibr" rid="ref53">53</xref></sup> The proteins were modeled with the AMBER
+ff14SB force field,<sup><xref ref-type="bibr" rid="ref54">54</xref></sup> while the ligands
+were described by the GAFF2 general AMBER force field.<sup><xref ref-type="bibr" rid="ref55">55</xref></sup> Partial charges for the ligands were obtained
+with the AM1-BCC method using Antechamber, after optimization with
+the semiempirical AM1 method.<sup><xref ref-type="bibr" rid="ref56">56</xref></sup> Charges
+and parameters for the ligands are given in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02236/suppl_file/ci4c02236_si_001.pdf">Supporting Information</ext-link>. The protein&#x02013;ligand complexes
+and the free ligands were solvated in a cubic periodic box of TIP3P
+water molecules extending at least 12 &#x000c5; from any solute atom.<sup><xref ref-type="bibr" rid="ref57">57</xref></sup> Neutralizing counterions, sodium or chloride,
+were added to each protein using parameters from Joung and Cheatham.<sup><xref ref-type="bibr" rid="ref55">55</xref>,<xref ref-type="bibr" rid="ref58">58</xref></sup></p><p>All systems were first minimized, employing 5000 cycles of
+steepest-descent
+and 5000 cycles of conjugate-gradient minimization without applying
+any restrains. Subsequently, a 50 ps heating at constant volume was
+performed, followed by 200 ps of equilibration at constant pressure.
+The temperature was controlled using a Langevin thermostat<sup><xref ref-type="bibr" rid="ref59">59</xref></sup> set to a target temperature of 300 K. Pressure
+regulation was achieved through a Monte Carlo barostat, maintaining
+a target pressure of 1.0 atm with a relaxation time of 2.0 ps.</p><p>During the FEP simulations, a ligand was gradually converted to
+another ligand in a transformation controlled by the transformation
+parameter &#x003bb;.<sup><xref ref-type="bibr" rid="ref60">60</xref></sup> To ensure proper phase-space
+overlap, 11 alchemical windows (&#x003bb; = 0.0, 0.1, 0.2, 0.3, 0.4,
+0.5, 0.6, 0.7, 0.8, 0.9, 1.0) were used for the transformation and
+simulations at all &#x003bb; were run simultaneously using the same
+starting structure. The nonbonded interactions were smoothly modified
+utilizing a soft-core potential<sup><xref ref-type="bibr" rid="ref60">60</xref></sup> involving
+both electrostatics and Lennard&#x02212;Jones interactions. We employed
+the dual-topology approach implemented in AMBER<sup><xref ref-type="bibr" rid="ref60">60</xref></sup> and the simulations were run with the GPU version of the
+pmemd software.<sup><xref ref-type="bibr" rid="ref62">62</xref>,<xref ref-type="bibr" rid="ref63">63</xref></sup> A 10 ns production was carried
+for each window in the NPT ensemble. The time step was set to 2 fs,
+and snapshots were saved every 2 ps for subsequent analysis. Particle
+mesh Ewald<sup><xref ref-type="bibr" rid="ref64">64</xref></sup> summation was used for electrostatic
+interactions and a cutoff of 8.0 &#x000c5; was utilized for Lennard&#x02212;Jones
+interactions.</p><p>We studied the effect of the starting velocities
+and the starting
+coordinates of the solvation water molecules on the relative binding
+free energies. We used five different sets of random starting velocities
+(obtained by using different random seeds, using the ig = &#x02212;1
+option in AMBER), as well as five different water boxes. These five
+distinct water configurations were taken from a 500 ns simulation
+of a TIP3P water box, taking snapshots every 12.5 ns.<sup><xref ref-type="bibr" rid="ref34">34</xref></sup> The water boxes are available at <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://signe.teokem.lu.se/ulf/Methods/waterboxes.html">http://signe.teokem.lu.se/ulf/Methods/waterboxes.html</uri> (we used water boxes 6, 8, 16, 26 and 36). It should be noted that
+in simulations with different water boxes, the starting velocities
+were also randomized. Thus, a total of 10 independent FEP simulations
+were performed for each transformation.</p><p>To obtain more data,
+we also studied the binding of nine small
+substituted benzene ligands to a ferritin dimer (ten transformations),<sup><xref ref-type="bibr" rid="ref50">50</xref></sup> ten ligands to blood coagulation factor Xa (fXa)
+(ten transformations),<sup><xref ref-type="bibr" rid="ref49">49</xref></sup> and 12 ligands
+to dihydrofolate reductase (DHFR; 15 transformations).<sup><xref ref-type="bibr" rid="ref47">47</xref>,<xref ref-type="bibr" rid="ref48">48</xref></sup> The ligands are shown in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02236/suppl_file/ci4c02236_si_001.pdf">Figure S1</ext-link> and
+are described in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02236/suppl_file/ci4c02236_si_001.pdf">Table S1</ext-link>. The setup is
+described in our previous publications.<sup><xref ref-type="bibr" rid="ref20">20</xref>,<xref ref-type="bibr" rid="ref65">65</xref></sup> The simulations
+differ in that 13 &#x003bb; values were used (0.0, 0.05, 0.1, 0.2, 0.3,
+0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95 and 1.0) and that the production
+run was only 2 ns.</p></sec><sec id="sec2.2"><title>Free-Energy Estimators</title><p>FEP methods enable the calculation
+of relative free energy through a computationally efficient pathway.
+Using a standard thermodynamic cycle and the fact that the free energy
+is a state function, the relative binding free energy (&#x00394;&#x00394;<italic>G</italic><sub>bind</sub>) between two ligands (L1 and L2) equals
+the difference between the absolute binding free energy (&#x00394;<italic>G</italic><sub>bind</sub>) of the two ligands, which involves changing
+the environment from unbound in an aqueous phase to bound in a complex
+with the protein target.<sup><xref ref-type="bibr" rid="ref10">10</xref>&#x02212;<xref ref-type="bibr" rid="ref12">12</xref></sup><disp-formula id="eq1"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02236_m001" position="anchor"/><label>1</label></disp-formula></p><p>Here, <inline-formula id="d34e413"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02236_m002.gif"/></inline-formula> is the free energy difference for the ligands
+bound to the protein and <inline-formula id="d34e416"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02236_m003.gif"/></inline-formula> is the same free energy difference in water
+solution.</p><p>The free energy changes were estimated by MBAR method,<sup><xref ref-type="bibr" rid="ref18">18</xref></sup> as implemented in alchemlyb<sup><xref ref-type="bibr" rid="ref66">66</xref></sup> (<uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://alchemlyb.readthedocs.io">https://alchemlyb.readthedocs.io</uri>). Moreover, we employed the Wu and Kofke bias measure &#x003a0; to
+ensure that there is a proper overlap between all &#x003bb; states.<sup><xref ref-type="bibr" rid="ref67">67</xref></sup> If &#x003a0; &#x0003c; 0.5, additional &#x003bb; values
+were added.</p><p>The performance of the free-energy estimates was
+quantified by
+the mean absolute deviation (MAD), the maximum error (Max), the correlation
+coefficient (<italic>R</italic><sup>2</sup>) and Kendall&#x02019;s
+rank correlation coefficient (&#x003c4;) compared to experimental data.
+&#x003c4; was calculated only for the transformations that were explicitly
+studied, not for all combinations that can be formed from these transformations
+(this is marked by calling it &#x003c4;<sub><italic>r</italic></sub>). Moreover, it was evaluated considering only differences (both
+experimental and calculated) that are statistically significant at
+the 90% level (&#x003c4;<sub><italic>r</italic>90</sub>).<sup><xref ref-type="bibr" rid="ref68">68</xref></sup> Note that <italic>R</italic><sup>2</sup> for
+relative affinities depend on the direction of the perturbation (i.e.,
+whether L1 &#x02192; L2 or L2 &#x02192; L1 is considered, which is arbitrary).
+This was solved by considering both directions (both forward and backward)
+for all perturbations when <italic>R</italic><sup>2</sup> was calculated.</p><p>The standard deviation of the quality measures was obtained by
+a simple simulation approach.<sup><xref ref-type="bibr" rid="ref33">33</xref></sup> For each
+transformation, 1000 Gaussian-distributed random numbers were generated
+with the mean and standard deviation equal to the MBAR and experimental
+results for that transformation. Then, the quality measures were calculated
+for each of these 1000 sets of simulated results and the standard
+error over the 1000 sets is reported as the uncertainty. Of course,
+such uncertainty estimates are quite approximate and assume a Gaussian
+distribution of the quality measures.</p></sec></sec><sec id="sec3"><title>Results and Discussion</title><p>In this study, we compare two
+approaches to obtain independent
+estimates for the calculation of relative binding free energies. In
+the first approach, five independent simulations were obtained by
+using a different random seed to generate the starting velocity. In
+the second approach, the proteins were solvated in five different
+solvent boxes. In the following, we will call these two approaches
+velocity-induced independent simulations (VIS) and solvent-induced
+independent simulations (SIS). We have studied five different proteins,
+bromodomain 4 (BRD4), the Leu99Ala mutant of T4 lysozyme, dihydrofolate
+reductase, blood-clotting factor Xa and ferritin. The results of the
+first two are described in detail in the main text, whereas the other
+three are described mainly in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02236/suppl_file/ci4c02236_si_001.pdf">Supporting Information</ext-link>.</p><p>For BRD4, we studied four relative affinities involving the
+four
+ligands shown in <xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>. The results are collected in <xref rid="tbl1" ref-type="other">Table <xref rid="tbl1" ref-type="other">1</xref></xref>. It can be seen that the VIS and SIS approaches give
+quite similar results. The average &#x00394;&#x00394;<italic>G</italic>s differ by only 0.1&#x02013;0.8 kJ/mol, which is within the statistical
+uncertainty&#x02013;in no case is the difference larger than two times
+the precision (i.e., a 95% confidence <italic>t</italic> factor).
+Compared to the experimental estimates,<sup><xref ref-type="bibr" rid="ref38">38</xref></sup> the results are excellent, with errors of 0.1&#x02013;1.8 kJ/mol
+and perfect both <italic>R</italic><sup>2</sup> and &#x003c4;<sub><italic>r</italic>90</sub>. There is no indication that any of the two approaches
+gives better results (VIS gives a slightly lower MAD and SIS gives
+a lower maximum error, but none of the differences is statistically
+significant) and there is no trend in the calculated affinities.</p><table-wrap id="tbl1" position="float"><label>Table 1</label><caption><title>Relative Binding Free Energies (kJ/mol)
+for the Four Ligands of BRD4, Showing the Results of Five Independent
+Simulations with Different Starting Velocities or Using Five Different
+Solvent Boxes<xref rid="tbl1fn1" ref-type="table-fn">a</xref></title></caption><table frame="hsides" rules="groups" border="0"><colgroup><col align="left"/><col align="char" char="&#x000b1;"/><col align="char" char="&#x000b1;"/><col align="char" char="&#x000b1;"/><col align="char" char="&#x000b1;"/></colgroup><thead><tr><th style="border:none;" align="center">&#x000a0;</th><th style="border:none;" align="center" char="&#x000b1;">L1 &#x02192; L3</th><th style="border:none;" align="center" char="&#x000b1;">L3 &#x02192;
+L2</th><th style="border:none;" align="center" char="&#x000b1;">L3 &#x02192; L4</th><th style="border:none;" align="center" char="&#x000b1;">L4 &#x02192; L2</th></tr></thead><tbody><tr><td colspan="5" style="border:none;" align="left">VIS</td></tr><tr><td style="border:none;" align="left">1</td><td style="border:none;" align="char" char="&#x000b1;">1.45&#x000a0;&#x000b1;&#x000a0;0.10</td><td style="border:none;" align="char" char="&#x000b1;">6.62&#x000a0;&#x000b1;&#x000a0;0.17</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;0.38&#x000a0;&#x000b1;&#x000a0;0.08</td><td style="border:none;" align="char" char="&#x000b1;">9.34&#x000a0;&#x000b1;&#x000a0;0.16</td></tr><tr><td style="border:none;" align="left">2</td><td style="border:none;" align="char" char="&#x000b1;">1.18&#x000a0;&#x000b1;&#x000a0;0.10</td><td style="border:none;" align="char" char="&#x000b1;">6.62&#x000a0;&#x000b1;&#x000a0;0.17</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;0.10&#x000a0;&#x000b1;&#x000a0;0.08</td><td style="border:none;" align="char" char="&#x000b1;">8.06&#x000a0;&#x000b1;&#x000a0;0.17</td></tr><tr><td style="border:none;" align="left">3</td><td style="border:none;" align="char" char="&#x000b1;">1.80&#x000a0;&#x000b1;&#x000a0;0.10</td><td style="border:none;" align="char" char="&#x000b1;">8.24&#x000a0;&#x000b1;&#x000a0;0.16</td><td style="border:none;" align="char" char="&#x000b1;">0.00&#x000a0;&#x000b1;&#x000a0;0.07</td><td style="border:none;" align="char" char="&#x000b1;">7.16&#x000a0;&#x000b1;&#x000a0;0.17</td></tr><tr><td style="border:none;" align="left">4</td><td style="border:none;" align="char" char="&#x000b1;">1.30&#x000a0;&#x000b1;&#x000a0;0.10</td><td style="border:none;" align="char" char="&#x000b1;">7.08&#x000a0;&#x000b1;&#x000a0;0.17</td><td style="border:none;" align="char" char="&#x000b1;">0.09&#x000a0;&#x000b1;&#x000a0;0.08</td><td style="border:none;" align="char" char="&#x000b1;">8.71&#x000a0;&#x000b1;&#x000a0;0.17</td></tr><tr><td style="border:none;" align="left">5</td><td style="border:none;" align="char" char="&#x000b1;">1.40&#x000a0;&#x000b1;&#x000a0;0.10</td><td style="border:none;" align="char" char="&#x000b1;">8.04&#x000a0;&#x000b1;&#x000a0;0.16</td><td style="border:none;" align="char" char="&#x000b1;">0.03&#x000a0;&#x000b1;&#x000a0;0.08</td><td style="border:none;" align="char" char="&#x000b1;">9.09&#x000a0;&#x000b1;&#x000a0;0.17</td></tr><tr><td style="border:none;" align="left">Av</td><td style="border:none;" align="char" char="&#x000b1;">1.43&#x000a0;&#x000b1;&#x000a0;0.10</td><td style="border:none;" align="char" char="&#x000b1;">7.32&#x000a0;&#x000b1;&#x000a0;0.35</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;0.07&#x000a0;&#x000b1;&#x000a0;0.08</td><td style="border:none;" align="char" char="&#x000b1;">8.47&#x000a0;&#x000b1;&#x000a0;0.39</td></tr><tr><td style="border:none;" align="left">Err</td><td style="border:none;" align="char" char="&#x000b1;">0.17</td><td style="border:none;" align="char" char="&#x000b1;">0.2</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;0.07</td><td style="border:none;" align="char" char="&#x000b1;">1.78</td></tr><tr><td style="border:none;" align="left">Qual</td><td style="border:none;" align="char" char="&#x000b1;">0.7&#x000a0;&#x000b1;&#x000a0;0.2</td><td style="border:none;" align="char" char="&#x000b1;">1.8&#x000a0;&#x000b1;&#x000a0;0.7</td><td style="border:none;" align="char" char="&#x000b1;">1.00&#x000a0;&#x000b1;&#x000a0;0.01</td><td style="border:none;" align="char" char="&#x000b1;">1.00&#x000a0;&#x000b1;&#x000a0;0.02</td></tr><tr><td colspan="5" style="border:none;" align="left">SIS</td></tr><tr><td style="border:none;" align="left">1</td><td style="border:none;" align="char" char="&#x000b1;">1.59&#x000a0;&#x000b1;&#x000a0;0.10</td><td style="border:none;" align="char" char="&#x000b1;">9.01&#x000a0;&#x000b1;&#x000a0;0.16</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;0.30&#x000a0;&#x000b1;&#x000a0;0.08</td><td style="border:none;" align="char" char="&#x000b1;">8.69&#x000a0;&#x000b1;&#x000a0;0.17</td></tr><tr><td style="border:none;" align="left">2</td><td style="border:none;" align="char" char="&#x000b1;">1.66&#x000a0;&#x000b1;&#x000a0;0.10</td><td style="border:none;" align="char" char="&#x000b1;">8.11&#x000a0;&#x000b1;&#x000a0;0.16</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;0.56&#x000a0;&#x000b1;&#x000a0;0.08</td><td style="border:none;" align="char" char="&#x000b1;">8.49&#x000a0;&#x000b1;&#x000a0;0.17</td></tr><tr><td style="border:none;" align="left">3</td><td style="border:none;" align="char" char="&#x000b1;">1.49&#x000a0;&#x000b1;&#x000a0;0.10</td><td style="border:none;" align="char" char="&#x000b1;">7.24&#x000a0;&#x000b1;&#x000a0;0.17</td><td style="border:none;" align="char" char="&#x000b1;">0.26&#x000a0;&#x000b1;&#x000a0;0.08</td><td style="border:none;" align="char" char="&#x000b1;">8.59&#x000a0;&#x000b1;&#x000a0;0.17</td></tr><tr><td style="border:none;" align="left">4</td><td style="border:none;" align="char" char="&#x000b1;">1.76&#x000a0;&#x000b1;&#x000a0;0.10</td><td style="border:none;" align="char" char="&#x000b1;">6.47&#x000a0;&#x000b1;&#x000a0;0.17</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;0.11&#x000a0;&#x000b1;&#x000a0;0.08</td><td style="border:none;" align="char" char="&#x000b1;">7.11&#x000a0;&#x000b1;&#x000a0;0.17</td></tr><tr><td style="border:none;" align="left">5</td><td style="border:none;" align="char" char="&#x000b1;">1.32&#x000a0;&#x000b1;&#x000a0;0.10</td><td style="border:none;" align="char" char="&#x000b1;">9.66&#x000a0;&#x000b1;&#x000a0;0.16</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;0.10&#x000a0;&#x000b1;&#x000a0;0.08</td><td style="border:none;" align="char" char="&#x000b1;">7.62&#x000a0;&#x000b1;&#x000a0;0.17</td></tr><tr><td style="border:none;" align="left">Av</td><td style="border:none;" align="char" char="&#x000b1;">1.65&#x000a0;&#x000b1;&#x000a0;0.07</td><td style="border:none;" align="char" char="&#x000b1;">8.10&#x000a0;&#x000b1;&#x000a0;0.58</td><td style="border:none;" align="char" char="&#x000b1;"><bold>&#x02013;</bold>0.16&#x000a0;&#x000b1;&#x000a0;0.13</td><td style="border:none;" align="char" char="&#x000b1;">8.10&#x000a0;&#x000b1;&#x000a0;0.31</td></tr><tr><td style="border:none;" align="left">Err</td><td style="border:none;" align="char" char="&#x000b1;">0.31</td><td style="border:none;" align="char" char="&#x000b1;">1.41</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;0.16</td><td style="border:none;" align="char" char="&#x000b1;">1.41</td></tr><tr><td style="border:none;" align="left">Qual</td><td style="border:none;" align="char" char="&#x000b1;">0.8&#x000a0;&#x000b1;&#x000a0;0.3</td><td style="border:none;" align="char" char="&#x000b1;">1.4&#x000a0;&#x000b1;&#x000a0;0.6</td><td style="border:none;" align="char" char="&#x000b1;">1.00&#x000a0;&#x000b1;&#x000a0;0.01</td><td style="border:none;" align="char" char="&#x000b1;">1.00&#x000a0;&#x000b1;&#x000a0;0.02</td></tr></tbody></table><table-wrap-foot><fn id="tbl1fn1"><label>a</label><p>Av shows the average results and
+standard error of these five independent simulations. Err is the error
+compared to the experimental affinities (1.26, 6.69, 0.00, and 6.69
+kJ/mol for the four transformations).<sup><xref ref-type="bibr" rid="ref38">38</xref></sup> The four quality measures (Qual) are MAD, Max, <italic>R</italic><sup>2</sup>, and &#x003c4;<sub><italic>r</italic>90</sub>, in this
+order.</p></fn></table-wrap-foot></table-wrap><p>Three of the transformations form a thermodynamic
+cycle, which
+should give a net vanishing free energy, L3 &#x02192; L2 &#x02192; L4
+&#x02192; L3. Forming all (125) possible sums of the five independent
+results of three transformations give results that vary from &#x02212;2.8
+to 1.5 kJ/mol with an average of &#x02212;1.08 &#x000b1; 0.5 for VIS and
+from &#x02212;2.5 to 3.1 kJ/mol with an average of 0.16 &#x000b1; 0.7
+for SIS. The latter is clearly vanishing within the statistical uncertainty,
+whereas the former may have a slight bias (it differs from zero with
+93% probability). This may indicate that the SIS approach gives a
+better ensemble of independent simulations.</p><p>The precision of
+the individual affinities was estimated by MBAR.
+It can be seen that it is rather even for all perturbations, 0.07&#x02013;0.17
+kJ/mol. The precision is very similar for VIS and SIS and vary much
+more between the transformations than between the two approaches.
+The precision of the net estimate of the binding affinity (the average)
+is calculated as the standard error over the five independent estimates
+(the standard deviation divided by <inline-formula id="d34e633"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02236_m004.gif"/></inline-formula>). It can be seen that it is typically somewhat
+larger than the precision estimated by MBAR (with only one exception),
+by a factor of 1.1&#x02013;3.5. This shows that a single FEP calculation
+gives an overoptimistic estimate of the precision and that individual
+simulation may give &#x00394;&#x00394;<italic>G</italic> results that
+differ by 0.4&#x02013;3.2 kJ/mol. Undoubtedly, several independent
+simulations are needed to obtain a true estimate of both the binding
+free energy and the precision of that estimate, as has been pointed
+out in several previous investigations.<sup><xref ref-type="bibr" rid="ref33">33</xref>,<xref ref-type="bibr" rid="ref34">34</xref>,<xref ref-type="bibr" rid="ref36">36</xref>,<xref ref-type="bibr" rid="ref37">37</xref>,<xref ref-type="bibr" rid="ref39">39</xref>&#x02212;<xref ref-type="bibr" rid="ref41">41</xref></sup></p><p>It can also be seen that VIS and SIS give rather
+similar estimates
+of the precision. Both approaches agree that the L3 &#x02192; L2 and
+the L4 &#x02192; L2 transformations, involving a change from a H atom
+to a six-membered ring, give the largest uncertainty. The estimated
+uncertainty is similar (within 0.1 kJ/mol) for the two approaches
+for three of the transformations, whereas for the L3 &#x02192; L2 transformation,
+SIS gives an uncertainty (0.58 kJ/mol) that is almost two times larger
+than that obtained with VIS (0.35 kJ/mol).</p><p>For T4 lysozyme,
+we studied six transformations involving the seven
+ligands also shown in <xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>. The results are collected in <xref rid="tbl2" ref-type="other">Table <xref rid="tbl2" ref-type="other">2</xref></xref>. It can be seen that the two approaches
+give statistically coinciding results for five of the transformations
+(i.e., the averages coincide within twice the uncertainty); the averages
+agree within 0.7 kJ/mol. However, for the Eth &#x02192; Tol transformation,
+the results differ significantly, 2.5 &#x000b1; 0.1 and 3.1 &#x000b1; 0.1,
+giving a difference that is four times larger than the uncertainty,
+(0.61 &#x000b1; 0.15 kJ/mol). The VIS calculations give free-energy differences
+of 2.4&#x02013;2.9 kJ/mol, whereas those with the SIS calculations
+are 2.8&#x02013;3.3 kJ/mol. Of course, the difference can be caused
+by random fluctuations caused by the rather small sample size, but
+a simple simulation with Gaussian random numbers shows that if the
+two distributions are identical (with an average of 2.82 and a standard
+deviation 0.39 kJ/mol), it is only 1.4% chance that such a large difference
+is observed between two averages of five samples. Therefore, it is
+more likely that the default solvent box in AMBER gives results that
+are significantly lower than for other random solvent boxes for this
+transformation. We have checked the conformation of the ethyl group
+in theses simulations, but as can be seen from the results in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02236/suppl_file/ci4c02236_si_001.pdf">Table S2</ext-link>, there is no difference in the conformations
+between the two methods.</p><table-wrap id="tbl2" position="float"><label>Table 2</label><caption><title>Relative Binding Free Energies (kJ/mol)
+for the Seven Ligands of T4 Lysozyme, Showing the Results of Five
+Independent Simulations with Different Starting Velocities or Using
+Five Different Solvent Boxes<xref rid="tbl2fn1" ref-type="table-fn">a</xref></title></caption><table frame="hsides" rules="groups" border="0"><colgroup><col align="left"/><col align="char" char="&#x000b1;"/><col align="char" char="&#x000b1;"/><col align="char" char="&#x000b1;"/><col align="char" char="&#x000b1;"/><col align="char" char="&#x000b1;"/><col align="char" char="&#x000b1;"/></colgroup><thead><tr><th style="border:none;" align="center">&#x000a0;</th><th style="border:none;" align="center" char="&#x000b1;">Ben &#x02192; Phe</th><th style="border:none;" align="center" char="&#x000b1;">Eth &#x02192;
+Tol</th><th style="border:none;" align="center" char="&#x000b1;">Tol &#x02192; Ben</th><th style="border:none;" align="center" char="&#x000b1;">Ide &#x02192; Ido</th><th style="border:none;" align="center" char="&#x000b1;">Ido &#x02192;
+Bzf</th><th style="border:none;" align="center" char="&#x000b1;">Ide &#x02192; Bzf</th></tr></thead><tbody><tr><td colspan="7" style="border:none;" align="left">VIS</td></tr><tr><td style="border:none;" align="left">1</td><td style="border:none;" align="char" char="&#x000b1;">8.07&#x000a0;&#x000b1;&#x000a0;0.06</td><td style="border:none;" align="char" char="&#x000b1;">2.36&#x000a0;&#x000b1;&#x000a0;0.08</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;0.19&#x000a0;&#x000b1;&#x000a0;0.07</td><td style="border:none;" align="char" char="&#x000b1;">7.63&#x000a0;&#x000b1;&#x000a0;0.06</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;11.92&#x000a0;&#x000b1;&#x000a0;0.05</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;3.78&#x000a0;&#x000b1;&#x000a0;0.06</td></tr><tr><td style="border:none;" align="left">2</td><td style="border:none;" align="char" char="&#x000b1;">7.97&#x000a0;&#x000b1;&#x000a0;0.07</td><td style="border:none;" align="char" char="&#x000b1;">2.50&#x000a0;&#x000b1;&#x000a0;0.08</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;0.20 &#x000b1; 0.07</td><td style="border:none;" align="char" char="&#x000b1;">7.62&#x000a0;&#x000b1;&#x000a0;0.06</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;11.73 &#x000b1;
+0.05</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;3.86 &#x000b1; 0.06</td></tr><tr><td style="border:none;" align="left">3</td><td style="border:none;" align="char" char="&#x000b1;">8.42&#x000a0;&#x000b1;&#x000a0;0.06</td><td style="border:none;" align="char" char="&#x000b1;">2.38&#x000a0;&#x000b1;&#x000a0;0.08</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;0.08 &#x000b1; 0.07</td><td style="border:none;" align="char" char="&#x000b1;">6.61&#x000a0;&#x000b1;&#x000a0;0.06</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;11.51 &#x000b1; 0.05</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;3.99 &#x000b1; 0.06</td></tr><tr><td style="border:none;" align="left">4</td><td style="border:none;" align="char" char="&#x000b1;">8.02&#x000a0;&#x000b1;&#x000a0;0.07</td><td style="border:none;" align="char" char="&#x000b1;">2.41&#x000a0;&#x000b1;&#x000a0;0.08</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;0.16
+&#x000b1; 0.07</td><td style="border:none;" align="char" char="&#x000b1;">8.01&#x000a0;&#x000b1;&#x000a0;0.06</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;9.81 &#x000b1; 0.05</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;4.20
+&#x000b1; 0.06</td></tr><tr><td style="border:none;" align="left">5</td><td style="border:none;" align="char" char="&#x000b1;">8.07&#x000a0;&#x000b1;&#x000a0;0.07</td><td style="border:none;" align="char" char="&#x000b1;">2.91&#x000a0;&#x000b1;&#x000a0;0.08</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;0.33 &#x000b1; 0.07</td><td style="border:none;" align="char" char="&#x000b1;">7.75&#x000a0;&#x000b1;&#x000a0;0.06</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;11.48 &#x000b1; 0.05</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;3.87 &#x000b1; 0.06</td></tr><tr><td style="border:none;" align="left">Av</td><td style="border:none;" align="char" char="&#x000b1;">8.11&#x000a0;&#x000b1;&#x000a0;0.08</td><td style="border:none;" align="char" char="&#x000b1;">2.51&#x000a0;&#x000b1;&#x000a0;0.10</td><td style="border:none;" align="char" char="&#x000b1;"><bold>&#x02013;</bold>0.19 &#x000b1; 0.04</td><td style="border:none;" align="char" char="&#x000b1;">7.52&#x000a0;&#x000b1;&#x000a0;0.24</td><td style="border:none;" align="char" char="&#x000b1;"><bold>&#x02013;</bold>11.29 &#x000b1; 0.38</td><td style="border:none;" align="char" char="&#x000b1;"><bold>&#x02013;</bold>3.94 &#x000b1;
+0.07</td></tr><tr><td style="border:none;" align="left">Err</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;2.14</td><td style="border:none;" align="char" char="&#x000b1;">1.51</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;1.57</td><td style="border:none;" align="char" char="&#x000b1;">6.52</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;8.91</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;2.56</td></tr><tr><td style="border:none;" align="left">Qual</td><td style="border:none;" align="char" char="&#x000b1;">3.9&#x000a0;&#x000b1;&#x000a0;0.3</td><td style="border:none;" align="char" char="&#x000b1;">8.9&#x000a0;&#x000b1;&#x000a0;0.4</td><td style="border:none;" align="char" char="&#x000b1;">0.50 &#x000b1; 0.04</td><td style="border:none;" align="char" char="&#x000b1;">0.67&#x000a0;&#x000b1;&#x000a0;0.06</td><td style="border:none;" align="char" char="&#x000b1;">&#x000a0;</td><td style="border:none;" align="char" char="&#x000b1;">&#x000a0;</td></tr><tr><td colspan="7" style="border:none;" align="left">SIS</td></tr><tr><td style="border:none;" align="left">1</td><td style="border:none;" align="char" char="&#x000b1;">8.02&#x000a0;&#x000b1;&#x000a0;0.07</td><td style="border:none;" align="char" char="&#x000b1;">3.29&#x000a0;&#x000b1;&#x000a0;0.08</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;0.38
+&#x000b1; 0.07</td><td style="border:none;" align="char" char="&#x000b1;">7.29&#x000a0;&#x000b1;&#x000a0;0.06</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;12.09 &#x000b1; 0.05</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;4.42
+&#x000b1; 0.06</td></tr><tr><td style="border:none;" align="left">2</td><td style="border:none;" align="char" char="&#x000b1;">8.09&#x000a0;&#x000b1;&#x000a0;0.07</td><td style="border:none;" align="char" char="&#x000b1;">2.84&#x000a0;&#x000b1;&#x000a0;0.08</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;0.51 &#x000b1; 0.07</td><td style="border:none;" align="char" char="&#x000b1;">7.00&#x000a0;&#x000b1;&#x000a0;0.07</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;11.92 &#x000b1; 0.05</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;4.37 &#x000b1; 0.07</td></tr><tr><td style="border:none;" align="left">3</td><td style="border:none;" align="char" char="&#x000b1;">8.04&#x000a0;&#x000b1;&#x000a0;0.07</td><td style="border:none;" align="char" char="&#x000b1;">2.91&#x000a0;&#x000b1;&#x000a0;0.08</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;0.07 &#x000b1; 0.07</td><td style="border:none;" align="char" char="&#x000b1;">7.67&#x000a0;&#x000b1;&#x000a0;0.06</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;11.59 &#x000b1; 0.05</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;3.62 &#x000b1; 0.07</td></tr><tr><td style="border:none;" align="left">4</td><td style="border:none;" align="char" char="&#x000b1;">8.15&#x000a0;&#x000b1;&#x000a0;0.07</td><td style="border:none;" align="char" char="&#x000b1;">3.26&#x000a0;&#x000b1;&#x000a0;0.08</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;0.72
+&#x000b1; 0.07</td><td style="border:none;" align="char" char="&#x000b1;">7.01&#x000a0;&#x000b1;&#x000a0;0.06</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;11.52 &#x000b1; 0.05</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;4.12
+&#x000b1; 0.06</td></tr><tr><td style="border:none;" align="left">5</td><td style="border:none;" align="char" char="&#x000b1;">8.42&#x000a0;&#x000b1;&#x000a0;0.07</td><td style="border:none;" align="char" char="&#x000b1;">3.33&#x000a0;&#x000b1;&#x000a0;0.08</td><td style="border:none;" align="char" char="&#x000b1;">0.39 &#x000b1; 0.07</td><td style="border:none;" align="char" char="&#x000b1;">7.35&#x000a0;&#x000b1;&#x000a0;0.06</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;12.90 &#x000b1; 0.05</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;4.26 &#x000b1; 0.06</td></tr><tr><td style="border:none;" align="left">Av</td><td style="border:none;" align="char" char="&#x000b1;">8.14&#x000a0;&#x000b1;&#x000a0;0.07</td><td style="border:none;" align="char" char="&#x000b1;">3.13&#x000a0;&#x000b1;&#x000a0;0.10</td><td style="border:none;" align="char" char="&#x000b1;"><bold>&#x02013;</bold>0.26 &#x000b1; 0.19</td><td style="border:none;" align="char" char="&#x000b1;">7.26&#x000a0;&#x000b1;&#x000a0;0.12</td><td style="border:none;" align="char" char="&#x000b1;"><bold>&#x02013;</bold>12.01 &#x000b1; 0.25</td><td style="border:none;" align="char" char="&#x000b1;"><bold>&#x02013;</bold>4.16 &#x000b1;
+0.14</td></tr><tr><td style="border:none;" align="left">Err</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;2.11</td><td style="border:none;" align="char" char="&#x000b1;">2.12</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;1.64</td><td style="border:none;" align="char" char="&#x000b1;">6.26</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;9.62</td><td style="border:none;" align="char" char="&#x000b1;">&#x02013;2.78</td></tr><tr><td style="border:none;" align="left">Qual</td><td style="border:none;" align="char" char="&#x000b1;">4.1&#x000a0;&#x000b1;&#x000a0;0.3</td><td style="border:none;" align="char" char="&#x000b1;">9.6&#x000a0;&#x000b1;&#x000a0;0.4</td><td style="border:none;" align="char" char="&#x000b1;">0.48 &#x000b1; 0.04</td><td style="border:none;" align="char" char="&#x000b1;">1.00&#x000a0;&#x000b1;&#x000a0;0.03</td><td style="border:none;" align="char" char="&#x000b1;">&#x000a0;</td><td style="border:none;" align="char" char="&#x000b1;">&#x000a0;</td></tr></tbody></table><table-wrap-foot><fn id="tbl2fn1"><label>a</label><p>Av shows the average results and
+standard error of these five independent simulations. Err is the error
+compared to the experimental affinities (&#x02265;10.25, 1.00, 1.38,
+1.00, &#x02013; 2.38, and &#x02212;1.38 kJ/mol for the six transformations).<sup><xref ref-type="bibr" rid="ref46">46</xref>,<xref ref-type="bibr" rid="ref72">72</xref></sup> The four quality measures (Qual) are MAD, Max, <italic>R</italic><sup>2</sup>, and &#x003c4;<sub><italic>r</italic>90</sub>, in this
+order.</p></fn></table-wrap-foot></table-wrap><p>Compared to the experimental estimates,<sup><xref ref-type="bibr" rid="ref46">46</xref></sup> the results are appreciably worse than for the
+BRD4 simulations.
+For four of the transformations, the errors are 1.5&#x02013;2.8 kJ/mol
+(in absolute terms). However, for the Ide &#x02192; Ido and Ido &#x02192;
+Bzf transformations, the errors are high, 6&#x02013;10 kJ/mol. Both
+transformations involve indole and the transformation of the heterocyclic
+NH group to either CH<sub>2</sub> or O. Together with Ide &#x02192;
+Bzf, these three transformations form a thermodynamic cycle, which
+should give a net vanishing free energy. Indeed, the two approaches
+give average cycle free energies of 0.17 &#x000b1; 0.5 and &#x02212;0.59
+&#x000b1; 0.3 kJ/mol, which are reasonably close to zero. This indicates
+that the sampling is reasonably converged (although a vanishing cycle
+free energy is only a sufficient criterion for convergence) and that
+the problem may instead be caused by the force field or by the starting
+poses of the molecules (or possibly by errors in the experimental
+estimates).</p><p>The quality of the predictions from the VIS and
+SIS approaches
+is similar. VIS gives a lower MAD (3.9 &#x000b1; 0.3 vs 4.1 &#x000b1; 0.3)
+and maximum error (8.9 &#x000b1; 0.4 vs 9.6 &#x000b1; 0.4; i.e., none of
+the differences are statistically significant), but SIS gives a better
+&#x003c4;<sub><italic>r</italic>90</sub> (0.67 &#x000b1; 0.06 vs 1.00 &#x000b1;
+0.03). However, the latter difference is only caused by the slightly
+larger uncertainty for SIS for the Tol &#x02192; Ben transformation,
+0.19 kJ/mol, making the results, &#x02212;0.26 kJ/mol, not statistically
+significant different from zero and therefore this estimate, with
+an incorrect sign, is not included in &#x003c4;<sub><italic>r</italic>90</sub>, whereas it is significant and with an incorrect sign for
+VIS, &#x02212;0.19 &#x000b1; 0.04.</p><p>The precision of the individual
+affinities are similar or better
+than those of the BRD4 simulations and also more similar between the
+six transformations, 0.05&#x02013;0.08 kJ/mol. This reflects that the
+transformations are more similar, always involving the modification
+or addition of a single heavy atom. There is no difference in the
+precision of the two approaches. As for BRD4, the uncertainty estimated
+by MBAR for the individual simulations is significantly smaller than
+that estimated from the standard error over the five independent estimates
+(again with a single exception), by a factor of 1.1&#x02013;7.9. The
+results of the individual simulations give results that differ by
+0.4&#x02013;2.1 kJ/mol.</p><p>Several researchers have studied the
+binding of ligands to this
+lysozyme T4 mutant. They have observed that the side chain of one
+of the residues close to the binding site, Val-111, shows slow dynamics
+that may affect the binding affinity.<sup><xref ref-type="bibr" rid="ref69">69</xref>&#x02212;<xref ref-type="bibr" rid="ref71">71</xref></sup> We also observe slow
+sampling of the Val-111 side chain in our simulations, as is shown
+in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02236/suppl_file/ci4c02236_si_001.pdf">Table S3</ext-link>. In most simulations, almost
+only the trans conformation is observed, with only 1&#x02013;4% of
+the gauche<sup>&#x02013;</sup> conformation. However, occasionally,
+the amount of the latter conformation is higher (up to 19%) and in
+&#x0223c;20% of the simulations, the other gauche conformations is
+encountered or even dominates. We do not see any difference in the
+sampling between the VIS and SIS simulations (which was not expected
+since they differ only in the starting conformation of solvation-water
+molecules), nor do we see any correlation between the conformation
+of Val-111 and the relative binding affinity obtained, because the
+free energies are calculated from 11 simulations with different &#x003bb;
+values and varying sampling of the Val-111 conformation.</p><p>We
+have also studied the ligand dynamics in the binding site by
+following six distances between ligand atoms in the benzene ring and
+protein atoms, approximately forming a box around the ligand. The
+results in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02236/suppl_file/ci4c02236_si_001.pdf">Table S4</ext-link> again do not indicate
+any significant differences between VIS and SIS. The small benzene
+and phenol ligands show the largest dynamics with standard deviations
+larger than 0.6 &#x000c5; for five of the distances, whereas the standard
+deviation for most of the other simulations is 0.2&#x02013;0.5 &#x000c5;.
+However, occasionally larger fluctuations are observed also in some
+of the other transformations, but without any clear correlation to
+the calculated &#x00394;&#x00394;<italic>G</italic> or the type of independent
+simulations.</p><p>In general, the two approaches to generate independent
+simulations
+give similar estimates of the precision. The largest difference is
+for the Tol &#x02192; Ben transformation, for which SIS gives 0.15
+kJ/mol larger uncertainty than VIS.</p><p>To gain further statistics,
+we run VIS and SIS simulations on three
+additional proteins, viz. nine small substituted benzene ligands binding
+to a ferritin dimer (ten transformations),<sup><xref ref-type="bibr" rid="ref50">50</xref></sup> ten ligands binding to blood coagulation factor Xa (ten transformations),<sup><xref ref-type="bibr" rid="ref49">49</xref></sup> and 12 ligands binding to dihydrofolate reductase
+(15 transformations).<sup><xref ref-type="bibr" rid="ref47">47</xref>,<xref ref-type="bibr" rid="ref48">48</xref></sup> The results for these calculations
+are shown in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02236/suppl_file/ci4c02236_si_001.pdf">Tables S5&#x02013;S7</ext-link> and they
+are discussed in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02236/suppl_file/ci4c02236_si_001.pdf">Supporting Information</ext-link>. The results are completely analogous to those of BRD4 and lysozyme.
+VIS and SIS give similar results and a comparable precision. In one
+case (ferritin), there is an indication that SIS samples a slightly
+larger amount of the phase space.</p></sec><sec id="sec4"><title>Conclusions</title><p>In this study, we have compared two different
+methods to generate
+independent simulations for the calculation of relative binding free
+energies, viz. using different starting velocity (VIS) or using different
+solvent boxes (SIS). We show that the two approaches in most cases
+give identical results. However, sometimes SIS gives a slightly larger
+variation and somewhat different results.</p><p>Our simulations clearly
+emphasize the importance of running independent
+simulations. Individual simulations can give relative binding free
+energies that differ by several kJ/mol, which is highly significant
+for such accurate FEP simulations and can affect the conclusions in
+drug-development projects.</p><p>It has previously been argued that
+a variation of starting velocities
+is enough to generate independent trajectories.<sup><xref ref-type="bibr" rid="ref36">36</xref>,<xref ref-type="bibr" rid="ref37">37</xref>,<xref ref-type="bibr" rid="ref39">39</xref>&#x02212;<xref ref-type="bibr" rid="ref41">41</xref></sup> Such a variation is
+easy to obtain by simply modifying a keyword in the input file. However,
+we would strongly argue that it is better to employ all random steps
+in the setup of the simulation to generate an ensemble of independent
+simulations with a maximum of possible variations. Molecular simulations
+are affected by both the random numbers employed in the setup and
+running of the simulations, as well as the parameters used for the
+simulations.<sup><xref ref-type="bibr" rid="ref26">26</xref></sup> The parameters can be both
+those connected to the method (simulation parameters) and those involved
+in the force field. An important arbitrary choice in the setup of
+a simulated system is the solvation of the solute. This is normally
+done by overlaying the solute with a periodic box of equilibrated
+water molecules. Of course, this is a crude and random approach for
+solvation&#x02013;using different solvent boxes would give different
+results. We employed different solvent boxes, obtained from snapshots
+from an equilibrated MD simulation of pure water.<sup><xref ref-type="bibr" rid="ref34">34</xref></sup> Of course, this generates simulations with a varying number
+of water molecules, but this is natural because there is no simple
+method to determine the proper number of atoms in the solvated system.
+This means that there will be different topology and starting-coordinate
+files for each individual simulation, in variance to the velocity
+approach, which use the same topology and coordinates for the individual
+simulations. It should be pointed out that the SIS approach affects
+only the solvation water molecules, primarily outside the protein.
+If there are buried cavities in the protein that should be solvated
+during the simulation, enhanced-sampling methods need to be used,
+e.g., grand-canonical Monte Carlo simulations.<sup><xref ref-type="bibr" rid="ref73">73</xref>&#x02212;<xref ref-type="bibr" rid="ref76">76</xref></sup> However, the SIS approach may
+give a first indication if solvation of the protein is problematic
+for the calculated binding free energies (indicated by widely varying
+calculated energies).</p><p>There are also other steps of the protein
+setup that are random
+or at least very uncertain. If there are alternative conformations
+of groups in the macromolecule with equal occupancy, they are normally
+selected by random (or simply taking the first conformation for all).
+This is quite arbitrary and the selection could be used to enhance
+the sampling.<sup><xref ref-type="bibr" rid="ref34">34</xref></sup> However, groups of conformations
+are often connected, so a procedure that is more intelligent than
+a random choice would be desirable. The sampling can also enhanced
+by starting from different crystal structures.<sup><xref ref-type="bibr" rid="ref77">77</xref></sup></p><p>Another important choice is the positions of the
+hydrogen atoms
+(which are typically not seen in X-ray crystal structures). The positions
+of some of the protons can easily be deduced from the positions of
+the heavy atoms (e.g., aromatic, amide and CH<sub>2</sub> groups).
+The positions of H atoms in CH<sub>3</sub> groups are unknown, but
+probably not so important for calculated energies (and highly dynamic).
+On the other hand, the protons of alcohol and amine groups are important
+for hydrogen bonds and can in principle be placed anywhere on a circle
+around the heavy atom. Even worse, protons on water molecules can
+be placed anywhere on a sphere around the O atom and also form strong
+hydrogen bonds. There are more or less sophisticated algorithms in
+most MD and computational chemistry software to add such protons in
+proper positions. Likewise, these also try to determine the proper
+protonation state of all residue (in particular His residues) and
+sometimes they also consider the problem that crystallographic structures
+normally cannot differ between C, N and O atoms (affecting the side
+chains of His, Asn and Gln residues). These uncertainties differ from
+the starting velocities and solvation in that there exist solutions
+that are more correct or likely than other solutions and therefore
+the selection is not completely random. In a previous study, we employed
+Monte Carlo simulations to generate different starting protonation
+states, showing that they did not significantly affect binding affinities,
+except for residues close to the ligand-binding site.<sup><xref ref-type="bibr" rid="ref34">34</xref></sup> Another study has enhanced the sampling by using different
+protonation states of the catalytic Asp dyad in HIV-1 protease.<sup><xref ref-type="bibr" rid="ref41">41</xref></sup> The importance of software settings and force-field
+parameters have been studied for binding-energy calculations and MD
+simulations.<sup><xref ref-type="bibr" rid="ref26">26</xref>,<xref ref-type="bibr" rid="ref27">27</xref></sup></p><p>Currently, we tend to recommend
+to employ as accurate algorithms
+as possible to protonate the starting structure and then employ velocities
+and different solvation boxes to generate independent simulations.
+However, with proper algorithms, it would be interesting to vary the
+positions of at least solvent-exposed alcoholic groups and water molecules
+in different simulations, as well as all residues with several equally
+likely conformations.</p></sec></body><back><notes notes-type="data-availability" id="notes3"><title>Data Availability Statement</title><p>The data supporting
+this article have been included in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02236/suppl_file/ci4c02236_si_001.pdf">Supporting Information</ext-link>.</p></notes><notes id="notes1" notes-type="si"><title>Supporting Information Available</title><p>The Supporting Information is
+available free of charge at <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/10.1021/acs.jcim.4c02236?goto=supporting-info">https://pubs.acs.org/doi/10.1021/acs.jcim.4c02236</ext-link>.<list id="silist1" list-type="simple"><list-item><p>Ligands, results and discussion of the FEP calculations
+for dihydrofolate reductase, factor Xa, and ferritin; variation of
+the ethyl dihedral angle in the Eth &#x02192; Tol transformation of
+lysozyme; variation of the Val-111 dihedral angle in the lysozyme
+simulations; variation of the six key distances between the ligand
+and lysozyme in the simulations; AMBER parameters for the ligands
+(<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02236/suppl_file/ci4c02236_si_001.pdf">PDF</ext-link>)</p></list-item></list></p></notes><sec sec-type="supplementary-material"><title>Supplementary Material</title><supplementary-material content-type="local-data" id="sifile1"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02236_si_001.pdf"><caption><p>ci4c02236_si_001.pdf</p></caption></media></supplementary-material></sec><notes notes-type="" id="notes2"><title>Author Contributions</title><p>M.W.: investigation,
+data curation, supervision, methodology, software, writing&#x02014;review
+and editing, visualization; H.J.: investigation, data curation; U.R.:
+conceptualization, methodology, software, formal analysis, investigation,
+resources, data curation, writing&#x02014;original draft, writing&#x02014;review
+and editing, visualization, supervision, project administration, funding
+acquisition.</p></notes><notes notes-type="COI-statement" id="notes4"><p>The authors
+declare no competing financial interest.</p></notes><ack><title>Acknowledgments</title><p>U.R. was supported by grants
+from the Swedish Research
+Council (project 2022-04978). M.W. was supported by the National Natural
+Science Foundation of China (No. 22303076), the China Scholarship
+Council (No. 202108410209), and the Henan Education Department (23A150007).
+The computations were enabled by resources provided by LUNARC, the
+Centre for Scientific and Technical Computing at Lund University,
+and by the National Academic Infrastructure for Supercomputing in
+Sweden (NAISS) at PDC at KTH Royal Institute of Technology (Dardel),
+partially funded by the Swedish Research Council through grant agreements
+No. 2022-06725 and 2018-05973.</p></ack><ref-list><title>References</title><ref id="ref1"><mixed-citation publication-type="journal" id="cit1"><name><surname>Gohlke</surname><given-names>H.</given-names></name>; <name><surname>Klebe</surname><given-names>G.</given-names></name>
+<article-title>Approaches to the description and prediction of the binding affinity
+of small-molecule ligands to macromolecular receptors</article-title>. <source>Angew. Chem., Int. Ed.</source>
+<year>2002</year>, <volume>41</volume>, <fpage>2644</fpage>&#x02013;<lpage>2676</lpage>. <pub-id pub-id-type="doi">10.1002/1521-3773(20020802)41:15&#x0003c;2644::AID-ANIE2644&#x0003e;3.0.CO;2-O</pub-id>.</mixed-citation></ref><ref id="ref2"><mixed-citation publication-type="journal" id="cit2"><name><surname>Jorgensen</surname><given-names>W. L.</given-names></name>
+<article-title>Efficient
+Drug Lead Discovery and Optimization</article-title>. <source>Acc. Chem.
+Res.</source>
+<year>2009</year>, <volume>42</volume>, <fpage>724</fpage>&#x02013;<lpage>733</lpage>. <pub-id pub-id-type="doi">10.1021/ar800236t</pub-id>.<pub-id pub-id-type="pmid">19317443</pub-id>
+</mixed-citation></ref><ref id="ref3"><mixed-citation publication-type="journal" id="cit3"><name><surname>Kontoyianni</surname><given-names>M.</given-names></name>; <name><surname>Madhav</surname><given-names>P.</given-names></name>; <name><surname>Suchanek</surname><given-names>E. S.</given-names></name>; <name><surname>Seibel</surname><given-names>W.</given-names></name>
+<article-title>Theoretical and Practical
+Considerations in Virtual Screening: A Beaten Field?</article-title>. <source>Curr. Med. Chem.</source>
+<year>2008</year>, <volume>15</volume>, <fpage>107</fpage>&#x02013;<lpage>116</lpage>. <pub-id pub-id-type="doi">10.2174/092986708783330566</pub-id>.<pub-id pub-id-type="pmid">18220766</pub-id>
+</mixed-citation></ref><ref id="ref4"><mixed-citation publication-type="journal" id="cit4"><name><surname>Pinzi</surname><given-names>L.</given-names></name>; <name><surname>Rastelli</surname><given-names>G.</given-names></name>
+<article-title>Molecular Docking:
+Shifting Paradigms in Drug Discovery</article-title>. <source>Int. J.
+Mol. Sci.</source>
+<year>2019</year>, <volume>20</volume>, <fpage>4331</fpage><pub-id pub-id-type="doi">10.3390/ijms20184331</pub-id>.<pub-id pub-id-type="pmid">31487867</pub-id>
+</mixed-citation></ref><ref id="ref5"><mixed-citation publication-type="journal" id="cit5"><name><surname>Kollman</surname><given-names>P. A.</given-names></name>; <name><surname>Massova</surname><given-names>I.</given-names></name>; <name><surname>Reyes</surname><given-names>C. M.</given-names></name>; <name><surname>Kuhn</surname><given-names>B.</given-names></name>; <name><surname>Huo</surname><given-names>S.</given-names></name>; <name><surname>Chong</surname><given-names>L.</given-names></name>; <name><surname>Lee</surname><given-names>M. C.</given-names></name>; <name><surname>Lee</surname><given-names>T.</given-names></name>; <name><surname>Duan</surname><given-names>Y.</given-names></name>; <name><surname>Wang</surname><given-names>W.</given-names></name>; <name><surname>Donini</surname><given-names>O.</given-names></name>; <name><surname>Cieplak</surname><given-names>P.</given-names></name>; <name><surname>Srinivasan</surname><given-names>J.</given-names></name>; <name><surname>Case</surname><given-names>D. A.</given-names></name>; <name><surname>Cheatham</surname><given-names>T. E.</given-names></name>
+<article-title>Calculating Structures and Free Energies
+of Complex Molecules: Combining Molecular Mechanics and Continuum
+Models</article-title>. <source>Acc. Chem. Res.</source>
+<year>2000</year>, <volume>33</volume>, <fpage>889</fpage>&#x02013;<lpage>897</lpage>. <pub-id pub-id-type="doi">10.1021/ar000033j</pub-id>.<pub-id pub-id-type="pmid">11123888</pub-id>
+</mixed-citation></ref><ref id="ref6"><mixed-citation publication-type="journal" id="cit6"><name><surname>Genheden</surname><given-names>S.</given-names></name>; <name><surname>Ryde</surname><given-names>U.</given-names></name>
+<article-title>The MM/PBSA and MM/GBSA
+methods to estimate ligand-binding affinities</article-title>. <source>Expert Opin. Drug Discovery</source>
+<year>2015</year>, <volume>10</volume>, <fpage>449</fpage>&#x02013;<lpage>461</lpage>. <pub-id pub-id-type="doi">10.1517/17460441.2015.1032936</pub-id>.</mixed-citation></ref><ref id="ref7"><mixed-citation publication-type="journal" id="cit7"><name><surname>Wang</surname><given-names>S.</given-names></name>; <name><surname>Sun</surname><given-names>X.</given-names></name>; <name><surname>Cui</surname><given-names>W.</given-names></name>; <name><surname>Yuan</surname><given-names>S.</given-names></name>
+<article-title>MM/PB(GB)SA
+benchmarks on soluble
+proteins and membrane proteins</article-title>. <source>Front. Pharmacol.</source>
+<year>2022</year>, <volume>13</volume>, <fpage>1018351</fpage><pub-id pub-id-type="doi">10.3389/fphar.2022.1018351</pub-id>.<pub-id pub-id-type="pmid">36532746</pub-id>
+</mixed-citation></ref><ref id="ref8"><mixed-citation publication-type="journal" id="cit8"><name><surname>&#x000c5;qvist</surname><given-names>J.</given-names></name>; <name><surname>Luzhkov</surname><given-names>V. B.</given-names></name>; <name><surname>Brandsdal</surname><given-names>B. O.</given-names></name>
+<article-title>Ligand
+Binding Affinities from MD
+Simulations</article-title>. <source>Acc. Chem. Res.</source>
+<year>2002</year>, <volume>35</volume>, <fpage>358</fpage>&#x02013;<lpage>365</lpage>. <pub-id pub-id-type="doi">10.1021/ar010014p</pub-id>.<pub-id pub-id-type="pmid">12069620</pub-id>
+</mixed-citation></ref><ref id="ref9"><mixed-citation publication-type="journal" id="cit9"><name><surname>Simonson</surname><given-names>T.</given-names></name>
+<article-title>Protein: ligand
+recognition: simple models for electrostatic effects</article-title>. <source>Curr. Pharm. Des.</source>
+<year>2013</year>, <volume>19</volume>, <fpage>4241</fpage>&#x02013;<lpage>4256</lpage>. <pub-id pub-id-type="doi">10.2174/1381612811319230008</pub-id>.<pub-id pub-id-type="pmid">23170890</pub-id>
+</mixed-citation></ref><ref id="ref10"><mixed-citation publication-type="journal" id="cit10"><name><surname>Wereszczynski</surname><given-names>J.</given-names></name>; <name><surname>McCammon</surname><given-names>J. A.</given-names></name>
+<article-title>Statistical mechanics and molecular
+dynamics in evaluating
+thermodynamic properties of biomolecular recognition</article-title>. <source>Q. Rev. Biophys.</source>
+<year>2012</year>, <volume>45</volume>, <fpage>1</fpage>&#x02013;<lpage>25</lpage>. <pub-id pub-id-type="doi">10.1017/S0033583511000096</pub-id>.<pub-id pub-id-type="pmid">22082669</pub-id>
+</mixed-citation></ref><ref id="ref11"><mixed-citation publication-type="journal" id="cit11"><name><surname>Hansen</surname><given-names>N.</given-names></name>; <name><surname>Van Gunsteren</surname><given-names>W. F.</given-names></name>
+<article-title>Practical aspects of free-energy
+calculations: A review</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2014</year>, <volume>10</volume>, <fpage>2632</fpage>&#x02013;<lpage>2647</lpage>. <pub-id pub-id-type="doi">10.1021/ct500161f</pub-id>.<pub-id pub-id-type="pmid">26586503</pub-id>
+</mixed-citation></ref><ref id="ref12"><mixed-citation publication-type="journal" id="cit12"><name><surname>Mey</surname><given-names>A. S. J. S.</given-names></name>; <name><surname>Allen</surname><given-names>B. K.</given-names></name>; <name><surname>Macdonald</surname><given-names>H. E. B.</given-names></name>; <name><surname>Chodera</surname><given-names>J. D.</given-names></name>; <name><surname>Hahn</surname><given-names>D. F.</given-names></name>; <name><surname>Kuhn</surname><given-names>M.</given-names></name>; <name><surname>Michel</surname><given-names>J.</given-names></name>; <name><surname>Mobley</surname><given-names>D. L.</given-names></name>; <name><surname>Naden</surname><given-names>L. N.</given-names></name>; <name><surname>Prasad</surname><given-names>S.</given-names></name>; <name><surname>Rizzi</surname><given-names>A.</given-names></name>; <name><surname>Scheen</surname><given-names>J.</given-names></name>; <name><surname>Shirts</surname><given-names>M. R.</given-names></name>; <name><surname>Tresadern</surname><given-names>G.</given-names></name>; <name><surname>Xu</surname><given-names>H.</given-names></name>
+<article-title>Best Practices for Alchemical Free
+Energy Calculations [Article v1.0]</article-title>. <source>Living J.
+Comput. Mol. Sci.</source>
+<year>2020</year>, <volume>2</volume>, <fpage>18378</fpage><pub-id pub-id-type="doi">10.33011/livecoms.2.1.18378</pub-id>.<pub-id pub-id-type="pmid">34458687</pub-id>
+</mixed-citation></ref><ref id="ref13"><mixed-citation publication-type="journal" id="cit13"><name><surname>Dellago</surname><given-names>C.</given-names></name>; <name><surname>Hummer</surname><given-names>G.</given-names></name>
+<article-title>Computing Equilibrium
+Free Energies Using Non-Equilibrium
+Molecular Dynamics</article-title>. <source>Entropy</source>
+<year>2014</year>, <volume>16</volume>, <fpage>41</fpage>&#x02013;<lpage>61</lpage>. <pub-id pub-id-type="doi">10.3390/e16010041</pub-id>.</mixed-citation></ref><ref id="ref14"><mixed-citation publication-type="journal" id="cit14"><name><surname>Wan</surname><given-names>S.</given-names></name>; <name><surname>Bhati</surname><given-names>A. P.</given-names></name>; <name><surname>Coveney</surname><given-names>P. V.</given-names></name>
+<article-title>Comparison
+of Equilibrium and Nonequilibrium
+Approaches for Relative Binding Free Energy Predictions</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2023</year>, <volume>19</volume>, <fpage>7846</fpage>&#x02013;<lpage>7860</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jctc.3c00842</pub-id>.<pub-id pub-id-type="pmid">37862058</pub-id>
+</mixed-citation></ref><ref id="ref15"><mixed-citation publication-type="journal" id="cit15"><name><surname>Zwanzig</surname><given-names>R. W.</given-names></name>
+<article-title>High-Temperature
+Equation of State by a Perturbation Method. I. Nonpolar Gases</article-title>. <source>J. Chem. Phys.</source>
+<year>1954</year>, <volume>22</volume>, <fpage>1420</fpage>&#x02013;<lpage>1426</lpage>. <pub-id pub-id-type="doi">10.1063/1.1740409</pub-id>.</mixed-citation></ref><ref id="ref16"><mixed-citation publication-type="journal" id="cit16"><name><surname>Kirkwood</surname><given-names>J. G.</given-names></name>
+<article-title>Statistical
+Mechanics of Fluid Mixtures</article-title>. <source>J. Chem. Phys.</source>
+<year>1935</year>, <volume>3</volume>, <fpage>300</fpage>&#x02013;<lpage>313</lpage>. <pub-id pub-id-type="doi">10.1063/1.1749657</pub-id>.</mixed-citation></ref><ref id="ref17"><mixed-citation publication-type="journal" id="cit17"><name><surname>Bennett</surname><given-names>C. H.</given-names></name>
+<article-title>Efficient
+Estimation of Free Energy Differences from Monte Carlo Data</article-title>. <source>J. Chem. Phys.</source>
+<year>1976</year>, <volume>22</volume>, <fpage>245</fpage>&#x02013;<lpage>268</lpage>. <pub-id pub-id-type="doi">10.1016/0021-9991(76)90078-4</pub-id>.</mixed-citation></ref><ref id="ref18"><mixed-citation publication-type="journal" id="cit18"><name><surname>Shirts</surname><given-names>M. R.</given-names></name>; <name><surname>Chodera</surname><given-names>J. D.</given-names></name>
+<article-title>Statistically Optimal Analysis of
+Samples from Multiple
+Equilibrium States</article-title>. <source>J. Chem. Phys.</source>
+<year>2008</year>, <volume>129</volume> (<issue>12</issue>), <fpage>124105</fpage><pub-id pub-id-type="doi">10.1063/1.2978177</pub-id>.<pub-id pub-id-type="pmid">19045004</pub-id>
+</mixed-citation></ref><ref id="ref19"><mixed-citation publication-type="journal" id="cit19"><name><surname>Christ</surname><given-names>C. D.</given-names></name>; <name><surname>Fox</surname><given-names>T.</given-names></name>
+<article-title>Accuracy Assessment and Automation of Free Energy Calculations for
+Drug Design</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2014</year>, <volume>54</volume>, <fpage>108</fpage>&#x02013;<lpage>120</lpage>. <pub-id pub-id-type="doi">10.1021/ci4004199</pub-id>.<pub-id pub-id-type="pmid">24256082</pub-id>
+</mixed-citation></ref><ref id="ref20"><mixed-citation publication-type="journal" id="cit20"><name><surname>Mikulskis</surname><given-names>P.</given-names></name>; <name><surname>Genheden</surname><given-names>S.</given-names></name>; <name><surname>Ryde</surname><given-names>U.</given-names></name>
+<article-title>A Large-Scale
+Test of Free-Energy
+Simulation Estimates of Protein-Ligand Binding Affinities</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2014</year>, <volume>54</volume>, <fpage>2794</fpage>&#x02013;<lpage>2806</lpage>. <pub-id pub-id-type="doi">10.1021/ci5004027</pub-id>.<pub-id pub-id-type="pmid">25264937</pub-id>
+</mixed-citation></ref><ref id="ref21"><mixed-citation publication-type="journal" id="cit21"><name><surname>Abel</surname><given-names>R.</given-names></name>; <name><surname>Young</surname><given-names>T.</given-names></name>; <name><surname>Farid</surname><given-names>R.</given-names></name>; <name><surname>Berne</surname><given-names>B. J.</given-names></name>; <name><surname>Friesner</surname><given-names>R. A.</given-names></name>
+<article-title>Role of
+the active-site solvent in the thermodynamics of factor Xa ligand
+binding</article-title>. <source>J. Am. Chem. Soc.</source>
+<year>2008</year>, <volume>130</volume>, <fpage>2817</fpage>&#x02013;<lpage>2831</lpage>. <pub-id pub-id-type="doi">10.1021/ja0771033</pub-id>.<pub-id pub-id-type="pmid">18266362</pub-id>
+</mixed-citation></ref><ref id="ref22"><mixed-citation publication-type="journal" id="cit22"><name><surname>Wang</surname><given-names>L.</given-names></name>; <name><surname>Wu</surname><given-names>Y.</given-names></name>; <name><surname>Deng</surname><given-names>Y.</given-names></name>; <name><surname>Kim</surname><given-names>B.</given-names></name>; <name><surname>Pierce</surname><given-names>L.</given-names></name>; <name><surname>Krilov</surname><given-names>G.</given-names></name>; <name><surname>Lupyan</surname><given-names>D.</given-names></name>; <name><surname>Robinson</surname><given-names>S.</given-names></name>; <name><surname>Dahlgren</surname><given-names>M. K.</given-names></name>; <name><surname>Greenwood</surname><given-names>J.</given-names></name>; <name><surname>Romero</surname><given-names>D. L.</given-names></name>; <name><surname>Masse</surname><given-names>C.</given-names></name>; <name><surname>Knight</surname><given-names>J. L.</given-names></name>; <name><surname>Steinbrecher</surname><given-names>T.</given-names></name>; <name><surname>Beuming</surname><given-names>T.</given-names></name>; <name><surname>Damm</surname><given-names>W.</given-names></name>; <name><surname>Harder</surname><given-names>E.</given-names></name>; <name><surname>Sherman</surname><given-names>W.</given-names></name>; <name><surname>Brewer</surname><given-names>M.</given-names></name>; <name><surname>Wester</surname><given-names>R.</given-names></name>; <name><surname>Murcko</surname><given-names>M.</given-names></name>; <name><surname>Frye</surname><given-names>L.</given-names></name>; <name><surname>Farid</surname><given-names>R.</given-names></name>; <name><surname>Lin</surname><given-names>T.</given-names></name>; <name><surname>Mobley</surname><given-names>D. L.</given-names></name>; <name><surname>Jorgensen</surname><given-names>W. L.</given-names></name>; <name><surname>Berne</surname><given-names>B. J.</given-names></name>; <name><surname>Friesner</surname><given-names>R. A.</given-names></name>; <name><surname>Abel</surname><given-names>R.</given-names></name>
+<article-title>Accurate and Reliable
+Prediction of Relative Ligand Binding Potency in Prospective Drug
+Discovery by Way of a Modern Free-Energy Calculation Protocol and
+Force Field</article-title>. <source>J. Am. Chem. Soc.</source>
+<year>2015</year>, <volume>137</volume>, <fpage>2695</fpage>&#x02013;<lpage>2703</lpage>. <pub-id pub-id-type="doi">10.1021/ja512751q</pub-id>.<pub-id pub-id-type="pmid">25625324</pub-id>
+</mixed-citation></ref><ref id="ref23"><mixed-citation publication-type="journal" id="cit23"><name><surname>Harder</surname><given-names>E.</given-names></name>; <name><surname>Damm</surname><given-names>W.</given-names></name>; <name><surname>Maple</surname><given-names>J.</given-names></name>; <name><surname>Wu</surname><given-names>C.</given-names></name>; <name><surname>Reboul</surname><given-names>M.</given-names></name>; <name><surname>Xiang</surname><given-names>J. Y.</given-names></name>; <name><surname>Wang</surname><given-names>L.</given-names></name>; <name><surname>Lupyan</surname><given-names>D.</given-names></name>; <name><surname>Dahlgren</surname><given-names>M. K.</given-names></name>; <name><surname>Knight</surname><given-names>J. L.</given-names></name>; <name><surname>Kaus</surname><given-names>J. W.</given-names></name>; <name><surname>Cerutti</surname><given-names>D. S.</given-names></name>; <name><surname>Krilov</surname><given-names>G.</given-names></name>; <name><surname>Jorgensen</surname><given-names>W. L.</given-names></name>; <name><surname>Abel</surname><given-names>R.</given-names></name>; <name><surname>Friesner</surname><given-names>R. A.</given-names></name>
+<article-title>OPLS3:
+A Force Field
+Providing Broad Coverage of Drug-like Small Molecules and Proteins</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2016</year>, <volume>12</volume>, <fpage>281</fpage>&#x02013;<lpage>296</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jctc.5b00864</pub-id>.<pub-id pub-id-type="pmid">26584231</pub-id>
+</mixed-citation></ref><ref id="ref24"><mixed-citation publication-type="journal" id="cit24"><name><surname>Bhati</surname><given-names>A. P.</given-names></name>; <name><surname>Coveney</surname><given-names>P. V.</given-names></name>
+<article-title>Large Scale Study of Ligand-Protein
+Relative Binding
+Free Energy Calculations: Actionable Predictions from Statistically
+Robust Protocols</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2022</year>, <volume>18</volume>, <fpage>2687</fpage>&#x02013;<lpage>2702</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jctc.1c01288</pub-id>.<pub-id pub-id-type="pmid">35293737</pub-id>
+</mixed-citation></ref><ref id="ref25"><mixed-citation publication-type="book" id="cit25"><person-group person-group-type="allauthors"><name><surname>Frenkel</surname><given-names>D.</given-names></name>; <name><surname>Smit</surname><given-names>B.</given-names></name></person-group><source>Understanding molecular simulations</source>; <publisher-name>Academic
+Press</publisher-name>: <publisher-loc>London</publisher-loc>, <year>2002</year>; pp. <fpage>81</fpage>&#x02013;<lpage>82</lpage>.</mixed-citation></ref><ref id="ref26"><mixed-citation publication-type="journal" id="cit26"><name><surname>Vassaux</surname><given-names>M.</given-names></name>; <name><surname>Wan</surname><given-names>S.</given-names></name>; <name><surname>Edeling</surname><given-names>W.</given-names></name>; <name><surname>Coveney</surname><given-names>P. V.</given-names></name>
+<article-title>Ensembles
+Are Required to Handle
+Aleatoric and Parametric Uncertainty in Molecular Dynamics Simulation</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2021</year>, <volume>17</volume>, <fpage>5187</fpage>&#x02013;<lpage>5197</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jctc.1c00526</pub-id>.<pub-id pub-id-type="pmid">34280310</pub-id>
+</mixed-citation></ref><ref id="ref27"><mixed-citation publication-type="journal" id="cit27"><name><surname>Edeling</surname><given-names>W.</given-names></name>; <name><surname>Vassaux</surname><given-names>M.</given-names></name>; <name><surname>Yang</surname><given-names>Y.</given-names></name>; <name><surname>Wan</surname><given-names>S.</given-names></name>; <name><surname>Guillas</surname><given-names>S.</given-names></name>; <name><surname>Coveney</surname><given-names>P. V.</given-names></name>
+<article-title>Global ranking of the sensitivity
+of interaction potential
+contributions within classical molecular dynamics force fields</article-title>. <source>Npj Comput. Mater.</source>
+<year>2024</year>, <volume>10</volume> (<issue>1</issue>), <fpage>87</fpage><pub-id pub-id-type="doi">10.1038/s41524-024-01272-z</pub-id>.</mixed-citation></ref><ref id="ref28"><mixed-citation publication-type="journal" id="cit28"><name><surname>Olsson</surname><given-names>M. H. M.</given-names></name>; <name><surname>Hong</surname><given-names>G.</given-names></name>; <name><surname>Warshel</surname><given-names>A.</given-names></name>
+<article-title>Frozen Density
+Functional Free Energy
+Simulations of Redox Proteins: Computational Studies of the Reduction
+Potential of Plastocyanin and Rusticyanin</article-title>. <source>J.
+Am. Chem. Soc.</source>
+<year>2003</year>, <volume>125</volume>, <fpage>5025</fpage>&#x02013;<lpage>5039</lpage>. <pub-id pub-id-type="doi">10.1021/ja0212157</pub-id>.<pub-id pub-id-type="pmid">12708852</pub-id>
+</mixed-citation></ref><ref id="ref29"><mixed-citation publication-type="journal" id="cit29"><name><surname>Fujitani</surname><given-names>H.</given-names></name>; <name><surname>Tanida</surname><given-names>Y.</given-names></name>; <name><surname>Ito</surname><given-names>M.</given-names></name>; <name><surname>Jayachandran</surname><given-names>G.</given-names></name>; <name><surname>Snow</surname><given-names>C. D.</given-names></name>; <name><surname>Shirts</surname><given-names>M. R.</given-names></name>; <name><surname>Sorin</surname><given-names>E. J.</given-names></name>; <name><surname>Pande</surname><given-names>V. S.</given-names></name>
+<article-title>Direct
+calculation of the binding free energies of FKBP ligands</article-title>. <source>J. Chem. Phys.</source>
+<year>2005</year>, <volume>123</volume> (<issue>8</issue>), <fpage>084108</fpage><pub-id pub-id-type="doi">10.1063/1.1999637</pub-id>.<pub-id pub-id-type="pmid">16164283</pub-id>
+</mixed-citation></ref><ref id="ref30"><mixed-citation publication-type="journal" id="cit30"><name><surname>Adcock</surname><given-names>S.
+A.</given-names></name>; <name><surname>McCammon</surname><given-names>J. A.</given-names></name>
+<article-title>Molecular
+dynamics: survey of methods for simulating
+the activity of proteins</article-title>. <source>Chem. Rev.</source>
+<year>2006</year>, <volume>106</volume>, <fpage>1589</fpage>&#x02013;<lpage>1615</lpage>. <pub-id pub-id-type="doi">10.1021/cr040426m</pub-id>.<pub-id pub-id-type="pmid">16683746</pub-id>
+</mixed-citation></ref><ref id="ref31"><mixed-citation publication-type="journal" id="cit31"><name><surname>Zagrovic</surname><given-names>B.</given-names></name>; <name><surname>van Gunsteren</surname><given-names>W. F.</given-names></name>
+<article-title>Computational
+Analysis of the Mechanism and Thermodynamics
+of Inhibition of Phosphodiesterase 5A by Synthetic Ligands</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2007</year>, <volume>3</volume>, <fpage>301</fpage>&#x02013;<lpage>311</lpage>. <pub-id pub-id-type="doi">10.1021/ct600322d</pub-id>.<pub-id pub-id-type="pmid">26627173</pub-id>
+</mixed-citation></ref><ref id="ref32"><mixed-citation publication-type="journal" id="cit32"><name><surname>Lawrenz</surname><given-names>M.</given-names></name>; <name><surname>Baron</surname><given-names>R.</given-names></name>; <name><surname>McCammon</surname><given-names>J. A.</given-names></name>
+<article-title>Independent-Trajectories Thermodynamic-Integration
+Free-Energy Changes for Biomolecular Systems: Determinants of H5N1
+Avian Influenza Virus Neuraminidase Inhibition by Peramivir</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2009</year>, <volume>5</volume>, <fpage>1106</fpage>&#x02013;<lpage>1116</lpage>. <pub-id pub-id-type="doi">10.1021/ct800559d</pub-id>.<pub-id pub-id-type="pmid">19461872</pub-id>
+</mixed-citation></ref><ref id="ref33"><mixed-citation publication-type="journal" id="cit33"><name><surname>Genheden</surname><given-names>S.</given-names></name>; <name><surname>Ryde</surname><given-names>U.</given-names></name>
+<article-title>How to obtain statistically converged MM/GBSA results</article-title>. <source>J. Comput. Chem.</source>
+<year>2010</year>, <volume>31</volume>, <fpage>837</fpage>&#x02013;<lpage>846</lpage>. <pub-id pub-id-type="doi">10.1002/jcc.21366</pub-id>.<pub-id pub-id-type="pmid">19598265</pub-id>
+</mixed-citation></ref><ref id="ref34"><mixed-citation publication-type="journal" id="cit34"><name><surname>Genheden</surname><given-names>S.</given-names></name>; <name><surname>Ryde</surname><given-names>U.</given-names></name>
+<article-title>A comparison of different initialization protocols to obtain statistically
+independent molecular dynamics simulations</article-title>. <source>J. Comput. Chem.</source>
+<year>2011</year>, <volume>32</volume>, <fpage>187</fpage>&#x02013;<lpage>195</lpage>. <pub-id pub-id-type="doi">10.1002/jcc.21546</pub-id>.<pub-id pub-id-type="pmid">21132839</pub-id>
+</mixed-citation></ref><ref id="ref35"><mixed-citation publication-type="journal" id="cit35"><name><surname>Wright</surname><given-names>D. W.</given-names></name>; <name><surname>Hall</surname><given-names>B. A.</given-names></name>; <name><surname>Kenway</surname><given-names>O. A.</given-names></name>; <name><surname>Jha</surname><given-names>S.</given-names></name>; <name><surname>Coveney</surname><given-names>P. V.</given-names></name>
+<article-title>Computing
+Clinically Relevant Binding Free Energies of HIV-1 Protease Inhibitors</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2014</year>, <volume>10</volume>, <fpage>1228</fpage>&#x02013;<lpage>1241</lpage>. <pub-id pub-id-type="doi">10.1021/ct4007037</pub-id>.<pub-id pub-id-type="pmid">24683369</pub-id>
+</mixed-citation></ref><ref id="ref36"><mixed-citation publication-type="journal" id="cit36"><name><surname>Coveney</surname><given-names>P. V.</given-names></name>; <name><surname>Wan</surname><given-names>S.</given-names></name>
+<article-title>On the calculation of equilibrium thermodynamic properties from molecular
+dynamics</article-title>. <source>Phys. Chem. Chem. Phys.</source>
+<year>2016</year>, <volume>18</volume>, <fpage>30236</fpage>&#x02013;<lpage>30240</lpage>. <pub-id pub-id-type="doi">10.1039/C6CP02349E</pub-id>.<pub-id pub-id-type="pmid">27165501</pub-id>
+</mixed-citation></ref><ref id="ref37"><mixed-citation publication-type="journal" id="cit37"><name><surname>Bhati</surname><given-names>A. P.</given-names></name>; <name><surname>Wan</surname><given-names>S.</given-names></name>; <name><surname>Wright</surname><given-names>D. W.</given-names></name>; <name><surname>Coveney</surname><given-names>P. V.</given-names></name>
+<article-title>Rapid, Accurate, Precise, and Reliable
+Relative Free Energy Prediction Using Ensemble Based Thermodynamic
+Integration</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2017</year>, <volume>13</volume>, <fpage>210</fpage>&#x02013;<lpage>222</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jctc.6b00979</pub-id>.<pub-id pub-id-type="pmid">27997169</pub-id>
+</mixed-citation></ref><ref id="ref38"><mixed-citation publication-type="journal" id="cit38"><name><surname>Wan</surname><given-names>S.</given-names></name>; <name><surname>Bhati</surname><given-names>A. P.</given-names></name>; <name><surname>Zasada</surname><given-names>S. J.</given-names></name>; <name><surname>Wall</surname><given-names>I.</given-names></name>; <name><surname>Green</surname><given-names>D.</given-names></name>; <name><surname>Bamborough</surname><given-names>P.</given-names></name>; <name><surname>Coveney</surname><given-names>P. V.</given-names></name>
+<article-title>Rapid and Reliable Binding Affinity
+Prediction of Bromodomain Inhibitors: A Computational Study</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2017</year>, <volume>13</volume>, <fpage>784</fpage>&#x02013;<lpage>795</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jctc.6b00794</pub-id>.<pub-id pub-id-type="pmid">28005370</pub-id>
+</mixed-citation></ref><ref id="ref39"><mixed-citation publication-type="journal" id="cit39"><name><surname>Bhati</surname><given-names>A. P.</given-names></name>; <name><surname>Wan</surname><given-names>S.</given-names></name>; <name><surname>Hu</surname><given-names>Y.</given-names></name>; <name><surname>Sherborne</surname><given-names>B.</given-names></name>; <name><surname>Coveney</surname><given-names>P. V.</given-names></name>
+<article-title>Uncertainty Quantification
+in Alchemical Free Energy Methods</article-title>. <source>J. Chem.
+Theory Comput.</source>
+<year>2018</year>, <volume>14</volume>, <fpage>2867</fpage>&#x02013;<lpage>2880</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jctc.7b01143</pub-id>.<pub-id pub-id-type="pmid">29678106</pub-id>
+</mixed-citation></ref><ref id="ref40"><mixed-citation publication-type="journal" id="cit40"><name><surname>Wan</surname><given-names>S.</given-names></name>; <name><surname>Bhati</surname><given-names>A. P.</given-names></name>; <name><surname>Zasada</surname><given-names>S. J.</given-names></name>; <name><surname>Coveney</surname><given-names>P. V.</given-names></name>
+<article-title>Rapid, accurate,
+precise and reproducible ligand-protein binding free energy prediction</article-title>. <source>Interface Focus</source>
+<year>2020</year>, <volume>10</volume>, <fpage>20200007</fpage><pub-id pub-id-type="doi">10.1098/rsfs.2020.0007</pub-id>.<pub-id pub-id-type="pmid">33178418</pub-id>
+</mixed-citation></ref><ref id="ref41"><mixed-citation publication-type="journal" id="cit41"><name><surname>Sadiq</surname><given-names>S. K.</given-names></name>; <name><surname>Wright</surname><given-names>D. W.</given-names></name>; <name><surname>Kenway</surname><given-names>O. A.</given-names></name>; <name><surname>Coveney</surname><given-names>P. V.</given-names></name>
+<article-title>Accurate Ensemble
+Molecular Dynamics Binding Free Energy Ranking of Multidrug-Resistant
+HIV-1 Proteases</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2010</year>, <volume>50</volume>, <fpage>890</fpage>&#x02013;<lpage>905</lpage>. <pub-id pub-id-type="doi">10.1021/ci100007w</pub-id>.<pub-id pub-id-type="pmid">20384328</pub-id>
+</mixed-citation></ref><ref id="ref42"><mixed-citation publication-type="journal" id="cit42"><name><surname>Elofsson</surname><given-names>A.</given-names></name>; <name><surname>Nilsson</surname><given-names>L.</given-names></name>
+<article-title>How consistent are
+molecular dynamics simulations?
+Comparing structure and dynamics in reduced and oxidized <italic>Escherichia coli</italic> thioredoxin</article-title>. <source>J. Mol. Biol.</source>
+<year>1993</year>, <volume>233</volume>, <fpage>766</fpage>&#x02013;<lpage>780</lpage>. <pub-id pub-id-type="doi">10.1006/jmbi.1993.1551</pub-id>.<pub-id pub-id-type="pmid">8411178</pub-id>
+</mixed-citation></ref><ref id="ref43"><mixed-citation publication-type="journal" id="cit43"><name><surname>Caves</surname><given-names>L. S.</given-names></name>; <name><surname>Evanseck</surname><given-names>J. D.</given-names></name>; <name><surname>Karplus</surname><given-names>M.</given-names></name>
+<article-title>Locally accessible conformations
+of proteins: multiple molecular dynamics simulations of crambin</article-title>. <source>Protein Sci.</source>
+<year>1998</year>, <volume>7</volume>, <fpage>649</fpage>&#x02013;<lpage>666</lpage>. <pub-id pub-id-type="doi">10.1002/pro.5560070314</pub-id>.<pub-id pub-id-type="pmid">9541397</pub-id>
+</mixed-citation></ref><ref id="ref44"><mixed-citation publication-type="journal" id="cit44"><name><surname>Genheden</surname><given-names>S.</given-names></name>; <name><surname>Diehl</surname><given-names>C.</given-names></name>; <name><surname>Akke</surname><given-names>M.</given-names></name>; <name><surname>Ryde</surname><given-names>U.</given-names></name>
+<article-title>Starting-condition
+dependence of order parameters derived from molecular dynamics simulations</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2010</year>, <volume>6</volume>, <fpage>2176</fpage>&#x02013;<lpage>2190</lpage>. <pub-id pub-id-type="doi">10.1021/ct900696z</pub-id>.<pub-id pub-id-type="pmid">26615944</pub-id>
+</mixed-citation></ref><ref id="ref45"><mixed-citation publication-type="computer-program" id="cit45"><source>Amber 2023</source>; <publisher-name>University of California</publisher-name>: <publisher-loc>San Francisco</publisher-loc>, <year>2023</year>.</mixed-citation></ref><ref id="ref46"><mixed-citation publication-type="journal" id="cit46"><name><surname>Morton</surname><given-names>A.</given-names></name>; <name><surname>Baase</surname><given-names>A. W.</given-names></name>; <name><surname>Matthews</surname><given-names>W. B.</given-names></name>
+<article-title>Energetic
+origins of specificity
+of ligand binding in an interior nonpolar cavity of T4 lysozyme</article-title>. <source>Biochemistry</source>
+<year>1995</year>, <volume>34</volume>, <fpage>8564</fpage>&#x02013;<lpage>8575</lpage>. <pub-id pub-id-type="doi">10.1021/bi00027a006</pub-id>.<pub-id pub-id-type="pmid">7612598</pub-id>
+</mixed-citation></ref><ref id="ref47"><mixed-citation publication-type="journal" id="cit47"><name><surname>Yuthavong</surname><given-names>Y.</given-names></name>; <name><surname>Vilaivan</surname><given-names>T.</given-names></name>; <name><surname>Chareonsethakul</surname><given-names>N.</given-names></name>; <name><surname>Kamchonwongpaisan</surname><given-names>S.</given-names></name>; <name><surname>Sirawaraporn</surname><given-names>W.</given-names></name>; <name><surname>Quarrell</surname><given-names>R.</given-names></name>; <name><surname>Lowe</surname><given-names>G.</given-names></name>
+<article-title>Development of a lead
+inhibitor for the A16V+S108T mutant of dihydrofolate reductase from
+the cycloguanil-resistant strain (T9/94) of <italic>Plasmodium falciparum</italic></article-title>. <source>J. Med. Chem.</source>
+<year>2000</year>, <volume>43</volume>, <fpage>2738</fpage>&#x02013;<lpage>2744</lpage>. <pub-id pub-id-type="doi">10.1021/jm0009181</pub-id>.<pub-id pub-id-type="pmid">10893311</pub-id>
+</mixed-citation></ref><ref id="ref48"><mixed-citation publication-type="journal" id="cit48"><name><surname>Tarnchompoo</surname><given-names>B.</given-names></name>; <name><surname>Sirichaiwat</surname><given-names>C.</given-names></name>; <name><surname>Phupong</surname><given-names>W.</given-names></name>; <name><surname>Intaraudom</surname><given-names>C.</given-names></name>; <name><surname>Sirawaraporn</surname><given-names>W.</given-names></name>; <name><surname>Kamchonwongpaisan</surname><given-names>S.</given-names></name>; <name><surname>Vanichtanankul</surname><given-names>J.</given-names></name>; <name><surname>Thebtaranonth</surname><given-names>Y.</given-names></name>; <name><surname>Yuthavong</surname><given-names>Y.</given-names></name>
+<article-title>Development of 2,4-diaminopyrimidines
+as antimalarials based on inhibition of the S108N and C59R+S108N mutants
+of dihydrofolate reductase from pyrimethamine-resistant <italic>Plasmodium
+falciparum</italic></article-title>. <source>J. Med. Chem.</source>
+<year>2002</year>, <volume>45</volume>, <fpage>1244</fpage>&#x02013;<lpage>1252</lpage>. <pub-id pub-id-type="doi">10.1021/jm010131q</pub-id>.<pub-id pub-id-type="pmid">11881993</pub-id>
+</mixed-citation></ref><ref id="ref49"><mixed-citation publication-type="journal" id="cit49"><name><surname>Matter</surname><given-names>H.</given-names></name>; <name><surname>Defossa</surname><given-names>E.</given-names></name>; <name><surname>Heinelt</surname><given-names>U.</given-names></name>; <name><surname>Blohm</surname><given-names>P. M.</given-names></name>; <name><surname>Schneider</surname><given-names>D.</given-names></name>; <name><surname>Muller</surname><given-names>A.</given-names></name>; <name><surname>Herok</surname><given-names>S.</given-names></name>; <name><surname>Schreuder</surname><given-names>H.</given-names></name>; <name><surname>Liesum</surname><given-names>A.</given-names></name>; <name><surname>Brachvogel</surname><given-names>V.</given-names></name>; <name><surname>Lonze</surname><given-names>P.</given-names></name>; <name><surname>Walser</surname><given-names>A.</given-names></name>; <name><surname>Al-Obeidi</surname><given-names>F.</given-names></name>; <name><surname>Wildgoose</surname><given-names>P.</given-names></name>
+<article-title>Design and quantitative structure-activity
+relationship of 3-amidinobenzyl-1H-indole-2-carboxamides as potent,
+nonchiral, and selective inhibitors of blood coagulation factor Xa</article-title>. <source>J. Med. Chem.</source>
+<year>2002</year>, <volume>45</volume>, <fpage>2749</fpage>&#x02013;<lpage>2769</lpage>. <pub-id pub-id-type="doi">10.1021/jm0111346</pub-id>.<pub-id pub-id-type="pmid">12061878</pub-id>
+</mixed-citation></ref><ref id="ref50"><mixed-citation publication-type="journal" id="cit50"><name><surname>Vedula</surname><given-names>L. S.</given-names></name>; <name><surname>Brannigan</surname><given-names>G.</given-names></name>; <name><surname>Economou</surname><given-names>N. J.</given-names></name>; <name><surname>Xi</surname><given-names>J.</given-names></name>; <name><surname>Hall</surname><given-names>M. A.</given-names></name>; <name><surname>Liu</surname><given-names>R.</given-names></name>; <name><surname>Rossi</surname><given-names>M. J.</given-names></name>; <name><surname>Dailey</surname><given-names>W. P.</given-names></name>; <name><surname>Grasty</surname><given-names>K. C.</given-names></name>; <name><surname>Klein</surname><given-names>M. L.</given-names></name>; <name><surname>Eckenhoff</surname><given-names>R. G.</given-names></name>; <name><surname>Loll</surname><given-names>P. J.</given-names></name>
+<article-title>A unitary anesthetic binding site
+at high resolution</article-title>. <source>J. Biol. Chem.</source>
+<year>2009</year>, <volume>284</volume>, <fpage>24176</fpage>&#x02013;<lpage>24184</lpage>. <pub-id pub-id-type="doi">10.1074/jbc.M109.017814</pub-id>.<pub-id pub-id-type="pmid">19605349</pub-id>
+</mixed-citation></ref><ref id="ref51"><mixed-citation publication-type="book" id="cit51"><source>Schr&#x000f6;dinger Release</source>; <publisher-name>Maestro, Schr&#x000f6;dinger</publisher-name>: <publisher-loc>New
+York, NY</publisher-loc>, <year>2023</year>.</mixed-citation></ref><ref id="ref52"><mixed-citation publication-type="journal" id="cit52"><name><surname>Zhang</surname><given-names>S.</given-names></name>; <name><surname>Heyes</surname><given-names>D. J.</given-names></name>; <name><surname>Feng</surname><given-names>L.</given-names></name>; <name><surname>Sun</surname><given-names>W.</given-names></name>; <name><surname>Johannissen</surname><given-names>L. O.</given-names></name>; <name><surname>Liu</surname><given-names>H.</given-names></name>; <name><surname>Colin</surname><given-names>W. L.</given-names></name>; <name><surname>Li</surname><given-names>X.</given-names></name>; <name><surname>Ji</surname><given-names>Y.</given-names></name>; <name><surname>Yu</surname><given-names>X.</given-names></name>; <name><surname>Lin</surname><given-names>M.</given-names></name>
+<article-title>Structural basis for enzymatic photocatalysis in chlorophyll biosynthesis</article-title>. <source>Nature</source>
+<year>2019</year>, <volume>574</volume>, <fpage>722</fpage>&#x02013;<lpage>725</lpage>. <pub-id pub-id-type="doi">10.1038/s41586-019-1685-2</pub-id>.<pub-id pub-id-type="pmid">31645759</pub-id>
+</mixed-citation></ref><ref id="ref53"><mixed-citation publication-type="journal" id="cit53"><name><surname>Case</surname><given-names>D. A.</given-names></name>; <name><surname>Aktulga</surname><given-names>H. M.</given-names></name>; <name><surname>Belfon</surname><given-names>K.</given-names></name>; <name><surname>Cerutti</surname><given-names>D. S.</given-names></name>; <name><surname>Cisneros</surname><given-names>G. A.</given-names></name>; <name><surname>Cruzeiro</surname><given-names>V. W. D.</given-names></name>; <name><surname>Forouzesh</surname><given-names>N.</given-names></name>; <name><surname>Giese</surname><given-names>T. J.</given-names></name>; <name><surname>G&#x000f6;tz</surname><given-names>A. W.</given-names></name>; <name><surname>Gohlke</surname><given-names>H.</given-names></name>; <name><surname>Izadi</surname><given-names>S.</given-names></name>; <name><surname>Kasavajhala</surname><given-names>K.</given-names></name>; <name><surname>Kaymak</surname><given-names>M. C.</given-names></name>; <name><surname>King</surname><given-names>E.</given-names></name>; <name><surname>Kurtzman</surname><given-names>T.</given-names></name>; <name><surname>Lee</surname><given-names>T.-S.</given-names></name>; <name><surname>Li</surname><given-names>P.</given-names></name>; <name><surname>Liu</surname><given-names>J.</given-names></name>; <name><surname>Luchko</surname><given-names>T.</given-names></name>; <name><surname>Luo</surname><given-names>R.</given-names></name>; <name><surname>Manathunga</surname><given-names>M.</given-names></name>; <name><surname>Machado</surname><given-names>M. R.</given-names></name>; <name><surname>Nguyen</surname><given-names>H. M.</given-names></name>; <name><surname>O&#x02019;Hearn</surname><given-names>K. A.</given-names></name>; <name><surname>Onufriev</surname><given-names>A. V.</given-names></name>; <name><surname>Pan</surname><given-names>F.</given-names></name>; <name><surname>Pantano</surname><given-names>S.</given-names></name>; <name><surname>Qi</surname><given-names>R.</given-names></name>; <name><surname>Rahnamoun</surname><given-names>A.</given-names></name>; <name><surname>Risheh</surname><given-names>A.</given-names></name>; <name><surname>Schott-Verdugo</surname><given-names>S.</given-names></name>; <name><surname>Shajan</surname><given-names>A.</given-names></name>; <name><surname>Swails</surname><given-names>J.</given-names></name>; <name><surname>Wang</surname><given-names>J.</given-names></name>; <name><surname>Wei</surname><given-names>H.</given-names></name>; <name><surname>Wu</surname><given-names>X.</given-names></name>; <name><surname>Wu</surname><given-names>Y.</given-names></name>; <name><surname>Zhang</surname><given-names>S.</given-names></name>; <name><surname>Zhao</surname><given-names>S.</given-names></name>; <name><surname>Zhu</surname><given-names>Q.</given-names></name>; <name><surname>Cheatham</surname><given-names>T. E. I.</given-names></name>; <name><surname>Roe</surname><given-names>D. R.</given-names></name>; <name><surname>Roitberg</surname><given-names>A.</given-names></name>; <name><surname>Simmerling</surname><given-names>C.</given-names></name>; <name><surname>York</surname><given-names>D. M.</given-names></name>; <name><surname>Nagan</surname><given-names>M. C.</given-names></name>; <name><surname>Merz</surname><given-names>K. M. J.</given-names></name>
+<article-title>AmberTools</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2023</year>, <volume>63</volume>, <fpage>6183</fpage>&#x02013;<lpage>6191</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.3c01153</pub-id>.<pub-id pub-id-type="pmid">37805934</pub-id>
+</mixed-citation></ref><ref id="ref54"><mixed-citation publication-type="journal" id="cit54"><name><surname>Maier</surname><given-names>J. A.</given-names></name>; <name><surname>Martinez</surname><given-names>C.</given-names></name>; <name><surname>Kasavajhala</surname><given-names>K.</given-names></name>; <name><surname>Wickstrom</surname><given-names>L.</given-names></name>; <name><surname>Hauser</surname><given-names>K. E.</given-names></name>; <name><surname>Simmerling</surname><given-names>C.</given-names></name>
+<article-title>ff14SB: Improving
+the Accuracy of
+Protein Side Chain and Backbone Parameters from ff99SB</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2015</year>, <volume>11</volume>, <fpage>3696</fpage>&#x02013;<lpage>3713</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jctc.5b00255</pub-id>.<pub-id pub-id-type="pmid">26574453</pub-id>
+</mixed-citation></ref><ref id="ref55"><mixed-citation publication-type="journal" id="cit55"><name><surname>Wang</surname><given-names>J.</given-names></name>; <name><surname>Wolf</surname><given-names>R. M.</given-names></name>; <name><surname>Caldwell</surname><given-names>J. W.</given-names></name>; <name><surname>Kollman</surname><given-names>P. A.</given-names></name>; <name><surname>Case</surname><given-names>D. A.</given-names></name>
+<article-title>Development
+and testing of a general amber force field</article-title>. <source>J. Comput. Chem.</source>
+<year>2004</year>, <volume>25</volume>, <fpage>1157</fpage>&#x02013;<lpage>1174</lpage>. <pub-id pub-id-type="doi">10.1002/jcc.20035</pub-id>.<pub-id pub-id-type="pmid">15116359</pub-id>
+</mixed-citation></ref><ref id="ref56"><mixed-citation publication-type="journal" id="cit56"><name><surname>Dewar</surname><given-names>M. J. S.</given-names></name>; <name><surname>Zoebisch</surname><given-names>E. G.</given-names></name>; <name><surname>Healy</surname><given-names>E. F.</given-names></name>; <name><surname>Stewart</surname><given-names>J. J. P.</given-names></name>
+<article-title>Development and
+use of quantum mechanical molecular models. 76. AM1: a new general
+purpose quantum mechanical molecular model</article-title>. <source>J. Am. Chem. Soc.</source>
+<year>1993</year>, <volume>115</volume>, <fpage>5348</fpage>&#x02013;<lpage>5348</lpage>. <pub-id pub-id-type="doi">10.1021/ja00065a080</pub-id>.</mixed-citation></ref><ref id="ref57"><mixed-citation publication-type="journal" id="cit57"><name><surname>Joung</surname><given-names>I. S.</given-names></name>; <name><surname>Cheatham</surname><given-names>T. E. I.</given-names></name>
+<article-title>Molecular Dynamics Simulations of the Dynamic and Energetic
+Properties of Alkali and Halide Ions Using Water-Model-Specific Ion
+Parameters</article-title>. <source>J. Phys. Chem. B</source>
+<year>2009</year>, <volume>113</volume>, <fpage>13279</fpage>&#x02013;<lpage>13290</lpage>. <pub-id pub-id-type="doi">10.1021/jp902584c</pub-id>.<pub-id pub-id-type="pmid">19757835</pub-id>
+</mixed-citation></ref><ref id="ref58"><mixed-citation publication-type="journal" id="cit58"><name><surname>Joung</surname><given-names>I. S.</given-names></name>; <name><surname>Cheatham</surname><given-names>T. E. I.</given-names></name>
+<article-title>Determination
+of Alkali and Halide Monovalent Ion Parameters
+for Use in Explicitly Solvated Biomolecular Simulations</article-title>. <source>J. Phys. Chem. B</source>
+<year>2008</year>, <volume>112</volume>, <fpage>9020</fpage>&#x02013;<lpage>9041</lpage>. <pub-id pub-id-type="doi">10.1021/jp8001614</pub-id>.<pub-id pub-id-type="pmid">18593145</pub-id>
+</mixed-citation></ref><ref id="ref59"><mixed-citation publication-type="journal" id="cit59"><name><surname>Richard</surname><given-names>W. P.</given-names></name>; <name><surname>Bernard</surname><given-names>R. B.</given-names></name>; <name><surname>Attila</surname><given-names>S.</given-names></name>
+<article-title>An analysis of the accuracy of Langevin
+and molecular dynamics algorithms</article-title>. <source>Mol. Phys.</source>
+<year>1988</year>, <volume>65</volume>, <fpage>1409</fpage>&#x02013;<lpage>1419</lpage>. <pub-id pub-id-type="doi">10.1080/00268978800101881</pub-id>.</mixed-citation></ref><ref id="ref60"><mixed-citation publication-type="journal" id="cit60"><name><surname>Kaus</surname><given-names>J. W.</given-names></name>; <name><surname>Pierce</surname><given-names>L. T.</given-names></name>; <name><surname>Walker</surname><given-names>R. C.</given-names></name>; <name><surname>McCammon</surname><given-names>J. A.</given-names></name>
+<article-title>Improving the Efficiency
+of Free Energy Calculations in the Amber Molecular Dynamics Package</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2013</year>, <volume>9</volume>, <fpage>4131</fpage>&#x02013;<lpage>4139</lpage>. <pub-id pub-id-type="doi">10.1021/ct400340s</pub-id>.</mixed-citation></ref><ref id="ref62"><mixed-citation publication-type="journal" id="cit62"><name><surname>Lee</surname><given-names>T.-S.</given-names></name>; <name><surname>Cerutti</surname><given-names>D. S.</given-names></name>; <name><surname>Mermelstein</surname><given-names>D.</given-names></name>; <name><surname>Lin</surname><given-names>C.</given-names></name>; <name><surname>LeGrand</surname><given-names>S.</given-names></name>; <name><surname>Giese</surname><given-names>T. J.</given-names></name>; <name><surname>Roitberg</surname><given-names>A.</given-names></name>; <name><surname>Case</surname><given-names>D. A.</given-names></name>; <name><surname>Walker</surname><given-names>R. C.</given-names></name>; <name><surname>York</surname><given-names>D. M.</given-names></name>
+<article-title>GPU-Accelerated Molecular Dynamics and Free Energy
+Methods in Amber18: Performance Enhancements and New Features</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2018</year>, <volume>58</volume>, <fpage>2043</fpage>&#x02013;<lpage>2050</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.8b00462</pub-id>.<pub-id pub-id-type="pmid">30199633</pub-id>
+</mixed-citation></ref><ref id="ref63"><mixed-citation publication-type="journal" id="cit63"><name><surname>Lee</surname><given-names>T.-S.</given-names></name>; <name><surname>Hu</surname><given-names>Y.</given-names></name>; <name><surname>Sherborne</surname><given-names>B.</given-names></name>; <name><surname>Guo</surname><given-names>Z.</given-names></name>; <name><surname>York</surname><given-names>D. M.</given-names></name>
+<article-title>Toward Fast and
+Accurate Binding Affinity Prediction with pmemdGTI: An Efficient Implementation
+of GPU-Accelerated Thermodynamic Integration</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2017</year>, <volume>13</volume>, <fpage>3077</fpage>&#x02013;<lpage>3084</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jctc.7b00102</pub-id>.<pub-id pub-id-type="pmid">28618232</pub-id>
+</mixed-citation></ref><ref id="ref64"><mixed-citation publication-type="journal" id="cit64"><name><surname>Darden</surname><given-names>T.</given-names></name>; <name><surname>York</surname><given-names>D.</given-names></name>; <name><surname>Pedersen</surname><given-names>L.</given-names></name>
+<article-title>Particle mesh Ewald:
+An <italic>N</italic>log(<italic>N</italic>) method for Ewald sums
+in large systems</article-title>. <source>J. Chem. Phys.</source>
+<year>1993</year>, <volume>98</volume>, <fpage>10089</fpage>&#x02013;<lpage>10092</lpage>. <pub-id pub-id-type="doi">10.1063/1.464397</pub-id>.</mixed-citation></ref><ref id="ref65"><mixed-citation publication-type="journal" id="cit65"><person-group person-group-type="allauthors"><name><surname>Dolcetti</surname><given-names>G.</given-names></name>; <name><surname>Ekberg</surname><given-names>V.</given-names></name>; <name><surname>Cao</surname><given-names>L.</given-names></name>; <name><surname>Ignjatovi&#x00107;</surname><given-names>M.
+M.</given-names></name>; <name><surname>Olsson</surname><given-names>M.
+A.</given-names></name>; <name><surname>Ryde</surname><given-names>U.</given-names></name></person-group><article-title>Attempts to improve alchemical
+relative binding free-energy simulations by quantum-mechanical charges</article-title>. <source>J. Chem. Inf. Model.</source><year>2025</year>.</mixed-citation></ref><ref id="ref66"><mixed-citation publication-type="journal" id="cit66"><name><surname>Klimovich</surname><given-names>P.</given-names></name>; <name><surname>Shirts</surname><given-names>M.</given-names></name>; <name><surname>Mobley</surname><given-names>D.</given-names></name>
+<article-title>Guidelines for the
+analysis of free
+energy calculations</article-title>. <source>J. Comput.-Aided Mol. Des.</source>
+<year>2015</year>, <volume>29</volume>, <fpage>397</fpage>&#x02013;<lpage>411</lpage>. <pub-id pub-id-type="doi">10.1007/s10822-015-9840-9</pub-id>.<pub-id pub-id-type="pmid">25808134</pub-id>
+</mixed-citation></ref><ref id="ref67"><mixed-citation publication-type="journal" id="cit67"><name><surname>Wu</surname><given-names>D.</given-names></name>; <name><surname>Kofke</surname><given-names>D. A.</given-names></name>
+<article-title>Phase-space Overlap
+Measures. I. Fail-safe Bias Detection
+in Free Energies Calculated by Molecular Simulation</article-title>. <source>J. Chem. Phys.</source>
+<year>2005</year>, <volume>123</volume> (<issue>5</issue>), <fpage>054103</fpage><pub-id pub-id-type="doi">10.1063/1.1992483</pub-id>.<pub-id pub-id-type="pmid">16108627</pub-id>
+</mixed-citation></ref><ref id="ref68"><mixed-citation publication-type="journal" id="cit68"><name><surname>Mikulskis</surname><given-names>P.</given-names></name>; <name><surname>Genheden</surname><given-names>S.</given-names></name>; <name><surname>Rydberg</surname><given-names>P.</given-names></name>; <name><surname>Sandberg</surname><given-names>L.</given-names></name>; <name><surname>Olsen</surname><given-names>L.</given-names></name>; <name><surname>Ryde</surname><given-names>U.</given-names></name>
+<article-title>Binding affinities
+in the SAMPL3 trypsin and host-guest blind tests
+estimated with the MM/PBSA and LIE methods</article-title>. <source>J. Comput.-Aided. Mol. Des.</source>
+<year>2012</year>, <volume>26</volume>, <fpage>527</fpage>&#x02013;<lpage>541</lpage>. <pub-id pub-id-type="doi">10.1007/s10822-011-9524-z</pub-id>.<pub-id pub-id-type="pmid">22198518</pub-id>
+</mixed-citation></ref><ref id="ref69"><mixed-citation publication-type="journal" id="cit69"><name><surname>Mobley</surname><given-names>D. L.</given-names></name>; <name><surname>Chodera</surname><given-names>J. D.</given-names></name>; <name><surname>Dill</surname><given-names>K. A.</given-names></name>
+<article-title>Confine-and-Release
+Method: Obtaining
+Correct Binding Free Energies in the Presence of Protein Conformational
+Change</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2007</year>, <volume>3</volume>, <fpage>1231</fpage>&#x02013;<lpage>1235</lpage>. <pub-id pub-id-type="doi">10.1021/ct700032n</pub-id>.<pub-id pub-id-type="pmid">18843379</pub-id>
+</mixed-citation></ref><ref id="ref70"><mixed-citation publication-type="journal" id="cit70"><name><surname>Burley</surname><given-names>K. H.</given-names></name>; <name><surname>Gill</surname><given-names>S. C.</given-names></name>; <name><surname>Lim</surname><given-names>N. M.</given-names></name>; <name><surname>Mobley</surname><given-names>D. L.</given-names></name>
+<article-title>Enhancing Side Chain
+Rotamer Sampling Using Nonequilibrium Candidate Monte Carlo</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2019</year>, <volume>15</volume>, <fpage>1848</fpage>&#x02013;<lpage>1862</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jctc.8b01018</pub-id>.<pub-id pub-id-type="pmid">30677291</pub-id>
+</mixed-citation></ref><ref id="ref71"><mixed-citation publication-type="journal" id="cit71"><name><surname>Suruzhon</surname><given-names>M.</given-names></name>; <name><surname>Abdel-Maksoud</surname><given-names>K.</given-names></name>; <name><surname>Bodnarchuk</surname><given-names>M. S.</given-names></name>; <name><surname>Ciancetta</surname><given-names>A.</given-names></name>; <name><surname>Wall</surname><given-names>I. D.</given-names></name>; <name><surname>Essex</surname><given-names>J. W.</given-names></name>
+<article-title>Enhancing torsional
+sampling using
+fully adaptive simulated tempering</article-title>. <source>J. Chem.
+Phys.</source>
+<year>2024</year>, <volume>160</volume> (<issue>15</issue>), <fpage>154110</fpage><pub-id pub-id-type="doi">10.1063/5.0190659</pub-id>.<pub-id pub-id-type="pmid">38639317</pub-id>
+</mixed-citation></ref><ref id="ref72"><mixed-citation publication-type="journal" id="cit72"><name><surname>Mobley</surname><given-names>D. L.</given-names></name>; <name><surname>Graves</surname><given-names>A. P.</given-names></name>; <name><surname>Chodera</surname><given-names>J. D.</given-names></name>; <name><surname>McReynolds</surname><given-names>A. C.</given-names></name>; <name><surname>Shoichet</surname><given-names>B. K.</given-names></name>; <name><surname>Dill</surname><given-names>K. A.</given-names></name>
+<article-title>Predicting Absolute
+Ligand Binding
+Free Energies to a Simple Model Site</article-title>. <source>J. Mol.
+Biol.</source>
+<year>2007</year>, <volume>371</volume>, <fpage>1118</fpage>&#x02013;<lpage>1134</lpage>. <pub-id pub-id-type="doi">10.1016/j.jmb.2007.06.002</pub-id>.<pub-id pub-id-type="pmid">17599350</pub-id>
+</mixed-citation></ref><ref id="ref73"><mixed-citation publication-type="journal" id="cit73"><name><surname>Ekberg</surname><given-names>V.</given-names></name>; <name><surname>Samways</surname><given-names>M. L.</given-names></name>; <name><surname>Misini Ignjatovi&#x00107;</surname><given-names>M.</given-names></name>; <name><surname>Essex</surname><given-names>J. W.</given-names></name>; <name><surname>Ryde</surname><given-names>U.</given-names></name>
+<article-title>Comparison of Grand Canonical and Conventional Molecular Dynamics
+Simulation Methods for Protein-Bound Water Networks</article-title>. <source>ACS Phys. Chem. Au</source>
+<year>2022</year>, <volume>2</volume>, <fpage>247</fpage>&#x02013;<lpage>259</lpage>. <pub-id pub-id-type="doi">10.1021/acsphyschemau.1c00052</pub-id>.<pub-id pub-id-type="pmid">35637786</pub-id>
+</mixed-citation></ref><ref id="ref74"><mixed-citation publication-type="journal" id="cit74"><name><surname>Ge</surname><given-names>Y.</given-names></name>; <name><surname>Wych</surname><given-names>D. C.</given-names></name>; <name><surname>Samways</surname><given-names>M. L.</given-names></name>; <name><surname>Wall</surname><given-names>M. E.</given-names></name>; <name><surname>Essex</surname><given-names>J. W.</given-names></name>; <name><surname>Mobley</surname><given-names>D. L.</given-names></name>
+<article-title>Enhancing Sampling of Water Rehydration on Ligand Binding:
+A Comparison of Techniques</article-title>. <source>J. Chem. Theory
+Comput.</source>
+<year>2022</year>, <volume>18</volume>, <fpage>1359</fpage>&#x02013;<lpage>1381</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jctc.1c00590</pub-id>.<pub-id pub-id-type="pmid">35148093</pub-id>
+</mixed-citation></ref><ref id="ref75"><mixed-citation publication-type="journal" id="cit75"><name><surname>Ben-Shalom</surname><given-names>I. Y.</given-names></name>; <name><surname>Lin</surname><given-names>C.</given-names></name>; <name><surname>Radak</surname><given-names>B. K.</given-names></name>; <name><surname>Sherman</surname><given-names>W.</given-names></name>; <name><surname>Gilson</surname><given-names>M. K.</given-names></name>
+<article-title>Fast Equilibration
+of Water between Buried Sites and the Bulk by Molecular Dynamics with
+Parallel Monte Carlo Water Moves on Graphical Processing Units</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2021</year>, <volume>17</volume>, <fpage>7366</fpage>&#x02013;<lpage>7372</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jctc.1c00867</pub-id>.<pub-id pub-id-type="pmid">34762421</pub-id>
+</mixed-citation></ref><ref id="ref76"><mixed-citation publication-type="journal" id="cit76"><name><surname>Ross</surname><given-names>G. A.</given-names></name>; <name><surname>Russell</surname><given-names>E.</given-names></name>; <name><surname>Deng</surname><given-names>Y.</given-names></name>; <name><surname>Lu</surname><given-names>C.</given-names></name>; <name><surname>Harder</surname><given-names>E. D.</given-names></name>; <name><surname>Abel</surname><given-names>R.</given-names></name>; <name><surname>Wang</surname><given-names>L.</given-names></name>
+<article-title>Enhancing Water Sampling
+in Free
+Energy Calculations with Grand Canonical Monte Carlo</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2020</year>, <volume>16</volume>, <fpage>6061</fpage>&#x02013;<lpage>6076</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jctc.0c00660</pub-id>.<pub-id pub-id-type="pmid">32955877</pub-id>
+</mixed-citation></ref><ref id="ref77"><mixed-citation publication-type="journal" id="cit77"><name><surname>Wan</surname><given-names>S.</given-names></name>; <name><surname>Bhati</surname><given-names>A. P.</given-names></name>; <name><surname>Wade</surname><given-names>A. D.</given-names></name>; <name><surname>Alf&#x000e8;</surname><given-names>D.</given-names></name>; <name><surname>Coveney</surname><given-names>P. V.</given-names></name>
+<article-title>Thermodynamic and structural insights into the repurposing
+of drugs that bind to SARS-CoV-2 main protease</article-title>. <source>Mol. Syst. Des. Eng.</source>
+<year>2022</year>, <volume>7</volume>, <fpage>123</fpage>&#x02013;<lpage>131</lpage>. <pub-id pub-id-type="doi">10.1039/D1ME00124H</pub-id>.<pub-id pub-id-type="pmid">35223088</pub-id>
+</mixed-citation></ref></ref-list></back></article>

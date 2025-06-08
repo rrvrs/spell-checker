@@ -1,0 +1,1363 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" dtd-version="1.3" xml:lang="EN" article-type="research-article"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">J Chem Inf Model</journal-id><journal-id journal-id-type="iso-abbrev">J Chem Inf Model</journal-id><journal-id journal-id-type="publisher-id">ci</journal-id><journal-id journal-id-type="coden">jcisd8</journal-id><journal-title-group><journal-title>Journal of Chemical Information and Modeling</journal-title></journal-title-group><issn pub-type="ppub">1549-9596</issn><issn pub-type="epub">1549-960X</issn><publisher><publisher-name>American Chemical Society</publisher-name></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">39907634</article-id><article-id pub-id-type="pmc">PMC11863385</article-id>
+<article-id pub-id-type="doi">10.1021/acs.jcim.4c01810</article-id><article-categories><subj-group><subject>Article</subject></subj-group></article-categories><title-group><article-title>Toward the Prediction
+of Binding Events in Very Flexible,
+Allosteric, Multidomain Proteins</article-title></title-group><contrib-group><contrib contrib-type="author" corresp="yes" id="ath1"><name><surname>Basciu</surname><given-names>Andrea</given-names></name><xref rid="cor1" ref-type="other">*</xref><xref rid="aff1" ref-type="aff">&#x02020;</xref><xref rid="notes1" ref-type="notes">#</xref></contrib><contrib contrib-type="author" id="ath2"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0001-6337-1026</contrib-id><name><surname>Athar</surname><given-names>Mohd</given-names></name><xref rid="aff1" ref-type="aff">&#x02020;</xref></contrib><contrib contrib-type="author" id="ath3"><name><surname>Kurt</surname><given-names>Han</given-names></name><xref rid="aff1" ref-type="aff">&#x02020;</xref></contrib><contrib contrib-type="author" id="ath4"><name><surname>Neville</surname><given-names>Christine</given-names></name><xref rid="aff2" ref-type="aff">&#x02021;</xref><xref rid="aff3" ref-type="aff">&#x000a7;</xref></contrib><contrib contrib-type="author" id="ath5"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0002-5985-257X</contrib-id><name><surname>Malloci</surname><given-names>Giuliano</given-names></name><xref rid="aff1" ref-type="aff">&#x02020;</xref></contrib><contrib contrib-type="author" id="ath6"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0009-0003-8306-8739</contrib-id><name><surname>Muredda</surname><given-names>Fabrizio C.</given-names></name><xref rid="aff1" ref-type="aff">&#x02020;</xref></contrib><contrib contrib-type="author" id="ath7"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0001-6300-5712</contrib-id><name><surname>Bosin</surname><given-names>Andrea</given-names></name><xref rid="aff1" ref-type="aff">&#x02020;</xref></contrib><contrib contrib-type="author" id="ath8"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0003-0825-0824</contrib-id><name><surname>Ruggerone</surname><given-names>Paolo</given-names></name><xref rid="aff1" ref-type="aff">&#x02020;</xref></contrib><contrib contrib-type="author" corresp="yes" id="ath9"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0001-7369-1322</contrib-id><name><surname>Bonvin</surname><given-names>Alexandre M. J. J.</given-names></name><xref rid="cor2" ref-type="other">*</xref><xref rid="aff4" ref-type="aff">&#x02225;</xref></contrib><contrib contrib-type="author" corresp="yes" id="ath10"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0003-4013-8867</contrib-id><name><surname>Vargiu</surname><given-names>Attilio V.</given-names></name><xref rid="cor3" ref-type="other">*</xref><xref rid="aff1" ref-type="aff">&#x02020;</xref></contrib><aff id="aff1"><label>&#x02020;</label>Physics
+Department, <institution>University of Cagliari, Cittadella
+Universitaria</institution>, Monserrato
+(CA) I-09042, <country>Italy</country></aff><aff id="aff2"><label>&#x02021;</label>Institute
+for Computational Molecular Science, <institution>Temple
+University</institution>, 1925 N. 12th Street, Philadelphia, Pennsylvania 19122, <country>United States</country></aff><aff id="aff3"><label>&#x000a7;</label>Department
+of Biology, <institution>Temple University</institution>, 1900 North 12th Street, Philadelphia, Pennsylvania 19122, <country>United States</country></aff><aff id="aff4"><label>&#x02225;</label>Bijvoet
+Centre for Biomolecular Research, Faculty of Science - Chemistry, <institution>Utrecht University</institution>, Padualaan 8, Utrecht 3584 CH, <country>The Netherlands</country></aff></contrib-group><author-notes><corresp id="cor1"><label>*</label>Email: <email>a.basciu2@gmail.com</email>.</corresp><corresp id="cor2"><label>*</label>Email: <email>a.m.j.j.bonvin@uu.nl</email>.</corresp><corresp id="cor3"><label>*</label>Email: <email>vargiu@dsf.unica.it</email>.</corresp></author-notes><pub-date pub-type="epub"><day>05</day><month>02</month><year>2025</year></pub-date><pub-date pub-type="collection"><day>24</day><month>02</month><year>2025</year></pub-date><volume>65</volume><issue>4</issue><fpage>2052</fpage><lpage>2065</lpage><history><date date-type="received"><day>11</day><month>11</month><year>2024</year></date><date date-type="accepted"><day>13</day><month>01</month><year>2025</year></date><date date-type="rev-recd"><day>08</day><month>01</month><year>2025</year></date></history><permissions><copyright-statement>&#x000a9; 2025 The Authors. Published by American Chemical Society</copyright-statement><copyright-year>2025</copyright-year><copyright-holder>The Authors</copyright-holder><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>Permits the broadest form of re-use including for commercial purposes, provided that author attribution and integrity are maintained (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</ext-link>).</license-p></license></permissions><abstract><p content-type="toc-graphic"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01810_0005" id="ab-tgr1"/></p><p>Knowledge of the
+structures formed by proteins and small
+molecules
+is key to understand the molecular principles of chemotherapy and
+for designing new and more effective drugs. During the early stage
+of a drug discovery program, it is customary to predict ligand-protein
+complexes in silico, particularly when screening large compound databases.
+While virtual screening based on molecular docking is widely used
+for this purpose, it generally fails in mimicking binding events associated
+with large conformational changes in the protein, particularly when
+the latter involve multiple domains. In this work, we describe a new
+methodology to generate bound-like conformations of very flexible
+and allosteric proteins bearing multiple binding sites by exploiting
+only information on the unbound structure and the putative binding
+sites. The protocol is validated on the paradigm enzyme adenylate
+kinase, for which we generated a significant fraction of bound-like
+structures. A fraction of these conformations, employed in ensemble-docking
+calculations, allowed to find native-like poses of substrates and
+inhibitors (binding to the active form of the enzyme), as well as
+catalytically incompetent analogs (binding the inactive form). Our
+protocol provides a general framework for the generation of bound-like
+conformations of challenging drug targets that are suitable to host
+different ligands, demonstrating high sensitivity to the fine chemical
+details that regulate protein&#x02019;s activity. We foresee applications
+in virtual screening, in the prediction of the impact of amino acid
+mutations on structure and dynamics, and in protein engineering.</p></abstract><funding-group><award-group><funding-source><institution-wrap><institution>H2020 Research Infrastructures</institution><institution-id institution-id-type="doi">10.13039/100010666</institution-id></institution-wrap></funding-source><award-id>823830</award-id></award-group></funding-group><funding-group><award-group><funding-source><institution-wrap><institution>Programma Operativo Nazionale Ricerca e Competitivit&#x000c3;&#x000a0;</institution><institution-id institution-id-type="doi">10.13039/501100020134</institution-id></institution-wrap></funding-source><award-id>PROOF of CONCEPT - Valorizzazione dei risultati</award-id></award-group></funding-group><funding-group><award-group><funding-source><institution-wrap><institution>Programma Operativo Nazionale Ricerca e Competitivit&#x000c3;&#x000a0;</institution><institution-id institution-id-type="doi">10.13039/501100020134</institution-id></institution-wrap></funding-source><award-id>Azione I.1 Dottorati Innovativi con caratterizz</award-id></award-group></funding-group><funding-group><award-group><funding-source><institution-wrap><institution>NextGenerationEU</institution><institution-id institution-id-type="doi">10.13039/100031478</institution-id></institution-wrap></funding-source><award-id>PE00000019</award-id></award-group></funding-group><funding-group><award-group><funding-source><institution-wrap><institution>NextGenerationEU</institution><institution-id institution-id-type="doi">10.13039/100031478</institution-id></institution-wrap></funding-source><award-id>PE00000007</award-id></award-group></funding-group><funding-group><award-group><funding-source><institution-wrap><institution>NextGenerationEU</institution><institution-id institution-id-type="doi">10.13039/100031478</institution-id></institution-wrap></funding-source><award-id>ECS0000038</award-id></award-group></funding-group><funding-group><award-group><funding-source><institution-wrap><institution>Division of Microbiology and Infectious Diseases</institution><institution-id institution-id-type="doi">10.13039/100015691</institution-id></institution-wrap></funding-source><award-id>R01AI136799</award-id></award-group></funding-group><custom-meta-group><custom-meta><meta-name>document-id-old-9</meta-name><meta-value>ci4c01810</meta-value></custom-meta><custom-meta><meta-name>document-id-new-14</meta-name><meta-value>ci4c01810</meta-value></custom-meta><custom-meta><meta-name>ccc-price</meta-name><meta-value/></custom-meta></custom-meta-group></article-meta></front><body><sec id="sec1"><title>Introduction</title><p>Molecular recognition is a fundamental
+process for cellular life,
+regulation, and pathology,<sup><xref ref-type="bibr" rid="ref1">1</xref></sup> yet its quantitative
+understanding remains a major challenge due to the complexity of accounting
+for interactions among flexible partners fluttering in a crowded solution.
+The structural determinants of molecular recognition are best described
+indeed considering an ensemble of conformational states of each (macro)molecule
+involved.<sup><xref ref-type="bibr" rid="ref1">1</xref>,<xref ref-type="bibr" rid="ref2">2</xref></sup> Among them, proteins represent the majority
+of interactors and span a very wide flexibility spectrum, ranging
+from side-chain reorientations to large-scale domain motions, possibly
+coupled to secondary structure variations.<sup><xref ref-type="bibr" rid="ref1">1</xref></sup> Target plasticity is key especially for multispecific proteins,
+whereby even minor conformational changes can enable the binding of
+multiple compounds to different regions of the same broad binding
+site.<sup><xref ref-type="bibr" rid="ref3">3</xref>&#x02212;<xref ref-type="bibr" rid="ref5">5</xref></sup></p><p>The rapid increase in the number of experimentally
+resolved protein
+structures within the last decades has fueled the development of computational
+tools to mine their conformational space, including machine/deep-learning
+approaches integrating experimental data and simulations.<sup><xref ref-type="bibr" rid="ref6">6</xref>&#x02212;<xref ref-type="bibr" rid="ref25">25</xref></sup> Methods to mimic protein&#x02013;ligand association in silico, such
+as molecular docking and virtual screening, have become routinary
+in any modern drug design lab.<sup><xref ref-type="bibr" rid="ref1">1</xref>,<xref ref-type="bibr" rid="ref26">26</xref>,<xref ref-type="bibr" rid="ref27">27</xref></sup> Indeed, predicting the interactions between proteins and small molecules
+(ligands) underlies modern chemotherapy and drug design.<sup><xref ref-type="bibr" rid="ref1">1</xref>,<xref ref-type="bibr" rid="ref28">28</xref>,<xref ref-type="bibr" rid="ref29">29</xref></sup> Despite its widespread use, the
+proper description of partners&#x02019; flexibility in molecular docking
+remains a big challenge in the field, significantly affecting accuracy.<sup><xref ref-type="bibr" rid="ref1">1</xref>,<xref ref-type="bibr" rid="ref26">26</xref>,<xref ref-type="bibr" rid="ref28">28</xref>,<xref ref-type="bibr" rid="ref30">30</xref></sup> This difficulty is primarily due to the challenge of exploring plasticity
+in high-dimensional spaces, coupled with well-known sensitivity of
+docking to even minor structural changes at the binding interface.<sup><xref ref-type="bibr" rid="ref1">1</xref></sup> These difficulties affect also AI-based algorithms,
+particularly for the generation of protein ensembles of high conformational
+diversity or in the presence of interactions with membranes,<sup><xref ref-type="bibr" rid="ref31">31</xref></sup> although recent approaches achieved state-of-the-art
+accuracy in reproducing protein&#x02013;ligand structures, at least
+for common natural compounds.<sup><xref ref-type="bibr" rid="ref32">32</xref>,<xref ref-type="bibr" rid="ref33">33</xref></sup></p><p>Among the strategies
+developed to cope with the flexibility issue,<sup><xref ref-type="bibr" rid="ref28">28</xref></sup> ensemble-docking accounts for plasticity by
+using a predefined set of structures of one (generally the protein)
+or both the binding partners.<sup><xref ref-type="bibr" rid="ref26">26</xref>,<xref ref-type="bibr" rid="ref34">34</xref>,<xref ref-type="bibr" rid="ref35">35</xref></sup> The method has been successfully applied to various targets, showcasing
+its versatility in drug discovery efforts.<sup><xref ref-type="bibr" rid="ref29">29</xref>,<xref ref-type="bibr" rid="ref36">36</xref>&#x02212;<xref ref-type="bibr" rid="ref38">38</xref></sup> Within this framework, we recently proposed EDES
+(Ensemble Docking with Enhanced sampling of pocket Shape),<sup><xref ref-type="bibr" rid="ref39">39</xref>&#x02212;<xref ref-type="bibr" rid="ref41">41</xref></sup> a method employing metadynamics simulations<sup><xref ref-type="bibr" rid="ref42">42</xref>&#x02212;<xref ref-type="bibr" rid="ref46">46</xref></sup> with a set of ad hoc collective variables to bias
+the shape and the volume of a binding site. EDES was validated on
+a set of nonallosteric globular proteins bearing a single binding
+site, enabling the prediction of their bound(holo)-like conformations.
+Here we largely redesigned the original protocol, hereafter referred
+to as generalized EDES (gEDES), to deal with multidomain allosteric
+proteins bearing extended binding sites composed of multiple (sub)pockets.
+These proteins include indisputably relevant and challenging targets
+for drug design efforts.<sup><xref ref-type="bibr" rid="ref47">47</xref>,<xref ref-type="bibr" rid="ref48">48</xref></sup></p><p>We validated
+gEDES on the pharmaceutically important enzyme adenylate
+kinase (ADK), a paradigm protein undergoing very large structural
+rearrangements upon binding of multiple substrates to an extended
+region composed of two (sub)pockets (<xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>).<sup><xref ref-type="bibr" rid="ref49">49</xref>,<xref ref-type="bibr" rid="ref50">50</xref></sup> Structurally, ADK is
+as a monomeric enzyme composed of a main domain (CORE) linked to a
+NMP-binding (NMP) and an ATP-binding (LID) domain.<sup><xref ref-type="bibr" rid="ref49">49</xref></sup> These three domains embed two distinct binding regions
+at the interfaces between the CORE and the NMP and the LID regions
+(hereafter NC and LC respectively in <xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>), which bind ATP and AMP (substrates for
+the phosphoryl transfer) or two ADP molecules during the reverse reaction.
+During the catalytic cycle, the NMP and LID domains close over the
+substrate(s) via hinge-like motions (pink arrows in <xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>),<sup><xref ref-type="bibr" rid="ref51">51</xref>&#x02212;<xref ref-type="bibr" rid="ref53">53</xref></sup> generating
+a reactive environment shielded from nonstructural water molecules.<sup><xref ref-type="bibr" rid="ref54">54</xref>,<xref ref-type="bibr" rid="ref55">55</xref></sup></p><fig id="fig1" position="float"><label>Figure 1</label><caption><p>Comparison
+between the apo (PDB ID: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="PDB" xlink:href="4AKE">4AKE</ext-link>) and holo (PDB ID: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="PDB" xlink:href="1AKE">1AKE</ext-link>) experimental structures
+of ADK, represented by transparent and solid ribbons, respectively.
+Protein structure is built upon three quasi-rigid domains, called
+CORE, LID and NMP, and it features two distinct binding sites. LID
+(residues 118&#x02013;160) and NMP (residues 30&#x02013;61), which undergo
+hinge-like motions upon binding of substrates or inhibitors, are colored
+green and dark yellow, respectively. CORE domain (residues 1&#x02013;29,
+62&#x02013;117, 161&#x02013;214) is colored gray. Inhibitor P<sup>1</sup>,P<sup>5</sup>-bis(adenosine-5&#x02032;-)pentaphosphate (AP5) is shown
+by sticks colored by atom type (C, O, N, P atoms in gray, red, blue,
+and tan, respectively). Main hinge-like conformational changes between
+adjacent quasi-rigid domains are highlighted by the pink arrows. Values
+of the RMSD of the binding site of AP5 between apo and holo amount
+to 5.6 and 6.1 &#x000c5; when calculated on C<sub>&#x003b1;</sub> and non-hydrogenous
+atoms, respectively (after alignment of the corresponding selections).</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01810_0001" id="gr1" position="float"/></fig><p>This behavior is shared by different classes of
+pharmaceutically
+relevant proteins, including kinases and transferases.<sup><xref ref-type="bibr" rid="ref56">56</xref>,<xref ref-type="bibr" rid="ref57">57</xref></sup> Allosteric models of ADK activity have been proposed on the basis
+of the high correlation between the structural rearrangements of the
+LC and NC interfaces.<sup><xref ref-type="bibr" rid="ref58">58</xref>&#x02212;<xref ref-type="bibr" rid="ref60">60</xref></sup> While cofactors such as Mg<sup>2+</sup> are essential
+for the catalysis,<sup><xref ref-type="bibr" rid="ref61">61</xref>,<xref ref-type="bibr" rid="ref62">62</xref></sup> substrate binding and related
+conformational changes are believed to be largely independent of their
+presence.<sup><xref ref-type="bibr" rid="ref61">61</xref>,<xref ref-type="bibr" rid="ref63">63</xref></sup></p><p>Due to its peculiarities, ADK has
+been the subject of several experimental<sup><xref ref-type="bibr" rid="ref63">63</xref>&#x02212;<xref ref-type="bibr" rid="ref67">67</xref></sup> and computational<sup><xref ref-type="bibr" rid="ref58">58</xref>,<xref ref-type="bibr" rid="ref68">68</xref>&#x02212;<xref ref-type="bibr" rid="ref83">83</xref></sup> studies shedding light on the details of the structural rearrangements
+and the energetics governing its biological activity. Moreover, ADK
+has been extensively employed as paradigm system to benchmark various
+computational strategies aiming to reproduce large/allosteric apo(open)/holo(closed)
+conformational transitions,<sup><xref ref-type="bibr" rid="ref70">70</xref>,<xref ref-type="bibr" rid="ref71">71</xref>,<xref ref-type="bibr" rid="ref75">75</xref>&#x02212;<xref ref-type="bibr" rid="ref78">78</xref>,<xref ref-type="bibr" rid="ref84">84</xref>&#x02212;<xref ref-type="bibr" rid="ref89">89</xref></sup> as well as in molecular docking studies.<sup><xref ref-type="bibr" rid="ref80">80</xref>,<xref ref-type="bibr" rid="ref90">90</xref></sup></p><p>Here, we demonstrate that our new protocol can generate a
+significant
+fraction of structures of ADK that are very similar to those bound
+to a set of different ligands, without exploiting any information
+about these compounds. Importantly: (i) the ligands include substrates
+and inhibitors bound to a closed (active) conformation of the enzyme,
+as well as an incompetent binder bound to an open (inactive) state;
+(ii) the agreement encompasses the fine geometry of the extended binding
+region, resulting in the correct side-chain orientation of most residues
+therein. Moreover, when employed in ensemble-docking calculations,
+these conformations: (i) yielded native-like poses of substrates and
+inhibitors of ADK among the top-ranked ones for all the ligands; (ii)
+reproduced the binding mode of the catalytically inactive GTP analog
+to an open structure of ADK. Our findings highlight the high accuracy
+of gEDES in accounting for the fine physico-chemical details regulating
+enzyme activity (a feature that AI-based methods could not easily
+catch, as demonstrated below) and place it among the state-of-the-art
+tools for accurate in silico Structure-Based Drug Design.</p></sec><sec id="sec2"><title>Results and Discussion</title><p>The workflow of gEDES is sketched
+in <xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>. The only
+two ingredients needed to apply
+the method are the unbound structure of a protein and the location
+of its putative binding sites (BSs). Next, a dissection of the protein
+into quasi-rigid (QR) domains linked by flexible hinges is performed,
+and the collective variables (CVs) to perform bias-exchange well-tempered
+metadynamics<sup><xref ref-type="bibr" rid="ref42">42</xref>&#x02212;<xref ref-type="bibr" rid="ref44">44</xref></sup> simulations are setup. These are the gyration radius
+of the BS (RoG<sub>BS</sub>), the three Contacts across Inertia Planes
+(CIP<sub>1&#x02013;3</sub>), and the &#x0201c;contacts between quasi-Rigid
+Domains&#x0201d; (cRD) defined between residues belonging to adjacent
+QR domains and lining the BS (here the LID-CORE and NMP-CORE interfaces&#x02014;hereafter
+LC and NC, respectively). The &#x0201c;inertia planes&#x0201d; are defined
+as the planes perpendicular to the three principal axes of inertia
+of the BS, with each plane passing through its geometric center. The
+use of such planes allows automatically dissecting the BS into two
+groups of amino acids across each CIP CV; application of a bias on
+these CVs enhances the sampling of different BS shapes and volumes.If,
+as in the case of ADK, a significant fraction of residues defining
+the cRDs are charged, the corresponding CV is further split into one
+containing only the charged residues and another one containing all
+remaining ones. As demonstrated below, such a splitting allows for
+effective sampling of side chain conformations of the former group,
+which otherwise could be penalized by the lower free energy barriers
+associated with large fluctuations of non-charged residues. Once the
+simulations are done, a multi-step cluster analysis is performed on
+the resulting trajectories, producing several structure representatives
+to be employed in ensemble docking calculations. The reader is referred
+to the <xref rid="sec4" ref-type="other">Methods</xref> section for further detail
+on the methodology.</p><fig id="fig2" position="float"><label>Figure 2</label><caption><p>gEDES workflow. After choosing a structural template of
+the apo
+structure of the protein (1) either from experiments or from modeling,
+a list of putative binding site(s) and quasi-rigid (QR) domains linked
+by flexible hinges is identified by exploiting experimental information
+or computational algorithms such as COACH-D. (2) Next, the collective
+variables (CVs) are setup (3): in addition to the gyration radius
+(RoG<sub>BS</sub>) and the three contacts across inertia planes (CIP<sub>1&#x02013;3</sub>), a set of &#x0201c;contacts between quasi-Rigid
+Domains&#x0201d; (cRD) is also defined between residues belonging to
+adjacent QR domains and to the BS (here the LID-CORE and NMP-CORE
+interfaces&#x02014;hereafter LC and NC, respectively; see <xref rid="sec4" ref-type="other">Methods</xref> for implementation details). If, as for
+ADK, a relevant fraction of residues lining the cRDs features a charged
+side chain, this CV is further split into two new ones containing,
+respectively, only the charged residues and all the remaining ones.
+Finally, a multistep cluster analysis is performed (4) on the trajectory
+generated with the gEDES setup, producing several structure representatives
+to be employed in ensemble docking calculations (5).</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01810_0002" id="gr2" position="float"/></fig><p>In the following, we report the performance of
+gEDES in reproducing
+the structures of ADK bound to the four ligands employed in this work,
+focusing on the fine geometry of the BSs. Next, we show how accounting
+for protein plasticity improves docking outcomes. The experimental
+closed (active) structures of ADK in complex with substrates ADP and
+AMP (PDB IDs: 1ANK,<sup><xref ref-type="bibr" rid="ref54">54</xref></sup> 2ECK<sup><xref ref-type="bibr" rid="ref91">91</xref></sup>) and the inhibitor P<sup>1</sup>,P<sup>5</sup>-bis(adenosine-5&#x02032;-)pentaphosphate
+(hereafter AP5; PDB ID: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="PDB" xlink:href="1AKE">1AKE</ext-link>(<xref ref-type="bibr" rid="ref92">92</xref>)), as well as the open
+(inactive) structure in complex with the nonhydrolyzable (catalytically
+incompetent) GTP analog &#x003b2;,&#x003b3;-methyleneguanosine 5&#x02032;-triphosphate
+(hereafter GCP; PDB ID: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="PDB" xlink:href="6F7U">6F7U</ext-link>(<xref ref-type="bibr" rid="ref63">63</xref>)), are used as a reference
+for validation. Note that the structures of ADK bound to ADP and AMP
+ligands feature an overall conformation very similar to the one bound
+to AP5, with subangstrom structural variations at the corresponding
+BSs (see <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01810/suppl_file/ci4c01810_si_001.pdf">Table S1</ext-link>). Therefore, in the following,
+our discussion will often refer only to the AP5 and GCP bound structures.</p><sec id="sec2.1"><title>Sampling
+of Holo-like Protein Conformations</title><p>The performance
+of gEDES in generating holo-like structures of ADK is summarized in <xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref> and <xref rid="tbl1" ref-type="other">Table <xref rid="tbl1" ref-type="other">1</xref></xref>. Notably, the BS employed to
+define the CVs (that is the one found by COACH-D, hereafter referred
+to as BS<sub>COACH</sub>; see <xref rid="sec4" ref-type="other">Methods</xref> for
+details) does not coincide precisely with that of any ligand (hereafter
+BS<sub>AP5</sub>, BS<sub>ADP</sub>, BS<sub>AMP</sub>, and BS<sub>GCP</sub>). Indeed, BS<sub>COACH</sub> is much larger than all of them but
+BS<sub>AP5</sub>, and as such it is not biased toward specific compounds;
+it comprises 32 residues, 11 of which (almost 35% of the total) are
+charged. By inspecting the RMSD distributions in the left column of <xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref> we see that, for
+all BS investigated in this work, gEDES generates a non-negligible
+fraction of holo-like structures.</p><fig id="fig3" position="float"><label>Figure 3</label><caption><p>Performance of MD<sub>std</sub> and gEDES
+simulations in reproducing
+holo-like conformations of the computationally derived (BS<sub>COACH</sub>, first row) and experimental ADK ligands&#x02019; BSs (from the 2nd
+to the last row). Green and black colors identify in all graphs the
+data extracted from unbiased and gEDES simulations, respectively.
+Left column reports the normalized frequency distributions of the
+RMSD values of each site, calculated after superposition of the non-hydrogenous
+atoms (including both the backbone and the side chains) defining the
+same site onto the reference structure (that is, PDB ID <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="PDB" xlink:href="1AKE">1AKE</ext-link> for BS<sub>COACH</sub> and BS<sub>AP5</sub>, 2ECK for BS<sub>ADP</sub>, 1ANK for BS<sub>AMP</sub>, 6F7U for BS<sub>GCP</sub>). Shaded areas and solid lines
+refer to the distributions extracted from the production trajectory
+and from the cluster representatives used for docking calculations,
+respectively. These distributions were obtained by grouping RMSD values
+into bins of 0.2 &#x000c5; in width and interpolating the resulting distribution
+with cubic splines and a density of 20 points per &#x000c5;. Right column
+reports: (i) the normalized distributions of the fraction of total
+(solid lines) and charged (dashed lines) residues simultaneously assuming
+a holo-like conformation along the gEDES and MD<sub>std</sub> trajectories.
+Also in this case, the RMSD was calculated, for each residue, on all
+non-hydrogenous atoms after alignment of the entire corresponding
+BS (not the single amino acid) to the reference experimental structure.
+Criteria to consider residues&#x02019; conformations as holo-like are
+reported in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01810/suppl_file/ci4c01810_si_001.pdf">Table S4</ext-link>. (ii) the best conformation
+in the ensemble of cluster representatives against the corresponding
+reference structure. Side chains are shown by sticks colored from
+white to red according to the value of the per-residue RMSD from the
+reference structures (indicated by thin black sticks), with thick
+sticks identifying those residues that do not sample holo-like conformations.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01810_0003" id="gr3" position="float"/></fig><table-wrap id="tbl1" position="float"><label>Table 1</label><caption><title>Performance of gEDES vs MD<sub>std</sub> in Reproducing Holo-like Conformations of the Protein and of the
+BSs<xref rid="t1fn1" ref-type="table-fn">a</xref></title></caption><table frame="hsides" rules="groups" border="0"><colgroup><col align="left"/><col align="char" char="("/><col align="char" char="("/><col align="char" char="("/><col align="char" char="("/><col align="char" char="("/><col align="char" char="("/><col align="char" char="("/></colgroup><thead><tr><th style="border:none;" align="center">&#x000a0;</th><th colspan="3" align="center" char="(">holo:
+1AKE<hr/></th><th style="border:none;" align="center" char="(">holo: 2ECK</th><th style="border:none;" align="center" char="(">holo: 1ANK</th><th colspan="2" align="center" char="(">holo:
+6F7U<hr/></th></tr><tr><th style="border:none;" align="left">RMSD [&#x000c5;]</th><th style="border:none;" align="center" char="(">BS<sub>COACH</sub></th><th style="border:none;" align="center" char="(">BS<sub>AP5</sub></th><th style="border:none;" align="center" char="(">protein (C<sub>&#x003b1;</sub>)</th><th style="border:none;" align="center" char="(">BS<sub>ADP</sub></th><th style="border:none;" align="center" char="(">BS<sub>AMP</sub></th><th style="border:none;" align="center" char="(">BS<sub>GCP</sub></th><th style="border:none;" align="center" char="(">protein
+(C<sub>&#x003b1;</sub>)</th></tr></thead><tbody><tr><td style="border:none;" align="left">MD<sub>std</sub></td><td style="border:none;" align="char" char="(">0 (3.7)</td><td style="border:none;" align="char" char="(">0 (3.9)</td><td style="border:none;" align="char" char="(">0 (2.9)</td><td style="border:none;" align="char" char="(">0.9 (2.1)</td><td style="border:none;" align="char" char="(">0 (3.1)</td><td style="border:none;" align="char" char="(">23.5 (1.1)</td><td style="border:none;" align="char" char="(">16.2 (0.9)</td></tr><tr><td style="border:none;" align="left">gEDES</td><td style="border:none;" align="char" char="(">1.3 (2.0)</td><td style="border:none;" align="char" char="(">0.7 (2.0)</td><td style="border:none;" align="char" char="(">0.3 (1.8)</td><td style="border:none;" align="char" char="(">13.4 (0.9)</td><td style="border:none;" align="char" char="(">2.3 (2.2)</td><td style="border:none;" align="char" char="(">19.8 (1.3)</td><td style="border:none;" align="char" char="(">10.1 (1.0)</td></tr><tr><td style="border:none;" align="left">MD<sub arrange="stack">std</sub><sup arrange="stack">clust</sup></td><td style="border:none;" align="char" char="(">0 (3.9)</td><td style="border:none;" align="char" char="(">0 (4.0)</td><td style="border:none;" align="char" char="(">0 (3.1)</td><td style="border:none;" align="char" char="(">1.8 (2.1)</td><td style="border:none;" align="char" char="(">0 (3.8)</td><td style="border:none;" align="char" char="(">24.2 (1.1)</td><td style="border:none;" align="char" char="(">16.8 (1.5)</td></tr><tr><td style="border:none;" align="left">gEDES<sup>clust</sup></td><td style="border:none;" align="char" char="(">4.0 (2.1)</td><td style="border:none;" align="char" char="(">3.8 (2.2)</td><td style="border:none;" align="char" char="(">0.8 (2.1)</td><td style="border:none;" align="char" char="(">13.6 (1.1)</td><td style="border:none;" align="char" char="(">1.5 (2.2)</td><td style="border:none;" align="char" char="(">16.7 (2.0)</td><td style="border:none;" align="char" char="(">3.8 (2.0)</td></tr></tbody></table><table-wrap-foot><fn id="t1fn1"><label>a</label><p>Percentage of structures with RMSD
+values below 2 and 2.5 &#x000c5;, calculated, respectively, on the C<sub>&#x003b1;</sub> atoms for the protein and on the nonhydrogenous atoms
+for each BS. For each region values were obtained after the alignment
+to the same region on the reference structure. Results refer to the
+cumulative trajectories and to cluster representatives of both the
+standard MD simulation (MD<sub>std</sub>) and the gEDES approach.
+PDB codes of each reference holo-structure are reported in the first
+row. Lowest values of the RMSD (&#x000c5;) are reported in parentheses
+for each entry.</p></fn></table-wrap-foot></table-wrap><p>The same
+performance was not obtained during multiple
+independent
+standard MD simulations (hereafter MD<sub>std</sub>) for which, as
+expected, we found a consistent percentage of conformations with RMSD
+values lower than 2.5 &#x000c5; only when using BS<sub>GCP</sub> as reference.
+This is not surprising, as GCP is bound to an open inactive structure
+of the enzyme, while the binding of all the other compounds is associated
+with a decrease of the RoG of the corresponding BS by more than 20%
+(<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01810/suppl_file/ci4c01810_si_001.pdf">Table S2</ext-link>). <xref rid="tbl1" ref-type="other">Table <xref rid="tbl1" ref-type="other">1</xref></xref> quantifies these results in terms of RMSD
+values from the true holo complexes for all the BSs and for the whole
+protein (in the case of AP5 and GCP), considering both the entire
+trajectory and cluster-derived structures (130 and 160 clusters were
+obtained from the gEDES and MD<sub>std</sub> trajectories, respectively).
+We observe that, while gEDES was able to sample conformations displaying
+respectively RMSD of as low as 2.0 (1.8) &#x000c5; for BS<sub>COACH</sub> (whole protein), the best structures sampled by MD<sub>std</sub> featured corresponding values of 3.7 and 2.9 &#x000c5; respectively.
+These findings clearly indicate that, even in absence of any bias
+on the whole protein, our set of local CVs was able to drag the entire
+ADK structure toward holo-like geometries. Moreover, compared to our
+previous protocol,<sup><xref ref-type="bibr" rid="ref39">39</xref></sup> gEDES performed significantly
+better in reproducing all BSs conformations except BS<sub>GCP</sub> (which was expected as this structure is similar to that of the
+unbound protein), while the overall structures of both bound reference
+proteins were reproduced equally well by both approaches (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01810/suppl_file/ci4c01810_si_001.pdf">Table S3</ext-link>). This demonstrates the need for the
+latter algorithm in order to deal with very flexible multisite/allosteric
+proteins such as ADK.</p><p>Importantly, our multistep clustering
+pipeline allowed us to preserve
+these geometries within a restricted pool of selected structures.
+Indeed, the sets of conformations selected from gEDES MDs for the
+ensemble docking of AP5, ADP, AMP, and GCP include geometries 2.2,
+1.1, 2.2, 2.0 &#x000c5; away from the corresponding complex structures.
+As expected, gEDES and MD<sub>std</sub> have similar sampling performances
+only in the case of BS<sub>GCP</sub>.</p><p>These results further
+confirm the general applicability of gEDES,
+despite the protocol has been originally developed to address targets
+undergoing large conformational changes.</p><p>The second column in <xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref> reports the percentage
+of conformations displaying <italic>N</italic> amino acids simultaneously
+in their bound-like conformation
+(with <italic>N</italic> going from 0 to the number of residues lining
+each BS; see also <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01810/suppl_file/ci4c01810_si_001.pdf">Table S4</ext-link>). gEDES was
+able to generate a geometry of BS<sub>COACH</sub> simultaneously displaying
+27 out of 32 residues (of which 8 out of 11 charged amino acids) with
+a bound-like conformation. In turn, this resulted in the accurate
+reproduction of bound-like conformations for all experimental BSs,
+which are partly overlapping and/or included in BS<sub>COACH</sub>. In contrast, the best conformations generated from MD<sub>std</sub> displayed less than 40% of the residues in a bound-like geometry
+for all binding sites but BS<sub>GCP</sub> (for which the two protocols
+perform similarly). These different performances of gEDES and MD<sub>std</sub> trace back to their diverging abilities in reproducing
+the bound-like conformations of individual residues lining BS<sub>COACH</sub> and all the experimental BSs (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01810/suppl_file/ci4c01810_si_001.pdf">Figure S1</ext-link>).</p></sec><sec id="sec2.2"><title>Reproducing Ligand Native Poses</title><p>We performed ensemble-docking
+calculations on the conformational clusters extracted from gEDES and
+MD<sub>std</sub> trajectories using HADDOCK<sup><xref ref-type="bibr" rid="ref93">93</xref></sup> and AutoDock4.<sup><xref ref-type="bibr" rid="ref94">94</xref></sup> The poses reported for
+AutoDock4 were obtained after performing a ligand cluster analysis
+on the top poses obtained from each individual docking run (i.e.,
+a run for each protein conformation). For HADDOCK, the poses originate
+from a single docking run starting from the ensemble of cluster representative
+protein conformations (extracted from MD<sub>std</sub> or gEDES).
+Importantly, in the spirit of using our protocol for prediction purposes,
+docking of all ligands was performed on the region encompassing BS<sub>COACH</sub>, despite this site is much larger than all the experimental
+sites but BS<sub>AP5</sub>. Details of this implementation can be
+found in the <xref rid="sec4" ref-type="other">Methods</xref> section.</p><p><xref rid="tbl2" ref-type="other">Table <xref rid="tbl2" ref-type="other">2</xref></xref> shows that for all
+ligands but ADP, only the conformations of ADK obtained with gEDES
+enabled to retrieve top-ranked native-like complex structures (the
+top native-like complex structures obtained from the combined set
+of docking calculations using HADDOCK and AutoDock4 are shown in <xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>).</p><table-wrap id="tbl2" position="float"><label>Table 2</label><caption><title>Performance of AutoDock4 and HADDOCK
+in Reproducing the Experimental Structures of the Complexes between
+ADK and the Four Ligands Investigated in This Work<xref rid="t2fn1" ref-type="table-fn">a</xref></title></caption><table frame="hsides" rules="groups" border="0"><colgroup><col align="left"/><col align="left"/><col align="left"/><col align="left"/><col align="left"/><col align="left"/><col align="left"/><col align="left"/><col align="left"/><col align="left"/></colgroup><thead><tr><th style="border:none;" align="center">&#x000a0;</th><th style="border:none;" align="center">&#x000a0;</th><th colspan="2" align="center">AP5<hr/></th><th colspan="2" align="center">AMP<hr/></th><th colspan="2" align="center">ADP<hr/></th><th colspan="2" align="center">GCP<hr/></th></tr><tr><th style="border:none;" align="left">&#x000a0;</th><th style="border:none;" align="left">&#x000a0;</th><th style="border:none;" align="center">MD<sub>std</sub></th><th style="border:none;" align="center">gEDES</th><th style="border:none;" align="center">MD<sub>std</sub></th><th style="border:none;" align="center">gEDES</th><th style="border:none;" align="center">MD<sub>std</sub></th><th style="border:none;" align="center">gEDES</th><th style="border:none;" align="center">MD<sub>std</sub></th><th style="border:none;" align="center">gEDES</th></tr></thead><tbody><tr><td rowspan="4" style="border:none;" align="left">Autodock</td><td style="border:none;" align="left">sampl. perf. [%]</td><td style="border:none;" align="left">0.6</td><td style="border:none;" align="left">1.8</td><td style="border:none;" align="left">&#x000a0;</td><td style="border:none;" align="left">0.9</td><td style="border:none;" align="left">1.9</td><td style="border:none;" align="left">2.7</td><td style="border:none;" align="left">1.2</td><td style="border:none;" align="left">1.8</td></tr><tr><td style="border:none;" align="left">pose rank</td><td style="border:none;" align="left">2</td><td style="border:none;" align="left">2</td><td style="border:none;" align="left">(63)</td><td style="border:none;" align="left">7</td><td style="border:none;" align="left">10</td><td style="border:none;" align="left">1</td><td style="border:none;" align="left">16</td><td style="border:none;" align="left">10</td></tr><tr><td style="border:none;" align="left">RMSD<sub>lig/BS</sub> [&#x000c5;]</td><td style="border:none;" align="left">2.3/6.1</td><td style="border:none;" align="left">2.2/2.2</td><td style="border:none;" align="left">(3.7/4.9)</td><td style="border:none;" align="left">2.1/3.1</td><td style="border:none;" align="left">2.3/3.8</td><td style="border:none;" align="left">0.9/1.1</td><td style="border:none;" align="left">2.5/1.7</td><td style="border:none;" align="left">1.8/2.3</td></tr><tr><td style="border:none;" align="left"><italic>F</italic><sub>nat</sub></td><td style="border:none;" align="left">0.58</td><td style="border:none;" align="left">0.79</td><td style="border:none;" align="left">&#x000a0;</td><td style="border:none;" align="left">0.74</td><td style="border:none;" align="left">0.57</td><td style="border:none;" align="left">0.86</td><td style="border:none;" align="left">0.75</td><td style="border:none;" align="left">0.91</td></tr><tr><td rowspan="5" style="border:none;" align="left">HADDOCK</td><td style="border:none;" align="left">sampl. perf. [%]</td><td style="border:none;" align="left">2.8</td><td style="border:none;" align="left">0.57</td><td style="border:none;" align="left">&#x000a0;</td><td style="border:none;" align="left">0.004</td><td style="border:none;" align="left">0.06</td><td style="border:none;" align="left">0.1</td><td style="border:none;" align="left">1.01</td><td style="border:none;" align="left">1.4</td></tr><tr><td style="border:none;" align="left">pose rank</td><td style="border:none;" align="left">61</td><td style="border:none;" align="left">1</td><td style="border:none;" align="left">643</td><td style="border:none;" align="left">193</td><td style="border:none;" align="left">23</td><td style="border:none;" align="left">1</td><td style="border:none;" align="left">390</td><td style="border:none;" align="left">11</td></tr><tr><td style="border:none;" align="left">RMSD<sub>lig/BS</sub> [&#x000c5;]</td><td style="border:none;" align="left">2.2/7.9</td><td style="border:none;" align="left">1.6/2.1</td><td style="border:none;" align="left">2.4/7.8</td><td style="border:none;" align="left">1.7/2.7</td><td style="border:none;" align="left">2.3/4.2</td><td style="border:none;" align="left">0.6/1.4</td><td style="border:none;" align="left">2.0/3.5</td><td style="border:none;" align="left">1.7/2.0</td></tr><tr><td style="border:none;" align="left">Best RMSD<sub>lig</sub> [&#x000c5;]/rank</td><td style="border:none;" align="left">1.8/68</td><td style="border:none;" align="left">0.9/16</td><td style="border:none;" align="left">2.4/643</td><td style="border:none;" align="left">1.7/193</td><td style="border:none;" align="left">2.2/81</td><td style="border:none;" align="left">0.5/7</td><td style="border:none;" align="left">1.9/644</td><td style="border:none;" align="left">0.8/74</td></tr><tr><td style="border:none;" align="left"><italic>F</italic><sub>nat</sub></td><td style="border:none;" align="left">0.38</td><td style="border:none;" align="left">0.82</td><td style="border:none;" align="left">0.33</td><td style="border:none;" align="left">0.67</td><td style="border:none;" align="left">0.54</td><td style="border:none;" align="left">0.88</td><td style="border:none;" align="left">0.43</td><td style="border:none;" align="left">0.86</td></tr></tbody></table><table-wrap-foot><fn id="t2fn1"><label>a</label><p>For each compound, two cluster sets
+(gEDES and MD<sub>std</sub>) were employed in ensemble-docking calculations.
+Autodock results refer to clusters of docking poses obtained from
+a cluster analysis performed on all generated complexes (see <xref rid="sec4" ref-type="other">Methods</xref>), while for the HADDOCK they refer to the
+single structures from a single run starting from the ensemble of
+MD conformations. Sampling performance is calculated as the percentage
+of poses within 2.5 &#x000c5; from the native structure (for HADDOCK
+calculated at the rigid-body stage out of 50,000 poses). Pose ranking
+refers to the first native-like conformation with the highest score
+within each cluster. Next row reports the heavy atoms RMSD of the
+ligand and the binding site, calculated for the first native-like
+conformation according to ranking. <italic>F</italic><sub>nat</sub> indicates the fraction of native contacts recovered within a shell
+of 5 &#x000c5; from the ligand in the experimental structures. Overall
+best poses are highlighted in bold and shown in <xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>.</p></fn></table-wrap-foot></table-wrap><fig id="fig4" position="float"><label>Figure 4</label><caption><p>Comparison
+between the best complex structures (nearest-to-native)
+obtained for all investigated ADK ligands from the combined set of
+docking calculations using HADDOCK and AutoDock4 and the experimental
+conformations. Predicted complex structures correspond to the best
+overall poses reported in <xref rid="tbl2" ref-type="other">Table <xref rid="tbl2" ref-type="other">2</xref></xref>. For each ligand (names are indicated in the figure),
+the top row shows the structure obtained by gEDES and yielding the
+nearest-to-native complex geometry superposed to the corresponding
+experimental bound conformation. These structures are shown in cartoons
+and colored respectively by domain (green, yellow, and gray for the
+LID, NMP, and CORE domains, respectively) and in dark gray. Bright
+and dark solid materials were used to represent respectively the predicted
+and experimental structures of ADK. Location of the ligand in the
+experimental structures is shown by a semitransparent surface colored
+in iceblue, red, cyan, and magenta, respectively. Bottom row shows
+the comparison between the geometries of the BSs and of the ligand
+in the experimental bound structure vs the nearest-to-native pose,
+using again bright and dark materials for the predicted and experimental
+geometries, respectively:the side chains of residues lining the BS
+in the former (latter) structure are shown by dark thin (light thick)
+sticks colored by residue type; the ligand is shown with single color
+sticks in the experimental structure, while thicker sticks colored
+by atom type (C, N, O, P atoms in white, blue, red, and orange, respectively)
+indicate the best docking pose.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01810_0004" id="gr4" position="float"/></fig><p>Using either AutoDock4 or HADDOCK with the clusters
+obtained from
+gEDES, the top two poses of AP5 include a near-native complex structure
+(RMSD<sub>lig</sub> values of 2.2 and 1.6 &#x000c5;, respectively); importantly,
+top ligand poses were found within conformations of BS<sub>AP5</sub> that resembled the experimental complex, enabling to recover a large
+fraction of native contacts (<italic>F</italic><sub>nat</sub>). On
+the other hand, clusters obtained from MD<sub>std</sub>, even if able
+to yield near-native ligand poses, were ranked poorly and moreover
+were obtained on largely distorted BS structures (RMSD<sub>BS</sub> values of 4.9 and 7.9 &#x000c5; respectively), thus describing incorrect
+binding modes with low <italic>F</italic><sub>nat</sub> values.</p><p>A similar situation is seen for ADP, for which both docking programs
+find a native-like pose (associated with low RMSD<sub>lig</sub> and
+high <italic>F</italic><sub>nat</sub> values) ranked as first only
+when using gEDES clusters; native-like poses found using the MD<sub>std</sub> clusters were again ranked poorly and associated with distorted
+BS conformations. Regarding GCP, Autodock and HADDOCK found the native-like
+pose ranked as first and 11th respectively, when using gEDES clusters,
+compared to ranks of 16th and 390th when using structures from MD<sub>std</sub>. In this case, as expected, near-native ligand poses were
+found on holo-like BS<sub>GCP</sub> conformations with both the MD<sub>std</sub> and the gEDES clusters. Finally, both docking programs
+retrieved near-native ligand poses of AMP on top when using gEDES
+cluster representatives, although these structures featured a slightly
+distorted binding region compared to the previous ligands and were
+ranked poorly by HADDOCK. On the other hand, no native-like binding
+mode was retrieved when using protein structures derived from MD<sub>std</sub>. The slightly worst gEDES performance for AMP is perhaps
+expected, as this compound binds to the NC interface, whose competent
+conformation is triggered via an allosteric boost involving a previous
+closure of the LID domain.<sup><xref ref-type="bibr" rid="ref58">58</xref></sup> Nonetheless,
+binding-prone conformation of BS<sub>AMP</sub> enabling to accurately
+predict near-native AMP poses were recovered even without explicitly
+mimicking allosteric regulation.</p></sec><sec id="sec2.3"><title>Comparison with Previous
+Works</title><p>In this section, we
+compare our results with (several) previous works aiming to explore
+ADK functional motions, eventually leading to the generation of druggable
+structures, and to characterize the energetics of its apo-to-holo
+transitions.</p><p>Flores and Gerstein employed ADK as test system
+for their &#x0201c;conformation explorer&#x0201d; algorithm.<sup><xref ref-type="bibr" rid="ref95">95</xref></sup> Based on the identification of protein&#x02019;s
+hinge axes followed by Euler rotations and MD simulations, the authors
+addressed the LID motion, for which the closest-to-holo generated
+model displayed a C<sub>&#x003b1;</sub>-RMSD (after superimposing the
+CORE and NMP domains) of 3.8 &#x000c5;, to be compared with the value
+of &#x0223c;17 &#x000c5; (after the same superposition) between the experimental
+apo and holo structures. Kr&#x000fc;ger et al. applied the NMsim<sup><xref ref-type="bibr" rid="ref70">70</xref></sup> conformational search algorithm, based on elastic
+network models (ENM), to generate ADK bound-like structures either
+by unbiased simulations or by biasing the RoG of the protein to values
+below RoG<sub>apo</sub>. These approaches produced, respectively,
+conformations featuring backbone RMSD as low as 3.06 and 2.36 &#x000c5;
+from the holo structure.<sup><xref ref-type="bibr" rid="ref51">51</xref>,<xref ref-type="bibr" rid="ref92">92</xref></sup> A similar methodology
+was employed by Ahmed et al.,<sup><xref ref-type="bibr" rid="ref71">71</xref></sup> who coupled
+a rigid cluster normal-mode analysis (RCNMA) with NMsim to generate
+conformations featuring a C<sub>&#x003b1;</sub>-RMSD as low as 1 or
+3.1 &#x000c5; from the experimental complex depending on whether the
+ADK closed or open structures were used. Unfortunately, no information
+was reported by the authors on the performance in reproducing bound-like
+geometry of the BS.</p><p>Wang et al.<sup><xref ref-type="bibr" rid="ref77">77</xref></sup> employed Replica-Exchange
+MD simulations (starting from the holo structure) to estimate the
+free energy profile and the time scales associated with LID opening
+and closing. They found these values to be respectively &#x0223c;29
+and &#x0223c;118 &#x003bc;s, in good correlation with the experimental
+data<sup><xref ref-type="bibr" rid="ref88">88</xref></sup> and pointing to the need for very
+long, unbiased simulations to collect a statistically significant
+number of opening/closing events. Yasuda et al.<sup><xref ref-type="bibr" rid="ref75">75</xref></sup> employed &#x0201c;parallel cascade selection MD (PaCS-MD)&#x0201d;
+to generate transition pathways between the (known) apo and holo (AP5-bound
+complex) structures of ADK. The method produced models displaying
+a C<sub>&#x003b1;</sub>-RMSD as low as 1.1 &#x000c5; from the target structure,
+although also in this case no data regarding the BS geometry were
+reported. Jalalypour and co-workers<sup><xref ref-type="bibr" rid="ref76">76</xref></sup> developed
+an approach to identify key residues responsible for specific conformational
+transitions in proteins by comparing apo and holo structures of a
+generic target. Steered MD (SMD)<sup><xref ref-type="bibr" rid="ref58">58</xref></sup> simulations
+fed with this information were employed to trigger apo-to-holo functional
+rearrangements in ADK, generating conformations with C<sub>&#x003b1;</sub>-RMSD of 3.1 &#x000c5; from the AP5-bound geometry.</p><p>A thorough
+comparison of our method with those discussed above
+is limited by the lack of data regarding the accuracy in reproducing
+the geometry of the extended binding region considered in the present
+work, which is relevant for drug design applications. Below, we report
+three examples enabling (at least in part) such an assessment.</p><p>In the first one, Kurkcuoglu and Doruker<sup><xref ref-type="bibr" rid="ref80">80</xref></sup> included ADK in the set of 5 proteins selected to assess the performance
+of their ENM-based workflow to generate an ensemble of holo-like protein
+conformations for docking calculations. Their best model (selected
+after filtering the RoG of the protein so as to discard conformations
+with values larger than RoG<sub>apo</sub>) displayed a C<sub>&#x003b1;</sub>-RMSD of 2.4 &#x000c5; over the whole protein.<sup><xref ref-type="bibr" rid="ref51">51</xref>,<xref ref-type="bibr" rid="ref92">92</xref></sup> When these models were employed in docking calculations of AP5,
+the closest-to-native pose featured an RMSD<sub>lig</sub> 2.9 &#x000c5;
+from the experimental structure. In the second example, we employed
+NeuralPLexer2,<sup><xref ref-type="bibr" rid="ref32">32</xref></sup> a recent computational
+approach exploiting deep learning to predict protein&#x02013;ligand
+complex structures by integrating small molecules information and
+biophysical inductive bias, to reproduce the structures of the complexes
+between ADK and the four ligands investigated in this work. We used
+as inputs the unbound structure of the protein and the conformations
+of the ligands extracted from the corresponding complexes. Finally,
+we also employed AlphaFold3<sup><xref ref-type="bibr" rid="ref33">33</xref></sup> to predict
+the structures of the complexes formed by ADK with ADP and AMP. In
+this case, the user provides the sequence of the protein and selects
+the ligand from a list of available compounds.</p><p>The results of
+these calculations, summarized in <xref rid="tbl3" ref-type="other">Table <xref rid="tbl3" ref-type="other">3</xref></xref>, indicate that gEDES (a purely
+biophysical method) compares well with NeuralPLexer2 and AlphaFold3.
+While the latter displays the best performance for ADP and AMP (common
+natural compounds that are highly represented in the PDB database),
+it was not possible to evaluate its performance for AP5 and GCP, which
+are not included in the data set of ligands. Interestingly, NeuralPLexer2
+predicts complex structures that are slightly closer than those generated
+by gEDES and Autodock/HADDOCK for AP5 and AMP, while it has a slight
+worst performance for ADP. Moreover, it fails in generating native-like
+conformations for GCP.</p><table-wrap id="tbl3" position="float"><label>Table 3</label><caption><title>Comparison of gEDES,
+NeuralPLexer2,
+and AlphaFold3 Performances in Reproducing Native-like Conformations
+of the Complexes between AK and the Four Ligands Investigated in This
+Work<xref rid="t3fn1" ref-type="table-fn">a</xref></title></caption><table frame="hsides" rules="groups" border="0"><colgroup><col align="left"/><col align="left"/><col align="left"/><col align="left"/><col align="left"/><col align="left"/></colgroup><thead><tr><th style="border:none;" align="center">&#x000a0;</th><th style="border:none;" align="center">&#x000a0;</th><th style="border:none;" align="center">AP5</th><th style="border:none;" align="center">AMP</th><th style="border:none;" align="center">ADP</th><th style="border:none;" align="center">GCP</th></tr></thead><tbody><tr><td rowspan="2" style="border:none;" align="left">Autodock-gEDES</td><td style="border:none;" align="left">RMSD<sub>lig/BS</sub> [&#x000c5;]</td><td style="border:none;" align="left">2.2/2.2 (2)</td><td style="border:none;" align="left">2.1/3.1 (7)</td><td style="border:none;" align="left">0.9/1.1
+(1)</td><td style="border:none;" align="left">1.8/2.3 (10)</td></tr><tr><td style="border:none;" align="left"><italic>F</italic><sub>nat</sub></td><td style="border:none;" align="left">0.79</td><td style="border:none;" align="left">0.74</td><td style="border:none;" align="left">0.86</td><td style="border:none;" align="left">0.91</td></tr><tr><td rowspan="2" style="border:none;" align="left">HADDOCK-gEDES</td><td style="border:none;" align="left">RMSD<sub>lig/BS</sub> [&#x000c5;]</td><td style="border:none;" align="left">1.6/2.1 (1)</td><td style="border:none;" align="left">1.7/2.7 (193)</td><td style="border:none;" align="left">0.6/1.4 (1)</td><td style="border:none;" align="left">1.7/2.0
+(11)</td></tr><tr><td style="border:none;" align="left"><italic>F</italic><sub>nat</sub></td><td style="border:none;" align="left">0.82</td><td style="border:none;" align="left">0.67</td><td style="border:none;" align="left">0.88</td><td style="border:none;" align="left">0.86</td></tr><tr><td rowspan="2" style="border:none;" align="left">NeuralPLexer2</td><td style="border:none;" align="left">RMSD<sub>lig/BS</sub> [&#x000c5;]</td><td style="border:none;" align="left">1.6/1.9 (1)</td><td style="border:none;" align="left">1.3/2.1
+(1)</td><td style="border:none;" align="left">1.0/1.8 (1)</td><td style="border:none;" align="left"><xref rid="t3fn2" ref-type="table-fn">b</xref></td></tr><tr><td style="border:none;" align="left"><italic>F</italic><sub>nat</sub></td><td style="border:none;" align="left">0.89</td><td style="border:none;" align="left">0.90</td><td style="border:none;" align="left">0.77</td><td style="border:none;" align="left"><xref rid="t3fn2" ref-type="table-fn">b</xref></td></tr><tr><td rowspan="2" style="border:none;" align="left">AlphaFold3</td><td style="border:none;" align="left">RMSD<sub>lig/BS</sub> [&#x000c5;]</td><td style="border:none;" align="left"><xref rid="t3fn3" ref-type="table-fn">c</xref></td><td style="border:none;" align="left">0.9/1.3 (1)</td><td style="border:none;" align="left">0.3/0.6 (1)</td><td style="border:none;" align="left"><xref rid="t3fn3" ref-type="table-fn">c</xref></td></tr><tr><td style="border:none;" align="left"><italic>F</italic><sub>nat</sub></td><td style="border:none;" align="left"><xref rid="t3fn3" ref-type="table-fn">c</xref></td><td style="border:none;" align="left">1</td><td style="border:none;" align="left">1</td><td style="border:none;" align="left"><xref rid="t3fn3" ref-type="table-fn">c</xref></td></tr></tbody></table><table-wrap-foot><fn id="t3fn1"><label>a</label><p>See caption of <xref rid="tbl2" ref-type="other">Table <xref rid="tbl2" ref-type="other">2</xref></xref> for further details.</p></fn><fn id="t3fn2"><label>b</label><p>NeuralPLexer2 was unable to correctly
+reproduce the conformation of the protein and of the BS (minimum RMSD
+&#x0223c; 5.9 &#x000c5;), as well as native-like poses of GCP (RMS<italic>D</italic><sub>min</sub> &#x0223c; 3.8 &#x000c5;, <italic>F</italic><sub>nat</sub> = 0.50)</p></fn><fn id="t3fn3"><label>c</label><p>AlphaFold3
+server (<uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://alphafoldserver.com/">https://alphafoldserver.com/</uri>) allows in the current implementation to predict the binding of
+only a few ligands, including AMP and ADP.</p></fn></table-wrap-foot></table-wrap><p>It is instructive to comment on the results for AMP
+and GCP in
+view of the published data on the biological function of ADK. A recent
+investigation<sup><xref ref-type="bibr" rid="ref67">67</xref></sup> suggested that initial
+binding of AMP followed by ATP could lead to a closed state that does
+not allow for the correct positioning of the two ligands for effective
+phosphate transfer. In other words, binding of AMP should occur after
+binding of the other substrate for optimal enzymatic activity; therefore,
+our results are remarkable as we did not perform any prior simulation
+of the AMP-ATP complex.</p><p>Even more interesting are the results
+obtained for GCP, whose binding
+arrests the enzyme in a catalytically nonfunctional open state. Since
+our approach generates widely different conformations, including some
+open structures, we were able to retrieve native-like conformations
+of the complex between GCP and ADK. In contrast, NeuralPLexer2 generated
+in all cases catalytically competent structures very similar to those
+found for the true substrates of the enzyme. We hypothesize that this
+could be due, at least partly, to the large predominance of substrate
+bound (closed) ADK conformations. In the future, it would be instructive
+to assess the performance of NeuralPLexer2, AlphaFold3 and similar
+methodologies on data sets including active and inactive compounds
+binding to the same protein in different conformations.</p></sec></sec><sec id="sec3"><title>Concluding
+Remarks and Perspectives</title><p>The accurate prediction
+of the molecular determinants enabling
+biological and therapeutic activity mediated by proteins is a holy
+grail in computational biology and drug design. Accuracy and computational
+costs are two essential factors to be accounted for in developing
+effective software and protocols. The first factor requires not only
+to identify the correct structures of protein&#x02013;ligand complexes,
+but also to distinguish between active and inactive compounds based
+on their binding modes and affinities. This is particularly relevant
+when dealing with enzymes, whose selectivity is critical for the precise
+control of metabolic pathways often occurring in crowded environments
+filled with many chemically related substrates.</p><p>In this work,
+we proposed and validated gEDES, a computational
+protocol for the accurate prediction of holo-like conformations of
+proteins, including allosteric and/or multipocket targets undergoing
+extended conformational changes upon ligand binding. Notably, gEDES
+relies only on the knowledge of a structure of the protein (even if
+unbound to any ligand) and on the identification of its putative binding
+site(s), thereby avoiding biases toward any specific chemotype. We
+validated our methodology on the paradigm enzyme adenylate kinase,
+widely employed to benchmark computational methods aiming to reproduce
+apo/holo conformational transitions and to predict holo-like conformations
+of proteins. gEDES was able to generate a large fraction of holo-like
+conformations of both the whole protein and the extended binding competent
+region, which is constituted by multiple distinct binding sites. Importantly,
+the agreement goes beyond the identification of the overall correct
+geometry of the binding region, defined by its backbone atoms, and
+includes reproduction of holo-like side chains conformations. Furthermore,
+these binding competent geometries were reproduced for both active
+and inactive protein conformations within a single simulation. When
+using a limited set of conformations extracted from gEDES trajectories
+in ensemble-docking calculations of substrates, inhibitors, and catalytically
+incompetent binders of adenylate kinase, we retrieved in all cases
+native-like structures of the complexes (which include closed and
+open protein conformations) ranked among the top models. These results
+demonstrate that gEDES, coupled to state-of-the-art docking simulations,
+can achieve very high sensitivity toward subtle but crucial chemical
+details of ligands, placing it among the state-of-the-art methodologies
+in the field.</p><p>In perspective, we plan to use our protocol to
+predict functional
+conformational changes in proteins, in accurate virtual screening
+campaigns, and in the rational design and repurposing of drugs. Exploring
+the conformational diversity of binding sites in a &#x0201c;chemotype-unbiased&#x0201d;
+manner could lead to the identification of a larger number of promising
+lead candidates<sup><xref ref-type="bibr" rid="ref1">1</xref>,<xref ref-type="bibr" rid="ref96">96</xref>&#x02212;<xref ref-type="bibr" rid="ref99">99</xref></sup> and/or to discover potential
+new uses for already marketed ones.<sup><xref ref-type="bibr" rid="ref100">100</xref></sup> In
+addition, the detection of putative binding regions could in principle
+be improved by combining existing structural data with druggability
+estimations based on the physicochemical properties of the site.<sup><xref ref-type="bibr" rid="ref21">21</xref>,<xref ref-type="bibr" rid="ref101">101</xref></sup> Sampling could be further improved by introducing new CVs crucial
+for protein dynamics and/or coupling metadynamics with other enhanced-sampling
+methods. For example, biasing the radius of gyration of the whole
+protein could be of help in case of large proteins, for which exploiting
+only variables defined on a putative binding region could not be effective.
+Another possibility is the coupling of our strategy with others directly
+addressing the fine treatment of torsional angles<sup><xref ref-type="bibr" rid="ref102">102</xref></sup> rotations and/or secondary structure changes.<sup><xref ref-type="bibr" rid="ref103">103</xref></sup> Our workflow also allows for the inclusion
+of experimental information at different stages of the process, for
+instance during postprocessing as done e.g. in ref (<xref ref-type="bibr" rid="ref80">80</xref>). For instance, the cluster
+analysis can be biased to extract protein conformations featuring
+a value for the radius of gyration within a desired range. gEDES could
+also be employed to identify allosteric domains and/or pockets that
+are difficult to detect based on the sole knowledge of the apo structure
+of proteins. Indeed, MD simulations have been already employed for
+this purpose, and our protocol can be particularly effective when
+coupled with pocket detection tools to discover allosteric sites that
+may appear upon significant protein movements.<sup><xref ref-type="bibr" rid="ref104">104</xref>,<xref ref-type="bibr" rid="ref105">105</xref></sup> In future, we plan to apply our protocol to other allosteric proteins
+(preliminary data on aldose reductase and vascular endothelial growth
+factor receptor are encouraging) and also to targets in which the
+allosteric and orthosteric sites are distant each other. The latter
+are even more challenging than ADK due to the issues related with
+conformational changes propagating across allosteric pathways, but
+gEDES could be still employed, in principle, upon approximate identification
+of the correct binding sites.</p><p>Finally, accurate structural data
+generated by gEDES simulations
+can be exploited to improve the predictivity of AI-based methods.
+In this respect, a strong limitation of these methods is that they
+predict only static structures and not dynamical ensembles, which
+should closely reproduce the behavior of biomolecular systems. As
+a long-term purpose, we aim to create a database of protein structures
+encompassing bound, unbound, and intermediate conformational states.</p></sec><sec id="sec4"><title>Methods</title><sec id="sec4.1"><title>Binding
+Site Determination</title><p>In this work, we employed
+a bacterial ADK enzyme to validate the protocol. The binding region
+of ADK was identified by uploading the apo structure with PDB ID: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="PDB" xlink:href="4AKE">4AKE</ext-link>(<xref ref-type="bibr" rid="ref51">51</xref>) (resolved at 2.2 &#x000c5; resolution and devoid of any missing
+residue) to the Web server COACH-D.<sup><xref ref-type="bibr" rid="ref106">106</xref></sup> COACH-D
+gives in output a set of up to 10 putative binding sites, together
+with a ranking C-score ranging from 0 (unreliable prediction) to 1
+(highly accurate prediction). In the case of ADK, the software identified
+three binding regions (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01810/suppl_file/ci4c01810_si_001.pdf">Table S5</ext-link>) displaying
+a C-score respectively of 0.99 (BS1<sub>COACH</sub>), 0.89 (BS2<sub>COACH</sub>), and 0.67 (BS3<sub>COACH</sub>), while the remaining
+predictions featured very low C-scores (&#x0003c;0.01) and as such were
+discarded. For our purposes, we identified a consensus binding region
+(hereafter BS<sub>COACH</sub>) by merging all the residues belonging
+to the three relevant sites mentioned above to avoid any bias toward
+any ligand-specific binding site.</p><p>To test the accuracy of our
+protocol in reproducing the conformation of different experimental
+binding sites of ADK, we selected four complex structures, each bearing
+a different ligand and displaying full sequence identity to that of
+the apo protein. The PDB IDs of these complexes are 1AKE,<sup><xref ref-type="bibr" rid="ref92">92</xref></sup> 2ECK,<sup><xref ref-type="bibr" rid="ref91">91</xref></sup> 1ANK,<sup><xref ref-type="bibr" rid="ref54">54</xref></sup> and 6F7U.<sup><xref ref-type="bibr" rid="ref63">63</xref></sup> In 1AKE,
+the protein was resolved in complex with the inhibitor AP5 (see <xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>), mimicking the
+presence of two physiological substrates and binding across the LC
+and NC interfaces. In 1ANK, the protein was complexed with AMP, a
+physiological substrate, and with ANP, a nonhydrolyzable ATP analog,
+while in the structure 2ECK the enzyme is bound to two physiological
+substrates, namely ADP and AMP. The nonhydrolyzable (and thus catalytically
+incompetent) GTP analog GCP was bound to the LC interface of the protein
+in the 6F7U structure, which resembles closely the open (unbound)
+ADK structure. This latter system allows benchmarking the protocol
+against the impact of subtle chemical details on the conformation
+of the complexes and in turn on the structure&#x02013;activity relationships
+for ADK. Four different experimental binding regions, labeled BS<sub>AP5</sub>, BS<sub>GCP</sub>, BS<sub>ADP</sub>, and BS<sub>AMP</sub>, were defined by taking all the residues within 3.5 &#x000c5; from
+the corresponding ligands AP5, GCP, ADP, and AMP in their respective
+costructures (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01810/suppl_file/ci4c01810_si_001.pdf">Table S5</ext-link>). BS<sub>AP5</sub> spans both the NC and LC interfaces, while BS<sub>GCP</sub> and
+BS<sub>ADP</sub> identify two slightly different regions across the
+LC interface, and BS<sub>AMP</sub> is located within the NC interface.
+Note that, while enhanced conformational sampling was performed by
+biasing BS<sub>COACH</sub>, the sampling performance (that is the
+ability of gEDES in reproducing ADK bound-like conformations) was
+assessed with respect to the experimental binding regions, which are
+truly relevant to ligand binding.</p></sec><sec id="sec4.2"><title>Standard MD</title><p>Standard
+all-atom MD simulations of the
+apo protein (hereafter MD<sub>std</sub>) embedded in a 0.15 KCl water
+solution (&#x0223c;46.000 atoms in total) were carried out using the
+pmemd module of the AMBER20 package.<sup><xref ref-type="bibr" rid="ref107">107</xref></sup> The initial distance between the protein and the edge of the box
+was set to be at least 16 &#x000c5; in each direction.</p><p>The topology
+file was created using the <italic>LEaP</italic> module of AmberTools21
+starting from the apo structure. The AMBER-14SB<sup><xref ref-type="bibr" rid="ref108">108</xref></sup> force field was used for the protein, the TIP3P<sup><xref ref-type="bibr" rid="ref109">109</xref></sup> model was used for water, and the parameters
+for the ions were obtained from Wang et al.<sup><xref ref-type="bibr" rid="ref110">110</xref></sup> Long-range electrostatics was evaluated through the particle-mesh
+Ewald algorithm using a real-space cutoff of 12 &#x000c5; and a grid
+spacing of 1 &#x000c5; in each dimension. van der Waals interactions
+were treated by a Lennard-Jones potential using a smooth cutoff (switching
+radius 10 &#x000c5;, cutoff radius 12 &#x000c5;). A multistep energy minimization
+with a combination of the steepest-descent and conjugate-gradient
+methods was carried out to relax the internal constraints of the systems
+by gradually releasing positional restraints. Next, the system was
+heated from 0 to 310 K in 1 ns of constant-pressure heating (<italic>NPT</italic>) MD simulation using the Langevin thermostat (collision
+frequency of 1 ps<sup>&#x02013;1</sup>) and the Berendsen barostat.
+After equilibration (10 additional ns), four production runs of 2.5
+&#x003bc;s each were performed, for a total of 10 &#x003bc;s. Time steps
+of 2 and 4 fs (after hydrogen mass repartitioning) were used respectively
+for preproduction and equilibrium NPT MD simulations. Coordinates
+from production trajectory were saved every 100 ps.</p></sec><sec id="sec4.3"><title>Enhanced Sampling
+MD</title><p>Bias-exchange well-tempered metadynamics
+simulations<sup><xref ref-type="bibr" rid="ref43">43</xref>,<xref ref-type="bibr" rid="ref44">44</xref></sup> were performed on the apo protein
+using a set of ad hoc collective variables (CVs) to enhance the sampling
+of both the shape and the volume of the binding pocket. We used the
+GROMACS 2022.4 package<sup><xref ref-type="bibr" rid="ref111">111</xref></sup> and the PLUMED
+2.8 plugin.<sup><xref ref-type="bibr" rid="ref112">112</xref></sup> AMBER parameters were ported
+to GROMACS using the <italic>acpype</italic> parser.<sup><xref ref-type="bibr" rid="ref113">113</xref></sup> We defined four CVs considering the residues lining BS<sub>COACH</sub>: (i) the radius of gyration (hereafter RoG<sub>BS</sub>) calculated using the <italic>gyration</italic> built-in function
+of PLUMED; (ii) the number of (pseudo)contacts across three orthogonal
+&#x0201c;inertia planes&#x0201d; (CIPs), calculated through a switching
+function implemented in the <italic>coordination</italic> keyword
+of PLUMED. The &#x0201c;inertia planes&#x0201d; are defined as the planes
+orthogonal to the three principal inertia axes of the binding site
+and passing through its geometrical center. Dividing the BS in two
+groups on opposite sides of each inertia plane allows to define three
+shape-adaptive CIPs CVs that should naturally induce relevant (apo
+to holo) conformational changes upon application of a bias in metadynamics
+simulations. Note that while all non-hydrogenous atoms were considered
+to define the three CIPs, only backbone atoms were used for RoG<sub>BS</sub>.,</p><p>Starting from the last conformation sampled along
+the preproduction step in MD<sub>std</sub>, each replica was simulated
+without restraints for the first 10 ns. Next, an upper restraint centered
+at the value of RoG<sub>X-ray</sub><sup>apo</sup> was imposed
+with a force constant increasing linearly from 10 to 25 kcal mol<sup>&#x02013;1</sup> &#x000c5;<sup>&#x02013;2</sup> in 40 ns. This preliminary
+phase is needed to push the system toward a structure featuring a
+RoG<sub>BS</sub> value close to RoG<sub>X-ray</sub><sup>apo</sup>. Subsequently, the center of the RoG<sub>BS</sub> restraint was
+decreased linearly (every ns) to a value corresponding to 85% of RoG<sub>X-ray</sub><sup>apo</sup> in 400 ns (moving restraints were
+applied on this CV&#x02014;<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01810/suppl_file/ci4c01810_si_001.pdf">Figure S2</ext-link>). Focusing
+on conformations featuring collapsed sites is based on the evidence
+that the binding of ligands to enzymes is most often associated with
+such structural changes. Nonetheless, the relatively soft upper restraints
+adopted here still allow the sampling of structures with a larger
+RoG<sub>BS</sub> with respect to the value at which the restraint
+is set (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01810/suppl_file/ci4c01810_si_001.pdf">Figure S2</ext-link>). After reaching the
+desired value, the RoG<sub>BS</sub> restraint remains active for 150
+additional ns. Thus, the cumulative simulation time of each replica
+amounts to 550 ns.</p><p>To expand the use of our protocol for allosteric
+proteins bearing
+multiple binding sites, we employed SPECTRUS<sup><xref ref-type="bibr" rid="ref114">114</xref></sup> to identify the putative quasi-rigid domains of ADK. This analysis
+confirmed the dissection of the protein into three quasi-rigid domains,
+namely the CORE, LID, and NMP domains known from previous literature<sup><xref ref-type="bibr" rid="ref74">74</xref>,<xref ref-type="bibr" rid="ref114">114</xref></sup> (<xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>). The reliability
+of such subdivision was further verified by assessing, via RMSD calculations
+between the experimental structures, the internal conformational changes
+occurring upon ligand binding in each domain (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01810/suppl_file/ci4c01810_si_001.pdf">Table S6</ext-link>). To account for hinge-like motions between the two
+LC and NC interfaces, we implemented the cRD CVs representing the
+number of (pseudo)contacts across these interfaces. To avoid relying
+on any experimental knowledge of the binding region, we only exploited
+the knowledge of BS<sub>COACH</sub> to identify residues lining the
+NC and LC (sub)pockets. Namely, the following procedure was adopted:
+(i) we selected all BS<sub>COACH</sub> residues belonging to the NMP(LID)
+and being within 8 &#x000c5; from any residue of the CORE; (ii) a second
+specular selection was made by taking all BS<sub>COACH</sub> residues
+belonging to the CORE that are within 8 &#x000c5; from any residue of
+the NMP(LID). This cutoff was chosen to ensure that none of the BS<sub>COACH</sub> residues got associated with more than one cRD CV and
+that each list contained a minimum of 4 residues belonging to each
+quasi-rigid domain (to limit the onset of large structural distortions
+within secondary structure elements). The union of selections (i)
+and (ii) defined the cumulative list of residues used to setup the
+cRD<sub>LC(NC)</sub> CV (<xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>); (iii) the residues associated with the NC and LC
+(sub)pockets were split into two lists via domain assignment, for
+which the number of (pseudo)contacts was calculated via the <italic>coordination</italic> keyword of PLUMED. Furthermore, within each
+subpocket, the charged amino acids were separated from the others;
+this splitting in two CVs (cRD<sub>NC(LC)c</sub> and cRD<sub>NC(LC)o</sub>) specifically enhances the conformational sampling of charged amino
+acids in targets, such as ADK, which contain many of them within the
+BS.</p><p>To facilitate the general applicability of the method, we
+automatized
+the workflow so that the latter cRD subdivision occurs only if: (i)
+the binding site presents more than the 25% of charged residues and
+(ii) each residue group defining a cRD variable is composed of at
+least 2 nonadjacent residues. For the system considered in this work,
+11 out of the 32 residues (&#x0223c;34%) composing BS<sub>COACH</sub> are charged, so this subdivision was applied.</p><p>The height <italic>w</italic> of the Gaussian hills was set to
+0.6 kcal/mol, while their widths were set as reported in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01810/suppl_file/ci4c01810_si_001.pdf">Table S7</ext-link> based on the fluctuations recorded during
+a short (&#x0223c;200 ps) unbiased MD run. The bias factor for well-tempered
+metadynamics was set to 10. Hills were added every 2.5 ps, while the
+bias-exchange frequency was set to 50 ps. Further details on CV definitions
+are reported in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01810/suppl_file/ci4c01810_si_001.pdf">Table S7</ext-link>. Coordinates of
+the system were saved every 10 ps. It took approximately 3 weeks to
+run gEDES simulations for ADK on a workstation with 8 physical i7&#x02013;3Ghz
+Intel CPU cores and a NVIDIA RTX2080Ti graphic card.</p></sec><sec id="sec4.4"><title>Cluster Analysis</title><p>The cluster analysis was performed
+in the CVs space (for both the gEDES and MD<sub>std</sub> simulations)
+using in-house scripts in the R language. The distribution of RoG<sub>BS</sub> values sampled during the MD simulation was binned into
+30 equally wide slices, and the built-in hclust module of R was used
+to perform a hierarchical agglomerative clustering within each slice,
+setting the number of generated clusters in the <italic>i</italic><sup>th</sup> slice to <italic>x<sub>i</sub></italic> = (<italic>N<sub>i</sub></italic>/<italic>N</italic><sub>tot</sub>)&#x000b7;<italic>N</italic><sub>c</sub>, where <italic>N<sub>i</sub></italic>, <italic>N</italic><sub>tot</sub>, and <italic>N</italic><sub>c</sub> are
+respectively the number of structures within the <italic>i</italic><sup>th</sup> slice, the total number of structures, and the total
+number of clusters. In our case, <italic>N</italic><sub>c</sub> was
+set to 100, but we imposed the additional requirement to have at least
+two clusters within each of the 30 slices, which could thus lead to
+a final number of clusters larger than 100. This was implemented by
+iteratively increasing <italic>N</italic><sub>c</sub> by 10 units
+until the number of clusters within each of the RoG<sub>BS</sub> slices
+was equal or higher than two. The resulting clusters were used as
+starting points to perform a second cluster analysis with the K-means
+method (maximum number of iterations set to 10,000) and generating
+the same number of clusters. This multistep strategy of clustering
+in the CV space, which outperforms more standard RMSD-based approaches
+in generating maximally diverse ensemble of protein conformations,
+resulted respectively in 130 and 160 clusters for the gEDES and MD<sub>std</sub> trajectories.</p></sec><sec id="sec4.5"><title>Docking</title><p>Docking calculations were
+performed using HADDOCK<sup><xref ref-type="bibr" rid="ref93">93</xref></sup> and AutoDock.<sup><xref ref-type="bibr" rid="ref94">94</xref></sup> Ligand
+conformations were extracted from the relative complex structures
+and prepared according to the standard procedure of each software.
+Docking calculations were performed for all ligands onto the predicted
+binding site (BS<sub>COACH</sub>); thus, ligands binding to the NC(LC)
+interface could in principle sample the LC(NC) one.</p><p>In HADDOCK,
+a single docking run was performed per case, starting from the various
+ensembles of <italic>N</italic><sub><italic>c</italic></sub> conformations,
+with increased sampling (50,000/1000/1000 models for <italic>it0</italic>, <italic>it1</italic>, and <italic>wat</italic> steps, respectively
+referring to rigid-body docking, semiflexible and final refinement
+in explicit solvent) using the HADDOCK2.4 web server.<sup><xref ref-type="bibr" rid="ref115">115</xref></sup> This increased sampling compared to the default
+was chosen to ensure that each conformation in the ensemble was sufficiently
+sampled. During <italic>it0</italic> the protein BS residues were
+defined as &#x0201c;active&#x0201d;, effectively drawing the rigid ligand
+into the BS without restraining its orientation. For the subsequent
+stages, only the ligand was active, improving its exploration of the
+binding site while maintaining at least one contact with its interacting
+residues. In addition, a fake bead was placed in the center of each
+binding site pocket and an ambiguous 0 &#x000c5; distance restrain was
+defined to those two beads such as a ligand atom (any atom) should
+overlap with one of those two beads. Those two beads were defined
+as &#x0201c;shape&#x0201d; in the server and have no interactions with
+the remaining of the system except for the defined distance restraints.
+All conformations in the MD ensemble were aligned on the initial apo
+structure and their position, together with that of the fake beads,
+was kept fixed during the rigid-body phase of the docking.</p><p>In
+AutoDock, each ligand conformation was rigidly docked on each
+protein structure using the Lamarckian Genetic Algorithm (LGA). The
+number of energy evaluations (<italic>ga_num_evals</italic> parameter)
+was increased 10 times from its default value (1) to avoid repeating
+each calculation several times to obtain converged results. An adaptive
+grid was used, enclosing all the residues belonging to the BS in each
+different protein conformation.<sup><xref ref-type="bibr" rid="ref39">39</xref>,<xref ref-type="bibr" rid="ref40">40</xref></sup> Finally, an additional
+step consisting in the relaxation of the docking poses by means of
+a restrained structural optimization was performed with AMBER20.<sup><xref ref-type="bibr" rid="ref107">107</xref></sup> Systems were relaxed in vacuum by means of
+up to 1000 cycles of steepest descent optimization followed by up
+to 24000 cycles using the conjugate gradients algorithm. Harmonic
+forces of 0.1 kcal&#x000b7;mol<sup>&#x02013;1</sup>&#x000b7;&#x000c5;<sup>&#x02013;1</sup> were applied on all non-hydrogenous atoms of the system. Long-range
+electrostatics was evaluated directly using a cutoff of 99 &#x000c5;,
+as for the Lennard-Jones potential. The AMBER-14SB<sup><xref ref-type="bibr" rid="ref108">108</xref></sup> force field was used for the protein, while the parameters
+of the ligands were derived from the GAFF<sup><xref ref-type="bibr" rid="ref116">116</xref></sup> force field using the <italic>antechamber</italic> module of AmberTools.
+Bond-charge corrections (bcc) charges were assigned to ligand atoms
+following structural relaxation under the &#x0201c;Austin Model 1 (AM1)&#x0201d;
+approximation. After this step, poses were scored according to AutoDock&#x02019;s
+energy function. Next, the top poses (in total <italic>N</italic><sub>c</sub>, one for each docking run performed on a different receptor
+structure) were clustered using the <italic>cpptraj</italic> module
+of AmberTools with a hierarchical agglomerative algorithm. Namely,
+after structural alignment of the BS for the different complex conformations,
+ligand poses were clustered using a distance RMSD (dRMSD) cutoff <italic>d</italic><sub>c</sub> = 0.067&#x000b7;<italic>N</italic><sub>nh</sub>, where <italic>N</italic><sub>nh</sub> is the number of non-hydrogenous
+atoms of the ligand. This choice was made to tune the cutoff to the
+molecular size of each compound and resulted in cutoffs of 3.8, 1.5,
+1.8, and 2.1 &#x000c5; for AP5, AMP, ADP, and GCP, respectively. Finally,
+clusters were ordered according to the top score (lowest binding free
+energy) within each cluster.</p></sec><sec id="sec4.6"><title>Complex Structure Prediction with NeuralPLexer2
+and AlphaFold3</title><p>NeuralPLexer2<sup><xref ref-type="bibr" rid="ref32">32</xref></sup> simulations were run
+giving in input as <italic>receptor</italic> and <italic>template</italic> the chain A of the apo-structure of ADK. In addition, for each ligand,
+the molecular structure extracted from the PDB file of the corresponding
+complex was given as input to the <italic>ligand</italic> keyword.
+All files were provided in pdb format, and the remaining parameters
+were set to their default values (num-steps = 40, sampler = Langevin
+simulated annealing). The <italic>&#x02018;batched structure sampling&#x02019;</italic> method was employed, which produced 16 (keyword <italic>n-samples</italic>) putative structures of the corresponding protein&#x02013;ligand
+complex. The <italic>&#x02018;complex structure prediction&#x02019;</italic> model, specifically trained for complex structure prediction, was
+used as model checkpoint.</p><p>AlphaFold3<sup><xref ref-type="bibr" rid="ref33">33</xref></sup> predictions were performed on the Web site <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://alphafoldserver.com">https://alphafoldserver.com</uri> by selecting ADP or AMP as ligand and inserting the FASTA sequence
+of ADK corresponding to the PDB structure with PDB ID <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="PDB" xlink:href="4AKE">4AKE</ext-link>.</p></sec></sec></body><back><notes notes-type="data-availability" id="notes5"><title>Data Availability Statement</title><p>The docking and
+MD simulation packages used in this work are third proprietary software
+available for free to Academics at the corresponding webpages. The
+scripts used in this work to perform MD simulations and docking with
+Autodock can be accessed on GitHub at the following page: <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/vargiulab/gEDES">https://github.com/vargiulab/gEDES</uri>. Cluster representatives and top-ranking docking poses are available
+on Zenodo at the link: https://doi.org/10.5281/zenodo.14065360.</p></notes><notes id="notes6" notes-type="si"><title>Supporting Information Available</title><p>The Supporting Information
+is
+available free of charge at <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/10.1021/acs.jcim.4c01810?goto=supporting-info">https://pubs.acs.org/doi/10.1021/acs.jcim.4c01810</ext-link>.<list id="silist" list-type="simple"><list-item><p>Frequency of holo-like
+conformations sampled, plots
+of the radius of gyration, RMSD matrix, percentage of RoG variation,
+percentage of RoG variation, comparison between the previous and the
+current protocols, adaptive cut-off RMSD, residues lining the different
+binding regions, interdomain RMSD, and implementation details of CVs
+(<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01810/suppl_file/ci4c01810_si_001.pdf">PDF</ext-link>)</p></list-item></list></p></notes><sec sec-type="supplementary-material"><title>Supplementary Material</title><supplementary-material content-type="local-data" id="sifile1"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01810_si_001.pdf"><caption><p>ci4c01810_si_001.pdf</p></caption></media></supplementary-material></sec><notes notes-type="" id="notes1"><title>Author Present Address</title><p><sup>#</sup> WAY4WARD, Via Ruggero Bonghi 11/B, 00184 Roma, Italy</p></notes><notes notes-type="" id="notes2"><title>Author Contributions</title><p>A.Basciu
+and
+A.V.V. designed research; A.Basciu, M.A. and H.K. performed MD simulations;
+M.A., C.N., G.M., A.M.J.J.B. and A.V.V. performed docking calculations;
+F.C.M and A.Bosin provided technical support; A.Bosin, P.R., and,
+A.M.J.J.B. and A.V.V. funded research; A.V.V. supervised research;
+A.Basciu, M.A, H.K., A.M.J.J.B. and A.V.V. analyzed the data; A.Basciu
+and A.V.V. wrote the manuscript with contributions from all authors.
+All authors read and approved the final manuscript.</p></notes><notes notes-type="COI-statement" id="notes4"><p>The
+authors
+declare the following competing financial interest(s): H.K. is a recipient
+of a Ph.D. fellowship co-funded by the University and Research Italian
+Ministry and by the company AngeliniPharma S.p.A. under the program
+Programma Operativo Nazionale FSE-FESR Ricerca e Innovazione 2014-2020,
+Azione I.1 Dottorati Innovativi con caratterizzazione industriale.</p></notes><notes notes-type="" id="notes3"><title>Notes</title><p>A patent application for the gEDES protocol
+has been filed with the Italian Patent and Trademark Office (Ufficio
+Italiano Brevetti e Marchi) under the application number 102023000013206.</p></notes><ack><title>Acknowledgments</title><p>This project was funded by the Regional
+Government
+of Sardinia through the European Regional Development Fund grant &#x0201c;PROOF
+of CONCEPT&#x02014;Valorizzazione dei risultati della ricerca in biomedicina&#x0201d;.
+M.A. and A.V.V. gratefully acknowledge the &#x0201c;One Health Basic
+and Translational Research Actions addressing Unmet Needs on Emerging
+Infectious Diseases (INF-ACT)&#x0201d; foundation by the Italian Ministry
+of University and Research, PNRR, mission 4, component 2, investment
+1.3, project number PE00000007 (University of Cagliari). G.M., A.B.
+and P.R. gratefully acknowledge the Health Extended Alliance for Innovative
+Therapies, Advanced Lab-research, and Integrated Approaches of Precision
+Medicine partnership (HEAL ITALIA), foundation by the Italian Ministry
+of University and Research, PNRR, mission 4, component 2, investment
+1.3, project number PE00000019 (University of Cagliari). G.M., A.B.,
+P.R., and A.V.V. acknowledge funding from the National Recovery and
+Resilience Plan (NRRP), Mission 4 Component 2 Investment 1.5&#x02014;Call
+for tender No. 3277 published on December 30, 2021 by the Italian
+Ministry of University and Research (MUR) funded by the European Union&#x02014;NextGenerationEU.
+Project Code ECS0000038&#x02014;Project Title eINS Ecosystem of Innovation
+for Next Generation Sardinia&#x02014;CUP J85B17000360007&#x02014;Concession
+Decree No. 1056 adopted on June 23, 2022 by the Italian Ministry of
+University and Research (MUR). A.B., M. A., G.M., P.R., and A.V.V.
+received financial support by the NIAID/NIH grant no. R01AI136799.
+A.M.J.J.B. acknowledges funding from the European Union Horizon 2020
+project BioExcel (823830) and a computing grant from the Dutch Research
+Council (NWO) (17437). We thank Vincenzo Carnevale (Temple University,
+Philadelphia, U.S.A.) for useful discussions and Mattia Bernetti (Istituto
+Italiano di Tecnologia, Italy) and Paolo Carloni (Forschungszentrum
+J&#x000fc;lich GmbH, Germany) for the careful reading of the manuscript.</p></ack><ref-list><title>References</title><ref id="ref1"><mixed-citation publication-type="journal" id="cit1"><name><surname>Du</surname><given-names>X.</given-names></name>; <name><surname>Li</surname><given-names>Y.</given-names></name>; <name><surname>Xia</surname><given-names>Y.-L.</given-names></name>; <name><surname>Ai</surname><given-names>S.-M.</given-names></name>; <name><surname>Liang</surname><given-names>J.</given-names></name>; <name><surname>Sang</surname><given-names>P.</given-names></name>; <name><surname>Ji</surname><given-names>X.-L.</given-names></name>; <name><surname>Liu</surname><given-names>S.-Q.</given-names></name>
+<article-title>Insights into Protein&#x02013;Ligand
+Interactions: Mechanisms, Models, and Methods</article-title>. <source>IJMS</source>
+<year>2016</year>, <volume>17</volume> (<issue>2</issue>), <fpage>144</fpage><pub-id pub-id-type="doi">10.3390/ijms17020144</pub-id>.<pub-id pub-id-type="pmid">26821017</pub-id>
+</mixed-citation></ref><ref id="ref2"><mixed-citation publication-type="journal" id="cit2"><name><surname>Chu</surname><given-names>W.-T.</given-names></name>; <name><surname>Yan</surname><given-names>Z.</given-names></name>; <name><surname>Chu</surname><given-names>X.</given-names></name>; <name><surname>Zheng</surname><given-names>X.</given-names></name>; <name><surname>Liu</surname><given-names>Z.</given-names></name>; <name><surname>Xu</surname><given-names>L.</given-names></name>; <name><surname>Zhang</surname><given-names>K.</given-names></name>; <name><surname>Wang</surname><given-names>J.</given-names></name>
+<article-title>Physics of Biomolecular Recognition
+and Conformational Dynamics</article-title>. <source>Rep. Prog. Phys.</source>
+<year>2021</year>, <volume>84</volume> (<issue>12</issue>), <fpage>126601</fpage><pub-id pub-id-type="doi">10.1088/1361-6633/ac3800</pub-id>.</mixed-citation></ref><ref id="ref3"><mixed-citation publication-type="journal" id="cit3"><name><surname>Ma</surname><given-names>B.</given-names></name>; <name><surname>Shatsky</surname><given-names>M.</given-names></name>; <name><surname>Wolfson</surname><given-names>H. J.</given-names></name>; <name><surname>Nussinov</surname><given-names>R.</given-names></name>
+<article-title>Multiple Diverse Ligands
+Binding at a Single Protein Site: A Matter of Pre-existing Populations</article-title>. <source>Protein Sci.</source>
+<year>2002</year>, <volume>11</volume> (<issue>2</issue>), <fpage>184</fpage>&#x02013;<lpage>197</lpage>. <pub-id pub-id-type="doi">10.1110/ps.21302</pub-id>.<pub-id pub-id-type="pmid">11790828</pub-id>
+</mixed-citation></ref><ref id="ref4"><mixed-citation publication-type="journal" id="cit4"><name><surname>Niitsu</surname><given-names>A.</given-names></name>; <name><surname>Re</surname><given-names>S.</given-names></name>; <name><surname>Oshima</surname><given-names>H.</given-names></name>; <name><surname>Kamiya</surname><given-names>M.</given-names></name>; <name><surname>Sugita</surname><given-names>Y.</given-names></name>
+<article-title>De Novo Prediction
+of Binders and Nonbinders for T4 Lysozyme by gREST Simulations</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2019</year>, <volume>59</volume> (<issue>9</issue>), <fpage>3879</fpage>&#x02013;<lpage>3888</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.9b00416</pub-id>.<pub-id pub-id-type="pmid">31390205</pub-id>
+</mixed-citation></ref><ref id="ref5"><mixed-citation publication-type="journal" id="cit5"><name><surname>Ahuja</surname><given-names>L. G.</given-names></name>; <name><surname>Aoto</surname><given-names>P. C.</given-names></name>; <name><surname>Kornev</surname><given-names>A. P.</given-names></name>; <name><surname>Veglia</surname><given-names>G.</given-names></name>; <name><surname>Taylor</surname><given-names>S. S.</given-names></name>
+<article-title>Dynamic
+Allostery-Based Molecular Workings of Kinase:Peptide Complexes</article-title>. <source>Proc. Natl. Acad. Sci. U.S.A.</source>
+<year>2019</year>, <volume>116</volume> (<issue>30</issue>), <fpage>15052</fpage>&#x02013;<lpage>15061</lpage>. <pub-id pub-id-type="doi">10.1073/pnas.1900163116</pub-id>.<pub-id pub-id-type="pmid">31285328</pub-id>
+</mixed-citation></ref><ref id="ref6"><mixed-citation publication-type="journal" id="cit6"><name><surname>Bonomi</surname><given-names>M.</given-names></name>; <name><surname>Camilloni</surname><given-names>C.</given-names></name>; <name><surname>Cavalli</surname><given-names>A.</given-names></name>; <name><surname>Vendruscolo</surname><given-names>M.</given-names></name>
+<article-title>Metainference:
+A Bayesian Inference Method for Heterogeneous Systems</article-title>. <source>Sci. Adv.</source>
+<year>2016</year>, <volume>2</volume> (<issue>1</issue>), <elocation-id>e1501177</elocation-id><pub-id pub-id-type="doi">10.1126/sciadv.1501177</pub-id>.<pub-id pub-id-type="pmid">26844300</pub-id>
+</mixed-citation></ref><ref id="ref7"><mixed-citation publication-type="journal" id="cit7"><name><surname>Bottaro</surname><given-names>S.</given-names></name>; <name><surname>Lindorff-Larsen</surname><given-names>K.</given-names></name>
+<article-title>Biophysical
+Experiments and Biomolecular Simulations:
+A Perfect Match?</article-title>. <source>Science</source>
+<year>2018</year>, <volume>361</volume> (<issue>6400</issue>), <fpage>355</fpage>&#x02013;<lpage>360</lpage>. <pub-id pub-id-type="doi">10.1126/science.aat4010</pub-id>.<pub-id pub-id-type="pmid">30049874</pub-id>
+</mixed-citation></ref><ref id="ref8"><mixed-citation publication-type="journal" id="cit8"><name><surname>Senior</surname><given-names>A. W.</given-names></name>; <name><surname>Evans</surname><given-names>R.</given-names></name>; <name><surname>Jumper</surname><given-names>J.</given-names></name>; <name><surname>Kirkpatrick</surname><given-names>J.</given-names></name>; <name><surname>Sifre</surname><given-names>L.</given-names></name>; <name><surname>Green</surname><given-names>T.</given-names></name>; <name><surname>Qin</surname><given-names>C.</given-names></name>; <name><surname>&#x0017d;&#x000ed;dek</surname><given-names>A.</given-names></name>; <name><surname>Nelson</surname><given-names>A. W. R.</given-names></name>; <name><surname>Bridgland</surname><given-names>A.</given-names></name>; <name><surname>Penedones</surname><given-names>H.</given-names></name>; <name><surname>Petersen</surname><given-names>S.</given-names></name>; <name><surname>Simonyan</surname><given-names>K.</given-names></name>; <name><surname>Crossan</surname><given-names>S.</given-names></name>; <name><surname>Kohli</surname><given-names>P.</given-names></name>; <name><surname>Jones</surname><given-names>D. T.</given-names></name>; <name><surname>Silver</surname><given-names>D.</given-names></name>; <name><surname>Kavukcuoglu</surname><given-names>K.</given-names></name>; <name><surname>Hassabis</surname><given-names>D.</given-names></name>
+<article-title>Improved Protein Structure Prediction Using Potentials
+from Deep Learning</article-title>. <source>Nature</source>
+<year>2020</year>, <volume>577</volume> (<issue>7792</issue>), <fpage>706</fpage>&#x02013;<lpage>710</lpage>. <pub-id pub-id-type="doi">10.1038/s41586-019-1923-7</pub-id>.<pub-id pub-id-type="pmid">31942072</pub-id>
+</mixed-citation></ref><ref id="ref9"><mixed-citation publication-type="journal" id="cit9"><name><surname>Ganesan</surname><given-names>A.</given-names></name>; <name><surname>Coote</surname><given-names>M. L.</given-names></name>; <name><surname>Barakat</surname><given-names>K.</given-names></name>
+<article-title>Molecular
+Dynamics-Driven Drug Discovery:
+Leaping Forward with Confidence</article-title>. <source>Drug Discovery
+Today</source>
+<year>2017</year>, <volume>22</volume> (<issue>2</issue>), <fpage>249</fpage>&#x02013;<lpage>269</lpage>. <pub-id pub-id-type="doi">10.1016/j.drudis.2016.11.001</pub-id>.<pub-id pub-id-type="pmid">27890821</pub-id>
+</mixed-citation></ref><ref id="ref10"><mixed-citation publication-type="journal" id="cit10"><name><surname>&#x0015a;led&#x0017a;</surname><given-names>P.</given-names></name>; <name><surname>Caflisch</surname><given-names>A.</given-names></name>
+<article-title>Protein Structure-Based Drug Design:
+From Docking to
+Molecular Dynamics</article-title>. <source>Curr. Opin. Struct. Biol.</source>
+<year>2018</year>, <volume>48</volume>, <fpage>93</fpage>&#x02013;<lpage>102</lpage>. <pub-id pub-id-type="doi">10.1016/j.sbi.2017.10.010</pub-id>.<pub-id pub-id-type="pmid">29149726</pub-id>
+</mixed-citation></ref><ref id="ref11"><mixed-citation publication-type="journal" id="cit11"><name><surname>Allison</surname><given-names>J. R.</given-names></name>
+<article-title>Computational
+Methods for Exploring Protein Conformations</article-title>. <source>Biochem. Soc. Trans.</source>
+<year>2020</year>, <volume>48</volume> (<issue>4</issue>), <fpage>1707</fpage>&#x02013;<lpage>1724</lpage>. <pub-id pub-id-type="doi">10.1042/BST20200193</pub-id>.<pub-id pub-id-type="pmid">32756904</pub-id>
+</mixed-citation></ref><ref id="ref12"><mixed-citation publication-type="journal" id="cit12"><name><surname>De
+Vivo</surname><given-names>M.</given-names></name>; <name><surname>Masetti</surname><given-names>M.</given-names></name>; <name><surname>Bottegoni</surname><given-names>G.</given-names></name>; <name><surname>Cavalli</surname><given-names>A.</given-names></name>
+<article-title>Role of Molecular Dynamics
+and Related Methods in Drug Discovery</article-title>. <source>J. Med.
+Chem.</source>
+<year>2016</year>, <volume>59</volume> (<issue>9</issue>), <fpage>4035</fpage>&#x02013;<lpage>4061</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jmedchem.5b01684</pub-id>.<pub-id pub-id-type="pmid">26807648</pub-id>
+</mixed-citation></ref><ref id="ref13"><mixed-citation publication-type="journal" id="cit13"><name><surname>Muscat</surname><given-names>S.</given-names></name>; <name><surname>Stojceski</surname><given-names>F.</given-names></name>; <name><surname>Danani</surname><given-names>A.</given-names></name>
+<article-title>Elucidating the Effect
+of Static
+Electric Field on Amyloid Beta 1&#x02013;42 Supramolecular Assembly</article-title>. <source>Journal of Molecular Graphics and Modelling</source>
+<year>2020</year>, <volume>96</volume>, <elocation-id>107535</elocation-id><pub-id pub-id-type="doi">10.1016/j.jmgm.2020.107535</pub-id>.<pub-id pub-id-type="pmid">31978828</pub-id>
+</mixed-citation></ref><ref id="ref14"><mixed-citation publication-type="journal" id="cit14"><name><surname>Lazim</surname><given-names>R.</given-names></name>; <name><surname>Suh</surname><given-names>D.</given-names></name>; <name><surname>Choi</surname><given-names>S.</given-names></name>
+<article-title>Advances in
+Molecular Dynamics Simulations and Enhanced
+Sampling Methods for the Study of Protein Systems</article-title>. <source>IJMS</source>
+<year>2020</year>, <volume>21</volume> (<issue>17</issue>), <fpage>6339</fpage><pub-id pub-id-type="doi">10.3390/ijms21176339</pub-id>.<pub-id pub-id-type="pmid">32882859</pub-id>
+</mixed-citation></ref><ref id="ref15"><mixed-citation publication-type="journal" id="cit15"><name><surname>Bouvier</surname><given-names>B.</given-names></name>
+<article-title>Curvature
+as a Collective Coordinate in Enhanced Sampling Membrane Simulations</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2019</year>, <volume>15</volume> (<issue>12</issue>), <fpage>6551</fpage>&#x02013;<lpage>6561</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jctc.9b00716</pub-id>.<pub-id pub-id-type="pmid">31665603</pub-id>
+</mixed-citation></ref><ref id="ref16"><mixed-citation publication-type="journal" id="cit16"><name><surname>Souza</surname><given-names>P. C. T.</given-names></name>; <name><surname>Thallmair</surname><given-names>S.</given-names></name>; <name><surname>Conflitti</surname><given-names>P.</given-names></name>; <name><surname>Ram&#x000ed;rez-Palacios</surname><given-names>C.</given-names></name>; <name><surname>Alessandri</surname><given-names>R.</given-names></name>; <name><surname>Raniolo</surname><given-names>S.</given-names></name>; <name><surname>Limongelli</surname><given-names>V.</given-names></name>; <name><surname>Marrink</surname><given-names>S. J.</given-names></name>
+<article-title>Protein&#x02013;Ligand
+Binding with the Coarse-Grained
+Martini Model</article-title>. <source>Nat. Commun.</source>
+<year>2020</year>, <volume>11</volume> (<issue>1</issue>), <fpage>3714</fpage><pub-id pub-id-type="doi">10.1038/s41467-020-17437-5</pub-id>.<pub-id pub-id-type="pmid">32709852</pub-id>
+</mixed-citation></ref><ref id="ref17"><mixed-citation publication-type="journal" id="cit17"><name><surname>Heilmann</surname><given-names>N.</given-names></name>; <name><surname>Wolf</surname><given-names>M.</given-names></name>; <name><surname>Kozlowska</surname><given-names>M.</given-names></name>; <name><surname>Sedghamiz</surname><given-names>E.</given-names></name>; <name><surname>Setzler</surname><given-names>J.</given-names></name>; <name><surname>Brieg</surname><given-names>M.</given-names></name>; <name><surname>Wenzel</surname><given-names>W.</given-names></name>
+<article-title>Sampling of
+the Conformational
+Landscape of Small Proteins with Monte Carlo Methods</article-title>. <source>Sci. Rep</source>
+<year>2020</year>, <volume>10</volume> (<issue>1</issue>), <fpage>18211</fpage><pub-id pub-id-type="doi">10.1038/s41598-020-75239-7</pub-id>.<pub-id pub-id-type="pmid">33097750</pub-id>
+</mixed-citation></ref><ref id="ref18"><mixed-citation publication-type="journal" id="cit18"><name><surname>Sasmal</surname><given-names>S.</given-names></name>; <name><surname>Gill</surname><given-names>S. C.</given-names></name>; <name><surname>Lim</surname><given-names>N. M.</given-names></name>; <name><surname>Mobley</surname><given-names>D. L.</given-names></name>
+<article-title>Sampling
+Conformational
+Changes of Bound Ligands Using Nonequilibrium Candidate Monte Carlo
+and Molecular Dynamics</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2020</year>, <volume>16</volume> (<issue>3</issue>), <fpage>1854</fpage>&#x02013;<lpage>1865</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jctc.9b01066</pub-id>.<pub-id pub-id-type="pmid">32058713</pub-id>
+</mixed-citation></ref><ref id="ref19"><mixed-citation publication-type="journal" id="cit19"><name><surname>Degiacomi</surname><given-names>M. T.</given-names></name>
+<article-title>Coupling
+Molecular Dynamics and Deep Learning to Mine Protein Conformational
+Space</article-title>. <source>Structure</source>
+<year>2019</year>, <volume>27</volume> (<issue>6</issue>), <fpage>1034</fpage>&#x02013;<lpage>1040</lpage>. <pub-id pub-id-type="doi">10.1016/j.str.2019.03.018</pub-id>.<pub-id pub-id-type="pmid">31031199</pub-id>
+</mixed-citation></ref><ref id="ref20"><mixed-citation publication-type="journal" id="cit20"><name><surname>No&#x000e9;</surname><given-names>F.</given-names></name>; <name><surname>De Fabritiis</surname><given-names>G.</given-names></name>; <name><surname>Clementi</surname><given-names>C.</given-names></name>
+<article-title>Machine Learning for
+Protein Folding
+and Dynamics</article-title>. <source>Curr. Opin. Struct. Biol.</source>
+<year>2020</year>, <volume>60</volume>, <fpage>77</fpage>&#x02013;<lpage>84</lpage>. <pub-id pub-id-type="doi">10.1016/j.sbi.2019.12.005</pub-id>.<pub-id pub-id-type="pmid">31881449</pub-id>
+</mixed-citation></ref><ref id="ref21"><mixed-citation publication-type="journal" id="cit21"><name><surname>Yuan</surname><given-names>J.-H.</given-names></name>; <name><surname>Han</surname><given-names>S. B.</given-names></name>; <name><surname>Richter</surname><given-names>S.</given-names></name>; <name><surname>Wade</surname><given-names>R. C.</given-names></name>; <name><surname>Kokh</surname><given-names>D. B.</given-names></name>
+<article-title>Druggability
+Assessment in TRAPP Using Machine Learning Approaches</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2020</year>, <volume>60</volume> (<issue>3</issue>), <fpage>1685</fpage>&#x02013;<lpage>1699</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.9b01185</pub-id>.<pub-id pub-id-type="pmid">32105476</pub-id>
+</mixed-citation></ref><ref id="ref22"><mixed-citation publication-type="journal" id="cit22"><name><surname>Jumper</surname><given-names>J.</given-names></name>; <name><surname>Evans</surname><given-names>R.</given-names></name>; <name><surname>Pritzel</surname><given-names>A.</given-names></name>; <name><surname>Green</surname><given-names>T.</given-names></name>; <name><surname>Figurnov</surname><given-names>M.</given-names></name>; <name><surname>Ronneberger</surname><given-names>O.</given-names></name>; <name><surname>Tunyasuvunakool</surname><given-names>K.</given-names></name>; <name><surname>Bates</surname><given-names>R.</given-names></name>; <name><surname>&#x0017d;&#x000ed;dek</surname><given-names>A.</given-names></name>; <name><surname>Potapenko</surname><given-names>A.</given-names></name>; <name><surname>Bridgland</surname><given-names>A.</given-names></name>; <name><surname>Meyer</surname><given-names>C.</given-names></name>; <name><surname>Kohl</surname><given-names>S. A. A.</given-names></name>; <name><surname>Ballard</surname><given-names>A. J.</given-names></name>; <name><surname>Cowie</surname><given-names>A.</given-names></name>; <name><surname>Romera-Paredes</surname><given-names>B.</given-names></name>; <name><surname>Nikolov</surname><given-names>S.</given-names></name>; <name><surname>Jain</surname><given-names>R.</given-names></name>; <name><surname>Adler</surname><given-names>J.</given-names></name>; <name><surname>Back</surname><given-names>T.</given-names></name>; <name><surname>Petersen</surname><given-names>S.</given-names></name>; <name><surname>Reiman</surname><given-names>D.</given-names></name>; <name><surname>Clancy</surname><given-names>E.</given-names></name>; <name><surname>Zielinski</surname><given-names>M.</given-names></name>; <name><surname>Steinegger</surname><given-names>M.</given-names></name>; <name><surname>Pacholska</surname><given-names>M.</given-names></name>; <name><surname>Berghammer</surname><given-names>T.</given-names></name>; <name><surname>Bodenstein</surname><given-names>S.</given-names></name>; <name><surname>Silver</surname><given-names>D.</given-names></name>; <name><surname>Vinyals</surname><given-names>O.</given-names></name>; <name><surname>Senior</surname><given-names>A. W.</given-names></name>; <name><surname>Kavukcuoglu</surname><given-names>K.</given-names></name>; <name><surname>Kohli</surname><given-names>P.</given-names></name>; <name><surname>Hassabis</surname><given-names>D.</given-names></name>
+<article-title>Highly Accurate Protein
+Structure Prediction with AlphaFold</article-title>. <source>Nature</source>
+<year>2021</year>, <volume>596</volume> (<issue>7873</issue>), <fpage>583</fpage>&#x02013;<lpage>589</lpage>. <pub-id pub-id-type="doi">10.1038/s41586-021-03819-2</pub-id>.<pub-id pub-id-type="pmid">34265844</pub-id>
+</mixed-citation></ref><ref id="ref23"><mixed-citation publication-type="journal" id="cit23"><name><surname>Motta</surname><given-names>S.</given-names></name>; <name><surname>Callea</surname><given-names>L.</given-names></name>; <name><surname>Bonati</surname><given-names>L.</given-names></name>; <name><surname>Pandini</surname><given-names>A.</given-names></name>
+<article-title>PathDetect-SOM: A Neural
+Network Approach for the Identification of Pathways in Ligand Binding
+Simulations</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2022</year>, <volume>18</volume> (<issue>3</issue>), <fpage>1957</fpage>&#x02013;<lpage>1968</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jctc.1c01163</pub-id>.<pub-id pub-id-type="pmid">35213804</pub-id>
+</mixed-citation></ref><ref id="ref24"><mixed-citation publication-type="journal" id="cit24"><name><surname>Zhang</surname><given-names>Y.</given-names></name>; <name><surname>Li</surname><given-names>S.</given-names></name>; <name><surname>Meng</surname><given-names>K.</given-names></name>; <name><surname>Sun</surname><given-names>S.</given-names></name>
+<article-title>Machine Learning for Sequence and
+Structure-Based Protein&#x02013;Ligand Interaction Prediction</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2024</year>, <volume>64</volume> (<issue>5</issue>), <fpage>1456</fpage>&#x02013;<lpage>1472</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.3c01841</pub-id>.<pub-id pub-id-type="pmid">38385768</pub-id>
+</mixed-citation></ref><ref id="ref25"><mixed-citation publication-type="journal" id="cit25"><name><surname>M&#x000fc;llender</surname><given-names>L.</given-names></name>; <name><surname>Rizzi</surname><given-names>A.</given-names></name>; <name><surname>Parrinello</surname><given-names>M.</given-names></name>; <name><surname>Carloni</surname><given-names>P.</given-names></name>; <name><surname>Mandelli</surname><given-names>D.</given-names></name>
+<article-title>Effective
+Data-Driven Collective Variables for Free Energy Calculations from
+Metadynamics of Paths</article-title>. <source>PNAS Nexus</source>
+<year>2024</year>, <volume>3</volume> (<issue>4</issue>), <elocation-id>pgae159</elocation-id><pub-id pub-id-type="doi">10.1093/pnasnexus/pgae159</pub-id>.<pub-id pub-id-type="pmid">38665160</pub-id>
+</mixed-citation></ref><ref id="ref26"><mixed-citation publication-type="journal" id="cit26"><name><surname>Amaro</surname><given-names>R. E.</given-names></name>; <name><surname>Baudry</surname><given-names>J.</given-names></name>; <name><surname>Chodera</surname><given-names>J.</given-names></name>; <name><surname>Demir</surname><given-names>&#x000d6;.</given-names></name>; <name><surname>McCammon</surname><given-names>J. A.</given-names></name>; <name><surname>Miao</surname><given-names>Y.</given-names></name>; <name><surname>Smith</surname><given-names>J. C.</given-names></name>
+<article-title>Ensemble
+Docking in Drug Discovery</article-title>. <source>Biophys. J.</source>
+<year>2018</year>, <volume>114</volume> (<issue>10</issue>), <fpage>2271</fpage>&#x02013;<lpage>2278</lpage>. <pub-id pub-id-type="doi">10.1016/j.bpj.2018.02.038</pub-id>.<pub-id pub-id-type="pmid">29606412</pub-id>
+</mixed-citation></ref><ref id="ref27"><mixed-citation publication-type="journal" id="cit27"><name><surname>Buonfiglio</surname><given-names>R.</given-names></name>; <name><surname>Recanatini</surname><given-names>M.</given-names></name>; <name><surname>Masetti</surname><given-names>M.</given-names></name>
+<article-title>Protein Flexibility in Drug Discovery:
+From Theory to Computation</article-title>. <source>ChemMedChem.</source>
+<year>2015</year>, <volume>10</volume> (<issue>7</issue>), <fpage>1141</fpage>&#x02013;<lpage>1148</lpage>. <pub-id pub-id-type="doi">10.1002/cmdc.201500086</pub-id>.<pub-id pub-id-type="pmid">25891095</pub-id>
+</mixed-citation></ref><ref id="ref28"><mixed-citation publication-type="journal" id="cit28"><name><surname>Antunes</surname><given-names>D. A.</given-names></name>; <name><surname>Devaurs</surname><given-names>D.</given-names></name>; <name><surname>Kavraki</surname><given-names>L. E.</given-names></name>
+<article-title>Understanding the Challenges of Protein
+Flexibility in Drug Design</article-title>. <source>Expert Opinion on
+Drug Discovery</source>
+<year>2015</year>, <volume>10</volume> (<issue>12</issue>), <fpage>1301</fpage>&#x02013;<lpage>1313</lpage>. <pub-id pub-id-type="doi">10.1517/17460441.2015.1094458</pub-id>.<pub-id pub-id-type="pmid">26414598</pub-id>
+</mixed-citation></ref><ref id="ref29"><mixed-citation publication-type="journal" id="cit29"><name><surname>Caballero</surname><given-names>J.</given-names></name>
+<article-title>The Latest
+Automated Docking Technologies for Novel Drug Discovery</article-title>. <source>Expert Opin. Drug Discovery</source>
+<year>2020</year>, <fpage>625</fpage>&#x02013;<lpage>645</lpage>. <pub-id pub-id-type="doi">10.1080/17460441.2021.1858793</pub-id>.</mixed-citation></ref><ref id="ref30"><mixed-citation publication-type="journal" id="cit30"><name><surname>Harmalkar</surname><given-names>A.</given-names></name>; <name><surname>Gray</surname><given-names>J. J.</given-names></name>
+<article-title>Advances to Tackle
+Backbone Flexibility in Protein
+Docking</article-title>. <source>Curr. Opin. Struct. Biol.</source>
+<year>2021</year>, <volume>67</volume>, <fpage>178</fpage>&#x02013;<lpage>186</lpage>. <pub-id pub-id-type="doi">10.1016/j.sbi.2020.11.011</pub-id>.<pub-id pub-id-type="pmid">33360497</pub-id>
+</mixed-citation></ref><ref id="ref31"><mixed-citation publication-type="journal" id="cit31"><name><surname>Salda&#x000f1;o</surname><given-names>T.</given-names></name>; <name><surname>Escobedo</surname><given-names>N.</given-names></name>; <name><surname>Marchetti</surname><given-names>J.</given-names></name>; <name><surname>Zea</surname><given-names>D. J.</given-names></name>; <name><surname>Mac Donagh</surname><given-names>J.</given-names></name>; <name><surname>Velez Rueda</surname><given-names>A. J.</given-names></name>; <name><surname>Gonik</surname><given-names>E.</given-names></name>; <name><surname>Garc&#x000ed;a Melani</surname><given-names>A.</given-names></name>; <name><surname>Novomisky
+Nechcoff</surname><given-names>J.</given-names></name>; <name><surname>Salas</surname><given-names>M. N.</given-names></name>; <name><surname>Peters</surname><given-names>T.</given-names></name>; <name><surname>Demitroff</surname><given-names>N.</given-names></name>; <name><surname>Fernandez Alberti</surname><given-names>S.</given-names></name>; <name><surname>Palopoli</surname><given-names>N.</given-names></name>; <name><surname>Fornasari</surname><given-names>M. S.</given-names></name>; <name><surname>Parisi</surname><given-names>G.</given-names></name>
+<article-title>Impact of Protein Conformational Diversity on AlphaFold
+Predictions</article-title>. <source>Bioinformatics</source>
+<year>2022</year>, <volume>38</volume> (<issue>10</issue>), <fpage>2742</fpage>&#x02013;<lpage>2748</lpage>. <pub-id pub-id-type="doi">10.1093/bioinformatics/btac202</pub-id>.<pub-id pub-id-type="pmid">35561203</pub-id>
+</mixed-citation></ref><ref id="ref32"><mixed-citation publication-type="journal" id="cit32"><name><surname>Qiao</surname><given-names>Z.</given-names></name>; <name><surname>Nie</surname><given-names>W.</given-names></name>; <name><surname>Vahdat</surname><given-names>A.</given-names></name>; <name><surname>Miller</surname><given-names>T. F.</given-names></name>; <name><surname>Anandkumar</surname><given-names>A.</given-names></name>
+<article-title>State-Specific
+Protein&#x02013;Ligand Complex Structure Prediction with a Multiscale
+Deep Generative Model</article-title>. <source>Nat. Mach Intell</source>
+<year>2024</year>, <volume>6</volume> (<issue>2</issue>), <fpage>195</fpage>&#x02013;<lpage>208</lpage>. <pub-id pub-id-type="doi">10.1038/s42256-024-00792-z</pub-id>.</mixed-citation></ref><ref id="ref33"><mixed-citation publication-type="journal" id="cit33"><name><surname>Abramson</surname><given-names>J.</given-names></name>; <name><surname>Adler</surname><given-names>J.</given-names></name>; <name><surname>Dunger</surname><given-names>J.</given-names></name>; <name><surname>Evans</surname><given-names>R.</given-names></name>; <name><surname>Green</surname><given-names>T.</given-names></name>; <name><surname>Pritzel</surname><given-names>A.</given-names></name>; <name><surname>Ronneberger</surname><given-names>O.</given-names></name>; <name><surname>Willmore</surname><given-names>L.</given-names></name>; <name><surname>Ballard</surname><given-names>A. J.</given-names></name>; <name><surname>Bambrick</surname><given-names>J.</given-names></name>; <name><surname>Bodenstein</surname><given-names>S. W.</given-names></name>; <name><surname>Evans</surname><given-names>D. A.</given-names></name>; <name><surname>Hung</surname><given-names>C.-C.</given-names></name>; <name><surname>O&#x02019;Neill</surname><given-names>M.</given-names></name>; <name><surname>Reiman</surname><given-names>D.</given-names></name>; <name><surname>Tunyasuvunakool</surname><given-names>K.</given-names></name>; <name><surname>Wu</surname><given-names>Z.</given-names></name>; <name><surname>&#x0017d;emgulyt&#x00117;</surname><given-names>A.</given-names></name>; <name><surname>Arvaniti</surname><given-names>E.</given-names></name>; <name><surname>Beattie</surname><given-names>C.</given-names></name>; <name><surname>Bertolli</surname><given-names>O.</given-names></name>; <name><surname>Bridgland</surname><given-names>A.</given-names></name>; <name><surname>Cherepanov</surname><given-names>A.</given-names></name>; <name><surname>Congreve</surname><given-names>M.</given-names></name>; <name><surname>Cowen-Rivers</surname><given-names>A. I.</given-names></name>; <name><surname>Cowie</surname><given-names>A.</given-names></name>; <name><surname>Figurnov</surname><given-names>M.</given-names></name>; <name><surname>Fuchs</surname><given-names>F. B.</given-names></name>; <name><surname>Gladman</surname><given-names>H.</given-names></name>; <name><surname>Jain</surname><given-names>R.</given-names></name>; <name><surname>Khan</surname><given-names>Y. A.</given-names></name>; <name><surname>Low</surname><given-names>C. M. R.</given-names></name>; <name><surname>Perlin</surname><given-names>K.</given-names></name>; <name><surname>Potapenko</surname><given-names>A.</given-names></name>; <name><surname>Savy</surname><given-names>P.</given-names></name>; <name><surname>Singh</surname><given-names>S.</given-names></name>; <name><surname>Stecula</surname><given-names>A.</given-names></name>; <name><surname>Thillaisundaram</surname><given-names>A.</given-names></name>; <name><surname>Tong</surname><given-names>C.</given-names></name>; <name><surname>Yakneen</surname><given-names>S.</given-names></name>; <name><surname>Zhong</surname><given-names>E. D.</given-names></name>; <name><surname>Zielinski</surname><given-names>M.</given-names></name>; <name><surname>&#x0017d;&#x000ed;dek</surname><given-names>A.</given-names></name>; <name><surname>Bapst</surname><given-names>V.</given-names></name>; <name><surname>Kohli</surname><given-names>P.</given-names></name>; <name><surname>Jaderberg</surname><given-names>M.</given-names></name>; <name><surname>Hassabis</surname><given-names>D.</given-names></name>; <name><surname>Jumper</surname><given-names>J. M.</given-names></name>
+<article-title>Accurate Structure Prediction of
+Biomolecular Interactions with AlphaFold 3</article-title>. <source>Nature</source>
+<year>2024</year>, <volume>630</volume> (<issue>8016</issue>), <fpage>493</fpage>&#x02013;<lpage>500</lpage>. <pub-id pub-id-type="doi">10.1038/s41586-024-07487-w</pub-id>.<pub-id pub-id-type="pmid">38718835</pub-id>
+</mixed-citation></ref><ref id="ref34"><mixed-citation publication-type="journal" id="cit34"><name><surname>Huang</surname><given-names>S.-Y.</given-names></name>; <name><surname>Zou</surname><given-names>X.</given-names></name>
+<article-title>Ensemble Docking of Multiple Protein
+Structures: Considering Protein
+Structural Variations in Molecular Docking</article-title>. <source>Proteins</source>
+<year>2007</year>, <volume>66</volume> (<issue>2</issue>), <fpage>399</fpage>&#x02013;<lpage>421</lpage>. <pub-id pub-id-type="doi">10.1002/prot.21214</pub-id>.<pub-id pub-id-type="pmid">17096427</pub-id>
+</mixed-citation></ref><ref id="ref35"><mixed-citation publication-type="journal" id="cit35"><name><surname>Kapoor</surname><given-names>K.</given-names></name>; <name><surname>Thangapandian</surname><given-names>S.</given-names></name>; <name><surname>Tajkhorshid</surname><given-names>E.</given-names></name>
+<article-title>Extended-Ensemble Docking to Probe
+Dynamic Variation of Ligand Binding Sites during Large-Scale Structural
+Changes of Proteins</article-title>. <source>Chem. Sci.</source>
+<year>2022</year>, <volume>13</volume> (<issue>14</issue>), <fpage>4150</fpage>&#x02013;<lpage>4169</lpage>. <pub-id pub-id-type="doi">10.1039/D2SC00841F</pub-id>.<pub-id pub-id-type="pmid">35440993</pub-id>
+</mixed-citation></ref><ref id="ref36"><mixed-citation publication-type="journal" id="cit36"><name><surname>Acharya</surname><given-names>A.</given-names></name>; <name><surname>Agarwal</surname><given-names>R.</given-names></name>; <name><surname>Baker</surname><given-names>M. B.</given-names></name>; <name><surname>Baudry</surname><given-names>J.</given-names></name>; <name><surname>Bhowmik</surname><given-names>D.</given-names></name>; <name><surname>Boehm</surname><given-names>S.</given-names></name>; <name><surname>Byler</surname><given-names>K. G.</given-names></name>; <name><surname>Chen</surname><given-names>S. Y.</given-names></name>; <name><surname>Coates</surname><given-names>L.</given-names></name>; <name><surname>Cooper</surname><given-names>C. J.</given-names></name>; <name><surname>Demerdash</surname><given-names>O.</given-names></name>; <name><surname>Daidone</surname><given-names>I.</given-names></name>; <name><surname>Eblen</surname><given-names>J. D.</given-names></name>; <name><surname>Ellingson</surname><given-names>S.</given-names></name>; <name><surname>Forli</surname><given-names>S.</given-names></name>; <name><surname>Glaser</surname><given-names>J.</given-names></name>; <name><surname>Gumbart</surname><given-names>J. C.</given-names></name>; <name><surname>Gunnels</surname><given-names>J.</given-names></name>; <name><surname>Hernandez</surname><given-names>O.</given-names></name>; <name><surname>Irle</surname><given-names>S.</given-names></name>; <name><surname>Kneller</surname><given-names>D. W.</given-names></name>; <name><surname>Kovalevsky</surname><given-names>A.</given-names></name>; <name><surname>Larkin</surname><given-names>J.</given-names></name>; <name><surname>Lawrence</surname><given-names>T. J.</given-names></name>; <name><surname>LeGrand</surname><given-names>S.</given-names></name>; <name><surname>Liu</surname><given-names>S.-H.</given-names></name>; <name><surname>Mitchell</surname><given-names>J. C.</given-names></name>; <name><surname>Park</surname><given-names>G.</given-names></name>; <name><surname>Parks</surname><given-names>J. M.</given-names></name>; <name><surname>Pavlova</surname><given-names>A.</given-names></name>; <name><surname>Petridis</surname><given-names>L.</given-names></name>; <name><surname>Poole</surname><given-names>D.</given-names></name>; <name><surname>Pouchard</surname><given-names>L.</given-names></name>; <name><surname>Ramanathan</surname><given-names>A.</given-names></name>; <name><surname>Rogers</surname><given-names>D. M.</given-names></name>; <name><surname>Santos-Martins</surname><given-names>D.</given-names></name>; <name><surname>Scheinberg</surname><given-names>A.</given-names></name>; <name><surname>Sedova</surname><given-names>A.</given-names></name>; <name><surname>Shen</surname><given-names>Y.</given-names></name>; <name><surname>Smith</surname><given-names>J. C.</given-names></name>; <name><surname>Smith</surname><given-names>M. D.</given-names></name>; <name><surname>Soto</surname><given-names>C.</given-names></name>; <name><surname>Tsaris</surname><given-names>A.</given-names></name>; <name><surname>Thavappiragasam</surname><given-names>M.</given-names></name>; <name><surname>Tillack</surname><given-names>A. F.</given-names></name>; <name><surname>Vermaas</surname><given-names>J. V.</given-names></name>; <name><surname>Vuong</surname><given-names>V. Q.</given-names></name>; <name><surname>Yin</surname><given-names>J.</given-names></name>; <name><surname>Yoo</surname><given-names>S.</given-names></name>; <name><surname>Zahran</surname><given-names>M.</given-names></name>; <name><surname>Zanetti-Polzi</surname><given-names>L.</given-names></name>
+<article-title>Supercomputer-Based Ensemble Docking
+Drug Discovery Pipeline with Application to Covid-19</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2020</year>, <volume>60</volume> (<issue>12</issue>), <fpage>5832</fpage>&#x02013;<lpage>5852</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.0c01010</pub-id>.<pub-id pub-id-type="pmid">33326239</pub-id>
+</mixed-citation></ref><ref id="ref37"><mixed-citation publication-type="journal" id="cit37"><name><surname>Akbari</surname><given-names>Z.</given-names></name>; <name><surname>Stagno</surname><given-names>C.</given-names></name>; <name><surname>Iraci</surname><given-names>N.</given-names></name>; <name><surname>Efferth</surname><given-names>T.</given-names></name>; <name><surname>Omer</surname><given-names>E. A.</given-names></name>; <name><surname>Piperno</surname><given-names>A.</given-names></name>; <name><surname>Montazerozohori</surname><given-names>M.</given-names></name>; <name><surname>Feizi-Dehnayebi</surname><given-names>M.</given-names></name>; <name><surname>Micale</surname><given-names>N.</given-names></name>
+<article-title>Biological Evaluation, DFT, MEP,
+HOMO-LUMO Analysis
+and Ensemble Docking Studies of Zn(II) Complexes of Bidentate and
+Tetradentate Schiff Base Ligands as Antileukemia Agents</article-title>. <source>J. Mol. Struct.</source>
+<year>2024</year>, <volume>1301</volume>, <elocation-id>137400</elocation-id><pub-id pub-id-type="doi">10.1016/j.molstruc.2023.137400</pub-id>.</mixed-citation></ref><ref id="ref38"><mixed-citation publication-type="journal" id="cit38"><name><surname>Ricci-Lopez</surname><given-names>J.</given-names></name>; <name><surname>Aguila</surname><given-names>S. A.</given-names></name>; <name><surname>Gilson</surname><given-names>M. K.</given-names></name>; <name><surname>Brizuela</surname><given-names>C. A.</given-names></name>
+<article-title>Improving Structure-Based
+Virtual Screening with Ensemble Docking and Machine Learning</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2021</year>, <volume>61</volume> (<issue>11</issue>), <fpage>5362</fpage>&#x02013;<lpage>5376</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.1c00511</pub-id>.<pub-id pub-id-type="pmid">34652141</pub-id>
+</mixed-citation></ref><ref id="ref39"><mixed-citation publication-type="journal" id="cit39"><name><surname>Basciu</surname><given-names>A.</given-names></name>; <name><surname>Malloci</surname><given-names>G.</given-names></name>; <name><surname>Pietrucci</surname><given-names>F.</given-names></name>; <name><surname>Bonvin</surname><given-names>A. M. J. J.</given-names></name>; <name><surname>Vargiu</surname><given-names>A. V.</given-names></name>
+<article-title>Holo-like and Druggable Protein Conformations
+from
+Enhanced Sampling of Binding Pocket Volume and Shape</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2019</year>, <volume>59</volume> (<issue>4</issue>), <fpage>1515</fpage>&#x02013;<lpage>1528</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.8b00730</pub-id>.<pub-id pub-id-type="pmid">30883122</pub-id>
+</mixed-citation></ref><ref id="ref40"><mixed-citation publication-type="journal" id="cit40"><name><surname>Basciu</surname><given-names>A.</given-names></name>; <name><surname>Koukos</surname><given-names>P. I.</given-names></name>; <name><surname>Malloci</surname><given-names>G.</given-names></name>; <name><surname>Bonvin</surname><given-names>A. M. J. J.</given-names></name>; <name><surname>Vargiu</surname><given-names>A. V.</given-names></name>
+<article-title>Coupling Enhanced Sampling of the
+Apo-Receptor with
+Template-Based Ligand Conformers Selection: Performance in Pose Prediction
+in the D3R Grand Challenge 4</article-title>. <source>J. Comput. Aided
+Mol. Des</source>
+<year>2020</year>, <volume>34</volume> (<issue>2</issue>), <fpage>149</fpage>&#x02013;<lpage>162</lpage>. <pub-id pub-id-type="doi">10.1007/s10822-019-00244-6</pub-id>.<pub-id pub-id-type="pmid">31720895</pub-id>
+</mixed-citation></ref><ref id="ref41"><mixed-citation publication-type="book" id="cit41"><person-group person-group-type="allauthors"><name><surname>Basciu</surname><given-names>A.</given-names></name>; <name><surname>Callea</surname><given-names>L.</given-names></name>; <name><surname>Motta</surname><given-names>S.</given-names></name>; <name><surname>Bonvin</surname><given-names>A. M. J. J.</given-names></name>; <name><surname>Bonati</surname><given-names>L.</given-names></name>; <name><surname>Vargiu</surname><given-names>A. V.</given-names></name></person-group><article-title>No Dance, No Partner! A Tale
+of Receptor Flexibility in Docking and Virtual Screening</article-title>. In <source>Annu. Rep. Med. Chem.</source>; <publisher-name>Elsevier</publisher-name>, <year>2022</year>; vol <volume>59</volume>, pp <fpage>43</fpage>&#x02013;<lpage>97</lpage>.</mixed-citation></ref><ref id="ref42"><mixed-citation publication-type="journal" id="cit42"><name><surname>Laio</surname><given-names>A.</given-names></name>; <name><surname>Parrinello</surname><given-names>M.</given-names></name>
+<article-title>Escaping Free-Energy
+Minima</article-title>. <source>Proc. Natl. Acad. Sci. U. S. A.</source>
+<year>2002</year>, <volume>99</volume> (<issue>20</issue>), <fpage>12562</fpage>&#x02013;<lpage>12566</lpage>. <pub-id pub-id-type="doi">10.1073/pnas.202427399</pub-id>.<pub-id pub-id-type="pmid">12271136</pub-id>
+</mixed-citation></ref><ref id="ref43"><mixed-citation publication-type="journal" id="cit43"><name><surname>Barducci</surname><given-names>A.</given-names></name>; <name><surname>Bussi</surname><given-names>G.</given-names></name>; <name><surname>Parrinello</surname><given-names>M.</given-names></name>
+<article-title>Well-Tempered Metadynamics: A Smoothly
+Converging and Tunable Free-Energy Method</article-title>. <source>Phys.
+Rev. Lett.</source>
+<year>2008</year>, <volume>100</volume> (<issue>2</issue>), <elocation-id>020603</elocation-id><pub-id pub-id-type="doi">10.1103/PhysRevLett.100.020603</pub-id>.<pub-id pub-id-type="pmid">18232845</pub-id>
+</mixed-citation></ref><ref id="ref44"><mixed-citation publication-type="journal" id="cit44"><name><surname>Piana</surname><given-names>S.</given-names></name>; <name><surname>Laio</surname><given-names>A.</given-names></name>
+<article-title>A Bias-Exchange Approach
+to Protein Folding</article-title>. <source>J. Phys. Chem. B</source>
+<year>2007</year>, <volume>111</volume> (<issue>17</issue>), <fpage>4553</fpage>&#x02013;<lpage>4559</lpage>. <pub-id pub-id-type="doi">10.1021/jp067873l</pub-id>.<pub-id pub-id-type="pmid">17419610</pub-id>
+</mixed-citation></ref><ref id="ref45"><mixed-citation publication-type="journal" id="cit45"><name><surname>Zuo</surname><given-names>K.</given-names></name>; <name><surname>Kranjc</surname><given-names>A.</given-names></name>; <name><surname>Capelli</surname><given-names>R.</given-names></name>; <name><surname>Rossetti</surname><given-names>G.</given-names></name>; <name><surname>Nechushtai</surname><given-names>R.</given-names></name>; <name><surname>Carloni</surname><given-names>P.</given-names></name>
+<article-title>Metadynamics Simulations
+of Ligands Binding to Protein
+Surfaces: A Novel Tool for Rational Drug Design</article-title>. <source>Phys. Chem. Chem. Phys.</source>
+<year>2023</year>, <volume>25</volume> (<issue>20</issue>), <fpage>13819</fpage>&#x02013;<lpage>13824</lpage>. <pub-id pub-id-type="doi">10.1039/D3CP01388J</pub-id>.<pub-id pub-id-type="pmid">37184538</pub-id>
+</mixed-citation></ref><ref id="ref46"><mixed-citation publication-type="journal" id="cit46"><name><surname>Cavalli</surname><given-names>A.</given-names></name>; <name><surname>Spitaleri</surname><given-names>A.</given-names></name>; <name><surname>Saladino</surname><given-names>G.</given-names></name>; <name><surname>Gervasio</surname><given-names>F. L.</given-names></name>
+<article-title>Investigating Drug&#x02013;Target
+Association and Dissociation Mechanisms Using Metadynamics-Based Algorithms</article-title>. <source>Acc. Chem. Res.</source>
+<year>2015</year>, <volume>48</volume> (<issue>2</issue>), <fpage>277</fpage>&#x02013;<lpage>285</lpage>. <pub-id pub-id-type="doi">10.1021/ar500356n</pub-id>.<pub-id pub-id-type="pmid">25496113</pub-id>
+</mixed-citation></ref><ref id="ref47"><mixed-citation publication-type="journal" id="cit47"><name><surname>Nussinov</surname><given-names>R.</given-names></name>; <name><surname>Tsai</surname><given-names>C.-J.</given-names></name>
+<article-title>Allostery in Disease
+and in Drug Discovery</article-title>. <source>Cell</source>
+<year>2013</year>, <volume>153</volume> (<issue>2</issue>), <fpage>293</fpage>&#x02013;<lpage>305</lpage>. <pub-id pub-id-type="doi">10.1016/j.cell.2013.03.034</pub-id>.<pub-id pub-id-type="pmid">23582321</pub-id>
+</mixed-citation></ref><ref id="ref48"><mixed-citation publication-type="journal" id="cit48"><name><surname>Sheik
+Amamuddy</surname><given-names>O.</given-names></name>; <name><surname>Veldman</surname><given-names>W.</given-names></name>; <name><surname>Manyumwa</surname><given-names>C.</given-names></name>; <name><surname>Khairallah</surname><given-names>A.</given-names></name>; <name><surname>Agajanian</surname><given-names>S.</given-names></name>; <name><surname>Oluyemi</surname><given-names>O.</given-names></name>; <name><surname>Verkhivker</surname><given-names>G. M.</given-names></name>; <name><surname>Tastan Bishop</surname><given-names>&#x000d6;.</given-names></name>
+<article-title>Integrated Computational Approaches and Tools for Allosteric
+Drug Discovery</article-title>. <source>IJMS</source>
+<year>2020</year>, <volume>21</volume> (<issue>3</issue>), <fpage>847</fpage><pub-id pub-id-type="doi">10.3390/ijms21030847</pub-id>.<pub-id pub-id-type="pmid">32013012</pub-id>
+</mixed-citation></ref><ref id="ref49"><mixed-citation publication-type="journal" id="cit49"><name><surname>Ionescu</surname><given-names>M. I.</given-names></name>
+<article-title>Adenylate
+Kinase: A Ubiquitous Enzyme Correlated with Medical Conditions</article-title>. <source>Protein J.</source>
+<year>2019</year>, <volume>38</volume> (<issue>2</issue>), <fpage>120</fpage>&#x02013;<lpage>133</lpage>. <pub-id pub-id-type="doi">10.1007/s10930-019-09811-0</pub-id>.<pub-id pub-id-type="pmid">30666486</pub-id>
+</mixed-citation></ref><ref id="ref50"><mixed-citation publication-type="journal" id="cit50"><name><surname>Carling</surname><given-names>D.</given-names></name>
+<article-title>AMPK Signalling
+in Health and Disease</article-title>. <source>Curr. Opin. Cell Biol.</source>
+<year>2017</year>, <volume>45</volume>, <fpage>31</fpage>&#x02013;<lpage>37</lpage>. <pub-id pub-id-type="doi">10.1016/j.ceb.2017.01.005</pub-id>.<pub-id pub-id-type="pmid">28232179</pub-id>
+</mixed-citation></ref><ref id="ref51"><mixed-citation publication-type="journal" id="cit51"><name><surname>M&#x000fc;ller</surname><given-names>C.</given-names></name>; <name><surname>Schlauderer</surname><given-names>G.</given-names></name>; <name><surname>Reinstein</surname><given-names>J.</given-names></name>; <name><surname>Schulz</surname><given-names>G.</given-names></name>
+<article-title>Adenylate Kinase Motions
+during Catalysis: An Energetic Counterweight Balancing Substrate Binding</article-title>. <source>Structure</source>
+<year>1996</year>, <volume>4</volume> (<issue>2</issue>), <fpage>147</fpage>&#x02013;<lpage>156</lpage>. <pub-id pub-id-type="doi">10.1016/S0969-2126(96)00018-4</pub-id>.<pub-id pub-id-type="pmid">8805521</pub-id>
+</mixed-citation></ref><ref id="ref52"><mixed-citation publication-type="journal" id="cit52"><name><surname>Bae</surname><given-names>E.</given-names></name>; <name><surname>Phillips</surname><given-names>G. N.</given-names></name>
+<article-title>Roles of Static and Dynamic Domains in Stability and
+Catalysis of Adenylate Kinase</article-title>. <source>Proc. Natl. Acad.
+Sci. U.S.A.</source>
+<year>2006</year>, <volume>103</volume> (<issue>7</issue>), <fpage>2132</fpage>&#x02013;<lpage>2137</lpage>. <pub-id pub-id-type="doi">10.1073/pnas.0507527103</pub-id>.<pub-id pub-id-type="pmid">16452168</pub-id>
+</mixed-citation></ref><ref id="ref53"><mixed-citation publication-type="journal" id="cit53"><name><surname>Liu</surname><given-names>R.</given-names></name>; <name><surname>Xu</surname><given-names>H.</given-names></name>; <name><surname>Wei</surname><given-names>Z.</given-names></name>; <name><surname>Wang</surname><given-names>Y.</given-names></name>; <name><surname>Lin</surname><given-names>Y.</given-names></name>; <name><surname>Gong</surname><given-names>W.</given-names></name>
+<article-title>Crystal Structure
+of Human Adenylate Kinase 4 (L171P) Suggests the Role of Hinge Region
+in Protein Domain Motion</article-title>. <source>Biochem. Biophys.
+Res. Commun.</source>
+<year>2009</year>, <volume>379</volume> (<issue>1</issue>), <fpage>92</fpage>&#x02013;<lpage>97</lpage>. <pub-id pub-id-type="doi">10.1016/j.bbrc.2008.12.012</pub-id>.<pub-id pub-id-type="pmid">19073142</pub-id>
+</mixed-citation></ref><ref id="ref54"><mixed-citation publication-type="journal" id="cit54"><name><surname>Berry</surname><given-names>M. B.</given-names></name>; <name><surname>Meador</surname><given-names>B.</given-names></name>; <name><surname>Bilderback</surname><given-names>T.</given-names></name>; <name><surname>Liang</surname><given-names>P.</given-names></name>; <name><surname>Glaser</surname><given-names>M.</given-names></name>; <name><surname>Phillips</surname><given-names>G. N.</given-names></name>
+<article-title>The Closed Conformation
+of a Highly Flexible Protein:
+The Structure ofE. Coli Adenylate Kinase with Bound AMP and AMPPNP</article-title>. <source>Proteins</source>
+<year>1994</year>, <volume>19</volume> (<issue>3</issue>), <fpage>183</fpage>&#x02013;<lpage>198</lpage>. <pub-id pub-id-type="doi">10.1002/prot.340190304</pub-id>.<pub-id pub-id-type="pmid">7937733</pub-id>
+</mixed-citation></ref><ref id="ref55"><mixed-citation publication-type="journal" id="cit55"><name><surname>Schulz</surname><given-names>G. E.</given-names></name>; <name><surname>M&#x000fc;ller</surname><given-names>C. W.</given-names></name>; <name><surname>Diederichs</surname><given-names>K.</given-names></name>
+<article-title>Induced-Fit Movements in Adenylate
+Kinases</article-title>. <source>J. Mol. Biol.</source>
+<year>1990</year>, <volume>213</volume> (<issue>4</issue>), <fpage>627</fpage>&#x02013;<lpage>630</lpage>. <pub-id pub-id-type="doi">10.1016/S0022-2836(05)80250-5</pub-id>.<pub-id pub-id-type="pmid">2162964</pub-id>
+</mixed-citation></ref><ref id="ref56"><mixed-citation publication-type="journal" id="cit56"><name><surname>Wu</surname><given-names>P.</given-names></name>; <name><surname>Nielsen</surname><given-names>T. E.</given-names></name>; <name><surname>Clausen</surname><given-names>M. H.</given-names></name>
+<article-title>FDA-Approved
+Small-Molecule Kinase
+Inhibitors</article-title>. <source>Trends Pharmacol. Sci.</source>
+<year>2015</year>, <volume>36</volume> (<issue>7</issue>), <fpage>422</fpage>&#x02013;<lpage>439</lpage>. <pub-id pub-id-type="doi">10.1016/j.tips.2015.04.005</pub-id>.<pub-id pub-id-type="pmid">25975227</pub-id>
+</mixed-citation></ref><ref id="ref57"><mixed-citation publication-type="journal" id="cit57"><name><surname>Arrowsmith</surname><given-names>C. H.</given-names></name>; <name><surname>Bountra</surname><given-names>C.</given-names></name>; <name><surname>Fish</surname><given-names>P. V.</given-names></name>; <name><surname>Lee</surname><given-names>K.</given-names></name>; <name><surname>Schapira</surname><given-names>M.</given-names></name>
+<article-title>Epigenetic
+Protein Families: A New Frontier for Drug Discovery</article-title>. <source>Nat. Rev. Drug Discov</source>
+<year>2012</year>, <volume>11</volume> (<issue>5</issue>), <fpage>384</fpage>&#x02013;<lpage>400</lpage>. <pub-id pub-id-type="doi">10.1038/nrd3674</pub-id>.<pub-id pub-id-type="pmid">22498752</pub-id>
+</mixed-citation></ref><ref id="ref58"><mixed-citation publication-type="journal" id="cit58"><name><surname>Whitford</surname><given-names>P. C.</given-names></name>; <name><surname>Gosavi</surname><given-names>S.</given-names></name>; <name><surname>Onuchic</surname><given-names>J. N.</given-names></name>
+<article-title>Conformational
+Transitions in Adenylate
+Kinase: ALLOSTERIC COMMUNICATION REDUCES MISLIGATION</article-title>. <source>J. Biol. Chem.</source>
+<year>2008</year>, <volume>283</volume> (<issue>4</issue>), <fpage>2042</fpage>&#x02013;<lpage>2048</lpage>. <pub-id pub-id-type="doi">10.1074/jbc.M707632200</pub-id>.<pub-id pub-id-type="pmid">17998210</pub-id>
+</mixed-citation></ref><ref id="ref59"><mixed-citation publication-type="journal" id="cit59"><name><surname>Potoyan</surname><given-names>D. A.</given-names></name>; <name><surname>Zhuravlev</surname><given-names>P. I.</given-names></name>; <name><surname>Papoian</surname><given-names>G. A.</given-names></name>
+<article-title>Computing Free Energy of a Large-Scale
+Allosteric Transition in Adenylate Kinase Using All Atom Explicit
+Solvent Simulations</article-title>. <source>J. Phys. Chem. B</source>
+<year>2012</year>, <volume>116</volume> (<issue>5</issue>), <fpage>1709</fpage>&#x02013;<lpage>1715</lpage>. <pub-id pub-id-type="doi">10.1021/jp209980b</pub-id>.<pub-id pub-id-type="pmid">22212071</pub-id>
+</mixed-citation></ref><ref id="ref60"><mixed-citation publication-type="journal" id="cit60"><name><surname>Daily</surname><given-names>M. D.</given-names></name>; <name><surname>Phillips</surname><given-names>G. N.</given-names></name>; <name><surname>Cui</surname><given-names>Q.</given-names></name>
+<article-title>Many Local
+Motions Cooperate to Produce
+the Adenylate Kinase Conformational Transition</article-title>. <source>J. Mol. Biol.</source>
+<year>2010</year>, <volume>400</volume> (<issue>3</issue>), <fpage>618</fpage>&#x02013;<lpage>631</lpage>. <pub-id pub-id-type="doi">10.1016/j.jmb.2010.05.015</pub-id>.<pub-id pub-id-type="pmid">20471396</pub-id>
+</mixed-citation></ref><ref id="ref61"><mixed-citation publication-type="journal" id="cit61"><name><surname>Kerns</surname><given-names>S. J.</given-names></name>; <name><surname>Agafonov</surname><given-names>R. V.</given-names></name>; <name><surname>Cho</surname><given-names>Y.-J.</given-names></name>; <name><surname>Pontiggia</surname><given-names>F.</given-names></name>; <name><surname>Otten</surname><given-names>R.</given-names></name>; <name><surname>Pachov</surname><given-names>D. V.</given-names></name>; <name><surname>Kutter</surname><given-names>S.</given-names></name>; <name><surname>Phung</surname><given-names>L. A.</given-names></name>; <name><surname>Murphy</surname><given-names>P. N.</given-names></name>; <name><surname>Thai</surname><given-names>V.</given-names></name>; <name><surname>Alber</surname><given-names>T.</given-names></name>; <name><surname>Hagan</surname><given-names>M. F.</given-names></name>; <name><surname>Kern</surname><given-names>D.</given-names></name>
+<article-title>The Energy Landscape of Adenylate Kinase during Catalysis</article-title>. <source>Nat. Struct Mol. Biol.</source>
+<year>2015</year>, <volume>22</volume> (<issue>2</issue>), <fpage>124</fpage>&#x02013;<lpage>131</lpage>. <pub-id pub-id-type="doi">10.1038/nsmb.2941</pub-id>.<pub-id pub-id-type="pmid">25580578</pub-id>
+</mixed-citation></ref><ref id="ref62"><mixed-citation publication-type="journal" id="cit62"><name><surname>Lassila</surname><given-names>J. K.</given-names></name>; <name><surname>Zalatan</surname><given-names>J. G.</given-names></name>; <name><surname>Herschlag</surname><given-names>D.</given-names></name>
+<article-title>Biological
+Phosphoryl-Transfer Reactions:
+Understanding Mechanism and Catalysis</article-title>. <source>Annu.
+Rev. Biochem.</source>
+<year>2011</year>, <volume>80</volume> (<issue>1</issue>), <fpage>669</fpage>&#x02013;<lpage>702</lpage>. <pub-id pub-id-type="doi">10.1146/annurev-biochem-060409-092741</pub-id>.<pub-id pub-id-type="pmid">21513457</pub-id>
+</mixed-citation></ref><ref id="ref63"><mixed-citation publication-type="journal" id="cit63"><name><surname>Rogne</surname><given-names>P.</given-names></name>; <name><surname>Rosselin</surname><given-names>M.</given-names></name>; <name><surname>Grundstr&#x000f6;m</surname><given-names>C.</given-names></name>; <name><surname>Hedberg</surname><given-names>C.</given-names></name>; <name><surname>Sauer</surname><given-names>U. H.</given-names></name>; <name><surname>Wolf-Watz</surname><given-names>M.</given-names></name>
+<article-title>Molecular
+Mechanism of ATP versus GTP Selectivity of
+Adenylate Kinase</article-title>. <source>Proc. Natl. Acad. Sci. U.
+S. A.</source>
+<year>2018</year>, <volume>115</volume> (<issue>12</issue>), <fpage>3012</fpage>&#x02013;<lpage>3017</lpage>. <pub-id pub-id-type="doi">10.1073/pnas.1721508115</pub-id>.<pub-id pub-id-type="pmid">29507216</pub-id>
+</mixed-citation></ref><ref id="ref64"><mixed-citation publication-type="journal" id="cit64"><name><surname>Vonrhein</surname><given-names>C.</given-names></name>; <name><surname>Schlauderer</surname><given-names>G. J.</given-names></name>; <name><surname>Schulz</surname><given-names>G. E.</given-names></name>
+<article-title>Movie of the Structural Changes during
+a Catalytic Cycle of Nucleoside Monophosphate Kinases</article-title>. <source>Structure</source>
+<year>1995</year>, <volume>3</volume> (<issue>5</issue>), <fpage>483</fpage>&#x02013;<lpage>490</lpage>. <pub-id pub-id-type="doi">10.1016/S0969-2126(01)00181-2</pub-id>.<pub-id pub-id-type="pmid">7663945</pub-id>
+</mixed-citation></ref><ref id="ref65"><mixed-citation publication-type="journal" id="cit65"><name><surname>Kovermann</surname><given-names>M.</given-names></name>; <name><surname>Grundstr&#x000f6;m</surname><given-names>C.</given-names></name>; <name><surname>Sauer-Eriksson</surname><given-names>A. E.</given-names></name>; <name><surname>Sauer</surname><given-names>U. H.</given-names></name>; <name><surname>Wolf-Watz</surname><given-names>M.</given-names></name>
+<article-title>Structural
+Basis for Ligand Binding to an Enzyme by a Conformational Selection
+Pathway</article-title>. <source>Proc. Natl. Acad. Sci. U. S. A.</source>
+<year>2017</year>, <volume>114</volume> (<issue>24</issue>), <fpage>6298</fpage>&#x02013;<lpage>6303</lpage>. <pub-id pub-id-type="doi">10.1073/pnas.1700919114</pub-id>.<pub-id pub-id-type="pmid">28559350</pub-id>
+</mixed-citation></ref><ref id="ref66"><mixed-citation publication-type="journal" id="cit66"><name><surname>Hanson</surname><given-names>J. A.</given-names></name>; <name><surname>Duderstadt</surname><given-names>K.</given-names></name>; <name><surname>Watkins</surname><given-names>L. P.</given-names></name>; <name><surname>Bhattacharyya</surname><given-names>S.</given-names></name>; <name><surname>Brokaw</surname><given-names>J.</given-names></name>; <name><surname>Chu</surname><given-names>J.-W.</given-names></name>; <name><surname>Yang</surname><given-names>H.</given-names></name>
+<article-title>Illuminating the Mechanistic
+Roles of Enzyme Conformational Dynamics</article-title>. <source>Proc.
+Natl. Acad. Sci. U. S. A.</source>
+<year>2007</year>, <volume>104</volume> (<issue>46</issue>), <fpage>18055</fpage>&#x02013;<lpage>18060</lpage>. <pub-id pub-id-type="doi">10.1073/pnas.0708600104</pub-id>.<pub-id pub-id-type="pmid">17989222</pub-id>
+</mixed-citation></ref><ref id="ref67"><mixed-citation publication-type="journal" id="cit67"><name><surname>Scheerer</surname><given-names>D.</given-names></name>; <name><surname>Adkar</surname><given-names>B. V.</given-names></name>; <name><surname>Bhattacharyya</surname><given-names>S.</given-names></name>; <name><surname>Levy</surname><given-names>D.</given-names></name>; <name><surname>Iljina</surname><given-names>M.</given-names></name>; <name><surname>Riven</surname><given-names>I.</given-names></name>; <name><surname>Dym</surname><given-names>O.</given-names></name>; <name><surname>Haran</surname><given-names>G.</given-names></name>; <name><surname>Shakhnovich</surname><given-names>E. I.</given-names></name>
+<article-title>Allosteric
+Communication between Ligand Binding Domains Modulates Substrate Inhibition
+in Adenylate Kinase</article-title>. <source>Proc. Natl. Acad. Sci.
+U.S.A.</source>
+<year>2023</year>, <volume>120</volume> (<issue>18</issue>), <elocation-id>e2219855120</elocation-id><pub-id pub-id-type="doi">10.1073/pnas.2219855120</pub-id>.<pub-id pub-id-type="pmid">37094144</pub-id>
+</mixed-citation></ref><ref id="ref68"><mixed-citation publication-type="journal" id="cit68"><name><surname>Ionescu</surname><given-names>M.</given-names></name>; <name><surname>Oniga</surname><given-names>O.</given-names></name>
+<article-title>Molecular Docking Evaluation of (E)-5-Arylidene-2-Thioxothiazolidin-4-One
+Derivatives as Selective Bacterial Adenylate Kinase Inhibitors</article-title>. <source>Molecules</source>
+<year>2018</year>, <volume>23</volume> (<issue>5</issue>), <fpage>1076</fpage><pub-id pub-id-type="doi">10.3390/molecules23051076</pub-id>.<pub-id pub-id-type="pmid">29751552</pub-id>
+</mixed-citation></ref><ref id="ref69"><mixed-citation publication-type="journal" id="cit69"><name><surname>Li</surname><given-names>D.</given-names></name>; <name><surname>Liu</surname><given-names>M. S.</given-names></name>; <name><surname>Ji</surname><given-names>B.</given-names></name>
+<article-title>Mapping the Dynamics Landscape of
+Conformational Transitions in Enzyme: The Adenylate Kinase Case</article-title>. <source>Biophys. J.</source>
+<year>2015</year>, <volume>109</volume> (<issue>3</issue>), <fpage>647</fpage>&#x02013;<lpage>660</lpage>. <pub-id pub-id-type="doi">10.1016/j.bpj.2015.06.059</pub-id>.<pub-id pub-id-type="pmid">26244746</pub-id>
+</mixed-citation></ref><ref id="ref70"><mixed-citation publication-type="journal" id="cit70"><name><surname>Kruger</surname><given-names>D. M.</given-names></name>; <name><surname>Ahmed</surname><given-names>A.</given-names></name>; <name><surname>Gohlke</surname><given-names>H.</given-names></name>
+<article-title>NMSim Web Server: Integrated
+Approach
+for Normal Mode-Based Geometric Simulations of Biologically Relevant
+Conformational Transitions in Proteins</article-title>. <source>Nucleic
+Acids Res.</source>
+<year>2012</year>, <volume>40</volume> (<issue>W1</issue>), <fpage>W310</fpage>&#x02013;<lpage>W316</lpage>. <pub-id pub-id-type="doi">10.1093/nar/gks478</pub-id>.<pub-id pub-id-type="pmid">22669906</pub-id>
+</mixed-citation></ref><ref id="ref71"><mixed-citation publication-type="journal" id="cit71"><name><surname>Ahmed</surname><given-names>A.</given-names></name>; <name><surname>Rippmann</surname><given-names>F.</given-names></name>; <name><surname>Barnickel</surname><given-names>G.</given-names></name>; <name><surname>Gohlke</surname><given-names>H.</given-names></name>
+<article-title>A Normal Mode-Based
+Geometric Simulation Approach for Exploring Biologically Relevant
+Conformational Transitions in Proteins</article-title>. <source>J. Chem.
+Inf. Model.</source>
+<year>2011</year>, <volume>51</volume> (<issue>7</issue>), <fpage>1604</fpage>&#x02013;<lpage>1622</lpage>. <pub-id pub-id-type="doi">10.1021/ci100461k</pub-id>.<pub-id pub-id-type="pmid">21639141</pub-id>
+</mixed-citation></ref><ref id="ref72"><mixed-citation publication-type="journal" id="cit72"><name><surname>Lu</surname><given-names>Q.</given-names></name>; <name><surname>Wang</surname><given-names>J.</given-names></name>
+<article-title>Single Molecule Conformational Dynamics of Adenylate Kinase: Energy
+Landscape, Structural Correlations, and Transition State Ensembles</article-title>. <source>J. Am. Chem. Soc.</source>
+<year>2008</year>, <volume>130</volume> (<issue>14</issue>), <fpage>4772</fpage>&#x02013;<lpage>4783</lpage>. <pub-id pub-id-type="doi">10.1021/ja0780481</pub-id>.<pub-id pub-id-type="pmid">18338887</pub-id>
+</mixed-citation></ref><ref id="ref73"><mixed-citation publication-type="journal" id="cit73"><name><surname>Seyler</surname><given-names>S. L.</given-names></name>; <name><surname>Beckstein</surname><given-names>O.</given-names></name>
+<article-title>Sampling Large
+Conformational Transitions: Adenylate
+Kinase as a Testing Ground</article-title>. <source>Mol. Simul.</source>
+<year>2014</year>, <volume>40</volume> (<issue>10&#x02013;11</issue>), <fpage>855</fpage>&#x02013;<lpage>877</lpage>. <pub-id pub-id-type="doi">10.1080/08927022.2014.919497</pub-id>.</mixed-citation></ref><ref id="ref74"><mixed-citation publication-type="journal" id="cit74"><name><surname>Formoso</surname><given-names>E.</given-names></name>; <name><surname>Limongelli</surname><given-names>V.</given-names></name>; <name><surname>Parrinello</surname><given-names>M.</given-names></name>
+<article-title>Energetics
+and Structural Characterization
+of the Large-Scale Functional Motion of Adenylate Kinase</article-title>. <source>Sci. Rep</source>
+<year>2015</year>, <volume>5</volume> (<issue>1</issue>), <fpage>8425</fpage><pub-id pub-id-type="doi">10.1038/srep08425</pub-id>.<pub-id pub-id-type="pmid">25672826</pub-id>
+</mixed-citation></ref><ref id="ref75"><mixed-citation publication-type="journal" id="cit75"><name><surname>Yasuda</surname><given-names>T.</given-names></name>; <name><surname>Shigeta</surname><given-names>Y.</given-names></name>; <name><surname>Harada</surname><given-names>R.</given-names></name>
+<article-title>Efficient Conformational Sampling
+of Collective Motions of Proteins with Principal Component Analysis-Based
+Parallel Cascade Selection Molecular Dynamics</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2020</year>, <volume>60</volume> (<issue>8</issue>), <fpage>4021</fpage>&#x02013;<lpage>4029</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.0c00580</pub-id>.<pub-id pub-id-type="pmid">32786508</pub-id>
+</mixed-citation></ref><ref id="ref76"><mixed-citation publication-type="journal" id="cit76"><name><surname>Jalalypour</surname><given-names>F.</given-names></name>; <name><surname>Sensoy</surname><given-names>O.</given-names></name>; <name><surname>Atilgan</surname><given-names>C.</given-names></name>
+<article-title>Perturb&#x02013;Scan&#x02013;Pull:
+A Novel Method Facilitating Conformational Transitions in Proteins</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2020</year>, <volume>16</volume> (<issue>6</issue>), <fpage>3825</fpage>&#x02013;<lpage>3841</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jctc.9b01222</pub-id>.<pub-id pub-id-type="pmid">32324386</pub-id>
+</mixed-citation></ref><ref id="ref77"><mixed-citation publication-type="journal" id="cit77"><name><surname>Wang</surname><given-names>J.</given-names></name>; <name><surname>Peng</surname><given-names>C.</given-names></name>; <name><surname>Yu</surname><given-names>Y.</given-names></name>; <name><surname>Chen</surname><given-names>Z.</given-names></name>; <name><surname>Xu</surname><given-names>Z.</given-names></name>; <name><surname>Cai</surname><given-names>T.</given-names></name>; <name><surname>Shao</surname><given-names>Q.</given-names></name>; <name><surname>Shi</surname><given-names>J.</given-names></name>; <name><surname>Zhu</surname><given-names>W.</given-names></name>
+<article-title>Exploring Conformational
+Change of Adenylate Kinase by Replica Exchange Molecular Dynamic Simulation</article-title>. <source>Biophys. J.</source>
+<year>2020</year>, <volume>118</volume> (<issue>5</issue>), <fpage>1009</fpage>&#x02013;<lpage>1018</lpage>. <pub-id pub-id-type="doi">10.1016/j.bpj.2020.01.001</pub-id>.<pub-id pub-id-type="pmid">31995738</pub-id>
+</mixed-citation></ref><ref id="ref78"><mixed-citation publication-type="journal" id="cit78"><name><surname>Uyar</surname><given-names>A.</given-names></name>; <name><surname>Kantarci-Carsibasi</surname><given-names>N.</given-names></name>; <name><surname>Haliloglu</surname><given-names>T.</given-names></name>; <name><surname>Doruker</surname><given-names>P.</given-names></name>
+<article-title>Features of Large Hinge-Bending
+Conformational Transitions. Prediction of Closed Structure from Open
+State</article-title>. <source>Biophys. J.</source>
+<year>2014</year>, <volume>106</volume> (<issue>12</issue>), <fpage>2656</fpage>&#x02013;<lpage>2666</lpage>. <pub-id pub-id-type="doi">10.1016/j.bpj.2014.05.017</pub-id>.<pub-id pub-id-type="pmid">24940783</pub-id>
+</mixed-citation></ref><ref id="ref79"><mixed-citation publication-type="journal" id="cit79"><name><surname>Zeller</surname><given-names>F.</given-names></name>; <name><surname>Zacharias</surname><given-names>M.</given-names></name>
+<article-title>Substrate
+Binding Specifically Modulates Domain Arrangements
+in Adenylate Kinase</article-title>. <source>Biophys. J.</source>
+<year>2015</year>, <volume>109</volume> (<issue>9</issue>), <fpage>1978</fpage>&#x02013;<lpage>1985</lpage>. <pub-id pub-id-type="doi">10.1016/j.bpj.2015.08.049</pub-id>.<pub-id pub-id-type="pmid">26536274</pub-id>
+</mixed-citation></ref><ref id="ref80"><mixed-citation publication-type="journal" id="cit80"><name><surname>Kurkcuoglu</surname><given-names>Z.</given-names></name>; <name><surname>Doruker</surname><given-names>P.</given-names></name>
+<article-title>Ligand Docking to Intermediate and Close-To-Bound Conformers
+Generated by an Elastic Network Model Based Algorithm for Highly Flexible
+Proteins</article-title>. <source>PLoS One</source>
+<year>2016</year>, <volume>11</volume> (<issue>6</issue>), <elocation-id>e0158063</elocation-id><pub-id pub-id-type="doi">10.1371/journal.pone.0158063</pub-id>.<pub-id pub-id-type="pmid">27348230</pub-id>
+</mixed-citation></ref><ref id="ref81"><mixed-citation publication-type="journal" id="cit81"><name><surname>Lou</surname><given-names>H.</given-names></name>; <name><surname>Cukier</surname><given-names>R. I.</given-names></name>
+<article-title>Molecular Dynamics
+of Apo-Adenylate Kinase: A Principal
+Component Analysis</article-title>. <source>J. Phys. Chem. B</source>
+<year>2006</year>, <volume>110</volume> (<issue>25</issue>), <fpage>12796</fpage>&#x02013;<lpage>12808</lpage>. <pub-id pub-id-type="doi">10.1021/jp061976m</pub-id>.<pub-id pub-id-type="pmid">16800615</pub-id>
+</mixed-citation></ref><ref id="ref82"><mixed-citation publication-type="journal" id="cit82"><name><surname>Nam</surname><given-names>K.</given-names></name>; <name><surname>Arattu Thodika</surname><given-names>A. R.</given-names></name>; <name><surname>Grundstr&#x000f6;m</surname><given-names>C.</given-names></name>; <name><surname>Sauer</surname><given-names>U. H.</given-names></name>; <name><surname>Wolf-Watz</surname><given-names>M.</given-names></name>
+<article-title>Elucidating
+Dynamics of Adenylate Kinase from Enzyme Opening to Ligand Release</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2024</year>, <volume>64</volume> (<issue>1</issue>), <fpage>150</fpage>&#x02013;<lpage>163</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.3c01618</pub-id>.<pub-id pub-id-type="pmid">38117131</pub-id>
+</mixed-citation></ref><ref id="ref83"><mixed-citation publication-type="journal" id="cit83"><name><surname>Fiorentini</surname><given-names>R.</given-names></name>; <name><surname>Tarenzi</surname><given-names>T.</given-names></name>; <name><surname>Potestio</surname><given-names>R.</given-names></name>
+<article-title>Fast, Accurate,
+and System-Specific
+Variable-Resolution Modeling of Proteins</article-title>. <source>J.
+Chem. Inf. Model.</source>
+<year>2023</year>, <volume>63</volume> (<issue>4</issue>), <fpage>1260</fpage>&#x02013;<lpage>1275</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.2c01311</pub-id>.<pub-id pub-id-type="pmid">36735551</pub-id>
+</mixed-citation></ref><ref id="ref84"><mixed-citation publication-type="journal" id="cit84"><name><surname>Kanada</surname><given-names>R.</given-names></name>; <name><surname>Terayama</surname><given-names>K.</given-names></name>; <name><surname>Tokuhisa</surname><given-names>A.</given-names></name>; <name><surname>Matsumoto</surname><given-names>S.</given-names></name>; <name><surname>Okuno</surname><given-names>Y.</given-names></name>
+<article-title>Enhanced Conformational Sampling
+with an Adaptive Coarse-Grained
+Elastic Network Model Using Short-Time All-Atom Molecular Dynamics</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2022</year>, <volume>18</volume> (<issue>4</issue>), <fpage>2062</fpage>&#x02013;<lpage>2074</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jctc.1c01074</pub-id>.<pub-id pub-id-type="pmid">35325529</pub-id>
+</mixed-citation></ref><ref id="ref85"><mixed-citation publication-type="journal" id="cit85"><name><surname>Yuan</surname><given-names>Y.</given-names></name>; <name><surname>Zhu</surname><given-names>Q.</given-names></name>; <name><surname>Song</surname><given-names>R.</given-names></name>; <name><surname>Ma</surname><given-names>J.</given-names></name>; <name><surname>Dong</surname><given-names>H.</given-names></name>
+<article-title>A Two-Ended Data-Driven
+Accelerated Sampling Method for Exploring the Transition Pathways
+between Two Known States of Protein</article-title>. <source>J. Chem.
+Theory Comput.</source>
+<year>2020</year>, <volume>16</volume> (<issue>7</issue>), <fpage>4631</fpage>&#x02013;<lpage>4640</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jctc.9b01184</pub-id>.<pub-id pub-id-type="pmid">32320614</pub-id>
+</mixed-citation></ref><ref id="ref86"><mixed-citation publication-type="journal" id="cit86"><name><surname>Yang</surname><given-names>S.</given-names></name>; <name><surname>Song</surname><given-names>C.</given-names></name>
+<article-title><italic>Switching Go</italic>- <italic>-Martini</italic> for Investigating
+Protein Conformational Transitions and Associated Protein&#x02013;Lipid
+Interactions</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2024</year>, <volume>20</volume> (<issue>6</issue>), <fpage>2618</fpage>&#x02013;<lpage>2629</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jctc.3c01222</pub-id>.<pub-id pub-id-type="pmid">38447049</pub-id>
+</mixed-citation></ref><ref id="ref87"><mixed-citation publication-type="journal" id="cit87"><name><surname>Wang</surname><given-names>Y.</given-names></name>; <name><surname>Makowski</surname><given-names>L.</given-names></name>
+<article-title>Fine Structure of Conformational Ensembles in Adenylate
+Kinase</article-title>. <source>Proteins</source>
+<year>2018</year>, <volume>86</volume> (<issue>3</issue>), <fpage>332</fpage>&#x02013;<lpage>343</lpage>. <pub-id pub-id-type="doi">10.1002/prot.25443</pub-id>.<pub-id pub-id-type="pmid">29239025</pub-id>
+</mixed-citation></ref><ref id="ref88"><mixed-citation publication-type="journal" id="cit88"><name><surname>Henzler-Wildman</surname><given-names>K. A.</given-names></name>; <name><surname>Thai</surname><given-names>V.</given-names></name>; <name><surname>Lei</surname><given-names>M.</given-names></name>; <name><surname>Ott</surname><given-names>M.</given-names></name>; <name><surname>Wolf-Watz</surname><given-names>M.</given-names></name>; <name><surname>Fenn</surname><given-names>T.</given-names></name>; <name><surname>Pozharski</surname><given-names>E.</given-names></name>; <name><surname>Wilson</surname><given-names>M. A.</given-names></name>; <name><surname>Petsko</surname><given-names>G. A.</given-names></name>; <name><surname>Karplus</surname><given-names>M.</given-names></name>; <name><surname>H&#x000fc;bner</surname><given-names>C. G.</given-names></name>; <name><surname>Kern</surname><given-names>D.</given-names></name>
+<article-title>Intrinsic Motions along
+an Enzymatic Reaction Trajectory</article-title>. <source>Nature</source>
+<year>2007</year>, <volume>450</volume> (<issue>7171</issue>), <fpage>838</fpage>&#x02013;<lpage>844</lpage>. <pub-id pub-id-type="doi">10.1038/nature06410</pub-id>.<pub-id pub-id-type="pmid">18026086</pub-id>
+</mixed-citation></ref><ref id="ref89"><mixed-citation publication-type="journal" id="cit89"><name><surname>Shao</surname><given-names>Q.</given-names></name>
+<article-title>Enhanced Conformational
+Sampling Technique Provides an Energy Landscape View of Large-Scale
+Protein Conformational Transitions</article-title>. <source>Phys. Chem.
+Chem. Phys.</source>
+<year>2016</year>, <volume>18</volume> (<issue>42</issue>), <fpage>29170</fpage>&#x02013;<lpage>29182</lpage>. <pub-id pub-id-type="doi">10.1039/C6CP05634B</pub-id>.<pub-id pub-id-type="pmid">27730231</pub-id>
+</mixed-citation></ref><ref id="ref90"><mixed-citation publication-type="journal" id="cit90"><name><surname>Punia</surname><given-names>R.</given-names></name>; <name><surname>Goel</surname><given-names>G.</given-names></name>
+<article-title>Computation of the Protein Conformational Transition Pathway on Ligand
+Binding by Linear Response-Driven Molecular Dynamics</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2022</year>, <volume>18</volume> (<issue>5</issue>), <fpage>3268</fpage>&#x02013;<lpage>3283</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jctc.1c01243</pub-id>.<pub-id pub-id-type="pmid">35484642</pub-id>
+</mixed-citation></ref><ref id="ref91"><mixed-citation publication-type="journal" id="cit91"><name><surname>Berry</surname><given-names>M. B.</given-names></name>; <name><surname>Bae</surname><given-names>E.</given-names></name>; <name><surname>Bilderback</surname><given-names>T. R.</given-names></name>; <name><surname>Glaser</surname><given-names>M.</given-names></name>; <name><surname>Phillips</surname><given-names>G. N.</given-names></name>
+<article-title>Crystal
+Structure of ADP/AMP Complex of Escherichia Coli Adenylate Kinase</article-title>. <source>Proteins</source>
+<year>2006</year>, <volume>62</volume> (<issue>2</issue>), <fpage>555</fpage>&#x02013;<lpage>556</lpage>. <pub-id pub-id-type="doi">10.1002/prot.20699</pub-id>.<pub-id pub-id-type="pmid">16302237</pub-id>
+</mixed-citation></ref><ref id="ref92"><mixed-citation publication-type="journal" id="cit92"><name><surname>M&#x000fc;ller</surname><given-names>C. W.</given-names></name>; <name><surname>Schulz</surname><given-names>G. E.</given-names></name>
+<article-title>Structure of the Complex between Adenylate Kinase from
+Escherichia Coli and the Inhibitor Ap5A Refined at 1.9 &#x000c5; Resolution</article-title>. <source>J. Mol. Biol.</source>
+<year>1992</year>, <volume>224</volume> (<issue>1</issue>), <fpage>159</fpage>&#x02013;<lpage>177</lpage>. <pub-id pub-id-type="doi">10.1016/0022-2836(92)90582-5</pub-id>.<pub-id pub-id-type="pmid">1548697</pub-id>
+</mixed-citation></ref><ref id="ref93"><mixed-citation publication-type="journal" id="cit93"><name><surname>Dominguez</surname><given-names>C.</given-names></name>; <name><surname>Boelens</surname><given-names>R.</given-names></name>; <name><surname>Bonvin</surname><given-names>A. M. J. J.</given-names></name>
+<article-title>HADDOCK:
+A Protein&#x02013;Protein
+Docking Approach Based on Biochemical or Biophysical Information</article-title>. <source>J. Am. Chem. Soc.</source>
+<year>2003</year>, <volume>125</volume> (<issue>7</issue>), <fpage>1731</fpage>&#x02013;<lpage>1737</lpage>. <pub-id pub-id-type="doi">10.1021/ja026939x</pub-id>.<pub-id pub-id-type="pmid">12580598</pub-id>
+</mixed-citation></ref><ref id="ref94"><mixed-citation publication-type="journal" id="cit94"><name><surname>Morris</surname><given-names>G. M.</given-names></name>; <name><surname>Huey</surname><given-names>R.</given-names></name>; <name><surname>Lindstrom</surname><given-names>W.</given-names></name>; <name><surname>Sanner</surname><given-names>M. F.</given-names></name>; <name><surname>Belew</surname><given-names>R. K.</given-names></name>; <name><surname>Goodsell</surname><given-names>D. S.</given-names></name>; <name><surname>Olson</surname><given-names>A. J.</given-names></name>
+<article-title>AutoDock4
+and AutoDockTools4: Automated
+Docking with Selective Receptor Flexibility</article-title>. <source>J. Comput. Chem.</source>
+<year>2009</year>, <volume>30</volume> (<issue>16</issue>), <fpage>2785</fpage>&#x02013;<lpage>2791</lpage>. <pub-id pub-id-type="doi">10.1002/jcc.21256</pub-id>.<pub-id pub-id-type="pmid">19399780</pub-id>
+</mixed-citation></ref><ref id="ref95"><mixed-citation publication-type="journal" id="cit95"><name><surname>Flores</surname><given-names>S. C.</given-names></name>; <name><surname>Gerstein</surname><given-names>M. B.</given-names></name>
+<article-title>Predicting Protein
+Ligand Binding Motions with the
+Conformation Explorer</article-title>. <source>BMC Bioinformatics</source>
+<year>2011</year>, <volume>12</volume> (<issue>1</issue>), <fpage>417</fpage><pub-id pub-id-type="doi">10.1186/1471-2105-12-417</pub-id>.<pub-id pub-id-type="pmid">22032721</pub-id>
+</mixed-citation></ref><ref id="ref96"><mixed-citation publication-type="journal" id="cit96"><name><surname>Amaro</surname><given-names>R.</given-names></name>; <name><surname>Li</surname><given-names>W.</given-names></name>
+<article-title>Emerging Methods for
+Ensemble-Based Virtual Screening</article-title>. <source>CTMC</source>
+<year>2010</year>, <volume>10</volume> (<issue>1</issue>), <fpage>3</fpage>&#x02013;<lpage>13</lpage>. <pub-id pub-id-type="doi">10.2174/156802610790232279</pub-id>.</mixed-citation></ref><ref id="ref97"><mixed-citation publication-type="journal" id="cit97"><name><surname>Tarcsay</surname><given-names>&#x000c1;.</given-names></name>; <name><surname>Paragi</surname><given-names>G.</given-names></name>; <name><surname>Vass</surname><given-names>M.</given-names></name>; <name><surname>J&#x000f3;j&#x000e1;rt</surname><given-names>B.</given-names></name>; <name><surname>Bog&#x000e1;r</surname><given-names>F.</given-names></name>; <name><surname>Keser&#x00171;</surname><given-names>G. M.</given-names></name>
+<article-title>The Impact of Molecular Dynamics
+Sampling on the Performance of Virtual Screening against GPCRs</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2013</year>, <volume>53</volume> (<issue>11</issue>), <fpage>2990</fpage>&#x02013;<lpage>2999</lpage>. <pub-id pub-id-type="doi">10.1021/ci400087b</pub-id>.<pub-id pub-id-type="pmid">24116387</pub-id>
+</mixed-citation></ref><ref id="ref98"><mixed-citation publication-type="journal" id="cit98"><name><surname>Ferreira</surname><given-names>L.</given-names></name>; <name><surname>dos Santos</surname><given-names>R.</given-names></name>; <name><surname>Oliva</surname><given-names>G.</given-names></name>; <name><surname>Andricopulo</surname><given-names>A.</given-names></name>
+<article-title>Molecular
+Docking and Structure-Based Drug Design Strategies</article-title>. <source>Molecules</source>
+<year>2015</year>, <volume>20</volume> (<issue>7</issue>), <fpage>13384</fpage>&#x02013;<lpage>13421</lpage>. <pub-id pub-id-type="doi">10.3390/molecules200713384</pub-id>.<pub-id pub-id-type="pmid">26205061</pub-id>
+</mixed-citation></ref><ref id="ref99"><mixed-citation publication-type="journal" id="cit99"><name><surname>Forli</surname><given-names>S.</given-names></name>
+<article-title>Charting a
+Path to Success in Virtual Screening</article-title>. <source>Molecules</source>
+<year>2015</year>, <volume>20</volume> (<issue>10</issue>), <fpage>18732</fpage>&#x02013;<lpage>18758</lpage>. <pub-id pub-id-type="doi">10.3390/molecules201018732</pub-id>.<pub-id pub-id-type="pmid">26501243</pub-id>
+</mixed-citation></ref><ref id="ref100"><mixed-citation publication-type="journal" id="cit100"><name><surname>Li</surname><given-names>Y. Y.</given-names></name>; <name><surname>An</surname><given-names>J.</given-names></name>; <name><surname>Jones</surname><given-names>S. J. M.</given-names></name>
+<article-title>A Computational
+Approach to Finding Novel Targets for Existing Drugs</article-title>. <source>PLoS Comput. Biol.</source>
+<year>2011</year>, <volume>7</volume> (<issue>9</issue>), <elocation-id>e1002139</elocation-id><pub-id pub-id-type="doi">10.1371/journal.pcbi.1002139</pub-id>.<pub-id pub-id-type="pmid">21909252</pub-id>
+</mixed-citation></ref><ref id="ref101"><mixed-citation publication-type="journal" id="cit101"><name><surname>Schmidtke</surname><given-names>P.</given-names></name>; <name><surname>Barril</surname><given-names>X.</given-names></name>
+<article-title>Understanding and Predicting
+Druggability.
+A High-Throughput Method for Detection of Drug Binding Sites</article-title>. <source>J. Med. Chem.</source>
+<year>2010</year>, <volume>53</volume> (<issue>15</issue>), <fpage>5858</fpage>&#x02013;<lpage>5867</lpage>. <pub-id pub-id-type="doi">10.1021/jm100574m</pub-id>.<pub-id pub-id-type="pmid">20684613</pub-id>
+</mixed-citation></ref><ref id="ref102"><mixed-citation publication-type="journal" id="cit102"><name><surname>Miao</surname><given-names>Y.</given-names></name>; <name><surname>Goldfeld</surname><given-names>D. A.</given-names></name>; <name><surname>Moo</surname><given-names>E. V.</given-names></name>; <name><surname>Sexton</surname><given-names>P. M.</given-names></name>; <name><surname>Christopoulos</surname><given-names>A.</given-names></name>; <name><surname>McCammon</surname><given-names>J. A.</given-names></name>; <name><surname>Valant</surname><given-names>C.</given-names></name>
+<article-title>Accelerated
+Structure-Based
+Design of Chemically Diverse Allosteric Modulators of a Muscarinic
+G Protein-Coupled Receptor</article-title>. <source>Proc. Natl. Acad.
+Sci. U. S. A.</source>
+<year>2016</year>, <volume>113</volume> (<issue>38</issue>), <fpage>E5675</fpage>&#x02013;<lpage>E5684</lpage>. <pub-id pub-id-type="doi">10.1073/pnas.1612353113</pub-id>.<pub-id pub-id-type="pmid">27601651</pub-id>
+</mixed-citation></ref><ref id="ref103"><mixed-citation publication-type="journal" id="cit103"><name><surname>Pandini</surname><given-names>A.</given-names></name>; <name><surname>Fornili</surname><given-names>A.</given-names></name>
+<article-title>Using Local States
+To Drive the Sampling
+of Global Conformations in Proteins</article-title>. <source>J. Chem.
+Theory Comput.</source>
+<year>2016</year>, <volume>12</volume> (<issue>3</issue>), <fpage>1368</fpage>&#x02013;<lpage>1379</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jctc.5b00992</pub-id>.<pub-id pub-id-type="pmid">26808351</pub-id>
+</mixed-citation></ref><ref id="ref104"><mixed-citation publication-type="journal" id="cit104"><name><surname>Colombo</surname><given-names>G.</given-names></name>
+<article-title>Computing Allostery: From the Understanding
+of Biomolecular
+Regulation and the Discovery of Cryptic Sites to Molecular Design</article-title>. <source>Curr. Opin. Struct. Biol.</source>
+<year>2023</year>, <volume>83</volume>, <elocation-id>102702</elocation-id><pub-id pub-id-type="doi">10.1016/j.sbi.2023.102702</pub-id>.<pub-id pub-id-type="pmid">37716095</pub-id>
+</mixed-citation></ref><ref id="ref105"><mixed-citation publication-type="journal" id="cit105"><name><surname>La Sala</surname><given-names>G.</given-names></name>; <name><surname>Pfleger</surname><given-names>C.</given-names></name>; <name><surname>K&#x000e4;ck</surname><given-names>H.</given-names></name>; <name><surname>Wissler</surname><given-names>L.</given-names></name>; <name><surname>Nevin</surname><given-names>P.</given-names></name>; <name><surname>B&#x000f6;hm</surname><given-names>K.</given-names></name>; <name><surname>Janet</surname><given-names>J. P.</given-names></name>; <name><surname>Schimpl</surname><given-names>M.</given-names></name>; <name><surname>Stubbs</surname><given-names>C. J.</given-names></name>; <name><surname>De Vivo</surname><given-names>M.</given-names></name>; <name><surname>Tyrchan</surname><given-names>C.</given-names></name>; <name><surname>Hogner</surname><given-names>A.</given-names></name>; <name><surname>Gohlke</surname><given-names>H.</given-names></name>; <name><surname>Frolov</surname><given-names>A. I.</given-names></name>
+<article-title>Combining
+Structural and Coevolution Information to Unveil Allosteric Sites</article-title>. <source>Chem. Sci.</source>
+<year>2023</year>, <volume>14</volume> (<issue>25</issue>), <fpage>7057</fpage>&#x02013;<lpage>7067</lpage>. <pub-id pub-id-type="doi">10.1039/D2SC06272K</pub-id>.<pub-id pub-id-type="pmid">37389247</pub-id>
+</mixed-citation></ref><ref id="ref106"><mixed-citation publication-type="journal" id="cit106"><name><surname>Wu</surname><given-names>Q.</given-names></name>; <name><surname>Peng</surname><given-names>Z.</given-names></name>; <name><surname>Zhang</surname><given-names>Y.</given-names></name>; <name><surname>Yang</surname><given-names>J.</given-names></name>
+<article-title>COACH-D: Improved Protein&#x02013;Ligand
+Binding Sites Prediction with Refined Ligand-Binding Poses through
+Molecular Docking</article-title>. <source>Nucleic Acids Res.</source>
+<year>2018</year>, <volume>46</volume> (<issue>W1</issue>), <fpage>W438</fpage>&#x02013;<lpage>W442</lpage>. <pub-id pub-id-type="doi">10.1093/nar/gky439</pub-id>.<pub-id pub-id-type="pmid">29846643</pub-id>
+</mixed-citation></ref><ref id="ref107"><mixed-citation publication-type="book" id="cit107"><person-group person-group-type="allauthors"><name><surname>Case</surname><given-names>D. A.</given-names></name>; <name><surname>Belfon</surname><given-names>K.</given-names></name>; <name><surname>Ben-Shalom</surname><given-names>I.</given-names></name>; <name><surname>Brozell</surname><given-names>S.</given-names></name>; <name><surname>Cerutti</surname><given-names>D.</given-names></name>; <name><surname>Cheatham</surname><given-names>T.</given-names><suffix>III</suffix></name>; <name><surname>Cruzeiro</surname><given-names>V.</given-names></name>; <name><surname>Darden</surname><given-names>T.</given-names></name>; <name><surname>Duke</surname><given-names>R.</given-names></name>; <name><surname>Giambasu</surname><given-names>G.</given-names></name>; <name><surname>Gilson</surname><given-names>M. K.</given-names></name>; <name><surname>Gohlke</surname><given-names>H.</given-names></name>; <name><surname>Goetz</surname><given-names>A.</given-names></name>; <name><surname>Harris</surname><given-names>R.</given-names></name>; <name><surname>Izadi</surname><given-names>S.</given-names></name>; <name><surname>Izmailov</surname><given-names>S.</given-names></name>; <name><surname>Kasavajhala</surname><given-names>K.</given-names></name>; <name><surname>Kovalenko</surname><given-names>A.</given-names></name>; <name><surname>Krasny</surname><given-names>R.</given-names></name>; <name><surname>Kurtzman</surname><given-names>T.</given-names></name>; <name><surname>Lee</surname><given-names>T.</given-names></name>; <name><surname>LeGrand</surname><given-names>S.</given-names></name>; <name><surname>Li</surname><given-names>P.</given-names></name>; <name><surname>Lin</surname><given-names>C.</given-names></name>; <name><surname>Liu</surname><given-names>J.</given-names></name>; <name><surname>Luchko</surname><given-names>T.</given-names></name>; <name><surname>Luo</surname><given-names>R.</given-names></name>; <name><surname>Man</surname><given-names>V.</given-names></name>; <name><surname>Merz</surname><given-names>K.</given-names></name>; <name><surname>Miao</surname><given-names>Y.</given-names></name>; <name><surname>Mikhailovskii</surname><given-names>O.</given-names></name>; <name><surname>Monard</surname><given-names>G.</given-names></name>; <name><surname>Nguyen</surname><given-names>H.</given-names></name>; <name><surname>Onufriev</surname><given-names>A.</given-names></name>; <name><surname>Pan</surname><given-names>F.</given-names></name>; <name><surname>Pantano</surname><given-names>S.</given-names></name>; <name><surname>Qi</surname><given-names>R.</given-names></name>; <name><surname>Roe</surname><given-names>D.</given-names></name>; <name><surname>Roitberg</surname><given-names>A.</given-names></name>; <name><surname>Sagui</surname><given-names>C.</given-names></name>; <name><surname>Schott-Verdugo</surname><given-names>S.</given-names></name>; <name><surname>Shen</surname><given-names>J.</given-names></name>; <name><surname>Simmerling</surname><given-names>C.</given-names></name>; <name><surname>Skrynnikov</surname><given-names>N.</given-names></name>; <name><surname>Smith</surname><given-names>J.</given-names></name>; <name><surname>Swails</surname><given-names>J.</given-names></name>; <name><surname>Walker</surname><given-names>R.</given-names></name>; <name><surname>Wang</surname><given-names>J.</given-names></name>; <name><surname>Wilson</surname><given-names>L.</given-names></name>; <name><surname>Wolf</surname><given-names>R.</given-names></name>; <name><surname>Wu</surname><given-names>X.</given-names></name>; <name><surname>Xiong</surname><given-names>Y.</given-names></name>; <name><surname>Xue</surname><given-names>Y.</given-names></name>; <name><surname>York</surname><given-names>D.</given-names></name>; <name><surname>Kollman</surname><given-names>P.</given-names></name></person-group><source>AMBER20</source>; <publisher-name>University of California</publisher-name>, <year>2020</year>.</mixed-citation></ref><ref id="ref108"><mixed-citation publication-type="journal" id="cit108"><name><surname>Maier</surname><given-names>J. A.</given-names></name>; <name><surname>Martinez</surname><given-names>C.</given-names></name>; <name><surname>Kasavajhala</surname><given-names>K.</given-names></name>; <name><surname>Wickstrom</surname><given-names>L.</given-names></name>; <name><surname>Hauser</surname><given-names>K. E.</given-names></name>; <name><surname>Simmerling</surname><given-names>C.</given-names></name>
+<article-title>ff14SB: Improving
+the Accuracy of Protein Side Chain and Backbone Parameters from ff99SB</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2015</year>, <volume>11</volume> (<issue>8</issue>), <fpage>3696</fpage>&#x02013;<lpage>3713</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jctc.5b00255</pub-id>.<pub-id pub-id-type="pmid">26574453</pub-id>
+</mixed-citation></ref><ref id="ref109"><mixed-citation publication-type="journal" id="cit109"><name><surname>Wang</surname><given-names>L.-P.</given-names></name>; <name><surname>Martinez</surname><given-names>T. J.</given-names></name>; <name><surname>Pande</surname><given-names>V. S.</given-names></name>
+<article-title>Building
+Force Fields:
+An Automatic, Systematic, and Reproducible Approach</article-title>. <source>J. Phys. Chem. Lett.</source>
+<year>2014</year>, <volume>5</volume> (<issue>11</issue>), <fpage>1885</fpage>&#x02013;<lpage>1891</lpage>. <pub-id pub-id-type="doi">10.1021/jz500737m</pub-id>.<pub-id pub-id-type="pmid">26273869</pub-id>
+</mixed-citation></ref><ref id="ref110"><mixed-citation publication-type="journal" id="cit110"><name><surname>Wang</surname><given-names>L.-P.</given-names></name>; <name><surname>McKiernan</surname><given-names>K. A.</given-names></name>; <name><surname>Gomes</surname><given-names>J.</given-names></name>; <name><surname>Beauchamp</surname><given-names>K. A.</given-names></name>; <name><surname>Head-Gordon</surname><given-names>T.</given-names></name>; <name><surname>Rice</surname><given-names>J. E.</given-names></name>; <name><surname>Swope</surname><given-names>W. C.</given-names></name>; <name><surname>Mart&#x000ed;nez</surname><given-names>T. J.</given-names></name>; <name><surname>Pande</surname><given-names>V. S.</given-names></name>
+<article-title>Building a More Predictive Protein Force Field: A Systematic
+and Reproducible Route to AMBER-FB15</article-title>. <source>J. Phys.
+Chem. B</source>
+<year>2017</year>, <volume>121</volume> (<issue>16</issue>), <fpage>4023</fpage>&#x02013;<lpage>4039</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jpcb.7b02320</pub-id>.<pub-id pub-id-type="pmid">28306259</pub-id>
+</mixed-citation></ref><ref id="ref111"><mixed-citation publication-type="journal" id="cit111"><name><surname>Abraham</surname><given-names>M. J.</given-names></name>; <name><surname>Murtola</surname><given-names>T.</given-names></name>; <name><surname>Schulz</surname><given-names>R.</given-names></name>; <name><surname>P&#x000e1;ll</surname><given-names>S.</given-names></name>; <name><surname>Smith</surname><given-names>J. C.</given-names></name>; <name><surname>Hess</surname><given-names>B.</given-names></name>; <name><surname>Lindahl</surname><given-names>E.</given-names></name>
+<article-title>GROMACS: High Performance
+Molecular Simulations through Multi-Level Parallelism from Laptops
+to Supercomputers</article-title>. <source>SoftwareX</source>
+<year>2015</year>, <volume>1&#x02013;2</volume>, <fpage>19</fpage>&#x02013;<lpage>25</lpage>. <pub-id pub-id-type="doi">10.1016/j.softx.2015.06.001</pub-id>.</mixed-citation></ref><ref id="ref112"><mixed-citation publication-type="journal" id="cit112"><name><surname>Tribello</surname><given-names>G. A.</given-names></name>; <name><surname>Bonomi</surname><given-names>M.</given-names></name>; <name><surname>Branduardi</surname><given-names>D.</given-names></name>; <name><surname>Camilloni</surname><given-names>C.</given-names></name>; <name><surname>Bussi</surname><given-names>G.</given-names></name>
+<article-title>PLUMED 2: New Feathers for an Old
+Bird</article-title>. <source>Comput. Phys. Commun.</source>
+<year>2014</year>, <volume>185</volume> (<issue>2</issue>), <fpage>604</fpage>&#x02013;<lpage>613</lpage>. <pub-id pub-id-type="doi">10.1016/j.cpc.2013.09.018</pub-id>.</mixed-citation></ref><ref id="ref113"><mixed-citation publication-type="journal" id="cit113"><name><surname>Sousa da Silva</surname><given-names>A. W.</given-names></name>; <name><surname>Vranken</surname><given-names>W. F.</given-names></name>
+<article-title>ACPYPE AnteChamber
+PYthon Parser
+interfacE</article-title>. <source>BMC Res. Notes</source>
+<year>2012</year>, <volume>5</volume> (<issue>1</issue>), <fpage>367</fpage><pub-id pub-id-type="doi">10.1186/1756-0500-5-367</pub-id>.<pub-id pub-id-type="pmid">22824207</pub-id>
+</mixed-citation></ref><ref id="ref114"><mixed-citation publication-type="journal" id="cit114"><name><surname>Ponzoni</surname><given-names>L.</given-names></name>; <name><surname>Polles</surname><given-names>G.</given-names></name>; <name><surname>Carnevale</surname><given-names>V.</given-names></name>; <name><surname>Micheletti</surname><given-names>C.</given-names></name>
+<article-title>SPECTRUS: A Dimensionality Reduction Approach for Identifying
+Dynamical Domains in Protein Complexes from Limited Structural Datasets</article-title>. <source>Structure</source>
+<year>2015</year>, <volume>23</volume> (<issue>8</issue>), <fpage>1516</fpage>&#x02013;<lpage>1525</lpage>. <pub-id pub-id-type="doi">10.1016/j.str.2015.05.022</pub-id>.<pub-id pub-id-type="pmid">26165596</pub-id>
+</mixed-citation></ref><ref id="ref115"><mixed-citation publication-type="journal" id="cit115"><name><surname>Honorato</surname><given-names>R. V.</given-names></name>; <name><surname>Trellet</surname><given-names>M. E.</given-names></name>; <name><surname>Jim&#x000e9;nez-Garc&#x000ed;a</surname><given-names>B.</given-names></name>; <name><surname>Schaarschmidt</surname><given-names>J. J.</given-names></name>; <name><surname>Giulini</surname><given-names>M.</given-names></name>; <name><surname>Reys</surname><given-names>V.</given-names></name>; <name><surname>Koukos</surname><given-names>P. I.</given-names></name>; <name><surname>Rodrigues</surname><given-names>J. P. G. L. M.</given-names></name>; <name><surname>Karaca</surname><given-names>E.</given-names></name>; <name><surname>van Zundert</surname><given-names>G. C. P.</given-names></name>; <name><surname>Roel-Touris</surname><given-names>J.</given-names></name>; <name><surname>van Noort</surname><given-names>C. W.</given-names></name>; <name><surname>Jandov&#x000e1;</surname><given-names>Z.</given-names></name>; <name><surname>Melquiond</surname><given-names>A. S. J.</given-names></name>; <name><surname>Bonvin</surname><given-names>A. M. J. J.</given-names></name>
+<article-title>The HADDOCK2.4 Web Server: A Leap
+Forward in Integrative Modelling of Biomolecular Complexes</article-title>. <source>Nat. Protoc.</source>
+<year>2024</year>, <volume>19</volume>, <fpage>3219</fpage>&#x02013;<lpage>3241</lpage>. <pub-id pub-id-type="doi">10.1038/s41596-024-01011-0</pub-id>.<pub-id pub-id-type="pmid">38886530</pub-id>
+</mixed-citation></ref><ref id="ref116"><mixed-citation publication-type="journal" id="cit116"><name><surname>Wang</surname><given-names>J.</given-names></name>; <name><surname>Wolf</surname><given-names>R. M.</given-names></name>; <name><surname>Caldwell</surname><given-names>J. W.</given-names></name>; <name><surname>Kollman</surname><given-names>P. A.</given-names></name>; <name><surname>Case</surname><given-names>D. A.</given-names></name>
+<article-title>Development and Testing of a General
+Amber Force Field</article-title>. <source>Journal of computational
+chemistry</source>
+<year>2004</year>, <volume>25</volume> (<issue>9</issue>), <fpage>1157</fpage>&#x02013;<lpage>1174</lpage>. <pub-id pub-id-type="doi">10.1002/jcc.20035</pub-id>.<pub-id pub-id-type="pmid">15116359</pub-id>
+</mixed-citation></ref></ref-list></back></article>

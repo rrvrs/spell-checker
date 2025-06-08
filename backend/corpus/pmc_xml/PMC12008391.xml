@@ -1,0 +1,923 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Sci Rep</journal-id><journal-id journal-id-type="iso-abbrev">Sci Rep</journal-id><journal-title-group><journal-title>Scientific Reports</journal-title></journal-title-group><issn pub-type="epub">2045-2322</issn><publisher><publisher-name>Nature Publishing Group UK</publisher-name><publisher-loc>London</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">40251241</article-id><article-id pub-id-type="pmc">PMC12008391</article-id>
+<article-id pub-id-type="publisher-id">97930</article-id><article-id pub-id-type="doi">10.1038/s41598-025-97930-3</article-id><article-categories><subj-group subj-group-type="heading"><subject>Article</subject></subj-group></article-categories><title-group><article-title>Autonomous object tracking with vision based control using a 2DOF robotic arm</article-title></title-group><contrib-group><contrib contrib-type="author"><name><surname>Sahu</surname><given-names>Umesh Kumar</given-names></name><xref ref-type="aff" rid="Aff1">1</xref></contrib><contrib contrib-type="author"><name><surname>K. S.</surname><given-names>Mebin</given-names></name><xref ref-type="aff" rid="Aff1">1</xref></contrib><contrib contrib-type="author"><name><surname>K.</surname><given-names>Abhinav</given-names></name><xref ref-type="aff" rid="Aff1">1</xref></contrib><contrib contrib-type="author"><name><surname>P</surname><given-names>Muhammed Muzammil</given-names></name><xref ref-type="aff" rid="Aff1">1</xref></contrib><contrib contrib-type="author" corresp="yes"><name><surname>Jaiswal</surname><given-names>Ankur</given-names></name><address><email>ankur.jaiswal@manipal.edu</email></address><xref ref-type="aff" rid="Aff1">1</xref></contrib><contrib contrib-type="author"><name><surname>Yadav</surname><given-names>Umesh Kumar</given-names></name><xref ref-type="aff" rid="Aff2">2</xref></contrib><contrib contrib-type="author" corresp="yes"><name><surname>Dash</surname><given-names>Santanu Kumar</given-names></name><address><email>santanu4129@gmail.com</email></address><xref ref-type="aff" rid="Aff3">3</xref></contrib><aff id="Aff1"><label>1</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/02xzytt36</institution-id><institution-id institution-id-type="GRID">grid.411639.8</institution-id><institution-id institution-id-type="ISNI">0000 0001 0571 5193</institution-id><institution>Department of Mechatronics, Manipal Institute of Technology, </institution><institution>Manipal Academy of Higher Education, </institution></institution-wrap>Manipal, Karnataka 576104 India </aff><aff id="Aff2"><label>2</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/0077k1j32</institution-id><institution-id institution-id-type="GRID">grid.444471.6</institution-id><institution-id institution-id-type="ISNI">0000 0004 1764 2536</institution-id><institution>Department of Electrical Engineering, </institution><institution>Malaviya National Institute of Technology, </institution></institution-wrap>Jaipur, Rajasthan 302017 India </aff><aff id="Aff3"><label>3</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/00qzypv28</institution-id><institution-id institution-id-type="GRID">grid.412813.d</institution-id><institution-id institution-id-type="ISNI">0000 0001 0687 4946</institution-id><institution>TIFAC-CORE, </institution><institution>Vellore Institute of Technology, </institution></institution-wrap>Vellore, 632014 India </aff></contrib-group><pub-date pub-type="epub"><day>18</day><month>4</month><year>2025</year></pub-date><pub-date pub-type="pmc-release"><day>18</day><month>4</month><year>2025</year></pub-date><pub-date pub-type="collection"><year>2025</year></pub-date><volume>15</volume><elocation-id>13404</elocation-id><history><date date-type="received"><day>7</day><month>5</month><year>2024</year></date><date date-type="accepted"><day>8</day><month>4</month><year>2025</year></date></history><permissions><copyright-statement>&#x000a9; The Author(s) 2025, corrected publication 2025</copyright-statement><copyright-year>2025</copyright-year><license><ali:license_ref specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p><bold>Open Access</bold> This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article&#x02019;s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article&#x02019;s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link>.</license-p></license></permissions><abstract id="Abs1"><p id="Par1">The tracking of moving object by implementing robot manipulator is one of the challenging task for many applications such as manufacturing, agriculture, logistics, healthcare, space, military, entertainment, etc. In the deployment of robotic manipulators with real-time object tracking for aforementioned important applications, the proper sensor surveillance and ensuring stability are major challenges. The purpose of this study is to design a precise and responsive object-tracking system by eliminating the complexities related to tedious mechanisms, rigidity, requirement of multiple sensors, etc. which are commonly associated with traditional systems. The robotic arms can be effectively designed to track moving objects autonomously with vision-based control. In comparison with different classical and traditional servoing approaches, the image-based visual servoing (IBVS) is more advantageous in vision-based control. The present article describes a new approach for IBVS-based tracking control of 2-degree-of-freedom (DOF) robotic arm by including object identification and trajectory tracking based crucial components. To solve the issues associated with IBVS, an accurate deep learning-based object detection framework is employed. The presented framework is utilized to detect and locate the objects in real-time. Further, an effective vision-based control technique is designed to control the 2-DOF robotic arm with the help of real-time response of object detection system. The validation of proposed control strategy is done by performing a simulation and experimental investigations with CoppeliaSim robot simulator and 2-DOF robotic arm, respectively. The findings reveal that the proposed deep learning controller for the vision-based 2-DOF robotic arm achieves good levels of accuracy and response time while performing visual servoing tasks. Furthermore, thorough discussion on possibility of using data-driven learning technique has been explored to improve the robustness and adaptability of the presented control scheme.</p></abstract><kwd-group xml:lang="en"><title>Keywords</title><kwd>Deep learning</kwd><kwd>Feature based tracking</kwd><kwd>Object tracking</kwd><kwd>2-DOF robotic arm</kwd><kwd>Image-based visual servoing</kwd></kwd-group><kwd-group kwd-group-type="npg-subject"><title>Subject terms</title><kwd>Engineering</kwd><kwd>Mathematics and computing</kwd></kwd-group><funding-group><award-group><funding-source><institution>Manipal Academy of Higher Education, Manipal</institution></funding-source></award-group><open-access><p>Open access funding provided by Manipal Academy of Higher Education, Manipal</p></open-access></funding-group><custom-meta-group><custom-meta><meta-name>issue-copyright-statement</meta-name><meta-value>&#x000a9; Springer Nature Limited 2025</meta-value></custom-meta></custom-meta-group></article-meta></front><body><sec id="Sec1"><title>Introduction</title><p id="Par2">A robotic arm replicates the functions of human arm and can be built to perform a variety of jobs. The arm consists of interconnected links with joints that allow for rotational and linear range of motion, allowing the robot to manipulate the objects with precision and flexibility<sup><xref ref-type="bibr" rid="CR1">1</xref>,<xref ref-type="bibr" rid="CR2">2</xref></sup>. Robot arms have become increasingly popular across a variety of fields which include industrial automation, agricultural innovation, traction and logistics, biomedical engineering, entertainment, etc.<sup><xref ref-type="bibr" rid="CR3">3</xref>&#x02013;<xref ref-type="bibr" rid="CR5">5</xref></sup>. These systems use a variety of sensors, including temperature, radiation, colour, and weight<sup><xref ref-type="bibr" rid="CR6">6</xref></sup>. However, there is a growing trend towards employing single-lens cameras and computer vision techniques to independently conduct jobs with greater precision, potentially replacing the need of several sensors<sup><xref ref-type="bibr" rid="CR7">7</xref>,<xref ref-type="bibr" rid="CR8">8</xref></sup>. A vision-based object tracking system can enhance the precision and capabilities of robot arms<sup><xref ref-type="bibr" rid="CR9">9</xref></sup>.</p><p id="Par3">A visual-based control or visual servoing (VS) using computer vision enables a robot to view and interact with its environment<sup><xref ref-type="bibr" rid="CR10">10</xref>,<xref ref-type="bibr" rid="CR11">11</xref></sup>. With this approach, the robot arm can adapt the changes in the environment and perform tasks with greater precision and flexibility, as if it has its own set of eyes to guide its actions. It also avoids conventional method of training a robot, and it has better accuracy and controllability<sup><xref ref-type="bibr" rid="CR12">12</xref>,<xref ref-type="bibr" rid="CR13">13</xref></sup>. Visual-based robot control relies on feedback from a camera system, which calculates the error between the desired and provided visual information to generate commands for robot&#x02019;s actuators<sup><xref ref-type="bibr" rid="CR14">14</xref></sup>.</p><p id="Par4">There are two camera configurations such as eye-in-hand (EIH) and eye-to-hand (ETH), depending on where the camera is positioned in the control loop. In EIH configuration, camera is rigidly mounted on the end-effector, and its position is fixed relative to the robot&#x02019;s pose. Whereas in ETH configuration, camera observes the robot and its surroundings within its workspace. EIH configuration provides a precise view of the scene, but it has limited interaction with the entire workspace whereas ETH configuration provides a global view<sup><xref ref-type="bibr" rid="CR15">15</xref></sup>. In addition, visual servoing have three methods focused on geometric features, Image-Based visual servoing (IBVS)<sup><xref ref-type="bibr" rid="CR16">16</xref>,<xref ref-type="bibr" rid="CR17">17</xref></sup>, Position-Based visual servoing (PBVS)<sup><xref ref-type="bibr" rid="CR18">18</xref></sup> and hydrid visual servoing (HVS)<sup><xref ref-type="bibr" rid="CR19">19</xref></sup>. PBVS is a technique that involves establishing a relationship between the robot&#x02019;s position and attitude, and the image signal using camera parameters. This approach offers the advantage of obtaining more mature control methods and separating visual processing from robot control. However, there are challenges, such as the accuracy of the position and attitude information extracted from the image and the possibility that the robot or reference object may not always be within the camera&#x02019;s field-of-view<sup><xref ref-type="bibr" rid="CR18">18</xref></sup>.</p><p id="Par5">On the other side, IBVS involves comparing the real-time measured image feature with a reference feature and with the resulting feature error for feedback to form closed-loop feedback. This approach has the advantage of strong robustness to camera model deviations and requires less real-time computation compared to PBVS<sup><xref ref-type="bibr" rid="CR20">20</xref></sup>. However, it also has limitations such as unknown depth information in the image Jacobian matrix, and which may encounter the singularity of the image Jacobian matrix and the problem of local minima<sup><xref ref-type="bibr" rid="CR21">21</xref></sup>. Another approach is combination of both the IBVS and PBVS which is known as HVS method that improves the overall performance of a system selecting the best features among the two visual servoing techniques. HVS can combine the strengths of both approaches and benefited from depth information to achieve improved performance. The choice of visual servoing approach depends on the task requirements and camera availability<sup><xref ref-type="bibr" rid="CR22">22</xref></sup>.</p><p id="Par6">Visual servoing technique finds its application in object tracking. Identifying and continually monitoring objects across a series of picture or video frames is a key task in computer vision, known as object tracking<sup><xref ref-type="bibr" rid="CR23">23</xref>,<xref ref-type="bibr" rid="CR24">24</xref></sup>. This is performed by defining the target item in the first frame and then tracking it in the following frames<sup><xref ref-type="bibr" rid="CR25">25</xref></sup>. Numerous fields have benefited from object trackings, such as activity recognition, robotics, autonomous vehicle tracking, traffic monitoring, and medical diagnosis systems<sup><xref ref-type="bibr" rid="CR26">26</xref>,<xref ref-type="bibr" rid="CR27">27</xref></sup>. Object tracking methods can be broadly divided into three categories: feature-based, segmentation-based, and estimation-based. Feature-based methods rely on identifying specific features of the object, such as colour, texture, or optical flow. Segmentation-based methods divide the image into regions and track the object by keeping track of its position in each segment. Estimation-based methods use mathematical models to predict the object&#x02019;s position over time. Some common techniques within each of these categories include Bayesian, Kalman, and particle filters, as well as mean-shift and Cam Shift algorithms<sup><xref ref-type="bibr" rid="CR26">26</xref></sup>. However, object tracking also poses significant challenges such as illumination variation, background clutters, low resolution, scale, occlusion, change in the target position and fast motion<sup><xref ref-type="bibr" rid="CR28">28</xref></sup> leading to ongoing research in this field.</p></sec><sec id="Sec2"><title>Related work</title><p id="Par7">In recent years, with advancements in deep learning and camera technologies, vision-based robot control has seen a rapid growth, in both theoretical foundations and innovative applications. This brief review focuses on few latest developments and their applications, particularly in the context of robot control using visual information.</p><p id="Par8">The use of visual information for controlling 2-DOF robotic arms has been widely explored in recent years, with various approaches leveraging image processing, deep learning (DL), and reinforcement learning (RL) to enhance robotic control. However, a critical analysis of existing works reveals limitations in their adaptability, accuracy, and real-time performance, which this study aims to address.</p><p id="Par9">Several studies have focused on utilizing image-based parameters for robotic control. For instance, Sharma et al.<sup><xref ref-type="bibr" rid="CR29">29</xref></sup> employed two image parameters to enhance the observability and manipulability of a 2-DOF robotic arm, particularly in adjusting the active camera&#x02019;s position and trajectory. Similarly, Cong et al.<sup><xref ref-type="bibr" rid="CR30">30</xref></sup> proposed a vision-based network control system (NCS) for remote manipulator control, integrating an image processing and transmission module. Wang et al.<sup><xref ref-type="bibr" rid="CR31">31</xref></sup> developed a low-cost, contactless trajectory tracking controller for a 2-DOF inverted pendulum, demonstrating the feasibility of vision-based control in robotic applications.</p><p id="Par10">Advancements in sensor-based vision control have also been explored. Al-Shabi et al.<sup><xref ref-type="bibr" rid="CR32">32</xref></sup> utilized a Kinect sensor to extract image landmarks from skeletal data for robotic arm control. Moreno et al.<sup><xref ref-type="bibr" rid="CR33">33</xref></sup> introduced a machine vision-based system that interprets an operator&#x02019;s arm movements to control a robotic arm, whereas Quintero et al.<sup><xref ref-type="bibr" rid="CR34">34</xref></sup> used 2D video images to drive a 6-DOF robot manipulator for assistive applications.</p><p id="Par11">Deep learning and RL approaches have further improved robotic vision-based control. Athulya et al.<sup><xref ref-type="bibr" rid="CR35">35</xref></sup> applied a pre-trained model for inverse kinematics, using predefined joint-angle data for robotic control. Sekkat et al.<sup><xref ref-type="bibr" rid="CR36">36</xref></sup> introduced a deep reinforcement learning (DRL) based controller to determine an object&#x02019;s 3D location for improved robotic arm control. Oliva et al.<sup><xref ref-type="bibr" rid="CR37">37</xref></sup> combined visual feedback with neural networks (NNs) to enhance control policy learning for a 2-DOF planar robot. Deng et al.<sup><xref ref-type="bibr" rid="CR38">38</xref></sup> proposed an active vision-based motion control technique, focusing on high-precision manipulation, while Yurtsever et al.<sup><xref ref-type="bibr" rid="CR39">39</xref></sup> analyzed vision-based deviation detection in a 2-DOF soft robotic arm. Additionally, Wang et al.<sup><xref ref-type="bibr" rid="CR40">40</xref></sup> introduced visual feature constraints to improve autonomous grasping tasks, and Belalia et al.<sup><xref ref-type="bibr" rid="CR41">41</xref></sup> demonstrated a CNN-based visual control framework for a 2-DOF SCARA arm through simulation studies.</p><p id="Par12">While these approaches have made significant contributions, a comprehensive investigation into IBVS-based tracking control for a 2-DOF robotic arm remains unexplored. Existing works primarily focus on object detection, localization, and trajectory planning, but they lack an integrated real-time vision-based control mechanism that effectively leverages DL for improved precision and adaptability. This gap in the literature motivates the present study, which aims to develop an innovative IBVS framework for object tracking, integrating DL based feature extraction, dual 2D-3D coordinate utilization, and an optimized vision-based control scheme to enhance tracking accuracy and response efficiency.</p><p id="Par13">This study defines the problem of achieving precise moving object tracking in a 2-DOF robotic arm and proposes a solution through the design of an interaction matrix using a minimal set of visual features extracted via a DL-based feature extraction method for enhanced visual control. The contributions of this presented study are as follows:</p><p>
+<list list-type="bullet"><list-item><p id="Par14">Robust feature has been detected by utilizing deep learning-based object detection framework to address the issue associated with IBVS.</p></list-item><list-item><p id="Par15">A new vision-based control scheme is developed for tracking a moving object using a 2-DOF robotic arm, leveraging real-time responses from a deep learning-based object detection system to ensure high accuracy and fast response in visual servoing while maintaining simplicity and practicality.</p></list-item><list-item><p id="Par16">Developed the hardware and software interface to validate the performance of proposed control scheme using simulation and experimental study.</p></list-item><list-item><p id="Par17">Analyzed the safety aspects of the proposed vision-based control system.</p></list-item></list>
+</p><p>This work introduces several key innovations in 2-DOF robotic arm control and computer vision, including the integration of MediaPipe for real-time feature extraction, a new dual-coordinate approach leveraging both 2D and 3D spatial information, and an optimized vision-based control scheme that enhances accuracy and efficiency in visual servoing tasks.</p><p id="Par18">The importance of this work lies in the ability to enhance the flexibility of 2-DOF robotic arm by implementing a vision-based object tracking system, allowing robotic arms to adapt to environmental changes while reducing sensor dependency through the use of a single-lens camera and computer vision techniques, making the system more cost-effective and robust.</p><p id="Par19">The rest of the paper is organised as follows. In section &#x0201c;<xref rid="Sec3" ref-type="sec">Dynamics of 2-DOF robotic arm and camera modeling</xref>&#x0201d;, the dynamics of the 2-DOF robotic arm and camera model are described. Then, the selection of visual features for efficient tracking of moving objects is presented in section &#x0201c;<xref rid="Sec6" ref-type="sec">Feature selection</xref>&#x0201d;, in which visual features for tracking control of 2-DOF (section &#x0201c;<xref rid="Sec7" ref-type="sec">Visual features for tracking control of 2-DOF</xref>&#x0201d;) are presented followed by discussion of feature-based object detection (section &#x0201c;<xref rid="Sec13" ref-type="sec">Feature based object recognition framework</xref>&#x0201d;). Section &#x0201c;<xref rid="Sec18" ref-type="sec">Proposed vision-based tracking control scheme</xref>&#x0201d; presents the development of a proposed vision-based controller to track the moving object. Section &#x0201c;<xref rid="Sec20" ref-type="sec">Results and discussion</xref>&#x0201d; presents the results and discussion, in which employed software and hardware components (section &#x0201c;<xref rid="Sec21" ref-type="sec">Software and hardware components</xref>&#x0201d;) are described followed by comprehensive simulation results (section &#x0201c;<xref rid="Sec22" ref-type="sec">Simulation results</xref>&#x0201d;) using CoppeliaSim simulator. Further, experimental results presented in section &#x0201c;<xref rid="Sec23" ref-type="sec">Experimental results</xref>&#x0201d;. The conclusion and scope of further work are given in section &#x0201c;<xref rid="Sec28" ref-type="sec">Conclusion and future scope</xref>&#x0201d;.</p></sec><sec id="Sec3"><title>Dynamics of 2-DOF robotic arm and camera modeling</title><sec id="Sec4"><title>Dynamics of 2-DOF robotic arm</title><p id="Par20">The robotic arm consists of two revolute joints and the first two links are servo motors. First servo motor rotates from 0&#x000b0; to 180&#x000b0; along the vertical axis and the second servo motor rotates from 0&#x000b0; to 180&#x000b0; along the horizontal axis. The end-effector is camera placed in the U-shaped link as shown in the Fig. <xref rid="Fig1" ref-type="fig">1</xref>. The 2-DOF robot arm configuration is shown in the Fig. <xref rid="Fig2" ref-type="fig">2</xref>. The Denavit&#x02013;Hartenberg (DH) parameters for the forward kinematics are given is Table <xref rid="Tab1" ref-type="table">1</xref>.<fig id="Fig1"><label>Fig. 1</label><caption><p>Structure of 2-DOF robotic arm.</p></caption><graphic xlink:href="41598_2025_97930_Fig1_HTML" id="MO1"/></fig><fig id="Fig2"><label>Fig. 2</label><caption><p>2-DOF robotic arm configuration.</p></caption><graphic xlink:href="41598_2025_97930_Fig2_HTML" id="MO2"/></fig><table-wrap id="Tab1"><label>Table 1</label><caption><p>DH parameters for the forward kinematics.</p></caption><table frame="hsides" rules="groups"><tbody><tr><td align="left" colspan="2">Joint-1</td></tr><tr><td align="left">&#x000a0;Link Length (<inline-formula id="IEq1"><alternatives><tex-math id="d33e525">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$a_1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq1.gif"/></alternatives></inline-formula>)</td><td align="left">2.3 inches (length from base to Joint-1.)</td></tr><tr><td align="left">&#x000a0;Link Twist (<inline-formula id="IEq2"><alternatives><tex-math id="d33e537">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha _1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq2.gif"/></alternatives></inline-formula>)</td><td align="left">90&#x000b0; (since <inline-formula id="IEq3"><alternatives><tex-math id="d33e546">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$z_1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq3.gif"/></alternatives></inline-formula> and <inline-formula id="IEq4"><alternatives><tex-math id="d33e552">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$z_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq4.gif"/></alternatives></inline-formula> are perpendicular)</td></tr><tr><td align="left">&#x000a0;Link Offset (<inline-formula id="IEq5"><alternatives><tex-math id="d33e562">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d_1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq5.gif"/></alternatives></inline-formula>)</td><td align="left">1.15 inches (distance from joint-1 to joint-2, along z-axis)</td></tr><tr><td align="left">&#x000a0;Joint Angle Offset (<inline-formula id="IEq6"><alternatives><tex-math id="d33e574">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$q_1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq6.gif"/></alternatives></inline-formula>)</td><td align="left">Rotates about <inline-formula id="IEq7"><alternatives><tex-math id="d33e583">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$z_0$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq7.gif"/></alternatives></inline-formula> (pan movement)</td></tr><tr><td align="left" colspan="2">Joint-2</td></tr><tr><td align="left">&#x000a0;Link Length (<inline-formula id="IEq8"><alternatives><tex-math id="d33e596">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$a_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq8.gif"/></alternatives></inline-formula>)</td><td align="left">2.1 inches (length from Joint-2 to the end-effector.)</td></tr><tr><td align="left">&#x000a0;Link Twist (<inline-formula id="IEq9"><alternatives><tex-math id="d33e608">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha _2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq9.gif"/></alternatives></inline-formula>)</td><td align="left">0&#x000b0; (since <inline-formula id="IEq10"><alternatives><tex-math id="d33e617">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$z_1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq3.gif"/></alternatives></inline-formula> and <inline-formula id="IEq11"><alternatives><tex-math id="d33e623">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$z_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq4.gif"/></alternatives></inline-formula> are parallel)</td></tr><tr><td align="left">&#x000a0;Link Offset (<inline-formula id="IEq12"><alternatives><tex-math id="d33e633">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$d_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq12.gif"/></alternatives></inline-formula>)</td><td align="left">1.15 inches (distance from joint-2 to end-effector, along z-axis)</td></tr><tr><td align="left">&#x000a0;Joint Angle Offset (<inline-formula id="IEq13"><alternatives><tex-math id="d33e645">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$q_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq13.gif"/></alternatives></inline-formula>)</td><td align="left">Rotates about <inline-formula id="IEq14"><alternatives><tex-math id="d33e654">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$z_1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq3.gif"/></alternatives></inline-formula> (tilt movement)</td></tr></tbody></table></table-wrap></p><p id="Par21">Based on the DH parameters, the transformation matrix from the base frame to the end-effector frame can be derived using the DH convention. The transformation matrix, denoted as <italic>T</italic>, is obtained by multiplying individual transformation matrices for each joint can be expressed as:<disp-formula id="Equ1"><label>1</label><alternatives><tex-math id="d33e665">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} T = T_1 \times T_2 \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_97930_Article_Equ1.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq15"><alternatives><tex-math id="d33e672">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$T_1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq15.gif"/></alternatives></inline-formula> and <inline-formula id="IEq16"><alternatives><tex-math id="d33e678">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$T_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq16.gif"/></alternatives></inline-formula> represent the individual transformation matrices for each joint is described in Eqs. (<xref rid="Equ2" ref-type="disp-formula">2</xref>) and (<xref rid="Equ3" ref-type="disp-formula">3</xref>).<disp-formula id="Equ2"><label>2</label><alternatives><tex-math id="d33e691">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} &#x00026; {T_1} = \left[ {\begin{array}{*{20}{c}} {\cos {q_1}}&#x00026; 0 \quad &#x00026; \sin {q_1} &#x00026; \quad 2.3\cos {q_1}\\ {\sin {q_1}}&#x00026; 0 \quad &#x00026; {-\cos {q_1}}&#x00026; \quad 2.3\sin {q_1}\\ 0&#x00026; \quad 1&#x00026; \quad 0&#x00026; \quad 1.15\\ 0&#x00026; \quad 0&#x00026; \quad 0&#x00026; \quad 1 \end{array}} \right] \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_97930_Article_Equ2.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ3"><label>3</label><alternatives><tex-math id="d33e697">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} &#x00026; {T_2} = \left[ {\begin{array}{*{20}{c}} {\cos {q_2}}&#x00026; \quad {-\sin {q_2}}&#x00026; \quad 0&#x00026; \quad 2.1\cos {q_2} \\ { \sin {q_2}}&#x00026; \quad {\cos {q_2}}&#x00026; \quad 0&#x00026; \quad 2.1\sin {q_2} \\ 0&#x00026; \quad 0&#x00026; \quad 1&#x00026; \quad 1.15 \\ 0&#x00026; \quad 0&#x00026; \quad 0&#x00026; \quad 1 \end{array}} \right] \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_97930_Article_Equ3.gif" position="anchor"/></alternatives></disp-formula></p><p>The resulting matrix <italic>T</italic> given in (<xref rid="Equ4" ref-type="disp-formula">4</xref>) represents the transformation from the base frame to the end-effector frame. The elements in the matrix correspond to the position and orientation of the end-effector relative to the base frame.<disp-formula id="Equ4"><label>4</label><alternatives><tex-math id="d33e711">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} T = \left[ {\begin{array}{*{20}{c}} {\cos {q_1} \cos {q_2}}&#x00026; \quad { -\cos {q_1}\sin {q_2}}&#x00026; \quad {\sin {q_1}}&#x00026; \quad 2.3\cos {q_1}+2.1\cos {q_1}\cos {q_2}+1.15\sin {q_1}\\ {\sin {q_1} \cos {q_2}}&#x00026; \quad {-\sin {q_1} \sin {q_2}}&#x00026; \quad {-\cos {q_1}}&#x00026; \quad 2.3\sin {q_1}+2.1\sin {q_1}\cos {q_2}-1.15\cos {q_1} \\ { \sin {q_2}}&#x00026; \quad {\cos {q_2}}&#x00026; \quad 0&#x00026; \quad 2.1 \sin {q_2}+1.15 \\ 0&#x00026; \quad 0&#x00026; \quad 0&#x00026; \quad 1 \end{array}} \right] \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_97930_Article_Equ4.gif" position="anchor"/></alternatives></disp-formula></p><p>By controlling and adjusting the joint angles <inline-formula id="IEq17"><alternatives><tex-math id="d33e719">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$q_1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq6.gif"/></alternatives></inline-formula> and <inline-formula id="IEq18"><alternatives><tex-math id="d33e725">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$q_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq13.gif"/></alternatives></inline-formula>, camera can be positioned accordingly to track the object&#x02019;s movement.</p></sec><sec id="Sec5"><title>Camera modeling</title><p id="Par22">For a 2-DOF based robotic arm, the interaction matrix for visual servoing with point features must depend on the specific configuration of the robot arm and its arm kinematics. The robotic arm has two joints. These joints are denoted by joint-1 and joint-2 as described in Fig. <xref rid="Fig1" ref-type="fig">1</xref>. Moreover, the joint angles are represented as <inline-formula id="IEq19"><alternatives><tex-math id="d33e738">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$q_1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq6.gif"/></alternatives></inline-formula> and <inline-formula id="IEq20"><alternatives><tex-math id="d33e744">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$q_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq13.gif"/></alternatives></inline-formula>, respectively. Further, the relationship between the joint velocities and the changes in the image coordinates of the point feature are formulated to compute the interaction matrix. This derived relationship is typically based on the forward kinematics of the robot arm, which describes about joint angles in determination of position of the end-effector in Cartesian coordinates. The image coordinates in terms of Cartesian coordinates provides the relation between image coordinates and its reference joint angles by employing chain rule of differentiation. This involves calculating the partial derivatives of the image coordinates with respect to the Cartesian coordinates and then with respect to joint angles. The interaction matrix, denoted as <italic>L</italic>, for a 2-DOF robot arm, can be represented as<disp-formula id="Equ5"><label>5</label><alternatives><tex-math id="d33e753">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} L = \left[ {\begin{array}{*{20}{c}} {\frac{{du}}{{d{q_1}}}}&#x00026; \quad {\frac{{du}}{{d{q_2}}}} \\ {\frac{{dv}}{{d{q_1}}}}&#x00026; \quad {\frac{{dv}}{{d{q_2}}}} \end{array}} \right] \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_97930_Article_Equ5.gif" position="anchor"/></alternatives></disp-formula></p><p>Here, <inline-formula id="IEq21"><alternatives><tex-math id="d33e761">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\frac{{du}}{{d{q_1}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq21.gif"/></alternatives></inline-formula>, and <inline-formula id="IEq22"><alternatives><tex-math id="d33e767">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\frac{{du}}{{d{q_2}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq22.gif"/></alternatives></inline-formula>, respectively, represent the partial derivatives of the image coordinate <italic>u</italic> with respect to joint angles <inline-formula id="IEq23"><alternatives><tex-math id="d33e776">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$q_1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq6.gif"/></alternatives></inline-formula> and <inline-formula id="IEq24"><alternatives><tex-math id="d33e782">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$q_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq13.gif"/></alternatives></inline-formula>. Similarly, <inline-formula id="IEq25"><alternatives><tex-math id="d33e789">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\frac{{dv}}{{d{q_1}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq25.gif"/></alternatives></inline-formula> represent the partial derivatives of the image coordinate <italic>v</italic> with respect to the joint angles <inline-formula id="IEq26"><alternatives><tex-math id="d33e798">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$q_1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq6.gif"/></alternatives></inline-formula>, and partial derivatives of the image coordinate <italic>v</italic> with respect to the joint angles <inline-formula id="IEq27"><alternatives><tex-math id="d33e807">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$q_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq13.gif"/></alternatives></inline-formula> is given by <inline-formula id="IEq28"><alternatives><tex-math id="d33e813">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\frac{{dv}}{{d{q_2}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq28.gif"/></alternatives></inline-formula>.</p><p id="Par23">The specific values of these partial derivatives will depend on the geometry and kinematics of the robotic arm. So, these partial derivatives based on the forward kinematics equations that relate the joint angles to the Cartesian coordinates of the end-effector and the image coordinates of the point feature needs to be derived. The interaction matrix (<xref rid="Equ5" ref-type="disp-formula">5</xref>), is used in visual servoing algorithms to determine the required joint velocities that will drive the robotic arm to achieve a desired change in the image coordinates of the point feature.</p><p id="Par24">Let&#x02019;s denote the Cartesian coordinates of the end-effector as (<italic>X</italic>,&#x000a0;<italic>Y</italic>) and the image coordinates of the point feature as (<italic>u</italic>,&#x000a0;<italic>v</italic>) . The forward kinematics equations of the 2-DOF robotic arm will define how the end-effector position relates to the joint angles. Let&#x02019;s assume these equations are as follows:<disp-formula id="Equ6"><label>6</label><alternatives><tex-math id="d33e838">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} \begin{aligned}&#x00026;X = {f_1}({q_1},{q_2}) \\&#x00026;Y = {f_2}({q_1},{q_2}) \\ \end{aligned} \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_97930_Article_Equ6.gif" position="anchor"/></alternatives></disp-formula></p><p>Equation (<xref rid="Equ6" ref-type="disp-formula">6</xref>) is a general representation of the forward kinematice, presenting the <italic>X</italic> and <italic>Y</italic> coordinates of the end-effector in terms of the joint angles. Where, <inline-formula id="IEq29"><alternatives><tex-math id="d33e855">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$f_1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq29.gif"/></alternatives></inline-formula> and <inline-formula id="IEq30"><alternatives><tex-math id="d33e861">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$f_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq30.gif"/></alternatives></inline-formula> are derived from last column of the DH transformation matrix derived in (<xref rid="Equ4" ref-type="disp-formula">4</xref>).</p><p id="Par25">Now, the partial derivatives of the image coordinates (<italic>u</italic>,&#x000a0;<italic>v</italic>) with respect to the joint angles <inline-formula id="IEq31"><alternatives><tex-math id="d33e879">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(q_1, q_2)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq31.gif"/></alternatives></inline-formula> using the chain rule of differentiation can be represent as:<disp-formula id="Equ7"><label>7</label><alternatives><tex-math id="d33e885">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} \left\{ \begin{aligned} \frac{{du}}{{d{q_1}}} = \frac{{du}}{{dX}}*\frac{{dX}}{{d{q_1}}} + \frac{{du}}{{dY}}*\frac{{dY}}{{d{q_1}}} \\ \frac{{du}}{{d{q_2}}} = \frac{{du}}{{dX}}*\frac{{dX}}{{d{q_2}}} + \frac{{du}}{{dY}}*\frac{{dY}}{{d{q_2}}} \\ \frac{{dv}}{{d{q_1}}} = \frac{{dv}}{{dX}}*\frac{{dX}}{{d{q_1}}} + \frac{{dv}}{{dY}}*\frac{{dY}}{{d{q_1}}} \\ \frac{{dv}}{{d{q_2}}} = \frac{{dv}}{{dX}}*\frac{{dX}}{{d{q_2}}} + \frac{{dv}}{{dY}}*\frac{{dY}}{{d{q_2}}} \\ \end{aligned} \right\} \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_97930_Article_Equ7.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq32"><alternatives><tex-math id="d33e892">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\frac{{du}}{{d{X}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq32.gif"/></alternatives></inline-formula>, <inline-formula id="IEq33"><alternatives><tex-math id="d33e899">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\frac{{du}}{{d{Y}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq33.gif"/></alternatives></inline-formula>, <inline-formula id="IEq34"><alternatives><tex-math id="d33e905">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\frac{{dv}}{{d{X}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq34.gif"/></alternatives></inline-formula>, <inline-formula id="IEq35"><alternatives><tex-math id="d33e911">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\frac{{dv}}{{d{Y}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq35.gif"/></alternatives></inline-formula> represent the partial derivatives of the image coordinates (<italic>u</italic>,&#x000a0;<italic>v</italic>) with respect to the Cartesian coordinates (<italic>X</italic>,&#x000a0;<italic>Y</italic>) of the end-effector. These are then combined with the partial derivatives of the Cartesian coordinates with respect to the joint angles to form the interaction matrix. The terms <inline-formula id="IEq36"><alternatives><tex-math id="d33e930">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\frac{{dX}}{{d{q_1}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq36.gif"/></alternatives></inline-formula>, <inline-formula id="IEq37"><alternatives><tex-math id="d33e936">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\frac{{dX}}{{d{q_2}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq37.gif"/></alternatives></inline-formula>, <inline-formula id="IEq38"><alternatives><tex-math id="d33e942">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\frac{{dY}}{{d{q_1}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq38.gif"/></alternatives></inline-formula>, <inline-formula id="IEq39"><alternatives><tex-math id="d33e948">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\frac{{dY}}{{d{q_2}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq39.gif"/></alternatives></inline-formula> represent the partial derivatives of the Cartesian coordinates (<italic>X</italic>,&#x000a0;<italic>Y</italic>) with respect to the joint angles <inline-formula id="IEq40"><alternatives><tex-math id="d33e961">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(q_1, q_2)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq31.gif"/></alternatives></inline-formula>.</p><p id="Par26">From (<xref rid="Equ4" ref-type="disp-formula">4</xref>), Eq. (<xref rid="Equ6" ref-type="disp-formula">6</xref>) can be represented as<disp-formula id="Equ8"><label>8</label><alternatives><tex-math id="d33e975">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} &#x00026; X = a_1\cos {q_1}+a_2\cos {q_1}\cos {q_2}+d_2\sin {q_1} \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_97930_Article_Equ8.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ9"><label>9</label><alternatives><tex-math id="d33e981">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} &#x00026; Y = a_1\sin {q_1}+a_2\sin {q_1}\cos {q_2}-d_2\cos {q_1} \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_97930_Article_Equ9.gif" position="anchor"/></alternatives></disp-formula></p><p>Differentiation of (<xref rid="Equ8" ref-type="disp-formula">8</xref>) with respect to <inline-formula id="IEq41"><alternatives><tex-math id="d33e992">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$q_1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq6.gif"/></alternatives></inline-formula> and <inline-formula id="IEq42"><alternatives><tex-math id="d33e998">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$q_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq13.gif"/></alternatives></inline-formula> can be represented as<disp-formula id="Equ10"><label>10</label><alternatives><tex-math id="d33e1004">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} \begin{aligned}&#x00026;\frac{{dX}}{{d{q_1}}} = - {a_1}\sin {q_1}- {a_2}\sin {q_1}\cos {q_2}+d_2\cos {q_1} \\&#x00026;\frac{{dX}}{{d{q_2}}} = - {a_2}\cos {q_1}\sin {q_2} \\ \end{aligned} \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_97930_Article_Equ10.gif" position="anchor"/></alternatives></disp-formula></p><p>Differentiation of (<xref rid="Equ9" ref-type="disp-formula">9</xref>) with respect to <inline-formula id="IEq43"><alternatives><tex-math id="d33e1015">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$q_1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq6.gif"/></alternatives></inline-formula> and <inline-formula id="IEq44"><alternatives><tex-math id="d33e1021">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$q_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq13.gif"/></alternatives></inline-formula> can be represented as<disp-formula id="Equ11"><label>11</label><alternatives><tex-math id="d33e1027">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} \begin{aligned}&#x00026;\frac{{dY}}{{d{q_1}}} = {a_1}\cos {q_1}+ {a_2}\cos {q_1}\cos {q_2}+d_2\sin {q_1} \\&#x00026;\frac{{dY}}{{d{q_2}}} = -{a_2}\sin {q_1}\sin {q_2} \\ \end{aligned} \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_97930_Article_Equ11.gif" position="anchor"/></alternatives></disp-formula></p><p>In (<xref rid="Equ7" ref-type="disp-formula">7</xref>), <inline-formula id="IEq45"><alternatives><tex-math id="d33e1038">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\frac{{du}}{{d{X}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq32.gif"/></alternatives></inline-formula>, <inline-formula id="IEq46"><alternatives><tex-math id="d33e1044">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\frac{{du}}{{d{Y}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq33.gif"/></alternatives></inline-formula>, <inline-formula id="IEq47"><alternatives><tex-math id="d33e1050">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\frac{{dv}}{{d{X}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq34.gif"/></alternatives></inline-formula>, <inline-formula id="IEq48"><alternatives><tex-math id="d33e1056">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\frac{{dv}}{{d{Y}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq35.gif"/></alternatives></inline-formula> are derived from perspective projection camera model, for mapping real-world 3D position into pixel coordinate (<italic>u</italic>, <italic>v</italic>). by following perspective projection camera model<sup><xref ref-type="bibr" rid="CR20">20</xref></sup>:<disp-formula id="Equ12"><label>12</label><alternatives><tex-math id="d33e1073">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} \begin{aligned} u=\frac{fX}{Z}; v= \frac{fY}{Z} \end{aligned} \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_97930_Article_Equ12.gif" position="anchor"/></alternatives></disp-formula>where, <italic>f</italic> is the focal length of camera, and (<italic>X</italic>, <italic>Y</italic>, <italic>Z</italic>) is the position of the end-effector in the camera frame. We assume the end-effector lies on a plane with a fixed depth <italic>Z</italic>. Derivative of perspective projection (<xref rid="Equ12" ref-type="disp-formula">12</xref>) can be written as<disp-formula id="Equ13"><label>13</label><alternatives><tex-math id="d33e1099">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} \begin{aligned} \frac{du}{dX} = \frac{f}{Z}; \frac{du}{dY}= 0 ; \frac{dv}{dX}= 0 ; \frac{dv}{dY}= \frac{f}{Z}. \end{aligned} \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_97930_Article_Equ13.gif" position="anchor"/></alternatives></disp-formula></p><p>Substituting (<xref rid="Equ10" ref-type="disp-formula">10</xref>), (<xref rid="Equ11" ref-type="disp-formula">11</xref>), and (<xref rid="Equ13" ref-type="disp-formula">13</xref>) into (<xref rid="Equ7" ref-type="disp-formula">7</xref>), interaction matrix (<xref rid="Equ5" ref-type="disp-formula">5</xref>) can be represented as<disp-formula id="Equ14"><label>14</label><alternatives><tex-math id="d33e1124">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} L = \left[ {\begin{array}{*{20}{c}} - f({a_1}\sin {q_1}+ {a_2}\sin {q_1}\cos {q_2}-d_2\cos {q_1})/Z &#x00026; - f({a_2}\cos {q_1}\cos {q_2})/Z \\ f({a_1}\cos {q_1}+ {a_2}\cos {q_1}\cos {q_2}+d_2\sin {q_1})/Z &#x00026; - f({a_2}\sin {q_1}\sin {q_2})/Z &#x00026; \end{array}} \right] \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_97930_Article_Equ14.gif" position="anchor"/></alternatives></disp-formula></p><p>Equation (<xref rid="Equ14" ref-type="disp-formula">14</xref>) is the interaction matrix that relates the joint velocities to the changes in the image coordinates (<italic>u</italic>,&#x000a0;<italic>v</italic>) of the point feature. It captures the sensitivity of the image coordinates to the joint angles. Further, the joint angles are used in visual servoing algorithms to control the robot arm based on the desired changes in the image coordinates.</p></sec></sec><sec id="Sec6"><title>Feature selection</title><sec id="Sec7"><title>Visual features for tracking control of 2-DOF</title><p id="Par27">In this section, the implementation of visual feature extraction and control for a 2-DOF robotic arm to track specific landmarks are done. The chosen landmark for this task is a person&#x02019;s nose tip, which is tracked using IBVS. The process begins with using MediaPipe, a computer vision framework, to detect the position of the moving object in real-time from a video stream. MediaPipe&#x02019;s pose estimation model predicts the 2D coordinates of the moving object, which are then transformed into 3D world coordinates through camera calibration. These 3D coordinates serve as the visual feature for controlling the robotic arm. A visual servoing control loop calculates the required joint angles of the robotic arm based on the error between the current position and the desired position using (<xref rid="Equ14" ref-type="disp-formula">14</xref>). The calculated joint angles are then used to actuate the robotic arm, enabling it to accurately track the moving object as it moves within the video stream. This approach allows for precise and dynamic object tracking with the robotic arm.</p><p id="Par28">To map 2D image coordinates (<italic>u</italic>,&#x000a0;<italic>v</italic>) to 3D world coordinates (<italic>X</italic>,&#x000a0;<italic>Y</italic>,&#x000a0;<italic>Z</italic>) for the given robotic arm with DH parameters (Table <xref rid="Tab1" ref-type="table">1</xref>), camera calibration need to be perform to obtain the intrinsic parameters of the camera and then use the forward kinematics equations for the robotic arm to compute the 3D position. Here are the steps to achieve this:</p><sec id="Sec8"><title>Camera calibration</title><p id="Par29">Camera calibration is a crucial step to estimate the intrinsic parameters of the camera. The important parameters involved in camera calibration are focal lengths <inline-formula id="IEq49"><alternatives><tex-math id="d33e1175">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(f_x, f_y)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq49.gif"/></alternatives></inline-formula>, principal point coordinates <inline-formula id="IEq50"><alternatives><tex-math id="d33e1181">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(c_x, c_y)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq50.gif"/></alternatives></inline-formula>, and lens distortion parameters <inline-formula id="IEq51"><alternatives><tex-math id="d33e1187">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(k_1, k_2, k_3)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq51.gif"/></alternatives></inline-formula>. In this process, firstly, by identifying the known calibration patterns, such as a checkerboard, to capture multiple images, analyzing is done. By analyzing the images, the intrinsic parameters of the camera can be estimated, accurately. The camera calibration parameters are also essential for transforming 2D image coordinates into 3D world coordinates, as such parameters define the camera&#x02019;s internal characteristics to capture the visual information.</p></sec><sec id="Sec9"><title>Obtain 2D image coordinates</title><p id="Par30">After camera calibration, the next step is to extract the 2D image coordinates of a feature point from the captured camera image. This is achieved using MediaPipe, which detects specific landmarks, such as the nose tip, and provides their 2D coordinates (<italic>u</italic>,&#x000a0;<italic>v</italic>) . These coordinates serve as a crucial input for subsequent transformations into 3D coordinates.</p></sec><sec id="Sec10"><title>Convert to homogeneous coordinates</title><p id="Par31">To facilitate the transformation from 2D to 3D coordinates, the 2D image coordinates need to be represented in homogeneous form. This is done by adding a 1 as the third component to the coordinates (<italic>u</italic>,&#x000a0;<italic>v</italic>) , resulting in homogeneous coordinates <inline-formula id="IEq52"><alternatives><tex-math id="d33e1213">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(u', v', 1)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq52.gif"/></alternatives></inline-formula>. This representation is necessary for applying the inverse projection and other mathematical transformations.</p></sec><sec id="Sec11"><title>Inverse projection</title><p id="Par32">The inverse projection step involves obtaining the direction of the ray from the camera&#x02019;s optical center in the 3D world frame. This is achieved by applying the inverse of the camera&#x02019;s intrinsic matrix (<italic>L</italic>) to the homogeneous coordinates <inline-formula id="IEq53"><alternatives><tex-math id="d33e1226">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(u', v', 1)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq52.gif"/></alternatives></inline-formula>. The result is a set of coordinates that represent the direction of the ray in the 3D world frame. This step is crucial for determining the 3D position of the point feature relative to the camera.</p></sec><sec id="Sec12"><title>Compute 3D point</title><p id="Par33">Finally, the 3D position of the end-effector/camera in the world coordinate system is computed using the transformation matrix (<italic>T</italic>) derived from the DH parameters. The forward kinematics equations and the transformation matrix are used to calculate the 3D coordinates (<italic>X</italic>,&#x000a0;<italic>Y</italic>,&#x000a0;<italic>Z</italic>) of the end-effector. The transformation matrix <italic>T</italic> represents the position and orientation of the end-effector relative to the base frame. By extracting the 3D coordinates from this matrix, the position of the end-effector in the world coordinate system can be determined. These values correspond to the position of the end-effector after setting the joint angles <inline-formula id="IEq54"><alternatives><tex-math id="d33e1252">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$q_1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq6.gif"/></alternatives></inline-formula> and <inline-formula id="IEq55"><alternatives><tex-math id="d33e1258">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$q_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq13.gif"/></alternatives></inline-formula> in the robotic arm. By adjusting these joint angles, the camera /end-effector can be positioned to track the movement of the object accurately.</p></sec></sec><sec id="Sec13"><title>Feature based object recognition framework</title><p id="Par34">In the present work, a MediaPipe framework is used as feature based object recognition framework. The presented framework is utilized to extract the point feature, and will be tracking the movement of the facial landmark. The process begins with a pre-trained machine-learning model extensively trained on diverse datasets that recognize intricate patterns. Through feature extraction, the neural network identifies key points representing various facial features, which localizes the object point in 2D image coordinates (<italic>u</italic>,&#x000a0;<italic>v</italic>) . Once MediaPipe processes the input, it outputs the facial landmark information, which includes the object coordinates, OpenCV provide a real time monitoring and pre-process the input from the camera such as resizing, and colour combination with respect to the compatibility of the object point.</p><sec id="Sec14"><title>Camera calibration and coordinate transformation</title><p id="Par35">Subsequently, camera calibration becomes crucial to convert the 2D coordinates to the camera frame and determine intrinsic parameters like focal lengths <inline-formula id="IEq56"><alternatives><tex-math id="d33e1278">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(f_x, f_y)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq49.gif"/></alternatives></inline-formula> and principal point coordinates <inline-formula id="IEq57"><alternatives><tex-math id="d33e1284">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(c_x, c_y)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq50.gif"/></alternatives></inline-formula>. The 2D image coordinates are then converted to homogeneous coordinates <inline-formula id="IEq58"><alternatives><tex-math id="d33e1290">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$[u', v', 1]$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq58.gif"/></alternatives></inline-formula> for further processing. By utilizing the inverse of the camera&#x02019;s intrinsic matrix <inline-formula id="IEq59"><alternatives><tex-math id="d33e1296">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$L^{-1}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq59.gif"/></alternatives></inline-formula> the direction of the ray from the camera&#x02019;s optical center in 3D world coordinates is obtained. The last step would involve using the 3D vector <inline-formula id="IEq60"><alternatives><tex-math id="d33e1302">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$[u, v, 1]^T$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq60.gif"/></alternatives></inline-formula> and the depth information to compute the actual 3D position (<italic>X</italic>,&#x000a0;<italic>Y</italic>,&#x000a0;<italic>Z</italic>) of the object point in the world coordinate system.</p></sec><sec id="Sec15"><title>Detailed process of object recognition framework</title><p id="Par36">MediaPipe systematically extracts object features through a well-defined sequence of steps outlined below in Fig. <xref rid="Fig3" ref-type="fig">3</xref>.<fig id="Fig3"><label>Fig. 3</label><caption><p>MediaPipe moving object point extraction flowchart.</p></caption><graphic xlink:href="41598_2025_97930_Fig3_HTML" id="MO3"/></fig></p><p id="Par37">Initially, the system ingests video frames or images. Face detection is then executed using the Single Shot Multibox Detector framework, known for its efficiency in real-time object detection. Following this, the facial landmarks detection step employs a custom neural network with the &#x0201c;Holistic-Model&#x0201d; technique. This specialized algorithm accurately identifies numerous critical points on the face. The next step is to extract the moving object landmark, which involves accurately locating the corresponding key point within the output of the face landmark detection. This extraction technique is tightly linked to the overall architecture of the holistic model. Finally, the system generates an output with the specific coordinates of the detected moving object<sup><xref ref-type="bibr" rid="CR42">42</xref></sup>. MediaPipe&#x02019;s output includes detailed facial landmark information and accurate coordinates for significant points, particularly those linked with the object.</p></sec><sec id="Sec16"><title>Integration with OpenCV</title><p id="Par38">Following the extraction of object features, OpenCV plays a crucial role in enhancing the workflow by enabling further processing steps. This includes tasks such as creating visual representations, performing additional analytical operations, and seamlessly integrating the collected object detection insights into larger and more advanced computer vision systems. The combination of MediaPipe with OpenCV exemplifies a successful collaboration, demonstrating the integration of DL capabilities for refined object detection in computer vision applications<sup><xref ref-type="bibr" rid="CR43">43</xref></sup>.</p></sec><sec id="Sec17"><title>Application in robotic arm control</title><p id="Par39">Integrating this process with the control of a 2-DOF robotic arm, the extracted 2D coordinates from MediaPipe are transformed into 3D world coordinates through camera calibration. These 3D coordinates serve as the visual feature for controlling the robotic arm. A visual servoing control loop calculates the required joint angles of the robotic arm based on the error between the current position and the desired position. The calculated joint angles are then used to actuate the robotic arm, enabling it to accurately track the moving object as it moves within the video stream. In our control logic, we use the 3D coordinates primarily to control the speed in the <italic>Y</italic> direction. However, for controlling the two robotic arm joints, we rely only on the 2D points. This approach allows for efficient and precise control of the robotic arm&#x02019;s movements, ensuring accurate tracking of the moving object. By following these detailed steps, the system can dynamically and precisely track a moving object, leveraging the strengths of both MediaPipe and OpenCV in a cohesive and effective manner.</p></sec></sec></sec><sec id="Sec18"><title>Proposed vision-based tracking control scheme</title><p id="Par40">The IBVS tracking control system follows a systematic procedure. It starts by utilizing a camera to monitor the real-time position of an object, as shown in Fig. <xref rid="Fig4" ref-type="fig">4</xref>. Subsequently, the system calculates the positional error by comparing it with the end effector&#x02019;s position. Utilizing this error data, the controller then generates control commands for the joints of 2-DOF robotic arms. These drives promptly respond by adjusting the joint angles, a critical step to minimize the error and attain the desired end-effector position.<fig id="Fig4"><label>Fig. 4</label><caption><p>Block diagram of IBVS tracking control system.</p></caption><graphic xlink:href="41598_2025_97930_Fig4_HTML" id="MO4"/></fig></p><p id="Par41">In proposed vision-based tracking control scheme the goal is to control the 2-dof robotic arm so that the image coordinates (<italic>u</italic>,&#x000a0;<italic>v</italic>) matches the desired image coordinates <inline-formula id="IEq61"><alternatives><tex-math id="d33e1375">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(u^*, v^*)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq61.gif"/></alternatives></inline-formula>. This is achieved by inverse kinematics given below<disp-formula id="Equ15"><label>15</label><alternatives><tex-math id="d33e1381">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} \dot{q} = {L^ + }\left[ {\begin{array}{*{20}{c}} {\dot{u}} \\ {\dot{v}} \end{array}} \right] \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_97930_Article_Equ15.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq62"><alternatives><tex-math id="d33e1388">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$L^+$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq62.gif"/></alternatives></inline-formula> is the pseudo-inverse of the interaction/ Jacobin matrix (<xref rid="Equ14" ref-type="disp-formula">14</xref>), <inline-formula id="IEq63"><alternatives><tex-math id="d33e1398">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\dot{u}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq63.gif"/></alternatives></inline-formula> and <inline-formula id="IEq64"><alternatives><tex-math id="d33e1404">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\dot{v}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq64.gif"/></alternatives></inline-formula> are the required changes in image coordinates, and <inline-formula id="IEq65"><alternatives><tex-math id="d33e1410">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\dot{q}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq65.gif"/></alternatives></inline-formula> is the joint velocity command. To move the robot towards a moving target in the image the error between desired and current image coordinates can be computed using,<disp-formula id="Equ16"><label>16</label><alternatives><tex-math id="d33e1416">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} e = \left[ {\begin{array}{*{20}{c}} {{u^*} - u} \\ {{v^*} - v} \end{array}} \right] \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_97930_Article_Equ16.gif" position="anchor"/></alternatives></disp-formula></p><p>The control law can be defined as<disp-formula id="Equ17"><label>17</label><alternatives><tex-math id="d33e1424">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} \left[ {\begin{array}{*{20}{c}} {\dot{u}} \\ {\dot{v}} \end{array}} \right] = - \lambda e \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_97930_Article_Equ17.gif" position="anchor"/></alternatives></disp-formula>where, <inline-formula id="IEq66"><alternatives><tex-math id="d33e1431">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\lambda$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq66.gif"/></alternatives></inline-formula> is a positive gain. Using (<xref rid="Equ15" ref-type="disp-formula">15</xref>), joint velocities can be computed using<disp-formula id="Equ18"><label>18</label><alternatives><tex-math id="d33e1440">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} \dot{q} = {L^ + }( - \lambda e) \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_97930_Article_Equ18.gif" position="anchor"/></alternatives></disp-formula></p><p>Equation (<xref rid="Equ18" ref-type="disp-formula">18</xref>), updates joint position by integrating <inline-formula id="IEq67"><alternatives><tex-math id="d33e1451">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\dot{q}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq65.gif"/></alternatives></inline-formula> over time. In Fig. <xref rid="Fig5" ref-type="fig">5</xref> shown the proposed IBVS controller, in which the process to track the moving object consisting of three main stages. Initially, the camera is observing the moving object. The visual feature from the moving object is extracted by feature-based object detection framework (section &#x0201c;<xref rid="Sec13" ref-type="sec">Feature based object recognition framework</xref>&#x0201d;) in later stage. Incorporating these extracted visual features and desired feature, feature error is determined. The third stage employs an IBVS control algorithm to compute the necessary joint angles for achieving the desired position. This algorithm strategically divides the field of view into specific sections, assigning each section with corresponding joint angles. Thereby minimizing the error between the object and the end-effector position, bringing it to zero. The entire process is visually depicted in Fig. <xref rid="Fig5" ref-type="fig">5</xref>.<fig id="Fig5"><label>Fig. 5</label><caption><p>Stepwise explanation of IBVS tracking process.</p></caption><graphic xlink:href="41598_2025_97930_Fig5_HTML" id="MO5"/></fig></p><p id="Par42">The IBVS tracking control scheme shown in Fig. <xref rid="Fig4" ref-type="fig">4</xref> consists of a hardware and a software component. The software component MediaPipe framework is used as feature-based object recognition framework, which observe the moving object from the camera to detect the object&#x02019;s position. Subsequently, it calculates the necessary joint angles from the feature error to attain that position and sends commands from the controller designed using ATmega328P based development board to control the joints of the 2-DOF robotic arm. The simulation and experimental studies are carried out and presented in section &#x0201c;<xref rid="Sec20" ref-type="sec">Results and discussion</xref>&#x0201d; to validate the proposed IBVS tracking contol scheme.</p><sec id="Sec19"><title>Stability analysis</title><p id="Par43">To analyze stability, define a Lyapunov function candidate:<disp-formula id="Equ19"><label>19</label><alternatives><tex-math id="d33e1486">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} V=\frac{1}{2}e^Te \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_97930_Article_Equ19.gif" position="anchor"/></alternatives></disp-formula>which represents the squared image feature error. Time derivative of (<xref rid="Equ19" ref-type="disp-formula">19</xref>) can be written as<disp-formula id="Equ20"><label>20</label><alternatives><tex-math id="d33e1496">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} \dot{V}=e^T \dot{e} \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_97930_Article_Equ20.gif" position="anchor"/></alternatives></disp-formula></p><p>Using (<xref rid="Equ18" ref-type="disp-formula">18</xref>), the image feature dynamics are given by <inline-formula id="IEq68"><alternatives><tex-math id="d33e1507">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\dot{e} = -LL^ + \lambda e$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq68.gif"/></alternatives></inline-formula>. Above Eq. (<xref rid="Equ20" ref-type="disp-formula">20</xref>) can be represented as.<disp-formula id="Equ21"><label>21</label><alternatives><tex-math id="d33e1516">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} \dot{V}=-\lambda e^T LL^ + e \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2025_97930_Article_Equ21.gif" position="anchor"/></alternatives></disp-formula></p><p>Since, <inline-formula id="IEq69"><alternatives><tex-math id="d33e1524">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$LL^+$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq69.gif"/></alternatives></inline-formula> is semi-positive definite, and <inline-formula id="IEq70"><alternatives><tex-math id="d33e1530">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\lambda$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq66.gif"/></alternatives></inline-formula> is positive, we conclude the <inline-formula id="IEq71"><alternatives><tex-math id="d33e1536">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\dot{V} \le 0$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq71.gif"/></alternatives></inline-formula>, which ensure that V is non-increasing. This implies global asymptotic stability, meaning the system will converge to the desired image coordinates. Also, if <inline-formula id="IEq72"><alternatives><tex-math id="d33e1542">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\lambda$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq66.gif"/></alternatives></inline-formula> is large, convergence is fast, and if <inline-formula id="IEq73"><alternatives><tex-math id="d33e1548">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\lambda$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq66.gif"/></alternatives></inline-formula> is small, convergence is slow. This ensures that the robot smoothly tracks the moving target.</p></sec></sec><sec id="Sec20"><title>Results and discussion</title><p id="Par44">In this section, the performance of the proposed IBVS tracking controller has been analyzed by simulation and experimental studies. The simulation analysis of the proposed controller is evaluated in the CoppeliaSim simulator<sup><xref ref-type="bibr" rid="CR44">44</xref></sup>. Further, the development of the experimental setup is presented followed by the performance and robustness of the proposed IBVS tracking controller is validated by performing experimental studies on the 2-DOF Robotic arm.</p><sec id="Sec21"><title>Software and hardware components</title><p id="Par45">This section outlines the hardware and software components utilized in both, simulation and experimental studies. The software components include the CoppeliaSim simulator, MediaPipe framework, OpenCV library and Arduino Integrated Development Environment (IDE). The hardware components of the experimental setup consists of a 2-DOF robotics arm, an ATmega328P-based controller, and a personal computer (PC). The detailed description of software and hardware components are presented in Tables <xref rid="Tab2" ref-type="table">2</xref> and <xref rid="Tab3" ref-type="table">3</xref>, respectively.<table-wrap id="Tab2"><label>Table 2</label><caption><p>Software tools.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Software tools</th><th align="left">Description</th></tr></thead><tbody><tr><td align="left">CoppeliaSim Simulator</td><td align="left">The CoppeliaSim Simulator is an open-source simulator utilize for vision-based tracking of a 2-DOF robot arm. It also offers a versatile research environment, an accurate dynamic model, and interaction with ViSP for vision-based tracking control of a 2-DOF robotic arm</td></tr><tr><td align="left">OpenCV library</td><td align="left">The OpenCV library is one of the well known open-source machine vision library. It detects the outlines and center of an item on a workstation. Additionally, it also provides several functions for machine vision algorithms, including contouring, Canny Edge, grayscale, and Gaussian filter</td></tr><tr><td align="left">MediaPipe framework</td><td align="left">The MediaPipe is an open-source framework which is generally used to perform real-time perception tasks including object detection and tracking. MediaPipe is coupled and configured with OpenCV to improve the feature extraction for better vision-based tracking control. By utilizing OpenCV and MediaPipe, a system can be created to recognize and track objects in real-time which allows for precise control of a 2-DOF robot arm</td></tr><tr><td align="left">Arduino IDE</td><td align="left">The Arduino IDE is utilized for vision-based tracking control of a 2-DOF robot arm by integrating computer vision algorithms. It utilizes a vision system with IBVS. The main advantages of Arduino IDE are convenient operation, fast analyzing rate, stable operation, high accuracy, etc.</td></tr></tbody></table></table-wrap><table-wrap id="Tab3"><label>Table 3</label><caption><p>Hardware components.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Hardware components</th><th align="left">Description</th></tr></thead><tbody><tr><td align="left">2-DOF robotic arm</td><td align="left">A 2-DOF robotic arm is applied for object tracking. This specialized arm, equipped with a camera on its end effector, accurately observes object movements in both horizontal and vertical directions. The camera facilitates smooth and uninterrupted tracking of the object, highlighting the indispensable nature of the 2-DOF robotic arm as a fundamental hardware component in our system</td></tr><tr><td align="left">ATmega328P based Controller</td><td align="left">The control system incorporates an Arduino UNO a ATmega328P based Development Board, recognized for its open-source architecture and user-friendly design. Arduino Uno is the key component in vision-based tracking control of a 2-DOF robot arm include integration of computer vision, vision-based control strategy, and enhanced performance<sup><xref ref-type="bibr" rid="CR45">45</xref></sup></td></tr><tr><td align="left">Personal computer (PC)</td><td align="left">It is equipped with Intel(R) Xeon(R) E-2124 processor operates at 3.30GHz clock cycle. PC is used to execute IBVS control algorithm using OpenCV, MediaPipe and facilitate integration of software tool with hardware components to achieve visual servoing task</td></tr></tbody></table></table-wrap></p></sec><sec id="Sec22"><title>Simulation results</title><p id="Par46">In this study, a comprehensive simulation was conducted utilizing the CoppeliaSim simulator<sup><xref ref-type="bibr" rid="CR44">44</xref></sup> to replicate the dynamics of a real-world system, specifically a 2-DOF robotic arm designed to track the movement of an object. In the present study, a sphere is considered an object that resembles a nose tip. Figure <xref rid="Fig6" ref-type="fig">6</xref> shows the 3D Computer-aided design (CAD) model of the 2-DOF robotic arm with different views. In the present simulation study, two revolute joints were implemented in the simulated environment to mimic the mechanical structure of the 2-DOF robotic arm shown in Fig. <xref rid="Fig6" ref-type="fig">6</xref>. The IBVS tracking control algorithm implemented using OpenCV and MediaPipe successfully generated real-time <italic>x</italic> and <italic>y</italic> coordinate values for the object&#x02019;s movement along a predefined path. By implementing a IBVS tracking algorithm, the simulated robotic arm effectively followed the object&#x02019;s trajectory. The real-time tracking of the object&#x02019;s coordinates and the adherence to the predefined path showcase the robustness and accuracy of the tracking algorithm within the CoppeliaSim environment.<fig id="Fig6"><label>Fig. 6</label><caption><p>3D CAD model of 2-DOF robotic arm.</p></caption><graphic xlink:href="41598_2025_97930_Fig6_HTML" id="MO6"/></fig></p><p id="Par47">In the CoppeliaSim environment, a random path has been generated alongside a spherical object resembling a nose tip. Accompanying this setup are two revolute joints representing the structure of a 2-DOF robotic arm, as depicted in Fig. <xref rid="Fig7" ref-type="fig">7</xref>.<fig id="Fig7"><label>Fig. 7</label><caption><p>Path, object and 2-DOF robotic arm developed in CoppeliaSim environment.</p></caption><graphic xlink:href="41598_2025_97930_Fig7_HTML" id="MO7"/></fig></p><p id="Par48">In the IBVS tracking algorithm implementation, MediaPipe and OpenCV libraries were utilized to capture real-time positional data of the object. The <italic>x</italic> and <italic>y</italic> coordinate values of the object were extracted, as shown in Fig. <xref rid="Fig8" ref-type="fig">8</xref>. Following this, the data was transmitted to the CoppeliaSim debug console via a Remote API connection established between VSCode and CoppeliaSim. This integration facilitates a structured exchange of information between the Python environment and the CoppeliaSim simulation, enabling seamless updates and interactions based on the live data acquired through object tracking.</p><p id="Par49">In the Lua script embedded within the child script of the visual sensor, an IBVS tracking algorithm has been developed to control the joint velocity based on the received <italic>x</italic> and <italic>y</italic> coordinate values. This algorithm ensures continuous tracking of the object. The effectiveness of the tracking algorithm is demonstrated in Fig. <xref rid="Fig9" ref-type="fig">9</xref>, where a plot illustrates the variation of joint velocity for both yaw and pitch joints over time. As the object is detected and tracked, the joint velocities adjust accordingly, ultimately reaching zero velocity once the object is stationary. This behavior confirms the successful tracking of the moving object, as reflected by the diminishing joint velocities. Finally, Fig. <xref rid="Fig10" ref-type="fig">10</xref> provides a comprehensive view of the entire CoppeliaSim environment. In the bottom left corner, continuous publication of <italic>x</italic> and <italic>y</italic> coordinate values is evident shown in Fig. <xref rid="Fig10" ref-type="fig">10</xref>, accompanied by the concurrent display of the graph and visual sensor output. These visualizations collectively affirm the successful implementation of our tracking algorithm in the simulated environment, reinforcing the robustness and efficacy of our approach.<fig id="Fig8"><label>Fig. 8</label><caption><p>CoppeliaSim console showing x and y coordinate values of the object.</p></caption><graphic xlink:href="41598_2025_97930_Fig8_HTML" id="MO8"/></fig><fig id="Fig9"><label>Fig. 9</label><caption><p>Plot of joint velocity v/s time (red indicates yaw velocity and blue indicates pitch velocity).</p></caption><graphic xlink:href="41598_2025_97930_Fig9_HTML" id="MO9"/></fig><fig id="Fig10"><label>Fig. 10</label><caption><p>Comprehensive view of the entire coppeliaSim environment.</p></caption><graphic xlink:href="41598_2025_97930_Fig10_HTML" id="MO10"/></fig></p></sec><sec id="Sec23"><title>Experimental results</title><p id="Par50">The 2-DOF robotic arm for tracking moving object has achieved a significant milestone in seamlessly integrating a 2-DOF robotic arm with an ATmega328P based Controller, effectively transforming it into a dynamic system capable of tracking a moving object. In this case, the object of interest is a person&#x02019;s nose, detected through a camera affixed to the robotic arm&#x02019;s frame. Operating initially in an idle state, the robotic arm autonomously sprang into action upon the detection of the nose, accurately mirroring its movements. The integration leveraged the Mediapipe framework<sup><xref ref-type="bibr" rid="CR42">42</xref></sup> to extract real-time nose tip coordinates from a video stream. Calibration of the camera enabled the translation of 2D coordinates into their 3D counterparts, ensuring precise tracking in the physical world. A custom algorithm, tailored for object detection and localization, continuously monitored the object&#x02019;s position and issued precise commands to the controller. This orchestration facilitated synchronized movements of the robotic arm in tandem with the person&#x02019;s nose. The successful real-time tracking of the nose tip, coupled with the validation of results in real-world scenarios, underscores the robustness and versatility of the implemented IBVS based tracking control system. This accomplishment holds promising implications for applications requiring dynamic object tracking within the realm of robotics. Figure <xref rid="Fig11" ref-type="fig">11</xref> shows the signal flow diagram of experimental setup. Figure <xref rid="Fig12" ref-type="fig">12</xref> shows the experimental setup. In Fig. <xref rid="Fig12" ref-type="fig">12</xref>, personal computer (PC) with IBVS control algorithm composed of OpenCV library and MediaPipe framework facilitate integration of software tool with hardware components (2-DOF robotic arm) to achieve visual servoing task. Figure <xref rid="Fig13" ref-type="fig">13</xref> shows the real-time output of nose position w.r.t <italic>x</italic> and <italic>y</italic> coordinates obtained by feature based object detection algorithm and IBVS tracking controller to control the 2-DOF robotic arm.<fig id="Fig11"><label>Fig. 11</label><caption><p>Signal flow of experimental setup.</p></caption><graphic xlink:href="41598_2025_97930_Fig11_HTML" id="MO11"/></fig><fig id="Fig12"><label>Fig. 12</label><caption><p>Experimental setup.</p></caption><graphic xlink:href="41598_2025_97930_Fig12_HTML" id="MO12"/></fig><fig id="Fig13"><label>Fig. 13</label><caption><p>Serial port publishing position of the moving object.</p></caption><graphic xlink:href="41598_2025_97930_Fig13_HTML" id="MO13"/></fig></p><p id="Par51">The methodology involves a Python based IBVS algorithm composed of OpenCV libraries and MediaPipe framework to extract the moving object position in a live video feed from a camera. Once the moving object coordinates are detected, they are translated into specific &#x02018;z&#x02019; values based on predefined ranges. These &#x02018;z&#x02019; values are then sent to an ATmega328P based microcontroller via serial communication, establishing a direct interface between the Python and Arduino codes. In the Arduino code, the received &#x02018;z&#x02019; values are parsed and utilized to control 2-DOF robotic arm. This communication link allows the controller to interpret the moving object position data from Python based IBVS control algorithm and translate it into corresponding movements of the joints, resulting in a responsive and interactive system where moving object directly influence physical actions.</p></sec><sec id="Sec24"><title>Discussion</title><p id="Par52">The simulation and experimental results provide clear and compelling evidence that the object tracking system is effective. The outcome demonstrates that the robotic arm successfully tracks a continuously moving object. This is evident from the plot shown in Fig. <xref rid="Fig9" ref-type="fig">9</xref>, which shows that the joint velocities of the robotic arm come to zero once the object is tracked, indicating that the arm has reached the desired position and is no longer adjusting its movement. Additionally, Fig. <xref rid="Fig10" ref-type="fig">10</xref> presents the camera view in bottom right corner, clearly showing the object centered in the field of view, confirming that the object is being accurately tracked.</p><p id="Par53">Figures <xref rid="Fig8" ref-type="fig">8</xref>, <xref rid="Fig9" ref-type="fig">9</xref>, <xref rid="Fig10" ref-type="fig">10</xref>, <xref rid="Fig11" ref-type="fig">11</xref>, <xref rid="Fig12" ref-type="fig">12</xref> and <xref rid="Fig13" ref-type="fig">13</xref> further support this by illustrating that the object coordinates are continuously tracked and published. These figures show that the coordinate values remain consistent when the object is at rest and tracking is complete, which aligns with the plot shown in Fig. <xref rid="Fig9" ref-type="fig">9</xref> where the joint angles are zero once the object tracking is complete. This consistent results across simulation and experimental results validates the conclusion that the object tracking system is effective. The robotic arm&#x02019;s ability to bring joint velocities to zero and maintain the object in the center of the field of view demonstrates precise and reliable tracking performance.</p></sec><sec id="Sec25"><title>Discussion on data-driven learning techniques</title><p id="Par54">In the literature, recent advancements in data-driven learning have significantly impacted the field of robust control, particularly in adaptive cruise control and nonlinear system regulation. In<sup><xref ref-type="bibr" rid="CR46">46</xref></sup>, authors explored adaptive robust control using data-driven learning for systems with significant uncertainties. In this research work, authors demonstrated about data-driven learning in mitigation of modeling errors and disturbances by offering robust performance in sensor-driven systems. Extending the available techniques, authors developed an adaptive Q-learning-based <inline-formula id="IEq74"><alternatives><tex-math id="d33e1829">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\text{H}}_{\infty }$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq74.gif"/></alternatives></inline-formula> control method in<sup><xref ref-type="bibr" rid="CR47">47</xref></sup> for continuous-time nonlinear systems, which leverages reinforcement learning (RL) to manage non-linearities and enhance system adaptability without prior knowledge of system dynamics. Further in<sup><xref ref-type="bibr" rid="CR48">48</xref></sup>, authors proposed a model-free <inline-formula id="IEq75"><alternatives><tex-math id="d33e1843">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\text{H}}_\infty$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq75.gif"/></alternatives></inline-formula> prescribed performance control strategy using policy learning, which eliminates the need for explicit system models and optimizes real-time control adaptability, thus handling system disturbances more efficiently. Additionally, in<sup><xref ref-type="bibr" rid="CR49">49</xref></sup>, authors introduced a framework for data-driven <inline-formula id="IEq76"><alternatives><tex-math id="d33e1854">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\text{H}}_\infty$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq75.gif"/></alternatives></inline-formula> control of adaptive cruise control systems, emphasizing robustness and stability while managing uncertainties and external disturbances. The discussed approaches are especially relevant in dynamic vehicular environments where traditional model-based techniques may suffer with some disadvantages. Collectively, the elaborated studies illustrate the potential of integrating data-driven learning techniques such as Q-learning, policy learning, and model-free control into robotic and control systems, laying a foundation for improving adaptability and robustness in dynamic and uncertain environments.</p><p id="Par55">Recent advancements in techniques such as RL and model-free control offer significant opportunities to optimize the performance of our 2-DOF robotic arm in dynamic and unpredictable environments. By integrating these methods with our current IBVS scheme, the robotic arm could gain the ability to adapt more effectively to environmental changes, such as sudden object occlusions or visibility issue or varying lighting conditions, which traditional IBVS may struggle to manage. RL, in particular, could be employed to enable the system to learn optimal control actions through trial-and-error interactions with the environment, improving both robustness and adaptability<sup><xref ref-type="bibr" rid="CR17">17</xref></sup>. Model-free control, which eliminates the need for a detailed dynamic model, would further enhance the system&#x02019;s flexibility in scenarios with partial or uncertain state information.</p><p id="Par56">Building on these advancements, we recognize the potential of hybrid approaches that combine traditional IBVS with data-driven techniques, such as neural networks, to address challenges like visibility issue, disturbance rejection and noise handling. The present work is capable to handle image noise and moderate external disturbance. However, the proposed control scheme may fail if object is not present in the field-of-view (FoV). Many data-driven learning based approach with VS has been proposed to deal with complex manipulation task such as target tracking<sup><xref ref-type="bibr" rid="CR50">50</xref></sup>, object manipulation<sup><xref ref-type="bibr" rid="CR51">51</xref></sup>, controlling mobile robot<sup><xref ref-type="bibr" rid="CR19">19</xref>,<xref ref-type="bibr" rid="CR52">52</xref>,<xref ref-type="bibr" rid="CR53">53</xref></sup>, robot manipulator<sup><xref ref-type="bibr" rid="CR54">54</xref>&#x02013;<xref ref-type="bibr" rid="CR56">56</xref></sup>, 2-DOF Helicopter System<sup><xref ref-type="bibr" rid="CR57">57</xref>&#x02013;<xref ref-type="bibr" rid="CR59">59</xref></sup> and servo mechanism<sup><xref ref-type="bibr" rid="CR60">60</xref></sup>. Also, RL<sup><xref ref-type="bibr" rid="CR17">17</xref>,<xref ref-type="bibr" rid="CR61">61</xref></sup> and Deep RL (DRL)<sup><xref ref-type="bibr" rid="CR62">62</xref>&#x02013;<xref ref-type="bibr" rid="CR64">64</xref></sup> have been applied in robotic manipulation task. These brief literature revels that neural networks are particularly well-suited for learning and compensating for non-linearities and uncertainties that may not be fully captured by conventional IBVS algorithms, especially in complex, dynamic environments. By embedding such learning mechanisms into the control loop, the system could dynamically adjust the position to keep the object within FoV, adapt to environmental disturbances and sensor noise, thereby improving overall stability and precision.</p><p id="Par57">The vision-based tracking control scheme presented in section &#x0201c;<xref rid="Sec18" ref-type="sec">Proposed vision-based tracking control scheme</xref>&#x0201d; does not guarantee the retention of visual features within the camera&#x02019;s FoV. Additionally, higher controller gains lead to increased input torque, causing visual features to move out of the FoV more rapidly, resulting in system instability and reduced accuracy . To address this visibility issue, a hybrid control scheme can be implemented. The proposed hybrid control scheme will incorporate a RL controller, which can be integrated into the existing control framework to address visibility issues. In the proposed hybrid control scheme, the RL controller will adjusts the arm&#x02019;s position to bring the object within the FoV by selecting the optimal control input, after which the existing control scheme completes the visual servoing task. This hybrid control architecture would enable the robotic arm to anticipate and correct for perturbations that could degrade visual tracking or control accuracy.</p></sec><sec id="Sec26"><title>Comparison analysis</title><p id="Par58">In this work, the important difference between the proposed control scheme as compared to other schemes<sup><xref ref-type="bibr" rid="CR29">29</xref>&#x02013;<xref ref-type="bibr" rid="CR32">32</xref>,<xref ref-type="bibr" rid="CR35">35</xref>,<xref ref-type="bibr" rid="CR37">37</xref>,<xref ref-type="bibr" rid="CR39">39</xref></sup> is presented as follows. First, the present work utilizes a DL-based approach for efficient visual feature extraction to address the limitation of IBVS unlike<sup><xref ref-type="bibr" rid="CR29">29</xref>&#x02013;<xref ref-type="bibr" rid="CR32">32</xref>,<xref ref-type="bibr" rid="CR35">35</xref>,<xref ref-type="bibr" rid="CR39">39</xref></sup>. However, in<sup><xref ref-type="bibr" rid="CR37">37</xref></sup>, a DRL controller is used to learn the control policy for a robotic arm. Second, the integration of machine vision and automatic control technology, combined with a novel dual-coordinate approach utilizing both 2D and 3D spatial information, enhances object detection and localization, effectively addressing the limitations of external perception in handling sudden situations faced by other control methods. In conclusion, the proposed vision-based tracking control for 2-DOF robotic arms offers advantages such as improved control and efficiency, real cooperation of two arms, and integration with machine vision similar to<sup><xref ref-type="bibr" rid="CR29">29</xref>&#x02013;<xref ref-type="bibr" rid="CR32">32</xref>,<xref ref-type="bibr" rid="CR35">35</xref>,<xref ref-type="bibr" rid="CR37">37</xref>,<xref ref-type="bibr" rid="CR39">39</xref></sup>.</p></sec><sec id="Sec27"><title>Safety aspects of proposed scheme</title><p id="Par59">The proposed control scheme ensures safety through multiple robust mechanisms. Firstly, the implementation of a powerful DL framework like MediaPipe for feature extraction enhances a high level of accuracy and reliability in object detection and tracking. MediaPipe&#x02019;s pre-trained models, trained on diverse datasets, can recognize intricate patterns and extract point features that remain robust across varying conditions, including changes in lighting, background clutter, and occlusions. The DL models in MediaPipe are trained on extensive datasets, which include a wide variety of conditions and environments, enhancing their ability to generalize and perform reliably in real-world applications. This robustness ensures about consistency and accuracy of a system such that it can be easily identifies the target feature by significantly reducing the risk of detection errors.</p><p id="Par60">Further, the control logic in this approach is designed to be both efficient and reliable. It relies solely on the coordinates extracted from MediaPipe to assign joint angles to the robotic arm. This simplified approach minimizes the complexity of the control system by reducing the likelihood of software bugs or malfunctions. The utility of 2D coordinates to control the joint angles and the 3D coordinates to regulate the speed confirms that the system achieves precise and responsive movements. This dual-coordinate approach enhances the accuracy of the robotic arm&#x02019;s actions, ensuring that it can safely and effectively track the moving object.</p><p id="Par61">Moreover, real-time feedback integration within the control loop allows continuous monitoring and adjustment based on the object&#x02019;s position. This dynamic adaptability enables the robotic arm to respond swiftly to environmental changes, ensuring stable and reliable operation. Overall, the combination of advanced DL techniques, robust feature extraction, and a simple yet effective control logic contributes to the safety and reliability of the proposed system.</p></sec></sec><sec id="Sec28"><title>Conclusion and future scope</title><p id="Par62">The presented study proposes IBVS-based innovative tracking control of a 2-DOF robotic arm to overcome the challenges related to sensing and stability concerns in real-time object tracking with robot manipulator. The proposed control scheme integrates a precise deep learning based moving object detection algorithm with an efficient IBVS tracking controller to achieve the visual servoing task. The feature-based object detection algorithm is utilizes OpenCV libraries to process the input image data. Moreover, the MediaPipe framework incorporated a deep learning approach to detect the visual feature from moving objects by ensuring robust and adaptive tracking performance. Further, the selected deep learning based features address the issues associated with the IBVS approach. This proposed scheme was thoroughly investigated through simulations and real-time experiments, yielding expected results with the successful tracking of the moving object. The developed IBVS tracking control algorithm, driven by error feedback in both directional coordinates, demonstrated the system&#x02019;s ability to continuously track the object with remarkable precision.</p><p id="Par63">In the future, enhancing the proposed control scheme with data-driven learning techniques can improve the robustness and adaptability of object tracking. The proposed control scheme can also be applied to perform various tasks under different conditions to cater to industrial and medical applications.</p></sec></body><back><fn-group><fn><p>The original online version of this Article was revised: In the original version of this Article, Santanu Kumar Dash was omitted as a corresponding author. Correspondence and requests for materials should also be addressed to: santanu4129@gmail.com.</p></fn><fn><p><bold>Publisher&#x02019;s note</bold></p><p>Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></fn><fn><p><bold>Change history</bold></p><p>5/21/2025</p><p>A Correction to this paper has been published: 10.1038/s41598-025-02633-4</p></fn></fn-group><ack><title>Acknowledgements</title><p>The authors would like to acknowledge the Robotics and E-Yantra (Embedded System and Robotics) Laboratory of the Mechatronics department, Manipal Institute of Technology, Manipal for their support and for providing the required apparatus to carry out the experimental work.</p></ack><notes notes-type="author-contribution"><title>Author contributions</title><p>All authors contributed to the study&#x02019;s conception and design. U.K.S., M.K.S., A.K., M.M.P., performed material preparation, data collection, and analysis. The first draft of the manuscript was written by U.K.S., M.K.S., A.K., M.M.P. and extended by A.J., U.K.Y. and S.K.D.. U.K.S., M.K.S., A.K., and M.M.P. contributed simulations and experimental evaluation. All authors read and approved the final manuscript.</p></notes><notes notes-type="funding-information"><title>Funding</title><p>Open access funding provided by Manipal Academy of Higher Education, Manipal</p><p>No funds, grants, or other support was received.</p></notes><notes notes-type="data-availability"><title>Data availability</title><p>The data used and/or analyzed during the current study are available from the corresponding author upon reasonable request.</p></notes><notes><title>Declarations</title><notes id="FPar1" notes-type="COI-statement"><title>Competing interests</title><p id="Par68">The authors declare no competing interests.</p></notes><notes id="FPar2"><title>Ethics</title><p id="Par69">This research study did not involve any human participants or animals, and therefore did not require ethical approval.</p></notes></notes><ref-list id="Bib1"><title>References</title><ref id="CR1"><label>1.</label><citation-alternatives><element-citation id="ec-CR1" publication-type="journal"><person-group person-group-type="author"><name><surname>Kim</surname><given-names>B</given-names></name><name><surname>Neville</surname><given-names>C</given-names></name></person-group><article-title>Accuracy and feasibility of a novel fine hand motor skill assessment using computer vision object tracking</article-title><source>Sci. Rep.</source><year>2023</year><volume>13</volume><fpage>1</fpage><lpage>14</lpage><pub-id pub-id-type="doi">10.1038/s41598-023-29091-0</pub-id><pub-id pub-id-type="pmid">36593249</pub-id>
+</element-citation><mixed-citation id="mc-CR1" publication-type="journal">Kim, B. &#x00026; Neville, C. Accuracy and feasibility of a novel fine hand motor skill assessment using computer vision object tracking. <italic>Sci. Rep.</italic><bold>13</bold>, 1&#x02013;14. 10.1038/s41598-023-29091-0 (2023).<pub-id pub-id-type="pmid">36593249</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR2"><label>2.</label><citation-alternatives><element-citation id="ec-CR2" publication-type="journal"><person-group person-group-type="author"><name><surname>Zhen</surname><given-names>SC</given-names></name><name><surname>Li</surname><given-names>R</given-names></name><name><surname>Liu</surname><given-names>X</given-names></name><name><surname>Chen</surname><given-names>YH</given-names></name></person-group><article-title>Advanced robust control design and experimental verification for trajectory tracking of model-based uncertain collaborative robots</article-title><source>Meas. Sci. Technol.</source><year>2024</year><pub-id pub-id-type="doi">10.1088/1361-6501/ad179d</pub-id></element-citation><mixed-citation id="mc-CR2" publication-type="journal">Zhen, S. C., Li, R., Liu, X. &#x00026; Chen, Y. H. Advanced robust control design and experimental verification for trajectory tracking of model-based uncertain collaborative robots. <italic>Meas. Sci. Technol.</italic>. 10.1088/1361-6501/ad179d (2024).</mixed-citation></citation-alternatives></ref><ref id="CR3"><label>3.</label><citation-alternatives><element-citation id="ec-CR3" publication-type="journal"><person-group person-group-type="author"><name><surname>Shah</surname><given-names>R</given-names></name><name><surname>Pandey</surname><given-names>AB</given-names></name></person-group><article-title>Concept for automated sorting robotic arm</article-title><source>Procedia Manuf.</source><year>2018</year><volume>20</volume><fpage>400</fpage><lpage>405</lpage><pub-id pub-id-type="doi">10.1016/j.promfg.2018.02.058</pub-id></element-citation><mixed-citation id="mc-CR3" publication-type="journal">Shah, R. &#x00026; Pandey, A. B. Concept for automated sorting robotic arm. <italic>Procedia Manuf.</italic><bold>20</bold>, 400&#x02013;405. 10.1016/j.promfg.2018.02.058 (2018).</mixed-citation></citation-alternatives></ref><ref id="CR4"><label>4.</label><citation-alternatives><element-citation id="ec-CR4" publication-type="book"><person-group person-group-type="editor"><name><surname>Sharma</surname><given-names>S</given-names></name><name><surname>Subudhi</surname><given-names>B</given-names></name><name><surname>Sahu</surname><given-names>UK</given-names></name></person-group><source>Intelligent Control, Robotics, and Industrial Automation</source><year>2023</year><edition>1</edition><publisher-loc>Singapore</publisher-loc><publisher-name>Springer</publisher-name></element-citation><mixed-citation id="mc-CR4" publication-type="book">Sharma, S. et al. (eds) <italic>Intelligent Control, Robotics, and Industrial Automation</italic> 1st edn. (Springer, Singapore, 2023).</mixed-citation></citation-alternatives></ref><ref id="CR5"><label>5.</label><citation-alternatives><element-citation id="ec-CR5" publication-type="journal"><person-group person-group-type="author"><name><surname>Konecny</surname><given-names>J</given-names></name><etal/></person-group><article-title>Industrial camera model positioned on an effector for automated tool center point calibration</article-title><source>Sci. Rep.</source><year>2024</year><volume>14</volume><fpage>1</fpage><lpage>16</lpage><pub-id pub-id-type="doi">10.1038/s41598-023-51011-5</pub-id><pub-id pub-id-type="pmid">38167627</pub-id>
+</element-citation><mixed-citation id="mc-CR5" publication-type="journal">Konecny, J. et al. Industrial camera model positioned on an effector for automated tool center point calibration. <italic>Sci. Rep.</italic><bold>14</bold>, 1&#x02013;16. 10.1038/s41598-023-51011-5 (2024).<pub-id pub-id-type="pmid">38167627</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR6"><label>6.</label><citation-alternatives><element-citation id="ec-CR6" publication-type="journal"><person-group person-group-type="author"><name><surname>Abdullah-Al-Noman</surname><given-names>M</given-names></name><name><surname>Eva</surname><given-names>AN</given-names></name><name><surname>Yeahyea</surname><given-names>TB</given-names></name><name><surname>Khan</surname><given-names>R</given-names></name></person-group><article-title>Computer vision-based robotic arm for object color, shape, and size detection</article-title><source>J. Robot. Control (JRC)</source><year>2022</year><volume>3</volume><fpage>180</fpage><lpage>186</lpage><pub-id pub-id-type="doi">10.18196/jrc.v3i2.13906</pub-id></element-citation><mixed-citation id="mc-CR6" publication-type="journal">Abdullah-Al-Noman, M., Eva, A. N., Yeahyea, T. B. &#x00026; Khan, R. Computer vision-based robotic arm for object color, shape, and size detection. <italic>J. Robot. Control (JRC)</italic><bold>3</bold>, 180&#x02013;186. 10.18196/jrc.v3i2.13906 (2022).</mixed-citation></citation-alternatives></ref><ref id="CR7"><label>7.</label><citation-alternatives><element-citation id="ec-CR7" publication-type="journal"><person-group person-group-type="author"><name><surname>Lee</surname><given-names>D</given-names></name><etal/></person-group><article-title>Vision-based tracking system for augmented reality to localize recurrent laryngeal nerve during robotic thyroid surgery</article-title><source>Sci. Rep.</source><year>2020</year><volume>10</volume><fpage>1</fpage><lpage>7</lpage><pub-id pub-id-type="doi">10.1038/s41598-020-65439-6</pub-id><pub-id pub-id-type="pmid">31913322</pub-id>
+</element-citation><mixed-citation id="mc-CR7" publication-type="journal">Lee, D. et al. Vision-based tracking system for augmented reality to localize recurrent laryngeal nerve during robotic thyroid surgery. <italic>Sci. Rep.</italic><bold>10</bold>, 1&#x02013;7. 10.1038/s41598-020-65439-6 (2020).<pub-id pub-id-type="pmid">31913322</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR8"><label>8.</label><citation-alternatives><element-citation id="ec-CR8" publication-type="journal"><person-group person-group-type="author"><name><surname>Tang</surname><given-names>X</given-names></name><name><surname>Zhou</surname><given-names>H</given-names></name><name><surname>Jiang</surname><given-names>X</given-names></name></person-group><article-title>Monocular vision-based online kinematic calibration method for five-axis motion platform</article-title><source>Meas. Sci. Technol.</source><year>2024</year><pub-id pub-id-type="doi">10.1088/1361-6501/ad03b5</pub-id></element-citation><mixed-citation id="mc-CR8" publication-type="journal">Tang, X., Zhou, H. &#x00026; Jiang, X. Monocular vision-based online kinematic calibration method for five-axis motion platform. <italic>Meas. Sci. Technol.</italic>10.1088/1361-6501/ad03b5 (2024).</mixed-citation></citation-alternatives></ref><ref id="CR9"><label>9.</label><citation-alternatives><element-citation id="ec-CR9" publication-type="journal"><person-group person-group-type="author"><name><surname>Mohamed</surname><given-names>A</given-names></name><name><surname>Yang</surname><given-names>C</given-names></name><name><surname>Cangelosi</surname><given-names>A</given-names></name></person-group><article-title>Stereo vision based object tracking control for a movable robot head</article-title><source>IFAC-PapersOnLine</source><year>2016</year><volume>49</volume><fpage>155</fpage><lpage>162</lpage><pub-id pub-id-type="doi">10.1016/j.ifacol.2016.07.106</pub-id></element-citation><mixed-citation id="mc-CR9" publication-type="journal">Mohamed, A., Yang, C. &#x00026; Cangelosi, A. Stereo vision based object tracking control for a movable robot head. <italic>IFAC-PapersOnLine</italic><bold>49</bold>, 155&#x02013;162 (2016).</mixed-citation></citation-alternatives></ref><ref id="CR10"><label>10.</label><citation-alternatives><element-citation id="ec-CR10" publication-type="journal"><person-group person-group-type="author"><name><surname>Luo</surname><given-names>Y</given-names></name><etal/></person-group><article-title>Calibration-free monocular vision-based robot manipulations with occlusion awareness</article-title><source>IEEE Access</source><year>2021</year><volume>9</volume><fpage>85265</fpage><lpage>85276</lpage><pub-id pub-id-type="doi">10.1109/ACCESS.2021.3082947</pub-id></element-citation><mixed-citation id="mc-CR10" publication-type="journal">Luo, Y. et al. Calibration-free monocular vision-based robot manipulations with occlusion awareness. <italic>IEEE Access</italic><bold>9</bold>, 85265&#x02013;85276. 10.1109/ACCESS.2021.3082947 (2021).</mixed-citation></citation-alternatives></ref><ref id="CR11"><label>11.</label><citation-alternatives><element-citation id="ec-CR11" publication-type="journal"><person-group person-group-type="author"><name><surname>Luo</surname><given-names>W</given-names></name><etal/></person-group><article-title>An efficient visual servo tracker for herd monitoring by UAV</article-title><source>Sci. Rep.</source><year>2024</year><pub-id pub-id-type="doi">10.1038/s41598-024-60445-4</pub-id><pub-id pub-id-type="pmid">39738662</pub-id>
+</element-citation><mixed-citation id="mc-CR11" publication-type="journal">Luo, W. et al. An efficient visual servo tracker for herd monitoring by UAV. <italic>Sci. Rep.</italic>10.1038/s41598-024-60445-4 (2024).<pub-id pub-id-type="pmid">39738662</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR12"><label>12.</label><citation-alternatives><element-citation id="ec-CR12" publication-type="journal"><person-group person-group-type="author"><name><surname>Wu</surname><given-names>C</given-names></name><name><surname>He</surname><given-names>Z</given-names></name><name><surname>Zhang</surname><given-names>S</given-names></name><name><surname>Zhao</surname><given-names>X</given-names></name></person-group><article-title>A circular feature-based pose measurement method for metal part grasping</article-title><source>Meas. Sci. Technol.</source><year>2017</year><pub-id pub-id-type="doi">10.1088/1361-6501/aa87ea</pub-id></element-citation><mixed-citation id="mc-CR12" publication-type="journal">Wu, C., He, Z., Zhang, S. &#x00026; Zhao, X. A circular feature-based pose measurement method for metal part grasping. <italic>Meas. Sci. Technol.</italic>10.1088/1361-6501/aa87ea (2017).</mixed-citation></citation-alternatives></ref><ref id="CR13"><label>13.</label><citation-alternatives><element-citation id="ec-CR13" publication-type="journal"><person-group person-group-type="author"><name><surname>Golestani</surname><given-names>N</given-names></name><name><surname>Moghaddam</surname><given-names>M</given-names></name></person-group><article-title>Wearable magnetic induction-based approach toward 3D motion tracking</article-title><source>Sci. Rep.</source><year>2021</year><volume>11</volume><fpage>1</fpage><lpage>10</lpage><pub-id pub-id-type="doi">10.1038/s41598-021-98346-5</pub-id><pub-id pub-id-type="pmid">33414495</pub-id>
+</element-citation><mixed-citation id="mc-CR13" publication-type="journal">Golestani, N. &#x00026; Moghaddam, M. Wearable magnetic induction-based approach toward 3D motion tracking. <italic>Sci. Rep.</italic><bold>11</bold>, 1&#x02013;10. 10.1038/s41598-021-98346-5 (2021).<pub-id pub-id-type="pmid">33414495</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR14"><label>14.</label><citation-alternatives><element-citation id="ec-CR14" publication-type="journal"><person-group person-group-type="author"><name><surname>Xing</surname><given-names>G</given-names></name><name><surname>Meng</surname><given-names>W</given-names></name></person-group><article-title>Design of robot vision servo control system based on image</article-title><source>J. Phys. Conf. Ser.</source><year>2021</year><volume>2136</volume><fpage>012049</fpage><pub-id pub-id-type="doi">10.1088/1742-6596/2136/1/012049</pub-id></element-citation><mixed-citation id="mc-CR14" publication-type="journal">Xing, G. &#x00026; Meng, W. Design of robot vision servo control system based on image. <italic>J. Phys. Conf. Ser.</italic><bold>2136</bold>, 012049. 10.1088/1742-6596/2136/1/012049 (2021).</mixed-citation></citation-alternatives></ref><ref id="CR15"><label>15.</label><mixed-citation publication-type="other">Muis, A. &#x00026; Ohnishi, K. Eye-to-hand approach on eye-in-hand configuration within real-time visual servoing. In <italic>Proceedings of 8th IEEE International Workshop on Advanced Motion Control</italic>, 647&#x02013;652 (IEEE, Kawasaki, Japan, 2004).</mixed-citation></ref><ref id="CR16"><label>16.</label><citation-alternatives><element-citation id="ec-CR16" publication-type="journal"><person-group person-group-type="author"><name><surname>Chu</surname><given-names>HK</given-names></name><name><surname>Mills</surname><given-names>JK</given-names></name><name><surname>Cleghorn</surname><given-names>WL</given-names></name></person-group><article-title>Image-based visual servoing through micropart reflection for the microassembly process</article-title><source>J. Micromech. Microeng.</source><year>2011</year><volume>21</volume><fpage>065016</fpage><pub-id pub-id-type="doi">10.1088/0960-1317/21/6/065016</pub-id></element-citation><mixed-citation id="mc-CR16" publication-type="journal">Chu, H. K., Mills, J. K. &#x00026; Cleghorn, W. L. Image-based visual servoing through micropart reflection for the microassembly process. <italic>J. Micromech. Microeng.</italic><bold>21</bold>, 065016. 10.1088/0960-1317/21/6/065016 (2011).</mixed-citation></citation-alternatives></ref><ref id="CR17"><label>17.</label><citation-alternatives><element-citation id="ec-CR17" publication-type="journal"><person-group person-group-type="author"><name><surname>Sahu</surname><given-names>UK</given-names></name><name><surname>Patra</surname><given-names>D</given-names></name><name><surname>Subudhi</surname><given-names>B</given-names></name></person-group><article-title>Adaptive intelligent vision-based control of a flexible-link manipulator</article-title><source>Electr. Eng.</source><year>2023</year><volume>105</volume><fpage>3263</fpage><lpage>3281</lpage><pub-id pub-id-type="doi">10.1007/s00202-023-01875-7</pub-id></element-citation><mixed-citation id="mc-CR17" publication-type="journal">Sahu, U. K., Patra, D. &#x00026; Subudhi, B. Adaptive intelligent vision-based control of a flexible-link manipulator. <italic>Electr. Eng.</italic><bold>105</bold>, 3263&#x02013;3281. 10.1007/s00202-023-01875-7 (2023).</mixed-citation></citation-alternatives></ref><ref id="CR18"><label>18.</label><citation-alternatives><element-citation id="ec-CR18" publication-type="journal"><person-group person-group-type="author"><name><surname>Nazari</surname><given-names>AA</given-names></name><name><surname>Zareinia</surname><given-names>K</given-names></name><name><surname>Janabi-Sharifi</surname><given-names>F</given-names></name></person-group><article-title>Visual servoing of continuum robots: Methods, challenges, and prospects</article-title><source>Int. J. Med. Robot. Comput. Assist. Surg.</source><year>2022</year><volume>18</volume><fpage>1</fpage><lpage>26</lpage><pub-id pub-id-type="doi">10.1002/rcs.2384</pub-id></element-citation><mixed-citation id="mc-CR18" publication-type="journal">Nazari, A. A., Zareinia, K. &#x00026; Janabi-Sharifi, F. Visual servoing of continuum robots: Methods, challenges, and prospects. <italic>Int. J. Med. Robot. Comput. Assist. Surg.</italic><bold>18</bold>, 1&#x02013;26. 10.1002/rcs.2384 (2022).</mixed-citation></citation-alternatives></ref><ref id="CR19"><label>19.</label><citation-alternatives><element-citation id="ec-CR19" publication-type="journal"><person-group person-group-type="author"><name><surname>Wang</surname><given-names>Y</given-names></name><name><surname>Lang</surname><given-names>H</given-names></name><name><surname>De Silva</surname><given-names>CW</given-names></name></person-group><article-title>A hybrid visual servo controller for robust grasping by wheeled mobile robots</article-title><source>IEEE/ASME Trans. Mechatron.</source><year>2010</year><volume>15</volume><fpage>757</fpage><lpage>769</lpage><pub-id pub-id-type="doi">10.1109/TMECH.2009.2034740</pub-id></element-citation><mixed-citation id="mc-CR19" publication-type="journal">Wang, Y., Lang, H. &#x00026; De Silva, C. W. A hybrid visual servo controller for robust grasping by wheeled mobile robots. <italic>IEEE/ASME Trans. Mechatron.</italic><bold>15</bold>, 757&#x02013;769. 10.1109/TMECH.2009.2034740 (2010).</mixed-citation></citation-alternatives></ref><ref id="CR20"><label>20.</label><citation-alternatives><element-citation id="ec-CR20" publication-type="journal"><person-group person-group-type="author"><name><surname>Sahu</surname><given-names>U</given-names></name><name><surname>Patra</surname><given-names>D</given-names></name><name><surname>Subudhi</surname><given-names>B</given-names></name></person-group><article-title>Vision based tip position tracking control of two-link flexible manipulator</article-title><source>IET Cyber Syst. Robot.</source><year>2020</year><volume>2</volume><fpage>53</fpage><lpage>66</lpage><pub-id pub-id-type="doi">10.1049/iet-csr.2019.0035</pub-id></element-citation><mixed-citation id="mc-CR20" publication-type="journal">Sahu, U., Patra, D. &#x00026; Subudhi, B. Vision based tip position tracking control of two-link flexible manipulator. <italic>IET Cyber Syst. Robot.</italic><bold>2</bold>, 53&#x02013;66. 10.1049/iet-csr.2019.0035 (2020).</mixed-citation></citation-alternatives></ref><ref id="CR21"><label>21.</label><mixed-citation publication-type="other">Sun, X., Zhu, X., Wang, P. &#x00026; Chen, H. A review of robot control with visual servoing. In <italic>Proceedings of 8th Annual IEEE International Conference on Cyber Technology in Automation, Control and Intelligent Systems, CYBER 2018</italic>, 116&#x02013;121 (IEEE, Tianjin, China, 2019). 10.1109/CYBER.2018.8688060.</mixed-citation></ref><ref id="CR22"><label>22.</label><citation-alternatives><element-citation id="ec-CR22" publication-type="journal"><person-group person-group-type="author"><name><surname>Hutchinson</surname><given-names>S</given-names></name><name><surname>Hager</surname><given-names>GD</given-names></name><name><surname>Corke</surname><given-names>PI</given-names></name></person-group><article-title>A tutorial on visual servo control</article-title><source>IEEE Trans. Robot. Autom.</source><year>1996</year><volume>12</volume><fpage>651</fpage><lpage>670</lpage><pub-id pub-id-type="doi">10.1109/70.538972</pub-id></element-citation><mixed-citation id="mc-CR22" publication-type="journal">Hutchinson, S., Hager, G. D. &#x00026; Corke, P. I. A tutorial on visual servo control. <italic>IEEE Trans. Robot. Autom.</italic><bold>12</bold>, 651&#x02013;670. 10.1109/70.538972 (1996).</mixed-citation></citation-alternatives></ref><ref id="CR23"><label>23.</label><citation-alternatives><element-citation id="ec-CR23" publication-type="journal"><person-group person-group-type="author"><name><surname>Gu</surname><given-names>F</given-names></name><name><surname>Lu</surname><given-names>J</given-names></name><name><surname>Cai</surname><given-names>C</given-names></name><name><surname>Zhu</surname><given-names>Q</given-names></name><name><surname>Ju</surname><given-names>Z</given-names></name></person-group><article-title>Eantrack: An efficient attention network for visual tracking</article-title><source>IEEE Trans. Autom. Sci. Eng.</source><year>2023</year><pub-id pub-id-type="doi">10.1109/TASE.2023.3319676</pub-id></element-citation><mixed-citation id="mc-CR23" publication-type="journal">Gu, F., Lu, J., Cai, C., Zhu, Q. &#x00026; Ju, Z. Eantrack: An efficient attention network for visual tracking. <italic>IEEE Trans. Autom. Sci. Eng.</italic>10.1109/TASE.2023.3319676 (2023).</mixed-citation></citation-alternatives></ref><ref id="CR24"><label>24.</label><citation-alternatives><element-citation id="ec-CR24" publication-type="journal"><person-group person-group-type="author"><name><surname>Gu</surname><given-names>F</given-names></name><name><surname>Lu</surname><given-names>J</given-names></name><name><surname>Cai</surname><given-names>C</given-names></name><name><surname>Zhu</surname><given-names>Q</given-names></name><name><surname>Ju</surname><given-names>Z</given-names></name></person-group><article-title>Vtst: Efficient visual tracking with a stereoscopic transformer</article-title><source>IEEE Trans. Emerg. Top. Comput. Intell.</source><year>2024</year><pub-id pub-id-type="doi">10.1109/TETCI.2024.3360303</pub-id></element-citation><mixed-citation id="mc-CR24" publication-type="journal">Gu, F., Lu, J., Cai, C., Zhu, Q. &#x00026; Ju, Z. Vtst: Efficient visual tracking with a stereoscopic transformer. <italic>IEEE Trans. Emerg. Top. Comput. Intell.</italic>10.1109/TETCI.2024.3360303 (2024).</mixed-citation></citation-alternatives></ref><ref id="CR25"><label>25.</label><citation-alternatives><element-citation id="ec-CR25" publication-type="journal"><person-group person-group-type="author"><name><surname>Tinoco</surname><given-names>V</given-names></name><name><surname>Silva</surname><given-names>MF</given-names></name><name><surname>Santos</surname><given-names>FN</given-names></name><name><surname>Morais</surname><given-names>R</given-names></name><name><surname>Filipe</surname><given-names>V</given-names></name></person-group><article-title>SCARA self posture recognition using a monocular camera</article-title><source>IEEE Access</source><year>2022</year><volume>10</volume><fpage>25883</fpage><lpage>25891</lpage><pub-id pub-id-type="doi">10.1109/ACCESS.2022.3155199</pub-id></element-citation><mixed-citation id="mc-CR25" publication-type="journal">Tinoco, V., Silva, M. F., Santos, F. N., Morais, R. &#x00026; Filipe, V. SCARA self posture recognition using a monocular camera. <italic>IEEE Access</italic><bold>10</bold>, 25883&#x02013;25891. 10.1109/ACCESS.2022.3155199 (2022).</mixed-citation></citation-alternatives></ref><ref id="CR26"><label>26.</label><mixed-citation publication-type="other">Soleimanitaleb, Z., Keyvanrad, M.&#x000a0;A. &#x00026; Jafari, A. Object tracking methods: A review. In <italic>Proceedings of 9th International Conference on Computer and Knowledge Engineering, ICCKE 2019</italic>, 282&#x02013;288 (IEEE, Mashhad, Iran, 2019). 10.1109/ICCKE48569.2019.8964761.</mixed-citation></ref><ref id="CR27"><label>27.</label><citation-alternatives><element-citation id="ec-CR27" publication-type="journal"><person-group person-group-type="author"><name><surname>Li</surname><given-names>W</given-names></name><etal/></person-group><article-title>Intelligent metasurface system for automatic tracking of moving targets and wireless communications based on computer vision</article-title><source>Nat. Commun.</source><year>2023</year><volume>14</volume><fpage>1</fpage><lpage>10</lpage><pub-id pub-id-type="doi">10.1038/s41467-023-36645-3</pub-id><pub-id pub-id-type="pmid">36596776</pub-id>
+</element-citation><mixed-citation id="mc-CR27" publication-type="journal">Li, W. et al. Intelligent metasurface system for automatic tracking of moving targets and wireless communications based on computer vision. <italic>Nat. Commun.</italic><bold>14</bold>, 1&#x02013;10. 10.1038/s41467-023-36645-3 (2023).<pub-id pub-id-type="pmid">36596776</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR28"><label>28.</label><citation-alternatives><element-citation id="ec-CR28" publication-type="journal"><person-group person-group-type="author"><name><surname>Li</surname><given-names>Z</given-names></name><etal/></person-group><article-title>Heterogeneous sensing for target tracking: Architecture, techniques, applications and challenges</article-title><source>Meas. Sci. Technol.</source><year>2023</year><volume>34</volume><fpage>072002</fpage><pub-id pub-id-type="doi">10.1088/1361-6501/acc267</pub-id></element-citation><mixed-citation id="mc-CR28" publication-type="journal">Li, Z. et al. Heterogeneous sensing for target tracking: Architecture, techniques, applications and challenges. <italic>Meas. Sci. Technol.</italic><bold>34</bold>, 072002. 10.1088/1361-6501/acc267 (2023).</mixed-citation></citation-alternatives></ref><ref id="CR29"><label>29.</label><mixed-citation publication-type="other">Sharma, R. &#x00026; Hutchineon, S. The observability of robot motion under active camera control. In <italic>Proceedings&#x02014;IEEE International Conference on Robotics and Automation</italic>, 162&#x02013;167 (IEEE, San Diego, CA, USA, 1994). 10.1109/ROBOT.1994.350994.</mixed-citation></ref><ref id="CR30"><label>30.</label><mixed-citation publication-type="other">Cong, S. &#x00026; Wang, J. Internet-based and visual feedback networked robot arm teleoperation system. In <italic>2010 International Conference on Networking, Sensing and Control (ICNSC)</italic>, 452&#x02013;457 (IEEE, Chicago, IL, USA, 2010). 10.1109/ICNSC.2010.5461616.</mixed-citation></ref><ref id="CR31"><label>31.</label><citation-alternatives><element-citation id="ec-CR31" publication-type="journal"><person-group person-group-type="author"><name><surname>Wang</surname><given-names>H</given-names></name><name><surname>Vasseur</surname><given-names>C</given-names></name><name><surname>Koncar</surname><given-names>V</given-names></name><name><surname>Chamroo</surname><given-names>A</given-names></name><name><surname>Christov</surname><given-names>N</given-names></name></person-group><article-title>Modelling and trajectory tracking control of a 2-DOF vision based inverted pendulum</article-title><source>Control Eng. Appl. Inform.</source><year>2010</year><volume>12</volume><fpage>59</fpage><lpage>66</lpage></element-citation><mixed-citation id="mc-CR31" publication-type="journal">Wang, H., Vasseur, C., Koncar, V., Chamroo, A. &#x00026; Christov, N. Modelling and trajectory tracking control of a 2-DOF vision based inverted pendulum. <italic>Control Eng. Appl. Inform.</italic><bold>12</bold>, 59&#x02013;66 (2010).</mixed-citation></citation-alternatives></ref><ref id="CR32"><label>32.</label><citation-alternatives><element-citation id="ec-CR32" publication-type="journal"><person-group person-group-type="author"><name><surname>Al-Shabi</surname><given-names>M</given-names></name></person-group><article-title>Simulation and implementation of real-time vision-based control system for 2-DoF robotic arm using PID with hardware-in-the-loop</article-title><source>Intell. Control Autom.</source><year>2015</year><volume>06</volume><fpage>147</fpage><lpage>157</lpage><pub-id pub-id-type="doi">10.4236/ica.2015.62015</pub-id></element-citation><mixed-citation id="mc-CR32" publication-type="journal">Al-Shabi, M. Simulation and implementation of real-time vision-based control system for 2-DoF robotic arm using PID with hardware-in-the-loop. <italic>Intell. Control Autom.</italic><bold>06</bold>, 147&#x02013;157. 10.4236/ica.2015.62015 (2015).</mixed-citation></citation-alternatives></ref><ref id="CR33"><label>33.</label><mixed-citation publication-type="other">Moreno, R.&#x000a0;J. Tracking of human operator arms oriented to the control of two robotic arms. In <italic>Proceedings of 19th Symposium Image, Signal Process and Artificial Vision, STSIVA 2014</italic>, 1&#x02013;4 (IEEE, Armenia, Colombia, 2015). 10.1109/STSIVA.2014.7010125.</mixed-citation></ref><ref id="CR34"><label>34.</label><mixed-citation publication-type="other">Quintero, C.&#x000a0;P., Ramirez, O. &#x00026; J&#x000e4;gersand, M. VIBI: Assistive vision-based interface for robot manipulation. In <italic>Proceedings&#x02014;IEEE International Conference on Robotics and Automation</italic>, 4458&#x02013;4463 (IEEE, Seattle, Washington, 2015). 10.1109/ICRA.2015.7139816.</mixed-citation></ref><ref id="CR35"><label>35.</label><mixed-citation publication-type="other">Athulya, P. S., Ranjith Kumar, S., &#x00026; George, N. A. Approach, computer vision for the inverse kinematics of 2 DOF manipulators using neural network. In <italic>IEEE Recent Advances in Intelligent Computational Systems, RAICS, 2020</italic>, 82&#x02013;85 (IEEE, Trivandrum, India, 2020). 10.1109/RAICS51191.2020.9332485.</mixed-citation></ref><ref id="CR36"><label>36.</label><citation-alternatives><element-citation id="ec-CR36" publication-type="journal"><person-group person-group-type="author"><name><surname>Sekkat</surname><given-names>H</given-names></name><name><surname>Tigani</surname><given-names>S</given-names></name><name><surname>Saadane</surname><given-names>R</given-names></name><name><surname>Chehri</surname><given-names>A</given-names></name></person-group><article-title>Vision-based robotic arm control algorithm using deep reinforcement learning for autonomous objects grasping</article-title><source>Appl. Sci.</source><year>2021</year><volume>11</volume><fpage>1</fpage><lpage>14</lpage><pub-id pub-id-type="doi">10.3390/app11177917</pub-id></element-citation><mixed-citation id="mc-CR36" publication-type="journal">Sekkat, H., Tigani, S., Saadane, R. &#x00026; Chehri, A. Vision-based robotic arm control algorithm using deep reinforcement learning for autonomous objects grasping. <italic>Appl. Sci.</italic><bold>11</bold>, 1&#x02013;14. 10.3390/app11177917 (2021).</mixed-citation></citation-alternatives></ref><ref id="CR37"><label>37.</label><mixed-citation publication-type="other">Oliva, M., Banik, S., Josifovski, J. &#x00026; Knoll, A. Graph neural networks for relational inductive bias in vision-based deep reinforcement learning of robot control. In <italic>Proceedings of the International Joint Conference on Neural Networks</italic>, Vol. 2022-July, 1&#x02013;9 (IEEE, Padua, Italy, 2022). 10.1109/IJCNN55064.2022.9892101. <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/2203.05985">arXiv:2203.05985</ext-link>.</mixed-citation></ref><ref id="CR38"><label>38.</label><mixed-citation publication-type="other">Deng, H. et al. High-precision control of robotic arms based on active visual under unstructured scenes. In <italic>Proceedings of International Conference on Robotics Biomimetics, ROBIO 2022</italic>, 1053&#x02013;1060 (IEEE, Jinghong, China, 2022). 10.1109/ROBIO55434.2022.10011736.</mixed-citation></ref><ref id="CR39"><label>39.</label><citation-alternatives><element-citation id="ec-CR39" publication-type="journal"><person-group person-group-type="author"><name><surname>Yurtsever</surname><given-names>O</given-names></name><name><surname>Kucuk</surname><given-names>H</given-names></name></person-group><article-title>Design, production and vision based analysis of a wireless operated 2-DOF SMA driven soft robotic arm</article-title><source>Mater. Today Commun.</source><year>2023</year><pub-id pub-id-type="doi">10.1016/j.mtcomm.2022.105176</pub-id></element-citation><mixed-citation id="mc-CR39" publication-type="journal">Yurtsever, O. &#x00026; Kucuk, H. Design, production and vision based analysis of a wireless operated 2-DOF SMA driven soft robotic arm. <italic>Mater. Today Commun.</italic>10.1016/j.mtcomm.2022.105176 (2023).</mixed-citation></citation-alternatives></ref><ref id="CR40"><label>40.</label><mixed-citation publication-type="other">Wang, W., Zhang, X., Liu, J. &#x00026; Wu, P. Research on manipulator control based on visual feature constraints. In <italic>Proceedings of 3rd International Conference on Electronic Information Engineering and Computer Science EIECS 2023</italic>, 261&#x02013;264 (IEEE, Changchun, China, 2023). 10.1109/EIECS59936.2023.10435444.</mixed-citation></ref><ref id="CR41"><label>41.</label><citation-alternatives><element-citation id="ec-CR41" publication-type="journal"><person-group person-group-type="author"><name><surname>Belalia</surname><given-names>A</given-names></name><name><surname>Chouraqui</surname><given-names>S</given-names></name><name><surname>Boussir</surname><given-names>M</given-names></name></person-group><article-title>Trajectory tracking of a robot arm using image sequences</article-title><source>Int. J. Comput. Digit. Syst.</source><year>2024</year><volume>15</volume><fpage>1067</fpage><lpage>1081</lpage><pub-id pub-id-type="doi">10.12785/ijcds/16017</pub-id></element-citation><mixed-citation id="mc-CR41" publication-type="journal">Belalia, A., Chouraqui, S. &#x00026; Boussir, M. Trajectory tracking of a robot arm using image sequences. <italic>Int. J. Comput. Digit. Syst.</italic><bold>15</bold>, 1067&#x02013;1081. 10.12785/ijcds/16017 (2024).</mixed-citation></citation-alternatives></ref><ref id="CR42"><label>42.</label><mixed-citation publication-type="other">Lugaresi, C. et al. Mediapipe: A framework for building perception pipelines. arXiv preprint <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/1906.08172">arXiv:1906.08172</ext-link> (2019).</mixed-citation></ref><ref id="CR43"><label>43.</label><citation-alternatives><element-citation id="ec-CR43" publication-type="journal"><person-group person-group-type="author"><name><surname>Faisal</surname><given-names>M</given-names></name><name><surname>Abir</surname><given-names>FF</given-names></name><name><surname>Ahmed</surname><given-names>MU</given-names></name><name><surname>Ahad</surname><given-names>M</given-names></name></person-group><article-title>Exploiting domain transformation and deep learning for hand gesture recognition using a low-cost dataglove</article-title><source>Sci. Rep.</source><year>2022</year><volume>12</volume><fpage>1</fpage><lpage>15</lpage><pub-id pub-id-type="doi">10.1038/s41598-022-25108-2</pub-id><pub-id pub-id-type="pmid">34992227</pub-id>
+</element-citation><mixed-citation id="mc-CR43" publication-type="journal">Faisal, M., Abir, F. F., Ahmed, M. U. &#x00026; Ahad, M. Exploiting domain transformation and deep learning for hand gesture recognition using a low-cost dataglove. <italic>Sci. Rep.</italic><bold>12</bold>, 1&#x02013;15. 10.1038/s41598-022-25108-2 (2022).<pub-id pub-id-type="pmid">34992227</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR44"><label>44.</label><mixed-citation publication-type="other">Rohmer, E., Singh, S. P.&#x000a0;N. &#x00026; Freese, M. Coppeliasim (formerly v-rep): A versatile and scalable robot simulation framework. In <italic>Proceedings of The International Conference on Intelligent Robots and Systems (IROS)</italic>. <ext-link ext-link-type="uri" xlink:href="http://www.coppeliarobotics.com">www.coppeliarobotics.com</ext-link> (2013).</mixed-citation></ref><ref id="CR45"><label>45.</label><mixed-citation publication-type="other">Uno R3. https://docs.arduino.cc/hardware/uno-rev3. [Online; accessed 19-March-2023].</mixed-citation></ref><ref id="CR46"><label>46.</label><citation-alternatives><element-citation id="ec-CR46" publication-type="journal"><person-group person-group-type="author"><name><surname>Zhao</surname><given-names>J</given-names></name><name><surname>Zeng</surname><given-names>Q</given-names></name></person-group><article-title>Adaptive robust control for uncertain systems via data-driven learning</article-title><source>J. Sens.</source><year>2022</year><volume>2022</volume><fpage>9686060</fpage><pub-id pub-id-type="doi">10.1155/2022/9686060</pub-id></element-citation><mixed-citation id="mc-CR46" publication-type="journal">Zhao, J. &#x00026; Zeng, Q. Adaptive robust control for uncertain systems via data-driven learning. <italic>J. Sens.</italic><bold>2022</bold>, 9686060 (2022).</mixed-citation></citation-alternatives></ref><ref id="CR47"><label>47.</label><citation-alternatives><element-citation id="ec-CR47" publication-type="journal"><person-group person-group-type="author"><name><surname>Zhao</surname><given-names>J</given-names></name><name><surname>Lv</surname><given-names>Y</given-names></name><name><surname>Wang</surname><given-names>Z</given-names></name><name><surname>Zhao</surname><given-names>Z</given-names></name></person-group><article-title>Adaptive q-learning based model-free <inline-formula id="IEq80"><alternatives><tex-math id="d33e3195">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\text{h}}_{\infty }$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq80.gif"/></alternatives></inline-formula> control of continuous-time nonlinear systems: Theory and application</article-title><source>IEEE Trans. Emerg. Top. Comput. Intell.</source><year>2024</year><pub-id pub-id-type="doi">10.1109/TETCI.2024.3449870</pub-id></element-citation><mixed-citation id="mc-CR47" publication-type="journal">Zhao, J., Lv, Y., Wang, Z. &#x00026; Zhao, Z. Adaptive q-learning based model-free <inline-graphic xlink:href="41598_2025_97930_Article_IEq80.gif"/> control of continuous-time nonlinear systems: Theory and application. <italic>IEEE Trans. Emerg. Top. Comput. Intell.</italic>10.1109/TETCI.2024.3449870 (2024).</mixed-citation></citation-alternatives></ref><ref id="CR48"><label>48.</label><citation-alternatives><element-citation id="ec-CR48" publication-type="journal"><person-group person-group-type="author"><name><surname>Zhao</surname><given-names>J </given-names></name><name><surname>Jia</surname><given-names>B</given-names></name><name><surname>Zhao</surname><given-names>Z</given-names></name></person-group><article-title>Model-free <inline-formula id="IEq82"><alternatives><tex-math id="d33e3234">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\text{h}}_{\infty }$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq80.gif"/></alternatives></inline-formula> prescribed performance control of adaptive cruise control systems via policy learning</article-title><source>IEEE Trans. Intell. Transp. Syst.</source><year>2024</year><pub-id pub-id-type="doi">10.1109/TITS.2024.3485103</pub-id></element-citation><mixed-citation id="mc-CR48" publication-type="journal">Zhao, J., Jia, B. &#x00026; Zhao, Z. Model-free <inline-graphic xlink:href="41598_2025_97930_Article_IEq80.gif"/> prescribed performance control of adaptive cruise control systems via policy learning. <italic>IEEE Trans. Intell. Transp. Syst.</italic>10.1109/TITS.2024.3485103 (2024).</mixed-citation></citation-alternatives></ref><ref id="CR49"><label>49.</label><citation-alternatives><element-citation id="ec-CR49" publication-type="journal"><person-group person-group-type="author"><name><surname>Zhao</surname><given-names>J</given-names></name><etal/></person-group><article-title>Data-driven learning for <inline-formula id="IEq84"><alternatives><tex-math id="d33e3268">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\text{h}}_{\infty }$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_97930_Article_IEq80.gif"/></alternatives></inline-formula> control of adaptive cruise control systems</article-title><source>IEEE Trans. Veh. Technol.</source><year>2024</year><volume>73</volume><fpage>18348</fpage><lpage>18362</lpage><pub-id pub-id-type="doi">10.1109/TVT.2024.3447060</pub-id></element-citation><mixed-citation id="mc-CR49" publication-type="journal">Zhao, J. et al. Data-driven learning for <inline-graphic xlink:href="41598_2025_97930_Article_IEq80.gif"/> control of adaptive cruise control systems. <italic>IEEE Trans. Veh. Technol.</italic><bold>73</bold>, 18348&#x02013;18362. 10.1109/TVT.2024.3447060 (2024).</mixed-citation></citation-alternatives></ref><ref id="CR50"><label>50.</label><citation-alternatives><element-citation id="ec-CR50" publication-type="journal"><person-group person-group-type="author"><name><surname>Distante</surname><given-names>C</given-names></name><name><surname>Anglani</surname><given-names>A</given-names></name><name><surname>Taurisano</surname><given-names>F</given-names></name></person-group><article-title>Target reaching by using visual information and Q-learning controllers</article-title><source>Auton. Robot.</source><year>2000</year><volume>9</volume><fpage>41</fpage><lpage>50</lpage><pub-id pub-id-type="doi">10.1023/A:1008972101435</pub-id></element-citation><mixed-citation id="mc-CR50" publication-type="journal">Distante, C., Anglani, A. &#x00026; Taurisano, F. Target reaching by using visual information and Q-learning controllers. <italic>Auton. Robot.</italic><bold>9</bold>, 41&#x02013;50. 10.1023/A:1008972101435 (2000).</mixed-citation></citation-alternatives></ref><ref id="CR51"><label>51.</label><citation-alternatives><element-citation id="ec-CR51" publication-type="journal"><person-group person-group-type="author"><name><surname>Kim</surname><given-names>S</given-names></name><name><surname>Jo</surname><given-names>HJ</given-names></name><name><surname>Song</surname><given-names>JB</given-names></name></person-group><article-title>Object manipulation system based on image-based reinforcement learning</article-title><source>Intel. Serv. Robot.</source><year>2022</year><volume>15</volume><fpage>171</fpage><lpage>177</lpage><pub-id pub-id-type="doi">10.1007/s11370-021-00402-6</pub-id></element-citation><mixed-citation id="mc-CR51" publication-type="journal">Kim, S., Jo, H. J. &#x00026; Song, J. B. Object manipulation system based on image-based reinforcement learning. <italic>Intel. Serv. Robot.</italic><bold>15</bold>, 171&#x02013;177. 10.1007/s11370-021-00402-6 (2022).</mixed-citation></citation-alternatives></ref><ref id="CR52"><label>52.</label><mixed-citation publication-type="other">Gaskett, C., Fletcher, L. &#x00026; Zelinsky, A. Reinforcement learning for a vision based mobile robot. In <italic>Proceedings of IEEE/RSJ International Conference on Intelligent Robots and Systems</italic>, 403&#x02013;409 (IEEE, Takamatsu, Japan, 2000). 10.1109/IROS.2000.894638.</mixed-citation></ref><ref id="CR53"><label>53.</label><mixed-citation publication-type="other">Hafner, R. &#x00026; Riedmiller, M. Reinforcement learning on an omnidirectional mobile robot. In <italic>Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems</italic>, 418&#x02013;423 (IEEE, Las Vegas, Nevada, 2003). 10.1109/IROS.2003.1250665.</mixed-citation></ref><ref id="CR54"><label>54.</label><citation-alternatives><element-citation id="ec-CR54" publication-type="journal"><person-group person-group-type="author"><name><surname>Kar</surname><given-names>I</given-names></name><name><surname>Behera</surname><given-names>L</given-names></name></person-group><article-title>Visual motor control of a 7 DOF robot manipulator using a fuzzy SOM network</article-title><source>Intel. Serv. Robot.</source><year>2010</year><volume>3</volume><fpage>49</fpage><lpage>60</lpage><pub-id pub-id-type="doi">10.1007/s11370-009-0058-3</pub-id></element-citation><mixed-citation id="mc-CR54" publication-type="journal">Kar, I. &#x00026; Behera, L. Visual motor control of a 7 DOF robot manipulator using a fuzzy SOM network. <italic>Intel. Serv. Robot.</italic><bold>3</bold>, 49&#x02013;60. 10.1007/s11370-009-0058-3 (2010).</mixed-citation></citation-alternatives></ref><ref id="CR55"><label>55.</label><citation-alternatives><element-citation id="ec-CR55" publication-type="journal"><person-group person-group-type="author"><name><surname>Miljkovic</surname><given-names>Z</given-names></name><name><surname>Mitic</surname><given-names>M</given-names></name><name><surname>Lazarevic</surname><given-names>M</given-names></name><name><surname>Babic</surname><given-names>B</given-names></name></person-group><article-title>Neural network reinforcement learning for visual control of robot manipulators</article-title><source>Expert Syst. Appl.</source><year>2013</year><volume>40</volume><fpage>1721</fpage><lpage>1736</lpage><pub-id pub-id-type="doi">10.1016/j.eswa.2012.09.010</pub-id></element-citation><mixed-citation id="mc-CR55" publication-type="journal">Miljkovic, Z., Mitic, M., Lazarevic, M. &#x00026; Babic, B. Neural network reinforcement learning for visual control of robot manipulators. <italic>Expert Syst. Appl.</italic><bold>40</bold>, 1721&#x02013;1736. 10.1016/j.eswa.2012.09.010 (2013).</mixed-citation></citation-alternatives></ref><ref id="CR56"><label>56.</label><citation-alternatives><element-citation id="ec-CR56" publication-type="journal"><person-group person-group-type="author"><name><surname>Chotikunnan</surname><given-names>P </given-names></name><etal/></person-group><article-title>Hybrid fuzzy-expert system control for robotic manipulator applications</article-title><source>J. Robot. Control (JRC)</source><year>2025</year><volume>6</volume><fpage>155</fpage><lpage>165</lpage><pub-id pub-id-type="doi">10.18196/jrc.v6i1.24956</pub-id></element-citation><mixed-citation id="mc-CR56" publication-type="journal">Chotikunnan, P. et al. Hybrid fuzzy-expert system control for robotic manipulator applications. <italic>J. Robot. Control (JRC)</italic><bold>6</bold>, 155&#x02013;165. 10.18196/jrc.v6i1.24956 (2025).</mixed-citation></citation-alternatives></ref><ref id="CR57"><label>57.</label><citation-alternatives><element-citation id="ec-CR57" publication-type="journal"><person-group person-group-type="author"><name><surname>Wu</surname><given-names>B</given-names></name><name><surname>Wu</surname><given-names>J</given-names></name><name><surname>He</surname><given-names>W</given-names></name><name><surname>Tang</surname><given-names>G</given-names></name><name><surname>Zhao</surname><given-names>Z</given-names></name></person-group><article-title>Adaptive neural control for an uncertain 2-DOF helicopter system with unknown control direction and actuator faults</article-title><source>Mathematics</source><year>2022</year><volume>10</volume><fpage>4342</fpage><pub-id pub-id-type="doi">10.3390/math10224342</pub-id></element-citation><mixed-citation id="mc-CR57" publication-type="journal">Wu, B., Wu, J., He, W., Tang, G. &#x00026; Zhao, Z. Adaptive neural control for an uncertain 2-DOF helicopter system with unknown control direction and actuator faults. <italic>Mathematics</italic><bold>10</bold>, 4342. 10.3390/math10224342 (2022).</mixed-citation></citation-alternatives></ref><ref id="CR58"><label>58.</label><citation-alternatives><element-citation id="ec-CR58" publication-type="journal"><person-group person-group-type="author"><name><surname>Zhao</surname><given-names>Z</given-names></name><name><surname>He</surname><given-names>W</given-names></name><name><surname>Zou</surname><given-names>T</given-names></name><name><surname>Zhang</surname><given-names>T</given-names></name><name><surname>Chen</surname><given-names>C</given-names></name></person-group><article-title>Adaptive broad learning neural network for fault-tolerant control of 2-DOF helicopter systems</article-title><source>IEEE Trans. Syst. Man. Cybern. Syst.</source><year>2023</year><volume>53</volume><fpage>7560</fpage><lpage>7570</lpage><pub-id pub-id-type="doi">10.1109/TSMC.2023.3299303</pub-id></element-citation><mixed-citation id="mc-CR58" publication-type="journal">Zhao, Z., He, W., Zou, T., Zhang, T. &#x00026; Chen, C. Adaptive broad learning neural network for fault-tolerant control of 2-DOF helicopter systems. <italic>IEEE Trans. Syst. Man. Cybern. Syst.</italic><bold>53</bold>, 7560&#x02013;7570. 10.1109/TSMC.2023.3299303 (2023).</mixed-citation></citation-alternatives></ref><ref id="CR59"><label>59.</label><citation-alternatives><element-citation id="ec-CR59" publication-type="journal"><person-group person-group-type="author"><name><surname>Zhao</surname><given-names>Z</given-names></name><name><surname>Zhang</surname><given-names>J</given-names></name><name><surname>Liu</surname><given-names>Z</given-names></name><name><surname>He</surname><given-names>W</given-names></name><name><surname>Hong</surname><given-names>K-S</given-names></name></person-group><article-title>Adaptive quantized fault-tolerant control of a 2-DOF helicopter system with actuator fault and unknown dead zone</article-title><source>Automatica</source><year>2023</year><volume>148</volume><fpage>110792</fpage><pub-id pub-id-type="doi">10.1016/j.automatica.2022.110792</pub-id></element-citation><mixed-citation id="mc-CR59" publication-type="journal">Zhao, Z., Zhang, J., Liu, Z., He, W. &#x00026; Hong, K.-S. Adaptive quantized fault-tolerant control of a 2-DOF helicopter system with actuator fault and unknown dead zone. <italic>Automatica</italic><bold>148</bold>, 110792. 10.1016/j.automatica.2022.110792 (2023).</mixed-citation></citation-alternatives></ref><ref id="CR60"><label>60.</label><citation-alternatives><element-citation id="ec-CR60" publication-type="journal"><person-group person-group-type="author"><name><surname>Zhao</surname><given-names>J</given-names></name><name><surname>Lv</surname><given-names>Y</given-names></name><name><surname>Zhao</surname><given-names>Z</given-names></name><name><surname>Wang</surname><given-names>Z</given-names></name></person-group><article-title>Adaptive Optimal Tracking Control of Servo Mechanisms via Generalised Policy Learning</article-title><source>IEEE Trans. Instrum. Meas.</source><year>2024</year><volume>73</volume><fpage>1</fpage><lpage>11</lpage><pub-id pub-id-type="doi">10.1109/TIM.2024.3457963</pub-id></element-citation><mixed-citation id="mc-CR60" publication-type="journal">Zhao, J., Lv, Y., Zhao, Z. &#x00026; Wang, Z. Adaptive Optimal Tracking Control of Servo Mechanisms via Generalised Policy Learning. <italic>IEEE Trans. Instrum. Meas.</italic><bold>73</bold>, 1&#x02013;11. 10.1109/TIM.2024.3457963 (2024).</mixed-citation></citation-alternatives></ref><ref id="CR61"><label>61.</label><citation-alternatives><element-citation id="ec-CR61" publication-type="journal"><person-group person-group-type="author"><name><surname>Hu</surname><given-names>Y</given-names></name><name><surname>Si</surname><given-names>B</given-names></name></person-group><article-title>A reinforcement learning neural network for robotic manipulator control</article-title><source>Neural Comput.</source><year>2018</year><volume>30</volume><fpage>1983</fpage><lpage>2004</lpage><pub-id pub-id-type="doi">10.1162/NECO_a_01079</pub-id><pub-id pub-id-type="pmid">29652591</pub-id>
+</element-citation><mixed-citation id="mc-CR61" publication-type="journal">Hu, Y. &#x00026; Si, B. A reinforcement learning neural network for robotic manipulator control. <italic>Neural Comput.</italic><bold>30</bold>, 1983&#x02013;2004. 10.1162/NECO_a_01079 (2018) <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/1706.02451">arXiv:1706.02451</ext-link>.<pub-id pub-id-type="pmid">29652591</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR62"><label>62.</label><mixed-citation publication-type="other">Kim, W., Kim, T., Lee, J. &#x00026; Kim, H.&#x000a0;J. Vision-based deep reinforcement learning to control a manipulator. In <italic>Proceedings of 11th Asian Control Conference (ASCC)</italic>, 1046&#x02013;1050 (Australia, 2017). 10.1109/ASCC.2017.8287315.</mixed-citation></ref><ref id="CR63"><label>63.</label><mixed-citation publication-type="other">Kalashnikov, D. et al. QT-Opt: Scalable deep reinforcement learning for vision-based robotic manipulation, 1&#x02013;22 . arXiv preprint <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/1806.10293">arXiv:1806.10293</ext-link><ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/1806.10293">arXiv:1806.10293</ext-link>v2 (2018).</mixed-citation></ref><ref id="CR64"><label>64.</label><citation-alternatives><element-citation id="ec-CR64" publication-type="journal"><person-group person-group-type="author"><name><surname>Sekkat</surname><given-names>H</given-names></name><name><surname>Tigani</surname><given-names>S</given-names></name><name><surname>Saadane</surname><given-names>R</given-names></name><name><surname>Chehri</surname><given-names>A</given-names></name></person-group><article-title>Vision-based robotic arm control algorithm using deep reinforcement learning for autonomous objects grasping</article-title><source>Appl. Sci. (Switzerland)</source><year>2021</year><volume>11</volume><fpage>1</fpage><lpage>14</lpage><pub-id pub-id-type="doi">10.3390/app11177917</pub-id></element-citation><mixed-citation id="mc-CR64" publication-type="journal">Sekkat, H., Tigani, S., Saadane, R. &#x00026; Chehri, A. Vision-based robotic arm control algorithm using deep reinforcement learning for autonomous objects grasping. <italic>Appl. Sci. (Switzerland)</italic><bold>11</bold>, 1&#x02013;14. 10.3390/app11177917 (2021).</mixed-citation></citation-alternatives></ref></ref-list></back></article>

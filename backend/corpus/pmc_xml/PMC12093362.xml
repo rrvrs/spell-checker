@@ -1,0 +1,885 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" dtd-version="1.3" xml:lang="EN" article-type="research-article"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Chem Res Toxicol</journal-id><journal-id journal-id-type="iso-abbrev">Chem Res Toxicol</journal-id><journal-id journal-id-type="publisher-id">tx</journal-id><journal-id journal-id-type="coden">crtoec</journal-id><journal-title-group><journal-title>Chemical Research in Toxicology</journal-title></journal-title-group><issn pub-type="ppub">0893-228X</issn><issn pub-type="epub">1520-5010</issn><publisher><publisher-name>American Chemical Society</publisher-name></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">40253625</article-id><article-id pub-id-type="pmc">PMC12093362</article-id>
+<article-id pub-id-type="doi">10.1021/acs.chemrestox.4c00347</article-id><article-categories><subj-group><subject>Article</subject></subj-group></article-categories><title-group><article-title>Data Exploration
+for Target Predictions Using Proprietary
+and Publicly Available Data Sets</article-title></title-group><contrib-group><contrib contrib-type="author" id="ath1"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0002-0847-3860</contrib-id><name><surname>Smaji&#x00107;</surname><given-names>Aljo&#x00161;a</given-names></name><xref rid="aff1" ref-type="aff">&#x02020;</xref></contrib><contrib contrib-type="author" id="ath2"><name><surname>Steger-Hartmann</surname><given-names>Thomas</given-names></name><xref rid="aff2" ref-type="aff">&#x02021;</xref></contrib><contrib contrib-type="author" id="ath3"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0003-4209-6883</contrib-id><name><surname>Ecker</surname><given-names>Gerhard. F.</given-names></name><xref rid="aff1" ref-type="aff">&#x02020;</xref></contrib><contrib contrib-type="author" corresp="yes" id="ath4"><name><surname>Hackl</surname><given-names>Anke</given-names></name><xref rid="cor1" ref-type="other">*</xref><xref rid="aff2" ref-type="aff">&#x02021;</xref></contrib><aff id="aff1"><label>&#x02020;</label>Department
+of Pharmaceutical Sciences, <institution>University of
+Vienna</institution>, Vienna 1090, <country>Austria</country></aff><aff id="aff2"><label>&#x02021;</label><institution>Bayer
+AG, Pharmaceuticals Division</institution>, Berlin 13353, <country>Germany</country></aff></contrib-group><author-notes><corresp id="cor1"><label>*</label>E-mail: <email>anke.hackl@bayer.com</email>.</corresp></author-notes><pub-date pub-type="epub"><day>20</day><month>04</month><year>2025</year></pub-date><pub-date pub-type="collection"><day>19</day><month>05</month><year>2025</year></pub-date><volume>38</volume><issue>5</issue><fpage>820</fpage><lpage>833</lpage><history><date date-type="received"><day>28</day><month>08</month><year>2024</year></date><date date-type="accepted"><day>18</day><month>03</month><year>2025</year></date><date date-type="rev-recd"><day>17</day><month>03</month><year>2025</year></date></history><permissions><copyright-statement>&#x000a9; 2025 The Authors. Published by American Chemical Society</copyright-statement><copyright-year>2025</copyright-year><copyright-holder>The Authors</copyright-holder><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>Permits the broadest form of re-use including for commercial purposes, provided that author attribution and integrity are maintained (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</ext-link>).</license-p></license></permissions><abstract><p content-type="toc-graphic"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="tx4c00347_0012" id="ab-tgr1"/></p><p>When applying machine learning (ML) approaches for the
+prediction
+of bioactivity, it is common to collect data from different assays
+or sources and combine them into single data sets. However, depending
+on the data domains and sources from which these data are retrieved,
+bioactivity data for the same macromolecular target may show a high
+variance of values (looking at a single compound) and cover very different
+parts of the chemical space as well as the bioactivity range (looking
+at the whole data set). The effectiveness and applicability domain
+of the resulting prediction models may be strongly influenced by the
+sources from which their training data were retrieved. Therefore,
+we investigated the chemical space and active/inactive distribution
+of proprietary pharmaceutical data from Bayer AG and the publicly
+available ChEMBL database, and their impact when applied as training
+data for classification models. For this end, we applied two different
+sets of descriptors in combination with different ML algorithms. The
+results show substantial differences in chemical space between the
+two different data sources, leading to suboptimal prediction performance
+when models are applied to domains other than their training data.
+MCC values between &#x02212;0.34 and 0.37 among all targets were retrieved,
+indicating suboptimal model performance when models trained on Bayer
+AG data were tested on ChEMBL data and vice versa. The mean Tanimoto
+similarity of the nearest neighbors between these two data sources
+indicated similarities for 31 targets equal to or less than 0.3. Interestingly,
+all applied methods to assess overlap of chemical space of the two
+data sources to predict the applicability of models beyond their training
+data sets did not correlate with observed performances. Finally, we
+applied different strategies for creating mixed training data sets
+based on both public and proprietary sources, using assay format (cell-based
+and cell-free) information and Tanimoto similarities.</p></abstract><funding-group><award-group><funding-source><institution-wrap><institution>Austrian Science Fund</institution><institution-id institution-id-type="doi">10.13039/501100002428</institution-id></institution-wrap></funding-source><award-id>W1232</award-id></award-group></funding-group><custom-meta-group><custom-meta><meta-name>document-id-old-9</meta-name><meta-value>tx4c00347</meta-value></custom-meta><custom-meta><meta-name>document-id-new-14</meta-name><meta-value>tx4c00347</meta-value></custom-meta><custom-meta><meta-name>ccc-price</meta-name><meta-value/></custom-meta></custom-meta-group></article-meta></front><body><sec id="sec1"><title>Introduction</title><p>Machine learning (ML) along with other
+artificial intelligence
+(AI) methods have experienced rapid advancement in the field of drug
+discovery and development.<sup><xref ref-type="bibr" rid="ref1">1</xref>,<xref ref-type="bibr" rid="ref2">2</xref></sup> Its significance can
+be evident in shaping the design of novel compounds of medical relevance
+and synthetic routes for medicinal chemistry.<sup><xref ref-type="bibr" rid="ref3">3</xref></sup> As an example, quantitative structure&#x02013;activity relationship
+(QSAR) approaches serve as a powerful instrument for <italic>in silico</italic> toxicity and bioactivity predictions.<sup><xref ref-type="bibr" rid="ref4">4</xref></sup> The predictive performance of these statistical methods relies heavily
+on the quality of the data from which the relationship between chemical
+properties and activity has to be learned.<sup><xref ref-type="bibr" rid="ref5">5</xref>,<xref ref-type="bibr" rid="ref6">6</xref></sup> Moreover,
+the availability of data also has a major influence on the predictivity
+and applicability of the models.<sup><xref ref-type="bibr" rid="ref7">7</xref></sup></p><p>Generally, data sets for computational drug discovery approaches
+are generated from different assays, experimental settings, and organizations.<sup><xref ref-type="bibr" rid="ref8">8</xref>,<xref ref-type="bibr" rid="ref9">9</xref></sup> In industry settings, large, consistently measured data sets are
+common. These data sets are properly curated and can be retrieved
+from large data repositories within the companies. Moreover, these
+data sets bear detailed annotations which are crucial when interpreting
+and contextualizing bioactivities. With consistent measurements and
+detailed annotations, data integrity and reliability can be assessed
+and ensured. As an example, one can determine the assay type (e.g.,
+radiological assay, in vitro/in vivo), allowing data sets to be combined
+accordingly and applied for specific tasks. However, proprietary data
+sets are nondisclosed to the public and therefore limited to the use
+within their own company.<sup><xref ref-type="bibr" rid="ref10">10</xref></sup></p><p>In contrast,
+public databases are freely accessible and allow for
+widespread access to information related to bioactivity measurements.<sup><xref ref-type="bibr" rid="ref11">11</xref>,<xref ref-type="bibr" rid="ref12">12</xref></sup> Moreover, using public databases reduces the financial burden on
+researchers and public institutions due to high investment associated
+with data generation. In sum, they can be used freely, openly and
+without charge, making them an often-preferred choice among academic
+researchers and research scientists.<sup><xref ref-type="bibr" rid="ref13">13</xref></sup> Despite
+these benefits, public databases are few and sparse compared to industry
+settings. They do not offer consistent comparable measurements and
+annotations as within industry settings. An additional drawback is
+a significant decrease in size when data sets are taken from a single
+experimental setup.<sup><xref ref-type="bibr" rid="ref14">14</xref></sup> Therefore, a typical
+strategy for creating data sets for ML approaches in the public domain
+is to combine results from different assays and sources, solely based
+e.g., on their annotated macromolecular target.<sup><xref ref-type="bibr" rid="ref15">15</xref></sup></p><p>Recent work by Landrum and Riniker<sup><xref ref-type="bibr" rid="ref15">15</xref></sup> demonstrated that combining IC<sub>50</sub> or K<sub>i</sub> values
+from different sources introduces a significant amount of noise in
+the data sets and resulting ML models. Another drawback demonstrated
+by Smaji&#x00107; et al.<sup><xref ref-type="bibr" rid="ref16">16</xref></sup> identified a
+significant bias in which models built from publicly available data
+sources tend to falsely predict many compounds to be active and models
+built on proprietary sources to falsely predict many compounds to
+be inactive. In that study, the ChEMBL database was examined to analyze
+the distribution of active and inactive compounds and demonstrated
+that the database contains an imbalance toward more active than inactive
+compounds for most data sets. In addition, the study showed that models
+generated from the publicly available database are prone to overpredict
+active compounds due to this imbalance and that this effect can be
+mitigated to some extend by using consensus predictions from these
+models and additional models based on data from proprietary sources.
+As in the study of by Smaji&#x00107; et al. the ML models from the
+Roche off-target panel were provided and no access to the data was
+given, a more thorough data investigation and comparison was not possible.</p><p>Therefore, we were interested in the predictivity of models when
+trained on a publicly available data set but tested on a Bayer AG
+data set and vice versa. Additionally, we investigated how representative
+the chemical spaces of the two available data sources, proprietary
+and publicly available, are of each other. Moreover, by comparing
+the chemical and also property spaces of the data sources together
+with details on the experiments from which the measurements were obtained,
+we examined the most effective approach for handling the data from
+different data set sources. This can help to guide decision-making
+in terms of enhancing sparse data sets and applicability of ML models
+for off-target and bioactivity predictions.<sup><xref ref-type="bibr" rid="ref17">17</xref></sup></p><p>In this work we conducted an extensive data analysis using
+internal
+data from Bayer AG and from ChEMBL to identify differences between
+the two data domains (public and proprietary) for 40 targets and their
+impact on ML models. In addition, we applied two different sets of
+descriptors (electrotopological state (Estate)<sup><xref ref-type="bibr" rid="ref18">18</xref></sup> and continuous data driven descriptors (CDDDs)<sup><xref ref-type="bibr" rid="ref19">19</xref>,<xref ref-type="bibr" rid="ref20">20</xref></sup> and investigated their influence on classical ML algorithms such
+as Random Forest (RF), XGBoost (XGB), and Support Vector Machine (SVM)
+for these tasks. Moreover, we analyzed the differences in the chemical
+space covered by Bayer AG and ChEMBL data for the 40 investigated
+targets based on Uniform Manifold Approximation and Projection (UMAP)<sup><xref ref-type="bibr" rid="ref21">21</xref></sup> representations and using mean Tanimoto similarity
+as well as the distribution of classical physicochemical properties
+such as Molecular Weight, H-Bond Acceptor and Donor Count, Heavy Atom
+Count, Rotatable Bond Count, Topological Polar Surface Area and predicted
+logD at pH 7.5 between these two data sources. Finally, we applied
+different strategies for merging data sets using assay format (cell-based
+and cell-free) information and Tanimoto similarities for ML model
+building.</p></sec><sec id="sec2"><title>Methods</title><sec id="sec2.1"><title>Data Set Preparation from Bayer AG and ChEMBL</title><p>All target
+entries listed within the internal database from Bayer AG were explored,
+and only the UniProtKB accession numbers (ACs)<sup><xref ref-type="bibr" rid="ref22">22</xref></sup> with the organism annotation <italic>Homo sapiens</italic> were collected.</p><p>In total 40 human targets for which sufficient
+data are available could be retrieved from both data sources (Bayer
+AG and ChEMBL). The criteria the data had to fulfill were &#x02265;
+250 data points in total and at least 15% of the minority class represented
+in the target data set for both domains. Classes were defined based
+on a threshold of IC50 or <italic>K</italic><sub>i</sub> value of
+10 &#x003bc;M. A data set size of 250 has been chosen as it can be considered
+a reasonable number for training ML algorithms such as SVM, RF and
+XGB.<sup><xref ref-type="bibr" rid="ref23">23</xref></sup> Data on the targets that fulfilled
+the criteria were selected to undergo a standardization protocol.
+Moreover, for each compound the InChI (IUPAC International Chemical
+Identifier), InChI Key and SMILES (Simplified Molecular Input Entry
+Specification) were calculated. MolVS (version 0.1.1) was applied
+to remove stereochemistry information, salts, neutralize, and discard
+nonorganic compounds.</p><p>To ensure data consistency, if in ChEMBL
+multiple measurements
+of a compound&#x02019;s interaction with the target of interest were
+identified, that lead to different classification (i.e., at least
+1 measurement claiming activity and 1 measurement claiming inactivity),
+this compound was removed from this target&#x02019;s data set. On the
+other hand, if a compound with multiple measurements showed activity
+within the Bayer AG data sets, the active class was assigned in any
+case due to more consistent data management within the database. This
+cautious approach was chosen, because in context of off-target predictions,
+false positive predictions are considered acceptable while false negative
+predictions state a higher risk of missing a dangerous effect.</p><p>As a result, sufficient data for a total of 40 targets were retrieved (<xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>).</p><fig id="fig1" position="float"><label>Figure 1</label><caption><p>Depiction of the workflow for the retrieval
+of the data sets for
+the 40 Targets. It illustrates that both data sources were used and
+UniProtKB accession numbers (ACs)<sup><xref ref-type="bibr" rid="ref22">22</xref></sup> with
+the organism annotation <italic>Homo sapiens</italic> and the criteria to fulfill were &#x02265; 250 data points and at
+least 15% of the minority class represented in the target data set
+for both domains were applied.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="tx4c00347_0001" id="gr1" position="float"/></fig></sec><sec id="sec2.2"><title>Data Set Preparation for Mixed Models with Assay Format Information</title><p>Considering the experimental setup in which bioactivity data was
+generated, in addition to the investigated target, is expected to
+improve model performance. To that end, we created data sets from
+both data sources that contained results either measured in a cell-based
+or a cell-free assay format.</p><p>For Bayer AG data sets a dedicated
+annotation on the assay format (cell-based or cell-free) was available,
+while ChEMBL data sets do not provide such an explicit annotation.
+Therefore, individual data sets from ChEMBL with cell-based experimental
+information were created by leveraging the combination of annotations
+on in vitro and cell name annotation entries. In addition, assay type
+information such as Binding (B), ADME (A) and Toxicity (T) were further
+utilized. For the creation of cell-free experimental data sets from
+ChEMBL, a similar approach has been conducted by removing entries
+with annotated cell lines from ChEMBL data and keeping assay type
+information: A, B, T. These annotations were used to retrieve combined
+data sets from both sources that can be used to train mixed models.</p><p>Three different approaches to compile the mixed training data were
+applied:<list id="list_0001" list-type="simple"><list-item><label>a.</label><p>Considering only the individual target
+information</p></list-item><list-item><label>b.</label><p>Considering
+target information and
+assay format</p></list-item><list-item><label>c.</label><p>Considering
+target information, assay
+format and Tanimoto similarity &#x02265; 0.230<sup><xref ref-type="bibr" rid="ref24">24</xref></sup></p></list-item></list></p><p>This investigation was performed on the targets KCNH2
+and PDGFRA,
+because for these two targets both data sources contained sufficient
+data points with the necessary annotations. The mixed models for KCNH2
+following approaches b) and c) are based on the assay format &#x0201c;cell
+based&#x0201d;, while the ones for PDGFRA are based on the assay format
+&#x0201c;cell free&#x0201d;. At Bayer AG for both targets, there are
+multiple test definitions (distinct experimental setups) available,
+resulting in two separate data sets for KCNH2 and three separate data
+sets for PDGFRA. These were used as basis for training individual
+ML models, adding ChEMBL data following the mentioned approaches a
+to c.</p><p>A more detailed differentiation of experimental setups
+(e.g., considering
+specific cell lines instead of the simple annotation of assay format)
+is expected to be beneficial but would result in a significant decrease
+in training data set size. Hence, it was not further investigated
+here.</p><p>Random and cluster based nested CV approaches were chosen
+for the
+evaluation of the models. Given the absence of significant differences
+in the model performance between SVM and XGB models, the latter was
+selected for ML model building due to its shorter computation time.</p><p>Violin plots were created to depict the results of random and cluster-based
+CV for easier comparison. Thicker sections indicate more consistency
+in model performance. Moreover, the thickness of the violin plot helps
+to understand the stability and variability of the model&#x02019;s
+performance across different folds. Specifically, a longer violin
+plot indicates a wider range of MCC values, while a shorter violin
+plot suggests a more limited range.</p></sec><sec id="sec2.3"><title>Descriptor Selection</title><p>Two different approaches for calculating
+molecular descriptors were applied: Molconn-Z Estate (Electrotopological
+State)<sup><xref ref-type="bibr" rid="ref18">18</xref></sup> and Continuous and Data-Driven
+Descriptors (CDDDs).<sup><xref ref-type="bibr" rid="ref20">20</xref></sup> They were selected
+owing to their different ways of capturing information on the compounds
+and for an analysis on the impact of these two different ways of chemical
+structure representation in ML model performance. Estate molecular
+descriptors capture electrotopological state contributions from neighboring
+atoms and unique values for different structural features.<sup><xref ref-type="bibr" rid="ref18">18</xref></sup> Whereas CDDDs incorporate concepts from neural
+machine translations. CDDDs compress significant information on molecular
+structures into a low-dimensional representation vector by translating
+two syntactically distinct but semantically identical representations
+of the same structures.<sup><xref ref-type="bibr" rid="ref20">20</xref></sup> Therefore, CDDDs
+can be considered as structural descriptors, while Estate descriptors
+can be considered as electrotopological descriptors. In this study,
+a set of 512 numerical features corresponding to the CDDDs and 79
+numerical features representing the Estate descriptors, were utilized,
+as the scope of the research focused on data set evaluation rather
+than the creation of best performing models or descriptor analysis
+and search. Given that CDDDs effectively represent the structural
+aspects of the compounds, we prioritized them over 2D fingerprint
+descriptors, as other descriptors would not provide additional insights.<sup><xref ref-type="bibr" rid="ref19">19</xref></sup></p></sec><sec id="sec2.4"><title>Statistical Metrics</title><p>To estimate the performance of
+the binary classification the following parameters were used:<list id="list_0002" list-type="bullet"><list-item><p>Sensitivity: TP/(TP + FN)</p></list-item><list-item><p>Specificity: TN/(TN + FP)</p></list-item><list-item><p>Balanced accuracy:
+(Sensitivity + Specificity)/2</p></list-item><list-item><p>Accuracy:
+(TP + TN)/(TP + FP + TN + FN)</p></list-item><list-item><p>Precision
+or Positive Predictivity (PPV): TP/(TP + FP)</p></list-item><list-item><p>Negative predictivity (NPV): TN/(TN + FN)</p></list-item><list-item><p>F-Measure: Two * ((precision * recall)/(precision +
+recall))</p></list-item><list-item><p>Matthews correlation coefficient
+(MCC): (TP * TN &#x02013;
+FP * FN)/sqrt((TP + FN)(TP + FP)(TN + FP)(TN + FN))</p></list-item></list></p><p>Here, a true active prediction is phrased as true positive
+(TP), a true inactive prediction as true negative (TN), a false active
+prediction as false positive (FP) and a false inactive prediction
+as false negative (FN). To choose the best-performing hyperparameters,
+the MCC was selected as a statistical metric.<sup><xref ref-type="bibr" rid="ref25">25</xref></sup></p></sec><sec id="sec2.5"><title>Model Generation</title><p>Three distinct classifiers, namely
+RF, XGB and SVM were employed for model generation and analysis to
+assess the influence of different training sets and descriptors. The
+scikit-learn Python library (version 1.2.2) implementations were used
+to train binary classification models for the 40 above-mentioned targets.</p></sec><sec id="sec2.6"><title>Hyperparameter Grid Search</title><p>A nonextensive hyperparameter
+search was performed for each classifier to identify parameters conductive
+to effective model generalization.</p><p>The following parameters
+were used:<list id="list_0003" list-type="bullet"><list-item><p><italic>Random Forest:</italic> n_estimators: 50, 100,
+200, max_depth: None, 10, 20</p></list-item><list-item><p><italic>XGBoost</italic>: n_estimators: 50, 100, 200,
+max_depth: 3, 5, 7</p></list-item><list-item><p><italic>Support Vector
+Machine:</italic> C: 0.1, 1,
+10, kernel: linear, rbf</p></list-item></list></p><p>For hyperparameter selection, we utilized nested cross-validation
+(CV) during model training to identify the optimal set of hyperparameters.
+Instead of selecting the combination that produced the highest MCC,
+we chose the hyperparameter set that was most frequently selected
+across the nested CV iterations. This method is less prone to overfitting
+compared to more extensive grid searches focusing on the highest MCC.</p></sec><sec id="sec2.7"><title>Training Procedure and Nested Cross Validation</title><p>A nested
+cross validation (CV) was performed, to systematically evaluate and
+optimize the performance of the predictive models. This approach involves
+an outer loop for model evaluation, where the data set is divided
+into training and test sets, and an inner loop for hyperparameter
+tuning, where the training set is further partitioned into multiple
+subsets for model construction and validation. By iteratively performing
+this process, nested CV allows a thorough evaluation of model generalization
+across different training and test data sets and robust hyperparameter
+optimization, enhancing the reliability and validity of the models.
+In this study we applied a 5-fold inner CV and 9-fold outer CV, whereas
+for retraining the final ML models, the most frequently occurring
+hyperparameters from the outer CVs were taken. By choosing a 9-fold
+outer CV, an odd number of resulting models were created compared
+to a 10-fold CV, which helped to select the most frequently occurring
+hyperparameters. This strategy has been conducted for both, ChEMBL
+and Bayer AG data sets, with the mentioned molecular descriptor sets.
+The workflow used for the nested CV for ChEMBL and Bayer AG internal
+data sets is depicted in <xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>.</p><fig id="fig2" position="float"><label>Figure 2</label><caption><p>Depiction of the workflow used to generate the models
+in this study.
+It illustrates the process of applying the inner and outer CV for
+hyperparameter search and evaluation of the models. Lastly, the models
+are retrained with the most frequently occurring hyperparameters and
+entire data sets for 3 different ML algorithms: rf, xgboost, and svm
+models.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="tx4c00347_0002" id="gr2" position="float"/></fig><p>In an additional study, combined data sets from
+different sources
+were used for model training. Performance was evaluated by applying
+nested CV using random and cluster-based splitting. Cluster-based
+splitting was performed using the Butina<sup><xref ref-type="bibr" rid="ref26">26</xref></sup> algorithm with Tanimoto similarity &#x02265; 0.230 as a threshold.</p><p>The ML models were retrained using all the data, utilizing the
+most frequently occurring hyperparameters identified from the outer
+CV results of the nested CV results.</p></sec><sec id="sec2.8"><title>Comparative Evaluation of ML Models Across Data Sources</title><p>Models trained on data from one data source (ChEMBL or Bayer AG)
+were evaluated on the data from the other source. To avoid data leakage
+due to overlapping data, compounds present in the training set were
+filtered out of the respective test set for each target based on the
+InChIs. This would allow no contamination of the test set which would
+be further used for the assessment of the models. The final models,
+ChEMBL and Bayer AG, were applied to their respective test sets from
+the other data domain: ChEMBL models on the Bayer AG internal data
+sets, and Bayer AG models on the ChEMBL data sets.</p></sec><sec id="sec2.9"><title>Visualization of Chemical Space Between Publicly Available and
+Proprietary Data Sets</title><p>A visualization of the chemical space
+for both data sources for each target was conducted using the dimensionality
+reduction technique UMAP (<xref rid="fig5" ref-type="fig">Figure <xref rid="fig5" ref-type="fig">5</xref></xref>). This visualization technique allows the projection
+of molecular structures from a high-dimensional space (i.e., chemical
+descriptor space, biological descriptor space, etc.) to a 2D plane,
+preserving the global structure of the data. UMAP can help to identify
+clusters of similar molecules, detect outliers, and gain insights
+into the underlying chemical or biological space.<sup><xref ref-type="bibr" rid="ref21">21</xref></sup> Compounds from one data source were filtered out from the
+data set from the other source using InChIs as the identifier leading
+to two data sets: ChEMBL_delta and Bayer AG_delta. The resulting UMAP
+visualizations can be found in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00347/suppl_file/tx4c00347_si_001.pdf">Supporting Information</ext-link> (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00347/suppl_file/tx4c00347_si_001.pdf">Figure S13</ext-link>). UMAP was
+applied to reduce the dimensionality of the data, using the following
+parameters: n_neighbors = 15, min_dist = 0.1, and n_components = 2.
+These settings were chosen to balance local and global structure in
+the resulting embedding.</p></sec><sec id="sec2.10"><title>Mean Tanimoto Similarity of the Nearest Neighbors Between ChEMBL
+and Bayer AG Data Sets</title><p>The Tanimoto Similarity is a metric
+used to compare molecular fingerprints measuring the similarity between
+two chemical compounds by calculating the ratio of shared features
+(bits set to 1 in both fingerprints) to the total number of features
+(bits set to 1 in either fingerprint). It ranges from 0 to 1, with
+a higher Tanimoto Coefficient indicating greater structural similarity.
+A Tanimoto Coefficient of 0.8, for example, suggests a significant
+degree of overlap in features, reflecting substantial molecular resemblance.<sup><xref ref-type="bibr" rid="ref27">27</xref></sup> The mean Tanimoto Similarity of the nearest
+neighbors between ChEMBL and Bayer AG data sets were calculated using
+Morgan Fingerprints 2 from RDKit. For each compound in the Bayer AG
+data set, we identified the nearest neighbor from the corresponding
+ChEMBL data set using Tanimoto similarity calculations. When thinking
+about the enrichment of Bayer data sets from similar compounds from
+ChEMBL data set, we considered the chemical similarity and chose a
+threshold of 0.230 as described in the analysis by Landrum et al.<sup><xref ref-type="bibr" rid="ref24">24</xref></sup> This approach was chosen because it establishes
+well-founded thresholds for assessing similarity using this Morgen
+Fingerprints 2 descriptors and similarity metrics. Internal studies
+at Bayer AG have indicated discrepancies when assessing the structural
+similarity of compounds represented as CDDDs based on the Tanimoto
+Coefficient. An analysis of nearest neighbor indicated low similarity
+between the Bayer AG data sets and ChEMBL which is further discussed
+in the results section.</p></sec></sec><sec id="sec3"><title>Results</title><sec id="sec3.1"><title>Data Set Overview</title><p>Simple statistical analysis was used
+to determine the size of minority classes and data sets. Data set
+sizes for all 40 targets (listed as HGNC symbols) are provided in
+the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00347/suppl_file/tx4c00347_si_001.pdf">Supporting Information</ext-link> (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00347/suppl_file/tx4c00347_si_001.pdf">Table S1, Figures S1 and 2</ext-link>). In the majority
+of the ChEMBL data sets, the active class contains more compounds
+than the inactive class (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00347/suppl_file/tx4c00347_si_001.pdf">Figure S1</ext-link>). In
+comparison, in the Bayer AG data sets, one can observe a shift toward
+a higher ratio of inactive compounds (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00347/suppl_file/tx4c00347_si_001.pdf">Figure S2</ext-link>). The maximum number of compounds overlapping between ChEMBL and
+Bayer AG data sets was 10% for the target Serine/Threonine-protein
+kinase ATR. For 13 targets, there were no compounds from the one data
+source occurring as duplicates in the other data source. The retrieved
+data sets from both data sources were further employed in an analysis
+on mixed ML models, utilizing training data compiled from both sources
+into one data set as described in the methods section. Starting off
+with the data set from one distinct experimental setup from Bayer
+AG, corresponding ChEMBL data were added to the training set. First,
+by combining the data sets according only to their respective target
+(approach a). Second, by combining the data sets according to the
+respective target and the assay format information (approach b), and
+last by adding only ChEMBL compounds with a Tanimoto similarity &#x02265;
+0.230 according to the respective target and assay format to the corresponding
+Bayer AG data set (approach c). The more restrictive approaches generally
+lead to a reduction in training data set size, thus also affecting
+split size and split heterogeneity in the nested CV during model training.
+These data sets were used to train ML models in random and cluster
+based nested CVs to investigate the impact of combined training data
+sets on model quality. Two targets, KCNH2 and PDGFRA, were chosen
+for this analysis. Data availability for both data set domains is
+provided in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00347/suppl_file/tx4c00347_si_001.pdf">Supporting Information Table S1</ext-link>.</p></sec><sec id="sec3.2"><title>Model Performance of Nested CV within One Data Source</title><p>To assess the predictive performance of models after the nested cross-validation
+for the 40 targets, MCC was selected for evaluation in the graphical
+depiction. <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00347/suppl_file/tx4c00347_si_001.pdf">Figures S3&#x02013;S6</ext-link> represent
+the aggregated results of the outer CV with the corresponding set
+of descriptors. <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00347/suppl_file/tx4c00347_si_001.pdf">Figures S3 and S4</ext-link> illustrate
+the performances in combination with CDDDs. Overall, good performances
+were observed for both data sources and descriptor sets. Models for
+the majority of targets exceeded a mean MCC over 0.5, which can be
+translated to a good predictiveness of the models within their training
+data source.</p><p>Moreover, the standard deviation across all outer
+CV results per target and data domain, which is depicted as error
+bars for both data sources and descriptor sets (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00347/suppl_file/tx4c00347_si_001.pdf">Figures S3&#x02013;S6</ext-link>), was within an acceptable range, indicating
+consistency and robustness of the methods toward varying splits in
+test and training data sets within the respective data source. In
+addition, all statistical metrics for each target can be downloaded
+from Zenodo (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://zenodo.org/doi/10.5281/zenodo.14355717">https://zenodo.org/doi/10.5281/zenodo.14355717</ext-link>).</p><p>Results derived based on CDDDs within the ChEMBL source,
+for the
+targets CDC25A, CYP2C19, CYP2C8, CYP2C9, MALT1 showed lower performance
+compared to others with mean MCC values slightly higher than 0.4,
+indicating still acceptable model performance (see <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00347/suppl_file/tx4c00347_si_001.pdf">Figure S3</ext-link>). Observing Bayer AG results, only the model for
+MGLL showed suboptimal performance with MCC score 0.2 (see <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00347/suppl_file/tx4c00347_si_001.pdf">Figure S4</ext-link>). This could be explained by the low
+number of data points for training, bearing a total of 255 data points
+for the complete data set (see <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00347/suppl_file/tx4c00347_si_001.pdf">Table S1</ext-link>). Models for other targets, such as CACNA1C, CYP2C19, CYP2D6, ELANE,
+ESR2, PDGFRA, PTPN1 showed values modestly above 0.4 MCC.</p><p>Due
+to the large data set size within PDGFRB it was impractical
+to create SVM models, as complexity increases exponentially with large
+data sets. Therefore, no SVM models for PDGFRB from Bayer AG source
+were created.</p><p><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00347/suppl_file/tx4c00347_si_001.pdf">Figures S5 and S6</ext-link> display
+the results
+of outer CV results using Estate descriptors for model building. Overall,
+a slight decrease in the MCC values can be observed when compared
+to the models created by using CDDDs. Results of the outer CV in both
+data sources indicate for the majority of targets overall good performances
+reaching MCCs over 0.5. Models created using the ChEMBL domain showed
+lower performance for CDC25A, CYP2C8, MALT1, PDGFRA, with MCC values
+below 0.4. The Bayer AG models for the targets CACNA1C, CYP2C19, CYP2D6
+and PTPN1 showed MCC values below 0.4. In the instance of MGLL, the
+MCC exhibited a value of 0.3.</p><p>Based on the performance of the
+models evaluated by outer CV across
+the 40 targets, it can be concluded that the models generalize well
+within their data source. To evaluate their applicability to the respective
+other data source, all models were retrained with the full data sets
+of each target from each data set source. For this, the hyperparameters
+that were chosen most often in the ensembles of the repeated outer
+CVs were selected to train the final models.</p></sec><sec id="sec3.3"><title>Model Performance Across Data Sources</title><sec id="sec3.3.1"><title>Model Performance on ChEMBL Data Sets</title><p>The <italic>t</italic> test calculations of the mean MCC values revealed significant differences
+when CDDDs and Estate descriptors were used, with CDDDs outperforming
+the Estate descriptors. Given the performance exhibited by models
+built with CDDDs compared to the Estate descriptors, the models were
+retrained and tested using CDDDs to leverage their efficacy in enhancing
+predictive accuracy. <xref rid="fig3" ref-type="fig">Figures <xref rid="fig3" ref-type="fig">3</xref></xref> and <xref rid="fig4" ref-type="fig">4</xref> display the performance of the
+final models trained with Bayer AG data predicting the corresponding
+ChEMBL data set for the same target (<xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>) and vice versa (<xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>). Overall, it becomes evident that model
+performance across the data domain shows a suboptimal outcome. Models
+trained with the Bayer AG data set exhibited a notable deficiency
+in accurately predicting the corresponding ChEMBL data sets. Only
+ATR and MMP12 showed MCC values above 0.4. Most targets exhibited
+MCC values below 0.3, suggesting moderate to poor agreement between
+the predicted and actual classification. For targets such as CHEK2,
+CXCR1, HIF1A, MALT1, MMP12, MMP8, PLG and PTPN1MCC values were worse
+than random, falling around or below zero.</p><fig id="fig3" position="float"><label>Figure 3</label><caption><p>A bar chart illustrating
+the performance of models trained on Bayer
+AG data predicting ChEMBL test sets, using CDDDs to represent the
+chemical structures. The bar chart displays the MCC scores achieved
+by different ML algorithms across the 40 Targets. The <italic>x</italic>-axis represents 40 targets, while the <italic>y</italic>-axis shows
+the MCC score. Each bar is color coded to represent a different ML
+algorithm: red for SVM, green for XGB, and blue for RF.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="tx4c00347_0003" id="gr3" position="float"/></fig><fig id="fig4" position="float"><label>Figure 4</label><caption><p>A bar chart illustrating the performance of models trained
+on ChEMBL
+data predicting Bayer AG test sets, using CDDDs to represent the chemical
+structures. The bar chart displays the MCC scores achieved by different
+ML algorithms across the 40 Targets. The <italic>x</italic>-axis represents
+40 targets, while the <italic>y</italic>-axis shows the MCC score.
+Each bar is color coded to represent a different ML model: red for
+SVM, green for XGB, and blue for RF.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="tx4c00347_0004" id="gr4" position="float"/></fig></sec><sec id="sec99"><title>Model Performance on Bayer AG Internal Data Sets</title><p>A
+similar trend can be seen when looking at the performance of models
+trained on ChEMBL data predicting Bayer AG data sets (<xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>). In this scenario, MCC exceeded
+0.4 for only two of the targets, ADAM17 and CXCR1. MCC values over
+0.3 were only retrieved for F2 and MMP12. Model performance for the
+targets, CHEK2, CLK1, ELANE, IDO1, LCK, MMP1, MMP14, MMP8, PDGFRA,
+PDGFRB, PIK3R1, PLG, PTPN1 and TNF is poor with MCC values around
+or below zero. Overall, across both data sources, no algorithm demonstrated
+superiority over the others. Moreover, it becomes evident that using
+the ChEMBL database for model training and applying these models on
+proprietary data sets such as Bayer AG and vice versa, using Bayer
+AG data sets for model building and applying them to ChEMBL, produce
+inadequate levels of prediction accuracy and suggest they are not
+suitable for applying the models across data sources.</p></sec></sec><sec id="sec3.4.1"><title>Visualization of Chemical Space for the 40 Targets and Mean
+Tanimoto Similarity Calculations of the Nearest Neighbors</title><p>The observed prediction performances of models trained on data from
+one source predicting data from the respective other sources were
+poor in most cases. As a first assessment on the proximity of chemical
+spaces of the two data sources, UMAP visualizations were applied.
+One point of interest here was the analysis to which extent UMAP visualization
+could indicate good or bad model applicability.</p><p>The Estate descriptors
+were chosen over CDDDs, as internal studies at Bayer AG show a mismatch
+when assessing the structural similarity of compounds represented
+as CDDDs based on the Tanimoto Coefficient. The resulting 40 UMAP
+visualizations indicated similarity between the compounds in terms
+of drug alikeness to some extent. This can be explained by the nature
+of the Estate molecular descriptors, as they are designed to capture
+important molecular features related to drug-likeness, such as hydrogen
+bond donors and acceptors, hydrophobicity, size and complexity. Therefore,
+ML models built on Estates descriptors following the same procedure
+as described above for CDDD descriptors were trained for all 40 targets.
+These were used to reflect on how indicative overlap of chemical space
+is to assess the applicability of models across data sources.</p><p>The analyses indicated that representatives of the Bayer AG database
+can be found in nearby areas or overlapping with ChEMBL database representatives.
+For illustrative purposes, three targets have been selected, ADAM17,
+CLK1 and CXCR1 to reflect on how UMAP visualizations may explain model
+performances.</p><p>Looking at the UMAP visualization for ADAM17 one
+can observe that
+the chemical space covered by the Bayer AG compounds is well embedded
+in the chemical space covered by the ChEMBL compounds. Following this
+observation, a good model performance when the ChEMBL trained model
+is applied to Bayer AG compounds can be expected. In line with that,
+this experiment yields a MCC value of 0.56 for the RF model (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00347/suppl_file/tx4c00347_si_001.pdf">Figure S12</ext-link>). When the Bayer AG data source trained
+model is applied to compounds from the corresponding ChEMBL data set,
+a drop of performance, 0.30 MCC for the RF model (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00347/suppl_file/tx4c00347_si_001.pdf">Figure S11</ext-link>), can be observed. This can be explained by the
+high amount of ChEMBL compounds in a chemical space beyond that of
+the Bayer AG compounds used for model training (see <xref rid="fig5" ref-type="fig">Figure <xref rid="fig5" ref-type="fig">5</xref></xref>).</p><fig id="fig5" position="float"><label>Figure 5</label><caption><p>UMAP visualizations of Bayer AG and ChEMBL data sets for ADAM 17,
+CLK1 and CXCR1. Different shapes and colors in the figures indicate
+the unique and overlapping compounds from both data sources Overlapping
+compounds are indicated as yellow triangles. Blue dots represent the
+ChEMBL chemical space whereas green squares represent Bayer AG chemical
+space.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="tx4c00347_0005" id="gr5" position="float"/></fig><p>Interestingly, this does not apply for CLK1. When
+models for CLK1
+are applied across data sources, both models fail to generalize and
+show MCC values between MCC&#x02013;0.25 when Bayer models are applied
+on ChEMBL and MCC values of &#x02212;0.21 when applied vice versa (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00347/suppl_file/tx4c00347_si_001.pdf">Figures S11 and S12</ext-link>). However, looking at the
+UMAP visualizations for CLK1, most of the chemical space covered by
+ChEMBL compounds are embedded in the chemical space covered by the
+Bayer AG compounds, but covers distinct areas. Hence, one would expect
+a decent performance of the model trained on Bayer data when predicting
+ChEMBL compounds based on the UMAP visualization (<xref rid="fig5" ref-type="fig">Figure <xref rid="fig5" ref-type="fig">5</xref></xref>). Observed model performance
+shows, that UMAP visualization does not cover all information needed
+to understand model applicability in this case.</p><p>The UMAP visualization
+for CXCR1 shows larger clusters of nonrelated
+chemical spaces for the two different data sources. From this, low
+transferability of the model trained on one data source to predict
+the respective other one can be expected. The ChEMBL model trained
+for CXCR1 shows a performance of 0.28 MCC for the XGB model predicting
+Bayer AG compounds. Even worse model performance can be seen when
+the Bayer AG model is applied to ChEMBL compounds (MCC = &#x02212;0.49, <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00347/suppl_file/tx4c00347_si_001.pdf">Figure S11</ext-link>).</p><p>Unfortunately, across all
+40 targets the UMAP visualizations are
+not informative in order to assess the transferability of models trained
+on one data source to predict compounds from the respective other
+data source.</p><p>In addition, we calculated mean Tanimoto similarities
+of the nearest
+neighbors based on Morgan fingerprints 2 to assess similarities between
+corresponding data sets from the two data sources for all 40 targets. <xref rid="fig6" ref-type="fig">Figure <xref rid="fig6" ref-type="fig">6</xref></xref> shows the results
+of this analysis. The results of the mean Tanimoto similarity of the
+nearest neighbors revealed that the data sets in general exhibit low
+chemical similarity. <xref rid="fig6" ref-type="fig">Figure <xref rid="fig6" ref-type="fig">6</xref></xref> demonstrates that for the majority of targets a similarity
+of 0.3 was obtained for the nearest neighbors of the two data sources,
+suggesting differences in the chemical space. Only for the target
+Serine/Threonine-protein kinase ATR, a mean Tanimoto similarity of
+0.5 was identified to the nearest neighbors (<xref rid="fig6" ref-type="fig">Figure <xref rid="fig6" ref-type="fig">6</xref></xref>). Despite this, the ML models for this target
+achieved poor MCC values across the data set sources (0.46 and 0.22,
+respectively; <xref rid="fig3" ref-type="fig">Figures <xref rid="fig3" ref-type="fig">3</xref></xref> and <xref rid="fig4" ref-type="fig">4</xref>). The lowest mean Tanimoto similarity
+to the nearest neighbor was retrieved for Acetyl-CoA carboxylase 1
+(ACACA), Cytochrome P450 2C19 (CYP2C19) and Mitogen-activated protein
+kinase 10 (MAPK10), with a value of 0.2 (<xref rid="fig6" ref-type="fig">Figure <xref rid="fig6" ref-type="fig">6</xref></xref>). For example, when ML models from Bayer
+AG for CYP2C19 and MAPK10 are tested on ChEMBL data, MCC values of
+0.12 for the XGB model and 0.20 for the SVM model were obtained, while
+the vice versa setting yielded MCC values of 0.18 and 0.28 for the
+SVM models (<xref rid="fig3" ref-type="fig">Figures <xref rid="fig3" ref-type="fig">3</xref></xref> and <xref rid="fig4" ref-type="fig">4</xref>). ML models for Interleukin 8 receptor,
+alpha (CXCR1), which showed mean Tanimoto similarities of 0.3, exhibited
+good MCC scores of 0.46 when ChEMBL models were applied to Bayer AG.
+However, when models were applied vice versa, MCC values of &#x02212;0.34
+were observed, indicating significant decrease in performance (<xref rid="fig3" ref-type="fig">Figures <xref rid="fig3" ref-type="fig">3</xref></xref> and <xref rid="fig4" ref-type="fig">4</xref>).</p><fig id="fig6" position="float"><label>Figure 6</label><caption><p>A bar chart illustrating the outcome of mean Tanimoto similarity
+(based on Morgan fingerprints 2) of the nearest neighbors between
+ChEMBL and Bayer AG data. The <italic>x</italic>-axis represents all
+40 targets, while the <italic>y</italic>-axis depicts the mean Tanimoto
+similarity of the nearest neighbors.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="tx4c00347_0006" id="gr6" position="float"/></fig><p>Comparing these observations on the data set similarities
+to the
+ML performance, it becomes evident that this approach does not align
+with the performance metrics. These findings suggests that Tanimoto
+similarities of the nearest neighbor may not reflect the utility in
+assessing the transferability of models to predict compounds from
+the other data source.</p></sec><sec id="sec3.5"><title>Distribution of Key Physicochemical Properties Across All 40
+Off-Targets</title><p>The analysis of the distribution of key physicochemical
+properties across all 40 off-targets between the two respective data
+sets (Bayer AG and ChEMBL), including Molecular Weight, predicted
+logD at pH 7.5, Topological Polar Surface Area, Heavy Atom Count,
+Rotatable Bond Count, H-Bond Donor Count, and H-Bond Acceptor Count,
+revealed differences between the two data sources across nearly all
+data sets. Among these, the predicted logD at pH 7.5 exhibited the
+smallest variation, while the Heavy Atom Count showed the largest
+differences. For example, PIK3R1, MMP8, CLK1, and ACACA with details
+available on Zenodo (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://zenodo.org/doi/10.5281/zenodo.14355717">https://zenodo.org/doi/10.5281/zenodo.14355717</ext-link>). The majority of compounds within the Bayer AG data sets demonstrated
+a higher Molecular Weight compared to their corresponding ChEMBL data
+sets. However, the analysis of Rotatable Bond Count, H-Bond Donor
+Count, H-Bond Acceptor Count, and Topological Polar Surface Area showed
+no consistent trends. Some data sets displayed higher or lower values
+for these properties, while others showed negligible differences.
+Overall, the results highlight notable variability in physicochemical
+properties across the data sources, alongside differences in structural
+information identified through the Mean Tanimoto Similarity analysis.
+All results can be found on Zenodo (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://zenodo.org/doi/10.5281/zenodo.14355717">https://zenodo.org/doi/10.5281/zenodo.14355717</ext-link>).</p></sec><sec id="sec3.6"><title>Mixed Models</title><p>Applying ML models trained on data from
+only one data source to predict bioactivities of the other data source
+did not show satisfying performance and the analysis of the covered
+chemical space did not turn out to be informative on the applicability.
+Hence, the training of ML models on data sets combining the two sources
+was investigated.</p><p><xref rid="fig7" ref-type="fig">Figures <xref rid="fig7" ref-type="fig">7</xref></xref>&#x02013;<xref rid="fig11" ref-type="fig">11</xref> show the model performance
+for the three different approaches (a to c) used for the compilation
+of mixed training data sets as described in the methods section above.</p><fig id="fig7" position="float"><label>Figure 7</label><caption><p>Violin
+plots illustrating results from random and cluster-based
+nested CV for KCNH2 experimental setup 1 from Bayer AG. The <italic>x</italic>-axis represents different approaches used for compiling
+training data based on adding ChEMBL data using solely target information
+(approach a), additionally assay format information (approach b) and
+additionally Tanimoto similarity &#x02265; 0.230 (approach c). <italic>Y</italic>-axis depicts the mean MCC values obtained from random
+and cluster-based nested CV.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="tx4c00347_0007" id="gr7" position="float"/></fig><p><xref rid="fig7" ref-type="fig">Figures <xref rid="fig7" ref-type="fig">7</xref></xref> and <xref rid="fig8" ref-type="fig">8</xref> visualize
+the performance
+of models trained with the three differently compiled training data
+sets, assessed by random and cluster-based nested CV for KCNH2. Interestingly,
+performance increased slightly for random and cluster-based splits
+when taking assay format information into account when compiling mixed
+data sets for model training, following approach b) (<xref rid="fig7" ref-type="fig">Figure <xref rid="fig7" ref-type="fig">7</xref></xref>). However, when in addition
+chemical similarity was taken into account (approach c), no further
+improvement in model performance can be observed. The slightly worse
+performance and higher variability of MCC values obtained from cluster-based
+splits in comparison to random-based splits can be explained by cluster-based
+test splits being relatively dissimilar to the respective training
+splits while in random-based splitting, similarity is homogeneously
+distributed across splits, resulting in better transferability of
+predictions from training to test splits. Additionally, training and
+test set size as well as split size influence predictive performance
+and variability.</p><fig id="fig8" position="float"><label>Figure 8</label><caption><p>Violin plots illustrating results from random and cluster-based
+nested CV for KCNH2 experimental setup 2 from Bayer AG. The <italic>x</italic>-axis represents different approaches used for compiling
+training data based on adding ChEMBL data using solely target information
+(approach a), additionally assay format information (approach b) and
+additionally Tanimoto similarity &#x02265; 0.230 (approach c). <italic>Y</italic>-axis depicts the mean MCC values obtained from random
+and cluster-based nested CV.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="tx4c00347_0008" id="gr8" position="float"/></fig><p>When analyzing the cluster-based nested CV results,
+a high frequency
+of MCC values around 0.38 can be observed when only individual target
+information is used. A wide range of MCC values is evident when additionally,
+assay format information is included, with an even broader range observed
+when Tanimoto similarities are added. This shows the impact of split
+size and split heterogeneity on model performance is also depending
+on total data set size, since the more restrictive approaches of data
+set compilation generally lead to a reduction in data set size compared
+to the less restrictive approaches.</p><p>For two of the PDGFRA experimental
+setups from Bayer AG (<xref rid="fig9" ref-type="fig">Figures <xref rid="fig9" ref-type="fig">9</xref></xref> and <xref rid="fig10" ref-type="fig">10</xref>),
+compiling the training data according to approach b) showed improved
+performance, with MCC values ranging between 0.6 and 0.75 for random
+and 0.4 and 0.58 for cluster-based nested CV compared to approach
+a). In contrast, when utilizing the third experimental setup from
+Bayer AG no difference in performance was observed for the three different
+approaches of training data compilation (<xref rid="fig11" ref-type="fig">Figure <xref rid="fig11" ref-type="fig">11</xref></xref>). This resulted in MCC values of approximately 0.45 for random-based
+nested CV and 0.2 for cluster-based approaches.</p><fig id="fig9" position="float"><label>Figure 9</label><caption><p>Violin plots illustrating
+results from random and cluster-based
+nested CV for PDGFRA experimental setup 1 from Bayer AG. The <italic>x</italic>-axis represents different approaches used for compiling
+training data based on adding ChEMBL data using solely target information
+(approach a), additionally assay format information (approach b) and
+additionally Tanimoto similarity &#x02265; 0.230 (approach c). <italic>Y</italic>-axis depicts the mean MCC values obtained from random
+and cluster-based nested CV.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="tx4c00347_0009" id="gr9" position="float"/></fig><fig id="fig10" position="float"><label>Figure 10</label><caption><p>Violin plots illustrating results from random and cluster-based
+nested CV for PDGFRA experimental setup 2 from Bayer AG. The <italic>x</italic>-axis represents different approaches used for compiling
+training data based on adding ChEMBL data using solely target information
+(approach a), additionally assay format information (approach b) and
+additionally Tanimoto similarity &#x02265; 0.230 (approach c). <italic>Y</italic>-axis depicts the mean MCC values obtained from random
+and cluster-based nested CV.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="tx4c00347_0010" id="gr10" position="float"/></fig><fig id="fig11" position="float"><label>Figure 11</label><caption><p>Violin plots illustrating results from random and cluster-based
+nested CV for PDGFRA experimental setup 3 from Bayer AG. The <italic>x</italic>-axis represents different approaches used for compiling
+training data based on adding ChEMBL data using solely target information
+(approach a), additionally assay format information (approach b) and
+additionally Tanimoto similarity &#x02265; 0.230 (approach c). <italic>Y</italic>-axis depicts the mean MCC values obtained from random
+and cluster-based nested CV.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="tx4c00347_0011" id="gr11" position="float"/></fig></sec></sec><sec id="sec4"><title>Discussion</title><p>The first part of the study was to confirm
+on a larger scale the
+results obtained from Smaji&#x00107; et al. that models trained on
+public sources are not applicable for in-house predictions, and vice
+versa. If so, the second focus was the investigation of different
+strategies for enhancing in-house data sets with selected public data,
+considering both chemical space and experimental setup information. <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00347/suppl_file/tx4c00347_si_001.pdf">Figures S1 and S2</ext-link> show that the two data sources,
+ChEMBL and Bayer AG, exhibit inherent differences in their core characteristics,
+as one data source is skewed toward actives while the other shows
+imbalance toward inactives. Furthermore, from the confusion matrices
+which can be found on Zenodo (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://zenodo.org/doi/10.5281/zenodo.14355717">https://zenodo.org/doi/10.5281/zenodo.14355717</ext-link>) it becomes evident that for the majority of targets, the models
+trained on ChEMBL data overpredict positives and models trained on
+Bayer AG data overpredict negatives. This corroborates the earlier
+study by Smaji&#x00107; et al.</p><p>The assessment of the applicability
+of models trained on one data
+source to predict data from the other data source was investigated
+using the dimensionality reduction method UMAP, calculating key physicochemical
+properties and assessing structural similarity through mean Tanimoto
+similarity. In addition to addressing the main research questions
+within this manuscript, these methods provided a comprehensive view
+of the chemical space covered by the Bayer AG and ChEMBL data sets.
+Low Mean Tanimoto Similarity values indicate reduced structural similarity
+between the two data set domains. However, our study shows that these
+approaches do not provide insights into whether ML models will fail
+when tested across different data sources. For certain targets, an
+overlap in chemical space was observed, but this was not consistently
+reflected in model performance, and vice versa. The two different
+data sources share very few identical compounds with the highest percentage
+of identical compounds for one target being 10% for the target ATR.</p><p>Besides focusing on the utility of the applicability domain estimation
+we also were interested in the performances of different combinations
+of descriptors and ML algorithms. Across the majority of target end
+points, RF, XGB and SVM algorithms applied in the nested CV showed
+better performances when using CDDDs compared to Estate descriptors,
+irrespective of the data source. Interestingly, combining SVM with
+CDDDs enhanced performance compared to using RF and XGB with CDDDs,
+albeit this effect is not statistically significant. This can be observed
+in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00347/suppl_file/tx4c00347_si_001.pdf">Figures S3 and S4</ext-link>. For a better depiction
+of the overall performances between the three ML algorithms and descriptors
+for all 40 targets, violin bar plots have been created. The violin
+plots can be found in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00347/suppl_file/tx4c00347_si_001.pdf">Supporting Information. Figures S7&#x02013;S10</ext-link> show the overall mean MCC (aggregating
+the repeated outer CV results) for all 40 targets when RF, XGB, and
+SVM models are used in combination with CDDDs and Estate descriptors.
+A high frequency of the overall MCC values for SVM models in combination
+with CDDDs can be seen around values higher than 0.6. In addition,
+the median sits slightly higher than the one of RF and XGB models
+with a MCC value above 0.6 indicating overall good performance in
+terms of classification accuracy. A drop in performance, from 0.6
+to 0.5 MCC, can be observed when applying Estate descriptors to build
+SVM models.</p><p>In order to investigate the predictivity of mixed
+ML models trained
+on data sets compiled from both data sources, three different approaches
+were utilized: Starting with data from one experimental setup from
+Bayer AG, ChEMBL data were added to the training set based either
+on only target information (approach a), or on target information
+and assay format information (approach b) or on target information
+and assay format information and Tanimoto similarity (approach c).
+For the analyzed targets KCNH2 and PDGFRA, no significant advantage
+was evident for approach c) versus approach b). Nevertheless, better
+performances for certain target + assay format combinations (approach
+b) were retrieved compared to combining data sets according to only
+target information (approach a), suggesting its potential utility
+in the training data compilation process. However, given the lack
+of detailed annotations in the ChEMBL database, caution is warranted
+regarding potential biases and uncertainties inherent in combining
+data sets, which could introduce variability in the analysis outcomes.
+Also, applying more restrictive criteria for data set compilation
+leads to smaller training data set sizes. Here, finding the balance
+between scientifically sound combination approaches and adequate data
+set size remains a challenge. Therefore, additional analysis, and
+experiments are necessary to explore this further, particularly utilizing
+qualitatively annotated data for a more in-depth understanding. Furthermore,
+as demonstrated in the recent Tox24 challenge, representation learning
+methods<sup><xref ref-type="bibr" rid="ref28">28</xref></sup> as well as multitask learning
+approaches have the potential to further enhance model performance,
+which could be explored further in future studies.</p></sec><sec id="sec5"><title>Conclusions</title><p>In this study, we present significant differences
+between the different
+data sources of publicly available vs proprietary data and their impact
+on the ML model performances when applied to data sets out of the
+training set source. An evaluation of UMAP visualizations and Tanimoto
+similarity calculations for preassessing model applicability on data
+sets other than its training data set sources reveal poor guidance.
+Additionally, the exploration of various approaches to combine data
+sets from different sources based on the inclusion of experimental
+assay information is presented. Here we may see that considering assay
+format information improves predictive quality in some cases while
+taking chemical similarity into account seems to play a minor role.
+In addition, we visualize chemical spaces for all 40 investigated
+targets and highlight their different distribution/location in chemical
+space and differences in chemical similarity using mean Tanimoto similarity
+calculations of the nearest neighbor. We demonstrate that models trained
+on data from one source are not suitable for predicting compounds
+from other data sources, which is most probably due to lack of overlap
+in their chemical spaces. If it is not possible to obtain decent model
+performance on in-house data only, results obtained with KCNH2 and
+PDGFRA indicate that enhancing the training data with public compounds&#x02014;considering
+experimental setup information such as assay format in addition to
+target information&#x02014;can enhance model performance. However,
+leveraging public data is not straightforward due to limited annotations,
+making it difficult to obtain high-quality data, even though it holds
+the potential for improved models. This strengthens the importance
+of defined meta data annotations in both public and proprietary data
+sets which are unfortunately currently often lacking. Moreover, this
+study contributes to various domains within ML approaches. By highlighting
+the differences in chemical space across domains, it seeks to raise
+awareness within the community about the potential challenges associated
+with using chemical and biological data from diverse sources for model
+training.</p></sec></body><back><notes id="notes1" notes-type="si"><title>Supporting Information Available</title><p>The Supporting Information is
+available free of charge at <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/10.1021/acs.chemrestox.4c00347?goto=supporting-info">https://pubs.acs.org/doi/10.1021/acs.chemrestox.4c00347</ext-link>.<list id="silist1" list-type="simple"><list-item><p>Data availability for both data set domains, distribution
+of actives and inactives, bar charts illustrating the results of nested
+CV (CDDDs + Estates), overall MCC distribution from random-based nested
+CV using CDDD and estate descriptors, and visualization of chemical
+space for 40 targets (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.chemrestox.4c00347/suppl_file/tx4c00347_si_001.pdf">PDF</ext-link>)</p></list-item></list></p></notes><sec sec-type="supplementary-material"><title>Supplementary Material</title><supplementary-material content-type="local-data" id="sifile1"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="tx4c00347_si_001.pdf"><caption><p>tx4c00347_si_001.pdf</p></caption></media></supplementary-material></sec><notes notes-type="" id="notes2"><title>Author Contributions</title><p>A.S. developed,
+implemented, and validated the method. A.H., G.F.E. and T.S.-H. were
+involved in designing the study. All authors read and approved the
+manuscript. CRediT: <bold>Aljo&#x00161;a Smaji&#x00107;</bold> conceptualization,
+data curation, formal analysis, investigation, methodology, writing
+- original draft, writing - review &#x00026; editing; <bold>Thomas Steger-
+Hartmann</bold> project administration, resources, supervision, writing
+- review &#x00026; editing; <bold>Gerhard F. Ecker</bold> funding acquisition,
+resources, writing - review &#x00026; editing; <bold>Anke Hackl</bold> conceptualization, data curation, formal analysis, resources, supervision,
+validation, writing - review &#x00026; editing.</p></notes><notes notes-type="funding-statement" id="notes4"><p>The Pharmacoinformatics
+Research Group (Ecker lab) acknowledges funding provided by the Austrian
+Science Fund FWF W1232 MolTag. Open Access is funded by the Austrian
+Science Fund (FWF).</p></notes><notes notes-type="COI-statement" id="notes3"><p>The authors
+declare no competing financial interest.</p></notes><ack><title>Acknowledgments</title><p>We would like to
+acknowledge the resources provided
+by Bayer Pharma AG for this project. The authors thank Marina Garcia
+de Lomana for her support in the project.</p></ack><glossary id="dl1"><def-list><title>Abbreviations</title><def-item><term>ML</term><def><p>machine
+learning</p></def></def-item><def-item><term>AI</term><def><p>artificial
+intelligence</p></def></def-item><def-item><term>QSAR</term><def><p>quantitative structure&#x02013;activity
+relationship</p></def></def-item><def-item><term>CDDD</term><def><p>continuous data driven descriptor</p></def></def-item><def-item><term>Estate</term><def><p>electrotopological state</p></def></def-item><def-item><term>RF</term><def><p>random forest</p></def></def-item><def-item><term>XGB</term><def><p>xgboost</p></def></def-item><def-item><term>SVM</term><def><p>support vector machine</p></def></def-item><def-item><term>UMAP</term><def><p>uniform manifold approximation
+and projection for dimension reduction</p></def></def-item><def-item><term>AC</term><def><p>accession number</p></def></def-item><def-item><term>InChIs</term><def><p>IUPAC international chemical
+identifiers</p></def></def-item><def-item><term>SMILES</term><def><p>simplified molecular input entry
+specification</p></def></def-item><def-item><term>B</term><def><p>binding</p></def></def-item><def-item><term>A</term><def><p>ADME</p></def></def-item><def-item><term>T</term><def><p>toxicity</p></def></def-item><def-item><term>KCNH2</term><def><p>potassium voltage-gated
+channel
+subfamily H member 2</p></def></def-item><def-item><term>PDGFRA</term><def><p>platelet-derived growth factor
+receptor A</p></def></def-item><def-item><term>BA</term><def><p>balanced
+accuracy</p></def></def-item><def-item><term>ACC</term><def><p>accuracy</p></def></def-item><def-item><term>PRC</term><def><p>precision</p></def></def-item><def-item><term>Sen</term><def><p>sensitivity</p></def></def-item><def-item><term>Spec</term><def><p>specificity</p></def></def-item><def-item><term>AUC</term><def><p>area under the curve</p></def></def-item><def-item><term>MCC</term><def><p>Matthews correlation
+coefficient</p></def></def-item><def-item><term>TP</term><def><p>true
+positive</p></def></def-item><def-item><term>FP</term><def><p>false
+positive</p></def></def-item><def-item><term>FN</term><def><p>false
+negative</p></def></def-item><def-item><term>CV</term><def><p>cross-validation</p></def></def-item><def-item><term>ATR</term><def><p>serine/threonine-protein
+kinase
+ATR</p></def></def-item><def-item><term>CDC25A</term><def><p>M-phase
+inducer phosphatase 1</p></def></def-item><def-item><term>CYP2C19</term><def><p>cytochrome P450 2C19</p></def></def-item><def-item><term>CYP2C8</term><def><p>cytochrome P450 2C8</p></def></def-item><def-item><term>CYP2C9</term><def><p>cytochrome P450 family 2 subfamily
+C member 9</p></def></def-item><def-item><term>MALT1</term><def><p>mucosa-associated lymphoid tissue
+lymphoma translocation protein 1</p></def></def-item><def-item><term>MGLL</term><def><p>monoacylglycerol lipase</p></def></def-item><def-item><term>CACNA1C</term><def><p>calcium channel, voltage-dependent,
+L type, alpha 1C subunit</p></def></def-item><def-item><term>CYP2D6</term><def><p>cytochrome P450 2D6</p></def></def-item><def-item><term>ELANE</term><def><p>neutrophil elastase</p></def></def-item><def-item><term>ESR2</term><def><p>estrogen receptor beta</p></def></def-item><def-item><term>PDGFRA</term><def><p>platelet-derived growth factor
+receptor A</p></def></def-item><def-item><term>PTPN1</term><def><p>tyrosine-protein phosphatase nonreceptor
+type 1</p></def></def-item><def-item><term>PGFRB</term><def><p>platelet-derived
+growth factor
+receptor beta</p></def></def-item><def-item><term>MMP12</term><def><p>matrix metalloproteinase-12</p></def></def-item><def-item><term>CHEK2</term><def><p>checkpoint kinase 2</p></def></def-item><def-item><term>CXCRR</term><def><p>interleukin 8 receptor, alpha</p></def></def-item><def-item><term>HIF1A</term><def><p>hypoxia-inducible factor 1-alpha</p></def></def-item><def-item><term>MMP8</term><def><p>matrix metalloproteinase-8</p></def></def-item><def-item><term>PLG</term><def><p>plasminogen</p></def></def-item><def-item><term>ADAM 17</term><def><p>metalloprotease 17</p></def></def-item><def-item><term>F2</term><def><p>coagulation Factor
+II</p></def></def-item><def-item><term>CLK1</term><def><p>dual specificity
+protein kinase
+CLK1</p></def></def-item><def-item><term>IDO1</term><def><p>indoleamine-pyrrole
+2,3-dioxygenase</p></def></def-item><def-item><term>LCK</term><def><p>lymphocyte-specific protein tyrosine
+kinase</p></def></def-item><def-item><term>MMP1</term><def><p>matrix
+metalloproteinase-1</p></def></def-item><def-item><term>MMP14</term><def><p>matrix metalloproteinase-14</p></def></def-item><def-item><term>PIK3R1</term><def><p>phosphatidylinositol 3-kinase</p></def></def-item><def-item><term>TNF</term><def><p>tumor necrosis factor</p></def></def-item><def-item><term>ACACA</term><def><p>acetyl-CoA carboxylase
+1</p></def></def-item><def-item><term>MAPK10</term><def><p>mitogen-activated
+protein kinase
+10</p></def></def-item><def-item><term>ATM</term><def><p>ATM serine/threonine
+kinase</p></def></def-item><def-item><term>CDC25B</term><def><p>M-phase
+inducer phosphatase 2</p></def></def-item><def-item><term>CYP3A4</term><def><p>cytochrome P450 3A4</p></def></def-item><def-item><term>MMP7</term><def><p>matrix metalloproteinase-7</p></def></def-item><def-item><term>NPY1R</term><def><p>neuropeptide Y receptor type 1</p></def></def-item><def-item><term>PRKD2</term><def><p>serine/threonine-protein kinase
+D2</p></def></def-item><def-item><term>SRC</term><def><p>proto-oncogene
+tyrosine-protein
+kinase Src</p></def></def-item><def-item><term>USP7</term><def><p>ubiquitin specific protease</p></def></def-item></def-list></glossary><ref-list><title>References</title><ref id="ref1"><mixed-citation publication-type="journal" id="cit1"><name><surname>Qureshi</surname><given-names>R.</given-names></name>; <name><surname>Irfan</surname><given-names>M.</given-names></name>; <name><surname>Gondal</surname><given-names>T. M.</given-names></name>; <name><surname>Khan</surname><given-names>S.</given-names></name>; <name><surname>Wu</surname><given-names>J.</given-names></name>; <name><surname>Hadi</surname><given-names>M. U.</given-names></name>; <name><surname>Heymach</surname><given-names>J.</given-names></name>; <name><surname>Le</surname><given-names>X.</given-names></name>; <name><surname>Yan</surname><given-names>H.</given-names></name>; <name><surname>Alam</surname><given-names>T.</given-names></name>
+<article-title>AI in Drug Discovery and Its Clinical Relevance</article-title>. <source>Heliyon</source>
+<year>2023</year>, <volume>9</volume> (<issue>7</issue>), <elocation-id>e17575</elocation-id><pub-id pub-id-type="doi">10.1016/j.heliyon.2023.e17575</pub-id>.<pub-id pub-id-type="pmid">37396052</pub-id>
+</mixed-citation></ref><ref id="ref2"><mixed-citation publication-type="journal" id="cit2"><name><surname>Subasi</surname><given-names>A.</given-names></name>
+<article-title>Artificial
+Intelligence in Drug Discovery and Development</article-title>. <source>Appl. Artif. Intell. Healthc. Biomed.</source>
+<year>2024</year>, <fpage>417</fpage>&#x02013;<lpage>454</lpage>. <pub-id pub-id-type="doi">10.1016/B978-0-443-22308-2.00018-4</pub-id>.</mixed-citation></ref><ref id="ref3"><mixed-citation publication-type="journal" id="cit3"><name><surname>Dara</surname><given-names>S.</given-names></name>; <name><surname>Dhamercherla</surname><given-names>S.</given-names></name>; <name><surname>Jadav</surname><given-names>S. S.</given-names></name>; <name><surname>Babu</surname><given-names>C. M.</given-names></name>; <name><surname>Ahsan</surname><given-names>M. J.</given-names></name>
+<article-title>Machine
+Learning in Drug Discovery: A Review</article-title>. <source>Artif.
+Intell. Rev.</source>
+<year>2022</year>, <volume>55</volume> (<issue>3</issue>), <fpage>1947</fpage>&#x02013;<lpage>1999</lpage>. <pub-id pub-id-type="doi">10.1007/s10462-021-10058-4</pub-id>.<pub-id pub-id-type="pmid">34393317</pub-id>
+</mixed-citation></ref><ref id="ref4"><mixed-citation publication-type="book" id="cit4"><person-group person-group-type="allauthors"><name><surname>Bastikar</surname><given-names>V.</given-names></name>; <name><surname>Bastikar</surname><given-names>A.</given-names></name>; <name><surname>Gupta</surname><given-names>P.</given-names></name></person-group><article-title>Quantitative Structure&#x02013;Activity
+Relationship-Based Computational Approaches</article-title>. <source>Computational Approaches for Novel Therapeutic and Diagnostic Designing
+to Mitigate SARS-CoV-2 Infection: Revolutionary Strategies to Combat
+Pandemics</source>; <publisher-name>Academic Press</publisher-name>, <year>2022</year>; pp <fpage>191</fpage>&#x02013;<lpage>205</lpage>.<pub-id pub-id-type="doi">10.1016/B978-0-323-91172-6.00001-7</pub-id></mixed-citation></ref><ref id="ref5"><mixed-citation publication-type="journal" id="cit5"><name><surname>Raies</surname><given-names>A. B.</given-names></name>; <name><surname>Bajic</surname><given-names>V. B.</given-names></name>
+<article-title>In Silico Toxicology: Computational
+Methods for the
+Prediction of Chemical Toxicity</article-title>. <source>Wiley Interdiscip.
+Rev.: Comput. Mol. Sci.</source>
+<year>2016</year>, <volume>6</volume> (<issue>2</issue>), <fpage>147</fpage>&#x02013;<lpage>172</lpage>. <pub-id pub-id-type="doi">10.1002/wcms.1240</pub-id>.<pub-id pub-id-type="pmid">27066112</pub-id>
+</mixed-citation></ref><ref id="ref6"><mixed-citation publication-type="journal" id="cit6"><name><surname>Vamathevan</surname><given-names>J.</given-names></name>; <name><surname>Clark</surname><given-names>D.</given-names></name>; <name><surname>Czodrowski</surname><given-names>P.</given-names></name>; <name><surname>Dunham</surname><given-names>I.</given-names></name>; <name><surname>Ferran</surname><given-names>E.</given-names></name>; <name><surname>Lee</surname><given-names>G.</given-names></name>; <name><surname>Li</surname><given-names>B.</given-names></name>; <name><surname>Madabhushi</surname><given-names>A.</given-names></name>; <name><surname>Shah</surname><given-names>P.</given-names></name>; <name><surname>Spitzer</surname><given-names>M.</given-names></name>; <name><surname>Zhao</surname><given-names>S.</given-names></name>
+<article-title>Applications
+of Machine Learning in Drug Discovery and Development</article-title>. <source>Nat. Rev. Drug Discovery</source>
+<year>2019</year>, <volume>18</volume> (<issue>6</issue>), <fpage>463</fpage>&#x02013;<lpage>477</lpage>. <pub-id pub-id-type="doi">10.1038/s41573-019-0024-5</pub-id>.<pub-id pub-id-type="pmid">30976107</pub-id>
+</mixed-citation></ref><ref id="ref7"><mixed-citation publication-type="journal" id="cit7"><name><surname>Pastor</surname><given-names>M.</given-names></name>; <name><surname>Quintana</surname><given-names>J.</given-names></name>; <name><surname>Sanz</surname><given-names>F.</given-names></name>
+<article-title>Development
+of an Infrastructure
+for the Prediction of Biological Endpoints in Industrial Environments.
+Lessons Learned at the ETOX Project</article-title>. <source>Front.
+Pharmacol.</source>
+<year>2018</year>, <volume>9</volume> (<issue>OCT</issue>), <fpage>1147</fpage><pub-id pub-id-type="doi">10.3389/fphar.2018.01147</pub-id>.<pub-id pub-id-type="pmid">30364191</pub-id>
+</mixed-citation></ref><ref id="ref8"><mixed-citation publication-type="journal" id="cit8"><name><surname>Papadatos</surname><given-names>G.</given-names></name>; <name><surname>Gaulton</surname><given-names>A.</given-names></name>; <name><surname>Hersey</surname><given-names>A.</given-names></name>; <name><surname>Overington</surname><given-names>J. P.</given-names></name>
+<article-title>Activity,
+Assay and Target Data Curation and Quality in the ChEMBL Database</article-title>. <source>J. Comput.-Aided Mol. Des.</source>
+<year>2015</year>, <volume>29</volume> (<issue>9</issue>), <fpage>885</fpage>&#x02013;<lpage>896</lpage>. <pub-id pub-id-type="doi">10.1007/s10822-015-9860-5</pub-id>.<pub-id pub-id-type="pmid">26201396</pub-id>
+</mixed-citation></ref><ref id="ref9"><mixed-citation publication-type="journal" id="cit9"><name><surname>Chen</surname><given-names>W.</given-names></name>; <name><surname>Liu</surname><given-names>X.</given-names></name>; <name><surname>Zhang</surname><given-names>S.</given-names></name>; <name><surname>Chen</surname><given-names>S.</given-names></name>
+<article-title>Artificial Intelligence for Drug
+Discovery: Resources, Methods, and Applications</article-title>. <source>Mol. Ther. Nucleic Acids</source>
+<year>2023</year>, <volume>31</volume>, <fpage>691</fpage>&#x02013;<lpage>702</lpage>. <pub-id pub-id-type="doi">10.1016/j.omtn.2023.02.019</pub-id>.<pub-id pub-id-type="pmid">36923950</pub-id>
+</mixed-citation></ref><ref id="ref10"><mixed-citation publication-type="journal" id="cit10"><name><surname>Kramer</surname><given-names>C.</given-names></name>; <name><surname>Dahl</surname><given-names>G.</given-names></name>; <name><surname>Tyrchan</surname><given-names>C.</given-names></name>; <name><surname>Ulander</surname><given-names>J.</given-names></name>
+<article-title>A Comprehensive
+Company
+Database Analysis of Biological Assay Variability</article-title>. <source>Drug Discovery Today</source>
+<year>2016</year>, <volume>21</volume> (<issue>8</issue>), <fpage>1213</fpage>&#x02013;<lpage>1221</lpage>. <pub-id pub-id-type="doi">10.1016/j.drudis.2016.03.015</pub-id>.<pub-id pub-id-type="pmid">27063506</pub-id>
+</mixed-citation></ref><ref id="ref11"><mixed-citation publication-type="journal" id="cit11"><name><surname>Gaulton</surname><given-names>A.</given-names></name>; <name><surname>Hersey</surname><given-names>A.</given-names></name>; <name><surname>Nowotka</surname><given-names>M. L.</given-names></name>; <name><surname>Patricia Bento</surname><given-names>A.</given-names></name>; <name><surname>Chambers</surname><given-names>J.</given-names></name>; <name><surname>Mendez</surname><given-names>D.</given-names></name>; <name><surname>Mutowo</surname><given-names>P.</given-names></name>; <name><surname>Atkinson</surname><given-names>F.</given-names></name>; <name><surname>Bellis</surname><given-names>L. J.</given-names></name>; <name><surname>Cibrian-Uhalte</surname><given-names>E.</given-names></name>; et al. <article-title>The ChEMBL Database
+in 2017</article-title>. <source>Nucleic Acids Res.</source>
+<year>2017</year>, <volume>45</volume> (<issue>D1</issue>), <fpage>D945</fpage>&#x02013;<lpage>D954</lpage>. <pub-id pub-id-type="doi">10.1093/nar/gkw1074</pub-id>.<pub-id pub-id-type="pmid">27899562</pub-id>
+</mixed-citation></ref><ref id="ref12"><mixed-citation publication-type="journal" id="cit12"><name><surname>Kim</surname><given-names>S.</given-names></name>; <name><surname>Chen</surname><given-names>J.</given-names></name>; <name><surname>Cheng</surname><given-names>T.</given-names></name>; <name><surname>Gindulyte</surname><given-names>A.</given-names></name>; <name><surname>He</surname><given-names>J.</given-names></name>; <name><surname>He</surname><given-names>S.</given-names></name>; <name><surname>Li</surname><given-names>Q.</given-names></name>; <name><surname>Shoemaker</surname><given-names>B. A.</given-names></name>; <name><surname>Thiessen</surname><given-names>P. A.</given-names></name>; <name><surname>Yu</surname><given-names>B.</given-names></name>; <name><surname>Zaslavsky</surname><given-names>L.</given-names></name>; <name><surname>Zhang</surname><given-names>J.</given-names></name>; <name><surname>Bolton</surname><given-names>E. E.</given-names></name>
+<article-title>PubChem in 2021: New Data Content
+and Improved Web Interfaces</article-title>. <source>Nucleic Acids Res.</source>
+<year>2021</year>, <volume>49</volume> (<issue>D1</issue>), <fpage>D1388</fpage>&#x02013;<lpage>D1395</lpage>. <pub-id pub-id-type="doi">10.1093/nar/gkaa971</pub-id>.<pub-id pub-id-type="pmid">33151290</pub-id>
+</mixed-citation></ref><ref id="ref13"><mixed-citation publication-type="journal" id="cit13"><name><surname>Chen</surname><given-names>B.</given-names></name>; <name><surname>Butte</surname><given-names>A. J.</given-names></name>
+<article-title>Leveraging Big Data to Transform Target Selection and
+Drug Discovery</article-title>. <source>Clin. Pharmacol. Ther.</source>
+<year>2016</year>, <volume>99</volume> (<issue>3</issue>), <fpage>285</fpage>&#x02013;<lpage>297</lpage>. <pub-id pub-id-type="doi">10.1002/cpt.318</pub-id>.<pub-id pub-id-type="pmid">26659699</pub-id>
+</mixed-citation></ref><ref id="ref14"><mixed-citation publication-type="journal" id="cit14"><name><surname>Kalliokoski</surname><given-names>T.</given-names></name>; <name><surname>Kramer</surname><given-names>C.</given-names></name>; <name><surname>Vulpetti</surname><given-names>A.</given-names></name>; <name><surname>Gedeck</surname><given-names>P.</given-names></name>; <name><surname>Cavalli</surname><given-names>A.</given-names></name>
+<article-title>Comparability
+of Mixed IC50 Data &#x02013; A Statistical Analysis</article-title>. <source>PLoS One</source>
+<year>2013</year>, <volume>8</volume>, <elocation-id>e61007</elocation-id><pub-id pub-id-type="doi">10.1371/journal.pone.0061007</pub-id>.<pub-id pub-id-type="pmid">23613770</pub-id>
+</mixed-citation></ref><ref id="ref15"><mixed-citation publication-type="journal" id="cit15"><name><surname>Landrum</surname><given-names>G.</given-names></name>; <name><surname>Riniker</surname><given-names>S.</given-names></name>
+<article-title>Combining IC50 or Ki
+Values From Different Sources
+Is a Source of Significant Noise</article-title>. <source>J. Chem. Inf.
+Model.</source>
+<year>2024</year>, <volume>64</volume> (<issue>5</issue>), <fpage>1560</fpage>&#x02013;<lpage>1567</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.4c00049</pub-id>.<pub-id pub-id-type="pmid">38394344</pub-id>
+</mixed-citation></ref><ref id="ref16"><mixed-citation publication-type="journal" id="cit16"><name><surname>Smaji&#x00107;</surname><given-names>A.</given-names></name>; <name><surname>Rami</surname><given-names>I.</given-names></name>; <name><surname>Sosnin</surname><given-names>S.</given-names></name>; <name><surname>Ecker</surname><given-names>G. F.</given-names></name>
+<article-title>Identifying
+Differences
+in the Performance of Machine Learning Models for Off-Targets Trained
+on Publicly Available and Proprietary Data Sets</article-title>. <source>Chem. Res. Toxicol.</source>
+<year>2023</year>, <volume>36</volume>, <fpage>1300</fpage><pub-id pub-id-type="doi">10.1021/acs.chemrestox.3c00042</pub-id>.<pub-id pub-id-type="pmid">37439496</pub-id>
+</mixed-citation></ref><ref id="ref17"><mixed-citation publication-type="book" id="cit17"><person-group person-group-type="allauthors"><name><surname>Wang</surname><given-names>Z.</given-names></name>; <name><surname>Chen</surname><given-names>J.</given-names></name></person-group><article-title>Applicability
+Domain Characterization
+for Machine Learning QSAR Models</article-title>. <source>Machine
+Learning and Deep Learning in Computational Toxicology</source>; <publisher-name>Springer</publisher-name>, <year>2023</year>; pp <fpage>323</fpage>&#x02013;<lpage>353</lpage>.<pub-id pub-id-type="doi">10.1007/978-3-031-20730-3_13</pub-id></mixed-citation></ref><ref id="ref18"><mixed-citation publication-type="weblink" id="cit18"><source>Molconn-Z. 4.00 Manual: Appendix I</source>. <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.edusoft-lc.com/molconn/manuals/400/appI.html">http://www.edusoft-lc.com/molconn/manuals/400/appI.html</uri> (Accessed 14 March 2024).</mixed-citation></ref><ref id="ref19"><mixed-citation publication-type="journal" id="cit19"><name><surname>G&#x000f6;ller</surname><given-names>A. H.</given-names></name>; <name><surname>Kuhnke</surname><given-names>L.</given-names></name>; <name><surname>Montanari</surname><given-names>F.</given-names></name>; <name><surname>Bonin</surname><given-names>A.</given-names></name>; <name><surname>Schneckener</surname><given-names>S.</given-names></name>; <name><surname>Ter Laak</surname><given-names>A.</given-names></name>; <name><surname>Wichard</surname><given-names>J.</given-names></name>; <name><surname>Lobell</surname><given-names>M.</given-names></name>; <name><surname>Hillisch</surname><given-names>A.</given-names></name>
+<article-title>Bayer&#x02019;s
+in Silico ADMET Platform: A Journey of Machine Learning over the Past
+Two Decades</article-title>. <source>Drug Discovery Today</source>
+<year>2020</year>, <volume>25</volume> (<issue>9</issue>), <fpage>1702</fpage>&#x02013;<lpage>1709</lpage>. <pub-id pub-id-type="doi">10.1016/j.drudis.2020.07.001</pub-id>.<pub-id pub-id-type="pmid">32652309</pub-id>
+</mixed-citation></ref><ref id="ref20"><mixed-citation publication-type="journal" id="cit20"><name><surname>Winter</surname><given-names>R.</given-names></name>; <name><surname>Montanari</surname><given-names>F.</given-names></name>; <name><surname>No&#x000e9;</surname><given-names>F.</given-names></name>; <name><surname>Clevert</surname><given-names>D. A.</given-names></name>
+<article-title>Learning Continuous
+and Data-Driven Molecular Descriptors by Translating Equivalent Chemical
+Representations</article-title>. <source>Chem. Sci.</source>
+<year>2019</year>, <volume>10</volume> (<issue>6</issue>), <fpage>1692</fpage>&#x02013;<lpage>1701</lpage>. <pub-id pub-id-type="doi">10.1039/C8SC04175J</pub-id>.<pub-id pub-id-type="pmid">30842833</pub-id>
+</mixed-citation></ref><ref id="ref21"><mixed-citation publication-type="journal" id="cit21"><name><surname>McInnes</surname><given-names>L.</given-names></name>; <name><surname>Healy</surname><given-names>J.</given-names></name>; <name><surname>Saul</surname><given-names>N.</given-names></name>; <name><surname>Gro&#x000df;berger</surname><given-names>L.</given-names></name>
+<article-title>UMAP: Uniform
+Manifold Approximation and Projection for Dimension Reduction</article-title>. <source>J. Open Source Softw.</source>
+<year>2018</year>, <volume>3</volume>, <fpage>861</fpage><pub-id pub-id-type="doi">10.21105/joss.00861</pub-id>.</mixed-citation></ref><ref id="ref22"><mixed-citation publication-type="journal" id="cit22"><article-title>UniProt:
+The Universal Protein Knowledgebase in 2023</article-title>. <source>Nucleic Acids Res.</source>
+<year>2023</year>, <volume>51</volume> (<issue>D1</issue>), <fpage>D523</fpage>&#x02013;<lpage>D531</lpage>. <pub-id pub-id-type="doi">10.1093/nar/gkac1052</pub-id>.<pub-id pub-id-type="pmid">36408920</pub-id>
+</mixed-citation></ref><ref id="ref23"><mixed-citation publication-type="journal" id="cit23"><name><surname>Siemers</surname><given-names>F. M.</given-names></name>; <name><surname>Feldmann</surname><given-names>C.</given-names></name>; <name><surname>Bajorath</surname><given-names>J.</given-names></name>
+<article-title>Minimal Data Requirements for Accurate
+Compound Activity Prediction Using Machine Learning Methods of Different
+Complexity</article-title>. <source>Cell Rep. Phys. Sci.</source>
+<year>2022</year>, <volume>3</volume> (<issue>11</issue>), <fpage>101113</fpage><pub-id pub-id-type="doi">10.1016/j.xcrp.2022.101113</pub-id>.</mixed-citation></ref><ref id="ref24"><mixed-citation publication-type="weblink" id="cit24"><person-group person-group-type="allauthors"><name><surname>Landrum</surname><given-names>G. A.</given-names></name></person-group><source>Thresholds for &#x0201c;random&#x0201d;
+in fingerprints the RDKit supports</source>. <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://rdkit.blogspot.com/2013/10/fingerprint-thresholds.html">https://rdkit.blogspot.com/2013/10/fingerprint-thresholds.html</uri> (Accessed 15 April 2024).</mixed-citation></ref><ref id="ref25"><mixed-citation publication-type="journal" id="cit25"><name><surname>Chicco</surname><given-names>D.</given-names></name>; <name><surname>Jurman</surname><given-names>G.</given-names></name>
+<article-title>The Advantages of the
+Matthews Correlation Coefficient
+(MCC) over F1 Score and Accuracy in Binary Classification Evaluation</article-title>. <source>BMC Genomics</source>
+<year>2020</year>, <volume>21</volume>, <fpage>1</fpage><pub-id pub-id-type="doi">10.1186/s12864-019-6413-7</pub-id>.</mixed-citation></ref><ref id="ref26"><mixed-citation publication-type="journal" id="cit26"><name><surname>Butina</surname><given-names>D.</given-names></name>
+<article-title>Unsupervised
+Data Base Clustering Based on Daylight&#x02019;s Fingerprint and Tanimoto
+Similarity: A Fast and Automated Way to Cluster Small and Large Data
+Sets</article-title>. <source>J. Chem. Inf. Comput. Sci.</source>
+<year>1999</year>, <volume>39</volume> (<issue>4</issue>), <fpage>747</fpage>&#x02013;<lpage>750</lpage>. <pub-id pub-id-type="doi">10.1021/ci9803381</pub-id>.</mixed-citation></ref><ref id="ref27"><mixed-citation publication-type="journal" id="cit27"><name><surname>Bajusz</surname><given-names>D.</given-names></name>; <name><surname>R&#x000e1;cz</surname><given-names>A.</given-names></name>; <name><surname>H&#x000e9;berger</surname><given-names>K.</given-names></name>
+<article-title>Why Is Tanimoto Index an Appropriate
+Choice for Fingerprint-Based Similarity Calculations?</article-title>. <source>J. Cheminf.</source>
+<year>2015</year>, <volume>7</volume> (<issue>1</issue>), <fpage>1</fpage>&#x02013;<lpage>13</lpage>. <pub-id pub-id-type="doi">10.1186/s13321-015-0069-3</pub-id>.</mixed-citation></ref><ref id="ref28"><mixed-citation publication-type="journal" id="cit28"><person-group person-group-type="allauthors"><name><surname>Eytcheson</surname><given-names>S. A.</given-names></name>; <name><surname>Tetko</surname><given-names>I. V.</given-names></name></person-group><article-title>Which Modern
+AI Methods Provide Accurate Predictions of Toxicological Endpoints?
+Analysis of Tox24 Challenge Results</article-title>. <source>ChemRxiv</source>, <year>2025</year>.<pub-id pub-id-type="doi">10.26434/CHEMRXIV-2025-7K7X3</pub-id></mixed-citation></ref></ref-list></back></article>

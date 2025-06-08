@@ -1,0 +1,477 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" dtd-version="1.3" xml:lang="EN" article-type="brief-report"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">J Chem Inf Model</journal-id><journal-id journal-id-type="iso-abbrev">J Chem Inf Model</journal-id><journal-id journal-id-type="publisher-id">ci</journal-id><journal-id journal-id-type="coden">jcisd8</journal-id><journal-title-group><journal-title>Journal of Chemical Information and Modeling</journal-title></journal-title-group><issn pub-type="ppub">1549-9596</issn><issn pub-type="epub">1549-960X</issn><publisher><publisher-name>American Chemical Society</publisher-name></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">39929140</article-id><article-id pub-id-type="pmc">PMC11863363</article-id>
+<article-id pub-id-type="doi">10.1021/acs.jcim.4c01849</article-id><article-categories><subj-group><subject>Application Note</subject></subj-group></article-categories><title-group><article-title>Automated Analysis
+of Soft Matter Interfaces, Interactions,
+and Self-Assembly with PySoftK</article-title></title-group><contrib-group><contrib contrib-type="author" id="ath1"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0003-2668-7405</contrib-id><name><surname>L&#x000f3;pez-R&#x000ed;os de Castro</surname><given-names>Raquel</given-names></name><xref rid="aff1" ref-type="aff">&#x02020;</xref><xref rid="aff2" ref-type="aff">&#x02021;</xref><xref rid="aff3" ref-type="aff">&#x000b6;</xref></contrib><contrib contrib-type="author" corresp="yes" id="ath2"><name><surname>Santana-Bonilla</surname><given-names>Alejandro</given-names></name><xref rid="cor1" ref-type="other">*</xref><xref rid="aff4" ref-type="aff">&#x000a7;</xref></contrib><contrib contrib-type="author" id="ath3"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0003-4011-9658</contrib-id><name><surname>Ziolek</surname><given-names>Robert M.</given-names></name><xref rid="aff2" ref-type="aff">&#x02021;</xref></contrib><contrib contrib-type="author" corresp="yes" id="ath4"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0003-1028-4804</contrib-id><name><surname>Lorenz</surname><given-names>Christian D.</given-names></name><xref rid="cor2" ref-type="other">*</xref><xref rid="aff5" ref-type="aff">&#x02225;</xref><xref rid="aff2" ref-type="aff">&#x02021;</xref></contrib><aff id="aff1"><label>&#x02020;</label>Department
+of Chemistry, <institution>King&#x02019;s College London</institution>, London SE1 1DB, <country>United Kingdom</country></aff><aff id="aff2"><label>&#x02021;</label>Biological
+Physics and Soft Matter Group, Department of Physics, <institution>King&#x02019;s College London</institution>, London WC2R 2LS, <country>United Kingdom</country></aff><aff id="aff3"><label>&#x000b6;</label>In Silico
+Toxicology and Structural Bioinformatics, Institute of Physiology, <institution>Charit&#x000e9;-Universit&#x000e4;tsmedizin Berlin</institution>, 10117 Berlin, <country>Germany</country></aff><aff id="aff4"><label>&#x000a7;</label>Department
+of Physics, <institution>King&#x02019;s College London</institution>, London WC2R 2LS, <country>United Kingdom</country></aff><aff id="aff5"><label>&#x02225;</label>Department
+of Engineering, <institution>King&#x02019;s College London</institution>, London WC2R 2LS, <country>United Kingdom</country></aff></contrib-group><author-notes><corresp id="cor1"><label>*</label>E-mail: <email>alejandro.santana_bonilla@kcl.ac.uk</email>.</corresp><corresp id="cor2"><label>*</label>E-mail: <email>chris.lorenz@kcl.ac.uk</email>.</corresp></author-notes><pub-date pub-type="epub"><day>10</day><month>02</month><year>2025</year></pub-date><pub-date pub-type="collection"><day>24</day><month>02</month><year>2025</year></pub-date><volume>65</volume><issue>4</issue><fpage>1679</fpage><lpage>1684</lpage><history><date date-type="received"><day>09</day><month>10</month><year>2024</year></date><date date-type="accepted"><day>30</day><month>01</month><year>2025</year></date><date date-type="rev-recd"><day>25</day><month>01</month><year>2025</year></date></history><permissions><copyright-statement>&#x000a9; 2025 The Authors. Published by American Chemical Society</copyright-statement><copyright-year>2025</copyright-year><copyright-holder>The Authors</copyright-holder><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>Permits the broadest form of re-use including for commercial purposes, provided that author attribution and integrity are maintained (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</ext-link>).</license-p></license></permissions><abstract><p content-type="toc-graphic"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01849_0005" id="ab-tgr1"/></p><p>Molecular dynamics simulations have become essential
+tools in
+the study of soft matter and biological macromolecules. The large
+amount of high-dimensional data associated with such simulations does
+not straightforwardly elucidate the atomistic mechanisms that underlie
+complex materials and molecular processes. Analysis of these simulations
+is complicated: the dynamics intrinsic to soft matter simulations
+necessitates careful application of specific, and often complex, algorithms
+to extract meaningful molecular scale understanding. There is an ongoing
+need for high-quality automated computational workflows to facilitate
+this analysis in a reproducible manner with minimal user input. In
+this work, we introduce a series of molecular simulation analysis
+tools for investigating interfaces, molecular interactions (including
+ring&#x02013;ring stacking), and self-assembly. In addition, we include
+a number of auxiliary tools, including a useful function to unwrap
+molecular structures that are greater than half the length of their
+corresponding simulation box. These tools are contained in the PySoftK
+software package, making the application of these algorithms straightforward
+for the user. These new simulation analysis tools within PySoftK will
+support high-quality, reproducible analysis of soft matter and biomolecular
+simulations to bring about new predictive understanding in nano- and
+biotechnology.</p></abstract><funding-group><award-group><funding-source><institution-wrap><institution>Engineering and Physical Sciences Research Council</institution><institution-id institution-id-type="doi">10.13039/501100000266</institution-id></institution-wrap></funding-source><award-id>EP/P020194/1</award-id></award-group></funding-group><funding-group><award-group><funding-source><institution-wrap><institution>Biotechnology and Biological Sciences Research Council</institution><institution-id institution-id-type="doi">10.13039/501100000268</institution-id></institution-wrap></funding-source><award-id>BB/T008709/1</award-id></award-group></funding-group><funding-group><award-group><funding-source><institution-wrap><institution>Engineering and Physical Sciences Research Council</institution><institution-id institution-id-type="doi">10.13039/501100000266</institution-id></institution-wrap></funding-source><award-id>EP/W032260/1</award-id></award-group></funding-group><funding-group><award-group><funding-source><institution-wrap><institution>Engineering and Physical Sciences Research Council</institution><institution-id institution-id-type="doi">10.13039/501100000266</institution-id></institution-wrap></funding-source><award-id>EP/V049771/1</award-id></award-group></funding-group><funding-group><award-group><funding-source><institution-wrap><institution>Engineering and Physical Sciences Research Council</institution><institution-id institution-id-type="doi">10.13039/501100000266</institution-id></institution-wrap></funding-source><award-id>EP/T022213/1</award-id></award-group></funding-group><custom-meta-group><custom-meta><meta-name>document-id-old-9</meta-name><meta-value>ci4c01849</meta-value></custom-meta><custom-meta><meta-name>document-id-new-14</meta-name><meta-value>ci4c01849</meta-value></custom-meta><custom-meta><meta-name>ccc-price</meta-name><meta-value/></custom-meta></custom-meta-group></article-meta></front><body><sec id="sec1"><title>Introduction</title><p>Soft matter spans materials science applications
+in cosmetics,<sup><xref ref-type="bibr" rid="ref1">1</xref>&#x02212;<xref ref-type="bibr" rid="ref3">3</xref></sup> pharmaceuticals,<sup><xref ref-type="bibr" rid="ref4">4</xref>&#x02212;<xref ref-type="bibr" rid="ref7">7</xref></sup> and water decontamination<sup><xref ref-type="bibr" rid="ref8">8</xref></sup> among many
+others. Advances in synthetic chemistry and formulation science have
+led to the development of a plethora of soft matter architectures,
+while ever-increasing computational power and simulation techniques
+have opened up opportunities for their study <italic>in silico</italic>. An understanding of the interplay of molecular structure, conformational
+dynamics and intermolecular interactions of the constituent molecules
+is required to build up generalizable structure&#x02013;property relationships
+to support the rational design of new functional soft matter materials.</p><p>Molecular dynamics (MD) simulations provide the framework to investigate
+the molecular structure, dynamics, and interactions at a level of
+detail that cannot be resolved experimentally, such as in the field
+of soft matter self-assembly.<sup><xref ref-type="bibr" rid="ref9">9</xref>&#x02212;<xref ref-type="bibr" rid="ref16">16</xref></sup> These simulations generate a vast amount of high-dimensional data,
+but it is typically challenging to extract meaningful understanding
+of the underlying mechanisms at play. Interpreting the molecular mechanisms
+present in MD simulations often necessitates the development of bespoke
+computational tools, and as a result, it is often not possible to
+reproduce quantitative results.<sup><xref ref-type="bibr" rid="ref17">17</xref></sup></p><p>The computational soft matter community has invested significant
+effort in simplifying input creation for soft matter simulations,
+as exemplified by tools such as PySoftK,<sup><xref ref-type="bibr" rid="ref18">18</xref></sup> Polymer Structure Predictor,<sup><xref ref-type="bibr" rid="ref19">19</xref></sup> Radonpy<sup><xref ref-type="bibr" rid="ref20">20</xref></sup> and MoSDeF.<sup><xref ref-type="bibr" rid="ref21">21</xref></sup> However,
+a comprehensive package for analyzing soft matter material properties
+has not yet been reported. To address this issue, PySoftK (version
+1.0) now includes a toolkit designed for analysis of soft matter simulations,
+providing a unified computational framework in which modeling and
+analysis can be streamlined under modern software development standards.
+These features mitigate important data provenance and reproducibility
+concerns. In line with the design commitment of PySoftK to minimize
+user inputs and provide highly efficient code, PySoftK v1.0 enables
+the analysis of large-scale soft matter systems.</p><p>This work introduces
+new computational analysis algorithms with
+illustrative case studies. The tools that have been included in the
+most recent release of PySoftK allow users to quantify the self-assembly
+of soft and biological molecules. For the self-assembly that results
+in sphere-like nanoparticles, there are tools that allow the user
+to accurately describe the interface of the nanoparticles, which in
+turns allows users to accurately understand the location of molecules
+within the nanoparticle and those near the nanoparticle&#x02019;s interface.
+Additionally, we included functions that will allow the user to determine
+the size and shape of the nanoparticles. Also there is a tool that
+accurately takes into account periodic boundary conditions when modeling
+a collection of self-assembled molecules, where other tools are unable
+to do so. Finally, PySoftK will measure interactions between the self-assembled
+molecules and their solvent environment, and also it has a tool that
+can measure the specific interactions formed between ring containing
+molecules. These tools allow the user to identify the interactions
+which play a key role in the self-assembly and stabilizing of the
+self-assembled structure that is formed. These tools have not previously
+been shared with the community through a freely available and well-tested
+software package. PySoftK v1.0 provides an automated approach to investigate
+interfaces in soft matter systems, interactions that govern structure
+within soft matter, and soft matter self-assembly. PySoftK v1.0 supports
+users to investigate soft matter systems forming any nanoparticle
+or interface since the implemented algorithms are entirely chemically
+agnostic. With this new release, PySoftK version 1.0 further supports
+the acceleration of computer-aided materials development.</p></sec><sec id="sec2"><title>Results and Discussion</title><p>The PySoftK package and associated
+tutorial notebooks are freely
+available on Github (<uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/alejandrosantanabonilla/pysoftk">https://github.com/alejandrosantanabonilla/pysoftk</uri>). The repository also contains short trajectories to run the tutorials
+and also to generate the figures presented in this manuscript. The
+majority of the molecular simulations analyzed with PySoftK within
+this work were originally published elsewhere. In each case, the original
+article is cited in the associated figure caption for clarity. Since
+PySoftK utilizes MDAnalysis<sup><xref ref-type="bibr" rid="ref22">22</xref></sup> to load topology
+and trajectory information, its functionality can be applied to the
+wide range of file formats supported by MDAnalysis.</p><sec id="sec2.1"><title>Analyzing Interfaces</title><p>In order to accurately understand
+the interfacial properties of nanoparticles, one must first be able
+to accurately describe the geometry of the interface of interest.
+Then the interfacial properties can be measured as well as the internal
+distribution of the components within a nanoparticle, which provides
+precise information regarding its structure.</p><sec id="sec2.1.1"><title>Spherical Density</title><p>For nanoparticles that are approximately
+spherical, the interface of the nanoparticle can be described by identifying
+the radius of the nanoparticle from the particle&#x02019;s center of
+mass. The density of its various components is calculated with reference
+to the aggregate&#x02019;s center of mass. There are numerous MD studies
+that measure the density of components of polymer micelles using this
+approach,<sup><xref ref-type="bibr" rid="ref12">12</xref>,<xref ref-type="bibr" rid="ref23">23</xref>,<xref ref-type="bibr" rid="ref24">24</xref></sup> but there
+are limited open-source tools to reliably carry out such analysis.
+The PySoftK <monospace>spherical_density</monospace> tool, which is
+described in detail in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01849/suppl_file/ci4c01849_si_001.pdf">Electronic Supporting Information (ESI)</ext-link> section on spherical_density, allows users
+to easily calculate the spherical density over a trajectory, including
+structures undergoing molecular exchange during their simulation.</p></sec><sec id="sec2.1.2"><title>Intrinsic Density</title><p>If a nanoparticle possesses either
+significant asphericity or a rough interface, then defining a spherical
+interface will lead to misleading characterization. As a result, intrinsic
+interface approaches have been developed to identify the location
+of the uneven interfaces of nanoparticles.<sup><xref ref-type="bibr" rid="ref25">25</xref></sup> The intrinsic core&#x02013;shell interface (ICSI) algorithm is one
+such example, which was originally developed to study core&#x02013;shell
+micellar structures.<sup><xref ref-type="bibr" rid="ref12">12</xref>,<xref ref-type="bibr" rid="ref26">26</xref></sup> This approach categorizes constituent
+molecules in a micelle into core and shell regions, automatically
+identifying the boundary between them (the core&#x02013;shell interface).
+The intrinsic density of the nanoparticle is computed as the ratio
+of the relative positions of atoms with respect to the ICSI, normalized
+by the average volume of the shell in which a given atom is found.
+The normalization factor cannot be calculated analytically; therefore,
+we use Monte Carlo integration to calculate it. PySoftK&#x02019;s <monospace>intrinsic_density</monospace> class harnesses the ICSI method to
+perform intrinsic density calculations. The implementation importantly
+enables seamless processing of the unwrapped coordinates provided
+by <monospace>make_micelle_whole</monospace> and is suitable for use
+on structures undergoing molecular exchange. The use of this function
+closely follows that of the spherical density function. Additionally,
+there is an <monospace>intrinsic_density_water</monospace> class to
+compute the intrinsic density of water, which requires different treatment.
+The <monospace>intrinsic_density</monospace> class outputs a NumPy
+array containing the intrinsic density with respect to the distance
+to the core&#x02013;shell interface, where a distance <italic>r</italic> = 0 reflects the position of the interface. It also outputs another
+NumPy array with the values of the bins used in the density calculation. <xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref> shows both spherical
+and intrinsic density calculations of the same diblock polymer nanoparticle.
+The spherical density tool outputs the density as a function of distance
+from the center of mass of the aggregate (<xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>a), while the intrinsic density outputs the
+density as a function of the distance from the core&#x02013;shell interface
+(<xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>b). Negative
+distance values in the intrinsic density represent the core region.
+Both density plots share some conserved features, since the nanoparticle
+has a well-defined core&#x02013;shell interface. From the spherical
+density plot, we can infer that the core of the nanoparticle is predominately
+formed of MA with an EO corona. We can also suggest that some water
+penetrates the core of the nanoparticle too. The intrinsic density
+plots confirm these deductions categorically, with the core formed
+mostly of MA with some EO blocks found throughout the nanoparticle
+core. Water clearly penetrates into the nanoparticle core (this can
+be measured and compared to the experimental results). The detailed
+interfacial structure of water is only apparent in <xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>b, showing a small peak in
+the water intrinsic density plot at <italic>r</italic> &#x02248; 5
+&#x000c5;, indicative of a weakly hydrophobic interface.</p><fig id="fig1" position="float"><label>Figure 1</label><caption><p>Comparing spherical and
+intrinsic density calculations. Density
+calculation of a spherical micelle formed by poly(ethylene oxide)
+and poly(methyl acrylate) block (PEO&#x02013;PMA) polymers using (a) <monospace>spherical_density</monospace> and (b) <monospace>intrinsic_density</monospace>. Polymer trajectories of diblock PEO&#x02013;PMA polymer were originally
+published elsewhere.<sup><xref ref-type="bibr" rid="ref16">16</xref></sup></p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01849_0001" id="gr1" position="float"/></fig></sec></sec><sec id="sec2.2"><title>Molecular-Scale Interactions</title><p>This section describes
+tools to analyze different intermolecular interactions that play important
+roles in the self-assembly of a soft matter. We have developed novel
+methods for investigating ring stacking interactions, which are commonly
+found within aggregates of conjugated polymers, proteins, and other
+biopolymers. We also introduce a tool to automatically assess the
+solvation of different regions of the molecules.</p><sec id="sec2.2.1"><title>Ring Stacking Analysis</title><p>Ring stacking interactions are
+a common driving force behind many collective phenomena ranging from
+DNA base pairing<sup><xref ref-type="bibr" rid="ref27">27</xref></sup> and protein&#x02013;drug
+binding<sup><xref ref-type="bibr" rid="ref28">28</xref></sup> to through-space charge transfer
+in conjugated polymers.<sup><xref ref-type="bibr" rid="ref29">29</xref></sup></p><p>A class
+to identify ring&#x02013;ring interactions has been developed for PySoftK
+v1.0. ProLIF can also calculate ring stacking interactions in protein&#x02013;ligand
+systems.<sup><xref ref-type="bibr" rid="ref30">30</xref></sup> The algorithm implemented in
+PySoftK v1.0. has been specifically engineered for large soft matter
+systems, where ring stacking interactions across collections of molecules
+can be present. PySoftK&#x02019;s ring stacking interaction algorithm
+consists of three stages. First, all atoms belonging to rings within
+the chosen molecules are automatically detected. Pairs of molecules
+within the system are then screened using a cutoff distance to define
+rings in close contact (distance between the center of geometry of
+two rings &#x0003c;10 &#x000c5;). Finally, those rings in close contact are
+selected to have the necessary geometrical properties between the
+rings computed in the final stage (distance of any two atoms in the
+two rings &#x0003c;4 &#x000c5; and an angular cutoff of 20&#x000b0; between the
+planes of each ring). Default values for the parameters were assigned
+with reference to our previous work.<sup><xref ref-type="bibr" rid="ref31">31</xref></sup> The
+algorithm is explained in more detail in the ESI (section <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01849/suppl_file/ci4c01849_si_001.pdf">RSA: Ring Stacking Analysis</ext-link>), and it is used
+to investigate an amorphous polymer system and the protein complex
+formed between TREM2 and DAP12<sup><xref ref-type="bibr" rid="ref32">32</xref></sup> as shown
+in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01849/suppl_file/ci4c01849_si_001.pdf">Figure S16</ext-link>.</p></sec><sec id="sec2.2.2"><title>Automated Characterization of General Molecular Interactions</title><p>We have developed a code that allows a more general assessment
+of other types of interactions between molecules within the simulated
+system. One example is solvation analysis, which plays a crucial role
+in understanding the structure and dynamics of amphiphilic soft matter.
+This analysis allows us to quantify the solvation cells around molecules,
+and to predict hydrophobic interactions.<sup><xref ref-type="bibr" rid="ref16">16</xref>,<xref ref-type="bibr" rid="ref33">33</xref></sup> PySoftK&#x02019;s <monospace>solvation</monospace> class provides
+a straightforward method for quantifying solvation by determining
+the number of solvent molecules within the first solvation shell of
+the specified molecules. In doing so, PySoftK will identify the solvent
+molecules that are hydrogen-bonded to a particular part of a molecule,
+as well as any that might be attracted via other types of interactions
+(e.g., electrostatic, hydrophobic), and thus is a more general way
+of identifying the solvation of different parts of molecules. Quantifying
+intermolecular interactions is vital to understanding the mechanisms
+that drive molecular-scale phenomena. The <monospace>contacts</monospace> tool calculates the contacts between molecules by measuring the
+distance between selected atoms. If the intermolecular distance between
+two selected atoms is less than a user-defined cutoff, then it is
+considered a contact. More details regarding the implementation and
+application of the solvation and contact analysis tools within PySoftK
+are included in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01849/suppl_file/ci4c01849_si_001.pdf">ESI</ext-link> (solvation and
+contacts: Quantification of intermolecular interactions sections,
+respectively).</p></sec></sec><sec id="sec2.3"><title>Tracking Self-Assembly</title><p>The algorithms introduced in
+this section are useful for performing the analysis of soft matter
+aggregates, including self-assembly. The algorithms are entirely resolution
+and chemically agnostic.</p><sec id="sec2.3.1"><title>Tracking Self-Assembly</title><p>The Spatial Clustering Protocol
+(SCP) algorithm provides a fast way to label molecules based on the
+cluster or aggregate in which they reside during a self-assembly process.
+We make use of simple graph theory to represent an aggregate of molecules
+as a graph, where each molecule is a node, and if any two molecules
+are within the defined distance cutoff, an edge is added between these
+two nodes in the graph. In this representation, clusters are rapidly
+identified as connected subgraphs. This makes this analysis suitably
+fast such that the dynamical self-assembly process can be quickly
+rationalized over an entire trajectory. The algorithm returns a Pandas
+dataframe which contains the molecule residue IDs for each cluster
+and the cluster size for each time step. More details about the application
+of graph theory to investigating self-assembly can be found in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01849/suppl_file/ci4c01849_si_001.pdf">ESI</ext-link> (section SCP: Spatial clustering of polymers). <xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref> demonstrates PySoftK&#x02019;s
+SCP algorithm applied to self-assembling diblock polymers, which can
+be used to track the exchange of unimers between different aggregates
+during the simulation.</p><fig id="fig2" position="float"><label>Figure 2</label><caption><p>Analyzing the self-assembly of soft matter. (a) Snapshot
+from the
+simulation of randomly distributed diblock PEO&#x02013;PMA polymer
+molecules in solution (note: water is not shown so that the polymers
+can be seen clearly). (b) Snapshot of the simulated system after the
+polymers have formed one large (orange) micelle and another small
+(cyan) micelle. (c) Plot of the number of polymer molecules in the
+largest aggregate as a function of time in the simulation. Polymer
+trajectories of diblock PEO&#x02013;PMA polymer were originally published
+elsewhere.<sup><xref ref-type="bibr" rid="ref16">16</xref></sup></p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01849_0002" id="gr2" position="float"/></fig></sec><sec id="sec2.3.2"><title>Unwrapping Large Aggregates across the PBC</title><p>Upon self-assembly,
+the resultant nanoparticle may span more than half the length of
+the simulation box in one or more dimensions. In order to accurately
+analyze the nanoparticle and its environment, it is necessary to accurately
+represent the location of all of the molecules that make up the nanoparticle,
+while accounting for periodic boundary conditions. Various tools have
+been implemented elsewhere that can accurately reconstruct the position
+of molecules across the periodic boundary conditions (PBCs), but importantly,
+they fail to do so when molecular structures or molecules span a distance
+of more than half of the simulation box size in a given dimension.</p><p>The <monospace>make_micelle_whole</monospace> tool in PySoftK can
+successfully reposition the molecules within a self-assembled aggregate
+if the aggregate is larger than half of the length of the simulation
+box in one or more dimensions. <xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>a shows a polymer micelle that spans the simulation
+box in at least two dimensions. <xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>b demonstrates the utility of <monospace>make_micelle_whole</monospace>, which successfully reconstructs the micelle shown in <xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>a. <xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>c,d demonstrates that the algorithms reported
+in MDAnalysis v2.5 and GROMACS 2023, respectively, are not able to
+reconstruct the micelle using the same input files as used with PySoftK&#x02019;s <monospace>make_micelle_whole</monospace> function. The MDAnalysis unwrapping
+procedure is described in a PySoftK tutorial notebook (<uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/alejandrosantanabonilla/pysoftk/blob/main/pol_analysis_tutorials/example_mdanalysis_vs_micelle_whole.ipynb">https://github.com/alejandrosantanabonilla/pysoftk/blob/main/pol_analysis_tutorials/example_mdanalysis_vs_micelle_whole.ipynb</uri>), which also includes a more detailed comparison of MDAnalysis and
+PySoftK unwrapping results. Also more details about the unwrapping
+procedure can be found in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01849/suppl_file/ci4c01849_si_001.pdf">ESI</ext-link> section
+make_micelle_whole. Our algorithm provides reliable and robust reconstruction
+of large molecular assemblies across periodic boundaries.</p><fig id="fig3" position="float"><label>Figure 3</label><caption><p>Unwrapping
+a polymer nanoparticle that is bigger than half the
+box length using PySoftK. (a) Polymer nanoparticle shown spanning
+the PBC, which is unwrapped using (b) PySoftK, (c) MDAnalysis, and
+(d) GROMACS 2023 (<monospace>gmx trjconv -pbc mol</monospace>). The
+polymer simulation of diblock PEO&#x02013;PMA was originally published
+elsewhere.<sup><xref ref-type="bibr" rid="ref16">16</xref></sup></p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01849_0003" id="gr3" position="float"/></fig><p>As an example, a simple radius of gyration calculation
+can introduce
+analysis artifacts when computed on incorrectly unwrapped coordinates. <xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref> highlights the difference
+in radius of gyration calculated using polymer nanoparticle coordinates
+unwrapped using MDAnalysis and PySoftK.</p><fig id="fig4" position="float"><label>Figure 4</label><caption><p>Effect of incorrect unwrapping
+on the calculation of radius of
+gyration. Result using MDAnalysis <monospace>radius_of_gyration()</monospace> on (a) the polymer nanoparticle spanning the PBC following unwrapping
+with (b) MDAnalysis and (c) PySoftK. (d) Snapshot of the reconstructed
+micelle with its diameter indicated (not to scale) for reference.
+Polymer trajectories of diblock PEO&#x02013;PMA polymer were originally
+published elsewhere.<sup><xref ref-type="bibr" rid="ref16">16</xref></sup></p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01849_0004" id="gr4" position="float"/></fig></sec><sec id="sec2.3.3"><title>Auxiliary Functions</title><p>For convenience, we also included
+specific functions to calculate the radius of gyration and eccentricity
+of self-assembled structures. These are described in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01849/suppl_file/ci4c01849_si_001.pdf">ESI</ext-link> (sections rgyr: radius of gyration and ecc:
+Eccentricity calculation).</p></sec></sec></sec><sec id="sec3"><title>Conclusion</title><p>PySoftK v1.0 adds a complete standalone
+module for the analysis
+of soft matter systems. This work provides a set of interconnected
+tools that are useful for determining the physical properties of soft
+matter self-assembled aggregates as well as the molecular-scale interactions
+that underlie such emergent behavior. One of the key features of PySoftK
+v1.0 is that it properly accounts for periodic boundary conditions
+when determining the positions of atoms within the molecules that
+make up a soft matter aggregate if the aggregate is larger than half
+the size of the simulation box in one or multiple dimensions (as is
+typical in soft matter self-assembly simulations). Other software
+tools are not designed to account for molecular assemblies of this
+large size. A thorough suite of tests has been created to cover the
+code to ensure its correct functionality. Furthermore, PySoftK version
+1.0 is designed to provide maximum flexibility to the user. Most functions
+output the data per outputted configuration of the trajectory so that
+the user can decide how to represent or further process the data.
+Although the initial version of PySoftK has a particular focus on
+polymers, the analysis module has been created such that it is fully
+chemically agnostic. PySoftK v1.0 is an open-source platform that
+allows users to analyze complex structures, dynamics, and interactions
+in their simulations with minimal user input. PySoftK v1.0 contributes
+to the standardization of molecular-scale simulation analysis, which
+will promote accurate comparisons across different simulations to
+support the rational <italic>in silico</italic> design of new soft
+materials.</p></sec></body><back><notes notes-type="data-availability" id="notes4"><title>Data Availability Statement</title><p>PySoftK v1.0
+is freely available at: <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/alejandrosantanabonilla/pysoftk">https://github.com/alejandrosantanabonilla/pysoftk</uri>.</p></notes><notes id="notes1" notes-type="si"><title>Supporting Information Available</title><p>The Supporting Information is
+available free of charge at <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/10.1021/acs.jcim.4c01849?goto=supporting-info">https://pubs.acs.org/doi/10.1021/acs.jcim.4c01849</ext-link>.<list id="silist" list-type="simple"><list-item><p>Description of application of graph theory to molecular
+simulations. Description of PySoftK&#x02019;s algorithm that employs
+graph theory to analyze self-assembly of soft matter. Description
+of PySoftK development. Detailed description and examples of each
+analysis tool within PySoftK. (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01849/suppl_file/ci4c01849_si_001.pdf">PDF</ext-link>)</p></list-item></list></p></notes><sec sec-type="supplementary-material"><title>Supplementary Material</title><supplementary-material content-type="local-data" id="sifile1"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01849_si_001.pdf"><caption><p>ci4c01849_si_001.pdf</p></caption></media></supplementary-material></sec><notes notes-type="" id="notes2"><title>Author Contributions</title><p>R.L.-R.D.C.
+A.S.-B., R.M.Z., and C.D.L. designed the code and corresponding research.
+R.L.-R.D.C. A.S.-B., and R.M.Z. wrote all of the code and the tutorials
+reported in the manuscript. R.L.-R.D.C. A.S.-B., and R.M.Z. carried
+out any necessary analysis for this manuscript. R.L.-R.D.C. A.S.-B.,
+R.M.Z., and C.D.L. have written and edited the manuscript.</p></notes><notes notes-type="COI-statement" id="notes3"><p>The authors
+declare no competing financial interest.</p></notes><ack><title>Acknowledgments</title><p>The authors thank the e-Research department
+at King&#x02019;s
+College London for computational resources.<sup><xref ref-type="bibr" rid="ref34">34</xref></sup> We are grateful to the UK Materials and Molecular Modelling Hub
+for computational resources, which is partially funded by EPSRC (EP/T022213/1,
+EP/W032260/1 and EP/P020194/1). R.L.-R.D.C. acknowledges the support
+by the Biotechnology and Biological Sciences Research Council (BB/T008709/1)
+via the London Interdisciplinary Doctoral Programme (LIDo). R.M.Z.
+and C.D.L. acknowledge the Engineering and Physical Sciences Research
+Council (EPSRC) for funding (EP/V049771/1).</p></ack><ref-list><title>References</title><ref id="ref1"><mixed-citation publication-type="journal" id="cit1"><name><surname>Mitura</surname><given-names>S.</given-names></name>; <name><surname>Sionkowska</surname><given-names>A.</given-names></name>; <name><surname>Jaiswal</surname><given-names>A.</given-names></name>
+<article-title>Biopolymers for hydrogels in cosmetics:
+review</article-title>. <source>J. Mater. Sci.: Mater. Med.</source>
+<year>2020</year>, <volume>31</volume>, <fpage>50</fpage><pub-id pub-id-type="doi">10.1007/s10856-020-06390-w</pub-id>.<pub-id pub-id-type="pmid">32451785</pub-id>
+</mixed-citation></ref><ref id="ref2"><mixed-citation publication-type="journal" id="cit2"><name><surname>Ahmadi</surname><given-names>D.</given-names></name>; <name><surname>Ledder</surname><given-names>R.</given-names></name>; <name><surname>Mahmoudi</surname><given-names>N.</given-names></name>; <name><surname>Li</surname><given-names>P.</given-names></name>; <name><surname>Tellam</surname><given-names>J.</given-names></name>; <name><surname>Robinson</surname><given-names>D.</given-names></name>; <name><surname>Heenan</surname><given-names>R. K.</given-names></name>; <name><surname>Smith</surname><given-names>P.</given-names></name>; <name><surname>Lorenz</surname><given-names>C. D.</given-names></name>; <name><surname>Barlow</surname><given-names>D. J.</given-names></name>; <name><surname>Lawrence</surname><given-names>M. J.</given-names></name>
+<article-title>Supramolecular architecture
+of a
+multi-component biomimetic lipid barrier formulation</article-title>. <source>J. Colloid Interface Sci.</source>
+<year>2021</year>, <volume>587</volume>, <fpage>597</fpage>&#x02013;<lpage>612</lpage>. <pub-id pub-id-type="doi">10.1016/j.jcis.2020.11.017</pub-id>.<pub-id pub-id-type="pmid">33239213</pub-id>
+</mixed-citation></ref><ref id="ref3"><mixed-citation publication-type="journal" id="cit3"><name><surname>Gupta</surname><given-names>S.</given-names></name>; <name><surname>Sharma</surname><given-names>S.</given-names></name>; <name><surname>Kumar Nadda</surname><given-names>A.</given-names></name>; <name><surname>Saad Bala Husain</surname><given-names>M.</given-names></name>; <name><surname>Gupta</surname><given-names>A.</given-names></name>
+<article-title>Biopolymers from waste biomass and
+its applications in the cosmetic
+industry: A review</article-title>. <source>Mater. Today: Proc.</source>
+<year>2022</year>, <volume>68</volume>, <fpage>873</fpage>&#x02013;<lpage>879</lpage>. <pub-id pub-id-type="doi">10.1016/j.matpr.2022.06.422</pub-id>.</mixed-citation></ref><ref id="ref4"><mixed-citation publication-type="journal" id="cit4"><name><surname>Kohli</surname><given-names>A. G.</given-names></name>; <name><surname>Kierstead</surname><given-names>P. H.</given-names></name>; <name><surname>Venditto</surname><given-names>V. J.</given-names></name>; <name><surname>Walsh</surname><given-names>C. L.</given-names></name>; <name><surname>Szoka</surname><given-names>F. C.</given-names></name>
+<article-title>Designer
+lipids for drug delivery: From heads to tails</article-title>. <source>J. Controlled Release</source>
+<year>2014</year>, <volume>190</volume>, <fpage>274</fpage>&#x02013;<lpage>287</lpage>. <pub-id pub-id-type="doi">10.1016/j.jconrel.2014.04.047</pub-id>.</mixed-citation></ref><ref id="ref5"><mixed-citation publication-type="journal" id="cit5"><name><surname>Chen</surname><given-names>C. H.</given-names></name>; <name><surname>Liu</surname><given-names>Y.-H.</given-names></name>; <name><surname>Eskandari</surname><given-names>A.</given-names></name>; <name><surname>Ghimire</surname><given-names>J.</given-names></name>; <name><surname>Lin</surname><given-names>L. C.-W.</given-names></name>; <name><surname>Fang</surname><given-names>Z.-S.</given-names></name>; <name><surname>Wimley</surname><given-names>W. C.</given-names></name>; <name><surname>Ulmschneider</surname><given-names>J. P.</given-names></name>; <name><surname>Suntharalingam</surname><given-names>K.</given-names></name>; <name><surname>Hu</surname><given-names>C.-M. J.</given-names></name>; <name><surname>Ulmschneider</surname><given-names>M. B.</given-names></name>
+<article-title>Integrated
+Design of a Membrane-Lytic Peptide-Based Intravenous Nanotherapeutic
+Suppresses Triple-Negative Breast Cancer</article-title>. <source>Advanced
+Science</source>
+<year>2022</year>, <volume>9</volume>, <fpage>2105506</fpage><pub-id pub-id-type="doi">10.1002/advs.202105506</pub-id>.<pub-id pub-id-type="pmid">35246961</pub-id>
+</mixed-citation></ref><ref id="ref6"><mixed-citation publication-type="journal" id="cit6"><name><surname>Ishkhanyan</surname><given-names>H.</given-names></name>; <name><surname>Rhys</surname><given-names>N. H.</given-names></name>; <name><surname>Barlow</surname><given-names>D. J.</given-names></name>; <name><surname>Lawrence</surname><given-names>M. J.</given-names></name>; <name><surname>Lorenz</surname><given-names>C. D.</given-names></name>
+<article-title>Impact
+of drug aggregation on the structural and dynamic properties of Triton
+X-100 micelles</article-title>. <source>Nanoscale</source>
+<year>2022</year>, <volume>14</volume>, <fpage>5392</fpage><pub-id pub-id-type="doi">10.1039/D1NR07936K</pub-id>.<pub-id pub-id-type="pmid">35319029</pub-id>
+</mixed-citation></ref><ref id="ref7"><mixed-citation publication-type="journal" id="cit7"><name><surname>Saaka</surname><given-names>Y.</given-names></name>; <name><surname>Allen</surname><given-names>D.</given-names></name>; <name><surname>Terry</surname><given-names>A. E.</given-names></name>; <name><surname>Lorenz</surname><given-names>C. D.</given-names></name>; <name><surname>Barlow</surname><given-names>D. J.</given-names></name>; <name><surname>Lawrence</surname><given-names>M. J.</given-names></name>
+<article-title>Characterisation of the apparent aqueous solubility
+enhancement of testosterone analogues in micelles of dodecyl-chained
+surfactants with different headgroups</article-title>. <source>J. Mol.
+Liq.</source>
+<year>2023</year>, <volume>385</volume>, <fpage>122376</fpage><pub-id pub-id-type="doi">10.1016/j.molliq.2023.122376</pub-id>.</mixed-citation></ref><ref id="ref8"><mixed-citation publication-type="journal" id="cit8"><name><surname>Shah</surname><given-names>A.</given-names></name>; <name><surname>Shahzad</surname><given-names>S.</given-names></name>; <name><surname>Munir</surname><given-names>A.</given-names></name>; <name><surname>Nadagouda</surname><given-names>M. N.</given-names></name>; <name><surname>Khan</surname><given-names>G. S.</given-names></name>; <name><surname>Shams</surname><given-names>D. F.</given-names></name>; <name><surname>Dionysiou</surname><given-names>D. D.</given-names></name>; <name><surname>Rana</surname><given-names>U. A.</given-names></name>
+<article-title>Micelles as Soil and Water Decontamination Agents</article-title>. <source>Chem. Rev.</source>
+<year>2016</year>, <volume>116</volume>, <fpage>6042</fpage>&#x02013;<lpage>6074</lpage>. <pub-id pub-id-type="doi">10.1021/acs.chemrev.6b00132</pub-id>.<pub-id pub-id-type="pmid">27136750</pub-id>
+</mixed-citation></ref><ref id="ref9"><mixed-citation publication-type="journal" id="cit9"><name><surname>Srinivas</surname><given-names>G.</given-names></name>; <name><surname>Discher</surname><given-names>D. E.</given-names></name>; <name><surname>Klein</surname><given-names>M. L.</given-names></name>
+<article-title>Self-assembly and
+properties of diblock
+copolymers by coarse-grain molecular dynamics</article-title>. <source>Nature materials</source>
+<year>2004</year>, <volume>3</volume>, <fpage>638</fpage>&#x02013;<lpage>644</lpage>. <pub-id pub-id-type="doi">10.1038/nmat1185</pub-id>.<pub-id pub-id-type="pmid">15300242</pub-id>
+</mixed-citation></ref><ref id="ref10"><mixed-citation publication-type="journal" id="cit10"><name><surname>Jorge</surname><given-names>M.</given-names></name>
+<article-title>Molecular
+Dynamics Simulation of Self-Assembly of <italic>n</italic>-Decyltrimethylammonium
+Bromide Micelles</article-title>. <source>Langmuir</source>
+<year>2008</year>, <volume>24</volume>, <fpage>5714</fpage>&#x02013;<lpage>5725</lpage>. <pub-id pub-id-type="doi">10.1021/la800291p</pub-id>.<pub-id pub-id-type="pmid">18454560</pub-id>
+</mixed-citation></ref><ref id="ref11"><mixed-citation publication-type="journal" id="cit11"><name><surname>Wang</surname><given-names>H.</given-names></name>; <name><surname>Zhang</surname><given-names>H.</given-names></name>; <name><surname>Liu</surname><given-names>C.</given-names></name>; <name><surname>Yuan</surname><given-names>S.</given-names></name>
+<article-title>Coarse-grained molecular
+dynamics simulation of self-assembly of polyacrylamide and sodium
+dodecylsulfate in aqueous solution</article-title>. <source>J. Colloid
+Interface Sci.</source>
+<year>2012</year>, <volume>386</volume>, <fpage>205</fpage>&#x02013;<lpage>211</lpage>. <pub-id pub-id-type="doi">10.1016/j.jcis.2012.07.026</pub-id>.<pub-id pub-id-type="pmid">22901375</pub-id>
+</mixed-citation></ref><ref id="ref12"><mixed-citation publication-type="journal" id="cit12"><name><surname>Ziolek</surname><given-names>R. M.</given-names></name>; <name><surname>Omar</surname><given-names>J.</given-names></name>; <name><surname>Hu</surname><given-names>W.</given-names></name>; <name><surname>Porcar</surname><given-names>L.</given-names></name>; <name><surname>Gonzalez-Gaitano</surname><given-names>G.</given-names></name>; <name><surname>Dreiss</surname><given-names>C. A.</given-names></name>; <name><surname>Lorenz</surname><given-names>C. D.</given-names></name>
+<article-title>Understanding the
+pH-directed self-assembly
+of a four-arm block copolymer</article-title>. <source>Macromolecules</source>
+<year>2020</year>, <volume>53</volume>, <fpage>11065</fpage>&#x02013;<lpage>11076</lpage>. <pub-id pub-id-type="doi">10.1021/acs.macromol.0c01694</pub-id>.</mixed-citation></ref><ref id="ref13"><mixed-citation publication-type="journal" id="cit13"><name><surname>Pink</surname><given-names>D. L.</given-names></name>; <name><surname>Foglia</surname><given-names>F.</given-names></name>; <name><surname>Barlow</surname><given-names>D. J.</given-names></name>; <name><surname>Lawrence</surname><given-names>M. J.</given-names></name>; <name><surname>Lorenz</surname><given-names>C. D.</given-names></name>
+<article-title>The Impact
+of Lipid Digestion on the Dynamic and Structural Properties of Micelles</article-title>. <source>Small</source>
+<year>2021</year>, <volume>17</volume>, <fpage>2004761</fpage><pub-id pub-id-type="doi">10.1002/smll.202004761</pub-id>.<pub-id pub-id-type="pmid">33470509</pub-id>
+</mixed-citation></ref><ref id="ref14"><mixed-citation publication-type="journal" id="cit14"><name><surname>Pink</surname><given-names>D. L.</given-names></name>; <name><surname>Loruthai</surname><given-names>O.</given-names></name>; <name><surname>Ziolek</surname><given-names>R. M.</given-names></name>; <name><surname>Terry</surname><given-names>A. E.</given-names></name>; <name><surname>Barlow</surname><given-names>D. J.</given-names></name>; <name><surname>Lawrence</surname><given-names>M. J.</given-names></name>; <name><surname>Lorenz</surname><given-names>C. D.</given-names></name>
+<article-title>Interplay
+of lipid and surfactant:
+Impact on nanoparticle structure</article-title>. <source>J. Colloid
+Interface Sci.</source>
+<year>2021</year>, <volume>597</volume>, <fpage>278</fpage>&#x02013;<lpage>288</lpage>. <pub-id pub-id-type="doi">10.1016/j.jcis.2021.03.136</pub-id>.<pub-id pub-id-type="pmid">33872884</pub-id>
+</mixed-citation></ref><ref id="ref15"><mixed-citation publication-type="journal" id="cit15"><name><surname>Bhendale</surname><given-names>M.</given-names></name>; <name><surname>Singh</surname><given-names>J. K.</given-names></name>
+<article-title>Molecular Insights on Morphology,
+Composition, and
+Stability of Mixed Micelles Formed by Ionic Surfactant and Nonionic
+Block Copolymer in Water Using Coarse-Grained Molecular Dynamics Simulations</article-title>. <source>Langmuir</source>
+<year>2023</year>, <volume>39</volume>, <fpage>5031</fpage>&#x02013;<lpage>5040</lpage>. <pub-id pub-id-type="doi">10.1021/acs.langmuir.3c00045</pub-id>.<pub-id pub-id-type="pmid">36992607</pub-id>
+</mixed-citation></ref><ref id="ref16"><mixed-citation publication-type="journal" id="cit16"><name><surname>Lopez-Rios
+de Castro</surname><given-names>R.</given-names></name>; <name><surname>Ziolek</surname><given-names>R. M.</given-names></name>; <name><surname>Lorenz</surname><given-names>C. D.</given-names></name>
+<article-title>Topology-Controlled
+Self-Assembly of Amphiphilic Block Copolymers</article-title>. <source>Nanoscale</source>
+<year>2023</year>, <volume>15</volume>, <fpage>15230</fpage><pub-id pub-id-type="doi">10.1039/D3NR01204B</pub-id>.<pub-id pub-id-type="pmid">37671739</pub-id>
+</mixed-citation></ref><ref id="ref17"><mixed-citation publication-type="journal" id="cit17"><name><surname>Gartner</surname><given-names>T. E.</given-names><suffix>III</suffix></name>; <name><surname>Jayaraman</surname><given-names>A.</given-names></name>
+<article-title>Modeling and
+simulations of polymers:
+a roadmap</article-title>. <source>Macromolecules</source>
+<year>2019</year>, <volume>52</volume>, <fpage>755</fpage>&#x02013;<lpage>786</lpage>. <pub-id pub-id-type="doi">10.1021/acs.macromol.8b01836</pub-id>.</mixed-citation></ref><ref id="ref18"><mixed-citation publication-type="journal" id="cit18"><name><surname>Santana-Bonilla</surname><given-names>A.</given-names></name>; <name><surname>Lopez-Rios de Castro</surname><given-names>R.</given-names></name>; <name><surname>Sun</surname><given-names>P.</given-names></name>; <name><surname>Ziolek</surname><given-names>R. M.</given-names></name>; <name><surname>Lorenz</surname><given-names>C. D.</given-names></name>
+<article-title>Modular
+Software for Generating and Modeling Diverse Polymer Databases</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2023</year>, <volume>63</volume>, <fpage>3761</fpage><pub-id pub-id-type="doi">10.1021/acs.jcim.3c00081</pub-id>.<pub-id pub-id-type="pmid">37288782</pub-id>
+</mixed-citation></ref><ref id="ref19"><mixed-citation publication-type="journal" id="cit19"><name><surname>Sahu</surname><given-names>H.</given-names></name>; <name><surname>Shen</surname><given-names>K.-H.</given-names></name>; <name><surname>Montoya</surname><given-names>J. H.</given-names></name>; <name><surname>Tran</surname><given-names>H.</given-names></name>; <name><surname>Ramprasad</surname><given-names>R.</given-names></name>
+<article-title>Polymer structure
+predictor (psp): a python toolkit for predicting atomic-level structural
+models for a range of polymer geometries</article-title>. <source>J.
+Chem. Theory Comput.</source>
+<year>2022</year>, <volume>18</volume>, <fpage>2737</fpage>&#x02013;<lpage>2748</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jctc.2c00022</pub-id>.<pub-id pub-id-type="pmid">35244397</pub-id>
+</mixed-citation></ref><ref id="ref20"><mixed-citation publication-type="journal" id="cit20"><name><surname>Hayashi</surname><given-names>Y.</given-names></name>; <name><surname>Shiomi</surname><given-names>J.</given-names></name>; <name><surname>Morikawa</surname><given-names>J.</given-names></name>; <name><surname>Yoshida</surname><given-names>R.</given-names></name>
+<article-title>RadonPy: automated
+physical property calculation using all-atom classical molecular dynamics
+simulations for polymer informatics</article-title>. <source>npj Computational
+Materials</source>
+<year>2022</year>, <volume>8</volume>, <fpage>222</fpage><pub-id pub-id-type="doi">10.1038/s41524-022-00906-4</pub-id>.</mixed-citation></ref><ref id="ref21"><mixed-citation publication-type="journal" id="cit21"><name><surname>Summers</surname><given-names>A. Z.</given-names></name>; <name><surname>Gilmer</surname><given-names>J. B.</given-names></name>; <name><surname>Iacovella</surname><given-names>C. R.</given-names></name>; <name><surname>Cummings</surname><given-names>P. T.</given-names></name>; <name><surname>McCabe</surname><given-names>C.</given-names></name>
+<article-title>MoSDeF, a
+Python Framework Enabling Large-Scale Computational Screening of Soft
+Matter: Application to Chemistry-Property Relationships in Lubricating
+Monolayer Films</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2020</year>, <volume>16</volume>, <fpage>1779</fpage>&#x02013;<lpage>1793</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jctc.9b01183</pub-id>.<pub-id pub-id-type="pmid">32004433</pub-id>
+</mixed-citation></ref><ref id="ref22"><mixed-citation publication-type="journal" id="cit22"><name><surname>Michaud-Agrawal</surname><given-names>N.</given-names></name>; <name><surname>Denning</surname><given-names>E. J.</given-names></name>; <name><surname>Woolf</surname><given-names>T. B.</given-names></name>; <name><surname>Beckstein</surname><given-names>O.</given-names></name>
+<article-title>MDAnalysis:
+a toolkit for the analysis of molecular dynamics simulations</article-title>. <source>Journal of computational chemistry</source>
+<year>2011</year>, <volume>32</volume>, <fpage>2319</fpage>&#x02013;<lpage>2327</lpage>. <pub-id pub-id-type="doi">10.1002/jcc.21787</pub-id>.<pub-id pub-id-type="pmid">21500218</pub-id>
+</mixed-citation></ref><ref id="ref23"><mixed-citation publication-type="journal" id="cit23"><name><surname>Kovacevic</surname><given-names>M.</given-names></name>; <name><surname>Balaz</surname><given-names>I.</given-names></name>; <name><surname>Marson</surname><given-names>D.</given-names></name>; <name><surname>Laurini</surname><given-names>E.</given-names></name>; <name><surname>Jovic</surname><given-names>B.</given-names></name>
+<article-title>Mixed-monolayer
+functionalized gold nanoparticles for cancer treatment: Atomistic
+molecular dynamics simulations study</article-title>. <source>Biosystems</source>
+<year>2021</year>, <volume>202</volume>, <fpage>104354</fpage><pub-id pub-id-type="doi">10.1016/j.biosystems.2021.104354</pub-id>.<pub-id pub-id-type="pmid">33444701</pub-id>
+</mixed-citation></ref><ref id="ref24"><mixed-citation publication-type="journal" id="cit24"><name><surname>Wilkosz</surname><given-names>N.</given-names></name>; <name><surname>&#x00141;azarski</surname><given-names>G.</given-names></name>; <name><surname>Kovacik</surname><given-names>L.</given-names></name>; <name><surname>Gargas</surname><given-names>P.</given-names></name>; <name><surname>Nowakowska</surname><given-names>M.</given-names></name>; <name><surname>Jamroz</surname><given-names>D.</given-names></name>; <name><surname>Kepczynski</surname><given-names>M.</given-names></name>
+<article-title>Molecular insight into drug-loading
+capacity of PEG&#x02013;PLGA nanoparticles for itraconazole</article-title>. <source>J. Phys. Chem. B</source>
+<year>2018</year>, <volume>122</volume>, <fpage>7080</fpage>&#x02013;<lpage>7090</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jpcb.8b03742</pub-id>.<pub-id pub-id-type="pmid">29927603</pub-id>
+</mixed-citation></ref><ref id="ref25"><mixed-citation publication-type="journal" id="cit25"><name><surname>Sega</surname><given-names>M.</given-names></name>; <name><surname>Kantorovich</surname><given-names>S. S.</given-names></name>; <name><surname>Jedlovszky</surname><given-names>P.</given-names></name>; <name><surname>Jorge</surname><given-names>M.</given-names></name>
+<article-title>The generalized identification
+of truly interfacial molecules (ITIM) algorithm for nonplanar interfaces</article-title>. <source>J. Chem. Phys.</source>
+<year>2013</year>, <volume>138</volume>, <fpage>044110</fpage><pub-id pub-id-type="doi">10.1063/1.4776196</pub-id>.<pub-id pub-id-type="pmid">23387571</pub-id>
+</mixed-citation></ref><ref id="ref26"><mixed-citation publication-type="journal" id="cit26"><name><surname>Ziolek</surname><given-names>R.
+M.</given-names></name>; <name><surname>Smith</surname><given-names>P.</given-names></name>; <name><surname>Pink</surname><given-names>D. L.</given-names></name>; <name><surname>Dreiss</surname><given-names>C. A.</given-names></name>; <name><surname>Lorenz</surname><given-names>C. D.</given-names></name>
+<article-title>Unsupervised
+learning unravels the structure of four-arm and linear block copolymer
+micelles</article-title>. <source>Macromolecules</source>
+<year>2021</year>, <volume>54</volume>, <fpage>3755</fpage>&#x02013;<lpage>3768</lpage>. <pub-id pub-id-type="doi">10.1021/acs.macromol.0c02523</pub-id>.</mixed-citation></ref><ref id="ref27"><mixed-citation publication-type="journal" id="cit27"><name><surname>Kool</surname><given-names>E. T.</given-names></name>
+<article-title>Hydrogen
+bonding, base stacking, and steric effects in DNA replication</article-title>. <source>Annual review of biophysics and biomolecular structure</source>
+<year>2001</year>, <volume>30</volume>, <fpage>1</fpage>&#x02013;<lpage>22</lpage>. <pub-id pub-id-type="doi">10.1146/annurev.biophys.30.1.1</pub-id>.</mixed-citation></ref><ref id="ref28"><mixed-citation publication-type="journal" id="cit28"><name><surname>Liu</surname><given-names>Y.</given-names></name>; <name><surname>Liu</surname><given-names>B.-Y.</given-names></name>; <name><surname>Hao</surname><given-names>P.</given-names></name>; <name><surname>Li</surname><given-names>X.</given-names></name>; <name><surname>Li</surname><given-names>Y.-X.</given-names></name>; <name><surname>Wang</surname><given-names>J.-F.</given-names></name>
+<article-title><italic>&#x003c0;&#x02013;&#x003c0;</italic> Stacking mediated
+drug&#x02013;drug interactions in human CYP2E1</article-title>. <source>Proteins: Struct., Funct., Bioinf.</source>
+<year>2013</year>, <volume>81</volume>, <fpage>945</fpage>&#x02013;<lpage>954</lpage>. <pub-id pub-id-type="doi">10.1002/prot.24260</pub-id>.</mixed-citation></ref><ref id="ref29"><mixed-citation publication-type="journal" id="cit29"><name><surname>Schwartz</surname><given-names>B. J.</given-names></name>
+<article-title>Conjugated
+polymers as molecular materials: How chain conformation and film morphology
+influence energy transfer and interchain interactions</article-title>. <source>Annu. Rev. Phys. Chem.</source>
+<year>2003</year>, <volume>54</volume>, <fpage>141</fpage>&#x02013;<lpage>172</lpage>. <pub-id pub-id-type="doi">10.1146/annurev.physchem.54.011002.103811</pub-id>.<pub-id pub-id-type="pmid">12524429</pub-id>
+</mixed-citation></ref><ref id="ref30"><mixed-citation publication-type="journal" id="cit30"><name><surname>Bouysset</surname><given-names>C.</given-names></name>; <name><surname>Fiorucci</surname><given-names>S.</given-names></name>
+<article-title>ProLIF: a library to
+encode molecular interactions
+as fingerprints</article-title>. <source>Journal of Cheminformatics</source>
+<year>2021</year>, <volume>13</volume>, <fpage>72</fpage><pub-id pub-id-type="doi">10.1186/s13321-021-00548-6</pub-id>.<pub-id pub-id-type="pmid">34563256</pub-id>
+</mixed-citation></ref><ref id="ref31"><mixed-citation publication-type="journal" id="cit31"><name><surname>Ziolek</surname><given-names>R. M.</given-names></name>; <name><surname>Santana-Bonilla</surname><given-names>A.</given-names></name>; <name><surname>Lopez-Rios de Castro</surname><given-names>R.</given-names></name>; <name><surname>Kuhn</surname><given-names>R.</given-names></name>; <name><surname>Green</surname><given-names>M.</given-names></name>; <name><surname>Lorenz</surname><given-names>C. D.</given-names></name>
+<article-title>Conformational
+heterogeneity and
+interchain percolation revealed in an amorphous conjugated polymer</article-title>. <source>ACS Nano</source>
+<year>2022</year>, <volume>16</volume>, <fpage>14432</fpage>&#x02013;<lpage>14442</lpage>. <pub-id pub-id-type="doi">10.1021/acsnano.2c04794</pub-id>.<pub-id pub-id-type="pmid">36103148</pub-id>
+</mixed-citation></ref><ref id="ref32"><mixed-citation publication-type="journal" id="cit32"><name><surname>Zhong</surname><given-names>Z.</given-names></name>; <name><surname>Ulmschneider</surname><given-names>M. B.</given-names></name>; <name><surname>Lorenz</surname><given-names>C. D.</given-names></name>
+<article-title>Unraveling the Molecular Dance: Insights
+into TREM2/DAP12 Complex Formation in Alzheimer&#x02019;s Disease through
+Molecular Dynamics Simulations</article-title>. <source>ACS Omega</source>
+<year>2024</year>, <volume>9</volume>, <fpage>28715</fpage>&#x02013;<lpage>28725</lpage>. <pub-id pub-id-type="doi">10.1021/acsomega.4c03060</pub-id>.<pub-id pub-id-type="pmid">38973875</pub-id>
+</mixed-citation></ref><ref id="ref33"><mixed-citation publication-type="journal" id="cit33"><name><surname>Jafari</surname><given-names>M.</given-names></name>; <name><surname>Doustdar</surname><given-names>F.</given-names></name>; <name><surname>Mehrnejad</surname><given-names>F.</given-names></name>
+<article-title>Molecular
+self-assembly strategy
+for encapsulation of an amphipathic &#x003b1;-helical antimicrobial
+peptide into the different polymeric and copolymeric nanoparticles</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2019</year>, <volume>59</volume>, <fpage>550</fpage>&#x02013;<lpage>563</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.8b00641</pub-id>.<pub-id pub-id-type="pmid">30475620</pub-id>
+</mixed-citation></ref><ref id="ref34"><mixed-citation publication-type="journal" id="cit34"><person-group person-group-type="allauthors"><collab>King&#x02019;s
+College London</collab></person-group><source>King&#x02019;s Computational
+Research, Engineering
+and Technology Environment (CREATE)</source><year>2022</year>; <pub-id pub-id-type="doi">10.18742/rnvf-m076</pub-id>.</mixed-citation></ref></ref-list></back></article>

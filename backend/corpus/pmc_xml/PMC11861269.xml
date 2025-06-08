@@ -1,0 +1,679 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="1.3" xml:lang="en" article-type="other"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Viruses</journal-id><journal-id journal-id-type="iso-abbrev">Viruses</journal-id><journal-id journal-id-type="publisher-id">viruses</journal-id><journal-title-group><journal-title>Viruses</journal-title></journal-title-group><issn pub-type="epub">1999-4915</issn><publisher><publisher-name>MDPI</publisher-name></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">40006952</article-id><article-id pub-id-type="pmc">PMC11861269</article-id><article-id pub-id-type="doi">10.3390/v17020197</article-id><article-id pub-id-type="publisher-id">viruses-17-00197</article-id><article-categories><subj-group subj-group-type="heading"><subject>Perspective</subject></subj-group></article-categories><title-group><article-title>Evolutionary Mechanisms of the Emergence of the Variants of Concern of SARS-CoV-2</article-title></title-group><contrib-group><contrib contrib-type="author"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0002-0744-6705</contrib-id><name><surname>Rouzine</surname><given-names>Igor M.</given-names></name></contrib></contrib-group><contrib-group><contrib contrib-type="editor"><name><surname>Harty</surname><given-names>Ronald N.</given-names></name><role>Academic Editor</role></contrib></contrib-group><aff id="af1-viruses-17-00197">Sechenov Institute of Evolutionary Physiology and Biochemistry, Russian Academy of Sciences, St. Petersburg 194223, Russia; <email>igor.rouzine@iephb.ru</email></aff><pub-date pub-type="epub"><day>30</day><month>1</month><year>2025</year></pub-date><pub-date pub-type="collection"><month>2</month><year>2025</year></pub-date><volume>17</volume><issue>2</issue><elocation-id>197</elocation-id><history><date date-type="received"><day>07</day><month>1</month><year>2025</year></date><date date-type="rev-recd"><day>21</day><month>1</month><year>2025</year></date><date date-type="accepted"><day>29</day><month>1</month><year>2025</year></date></history><permissions><copyright-statement>&#x000a9; 2025 by the author.</copyright-statement><copyright-year>2025</copyright-year><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license (<ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</ext-link>).</license-p></license></permissions><abstract><p>The evolutionary origin of the variants of concern (VOCs) of SARS-CoV-2, characterized by a large number of new substitutions and strong changes in virulence and transmission rate, is intensely debated. The leading explanation in the literature is a chronic infection in immunocompromised individuals, where the virus evolves before returning into the main population. The present article reviews less-investigated hypotheses of VOC emergence with transmission between acutely infected hosts, with a focus on the mathematical models of stochastic evolution that have proved to be useful for other viruses, such as HIV and influenza virus. The central message is that understanding the acting factors of VOC evolution requires the framework of stochastic multi-locus evolution models, and that alternative hypotheses can be effectively verified by fitting results of computer simulation to empirical data.</p></abstract><kwd-group><kwd>immunosuppressed patient</kwd><kwd>chronic infection</kwd><kwd>primary mutation</kwd><kwd>compensatory mutation</kwd><kwd>recombination</kwd></kwd-group><funding-group><award-group><funding-source>Russian Science Foundation</funding-source><award-id>24-24-00529</award-id></award-group><funding-statement>I.M.R. worked within the framework of the Russian Science Foundation, grant 24-24-00529.</funding-statement></funding-group></article-meta></front><body><sec sec-type="intro" id="sec1-viruses-17-00197"><title>1. Introduction</title><p>Similarly to HIV, HCV, and influenza virus, SARS-CoV-2 is perpetually acquiring new substitutions in its genome, with a very high mean substitution rate of (0.6&#x02013;1.6) &#x000b7; <inline-formula><mml:math id="mm1" overflow="scroll"><mml:mrow><mml:mrow><mml:msup><mml:mrow><mml:mn>10</mml:mn></mml:mrow><mml:mrow><mml:mo>&#x02212;</mml:mo><mml:mn>3</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mrow></mml:math></inline-formula>/year/site, depending on the subtype [<xref rid="B1-viruses-17-00197" ref-type="bibr">1</xref>,<xref rid="B2-viruses-17-00197" ref-type="bibr">2</xref>] (<xref rid="viruses-17-00197-f001" ref-type="fig">Figure 1</xref>). The substitution rate of its envelope protein, Spike, is even faster, at (5&#x02013;6) &#x000b7; <inline-formula><mml:math id="mm2" overflow="scroll"><mml:mrow><mml:mrow><mml:msup><mml:mrow><mml:mn>10</mml:mn></mml:mrow><mml:mrow><mml:mo>&#x02212;</mml:mo><mml:mn>3</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mrow></mml:math></inline-formula>/year/site, and second only to the envelope protein of HIV [<xref rid="B3-viruses-17-00197" ref-type="bibr">3</xref>]. Millions of genomes have been sequenced to date, producing a vast amount of data on genetic variation, antigenicity, and transmission [<xref rid="B4-viruses-17-00197" ref-type="bibr">4</xref>,<xref rid="B5-viruses-17-00197" ref-type="bibr">5</xref>,<xref rid="B6-viruses-17-00197" ref-type="bibr">6</xref>,<xref rid="B7-viruses-17-00197" ref-type="bibr">7</xref>,<xref rid="B8-viruses-17-00197" ref-type="bibr">8</xref>]. The variants of concern (VOCs) of SARS-CoV-2, such as Alpha (B.1.1.7), Delta (B.1.617.2), and Omicron (B.1.1.529 and its subvariants B.A1, B.A2, etc.), particularly stand out, due to their changes in virulence and transmission rate. For example, the variant Alpha had at least 43% faster transmission than the previous virus variant [<xref rid="B9-viruses-17-00197" ref-type="bibr">9</xref>]. A VOC carries a new set of a dozen or more mostly non-synonymous mutations [<xref rid="B10-viruses-17-00197" ref-type="bibr">10</xref>,<xref rid="B11-viruses-17-00197" ref-type="bibr">11</xref>,<xref rid="B12-viruses-17-00197" ref-type="bibr">12</xref>,<xref rid="B13-viruses-17-00197" ref-type="bibr">13</xref>]. Phylogenetic analysis demonstrates that a VOC does not descend directly from any of the current dominant virus variants, but represents a sister strain, with a common ancestor that existed many months prior [<xref rid="B10-viruses-17-00197" ref-type="bibr">10</xref>,<xref rid="B11-viruses-17-00197" ref-type="bibr">11</xref>,<xref rid="B12-viruses-17-00197" ref-type="bibr">12</xref>,<xref rid="B13-viruses-17-00197" ref-type="bibr">13</xref>]. The evolutionary cause of this phenomenon remains unknown. Understanding VOC genesis demands a concerted effort of clinicians, epidemiologists, virologists, immunologists, and virus evolution experts.</p></sec><sec id="sec2-viruses-17-00197"><title>2. Epidemiological Reservoirs (Silent Spread)</title><p>One possible explanation postulates the existence of a hidden epidemiological reservoir, where the virus evolves un-noticed and then returns to the population. Such a reservoir could be an animal population (reverse zoonosis) [<xref rid="B21-viruses-17-00197" ref-type="bibr">21</xref>,<xref rid="B22-viruses-17-00197" ref-type="bibr">22</xref>] or a human population not covered by genetic surveillance [<xref rid="B6-viruses-17-00197" ref-type="bibr">6</xref>,<xref rid="B13-viruses-17-00197" ref-type="bibr">13</xref>,<xref rid="B23-viruses-17-00197" ref-type="bibr">23</xref>,<xref rid="B24-viruses-17-00197" ref-type="bibr">24</xref>]. The two hypotheses are similar. The facts in favor of them include numerous documented cases of a pathogen passing between an animal reservoir and a human population (e.g., bubonic plague, HIV, influenza), as well as certain SARS-CoV-2 variants being found only in specific locations, at least early on following their first detection [<xref rid="B24-viruses-17-00197" ref-type="bibr">24</xref>]. A difference between the animal reservoir hypothesis and the hypothesis of silent spread in a human population is the presumed evolutionary rate. Another difference is that cross-species jumps often require additional adaptation mutations. The silent spread hypothesis could be confirmed by tracing a VOC to a specific human or animal reservoir.</p></sec><sec id="sec3-viruses-17-00197"><title>3. Evolution in Immunocompromised Individuals</title><p>Much discussed in the literature is the hypothesis that VOCs may evolve within immunocompromised individuals who exhibit a long-term chronic infection [<xref rid="B10-viruses-17-00197" ref-type="bibr">10</xref>,<xref rid="B25-viruses-17-00197" ref-type="bibr">25</xref>,<xref rid="B26-viruses-17-00197" ref-type="bibr">26</xref>,<xref rid="B27-viruses-17-00197" ref-type="bibr">27</xref>,<xref rid="B28-viruses-17-00197" ref-type="bibr">28</xref>,<xref rid="B29-viruses-17-00197" ref-type="bibr">29</xref>,<xref rid="B30-viruses-17-00197" ref-type="bibr">30</xref>]. Due to its adaptation to a human host in the presence of a weakened immune response, the virus could rapidly accumulate many mutations and then return to the general population. The prevalence of chronic infections in the population is small, 0.1&#x02013;0.5% [<xref rid="B31-viruses-17-00197" ref-type="bibr">31</xref>], but they could seed new highly fit variants. In the support of this idea, evolution in immunocompromised patients and VOCs share common features, including some hallmark mutations in the Spike protein and convergent evolution [<xref rid="B10-viruses-17-00197" ref-type="bibr">10</xref>]. Several studies have found an accelerated substitution rate within some chronic individuals compared to the substitution rate of the virus in the main population [<xref rid="B25-viruses-17-00197" ref-type="bibr">25</xref>,<xref rid="B26-viruses-17-00197" ref-type="bibr">26</xref>,<xref rid="B27-viruses-17-00197" ref-type="bibr">27</xref>,<xref rid="B28-viruses-17-00197" ref-type="bibr">28</xref>,<xref rid="B29-viruses-17-00197" ref-type="bibr">29</xref>,<xref rid="B30-viruses-17-00197" ref-type="bibr">30</xref>], although some have challenged this [<xref rid="B2-viruses-17-00197" ref-type="bibr">2</xref>]. However, acceleration is not specific evidence for seeding VOCs from these patients. The speed of viral evolution is often faster in chronically infected individuals due to a faster turnover; this is a common phenomenon among viruses. These data are also consistent with viral adaptation occurring in parallel and independently at two biological levels. One level is the evolution within a chronic patient, and another level is the evolution due to transmission in the general population (in hosts with acute infections). Both processes confer viral adaptation to human species, and likely select for many (but not all) similar substitutions.</p><p>A search for drivers of VOC evolution in 27 chronic patients demonstrated that, although substitutions in chronic patients include some hallmark VOC mutations, the long subsets of mutations associated with the global transmission of VOCs are absent from these patients [<xref rid="B32-viruses-17-00197" ref-type="bibr">32</xref>]. The difference between VOCs and the virus in chronic patients could be explained by an evolutionary conflict between two biological levels [<xref rid="B32-viruses-17-00197" ref-type="bibr">32</xref>,<xref rid="B33-viruses-17-00197" ref-type="bibr">33</xref>]: the level of a chronically infected host and the level of a population. The evolutionary conflict, however, does not require chronic infection, and can also result from the parallel evolution at the two biological levels. Nevertheless, the chronic patient hypothesis remains the leading hypothesis in the literature, and deserves further investigation. Identification of the source patients for at least some VOCs would allow direct confirmation. Recently, shedding of novel SARS-CoV-2 Spike sequences to wastewater was traced to a single commercial building, and has been detected and interpreted as coming from a chronically infected individual [<xref rid="B34-viruses-17-00197" ref-type="bibr">34</xref>].</p></sec><sec id="sec4-viruses-17-00197"><title>4. Evolutionary Forces in the General Population</title><p>The above class of potential explanations was based on virus evolution in and seeding from a special reservoir of population, other than the general population. Another direction of the search is the detailed analysis of biological mechanisms shaping virus evolution in the general population. In principle, the same forces can also act in reservoirs, but the presence of reservoirs is not important for this line of inquiry. Viruses evolve due to a complex interplay between various biological factors, including random mutation, natural selection, epistatic interaction, random genetic drift, linkage between loci due to common phylogeny, recombination, migration, and inhomogeneous population structure (<xref rid="viruses-17-00197-box001" ref-type="boxed-text">Box 1</xref>). The interplay between these evolutionary factors, which can be readily simulated in silico, generates a set of specific evolutionary patterns, which can be compared to genomic data in the public domain. All hypotheses of this class are testable, and their confirmation or falsification would help with understanding the origins of VOCs. Two examples follow.</p><boxed-text id="viruses-17-00197-box001" position="float"><label>Box 1</label><caption><title>Terminology.</title></caption><p>Allele&#x02014;a variant of a locus.</p><p>Compensatory mutation&#x02014;a mutation at another locus, compensating the deleterious effect of a mutation at the given locus.</p><p>Convergent evolution&#x02014;evolution towards the same genetic sequence in independent populations.</p><p>Fitness (reproduction number)&#x02014;the average number of cells infected by a virus from one infected cell, or the average number of individuals infected by one individual. </p><p>Fitness valley&#x02014;a sequence of mutations with a transient fitness decrease in the middle.</p><p>Genetic drift&#x02014;random fluctuation in the progeny number of a virus genome, measured by the number of infected cells for within-host evolution and the number of infected hosts for population-level evolution, respectively. It causes random fluctuations in allelic frequency over time, and may cause their eventual loss.</p><p>Genetic linkage&#x02014;co-inheritance of alleles at different loci because they are close together on a chromosome (i.e., low chance of recombination splitting them up)</p><p>Immune escape&#x02014;a mutation causing a loss of recognition.</p><p>Locus&#x02014;a small variable part of a genome (usually, a nucleotide or amino acid position)</p><p>Natural selection&#x02014;an increase in the number of genetic variants with a larger fitness over generations.</p><p>Recombination&#x02014;a mosaic mix of two individual genomes, due to them switching templates during replication.</p></boxed-text></sec><sec id="sec5-viruses-17-00197"><title>5. Fitness Valley Hypothesis</title><p>VOCs may arise early on, while still undetectable, due to a cascade of compensatory mutations emerging in a population after a primary mutation, conferring a major change in viral properties [<xref rid="B35-viruses-17-00197" ref-type="bibr">35</xref>]. A population-level simulation study proposed this effect in conjunction with the evolution in immunocompromised patients [<xref rid="B35-viruses-17-00197" ref-type="bibr">35</xref>]. However, under certain conditions, a fitness valley could also be crossed in the general population, in direct patient-to-patient transmission. The authors of [<xref rid="B36-viruses-17-00197" ref-type="bibr">36</xref>] used computer simulation to interpret the origin of VOCs using simple fitness landscapes (a single mutation, several additive mutations, and a fitness plateau followed by a single mutation). The fitness valley, in contrast, includes a transient decrease in fitness forced by some changes in the environment (tissue, host, species, immune response). This &#x0201c;fitness valley&#x0201d; effect has been previously observed or inferred for various viruses, including HIV [<xref rid="B37-viruses-17-00197" ref-type="bibr">37</xref>,<xref rid="B38-viruses-17-00197" ref-type="bibr">38</xref>] and influenza [<xref rid="B39-viruses-17-00197" ref-type="bibr">39</xref>,<xref rid="B40-viruses-17-00197" ref-type="bibr">40</xref>], and studied using mathematical models [<xref rid="B40-viruses-17-00197" ref-type="bibr">40</xref>,<xref rid="B41-viruses-17-00197" ref-type="bibr">41</xref>]. For example, a primary mutation can help a virus to escape the immune response, adapt to a species or a tissue, or expand the pH range in which it can replicate. Mutations conferring these benefits to a virus, but reducing its overall fitness, are followed by compensatory mutations that elevate its fitness above the initial level.</p><p>Compensatory mutations (positive epistasis) have also been observed for SARS-CoV-2. Mutations in neutralizing antibody-binding regions that help SARS-CoV-2 to escape immune recognition during transmission [<xref rid="B3-viruses-17-00197" ref-type="bibr">3</xref>,<xref rid="B4-viruses-17-00197" ref-type="bibr">4</xref>,<xref rid="B6-viruses-17-00197" ref-type="bibr">6</xref>,<xref rid="B20-viruses-17-00197" ref-type="bibr">20</xref>,<xref rid="B42-viruses-17-00197" ref-type="bibr">42</xref>] negatively affect the function of receptor binding, and may also have to be compensated for elsewhere. K417N and E484K in Spike seem to help it to avoid antibody recognition, but they also remove two salt-bridges with ACE2 (the target receptor on our cells); however, N501Y appears to increase affinity for ACE2, and might compensate for the loss of the salt-bridges [<xref rid="B43-viruses-17-00197" ref-type="bibr">43</xref>]. The tradeoff between antibody escape and transmissibility has been inferred in immunocompromised patients [<xref rid="B32-viruses-17-00197" ref-type="bibr">32</xref>]. The same is likely true for mutations conferring escape from innate responses to SARS-CoV-2 [<xref rid="B44-viruses-17-00197" ref-type="bibr">44</xref>,<xref rid="B45-viruses-17-00197" ref-type="bibr">45</xref>].</p><p>A classic example of the fitness valley effect is the rapid formation of drug resistance in HIV in patients treated with early antiretroviral inhibitors, where the initial primary mutation decreasing the viral sensitivity to a drug is followed by many compensatory mutations [<xref rid="B46-viruses-17-00197" ref-type="bibr">46</xref>,<xref rid="B47-viruses-17-00197" ref-type="bibr">47</xref>]. For example, HIV-1 develops resistance to protease inhibitors due to a protease mutation that reduces binding affinity [<xref rid="B38-viruses-17-00197" ref-type="bibr">38</xref>,<xref rid="B48-viruses-17-00197" ref-type="bibr">48</xref>,<xref rid="B49-viruses-17-00197" ref-type="bibr">49</xref>]. The fitness cost of drug resistance is high, and requires one or more additional mutations in protease to compensate for reduced fitness in order for resistance to evolve. Compensatory cleavage-site mutations in the capsid protein are required as well [<xref rid="B50-viruses-17-00197" ref-type="bibr">50</xref>].</p><p>Another example is mutations in the HIV genome that help it to escape the cytotoxic immune response in a host [<xref rid="B51-viruses-17-00197" ref-type="bibr">51</xref>,<xref rid="B52-viruses-17-00197" ref-type="bibr">52</xref>] (<xref rid="viruses-17-00197-f002" ref-type="fig">Figure 2</xref>A). The viral replication capacity lowered by an escape mutation is later gradually restored by compensatory mutations [<xref rid="B53-viruses-17-00197" ref-type="bibr">53</xref>,<xref rid="B54-viruses-17-00197" ref-type="bibr">54</xref>,<xref rid="B55-viruses-17-00197" ref-type="bibr">55</xref>]. Compensatory alleles with the highest degree of compensation grow the fastest, creating a cascade of compensatory mutations over time. This process is thought to be responsible for the high diversity and rapid HIV evolution in untreated patients [<xref rid="B56-viruses-17-00197" ref-type="bibr">56</xref>]. The loss of fitness due to escape mutations, and the partial loss of recognition by the immune system, together determine the order, the number, and the evolution rates of escape mutations [<xref rid="B57-viruses-17-00197" ref-type="bibr">57</xref>,<xref rid="B58-viruses-17-00197" ref-type="bibr">58</xref>]. Compensatory mutations prevent the reversion of escape mutations after the decay of CD8 T cell clones against escaped epitopes. Bacteria developing antibiotic resistance also pass through such fitness valleys [<xref rid="B59-viruses-17-00197" ref-type="bibr">59</xref>].</p><p>To test the &#x0201c;fitness valley&#x0201d; hypothesis, one has to measure the network of epistatic interactions responsible for the transition between the initial and final viral strains. The fitness landscape comprising the epistatic network, and the costs of separate mutations, can be inferred from genetic samples using various methods [<xref rid="B40-viruses-17-00197" ref-type="bibr">40</xref>,<xref rid="B60-viruses-17-00197" ref-type="bibr">60</xref>,<xref rid="B61-viruses-17-00197" ref-type="bibr">61</xref>,<xref rid="B62-viruses-17-00197" ref-type="bibr">62</xref>,<xref rid="B63-viruses-17-00197" ref-type="bibr">63</xref>,<xref rid="B64-viruses-17-00197" ref-type="bibr">64</xref>]. The methods that take into account the effects of genetic linkage are more reliable. The signature of a fitness valley is a simple epistatic network, with a shape close to that of a star, and approximately one path connecting any two nodes (connectivity close to 1). Indeed, most epistatic connections exist due to compensation for the same primary mutation. Tertiary mutations compensating for the compensatory mutations can add some loops to the star, raising the connectivity slightly above 1. In one example, to explain the origin of the 2009 pandemic of Influenza A H1N1, the epistatic network was inferred for the neuraminidase protein [<xref rid="B40-viruses-17-00197" ref-type="bibr">40</xref>] (<xref rid="viruses-17-00197-f002" ref-type="fig">Figure 2</xref>B). The epistatic network has a mostly a star-like appearance due to direct compensatory mutations, with a few loops due to secondary compensations. The primary mutation 248 is well known to decrease the sensitivity of the virus to pH [<xref rid="B65-viruses-17-00197" ref-type="bibr">65</xref>]. Observation of a similar network for SARS-CoV-2 would represent evidence in favor of the &#x0201c;fitness valley&#x0201d; hypothesis. At the present moment, the observation of strong compensation in SARS-CoV-2 [<xref rid="B43-viruses-17-00197" ref-type="bibr">43</xref>] represents indirect evidence, because it proves that compensatory mutations required for the fitness valley effect, in principle, exist for this virus.</p><p>Another test of the &#x0201c;fitness valley&#x0201d; hypothesis is that locations of the inferred compensatory residues must follow a structural pattern that is consistent with a specific mechanism of compensation. In this example, all compensatory sites are located on the protein surface in alpha helixes. Apparently, they serve to re-adjust the angles between beta-sheets that are changed by the primary mutation 248, representing a case of allosteric interaction (<xref rid="viruses-17-00197-f002" ref-type="fig">Figure 2</xref>C).</p></sec><sec id="sec6-viruses-17-00197"><title>6. Multi-Locus Evolution with Recombination</title><p>Variants with large sets of newly acquired mutations could also arise due to multiple recombination events, with fitter recombinants then rising in frequency through natural selection. Indeed, SARS-CoV-2 has observable crossover recombination due to co-infection events [<xref rid="B66-viruses-17-00197" ref-type="bibr">66</xref>,<xref rid="B67-viruses-17-00197" ref-type="bibr">67</xref>,<xref rid="B68-viruses-17-00197" ref-type="bibr">68</xref>,<xref rid="B69-viruses-17-00197" ref-type="bibr">69</xref>]. In this hypothesis, highly fit sequences are formed, when still at undetectable levels, by rare recombination events (<xref rid="viruses-17-00197-f003" ref-type="fig">Figure 3</xref>A). This possibility is supported by computational and mathematical models, that have not yet been applied to SARS-CoV-2, which take advantage of the fact that, due to random recombination crossovers, some rare progeny genomes can have an unusually large number of beneficial alleles compared to their parents [<xref rid="B70-viruses-17-00197" ref-type="bibr">70</xref>,<xref rid="B71-viruses-17-00197" ref-type="bibr">71</xref>,<xref rid="B72-viruses-17-00197" ref-type="bibr">72</xref>,<xref rid="B73-viruses-17-00197" ref-type="bibr">73</xref>]. These models demonstrate that the evolution of a viral population can be understood as a distribution of genomes in fitness traveling along the fitness coordinate. The front of the distribution moves forward towards a higher fitness, because these rare recombinants, with an excess of beneficial alleles, are the most fit in a population [<xref rid="B70-viruses-17-00197" ref-type="bibr">70</xref>]. Starting from a single copy, although not detectable initially, such recombinant lineages eventually outgrow all others, and become a new dominant strain in a population (<xref rid="viruses-17-00197-f003" ref-type="fig">Figure 3</xref>A). The time delay with which this process occurs, and the rapid growth of the lineage, could be an explanation for the &#x0201c;sudden&#x0201d; emergence of VOCs. Interestingly, a computer simulation based on such a model has generated a polyphyletic tree and a distribution of beneficial mutations among branches (<xref rid="viruses-17-00197-f003" ref-type="fig">Figure 3</xref>B) resembling that of a VOC [<xref rid="B74-viruses-17-00197" ref-type="bibr">74</xref>] (<xref rid="viruses-17-00197-f003" ref-type="fig">Figure 3</xref>C). Initially, the genetic distance from the original virus strain increased linearly with time. When the variant Alpha appeared in the autumn of 2021, it deviated from this gradual increase by exhibiting a jump by 10 distinct mutations, including three short deletions, one knockout, and six amino acid replacements (<xref rid="viruses-17-00197-f003" ref-type="fig">Figure 3</xref>C). Phylogeny hinted at a common ancestor of Alpha (B.1.1.7) and the previous strain (20E or B.1.177) occurring sometime around March. The simulation (<xref rid="viruses-17-00197-f003" ref-type="fig">Figure 3</xref>B) reproduced these features qualitatively, including independent subtrees at different and even the same moments of time, and jumps in the mutation number. For the simulation details, see the caption of <xref rid="viruses-17-00197-f003" ref-type="fig">Figure 3</xref> and [<xref rid="B74-viruses-17-00197" ref-type="bibr">74</xref>].</p><p>The simplest way to rule out the recombination hypothesis is to demonstrate, with the use of a computer simulation, that the recombination incidence of SARS-CoV-2 is too low to cause such a frequent emergence of VOCs. The unknown input parameter is the effective outcrossing rate, defined as the probability that a genome undergoes recombination with another genome. This quantity depends on the effective rate of co-infection with two viral variants [<xref rid="B71-viruses-17-00197" ref-type="bibr">71</xref>,<xref rid="B73-viruses-17-00197" ref-type="bibr">73</xref>]. The last value is unknown, and can be either higher or lower than the average rate of individual co-infection, because transmission rate varies strongly among individuals for a variety of reasons, including superspreading events [<xref rid="B76-viruses-17-00197" ref-type="bibr">76</xref>,<xref rid="B77-viruses-17-00197" ref-type="bibr">77</xref>,<xref rid="B78-viruses-17-00197" ref-type="bibr">78</xref>].</p><p>Fortunately, there are methods of inference of the outcrossing rate from genomic data. For example, the outcrossing rate in an average untreated HIV-infected individual was demonstrated, by two independent methods, to be around 1.5% [<xref rid="B79-viruses-17-00197" ref-type="bibr">79</xref>,<xref rid="B80-viruses-17-00197" ref-type="bibr">80</xref>]. Such techniques could be re-applied to SARS-CoV-2 data. If the estimated outcrossing rate is too low, and a Monte Carlo simulation based on it does not predict the emergence of VOCs with a frequency similar to that observed in real data, the hypothesis is falsified. This would not mean, of course, that recombination events do not occur, but only that they are insufficient to explain the emergence of the VOC under investigation. If, however, it is quantitatively consistent with the observed emergence, the hypothesis will be elevated to the rank of a working model. The discovery of the two parental strains of a VOC would provide its ultimate confirmation, and bioinformatics tools could help with wide screening.</p><p>Note that multi-locus models of evolution predict that the fittest strains are formed by sequential multiple recombination events [<xref rid="B70-viruses-17-00197" ref-type="bibr">70</xref>,<xref rid="B73-viruses-17-00197" ref-type="bibr">73</xref>,<xref rid="B74-viruses-17-00197" ref-type="bibr">74</xref>], which may be difficult to detect. Genetic evidence demonstrates the importance of recombination in the formation of recent genetic variants of SARS-CoV-2 [<xref rid="B81-viruses-17-00197" ref-type="bibr">81</xref>,<xref rid="B82-viruses-17-00197" ref-type="bibr">82</xref>,<xref rid="B83-viruses-17-00197" ref-type="bibr">83</xref>,<xref rid="B84-viruses-17-00197" ref-type="bibr">84</xref>,<xref rid="B85-viruses-17-00197" ref-type="bibr">85</xref>]. However, the fact that a new strain is a recombinant does not prove that recombination is the primary driver of their emergence, but only that it participates in its formation. The most important evolutionary factor can be hiding behind the scene. Only by performing computer simulation for alternative dynamic models, and comparing their predictions to genomic data, can it be determined which evolutionary mechanism is the primary driver [<xref rid="B56-viruses-17-00197" ref-type="bibr">56</xref>,<xref rid="B79-viruses-17-00197" ref-type="bibr">79</xref>,<xref rid="B86-viruses-17-00197" ref-type="bibr">86</xref>,<xref rid="B87-viruses-17-00197" ref-type="bibr">87</xref>,<xref rid="B88-viruses-17-00197" ref-type="bibr">88</xref>].</p><p>The above hypotheses are not mutually excluding. For example, fitness valley crossing or recombination may occur within chronically infected patients, and then transfer to the population. A simulation study at the level of a population [<xref rid="B35-viruses-17-00197" ref-type="bibr">35</xref>] has found that, when the pathogen does not have to cross a fitness valley for immune escape to occur (no epistasis), this has no principal effect on antigenic evolution in immunocompromised individuals. However, if a fitness valley exists at the between-host level (epistasis), persistent infections of immunocompromised individuals allow mutations to accumulate in a population. Usually, a fitness valley is crossed under a change of conditions, such as in the presence of an immune response or an antiviral, or during transmission between species, individual hosts, or organs; these factors need to be investigated.</p><p>An interesting question is whether the evolutionary pressure from infection prevention and control (lockdowns, vaccines, masks) affects the hypotheses presented in this manuscript. Because these hypotheses are poorly studied in the context of SARS-CoV-2, and we do not know which one is true, only future simulation and data analysis will be able to answer this question.</p></sec><sec sec-type="conclusions" id="sec7-viruses-17-00197"><title>7. Conclusions</title><p>To summarize, silent evolution in population reservoirs or chronically infected patients is not the only possibility that one should focus on in the search of explanations for VOCs. The explanations based on the interplay between different factors driving virus evolution in the general population, such as a fitness valley and multi-locus evolution with recombination, which have received much less attention in the literature on SARS-CoV-2 but are well studied for other viruses, deserve more careful investigation. Although these explanations do not require evolution in chronically infected patients, they are compatible with it. Once one of these hypotheses about evolutionary mechanisms is confirmed, as described above, and the relevant parameters are estimated, the probabilistic prediction of future VOCs in the next few years, by Monte Carlo simulation, will become possible.</p></sec></body><back><ack><title>Acknowledgments</title><p>I thank Myrthe Willemsen, Ganna Rozhnova, and Andrey Komissarov for their comments and stimulating discussions.</p></ack><fn-group><fn><p><bold>Disclaimer/Publisher&#x02019;s Note:</bold> The statements, opinions and data contained in all publications are solely those of the individual author(s) and contributor(s) and not of MDPI and/or the editor(s). MDPI and/or the editor(s) disclaim responsibility for any injury to people or property resulting from any ideas, methods, instructions or products referred to in the content.</p></fn></fn-group><notes><title>Institutional Review Board Statement</title><p>Approval was not required.</p></notes><notes notes-type="COI-statement"><title>Conflicts of Interest</title><p>The author declares no conflict of interests.</p></notes><ref-list><title>References</title><ref id="B1-viruses-17-00197"><label>1.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Duchene</surname><given-names>S.</given-names></name>
+<name><surname>Featherstone</surname><given-names>L.</given-names></name>
+<name><surname>Haritopoulou-Sinanidou</surname><given-names>M.</given-names></name>
+<name><surname>Rambaut</surname><given-names>A.</given-names></name>
+<name><surname>Lemey</surname><given-names>P.</given-names></name>
+<name><surname>Baele</surname><given-names>G.</given-names></name>
+</person-group><article-title>Temporal signal and the phylodynamic threshold of SARS-CoV-2</article-title><source>Virus Evol.</source><year>2020</year><volume>6</volume><fpage>veaa061</fpage><pub-id pub-id-type="doi">10.1093/ve/veaa061</pub-id><pub-id pub-id-type="pmid">33235813</pub-id>
+</element-citation></ref><ref id="B2-viruses-17-00197"><label>2.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>&#x000d6;versti</surname><given-names>S.</given-names></name>
+<name><surname>Gaul</surname><given-names>E.</given-names></name>
+<name><surname>Jensen</surname><given-names>B.E.O.</given-names></name>
+<name><surname>K&#x000fc;hnert</surname><given-names>D.</given-names></name>
+</person-group><article-title>Phylogenetic meta-analysis of chronic SARS-CoV-2 infections in immunocompromised patients shows no evidence of elevated evolutionary rates</article-title><source>bioRxiv</source><year>2023</year><pub-id pub-id-type="doi">10.1101/2023.11.01.565087</pub-id></element-citation></ref><ref id="B3-viruses-17-00197"><label>3.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Yewdell</surname><given-names>J.W.</given-names></name>
+</person-group><article-title>Antigenic drift: Understanding COVID-19</article-title><source>Immunity</source><year>2021</year><volume>54</volume><fpage>2681</fpage><lpage>2687</lpage><pub-id pub-id-type="doi">10.1016/j.immuni.2021.11.016</pub-id><pub-id pub-id-type="pmid">34910934</pub-id>
+</element-citation></ref><ref id="B4-viruses-17-00197"><label>4.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Carabelli</surname><given-names>A.M.</given-names></name>
+<name><surname>Peacock</surname><given-names>T.P.</given-names></name>
+<name><surname>Thorne</surname><given-names>L.G.</given-names></name>
+<name><surname>Harvey</surname><given-names>W.T.</given-names></name>
+<name><surname>Hughes</surname><given-names>J.</given-names></name>
+<name><surname>Consortium</surname><given-names>C.-G.U.</given-names></name>
+<name><surname>Peacock</surname><given-names>S.J.</given-names></name>
+<name><surname>Barclay</surname><given-names>W.S.</given-names></name>
+<name><surname>de Silva</surname><given-names>T.I.</given-names></name>
+<name><surname>Towers</surname><given-names>G.J.</given-names></name>
+<etal/>
+</person-group><article-title>SARS-CoV-2 variant biology: Immune escape, transmission and fitness</article-title><source>Nat. Rev. Microbiol.</source><year>2023</year><volume>21</volume><fpage>162</fpage><lpage>177</lpage><pub-id pub-id-type="doi">10.1038/s41579-022-00841-7</pub-id><pub-id pub-id-type="pmid">36653446</pub-id>
+</element-citation></ref><ref id="B5-viruses-17-00197"><label>5.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Flores-Vega</surname><given-names>V.R.</given-names></name>
+<name><surname>Monroy-Molina</surname><given-names>J.V.</given-names></name>
+<name><surname>Jimenez-Hernandez</surname><given-names>L.E.</given-names></name>
+<name><surname>Torres</surname><given-names>A.G.</given-names></name>
+<name><surname>Santos-Preciado</surname><given-names>J.I.</given-names></name>
+<name><surname>Rosales-Reyes</surname><given-names>R.</given-names></name>
+</person-group><article-title>SARS-CoV-2: Evolution and Emergence of New Viral Variants</article-title><source>Viruses</source><year>2022</year><volume>14</volume><elocation-id>653</elocation-id><pub-id pub-id-type="doi">10.3390/v14040653</pub-id><pub-id pub-id-type="pmid">35458383</pub-id>
+</element-citation></ref><ref id="B6-viruses-17-00197"><label>6.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Shrestha</surname><given-names>L.B.</given-names></name>
+<name><surname>Foster</surname><given-names>C.</given-names></name>
+<name><surname>Rawlinson</surname><given-names>W.</given-names></name>
+<name><surname>Tedla</surname><given-names>N.</given-names></name>
+<name><surname>Bull</surname><given-names>R.A.</given-names></name>
+</person-group><article-title>Evolution of the SARS-CoV-2 omicron variants BA.1 to BA.5: Implications for immune escape and transmission</article-title><source>Rev. Med. Virol.</source><year>2022</year><volume>32</volume><fpage>e2381</fpage><pub-id pub-id-type="doi">10.1002/rmv.2381</pub-id><pub-id pub-id-type="pmid">35856385</pub-id>
+</element-citation></ref><ref id="B7-viruses-17-00197"><label>7.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Telenti</surname><given-names>A.</given-names></name>
+<name><surname>Hodcroft</surname><given-names>E.B.</given-names></name>
+<name><surname>Robertson</surname><given-names>D.L.</given-names></name>
+</person-group><article-title>The Evolution and Biology of SARS-CoV-2 Variants</article-title><source>Cold Spring Harb. Perspect. Med.</source><year>2022</year><volume>12</volume><pub-id pub-id-type="doi">10.1101/cshperspect.a041390</pub-id><pub-id pub-id-type="pmid">35444005</pub-id>
+</element-citation></ref><ref id="B8-viruses-17-00197"><label>8.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Singh</surname><given-names>D.</given-names></name>
+<name><surname>Yi</surname><given-names>S.V.</given-names></name>
+</person-group><article-title>On the origin and evolution of SARS-CoV-2</article-title><source>Exp. Mol. Med.</source><year>2021</year><volume>53</volume><fpage>537</fpage><lpage>547</lpage><pub-id pub-id-type="doi">10.1038/s12276-021-00604-z</pub-id><pub-id pub-id-type="pmid">33864026</pub-id>
+</element-citation></ref><ref id="B9-viruses-17-00197"><label>9.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Davies</surname><given-names>N.G.</given-names></name>
+<name><surname>Jarvis</surname><given-names>C.I.</given-names></name>
+<name><surname>Group</surname><given-names>C.C.-W.</given-names></name>
+<name><surname>Edmunds</surname><given-names>W.J.</given-names></name>
+<name><surname>Jewell</surname><given-names>N.P.</given-names></name>
+<name><surname>Diaz-Ordaz</surname><given-names>K.</given-names></name>
+<name><surname>Keogh</surname><given-names>R.H.</given-names></name>
+</person-group><article-title>Increased mortality in community-tested cases of SARS-CoV-2 lineage B.1.1.7</article-title><source>Nature</source><year>2021</year><volume>593</volume><fpage>270</fpage><lpage>274</lpage><pub-id pub-id-type="doi">10.1038/s41586-021-03426-1</pub-id><pub-id pub-id-type="pmid">33723411</pub-id>
+</element-citation></ref><ref id="B10-viruses-17-00197"><label>10.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Corey</surname><given-names>L.</given-names></name>
+<name><surname>Beyrer</surname><given-names>C.</given-names></name>
+<name><surname>Cohen</surname><given-names>M.S.</given-names></name>
+<name><surname>Michael</surname><given-names>N.L.</given-names></name>
+<name><surname>Bedford</surname><given-names>T.</given-names></name>
+<name><surname>Rolland</surname><given-names>M.</given-names></name>
+</person-group><article-title>SARS-CoV-2 Variants in Patients with Immunosuppression</article-title><source>N. Engl. J. Med.</source><year>2021</year><volume>385</volume><fpage>562</fpage><lpage>566</lpage><pub-id pub-id-type="doi">10.1056/NEJMsb2104756</pub-id><pub-id pub-id-type="pmid">34347959</pub-id>
+</element-citation></ref><ref id="B11-viruses-17-00197"><label>11.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Tay</surname><given-names>J.H.</given-names></name>
+<name><surname>Porter</surname><given-names>A.F.</given-names></name>
+<name><surname>Wirth</surname><given-names>W.</given-names></name>
+<name><surname>Duchene</surname><given-names>S.</given-names></name>
+</person-group><article-title>The emergence of SARS-CoV-2 variants of concern is driven by acceleration of the substitution rate</article-title><source>Mol. Biol. Evol.</source><year>2022</year><volume>39</volume><elocation-id>msac013</elocation-id><pub-id pub-id-type="doi">10.1093/molbev/msac013</pub-id><pub-id pub-id-type="pmid">35038741</pub-id>
+</element-citation></ref><ref id="B12-viruses-17-00197"><label>12.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Martin</surname><given-names>D.P.</given-names></name>
+<name><surname>Lytras</surname><given-names>S.</given-names></name>
+<name><surname>Lucaci</surname><given-names>A.G.</given-names></name>
+<name><surname>Maier</surname><given-names>W.</given-names></name>
+<name><surname>Gruning</surname><given-names>B.</given-names></name>
+<name><surname>Shank</surname><given-names>S.D.</given-names></name>
+<name><surname>Weaver</surname><given-names>S.</given-names></name>
+<name><surname>MacLean</surname><given-names>O.A.</given-names></name>
+<name><surname>Orton</surname><given-names>R.J.</given-names></name>
+<name><surname>Lemey</surname><given-names>P.</given-names></name>
+<etal/>
+</person-group><article-title>Selection Analysis Identifies Clusters of Unusual Mutational Changes in Omicron Lineage BA.1 That Likely Impact Spike Function</article-title><source>Mol. Biol. Evol.</source><year>2022</year><volume>39</volume><elocation-id>msac061</elocation-id><pub-id pub-id-type="doi">10.1093/molbev/msac061</pub-id><pub-id pub-id-type="pmid">35325204</pub-id>
+</element-citation></ref><ref id="B13-viruses-17-00197"><label>13.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Markov</surname><given-names>P.V.</given-names></name>
+<name><surname>Ghafari</surname><given-names>M.</given-names></name>
+<name><surname>Beer</surname><given-names>M.</given-names></name>
+<name><surname>Lythgoe</surname><given-names>K.</given-names></name>
+<name><surname>Simmonds</surname><given-names>P.</given-names></name>
+<name><surname>Stilianakis</surname><given-names>N.I.</given-names></name>
+<name><surname>Katzourakis</surname><given-names>A.</given-names></name>
+</person-group><article-title>The evolution of SARS-CoV-2</article-title><source>Nat. Rev. Microbiol.</source><year>2023</year><volume>21</volume><fpage>361</fpage><lpage>379</lpage><pub-id pub-id-type="doi">10.1038/s41579-023-00878-2</pub-id><pub-id pub-id-type="pmid">37020110</pub-id>
+</element-citation></ref><ref id="B14-viruses-17-00197"><label>14.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Patino-Galindo</surname><given-names>J.A.</given-names></name>
+<name><surname>Gonzalez-Candelas</surname><given-names>F.</given-names></name>
+</person-group><article-title>The substitution rate of HIV-1 subtypes: A genomic approach</article-title><source>Virus Evol.</source><year>2017</year><volume>3</volume><fpage>vex029</fpage><pub-id pub-id-type="doi">10.1093/ve/vex029</pub-id><pub-id pub-id-type="pmid">29942652</pub-id>
+</element-citation></ref><ref id="B15-viruses-17-00197"><label>15.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Yuan</surname><given-names>M.</given-names></name>
+<name><surname>Lu</surname><given-names>T.</given-names></name>
+<name><surname>Li</surname><given-names>C.</given-names></name>
+<name><surname>Lu</surname><given-names>L.</given-names></name>
+</person-group><article-title>The evolutionary rates of HCV estimated with subtype 1a and 1b sequences over the ORF length and in different genomic regions</article-title><source>PLoS ONE</source><year>2013</year><volume>8</volume><elocation-id>e64698</elocation-id><pub-id pub-id-type="doi">10.1371/journal.pone.0064698</pub-id><pub-id pub-id-type="pmid">23762247</pub-id>
+</element-citation></ref><ref id="B16-viruses-17-00197"><label>16.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Nobusawa</surname><given-names>E.</given-names></name>
+<name><surname>Sato</surname><given-names>K.</given-names></name>
+</person-group><article-title>Comparison of the mutation rates of human influenza A and B viruses</article-title><source>J. Virol.</source><year>2006</year><volume>80</volume><fpage>3675</fpage><lpage>3678</lpage><pub-id pub-id-type="doi">10.1128/JVI.80.7.3675-3678.2006</pub-id><pub-id pub-id-type="pmid">16537638</pub-id>
+</element-citation></ref><ref id="B17-viruses-17-00197"><label>17.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Dapp</surname><given-names>M.J.</given-names></name>
+<name><surname>Kober</surname><given-names>K.M.</given-names></name>
+<name><surname>Chen</surname><given-names>L.</given-names></name>
+<name><surname>Westfall</surname><given-names>D.H.</given-names></name>
+<name><surname>Wong</surname><given-names>K.</given-names></name>
+<name><surname>Zhao</surname><given-names>H.</given-names></name>
+<name><surname>Hall</surname><given-names>B.M.</given-names></name>
+<name><surname>Deng</surname><given-names>W.</given-names></name>
+<name><surname>Sibley</surname><given-names>T.</given-names></name>
+<name><surname>Ghorai</surname><given-names>S.</given-names></name>
+<etal/>
+</person-group><article-title>Patterns and rates of viral evolution in HIV-1 subtype B infected females and males</article-title><source>PLoS ONE</source><year>2017</year><volume>12</volume><elocation-id>e0182443</elocation-id><pub-id pub-id-type="doi">10.1371/journal.pone.0182443</pub-id><pub-id pub-id-type="pmid">29045410</pub-id>
+</element-citation></ref><ref id="B18-viruses-17-00197"><label>18.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Gray</surname><given-names>R.R.</given-names></name>
+<name><surname>Parker</surname><given-names>J.</given-names></name>
+<name><surname>Lemey</surname><given-names>P.</given-names></name>
+<name><surname>Salemi</surname><given-names>M.</given-names></name>
+<name><surname>Katzourakis</surname><given-names>A.</given-names></name>
+<name><surname>Pybus</surname><given-names>O.G.</given-names></name>
+</person-group><article-title>The mode and tempo of hepatitis C virus evolution within and among hosts</article-title><source>BMC Evol. Biol.</source><year>2011</year><volume>11</volume><elocation-id>131</elocation-id><pub-id pub-id-type="doi">10.1186/1471-2148-11-131</pub-id><pub-id pub-id-type="pmid">21595904</pub-id>
+</element-citation></ref><ref id="B19-viruses-17-00197"><label>19.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Strelkowa</surname><given-names>N.</given-names></name>
+<name><surname>Lassig</surname><given-names>M.</given-names></name>
+</person-group><article-title>Clonal interference in the evolution of influenza</article-title><source>Genetics</source><year>2012</year><volume>192</volume><fpage>671</fpage><lpage>682</lpage><pub-id pub-id-type="doi">10.1534/genetics.112.143396</pub-id><pub-id pub-id-type="pmid">22851649</pub-id>
+</element-citation></ref><ref id="B20-viruses-17-00197"><label>20.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Rouzine</surname><given-names>I.M.</given-names></name>
+<name><surname>Rozhnova</surname><given-names>G.</given-names></name>
+</person-group><article-title>Evolutionary implications of SARS-CoV-2 vaccination for the future design of vaccination strategies</article-title><source>Commun. Med.</source><year>2023</year><volume>3</volume><fpage>86</fpage><pub-id pub-id-type="doi">10.1038/s43856-023-00320-x</pub-id><pub-id pub-id-type="pmid">37336956</pub-id>
+</element-citation></ref><ref id="B21-viruses-17-00197"><label>21.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Kane</surname><given-names>Y.</given-names></name>
+<name><surname>Wong</surname><given-names>G.</given-names></name>
+<name><surname>Gao</surname><given-names>G.F.</given-names></name>
+</person-group><article-title>Animal Models, Zoonotic Reservoirs, and Cross-Species Transmission of Emerging Human-Infecting Coronaviruses</article-title><source>Annu. Rev. Anim. Biosci.</source><year>2023</year><volume>11</volume><fpage>1</fpage><lpage>31</lpage><pub-id pub-id-type="doi">10.1146/annurev-animal-020420-025011</pub-id><pub-id pub-id-type="pmid">36790890</pub-id>
+</element-citation></ref><ref id="B22-viruses-17-00197"><label>22.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>McBride</surname><given-names>D.</given-names></name>
+<name><surname>Garushyants</surname><given-names>S.</given-names></name>
+<name><surname>Franks</surname><given-names>J.</given-names></name>
+<name><surname>Magee</surname><given-names>A.</given-names></name>
+<name><surname>Overend</surname><given-names>S.</given-names></name>
+<name><surname>Huey</surname><given-names>D.</given-names></name>
+<name><surname>Williams</surname><given-names>A.</given-names></name>
+<name><surname>Faith</surname><given-names>S.</given-names></name>
+<name><surname>Kandeil</surname><given-names>A.</given-names></name>
+<name><surname>Trifkovic</surname><given-names>S.</given-names></name>
+<etal/>
+</person-group><article-title>Accelerated evolution of SARS-CoV-2 in free-ranging white-tailed deer</article-title><source>Res. Sq.</source><year>2023</year><volume>14</volume><fpage>5105</fpage><pub-id pub-id-type="doi">10.1038/s41467-023-40706-y</pub-id><pub-id pub-id-type="pmid">37640694</pub-id>
+</element-citation></ref><ref id="B23-viruses-17-00197"><label>23.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Kemp</surname><given-names>S.A.</given-names></name>
+<name><surname>Collier</surname><given-names>D.A.</given-names></name>
+<name><surname>Datir</surname><given-names>R.P.</given-names></name>
+<name><surname>Ferreira</surname><given-names>I.</given-names></name>
+<name><surname>Gayed</surname><given-names>S.</given-names></name>
+<name><surname>Jahun</surname><given-names>A.</given-names></name>
+<name><surname>Hosmillo</surname><given-names>M.</given-names></name>
+<name><surname>Rees-Spear</surname><given-names>C.</given-names></name>
+<name><surname>Mlcochova</surname><given-names>P.</given-names></name>
+<name><surname>Lumb</surname><given-names>I.U.</given-names></name>
+<etal/>
+</person-group><article-title>SARS-CoV-2 evolution during treatment of chronic infection</article-title><source>Nature</source><year>2021</year><volume>592</volume><fpage>277</fpage><lpage>282</lpage><pub-id pub-id-type="doi">10.1038/s41586-021-03291-y</pub-id><pub-id pub-id-type="pmid">33545711</pub-id>
+</element-citation></ref><ref id="B24-viruses-17-00197"><label>24.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Smyth</surname><given-names>D.S.</given-names></name>
+<name><surname>Trujillo</surname><given-names>M.</given-names></name>
+<name><surname>Gregory</surname><given-names>D.A.</given-names></name>
+<name><surname>Cheung</surname><given-names>K.</given-names></name>
+<name><surname>Gao</surname><given-names>A.</given-names></name>
+<name><surname>Graham</surname><given-names>M.</given-names></name>
+<name><surname>Guan</surname><given-names>Y.</given-names></name>
+<name><surname>Guldenpfennig</surname><given-names>C.</given-names></name>
+<name><surname>Hoxie</surname><given-names>I.</given-names></name>
+<name><surname>Kannoly</surname><given-names>S.</given-names></name>
+<etal/>
+</person-group><article-title>Tracking cryptic SARS-CoV-2 lineages detected in NYC wastewater</article-title><source>Nat. Commun.</source><year>2022</year><volume>13</volume><fpage>635</fpage><pub-id pub-id-type="doi">10.1038/s41467-022-28246-3</pub-id><pub-id pub-id-type="pmid">35115523</pub-id>
+</element-citation></ref><ref id="B25-viruses-17-00197"><label>25.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Borges</surname><given-names>V.</given-names></name>
+<name><surname>Isidro</surname><given-names>J.</given-names></name>
+<name><surname>Cunha</surname><given-names>M.</given-names></name>
+<name><surname>Cochicho</surname><given-names>D.</given-names></name>
+<name><surname>Martins</surname><given-names>L.</given-names></name>
+<name><surname>Banha</surname><given-names>L.</given-names></name>
+<name><surname>Figueiredo</surname><given-names>M.</given-names></name>
+<name><surname>Rebelo</surname><given-names>L.</given-names></name>
+<name><surname>Trindade</surname><given-names>M.C.</given-names></name>
+<name><surname>Duarte</surname><given-names>S.</given-names></name>
+<etal/>
+</person-group><article-title>Long-Term Evolution of SARS-CoV-2 in an Immunocompromised Patient with Non-Hodgkin Lymphoma</article-title><source>mSphere</source><year>2021</year><volume>6</volume><fpage>e00244-21</fpage><pub-id pub-id-type="doi">10.1128/mSphere.00244-21</pub-id><pub-id pub-id-type="pmid">34319130</pub-id>
+</element-citation></ref><ref id="B26-viruses-17-00197"><label>26.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Chaguza</surname><given-names>C.</given-names></name>
+<name><surname>Hahn</surname><given-names>A.M.</given-names></name>
+<name><surname>Petrone</surname><given-names>M.E.</given-names></name>
+<name><surname>Zhou</surname><given-names>S.</given-names></name>
+<name><surname>Ferguson</surname><given-names>D.</given-names></name>
+<name><surname>Breban</surname><given-names>M.I.</given-names></name>
+<name><surname>Pham</surname><given-names>K.</given-names></name>
+<name><surname>Pena-Hernandez</surname><given-names>M.A.</given-names></name>
+<name><surname>Castaldi</surname><given-names>C.</given-names></name>
+<name><surname>Hill</surname><given-names>V.</given-names></name>
+<etal/>
+</person-group><article-title>Accelerated SARS-CoV-2 intrahost evolution leading to distinct genotypes during chronic infection</article-title><source>Cell Rep. Med.</source><year>2023</year><volume>4</volume><fpage>100943</fpage><pub-id pub-id-type="doi">10.1016/j.xcrm.2023.100943</pub-id><pub-id pub-id-type="pmid">36791724</pub-id>
+</element-citation></ref><ref id="B27-viruses-17-00197"><label>27.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Choi</surname><given-names>B.</given-names></name>
+<name><surname>Choudhary</surname><given-names>M.C.</given-names></name>
+<name><surname>Regan</surname><given-names>J.</given-names></name>
+<name><surname>Sparks</surname><given-names>J.A.</given-names></name>
+<name><surname>Padera</surname><given-names>R.F.</given-names></name>
+<name><surname>Qiu</surname><given-names>X.</given-names></name>
+<name><surname>Solomon</surname><given-names>I.H.</given-names></name>
+<name><surname>Kuo</surname><given-names>H.H.</given-names></name>
+<name><surname>Boucau</surname><given-names>J.</given-names></name>
+<name><surname>Bowman</surname><given-names>K.</given-names></name>
+<etal/>
+</person-group><article-title>Persistence and Evolution of SARS-CoV-2 in an Immunocompromised Host</article-title><source>N. Engl. J. Med.</source><year>2020</year><volume>383</volume><fpage>2291</fpage><lpage>2293</lpage><pub-id pub-id-type="doi">10.1056/NEJMc2031364</pub-id><pub-id pub-id-type="pmid">33176080</pub-id>
+</element-citation></ref><ref id="B28-viruses-17-00197"><label>28.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Ciuffreda</surname><given-names>L.</given-names></name>
+<name><surname>Lorenzo-Salazar</surname><given-names>J.M.</given-names></name>
+<name><surname>Alcoba-Florez</surname><given-names>J.</given-names></name>
+<name><surname>Rodriguez-Perez</surname><given-names>H.</given-names></name>
+<name><surname>Gil-Campesino</surname><given-names>H.</given-names></name>
+<name><surname>Inigo-Campos</surname><given-names>A.</given-names></name>
+<name><surname>Garcia-Martinez de Artola</surname><given-names>D.</given-names></name>
+<name><surname>Valenzuela-Fernandez</surname><given-names>A.</given-names></name>
+<name><surname>Hayek-Peraza</surname><given-names>M.</given-names></name>
+<name><surname>Rojo-Alba</surname><given-names>S.</given-names></name>
+<etal/>
+</person-group><article-title>Longitudinal study of a SARS-CoV-2 infection in an immunocompromised patient with X-linked agammaglobulinemia</article-title><source>J. Infect.</source><year>2021</year><volume>83</volume><fpage>607</fpage><lpage>635</lpage><pub-id pub-id-type="doi">10.1016/j.jinf.2021.07.028</pub-id><pub-id pub-id-type="pmid">34329678</pub-id>
+</element-citation></ref><ref id="B29-viruses-17-00197"><label>29.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Hettle</surname><given-names>D.</given-names></name>
+<name><surname>Hutchings</surname><given-names>S.</given-names></name>
+<name><surname>Muir</surname><given-names>P.</given-names></name>
+<name><surname>Moran</surname><given-names>E.</given-names></name>
+<collab>The COVID-19 Genomics UK (COG-UK) Consortium</collab>
+</person-group><article-title>Persistent SARS-CoV-2 infection in immunocompromised patients facilitates rapid viral evolution: Retrospective cohort study and literature review</article-title><source>Clin. Infect. Pract.</source><year>2022</year><volume>16</volume><fpage>100210</fpage><pub-id pub-id-type="doi">10.1016/j.clinpr.2022.100210</pub-id><pub-id pub-id-type="pmid">36405361</pub-id>
+</element-citation></ref><ref id="B30-viruses-17-00197"><label>30.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Stanevich</surname><given-names>O.V.</given-names></name>
+<name><surname>Alekseeva</surname><given-names>E.I.</given-names></name>
+<name><surname>Sergeeva</surname><given-names>M.</given-names></name>
+<name><surname>Fadeev</surname><given-names>A.V.</given-names></name>
+<name><surname>Komissarova</surname><given-names>K.S.</given-names></name>
+<name><surname>Ivanova</surname><given-names>A.A.</given-names></name>
+<name><surname>Simakova</surname><given-names>T.S.</given-names></name>
+<name><surname>Vasilyev</surname><given-names>K.A.</given-names></name>
+<name><surname>Shurygina</surname><given-names>A.P.</given-names></name>
+<name><surname>Stukova</surname><given-names>M.A.</given-names></name>
+<etal/>
+</person-group><article-title>SARS-CoV-2 escape from cytotoxic T cells during long-term COVID-19</article-title><source>Nat. Commun.</source><year>2023</year><volume>14</volume><fpage>149</fpage><pub-id pub-id-type="doi">10.1038/s41467-022-34033-x</pub-id><pub-id pub-id-type="pmid">36627290</pub-id>
+</element-citation></ref><ref id="B31-viruses-17-00197"><label>31.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Ghafari</surname><given-names>M.</given-names></name>
+<name><surname>Hall</surname><given-names>M.</given-names></name>
+<name><surname>Golubchik</surname><given-names>T.</given-names></name>
+<name><surname>Ayoubkhani</surname><given-names>D.</given-names></name>
+<name><surname>House</surname><given-names>T.</given-names></name>
+<name><surname>MacIntyre-Cockett</surname><given-names>G.</given-names></name>
+<name><surname>Fryer</surname><given-names>H.R.</given-names></name>
+<name><surname>Thomson</surname><given-names>L.</given-names></name>
+<name><surname>Nurtay</surname><given-names>A.</given-names></name>
+<name><surname>Kemp</surname><given-names>S.A.</given-names></name>
+<etal/>
+</person-group><article-title>Prevalence of persistent SARS-CoV-2 in a large community surveillance study</article-title><source>Nature</source><year>2024</year><volume>626</volume><fpage>1094</fpage><lpage>1101</lpage><pub-id pub-id-type="doi">10.1038/s41586-024-07029-4</pub-id><pub-id pub-id-type="pmid">38383783</pub-id>
+</element-citation></ref><ref id="B32-viruses-17-00197"><label>32.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Harari</surname><given-names>S.</given-names></name>
+<name><surname>Tahor</surname><given-names>M.</given-names></name>
+<name><surname>Rutsinsky</surname><given-names>N.</given-names></name>
+<name><surname>Meijer</surname><given-names>S.</given-names></name>
+<name><surname>Miller</surname><given-names>D.</given-names></name>
+<name><surname>Henig</surname><given-names>O.</given-names></name>
+<name><surname>Halutz</surname><given-names>O.</given-names></name>
+<name><surname>Levytskyi</surname><given-names>K.</given-names></name>
+<name><surname>Ben-Ami</surname><given-names>R.</given-names></name>
+<name><surname>Adler</surname><given-names>A.</given-names></name>
+<etal/>
+</person-group><article-title>Drivers of adaptive evolution during chronic SARS-CoV-2 infections</article-title><source>Nat. Med.</source><year>2022</year><volume>28</volume><fpage>1501</fpage><lpage>1508</lpage><pub-id pub-id-type="doi">10.1038/s41591-022-01882-4</pub-id><pub-id pub-id-type="pmid">35725921</pub-id>
+</element-citation></ref><ref id="B33-viruses-17-00197"><label>33.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Rast</surname><given-names>L.I.</given-names></name>
+<name><surname>Rouzine</surname><given-names>I.M.</given-names></name>
+<name><surname>Rozhnova</surname><given-names>G.</given-names></name>
+<name><surname>Bishop</surname><given-names>L.</given-names></name>
+<name><surname>Weinberger</surname><given-names>A.D.</given-names></name>
+<name><surname>Weinberger</surname><given-names>L.S.</given-names></name>
+</person-group><article-title>Conflicting selection pressures will constrain viral escape from interfering particles: Principles for designing resistance-proof antivirals</article-title><source>PLoS Comput. Biol.</source><year>2016</year><volume>12</volume><elocation-id>e1004799</elocation-id><pub-id pub-id-type="doi">10.1371/journal.pcbi.1004799</pub-id><pub-id pub-id-type="pmid">27152856</pub-id>
+</element-citation></ref><ref id="B34-viruses-17-00197"><label>34.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Shafer</surname><given-names>M.M.</given-names></name>
+<name><surname>Bobholz</surname><given-names>M.J.</given-names></name>
+<name><surname>Vuyk</surname><given-names>W.C.</given-names></name>
+<name><surname>Gregory</surname><given-names>D.A.</given-names></name>
+<name><surname>Roguet</surname><given-names>A.</given-names></name>
+<name><surname>Haddock Soto</surname><given-names>L.A.</given-names></name>
+<name><surname>Rushford</surname><given-names>C.</given-names></name>
+<name><surname>Janssen</surname><given-names>K.H.</given-names></name>
+<name><surname>Emmen</surname><given-names>I.E.</given-names></name>
+<name><surname>Ries</surname><given-names>H.J.</given-names></name>
+<etal/>
+</person-group><article-title>Tracing the origin of SARS-CoV-2 omicron-like spike sequences detected in an urban sewershed: A targeted, longitudinal surveillance study of a cryptic wastewater lineage</article-title><source>Lancet Microbe</source><year>2024</year><volume>5</volume><fpage>e335</fpage><lpage>e344</lpage><pub-id pub-id-type="doi">10.1016/S2666-5247(23)00372-5</pub-id><pub-id pub-id-type="pmid">38484748</pub-id>
+</element-citation></ref><ref id="B35-viruses-17-00197"><label>35.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Smith</surname><given-names>C.A.</given-names></name>
+<name><surname>Ashby</surname><given-names>B.</given-names></name>
+</person-group><article-title>Antigenic evolution of SARS-CoV-2 in immunocompromised hosts</article-title><source>Evol. Med. Public. Health</source><year>2023</year><volume>11</volume><fpage>90</fpage><lpage>100</lpage><pub-id pub-id-type="doi">10.1093/emph/eoac037</pub-id><pub-id pub-id-type="pmid">37007166</pub-id>
+</element-citation></ref><ref id="B36-viruses-17-00197"><label>36.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Ghafari</surname><given-names>M.</given-names></name>
+<name><surname>Liu</surname><given-names>Q.</given-names></name>
+<name><surname>Thilon</surname><given-names>A.</given-names></name>
+<name><surname>Katzurakis</surname><given-names>A.</given-names></name>
+</person-group><article-title>Investigating the evolutionary origins of the first three SARS-CoV-2 variants of concern</article-title><source>Front. Virol.</source><year>2022</year><volume>2</volume><elocation-id>942555</elocation-id><pub-id pub-id-type="doi">10.3389/fviro.2022.942555</pub-id></element-citation></ref><ref id="B37-viruses-17-00197"><label>37.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Bonhoeffer</surname><given-names>S.</given-names></name>
+<name><surname>Chappey</surname><given-names>C.</given-names></name>
+<name><surname>Parkin</surname><given-names>N.T.</given-names></name>
+<name><surname>Whitcomb</surname><given-names>J.M.</given-names></name>
+<name><surname>Petropoulos</surname><given-names>C.J.</given-names></name>
+</person-group><article-title>Evidence for positive epistasis in HIV-1</article-title><source>Science</source><year>2004</year><volume>306</volume><fpage>1547</fpage><lpage>1550</lpage><pub-id pub-id-type="doi">10.1126/science.1101786</pub-id><pub-id pub-id-type="pmid">15567861</pub-id>
+</element-citation></ref><ref id="B38-viruses-17-00197"><label>38.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Zhang</surname><given-names>T.H.</given-names></name>
+<name><surname>Dai</surname><given-names>L.</given-names></name>
+<name><surname>Barton</surname><given-names>J.P.</given-names></name>
+<name><surname>Du</surname><given-names>Y.</given-names></name>
+<name><surname>Tan</surname><given-names>Y.</given-names></name>
+<name><surname>Pang</surname><given-names>W.</given-names></name>
+<name><surname>Chakraborty</surname><given-names>A.K.</given-names></name>
+<name><surname>Lloyd-Smith</surname><given-names>J.O.</given-names></name>
+<name><surname>Sun</surname><given-names>R.</given-names></name>
+</person-group><article-title>Predominance of positive epistasis among drug resistance-associated mutations in HIV-1 protease</article-title><source>PLoS Genet.</source><year>2020</year><volume>16</volume><elocation-id>e1009009</elocation-id><pub-id pub-id-type="doi">10.1371/journal.pgen.1009009</pub-id><pub-id pub-id-type="pmid">33085662</pub-id>
+</element-citation></ref><ref id="B39-viruses-17-00197"><label>39.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Kryazhimskiy</surname><given-names>S.</given-names></name>
+<name><surname>Dushoff</surname><given-names>J.</given-names></name>
+<name><surname>Bazykin</surname><given-names>G.A.</given-names></name>
+<name><surname>Plotkin</surname><given-names>J.B.</given-names></name>
+</person-group><article-title>Prevalence of epistasis in the evolution of influenza A surface proteins</article-title><source>PLoS Genet.</source><year>2011</year><volume>7</volume><elocation-id>e1001301</elocation-id><pub-id pub-id-type="doi">10.1371/journal.pgen.1001301</pub-id><pub-id pub-id-type="pmid">21390205</pub-id>
+</element-citation></ref><ref id="B40-viruses-17-00197"><label>40.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Pedruzzi</surname><given-names>G.</given-names></name>
+<name><surname>Rouzine</surname><given-names>I.M.</given-names></name>
+</person-group><article-title>An evolution-based high-fidelity method of epistasis measurement: Theory and application to influenza</article-title><source>PLoS Pathog.</source><year>2021</year><volume>17</volume><elocation-id>e1009669</elocation-id><pub-id pub-id-type="doi">10.1371/journal.ppat.1009669</pub-id><pub-id pub-id-type="pmid">34153082</pub-id>
+</element-citation></ref><ref id="B41-viruses-17-00197"><label>41.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Weissman</surname><given-names>D.B.</given-names></name>
+<name><surname>Desai</surname><given-names>M.M.</given-names></name>
+<name><surname>Fisher</surname><given-names>D.S.</given-names></name>
+<name><surname>Feldman</surname><given-names>M.W.</given-names></name>
+</person-group><article-title>The rate at which asexual populations cross fitness valleys</article-title><source>Theor. Popul. Biol.</source><year>2009</year><volume>75</volume><fpage>286</fpage><lpage>300</lpage><pub-id pub-id-type="doi">10.1016/j.tpb.2009.02.006</pub-id><pub-id pub-id-type="pmid">19285994</pub-id>
+</element-citation></ref><ref id="B42-viruses-17-00197"><label>42.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Cobey</surname><given-names>S.</given-names></name>
+<name><surname>Larremore</surname><given-names>D.B.</given-names></name>
+<name><surname>Grad</surname><given-names>Y.H.</given-names></name>
+<name><surname>Lipsitch</surname><given-names>M.</given-names></name>
+</person-group><article-title>Concerns about SARS-CoV-2 evolution should not hold back efforts to expand vaccination</article-title><source>Nat. Rev. Immunol.</source><year>2021</year><volume>21</volume><fpage>330</fpage><lpage>335</lpage><pub-id pub-id-type="doi">10.1038/s41577-021-00544-9</pub-id><pub-id pub-id-type="pmid">33795856</pub-id>
+</element-citation></ref><ref id="B43-viruses-17-00197"><label>43.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Moulana</surname><given-names>A.</given-names></name>
+<name><surname>Dupic</surname><given-names>T.</given-names></name>
+<name><surname>Phillips</surname><given-names>A.M.</given-names></name>
+<name><surname>Chang</surname><given-names>J.</given-names></name>
+<name><surname>Nieves</surname><given-names>S.</given-names></name>
+<name><surname>Roffler</surname><given-names>A.A.</given-names></name>
+<name><surname>Greaney</surname><given-names>A.J.</given-names></name>
+<name><surname>Starr</surname><given-names>T.N.</given-names></name>
+<name><surname>Bloom</surname><given-names>J.D.</given-names></name>
+<name><surname>Desai</surname><given-names>M.M.</given-names></name>
+</person-group><article-title>Compensatory epistasis maintains ACE2 affinity in SARS-CoV-2 Omicron BA.1</article-title><source>Nat. Commun.</source><year>2022</year><volume>13</volume><fpage>7011</fpage><pub-id pub-id-type="doi">10.1038/s41467-022-34506-z</pub-id><pub-id pub-id-type="pmid">36384919</pub-id>
+</element-citation></ref><ref id="B44-viruses-17-00197"><label>44.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Reuschl</surname><given-names>A.K.</given-names></name>
+<name><surname>Thorne</surname><given-names>L.G.</given-names></name>
+<name><surname>Whelan</surname><given-names>M.V.X.</given-names></name>
+<name><surname>Ragazzini</surname><given-names>R.</given-names></name>
+<name><surname>Furnon</surname><given-names>W.</given-names></name>
+<name><surname>Cowton</surname><given-names>V.M.</given-names></name>
+<name><surname>De Lorenzo</surname><given-names>G.</given-names></name>
+<name><surname>Mesner</surname><given-names>D.</given-names></name>
+<name><surname>Turner</surname><given-names>J.L.E.</given-names></name>
+<name><surname>Dowgier</surname><given-names>G.</given-names></name>
+<etal/>
+</person-group><article-title>Evolution of enhanced innate immune suppression by SARS-CoV-2 Omicron subvariants</article-title><source>Nat. Microbiol.</source><year>2024</year><volume>9</volume><fpage>451</fpage><lpage>463</lpage><pub-id pub-id-type="doi">10.1038/s41564-023-01588-4</pub-id><pub-id pub-id-type="pmid">38228858</pub-id>
+</element-citation></ref><ref id="B45-viruses-17-00197"><label>45.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Thorne</surname><given-names>L.G.</given-names></name>
+<name><surname>Bouhaddou</surname><given-names>M.</given-names></name>
+<name><surname>Reuschl</surname><given-names>A.K.</given-names></name>
+<name><surname>Zuliani-Alvarez</surname><given-names>L.</given-names></name>
+<name><surname>Polacco</surname><given-names>B.</given-names></name>
+<name><surname>Pelin</surname><given-names>A.</given-names></name>
+<name><surname>Batra</surname><given-names>J.</given-names></name>
+<name><surname>Whelan</surname><given-names>M.V.X.</given-names></name>
+<name><surname>Hosmillo</surname><given-names>M.</given-names></name>
+<name><surname>Fossati</surname><given-names>A.</given-names></name>
+<etal/>
+</person-group><article-title>Evolution of enhanced innate immune evasion by SARS-CoV-2</article-title><source>Nature</source><year>2022</year><volume>602</volume><fpage>487</fpage><lpage>495</lpage><pub-id pub-id-type="doi">10.1038/s41586-021-04352-y</pub-id><pub-id pub-id-type="pmid">34942634</pub-id>
+</element-citation></ref><ref id="B46-viruses-17-00197"><label>46.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Gonzalez-Ortega</surname><given-names>E.</given-names></name>
+<name><surname>Ballana</surname><given-names>E.</given-names></name>
+<name><surname>Badia</surname><given-names>R.</given-names></name>
+<name><surname>Clotet</surname><given-names>B.</given-names></name>
+<name><surname>Este</surname><given-names>J.A.</given-names></name>
+</person-group><article-title>Compensatory mutations rescue the virus replicative capacity of VIRIP-resistant HIV-1</article-title><source>Antiviral Res.</source><year>2011</year><volume>92</volume><fpage>479</fpage><lpage>483</lpage><pub-id pub-id-type="doi">10.1016/j.antiviral.2011.10.010</pub-id><pub-id pub-id-type="pmid">22027647</pub-id>
+</element-citation></ref><ref id="B47-viruses-17-00197"><label>47.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Handel</surname><given-names>A.</given-names></name>
+<name><surname>Regoes</surname><given-names>R.R.</given-names></name>
+<name><surname>Antia</surname><given-names>R.</given-names></name>
+</person-group><article-title>The role of compensatory mutations in the emergence of drug resistance</article-title><source>PLoS Comput. Biol.</source><year>2006</year><volume>2</volume><elocation-id>e137</elocation-id><pub-id pub-id-type="doi">10.1371/journal.pcbi.0020137</pub-id><pub-id pub-id-type="pmid">17040124</pub-id>
+</element-citation></ref><ref id="B48-viruses-17-00197"><label>48.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Piana</surname><given-names>S.</given-names></name>
+<name><surname>Carloni</surname><given-names>P.</given-names></name>
+<name><surname>Rothlisberger</surname><given-names>U.</given-names></name>
+</person-group><article-title>Drug resistance in HIV-1 protease: Flexibility-assisted mechanism of compensatory mutations</article-title><source>Protein Sci.</source><year>2002</year><volume>11</volume><fpage>2393</fpage><lpage>2402</lpage><pub-id pub-id-type="doi">10.1110/ps.0206702</pub-id><pub-id pub-id-type="pmid">12237461</pub-id>
+</element-citation></ref><ref id="B49-viruses-17-00197"><label>49.</label><element-citation publication-type="book"><source>HIV Drug Resistance Database</source><publisher-name>Standford University</publisher-name><publisher-loc>Stanford, CA, USA</publisher-loc><year>2024</year><comment>Available online: <ext-link xlink:href="https://hivdb.stanford.edu/dr-summary/resistance-notes/PI/" ext-link-type="uri">https://hivdb.stanford.edu/dr-summary/resistance-notes/PI/</ext-link></comment><date-in-citation content-type="access-date" iso-8601-date="2025-01-07">(accessed on 7 January 2025)</date-in-citation></element-citation></ref><ref id="B50-viruses-17-00197"><label>50.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Fun</surname><given-names>A.</given-names></name>
+<name><surname>Wensing</surname><given-names>A.M.</given-names></name>
+<name><surname>Verheyen</surname><given-names>J.</given-names></name>
+<name><surname>Nijhuis</surname><given-names>M.</given-names></name>
+</person-group><article-title>Human Immunodeficiency Virus Gag and protease: Partners in resistance</article-title><source>Retrovirology</source><year>2012</year><volume>9</volume><fpage>63</fpage><pub-id pub-id-type="doi">10.1186/1742-4690-9-63</pub-id><pub-id pub-id-type="pmid">22867298</pub-id>
+</element-citation></ref><ref id="B51-viruses-17-00197"><label>51.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Goonetilleke</surname><given-names>N.</given-names></name>
+<name><surname>Liu</surname><given-names>M.K.</given-names></name>
+<name><surname>Salazar-Gonzalez</surname><given-names>J.F.</given-names></name>
+<name><surname>Ferrari</surname><given-names>G.</given-names></name>
+<name><surname>Giorgi</surname><given-names>E.</given-names></name>
+<name><surname>Ganusov</surname><given-names>V.V.</given-names></name>
+<name><surname>Keele</surname><given-names>B.F.</given-names></name>
+<name><surname>Learn</surname><given-names>G.H.</given-names></name>
+<name><surname>Turnbull</surname><given-names>E.L.</given-names></name>
+<name><surname>Salazar</surname><given-names>M.G.</given-names></name>
+<etal/>
+</person-group><article-title>The first T cell response to transmitted/founder virus contributes to the control of acute viremia in HIV-1 infection</article-title><source>J. Exp. Med.</source><year>2009</year><volume>206</volume><fpage>1253</fpage><lpage>1272</lpage><pub-id pub-id-type="doi">10.1084/jem.20090365</pub-id><pub-id pub-id-type="pmid">19487423</pub-id>
+</element-citation></ref><ref id="B52-viruses-17-00197"><label>52.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Ganusov</surname><given-names>V.V.</given-names></name>
+<name><surname>De Boer</surname><given-names>R.J.</given-names></name>
+</person-group><article-title>Estimating costs and benefits of CTL escape mutations in SIV/HIV infection</article-title><source>PLoS Comput. Biol.</source><year>2006</year><volume>2</volume><elocation-id>e24</elocation-id><pub-id pub-id-type="doi">10.1371/journal.pcbi.0020024</pub-id><pub-id pub-id-type="pmid">16604188</pub-id>
+</element-citation></ref><ref id="B53-viruses-17-00197"><label>53.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Liu</surname><given-names>D.</given-names></name>
+<name><surname>Zuo</surname><given-names>T.</given-names></name>
+<name><surname>Hora</surname><given-names>B.</given-names></name>
+<name><surname>Song</surname><given-names>H.</given-names></name>
+<name><surname>Kong</surname><given-names>W.</given-names></name>
+<name><surname>Yu</surname><given-names>X.</given-names></name>
+<name><surname>Goonetilleke</surname><given-names>N.</given-names></name>
+<name><surname>Bhattacharya</surname><given-names>T.</given-names></name>
+<name><surname>Perelson</surname><given-names>A.S.</given-names></name>
+<name><surname>Haynes</surname><given-names>B.F.</given-names></name>
+<etal/>
+</person-group><article-title>Preexisting compensatory amino acids compromise fitness costs of a HIV-1 T cell escape mutation</article-title><source>Retrovirology</source><year>2014</year><volume>11</volume><fpage>101</fpage><pub-id pub-id-type="doi">10.1186/s12977-014-0101-0</pub-id><pub-id pub-id-type="pmid">25407514</pub-id>
+</element-citation></ref><ref id="B54-viruses-17-00197"><label>54.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Crawford</surname><given-names>H.</given-names></name>
+<name><surname>Prado</surname><given-names>J.G.</given-names></name>
+<name><surname>Leslie</surname><given-names>A.</given-names></name>
+<name><surname>Hue</surname><given-names>S.</given-names></name>
+<name><surname>Honeyborne</surname><given-names>I.</given-names></name>
+<name><surname>Reddy</surname><given-names>S.</given-names></name>
+<name><surname>van der Stok</surname><given-names>M.</given-names></name>
+<name><surname>Mncube</surname><given-names>Z.</given-names></name>
+<name><surname>Brander</surname><given-names>C.</given-names></name>
+<name><surname>Rousseau</surname><given-names>C.</given-names></name>
+<etal/>
+</person-group><article-title>Compensatory mutation partially restores fitness and delays reversion of escape mutation within the immunodominant HLA-B*5703-restricted Gag epitope in chronic human immunodeficiency virus type 1 infection</article-title><source>J. Virol.</source><year>2007</year><volume>81</volume><fpage>8346</fpage><lpage>8351</lpage><pub-id pub-id-type="doi">10.1128/JVI.00465-07</pub-id><pub-id pub-id-type="pmid">17507468</pub-id>
+</element-citation></ref><ref id="B55-viruses-17-00197"><label>55.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Song</surname><given-names>H.</given-names></name>
+<name><surname>Pavlicek</surname><given-names>J.W.</given-names></name>
+<name><surname>Cai</surname><given-names>F.</given-names></name>
+<name><surname>Bhattacharya</surname><given-names>T.</given-names></name>
+<name><surname>Li</surname><given-names>H.</given-names></name>
+<name><surname>Iyer</surname><given-names>S.S.</given-names></name>
+<name><surname>Bar</surname><given-names>K.J.</given-names></name>
+<name><surname>Decker</surname><given-names>J.M.</given-names></name>
+<name><surname>Goonetilleke</surname><given-names>N.</given-names></name>
+<name><surname>Liu</surname><given-names>M.K.</given-names></name>
+<etal/>
+</person-group><article-title>Impact of immune escape mutations on HIV-1 fitness in the context of the cognate transmitted/founder genome</article-title><source>Retrovirology</source><year>2012</year><volume>9</volume><fpage>89</fpage><pub-id pub-id-type="doi">10.1186/1742-4690-9-89</pub-id><pub-id pub-id-type="pmid">23110705</pub-id>
+</element-citation></ref><ref id="B56-viruses-17-00197"><label>56.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Rouzine</surname><given-names>I.M.</given-names></name>
+<name><surname>Coffin</surname><given-names>J.M.</given-names></name>
+</person-group><article-title>Search for the mechanism of genetic variation in the pro gene of human immunodeficiency virus</article-title><source>J. Virol.</source><year>1999</year><volume>73</volume><fpage>8167</fpage><lpage>8178</lpage><pub-id pub-id-type="doi">10.1128/JVI.73.10.8167-8178.1999</pub-id><pub-id pub-id-type="pmid">10482567</pub-id>
+</element-citation></ref><ref id="B57-viruses-17-00197"><label>57.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Althaus</surname><given-names>C.L.</given-names></name>
+<name><surname>De Boer</surname><given-names>R.J.</given-names></name>
+</person-group><article-title>Dynamics of immune escape during HIV/SIV infection</article-title><source>PLoS Comput. Biol.</source><year>2008</year><volume>4</volume><elocation-id>e1000103</elocation-id><pub-id pub-id-type="doi">10.1371/journal.pcbi.1000103</pub-id><pub-id pub-id-type="pmid">18636096</pub-id>
+</element-citation></ref><ref id="B58-viruses-17-00197"><label>58.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Batorsky</surname><given-names>R.</given-names></name>
+<name><surname>Sergeev</surname><given-names>R.A.</given-names></name>
+<name><surname>Rouzine</surname><given-names>I.M.</given-names></name>
+</person-group><article-title>The route of HIV escape from immune response targeting multiple sites is determined by the cost-benefit tradeoff of escape mutations</article-title><source>PLoS Comput. Biol.</source><year>2014</year><volume>10</volume><elocation-id>e1003878</elocation-id><pub-id pub-id-type="doi">10.1371/journal.pcbi.1003878</pub-id><pub-id pub-id-type="pmid">25356981</pub-id>
+</element-citation></ref><ref id="B59-viruses-17-00197"><label>59.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Levin</surname><given-names>B.R.</given-names></name>
+<name><surname>Perrot</surname><given-names>V.</given-names></name>
+<name><surname>Walker</surname><given-names>N.</given-names></name>
+</person-group><article-title>Compensatory mutations, antibiotic resistance and the population genetics of adaptive evolution in bacteria</article-title><source>Genetics</source><year>2000</year><volume>154</volume><fpage>985</fpage><lpage>997</lpage><pub-id pub-id-type="doi">10.1093/genetics/154.3.985</pub-id><pub-id pub-id-type="pmid">10757748</pub-id>
+</element-citation></ref><ref id="B60-viruses-17-00197"><label>60.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Marsh</surname><given-names>L.</given-names></name>
+</person-group><article-title>Spatial autocorrelation of amino Acid replacement rates in the vasopressin receptor family</article-title><source>J. Mol. Evol.</source><year>2009</year><volume>68</volume><fpage>28</fpage><lpage>39</lpage><pub-id pub-id-type="doi">10.1007/s00239-008-9183-4</pub-id><pub-id pub-id-type="pmid">19052795</pub-id>
+</element-citation></ref><ref id="B61-viruses-17-00197"><label>61.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Luksza</surname><given-names>M.</given-names></name>
+<name><surname>Lassig</surname><given-names>M.</given-names></name>
+</person-group><article-title>A predictive fitness model for influenza</article-title><source>Nature</source><year>2014</year><volume>507</volume><fpage>57</fpage><lpage>61</lpage><pub-id pub-id-type="doi">10.1038/nature13087</pub-id><pub-id pub-id-type="pmid">24572367</pub-id>
+</element-citation></ref><ref id="B62-viruses-17-00197"><label>62.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Neher</surname><given-names>R.A.</given-names></name>
+<name><surname>Russell</surname><given-names>C.A.</given-names></name>
+<name><surname>Shraiman</surname><given-names>B.I.</given-names></name>
+</person-group><article-title>Predicting evolution from the shape of genealogical trees</article-title><source>eLife</source><year>2014</year><volume>3</volume><fpage>e03568</fpage><pub-id pub-id-type="doi">10.7554/eLife.03568</pub-id><pub-id pub-id-type="pmid">25385532</pub-id>
+</element-citation></ref><ref id="B63-viruses-17-00197"><label>63.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Rodriguez-Rivas</surname><given-names>J.</given-names></name>
+<name><surname>Croce</surname><given-names>G.</given-names></name>
+<name><surname>Muscat</surname><given-names>M.</given-names></name>
+<name><surname>Weigt</surname><given-names>M.</given-names></name>
+</person-group><article-title>Epistatic models predict mutable sites in SARS-CoV-2 proteins and epitopes</article-title><source>Proc. Natl. Acad. Sci. USA</source><year>2022</year><volume>119</volume><fpage>e2113118119</fpage><pub-id pub-id-type="doi">10.1073/pnas.2113118119</pub-id><pub-id pub-id-type="pmid">35022216</pub-id>
+</element-citation></ref><ref id="B64-viruses-17-00197"><label>64.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Likhachev</surname><given-names>I.V.</given-names></name>
+<name><surname>Rouzine</surname><given-names>I.M.</given-names></name>
+</person-group><article-title>Measurement of selection coefficients from genomic samples of adapting populations by computer modeling</article-title><source>STAR Protoc.</source><year>2023</year><volume>4</volume><fpage>101821</fpage><pub-id pub-id-type="doi">10.1016/j.xpro.2022.101821</pub-id><pub-id pub-id-type="pmid">36871222</pub-id>
+</element-citation></ref><ref id="B65-viruses-17-00197"><label>65.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Takahashi</surname><given-names>T.</given-names></name>
+<name><surname>Song</surname><given-names>J.</given-names></name>
+<name><surname>Suzuki</surname><given-names>T.</given-names></name>
+<name><surname>Kawaoka</surname><given-names>Y.</given-names></name>
+</person-group><article-title>Mutations in NA that induced low pH-stability and enhanced the replication of pandemic (H1N1) 2009 influenza A virus at an early stage of the pandemic</article-title><source>PLoS ONE</source><year>2013</year><volume>8</volume><elocation-id>e64439</elocation-id><pub-id pub-id-type="doi">10.1371/journal.pone.0064439</pub-id><pub-id pub-id-type="pmid">23696893</pub-id>
+</element-citation></ref><ref id="B66-viruses-17-00197"><label>66.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Ignatieva</surname><given-names>A.</given-names></name>
+<name><surname>Hein</surname><given-names>J.</given-names></name>
+<name><surname>Jenkins</surname><given-names>P.A.</given-names></name>
+</person-group><article-title>Ongoing recombination in SARS-CoV-2 revealed through genealogical reconstruction</article-title><source>Mol. Biol. Evol.</source><year>2022</year><volume>39</volume><elocation-id>msac028</elocation-id><pub-id pub-id-type="doi">10.1093/molbev/msac028</pub-id><pub-id pub-id-type="pmid">35106601</pub-id>
+</element-citation></ref><ref id="B67-viruses-17-00197"><label>67.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Jackson</surname><given-names>B.</given-names></name>
+<name><surname>Boni</surname><given-names>M.F.</given-names></name>
+<name><surname>Bull</surname><given-names>M.J.</given-names></name>
+<name><surname>Colleran</surname><given-names>A.</given-names></name>
+<name><surname>Colquhoun</surname><given-names>R.M.</given-names></name>
+<name><surname>Darby</surname><given-names>A.C.</given-names></name>
+<name><surname>Haldenby</surname><given-names>S.</given-names></name>
+<name><surname>Hill</surname><given-names>V.</given-names></name>
+<name><surname>Lucaci</surname><given-names>A.</given-names></name>
+<name><surname>McCrone</surname><given-names>J.T.</given-names></name>
+<etal/>
+</person-group><article-title>Generation and transmission of interlineage recombinants in the SARS-CoV-2 pandemic</article-title><source>Cell</source><year>2021</year><volume>184</volume><fpage>5179</fpage><lpage>5188.e8</lpage><pub-id pub-id-type="doi">10.1016/j.cell.2021.08.014</pub-id><pub-id pub-id-type="pmid">34499854</pub-id>
+</element-citation></ref><ref id="B68-viruses-17-00197"><label>68.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Yi</surname><given-names>H.</given-names></name>
+</person-group><article-title>2019 novel coronavirus is undergoing active recombination</article-title><source>Clin. Infect. Dis.</source><year>2020</year><volume>71</volume><fpage>884</fpage><lpage>887</lpage><pub-id pub-id-type="doi">10.1093/cid/ciaa219</pub-id><pub-id pub-id-type="pmid">32130405</pub-id>
+</element-citation></ref><ref id="B69-viruses-17-00197"><label>69.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Turakhia</surname><given-names>Y.</given-names></name>
+<name><surname>Thornlow</surname><given-names>B.</given-names></name>
+<name><surname>Hinrichs</surname><given-names>A.</given-names></name>
+<name><surname>McBroome</surname><given-names>J.</given-names></name>
+<name><surname>Ayala</surname><given-names>N.</given-names></name>
+<name><surname>Ye</surname><given-names>C.</given-names></name>
+<name><surname>Smith</surname><given-names>K.</given-names></name>
+<name><surname>De Maio</surname><given-names>N.</given-names></name>
+<name><surname>Haussler</surname><given-names>D.</given-names></name>
+<name><surname>Lanfear</surname><given-names>R.</given-names></name>
+<etal/>
+</person-group><article-title>Pandemic-scale phylogenomics reveals the SARS-CoV-2 recombination landscape</article-title><source>Nature</source><year>2022</year><volume>609</volume><fpage>994</fpage><lpage>997</lpage><pub-id pub-id-type="doi">10.1038/s41586-022-05189-9</pub-id><pub-id pub-id-type="pmid">35952714</pub-id>
+</element-citation></ref><ref id="B70-viruses-17-00197"><label>70.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Rouzine</surname><given-names>I.M.</given-names></name>
+<name><surname>Coffin</surname><given-names>J.M.</given-names></name>
+</person-group><article-title>Evolution of human immunodeficiency virus under selection and weak recombination</article-title><source>Genetics</source><year>2005</year><volume>170</volume><fpage>7</fpage><lpage>18</lpage><pub-id pub-id-type="doi">10.1534/genetics.104.029926</pub-id><pub-id pub-id-type="pmid">15744057</pub-id>
+</element-citation></ref><ref id="B71-viruses-17-00197"><label>71.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Rouzine</surname><given-names>I.M.</given-names></name>
+<name><surname>Coffin</surname><given-names>J.M.</given-names></name>
+</person-group><article-title>Highly fit ancestors of a partly sexual haploid population</article-title><source>Theor. Popul. Biol.</source><year>2007</year><volume>71</volume><fpage>239</fpage><lpage>250</lpage><pub-id pub-id-type="doi">10.1016/j.tpb.2006.09.002</pub-id><pub-id pub-id-type="pmid">17097121</pub-id>
+</element-citation></ref><ref id="B72-viruses-17-00197"><label>72.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Neher</surname><given-names>R.A.</given-names></name>
+<name><surname>Shraiman</surname><given-names>B.I.</given-names></name>
+<name><surname>Fisher</surname><given-names>D.S.</given-names></name>
+</person-group><article-title>Rate of adaptation in large sexual populations</article-title><source>Genetics</source><year>2010</year><volume>184</volume><fpage>467</fpage><lpage>481</lpage><pub-id pub-id-type="doi">10.1534/genetics.109.109009</pub-id><pub-id pub-id-type="pmid">19948891</pub-id>
+</element-citation></ref><ref id="B73-viruses-17-00197"><label>73.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Neher</surname><given-names>R.A.</given-names></name>
+<name><surname>Kessinger</surname><given-names>T.A.</given-names></name>
+<name><surname>Shraiman</surname><given-names>B.I.</given-names></name>
+</person-group><article-title>Coalescence and genetic diversity in sexual populations under selection</article-title><source>Proc. Natl. Acad. Sci. USA</source><year>2013</year><volume>110</volume><fpage>15836</fpage><lpage>15841</lpage><pub-id pub-id-type="doi">10.1073/pnas.1309697110</pub-id><pub-id pub-id-type="pmid">24019480</pub-id>
+</element-citation></ref><ref id="B74-viruses-17-00197"><label>74.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Rouzine</surname><given-names>I.M.</given-names></name>
+</person-group><article-title>Long-range linkage effects in adapting sexual populations</article-title><source>Sci. Rep.</source><year>2023</year><volume>13</volume><elocation-id>12492</elocation-id><pub-id pub-id-type="doi">10.1038/s41598-023-39392-z</pub-id><pub-id pub-id-type="pmid">37528175</pub-id>
+</element-citation></ref><ref id="B75-viruses-17-00197"><label>75.</label><element-citation publication-type="gov"><person-group person-group-type="author">
+<name><surname>Bedford</surname><given-names>T.</given-names></name>
+</person-group><article-title>Evolutionary Dynamics of SARS-CoV-2</article-title><comment>Available online: <ext-link xlink:href="https://videocast.nih.gov/watch=43795" ext-link-type="uri">https://videocast.nih.gov/watch=43795</ext-link></comment><date-in-citation content-type="access-date" iso-8601-date="2025-01-06">(accessed on 6 January 2025)</date-in-citation></element-citation></ref><ref id="B76-viruses-17-00197"><label>76.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Otto</surname><given-names>S.P.</given-names></name>
+<name><surname>Day</surname><given-names>T.</given-names></name>
+<name><surname>Arino</surname><given-names>J.</given-names></name>
+<name><surname>Colijn</surname><given-names>C.</given-names></name>
+<name><surname>Dushoff</surname><given-names>J.</given-names></name>
+<name><surname>Li</surname><given-names>M.</given-names></name>
+<name><surname>Mechai</surname><given-names>S.</given-names></name>
+<name><surname>Van Domselaar</surname><given-names>G.</given-names></name>
+<name><surname>Wu</surname><given-names>J.</given-names></name>
+<name><surname>Earn</surname><given-names>D.J.D.</given-names></name>
+<etal/>
+</person-group><article-title>The origins and potential future of SARS-CoV-2 variants of concern in the evolving COVID-19 pandemic</article-title><source>Curr. Biol.</source><year>2021</year><volume>31</volume><fpage>R918</fpage><lpage>R929</lpage><pub-id pub-id-type="doi">10.1016/j.cub.2021.06.049</pub-id><pub-id pub-id-type="pmid">34314723</pub-id>
+</element-citation></ref><ref id="B77-viruses-17-00197"><label>77.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Lau</surname><given-names>M.S.Y.</given-names></name>
+<name><surname>Grenfell</surname><given-names>B.</given-names></name>
+<name><surname>Thomas</surname><given-names>M.</given-names></name>
+<name><surname>Bryan</surname><given-names>M.</given-names></name>
+<name><surname>Nelson</surname><given-names>K.</given-names></name>
+<name><surname>Lopman</surname><given-names>B.</given-names></name>
+</person-group><article-title>Characterizing superspreading events and age-specific infectiousness of SARS-CoV-2 transmission in Georgia, USA</article-title><source>Proc. Natl. Acad. Sci USA</source><year>2020</year><volume>117</volume><fpage>22430</fpage><lpage>22435</lpage><pub-id pub-id-type="doi">10.1073/pnas.2011802117</pub-id><pub-id pub-id-type="pmid">32820074</pub-id>
+</element-citation></ref><ref id="B78-viruses-17-00197"><label>78.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Liu</surname><given-names>Y.</given-names></name>
+<name><surname>Eggo</surname><given-names>R.M.</given-names></name>
+<name><surname>Kucharski</surname><given-names>A.J.</given-names></name>
+</person-group><article-title>Secondary attack rate and superspreading events for SARS-CoV-2</article-title><source>Lancet</source><year>2020</year><volume>395</volume><fpage>e47</fpage><pub-id pub-id-type="doi">10.1016/S0140-6736(20)30462-1</pub-id><pub-id pub-id-type="pmid">32113505</pub-id>
+</element-citation></ref><ref id="B79-viruses-17-00197"><label>79.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Batorsky</surname><given-names>R.</given-names></name>
+<name><surname>Kearney</surname><given-names>M.F.</given-names></name>
+<name><surname>Palmer</surname><given-names>S.E.</given-names></name>
+<name><surname>Maldarelli</surname><given-names>F.</given-names></name>
+<name><surname>Rouzine</surname><given-names>I.M.</given-names></name>
+<name><surname>Coffin</surname><given-names>J.M.</given-names></name>
+</person-group><article-title>Estimate of effective recombination rate and average selection coefficient for HIV in chronic infection</article-title><source>Proc. Natl. Acad. Sci. USA</source><year>2011</year><volume>108</volume><fpage>5661</fpage><lpage>5666</lpage><pub-id pub-id-type="doi">10.1073/pnas.1102036108</pub-id><pub-id pub-id-type="pmid">21436045</pub-id>
+</element-citation></ref><ref id="B80-viruses-17-00197"><label>80.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Neher</surname><given-names>R.A.</given-names></name>
+<name><surname>Leitner</surname><given-names>T.</given-names></name>
+</person-group><article-title>Recombination rate and selection strength in HIV intra-patient evolution</article-title><source>PLoS Comput. Biol.</source><year>2010</year><volume>6</volume><elocation-id>e1000660</elocation-id><pub-id pub-id-type="doi">10.1371/journal.pcbi.1000660</pub-id><pub-id pub-id-type="pmid">20126527</pub-id>
+</element-citation></ref><ref id="B81-viruses-17-00197"><label>81.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Tamura</surname><given-names>T.</given-names></name>
+<name><surname>Ito</surname><given-names>J.</given-names></name>
+<name><surname>Uriu</surname><given-names>K.</given-names></name>
+<name><surname>Zahradnik</surname><given-names>J.</given-names></name>
+<name><surname>Kida</surname><given-names>I.</given-names></name>
+<name><surname>Anraku</surname><given-names>Y.</given-names></name>
+<name><surname>Nasser</surname><given-names>H.</given-names></name>
+<name><surname>Shofa</surname><given-names>M.</given-names></name>
+<name><surname>Oda</surname><given-names>Y.</given-names></name>
+<name><surname>Lytras</surname><given-names>S.</given-names></name>
+<etal/>
+</person-group><article-title>Virological characteristics of the SARS-CoV-2 XBB variant derived from recombination of two Omicron subvariants</article-title><source>Nat. Commun.</source><year>2023</year><volume>14</volume><fpage>2800</fpage><pub-id pub-id-type="doi">10.1038/s41467-023-38435-3</pub-id><pub-id pub-id-type="pmid">37193706</pub-id>
+</element-citation></ref><ref id="B82-viruses-17-00197"><label>82.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Li</surname><given-names>J.Y.</given-names></name>
+<name><surname>Wang</surname><given-names>H.Y.</given-names></name>
+<name><surname>Cheng</surname><given-names>Y.X.</given-names></name>
+<name><surname>Ji</surname><given-names>C.</given-names></name>
+<name><surname>Weng</surname><given-names>S.</given-names></name>
+<name><surname>Han</surname><given-names>N.</given-names></name>
+<name><surname>Yang</surname><given-names>R.</given-names></name>
+<name><surname>Zhou</surname><given-names>H.Y.</given-names></name>
+<name><surname>Wu</surname><given-names>A.</given-names></name>
+</person-group><article-title>Comprehensive detection and dissection of interlineage recombination events in the SARS-CoV-2 pandemic</article-title><source>Virus Evol.</source><year>2024</year><volume>10</volume><fpage>veae074</fpage><pub-id pub-id-type="doi">10.1093/ve/veae074</pub-id><pub-id pub-id-type="pmid">39399153</pub-id>
+</element-citation></ref><ref id="B83-viruses-17-00197"><label>83.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Kodsi</surname><given-names>I.A.</given-names></name>
+<name><surname>Rayes</surname><given-names>D.E.</given-names></name>
+<name><surname>Koweyes</surname><given-names>J.</given-names></name>
+<name><surname>Khoury</surname><given-names>C.A.</given-names></name>
+<name><surname>Rahy</surname><given-names>K.</given-names></name>
+<name><surname>Thoumi</surname><given-names>S.</given-names></name>
+<name><surname>Chamoun</surname><given-names>M.</given-names></name>
+<name><surname>Haddad</surname><given-names>H.</given-names></name>
+<name><surname>Mokhbat</surname><given-names>J.</given-names></name>
+<name><surname>Tokajian</surname><given-names>S.</given-names></name>
+</person-group><article-title>Tracking SARS-CoV-2 variants during the 2023 flu season and beyond in Lebanon</article-title><source>Virus Res.</source><year>2024</year><volume>339</volume><fpage>199289</fpage><pub-id pub-id-type="doi">10.1016/j.virusres.2023.199289</pub-id><pub-id pub-id-type="pmid">38036064</pub-id>
+</element-citation></ref><ref id="B84-viruses-17-00197"><label>84.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Branda</surname><given-names>F.</given-names></name>
+<name><surname>Ciccozzi</surname><given-names>M.</given-names></name>
+<name><surname>Scarpa</surname><given-names>F.</given-names></name>
+</person-group><article-title>Genetic variability of the recombinant SARS-CoV-2 XEC: Is it a new evolutionary dead-end lineage?</article-title><source>New Microbes New Infect.</source><year>2024</year><volume>62</volume><fpage>101520</fpage><pub-id pub-id-type="doi">10.1016/j.nmni.2024.101520</pub-id><pub-id pub-id-type="pmid">39559179</pub-id>
+</element-citation></ref><ref id="B85-viruses-17-00197"><label>85.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Garcia</surname><given-names>I.</given-names></name>
+<name><surname>Brate</surname><given-names>J.</given-names></name>
+<name><surname>Fossum</surname><given-names>E.</given-names></name>
+<name><surname>Rohringer</surname><given-names>A.</given-names></name>
+<name><surname>Moen</surname><given-names>L.V.</given-names></name>
+<name><surname>Hungnes</surname><given-names>O.</given-names></name>
+<name><surname>Fjaere</surname><given-names>O.</given-names></name>
+<name><surname>Zaragkoulias</surname><given-names>K.</given-names></name>
+<name><surname>Bragstad</surname><given-names>K.</given-names></name>
+</person-group><article-title>Recombinant SARS-CoV-2 Delta/Omicron BA.5 emerging in an immunocompromised long-term infected COVID-19 patient</article-title><source>Sci. Rep.</source><year>2024</year><volume>14</volume><elocation-id>25790</elocation-id><pub-id pub-id-type="doi">10.1038/s41598-024-75241-3</pub-id><pub-id pub-id-type="pmid">39468221</pub-id>
+</element-citation></ref><ref id="B86-viruses-17-00197"><label>86.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Rouzine</surname><given-names>I.M.</given-names></name>
+<name><surname>Coffin</surname><given-names>J.M.</given-names></name>
+</person-group><article-title>Linkage disequilibrium test implies a large effective population number for HIV in vivo</article-title><source>Proc. Natl. Acad. Sci. USA</source><year>1999</year><volume>96</volume><fpage>10758</fpage><lpage>10763</lpage><pub-id pub-id-type="doi">10.1073/pnas.96.19.10758</pub-id><pub-id pub-id-type="pmid">10485899</pub-id>
+</element-citation></ref><ref id="B87-viruses-17-00197"><label>87.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Rouzine</surname><given-names>I.M.</given-names></name>
+<name><surname>Weinberger</surname><given-names>L.S.</given-names></name>
+</person-group><article-title>The quantitative theory of within-host viral evolution</article-title><source>J. Stat. Mech. Theory Exp.</source><year>2013</year><volume>2013</volume><fpage>P01009</fpage><pub-id pub-id-type="doi">10.1088/1742-5468/2013/01/P01009</pub-id></element-citation></ref><ref id="B88-viruses-17-00197"><label>88.</label><element-citation publication-type="journal"><person-group person-group-type="author">
+<name><surname>Rouzine</surname><given-names>I.M.</given-names></name>
+<name><surname>Weinberger</surname><given-names>A.D.</given-names></name>
+<name><surname>Weinberger</surname><given-names>L.S.</given-names></name>
+</person-group><article-title>An evolutionary role for HIV latency in enhancing viral transmission</article-title><source>Cell</source><year>2015</year><volume>160</volume><fpage>1002</fpage><lpage>1012</lpage><pub-id pub-id-type="doi">10.1016/j.cell.2015.02.017</pub-id><pub-id pub-id-type="pmid">25723173</pub-id>
+</element-citation></ref></ref-list></back><floats-group><fig position="float" id="viruses-17-00197-f001"><label>Figure 1</label><caption><p>Viral substitution rates. The purple rectangles show the intervals of the median values for the most rapidly and most slowly evolving subtypes of HIV, HCV, influenza virus, and SARS-CoV-2 for the full genome [<xref rid="B1-viruses-17-00197" ref-type="bibr">1</xref>,<xref rid="B14-viruses-17-00197" ref-type="bibr">14</xref>,<xref rid="B15-viruses-17-00197" ref-type="bibr">15</xref>,<xref rid="B16-viruses-17-00197" ref-type="bibr">16</xref>]. The green rectangles correspond to the envelope proteins targeted by neutralizing antibodies [<xref rid="B3-viruses-17-00197" ref-type="bibr">3</xref>,<xref rid="B17-viruses-17-00197" ref-type="bibr">17</xref>,<xref rid="B18-viruses-17-00197" ref-type="bibr">18</xref>,<xref rid="B19-viruses-17-00197" ref-type="bibr">19</xref>]. To fit into the plot, HIV values are shown at a third of their actual value. Based on [<xref rid="B20-viruses-17-00197" ref-type="bibr">20</xref>].</p></caption><graphic xlink:href="viruses-17-00197-g001" position="float"/></fig><fig position="float" id="viruses-17-00197-f002"><label>Figure 2</label><caption><p>The fitness valley hypothesis. (<bold>A</bold>) Consecutive fixation of alleles, compensating for the fitness effect of the primary immune escape mutation in an HIV-infected patient. The percent selection coefficients are shown on the curves. (<bold>B</bold>) An example of an epistatic network predicted from genomic sequence data for the surface protein sequences of Influenza A H1N1, to explain the pandemics of 2009 [<xref rid="B40-viruses-17-00197" ref-type="bibr">40</xref>]. The circular diagram shows the network of interaction between variable amino acid sites in the neuraminidase protein, as inferred by the 3-site haplotype method. The red lines show residue 248 with the primary mutation and the direct compensatory residues. The green lines show secondary compensatory mutations. (<bold>C</bold>) The structural location of the predicted epistasis network in a neuraminidase monomer of influenza virus. The three-dimensional structure of Influenza A H1N1 neuraminidase (PDB ID code 4QVZ). The colored spheres represent the predicted epistatic residues from (<bold>B</bold>). Red sphere: Predicted primary mutation, residue 248 in (<bold>B</bold>). Yellow spheres: Compensatory residues from (<bold>B</bold>). Note that all compensatory residues are located in alpha helixes on the surface of protein, representing a case of allosteric interaction. Based on [<xref rid="B40-viruses-17-00197" ref-type="bibr">40</xref>].</p></caption><graphic xlink:href="viruses-17-00197-g002" position="float"/></fig><fig position="float" id="viruses-17-00197-f003"><label>Figure 3</label><caption><p>Multi-locus evolution with recombination. (<bold>A</bold>) The recombination of two viruses (parents, yellow and red bars) sometimes generates a highly fit recombinant virus (progeny), which extends the edge of genome distribution (blue solid curve) in fitness. It becomes the dominant strain later, when the distribution of genomes over fitness, the travelling fitness wave, moves over (gray arrow, blue dashed curve). Inset: the pink dots are beneficial alleles in two parental genomes that recombine into the progeny. (<bold>B</bold>) A phylogenetic tree for 10 genomes sampled at three time points from a population, shown in generations in 3 colors, the evolution of which is simulated by the Monte Carlo method (Fisher&#x02013;Wright process). Th open circles show the roots of the three subtrees, which correspond to the previously best-fit genomes. The tree was obtained by neighbor-joining analysis in the MEGA11 package (version 11.0.10). The red star shows the root of the tree, chosen from the sampled sequences by MEGA11. The numbers at the leaves show the number of beneficial alleles in the genome. The genetic distance scale is below. Simulation parameters: population size <inline-formula><mml:math id="mm7" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>N</mml:mi><mml:mo>=</mml:mo><mml:mn>1000</mml:mn><mml:mo>,</mml:mo></mml:mrow></mml:mrow></mml:math></inline-formula> outcrossing rate <inline-formula><mml:math id="mm3" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>r</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo></mml:mrow></mml:mrow></mml:math></inline-formula> locus number <inline-formula><mml:math id="mm4" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>L</mml:mi><mml:mo>=</mml:mo><mml:mn>500</mml:mn><mml:mo>,</mml:mo></mml:mrow></mml:mrow></mml:math></inline-formula> selection coefficient <inline-formula><mml:math id="mm5" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>s</mml:mi><mml:mn>0</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mn>0.1</mml:mn><mml:mo>,</mml:mo></mml:mrow></mml:mrow></mml:math></inline-formula> initial allele frequency <inline-formula><mml:math id="mm6" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>f</mml:mi><mml:mn>0</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mn>0.02</mml:mn><mml:mo>,</mml:mo><mml:mo>&#x000a0;</mml:mo><mml:mi>M</mml:mi><mml:mo>=</mml:mo><mml:mn>3</mml:mn></mml:mrow></mml:mrow></mml:math></inline-formula> crossovers. (<bold>C</bold>) The dependence of the mutation number on time for various clades of SARS-CoV-2 during the formation of the VOC Alpha (B.1.1.7). Phylogeny is shown for two clades competing in UK in the Fall 2020, clade 20E (B.1.177) and variant B.1.1.7. (<bold>B</bold>,<bold>C</bold>) is based on [<xref rid="B74-viruses-17-00197" ref-type="bibr">74</xref>,<xref rid="B75-viruses-17-00197" ref-type="bibr">75</xref>], respectively.</p></caption><graphic xlink:href="viruses-17-00197-g003" position="float"/></fig></floats-group></article>

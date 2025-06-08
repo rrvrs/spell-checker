@@ -1,0 +1,637 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" dtd-version="1.3" xml:lang="EN" article-type="research-article"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">J Chem Inf Model</journal-id><journal-id journal-id-type="iso-abbrev">J Chem Inf Model</journal-id><journal-id journal-id-type="publisher-id">ci</journal-id><journal-id journal-id-type="coden">jcisd8</journal-id><journal-title-group><journal-title>Journal of Chemical Information and Modeling</journal-title></journal-title-group><issn pub-type="ppub">1549-9596</issn><issn pub-type="epub">1549-960X</issn><publisher><publisher-name>American Chemical Society</publisher-name></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">39907635</article-id><article-id pub-id-type="pmc">PMC11863365</article-id>
+<article-id pub-id-type="doi">10.1021/acs.jcim.4c02040</article-id><article-categories><subj-group><subject>Article</subject></subj-group></article-categories><title-group><article-title>Toward Machine
+Learning Electrospray Ionization Sensitivity
+Prediction for Semiquantitative Lipidomics in Stem Cells</article-title></title-group><contrib-group><contrib contrib-type="author" id="ath1"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0001-7566-1354</contrib-id><name><surname>Grouw</surname><given-names>Alexandria
+Van</given-names></name><xref rid="aff1" ref-type="aff">&#x02020;</xref></contrib><contrib contrib-type="author" id="ath2"><name><surname>Rainey</surname><given-names>Markace A.</given-names></name><xref rid="aff1" ref-type="aff">&#x02020;</xref></contrib><contrib contrib-type="author" id="ath3"><name><surname>Reid</surname><given-names>Olivia K.</given-names></name><xref rid="aff1" ref-type="aff">&#x02020;</xref></contrib><contrib contrib-type="author" id="ath4"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0001-9802-5190</contrib-id><name><surname>Ogle</surname><given-names>Molly M.</given-names></name><xref rid="aff3" ref-type="aff">&#x000a7;</xref></contrib><contrib contrib-type="author" id="ath5"><name><surname>Moore</surname><given-names>Samuel G.</given-names></name><xref rid="aff3" ref-type="aff">&#x000a7;</xref></contrib><contrib contrib-type="author" id="ath6"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0002-3940-3574</contrib-id><name><surname>Temenoff</surname><given-names>Johnna S.</given-names></name><xref rid="aff2" ref-type="aff">&#x02021;</xref></contrib><contrib contrib-type="author" corresp="yes" id="ath7"><name><surname>Fern&#x000e1;ndez</surname><given-names>Facundo M.</given-names></name><xref rid="cor1" ref-type="other">*</xref><xref rid="aff1" ref-type="aff">&#x02020;</xref><xref rid="aff3" ref-type="aff">&#x000a7;</xref></contrib><aff id="aff1"><label>&#x02020;</label>School
+of Chemistry and Biochemistry, <institution>Georgia Institute
+of Technology</institution>, 901 Atlanta
+Drive, Atlanta, Georgia 30332, <country>USA</country></aff><aff id="aff2"><label>&#x02021;</label>The
+Wallace H. Coulter Department of Biomedical Engineering, <institution>Georgia Institute of Technology and Emory University</institution>, 313 Ferst Drive NW, Atlanta, Georgia 30332, <country>USA</country></aff><aff id="aff3"><label>&#x000a7;</label>Systems
+Mass Spectrometry Core, Parker H. Petit Institute for Bioengineering
+and Bioscience, <institution>Georgia Institute of Technology</institution>, 315 Ferst Drive NW, Atlanta, Georgia Samuel, <country>USA</country></aff></contrib-group><author-notes><corresp id="cor1"><label>*</label>Email: <email>facundo.fernandez@chemistry.gatech.edu</email>.</corresp></author-notes><pub-date pub-type="epub"><day>05</day><month>02</month><year>2025</year></pub-date><pub-date pub-type="collection"><day>24</day><month>02</month><year>2025</year></pub-date><volume>65</volume><issue>4</issue><fpage>1826</fpage><lpage>1836</lpage><history><date date-type="received"><day>06</day><month>11</month><year>2024</year></date><date date-type="accepted"><day>27</day><month>01</month><year>2025</year></date><date date-type="rev-recd"><day>08</day><month>01</month><year>2025</year></date></history><permissions><copyright-statement>&#x000a9; 2025 The Authors. Published by American Chemical Society</copyright-statement><copyright-year>2025</copyright-year><copyright-holder>The Authors</copyright-holder><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>Permits the broadest form of re-use including for commercial purposes, provided that author attribution and integrity are maintained (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</ext-link>).</license-p></license></permissions><abstract><p content-type="toc-graphic"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02040_0007" id="ab-tgr1"/></p><p>Specificity, sensitivity, and high metabolite coverage
+make mass
+spectrometry (MS) one of the most valuable tools in metabolomics and
+lipidomics. However, translation of metabolomics MS methods to multiyear
+studies conducted across multiple batches is limited by variability
+in electrospray ionization response, making batch-to-batch comparisons
+challenging. This limitation creates an artificial divide between
+nontargeted discovery work that is broad in scope but limited in terms
+of absolute quantitation ability and targeted work that is highly
+accurate but limited in scope due to the need for matched isotopically
+labeled standards. These issues are often observed in stem cell studies
+using metabolomic and lipidomic MS approaches, where patient recruitment
+can be a years-long process and samples become available in discrete
+batches every few months. To bridge this gap, we developed a machine
+learning model that predicts electrospray ionization sensitivity for
+lipid classes that have shown correlation with stem cell potency.
+Molecular descriptors derived from these lipids&#x02019; chemical structures
+are used as model input to predict electrospray response, enabling
+quantitation by MS with moderate accuracy (semiquantitation). Model
+performance was evaluated via internal and external validation using
+cultured cells from various stem cell donors, achieving global percent
+errors of 40% and 20% for positive and negative electrospray ion modes,
+respectively. Although this accuracy is typically insufficient for
+traditional targeted lipidomics experiments, it is sufficient for
+semiquantitative estimation of lipid marker concentrations across
+batches without the need for specific chemical standards that many
+times are unavailable. Furthermore, the precision for model-predicted
+concentrations was 16.9% for the positive mode and 7.5% for the negative
+mode, indicating promise for data harmonization across batches. The
+set of molecular descriptors used by the models described here was
+able to yield higher accuracy than those previously published in the
+literature, showing high promise toward semiquantitative lipidomics.</p></abstract><funding-group><award-group><funding-source><institution-wrap><institution>National Cancer Institute</institution><institution-id institution-id-type="doi">10.13039/100000054</institution-id></institution-wrap></funding-source><award-id>1R01CA218664</award-id></award-group></funding-group><funding-group><award-group><funding-source><institution-wrap><institution>Division of Engineering Education and Centers</institution><institution-id institution-id-type="doi">10.13039/100000149</institution-id></institution-wrap></funding-source><award-id>EEC-1648035</award-id></award-group></funding-group><custom-meta-group><custom-meta><meta-name>document-id-old-9</meta-name><meta-value>ci4c02040</meta-value></custom-meta><custom-meta><meta-name>document-id-new-14</meta-name><meta-value>ci4c02040</meta-value></custom-meta><custom-meta><meta-name>ccc-price</meta-name><meta-value/></custom-meta></custom-meta-group></article-meta></front><body><sec id="sec1"><label>1</label><title>Introduction</title><p>Cell-based therapies hold
+great promise for the treatment of incurable
+diseases<sup><xref ref-type="bibr" rid="ref1">1</xref>&#x02212;<xref ref-type="bibr" rid="ref3">3</xref></sup> through cell replacement or release of trophic factors.
+Such therapies can be manufactured from a number of cell types, including
+primary, progenitor, or stem cells.<sup><xref ref-type="bibr" rid="ref1">1</xref></sup> The
+inherent complexity associated with cellular processes grants these
+therapies their unique potential but also makes consistent manufacturing
+at specific quality and safety levels a significant challenge.<sup><xref ref-type="bibr" rid="ref4">4</xref></sup> Mesenchymal stromal cells (MSCs) used in immunotherapy
+applications, for example, have been known to suffer from donor-to-donor
+variability and intracolony heterogeneity.<sup><xref ref-type="bibr" rid="ref5">5</xref></sup> In this context, discovery and quantitation of biochemical critical
+quality attributes (CQAs) indicative of relative potency and mechanisms
+of action are critical for standardizing treatments and ensuring the
+rigor of clinical trials.<sup><xref ref-type="bibr" rid="ref5">5</xref>,<xref ref-type="bibr" rid="ref6">6</xref></sup></p><p>Metabolomics and
+lipidomics are emerging as sources of CQAs highly
+predictive of cell therapy properties, including potency.<sup><xref ref-type="bibr" rid="ref7">7</xref>&#x02212;<xref ref-type="bibr" rid="ref11">11</xref></sup> These &#x02018;omic approaches produce metabolite abundance profiles
+that are the closest to the cellular phenotype at any given time point.
+Metabolomics/lipidomics experiments typically rely on liquid chromatography-mass
+spectrometry (LC-MS) conducted in a nontargeted fashion to discover
+CQAs,<sup><xref ref-type="bibr" rid="ref12">12</xref></sup> producing relative quantitation
+data within a given batch of experiments. The transition from nontargeted
+data sets to targeted quantitative CQA assays is often difficult to
+achieve,<sup><xref ref-type="bibr" rid="ref13">13</xref>,<xref ref-type="bibr" rid="ref14">14</xref></sup> limiting the comparison of CQA abundances
+across batches and cell types. For example, a recent MSC metabolomics
+study on three cell lines identified four ether-linked phosphatidylcholine
+(O-PC) lipid CQA candidates that correlated with inhibited T-cell
+proliferation during coculture.<sup><xref ref-type="bibr" rid="ref9">9</xref></sup> However,
+a follow-up expanded study on ten cell lines showed that these markers
+were not as strongly correlated, while a small panel of different
+phospholipids were better predictors.<sup><xref ref-type="bibr" rid="ref11">11</xref></sup></p><p>While the standard practices of quantitative (targeted) metabolomics
+and lipidomics are well-established, the practices of the corresponding
+nontargeted workflows have not yet been standardized, emphasizing
+the need for data harmonization.<sup><xref ref-type="bibr" rid="ref13">13</xref>,<xref ref-type="bibr" rid="ref14">14</xref></sup> Nontargeted
+CQA discovery work is broad in scope but limited in terms of quantitative
+ability, while targeted work is highly accurate but limited in scope
+due to the need for expensive stable isotope-labeled standards.<sup><xref ref-type="bibr" rid="ref13">13</xref>,<xref ref-type="bibr" rid="ref14">14</xref></sup> Semiquantitative metabolomics and lipidomics methods leverage some
+of the advantages of targeted and nontargeted approaches by utilizing
+surrogate standards to obtain quantitative information for hundreds
+of analytes in a single experiment, but at the cost of some accuracy.<sup><xref ref-type="bibr" rid="ref14">14</xref>,<xref ref-type="bibr" rid="ref15">15</xref></sup> Drotlef et al., for example, developed a lipid class-specific calibration
+workflow with stable isotope-labeled standards achieving acceptable
+accuracy levels, but the approach required the use of a reference
+material to calculate the necessary response factors.<sup><xref ref-type="bibr" rid="ref16">16</xref></sup> The use of such surrogate standards alone, however, cannot
+correct common effects observed in the LC-MS electrospray ionization
+(ESI) ion source, such as differential nonlinear responses, variations
+in matrix effects, or differences in analyte ionization efficiencies
+within a lipid class.<sup><xref ref-type="bibr" rid="ref17">17</xref>,<xref ref-type="bibr" rid="ref18">18</xref></sup></p><p>Machine learning (ML) has
+played a role in the merging of nontargeted
+and targeted metabolomics/lipidomics LC-MS workflows.<sup><xref ref-type="bibr" rid="ref19">19</xref></sup> Both random forest (RF) and artificial neural networks
+(ANN) have been used to predict ESI sensitivity based on analyte properties
+such as LC-MS chromatographic retention time, capillary electrophoresis
+effective charge, and even fragmentation information from incomplete
+structural assignments.<sup><xref ref-type="bibr" rid="ref20">20</xref>&#x02212;<xref ref-type="bibr" rid="ref22">22</xref></sup> These studies were able to achieve
+regression models with <italic>R</italic><sup>2</sup> values above
+0.8, but in both cases, the models performed poorly on independent
+data sets. Approaches based on molecular descriptors have also been
+used to predict relative ionization sensitivity using support vector
+regression (SVR), RF, ANN, and other ML techniques, but the work was
+limited to a very narrow data set comprising only carboxylic acids
+in negative ion mode.<sup><xref ref-type="bibr" rid="ref23">23</xref></sup> The most successful
+molecular descriptor-based studies for the prediction of ionization
+efficiency have achieved excellent <italic>R</italic><sup>2</sup> results
+on training and test sets but had errors as high as &#x0223c;200% when
+predicting the concentration of analytes in real samples.<sup><xref ref-type="bibr" rid="ref24">24</xref>&#x02212;<xref ref-type="bibr" rid="ref26">26</xref></sup> These studies were conducted without accounting for matrix effects
+and included very large training sets that span many chemical classes.
+Here, we present the first results of a semiquantitative LC-MS lipidomics
+approach that includes stable isotope surrogate internal standards,
+matrix matching, and ML relative ionization sensitivity prediction
+in order to account for all major sources of inaccuracy encountered
+in MSC lipid quantitation experiments.</p></sec><sec id="sec2"><label>2</label><title>Experimental Procedures</title><sec id="sec2.1"><label>2.1</label><title>Preparation of Standard Mixtures</title><p>Avanti Polar Lipids UltimateSPLASH ONE mix was diluted with isopropanol
+to produce six calibrant stock solutions (UCal mixes) with 1:500 (Calibrant
+1), 1:200 (Calibrant 2), 1:67 (Calibrant 3), 1:33 (Calibrant 4), 1:17
+(Calibrant 5), and 1:10 (Calibrant 6) dilution factors. Avanti Polar
+Lipids SPLASH LIPIDOMIX was diluted 1:113 in isopropanol to create
+a High Splash Lipidomix stock and 1:581 for a Low Splash Lipidomix
+stock.</p></sec><sec id="sec2.2"><label>2.2</label><title>Sample Preparation and Extraction</title><p>Commercially available human bone marrow MSC samples from two donors
+(#182, #310 RoosterBio, Inc.) were thawed and allowed to recover in
+the culture for 4 days in a standard cell culture incubator at 37
+&#x000b0;C with 5% CO<sub>2</sub>. The culture media were composed of
+low glucose Dulbecco&#x02019;s Minimal Essential Medium (DMEM, Gibco)
+containing pyruvate, <sc>l</sc>-glutamine, penicillin-streptomycin,
+and 10% fetal bovine serum (FBS). Cells were washed three times in
+phosphate-buffered saline (PBS) and harvested by scraping with a sterile
+cell scraper. Cells were counted by a hemocytometer and aliquoted
+into 12 replicates from each donor at approximately 200,000 cells
+per sample. Cells were pelleted in 250 &#x003bc;L of methanol and 155
+mM ammonium acetate. The supernatant was removed from all samples
+prior to the addition of extraction solvent and lipid standard mixes.
+Isopropanol, UCal standards specific for each calibration level, and/or
+Splash Lipidomix standards were added to all cellular samples and
+blanks for extraction according to <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02040/suppl_file/ci4c02040_si_001.pdf">Table S1</ext-link>. A representative scheme of sample components is shown in <xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>a. Following the
+addition of the appropriate extraction solvent spiked with lipid standards,
+50 &#x003bc;L of glass beads (400&#x02013;600 &#x003bc;m) was added. Samples
+were then bead homogenized on Tissuelyzer II at 30 Hz for 5 min, followed
+by centrifugation at 21,000 g for 5 min. The supernatant was transferred
+to new microcentrifuge vials. The original vial still containing the
+beads was washed with an additional 200 &#x003bc;L of 2-propanol, vortexed,
+and centrifuged, and the supernatant was transferred again to the
+new vial. Samples were then concentrated using vacuum centrifugation
+and reconstituted in 75 &#x003bc;L of isopropanol. Samples were then
+sonicated to ensure full reconstitution and centrifuged again. Five
+&#x003bc;L of each sample was removed to form a pooled QC. The remaining
+volume was transferred to LC-MS vials for analysis.</p><fig id="fig1" position="float"><label>Figure 1</label><caption><p>Collection of training
+and evaluation data sets for machine learning
+models. Two lipid standard mixes, the Avanti UltimateSPLASH ONE and
+Avanti SPLASH LIPIDOMIX, were spiked according to the (a) scheme into
+cell pellet samples composed of MSCs from two donors. From these samples,
+several lipid (b) data sets were created for model training, testing,
+and target evaluation. UI27RMEWO3 Created in BioRender. Fernandez,
+F. (2025).</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02040_0001" id="gr3" position="float"/></fig></sec><sec id="sec2.3"><label>2.3</label><title>UHPLC-MS/MS Analysis</title><p>The lipidomics
+LC-MS workflow was carried out on a Thermo Orbitrap Exploris 240 (Thermo
+Fisher Scientific) system. Reverse phase LC was performed using an
+Accucore C30 column (2.1 mm &#x000d7; 150 mm, 2.6 &#x003bc;m particle size)
+on a Vanquish (Thermo Fisher Scientific) liquid chromatograph (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02040/suppl_file/ci4c02040_si_001.pdf">Table S2</ext-link>). Full-scan data were collected at a
+mass resolution of 120,000 (fwhm) in Orbitrap. Data-dependent acquisition
+(DDA) was employed to yield fragmentation information on endogenous
+and spiked lipids in sample extracts. Collision energies of 15%, 30%,
+and 50% were chosen for the HCD MS<sup>2</sup> experiments. LC-MS
+data were aligned and integrated, including blank removal, with Compound
+Discoverer 3.3 (Thermo Fisher Scientific). Drift correction was also
+performed in Compound Discoverer using responses from pooled QC samples
+that bracket sets of 20 individual samples. All lipid standards were
+annotated using exact mass matches.</p></sec><sec id="sec2.4"><label>2.4</label><title>Description of Machine Learning (ML) Data
+Sets</title><p>All (<italic>m</italic>/<italic>z</italic>, time) LC-MS
+features were exported from Compound Discoverer and separated into
+three lists: annotated endogenous lipid features, UltimateSplash lipid
+features, and Splash Lipidomix features. These peak areas automatically
+include all adducts that Compound Discoverer identified for that peak.
+A list of included adducts for all standards (and their relative abundances)
+can be found in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02040/suppl_file/ci4c02040_si_002.xlsx">Supporting Information</ext-link>.
+Responses (peak areas) for UltimateSplash lipids in donor 1 samples
+were used for model creation and internal validation. All other lipid
+data sets described in <xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>b formed various lipid target sets for model external validation.
+Recovery of lipid standards was determined by spiking equivalent concentrations
+of the mixes into isopropanol and comparing peak areas between matrix
+and nonmatrix samples (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02040/suppl_file/ci4c02040_si_001.pdf">Table S3</ext-link>).</p></sec><sec id="sec2.5"><label>2.5</label><title>Calculation of Experimental Sensitivity Values</title><p>Peak areas for the UltimateSplash lipids in the six donor 1 calibrant
+samples were used to create external calibration curves based on their
+spiked concentrations. The slope (<italic>m</italic>) from these curves
+was calculated for all lipids observed in both positive and negative
+ion modes. Some lipids were not detected in both modes, and some lipids
+were removed because their calibration curves did not meet the linearity
+criterion (<italic>R</italic><sup>2</sup> &#x0003c; 0.8). For some lipids,
+the sixth and highest calibrator was outside the linearity range,
+so the sixth calibration level was removed for all lipids. A full
+list of lipids included in the final models can be found in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02040/suppl_file/ci4c02040_si_001.pdf">Table S4a</ext-link> (positive ion mode) and <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02040/suppl_file/ci4c02040_si_001.pdf">Table S4b</ext-link> (negative ion mode). To control for
+injection-to-injection response differences, calibration curves were
+relativized to the cholesterol-d7 response (positive ion mode) and
+monoacylglycerol-d7 (negative ion mode), according to the workflow
+shown in <xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>a.
+The resulting relativized slopes (<italic>m</italic><sub>R</sub>)
+were used as the ground truth for support vector regression (SVR)
+model training.</p><fig id="fig2" position="float"><label>Figure 2</label><caption><p>Model development workflow depicting (a) generation of
+lipid calibration
+curves for determination of experimental sensitivity values (<italic>m</italic><sub>R</sub>), (b) identifying optimal train/test split
+percentage, (c) optimization of data transformation and feature selection,
+d) generation of 1,101 model iterations to select median error model,
+(e) model training with 5-fold cross validation, (f) model validation
+on test set lipids, and (g) external validation on separate lipids
+in separate samples. Full workflow results in two final models: one
+for each ionization mode, positive and negative. NA27RMF9PW Created
+in BioRender. Fernandez, F. (2025).</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02040_0002" id="gr4" position="float"/></fig></sec><sec id="sec2.6"><label>2.6</label><title>Lipid Concentration Prediction Pipeline</title><p>A total of 61 and 50 lipid <italic>m</italic><sub><italic>R</italic></sub> values measured in positive and negative ion modes were used
+to create support vector machine (SVM) model sets. These model sets
+were first created by varying the percentages of lipids devoted to
+training and model testing (<xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>b). Once an optimal training percentage of 80% was
+chosen, models of four different types were generated. Two of these
+models utilized recursive feature elimination (RFE) to remove nonuseful
+molecular descriptors, and two model types used a Box-Cox transformation
+to normalize the distribution of <italic>m</italic><sub><italic>R</italic></sub> values (<xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>c). From the performance of these model types, it was determined
+that both the RFE and Box-Cox aided in model accuracy. Due to the
+relatively small lipid data set (UltimateSplash mix containing 69
+unique lipids), there was concern that individual lipid allocation
+to train or test would have a significant impact on model performance.
+In order to mitigate testing effects, 1,101 model iterations were
+performed where the selection of the internal validation set was randomly
+generated in each iteration (<xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>d). Following the creation of 1,101 models for each
+ionization mode, the median model based on the absolute error in the
+predicted lipid <italic>m</italic><sub><italic>R</italic></sub> was
+selected as the final model (<xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>e).</p></sec><sec id="sec2.7"><label>2.7</label><title>Validation Procedures</title><p>Model internal
+validation was performed on the withheld 20% of UltimateSplash standards
+in donor 1 samples (<xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>f). Predicted concentrations were determined by converting
+predicted <italic>m</italic><sub>R</sub> values to concentrations
+following <xref rid="eq1" ref-type="disp-formula">eq <xref rid="eq1" ref-type="disp-formula">1</xref></xref>, where <italic>y</italic> is the peak area response in the sample and <italic>b</italic> is the peak area in the blank.<disp-formula id="eq1"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02040_m001" position="anchor"/><label>1</label></disp-formula></p><p>As an additional external validation,
+Splash Lipidomix standard concentrations were predicted in separate
+samples (<xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>g).</p></sec><sec id="sec2.8"><label>2.8</label><title>Single-Point Calibration</title><p>Single-point
+calibrations were performed to compare against SVR model results by
+calculating the response ratio for the UltimateSplash component with
+the highest structural similarity to that of the Splash Lipidomix
+analyte. Structural similarity was defined as having the same headgroup,
+the closest hydrocarbon chain length and the closest number of double
+bonds. A table indicating which UltimateSplash component was used
+in each case is included (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02040/suppl_file/ci4c02040_si_001.pdf">Table S5</ext-link>). The
+response factor was then applied to the Splash Lipidomix analyte to
+estimate its concentration.<sup><xref ref-type="bibr" rid="ref27">27</xref></sup> An example
+calculation is provided in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02040/suppl_file/ci4c02040_si_001.pdf">Figure S1a</ext-link>.</p></sec><sec id="sec2.9"><label>2.9</label><title>Multipoint Calibration</title><p>A multipoint
+calibration approach using surrogate standards was also performed
+as a comparison to SVR model results. For this method, UltimateSplash
+components from a particular lipid class were used to create a calibration
+curve composed of different individual lipid members of a single class.
+The slope of that curve was then used to quantify the Splash Lipidomix
+analyte of the same class. An example calculation is provided in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02040/suppl_file/ci4c02040_si_001.pdf">Figure S1b</ext-link>.</p></sec><sec id="sec2.10"><label>2.10</label><title>Machine Learning and Package Dependencies</title><p>All regression models were built in Python (v3.11.5) using Jupyter
+Notebook (v6.5.4) with IPykernel (v6.25.0). Plotting and visualization
+were performed using Matplotlib (v3.7.2), Plotly (v5.18.0), and Seaborn
+(v0.12.2) libraries. Molecular representations were generated via
+RDKit (v2023.09.5), and the corresponding molecular descriptors were
+calculated by using Mordred (v1.2.0). General data manipulation and
+analysis were facilitated by NumPy (v1.24.3), Pandas (v2.1.4), and
+SciPy (v1.11.1). Machine learning models were built and refined using
+the scikit-learn (v1.3.0) library. Data export and handling of Excel
+files were managed using Pandas and Openpyxl (v3.0.10). Optionally,
+the PubChemPy (v1.0.4) library could be used for retrieving compound
+data from PubChem if a CID list is provided, although SMILES strings
+were used directly in this study.</p></sec></sec><sec id="sec3"><label>3</label><title>Results</title><sec id="sec3.1"><label>3.1</label><title>Experimentally Observed Sensitivities by Lipid
+Class</title><p>The relative electrospray ionization efficiency of
+a given chemical species is largely controlled by its structure, other
+sample or solvent components, and the specific experimental conditions
+used, such as flow rate, solvent type, applied electric field strength,
+etc. For lipids, the molecular properties of the headgroup are important
+determinants of ionization efficiency, with the lipid tail chain lengths
+also having a marked impact. Lipids can also undergo in-source fragmentation
+with ESI, which will result in signal loss. In order to ensure ionization
+efficiency measurements were not significantly biased due to in-source
+fragmentation signal loss, common in-source fragments were identified
+and tabulated (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02040/suppl_file/ci4c02040_si_002.xlsx">Supporting Information</ext-link>).
+The observed range of experimental ionization efficiencies (<italic>m</italic>, <xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>a) for the various tested lipid classes (<xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>) was as expected. Additionally, some lipid
+classes showed a large within-class ionization efficiency range (<xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>). Of particular
+note were the triacylglycerols (TG) in positive ion mode and ceramides
+(Cer) in negative ion mode. This variability highlighted the marked
+effects of tail lengths on ionization efficiencies and the challenges
+involved in using surrogate standards for quantification. Attempting
+to quantify analytes from such highly variable lipid classes using
+a surrogate standard could introduce inaccuracies in the predicted
+concentrations.</p><fig id="fig3" position="float"><label>Figure 3</label><caption><p>Electrospray ionization efficiency violin plots of observed
+lipid
+classes in (a) positive ion mode and (b) negative ion mode. The plot
+displays the ionization efficiencies of the lipid components of the
+Avanti Ultimate SplashOne mix spiked into donor 1 and donor 2 MSC
+samples. For each individual lipid, the ionization efficiencies measured
+were averaged across donor 1 and donor 2 samples. Ionization efficiency
+was defined as the slope of the concentration&#x02013;response curve
+(<italic>m</italic>) using non-normalized peak areas.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02040_0003" id="gr5" position="float"/></fig></sec><sec id="sec3.2"><label>3.2</label><title>Prediction of Lipid Sensitivities</title><p>To evaluate the efficacy of our SVM regression workflow, a learning
+curve was generated by altering the percentage of UltimateSplash donor
+1 lipids that were allocated to the training and internal validation
+steps (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02040/suppl_file/ci4c02040_si_001.pdf">Figure S2</ext-link>). As expected, a median
+absolute percent error (MdAPE) plateau starting at train/test split
+ratios of 70:30 to 80:20 was observed for both positive and negative
+ion mode SVR models. Box-Cox transformation and RFE variable selection
+had minor but measurable effects at a split ratio of 80:20 when examining
+the MdAPE of the predicted relative sensitivities (<italic>m</italic><sub>R</sub>). However, Box-Cox transformation clearly aided in model
+accuracy when examining the mean percent error, rather than MdAPE,
+for predicted lipid <italic>m</italic><sub>R</sub> by helping to prevent
+a few cases of high errors (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02040/suppl_file/ci4c02040_si_001.pdf">Figure S3</ext-link>).
+RFE improved MdAPE, and for this reason, it was applied together with
+the Box-Cox transformation to the final workflow.</p></sec><sec id="sec3.3"><label>3.3</label><title>SVR Model Interpretability</title><p>The most
+commonly utilized molecular descriptors in all SVM model iterations
+were GAT descriptors (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02040/suppl_file/ci4c02040_si_001.pdf">Figure S4</ext-link>). These
+are autocorrelation descriptors that represent the spatial distribution
+of atom or bond properties, explaining their correlation with the
+electrospray ionization efficiency. GAT descriptors examine how a
+molecular property is distributed across the molecular topography.<sup><xref ref-type="bibr" rid="ref28">28</xref></sup> For the positive ion mode in particular, GAT
+descriptors with a lag of 6 (GATS6xx), referring to the topological
+distance or path length, were important for SVM models.<sup><xref ref-type="bibr" rid="ref28">28</xref></sup> GAT autocorrelation descriptors used in SVR
+models were those weighted by properties such as electronegativity
+(e.g., <italic>GATS6se</italic>, <italic>GATS6pe</italic>, and <italic>GATS6are</italic>), valence electrons (<italic>GATS1dv</italic>),
+or intrinsic state (<italic>GATS 3s</italic>).</p></sec><sec id="sec3.4"><label>3.4</label><title>SVR Model Performance</title><p>Both positive
+and negative mode models performed with high calibration accuracy
+(<xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>a,b), as well
+as high performance in cross-validation (<xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>c,d) with <italic>R</italic>-squared values
+of 0.808 for the positive model and 0.986 for the negative model.
+Following the assessment of model performance under calibration and
+cross-validation, the performance under internal validation conditions
+was evaluated. Ionization efficiencies for the 20% of left-out lipids
+in the UltimateSplash mix spiked into donor 1 samples were predicted
+(<xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>e,f). The
+observed <italic>R</italic>-squared values were 0.953 and 0.986 for
+positive and negative ion modes, respectively, indicating the adequate
+predictive ability of the model on unseen data. The predicted <italic>m</italic><sub>R</sub> values for these internal validation standards
+were then used to calculate the concentrations of the matching lipids
+in each of the donor 1 samples in the internal validation set (<xref rid="fig5" ref-type="fig">Figure <xref rid="fig5" ref-type="fig">5</xref></xref>a,b). Concentration
+prediction errors were at or below 40%, with the exception of a few
+cases of higher errors, which included two phosphatidylglycerols (PGs)
+in positive mode, a phosphatidylinositol (PI) in positive mode, and
+a diacylglycerol (DG) in negative mode. For the PG and PI lipids,
+their errors are likely due to testing effects, as three out of five
+total class members were allocated to the internal validation set,
+leaving only two members in the training set. The concentration error
+for DG can be explained by the class&#x02019;s large range of ionization
+efficiencies in negative mode. The global average error including
+these higher error cases was 43.6% for positive mode and 41.3% for
+negative mode. If these four lipid outliers are removed, the global
+average for positive ion mode was 22.9% and 25.1% in negative mode.
+Although errors in the 20&#x02013;30% range would typically be unacceptable
+for strict quantitation work, they could still be acceptable for semiquantitative
+work in a nontargeted metabolomics setting where strict accuracy is
+not the ultimate goal of method development. The overall precision
+for internal calibration was determined by taking the mean of the
+coefficients of variation of each lipid determined from the predicted
+concentrations in the 5 samples. The precision was 22.6% for the positive
+mode and 15.7% for the negative mode. Errors for specific samples
+and lipids in the internal validation sets are provided in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02040/suppl_file/ci4c02040_si_001.pdf">Figure S5 and S6</ext-link>.</p><fig id="fig4" position="float"><label>Figure 4</label><caption><p>Model calibration and
+internal validation performance. Plots depicting
+measured relative slopes (<italic>m</italic><sub>R</sub>) for UltimateSplash
+components in donor 1 samples against their predicted relative slopes
+for (a) positive ion mode model calibration, (b) negative ion mode
+calibration, (c) positive model cross-validation, (d) negative mode
+cross-validation, (e) positive mode internal validation, and (f) negative
+mode internal validation. For positive and negative ion mode model
+iterations, the median was chosen for display. All models utilized
+Box-Cox transformation and recursive feature elimination (RFE). Dashed
+lines indicate the regression fit line, and solid lines indicate a <italic>x</italic> = <italic>y</italic> fit.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02040_0004" id="gr6" position="float"/></fig><fig id="fig5" position="float"><label>Figure 5</label><caption><p>Errors for internal and external validation of positive
+and negative
+ion mode models. Average percent errors for (a) positive and (b) negative
+mode concentration predictions during internal validation using 20%
+of the analytes in UltimateSplash Mix. Errors were averaged at each
+calibration level. Average percent errors for (c) positive and (d)
+negative mode concentration predictions during external validation
+using Splash Lipidomix in donor 1 and donor 2 samples. Errors were
+averaged across three high samples and three low samples. Errors were
+calculated by comparing predicted concentrations to spiked concentrations.
+Note: ceramide names abbreviated for space; full names can be found
+in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02040/suppl_file/ci4c02040_si_001.pdf">Table S3</ext-link>.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02040_0005" id="gr7" position="float"/></fig></sec><sec id="sec3.5"><label>3.5</label><title>Model Performance in External Validation Sets</title><p>Real-life quantitation using nontargeted metabolomics data sets
+would require that accuracy be maintained even if the ionization prediction
+model is applied to analytes not present in the training set. In addition,
+accuracy should be maintained across different sample types, ideally
+even across different matrices. In order to assess ionization prediction
+accuracy in these stringent conditions, external validation sets comprised
+of Splash Lipidomix lipids were also tested (<xref rid="fig5" ref-type="fig">Figure <xref rid="fig5" ref-type="fig">5</xref></xref>c,d). If outliers were removed, the global
+average errors for positive and negative ion modes were 21.4% and
+15.2%, respectively. However, a few cases of higher errors were observed,
+specifically for PG (15:0&#x02013;18:1(d7)) and PC (15:0&#x02013;18:1(d7))
+in positive mode and PI (15:0&#x02013;18:1(d7)) in negative mode. The
+global average error including these higher error cases was 40.9%
+and 20.9% in positive and negative modes, respectively. The precision
+for the predicted concentrations was 16.9% for the positive mode and
+7.5% for the negative mode. Errors for individual samples and lipid
+analytes in the external validation sets are detailed in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02040/suppl_file/ci4c02040_si_001.pdf">Figures S7&#x02013;10</ext-link>. Overall, these results
+indicated that predicting lipid concentrations in a variety of matrices
+with acceptable accuracy was possible for a number of different lipids
+as long as their lipid classes were well-represented in the training
+set. From these results, it was also apparent that matrix effects
+from individual cell donors were not significant enough to disrupt
+concentration prediction accuracy.</p></sec><sec id="sec3.6"><label>3.6</label><title>Outlier Analysis</title><p>A few of the lipids
+in the external validation set had high prediction errors compared
+with the average (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02040/suppl_file/ci4c02040_si_001.pdf">Figure S11</ext-link>). In the case
+of PI (15:0&#x02013;18:1(d7)) in negative mode (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02040/suppl_file/ci4c02040_si_001.pdf">Figure S11a</ext-link>), the source of the observed high error is likely
+the product of the innate model accuracy. However, for the two Splash
+Lipidomix standards measured in positive mode, PG(15:0&#x02013;18:1(d7))
+and PC(15:0&#x02013;18:1(d7)) (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02040/suppl_file/ci4c02040_si_001.pdf">Figure S11b,c</ext-link>), the errors may have resulted from additional factors. Testing
+effects may have caused these high errors given the relatively few
+examples of PC and PG lipids in the data set (5 each). Analysis of <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02040/suppl_file/ci4c02040_si_001.pdf">Figure S11b,c</ext-link> shows that PG (15:0&#x02013;18:1(d7))
+and PC (15:0&#x02013;18:1(d7)) had much higher than expected responses,
+which deviated from the expected trend line. Examination of the retention
+times of these outlier lipids did not show them outside the range
+of retention times of training lipids (Tables SI 4a and SI 4b). Errors
+may be introduced if the external validation lipid has a much higher
+(or lower) relative sensitivity than the same lipid class components
+in the training set. As discussed in <xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>, lipid ionization efficiency showed a significantly
+large range. Another possible explanation for the observed errors
+is ionization enhancement or suppression due to coeluting compounds
+present in cell extracts that did not affect ionization of training
+lipids. The percent recovery for PC (15:0&#x02013;18:1(d7)) is over
+100%, which supports that this error was likely due to ionization
+enhancement in this case. Although spiking of deuterated standards
+into real biological samples should mitigate these effects due to
+matrix matching, it might not offer a universal mitigation of matrix
+effects in all possible scenarios, such as when there is coelution
+of highly ionizable lipids.</p></sec><sec id="sec3.7"><label>3.7</label><title>Comparison to Traditional Quantitation Approaches</title><p>More often than not, quantitation in lipidomics is performed using
+simple calibration approaches such as 1-point calibration or establishing
+a least-squares linear regression for a specific lipid class. For
+these approaches, surrogate chemical standards are used to determine
+a response relationship that is applied to all lipid analytes of the
+same class, even if they are not perfectly matched to the standard.
+For comparison purposes, we applied two semiquantitative approaches
+described in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02040/suppl_file/ci4c02040_si_001.pdf">Figure S1a</ext-link>. These methods
+resulted in concentration estimation errors higher than the ML-based
+approach developed in this work (<xref rid="fig6" ref-type="fig">Figure <xref rid="fig6" ref-type="fig">6</xref></xref>a). The approach with the highest mean error
+was the 1-point approach, with errors ranging from 100% to 60% in
+positive and negative ionization modes. The lipid class-specific calibration
+curves showed lower mean errors (50&#x02013;90%), but still higher
+than the SVR model, which was between 20 and 40%. When the performance
+was evaluated on a lipid class basis for each ionization mode, the
+simpler quantitation methods were often sufficiently accurate but
+failed for PG (15:0&#x02013;18:1(d7)) and DG (15:0&#x02013;18:1(d7))
+in positive mode, and PI (15:0&#x02013;18:1(d7)) in negative mode.
+The SVR regression approach showed more accurate concentration estimates
+than one-point calibrations and lipid-class specific calibration curves
+in all examined cases.</p><fig id="fig6" position="float"><label>Figure 6</label><caption><p>Model accuracy compared to traditional nontargeted quantitation
+approaches. The accuracies of predicted and calculated concentrations
+for Splash Lipidomix standards in donor 1 and donor 2 samples (averaged
+across 12 samples). Concentrations were determined using the prediction
+workflow, one-point calibration, and surrogate lipid class curve calibration
+and are displayed as (a) a global average for positive and negative
+modes, (b) averages by lipid component in positive mode, and (c) averages
+by lipid component in negative mode.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02040_0006" id="gr8" position="float"/></fig></sec><sec id="sec3.8"><label>3.8</label><title>Model Performance on Unseen Lipid Classes</title><p>Many lipids from bacteria and mammalian cells are modified from
+the lipid classes presented here or exist in different classes altogether.
+To examine how well the model can generalize to new lipid classes,
+all lyso lipids were removed from the training set and designated
+as a separate validation set. In this experiment, the model was trained
+on all lipids, excluding lyso lipids. The performance in this experiment
+indicates that the model does not easily predict unseen classes, as
+the <italic>R</italic><sup>2</sup> for model validations was &#x02212;16.3
+and &#x02212;151.7 in positive and negative mode, respectively (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02040/suppl_file/ci4c02040_si_001.pdf">Figure S12</ext-link>). This result is not surprising given
+the nature of machine learning. Without the necessary trends represented
+in the training set, extrapolation by the model is usually unsuccessful.
+Another way to examine robustness, however, is to examine how well
+the model performs within each class instead of how it performs out-of-class.
+For example, we may want to know whether it can extrapolate to quantify
+very large or very small lipids. The largest ultimate lipids (by mass)
+from each class were removed for the test set (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02040/suppl_file/ci4c02040_si_001.pdf">Figure S13</ext-link>), and the smallest lipids (by mass) from each class
+were removed (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02040/suppl_file/ci4c02040_si_001.pdf">Figure S13</ext-link>). <italic>R</italic>-squared measurements for these validation sets were all between
+0.75 and 1, with greater accuracy in the large lipid validation sets,
+whose <italic>R</italic>-squared measurements were both between 0.95
+and 1. This indicates that the model can extrapolate for lipid chain
+lengths beyond what it has seen in training.</p></sec></sec><sec id="sec4"><label>4</label><title>Conclusions</title><p>We demonstrate a powerful
+approach for semiquantitation in nontargeted
+lipidomics workflows that utilizes machine learning prediction of
+ionization efficiency for concentration estimation. Although this
+approach requires the use of lipid standards for matrix matching,
+it enables the quantitation of thousands of lipids from only 69 standards
+and enables the quantitation of some lipids for which standards do
+not exist. The prediction of concentration is more accurate than simple
+nontargeted calibration approaches and can be achieved with high precision,
+indicating promise for use in studies for which conducting LC-MS lipidomics
+in multiple sample batches is necessary. The model presented here
+was created with cellular samples, but this approach could be adopted
+in many types of sample matrices and is customizable to other instrumentation.
+Without the need to reoptimize the modeling approach, creation of
+project/instrument-specific models is simple. The length of time that
+a single model could hold for continued batches in a project is yet
+to be determined, but here we demonstrate the general feasibility
+of this approach for semiquantitation. This method could be used to
+determine relevant biological lipid concentrations to inform the development
+of targeted assays directed from nontargeted data, aiding biomarker
+discovery work. Data harmonization and lipidomics data set comparison
+remain the most promising future application of this work, as meta-analysis
+of several cellular lipidomics studies remains a challenge in the
+field that accurate semiquantitation could help address.</p></sec></body><back><notes notes-type="data-availability" id="notes2"><title>Data Availability Statement</title><p>The full Jupyter
+notebook for sensitivity prediction is publicly available at <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/facundof2016/Sensitivity_Predictor.git">https://github.com/facundof2016/Sensitivity_Predictor.git</uri>. All raw data and input files including lipid SMILES are also present
+in the repository.</p></notes><notes id="notes1" notes-type="si"><title>Supporting Information Available</title><p>The Supporting Information is
+available free of charge at <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/10.1021/acs.jcim.4c02040?goto=supporting-info">https://pubs.acs.org/doi/10.1021/acs.jcim.4c02040</ext-link>.<list id="silist1" list-type="simple"><list-item><p>Sample preparation and analysis details, example calculations,
+learning curves, model type comparison, most-selected Mordred descriptors,
+heatmaps of validation set prediction error by sample, and outlier
+analysis (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02040/suppl_file/ci4c02040_si_001.pdf">PDF</ext-link>)</p></list-item><list-item><p>Adduct and in-source fragment ratio table (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02040/suppl_file/ci4c02040_si_002.xlsx">XLSX</ext-link>)</p></list-item></list></p></notes><sec sec-type="supplementary-material"><title>Supplementary Material</title><supplementary-material content-type="local-data" id="sifile1"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02040_si_001.pdf"><caption><p>ci4c02040_si_001.pdf</p></caption></media></supplementary-material><supplementary-material content-type="local-data" id="sifile2"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02040_si_002.xlsx"><caption><p>ci4c02040_si_002.xlsx</p></caption></media></supplementary-material></sec><notes notes-type="" id="notes3"><title>Author Contributions</title><p>Conceptualization,
+Alexandria Van Grouw and Facundo M. Fern&#x000e1;ndez; methodology,
+Alexandria Van Grouw and Facundo M. Fern&#x000e1;ndez; validation,
+Alexandria Van Grouw and Samuel Moore; formal analysis, Alexandria
+Van Grouw, Markace Rainey, and Olivia K. Reid; investigation, Alexandria
+Van Grouw, Molly M. Ogle, and Markace Rainey; data curation, Alexandria
+Van Grouw; writing&#x02014;original draft preparation, Alexandria Van
+Grouw; writing&#x02014;review and editing, Alexandria Van Grouw and
+Facundo M. Fern&#x000e1;ndez; visualization, Alexandria Van Grouw;
+supervision, Johnna Temenoff and Facundo M. Fern&#x000e1;ndez; funding
+acquisition, Johnna Temenoff and Facundo M. Fern&#x000e1;ndez. All
+authors have read and agreed to the published version of the manuscript.</p></notes><notes notes-type="COI-statement" id="notes4"><p>The
+authors
+declare no competing financial interest.</p></notes><ack><title>Acknowledgments</title><p>FMF acknowledges support from the CMaT NSF Research
+Center (EEC-1648035) and NIH award 1R01CA218664</p></ack><ref-list><title>References</title><ref id="ref1"><mixed-citation publication-type="journal" id="cit1"><name><surname>Buzhor</surname><given-names>E.</given-names></name>; <name><surname>Leshansky</surname><given-names>L.</given-names></name>; <name><surname>Blumenthal</surname><given-names>J.</given-names></name>; <name><surname>Barash</surname><given-names>H.</given-names></name>; <name><surname>Warshawsky</surname><given-names>D.</given-names></name>; <name><surname>Mazor</surname><given-names>Y.</given-names></name>; <name><surname>Shtrichman</surname><given-names>R.</given-names></name>
+<article-title>Cell-Based Therapy Approaches: The
+Hope for Incurable Diseases</article-title>. <source>Regen. Med.</source>
+<year>2014</year>, <volume>9</volume> (<issue>5</issue>), <fpage>649</fpage>&#x02013;<lpage>672</lpage>. <pub-id pub-id-type="doi">10.2217/rme.14.35</pub-id>.<pub-id pub-id-type="pmid">25372080</pub-id>
+</mixed-citation></ref><ref id="ref2"><mixed-citation publication-type="journal" id="cit2"><name><surname>Song</surname><given-names>N.</given-names></name>; <name><surname>Scholtemeijer</surname><given-names>M.</given-names></name>; <name><surname>Shah</surname><given-names>K.</given-names></name>
+<article-title>Mesenchymal Stem Cell Immunomodulation:
+Mechanisms and Therapeutic Potential</article-title>. <source>Trends
+Pharmacol. Sci.</source>
+<year>2020</year>, <volume>41</volume> (<issue>9</issue>), <fpage>653</fpage>&#x02013;<lpage>664</lpage>. <pub-id pub-id-type="doi">10.1016/j.tips.2020.06.009</pub-id>.<pub-id pub-id-type="pmid">32709406</pub-id>
+</mixed-citation></ref><ref id="ref3"><mixed-citation publication-type="journal" id="cit3"><name><surname>Yamanaka</surname><given-names>S.</given-names></name>
+<article-title>Pluripotent
+Stem Cell-Based Cell Therapy&#x02014;Promise and Challenges</article-title>. <source>Cell Stem Cell</source>
+<year>2020</year>, <volume>27</volume> (<issue>4</issue>), <fpage>523</fpage>&#x02013;<lpage>531</lpage>. <pub-id pub-id-type="doi">10.1016/j.stem.2020.09.014</pub-id>.<pub-id pub-id-type="pmid">33007237</pub-id>
+</mixed-citation></ref><ref id="ref4"><mixed-citation publication-type="journal" id="cit4"><name><surname>Brachtl</surname><given-names>G.</given-names></name>; <name><surname>Poupardin</surname><given-names>R.</given-names></name>; <name><surname>Hochmann</surname><given-names>S.</given-names></name>; <name><surname>Raninger</surname><given-names>A.</given-names></name>; <name><surname>J&#x000fc;rchott</surname><given-names>K.</given-names></name>; <name><surname>Streitz</surname><given-names>M.</given-names></name>; <name><surname>Schlickeiser</surname><given-names>S.</given-names></name>; <name><surname>Oeller</surname><given-names>M.</given-names></name>; <name><surname>Wolf</surname><given-names>M.</given-names></name>; <name><surname>Schallmoser</surname><given-names>K.</given-names></name>; <name><surname>Volk</surname><given-names>H.-D.</given-names></name>; <name><surname>Geissler</surname><given-names>S.</given-names></name>; <name><surname>Strunk</surname><given-names>D.</given-names></name>
+<article-title>Batch Effects
+during Human Bone Marrow Stromal Cell Propagation Prevail Donor Variation
+and Culture Duration: Impact on Genotype, Phenotype and Function</article-title>. <source>Cells</source>
+<year>2022</year>, <volume>11</volume> (<issue>6</issue>), <fpage>946</fpage><pub-id pub-id-type="doi">10.3390/cells11060946</pub-id>.<pub-id pub-id-type="pmid">35326396</pub-id>
+</mixed-citation></ref><ref id="ref5"><mixed-citation publication-type="journal" id="cit5"><name><surname>Galipeau</surname><given-names>J.</given-names></name>; <name><surname>Sens&#x000e9;b&#x000e9;</surname><given-names>L.</given-names></name>
+<article-title>Mesenchymal Stromal Cells: Clinical
+Challenges and Therapeutic Opportunities</article-title>. <source>Cell
+Stem Cell</source>
+<year>2018</year>, <volume>22</volume> (<issue>6</issue>), <fpage>824</fpage>&#x02013;<lpage>833</lpage>. <pub-id pub-id-type="doi">10.1016/j.stem.2018.05.004</pub-id>.<pub-id pub-id-type="pmid">29859173</pub-id>
+</mixed-citation></ref><ref id="ref6"><mixed-citation publication-type="journal" id="cit6"><name><surname>Wuchter</surname><given-names>P.</given-names></name>; <name><surname>Bieback</surname><given-names>K.</given-names></name>; <name><surname>Schrezenmeier</surname><given-names>H.</given-names></name>; <name><surname>Bornh&#x000e4;user</surname><given-names>M.</given-names></name>; <name><surname>M&#x000fc;ller</surname><given-names>L. P.</given-names></name>; <name><surname>B&#x000f6;nig</surname><given-names>H.</given-names></name>; <name><surname>Wagner</surname><given-names>W.</given-names></name>; <name><surname>Meisel</surname><given-names>R.</given-names></name>; <name><surname>Pavel</surname><given-names>P.</given-names></name>; <name><surname>Tonn</surname><given-names>T.</given-names></name>; <name><surname>Lang</surname><given-names>P.</given-names></name>; <name><surname>M&#x000fc;ller</surname><given-names>I.</given-names></name>; <name><surname>Renner</surname><given-names>M.</given-names></name>; <name><surname>Malcherek</surname><given-names>G.</given-names></name>; <name><surname>Saffrich</surname><given-names>R.</given-names></name>; <name><surname>Buss</surname><given-names>E. C.</given-names></name>; <name><surname>Horn</surname><given-names>P.</given-names></name>; <name><surname>Rojewski</surname><given-names>M.</given-names></name>; <name><surname>Schmitt</surname><given-names>A.</given-names></name>; <name><surname>Ho</surname><given-names>A. D.</given-names></name>; <name><surname>Sanzenbacher</surname><given-names>R.</given-names></name>; <name><surname>Schmitt</surname><given-names>M.</given-names></name>
+<article-title>Standardization of Good Manufacturing
+Practice&#x02013;Compliant Production of Bone Marrow&#x02013;Derived
+Human Mesenchymal Stromal Cells for Immunotherapeutic Applications</article-title>. <source>Cytotherapy</source>
+<year>2015</year>, <volume>17</volume> (<issue>2</issue>), <fpage>128</fpage>&#x02013;<lpage>139</lpage>. <pub-id pub-id-type="doi">10.1016/j.jcyt.2014.04.002</pub-id>.<pub-id pub-id-type="pmid">24856898</pub-id>
+</mixed-citation></ref><ref id="ref7"><mixed-citation publication-type="journal" id="cit7"><name><surname>Culberson</surname><given-names>A. L.</given-names></name>; <name><surname>Bowles-Welch</surname><given-names>A. C.</given-names></name>; <name><surname>Wang</surname><given-names>B.</given-names></name>; <name><surname>Kottke</surname><given-names>P. A.</given-names></name>; <name><surname>Jimenez</surname><given-names>A. C.</given-names></name>; <name><surname>Roy</surname><given-names>K.</given-names></name>; <name><surname>Fedorov</surname><given-names>A. G.</given-names></name>
+<article-title>Early Detection
+and Metabolic Pathway Identification
+of T Cell Activation by In-Process Intracellular Mass Spectrometry</article-title>. <source>Cytotherapy</source>
+<year>2023</year>, <volume>25</volume> (<issue>9</issue>), <fpage>1006</fpage>&#x02013;<lpage>1015</lpage>. <pub-id pub-id-type="doi">10.1016/j.jcyt.2023.03.010</pub-id>.<pub-id pub-id-type="pmid">37061898</pub-id>
+</mixed-citation></ref><ref id="ref8"><mixed-citation publication-type="journal" id="cit8"><name><surname>Jimenez</surname><given-names>A. C.</given-names></name>; <name><surname>Heist</surname><given-names>C. A.</given-names></name>; <name><surname>Navaei</surname><given-names>M.</given-names></name>; <name><surname>Yeago</surname><given-names>C.</given-names></name>; <name><surname>Roy</surname><given-names>K.</given-names></name>
+<article-title>Longitudinal
+Two-Dimensional Gas Chromatography Mass Spectrometry as a Non-Destructive
+at-Line Monitoring Tool during Cell Manufacturing Identifies Volatile
+Features Correlative to Cell Product Quality</article-title>. <source>Cytotherapy</source>
+<year>2022</year>, <volume>24</volume> (<issue>11</issue>), <fpage>1136</fpage>&#x02013;<lpage>1147</lpage>. <pub-id pub-id-type="doi">10.1016/j.jcyt.2022.06.001</pub-id>.<pub-id pub-id-type="pmid">35882596</pub-id>
+</mixed-citation></ref><ref id="ref9"><mixed-citation publication-type="journal" id="cit9"><name><surname>Maughon</surname><given-names>T. S.</given-names></name>; <name><surname>Shen</surname><given-names>X.</given-names></name>; <name><surname>Huang</surname><given-names>D.</given-names></name>; <name><surname>Michael</surname><given-names>A. O. A.</given-names></name>; <name><surname>Shockey</surname><given-names>W. A.</given-names></name>; <name><surname>Andrews</surname><given-names>S. H.</given-names></name>; <name><surname>McRae</surname><given-names>J. M.</given-names></name>; <name><surname>Platt</surname><given-names>M. O.</given-names></name>; <name><surname>Fern&#x000e1;ndez</surname><given-names>F. M.</given-names></name>; <name><surname>Edison</surname><given-names>A. S.</given-names></name>; <name><surname>Stice</surname><given-names>S. L.</given-names></name>; <name><surname>Marklein</surname><given-names>R. A.</given-names></name>
+<article-title>Metabolomics
+and
+Cytokine Profiling of Mesenchymal Stromal Cells Identify Markers Predictive
+of T-Cell Suppression</article-title>. <source>Cytotherapy</source>
+<year>2022</year>, <volume>24</volume> (<issue>2</issue>), <fpage>137</fpage>&#x02013;<lpage>148</lpage>. <pub-id pub-id-type="doi">10.1016/j.jcyt.2021.08.002</pub-id>.<pub-id pub-id-type="pmid">34696960</pub-id>
+</mixed-citation></ref><ref id="ref10"><mixed-citation publication-type="journal" id="cit10"><name><surname>Nikitina</surname><given-names>A. A.</given-names></name>; <name><surname>Van Grouw</surname><given-names>A.</given-names></name>; <name><surname>Roysam</surname><given-names>T.</given-names></name>; <name><surname>Huang</surname><given-names>D.</given-names></name>; <name><surname>Fern&#x000e1;ndez</surname><given-names>F. M.</given-names></name>; <name><surname>Kemp</surname><given-names>M. L.</given-names></name>
+<article-title>Mass Spectrometry Imaging Reveals Early Metabolic Priming
+of Cell Lineage in Differentiating Human-Induced Pluripotent Stem
+Cells</article-title>. <source>Anal. Chem.</source>
+<year>2023</year>, <volume>95</volume> (<issue>11</issue>), <fpage>4880</fpage>&#x02013;<lpage>4888</lpage>. <pub-id pub-id-type="doi">10.1021/acs.analchem.2c04416</pub-id>.<pub-id pub-id-type="pmid">36898041</pub-id>
+</mixed-citation></ref><ref id="ref11"><mixed-citation publication-type="journal" id="cit11"><name><surname>Van
+Grouw</surname><given-names>A.</given-names></name>; <name><surname>Colonna</surname><given-names>M. B.</given-names></name>; <name><surname>Maughon</surname><given-names>T. S.</given-names></name>; <name><surname>Shen</surname><given-names>X.</given-names></name>; <name><surname>Larey</surname><given-names>A. M.</given-names></name>; <name><surname>Moore</surname><given-names>S. G.</given-names></name>; <name><surname>Yeago</surname><given-names>C.</given-names></name>; <name><surname>Fern&#x000e1;ndez</surname><given-names>F. M.</given-names></name>; <name><surname>Edison</surname><given-names>A. S.</given-names></name>; <name><surname>Stice</surname><given-names>S. L.</given-names></name>; <name><surname>Bowles-Welch</surname><given-names>A. C.</given-names></name>; <name><surname>Marklein</surname><given-names>R. A.</given-names></name>
+<article-title>Development of a Robust Consensus Modeling Approach
+for Identifying Cellular and Media Metabolites Predictive of Mesenchymal
+Stromal Cell Potency</article-title>. <source>Stem Cells</source>
+<year>2023</year>, <volume>41</volume> (<issue>8</issue>), <fpage>792</fpage>&#x02013;<lpage>808</lpage>. <pub-id pub-id-type="doi">10.1093/stmcls/sxad039</pub-id>.<pub-id pub-id-type="pmid">37279550</pub-id>
+</mixed-citation></ref><ref id="ref12"><mixed-citation publication-type="journal" id="cit12"><name><surname>Domenick</surname><given-names>T. M.</given-names></name>; <name><surname>Gill</surname><given-names>E. L.</given-names></name>; <name><surname>Vedam-Mai</surname><given-names>V.</given-names></name>; <name><surname>Yost</surname><given-names>R. A.</given-names></name>
+<article-title>Mass Spectrometry-Based
+Cellular Metabolomics: Current Approaches, Applications, and Future
+Directions</article-title>. <source>Anal. Chem.</source>
+<year>2021</year>, <volume>93</volume> (<issue>1</issue>), <fpage>546</fpage>&#x02013;<lpage>566</lpage>. <pub-id pub-id-type="doi">10.1021/acs.analchem.0c04363</pub-id>.<pub-id pub-id-type="pmid">33146525</pub-id>
+</mixed-citation></ref><ref id="ref13"><mixed-citation publication-type="journal" id="cit13"><name><surname>Rampler</surname><given-names>E.</given-names></name>; <name><surname>Abiead</surname><given-names>Y. E.</given-names></name>; <name><surname>Schoeny</surname><given-names>H.</given-names></name>; <name><surname>Rusz</surname><given-names>M.</given-names></name>; <name><surname>Hildebrand</surname><given-names>F.</given-names></name>; <name><surname>Fitz</surname><given-names>V.</given-names></name>; <name><surname>Koellensperger</surname><given-names>G.</given-names></name>
+<article-title>Recurrent
+Topics in Mass Spectrometry-Based
+Metabolomics and Lipidomics&#x02014;Standardization, Coverage, and
+Throughput</article-title>. <source>Anal. Chem.</source>
+<year>2021</year>, <volume>93</volume> (<issue>1</issue>), <fpage>519</fpage>&#x02013;<lpage>545</lpage>. <pub-id pub-id-type="doi">10.1021/acs.analchem.0c04698</pub-id>.<pub-id pub-id-type="pmid">33249827</pub-id>
+</mixed-citation></ref><ref id="ref14"><mixed-citation publication-type="journal" id="cit14"><name><surname>Cajka</surname><given-names>T.</given-names></name>; <name><surname>Fiehn</surname><given-names>O.</given-names></name>
+<article-title>Toward Merging Untargeted
+and Targeted Methods in Mass Spectrometry-Based
+Metabolomics and Lipidomics</article-title>. <source>Anal. Chem.</source>
+<year>2016</year>, <volume>88</volume> (<issue>1</issue>), <fpage>524</fpage>&#x02013;<lpage>545</lpage>. <pub-id pub-id-type="doi">10.1021/acs.analchem.5b04491</pub-id>.<pub-id pub-id-type="pmid">26637011</pub-id>
+</mixed-citation></ref><ref id="ref15"><mixed-citation publication-type="journal" id="cit15"><name><surname>Liu</surname><given-names>K. H.</given-names></name>; <name><surname>Nellis</surname><given-names>M.</given-names></name>; <name><surname>Uppal</surname><given-names>K.</given-names></name>; <name><surname>Ma</surname><given-names>C.</given-names></name>; <name><surname>Tran</surname><given-names>V.</given-names></name>; <name><surname>Liang</surname><given-names>Y.</given-names></name>; <name><surname>Walker</surname><given-names>D. I.</given-names></name>; <name><surname>Jones</surname><given-names>D. P.</given-names></name>
+<article-title>Reference Standardization
+for Quantification and Harmonization of Large-Scale Metabolomics</article-title>. <source>Anal. Chem.</source>
+<year>2020</year>, <volume>92</volume> (<issue>13</issue>), <fpage>8836</fpage>&#x02013;<lpage>8844</lpage>. <pub-id pub-id-type="doi">10.1021/acs.analchem.0c00338</pub-id>.<pub-id pub-id-type="pmid">32490663</pub-id>
+</mixed-citation></ref><ref id="ref16"><mixed-citation publication-type="journal" id="cit16"><name><surname>Drotleff</surname><given-names>B.</given-names></name>; <name><surname>Illison</surname><given-names>J.</given-names></name>; <name><surname>Schlotterbeck</surname><given-names>J.</given-names></name>; <name><surname>Lukowski</surname><given-names>R.</given-names></name>; <name><surname>L&#x000e4;mmerhofer</surname><given-names>M.</given-names></name>
+<article-title>Comprehensive
+Lipidomics of Mouse Plasma Using Class-Specific Surrogate Calibrants
+and SWATH Acquisition for Large-Scale Lipid Quantification in Untargeted
+Analysis</article-title>. <source>Anal. Chim. Acta</source>
+<year>2019</year>, <volume>1086</volume>, <fpage>90</fpage>&#x02013;<lpage>102</lpage>. <pub-id pub-id-type="doi">10.1016/j.aca.2019.08.030</pub-id>.<pub-id pub-id-type="pmid">31561798</pub-id>
+</mixed-citation></ref><ref id="ref17"><mixed-citation publication-type="journal" id="cit17"><name><surname>Konermann</surname><given-names>L.</given-names></name>; <name><surname>Ahadi</surname><given-names>E.</given-names></name>; <name><surname>Rodriguez</surname><given-names>A. D.</given-names></name>; <name><surname>Vahidi</surname><given-names>S.</given-names></name>
+<article-title>Unraveling the Mechanism
+of Electrospray Ionization</article-title>. <source>Anal. Chem.</source>
+<year>2013</year>, <volume>85</volume> (<issue>1</issue>), <fpage>2</fpage>&#x02013;<lpage>9</lpage>. <pub-id pub-id-type="doi">10.1021/ac302789c</pub-id>.<pub-id pub-id-type="pmid">23134552</pub-id>
+</mixed-citation></ref><ref id="ref18"><mixed-citation publication-type="journal" id="cit18"><name><surname>Yu</surname><given-names>H.</given-names></name>; <name><surname>Huan</surname><given-names>T.</given-names></name>
+<article-title>Patterned Signal Ratio
+Biases in Mass Spectrometry-Based Quantitative
+Metabolomics</article-title>. <source>Anal. Chem.</source>
+<year>2021</year>, <volume>93</volume> (<issue>4</issue>), <fpage>2254</fpage>&#x02013;<lpage>2262</lpage>. <pub-id pub-id-type="doi">10.1021/acs.analchem.0c04113</pub-id>.<pub-id pub-id-type="pmid">33400486</pub-id>
+</mixed-citation></ref><ref id="ref19"><mixed-citation publication-type="journal" id="cit19"><name><surname>Groff</surname><given-names>L. C.</given-names></name>; <name><surname>Grossman</surname><given-names>J. N.</given-names></name>; <name><surname>Kruve</surname><given-names>A.</given-names></name>; <name><surname>Minucci</surname><given-names>J. M.</given-names></name>; <name><surname>Lowe</surname><given-names>C. N.</given-names></name>; <name><surname>McCord</surname><given-names>J. P.</given-names></name>; <name><surname>Kapraun</surname><given-names>D. F.</given-names></name>; <name><surname>Phillips</surname><given-names>K. A.</given-names></name>; <name><surname>Purucker</surname><given-names>S. T.</given-names></name>; <name><surname>Chao</surname><given-names>A.</given-names></name>; <name><surname>Ring</surname><given-names>C. L.</given-names></name>; <name><surname>Williams</surname><given-names>A. J.</given-names></name>; <name><surname>Sobus</surname><given-names>J. R.</given-names></name>
+<article-title>Uncertainty
+Estimation Strategies for Quantitative Non-Targeted Analysis</article-title>. <source>Anal. Bioanal. Chem.</source>
+<year>2022</year>, <volume>414</volume> (<issue>17</issue>), <fpage>4919</fpage>&#x02013;<lpage>4933</lpage>. <pub-id pub-id-type="doi">10.1007/s00216-022-04118-z</pub-id>.<pub-id pub-id-type="pmid">35699740</pub-id>
+</mixed-citation></ref><ref id="ref20"><mixed-citation publication-type="journal" id="cit20"><name><surname>Chalcraft</surname><given-names>K. R.</given-names></name>; <name><surname>Lee</surname><given-names>R.</given-names></name>; <name><surname>Mills</surname><given-names>C.</given-names></name>; <name><surname>Britz-McKibbin</surname><given-names>P.</given-names></name>
+<article-title>Virtual Quantification of Metabolites
+by Capillary Electrophoresis-Electrospray Ionization-Mass Spectrometry:
+Predicting Ionization Efficiency Without Chemical Standards</article-title>. <source>Anal. Chem.</source>
+<year>2009</year>, <volume>81</volume> (<issue>7</issue>), <fpage>2506</fpage>&#x02013;<lpage>2515</lpage>. <pub-id pub-id-type="doi">10.1021/ac802272u</pub-id>.<pub-id pub-id-type="pmid">19275147</pub-id>
+</mixed-citation></ref><ref id="ref21"><mixed-citation publication-type="journal" id="cit21"><name><surname>Palm</surname><given-names>E.</given-names></name>; <name><surname>Kruve</surname><given-names>A.</given-names></name>
+<article-title>Machine Learning for
+Absolute Quantification of Unidentified Compounds
+in Non-Targeted LC/HRMS</article-title>. <source>Molecules</source>
+<year>2022</year>, <volume>27</volume> (<issue>3</issue>), <fpage>1013</fpage><pub-id pub-id-type="doi">10.3390/molecules27031013</pub-id>.<pub-id pub-id-type="pmid">35164283</pub-id>
+</mixed-citation></ref><ref id="ref22"><mixed-citation publication-type="journal" id="cit22"><name><surname>Sepman</surname><given-names>H.</given-names></name>; <name><surname>Malm</surname><given-names>L.</given-names></name>; <name><surname>Peets</surname><given-names>P.</given-names></name>; <name><surname>MacLeod</surname><given-names>M.</given-names></name>; <name><surname>Martin</surname><given-names>J.</given-names></name>; <name><surname>Breitholtz</surname><given-names>M.</given-names></name>; <name><surname>Kruve</surname><given-names>A.</given-names></name>
+<article-title>Bypassing the Identification: MS2Quant
+for Concentration Estimations of Chemicals Detected with Nontarget
+LC-HRMS from MS <sup>2</sup> Data</article-title>. <source>Anal. Chem.</source>
+<year>2023</year>, <volume>95</volume> (<issue>33</issue>), <fpage>12329</fpage>&#x02013;<lpage>12338</lpage>. <pub-id pub-id-type="doi">10.1021/acs.analchem.3c01744</pub-id>.<pub-id pub-id-type="pmid">37548594</pub-id>
+</mixed-citation></ref><ref id="ref23"><mixed-citation publication-type="journal" id="cit23"><name><surname>Mayhew</surname><given-names>A. W.</given-names></name>; <name><surname>Topping</surname><given-names>D. O.</given-names></name>; <name><surname>Hamilton</surname><given-names>J. F.</given-names></name>
+<article-title>New Approach Combining Molecular
+Fingerprints and Machine Learning to Estimate Relative Ionization
+Efficiency in Electrospray Ionization</article-title>. <source>ACS Omega</source>
+<year>2020</year>, <volume>5</volume> (<issue>16</issue>), <fpage>9510</fpage>&#x02013;<lpage>9516</lpage>. <pub-id pub-id-type="doi">10.1021/acsomega.0c00732</pub-id>.<pub-id pub-id-type="pmid">32363303</pub-id>
+</mixed-citation></ref><ref id="ref24"><mixed-citation publication-type="journal" id="cit24"><name><surname>Abrahamsson</surname><given-names>D.</given-names></name>; <name><surname>Park</surname><given-names>J.-S.</given-names></name>; <name><surname>Singh</surname><given-names>R. R.</given-names></name>; <name><surname>Sirota</surname><given-names>M.</given-names></name>; <name><surname>Woodruff</surname><given-names>T. J.</given-names></name>
+<article-title>Applications
+of Machine Learning to In Silico Quantification of Chemicals without
+Analytical Standards</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2020</year>, <volume>60</volume> (<issue>6</issue>), <fpage>2718</fpage>&#x02013;<lpage>2727</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.9b01096</pub-id>.<pub-id pub-id-type="pmid">32379974</pub-id>
+</mixed-citation></ref><ref id="ref25"><mixed-citation publication-type="journal" id="cit25"><name><surname>Liigand</surname><given-names>J.</given-names></name>; <name><surname>Wang</surname><given-names>T.</given-names></name>; <name><surname>Kellogg</surname><given-names>J.</given-names></name>; <name><surname>Smedsgaard</surname><given-names>J.</given-names></name>; <name><surname>Cech</surname><given-names>N.</given-names></name>; <name><surname>Kruve</surname><given-names>A.</given-names></name>
+<article-title>Quantification for
+Non-Targeted LC/MS
+Screening without Standard Substances</article-title>. <source>Sci.
+Rep.</source>
+<year>2020</year>, <volume>10</volume> (<issue>1</issue>), <fpage>5808</fpage><pub-id pub-id-type="doi">10.1038/s41598-020-62573-z</pub-id>.<pub-id pub-id-type="pmid">32242073</pub-id>
+</mixed-citation></ref><ref id="ref26"><mixed-citation publication-type="journal" id="cit26"><name><surname>Bieber</surname><given-names>S.</given-names></name>; <name><surname>Letzel</surname><given-names>T.</given-names></name>; <name><surname>Kruve</surname><given-names>A.</given-names></name>
+<article-title>Electrospray
+Ionization Efficiency
+Predictions and Analytical Standard Free Quantification for SFC/ESI/HRMS</article-title>. <source>J. Am. Soc. Mass Spectrom.</source>
+<year>2023</year>, <volume>34</volume> (<issue>7</issue>), <fpage>1511</fpage>&#x02013;<lpage>1518</lpage>. <pub-id pub-id-type="doi">10.1021/jasms.3c00156</pub-id>.<pub-id pub-id-type="pmid">37358930</pub-id>
+</mixed-citation></ref><ref id="ref27"><mixed-citation publication-type="journal" id="cit27"><name><surname>Medina</surname><given-names>J.</given-names></name>; <name><surname>Borreggine</surname><given-names>R.</given-names></name>; <name><surname>Teav</surname><given-names>T.</given-names></name>; <name><surname>Gao</surname><given-names>L.</given-names></name>; <name><surname>Ji</surname><given-names>S.</given-names></name>; <name><surname>Carrard</surname><given-names>J.</given-names></name>; <name><surname>Jones</surname><given-names>C.</given-names></name>; <name><surname>Blomberg</surname><given-names>N.</given-names></name>; <name><surname>Jech</surname><given-names>M.</given-names></name>; <name><surname>Atkins</surname><given-names>A.</given-names></name>; <name><surname>Martins</surname><given-names>C.</given-names></name>; <name><surname>Schmidt-Trucksass</surname><given-names>A.</given-names></name>; <name><surname>Giera</surname><given-names>M.</given-names></name>; <name><surname>Cazenave-Gassiot</surname><given-names>A.</given-names></name>; <name><surname>Gallart-Ayala</surname><given-names>H.</given-names></name>; <name><surname>Ivanisevic</surname><given-names>J.</given-names></name>
+<article-title>Omic-Scale High-Throughput Quantitative
+LC&#x02013;MS/MS
+Approach for Circulatory Lipid Phenotyping in Clinical Research</article-title>. <source>Anal. Chem.</source>
+<year>2023</year>, <volume>95</volume> (<issue>6</issue>), <fpage>3168</fpage>&#x02013;<lpage>3179</lpage>. <pub-id pub-id-type="doi">10.1021/acs.analchem.2c02598</pub-id>.<pub-id pub-id-type="pmid">36716250</pub-id>
+</mixed-citation></ref><ref id="ref28"><mixed-citation publication-type="journal" id="cit28"><name><surname>Hollas</surname><given-names>B.</given-names></name>
+<article-title>An Analysis
+of the Autocorrelation Descriptor for Molecules</article-title>. <source>J. Math. Chem.</source>
+<year>2003</year>, <volume>33</volume>, <fpage>91</fpage>&#x02013;<lpage>101</lpage>. <pub-id pub-id-type="doi">10.1023/A:1023247831238</pub-id>.</mixed-citation></ref></ref-list></back></article>

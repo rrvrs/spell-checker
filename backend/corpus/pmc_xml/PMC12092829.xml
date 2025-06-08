@@ -1,0 +1,972 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Sci Rep</journal-id><journal-id journal-id-type="iso-abbrev">Sci Rep</journal-id><journal-title-group><journal-title>Scientific Reports</journal-title></journal-title-group><issn pub-type="epub">2045-2322</issn><publisher><publisher-name>Nature Publishing Group UK</publisher-name><publisher-loc>London</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">40394179</article-id><article-id pub-id-type="pmc">PMC12092829</article-id>
+<article-id pub-id-type="publisher-id">1763</article-id><article-id pub-id-type="doi">10.1038/s41598-025-01763-z</article-id><article-categories><subj-group subj-group-type="heading"><subject>Article</subject></subj-group></article-categories><title-group><article-title>Automated cell structure extraction for 3D electron microscopy by deep learning</article-title></title-group><contrib-group><contrib contrib-type="author"><name><surname>Kousaka</surname><given-names>Jin</given-names></name><xref ref-type="aff" rid="Aff1">1</xref></contrib><contrib contrib-type="author"><name><surname>Iwane</surname><given-names>Atsuko H.</given-names></name><xref ref-type="aff" rid="Aff2">2</xref><xref ref-type="aff" rid="Aff3">3</xref><xref ref-type="aff" rid="Aff4">4</xref></contrib><contrib contrib-type="author" corresp="yes"><name><surname>Togashi</surname><given-names>Yuichi</given-names></name><address><email>togashi@fc.ritsumei.ac.jp</email></address><xref ref-type="aff" rid="Aff1">1</xref><xref ref-type="aff" rid="Aff2">2</xref><xref ref-type="aff" rid="Aff3">3</xref></contrib><aff id="Aff1"><label>1</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/0197nmd03</institution-id><institution-id institution-id-type="GRID">grid.262576.2</institution-id><institution-id institution-id-type="ISNI">0000 0000 8863 9909</institution-id><institution>Graduate School of Life Sciences, </institution><institution>Ritsumeikan University, </institution></institution-wrap>1-1-1 Noji-higashi, 525-8577 Kusatsu, Shiga Japan </aff><aff id="Aff2"><label>2</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/023rffy11</institution-id><institution-id institution-id-type="GRID">grid.508743.d</institution-id><institution>Laboratory for Cell Field Structure, </institution><institution>RIKEN Center for Biosystems Dynamics Research, </institution></institution-wrap>3-10-23 Kagamiyama, 739-0046 Higashi-Hiroshima, Hiroshima Japan </aff><aff id="Aff3"><label>3</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/023rffy11</institution-id><institution-id institution-id-type="GRID">grid.508743.d</institution-id><institution>Laboratory for Comprehensive Bioimaging, </institution><institution>RIKEN Center for Biosystems Dynamics Research, </institution></institution-wrap>2-2-3 Minatojima-minamimachi, 650-0047 Kobe, Hyogo Japan </aff><aff id="Aff4"><label>4</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/03cxys317</institution-id><institution-id institution-id-type="GRID">grid.268397.1</institution-id><institution-id institution-id-type="ISNI">0000 0001 0660 7960</institution-id><institution>Research Institute for Cell Design Medical Science, </institution><institution>Yamaguchi University, </institution></institution-wrap>1-1-1 Minami-Kogushi, 755-8505 Ube, Yamaguchi Japan </aff></contrib-group><pub-date pub-type="epub"><day>20</day><month>5</month><year>2025</year></pub-date><pub-date pub-type="pmc-release"><day>20</day><month>5</month><year>2025</year></pub-date><pub-date pub-type="collection"><year>2025</year></pub-date><volume>15</volume><elocation-id>17481</elocation-id><history><date date-type="received"><day>27</day><month>9</month><year>2024</year></date><date date-type="accepted"><day>8</day><month>5</month><year>2025</year></date></history><permissions><copyright-statement>&#x000a9; The Author(s) 2025</copyright-statement><copyright-year>2025</copyright-year><license><ali:license_ref specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p><bold>Open Access</bold> This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article&#x02019;s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article&#x02019;s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link>.</license-p></license></permissions><abstract id="Abs1"><p id="Par1">Modeling the 3D structures of cells and tissues is crucial in biology. Sequential cross-sectional images from electron microscopy provide high-resolution intracellular structure information. The segmentation of complex cell structures remains a laborious manual task for experts, demanding time and effort. This bottleneck in analyzing biological images requires efficient and automated solutions. In this study, the deep learning-based automated segmentation of biological images was explored to enable accurate reconstruction of the 3D structures of cells and organelles. An analysis system for the cell images of <italic>Cyanidioschyzon merolae</italic>, a primitive unicellular red algae, was constructed. This system utilizes sequential cross-sectional images captured by a focused ion beam scanning electron microscope (FIB-SEM). A U-Net was adopted and training was performed to identify and segment cell organelles from single-cell images. In addition, the segment anything model (SAM) and 3D watershed algorithm were employed to extract individual 3D images of each cell from large-scale microscope images containing numerous cells. Finally, the trained U-Net was applied to segment each structure within these 3D images. Through this procedure, the creation of 3D cell models could be fully automated. The adoption of other deep learning techniques and combinations of image processing methods will also be explored to enhance the segmentation accuracy further.</p></abstract><kwd-group xml:lang="en"><title>Keywords</title><kwd>Bioimage analysis</kwd><kwd>Segmentation</kwd><kwd>Organelle</kwd><kwd>Cell division</kwd><kwd>FIB-SEM</kwd></kwd-group><kwd-group kwd-group-type="npg-subject"><title>Subject terms</title><kwd>3-D reconstruction</kwd><kwd>Image processing</kwd><kwd>Machine learning</kwd><kwd>Cell division</kwd><kwd>Cellular imaging</kwd></kwd-group><funding-group><award-group><funding-source><institution>Japan Society for the Promotion of Science</institution></funding-source><award-id>JP26291028</award-id><award-id>JP21K03487</award-id></award-group></funding-group><custom-meta-group><custom-meta><meta-name>issue-copyright-statement</meta-name><meta-value>&#x000a9; Springer Nature Limited 2025</meta-value></custom-meta></custom-meta-group></article-meta></front><body><sec id="Sec1"><title>Introduction</title><p id="Par2">Advanced deep learning technology has significantly improved the accuracy and efficiency of general image recognition tasks. Furthermore, its application to biological tissue and medical imaging has attracted much attention. As a demonstration, we analyzed 3D cell images captured using a focused ion beam scanning electron microscope (FIB-SEM). FIB-SEMs are primarily used to measure physical properties and evaluate microstructures of solid samples<sup><xref ref-type="bibr" rid="CR1">1</xref></sup>. Recently, they have also been utilized to analyze 3D structures of cells and tissues. The surface of resin-embedded biological samples is repeatedly cut using a gallium ion beam and imaged by a scanning electron microscope. The serial block-face (SBF) image data, i.e., a sequence of cross-sectional images, is reconstructed as a 3D structure.</p><p id="Par3">However, this technology still requires improvement. The intricate boundaries separating structures within each slice, low contrast, and significant noise make analysis based on brightness challenging. Furthermore, as images taken with an electron microscope are single channel (grayscale), relying on electron beam reflections, the absence of color information further complicates the analysis. In addition, identifying specific cells within a space containing multiple cells and extracting their microstructures is difficult. Consequently, the segmentation of microstructure depends on subjective evaluation and manual techniques performed by experts, consuming a considerable amount of time. Image data analysis, which automates this process and is more efficient, objective, and quantitative, is expected to contribute to the analysis of various 3D biological images. The objective of this study was to automate this process fully, exploring the application of deep learning in the recognition tasks of cultured cell images.</p><p id="Par4">We chose <italic>Cyanidioschyzon merolae</italic> as a model for the automated reconstruction of 3D cell structures using an FIB-SEM<sup><xref ref-type="bibr" rid="CR2">2</xref>,<xref ref-type="bibr" rid="CR3">3</xref></sup>. <italic>C. merolae</italic> is a primitive unicellular eukaryote belonging to red algae, with a diameter of approximately 1.5&#x02013;2.0 <inline-formula id="IEq1"><alternatives><tex-math id="d33e246">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\mu$$\end{document}</tex-math><mml:math id="d33e251"><mml:mi>&#x003bc;</mml:mi></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq1.gif"/></alternatives></inline-formula>m<sup><xref ref-type="bibr" rid="CR4">4</xref></sup> (Figure <xref rid="Fig1" ref-type="fig">1</xref>). This organism has a simple structure with only one organelle of each type: nucleus, mitochondrion, plastid, and peroxisome<sup><xref ref-type="bibr" rid="CR5">5</xref></sup>. Each organelle is distributed equally to the two daughter cells<sup><xref ref-type="bibr" rid="CR6">6</xref>,<xref ref-type="bibr" rid="CR7">7</xref></sup> (Figure <xref rid="Fig2" ref-type="fig">2</xref>). The genome of <italic>C. merolae</italic> and the genomes of its mitochondrion and plastid have been completely sequenced<sup><xref ref-type="bibr" rid="CR8">8</xref>&#x02013;<xref ref-type="bibr" rid="CR11">11</xref></sup>. Moreover, it is relatively easy to synchronize the cell division cycles of multiple <italic>C. merolae</italic> cells in culture with the cycle of light<sup><xref ref-type="bibr" rid="CR12">12</xref></sup>. Due to these characteristics, <italic>C. merolae</italic> is regarded as a model organism for investigating the mechanisms of cell division. Cell division in <italic>C. merolae</italic> has been extensively studied using molecular and cell biological approaches. Recent advances in observation techniques have enabled the observation of dynamic changes in the behavior and target molecules of individual living cells<sup><xref ref-type="bibr" rid="CR13">13</xref></sup>. However, the physical mechanism of division control based on mechanical properties remains unclear.</p><p id="Par6">Therefore, this article proposes an automated method for accurately extracting cell and organelle structures during the division process of <italic>C. merolae</italic>. In previous studies, a technique for segmenting each structure from <italic>C. merolae</italic> FIB-SEM images using machine learning was proposed<sup><xref ref-type="bibr" rid="CR14">14</xref></sup>. However, this method segments structures from each cross-sectional image in the SBF image containing only one cell. Separating cells and backgrounds is still performed manually and is time-consuming. Additionally, the method disregards the sequential contours between cross-section images and has problems in the segmentation of structures at the cell edge. This article proposes a technique to resolve such shortcomings. This method, which enables the automated and rapid acquisition of 3D structures of multiple <italic>C. merolae</italic> cells, will facilitate the investigation of the mechanical characteristics related to cell division in the future.</p></sec><sec id="Sec2"><title>Materials and methods</title><sec id="Sec3"><title>Image acquisition and preprocessing</title><sec id="Sec4"><title>Image data acquisition using FIB-SEM</title><p id="Par7">The images of samples containing multiple <italic>C. merolae</italic> cells, physically fixed by high-pressure freezing, were obtained by an FIB-SEM. The aspect ratios of the obtained sequential sectional images were corrected, and the noise was removed using a median filter using Amira software version 2020.2 (Thermo Fisher Scientific Inc.; https://www.thermofisher.com/us/en/home/electron-microscopy/products/software-em-3d-vis/amira-software.html). Experts performed cropping to construct learning data images, to create SBF images each containing one cell with side lengths of approximately 200&#x02013;500 pixels, as depicted in Figure <xref rid="Fig1" ref-type="fig">1</xref> (a). The experts manually segmented each sequential cross-sectional image constituting the SBF image to label the plastid, mitochondrion, peroxisome, nuclei, cytoplasm, and background<sup><xref ref-type="bibr" rid="CR14">14</xref></sup>. In other words, all voxels constituting the SBF images were labeled into six classes.<fig id="Fig1"><label>Fig. 1</label><caption><p>Procedure to reconstruct a 3D model of a cell from sequential cross-sectional images. (<bold>a</bold>) SBF image that centrally includes the cell of interest, cropped from FIB-SEM images. (<bold>b</bold>) By reconstructing the data and removing the background, a 3D model of the cell is produced. (<bold>c</bold>) Three-dimensional organelle model visualized by further removing the cytoplasm, indicating cytoplasm (white), plastid (green), mitochondrion (yellow), peroxisome (orange), and nucleus (gray). (<bold>d</bold>) This SBF consists of sequential cross-sectional images, as depicted in the top row. Various organelles, the cytoplasm, and the background in these images were manually identified by experts, as shown in the bottom row. In this panel, images at six different depths (in the direction perpendicular to the images) are presented. Fiji/ImageJ 2 was used for the visualization.</p></caption><graphic xlink:href="41598_2025_1763_Fig1_HTML" id="MO1"/></fig></p><p id="Par8">The cell cycle of <italic>C. merolae</italic> is classified into five stages<sup><xref ref-type="bibr" rid="CR12">12</xref></sup>, shown in Figure <xref rid="Fig2" ref-type="fig">2</xref>. The G1-S phase of the cell cycle is referred to as Stage 1, followed by the G2 phase to the M phase (pre-phase) as Stage 2, the M phase (pre-phase) to the M phase (post-phase) as Stage 3, the M phase (post-phase) as Stage 4, and the M phase (termination phase) as Stage 5. Multiple SBF images were labeled for each stage. The labeled SBF images totaled 68 and were classified into one of these stages by experts.<fig id="Fig2"><label>Fig. 2</label><caption><p>Structural changes associated with the cell cycle of <italic>C. merolae</italic>. Each structure includes the cytoplasm (white), plastid (green), mitochondrion (yellow), peroxisome (orange), and nucleus (gray). Each type of organelle is equally distributed to the daughter cells during division<sup><xref ref-type="bibr" rid="CR6">6</xref>,<xref ref-type="bibr" rid="CR7">7</xref></sup>. The division of organelle structures occurs at nearly consistent timings regardless of the individual, although the timing varies depending on the type of organelle<sup><xref ref-type="bibr" rid="CR13">13</xref></sup>. Visualized by Fiji/ImageJ 2.</p></caption><graphic xlink:href="41598_2025_1763_Fig2_HTML" id="MO2"/></fig></p></sec><sec id="Sec5"><title>Image data preprocessing</title><p id="Par9">The images obtained by FIB-SEM and the labeled dataset created by experts were preprocessed for deep learning analysis; due to a difference in resolution between the horizontal and vertical directions when capturing images with the FIB-SEM, the voxels in the SBF images were shaped as rectangular parallelepipeds rather than cubes. The SBF images were resized using nearest-neighbor interpolation to restore the aspect ratios of the voxels to their actual size ratios, facilitating 3D data analysis. A bilateral filter technique was employed to process the images and remove noise that Amira software could not eliminate<sup><xref ref-type="bibr" rid="CR15">15</xref></sup>. Each sectional image was resized to create cubic voxels, each side measuring 256 pixels, to ensure a consistent input image size for the deep learning model. For effective deep learning, the brightness values of the electron microscope images were normalized to a range of 0&#x02013;1 (by dividing 8-bit values by 255). After these preprocessing steps, the dataset was split into different sets for cross-validation, resulting in six cases. In each case, an SBF image was selected as validation data to train the deep learning model, each corresponding to a different stage of cell division. The remaining SBF images were used as training data for the deep-learning model. In addition to the conventional cross-sectional images obtained from the top surface by FIB shaving, the SBF training image dataset was augmented by creating new cross-sectional images from both lateral and anterior views. Details on the number of cells used and the number of cross-sectional images for each dataset in each cross-validation case are presented in Table <xref rid="Tab1" ref-type="table">1</xref>. Fiji/ImageJ version 2 (https://fiji.sc/)<sup><xref ref-type="bibr" rid="CR16">16</xref></sup> was used for the 3D modeling and visualization.<table-wrap id="Tab1"><label>Table 1</label><caption><p>Dataset used for cross-validation of training. &#x0201c;Case Number&#x0201d; refers to the consecutive number for each case of cross-validation. The number of cells used for training data in each cell cycle is denoted as &#x0201c;Cells&#x0201d;, and the number of cross-sectional images used for training is indicated as &#x0201c;LI&#x0201d;. &#x0201c;VI&#x0201d; represents the number of cross-sectional images used for the validation data.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left" rowspan="3">Case Number</th><th align="left" colspan="18">Cell Cycle Stage</th></tr><tr><th align="left" colspan="3">Stage1</th><th align="left" colspan="3">Stage2</th><th align="left" colspan="3">Stage3</th><th align="left" colspan="3">Stage4</th><th align="left" colspan="3">Stage5</th><th align="left" colspan="3">Total</th></tr><tr><th align="left">Cells</th><th align="left">LI</th><th align="left">VI</th><th align="left">Cells</th><th align="left">LI</th><th align="left">VI</th><th align="left">Cells</th><th align="left">LI</th><th align="left">VI</th><th align="left">Cells</th><th align="left">LI</th><th align="left">VI</th><th align="left">Cells</th><th align="left">LI</th><th align="left">VI</th><th align="left">Cells</th><th align="left">LI</th><th align="left">VI</th></tr></thead><tbody><tr><td align="left">1</td><td align="left">24</td><td align="left">16,568</td><td align="left">482</td><td align="left">12</td><td align="left">15,701</td><td align="left">588</td><td align="left">11</td><td align="left">13,852</td><td align="left">426</td><td align="left">11</td><td align="left">15,098</td><td align="left">550</td><td align="left">5</td><td align="left">7,695</td><td align="left">424</td><td align="left">63</td><td align="left">68,914</td><td align="left">2,470</td></tr><tr><td align="left">2</td><td align="left">24</td><td align="left">16,660</td><td align="left">470</td><td align="left">12</td><td align="left">15,520</td><td align="left">342</td><td align="left">11</td><td align="left">13,854</td><td align="left">432</td><td align="left">11</td><td align="left">14,974</td><td align="left">580</td><td align="left">5</td><td align="left">7,327</td><td align="left">672</td><td align="left">63</td><td align="left">68,335</td><td align="left">2,496</td></tr><tr><td align="left">3</td><td align="left">24</td><td align="left">16,533</td><td align="left">464</td><td align="left">12</td><td align="left">15,233</td><td align="left">514</td><td align="left">11</td><td align="left">13,798</td><td align="left">470</td><td align="left">11</td><td align="left">15,373</td><td align="left">416</td><td align="left">5</td><td align="left">7,218</td><td align="left">800</td><td align="left">63</td><td align="left">68,155</td><td align="left">2,664</td></tr><tr><td align="left">4</td><td align="left">24</td><td align="left">16,696</td><td align="left">404</td><td align="left">12</td><td align="left">15,245</td><td align="left">420</td><td align="left">11</td><td align="left">13,881</td><td align="left">362</td><td align="left">11</td><td align="left">15,537</td><td align="left">384</td><td align="left">5</td><td align="left">7,725</td><td align="left">370</td><td align="left">63</td><td align="left">69,084</td><td align="left">1,940</td></tr><tr><td align="left">5</td><td align="left">24</td><td align="left">16,723</td><td align="left">340</td><td align="left">12</td><td align="left">15,185</td><td align="left">478</td><td align="left">11</td><td align="left">13,805</td><td align="left">388</td><td align="left">11</td><td align="left">15,452</td><td align="left">440</td><td align="left">5</td><td align="left">7,748</td><td align="left">348</td><td align="left">63</td><td align="left">68,913</td><td align="left">1,994</td></tr><tr><td align="left">6</td><td align="left">24</td><td align="left">16,706</td><td align="left">460</td><td align="left">12</td><td align="left">15,466</td><td align="left">376</td><td align="left">11</td><td align="left">13,927</td><td align="left">340</td><td align="left">11</td><td align="left">15,420</td><td align="left">418</td><td align="left">5</td><td align="left">7,492</td><td align="left">374</td><td align="left">63</td><td align="left">69,011</td><td align="left">1,968</td></tr></tbody></table></table-wrap></p></sec></sec><sec id="Sec6"><title>Automated segmentation of single cells using deep learning</title><sec id="Sec7"><title>Deep neural network architecture</title><p id="Par10">We developed a scanning 3D U-Net neural network model, as illustrated in Figure <xref rid="Fig3" ref-type="fig">3</xref> (parameters are shown in Table <xref rid="Tab2" ref-type="table">2</xref>)<sup><xref ref-type="bibr" rid="CR17">17</xref>&#x02013;<xref ref-type="bibr" rid="CR19">19</xref></sup>. Initially created for image segmentation tasks, U-Net is now extensively employed in various fields, including medical imaging<sup><xref ref-type="bibr" rid="CR20">20</xref></sup>. The first half of the neural network consists entirely of convolutional layers. On the opposite side, deconvolutional layers gradually restore the image size to the original input. The convolutional and deconvolutional layers are connected by skip connections, designed to prevent information loss due to the encoding of the convolutional layers. In this study, we implemented four stages of convolution and deconvolution, with each deconvolution layer in our model enhanced with an attention gate mechanism<sup><xref ref-type="bibr" rid="CR21">21</xref></sup>. The ReLU function was used as the activation function at each layer, and batch normalization was performed at all layers to prevent overfitting<sup><xref ref-type="bibr" rid="CR17">17</xref>,<xref ref-type="bibr" rid="CR18">18</xref></sup>. The U-Net model in this study had approximately 130 million parameters. We performed a six-class segmentation task. The input data shape was defined as a tensor of [batch size, number of channels, vertical pixel count of the SBF image, and horizontal pixel count of the SBF image]. The label data and U-Net output values were fed into the TverskyLoss function for loss score calculation<sup><xref ref-type="bibr" rid="CR22">22</xref></sup>. The AdamW learning function was used, with the learning rate starting from a base rate of 0.00001 and decaying by a factor of 0.95 each epoch<sup><xref ref-type="bibr" rid="CR23">23</xref></sup>. The number of epochs was set to 5. All networks were built on a GPU (NVIDIA GeForce RTX 4090 with 24 GB memory), and the framework was implemented using Python and TensorFlow. To accelerate learning, the tensor cores of the GPU were automatically utilized.<fig id="Fig3"><label>Fig. 3</label><caption><p>The architecture of U-Net (W and H are output width and height, respectively).</p></caption><graphic xlink:href="41598_2025_1763_Fig3_HTML" id="MO3"/></fig><table-wrap id="Tab2"><label>Table 2</label><caption><p>Scanning 3D U-Net architecture (K, O, I, D, W, and H are the kernel size, output channel, input channel, output depth, output width, and output height, respectively).</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Network Path</th><th align="left">Layer</th><th align="left">Size of K<inline-formula id="IEq2"><alternatives><tex-math id="d33e803">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$_W$$\end{document}</tex-math><mml:math id="d33e808"><mml:mmultiscripts><mml:mrow/><mml:mi>W</mml:mi><mml:mrow/></mml:mmultiscripts></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq2.gif"/></alternatives></inline-formula><inline-formula id="IEq3"><alternatives><tex-math id="d33e814">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e819"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>K<inline-formula id="IEq4"><alternatives><tex-math id="d33e823">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$_H$$\end{document}</tex-math><mml:math id="d33e828"><mml:mmultiscripts><mml:mrow/><mml:mi>H</mml:mi><mml:mrow/></mml:mmultiscripts></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq4.gif"/></alternatives></inline-formula><inline-formula id="IEq5"><alternatives><tex-math id="d33e834">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e839"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>O<inline-formula id="IEq6"><alternatives><tex-math id="d33e843">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e848"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>I</th><th align="left">Output Size (O<inline-formula id="IEq7"><alternatives><tex-math id="d33e855">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e860"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>W<inline-formula id="IEq8"><alternatives><tex-math id="d33e864">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e869"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>H)</th><th align="left">Attention</th><th align="left">Batch Normalization</th><th align="left">Activation</th></tr></thead><tbody><tr><td align="left" rowspan="10">Encoder</td><td align="left">conv1</td><td align="left">3<inline-formula id="IEq9"><alternatives><tex-math id="d33e888">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e893"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>3<inline-formula id="IEq10"><alternatives><tex-math id="d33e897">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e902"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>64<inline-formula id="IEq11"><alternatives><tex-math id="d33e906">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e911"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>1</td><td align="left">64<inline-formula id="IEq12"><alternatives><tex-math id="d33e918">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e923"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>256<inline-formula id="IEq13"><alternatives><tex-math id="d33e927">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e932"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>256</td><td align="left">False</td><td align="left">True</td><td align="left">ReLU</td></tr><tr><td align="left">conv2</td><td align="left">3<inline-formula id="IEq14"><alternatives><tex-math id="d33e948">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e953"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>3<inline-formula id="IEq15"><alternatives><tex-math id="d33e957">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e962"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>64<inline-formula id="IEq16"><alternatives><tex-math id="d33e966">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e971"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>64</td><td align="left">64<inline-formula id="IEq17"><alternatives><tex-math id="d33e978">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e983"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>256<inline-formula id="IEq18"><alternatives><tex-math id="d33e987">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e992"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>256</td><td align="left">False</td><td align="left">True</td><td align="left">ReLU</td></tr><tr><td align="left">conv3</td><td align="left">3<inline-formula id="IEq19"><alternatives><tex-math id="d33e1008">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1013"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>3<inline-formula id="IEq20"><alternatives><tex-math id="d33e1017">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1022"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>128<inline-formula id="IEq21"><alternatives><tex-math id="d33e1026">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1031"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>64</td><td align="left">128<inline-formula id="IEq22"><alternatives><tex-math id="d33e1038">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1043"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>128<inline-formula id="IEq23"><alternatives><tex-math id="d33e1047">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1052"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>128</td><td align="left">False</td><td align="left">True</td><td align="left">ReLU</td></tr><tr><td align="left">conv4</td><td align="left">3<inline-formula id="IEq24"><alternatives><tex-math id="d33e1068">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1073"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>3<inline-formula id="IEq25"><alternatives><tex-math id="d33e1077">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1082"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>128<inline-formula id="IEq26"><alternatives><tex-math id="d33e1086">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1091"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>128</td><td align="left">128<inline-formula id="IEq27"><alternatives><tex-math id="d33e1098">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1103"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>128<inline-formula id="IEq28"><alternatives><tex-math id="d33e1107">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1112"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>128</td><td align="left">False</td><td align="left">True</td><td align="left">ReLU</td></tr><tr><td align="left">conv5</td><td align="left">3<inline-formula id="IEq29"><alternatives><tex-math id="d33e1128">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1133"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>3<inline-formula id="IEq30"><alternatives><tex-math id="d33e1137">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1142"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>256<inline-formula id="IEq31"><alternatives><tex-math id="d33e1146">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1151"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>128</td><td align="left">256<inline-formula id="IEq32"><alternatives><tex-math id="d33e1158">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1163"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>64<inline-formula id="IEq33"><alternatives><tex-math id="d33e1167">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1172"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>64</td><td align="left">False</td><td align="left">True</td><td align="left">ReLU</td></tr><tr><td align="left">conv6</td><td align="left">3<inline-formula id="IEq34"><alternatives><tex-math id="d33e1188">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1193"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>3<inline-formula id="IEq35"><alternatives><tex-math id="d33e1197">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1202"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>256<inline-formula id="IEq36"><alternatives><tex-math id="d33e1206">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1211"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>256</td><td align="left">256<inline-formula id="IEq37"><alternatives><tex-math id="d33e1218">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1223"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>64<inline-formula id="IEq38"><alternatives><tex-math id="d33e1227">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1232"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>64</td><td align="left">False</td><td align="left">True</td><td align="left">ReLU</td></tr><tr><td align="left">conv7</td><td align="left">3<inline-formula id="IEq39"><alternatives><tex-math id="d33e1248">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1253"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>3<inline-formula id="IEq40"><alternatives><tex-math id="d33e1257">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1262"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>512<inline-formula id="IEq41"><alternatives><tex-math id="d33e1266">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1271"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>256</td><td align="left">512<inline-formula id="IEq42"><alternatives><tex-math id="d33e1278">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1283"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>32<inline-formula id="IEq43"><alternatives><tex-math id="d33e1287">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1292"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>32</td><td align="left">False</td><td align="left">True</td><td align="left">ReLU</td></tr><tr><td align="left">conv8</td><td align="left">3<inline-formula id="IEq44"><alternatives><tex-math id="d33e1308">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1313"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>3<inline-formula id="IEq45"><alternatives><tex-math id="d33e1317">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1322"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>512<inline-formula id="IEq46"><alternatives><tex-math id="d33e1326">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1331"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>512</td><td align="left">512<inline-formula id="IEq47"><alternatives><tex-math id="d33e1338">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1343"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>32<inline-formula id="IEq48"><alternatives><tex-math id="d33e1347">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1352"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>32</td><td align="left">False</td><td align="left">True</td><td align="left">ReLU</td></tr><tr><td align="left">conv9</td><td align="left">3<inline-formula id="IEq49"><alternatives><tex-math id="d33e1368">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1373"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>3<inline-formula id="IEq50"><alternatives><tex-math id="d33e1377">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1382"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>1024<inline-formula id="IEq51"><alternatives><tex-math id="d33e1386">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1391"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>512</td><td align="left">1024<inline-formula id="IEq52"><alternatives><tex-math id="d33e1398">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1403"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>16<inline-formula id="IEq53"><alternatives><tex-math id="d33e1407">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1412"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>16</td><td align="left">False</td><td align="left">True</td><td align="left">ReLU</td></tr><tr><td align="left">conv10</td><td align="left">3<inline-formula id="IEq54"><alternatives><tex-math id="d33e1428">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1433"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>3<inline-formula id="IEq55"><alternatives><tex-math id="d33e1437">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1442"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>1024<inline-formula id="IEq56"><alternatives><tex-math id="d33e1446">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1451"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>1024</td><td align="left">1024<inline-formula id="IEq57"><alternatives><tex-math id="d33e1458">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1463"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>16<inline-formula id="IEq58"><alternatives><tex-math id="d33e1467">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1472"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>16</td><td align="left">False</td><td align="left">True</td><td align="left">ReLU</td></tr><tr><td align="left" rowspan="9">Decoder</td><td align="left">deconv1</td><td align="left">3<inline-formula id="IEq59"><alternatives><tex-math id="d33e1490">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1495"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>3<inline-formula id="IEq60"><alternatives><tex-math id="d33e1499">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1504"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>512<inline-formula id="IEq61"><alternatives><tex-math id="d33e1508">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1513"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>1024</td><td align="left">512<inline-formula id="IEq62"><alternatives><tex-math id="d33e1520">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1525"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>32<inline-formula id="IEq63"><alternatives><tex-math id="d33e1529">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1534"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>32</td><td align="left">True</td><td align="left">True</td><td align="left">ReLU</td></tr><tr><td align="left">deconv2</td><td align="left">3<inline-formula id="IEq64"><alternatives><tex-math id="d33e1551">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1556"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>3<inline-formula id="IEq65"><alternatives><tex-math id="d33e1560">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1565"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>512<inline-formula id="IEq66"><alternatives><tex-math id="d33e1569">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1574"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>512</td><td align="left">512<inline-formula id="IEq67"><alternatives><tex-math id="d33e1581">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1586"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>32<inline-formula id="IEq68"><alternatives><tex-math id="d33e1590">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1595"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>32</td><td align="left">True</td><td align="left">True</td><td align="left">ReLU</td></tr><tr><td align="left">deconv3</td><td align="left">3<inline-formula id="IEq69"><alternatives><tex-math id="d33e1611">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1616"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>3<inline-formula id="IEq70"><alternatives><tex-math id="d33e1620">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1625"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>256<inline-formula id="IEq71"><alternatives><tex-math id="d33e1629">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1634"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>512</td><td align="left">256<inline-formula id="IEq72"><alternatives><tex-math id="d33e1641">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1646"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>64<inline-formula id="IEq73"><alternatives><tex-math id="d33e1650">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1655"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>64</td><td align="left">True</td><td align="left">True</td><td align="left">ReLU</td></tr><tr><td align="left">deconv4</td><td align="left">3<inline-formula id="IEq74"><alternatives><tex-math id="d33e1671">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1676"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>3<inline-formula id="IEq75"><alternatives><tex-math id="d33e1680">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1685"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>256<inline-formula id="IEq76"><alternatives><tex-math id="d33e1689">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1694"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>256</td><td align="left">256<inline-formula id="IEq77"><alternatives><tex-math id="d33e1701">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1706"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>64<inline-formula id="IEq78"><alternatives><tex-math id="d33e1710">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1715"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>64</td><td align="left">True</td><td align="left">True</td><td align="left">ReLU</td></tr><tr><td align="left">deconv5</td><td align="left">3<inline-formula id="IEq79"><alternatives><tex-math id="d33e1731">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1736"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>3<inline-formula id="IEq80"><alternatives><tex-math id="d33e1740">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1745"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>128<inline-formula id="IEq81"><alternatives><tex-math id="d33e1749">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1754"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>256</td><td align="left">128<inline-formula id="IEq82"><alternatives><tex-math id="d33e1761">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1766"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>128<inline-formula id="IEq83"><alternatives><tex-math id="d33e1770">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1775"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>128</td><td align="left">True</td><td align="left">True</td><td align="left">ReLU</td></tr><tr><td align="left">deconv6</td><td align="left">3<inline-formula id="IEq84"><alternatives><tex-math id="d33e1791">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1796"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>3<inline-formula id="IEq85"><alternatives><tex-math id="d33e1800">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1805"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>128<inline-formula id="IEq86"><alternatives><tex-math id="d33e1809">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1814"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>128</td><td align="left">128<inline-formula id="IEq87"><alternatives><tex-math id="d33e1821">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1826"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>128<inline-formula id="IEq88"><alternatives><tex-math id="d33e1830">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1835"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>128</td><td align="left">True</td><td align="left">True</td><td align="left">ReLU</td></tr><tr><td align="left">deconv7</td><td align="left">3<inline-formula id="IEq89"><alternatives><tex-math id="d33e1851">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1856"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>3<inline-formula id="IEq90"><alternatives><tex-math id="d33e1860">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1865"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>64<inline-formula id="IEq91"><alternatives><tex-math id="d33e1869">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1874"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>128</td><td align="left">64<inline-formula id="IEq92"><alternatives><tex-math id="d33e1881">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1886"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>256<inline-formula id="IEq93"><alternatives><tex-math id="d33e1890">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1895"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>256</td><td align="left">True</td><td align="left">True</td><td align="left">ReLU</td></tr><tr><td align="left">deconv8</td><td align="left">3<inline-formula id="IEq94"><alternatives><tex-math id="d33e1911">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1916"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>3<inline-formula id="IEq95"><alternatives><tex-math id="d33e1920">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1925"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>64<inline-formula id="IEq96"><alternatives><tex-math id="d33e1929">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1934"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>64</td><td align="left">64<inline-formula id="IEq97"><alternatives><tex-math id="d33e1941">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1946"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>256<inline-formula id="IEq98"><alternatives><tex-math id="d33e1950">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1955"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>256</td><td align="left">True</td><td align="left">True</td><td align="left">ReLU</td></tr><tr><td align="left">conv</td><td align="left">1<inline-formula id="IEq99"><alternatives><tex-math id="d33e1971">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1976"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>1<inline-formula id="IEq100"><alternatives><tex-math id="d33e1980">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1985"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>6<inline-formula id="IEq101"><alternatives><tex-math id="d33e1989">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e1994"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>64</td><td align="left">6<inline-formula id="IEq102"><alternatives><tex-math id="d33e2001">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e2006"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>256<inline-formula id="IEq103"><alternatives><tex-math id="d33e2010">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="d33e2015"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2025_1763_Article_IEq3.gif"/></alternatives></inline-formula>256</td><td align="left">True</td><td align="left">False</td><td align="left">SoftMax</td></tr></tbody></table></table-wrap></p></sec><sec id="Sec8"><title>Segmentation accuracy</title><p id="Par11">During the training phase, we evaluated the accuracy of the learning model through cross-validation. Our cross-validation process included six distinct cases (Table <xref rid="Tab1" ref-type="table">1</xref>); for each case, a dataset of 63 SBF images was used for training, and a separate set of 5 SBF images (one for each stage in the cell cycle) was employed for validation. The SBF images for validation did not overlap between cases. Each validation set included one cell from each of the five stages of the cell division cycle. We segmented the sequential cross-sectional images into six classes using the U-Net for each case. The output of the U-Net approached 1 if the segmentation results indicated a specific class and approached 0 otherwise. Finally, we compared these inference results with the label data and evaluated the model using the intersection over union (IoU) as expressed:<disp-formula id="Equ1"><label>1</label><alternatives><tex-math id="d33e2032">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} IoU = \frac{\text {Area of overlap}}{\text {Area of union}}. \end{aligned}$$\end{document}</tex-math><mml:math id="d33e2038" display="block"><mml:mrow><mml:mtable><mml:mtr><mml:mtd columnalign="right"><mml:mrow><mml:mi>I</mml:mi><mml:mi>o</mml:mi><mml:mi>U</mml:mi><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:mtext>Area of overlap</mml:mtext></mml:mrow><mml:mrow><mml:mtext>Area of union</mml:mtext></mml:mrow></mml:mfrac><mml:mo>.</mml:mo></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:math><graphic xlink:href="41598_2025_1763_Article_Equ1.gif" position="anchor"/></alternatives></disp-formula>The area of overlap is the intersection of the predicted and ground truth areas, and the area of union refers to the union of the predicted and ground truth sets.</p></sec></sec><sec id="Sec9"><title>Automated extraction of individual cells from large-scale images</title><p id="Par12">In this study, we first implemented U-Net-based automated segmentation of organelles using single-cell SBF images that were manually annotated by experts. However, because a model trained solely on single-cell data may have challenges accurately delineating boundaries in large-scale images containing multiple cells, a complementary approach for extracting individual cells from such images is required.</p><sec id="Sec10"><title>Segment anything model</title><p id="Par13">To generate SBFs automatically, we initially utilized the segment anything model (SAM) to distinguish cells and backgrounds automatically. Developed by Meta, the SAM enables easy segmentation of cells and backgrounds from large-scale microscopic images containing multiple cells<sup><xref ref-type="bibr" rid="CR24">24</xref></sup> (Although SAM2 has recently been announced, this study utilizes SAM, as that was the version available at the time of the research). SAM was trained on over 110 million images using over one billion masks and possesses zero-shot capabilities, enabling it to extract structures from unknown classes. We employed SAM to extract cells from the background in microscopic images containing multiple cells. Although SAM demonstrates high accuracy in cases with clear cell contours, it is less effective in instances in which cell contours are less defined, as shown in Figure 6. This situation presents challenges in extracting cellular organelles from SBFs with indistinct cell outlines. Therefore, although SAM works well for separating cells from backgrounds, a U-Net model trained to recognize cell organelles from SBF images is needed to overcome its limitations in more complex images.</p></sec><sec id="Sec11"><title>Three-dimensional watershed algorithm</title><p id="Par14">The next challenge was automating individual cell identification after completing the classification between cells and backgrounds using SAM segmentation. For this task, we employed the 3D watershed method. The watershed algorithm segments image regions based on brightness values<sup><xref ref-type="bibr" rid="CR25">25</xref></sup>. This algorithm simulates water flowing from mountains to valleys, dividing the image into different areas. The 3D watershed algorithm extends this concept to three dimensions, enabling the segmentation of the image space by structural region. This method enables the identification of structures on a per-cell basis. Typically, images are binarized into black and white before implementing this method, clearly distinguishing between areas of high and low brightness values. A specific brightness threshold is needed for this binarization.</p><p id="Par15">Applying the watershed method directly to noisy images can be challenging, especially when noise obscures the contours of structures, hindering effective segmentation. To address this issue, we initially performed SAM segmentation for large-scale microscopic images containing multiple cells. This preliminary step facilitated image binarization by distinguishing between cells and background. Although SAM operates on 2D images and cannot fully determine the continuity between structures in consecutive images, it significantly aids initial segmentation. Following SAM analysis, we applied the 3D watershed algorithm for further segmentation, making SAM a supportive tool in the 3D watershed process.</p></sec></sec></sec><sec id="Sec12"><title>Results</title><sec id="Sec13"><title>Performance of U-Net segmentation on SBF images</title><p id="Par16">Table <xref rid="Tab3" ref-type="table">3</xref> presents the IoU score for each case based on the inference results of the U-Net. The table organizes six training classes by row and five cell division stages by column. These results indicate that the average accuracy of background identification is approximately 0.99, suggesting that cells and backgrounds can be identified with very high accuracy, as illustrated in Figure <xref rid="Fig4" ref-type="fig">4</xref>. Additionally, the accuracy of plastid inference remains high throughout all stages of cell division. In contrast, the mitochondrion and nuclei are smaller in volume than the plastid, making them more difficult to identify accurately, with an average accuracy of about 0.70. The average accuracy for peroxisomes is notably lower, approximately 0.45.<table-wrap id="Tab3"><label>Table 3</label><caption><p>Inference accuracy of the trained model. Evaluation of the inference results of the model for each cellular organelle, in each case of cross-validation and for each stage of the cell cycle, based on the IoU score (<xref rid="Equ1" ref-type="disp-formula">1</xref>).</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left" rowspan="2">Stage</th><th align="left" colspan="2">1</th><th align="left" colspan="2">2</th><th align="left" colspan="2">3</th><th align="left" colspan="2">4</th><th align="left" colspan="2">5</th></tr><tr><th align="left">1 direction</th><th align="left">3 directions</th><th align="left">1 direction</th><th align="left">3 directions</th><th align="left">1 direction</th><th align="left">3 directions</th><th align="left">1 direction</th><th align="left">3 directions</th><th align="left">1 direction</th><th align="left">3 directions</th></tr></thead><tbody><tr><td align="left">Cytoplasm</td><td align="left">0.869</td><td align="left">0.882</td><td align="left">0.790</td><td align="left">0.830</td><td align="left">0.783</td><td align="left">0.806</td><td align="left">0.786</td><td align="left">0.796</td><td align="left">0.778</td><td align="left">0.804</td></tr><tr><td align="left">Plastid</td><td align="left">0.954</td><td align="left">0.958</td><td align="left">0.899</td><td align="left">0.928</td><td align="left">0.924</td><td align="left">0.945</td><td align="left">0.937</td><td align="left">0.941</td><td align="left">0.918</td><td align="left">0.944</td></tr><tr><td align="left">Mitochondrion</td><td align="left">0.825</td><td align="left">0.857</td><td align="left">0.581</td><td align="left">0.703</td><td align="left">0.712</td><td align="left">0.804</td><td align="left">0.759</td><td align="left">0.754</td><td align="left">0.625</td><td align="left">0.711</td></tr><tr><td align="left">Peroxisome</td><td align="left">0.548</td><td align="left">0.535</td><td align="left">0.516</td><td align="left">0.596</td><td align="left">0.483</td><td align="left">0.601</td><td align="left">0.509</td><td align="left">0.546</td><td align="left">0.148</td><td align="left">0.135</td></tr><tr><td align="left">Nucleus</td><td align="left">0.852</td><td align="left">0.883</td><td align="left">0.734</td><td align="left">0.801</td><td align="left">0.705</td><td align="left">0.697</td><td align="left">0.701</td><td align="left">0.696</td><td align="left">0.597</td><td align="left">0.630</td></tr><tr><td align="left">Background</td><td align="left">0.996</td><td align="left">0.996</td><td align="left">0.996</td><td align="left">0.996</td><td align="left">0.996</td><td align="left">0.996</td><td align="left">0.997</td><td align="left">0.997</td><td align="left">0.998</td><td align="left">0.998</td></tr></tbody></table></table-wrap></p><p id="Par17">Plastids are relatively easily identifiable due to their size, unique structure, and distinct brightness values. In contrast, mitochondria and nuclei have brightness values similar to those of the background and starch, making them more challenging to identify. Additionally, peroxisomes are assumed to be difficult for deep learning models to learn due to their irregular shapes that vary from cell to cell and brightness values that are similar to those of the background and starch<sup><xref ref-type="bibr" rid="CR26">26</xref>,<xref ref-type="bibr" rid="CR27">27</xref></sup>.<fig id="Fig4"><label>Fig. 4</label><caption><p>Examples of inference results for the validation dataset using a model obtained through the training. Each structure includes the cytoplasm (white), plastid (green), mitochondrion (yellow), peroxisome (orange), and nucleus (gray). The output images of the plastid and cytoplasm closely match the ground truth.</p></caption><graphic xlink:href="41598_2025_1763_Fig4_HTML" id="MO4"/></fig></p><p id="Par18">Furthermore, the inference accuracy for all classes tends to decrease gradually as the cell division stage progresses. As cell division progresses, especially just before the division of cytoplasm, a single SBF image may practically encompass two cells, increasing the complexity of cell structures within SBF images and potentially decreasing the inference accuracy as cell division advances. The U-Net includes skip connections bridging the encoder and decoder, and hence, unlike simple fully convolutional networks, learns by referencing not only local brightness values and contour distributions but also the positional information of structures. Consequently, it was expected that the U-Net has (relative) difficulty in learning spatial structures that appear infrequently in the training data, such as the SBF images containing almost separated two daughter cells in the late stage of cell division or small-volume structures like peroxisomes. The robustness of U-Net to data at varying scales has indeed been a general concern, and some improvements have been suggested, which include modifications to the skip connections<sup><xref ref-type="bibr" rid="CR28">28</xref>,<xref ref-type="bibr" rid="CR29">29</xref></sup>. In cases like the present one, where cross-sectional images of cells and organelles are learned as a single dataset, the sizes and shapes of the structures depicted in the images differ greatly between the pre-division and post-division states. Moreover, the training data predominantly consists of cell images in the early stages (pre-division of organelles), which makes it even more challenging to segment the structures in the late stages (post-division) and should be considered at the point of training data acquisition when possible.</p></sec><sec id="Sec14"><title>Multi-directional inference and its impact</title><p id="Par19">We segmented various cellular organelles from cross-sectional images of 2D pictures. However, a problem was identified with low identification accuracy in some classes. To address this issue, we generated new cross-sectional images perpendicular to the original images, using the 3D SBF data, as shown in Figure <xref rid="Fig5" ref-type="fig">5</xref>. We used these images for inference with a trained model. This model calculates the probability of belonging to all classes for each voxel (the smallest unit of a 3D image). Three predictive values are obtained for each voxel with inference from three directions. The class with the highest probability is selected when different classes are predicted. As this process may introduce noise, a median filter removes noise after selection. Consequently, as shown in Table <xref rid="Tab3" ref-type="table">3</xref>, some cases exhibit no change or a slight decrease in predictive accuracy, but other samples show clear improvements in accuracy. This finding suggests that accurately determining the class from a cross-sectional image from a specific direction may not be possible. Also, considering that the orientation of the cell to be imaged cannot be predetermined and that inference from difficult angles is inevitable, inferring from three directions is worthwhile, even if it means accepting a slight decrease in accuracy.<fig id="Fig5"><label>Fig. 5</label><caption><p>Cross-sections and label data of cells in various directions. (<bold>a</bold>) Three-dimensional cell model reconstructed from captured consecutive cross-sectional images. This model is visualized from the captured direction (by Fiji/ImageJ 2). (<bold>b</bold>) Consecutive cross-sectional images taken near the center of the cell (left) and label data created by experts based on them (right). (<bold>c</bold>) and (<bold>d</bold>) New cross-sectional images generated from stacked consecutive cross-sectional images (left) and the corresponding label data (right). These images were generated from two directions, one aligned with the captured direction and the other perpendicular. Each panel includes the cytoplasm (white), plastid (green), mitochondrion (yellow), peroxisome (orange), and nucleus (gray).</p></caption><graphic xlink:href="41598_2025_1763_Fig5_HTML" id="MO5"/></fig></p></sec><sec id="Sec15"><title>Application to large-scale microscopic image segmentation</title><p id="Par20">We used an ImageJ plugin to process the continuous cross-sectional images captured by the FIB-SEM and applied the 3D watershed algorithm. This technique enabled us to identify different cells individually, as shown in Figure <xref rid="Fig6" ref-type="fig">6</xref> (f) (additional information on the performance evaluation is in Supplementary Notes and Supplementary Figures <xref rid="MOESM1" ref-type="media">1</xref>&#x02013;<xref rid="MOESM1" ref-type="media">5</xref>). Thus, the process of creating an SBF image containing a single cell and identifying each cell and cell organelle, previously done manually by experts, was fully automated.</p><p id="Par5">
+<fig id="Fig6"><label>Fig. 6</label><caption><p>Schematic diagram of automatic identification of individual cells from a 3D image containing multiple cells using SAM and the 3D watershed method. (<bold>a</bold>), (<bold>b</bold>) Cross-sectional image of a sample containing multiple cells and its SBF. (<bold>c</bold>) Extraction of cells from the background by SAM. (<bold>d</bold>) Classification of cellular organelles by SAM. (<bold>e</bold>) Removal of the background identified by SAM from the SBF in (<bold>b</bold>). (<bold>f</bold>) Identification and color-coding of individual cells by the 3D watershed method. Visualized by Fiji/ImageJ 2.</p></caption><graphic xlink:href="41598_2025_1763_Fig6_HTML" id="MO6"/></fig>
+</p></sec></sec><sec id="Sec16"><title>Discussion</title><p id="Par21">We successfully established a method of automatically segmenting and focusing on specific cells within a mixed spatial environment in 3D imagery. By incorporating the latest deep learning models, which are being released at an ever-increasing rate, we can further enhance the accuracy of our inferences. This research method was achieved by employing deep learning analysis techniques, which require a substantial amount of high-quality, expertly labeled data as a prerequisite. The necessity for extensive labeled data poses a potential bottleneck for future advancements in this field. This research holds significant promise for biologists, particularly in aiding the morphological and dynamic analysis of cellular and tissue structures in 3D. The ability to segment and analyze intricate cellular compositions automatically in three dimensions provides a powerful tool for biological research.</p><p id="Par22">In principle, the technology presented here could be applied to images obtained by different types of 3D imaging devices, not limited to FIB-SEM. However, it appears especially effective to use machine learning for processing electron microscope images that contain only brightness information. A large volume of high-quality annotated data corresponding to 3D images is required to utilize this technology. This poses the most significant challenge when applying the technology to other cell types. Recently, various methods have been proposed for creating label data (semi-)manually and efficiently, and for performing zero-shot segmentation without label data. By integrating these methods, we may further enhance the technology described here to extract only specific structures from the environment crowded by multiple cells. In addition, it was suggested that label data of diverse patterns of division would be required when performing structure extraction for various cell states such as cell division, where the determination of the cell state would be another target of machine learning.</p></sec><sec id="Sec17" sec-type="supplementary-material"><title>Supplementary Information</title><p>
+<supplementary-material content-type="local-data" id="MOESM1"><media xlink:href="41598_2025_1763_MOESM1_ESM.doc"><caption><p>Supplementary Information 1.</p></caption></media></supplementary-material>
+<supplementary-material content-type="local-data" id="MOESM2"><media xlink:href="41598_2025_1763_MOESM2_ESM.pdf"><caption><p>Supplementary Information 2.</p></caption></media></supplementary-material>
+</p></sec></body><back><fn-group><fn><p><bold>Publisher&#x02019;s note</bold></p><p>Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></fn></fn-group><sec><title>Supplementary Information</title><p>The online version contains supplementary material available at 10.1038/s41598-025-01763-z.</p></sec><ack><title>Acknowledgements</title><p>This work was supported by JSPS KAKENHI grant numbers JP26291028 for A. H. I. and JP21K03487 for Y. T.</p></ack><notes notes-type="author-contribution"><title>Author contributions</title><p>J. K. conceived and implemented the analysis algorithms. A. H. I. provided the 3D cell images and labels. Y. T. supervised the research. All authors wrote and reviewed the manuscript.</p></notes><notes notes-type="data-availability"><title>Data availability</title><p>The analysis codes and the raw data of the analysis results in this study are available from the corresponding author (Y. T.) on reasonable request.</p></notes><notes><title>Declarations</title><notes id="FPar1" notes-type="COI-statement"><title>Competing interests</title><p id="Par23">The authors declare no competing interests.</p></notes></notes><ref-list id="Bib1"><title>References</title><ref id="CR1"><label>1.</label><citation-alternatives><element-citation id="ec-CR1" publication-type="journal"><person-group person-group-type="author"><name><surname>Inkson</surname><given-names>BJ</given-names></name><name><surname>Steer</surname><given-names>T</given-names></name><name><surname>Bus</surname><given-names>G</given-names></name><name><surname>Wagner</surname><given-names>T</given-names></name></person-group><article-title>Subsurface nanoindentation deformation of Cu-Al multilayers mapped in 3D by focused ion beam microscopy</article-title><source>J. Microsc.</source><year>2001</year><volume>201</volume><fpage>256</fpage><lpage>269</lpage><pub-id pub-id-type="doi">10.1046/j.1365-2818.2001.00767.x</pub-id><pub-id pub-id-type="pmid">11207928</pub-id>
+</element-citation><mixed-citation id="mc-CR1" publication-type="journal">Inkson, B. J., Steer, T., Bus, G. &#x00026; Wagner, T. Subsurface nanoindentation deformation of Cu-Al multilayers mapped in 3D by focused ion beam microscopy. <italic>J. Microsc.</italic><bold>201</bold>, 256&#x02013;269 (2001).<pub-id pub-id-type="pmid">11207928</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR2"><label>2.</label><mixed-citation publication-type="other">Kousaka, J., Iwane, A.&#x000a0;H. &#x00026; Togashi, Y. A method for automatically constructing 3D cell models from sequential cross-sectional images using deep learning. In <italic>Proceedings of the 67th Annual Conference of the Institute of Systems, Control and Information Engineers (SCI &#x02019;23)</italic>, 1094&#x02013;1099 (2023).</mixed-citation></ref><ref id="CR3"><label>3.</label><mixed-citation publication-type="other">Kousaka, J., Iwane, A.&#x000a0;H. &#x00026; Togashi, Y. 3D segmentation and quantification of cell structures by deep learning. In <italic>Proceedings of 3D Image Conference 2023</italic>, 99&#x02013;102 (2023).</mixed-citation></ref><ref id="CR4"><label>4.</label><citation-alternatives><element-citation id="ec-CR4" publication-type="journal"><person-group person-group-type="author"><name><surname>Kuroiwa</surname><given-names>T</given-names></name><name><surname>Nozaki</surname><given-names>H</given-names></name><name><surname>Matsuzaki</surname><given-names>M</given-names></name><name><surname>Misumi</surname><given-names>O</given-names></name><name><surname>Kuroiwa</surname><given-names>H</given-names></name></person-group><article-title>Does cell size depend on the nuclear genome size in ultra-small algae such as <italic>Cyanidioschyzon merolae</italic> and <italic>Ostreococcus tauri</italic>?</article-title><source>Cytologia</source><year>2004</year><volume>69</volume><fpage>93</fpage><lpage>96</lpage><pub-id pub-id-type="doi">10.1508/cytologia.69.93</pub-id></element-citation><mixed-citation id="mc-CR4" publication-type="journal">Kuroiwa, T., Nozaki, H., Matsuzaki, M., Misumi, O. &#x00026; Kuroiwa, H. Does cell size depend on the nuclear genome size in ultra-small algae such as <italic>Cyanidioschyzon merolae</italic> and <italic>Ostreococcus tauri</italic>? <italic>Cytologia</italic><bold>69</bold>, 93&#x02013;96 (2004).</mixed-citation></citation-alternatives></ref><ref id="CR5"><label>5.</label><citation-alternatives><element-citation id="ec-CR5" publication-type="journal"><person-group person-group-type="author"><name><surname>Miyagishima</surname><given-names>SY</given-names></name><name><surname>Tanaka</surname><given-names>K</given-names></name></person-group><article-title>The unicellular red alga<italic> Cyanidioschyzon merolae</italic>&#x02014;the simplest model of a photosynthetic eukaryote</article-title><source>Plant Cell Physiol.</source><year>2021</year><volume>62</volume><fpage>926</fpage><lpage>941</lpage><pub-id pub-id-type="doi">10.1093/pcp/pcab052</pub-id><pub-id pub-id-type="pmid">33836072</pub-id>
+</element-citation><mixed-citation id="mc-CR5" publication-type="journal">Miyagishima, S. Y. &#x00026; Tanaka, K. The unicellular red alga <italic>Cyanidioschyzon merolae</italic>&#x02014;the simplest model of a photosynthetic eukaryote. <italic>Plant Cell Physiol.</italic><bold>62</bold>, 926&#x02013;941 (2021).<pub-id pub-id-type="pmid">33836072</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR6"><label>6.</label><citation-alternatives><element-citation id="ec-CR6" publication-type="journal"><person-group person-group-type="author"><name><surname>Kuroiwa</surname><given-names>T</given-names></name><etal/></person-group><article-title>The division apparatus of plastids and mitochondria</article-title><source>Int. Rev. Cytol.</source><year>1998</year><volume>181</volume><fpage>1</fpage><lpage>41</lpage><pub-id pub-id-type="doi">10.1016/S0074-7696(08)60415-5</pub-id><pub-id pub-id-type="pmid">9522454</pub-id>
+</element-citation><mixed-citation id="mc-CR6" publication-type="journal">Kuroiwa, T. et al. The division apparatus of plastids and mitochondria. <italic>Int. Rev. Cytol.</italic><bold>181</bold>, 1&#x02013;41 (1998).<pub-id pub-id-type="pmid">9522454</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR7"><label>7.</label><mixed-citation publication-type="other">Misumi, O. et al. <italic>Cyanidioschyzon merolae</italic> genome. A tool for facilitating comparable studies on organelle biogenesis in photosynthetic eukaryotes. <italic>Plant Physiol.</italic><bold>137</bold>, 567&#x02013;585 (2005).</mixed-citation></ref><ref id="CR8"><label>8.</label><citation-alternatives><element-citation id="ec-CR8" publication-type="journal"><person-group person-group-type="author"><name><surname>Ohta</surname><given-names>N</given-names></name><name><surname>Sato</surname><given-names>N</given-names></name><name><surname>Kuroiwa</surname><given-names>T</given-names></name></person-group><article-title>Structure and organization of the mitochondrial genome of the unicellular red alga <italic>Cyanidioschyzon merolae</italic> deduced from the complete nucleotide sequence</article-title><source>Nucleic Acids Res.</source><year>1998</year><volume>26</volume><fpage>5190</fpage><lpage>5198</lpage><pub-id pub-id-type="doi">10.1093/nar/26.22.5190</pub-id><pub-id pub-id-type="pmid">9801318</pub-id>
+</element-citation><mixed-citation id="mc-CR8" publication-type="journal">Ohta, N., Sato, N. &#x00026; Kuroiwa, T. Structure and organization of the mitochondrial genome of the unicellular red alga <italic>Cyanidioschyzon merolae</italic> deduced from the complete nucleotide sequence. <italic>Nucleic Acids Res.</italic><bold>26</bold>, 5190&#x02013;5198 (1998).<pub-id pub-id-type="pmid">9801318</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR9"><label>9.</label><citation-alternatives><element-citation id="ec-CR9" publication-type="journal"><person-group person-group-type="author"><name><surname>Ohta</surname><given-names>N</given-names></name><etal/></person-group><article-title>Complete sequence and analysis of the plastid genome of the unicellular red alga <italic>Cyanidioschyzon merolae</italic></article-title><source>DNA Res.</source><year>2003</year><volume>10</volume><fpage>67</fpage><lpage>77</lpage><pub-id pub-id-type="doi">10.1093/dnares/10.2.67</pub-id><pub-id pub-id-type="pmid">12755171</pub-id>
+</element-citation><mixed-citation id="mc-CR9" publication-type="journal">Ohta, N. et al. Complete sequence and analysis of the plastid genome of the unicellular red alga <italic>Cyanidioschyzon merolae</italic>. <italic>DNA Res.</italic><bold>10</bold>, 67&#x02013;77 (2003).<pub-id pub-id-type="pmid">12755171</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR10"><label>10.</label><citation-alternatives><element-citation id="ec-CR10" publication-type="journal"><person-group person-group-type="author"><name><surname>Matsuzaki</surname><given-names>M</given-names></name><etal/></person-group><article-title>Genome sequence of the ultrasmall unicellular red alga <italic>Cyanidioschyzon merolae</italic> 10D</article-title><source>Nature</source><year>2004</year><volume>428</volume><fpage>653</fpage><lpage>657</lpage><pub-id pub-id-type="doi">10.1038/nature02398</pub-id><pub-id pub-id-type="pmid">15071595</pub-id>
+</element-citation><mixed-citation id="mc-CR10" publication-type="journal">Matsuzaki, M. et al. Genome sequence of the ultrasmall unicellular red alga <italic>Cyanidioschyzon merolae</italic> 10D. <italic>Nature</italic><bold>428</bold>, 653&#x02013;657 (2004).<pub-id pub-id-type="pmid">15071595</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR11"><label>11.</label><citation-alternatives><element-citation id="ec-CR11" publication-type="journal"><person-group person-group-type="author"><name><surname>Nozaki</surname><given-names>H</given-names></name><etal/></person-group><article-title>A 100%-complete sequence reveals unusually simple genomic features in the hot-spring red alga <italic>Cyanidioschyzon merolae</italic></article-title><source>BMC Biol.</source><year>2007</year><volume>5</volume><fpage>28</fpage><pub-id pub-id-type="doi">10.1186/1741-7007-5-28</pub-id><pub-id pub-id-type="pmid">17623057</pub-id>
+</element-citation><mixed-citation id="mc-CR11" publication-type="journal">Nozaki, H. et al. A 100%-complete sequence reveals unusually simple genomic features in the hot-spring red alga <italic>Cyanidioschyzon merolae</italic>. <italic>BMC Biol.</italic><bold>5</bold>, 28 (2007).<pub-id pub-id-type="pmid">17623057</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR12"><label>12.</label><citation-alternatives><element-citation id="ec-CR12" publication-type="journal"><person-group person-group-type="author"><name><surname>Suzuki</surname><given-names>K</given-names></name><etal/></person-group><article-title>Behavior of mitochondria, chloroplasts and their nuclei during the mitotic cycle in the ultramicroalga <italic>Cyanidioschyzon merolae</italic></article-title><source>Eur. J. Cell Biol.</source><year>1994</year><volume>63</volume><fpage>280</fpage><lpage>288</lpage><pub-id pub-id-type="pmid">8082652</pub-id>
+</element-citation><mixed-citation id="mc-CR12" publication-type="journal">Suzuki, K. et al. Behavior of mitochondria, chloroplasts and their nuclei during the mitotic cycle in the ultramicroalga <italic>Cyanidioschyzon merolae</italic>. <italic>Eur. J. Cell Biol.</italic><bold>63</bold>, 280&#x02013;288 (1994).<pub-id pub-id-type="pmid">8082652</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR13"><label>13.</label><citation-alternatives><element-citation id="ec-CR13" publication-type="journal"><person-group person-group-type="author"><name><surname>Ichinose</surname><given-names>TM</given-names></name><name><surname>Iwane</surname><given-names>AH</given-names></name></person-group><article-title>Long-term live cell cycle imaging of single <italic>Cyanidioschyzon merolae</italic> cells</article-title><source>Protoplasma</source><year>2021</year><volume>258</volume><fpage>651</fpage><lpage>660</lpage><pub-id pub-id-type="doi">10.1007/s00709-020-01592-z</pub-id><pub-id pub-id-type="pmid">33580410</pub-id>
+</element-citation><mixed-citation id="mc-CR13" publication-type="journal">Ichinose, T. M. &#x00026; Iwane, A. H. Long-term live cell cycle imaging of single <italic>Cyanidioschyzon merolae</italic> cells. <italic>Protoplasma</italic><bold>258</bold>, 651&#x02013;660 (2021).<pub-id pub-id-type="pmid">33580410</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR14"><label>14.</label><citation-alternatives><element-citation id="ec-CR14" publication-type="journal"><person-group person-group-type="author"><name><surname>Yudistira</surname><given-names>N</given-names></name><name><surname>Kavitha</surname><given-names>M</given-names></name><name><surname>Itabashi</surname><given-names>T</given-names></name><name><surname>Iwane</surname><given-names>AH</given-names></name><name><surname>Kurita</surname><given-names>T</given-names></name></person-group><article-title>Prediction of sequential organelles localization under imbalance using a balanced deep U-Net</article-title><source>Sci. Rep.</source><year>2020</year><volume>10</volume><fpage>2626</fpage><pub-id pub-id-type="doi">10.1038/s41598-020-59285-9</pub-id><pub-id pub-id-type="pmid">32060319</pub-id>
+</element-citation><mixed-citation id="mc-CR14" publication-type="journal">Yudistira, N., Kavitha, M., Itabashi, T., Iwane, A. H. &#x00026; Kurita, T. Prediction of sequential organelles localization under imbalance using a balanced deep U-Net. <italic>Sci. Rep.</italic><bold>10</bold>, 2626 (2020).<pub-id pub-id-type="pmid">32060319</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR15"><label>15.</label><citation-alternatives><element-citation id="ec-CR15" publication-type="journal"><person-group person-group-type="author"><name><surname>Banterle</surname><given-names>F</given-names></name><name><surname>Corsini</surname><given-names>M</given-names></name><name><surname>Cignoni</surname><given-names>P</given-names></name><name><surname>Scopigno</surname><given-names>R</given-names></name></person-group><article-title>A low-memory, straightforward and fast bilateral filter through subsampling in spatial domain</article-title><source>Comput. Graph. Forum</source><year>2012</year><volume>31</volume><fpage>19</fpage><lpage>32</lpage><pub-id pub-id-type="doi">10.1111/j.1467-8659.2011.02078.x</pub-id></element-citation><mixed-citation id="mc-CR15" publication-type="journal">Banterle, F., Corsini, M., Cignoni, P. &#x00026; Scopigno, R. A low-memory, straightforward and fast bilateral filter through subsampling in spatial domain. <italic>Comput. Graph. Forum</italic><bold>31</bold>, 19&#x02013;32 (2012).</mixed-citation></citation-alternatives></ref><ref id="CR16"><label>16.</label><citation-alternatives><element-citation id="ec-CR16" publication-type="journal"><person-group person-group-type="author"><name><surname>Schindelin</surname><given-names>J</given-names></name><etal/></person-group><article-title>Fiji: an open-source platform for biological-image analysis</article-title><source>Nat. Methods</source><year>2012</year><volume>9</volume><fpage>676</fpage><lpage>682</lpage><pub-id pub-id-type="doi">10.1038/nmeth.2019</pub-id><pub-id pub-id-type="pmid">22743772</pub-id>
+</element-citation><mixed-citation id="mc-CR16" publication-type="journal">Schindelin, J. et al. Fiji: an open-source platform for biological-image analysis. <italic>Nat. Methods</italic><bold>9</bold>, 676&#x02013;682 (2012).<pub-id pub-id-type="pmid">22743772</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR17"><label>17.</label><mixed-citation publication-type="other">Krizhevsky, A., Sutskever, I. &#x00026; Hinton, G.&#x000a0;E. ImageNet classification with deep convolutional neural networks. In <italic>NIPS&#x02019;12: Proceedings of the 25th International Conference on Neural Information Processing System</italic>, 1097&#x02013;1105 (2012).</mixed-citation></ref><ref id="CR18"><label>18.</label><mixed-citation publication-type="other">Ioffe, S. &#x00026; Szegedy, C. Batch normalization: Accelerating deep network training by reducing internal covariate shift. In <italic>The 32nd International Conference on Machine Learning (ICML 2015)</italic> (2015).</mixed-citation></ref><ref id="CR19"><label>19.</label><mixed-citation publication-type="other">&#x000c7;i&#x000e7;ek, &#x000d6;., Abdulkadir, A., Lienkamp, S. S., Brox, T. &#x00026; Ronneberger, O. 3D U-Net: Learning dense volumetric segmentation from sparse annotation. <italic>preprint arXiv</italic> 1606.06650 (2016).</mixed-citation></ref><ref id="CR20"><label>20.</label><mixed-citation publication-type="other">Ronneberger, O., Fischer, P. &#x00026; Brox, T. U-Net: Convolutional networks for biomedical image segmentation. In <italic>Medical Image Computing and Computer-Assisted Intervention &#x02013; MICCAI 2015</italic>, 234&#x02013;241 (Springer International Publishing, Cham, 2015).</mixed-citation></ref><ref id="CR21"><label>21.</label><mixed-citation publication-type="other">Vaswani, A. et al. Attention is all you need. In <italic>NIPS&#x02019;17: Proceedings of the 31st International Conference on Neural Information Processing Systems</italic>, 6000&#x02013;6010 (2017).</mixed-citation></ref><ref id="CR22"><label>22.</label><mixed-citation publication-type="other">Abraham, N. &#x00026; Khan, N.&#x000a0;M. A novel focal Tversky loss function with improved attention U-Net for lesion segmentation. In <italic>2019 IEEE 16th International Symposium on Biomedical Imaging (ISBI 2019)</italic>, 683&#x02013;687 (2019).</mixed-citation></ref><ref id="CR23"><label>23.</label><mixed-citation publication-type="other">Loshchilov, I. &#x00026; Hutter, F. Decoupled weight decay regularization. In <italic>Proceedings of the 7th International Conference on Learning Representations 2019 (ICLR 2019)</italic> (2019).</mixed-citation></ref><ref id="CR24"><label>24.</label><mixed-citation publication-type="other">Kirillov, A. et al. Segment anything.<italic> preprint arXiv</italic> 2304.02643 (2023).</mixed-citation></ref><ref id="CR25"><label>25.</label><citation-alternatives><element-citation id="ec-CR25" publication-type="journal"><person-group person-group-type="author"><name><surname>Vincent</surname><given-names>L</given-names></name><name><surname>Soille</surname><given-names>P</given-names></name></person-group><article-title>Watersheds in digital spaces: an efficient algorithm based on immersion simulations</article-title><source>IEEE Trans. Pattern Anal. Mach. Intell.</source><year>1991</year><volume>13</volume><fpage>583</fpage><lpage>598</lpage><pub-id pub-id-type="doi">10.1109/34.87344</pub-id></element-citation><mixed-citation id="mc-CR25" publication-type="journal">Vincent, L. &#x00026; Soille, P. Watersheds in digital spaces: an efficient algorithm based on immersion simulations. <italic>IEEE Trans. Pattern Anal. Mach. Intell.</italic><bold>13</bold>, 583&#x02013;598 (1991).</mixed-citation></citation-alternatives></ref><ref id="CR26"><label>26.</label><citation-alternatives><element-citation id="ec-CR26" publication-type="journal"><person-group person-group-type="author"><name><surname>Miyagishima</surname><given-names>S</given-names></name><name><surname>Itoh</surname><given-names>R</given-names></name><name><surname>Toda</surname><given-names>K</given-names></name><etal/></person-group><article-title>Microbody proliferation and segregation cycle in the single-microbody alga <italic>Cyanidioschyzon merolae</italic></article-title><source>Planta</source><year>1999</year><volume>208</volume><fpage>326</fpage><lpage>336</lpage><pub-id pub-id-type="doi">10.1007/s004250050566</pub-id></element-citation><mixed-citation id="mc-CR26" publication-type="journal">Miyagishima, S. et al. Microbody proliferation and segregation cycle in the single-microbody alga <italic>Cyanidioschyzon merolae</italic>. <italic>Planta</italic><bold>208</bold>, 326&#x02013;336 (1999).</mixed-citation></citation-alternatives></ref><ref id="CR27"><label>27.</label><citation-alternatives><element-citation id="ec-CR27" publication-type="journal"><person-group person-group-type="author"><name><surname>Imoto</surname><given-names>Y</given-names></name><name><surname>Itoh</surname><given-names>K</given-names></name><name><surname>Fujiki</surname><given-names>Y</given-names></name></person-group><article-title>Molecular basis of mitochondrial and peroxisomal division machineries</article-title><source>Int. J. Mol. Sci.</source><year>2020</year><volume>21</volume><fpage>5452</fpage><pub-id pub-id-type="doi">10.3390/ijms21155452</pub-id><pub-id pub-id-type="pmid">32751702</pub-id>
+</element-citation><mixed-citation id="mc-CR27" publication-type="journal">Imoto, Y., Itoh, K. &#x00026; Fujiki, Y. Molecular basis of mitochondrial and peroxisomal division machineries. <italic>Int. J. Mol. Sci.</italic><bold>21</bold>, 5452 (2020).<pub-id pub-id-type="pmid">32751702</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR28"><label>28.</label><mixed-citation publication-type="other">Zhou, Z., Siddiquee, M. M. R., Tajbakhsh, N. &#x00026; Liang, J. UNet++: A nested U-Net architecture for medical image segmentation. In <italic>Deep Learning in Medical Image Analysis and Multimodal Learning for Clinical Decision Support</italic> (Springer Nature Switzerland, 2018).</mixed-citation></ref><ref id="CR29"><label>29.</label><citation-alternatives><element-citation id="ec-CR29" publication-type="journal"><person-group person-group-type="author"><name><surname>Ibtehaz</surname><given-names>N</given-names></name><name><surname>Rahman</surname><given-names>MS</given-names></name></person-group><article-title>MultiResUNet: Rethinking the U-Net architecture for multimodal biomedical image segmentation</article-title><source>Neural Netw.</source><year>2020</year><volume>121</volume><fpage>74</fpage><lpage>87</lpage><pub-id pub-id-type="doi">10.1016/j.neunet.2019.08.025</pub-id><pub-id pub-id-type="pmid">31536901</pub-id>
+</element-citation><mixed-citation id="mc-CR29" publication-type="journal">Ibtehaz, N. &#x00026; Rahman, M. S. MultiResUNet: Rethinking the U-Net architecture for multimodal biomedical image segmentation. <italic>Neural Netw.</italic><bold>121</bold>, 74&#x02013;87 (2020).<pub-id pub-id-type="pmid">31536901</pub-id>
+</mixed-citation></citation-alternatives></ref></ref-list></back></article>

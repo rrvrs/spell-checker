@@ -1,0 +1,547 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" dtd-version="1.3" xml:lang="EN" article-type="brief-report"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">J Chem Inf Model</journal-id><journal-id journal-id-type="iso-abbrev">J Chem Inf Model</journal-id><journal-id journal-id-type="publisher-id">ci</journal-id><journal-id journal-id-type="coden">jcisd8</journal-id><journal-title-group><journal-title>Journal of Chemical Information and Modeling</journal-title></journal-title-group><issn pub-type="ppub">1549-9596</issn><issn pub-type="epub">1549-960X</issn><publisher><publisher-name>American Chemical Society</publisher-name></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">39928985</article-id><article-id pub-id-type="pmc">PMC11863366</article-id>
+<article-id pub-id-type="doi">10.1021/acs.jcim.4c02128</article-id><article-categories><subj-group><subject>Application Note</subject></subj-group></article-categories><title-group><article-title>PUCHIK: A Python
+Package To Analyze Molecular Dynamics
+Simulations of Aspherical Nanoparticles</article-title></title-group><contrib-group><contrib contrib-type="author" corresp="yes" id="ath1"><name><surname>Ishkhanyan</surname><given-names>Hrachya</given-names></name><xref rid="cor1" ref-type="other">*</xref><xref rid="aff1" ref-type="aff">&#x02020;</xref><xref rid="aff2" ref-type="aff">&#x02021;</xref></contrib><contrib contrib-type="author" id="ath2"><name><surname>Santana-Bonilla</surname><given-names>Alejandro</given-names></name><xref rid="aff2" ref-type="aff">&#x02021;</xref></contrib><contrib contrib-type="author" corresp="yes" id="ath3"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0003-1028-4804</contrib-id><name><surname>Lorenz</surname><given-names>Christian D.</given-names></name><xref rid="cor2" ref-type="other">*</xref><xref rid="aff3" ref-type="aff">&#x000b6;</xref></contrib><aff id="aff1"><label>&#x02020;</label><institution>Institute
+for Informatics and Automation Problems of the National Academy of
+Sciences of the Republic of Armenia</institution>, 0014 Yerevan, <country>Republic of Armenia</country></aff><aff id="aff2"><label>&#x02021;</label>Department
+of Physics, <institution>King&#x02019;s College London</institution>, London WC2R 2LS, <country>United Kingdom</country></aff><aff id="aff3"><label>&#x000b6;</label>Department
+of Engineering, <institution>King&#x02019;s College London</institution>, London WC2R 2LS, <country>United Kingdom</country></aff></contrib-group><author-notes><corresp id="cor1"><label>*</label>Email: <email>hrachishkhanyan@gmail.com</email>.</corresp><corresp id="cor2"><label>*</label>Email: <email>chris.lorenz@kcl.ac.uk</email>.</corresp></author-notes><pub-date pub-type="epub"><day>10</day><month>02</month><year>2025</year></pub-date><pub-date pub-type="collection"><day>24</day><month>02</month><year>2025</year></pub-date><volume>65</volume><issue>4</issue><fpage>1694</fpage><lpage>1701</lpage><history><date date-type="received"><day>15</day><month>11</month><year>2024</year></date><date date-type="accepted"><day>28</day><month>01</month><year>2025</year></date><date date-type="rev-recd"><day>25</day><month>01</month><year>2025</year></date></history><permissions><copyright-statement>&#x000a9; 2025 The Authors. Published by American Chemical Society</copyright-statement><copyright-year>2025</copyright-year><copyright-holder>The Authors</copyright-holder><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>Permits the broadest form of re-use including for commercial purposes, provided that author attribution and integrity are maintained (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</ext-link>).</license-p></license></permissions><abstract><p content-type="toc-graphic"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02128_0005" id="ab-tgr1"/></p><p>Accurately describing a nanoparticle&#x02019;s interface
+is crucial
+for understanding its internal structure, interfacial properties,
+and ultimately, its functionality. While current computational methods
+provide reasonable descriptions for spherical and quasi-spherical
+nanoparticles, there remains a need for effective models for aspherical
+structures such as capsules and rod-like systems. This work introduces
+Python Utility for Characterizing Heterogeneous Interfaces and Kinetics
+(PUCHIK), a novel algorithm developed to describe both spherelike
+and aspherical nanoparticles. With an accurate description of the
+location of the interface of the nanoparticle, this algorithm then
+allows for various other important quantities (e.g., densities of
+different atom/molecule types relative to the interface, volume of
+the nanoparticle, amount of solubilized molecules within the nanoparticle)
+to be calculated. Our software development, we focused on providing
+good performance to computationally demanding projects, while ensuring
+that the methodological approach can be adapted as a protocol for
+other code implementations.</p></abstract><funding-group><award-group><funding-source><institution-wrap><institution>Engineering and Physical Sciences Research Council</institution><institution-id institution-id-type="doi">10.13039/501100000266</institution-id></institution-wrap></funding-source><award-id>EP/P020194/1</award-id></award-group></funding-group><funding-group><award-group><funding-source><institution-wrap><institution>Higher Education and Science Committee of the Republic of Armenia</institution><institution-id institution-id-type="doi">NA</institution-id></institution-wrap></funding-source><award-id>N 24RL-1C009</award-id></award-group></funding-group><funding-group><award-group><funding-source><institution-wrap><institution>Engineering and Physical Sciences Research Council</institution><institution-id institution-id-type="doi">10.13039/501100000266</institution-id></institution-wrap></funding-source><award-id>EP/W032260/1</award-id></award-group></funding-group><funding-group><award-group><funding-source><institution-wrap><institution>Engineering and Physical Sciences Research Council</institution><institution-id institution-id-type="doi">10.13039/501100000266</institution-id></institution-wrap></funding-source><award-id>EP/T022213/1</award-id></award-group></funding-group><custom-meta-group><custom-meta><meta-name>document-id-old-9</meta-name><meta-value>ci4c02128</meta-value></custom-meta><custom-meta><meta-name>document-id-new-14</meta-name><meta-value>ci4c02128</meta-value></custom-meta><custom-meta><meta-name>ccc-price</meta-name><meta-value/></custom-meta></custom-meta-group></article-meta></front><body><sec id="sec1"><title>Introduction</title><p>Nanoparticles have promising applications
+in biomedicine, including
+targeted drug delivery,<sup><xref ref-type="bibr" rid="ref1">1</xref>&#x02212;<xref ref-type="bibr" rid="ref5">5</xref></sup> medical imaging, regenerative medicine, and biosensing.<sup><xref ref-type="bibr" rid="ref6">6</xref>&#x02212;<xref ref-type="bibr" rid="ref10">10</xref></sup> Understanding nanoparticle interfacial properties is critical as
+these properties dictate interactions with solutes, substrates, and
+other particles. Modifying the surface,<sup><xref ref-type="bibr" rid="ref11">11</xref>,<xref ref-type="bibr" rid="ref12">12</xref></sup> shape, size,
+and surface area of nanoparticles allows for functional optimization
+tailored to specific applications.<sup><xref ref-type="bibr" rid="ref13">13</xref></sup></p><p>Molecular dynamics (MD) simulations are a powerful tool for obtaining
+atomistic detailed information on the underlying physics of various
+systems, including liquid&#x02013;nanoparticle interfaces.<sup><xref ref-type="bibr" rid="ref14">14</xref>&#x02212;<xref ref-type="bibr" rid="ref19">19</xref></sup> Analysis of these simulations enables the quantification of useful
+properties such as volume, hydration, density profiles, solubilization
+of different molecules inside of the nanoparticle, etc. There are
+several methods to describe surfaces and interfaces, such as the marching
+cubes algorithm,<sup><xref ref-type="bibr" rid="ref20">20</xref></sup> Willard-Chandler method,<sup><xref ref-type="bibr" rid="ref21">21</xref></sup> the intrinsic core&#x02013;shell interface (ICSI)
+method<sup><xref ref-type="bibr" rid="ref22">22</xref></sup> and the cone algorithm.<sup><xref ref-type="bibr" rid="ref23">23</xref></sup></p><p>While the majority of these methods provide
+good results when constructing
+interfaces for symmetric nanoparticles, they are generally less effective
+for aspherical nanoparticles. The capability of providing an accurate
+description of the interface of nanoparticles independent of their
+shape is particularly important, because surface effects are dominant
+in their functionality. MD simulations are increasingly used to understand
+aspherical nanoparticles (e.g., wormlike micelles)<sup><xref ref-type="bibr" rid="ref24">24</xref>&#x02212;<xref ref-type="bibr" rid="ref27">27</xref></sup> and how the morphology of soft
+nanoparticles change under different conditions.<sup><xref ref-type="bibr" rid="ref28">28</xref>&#x02212;<xref ref-type="bibr" rid="ref30">30</xref></sup> In these studies,
+the interface is characterized either by investigating a given axis
+of the nanoparticle or by using radial distributions for atoms thought
+to be at the interface to identify their local environment.</p><p>This work proposes an algorithm capable of defining core&#x02013;shell
+interfaces for both symmetric and asymmetric nanoparticles composed
+of any type of material. It also includes volume and density calculations
+relative to the interface along with a detailed Python implementation
+that addresses computational demands. This approach aims to serve
+as a guide for optimizing other computational codes.</p><p>Determining
+the water&#x02013;core interface of a nanoparticle involves
+identifying the shape formed by the atoms in the hydrophobic core,
+similar to a computational geometry problem of computing the shape
+of a finite set of points. Edelsbrunner et al.<sup><xref ref-type="bibr" rid="ref31">31</xref></sup> introduced alpha shapes, which generalize the convex hull
+to better capture irregular geometries. In this work, interfaces are
+initially constructed using convex hulls but can be switched to alpha
+shapes for improved accuracy. The convex hull approach is faster,
+while alpha shapes are more effective for handling concave, bent,
+or irregular structures. The structural details provided by the alpha
+shape method allows for description of solid, hollow, and mesoporous
+materials.</p></sec><sec id="sec2"><title>Methods</title><p>Python Utility for Characterizing Heterogeneous
+Interfaces and
+Kinetic (PUCHIK = which means &#x0201c;balloon&#x0201d; in Armenian)
+is primarily built on three key Python packages: SciPy,<sup><xref ref-type="bibr" rid="ref32">32</xref></sup> MDAnalysis,<sup><xref ref-type="bibr" rid="ref33">33</xref>,<xref ref-type="bibr" rid="ref34">34</xref></sup> and Cython.<sup><xref ref-type="bibr" rid="ref35">35</xref></sup> SciPy is utilized for constructing the interface
+through its ConvexHull class, which acts as a Python wrapper for the
+Qhull library.<sup><xref ref-type="bibr" rid="ref36">36</xref></sup> MDAnalysis facilitates
+the reading of trajectories and topologies and provides a simple selection
+language resembling those used in CHARMM<sup><xref ref-type="bibr" rid="ref37">37</xref></sup> and VMD.<sup><xref ref-type="bibr" rid="ref38">38</xref></sup> The computationally intensive
+portions of the code are optimized using Cython, resulting in significant
+performance improvements. A more thorough discussion of optimizing
+code performance is provided in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02128/suppl_file/ci4c02128_si_001.pdf">Electronic Supporting Information (ESI)</ext-link>. Finally, alpha shapes are implemented
+in C++ using the computational geometry algorithms library (CGAL).<sup><xref ref-type="bibr" rid="ref39">39</xref></sup></p><sec id="sec2.1"><title>Implementation</title><p>The calculations using PUCHIK are done
+in four steps: convex hull construction, discretization of the simulation
+box, calculation of distances from each cell to the interface, and
+calculation of densities in each cell of the discretized box. As mentioned
+above, PUCHIK uses a convex hull to describe the interface between
+the nanoparticle and the rest of the solute. A convex hull is defined
+as the intersection of each and every convex set containing the points
+in question and, hence, the smallest convex set for the set of points.
+To define the desired set of atom coordinates, upon which the hull
+will be constructed, an instance of the <italic>Interface</italic> class is created, which requires the directory path(s) to the topology
+and trajectory files. MDAnalysis readers are used to read the trajectory,
+and therefore a large variety of different formats of trajectory files
+can be analyzed, e.g., CHARMM, AMBER,<sup><xref ref-type="bibr" rid="ref40">40</xref></sup> and GROMACS.<sup><xref ref-type="bibr" rid="ref41">41</xref>,<xref ref-type="bibr" rid="ref42">42</xref></sup> After loading the trajectory,
+the user can utilize the selection language of MDAnalysis to identify
+the atoms that make up the main structure. For example, the atoms
+comprising the hydrophobic core of a micelle can be selected. The
+second step divides the simulation box into a grid with <italic>nn</italic> cubic subdivisions (&#x0201c;cells&#x0201d;), where <italic>n</italic> is inputted by the user. Then, the distances between the centers
+of each cell and the convex hull are calculated. For each cell center,
+a check is performed to determine whether it is inside or outside
+the convex hull. If the cell center is inside the convex hull, then
+the distance is negative. Finally, the densities of the molecules
+in question are calculated and normalized for each cell.</p><p>PUCHIK
+can be configured to use an alpha shape<sup><xref ref-type="bibr" rid="ref31">31</xref></sup> rather than a convex hull to construct the interface. An alpha shape
+is a generalization of the convex hull that captures the shape of
+a set of points by &#x0201d;scooping out&#x0201d; empty spaces between
+them. It uses a parameter - &#x003b1;, which represents a radius of
+a circle that is rolled over the point cloud, removing regions that
+do not fit within the boundary defined by the points. Smaller alpha
+values provide a more-detailed representation of the interface, while
+as &#x003b1; &#x02192; <italic>&#x0221e;</italic>, the interface constructed
+using an alpha shape becomes the same as that constructed using the
+convex hull. In PUCHIK, alpha is a free parameter. If it is not provided
+by the user, an optimal alpha will be chosen as described in the CGAL
+library documentation. Alpha shapes provide a more-concave representation
+of the interface, enabling more precise definitions at the cost of
+a slight decrease in computational performance. Both methods provide
+the atom IDs for vertices, faces, and edges of the interface, enabling
+the construction of a detailed mesh representation of the nanoparticle.</p><p>In its current version, PUCHIK also supports the calculation of
+solubilized molecules inside the convex hull. This can be used to
+calculate the number of trapped water molecules and encapsulated small
+molecules, etc. A SciPy convex hull object also contains information
+about its volume and surface area. With the <italic>Interface</italic> objects <italic>calculate_volume</italic> method, these data are
+easily retrieved.</p></sec><sec id="sec2.2"><title>Package Structure and Usage</title><p>PUCHIK is designed for
+ease of use and efficiency. Users can accomplish tasks such as density
+calculations with minimal coding, often within as few as three lines.
+PUCHIK is executed as a script from within a Python interpreter and
+currently does not support execution from a command line. At the time
+of the writing, the package consists of two subpackages: <italic>core</italic> and <italic>utilities</italic>. The <italic>core</italic> package
+contains the main class that is going to be used, called <bold>Interface</bold>, while the <italic>utilities</italic> package contains a few useful
+tools that will be described later in this section. To create an <bold>Interface</bold> object, the user should pass the directory paths
+to the topology and trajectory files. As discussed previously, the
+default way of determining the interface of the aggregate to be studied
+with PUCHIK is using a convex hull, but if the users would prefer
+to use an alpha shape, this can be inputted using the <bold>use_alpha_shapes</bold> logical.</p><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02128_0028" id="GRAPHIC-d14e286-autogenerated" position="float"/><p>Since MDAnalysis is used to read all of the files from
+the molecular
+dynamics (MD) simulations, PUCHIK supports every file format that
+MDAnalysis supports. Then, the user will need to specify the atoms
+that make up the structure of interest, e.g., the core of the nanoparticle,
+with <bold>select_structure</bold>:</p><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02128_0016" id="GRAPHIC-d14e291-autogenerated" position="float"/><p>Note that atom selection is the same as that used within
+MDAnalysis.
+Finally, the <bold>calculate_density</bold> method can be called to
+calculate the density of the desired molecule type as a function of
+distance from the interface. The user will utilize MDAnalysis selections
+to identify the atoms that will be used within the density calculation:</p><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02128_0017" id="GRAPHIC-d14e296-autogenerated" position="float"/><p>The above code snippet calculates the density of the
+O atoms in
+the water molecules, as a function of distance to the interface of
+the selected structure. The volume of the structure can be obtained
+by the <bold>calculate_volume</bold> method. Surface area can also
+be returned from the same method by setting the keyword argument <italic>area</italic> to <bold>True</bold>.</p><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02128_0018" id="GRAPHIC-d14e305-autogenerated" position="float"/><p>Both the <bold>calculate_density</bold> and <bold>calculate_volume</bold> methods can be customized by changing default parameters. The <italic>start</italic>, <italic>skip</italic>, and <italic>end</italic> parameters
+allow the user to identify the portion of the trajectory that the
+analysis is performed over. <italic>norm_bin_count</italic> specifies
+the number of divisions within the simulation box required for the
+density normalization process. This can be tweaked, depending on the
+size of the system, to achieve more-precise calculations. Dividing
+the MD simulation box into 10 &#x000c5; segments typically yields the
+optimal results. For example, setting the <italic>norm_bin_count</italic> parameter to 10 or 12 works well when the box dimensions are 10
+nm &#x000d7; 10 nm &#x000d7; 10 nm or 12 nm &#x000d7; 12 nm &#x000d7; 12 nm, respectively.
+Finally, since density calculations are parallelized across every
+CPU core by default, the user has an option to turn multiprocessing
+off by setting the parameter <italic>mp</italic> to <bold>False</bold>, or to reduce the number of cores utilized by the code by setting <italic>cpu_count</italic> to the desired number.</p><p>In simulated systems
+that contain multiple aggregates of molecules,
+PUCHIK can be used to quickly identify and analyze each aggregate
+separately. The <italic>utilities</italic> package provides the user
+with extra functionality to find clusters of molecules and center
+and make the nanoparticle whole if it crossed the simulation box.
+Clusters can be found by instantiating the <bold>ClusterSearch</bold> class, selecting the atoms to be clustered and running the <bold>find_clusters</bold> method:</p><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02128_0029" id="GRAPHIC-d14e338-autogenerated" position="float"/><p>The <bold>find_clusters</bold> method returns a list
+of lists each
+containing residue ids for a separate cluster. A typical procedure
+for calculating densities in a simulation with multiple nanoparticles
+is as follows:</p><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02128_0030" id="GRAPHIC-d14e343-autogenerated" position="float"/><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02128_0031" id="GRAPHIC-d14e344-autogenerated" position="float"/><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02128_0032" id="GRAPHIC-d14e345-autogenerated" position="float"/><p>In the first part of the code, cluster IDs are obtained,
+and the
+first cluster is saved in the <bold>cluster_1_selection</bold> variable.
+The cluster is then made whole, centered within the box, and saved
+in a separate trajectory file by using the <bold>center_to_file</bold> function. Alternatively, the <bold>center_in_memory</bold> function
+can be used to achieve the same result directly on an MDAnalysis <bold>Universe</bold> object in-place. In the final step, the new trajectory
+is loaded, the desired cluster is selected as the main structure,
+and density calculations are performed. This routine ensures the absence
+of PBC-related artifacts and provides accurate density estimations.</p><p>PUCHIK is developed to be modular, and each of its functionality
+is independent. This is done to make it extendable and ease future
+development and implementation of custom user-defined functions.</p></sec></sec><sec id="sec3"><title>Results</title><sec id="sec3.1"><title>Density Calculations</title><p>Two model atomic assemblies, a
+cylinder with a radius and half-height of 2.9 nm, and a sphere with
+a radius of 2.9 nm (<xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>a), are used to evaluate the accuracy of the densities calculated
+using the methods within this software. The number density of the
+particles within the bulk of each assembly can be estimated to be
+0.0375 &#x000c5;<sup>&#x02013;3</sup>. The <italic>norm_bin_count</italic> was set to 8 for this specific calculation. In <xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>b, the number density of particles
+as a function of distance from the center of mass (code provided in
+ESA) and from the interface, as defined by the convex hull method
+in PUCHIK, of each assembly is shown, respectively. While the density
+as a function from the center of mass yields adequate results for
+the sphere, it fails to properly describe the density of particles
+that form the cylinder. The density calculated in this manner results
+in values greater than zero beyond the interface (<italic>r</italic> = 0), which is a result of the asymmetry of the shape of the assembly.
+At the same distance from the center of mass of the cylinder, there
+will be particles along the cylinder&#x02019;s long axis but not along
+its short axis. By employing an intrinisic surface approach, PUCHIK
+calculates correct density values for both the sphere and the cylinder
+as the calculations are done, relative to the interface of the structure.
+As both of these structures have the same density regardless of their
+shape, their corresponding density plots look identical. When calculating
+the density, the minimum distance from the surface of the interface
+is determined for each particle. The center of geometry of the structure
+represents the maximum distance from the interface while inside the
+aggregate of particles. Furthermore, results from the PUCHIK software
+were compared to that determined by the nanoCISC algorithm for two
+different structures, a semispherical micelle formed by TX100 surfactants
+(<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02128/suppl_file/ci4c02128_si_001.pdf">Figure S3a</ext-link>), and an aspherical micelle
+formed by TX100 surfactants and solubilized indomethacin molecules
+(<xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>a) described
+in our previous work.<sup><xref ref-type="bibr" rid="ref43">43</xref></sup> The parameter <italic>norm_bin_count</italic> in PUCHIK was set to 12 and nanoCISC was
+executed by the default parameters described in its documentation.
+The results of the semispherical micelle are presented in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02128/suppl_file/ci4c02128_si_001.pdf">ESI</ext-link>.</p><fig id="fig1" position="float"><label>Figure 1</label><caption><p>(a) Test structures with known density and volume:
+cylinder (left)
+and sphere (right). (b) Their corresponding number of atoms per volume
+as a function of the distance from the interface (negative values
+are inside the core of the nanoparticle) estimated by a standard approach
+(left) and the PUCHIK algorithm (right).</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02128_0001" id="gr1" position="float"/></fig><fig id="fig2" position="float"><label>Figure 2</label><caption><p>(a) Snapshot of an elongated TX100 micelle. Number of
+atoms per
+volume of water, hydrophobic tail, and hydrophilic head of Triton
+X-100 surfactant, as a function of distance from the interface of
+the hydrophobic core of the micelle. Comparison of results from two
+algorithms: (b) nanoCISC and (c) PUCHIK.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02128_0002" id="gr2" position="float"/></fig><p>On the elongated nanoparticle, consisting of 6750
+heavy atoms and
+with dimensions of &#x0223c;110 &#x000c5; &#x000d7; 84 &#x000c5; &#x000d7; 74 &#x000c5;
+(<xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>a), the nanoCISC
+algorithm provides inaccurate results, whereas the PUCHIK algorithm
+provides sensible results (<xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>b and c). The first issue to note with the results
+produced with the nanoCISC algorithm is the water density (<xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>b), where it drastically
+increases such that the density is larger than the expected average
+density value of water in bulk (&#x0223c;0.033 &#x000c5;<sup>&#x02013;3</sup>). Second, the density of water calculated with the nanoCISC algorithm
+suggests that there is a large amount of water inside the hydrophobic
+core of the micelle. The results from the PUCHIK calculations, on
+the other hand, yield results similar to those of the spherical micelle.
+This shows that regardless of the shape of the nanoparticle, the densities
+are correctly estimated.</p><p>Due to the asymmetry of the micelle,
+one axis is significantly
+larger than the other two. Therefore, algorithms that are symmetry-dependent
+are prone to provide results with larger statistical error. In <xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>b, the headgroup
+and tail densities reach a plateau within the core, with the headgroup
+density being higher than that of the hydrophobic tail, a pattern
+that does not resemble a stable core&#x02013;shell model nanoparticle.
+In <xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>c, on the
+other hand, the PEO density, after reaching its peak near <italic>r</italic> = 0, decreases to 0. This is expected as the distances
+are calculated relative to the convex hull of the interface, so <italic>r</italic> = 0 means any point on the interface. Hence, the PUCHIK
+method allows the core or shell thickness of an asymmetric, nonspherical
+nanoparticle to be calculated.</p></sec><sec id="sec3.2"><title>Convex Hull vs Alpha Shape</title><p>In most cases, the convex
+hull provides an adequate representation of the hydrophobic core&#x02013;water
+interface. Some inaccuracies will start to appear when the core is
+a bent or curved structure. For systems with features such as water-filled
+cavities, such as liposomes, it is preferable to model the nanoparticle
+interface as hollow.</p><p>The convex hull is not able to correctly
+describe such structures by definition, as it will enclose every bend
+and gap. A better approach to this problem is the use of alpha shapes,
+which can be customized to model such nanoparticles perfectly.</p><p><xref rid="fig3" ref-type="fig">Figures <xref rid="fig3" ref-type="fig">3</xref></xref>a and <xref rid="fig3" ref-type="fig">3</xref>b show a comparison of a surfactant-based nanoparticle&#x0015b;
+interface using both methods. <xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>a shows the convex hull of a nanoparticle. Although
+the red areas are part of the hull, they contain almost no atoms belonging
+to the nanoparticle and are filled with water molecules. Therefore,
+the density calculations might show a higher density of water inside
+the core of the nanoparticle, which is the case in <xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>c. However, the alpha shape
+(<xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>b) forms a
+concave interface, better fitting to the overall shape of the nanoparticle. <xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>d shows a significantly
+smaller water density inside of the nanoparticle when the alpha shape
+is used compared to that using the convex hull. Moreover, since the
+alpha shape typically encloses a smaller volume than its convex hull
+counterpart, while containing the same number of points, the number
+density (atoms per volume) is higher using an alpha shape than using
+a convex hull. Finally, it is important to note that calculating the
+alpha shape is computationally more expensive than the convex hull,
+representing a tradeoff between performance and precision. A comparison
+can be found in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02128/suppl_file/ci4c02128_si_001.pdf">Figure S6 in the ESI</ext-link>.</p><fig id="fig3" position="float"><label>Figure 3</label><caption><p>Same nanoparticle
+modeled using (a) a convex hull and (b) an alpha
+shape. Number of atoms per volume of water, hydrophobic tail, and
+hydrophilic head calculated using (c) a convex hull and (d) an alpha
+shape. <italic>r</italic> is the distance of the particle from the
+convex hull/alpha shape.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02128_0003" id="gr3" position="float"/></fig></sec><sec id="sec3.3"><title>Performance</title><p>The performance of PUCHIK throughout the
+development was improved by first identifying the bottleneck functions
+of the code. These functions are separated from the code and compiled
+by using Cython. The <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02128/suppl_file/ci4c02128_si_001.pdf">ESI</ext-link> provides details
+on how the profiling and compilation were conducted. This gives a
+slight performance boost of &#x0223c;6%. Finally, the code is parallelized
+to use multiple CPU processes simultaneously. The results are shown
+in <xref rid="tbl1" ref-type="other">Table <xref rid="tbl1" ref-type="other">1</xref></xref>. The system
+used for this benchmark contained &#x0223c;51&#x0202f;000 water molecules
+and &#x0223c;1100 interface atoms. Hydrogen atoms were excluded from
+the computation. Implementing a simple parallelization through multiprocessing
+increases the performance of the noncompiled code dramatically. The
+rate of change in computational time, depending on the number of frames,
+is &#x0223c;200% less for parallelized code than for the single process
+version. Furthermore, the parallelization of a compiled code offers
+an additional &#x0223c;11% performance boost.</p><table-wrap id="tbl1" position="float"><label>Table 1</label><caption><title>Execution Time Per Frame for Different
+Techniques to Compute Densities in the PUCHIK Algorithm</title></caption><table frame="hsides" rules="groups" border="0"><colgroup><col align="left"/><col align="center"/></colgroup><thead><tr><th style="border:none;" align="center">optimization technique</th><th style="border:none;" align="center">execution time (seconds per frame)</th></tr></thead><tbody><tr><td style="border:none;" align="left">Python SP</td><td style="border:none;" align="center">0.40</td></tr><tr><td style="border:none;" align="left">Python + Cython SP</td><td style="border:none;" align="center">0.37</td></tr><tr><td style="border:none;" align="left">Python MP</td><td style="border:none;" align="center">0.13</td></tr><tr><td style="border:none;" align="left">Python + Cython
+MP</td><td style="border:none;" align="center">0.12</td></tr></tbody></table></table-wrap><p>Finally, the time complexity of the code can be estimated
+as <italic>O</italic>(<italic>mN</italic>), where <italic>N</italic> is the
+number of particles for density calculations and <italic>m</italic> is the number of vertices on the convex hull. With a constant <italic>m</italic>, the execution time increases linearly with an increasing <italic>N</italic> (<xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>). These calculations were performed using a trajectory of 168&#x0202f;989
+atoms.</p><fig id="fig4" position="float"><label>Figure 4</label><caption><p>Linear dependence of the execution time on the number of particles.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02128_0004" id="gr4" position="float"/></fig></sec></sec><sec id="sec4"><title>Conclusions</title><p>This work introduces PUCHIK, a Python
+package specifically designed
+for the quantitative characterization of nanoparticle interfaces from
+MD trajectories. PUCHIK addresses the limitations of the current tools
+by providing a robust framework for analyzing both spherical and aspherical
+interfaces. The modular nature of PUCHIK makes it easy for the users
+to add functionality to the code, so that further analysis can be
+done using the definition of the location of the interface of the
+hydrophobic core of the nanoparticle. The results provided by our
+code enable the analysis of important quantities, enabling a deeper
+understanding of the structure&#x02013;property relationships present
+in these systems.</p><p>Furthermore, the limitations of using a convex
+hull are discussed.
+It was shown that, although convex hull provides a good approximation
+for spherical and elongated ellipsoids, interfaces of structures that
+contain bends, curves, and cavities will not be described properly
+as a convex hull. The convex hull will encompass the grooves and gaps
+leading to an oversimplified representation of these complex interfaces.
+To address this issue, another implementation for interface construction
+was presented. This implementation utilizes alpha shapes to produce
+a more fitting interface for a nanoparticle of an arbitrary shape.
+By having the ability to use both algorithms, PUCHIK allows users
+to analyze nanoparticles of any shape with one tool.</p><p>Finally,
+the manuscript also provides guidelines to make computationally
+intensive codes dramatically faster by utilizing one or a combination
+of different methods, such as compilation, multiprocessing, and simple
+algorithmic optimizations. Additionally, simply refactoring the code
+to enable parallel execution can dramatically improve performance,
+with speedups scaling according to the number of CPU cores employed.
+Using these optimization strategies, PUCHIK has improved performance
+in comparison to the Pytim software<sup><xref ref-type="bibr" rid="ref44">44</xref></sup> (see
+the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02128/suppl_file/ci4c02128_si_001.pdf">ESI</ext-link>), which has some of the same functionality.</p><p>PUCHIK will play an integral role in linking the molecular-scale
+detail available from molecular dynamics (MD) simulations to the observations
+made experimentally when studying nanoparticles. This tool will make
+it that much easier for users to utilize the results of their simulations
+to inform the modeling of experimental data. For example, the ability
+to accurately define the shape that is formed by the core and the
+corona of the nanoparticle is useful, because that information is
+necessary in order to choose appropriate models for understanding
+the data from neutron scattering experiments, which are a nice complement
+to MD simulations when studying nanoparticles. Additionally, being
+able to measure the type and amount of the different atomic species
+found in the core (and corona) of a nanoparticle is useful when assessing
+the scattering length density, which is used in the modeling of neutron
+scattering data of such systems. Therefore, in addition to providing
+the molecular-scale detail that is not assessable experimentally,
+this tool will provide further information to assist in the modeling
+of the experimental data gathered on these increasingly complex systems.</p></sec></body><back><notes notes-type="data-availability" id="notes4"><title>Data Availability Statement</title><p>The PUCHIK software
+package and the input files for the simulations reported in this manuscript
+are available for download from the Web site: <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/hrachishkhanyan/PUCHIK/tree/alpha_shapes">https://github.com/hrachishkhanyan/PUCHIK/tree/alpha_shapes</uri>.</p></notes><notes id="notes1" notes-type="si"><title>Supporting Information Available</title><p>The Supporting Information is
+available free of charge at <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/10.1021/acs.jcim.4c02128?goto=supporting-info">https://pubs.acs.org/doi/10.1021/acs.jcim.4c02128</ext-link>.<list id="silist" list-type="simple"><list-item><p>(a) Instructions for installing PUCHIK; (b) an example
+of the code required to utilize PUCHIK; (c) a brief discussion of
+the algorithm used within PUCHIK; (d) a description of the results
+from the density calculation within PUCHIK; (e) discussion of code
+optimization; (f) comparison of intrinsic densities measured with
+nanoCISC<sup><xref ref-type="bibr" rid="ref46">46</xref></sup> and PUCHIK; (g) a description
+of the profiling protocol used in PUCHIK; (h) a comparison of the
+performance of PUCHIK using a convex hull and alpha shapes for interface
+construction; and (i) a comparison of the performance of PUCHIK and
+Pytim<sup><xref ref-type="bibr" rid="ref44">44</xref></sup> (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c02128/suppl_file/ci4c02128_si_001.pdf">PDF</ext-link>)</p></list-item></list></p></notes><sec sec-type="supplementary-material"><title>Supplementary Material</title><supplementary-material content-type="local-data" id="sifile1"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c02128_si_001.pdf"><caption><p>ci4c02128_si_001.pdf</p></caption></media></supplementary-material></sec><notes notes-type="" id="notes2"><title>Author Contributions</title><p>H.I., A.S.-B.,
+and C.D.L. designed the code and corresponding research. H.I. and
+A.S.-B. wrote all of the code and the tutorials reported in the manuscript.
+H.I. carried out any necessary analysis for this manuscript. H.I.,
+A.S.-B., and C.D.L. wrote and edited the manuscript.</p></notes><notes notes-type="COI-statement" id="notes3"><p>The authors
+declare no competing financial interest.</p></notes><ack><title>Acknowledgments</title><p>Authors C.D.L. and H.I. acknowledge
+the Higher Education
+and Science Committee of the Republic of Armenia for supporting this
+research (Grant No. N 24RL-1C009). The authors also thank the e-Research
+department at King&#x02019;s College London for computational resources.<sup><xref ref-type="bibr" rid="ref45">45</xref></sup> We are grateful to the UK Materials and Molecular
+Modelling Hub for computational resources, which is partially funded
+by EPSRC (Nos. EP/T022213/1, EP/W032260/1, and EP/P020194/1).</p></ack><ref-list><title>References</title><ref id="ref1"><mixed-citation publication-type="journal" id="cit1"><name><surname>Wilczewska</surname><given-names>A. Z.</given-names></name>; <name><surname>Niemirowicz</surname><given-names>K.</given-names></name>; <name><surname>Markiewicz</surname><given-names>K. H.</given-names></name>; <name><surname>Car</surname><given-names>H.</given-names></name>
+<article-title>Nanoparticles as drug
+delivery systems</article-title>. <source>Pharmacol. Rep.</source>
+<year>2012</year>, <volume>64</volume>, <fpage>1020</fpage>&#x02013;<lpage>1037</lpage>. <pub-id pub-id-type="doi">10.1016/S1734-1140(12)70901-5</pub-id>.<pub-id pub-id-type="pmid">23238461</pub-id>
+</mixed-citation></ref><ref id="ref2"><mixed-citation publication-type="journal" id="cit2"><name><surname>Couvreur</surname><given-names>P.</given-names></name>
+<article-title>Nanoparticles
+in drug delivery: Past, present and future</article-title>. <source>Adv. Drug Delivery Rev.</source>
+<year>2013</year>, <volume>65</volume>, <fpage>21</fpage>&#x02013;<lpage>23</lpage>. <pub-id pub-id-type="doi">10.1016/j.addr.2012.04.010</pub-id>.</mixed-citation></ref><ref id="ref3"><mixed-citation publication-type="journal" id="cit3"><name><surname>Ishkhanyan</surname><given-names>H.</given-names></name>; <name><surname>Ziolek</surname><given-names>R. M.</given-names></name>; <name><surname>Barlow</surname><given-names>D. J.</given-names></name>; <name><surname>Lawrence</surname><given-names>M. J.</given-names></name>; <name><surname>Poghosyan</surname><given-names>A. H.</given-names></name>; <name><surname>Lorenz</surname><given-names>C. D.</given-names></name>
+<article-title>NSAID Solubilisation Promotes Morphological
+Transitions
+in Triton X-114 Surfactant Micelles</article-title>. <source>J. Mol.
+Liq.</source>
+<year>2022</year>, <volume>356</volume>, <fpage>119050</fpage><pub-id pub-id-type="doi">10.1016/j.molliq.2022.119050</pub-id>.</mixed-citation></ref><ref id="ref4"><mixed-citation publication-type="journal" id="cit4"><name><surname>L&#x000f3;pez-R&#x000ed;os
+de Castro</surname><given-names>R.</given-names></name>; <name><surname>Ziolek</surname><given-names>R. M.</given-names></name>; <name><surname>Ulmschneider</surname><given-names>M. B.</given-names></name>; <name><surname>Lorenz</surname><given-names>C. D.</given-names></name>
+<article-title>Therapeutic Peptides Are Preferentially Solubilized
+in Specific Microenvironments within PEG-PLGA Polymer Nanoparticles</article-title>. <source>Nano Lett.</source>
+<year>2024</year>, <volume>24</volume>, <fpage>2011</fpage>&#x02013;<lpage>2017</lpage>. <pub-id pub-id-type="doi">10.1021/acs.nanolett.3c04558</pub-id>.<pub-id pub-id-type="pmid">38306708</pub-id>
+</mixed-citation></ref><ref id="ref5"><mixed-citation publication-type="journal" id="cit5"><name><surname>Xie</surname><given-names>J.</given-names></name>; <name><surname>Pink</surname><given-names>D. L.</given-names></name>; <name><surname>Lawrence</surname><given-names>M. J.</given-names></name>; <name><surname>Lorenz</surname><given-names>C. D.</given-names></name>
+<article-title>Digestion of Lipid
+Micelles Leads to Increased Membrane Permeability</article-title>. <source>Nanoscale</source>
+<year>2024</year>, <volume>16</volume>, <fpage>2642</fpage>&#x02013;<lpage>2653</lpage>. <pub-id pub-id-type="doi">10.1039/D3NR05083A</pub-id>.<pub-id pub-id-type="pmid">38229565</pub-id>
+</mixed-citation></ref><ref id="ref6"><mixed-citation publication-type="journal" id="cit6"><name><surname>Popovi&#x00107;</surname><given-names>Z.</given-names></name>; <name><surname>Liu</surname><given-names>W.</given-names></name>; <name><surname>Chauhan</surname><given-names>V. P.</given-names></name>; <name><surname>Lee</surname><given-names>J.</given-names></name>; <name><surname>Wong</surname><given-names>C.</given-names></name>; <name><surname>Greytak</surname><given-names>A. B.</given-names></name>; <name><surname>Insin</surname><given-names>N.</given-names></name>; <name><surname>Nocera</surname><given-names>D. G.</given-names></name>; <name><surname>Fukumura</surname><given-names>D.</given-names></name>; <name><surname>Jain</surname><given-names>R. K.</given-names></name>; <name><surname>Bawendi</surname><given-names>M. G.</given-names></name>
+<article-title>A Nanoparticle Size Series for In Vivo Fluorescence
+Imaging</article-title>. <source>Angew. Chem., Int. Ed.</source>
+<year>2010</year>, <volume>49</volume>, <fpage>8649</fpage>&#x02013;<lpage>8652</lpage>. <pub-id pub-id-type="doi">10.1002/anie.201003142</pub-id>.</mixed-citation></ref><ref id="ref7"><mixed-citation publication-type="journal" id="cit7"><name><surname>Meyers</surname><given-names>J. D.</given-names></name>; <name><surname>Doane</surname><given-names>T.</given-names></name>; <name><surname>Burda</surname><given-names>C.</given-names></name>; <name><surname>Basilion</surname><given-names>J. P.</given-names></name>
+<article-title>Nanoparticles for
+imaging and treating brain cancer</article-title>. <source>Nanomedicine</source>
+<year>2013</year>, <volume>8</volume>, <fpage>123</fpage>&#x02013;<lpage>143</lpage>. <pub-id pub-id-type="doi">10.2217/nnm.12.185</pub-id>.<pub-id pub-id-type="pmid">23256496</pub-id>
+</mixed-citation><note><p>PMID: 23256496</p></note></ref><ref id="ref8"><mixed-citation publication-type="journal" id="cit8"><name><surname>Zhao</surname><given-names>M.</given-names></name>; <name><surname>Leggett</surname><given-names>E.</given-names></name>; <name><surname>Bourke</surname><given-names>S.</given-names></name>; <name><surname>Poursanidou</surname><given-names>S.</given-names></name>; <name><surname>Carter-Searjeant</surname><given-names>S.</given-names></name>; <name><surname>Po</surname><given-names>S.</given-names></name>; <name><surname>Palma do Carmo</surname><given-names>M.</given-names></name>; <name><surname>Dailey</surname><given-names>L. A.</given-names></name>; <name><surname>Manning</surname><given-names>P.</given-names></name>; <name><surname>Ryan</surname><given-names>S. G.</given-names></name>; <name><surname>Urbano</surname><given-names>M. A.</given-names></name>; <name><surname>&#x00047;&#x00303;reen</surname><given-names>L.</given-names></name>; <name><surname>Rakovich</surname><given-names>A.</given-names></name>
+<article-title>Theranostic Near-Infrared-Active
+Conjugated Polymer Nanoparticles</article-title>. <source>ACS Nano</source>
+<year>2021</year>, <volume>15</volume>, <fpage>8790</fpage>&#x02013;<lpage>8802</lpage>. <pub-id pub-id-type="doi">10.1021/acsnano.1c01257</pub-id>.<pub-id pub-id-type="pmid">33978405</pub-id>
+</mixed-citation></ref><ref id="ref9"><mixed-citation publication-type="journal" id="cit9"><name><surname>Ziolek</surname><given-names>R. M.</given-names></name>; <name><surname>Santana-Bonilla</surname><given-names>A.</given-names></name>; <name><surname>L&#x000f3;pez-R&#x000ed;os de Castro</surname><given-names>R.</given-names></name>; <name><surname>K uhn</surname><given-names>R.</given-names></name>; <name><surname>Green</surname><given-names>M.</given-names></name>; <name><surname>Lorenz</surname><given-names>C. D.</given-names></name>
+<article-title>Conformational Heterogeneity
+and Interchain Percolation Revealed in an Amorphous Conjugated Polymer</article-title>. <source>ACS Nano</source>
+<year>2022</year>, <volume>16</volume>, <fpage>14432</fpage>&#x02013;<lpage>14442</lpage>. <pub-id pub-id-type="doi">10.1021/acsnano.2c04794</pub-id>.<pub-id pub-id-type="pmid">36103148</pub-id>
+</mixed-citation></ref><ref id="ref10"><mixed-citation publication-type="journal" id="cit10"><name><surname>Bourke</surname><given-names>S.</given-names></name>; <name><surname>Don&#x000e0;</surname><given-names>F.</given-names></name>; <name><surname>Teijeiro Gonzalez</surname><given-names>Y.</given-names></name>; <name><surname>Qazi Chaudhry</surname><given-names>B.</given-names></name>; <name><surname>Panamarova</surname><given-names>M.</given-names></name>; <name><surname>Mackay</surname><given-names>E.</given-names></name>; <name><surname>Zammit</surname><given-names>P. S.</given-names></name>; <name><surname>Dailey</surname><given-names>L. A.</given-names></name>; <name><surname>Eggert</surname><given-names>U. S.</given-names></name>; <name><surname>Suhling</surname><given-names>K.</given-names></name>; <name><surname>Green</surname><given-names>M. A.</given-names></name>
+<article-title>Biocompatible Magnetic
+Conjugated Polymer Nanoparticles for Optical and Lifetime Imaging
+Applications in the First Biological Window</article-title>. <source>ACS Appl. Polym. Mater.</source>
+<year>2022</year>, <volume>4</volume>, <fpage>8193</fpage>&#x02013;<lpage>8202</lpage>. <pub-id pub-id-type="doi">10.1021/acsapm.2c01153</pub-id>.<pub-id pub-id-type="pmid">36405304</pub-id>
+</mixed-citation></ref><ref id="ref11"><mixed-citation publication-type="journal" id="cit11"><name><surname>Sanit&#x000e0;</surname><given-names>G.</given-names></name>; <name><surname>Carrese</surname><given-names>B.</given-names></name>; <name><surname>Lamberti</surname><given-names>A.</given-names></name>
+<article-title>Nanoparticle Surface Functionalization:
+How to Improve Biocompatibility and Cellular Internalization</article-title>. <source>Front. Mol. Biosci.</source>
+<year>2020</year>, <volume>7</volume>, <fpage>381</fpage><pub-id pub-id-type="doi">10.3389/fmolb.2020.587012</pub-id>.</mixed-citation></ref><ref id="ref12"><mixed-citation publication-type="journal" id="cit12"><name><surname>Neouze</surname><given-names>M.-A.</given-names></name>; <name><surname>Schubert</surname><given-names>U.</given-names></name>
+<article-title>Surface Modification and Functionalization of Metal
+and Metal Oxide Nanoparticles by Organic Ligands</article-title>. <source>Monatsh. Chem.</source>
+<year>2008</year>, <volume>139</volume>, <fpage>183</fpage>&#x02013;<lpage>195</lpage>. <pub-id pub-id-type="doi">10.1007/s00706-007-0775-2</pub-id>.</mixed-citation></ref><ref id="ref13"><mixed-citation publication-type="journal" id="cit13"><name><surname>Albanese</surname><given-names>A.</given-names></name>; <name><surname>Tang</surname><given-names>P. S.</given-names></name>; <name><surname>Chan</surname><given-names>W. C.</given-names></name>
+<article-title>The Effect of Nanoparticle
+Size,
+Shape, and Surface Chemistry on Biological Systems</article-title>. <source>Annu. Rev. Biomed. Eng.</source>
+<year>2012</year>, <volume>14</volume>, <fpage>1</fpage>&#x02013;<lpage>16</lpage>. <pub-id pub-id-type="doi">10.1146/annurev-bioeng-071811-150124</pub-id>.<pub-id pub-id-type="pmid">22524388</pub-id>
+</mixed-citation></ref><ref id="ref14"><mixed-citation publication-type="journal" id="cit14"><name><surname>Lorenz</surname><given-names>C. D.</given-names></name>; <name><surname>Hsieh</surname><given-names>C.-M.</given-names></name>; <name><surname>Dreiss</surname><given-names>C. A.</given-names></name>; <name><surname>Lawrence</surname><given-names>M. J.</given-names></name>
+<article-title>Molecular Dynamics
+Simulations of the Interfacial and Structural Properties of Dimethyldodecylamine-N-Oxide
+Micelles</article-title>. <source>Langmuir</source>
+<year>2011</year>, <volume>27</volume>, <fpage>546</fpage>&#x02013;<lpage>553</lpage>. <pub-id pub-id-type="doi">10.1021/la1031416</pub-id>.<pub-id pub-id-type="pmid">21166438</pub-id>
+</mixed-citation></ref><ref id="ref15"><mixed-citation publication-type="journal" id="cit15"><person-group person-group-type="allauthors"><name><surname>Pink</surname><given-names>D. L.</given-names></name>; <name><surname>Loruthai</surname><given-names>O.</given-names></name>; <name><surname>Ziolek</surname><given-names>R. M.</given-names></name>; <name><surname>Wasutrasawat</surname><given-names>P.</given-names></name>; <name><surname>Terry</surname><given-names>A.
+E.</given-names></name>; <name><surname>Lawrence</surname><given-names>M. J.</given-names></name>; <name><surname>Lorenz</surname><given-names>C. D.</given-names></name></person-group><article-title>On the Structure
+of Solid Lipid Nanoparticles</article-title>. <source>Small</source><year>2019</year><volume>15</volume>, <fpage>1903156</fpage>.<pub-id pub-id-type="doi">10.1002/smll.201903156</pub-id></mixed-citation></ref><ref id="ref16"><mixed-citation publication-type="journal" id="cit16"><name><surname>Griffiths</surname><given-names>M. Z.</given-names></name>; <name><surname>Shinoda</surname><given-names>W.</given-names></name>
+<article-title>Analyzing the Role
+of Surfactants in the Colloidal
+Stability of Nanoparticles in Oil through Coarse-Grained Molecular
+Dynamics Simulations</article-title>. <source>J. Phys. Chem. B</source>
+<year>2021</year>, <volume>125</volume>, <fpage>6315</fpage>&#x02013;<lpage>6321</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jpcb.1c01148</pub-id>.<pub-id pub-id-type="pmid">33990135</pub-id>
+</mixed-citation></ref><ref id="ref17"><mixed-citation publication-type="journal" id="cit17"><name><surname>Pabois</surname><given-names>O.</given-names></name>; <name><surname>Ziolek</surname><given-names>R. M.</given-names></name>; <name><surname>Lorenz</surname><given-names>C. D.</given-names></name>; <name><surname>Pr&#x000e9;vost</surname><given-names>S.</given-names></name>; <name><surname>Mahmoudi</surname><given-names>N.</given-names></name>; <name><surname>Skoda</surname><given-names>M. W. A.</given-names></name>; <name><surname>Welbourn</surname><given-names>R. J. L.</given-names></name>; <name><surname>Valero</surname><given-names>M.</given-names></name>; <name><surname>Harvey</surname><given-names>R. D.</given-names></name>; <name><surname>Grundy</surname><given-names>M. M.-L.</given-names></name>; <name><surname>Wilde</surname><given-names>P.</given-names></name>; <name><surname>Grillo</surname><given-names>I.</given-names></name>; <name><surname>Gerelli</surname><given-names>Y.</given-names></name>; <name><surname>Dreiss</surname><given-names>C. A.</given-names></name>
+<article-title>Morphology of bile
+salts micelles
+and mixed micelles with lipolysis products, from scattering techniques
+and atomistic simulations</article-title>. <source>J. Colloid Interface
+Sci.</source>
+<year>2021</year>, <volume>587</volume>, <fpage>522</fpage>&#x02013;<lpage>537</lpage>. <pub-id pub-id-type="doi">10.1016/j.jcis.2020.10.101</pub-id>.<pub-id pub-id-type="pmid">33189321</pub-id>
+</mixed-citation></ref><ref id="ref18"><mixed-citation publication-type="journal" id="cit18"><name><surname>Wen</surname><given-names>B.</given-names></name>; <name><surname>Bai</surname><given-names>B.</given-names></name>; <name><surname>Larson</surname><given-names>R. G.</given-names></name>
+<article-title>Surfactant desorption and scission free energies for
+cylindrical and spherical micelles from umbrella-sampling molecular
+dynamics simulations</article-title>. <source>J. Colloid Interface Sci.</source>
+<year>2021</year>, <volume>599</volume>, <fpage>773</fpage>&#x02013;<lpage>784</lpage>. <pub-id pub-id-type="doi">10.1016/j.jcis.2021.04.138</pub-id>.<pub-id pub-id-type="pmid">33989930</pub-id>
+</mixed-citation></ref><ref id="ref19"><mixed-citation publication-type="journal" id="cit19"><name><surname>Lopez-Rios
+de Castro</surname><given-names>R.</given-names></name>; <name><surname>Ziolek</surname><given-names>R. M.</given-names></name>; <name><surname>Lorenz</surname><given-names>C. D.</given-names></name>
+<article-title>Topology-controlled
+self-assembly of amphiphilic block copolymers</article-title>. <source>Nanoscale</source>
+<year>2023</year>, <volume>15</volume>, <fpage>15230</fpage>&#x02013;<lpage>15237</lpage>. <pub-id pub-id-type="doi">10.1039/D3NR01204B</pub-id>.<pub-id pub-id-type="pmid">37671739</pub-id>
+</mixed-citation></ref><ref id="ref20"><mixed-citation publication-type="journal" id="cit20"><name><surname>Lorensen</surname><given-names>W.
+E.</given-names></name>; <name><surname>Cline</surname><given-names>H. E.</given-names></name>
+<article-title>Marching
+cubes: A high resolution 3D surface construction
+algorithm</article-title>. <source>ACM SIGGRAPH Computer Graphics</source>
+<year>1987</year>, <volume>21</volume>, <fpage>163</fpage>&#x02013;<lpage>169</lpage>. <pub-id pub-id-type="doi">10.1145/37402.37422</pub-id>.</mixed-citation></ref><ref id="ref21"><mixed-citation publication-type="journal" id="cit21"><name><surname>Willard</surname><given-names>A. P.</given-names></name>; <name><surname>Chandler</surname><given-names>D.</given-names></name>
+<article-title>Instantaneous liquid
+interfaces</article-title>. <source>J. Phys. Chem. B</source>
+<year>2010</year>, <volume>114</volume>, <fpage>1954</fpage>&#x02013;<lpage>1958</lpage>. <pub-id pub-id-type="doi">10.1021/jp909219k</pub-id>.<pub-id pub-id-type="pmid">20055377</pub-id>
+</mixed-citation></ref><ref id="ref22"><mixed-citation publication-type="journal" id="cit22"><name><surname>Ziolek</surname><given-names>R. M.</given-names></name>; <name><surname>Omar</surname><given-names>J.</given-names></name>; <name><surname>Hu</surname><given-names>W.</given-names></name>; <name><surname>Porcar</surname><given-names>L.</given-names></name>; <name><surname>Gonz&#x000e1;lez-Gaitano</surname><given-names>G.</given-names></name>; <name><surname>Dreiss</surname><given-names>C. A.</given-names></name>; <name><surname>Lorenz</surname><given-names>C. D.</given-names></name>
+<article-title>Understanding the pH-Directed Self-Assembly
+of a Four-Arm Block Copolymer</article-title>. <source>Macromolecules</source>
+<year>2020</year>, <volume>53</volume>, <fpage>11065</fpage>&#x02013;<lpage>11076</lpage>. <pub-id pub-id-type="doi">10.1021/acs.macromol.0c01694</pub-id>.</mixed-citation></ref><ref id="ref23"><mixed-citation publication-type="journal" id="cit23"><name><surname>Wang</surname><given-names>Y.</given-names></name>; <name><surname>Teitel</surname><given-names>S.</given-names></name>; <name><surname>Dellago</surname><given-names>C.</given-names></name>
+<article-title>Melting of
+icosahedral gold nanoclusters
+from molecular dynamics simulations</article-title>. <source>J. Chem.
+Phys.</source>
+<year>2005</year>, <volume>122</volume>, <fpage>214722</fpage><pub-id pub-id-type="doi">10.1063/1.1917756</pub-id>.<pub-id pub-id-type="pmid">15974777</pub-id>
+</mixed-citation></ref><ref id="ref24"><mixed-citation publication-type="journal" id="cit24"><name><surname>Loverde</surname><given-names>S. M.</given-names></name>; <name><surname>Klein</surname><given-names>M. L.</given-names></name>; <name><surname>Discher</surname><given-names>D. E.</given-names></name>
+<article-title>Nanoparticle
+Shape Improves Delivery:
+Rational Coarse Grain Molecular Dynamics (rCG-MD) of Taxol in Worm-Like
+PEG-PCL Micelles</article-title>. <source>Adv. Mater.</source>
+<year>2012</year>, <volume>24</volume>, <fpage>3823</fpage>&#x02013;<lpage>3830</lpage>. <pub-id pub-id-type="doi">10.1002/adma.201103192</pub-id>.<pub-id pub-id-type="pmid">22105885</pub-id>
+</mixed-citation></ref><ref id="ref25"><mixed-citation publication-type="journal" id="cit25"><name><surname>Sharma</surname><given-names>H.</given-names></name>; <name><surname>Dormidontova</surname><given-names>E. E.</given-names></name>
+<article-title>Polymer-Threaded
+and Polymer-Wrapped Wormlike Micelle
+Solutions: Molecular Dynamics Simulations</article-title>. <source>Macromolecules</source>
+<year>2019</year>, <volume>52</volume>, <fpage>7016</fpage>&#x02013;<lpage>7027</lpage>. <pub-id pub-id-type="doi">10.1021/acs.macromol.9b00974</pub-id>.</mixed-citation></ref><ref id="ref26"><mixed-citation publication-type="journal" id="cit26"><name><surname>Chen</surname><given-names>Q.</given-names></name>; <name><surname>Liu</surname><given-names>W.</given-names></name>; <name><surname>Ye</surname><given-names>Z.</given-names></name>; <name><surname>Shang</surname><given-names>Y.</given-names></name>; <name><surname>Liu</surname><given-names>H.</given-names></name>
+<article-title>Molecular dynamics
+simulations and quantitative calculations on photo-responsive behavior
+of wormlike micelles constructed by gemini surfactant 12&#x02013;3&#x02013;12
+2Br<sup>&#x02013;</sup> and cinnamates with different ortho-substituents</article-title>. <source>Colloid Surf. A</source>
+<year>2022</year>, <volume>641</volume>, <fpage>128476</fpage><pub-id pub-id-type="doi">10.1016/j.colsurfa.2022.128476</pub-id>.</mixed-citation></ref><ref id="ref27"><mixed-citation publication-type="journal" id="cit27"><name><surname>Zhang</surname><given-names>R.</given-names></name>; <name><surname>Zhang</surname><given-names>X.</given-names></name>; <name><surname>Qing</surname><given-names>S.</given-names></name>; <name><surname>Luo</surname><given-names>Z.</given-names></name>; <name><surname>Liu</surname><given-names>Y.</given-names></name>
+<article-title>Investigation
+of nanoparticles shape that influence the thermal conductivity and
+viscosity in argon-based nanofluids: A molecular dynamics simulation</article-title>. <source>Int. J. Heat Mass Transfer</source>
+<year>2023</year>, <volume>207</volume>, <fpage>124031</fpage><pub-id pub-id-type="doi">10.1016/j.ijheatmasstransfer.2023.124031</pub-id>.</mixed-citation></ref><ref id="ref28"><mixed-citation publication-type="journal" id="cit28"><name><surname>Ospennikov</surname><given-names>A. S.</given-names></name>; <name><surname>Gavrilov</surname><given-names>A. A.</given-names></name>; <name><surname>Artykulnyi</surname><given-names>O. P.</given-names></name>; <name><surname>Kuklin</surname><given-names>A. I.</given-names></name>; <name><surname>Novikov</surname><given-names>V. V.</given-names></name>; <name><surname>Shibaev</surname><given-names>A. V.</given-names></name>; <name><surname>Philippova</surname><given-names>O. E.</given-names></name>
+<article-title>Transformations
+of wormlike surfactant
+micelles induced by a water- soluble monomer</article-title>. <source>J. Colloid Interface Sci.</source>
+<year>2021</year>, <volume>602</volume>, <fpage>590</fpage>&#x02013;<lpage>601</lpage>. <pub-id pub-id-type="doi">10.1016/j.jcis.2021.05.062</pub-id>.<pub-id pub-id-type="pmid">34147750</pub-id>
+</mixed-citation></ref><ref id="ref29"><mixed-citation publication-type="journal" id="cit29"><name><surname>Duran</surname><given-names>T.</given-names></name>; <name><surname>Costa</surname><given-names>A.</given-names></name>; <name><surname>Gupta</surname><given-names>A.</given-names></name>; <name><surname>Xu</surname><given-names>X.</given-names></name>; <name><surname>Zhang</surname><given-names>H.</given-names></name>; <name><surname>Burgess</surname><given-names>D.</given-names></name>; <name><surname>Chaudhuri</surname><given-names>B.</given-names></name>
+<article-title>Coarse-Grained
+Molecular Dynamics
+Simulations of Paclitaxel- Loaded Polymeric Micelles</article-title>. <source>Mol. Pharmaceutics</source>
+<year>2022</year>, <volume>19</volume>, <fpage>1117</fpage>&#x02013;<lpage>1134</lpage>. <pub-id pub-id-type="doi">10.1021/acs.molpharmaceut.1c00800</pub-id>.</mixed-citation></ref><ref id="ref30"><mixed-citation publication-type="journal" id="cit30"><name><surname>Ma</surname><given-names>Z.</given-names></name>; <name><surname>Liu</surname><given-names>G.</given-names></name>; <name><surname>Hu</surname><given-names>N.</given-names></name>; <name><surname>Chen</surname><given-names>L.</given-names></name>; <name><surname>Wei</surname><given-names>J.</given-names></name>
+<article-title>pH-induced morphological
+transition of aggregates formed by miktoarm star polymers in dilute
+solution: a mesoscopic simulation study</article-title>. <source>RSC
+Adv.</source>
+<year>2024</year>, <volume>14</volume>, <fpage>24240</fpage><pub-id pub-id-type="doi">10.1039/D4RA04511D</pub-id>.<pub-id pub-id-type="pmid">39101066</pub-id>
+</mixed-citation></ref><ref id="ref31"><mixed-citation publication-type="journal" id="cit31"><name><surname>Edelsbrunner</surname><given-names>H.</given-names></name>; <name><surname>Kirkpatrick</surname><given-names>D.</given-names></name>; <name><surname>Seidel</surname><given-names>R.</given-names></name>
+<article-title>On the Shape of a Set of Points in
+the Plane</article-title>. <source>IEEE Trans. Inform. Theory</source>
+<year>1983</year>, <volume>29</volume>, <fpage>551</fpage>&#x02013;<lpage>559</lpage>. <pub-id pub-id-type="doi">10.1109/TIT.1983.1056714</pub-id>.</mixed-citation></ref><ref id="ref32"><mixed-citation publication-type="journal" id="cit32"><name><surname>Virtanen</surname><given-names>P.</given-names></name>; et al. <article-title>SciPy 1.0: Fundamental
+Algorithms for Scientific Computing in Python</article-title>. <source>Nat. Methods</source>
+<year>2020</year>, <volume>17</volume>, <fpage>261</fpage>&#x02013;<lpage>272</lpage>. <pub-id pub-id-type="doi">10.1038/s41592-019-0686-2</pub-id>.<pub-id pub-id-type="pmid">32015543</pub-id>
+</mixed-citation></ref><ref id="ref33"><mixed-citation publication-type="conf-proc" id="cit33"><person-group person-group-type="allauthors"><name><surname>Gowers</surname><given-names>R.</given-names></name>; <name><surname>Linke</surname><given-names>M.</given-names></name>; <name><surname>Barnoud</surname><given-names>J.</given-names></name>; <name><surname>Reddy</surname><given-names>T.</given-names></name>; <name><surname>Melo</surname><given-names>M.</given-names></name>; <name><surname>Seyler</surname><given-names>S.</given-names></name>; <name><surname>Doma&#x00144;ski</surname><given-names>J.</given-names></name>; <name><surname>Dotson</surname><given-names>D.</given-names></name>; <name><surname>Buchoux</surname><given-names>S.</given-names></name>; <name><surname>Kenney</surname><given-names>I.</given-names></name>; <name><surname>Beckstein</surname><given-names>O.</given-names></name></person-group><article-title>MDAnalysis: A Python Package for the
+Rapid Analysis of Molecular Dynamics Simulations</article-title>.
+Presented at <source>Proceedings of the 15th Python in Science Conference
+(SCIPY 2016)</source>; July 11, <year>2016</year>. Report No. LA-UR-19-29136. <pub-id pub-id-type="doi">10.25080/Majora-629e541a-00e</pub-id>.</mixed-citation></ref><ref id="ref34"><mixed-citation publication-type="journal" id="cit34"><name><surname>Michaud-Agrawal</surname><given-names>N.</given-names></name>; <name><surname>Denning</surname><given-names>E. J.</given-names></name>; <name><surname>Woolf</surname><given-names>T. B.</given-names></name>; <name><surname>Beckstein</surname><given-names>O.</given-names></name>
+<article-title>MDAnalysis:
+A toolkit for the analysis of molecular dynamics simulations</article-title>. <source>J. Comput. Chem.</source>
+<year>2011</year>, <volume>32</volume>, <fpage>2319</fpage>&#x02013;<lpage>2327</lpage>. <pub-id pub-id-type="doi">10.1002/jcc.21787</pub-id>.<pub-id pub-id-type="pmid">21500218</pub-id>
+</mixed-citation></ref><ref id="ref35"><mixed-citation publication-type="journal" id="cit35"><name><surname>Behnel</surname><given-names>S.</given-names></name>; <name><surname>Bradshaw</surname><given-names>R.</given-names></name>; <name><surname>Citro</surname><given-names>C.</given-names></name>; <name><surname>Dalcin</surname><given-names>L.</given-names></name>; <name><surname>Seljebotn</surname><given-names>D. S.</given-names></name>; <name><surname>Smith</surname><given-names>K.</given-names></name>
+<article-title>Cython: The best of both worlds</article-title>. <source>Comput. Sci.
+Eng.</source>
+<year>2011</year>, <volume>13</volume>, <fpage>31</fpage>&#x02013;<lpage>39</lpage>. <pub-id pub-id-type="doi">10.1109/MCSE.2010.118</pub-id>.</mixed-citation></ref><ref id="ref36"><mixed-citation publication-type="journal" id="cit36"><name><surname>Barber</surname><given-names>C. B.</given-names></name>; <name><surname>Dobkin</surname><given-names>D. P.</given-names></name>; <name><surname>Huhdanpaa</surname><given-names>H.</given-names></name>
+<article-title>The quickhull algorithm for convex
+hulls</article-title>. <source>ACM Trans. Math. Softw.</source>
+<year>1996</year>, <volume>22</volume>, <fpage>469</fpage>&#x02013;<lpage>483</lpage>. <pub-id pub-id-type="doi">10.1145/235815.235821</pub-id>.</mixed-citation></ref><ref id="ref37"><mixed-citation publication-type="journal" id="cit37"><name><surname>Brooks</surname><given-names>B. R.</given-names></name>; <name><surname>Bruccoleri</surname><given-names>R. E.</given-names></name>; <name><surname>Olafson</surname><given-names>B. D.</given-names></name>; <name><surname>States</surname><given-names>D. J.</given-names></name>; <name><surname>Swaminathan</surname><given-names>S.</given-names></name>; <name><surname>Karplus</surname><given-names>M.</given-names></name>
+<article-title>CHARMM: A program for macromolecular energy, minimization,
+and dynamics calculations</article-title>. <source>J. Comput. Chem.</source>
+<year>1983</year>, <volume>4</volume>, <fpage>187</fpage>&#x02013;<lpage>217</lpage>. <pub-id pub-id-type="doi">10.1002/jcc.540040211</pub-id>.</mixed-citation></ref><ref id="ref38"><mixed-citation publication-type="journal" id="cit38"><name><surname>Humphrey</surname><given-names>W.</given-names></name>; <name><surname>Dalke</surname><given-names>A.</given-names></name>; <name><surname>Schulten</surname><given-names>K.</given-names></name>
+<article-title>VMD &#x02013;
+Visual Molecular Dynamics</article-title>. <source>J. Mol. Graph.</source>
+<year>1996</year>, <volume>14</volume>, <fpage>33</fpage>&#x02013;<lpage>38</lpage>. <pub-id pub-id-type="doi">10.1016/0263-7855(96)00018-5</pub-id>.<pub-id pub-id-type="pmid">8744570</pub-id>
+</mixed-citation></ref><ref id="ref39"><mixed-citation publication-type="book" id="cit39"><source>The CGAL Project CGAL User and Reference Manual</source>, 5.6.1 ed.; <publisher-name>CGAL Ed.ial Board</publisher-name>, <year>2024</year>.</mixed-citation></ref><ref id="ref40"><mixed-citation publication-type="journal" id="cit40"><name><surname>Case</surname><given-names>D. A.</given-names></name>; et al. <article-title>AmberTools</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2023</year>, <volume>63</volume>, <fpage>6183</fpage>&#x02013;<lpage>6191</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.3c01153</pub-id>.<pub-id pub-id-type="pmid">37805934</pub-id>
+</mixed-citation><note><p>PMID: 37805934</p></note></ref><ref id="ref41"><mixed-citation publication-type="journal" id="cit41"><name><surname>Berendsen</surname><given-names>H.</given-names></name>; <name><surname>van der
+Spoel</surname><given-names>D.</given-names></name>; <name><surname>van Drunen</surname><given-names>R.</given-names></name>
+<article-title>GROMACS: A message-passing parallel
+molecular dynamics implementation</article-title>. <source>Comput. Phys.
+Commun.</source>
+<year>1995</year>, <volume>91</volume>, <fpage>43</fpage>&#x02013;<lpage>56</lpage>. <pub-id pub-id-type="doi">10.1016/0010-4655(95)00042-E</pub-id>.</mixed-citation></ref><ref id="ref42"><mixed-citation publication-type="journal" id="cit42"><name><surname>Abraham</surname><given-names>M. J.</given-names></name>; <name><surname>Murtola</surname><given-names>T.</given-names></name>; <name><surname>Schulz</surname><given-names>R.</given-names></name>; <name><surname>P&#x000e1;ll</surname><given-names>S.</given-names></name>; <name><surname>Smith</surname><given-names>J. C.</given-names></name>; <name><surname>Hess</surname><given-names>B.</given-names></name>; <name><surname>Lindahl</surname><given-names>E.</given-names></name>
+<article-title>GROMACS: High performance
+molecular simulations through multi-level parallelism from laptops
+to supercomputers</article-title>. <source>SoftwareX</source>
+<year>2015</year>, <volume>1&#x02013;2</volume>, <fpage>19</fpage>&#x02013;<lpage>25</lpage>. <pub-id pub-id-type="doi">10.1016/j.softx.2015.06.001</pub-id>.</mixed-citation></ref><ref id="ref43"><mixed-citation publication-type="journal" id="cit43"><name><surname>Ishkhanyan</surname><given-names>H.</given-names></name>; <name><surname>Rhys</surname><given-names>N. H.</given-names></name>; <name><surname>Barlow</surname><given-names>D. J.</given-names></name>; <name><surname>Lawrence</surname><given-names>M. J.</given-names></name>; <name><surname>Lorenz</surname><given-names>C. D.</given-names></name>
+<article-title>Impact
+of drug aggregation on the structural and dynamic properties of Triton
+X-100 micelles</article-title>. <source>Nanoscale</source>
+<year>2022</year>, <volume>14</volume>, <fpage>5392</fpage>&#x02013;<lpage>5403</lpage>. <pub-id pub-id-type="doi">10.1039/D1NR07936K</pub-id>.<pub-id pub-id-type="pmid">35319029</pub-id>
+</mixed-citation></ref><ref id="ref44"><mixed-citation publication-type="journal" id="cit44"><name><surname>Sega</surname><given-names>M.</given-names></name>; <name><surname>Hantal</surname><given-names>G.</given-names></name>; <name><surname>F&#x000e1;bi&#x000e1;n</surname><given-names>B.</given-names></name>; <name><surname>Jedlovszky</surname><given-names>P.</given-names></name>
+<article-title>Pytim: A Python
+Package for the Interfacial Analysis of Molecular Smulations</article-title>. <source>J. Comput. Chem.</source>
+<year>2018</year>, <volume>39</volume>, <fpage>2118</fpage>&#x02013;<lpage>2125</lpage>. <pub-id pub-id-type="doi">10.1002/jcc.25384</pub-id>.<pub-id pub-id-type="pmid">30306571</pub-id>
+</mixed-citation></ref><ref id="ref45"><mixed-citation publication-type="journal" id="cit45"><article-title>e Research King&#x02019;s Computational Research</article-title>, <source>Engineering and Technology Environment (CREATE)</source>. <year>1999</year>; DOI: <pub-id pub-id-type="doi">10.18742/rnvf-m076</pub-id>.</mixed-citation></ref><ref id="ref46"><mixed-citation publication-type="journal" id="cit46"><name><surname>Allen</surname><given-names>D. T.</given-names></name>; <name><surname>Lorenz</surname><given-names>C. D.</given-names></name>
+<article-title>A novel method for constructing continuous
+intrinsic
+surfaces of nanoparticles</article-title>. <source>J. Mol. Model.</source>
+<year>2017</year>, <volume>23</volume>, <fpage>1</fpage>&#x02013;<lpage>11</lpage>. <pub-id pub-id-type="doi">10.1007/s00894-017-3378-9</pub-id>.<pub-id pub-id-type="pmid">27921184</pub-id>
+</mixed-citation></ref></ref-list></back></article>

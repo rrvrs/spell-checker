@@ -1,0 +1,934 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" dtd-version="1.3" xml:lang="EN" article-type="research-article"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">J Chem Inf Model</journal-id><journal-id journal-id-type="iso-abbrev">J Chem Inf Model</journal-id><journal-id journal-id-type="publisher-id">ci</journal-id><journal-id journal-id-type="coden">jcisd8</journal-id><journal-title-group><journal-title>Journal of Chemical Information and Modeling</journal-title></journal-title-group><issn pub-type="ppub">1549-9596</issn><issn pub-type="epub">1549-960X</issn><publisher><publisher-name>American Chemical Society</publisher-name></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">39915732</article-id><article-id pub-id-type="pmc">PMC11863371</article-id>
+<article-id pub-id-type="doi">10.1021/acs.jcim.4c01944</article-id><article-categories><subj-group><subject>Article</subject></subj-group></article-categories><title-group><article-title>Machine Learning Methodologies Applied to Magnetocaloric
+Perovskites Discovery</article-title></title-group><contrib-group><contrib contrib-type="author" id="ath1"><name><surname>Castro-Anaya</surname><given-names>Luis E.</given-names></name><xref rid="aff1" ref-type="aff">&#x02020;</xref></contrib><contrib contrib-type="author" id="ath2"><name><surname>Marese</surname><given-names>Eduardo</given-names></name><xref rid="aff1" ref-type="aff">&#x02020;</xref></contrib><contrib contrib-type="author" id="ath3"><name><surname>Lozano</surname><given-names>Jaime A.</given-names></name><xref rid="aff2" ref-type="aff">&#x02021;</xref></contrib><contrib contrib-type="author" id="ath4"><name><surname>Peixer</surname><given-names>Guilherme F.</given-names></name><xref rid="aff2" ref-type="aff">&#x02021;</xref></contrib><contrib contrib-type="author" id="ath5"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0002-8753-6670</contrib-id><name><surname>Barbosa</surname><given-names>Jader R.</given-names><suffix>Jr.</suffix></name><xref rid="aff2" ref-type="aff">&#x02021;</xref></contrib><contrib contrib-type="author" corresp="yes" id="ath6"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0003-4019-261X</contrib-id><name><surname>G&#x000f3;mez Gonz&#x000e1;lez</surname><given-names>Sergio Yesid</given-names></name><xref rid="cor1" ref-type="other">*</xref><xref rid="aff1" ref-type="aff">&#x02020;</xref></contrib><aff id="aff1"><label>&#x02020;</label>Laboratory
+of Mass Transfer and Numerical Simulation of Chemical Systems, Department
+of Chemical Engineering and Food Engineering, <institution>Federal University of Santa Catarina (UFSC)</institution>, Florian&#x000f3;polis, Santa
+Catarina 88040-900, <country>Brazil</country></aff><aff id="aff2"><label>&#x02021;</label>POLO
+- Research Laboratories for Emerging Technologies in Cooling and Thermophysics,
+Department of Mechanical Engineering, <institution>Federal
+University of Santa Catarina (UFSC)</institution>, Florian&#x000f3;polis, Santa Catarina 88040-900, <country>Brazil</country></aff></contrib-group><author-notes><corresp id="cor1"><label>*</label>Email: <email>sergio.gomez@ufsc.br</email>.</corresp></author-notes><pub-date pub-type="epub"><day>06</day><month>02</month><year>2025</year></pub-date><pub-date pub-type="collection"><day>24</day><month>02</month><year>2025</year></pub-date><volume>65</volume><issue>4</issue><fpage>1812</fpage><lpage>1825</lpage><history><date date-type="received"><day>04</day><month>11</month><year>2024</year></date><date date-type="accepted"><day>28</day><month>01</month><year>2025</year></date><date date-type="rev-recd"><day>27</day><month>01</month><year>2025</year></date></history><permissions><copyright-statement>&#x000a9; 2025 The Authors. Published by American Chemical Society</copyright-statement><copyright-year>2025</copyright-year><copyright-holder>The Authors</copyright-holder><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>Permits the broadest form of re-use including for commercial purposes, provided that author attribution and integrity are maintained (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</ext-link>).</license-p></license></permissions><abstract><p content-type="toc-graphic"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01944_0015" id="ab-tgr1"/></p><p>Traditionally, designing
+novel materials involves exploring new
+compositions guided by insights from previous work, relying on a trial-and-error
+approach, where continuous synthesis and characterization proceed
+until the properties meet the improvements. This method is inefficient
+due to the challenges of exploring vast chemical spaces. In this
+study, a machine-learning-based methodology is developed to assist
+the design from available data in the literature, allowing us to test
+in silico more than 1.2 million compositions. Two databases with 1227
+inputs were created from published studies. Four machine learning
+(ML) models were trained over the feature sets using 517 compositional
+features (generated from 58 atomic properties) to predict magnetocaloric
+properties of perovskites: Curie temperature (<italic>T</italic><sub>C</sub>), magnetic entropy change (ME), and relative cooling power
+(RCP). The best model-feature combinations were used to explore the
+chemical space of lanthanum, praseodymium, and neodymium manganites,
+identifying composition trends for different temperature applications,
+including room temperature refrigeration, where the most suitable
+combinations of doping elements were highlighted. The study offers
+valuable guidelines for future research insights on magnetocaloric
+materials, and the methodology can be transferred to other perovskite
+related material areas, such as catalysts and solar cell materials.</p></abstract><funding-group><award-group><funding-source><institution-wrap><institution>Conselho Nacional de Desenvolvimento Cient&#x000c3;&#x000ad;fico e Tecnol&#x000c3;&#x000b3;gico</institution><institution-id institution-id-type="doi">10.13039/501100003593</institution-id></institution-wrap></funding-source><award-id>404023/2019-3</award-id></award-group></funding-group><funding-group><award-group><funding-source><institution-wrap><institution>Funda&#x000c3;&#x000a7;&#x000c3;&#x000a3;o de Amparo &#x000c3;&#x000a0; Pesquisa e Inova&#x000c3;&#x000a7;&#x000c3;&#x000a3;o do Estado de Santa Catarina</institution><institution-id institution-id-type="doi">10.13039/501100005667</institution-id></institution-wrap></funding-source><award-id>2019TR0846</award-id></award-group></funding-group><funding-group><award-group><funding-source><institution-wrap><institution>Conselho Nacional de Desenvolvimento Cient&#x000c3;&#x000ad;fico e Tecnol&#x000c3;&#x000b3;gico</institution><institution-id institution-id-type="doi">10.13039/501100003593</institution-id></institution-wrap></funding-source><award-id>407491/2022-8</award-id></award-group></funding-group><funding-group><award-group><funding-source><institution-wrap><institution>Conselho Nacional de Desenvolvimento Cient&#x000c3;&#x000ad;fico e Tecnol&#x000c3;&#x000b3;gico</institution><institution-id institution-id-type="doi">10.13039/501100003593</institution-id></institution-wrap></funding-source><award-id>405970/2021-8</award-id></award-group></funding-group><custom-meta-group><custom-meta><meta-name>document-id-old-9</meta-name><meta-value>ci4c01944</meta-value></custom-meta><custom-meta><meta-name>document-id-new-14</meta-name><meta-value>ci4c01944</meta-value></custom-meta><custom-meta><meta-name>ccc-price</meta-name><meta-value/></custom-meta></custom-meta-group></article-meta><notes id="spn1"><title>Special Issue</title><p>Published as part of <italic>Journal
+of Chemical Information and Modeling</italic><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/curated-content?journal=jcisd8&#x00026;ref=feature">special issue</ext-link> &#x0201c;Machine Learning in Materials Science&#x0201d;.</p></notes></front><body><sec id="sec1"><title>Introduction</title><p>In recent years, increasing
+interest in magnetic refrigeration
+materials has fueled extensive research into the magnetocaloric effect
+(MCE),<sup><xref ref-type="bibr" rid="ref1">1</xref></sup> a phenomenon observed in specific
+magnetic materials and is characterized by a temperature change when
+the materials are subjected to a variation in the external magnetic
+field applied to them.<sup><xref ref-type="bibr" rid="ref2">2</xref></sup></p><p>The effect
+occurs due to the reordering of magnetic spins within
+the material. The intensity of this phenomenon is commonly described
+by a curve of temperature against magnetic entropy change at a specified
+magnetic field.<sup><xref ref-type="bibr" rid="ref3">3</xref></sup> This curve starts from
+a low value and increases, reaching a maximum value near the transition
+between two magnetic states, such as the Curie temperature, where
+the transition from the ferromagnetic to paramagnetic state occurs.
+After the peak is reached, the curve decreases back. The peak of
+the curve is known as the maximum magnetic entropy change, and this
+metric along with Curie temperature are typically used to characterize
+the MCE in terms of potential refrigeration applications and intensity.
+Additionally, a figure of merit known as the relative cooling power
+considers the width of the peak, as illustrated by <xref rid="eq1" ref-type="disp-formula">eq <xref rid="eq1" ref-type="disp-formula">1</xref></xref>.<disp-formula id="eq1"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01944_m001" position="anchor"/><label>1</label></disp-formula>where RCP is relative cooling power, ME is
+magnetic entropy change, and <italic>&#x003b4;T</italic><sub>FWHM</sub> is the temperature range over which the entropy change is the half
+of ME.</p><p>As a promising alternative to conventional cooling systems,
+the
+magnetic refrigeration field demands a meticulous selection of materials
+to ensure efficient, reliable, and sustainable cooling solutions,
+considering the complexity of thermodynamic processes and specific
+temperature requirements across different applications, ranging from
+room-temperature<sup><xref ref-type="bibr" rid="ref4">4</xref>&#x02212;<xref ref-type="bibr" rid="ref6">6</xref></sup> to cryogenic<sup><xref ref-type="bibr" rid="ref7">7</xref></sup> systems.
+Due to the reversibility of the MCE and work recovery during the demagnetization
+process, magnetocaloric systems have the potential to operate at high
+thermodynamic efficiencies.<sup><xref ref-type="bibr" rid="ref8">8</xref></sup> Moreover,
+the application of solid-state refrigerants prevents the leakage of
+environmentally harmful substances, increasing the interest in the
+technology for sustainability factors. Hence, research on magnetic
+refrigeration is attracting increasing attention and application prospects
+under a wide range of operation temperatures.<sup><xref ref-type="bibr" rid="ref9">9</xref></sup></p><p>Perovskites, distinguished by their general formula ABO<sub>3</sub>, have garnered substantial interest in the quest for novel
+magnetocaloric
+materials, owing to their exceptional crystalline structure and adaptable
+magnetic properties. The diverse compositions and adjustable properties
+of perovskites offer an array of options for tailoring magnetocaloric
+responses, enabling the design of efficient cooling devices adaptable
+to various temperature ranges and chemical environments from the material&#x02019;s
+point of view. Perovskites also have the potential to lower costs
+and facilitate fabrication features; for instance, manganites possess
+the mentioned advantages and are more economical and accessible to
+prepare than classic magnetocaloric materials such as intermetallic
+alloys.<sup><xref ref-type="bibr" rid="ref10">10</xref>,<xref ref-type="bibr" rid="ref11">11</xref></sup></p><p>Exploration of this family of materials
+is commonly performed through
+experiments using a trial-and-error approach;<sup><xref ref-type="bibr" rid="ref9">9</xref>,<xref ref-type="bibr" rid="ref12">12</xref></sup> however,
+recently, computational studies employing Monte Carlo molecular simulations
+and first-principles calculations have also been carried out.<sup><xref ref-type="bibr" rid="ref13">13</xref>,<xref ref-type="bibr" rid="ref14">14</xref></sup> The experimental scenario is limited due to its time-consuming and
+resource-demanding nature. In the computational simulation scenario,
+time remains a constraint since those simulations are computationally
+intensive, and the accuracy of the computations relies on the ability
+of the Hamiltonian to reproduce the atomistic physical reality.<sup><xref ref-type="bibr" rid="ref15">15</xref>,<xref ref-type="bibr" rid="ref16">16</xref></sup> An alternative to these two scenarios is to use data-driven methodologies
+such as machine learning approaches.</p><p>Machine learning (ML) methodologies
+rely on a limited but significant
+amount of experimentally obtained or simulated data, together with
+the extraction of features from the collected data to enable the application
+of algorithms, ensuring that the most relevant attributes are considered
+during model development, for training and optimization of ML models.<sup><xref ref-type="bibr" rid="ref17">17</xref></sup> Once trained, these models can efficiently explore
+a vast chemical space, requiring minimal resources. Remarkably, these
+scenarios can be complemented, as in the case of active experimentation,
+using iterative refinement of ML models.<sup><xref ref-type="bibr" rid="ref18">18</xref></sup></p><p>Data-driven methodologies have been used to explore material
+families
+such as, e.g., Heusler intermetallic compounds.<sup><xref ref-type="bibr" rid="ref19">19</xref>&#x02212;<xref ref-type="bibr" rid="ref21">21</xref></sup> Notable in
+this field is the work of Ucar et al.,<sup><xref ref-type="bibr" rid="ref22">22</xref></sup> who studied the maximum magnetic entropy change (ME) in several
+families of compounds, including some manganites, finding that the
+distinct features of each family explain the variations in the MCE.
+Their research highlights the importance of studying each family separately
+to achieve accurate results. Before the study of Ucar et al., only
+two ML investigations focused on perovskites: Zhang and Xu<sup><xref ref-type="bibr" rid="ref23">23</xref></sup> investigated the Curie temperature (<italic>T</italic><sub>C</sub>) of 94 manganites employing the crystal lattice
+constants as features and a Gaussian Process Regressor (GPR) as a
+ML model. The authors obtained a coefficient of determination of 0.7,
+which is remarkable considering the feature set used but not very
+significant, given the amount of data and the absence of a test set.
+The other work in this regard comes from Zhai et al.,<sup><xref ref-type="bibr" rid="ref24">24</xref></sup> who assessed 3 ML methods over 47 perovskites to predict
+the <italic>T</italic><sub>C</sub>. Despite having an excellent selection
+of structural and compositional parameters, they obtained a moderate
+coefficient of determination of low significance due to the absence
+of a testing stage equal to 0.85.</p><p>As previously mentioned, the
+amount of data available or employed
+has limited the development of robust models. Moreover, the unique
+MCE-related property explored was <italic>T</italic><sub>C</sub>.
+Fortunately, this picture has changed, as the available number of
+experimental data has increased to the extent that there are incentives
+for ML study in this family of materials.<sup><xref ref-type="bibr" rid="ref25">25</xref></sup> Additionally, the conducted reviews<sup><xref ref-type="bibr" rid="ref12">12</xref>,<xref ref-type="bibr" rid="ref25">25</xref></sup> have pointed
+out the importance of crystallite size in describing MCE in perovskites,
+which has not been taken into account by the previous studies. Crystallite
+size corresponds to a region within a crystalline material with a
+uniform crystal lattice orientation.<sup><xref ref-type="bibr" rid="ref26">26</xref></sup> This
+morphological parameter has a direct effect on material properties.
+Its control is widely used to optimize materials for applications
+such as semiconductors<sup><xref ref-type="bibr" rid="ref27">27</xref></sup> and magnetocaloric
+materials.<sup><xref ref-type="bibr" rid="ref28">28</xref></sup> Hence, an opportunity arises
+to evaluate this parameter as a morphological characteristic to better
+predict the thermomagnetic properties of magnetocaloric materials
+better.</p><p>In response to those needs, this work critically studies
+ML models,
+data collection, and feature selection procedures for predicting magnetocaloric
+properties (<italic>T</italic><sub>C</sub>, ME, and RCP) on perovskite
+materials. Four ML models are evaluated over different subsets of
+compositional features. A morphological descriptor is also employed,
+and their effect on the above-mentioned properties is assessed and
+discussed. Finally, the best ML models are used to explore the chemical
+subspace, and several insights are outlined for future studies of
+this family of materials.</p></sec><sec id="sec2"><title>Methods</title><p>Herein, a systematic approach
+is presented to collect data on perovskite
+compositions and the three magnetocaloric properties: <italic>T</italic><sub>C</sub>, ME, and RCP. Detailed insights into the data preprocessing
+methods and feature engineering techniques are also provided. Furthermore,
+we describe the ML models and used parameters, emphasizing their applicability
+in predicting the magnetocaloric properties of interest. <xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref> depicts the main
+variations in the dataset, feature set, and ML model employed.</p><fig id="fig1" position="float"><label>Figure 1</label><caption><p>Scheme showing
+the steps of the methods of this work: The left
+part presents the datasets used without crystallite size (Dataset
+A) and with crystallite size (Dataset B). The middle part shows the
+classification and nomenclature of the feature sets used. The right
+part shows the ML models employed.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01944_0001" id="gr1" position="float"/></fig><sec id="sec2.1"><title>Dataset</title><p>The data employed in this work were collected
+by manually extracting the three magnetocaloric properties of interest
+found in graphics and tables from 146 references (note: the list of
+article Digital Object Identifiers (DOIs) is available in the GitHub
+open repository (<uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/luis-chemeng/MCML">https://github.com/luis-chemeng/MCML</uri>)), generating a dataset
+for each property. The dataset contains the chemical formula of perovskites,
+the value of the property, and the crystallite size (<italic>D</italic>) reported along with the XRD measurements. The magnetic field applied
+is also reported in the cases of ME and RCP. After ensuring the chemical
+formulas&#x02019; data quality and validity, a separate database was
+produced for each magnetocaloric property. In each dataset, the records
+were filtered to consider just single perovskites with a stoichiometric
+composition of oxygen. The resulting datasets contained missing values
+on the crystallite size column; we explored two alternatives, as ML
+models can not be trained over features with empty values. In the
+first one, the feature crystallite size was disregarded, preserving
+the total number of samples of the dataset, which led to the denominated
+Dataset A. The second strategy consisted of using only the data samples
+with the crystallite size information, privileging the information
+provided by the crystallite size at the expense of the data quantity,
+leading to the denominated Dataset B, as presented in <xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>.</p><p>As a result of not
+considering the crystallite size in Dataset A, some records of this
+dataset contained several values of the property of interest for the
+same chemical composition. This situation increases the error in the
+ML models and decreases their performance in generalizing the data.
+To overcome this situation, we eliminate the repeated records and
+leave only the record corresponding to the median of the property
+values.</p><sec id="sec2.1.1"><title>Reliability of the Collected Data</title><p>Since ML models depend
+on the quantity and quality of data, it is worth making some notes
+regarding the reliability of the experimental data gathered: (i) It
+is well-known that the magnetocaloric characterization of materials
+is subject to experimental errors. In particular, the references from
+which the data were extracted measured the magnetic entropy change
+indirectly using magnetization curves and the Maxwell relation. In
+this context, Pecharsky and Gschneidner established that the uncertainty
+is as low as 10% relative deviation.<sup><xref ref-type="bibr" rid="ref29">29</xref></sup> This
+partially explains the dispersion observed in the magnetocaloric properties
+measured for materials with the same composition. (ii) Manganites
+are well-known to undergo second-order magnetic phase transitions.<sup><xref ref-type="bibr" rid="ref10">10</xref></sup> This is confirmed in most of the reference works
+through the Arrott plot slope analysis. This aspect increases our
+confidence in the reported values, as second-order phase transitions
+are less prone to hysteresis behavior that could otherwise hinder
+the accurate measurement of magnetocaloric phenomena. (iii) Manufacturing
+conditions can lead to inhomogeneities that are not always confirmed
+by experimental techniques, such as energy-dispersive X-ray spectroscopy
+(EDX). Additionally, different morphological aspects, such as crystallite
+size and anisotropy, were not always reported or verified.</p></sec></sec><sec id="sec2.2"><title>Feature Generation and Selection</title><p>Through the Python
+module XenonPy,<sup><xref ref-type="bibr" rid="ref30">30</xref></sup> a table containing 58
+atomic properties for every element of the periodic table was obtained.
+Each property is described in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01944/suppl_file/ci4c01944_si_001.pdf">Supporting Information</ext-link> in Table S1. XenonPy also offers 7 combinational formulas to obtain
+compositional descriptors from the atomic properties of the constitutive
+elements of the compound, namely, Weighted Average, Weighted Sum,
+Weighted Variance, Geometric Mean, Harmonic Mean, Maximum Aggregation,
+and Minimum Aggregation. This resulted in a vector comprising 406
+features. The mathematical expressions of these combinational formulas
+are in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01944/suppl_file/ci4c01944_si_001.pdf">Supporting Information</ext-link> in Equations
+S1 to S7. We include two new combinatorial formulas. The first one
+is the minimum difference between sites (eq S8 of <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01944/suppl_file/ci4c01944_si_001.pdf">Supporting Information</ext-link>), which is the minimum value between
+the difference of atomic property of site A or B with the oxygen atomic
+property, which accounted for 58 additional descriptors. This combination
+was inspired by the high dependence shown between this descriptor
+and the bandgap energy of perovskites reported by K&#x000f6;rbel et
+al.<sup><xref ref-type="bibr" rid="ref31">31</xref></sup> and subsequently used by Gladkikh
+et al.<sup><xref ref-type="bibr" rid="ref32">32</xref></sup> The second one is the tolerance
+factor-like descriptor (eq S9 of <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01944/suppl_file/ci4c01944_si_001.pdf">Supporting Information</ext-link>), which has a formula analogous to the Goldschmidt tolerance factor,
+but instead of using the ionic radii of the A, B, and oxygen sites,
+we used all 58 atomic properties available in XenonPy. As some of
+the atomic properties are zero for B site and oxygen, the calculation
+of this formula was impossible for 5 of the atomic properties, resulting
+in 53 descriptors. This combinatorial formula is used as Franco et
+al.<sup><xref ref-type="bibr" rid="ref33">33</xref></sup> showed that the tolerance factor
+is moderately correlated with <italic>T</italic><sub>C</sub>. This
+resulted in a vector comprising 517 features designated as compositional
+descriptors. The crystallite size was used as a morphological descriptor
+without further refinement.</p><p>Gladkikh et al.<sup><xref ref-type="bibr" rid="ref32">32</xref></sup> have reported how to select features for input to a ML
+algorithm and how to map these features to the target variable. They
+perform a correlation analysis with the descriptors and the property
+of interest using various correlation coefficients, such as Pearson
+and Spearman coefficients, Distance Correlation, etc. It is concluded
+that the degrees of correlation between a feature and the property
+in question should be regarded as something other than definitive,
+as they can vary depending on the correlation coefficient employed.</p><p>Four schemes of feature selection were implemented over the compositional
+descriptors: First (i) the features were grouped according to the
+combination type used, giving rise to 9 groups, each one composed
+of 58 features, except for the tolerance factor-like features group,
+which had 53 features. (ii) The second approach ranked the 517 features
+with their correlation coefficient concerning the objective property;
+the best 10 performers were selected. Three kinds of correlation coefficient
+calculations were applied: Pearson coefficient (PC), which measures
+the strength and direction of the linear relationship between two
+continuous variables; distance correlation (DC), which captures both
+linear and nonlinear relationships between variables; and the Spearman
+coefficient (SC), which evaluates the strength and direction of the
+monotonic relationship between two variables. We refer to this set
+of descriptors as PC10, SC10, and DC10, respectively. To ensure the
+most unique information was captured, a decorrelation strategy was
+used; i.e., the features with a correlation higher than 0.9 with a
+higher-ranked feature were discarded. (iii) Feature selection based
+on decision tree regressor (DT) was employed. For this, a decision
+tree regression model was trained. The relevance of the features was
+ranked according to the recursive feature elimination (RFE) method,
+which is a feature selection technique that works by iterative elimination
+of the less relevant or negligible features (those with the lowest
+Gini coefficient) until a desired number of features is left, in this
+case, 10. This set of features was called RFE10. Finally, (iv), a
+set without any further feature selection containing the total of
+compositional descriptors, named &#x0201c;All&#x0201d;, was also evaluated.</p></sec><sec id="sec2.3"><title>Machine Learning Models</title><p>The ML models were employed
+to model the magnetocaloric properties in conjunction with every set
+of features previously obtained. The data were divided for each property,
+with respect to a balance of 80% into a training set and 20% into
+a test set. The training set was further divided into 5 subsets, and
+using a five-round training process, 4 of the 5 subsets were used
+for training, and then the remaining subset was used for validation.
+This procedure, known as 5-fold cross-validation, was applied for
+a grid of hyperparameters to address the best nonoverfitting combination
+of hyperparameters for each model, i.e., the one that showed the minor
+root-mean-square error average on the validation sets. This step was
+done through the Bayesian optimization implemented in the Python module
+Hyperopt.<sup><xref ref-type="bibr" rid="ref34">34</xref></sup> The performance of optimized
+models was evaluated over the test set using three key metrics: root
+mean squared error (RMSE), which measures the square root of the average
+squared errors, given by <xref rid="eq2" ref-type="disp-formula">Equation <xref rid="eq2" ref-type="disp-formula">2</xref></xref>; mean absolute error (MAE), which measures average
+absolute errors, given by <xref rid="eq3" ref-type="disp-formula">Equation <xref rid="eq3" ref-type="disp-formula">3</xref></xref>; and the coefficient of determination (<italic>R</italic><sup>2</sup>), which measures the proportion of explained variance,
+varying from 0 to 1, given by <xref rid="eq4" ref-type="disp-formula">Equation <xref rid="eq4" ref-type="disp-formula">4</xref></xref>.<disp-formula id="eq2"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01944_m002" position="anchor"/><label>2</label></disp-formula><disp-formula id="eq3"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01944_m003" position="anchor"/><label>3</label></disp-formula><disp-formula id="eq4"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01944_m004" position="anchor"/><label>4</label></disp-formula>Here <italic>y</italic><sub><italic>i</italic></sub> represents the observed values of the dependent variable, <italic>&#x00177;</italic><sub><italic>i</italic></sub> represents the predicted
+values of the dependent variable, and <italic>&#x00079;&#x00305;</italic> represents
+the mean of the observed values of the dependent variable.</p><p>Four
+different ML models were evaluated in the present work. The first
+one is kernel ridge regression (KRR). This regression technique extends
+traditional ridge regression by leveraging the kernel technique, allowing
+it to handle nonlinear relationships between predictors and the target
+variable.<sup><xref ref-type="bibr" rid="ref35">35</xref></sup> KRR operates by minimizing
+the regularized sum of squared errors between the ground truth and
+the predicted values. Unlike linear regression methods, KRR employs
+a kernel function to implicitly map the input features into a higher-dimensional
+space where a linear model is fitted to capture intricate patterns
+in the data. This kernel-based approach enables KRR to model complex
+relationships flexibly while maintaining computational efficiency.
+The hyperparameters optimized for this model were the regularization
+strength, kernel type, and kernel coefficient for each kernel type.
+Each hyperparameter range is detailed in Table S2, in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01944/suppl_file/ci4c01944_si_001.pdf">Supporting Information</ext-link>.</p><p>The second model
+is artificial neural networks (ANN), an ML model
+that copies the functioning of the human brain. It comprises artificial
+neurons located in different layers, which process information and
+learn patterns according to the data provided.<sup><xref ref-type="bibr" rid="ref36">36</xref></sup> According to the complexity of what is being predicted,
+it is possible to modify the architecture of the neural network, changing
+the number of hidden layers and the number of neurons in each of these
+layers, as well as the activation function, which is a mathematical
+function that enables the ANN to model complex nonlinear patterns.
+The ANN is implemented as the multilayer perceptron regressor class
+available in the sklearn python module.<sup><xref ref-type="bibr" rid="ref37">37</xref></sup> A term accounting for the square of the neuron weights was included
+to avoid overfitting. This technique is known as L2 regularization.
+The evaluated hyperparameters are the number of layers and the number
+of neurons in each layer, the L2 regularization parameter, and the
+activation function. Each range of hyperparameter used is detailed
+in Table S3, in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01944/suppl_file/ci4c01944_si_001.pdf">Supporting Information</ext-link>. The optimizer employed is the Adam solver<sup><xref ref-type="bibr" rid="ref38">38</xref></sup> with an initial learning rate value of 0.01. This learning rate
+was implemented as adaptive, meaning that the learning rate can change
+during the training based on the model&#x02019;s performance.</p><p>The next evaluated model is the random forest (RF), an ensemble
+ML technique that combines multiple decision trees to enhance predictive
+accuracy and reduce overfitting.<sup><xref ref-type="bibr" rid="ref36">36</xref></sup> It relies
+on generating several bootstrap samples, where data points are randomly
+selected from the original dataset with replacement, forming subsets
+with potential overlaps. Multiple decision trees are built using these
+samples, each considering a random subset of features at each split
+to introduce variability and decorrelate the trees, thus, mitigating
+overfitting. In the end, predictions from individual trees are either
+averaged for regression tasks or subjected to a majority vote for
+classification tasks, providing more stable and accurate predictions
+while minimizing the impact of outliers and noise. As in the previous
+models, the implementation available in the sklearn module is used.<sup><xref ref-type="bibr" rid="ref37">37</xref></sup> The tuned hyperparameters included the number
+of estimators, i.e., the number of decision trees, the depth of the
+trees, the minimum number of samples for each split, and the minimum
+number of samples in each leaf. Each range of hyperparameters used
+is detailed in Table S4 in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01944/suppl_file/ci4c01944_si_001.pdf">Supporting Information</ext-link>.</p><p>The last model to be evaluated is XGBoost (Extreme Gradient
+Boosting).
+Like the previous model, XGBoost is an ensemble ML algorithm that
+creates a predictive model by sequentially adding decision trees,
+each aimed at correcting the errors made by the preceding ones.<sup><xref ref-type="bibr" rid="ref39">39</xref></sup> These decision trees are constructed using a
+weighted dataset, where the weight is adjusted based on the errors
+from the previous trees. The algorithm also incorporates regularization
+techniques to control the overfitting. XGBoost enhances its performance
+by optimizing a loss function and applying a gradient descent-based
+approach. This method allows it to efficiently fit complex relationships
+within the data, making XGBoost a highly competitive algorithm for
+various ML tasks such as classification and regression. This model
+was constructed by using the XGBRegressor class in the xgboost python
+module. The hyperparameters optimized for this model include the number
+of estimators, the maximum depth of a tree, the learning rate, the
+subsample ratio of the training instances, and the subsample ratio
+of columns when constructing each tree. Each range of hyperparameters
+used is detailed in Table S5 in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01944/suppl_file/ci4c01944_si_001.pdf">Supporting Information</ext-link>.</p></sec><sec id="sec2.4"><title>Chemical Space Screening</title><p>The systematic
+formula given
+by <xref rid="eq5" ref-type="disp-formula">Equation <xref rid="eq5" ref-type="disp-formula">5</xref></xref> generated
+a chemical space with potential perovskites. Letters A and B correspond
+to the A and B sites of the single perovskite; superscripts 1 and
+2 indicate the doping elements of the principal site (the one without
+superscripts). Element in principal site A was limited to La, Sr,
+and Nd as the three most common and abundant components in our database,
+and the concentration varies between 0.6 and 1. In the case of the
+B principal site, only Mn was considered, as the database is almost
+exclusively made of manganites. The concentration of Mn varied from
+0.8 to 1. The doping sites A and B were selected from the elements
+in our database in sites A and B, respectively. The doping site concentration
+was incrementally adjusted in intervals of 0.05, leading to a set
+of more than 1.2 million compositions.<disp-formula id="eq5"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01944_m005" position="anchor"/><label>5</label></disp-formula></p></sec></sec><sec id="sec3"><title>Results and Discussion</title><sec id="sec3.1"><title>Dataset Description</title><p>The database
+contains 292, 517,
+and 418 records for <italic>T</italic><sub>C</sub>, ME, and RCP, respectively.
+The distribution of each property is presented in blue in <xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>. A second distribution,
+accounting just for the records with crystallite size reported, is
+displayed in green in <xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>. As can be seen, the distribution is similar, while the quantity
+of data is about half (48.6%, 45.6%, and 55.0% for <italic>T</italic><sub>C</sub>, ME, and RCP, respectively). The absence of this parameter
+in more than half of the studies consulted is somewhat surprising
+because, even when most of the studies have XRD characterization and
+analysis, the calculation of crystallite size was omitted.</p><fig id="fig2" position="float"><label>Figure 2</label><caption><p>Histograms
+of the three magnetocaloric properties indicating the
+total amount of data (blue) and subset of data with the crystallite
+size (green). a) <italic>T</italic><sub>C</sub> distribution. b) ME
+distribution and c) RCP distribution.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01944_0002" id="gr2" position="float"/></fig><p>The effect of crystallite size on the magnitude of magnetocaloric
+properties in studies for specific compositions has been reported
+previously.<sup><xref ref-type="bibr" rid="ref40">40</xref>&#x02212;<xref ref-type="bibr" rid="ref42">42</xref></sup> Records with reported crystallite sizes for each
+of the properties were plotted to evidence the effect of crystallite
+size through all the data collected, as seen in <xref rid="fig3" ref-type="fig">Figures <xref rid="fig3" ref-type="fig">3</xref></xref>&#x02013;<xref rid="fig5" ref-type="fig">5</xref>. It should
+be noted that the data in <xref rid="fig4" ref-type="fig">Figures <xref rid="fig4" ref-type="fig">4</xref></xref> and <xref rid="fig5" ref-type="fig">5</xref> depict data for a wide range of magnetic fields. In particular, <xref rid="fig5" ref-type="fig">Figure <xref rid="fig5" ref-type="fig">5</xref></xref> displays an exceptionally
+high RCP value, corresponding to a magnetic field of 14 T. The values
+highlighted in different colors are from studies in which the synthesis
+conditions were varied (such as the synthesis method, sintering temperature,
+sintering time, or applied pressure). Therefore, perovskites with
+the same chemical composition but different morphology and, ultimately,
+different crystallite sizes were obtained. For <italic>T</italic><sub>C</sub>, the effect of crystallite size is proportional. However,
+the magnitude of this proportionality varies among the different perovskites.
+For some of the compositions, the effect is significant, while for
+others, it is almost null as the size of the crystallite increases,
+i.e., an asymptotic behavior. The effect generally seems proportional
+and more intense than <italic>T</italic><sub>C</sub> for the ME. However,
+it is possible to see two studies where this effect is reversed. Something
+similar happens with the RCP, where although the effect also seems
+generally positive, there are a couple of studies with an inversely
+proportional effect; this is not surprising as RCP is defined in terms
+of ME, being directly proportional as per established <xref rid="eq1" ref-type="disp-formula">Equation <xref rid="eq1" ref-type="disp-formula">1</xref></xref>.</p><fig id="fig3" position="float"><label>Figure 3</label><caption><p>Effect of crystallite
+size (<italic>D</italic>) on <italic>T</italic><sub>C</sub>. Pearson
+correlation coefficient (PC), Spearman correlation
+coefficient (SC), and distance correlation coefficient (DC) are displayed
+for all data points. The data points collected in the same study are
+represented by lines of different colors.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01944_0003" id="gr3" position="float"/></fig><fig id="fig4" position="float"><label>Figure 4</label><caption><p>Effect
+of crystallite size (<italic>D</italic>) on ME. Pearson
+correlation coefficient (PC), Spearman correlation coefficient (SC),
+and Distance correlation coefficient (DC) are displayed for all data
+points. The data points collected in the same study are represented
+by lines of different colors.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01944_0004" id="gr4" position="float"/></fig><fig id="fig5" position="float"><label>Figure 5</label><caption><p>Effect
+of crystallite size (<italic>D</italic>) on RCP. Pearson
+correlation coefficient (PC), Spearman correlation coefficient (SC),
+and distance correlation coefficient (DC) are displayed for all data
+points. The data points collected in the same study are represented
+by lines of different colors.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01944_0005" id="gr5" position="float"/></fig><p>Regarding a general trend and the use of correlation coefficients,
+although a discernible trend is observable in the scatter plots, the
+correlation coefficient fails to confirm this relationship, especially
+in the case of <italic>T</italic><sub>C</sub>, where the Pearson and
+Spearman coefficients depict a negative trend. For ME and RCP, the
+coefficients are low. However, the effect is indeed palpable. These
+results highlight the need for correlation coefficients in discerning
+meaningful trends in this material informatics problem, as they considered
+only the impact of one variable at a time.</p></sec><sec id="sec3.2"><title>Feature Selection Comparison</title><p>We utilized the correlation
+coefficients described in the methods section to determine the ranked
+features, ranking the features based on these coefficients, and selecting
+the top 10 features for each coefficient. This approach allowed us
+to evaluate how the models perform with fewer features.</p><p><xref rid="tbl1" ref-type="other">Tables <xref rid="tbl1" ref-type="other">1</xref></xref>&#x02013;<xref rid="tbl3" ref-type="other">3</xref> present the best 10 features for
+<italic>T</italic><sub>C</sub>, ME, and RCP, as their corresponding
+feature selection coefficients indicate. It is worth mentioning that
+the features in the ranked sets based on correlation coefficient do
+not possess a high intercorrelation, and they are not directly comparable
+because of the decorrelation strategy undertaken. Despite the above,
+the appearance of certain types of features stands out in the ranked
+sets. The features ranked according to the correlation coefficients
+have, in general, very similar positions in the rankings. However,
+looking at the types of features ranked by the RFE method may differ
+from those for the PC, SC, and DC coefficients, highlighting the importance
+of carrying out this feature selection with multiple methods. In the
+particular case of <italic>T</italic><sub>C</sub>, the features related
+to the number of unfilled electrons or valence electrons in the last
+atomic shells appear as the most significant feature in the four sets.
+Indeed, Sight et al., who studied rare-earth intermetallic compounds,
+found that the 4f electron count significantly influences the <italic>T</italic><sub>C</sub> magnitude. This atomic property was also a
+significant driver feature in analyzing the critical temperature of
+superconductive materials.<sup><xref ref-type="bibr" rid="ref43">43</xref></sup> In the case
+of ME, the property that stood out the most was the lattice constant.
+Oppositely, for RCP, no single elemental property emerged as prominently
+significant. This indicates a more complex interaction of factors
+influencing RCP and highlights the importance of a comprehensive analysis
+in understanding their behavior.</p><table-wrap id="tbl1" position="float"><label>Table 1</label><caption><title>Best 10 Predictors
+According to the
+Feature Selection Methods (DC, SC, PC, RFE) for <italic>T</italic><sub>C</sub></title></caption><table frame="hsides" rules="groups" border="0"><colgroup><col align="center"/><col align="center"/><col align="center"/><col align="center"/><col align="center"/></colgroup><thead><tr><th style="border:none;" align="center"><bold>Rank</bold></th><th style="border:none;" align="center"><bold>PC</bold>_<bold>decorr</bold></th><th style="border:none;" align="center"><bold>SC</bold>_<bold>decorr</bold></th><th style="border:none;" align="center"><bold>DC</bold>_<bold>decorr</bold></th><th style="border:none;" align="center"><bold>RFE</bold></th></tr></thead><tbody><tr><td style="border:none;" align="center"><bold>1</bold></td><td style="border:none;" align="center">Sum
+num_f_unfilled</td><td style="border:none;" align="center">TolF_electron_affinity</td><td style="border:none;" align="center">TolF_electron_affinity</td><td style="border:none;" align="center">Mean en_pauling</td></tr><tr><td style="border:none;" align="center"><bold>2</bold></td><td style="border:none;" align="center">Mean num_f_unfilled</td><td style="border:none;" align="center">MinDelta_num_d_unfilled</td><td style="border:none;" align="center">MinDelta_num_d_unfilled</td><td style="border:none;" align="center">Mean num_f_unfilled</td></tr><tr><td style="border:none;" align="center"><bold>3</bold></td><td style="border:none;" align="center">MinDelta_num_d_unfilled</td><td style="border:none;" align="center">TolF_evaporation_heat</td><td style="border:none;" align="center">Mean num_d_unfilled</td><td style="border:none;" align="center">Var en_allen</td></tr><tr><td style="border:none;" align="center"><bold>4</bold></td><td style="border:none;" align="center">Mean num_d_unfilled</td><td style="border:none;" align="center">Min en_allen</td><td style="border:none;" align="center">Sum num_d_unfilled</td><td style="border:none;" align="center">Geo electron_affinity</td></tr><tr><td style="border:none;" align="center"><bold>5</bold></td><td style="border:none;" align="center">Sum num_d_unfilled</td><td style="border:none;" align="center">Max num_d_unfilled</td><td style="border:none;" align="center">Sum num_f_unfilled</td><td style="border:none;" align="center">Geo lattice_constant</td></tr><tr><td style="border:none;" align="center"><bold>6</bold></td><td style="border:none;" align="center">Var num_f_unfilled</td><td style="border:none;" align="center">TolF_heat_of_formation</td><td style="border:none;" align="center">Mean num_f_unfilled</td><td style="border:none;" align="center">Har num_valence</td></tr><tr><td style="border:none;" align="center"><bold>7</bold></td><td style="border:none;" align="center">MinDelta_electron_affinity</td><td style="border:none;" align="center">Har fusion_enthalpy</td><td style="border:none;" align="center">TolF_num_d_unfilled</td><td style="border:none;" align="center">TolF_electron_affinity</td></tr><tr><td style="border:none;" align="center"><bold>8</bold></td><td style="border:none;" align="center">Max num_d_unfilled</td><td style="border:none;" align="center">Sum num_f_unfilled</td><td style="border:none;" align="center">MinDelta_electron_affinity</td><td style="border:none;" align="center">MinDelta_bulk_modulus</td></tr><tr><td style="border:none;" align="center"><bold>9</bold></td><td style="border:none;" align="center">TolF_electron_affinity</td><td style="border:none;" align="center">Mean num_f_unfilled</td><td style="border:none;" align="center">Min en_allen</td><td style="border:none;" align="center">MinDelta_hhi_r</td></tr><tr><td style="border:none;" align="center"><bold>10</bold></td><td style="border:none;" align="center">Min en_allen</td><td style="border:none;" align="center">Mean num_d_unfilled</td><td style="border:none;" align="center">TolF_evaporation_heat</td><td style="border:none;" align="center">MinDelta_num_valence</td></tr></tbody></table></table-wrap><table-wrap id="tbl2" position="float"><label>Table 2</label><caption><title>Best 10 Predictors According to the
+Feature Selection Methods (DC, SC, PC, RFE) for ME</title></caption><table frame="hsides" rules="groups" border="0"><colgroup><col align="center"/><col align="center"/><col align="center"/><col align="center"/><col align="center"/></colgroup><thead><tr><th style="border:none;" align="center"><bold>Rank</bold></th><th style="border:none;" align="center"><bold>PC</bold>_<bold>decorr</bold></th><th style="border:none;" align="center"><bold>SC</bold>_<bold>decorr</bold></th><th style="border:none;" align="center"><bold>DC</bold>_<bold>decorr</bold></th><th style="border:none;" align="center"><bold>RFE</bold></th></tr></thead><tbody><tr><td style="border:none;" align="center"><bold>1</bold></td><td style="border:none;" align="center">Min lattice_constant</td><td style="border:none;" align="center">MinDelta_heat_capacity_molar</td><td style="border:none;" align="center">TolF_lattice_constant</td><td style="border:none;" align="center">Sum electron_affinity</td></tr><tr><td style="border:none;" align="center"><bold>2</bold></td><td style="border:none;" align="center">Max bulk_modulus</td><td style="border:none;" align="center">TolF_lattice_constant</td><td style="border:none;" align="center">MinDelta_hhi_r</td><td style="border:none;" align="center">Sum num_f_unfilled</td></tr><tr><td style="border:none;" align="center"><bold>3</bold></td><td style="border:none;" align="center">MinDelta_thermal_conductivity</td><td style="border:none;" align="center">Max bulk_modulus</td><td style="border:none;" align="center">MinDelta_heat_capacity_molar</td><td style="border:none;" align="center">Var melting_point</td></tr><tr><td style="border:none;" align="center"><bold>4</bold></td><td style="border:none;" align="center">MinDelta_hhi_r</td><td style="border:none;" align="center">MinDelta_thermal_conductivity</td><td style="border:none;" align="center">MinDelta_atomic_radius_rahm</td><td style="border:none;" align="center">Var molar_volume</td></tr><tr><td style="border:none;" align="center"><bold>5</bold></td><td style="border:none;" align="center">TolF_lattice_constant</td><td style="border:none;" align="center">Min lattice_constant</td><td style="border:none;" align="center">MinDelta_hhi_p</td><td style="border:none;" align="center">Geo electron_negativity</td></tr><tr><td style="border:none;" align="center"><bold>6</bold></td><td style="border:none;" align="center">Sum electron_affinity</td><td style="border:none;" align="center">Mean melting_point</td><td style="border:none;" align="center">MinDelta_covalent_radius_cordero</td><td style="border:none;" align="center">Geo num_valence</td></tr><tr><td style="border:none;" align="center"><bold>7</bold></td><td style="border:none;" align="center">MinDelta_hhi_p</td><td style="border:none;" align="center">Max melting_point</td><td style="border:none;" align="center">Mean melting_point</td><td style="border:none;" align="center">Har bulk_modulus</td></tr><tr><td style="border:none;" align="center"><bold>8</bold></td><td style="border:none;" align="center">Max melting_point</td><td style="border:none;" align="center">Min thermal_conductivity</td><td style="border:none;" align="center">Sum electron_affinity</td><td style="border:none;" align="center">Har lattice_constant</td></tr><tr><td style="border:none;" align="center"><bold>9</bold></td><td style="border:none;" align="center">Mean electron_affinity</td><td style="border:none;" align="center">TolF_heat_of_formation</td><td style="border:none;" align="center">Min lattice_constant</td><td style="border:none;" align="center">Har sound_velocity</td></tr><tr><td style="border:none;" align="center"><bold>10</bold></td><td style="border:none;" align="center">Mean bulk_modulus</td><td style="border:none;" align="center">Min atomic_radius</td><td style="border:none;" align="center">MinDelta_covalent_radius_slater</td><td style="border:none;" align="center">TolF_vdw_radius_alvarez</td></tr></tbody></table></table-wrap><table-wrap id="tbl3" position="float"><label>Table 3</label><caption><title>Best 10 Predictors According to the
+Feature Selection Methods (DC, SC, PC, RFE) for RCP</title></caption><table frame="hsides" rules="groups" border="0"><colgroup><col align="center"/><col align="center"/><col align="center"/><col align="center"/><col align="center"/></colgroup><thead><tr><th style="border:none;" align="center"><bold>Rank</bold></th><th style="border:none;" align="center"><bold>PC</bold>_<bold>decorr</bold></th><th style="border:none;" align="center"><bold>SC</bold>_<bold>decorr</bold></th><th style="border:none;" align="center"><bold>DC</bold>_<bold>decorr</bold></th><th style="border:none;" align="center"><bold>RFE</bold></th></tr></thead><tbody><tr><td style="border:none;" align="center"><bold>1</bold></td><td style="border:none;" align="center">Sum electron_affinity</td><td style="border:none;" align="center">Min thermal_conductivity</td><td style="border:none;" align="center">MinDelta_vdw_radius_alvarez</td><td style="border:none;" align="center">Sum heat_capacity_molar</td></tr><tr><td style="border:none;" align="center"><bold>2</bold></td><td style="border:none;" align="center">Mean electron_affinity</td><td style="border:none;" align="center">Var atomic_number</td><td style="border:none;" align="center">MinDelta_vdw_radius</td><td style="border:none;" align="center">Sum thermal_conductivity</td></tr><tr><td style="border:none;" align="center"><bold>3</bold></td><td style="border:none;" align="center">MinDelta_vdw_radius_alvarez</td><td style="border:none;" align="center">Sum electron_affinity</td><td style="border:none;" align="center">MinDelta_atomic_radius_rahm</td><td style="border:none;" align="center">Mean en_allen</td></tr><tr><td style="border:none;" align="center"><bold>4</bold></td><td style="border:none;" align="center">Mean evaporation_heat</td><td style="border:none;" align="center">Har heat_capacity_molar</td><td style="border:none;" align="center">MinDelta_num_unfilled</td><td style="border:none;" align="center">Mean hhi_r</td></tr><tr><td style="border:none;" align="center"><bold>5</bold></td><td style="border:none;" align="center">Mean heat_capacity_molar</td><td style="border:none;" align="center">Geo heat_capacity_molar</td><td style="border:none;" align="center">Mean thermal_conductivity</td><td style="border:none;" align="center">Mean heat_capacity_molar</td></tr><tr><td style="border:none;" align="center"><bold>6</bold></td><td style="border:none;" align="center">MinDelta_atomic_radius_rahm</td><td style="border:none;" align="center">Max electron_affinity</td><td style="border:none;" align="center">Sum thermal_conductivity</td><td style="border:none;" align="center">Var atomic_radius_rahm</td></tr><tr><td style="border:none;" align="center"><bold>7</bold></td><td style="border:none;" align="center">Geo heat_capacity_molar</td><td style="border:none;" align="center">Geo electron_affinity</td><td style="border:none;" align="center">MinDelta_c6_gb</td><td style="border:none;" align="center">Var covalent_radius_cordero</td></tr><tr><td style="border:none;" align="center"><bold>8</bold></td><td style="border:none;" align="center">Har heat_capacity_molar</td><td style="border:none;" align="center">Sum heat_capacity_molar</td><td style="border:none;" align="center">MinDelta_covalent_radius_pyykko</td><td style="border:none;" align="center">Har hhi_p</td></tr><tr><td style="border:none;" align="center"><bold>9</bold></td><td style="border:none;" align="center">Geo electron_affinity</td><td style="border:none;" align="center">Mean heat_capacity_molar</td><td style="border:none;" align="center">MinDelta_atomic_radius</td><td style="border:none;" align="center">TolF_heat_capacity_mass</td></tr><tr><td style="border:none;" align="center"><bold>10</bold></td><td style="border:none;" align="center">Sum lattice_constant</td><td style="border:none;" align="center">Min covalent_radius_slater</td><td style="border:none;" align="center">Sum electron_affinity</td><td style="border:none;" align="center">TolF_num_valence</td></tr></tbody></table></table-wrap></sec><sec id="sec3.3"><title>Evaluation of Machine Learning
+Models</title><p>Performance for
+a combination of the dataset used, optimized ML model, and feature
+set used was evaluated using <italic>R</italic><sup>2</sup> metric
+over the test set. Those results are depicted as heatmaps in <xref rid="fig6" ref-type="fig">Figures <xref rid="fig6" ref-type="fig">6</xref></xref>, <xref rid="fig8" ref-type="fig">8</xref>, and <xref rid="fig10" ref-type="fig">10</xref> for <italic>T</italic><sub>C</sub>, ME, and RCP, respectively.</p><fig id="fig6" position="float"><label>Figure 6</label><caption><p>Heatmaps indicating the <italic>R</italic><sup>2</sup> in the prediction
+of Curie temperature (<italic>T</italic><sub>C</sub>), using different
+combinations of ML models (<italic>y</italic>-labels) and feature
+sets (<italic>x</italic>-labels). The squares with numbers represent
+better results among the feature sets. The performance using all compositional
+features (All517) is always displayed.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01944_0006" id="gr6" position="float"/></fig><p>The scale (color) goes from 0 (dark blue) to 1 (dark red). Thus,
+red tones correspond to coefficients of determination greater than
+0.5, while blue tones correspond to values below this threshold. The
+numerical values for the best performers in each feature set category
+are displayed within the respective cell of the heatmap.</p><p>Although
+the trends for each predicted property are different and
+will be discussed below, we observed a general trend: using the whole
+517 descriptors does not perform significantly better than using grouped
+feature sets or ranked feature sets. Even for some specific models,
+the performance was much worse. This can be explained by the fact
+that an unnecessarily large number of inputs bring noise to the model
+and reduce its ability to find general patterns.</p><sec id="sec3.3.1"><title>Curie Temperature</title><p>The heatmap of <italic>R</italic><sup>2</sup> for the combination
+of the ML model and feature set
+evidence some exciting aspects: (i) for Dataset A, models trained
+with maximum and minimum pooling atomic properties (Max and Min descriptors,
+respectively) evidence lower performance than the other descriptors
+across the 4 ML models tested. This suggests that the descriptors
+obtained by these combinations contain little relevant information
+for describing the <italic>T</italic><sub>C</sub>, compared with other
+sets of descriptors. This observation is still valid in Dataset B
+for the Min feature set. Meanwhile, the Max feature set performs notably
+well in Dataset B with the XGB and RF models; and (ii) looking at
+the ranked feature sets for both datasets, the RFE selection methodology
+was dominant. Achieving even the best <italic>R</italic><sup>2</sup> score among all of the feature sets for ANN and KRR models in Dataset
+B.</p><p>As the intended use of ML models in this work is to predict
+the magnetocaloric properties, <xref rid="fig7" ref-type="fig">Figure <xref rid="fig7" ref-type="fig">7</xref></xref> shows the best combination of the ML model and feature
+set for <italic>T</italic><sub>C</sub> prediction along with the parity
+plots and performance metrics for Datasets A and B. <xref rid="fig7" ref-type="fig">Figure <xref rid="fig7" ref-type="fig">7</xref></xref> also presents histograms of
+residuals, indicating the difference between the ground truth and
+the data predicted for the models. For Dataset A, the training and
+test histograms display the same mode, indicating consistency across
+the training and testing data. However, a notable distinction emerges
+for Dataset B: the training and test histograms showcase different
+modes, notably skewed toward negative values of deviations. This shift
+suggests a systematic underestimation of experimental values within
+the test set, highlighting potential discrepancies in the prediction
+accuracy. The best model was the kernel ridge regression (KRR), using
+the Dataset A and &#x0201c;Weighted Variance&#x0201d;, resulting in
+an RMSE of 22.1 K, MAE of 16.5 K and <italic>R</italic><sup>2</sup> of 0.86. Those metrics are comparable to those obtained by Zhai
+et al.:<sup><xref ref-type="bibr" rid="ref24">24</xref></sup> RMSE of 28.6 K, MAE of 21.21
+K, and <italic>R</italic><sup>2</sup> of 0.85. However, note that
+the metrics from this author were over the validation set and not
+on the test set. Therefore, the generality of the model expressed
+by Zhai et al. is not assured. Our results are also comparable with
+the ones of Court et al.,<sup><xref ref-type="bibr" rid="ref44">44</xref></sup> which employed
+the XenonPy module to generate descriptors to predict <italic>T</italic><sub>C</sub> in Heusler alloys. They obtained a RMSE of 60 K and
+a <italic>R</italic><sup>2</sup> of 0.71 using a XGB model, suggesting
+that better results on <italic>T</italic><sub>C</sub> prediction can
+be obtained using fewer features.</p><fig id="fig7" position="float"><label>Figure 7</label><caption><p>Parity plots of the best combination of
+ML models and feature set
+for experimental vs predicted <italic>T</italic><sub>C</sub> of magnetocaloric
+perovskites for training (blue) and test (orange) data. Below each
+parity plot is the respective normalized histogram of the residuals.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01944_0007" id="gr7" position="float"/></fig><p>Regarding crystallite size and its effect as a
+feature, it was
+found to have the lowest impact on the variation of <italic>T</italic><sub>C</sub>. A detailed discussion of this matter is available in
+the Supporting Information under the section Interpretability of the
+ML Models.</p></sec><sec id="sec3.3.2"><title>Maximum Magnetic Entropy Change</title><p><xref rid="fig8" ref-type="fig">Figure <xref rid="fig8" ref-type="fig">8</xref></xref> indicates that for Datasets A and B, no feature set
+stands
+out inside the grouped features, contrasting with the ranked features,
+where the RFE10 descriptors emerge as the feature set that optimally
+trains most models according to the <italic>R</italic><sup>2</sup>. As for the <italic>T</italic><sub>C</sub> prediction, models trained
+on Dataset A demonstrate that the maximum and minimum pooling atomic
+properties (Max and Min descriptors, respectively) exhibit inferior
+performance compared to those of other descriptors across all four
+ML models tested. Regarding Dataset A specifically, the ANN model
+consistently performs negatively compared to other models, regardless
+of the feature set employed. However, the XGB model stands out positively
+for this dataset, showcasing superior predictive capability.</p><fig id="fig8" position="float"><label>Figure 8</label><caption><p>Heatmaps indicating
+the <italic>R</italic><sup>2</sup> in the prediction
+of maximum magnetic entropy change (ME), using different combinations
+of ML models (<italic>y</italic>-labels) and feature sets (<italic>x</italic>-labels). The squares with numbers in them represent results
+among the feature sets. The performance using all compositional features
+(ALL517) is always displayed.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01944_0008" id="gr8" position="float"/></fig><p><xref rid="fig9" ref-type="fig">Figure <xref rid="fig9" ref-type="fig">9</xref></xref> shows the
+best combination of the ML model and feature set for the ME prediction,
+the parity plots, and the performance metrics for Data Sets A and
+B. The figure also presents histograms of residuals, indicating the
+difference between the data collected and the data predicted for the
+models. Unlike the models for <italic>T</italic><sub>C</sub>, the
+residual histograms of the models for both datasets exhibit the same
+mode for both test and training data, indicating consistency in the
+distribution of model errors across different datasets. However, there
+is a significant difference between the training and test data residuals
+and scores for dataset A, indicating an overfitting situation that
+could not be treated only by a cross-validation scheme and early stopping
+strategy, which points to relatively scarce data. Additionally, an
+examination of the validation curve (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01944/suppl_file/ci4c01944_si_001.pdf">Figure S1</ext-link>) shows that, although there are differences in the determination
+coefficient between the training and test sets, the RMSE curves are
+continuously decreasing in both the training and validation sets.</p><fig id="fig9" position="float"><label>Figure 9</label><caption><p>Parity
+plots of the best combination of ML models and feature set
+for experimental vs predicted ME of magnetocaloric perovskites for
+training (blue) and test (orange) data. Below each parity plot, the
+respective normalized histogram of the residuals is presented.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01944_0009" id="gr9" position="float"/></fig><p>According to the coefficient of determination metrics,
+our best
+model was KRR, using Dataset B and RFE10 as feature sets, resulting
+in RMSE of 0.8 J kg<sup>&#x02013;1</sup> K<sup>&#x02013;1</sup>, MAE
+of 0.6 J kg<sup>&#x02013;1</sup> K<sup>&#x02013;1</sup> and <italic>R</italic><sup>2</sup> of 0.78. This is comparable with the XGBoost
+models built by Castro et al.<sup><xref ref-type="bibr" rid="ref45">45</xref></sup> and Court
+et al.,<sup><xref ref-type="bibr" rid="ref44">44</xref></sup> who both predict the peak entropy
+change of magnetocaloric materials utilizing the features generated
+by XenonPy and obtained a MAE of 1.8 J kg<sup>&#x02013;1</sup> K<sup>&#x02013;1</sup> (164 test data points) and MAE of 1.2 J kg<sup>&#x02013;1</sup> K<sup>&#x02013;1</sup> (along with <italic>R</italic><sup>2</sup> of 0.87 using 152 test data points), respectively. Additionally,
+Ucar et al.<sup><xref ref-type="bibr" rid="ref22">22</xref></sup> also built a RF regressor
+over a variety of magnetocaloric materials and obtained MAE of 2.26
+J kg<sup>&#x02013;1</sup> K<sup>&#x02013;1</sup>, RMSE of 3.23 J kg<sup>&#x02013;1</sup> K<sup>&#x02013;1</sup>, and <italic>R</italic><sup>2</sup> equals 0.82. While keeping in mind the differences in the
+data quantity for each work, the results of our selection of the model
+and feature set seem promising, even when compared to the results
+with crystallite size, which also has a lower MAE (0.6 J kg<sup>&#x02013;1</sup> K<sup>&#x02013;1</sup>). Although our MAE is better than the one
+reported by Court et al., our <italic>R</italic><sup>2</sup> is worse.
+These results must be verified with more data since the crystallite
+size is not commonly reported as described in the section dataset
+description, affecting the ML model&#x02019;s accuracy.</p><p>In regards
+to the interpretation of the models, it was found that
+the magnetic field exerts the major influence on ME, and this isolated
+variable explains 26% and 33% of the variation of ME, in models for
+datasets A and B, respectively. Another important driven feature was
+the crystallite size which its effect is in average 10%. A detailed
+discussion is given in the Supporting Information under the section
+Interpretability of the ML models.</p></sec><sec id="sec3.3.3"><title>Relative Cooling Power</title><p>The outcomes for this particular
+property (<xref rid="fig10" ref-type="fig">Figure <xref rid="fig10" ref-type="fig">10</xref></xref>) reveal that the models trained with Dataset
+B exhibited superior performance compared to those trained with Dataset
+A. Notably, both KRR and ANN models demonstrated inferior performance
+relative to others when applied to Dataset A. Interestingly, across
+both datasets, no feature set stood out significantly among grouped
+and ranked features. This suggests the importance of feature selection
+across the various sets, indicating the complexity of the datasets
+and the challenges inherent in identifying dominant features for predictive
+modeling. The analysis of the histogram of residuals (presented in <xref rid="fig11" ref-type="fig">Figure <xref rid="fig11" ref-type="fig">11</xref></xref>) shows the same
+mode for training and test data in Dataset A, while for Dataset B,
+there is a tendency to overestimate. In both cases, a form of overfitting
+was observed. However, similar to the previous case, the validation
+curves (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01944/suppl_file/ci4c01944_si_001.pdf">Figures S2 and S3</ext-link> for dataset A
+and dataset B, respectively) show a simultaneous decrease in RMSE
+for both the training and validation data.</p><fig id="fig10" position="float"><label>Figure 10</label><caption><p>Heatmaps indicating
+the <italic>R</italic><sup>2</sup> in the prediction
+of relative cooling power (RCP), using different combinations of ML
+models (<italic>y</italic> labels) and feature sets (<italic>x</italic> labels). The squares with numbers in them represent better results
+among the feature sets. The performance using all compositional features
+(All517&#x02019;) is always displayed.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01944_0010" id="gr10" position="float"/></fig><fig id="fig11" position="float"><label>Figure 11</label><caption><p>Parity
+plots of the best combination of ML models and feature set
+for experimental vs predicted <italic>RCP</italic> of magnetocaloric
+perovskites for training (blue) and test (orange) data. Below each
+parity plot, the respective normalized histogram of residuals is presented.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01944_0011" id="gr11" position="float"/></fig><p>According to all the evaluation metrics, our best
+model was the
+XGBoost using Dataset B and Geometric Average as the best group of
+features, resulting in RMSE of 30 J kg<sup>&#x02013;1</sup>, MAE of
+20.5 J kg<sup>&#x02013;1</sup> and <italic>R</italic><sup>2</sup> of
+0.89. This is comparable with the XGBoost model constructed by Court
+et al., which evidenced an MAE of 16.8 J kg<sup>&#x02013;1</sup> and <italic>R</italic><sup>2</sup> of 0.92 (88 test data points).</p><p>In regard
+to the feature influence in the RCP according to the
+interpretation of the ML models, it was found that the magnetic field
+exerts the highest influence in this property having an effect of
+44% and 37% for the best ML model on dataset A and dataset B, respectively.
+On the other hand, crystallite size exerts 5% influence in the magnitude
+of this variable.</p></sec></sec><sec id="sec3.4"><title>Screening</title><p>In this section, we leverage
+the best ML
+models discussed in the previous sections to explore the chemical
+space of the perovskite magnetocaloric materials described in the
+method section. To this end, we employed the models trained with Dataset
+A. Due to its larger data size, these ensure greater robustness compared
+to models trained on Dataset B. Also, because the morphological parameter
+(crystallite size) does not remain a free parameter, we can focus
+only on chemical composition.</p><p>To conduct this analysis, we employed
+the figure of merit schematized by Gottschall et al.,<sup><xref ref-type="bibr" rid="ref46">46</xref></sup> where <italic>T</italic><sub>C</sub> is located on the <italic>x</italic>-axis and RCP is an indicator of the intensity of the magnetocaloric
+effect on the <italic>y</italic>-axis. In this way, <xref rid="fig12" ref-type="fig">Figure <xref rid="fig12" ref-type="fig">12</xref></xref> presents exclusively the
+composition with the highest predicted RCP (right) and ME (left),
+for each value of predicted <italic>T</italic><sub>C</sub> in the
+range from 40 to 400 K, increasing in 1 K increments. The compositions
+were categorized by the predominant chemical element present in the
+A-site (La, Nd and Pr). The magnetocaloric properties of Gadolinium
+(Gd), the benchmark magnetocaloric material for applications in ambient
+temperature,<sup><xref ref-type="bibr" rid="ref47">47</xref></sup> were also plotted for comparison.
+Gd magnetocaloric properties are plotted as the average of the available
+experimental data, and the error bar corresponds to the standard deviation.
+Details about the data collected for Gd is discussed in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01944/suppl_file/ci4c01944_si_001.pdf">Supporting Information</ext-link>.</p><fig id="fig12" position="float"><label>Figure 12</label><caption><p>Contour of predicted <italic>T</italic><sub>C</sub> vs predicted
+ME (left) and predicted <italic>T</italic><sub>C</sub> vs predicted
+RCP (right) at 2 T for the chemical space of perovskite (i.e., only
+perovskites with the highest ME or RCP at each interval of 1 K of <italic>T</italic><sub>C</sub> were plotted). Colors refer to the principal
+element in the A-site.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01944_0012" id="gr12" position="float"/></fig><p>The predicted ME values
+across the examined temperature range demonstrate
+significant scatter. At lower temperatures (<italic>T</italic><sub>C</sub> between 40 and 200 K), ME values start near 3.5 J/kgK, with
+compositions predominantly composed of manganites containing the three
+considered A-sites: Lanthanum (La), Praseodymium (Pr), or Neodymium
+(Nd). As the temperature increases beyond 200 K, the landscape shifts,
+and La-based manganites become increasingly dominant. Despite the
+broader scattering of ME values at higher temperatures, it is notable
+that none of the predicted compositions fall within Gd&#x02019;s experimental
+error bars. However, a few compositions exhibit ME magnitudes comparable
+to that of Gd, albeit at slightly lower or higher <italic>T</italic><sub>C</sub>.</p><p>The analysis of RCP reveals a similarly nuanced
+picture. For <italic>T</italic><sub>C</sub> values between 40 and
+200 K, most compositions
+achieve an RCP of approximately 200 J/kg, with Nd-based manganites
+being the primary candidates, alongside a few Pr-based compositions.
+Moving to the intermediate temperature range of 200&#x02013;250 K,
+the best-performing perovskites represent a mixture of La-, Pr-, and
+Nd-based manganites. However, RCP begins to decrease as the temperature
+increases. Above 250 K, La-based manganites exclusively emerge as
+the top candidates, although their performance declines further with
+increasing temperature. Interestingly, some La-based compositions
+near Gd&#x02019;s <italic>T</italic><sub>C</sub> approach the lower
+limit of Gd&#x02019;s error bars, with an RCP close to 130 J/kg. This
+proximity suggests that while these perovskites may not surpass Gd
+in performance, they could offer alternative pathways for optimization.</p><p>These findings underscore the varied influence of the A-site chemistry
+across temperature ranges. Nd-based manganites dominate at lower temperatures,
+while La-based compositions excel at higher temperatures. Although
+no perovskite in the considered chemical space matches Gd&#x02019;s
+performance within its experimental error bars, certain La-based manganites
+approach its lower threshold. To further investigate this behavior
+and identify trends that could guide the exploration of new manganites
+for room temperature refrigeration, we now analyze the influence of
+doping at both the A-site and the B-site.</p><p>The distribution of
+doping elements at sites A and B of perovskites
+in the top-performing compositions were analyzed through a co-occurrence
+matrix for each site (<xref rid="fig13" ref-type="fig">Figures <xref rid="fig13" ref-type="fig">13</xref></xref> and <xref rid="fig14" ref-type="fig">14</xref>). For this purpose,
+1.2 million compositions were filtered to include only compositions
+with both ME and RCP values above the average (1.98 J kg<sup>&#x02013;1</sup> K<sup>&#x02013;1</sup> and 66.8 J kg<sup>&#x02013;1</sup> respectively),
+while ensuring that the <italic>T</italic><sub>C</sub> values fell
+within a range close to room temperature (288&#x02013;318 K). This
+analysis revealed the frequency and co-occurrence patterns of different
+combinations of elements within the selected perovskites, which were
+exclusively La-based manganites i.e. La<sub>0.6</sub>A<sub arrange="stack">a1</sub><sup arrange="stack">(1)</sup>A<sub arrange="stack">a2</sub><sup arrange="stack">(2)</sup>Mn<sub>0.8</sub>B<sub arrange="stack">b1</sub><sup arrange="stack">(1)</sup>B<sub arrange="stack">b2</sub><sup arrange="stack">(2)</sup>O<sub>3</sub>. The results showed that strontium (Sr) is the element that occurs
+the most frequently as doping for site A, appearing in 290 of the
+534 compositions that exhibited superior performance in all three
+properties. Additionally, combinations of Sr with barium (Ba), and
+calcium (Ca) were the most frequent codoping elements. Similarly,
+manganese (Mn) emerged as the most common element at site B, present
+in 520 of the 534 compositions as a doping element, with concentrations
+exceeding 0.8. Notably, combinations of Mn with nickel (Ni) and aluminum
+(Al) appeared more frequently between the top-performing perovskite
+compositions. These findings indicate that Sr and Mn are the most
+important doping elements to optimize the magneto-caloric properties
+of perovskite materials.</p><fig id="fig13" position="float"><label>Figure 13</label><caption><p>Co-occurrence matrix between the doping cations
+in the perovskite
+compositions that showed superior results for both ME and RCP and
+has a <italic>T</italic><sub>C</sub> approximately at room temperature,
+according to our best models for each property. The numbers in the
+legend refers to the quantity of perovskites compositions with both
+of the cations in the <italic>x</italic> and <italic>y</italic> axis.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01944_0013" id="gr13" position="float"/></fig><fig id="fig14" position="float"><label>Figure 14</label><caption><p>Co-occurrence matrix between the doping anions in the
+perovskite
+compositions that showed superior results for both ME and RCP and
+has a <italic>T</italic><sub>C</sub> approximately at room temperature,
+according to our best models for each property. The numbers in the
+legend refer to the quantity of perovskites compositions has both
+of the anions in the <italic>x</italic> and <italic>y</italic> axis.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01944_0014" id="gr14" position="float"/></fig></sec></sec><sec id="sec4"><title>Conclusions</title><p>This work involved developing
+and assessing 4 different machine-learning
+models by employing diverse feature sets to calculate the main magnetocaloric
+properties of perovskite materials. This approach can be applied to
+any group of magnetocaloric materials, with its primary limitations
+being data availability and quality. This study focuses on exploring
+a chemical subspace of approximately 1.2 million manganites for magnetocaloric
+applications. A database of the magnetocaloric properties of hundreds
+of perovskites was compiled by using data collected from the scientific
+literature. Data analysis revealed the importance of crystallite size
+as a morphological descriptor and its absence in more than half of
+the data collected. This led to our study being performed on the complete
+data, leaving crystallite size features apart and in the subdataset
+with this morphological parameter.</p><p>The features to train the
+model was derived by proportional combination
+of the atomic properties of the constituent elements of the perovskites,
+leading to 517 compositional descriptors. To evaluate this high dimensionality,
+different feature sets were proposed, based on the type of combination
+rule used to blend the atomic properties (grouped feature sets), and
+by taking the 10 most relevant features based on different ranking
+methods (ranked feature sets). After training the models of the different
+feature sets, the performance was assessed through the determination
+coefficient metric. The results present heterogeneous outcomes across
+the ML models and the dataset used. In general, it was found that
+the use of the whole set of 517 features effectively did not lead
+to the best results, confirming the necessity of feature selection.
+Furthermore, a comparison of this work models with those obtained
+in similar studies discloses alike or superior performance on each
+of the three magnetocaloric properties.</p><p>The predictive capabilities
+of the best models were leveraged to
+explore the magnetocaloric effect within the chemical subspace of
+manganites. As indicators of magnetocaloric intensity, both ME and
+RCP were employed. Trends were established for the main element in
+site A: (i) neodymium and praseodymium manganites are better suited
+for applications below 200 K, while (ii) lanthanum manganites perform
+better for higher temperature applications. For room temperature applications,
+additional trends were identified using a co-occurrence matrix. Specifically,
+strontium, barium, calcium, and lead were found to be the strongest
+candidates for enhancing La-based manganites for room temperature
+refrigeration. Regarding site B, nickel, aluminum, and copper emerged
+as the most frequent candidates for single doping alongside manganese.
+This analysis will provide a valuable guide for the experimental exploration
+of new combinations of doping elements for La-based manganites in
+the quest for economically feasible alternatives to gadolinium.</p><p>Finally, given the substantiated evidence of the relationship between
+crystallite size and all three magnetocaloric properties, we propose
+that future studies, particularly those employing DRX analysis, explicitly
+report crystallite size as a parameter. This recommendation aims to
+foster a more comprehensive understanding of the intricate connections
+between the crystallite size and magnetocaloric properties in perovskite
+materials.</p></sec></body><back><notes notes-type="data-availability" id="notes-4"><title>Data Availability Statement</title><p>The Python scripts
+used for all stages of the methods, along with the data, are publicly
+available at <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/luis-chemeng/MCML">https://github.com/luis-chemeng/MCML</uri>.</p></notes><notes id="notes-1" notes-type="si"><title>Supporting Information Available</title><p>The Supporting Information
+is available free of charge at <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/10.1021/acs.jcim.4c01944?goto=supporting-info">https://pubs.acs.org/doi/10.1021/acs.jcim.4c01944</ext-link>.<list id="silist" list-type="simple"><list-item><p>Combinational Formulas
+and Atomic properties; Hyperparameters
+of ML models; Validation Curves; Interpretability of the ML models;
+Gadolinium data (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01944/suppl_file/ci4c01944_si_001.pdf">PDF</ext-link>)</p></list-item></list></p></notes><sec sec-type="supplementary-material"><title>Supplementary Material</title><supplementary-material content-type="local-data" id="sifile1"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01944_si_001.pdf"><caption><p>ci4c01944_si_001.pdf</p></caption></media></supplementary-material></sec><notes notes-type="" id="notes-2"><title>Author Contributions</title><p><bold>Luis
+E. Castro-Anaya:</bold> Conceptualization, Data curation, Formal analysis,
+Investigation, Methodology, Software, Visualization, Writing - original
+draft. <bold>Eduardo Marese:</bold> Data curation, Formal analysis,
+Investigation, Software, Visualization, Writing - original draft. <bold>Jaime A. Lozano:</bold> Funding acquisition, Project administration,
+Writing - review editing. <bold>Guilherme F. Peixer:</bold> Formal
+analysis, Software, Writing - review editing. <bold>Jader R. Barbosa
+Jr.:</bold> Funding acquisition, Project administration, Writing -
+review editing. <bold>Sergio Yesid G&#x000f3;mez Gonz&#x000e1;lez:</bold> Conceptualization, Data curation, Formal analysis, Funding acquisition,
+Supervision, Visualization, Writing - review editing</p></notes><notes notes-type="funding-statement" id="NOTES-d14e1495-autogenerated"><p>The Article
+Processing Charge
+for the publication of this research was funded by the Coordination
+for the Improvement of Higher Education Personnel - CAPES (ROR identifier:
+00x0ma614).</p></notes><notes notes-type="COI-statement" id="notes-3"><p>The authors
+declare no competing financial interest.</p></notes><ack><title>Acknowledgments</title><p>The Authors appreciate the support
+from CNPq through Grants
+No. 405970/2021-8 and No. 407491/2022-8. Additional funding was provided
+by the National Institutes of Science and Technology (INCT) Program
+(CNPq Grant No. 404023/2019-3; FAPESC Grant No. 2019TR0846).</p></ack><ref-list><title>References</title><ref id="ref1"><mixed-citation publication-type="journal" id="cit1"><name><surname>Kitanovski</surname><given-names>A.</given-names></name>
+<article-title>Energy applications
+of magnetocaloric materials</article-title>. <source>Adv. Energy Mater.</source>
+<year>2020</year>, <volume>10</volume>, <fpage>1903741</fpage><pub-id pub-id-type="doi">10.1002/aenm.201903741</pub-id>.</mixed-citation></ref><ref id="ref2"><mixed-citation publication-type="journal" id="cit2"><name><surname>Szymczak</surname><given-names>H.</given-names></name>; <name><surname>Szymczak</surname><given-names>R.</given-names></name>
+<article-title>Magnetocaloric effect.
+Physics and applications</article-title>. <source>Materials Science-Poland</source>
+<year>2008</year>, <volume>26</volume>, <fpage>807</fpage>.</mixed-citation></ref><ref id="ref3"><mixed-citation publication-type="journal" id="cit3"><name><surname>Romero
+Gomez</surname><given-names>J.</given-names></name>; <name><surname>Ferreiro Garcia</surname><given-names>R.</given-names></name>; <name><surname>De Miguel Catoira</surname><given-names>A.</given-names></name>; <name><surname>Romero Gomez</surname><given-names>M.</given-names></name>
+<article-title>Magnetocaloric effect: A review of the thermodynamic
+cycles in magnetic refrigeration</article-title>. <source>Renewable
+and Sustainable Energy Reviews</source>
+<year>2013</year>, <volume>17</volume>, <fpage>74</fpage>&#x02013;<lpage>82</lpage>. <pub-id pub-id-type="doi">10.1016/j.rser.2012.09.027</pub-id>.</mixed-citation></ref><ref id="ref4"><mixed-citation publication-type="journal" id="cit4"><name><surname>Dall'Olio</surname><given-names>S.</given-names></name>; <name><surname>Masche</surname><given-names>M.</given-names></name>; <name><surname>Liang</surname><given-names>J.</given-names></name>; <name><surname>Insinga</surname><given-names>A.R.</given-names></name>; <name><surname>Eriksen</surname><given-names>D.</given-names></name>; <name><surname>Bj&#x000f8;rk</surname><given-names>R.</given-names></name>; <name><surname>Nielsen</surname><given-names>K.K.</given-names></name>; <name><surname>Barcza</surname><given-names>A.</given-names></name>; <name><surname>Vieyra</surname><given-names>H.A.</given-names></name>; <name><surname>Beek</surname><given-names>N. V.</given-names></name>; <name><surname>Bez</surname><given-names>H. N.</given-names></name>; <name><surname>Engelbrecht</surname><given-names>K.</given-names></name>; <name><surname>Bahl</surname><given-names>C.R.H.</given-names></name>
+<article-title>Novel design of a high efficiency multi-bed active
+magnetic regenerator heat pump</article-title>. <source>International
+Journal of Refrigeration</source>
+<year>2021</year>, <volume>132</volume>, <fpage>243</fpage>&#x02013;<lpage>254</lpage>. <pub-id pub-id-type="doi">10.1016/j.ijrefrig.2021.09.007</pub-id>.</mixed-citation></ref><ref id="ref5"><mixed-citation publication-type="journal" id="cit5"><name><surname>Nakashima</surname><given-names>A. T.</given-names></name>; <name><surname>Fortkamp</surname><given-names>F. P.</given-names></name>; <name><surname>de S&#x000e1;</surname><given-names>N. M.</given-names></name>; <name><surname>dos Santos</surname><given-names>V. M.</given-names></name>; <name><surname>Hoffmann</surname><given-names>G.</given-names></name>; <name><surname>Peixer</surname><given-names>G. F.</given-names></name>; <name><surname>Dutra</surname><given-names>S. L.</given-names></name>; <name><surname>Ribeiro</surname><given-names>M. C.</given-names></name>; <name><surname>Lozano</surname><given-names>J. A.</given-names></name>; <name><surname>Barbosa</surname><given-names>J. R.</given-names></name>
+<article-title>A magnetic wine
+cooler prototype</article-title>. <source>International Journal of Refrigeration</source>
+<year>2021</year>, <volume>122</volume>, <fpage>110</fpage>&#x02013;<lpage>121</lpage>. <pub-id pub-id-type="doi">10.1016/j.ijrefrig.2020.11.015</pub-id>.</mixed-citation></ref><ref id="ref6"><mixed-citation publication-type="journal" id="cit6"><name><surname>Peixer</surname><given-names>G. F.</given-names></name>; et al. <article-title>A magnetocaloric air-conditioning
+system prototype</article-title>. <source>International Journal of Refrigeration</source>
+<year>2023</year>, <volume>151</volume>, <fpage>1</fpage>&#x02013;<lpage>13</lpage>. <pub-id pub-id-type="doi">10.1016/j.ijrefrig.2023.03.014</pub-id>.</mixed-citation></ref><ref id="ref7"><mixed-citation publication-type="journal" id="cit7"><name><surname>Zheng</surname><given-names>W.</given-names></name>; <name><surname>Shen</surname><given-names>J.</given-names></name>; <name><surname>Li</surname><given-names>Z.</given-names></name>; <name><surname>Huang</surname><given-names>H.</given-names></name>; <name><surname>Hai</surname><given-names>P.</given-names></name>; <name><surname>Liu</surname><given-names>J.</given-names></name>; <name><surname>Chen</surname><given-names>Z.</given-names></name>; <name><surname>Gao</surname><given-names>X.</given-names></name>; <name><surname>Mo</surname><given-names>Z.</given-names></name>
+<article-title>Numerical simulation
+of a multistage magnetic refrigeration system in the temperature range
+of liquid hydrogen</article-title>. <source>Int. J. Hydrogen Energy</source>
+<year>2024</year>, <volume>51</volume>, <fpage>523</fpage>&#x02013;<lpage>535</lpage>. <pub-id pub-id-type="doi">10.1016/j.ijhydene.2023.07.192</pub-id>.</mixed-citation></ref><ref id="ref8"><mixed-citation publication-type="journal" id="cit8"><name><surname>Dorin</surname><given-names>B.</given-names></name>; <name><surname>Avsec</surname><given-names>J.</given-names></name>; <name><surname>Plesca</surname><given-names>A.</given-names></name>
+<article-title>The efficiency
+of magnetic refrigeration
+and a comparison with compressor refrigeration systems</article-title>. <source>Journal of Energy Technology</source>
+<year>2018</year>, <volume>11</volume>, <fpage>59</fpage>&#x02013;<lpage>69</lpage>.</mixed-citation></ref><ref id="ref9"><mixed-citation publication-type="journal" id="cit9"><name><surname>Xie</surname><given-names>Z.</given-names></name>; <name><surname>Zou</surname><given-names>Z.</given-names></name>; <name><surname>He</surname><given-names>B.</given-names></name>; <name><surname>Liu</surname><given-names>L.</given-names></name>; <name><surname>Mao</surname><given-names>Z.</given-names></name>
+<article-title>Research Progress of
+Doped Manganite Materials in Magnetic Refrigeration</article-title>. <source>Frontiers in Materials</source>
+<year>2021</year>, <volume>8</volume>, <fpage>771941</fpage><pub-id pub-id-type="doi">10.3389/fmats.2021.771941</pub-id>.</mixed-citation></ref><ref id="ref10"><mixed-citation publication-type="journal" id="cit10"><name><surname>Smith</surname><given-names>A.</given-names></name>; <name><surname>Bahl</surname><given-names>C. R.</given-names></name>; <name><surname>Bj&#x000f8;rk</surname><given-names>R.</given-names></name>; <name><surname>Engelbrecht</surname><given-names>K.</given-names></name>; <name><surname>Nielsen</surname><given-names>K. K.</given-names></name>; <name><surname>Pryds</surname><given-names>N.</given-names></name>
+<article-title>Materials Challenges for High Performance
+Magnetocaloric Refrigeration Devices</article-title>. <source>Adv. Energy
+Mater.</source>
+<year>2012</year>, <volume>2</volume>, <fpage>1288</fpage>&#x02013;<lpage>1318</lpage>. <pub-id pub-id-type="doi">10.1002/aenm.201200167</pub-id>.</mixed-citation></ref><ref id="ref11"><mixed-citation publication-type="journal" id="cit11"><name><surname>Tozri</surname><given-names>A.</given-names></name>; <name><surname>Khelifi</surname><given-names>J.</given-names></name>; <name><surname>Dhahri</surname><given-names>E.</given-names></name>; <name><surname>Hlil</surname><given-names>E. K.</given-names></name>
+<article-title>Influence of Pr-doping
+on magnetic phase transition and magnetocaloric effect of La0.7-xPrxBa0.3MnO3Manganite</article-title>. <source>Mater. Chem. Phys.</source>
+<year>2015</year>, <volume>149&#x02013;150</volume>, <fpage>728</fpage>&#x02013;<lpage>733</lpage>. <pub-id pub-id-type="doi">10.1016/j.matchemphys.2014.11.034</pub-id>.</mixed-citation></ref><ref id="ref12"><mixed-citation publication-type="journal" id="cit12"><name><surname>Aya&#x0015f;</surname><given-names>A. O.</given-names></name>; <name><surname>&#x000c7;etin</surname><given-names>S. K.</given-names></name>; <name><surname>Ak&#x000e7;a</surname><given-names>G.</given-names></name>; <name><surname>Akyol</surname><given-names>M.</given-names></name>; <name><surname>Ekicibil</surname><given-names>A.</given-names></name>
+<article-title>Magnetic refrigeration:
+Current progress in magnetocaloric properties of perovskite Manganite
+materials</article-title>. <source>Materials Today Communications</source>
+<year>2023</year>, <volume>35</volume>, <fpage>105988</fpage><pub-id pub-id-type="doi">10.1016/j.mtcomm.2023.105988</pub-id>.</mixed-citation></ref><ref id="ref13"><mixed-citation publication-type="journal" id="cit13"><name><surname>Masrour</surname><given-names>R.</given-names></name>; <name><surname>Jabar</surname><given-names>A.</given-names></name>; <name><surname>Benyoussef</surname><given-names>A.</given-names></name>; <name><surname>Hamedoun</surname><given-names>M.</given-names></name>; <name><surname>Hlil</surname><given-names>E.</given-names></name>
+<article-title>Monte Carlo
+simulation study of magnetocaloric effect in NdMnO3 perovskite</article-title>. <source>J. Magn. Magn. Mater.</source>
+<year>2016</year>, <volume>401</volume>, <fpage>91</fpage>&#x02013;<lpage>95</lpage>. <pub-id pub-id-type="doi">10.1016/j.jmmm.2015.10.019</pub-id>.</mixed-citation></ref><ref id="ref14"><mixed-citation publication-type="journal" id="cit14"><name><surname>Tahiri</surname><given-names>N.</given-names></name>; <name><surname>Dahbi</surname><given-names>S.</given-names></name>; <name><surname>Dani</surname><given-names>I.</given-names></name>; <name><surname>El Bounagui</surname><given-names>O.</given-names></name>; <name><surname>Ez-Zahraouy</surname><given-names>H.</given-names></name>
+<article-title>Magnetocaloric and thermoelectric properties of the
+perovskite LaMnO3 material: A DFT study and Monte Carlo technique</article-title>. <source>Phase Transitions</source>
+<year>2021</year>, <volume>94</volume>, <fpage>826</fpage>&#x02013;<lpage>834</lpage>. <pub-id pub-id-type="doi">10.1080/01411594.2021.1974860</pub-id>.</mixed-citation></ref><ref id="ref15"><mixed-citation publication-type="journal" id="cit15"><name><surname>Erchidi
+Elyacoubi</surname><given-names>A. S.</given-names></name>; <name><surname>Masrour</surname><given-names>R.</given-names></name>; <name><surname>Jabar</surname><given-names>A.</given-names></name>
+<article-title>Magnetocaloric effect
+and magnetic properties in SmFe1-xMnxO3 perovskite: Monte Carlo simulations</article-title>. <source>Solid State Commun.</source>
+<year>2018</year>, <volume>271</volume>, <fpage>39</fpage>&#x02013;<lpage>43</lpage>. <pub-id pub-id-type="doi">10.1016/j.ssc.2017.12.015</pub-id>.</mixed-citation></ref><ref id="ref16"><mixed-citation publication-type="journal" id="cit16"><name><surname>Loudaini</surname><given-names>A.</given-names></name>; <name><surname>Aggour</surname><given-names>M.</given-names></name>; <name><surname>Mounkachi</surname><given-names>O.</given-names></name>; <name><surname>Bahmad</surname><given-names>L.</given-names></name>
+<article-title>Electronic, magnetic
+properties and magnetocaloric effect in La0.67Sr0.33MnO3 compound:
+Ab initio calculations and Monte Carlo simulation</article-title>. <source>Solid State Commun.</source>
+<year>2019</year>, <volume>295</volume>, <fpage>5</fpage>&#x02013;<lpage>11</lpage>. <pub-id pub-id-type="doi">10.1016/j.ssc.2019.03.009</pub-id>.</mixed-citation></ref><ref id="ref17"><mixed-citation publication-type="journal" id="cit17"><name><surname>Gao</surname><given-names>C.</given-names></name>; <name><surname>Min</surname><given-names>X.</given-names></name>; <name><surname>Fang</surname><given-names>M.</given-names></name>; <name><surname>Tao</surname><given-names>T.</given-names></name>; <name><surname>Zheng</surname><given-names>X.</given-names></name>; <name><surname>Liu</surname><given-names>Y.</given-names></name>; <name><surname>Wu</surname><given-names>X.</given-names></name>; <name><surname>Huang</surname><given-names>Z.</given-names></name>
+<article-title>Innovative materials science via
+machine learning</article-title>. <source>Adv. Funct. Mater.</source>
+<year>2022</year>, <volume>32</volume>, <fpage>2108044</fpage><pub-id pub-id-type="doi">10.1002/adfm.202108044</pub-id>.</mixed-citation></ref><ref id="ref18"><mixed-citation publication-type="journal" id="cit18"><name><surname>Balachandran</surname><given-names>P. V.</given-names></name>; <name><surname>Kowalski</surname><given-names>B.</given-names></name>; <name><surname>Sehirlioglu</surname><given-names>A.</given-names></name>; <name><surname>Lookman</surname><given-names>T.</given-names></name>
+<article-title>Experimental search
+for high-temperature ferroelectric perovskites guided by two-step
+machine learning</article-title>. <source>Nat. Commun.</source>
+<year>2018</year>, <volume>9</volume>, <fpage>1668</fpage><pub-id pub-id-type="doi">10.1038/s41467-018-03821-9</pub-id>.<pub-id pub-id-type="pmid">29700297</pub-id>
+</mixed-citation></ref><ref id="ref19"><mixed-citation publication-type="journal" id="cit19"><name><surname>Long</surname><given-names>T.</given-names></name>; <name><surname>Fortunato</surname><given-names>N. M.</given-names></name>; <name><surname>Zhang</surname><given-names>Y.</given-names></name>; <name><surname>Gutfleisch</surname><given-names>O.</given-names></name>; <name><surname>Zhang</surname><given-names>H.</given-names></name>
+<article-title>An accelerating approach
+of designing ferromagnetic materials via
+machine learning modeling of magnetic ground state and Curie temperature</article-title>. <source>Materials Research Letters</source>
+<year>2021</year>, <volume>9</volume>, <fpage>169</fpage>&#x02013;<lpage>174</lpage>. <pub-id pub-id-type="doi">10.1080/21663831.2020.1863876</pub-id>.</mixed-citation></ref><ref id="ref20"><mixed-citation publication-type="journal" id="cit20"><name><surname>Nelson</surname><given-names>J.</given-names></name>; <name><surname>Sanvito</surname><given-names>S.</given-names></name>
+<article-title>Predicting the Curie
+temperature of ferromagnets using
+machine learning</article-title>. <source>Phys. Rev. Materials</source>
+<year>2019</year>, <volume>3</volume>, <fpage>104405</fpage><pub-id pub-id-type="doi">10.1103/PhysRevMaterials.3.104405</pub-id>.</mixed-citation></ref><ref id="ref21"><mixed-citation publication-type="journal" id="cit21"><name><surname>Singh</surname><given-names>P.</given-names></name>; <name><surname>Del Rose</surname><given-names>T.</given-names></name>; <name><surname>Palasyuk</surname><given-names>A.</given-names></name>; <name><surname>Mudryk</surname><given-names>Y.</given-names></name>
+<article-title>Physics-Informed Machine-Learning
+Prediction of Curie Temperatures and Its Promise for Guiding the Discovery
+of Functional Magnetic Materials</article-title>. <source>Chem. Mater.</source>
+<year>2023</year>, <volume>35</volume>, <fpage>6304</fpage>&#x02013;<lpage>6312</lpage>. <pub-id pub-id-type="doi">10.1021/acs.chemmater.3c00892</pub-id>.</mixed-citation></ref><ref id="ref22"><mixed-citation publication-type="journal" id="cit22"><name><surname>Ucar</surname><given-names>H.</given-names></name>; <name><surname>Paudyal</surname><given-names>D.</given-names></name>; <name><surname>Choudhary</surname><given-names>K.</given-names></name>
+<article-title>Machine learning
+predicted magnetic
+entropy change using chemical descriptors across a large compositional
+landscape</article-title>. <source>Comput. Mater. Sci.</source>
+<year>2022</year>, <volume>209</volume>, <fpage>111414</fpage><pub-id pub-id-type="doi">10.1016/j.commatsci.2022.111414</pub-id>.</mixed-citation></ref><ref id="ref23"><mixed-citation publication-type="journal" id="cit23"><name><surname>Zhang</surname><given-names>Y.</given-names></name>; <name><surname>Xu</surname><given-names>X.</given-names></name>
+<article-title>Curie temperature modeling
+of magnetocaloric lanthanum manganites
+using Gaussian process regression</article-title>. <source>J. Magn.
+Magn. Mater.</source>
+<year>2020</year>, <volume>512</volume>, <fpage>166998</fpage><pub-id pub-id-type="doi">10.1016/j.jmmm.2020.166998</pub-id>.</mixed-citation></ref><ref id="ref24"><mixed-citation publication-type="journal" id="cit24"><name><surname>Zhai</surname><given-names>X.</given-names></name>; <name><surname>Chen</surname><given-names>M.</given-names></name>; <name><surname>Lu</surname><given-names>W.</given-names></name>
+<article-title>Accelerated
+search for perovskite
+materials with higher Curie temperature based on the machine learning
+methods</article-title>. <source>Comput. Mater. Sci.</source>
+<year>2018</year>, <volume>151</volume>, <fpage>41</fpage>&#x02013;<lpage>48</lpage>. <pub-id pub-id-type="doi">10.1016/j.commatsci.2018.04.031</pub-id>.</mixed-citation></ref><ref id="ref25"><mixed-citation publication-type="journal" id="cit25"><name><surname>Salazar-Mu&#x000f1;oz</surname><given-names>V. E.</given-names></name>; <name><surname>Lobo
+Guerrero</surname><given-names>A.</given-names></name>; <name><surname>Palomares-S&#x000e1;nchez</surname><given-names>S. A.</given-names></name>
+<article-title>Review of magnetocaloric
+properties in lanthanum manganites</article-title>. <source>J. Magn.
+Magn. Mater.</source>
+<year>2022</year>, <volume>562</volume>, <fpage>169787</fpage><pub-id pub-id-type="doi">10.1016/j.jmmm.2022.169787</pub-id>.</mixed-citation></ref><ref id="ref26"><mixed-citation publication-type="journal" id="cit26"><name><surname>Hassanzadeh-Tabrizi</surname><given-names>S.</given-names></name>
+<article-title>Precise calculation
+of crystallite size of nanomaterials: A review</article-title>. <source>J. Alloys Compd.</source>
+<year>2023</year>, <volume>968</volume>, <fpage>171914</fpage><pub-id pub-id-type="doi">10.1016/j.jallcom.2023.171914</pub-id>.</mixed-citation></ref><ref id="ref27"><mixed-citation publication-type="journal" id="cit27"><name><surname>Rivnay</surname><given-names>J.</given-names></name>; <name><surname>Noriega</surname><given-names>R.</given-names></name>; <name><surname>Kline</surname><given-names>R. J.</given-names></name>; <name><surname>Salleo</surname><given-names>A.</given-names></name>; <name><surname>Toney</surname><given-names>M. F.</given-names></name>
+<article-title>Quantitative
+analysis of lattice disorder and crystallite size in organic semiconductor
+thin film</article-title>. <source>Physical Review BCondensed Matter
+and Materials Physics</source>
+<year>2011</year>, <volume>84</volume>, <fpage>045203</fpage><pub-id pub-id-type="doi">10.1103/PhysRevB.84.045203</pub-id>.</mixed-citation></ref><ref id="ref28"><mixed-citation publication-type="journal" id="cit28"><name><surname>Zhang</surname><given-names>F.</given-names></name>; <name><surname>Taake</surname><given-names>C.</given-names></name>; <name><surname>Huang</surname><given-names>B.</given-names></name>; <name><surname>You</surname><given-names>X.</given-names></name>; <name><surname>Ojiyed</surname><given-names>H.</given-names></name>; <name><surname>Shen</surname><given-names>Q.</given-names></name>; <name><surname>Dugulan</surname><given-names>I.</given-names></name>; <name><surname>Caron</surname><given-names>L.</given-names></name>; <name><surname>van Dijk</surname><given-names>N.</given-names></name>; <name><surname>Br&#x000fc;ck</surname><given-names>E.</given-names></name>
+<article-title>Magnetocaloric effect in the (Mn,Fe)2(P,Si) system:
+From bulk to nano</article-title>. <source>Acta Mater.</source>
+<year>2022</year>, <volume>224</volume>, <fpage>117532</fpage><pub-id pub-id-type="doi">10.1016/j.actamat.2021.117532</pub-id>.</mixed-citation></ref><ref id="ref29"><mixed-citation publication-type="journal" id="cit29"><name><surname>Pecharsky</surname><given-names>V.</given-names></name>; <name><surname>Gschneidner</surname><given-names>K.</given-names><suffix>Jr</suffix></name>
+<article-title>Magnetocaloric effect from indirect
+measurements: Magnetization and heat capacity</article-title>. <source>J. Appl. Phys.</source>
+<year>1999</year>, <volume>86</volume>, <fpage>565</fpage>&#x02013;<lpage>575</lpage>. <pub-id pub-id-type="doi">10.1063/1.370767</pub-id>.</mixed-citation></ref><ref id="ref30"><mixed-citation publication-type="journal" id="cit30"><name><surname>Yamada</surname><given-names>H.</given-names></name>; <name><surname>Liu</surname><given-names>C.</given-names></name>; <name><surname>Wu</surname><given-names>S.</given-names></name>; <name><surname>Koyama</surname><given-names>Y.</given-names></name>; <name><surname>Ju</surname><given-names>S.</given-names></name>; <name><surname>Shiomi</surname><given-names>J.</given-names></name>; <name><surname>Morikawa</surname><given-names>J.</given-names></name>; <name><surname>Yoshida</surname><given-names>R.</given-names></name>
+<article-title>Predicting Materials Properties with
+Little Data Using Shotgun Transfer Learning</article-title>. <source>ACS Cent. Sci.</source>
+<year>2019</year>, <volume>5</volume>, <fpage>1717</fpage>&#x02013;<lpage>1730</lpage>. <pub-id pub-id-type="doi">10.1021/acscentsci.9b00804</pub-id>.<pub-id pub-id-type="pmid">31660440</pub-id>
+</mixed-citation></ref><ref id="ref31"><mixed-citation publication-type="journal" id="cit31"><name><surname>K&#x000f6;rbel</surname><given-names>S.</given-names></name>; <name><surname>Marques</surname><given-names>M. A. L.</given-names></name>; <name><surname>Botti</surname><given-names>S.</given-names></name>
+<article-title>Stability and electronic
+properties
+of new inorganic perovskites from high-throughput ab initio calculations</article-title>. <source>J. Mater. Chem. C</source>
+<year>2016</year>, <volume>4</volume>, <fpage>3157</fpage>&#x02013;<lpage>3167</lpage>. <pub-id pub-id-type="doi">10.1039/C5TC04172D</pub-id>.</mixed-citation></ref><ref id="ref32"><mixed-citation publication-type="journal" id="cit32"><name><surname>Gladkikh</surname><given-names>V.</given-names></name>; <name><surname>Kim</surname><given-names>D. Y.</given-names></name>; <name><surname>Hajibabaei</surname><given-names>A.</given-names></name>; <name><surname>Jana</surname><given-names>A.</given-names></name>; <name><surname>Myung</surname><given-names>C. W.</given-names></name>; <name><surname>Kim</surname><given-names>K. S.</given-names></name>
+<article-title>Machine Learning for Predicting the Band Gaps of ABX3
+Perovskites from Elemental Properties</article-title>. <source>J. Phys.
+Chem. C</source>
+<year>2020</year>, <volume>124</volume>, <fpage>8905</fpage><pub-id pub-id-type="doi">10.1021/acs.jpcc.9b11768</pub-id>.</mixed-citation></ref><ref id="ref33"><mixed-citation publication-type="journal" id="cit33"><name><surname>Franco</surname><given-names>V.</given-names></name>; <name><surname>Bl&#x000e1;zquez</surname><given-names>J. S.</given-names></name>; <name><surname>Ipus</surname><given-names>J. J.</given-names></name>; <name><surname>Law</surname><given-names>J. Y.</given-names></name>; <name><surname>Moreno-Ram&#x000ed;rez</surname><given-names>L. M.</given-names></name>; <name><surname>Conde</surname><given-names>A.</given-names></name>
+<article-title>Magnetocaloric effect: From materials research to refrigeration devices</article-title>. <source>Prog. Mater. Sci.</source>
+<year>2018</year>, <volume>93</volume>, <fpage>112</fpage>&#x02013;<lpage>232</lpage>. <pub-id pub-id-type="doi">10.1016/j.pmatsci.2017.10.005</pub-id>.</mixed-citation></ref><ref id="ref34"><mixed-citation publication-type="journal" id="cit34"><name><surname>Bergstra</surname><given-names>J.</given-names></name>; <name><surname>Yamins</surname><given-names>D.</given-names></name>; <name><surname>Cox</surname><given-names>D. D.</given-names></name>
+<article-title>Making a science
+of model search:
+Hyperparameter optimization in hundreds of dimensions for vision architectures</article-title>. <source>Machine Learning (ICML-13)</source>
+<year>2013</year>, <volume>28</volume>, <fpage>115</fpage>&#x02013;<lpage>123</lpage>.</mixed-citation></ref><ref id="ref35"><mixed-citation publication-type="book" id="cit35"><person-group person-group-type="allauthors"><name><surname>Murphy</surname><given-names>K. P.</given-names></name></person-group><source>Machine Learning:
+A Probabilistic Perspective</source>; <publisher-name>The MIT Press</publisher-name>, <year>2012</year>.</mixed-citation></ref><ref id="ref36"><mixed-citation publication-type="journal" id="cit36"><person-group person-group-type="allauthors"><name><surname>Brunton</surname><given-names>S. L.</given-names></name>; <name><surname>Kutz</surname><given-names>J. N.</given-names></name></person-group><source>Data-Driven Science
+and Engineering: Machine Learning, Dynamical Systems, and Control</source>; <publisher-name>Cambridge University Press</publisher-name>, <year>2022</year>.<pub-id pub-id-type="doi">10.1017/9781009089517</pub-id></mixed-citation></ref><ref id="ref37"><mixed-citation publication-type="journal" id="cit37"><name><surname>Pedregosa</surname><given-names>F.</given-names></name>; et al. <article-title>Scikit-learn: Machine
+Learning in Python</article-title>. <source>Journal
+of Machine Learning Research</source>
+<year>2011</year>, <volume>12</volume>, <fpage>2825</fpage>&#x02013;<lpage>2830</lpage>.</mixed-citation></ref><ref id="ref38"><mixed-citation publication-type="conf-proc" id="cit38"><person-group person-group-type="allauthors"><name><surname>Kingma</surname><given-names>D.</given-names></name>; <name><surname>Ba</surname><given-names>J.</given-names></name></person-group><article-title>Adam: A Method for Stochastic
+Optimization.</article-title><source>Conference Paper at the 3rd
+International Conference for Learning Representation</source>; San
+Diego, CA, May 7&#x02013;9, <year>2015</year>.</mixed-citation></ref><ref id="ref39"><mixed-citation publication-type="conf-proc" id="cit39"><person-group person-group-type="allauthors"><name><surname>Chen</surname><given-names>T.</given-names></name>; <name><surname>Guestrin</surname><given-names>C.</given-names></name></person-group><article-title>XGBoost: A Scalable
+Tree Boosting System</article-title>. <source>Proceedings of the 22nd
+ACM SIGKDD International Conference on Knowledge Discovery and Data
+Mining</source>; San Fransisco, CA, Aug. 13&#x02013;17, <year>2016</year>; pp <fpage>785</fpage>&#x02013;<lpage>794</lpage>.<pub-id pub-id-type="doi">10.1145/2939672.2939785</pub-id></mixed-citation></ref><ref id="ref40"><mixed-citation publication-type="journal" id="cit40"><name><surname>Tlili</surname><given-names>R.</given-names></name>; <name><surname>Bejar</surname><given-names>M.</given-names></name>; <name><surname>Dhahri</surname><given-names>E.</given-names></name>; <name><surname>Zaoui</surname><given-names>A.</given-names></name>; <name><surname>Hlil</surname><given-names>E. K.</given-names></name>; <name><surname>Bessais</surname><given-names>L.</given-names></name>
+<article-title>Influence of crystallite size reduction on the magnetic
+and magnetocaloric properties of La0.6Sr0.35Ca0.05CoO3 nanoparticles</article-title>. <source>Polyhedron</source>
+<year>2017</year>, <volume>121</volume>, <fpage>19</fpage>&#x02013;<lpage>24</lpage>. <pub-id pub-id-type="doi">10.1016/j.poly.2016.09.044</pub-id>.</mixed-citation></ref><ref id="ref41"><mixed-citation publication-type="journal" id="cit41"><name><surname>Thanh</surname><given-names>T. D.</given-names></name>; <name><surname>YiKyung</surname><given-names>Y.</given-names></name>; <name><surname>Ho</surname><given-names>T. A.</given-names></name>; <name><surname>Manh</surname><given-names>T. V.</given-names></name>; <name><surname>Phan</surname><given-names>T. L.</given-names></name>; <name><surname>Tartakovsky</surname><given-names>D. M.</given-names></name>; <name><surname>Yu</surname><given-names>S. C.</given-names></name>
+<article-title>Influence of Crystallite
+Size on
+Magnetocaloric Effect and Critical Behavior La <sub>0.7</sub> Sr<sub>0.3</sub> Mn<sub>0.92</sub>Co<sub>0.08O3</sub> Nanoparticles</article-title>. <source>IEEE Trans. Magn.</source>
+<year>2015</year>, <volume>51</volume>, <fpage>1</fpage>&#x02013;<lpage>4</lpage>. <pub-id pub-id-type="doi">10.1109/TMAG.2015.2424978</pub-id>.<pub-id pub-id-type="pmid">26203196</pub-id>
+</mixed-citation></ref><ref id="ref42"><mixed-citation publication-type="journal" id="cit42"><name><surname>Mahjoub</surname><given-names>S.</given-names></name>; <name><surname>Baazaoui</surname><given-names>M.</given-names></name>; <name><surname>Hlil</surname><given-names>E. K.</given-names></name>; <name><surname>Oumezzine</surname><given-names>M.</given-names></name>
+<article-title>Effect of
+synthesis techniques on structural, magnetocaloric and critical behavior
+of Pr0.6Ca0.1Sr0.3Mn0.975Fe0.025O3 manganites</article-title>. <source>Ceram. Int.</source>
+<year>2015</year>, <volume>41</volume>, <fpage>12407</fpage>&#x02013;<lpage>12416</lpage>. <pub-id pub-id-type="doi">10.1016/j.ceramint.2015.06.078</pub-id>.</mixed-citation></ref><ref id="ref43"><mixed-citation publication-type="journal" id="cit43"><name><surname>Liu</surname><given-names>Z.-L.</given-names></name>; <name><surname>Kang</surname><given-names>P.</given-names></name>; <name><surname>Zhu</surname><given-names>Y.</given-names></name>; <name><surname>Liu</surname><given-names>L.</given-names></name>; <name><surname>Guo</surname><given-names>H.</given-names></name>
+<article-title>Material informatics
+for layered high- T C superconductors</article-title>. <source>APL Materials</source>
+<year>2020</year>, <volume>8</volume>, <fpage>061104</fpage><pub-id pub-id-type="doi">10.1063/5.0004641</pub-id>.</mixed-citation></ref><ref id="ref44"><mixed-citation publication-type="journal" id="cit44"><name><surname>Court</surname><given-names>C. J.</given-names></name>; <name><surname>Jain</surname><given-names>A.</given-names></name>; <name><surname>Cole</surname><given-names>J. M.</given-names></name>
+<article-title>Inverse
+Design of Materials That
+Exhibit the Magnetocaloric Effect by Text-Mining of the Scientific
+Literature and Generative Deep Learning</article-title>. <source>Chem.
+Mater.</source>
+<year>2021</year>, <volume>33</volume>, <fpage>7217</fpage>&#x02013;<lpage>7231</lpage>. <pub-id pub-id-type="doi">10.1021/acs.chemmater.1c01368</pub-id>.</mixed-citation></ref><ref id="ref45"><mixed-citation publication-type="journal" id="cit45"><name><surname>Castro</surname><given-names>P. B. d.</given-names></name>; <name><surname>Terashima</surname><given-names>K.</given-names></name>; <name><surname>Yamamoto</surname><given-names>T. D.</given-names></name>; <name><surname>Hou</surname><given-names>Z.</given-names></name>; <name><surname>Iwasaki</surname><given-names>S.</given-names></name>; <name><surname>Matsumoto</surname><given-names>R.</given-names></name>; <name><surname>Adachi</surname><given-names>S.</given-names></name>; <name><surname>Saito</surname><given-names>Y.</given-names></name>; <name><surname>Song</surname><given-names>P.</given-names></name>; <name><surname>Takeya</surname><given-names>H.</given-names></name>; <name><surname>Takano</surname><given-names>Y.</given-names></name>
+<article-title>Machine-learning-guided discovery
+of the gigantic magnetocaloric effect in HoB2 near the hydrogen liquefaction
+temperature</article-title>. <source>NPG Asia Mater.</source>
+<year>2020</year>, <volume>12</volume>, <fpage>1</fpage>&#x02013;<lpage>7</lpage>. <pub-id pub-id-type="doi">10.1038/s41427-020-0214-y</pub-id>.</mixed-citation></ref><ref id="ref46"><mixed-citation publication-type="journal" id="cit46"><name><surname>Gottschall</surname><given-names>T.</given-names></name>; <name><surname>Skokov</surname><given-names>K. P.</given-names></name>; <name><surname>Fries</surname><given-names>M.</given-names></name>; <name><surname>Taubel</surname><given-names>A.</given-names></name>; <name><surname>Radulov</surname><given-names>I.</given-names></name>; <name><surname>Scheibel</surname><given-names>F.</given-names></name>; <name><surname>Benke</surname><given-names>D.</given-names></name>; <name><surname>Riegg</surname><given-names>S.</given-names></name>; <name><surname>Gutfleisch</surname><given-names>O.</given-names></name>
+<article-title>Making a Cool
+Choice: The Materials Library of Magnetic Refrigeration</article-title>. <source>Adv. Energy Mater.</source>
+<year>2019</year>, <volume>9</volume>, <fpage>1901322</fpage><pub-id pub-id-type="doi">10.1002/aenm.201901322</pub-id>.</mixed-citation></ref><ref id="ref47"><mixed-citation publication-type="journal" id="cit47"><name><surname>Gottschall</surname><given-names>T.</given-names></name>; <name><surname>Kuz&#x02019;min</surname><given-names>M. D.</given-names></name>; <name><surname>Skokov</surname><given-names>K. P.</given-names></name>; <name><surname>Skourski</surname><given-names>Y.</given-names></name>; <name><surname>Fries</surname><given-names>M.</given-names></name>; <name><surname>Gutfleisch</surname><given-names>O.</given-names></name>; <name><surname>Zavareh</surname><given-names>M. G.</given-names></name>; <name><surname>Schlagel</surname><given-names>D. L.</given-names></name>; <name><surname>Mudryk</surname><given-names>Y.</given-names></name>; <name><surname>Pecharsky</surname><given-names>V.</given-names></name>; <name><surname>Wosnitza</surname><given-names>J.</given-names></name>
+<article-title>Magnetocaloric effect of gadolinium
+in high magnetic fields</article-title>. <source>Phys. Rev. B</source>
+<year>2019</year>, <volume>99</volume>, <fpage>134429</fpage><pub-id pub-id-type="doi">10.1103/PhysRevB.99.134429</pub-id>.</mixed-citation></ref></ref-list></back></article>

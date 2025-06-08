@@ -1,0 +1,1232 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="1.3" id="mrm30353" xml:lang="en" article-type="research-article"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Magn Reson Med</journal-id><journal-id journal-id-type="iso-abbrev">Magn Reson Med</journal-id><journal-id journal-id-type="doi">10.1002/(ISSN)1522-2594</journal-id><journal-id journal-id-type="publisher-id">MRM</journal-id><journal-title-group><journal-title>Magnetic Resonance in Medicine</journal-title></journal-title-group><issn pub-type="ppub">0740-3194</issn><issn pub-type="epub">1522-2594</issn><publisher><publisher-name>John Wiley and Sons Inc.</publisher-name><publisher-loc>Hoboken</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">39449296</article-id><article-id pub-id-type="pmc">PMC11680732</article-id>
+<article-id pub-id-type="doi">10.1002/mrm.30353</article-id><article-id pub-id-type="publisher-id">MRM30353</article-id><article-categories><subj-group subj-group-type="overline"><subject>Research Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Computer Processing and Modeling</subject></subj-group></article-categories><title-group><article-title>Toward quantitative <styled-content style="fixed-case" toggle="no">CEST</styled-content> imaging of glutamate in the mouse brain using a multi&#x02010;pool exchange model calibrated by <styled-content style="fixed-case" toggle="no">
+<sup>1</sup>H</styled-content>&#x02010;<styled-content style="fixed-case" toggle="no">MRS</styled-content>
+</article-title><alt-title alt-title-type="left-running-head">MAGUIN et al.</alt-title></title-group><contrib-group><contrib id="mrm30353-cr-0001" contrib-type="author"><name><surname>Maguin</surname><given-names>C&#x000e9;cile</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0001-6411-5040</contrib-id><xref rid="mrm30353-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="mrm30353-cr-0002" contrib-type="author"><name><surname>Mougel</surname><given-names>Elo&#x000ef;se</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0009-0007-5926-2573</contrib-id><xref rid="mrm30353-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="mrm30353-cr-0003" contrib-type="author"><name><surname>Valette</surname><given-names>Julien</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-2067-5051</contrib-id><xref rid="mrm30353-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="mrm30353-cr-0004" contrib-type="author" corresp="yes"><name><surname>Flament</surname><given-names>Julien</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-6412-3427</contrib-id><xref rid="mrm30353-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><address><email>julien.flament@cea.fr</email></address></contrib></contrib-group><aff id="mrm30353-aff-0001">
+<label>
+<sup>1</sup>
+</label>
+<named-content content-type="organisation-division">Molecular Imaging Research Center, Laboratoire des Maladies Neurod&#x000e9;g&#x000e9;n&#x000e9;ratives</named-content>
+<institution>Universit&#x000e9; Paris&#x02010;Saclay, Commissariat &#x000e0; l'Energie Atomique et aux Energies Alternatives, Centre National de la Recherche Scientifique</institution>
+<city>
+Fontenay&#x02010;aux&#x02010;Roses</city>
+<country country="FR">France</country>
+</aff><author-notes><corresp id="correspondenceTo">
+<label>*</label>
+<bold>Correspondence</bold>
+<break/>
+Julien Flament, Universit&#x000e9; Paris&#x02010;Saclay, Commissariat &#x000e0; l'Energie Atomique et aux Energies Alternatives, Centre National de la Recherche Scientifique, 18 route du Panorama&#x02010;BP no. 6, 92260&#x02010;Fontenay&#x02010;aux&#x02010;Roses, France.<break/>
+Email: <email>julien.flament@cea.fr</email>
+<break/>
+</corresp></author-notes><pub-date pub-type="epub"><day>24</day><month>10</month><year>2024</year></pub-date><pub-date pub-type="ppub"><month>3</month><year>2025</year></pub-date><volume>93</volume><issue seq="360">3</issue><issue-id pub-id-type="doi">10.1002/mrm.v93.3</issue-id><fpage>1394</fpage><lpage>1410</lpage><history>
+<date date-type="rev-recd"><day>09</day><month>9</month><year>2024</year></date>
+<date date-type="received"><day>06</day><month>5</month><year>2024</year></date>
+<date date-type="accepted"><day>03</day><month>10</month><year>2024</year></date>
+</history><permissions><!--&#x000a9; 2025 International Society for Magnetic Resonance in Medicine.--><copyright-statement content-type="article-copyright">&#x000a9; 2024 The Author(s). <italic toggle="yes">Magnetic Resonance in Medicine</italic> published by Wiley Periodicals LLC on behalf of International Society for Magnetic Resonance in Medicine.</copyright-statement><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>This is an open access article under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link> License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions><self-uri content-type="pdf" xlink:href="file:MRM-93-1394.pdf"/><abstract><title>Abstract</title><sec id="mrm30353-sec-0001"><title>Purpose</title><p>To develop a CEST quantification model to map glutamate concentration in the mouse brain at 11.7&#x02009;T, overcoming the limitations of conventional glutamate&#x02010;weighted CEST (gluCEST) contrast (magnetization transfer ratio with asymmetric analysis).</p></sec><sec id="mrm30353-sec-0002"><title>Methods</title><p>
+<sup>1</sup>H&#x02010;MRS was used as a gold standard for glutamate quantification to calibrate a CEST&#x02010;based quantitative pipeline. Joint localized measurements of Z&#x02010;spectra at B<sub>1</sub>&#x02009;=&#x02009;5 &#x003bc;T and quantitative <sup>1</sup>H&#x02010;MRS were carried out in two voxels of interest in the mouse brain. A six&#x02010;pool Bloch&#x02010;McConnell model was found appropriate to fit experimental data. Glutamate exchange rate was estimated in both regions with this dedicated multi&#x02010;pool fitting model and using glutamate concentration determined by <sup>1</sup>H&#x02010;MRS.</p></sec><sec id="mrm30353-sec-0003"><title>Results</title><p>Glutamate exchange rate was estimated to be &#x002dc;1300&#x02009;Hz in the mouse brain. Using this calibrated value, maps of glutamate concentration in the mouse brain were obtained by pixel&#x02010;by&#x02010;pixel fitting of Z&#x02010;spectra at B<sub>1</sub>&#x02009;=&#x02009;5 &#x003bc;T. A complementary study of simulations, however, showed that the quantitative model has high sensitivity to noise, and therefore, requires high&#x02010;SNR acquisitions. Interestingly, fitted [Glu] seemed to be overestimated compared to <sup>1</sup>H&#x02010;MRS measurements, although it was estimated with simulations that the model has no intrinsic fitting bias with our experimental level of noise. The hypothesis of an unknown proton&#x02010;exchanging pool contributing to gluCEST signal is discussed.</p></sec><sec id="mrm30353-sec-0004"><title>Conclusion</title><p>High&#x02010;resolution mapping of glutamate in the brain was made possible using the proposed calibrated quantification model of gluCEST data. Further studying of the in vivo molecular contributions to gluCEST signal could improve modeling.</p></sec></abstract><kwd-group kwd-group-type="author-generated"><kwd id="mrm30353-kwd-0001">
+<sup>1</sup>H&#x02010;MRS</kwd><kwd id="mrm30353-kwd-0002">Bloch&#x02010;McConnell fitting</kwd><kwd id="mrm30353-kwd-0003">CEST</kwd><kwd id="mrm30353-kwd-0004">glutamate</kwd><kwd id="mrm30353-kwd-0005">quantification</kwd><kwd id="mrm30353-kwd-0006">quantitative CEST</kwd></kwd-group><funding-group><award-group id="funding-0001"><funding-source>NeurATRIS: A Translational Research Infrastructure for Biotherapies in Neurosciences</funding-source><award-id>ANR&#x02010;11&#x02010;INBS&#x02010;0011</award-id></award-group></funding-group><counts><fig-count count="6"/><table-count count="5"/><page-count count="17"/><word-count count="9300"/></counts><custom-meta-group><custom-meta><meta-name>source-schema-version-number</meta-name><meta-value>2.0</meta-value></custom-meta><custom-meta><meta-name>cover-date</meta-name><meta-value>March 2025</meta-value></custom-meta><custom-meta><meta-name>details-of-publishers-convertor</meta-name><meta-value>Converter:WILEY_ML3GV2_TO_JATSPMC version:6.5.1 mode:remove_FC converted:27.12.2024</meta-value></custom-meta></custom-meta-group></article-meta><notes><p content-type="self-citation">
+<mixed-citation publication-type="journal" id="mrm30353-cit-1001">
+<string-name>
+<surname>Maguin</surname>
+<given-names>C</given-names>
+</string-name>, <string-name>
+<surname>Mougel</surname>
+<given-names>E</given-names>
+</string-name>, <string-name>
+<surname>Valette</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Flament</surname>
+<given-names>J</given-names>
+</string-name>. <article-title>Toward quantitative <styled-content style="fixed-case" toggle="no">CEST</styled-content> imaging of glutamate in the mouse brain using a multi&#x02010;pool exchange model calibrated by <styled-content style="fixed-case" toggle="no">
+<sup>1</sup>H</styled-content>&#x02010;<styled-content style="fixed-case" toggle="no">MRS</styled-content>
+</article-title>. <source>Magn Reson Med</source>. <year>2025</year>;<volume>93</volume>(<issue>3</issue>):<fpage>1394</fpage>&#x02010;<lpage>1410</lpage>. doi: <pub-id pub-id-type="doi">10.1002/mrm.30353</pub-id>
+</mixed-citation>
+</p></notes></front><body id="mrm30353-body-0001"><sec id="mrm30353-sec-0005"><label>1</label><title>INTRODUCTION</title><p>CEST is an MRI&#x02010;based molecular imaging technique offering great potential. Unlike <sup>1</sup>H&#x02010;MRS that is limited by its intrinsic low sensitivity, CEST imaging can offer a valuable alternative to map spatial distribution of several brain metabolites with a good resolution. This technique indirectly detects dilute molecules by exploiting their exchange of labile protons with bulk water. Exchangeable protons, such as amine (&#x02013;NH<sub>3</sub>
+<sup>+</sup>) or amide (&#x02013;NH), have a resonance frequency different from that of free water and can be selectively saturated using an RF pulse. Because the decrease of water signal because of magnetization exchange is directly related to the concentration of exchanging protons, it is possible to map the spatial distribution of several molecules of interest, especially brain metabolites involved in several aspects of normal brain functions including cognition, memory, and learning. For instance, CEST can be applied to map glutamate (Glu), a neurotransmitter naturally abundant in the brain, which exhibits a CEST resonance at 3&#x02009;ppm.<xref rid="mrm30353-bib-0001" ref-type="bibr">
+<sup>1</sup>
+</xref> Various studies have already demonstrated the potential of Glu&#x02010;weighted CEST, gluCEST, to map Glu in both rodent and human brains. Thanks to the excellent spatial resolution offered by CEST, previously reported gluCEST images allow for the identification of main brain regions and even finer structures, like hippocampus pyramidal assembly.<xref rid="mrm30353-bib-0002" ref-type="bibr">
+<sup>2</sup>
+</xref> Furthermore, gluCEST has proven to be of particular interest to monitor neurometabolism and detect neurological pathologies. In rodents, gluCEST has been used to study neurodegenerative diseases like Huntington's,<xref rid="mrm30353-bib-0003" ref-type="bibr">
+<sup>3</sup>
+</xref>, <xref rid="mrm30353-bib-0004" ref-type="bibr">
+<sup>4</sup>
+</xref> Alzheimer's,<xref rid="mrm30353-bib-0005" ref-type="bibr">
+<sup>5</sup>
+</xref> or Parkinson's,<xref rid="mrm30353-bib-0006" ref-type="bibr">
+<sup>6</sup>
+</xref>, <xref rid="mrm30353-bib-0007" ref-type="bibr">
+<sup>7</sup>
+</xref> but also afflictions like cerebral ischemia,<xref rid="mrm30353-bib-0001" ref-type="bibr">
+<sup>1</sup>
+</xref> epilepsy,<xref rid="mrm30353-bib-0008" ref-type="bibr">
+<sup>8</sup>
+</xref> or traumatic brain injuries.<xref rid="mrm30353-bib-0009" ref-type="bibr">
+<sup>9</sup>
+</xref> In the human brain, gluCEST studies have shown that Glu might be a unique biomarker to detect tumor,<xref rid="mrm30353-bib-0010" ref-type="bibr">
+<sup>10</sup>
+</xref> epilepsy,<xref rid="mrm30353-bib-0011" ref-type="bibr">
+<sup>11</sup>
+</xref>, <xref rid="mrm30353-bib-0012" ref-type="bibr">
+<sup>12</sup>
+</xref> or encephalitis,<xref rid="mrm30353-bib-0013" ref-type="bibr">
+<sup>13</sup>
+</xref> sometimes proving to be more reliable than traditional MRI. GluCEST has also been used to study disorders on the psychosis spectrum<xref rid="mrm30353-bib-0014" ref-type="bibr">
+<sup>14</sup>
+</xref>, <xref rid="mrm30353-bib-0015" ref-type="bibr">
+<sup>15</sup>
+</xref> and multiple sclerosis.<xref rid="mrm30353-bib-0016" ref-type="bibr">
+<sup>16</sup>
+</xref>
+</p><p>However, the interpretation of the conventional gluCEST contrast, which is based on the measurement of the magnetization transfer ratio with asymmetric analysis (MTR<sub>asym</sub>) metric, can be confounded by concomitant effects such as the modification of the magnetization transfer<xref rid="mrm30353-bib-0017" ref-type="bibr">
+<sup>17</sup>
+</xref> (MT) or potentially non&#x02010;negligible downfield nuclear Overhauser effects (NOE), even at high B<sub>1</sub> saturation power. Furthermore, even when using less biased CEST metrics, such as inverse Z&#x02010;spectrum (MTR<sub>Rex</sub>),<xref rid="mrm30353-bib-0018" ref-type="bibr">
+<sup>18</sup>
+</xref> with proper removal of MT and NOE effects, gluCEST contrast is suspected to be contaminated by the contributions of other metabolites like amides or amines,<xref rid="mrm30353-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref> or by some amino&#x02010;acids like aspartate.<xref rid="mrm30353-bib-0020" ref-type="bibr">
+<sup>20</sup>
+</xref> Even when choosing the optimal saturation parameters for Glu&#x02010;targeted imaging, over 40% of gluCEST contrast might be related to other CEST agents.<xref rid="mrm30353-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref> To top it off, Glu exchange dynamics are known to be extremely sensitive to chemical environment (Figure&#x000a0;<xref rid="mrm30353-supitem-0001" ref-type="supplementary-material">S1</xref> and Tables&#x000a0;<xref rid="mrm30353-supitem-0001" ref-type="supplementary-material">S2</xref>, and <xref rid="mrm30353-supitem-0001" ref-type="supplementary-material">S3</xref>), temperature or pH. As changes of pH have already been reported in various stress conditions,<xref rid="mrm30353-bib-0021" ref-type="bibr">
+<sup>21</sup>
+</xref> it is important to account for this effect for reliable evaluation of Glu concentration in vivo.</p><p>Consequently, to increase the reliability and specificity of gluCEST imaging, quantification methods to determine the correct Glu concentration from CEST measurements are of utmost interest. Quantitative CEST (qCEST) has been an emerging field in the recent years,<xref rid="mrm30353-bib-0022" ref-type="bibr">
+<sup>22</sup>
+</xref> both for the in vivo quantification of exchange rates and of metabolite concentrations relative to water. Approaches such as Lorentzian decomposition of the Z&#x02010;spectrum (or polynomial and Lorentzian lineshape fitting) have been proposed,<xref rid="mrm30353-bib-0023" ref-type="bibr">
+<sup>23</sup>
+</xref>, <xref rid="mrm30353-bib-0024" ref-type="bibr">
+<sup>24</sup>
+</xref> with successful application to slow&#x02010;exchanging proton pools.<xref rid="mrm30353-bib-0025" ref-type="bibr">
+<sup>25</sup>
+</xref> However, the Z&#x02010;spectrum lineshape at 5 &#x003bc;T, which is a commonly used saturation power in gluCEST studies,<xref rid="mrm30353-bib-0004" ref-type="bibr">
+<sup>4</sup>
+</xref>, <xref rid="mrm30353-bib-0026" ref-type="bibr">
+<sup>26</sup>
+</xref> is broad and the specific peak related to Glu hardly distinguishable from other contributions, which makes it hard to fit properly with PLOF. Other more time&#x02010;efficient quantification methods, like quantification through varying saturation power or time (QUESP or QUEST)<xref rid="mrm30353-bib-0027" ref-type="bibr">
+<sup>27</sup>
+</xref> are theoretically applicable to rapidly exchanging protons like amine protons of Glu,<xref rid="mrm30353-bib-0028" ref-type="bibr">
+<sup>28</sup>
+</xref> but they require specific and uncontaminated CEST contrast, which is not the case of gluCEST, especially in vivo where the signal is mixed together with contributions of other CEST agents.<xref rid="mrm30353-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref>, <xref rid="mrm30353-bib-0020" ref-type="bibr">
+<sup>20</sup>
+</xref> Hence, a quantitative gluCEST pipeline was developed based on the gold&#x02010;standard approach, which is the fitting of Z&#x02010;spectra by Bloch&#x02010;McConnell simulations using a CEST model including several proton&#x02010;exchanging pools resonating at different frequencies.</p><p>The difficulty with this approach is the large number of unknown variables, including proton fractions and exchange rates of each pool. In particular, Glu exchange rate (k<sub>ex</sub>
+<sup>Glu</sup>), which is a key parameter for gluCEST quantification, has never been accurately measured in vivo. Although it has been extensively studied in vitro,<xref rid="mrm30353-bib-0001" ref-type="bibr">
+<sup>1</sup>
+</xref>, <xref rid="mrm30353-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref>, <xref rid="mrm30353-bib-0029" ref-type="bibr">
+<sup>29</sup>
+</xref>, <xref rid="mrm30353-bib-0030" ref-type="bibr">
+<sup>30</sup>
+</xref> exchange dynamics of Glu may be different in vivo, just like it was recently reported for Cr.<xref rid="mrm30353-bib-0031" ref-type="bibr">
+<sup>31</sup>
+</xref> The lack of knowledge on in vivo k<sub>ex</sub>
+<sup>Glu</sup> significantly limits the possibility of doing proper quantitative gluCEST imaging. One aim of this work is, therefore, to obtain an estimation of Glu's exchange rate in the mouse brain, and then use it as a tuned value to efficiently perform quantitative gluCEST imaging.</p><p>To develop this calibrated CEST model, quantitative <sup>1</sup>H&#x02010;MRS was used as a reference to measure Glu concentration in two different voxels, and this input was injected into the model to reduce the number of free parameters. Although <sup>1</sup>H&#x02010;MRS became recognized as a standard technique for metabolic monitoring in the brain, quantitative <sup>1</sup>H&#x02010;MRS is not straightforward. Proper quantification includes fitting of <sup>1</sup>H&#x02010;MRS spectrum, then scaling results using a separately acquired water spectrum, and adding T<sub>2</sub> and partial volume corrections.<xref rid="mrm30353-bib-0032" ref-type="bibr">
+<sup>32</sup>
+</xref> Few studies of quantitative <sup>1</sup>H&#x02010;MRS in the mouse brain at 11.7&#x02009;T have been published in literature and metabolite concentrations reported in these studies exhibited large variation. To accurately determine [Glu] in vivo, a whole <sup>1</sup>H&#x02010;MRS pipeline was developed, including T<sub>2</sub> measurement and partial volume correction based on brain tissues segmentation.</p><p>Finally, using the <sup>1</sup>H&#x02010;MRS&#x02010;optimized multi&#x02010;pool model, the feasibility of quantitative gluCEST imaging was evaluated in vivo in the mouse brain, and the quality of the model was analyzed using simulations.</p></sec><sec sec-type="methods" id="mrm30353-sec-0006"><label>2</label><title>METHODS</title><sec id="mrm30353-sec-0007"><label>2.1</label><title>Animal experiments</title><p>All experiments involving animals were approved by the local ethics committee and were performed according to French regulations (APAFIS no. 21&#x02009;335&#x02010;201&#x02009;907&#x02009;031&#x02009;642&#x02009;584).</p><p>Seven&#x02010; to 15&#x02010;month&#x02010;old wild type C57BL6 mice (Charles River) were anesthetized with isoflurane (1 to 1.5% isoflurane kept constant) in a 1:1 mixture of air and oxygen and were positioned on stereotaxic bed. Mouse temperature (37&#x000b0;C) and respiratory rate were monitored using PC SAM software (Small Animal Instruments) during scanning.</p></sec><sec id="mrm30353-sec-0008"><label>2.2</label><title>
+<styled-content style="fixed-case" toggle="no">MRI</styled-content> acquisitions</title><p>All experiments were performed on a horizontal 11.7&#x02009;T MRI scanner (Bruker).</p><sec id="mrm30353-sec-0009"><label>2.2.1</label><title>
+<styled-content style="fixed-case" toggle="no">
+<sup>1</sup>H</styled-content>&#x02010;<styled-content style="fixed-case" toggle="no">MRS</styled-content> acquisitions</title><p>Localized <sup>1</sup>H&#x02010;MRS spectra were acquired with a LASER (Localization by Adiabatic Selective Refocusing) sequence<xref rid="mrm30353-bib-0033" ref-type="bibr">
+<sup>33</sup>
+</xref> using a quadrature surface cryoprobe (Bruker) to increase SNR. A metabolite spectrum and an unsuppressed water spectrum were measured successively in the voxel of interest (VOI) to obtain quantitative measurements. For metabolite spectra acquisitions, a VAPOR<xref rid="mrm30353-bib-0034" ref-type="bibr">
+<sup>34</sup>
+</xref> (variable pulse power and optimized relaxa&#x02010;tion delays) water suppression module was used.</p><p>Two VOIs were chosen to investigate different tissue types (Figure&#x000a0;<xref rid="mrm30353-fig-0001" ref-type="fig">1A</xref>). The first VOI was placed in the striatum region, with a 12.8&#x02009;&#x003bc;L volume (3.2&#x02009;&#x000d7;&#x02009;2&#x02009;&#x000d7;&#x02009;2&#x02009;mm<sup>3</sup>), and contained almost exclusively gray matter. The second VOI was placed over the corpus callosum to target white matter tissue, with an 8&#x02009;&#x003bc;L volume (4&#x02009;&#x000d7;&#x02009;0.5&#x02009;&#x000d7;&#x02009;0.5&#x02009;mm<sup>3</sup>).</p><fig position="float" fig-type="FIGURE" id="mrm30353-fig-0001"><label>FIGURE 1</label><caption><p>
+Quantitative <sup>1</sup>H&#x02010;MRS acquisitions in the mouse brain. (A) Positioning of voxels of interest in striatum and corpus callosum. Typical fractions of gray matter, white matter, and CSF in the voxel are indicated. (B) Example of fit using LCModel toolbox of <sup>1</sup>H&#x02010;MRS spectra acquired on two different animals at TE&#x02009;=&#x02009;20&#x02009;ms. Macromolecules (MM) spectrum was experimentally acquired, while metabolite spectra were simulated. (C) Typical plots of normalized metabolite concentrations fitted by LCModel and area under water peak as a function of TE. Solid lines indicate mono&#x02010;exponential fits for T<sub>2</sub> estimation.</p></caption><graphic xlink:href="MRM-93-1394-g001" position="anchor" id="jats-graphic-1"/></fig><p>Metabolite and water <sup>1</sup>H&#x02010;MRS spectra (32 and 16 averages, respectively) were acquired for quantification at TE&#x02009;=&#x02009;20&#x02009;ms, TR&#x02009;=&#x02009;6&#x02009;s. To estimate metabolite T<sub>2</sub> values (in particular Glu's) in each VOI, additional metabolite spectra were also acquired at different TE, TE&#x02009;=&#x02009;[20, 25, 35, 80, 95, 110, 145] ms, specifically chosen to maximize Glu's signal, To estimate water's T<sub>2</sub>, spectra were acquired at TE&#x02009;=&#x02009;[20, 25, 30, 35, 40, 45, 50, 60, 70, 85, 100, 140, 200] ms. Experimental macromolecules (MM) spectra (4&#x02009;&#x000d7;&#x02009;64 averages) were acquired in each VOI on three animals with a double inversion&#x02010;recovery sequence (TI&#x02009;=&#x02009;2200/770&#x02009;ms, TR&#x02009;=&#x02009;4050&#x02009;ms) at all TE to incorporate the corresponding MM spectrum in LCModel<xref rid="mrm30353-bib-0035" ref-type="bibr">
+<sup>35</sup>
+</xref> basis&#x02010;set.</p></sec><sec id="mrm30353-sec-0010"><label>2.2.2</label><title>Localized <styled-content style="fixed-case" toggle="no">CEST</styled-content> measurements</title><p>Z&#x02010;spectra were acquired immediately after quantitative <sup>1</sup>H&#x02010;MRS acquisitions in the same VOIs of the mouse brain. Localized Z&#x02010;spectra (Z&#x02010;spectra<sub>localized</sub>) were obtained using a spectroscopic approach<xref rid="mrm30353-bib-0036" ref-type="bibr">
+<sup>36</sup>
+</xref> (TE&#x02009;=&#x02009;25&#x02009;ms, TR&#x02009;=&#x02009;5&#x02009;s), based on the same LASER localization module preceded by a CEST saturation scheme. The CEST module consisted of a 1&#x02009;s frequency&#x02010;selective quasi&#x02010;continuous wave pulse (10&#x02009;&#x000d7;&#x02009;100 ms rectangular pulses, separated by a delay of t<sub>d</sub>&#x02009;=&#x02009;10&#x02009;&#x003bc;s). Fifty&#x02010;one saturation offsets were acquired after a dummy scan, ranging from &#x02212;5 to +5&#x02009;ppm by steps of 0.2&#x02009;ppm with a saturation power of B<sub>1</sub>&#x02009;=&#x02009;5 &#x003bc;T. M<sub>0</sub> acquired at &#x003b4;&#x02009;=&#x02009;&#x02212;100&#x02009;ppm was used for Z&#x02010;spectrum normalization.</p></sec><sec id="mrm30353-sec-0011"><label>2.2.3</label><title>
+<styled-content style="fixed-case" toggle="no">CEST</styled-content> imaging of the mouse brain</title><p>CEST imaging was performed using a 72&#x02009;mm quadrature volume coil (TX, Bruker) to yield an homogeneous B<sub>1</sub> saturation in the whole brain, combined with a mouse&#x02010;head surface probe (RX, Bruker). Anatomical T<sub>2</sub> images were acquired using the Bruker&#x02010;implemented multi&#x02010;spin&#x02010;multi&#x02010;echo sequence (0.1&#x02009;&#x000d7;&#x02009;0.1&#x02009;mm<sup>2</sup> resolution). CEST images were acquired using a rapid acquisition with relaxation enhancement (RARE) sequence (TR&#x02009;=&#x02009;5&#x02009;s, RARE factor&#x02009;=&#x02009;10, TE&#x02009;=&#x02009;30&#x02009;ms) to image two slices of 0.6&#x02009;mm of the mouse brain separated by 2.4&#x02009;mm (0.15&#x02009;&#x000d7;&#x02009;0.15&#x02009;mm<sup>2</sup> resolution, 19.2&#x02009;&#x000d7;&#x02009;19.2&#x02009;mm<sup>2</sup> FOV, 480&#x02009;mm<sup>3</sup> shim volume). The same CEST scheme (t<sub>sat</sub>&#x02009;=&#x02009;1&#x02009;s, B<sub>1</sub>&#x02009;=&#x02009;5 &#x003bc;T), was used to acquire the same 51 offsets between &#x000b1;5&#x02009;ppm and M<sub>0</sub> at &#x02212;100&#x02009;ppm. For MTR<sub>asym</sub> computation, B<sub>0</sub> inhomogeneity was corrected using a water saturation shift referencing method<xref rid="mrm30353-bib-0037" ref-type="bibr">
+<sup>37</sup>
+</xref> acquired with B<sub>1</sub>&#x02009;=&#x02009;0.2 &#x003bc;T and offsets between &#x02212;1 to +1&#x02009;ppm by step of 0.1&#x02009;ppm. These acquisitions typically took 1&#x02009;h. Z&#x02010;spectra derived from CEST images are referenced as Z&#x02010;spectra<sub>imaging</sub> throughout the manuscript.</p></sec></sec><sec id="mrm30353-sec-0012"><label>2.3</label><title>Post processing</title><sec id="mrm30353-sec-0013"><label>2.3.1</label><title>Quantification of <styled-content style="fixed-case" toggle="no">
+<sup>1</sup>H</styled-content>&#x02010;<styled-content style="fixed-case" toggle="no">MRS</styled-content> results</title><p>
+<sup>1</sup>H&#x02010;MRS spectra were fitted using LCModel toolbox.<xref rid="mrm30353-bib-0035" ref-type="bibr">
+<sup>35</sup>
+</xref> Quantification was achieved according to the experts&#x02010;recommended methodology,<xref rid="mrm30353-bib-0032" ref-type="bibr">
+<sup>32</sup>
+</xref> which is scaling by the unsuppressed water spectrum, along with T<sub>2</sub> corrections and assessment of water concentration in the VOI through manual segmentation of tissues.<xref rid="mrm30353-bib-0038" ref-type="bibr">
+<sup>38</sup>
+</xref> Methodology is more thoroughly detailed in Appendix&#x000a0;<xref rid="mrm30353-supitem-0001" ref-type="supplementary-material">S1</xref>. This <sup>1</sup>H&#x02010;MRS quantification pipeline was tested and validated in vitro (Figure&#x000a0;<xref rid="mrm30353-supitem-0001" ref-type="supplementary-material">S2</xref>).</p></sec><sec id="mrm30353-sec-0014"><label>2.3.2</label><title>Correction of <styled-content style="fixed-case" toggle="no">CSF</styled-content> contamination of the Z&#x02010;spectra<sub>localized</sub>
+</title><p>Although the voxel positioned in the mouse striatum was carefully placed to avoid the contamination by ventricular signal, the inclusion of CSF could not be avoided in the case of the corpus callosum voxel, amounting to an estimated volumic fraction f<sub>CSF</sub>&#x02009;=&#x02009;5%&#x02013;10% of the volume of tissues. To correct for the CSF contamination of the Z&#x02010;spectra<sub>localized</sub> measured in the corpus callosum, a typical CSF Z&#x02010;spectrum <italic toggle="yes">Z</italic>
+<sup>
+<italic toggle="yes">CSF</italic>
+</sup> was acquired by averaging the CEST in ventricular areas (Figure&#x000a0;<xref rid="mrm30353-fig-0002" ref-type="fig">2B</xref>). The ratio of initial magnetization between the tissue of interest in the corpus callosum <mml:math id="jats-math-1" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>M</mml:mi><mml:mn>0</mml:mn><mml:mi mathvariant="italic">CC</mml:mi></mml:msubsup></mml:mrow></mml:mrow></mml:math>and the CSF contribution <mml:math id="jats-math-2" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>M</mml:mi><mml:mn>0</mml:mn><mml:mi mathvariant="italic">CSF</mml:mi></mml:msubsup></mml:mrow></mml:mrow></mml:math> can be accounted for by water concentration difference and T<sub>2</sub> effects: 
+<disp-formula id="mrm30353-disp-0001">
+<label>(1)</label>
+<mml:math id="jats-math-3" display="block" overflow="scroll"><mml:mrow><mml:mrow><mml:mfrac><mml:msubsup><mml:mi>M</mml:mi><mml:mn>0</mml:mn><mml:mi mathvariant="italic">CSF</mml:mi></mml:msubsup><mml:msubsup><mml:mi>M</mml:mi><mml:mn>0</mml:mn><mml:mi mathvariant="italic">CC</mml:mi></mml:msubsup></mml:mfrac><mml:mo linebreak="goodbreak">=</mml:mo><mml:mfrac><mml:msub><mml:mi>f</mml:mi><mml:mi mathvariant="italic">CSF</mml:mi></mml:msub><mml:mrow><mml:mn>1</mml:mn><mml:mo>&#x02212;</mml:mo><mml:msub><mml:mi>f</mml:mi><mml:mi mathvariant="italic">CSF</mml:mi></mml:msub></mml:mrow></mml:mfrac><mml:mo linebreak="goodbreak">&#x000d7;</mml:mo><mml:mfrac><mml:msup><mml:mrow><mml:mo stretchy="false">[</mml:mo><mml:mrow><mml:mi mathvariant="normal">H</mml:mi><mml:mn>2</mml:mn><mml:mi mathvariant="normal">O</mml:mi></mml:mrow><mml:mo stretchy="false">]</mml:mo></mml:mrow><mml:mi mathvariant="italic">CSF</mml:mi></mml:msup><mml:msup><mml:mrow><mml:mo stretchy="false">[</mml:mo><mml:mrow><mml:mi mathvariant="normal">H</mml:mi><mml:mn>2</mml:mn><mml:mi mathvariant="normal">O</mml:mi></mml:mrow><mml:mo stretchy="false">]</mml:mo></mml:mrow><mml:mi mathvariant="italic">CC</mml:mi></mml:msup></mml:mfrac><mml:mo linebreak="goodbreak">&#x000d7;</mml:mo><mml:mfrac><mml:mrow><mml:mi>exp</mml:mi><mml:mfenced open="(" close=")" separators=""><mml:mrow><mml:mo linebreak="goodbreak">&#x02212;</mml:mo><mml:mfrac bevelled="true"><mml:mi mathvariant="italic">TE</mml:mi><mml:msubsup><mml:mi>T</mml:mi><mml:mn>2</mml:mn><mml:mi mathvariant="italic">CC</mml:mi></mml:msubsup></mml:mfrac></mml:mrow></mml:mfenced></mml:mrow><mml:mrow><mml:mi>exp</mml:mi><mml:mfenced open="(" close=")" separators=""><mml:mrow><mml:mo linebreak="goodbreak">&#x02212;</mml:mo><mml:mfrac bevelled="true"><mml:mi mathvariant="italic">TE</mml:mi><mml:msubsup><mml:mi>T</mml:mi><mml:mn>2</mml:mn><mml:mi mathvariant="italic">CSF</mml:mi></mml:msubsup></mml:mfrac></mml:mrow></mml:mfenced></mml:mrow></mml:mfrac><mml:mo>,</mml:mo></mml:mrow></mml:mrow></mml:math>
+</disp-formula>
+with a typical <mml:math id="jats-math-4" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>T</mml:mi><mml:mn>2</mml:mn><mml:mi mathvariant="italic">CSF</mml:mi></mml:msubsup></mml:mrow></mml:mrow></mml:math> of 110&#x02009;ms (experimentally estimated). The experimentally measured signal is <mml:math id="jats-math-5" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>M</mml:mi><mml:mn>0</mml:mn><mml:mi mathvariant="italic">exp</mml:mi></mml:msubsup><mml:mo>=</mml:mo><mml:msubsup><mml:mi>M</mml:mi><mml:mn>0</mml:mn><mml:mi mathvariant="italic">CC</mml:mi></mml:msubsup><mml:mo>+</mml:mo><mml:msubsup><mml:mi>M</mml:mi><mml:mn>0</mml:mn><mml:mi mathvariant="italic">CSF</mml:mi></mml:msubsup></mml:mrow></mml:mrow></mml:math>. Using the relation above, <mml:math id="jats-math-6" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>M</mml:mi><mml:mn>0</mml:mn><mml:mi mathvariant="italic">CC</mml:mi></mml:msubsup></mml:mrow></mml:mrow></mml:math> and <mml:math id="jats-math-7" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>M</mml:mi><mml:mn>0</mml:mn><mml:mi mathvariant="italic">CSF</mml:mi></mml:msubsup></mml:mrow></mml:mrow></mml:math> were estimated separately. From this, the corrected Z&#x02010;spectrum <mml:math id="jats-math-8" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>Z</mml:mi><mml:mtext mathvariant="italic">corr</mml:mtext></mml:msub></mml:mrow></mml:mrow></mml:math> was derived from the experimentally acquired signal <mml:math id="jats-math-9" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi>M</mml:mi><mml:mi>z</mml:mi><mml:mi mathvariant="italic">exp</mml:mi></mml:msubsup></mml:mrow></mml:mrow></mml:math>: 
+<disp-formula id="mrm30353-disp-0002">
+<label>(2)</label>
+<mml:math id="jats-math-10" display="block" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>Z</mml:mi><mml:mtext mathvariant="italic">corr</mml:mtext></mml:msub><mml:mo linebreak="goodbreak">=</mml:mo><mml:mfrac><mml:mrow><mml:msubsup><mml:mi>M</mml:mi><mml:mi>z</mml:mi><mml:mi mathvariant="italic">exp</mml:mi></mml:msubsup><mml:mo>&#x02212;</mml:mo><mml:msup><mml:mi>Z</mml:mi><mml:mi mathvariant="italic">CSF</mml:mi></mml:msup><mml:msubsup><mml:mi>M</mml:mi><mml:mn>0</mml:mn><mml:mi mathvariant="italic">CSF</mml:mi></mml:msubsup></mml:mrow><mml:msubsup><mml:mi>M</mml:mi><mml:mn>0</mml:mn><mml:mi mathvariant="italic">CC</mml:mi></mml:msubsup></mml:mfrac><mml:mo>.</mml:mo></mml:mrow></mml:mrow></mml:math>
+</disp-formula>
+</p><fig position="float" fig-type="FIGURE" id="mrm30353-fig-0002"><label>FIGURE 2</label><caption><p>Mean Z&#x02010;spectra<sub>localized</sub> measurements at B<sub>1</sub>&#x02009;=&#x02009;5 &#x003bc;T in the striatum and in the corpus callosum. (A) Average Z&#x02010;spectrum<sub>localized</sub> measured at B<sub>1</sub>&#x02009;=&#x02009;5 &#x003bc;T in the striatum of five mice and the measurement of the magnetization transfer ratio with asymmetric analysis (MTR<sub>asym</sub>) (dashed line). (B) Average raw Z&#x02010;spectrum<sub>localized</sub> (dashed fine line) and CSF&#x02010;corrected Z&#x02010;spectrum<sub>localized</sub> (solid line) at B<sub>1</sub>&#x02009;=&#x02009;5 &#x003bc;T in the corpus callosum of seven mice. The gray line indicates the typical CSF Z&#x02010;spectrum used as reference for correction, and MTR<sub>asym</sub> calculated on the corrected Z&#x02010;spectrum in bold dashed line. (C) Typical fit of Z&#x02010;spectra<sub>localized</sub> acquired in striatum and corpus callosum of the same mouse using the optimized multi&#x02010;pool model.</p></caption><graphic xlink:href="MRM-93-1394-g003" position="anchor" id="jats-graphic-3"/></fig></sec></sec><sec id="mrm30353-sec-0015"><label>2.4</label><title>
+<styled-content style="fixed-case" toggle="no">CEST</styled-content> modeling methodology</title><p>First, the k<sub>ex</sub>
+<sup>Glu</sup> was evaluated by fitting Z&#x02010;spectra<sub>localized</sub> data with [Glu] fixed to <sup>1</sup>H&#x02010;MRS measured value for each mouse and then averaged across all mice for both striatum (n&#x02009;=&#x02009;5) and corpus callosum (n&#x02009;=&#x02009;8). The k<sub>ex</sub>
+<sup>Glu</sup> was fixed in the fitting model and [Glu] was left as a free parameter to be estimated on Z&#x02010;spectra<sub>localized</sub> and Z&#x02010;spectra<sub>imaging</sub> data.</p><sec id="mrm30353-sec-0016"><label>2.4.1</label><title>Z&#x02010;spectra<sub>localized</sub> modeling</title><p>Z&#x02010;spectra<sub>localized</sub> were fitted separately, with lower and upper bounds imposed on free variables with analytical Bloch&#x02010;McConnell simulations,<xref rid="mrm30353-bib-0039" ref-type="bibr">
+<sup>39</sup>
+</xref>, <xref rid="mrm30353-bib-0040" ref-type="bibr">
+<sup>40</sup>
+</xref> to save computing time, and using a least&#x02010;squares curve&#x02010;fitting algorithm (MATLAB 2022b). For each fit, residuals, R<sup>2</sup>, confidence intervals on fitted values at 95%, Akaike information criterion (AIC), corrected AIC (cAIC), and Bayesian information criterion (BIC) were computed (Appendix&#x000a0;<xref rid="mrm30353-supitem-0001" ref-type="supplementary-material">S1</xref>).</p><p>Several proton&#x02010;exchanging pools were included in the CEST models tested. MT was modeled with a super&#x02010;Lorentzian lineshape.<xref rid="mrm30353-bib-0041" ref-type="bibr">
+<sup>41</sup>
+</xref> MT pool has been reported to resonate at a negative frequency at low saturation power,<xref rid="mrm30353-bib-0042" ref-type="bibr">
+<sup>42</sup>
+</xref> so its resonance frequency was left as a free parameter between &#x02212;2.5 and 0&#x02009;ppm. To avoid unrealistic infinite absorption, the super&#x02010;Lorentzian lineshape was interpolated &#x000b1;1&#x02009;ppm around its resonance. To keep a reasonable number of free parameters, the resonance frequency of each pool was fixed to a known value (except for MT pool), the T<sub>2</sub> value of all metabolites was set to 10&#x02009;ms (except for MT pool where it was fixed to 10&#x02009;&#x003bc;s). The same T<sub>1</sub> was used for all pools (i.e., T<sub>1</sub> of water). During the fit, freedom was left in a range of plausible variation around the measured values in each ROI for T<sub>1</sub> and T<sub>2</sub> of water, which allows adjusting the direct water saturation width.</p></sec><sec id="mrm30353-sec-0017"><label>2.4.2</label><title>Mapping of Glu concentration using <styled-content style="fixed-case" toggle="no">CEST</styled-content> modeling</title><p>CEST images were denoised on k&#x02010;space data using the multilinear singular value decomposition method<xref rid="mrm30353-bib-0043" ref-type="bibr">
+<sup>43</sup>
+</xref> (core size of 30&#x02009;&#x000d7;&#x02009;30 for spatial dimensions and 10 for spectral dimension). Rician noise was corrected by removing and rescaling by non&#x02010;zero CEST signal &#x002dc;&#x02009;0&#x02009;ppm.<xref rid="mrm30353-bib-0044" ref-type="bibr">
+<sup>44</sup>
+</xref>
+</p><p>Z&#x02010;specta<sub>imaging</sub> were then fitted pixel&#x02010;by&#x02010;pixel in the brain region using the determined quantitative model described in Table&#x000a0;<xref rid="mrm30353-supitem-0001" ref-type="supplementary-material">S1</xref>. For each slice, a manually segmented mask of corpus callosum was used to differentiate the fit parameters used in gray matter and white matter.</p><p>From fitted Glu&#x02010;proton fractions, [Glu] maps were estimated with: 
+<disp-formula id="mrm30353-disp-0003">
+<label>(3)</label>
+<mml:math id="jats-math-11" display="block" overflow="scroll"><mml:mrow><mml:mrow><mml:mrow><mml:mo stretchy="false">[</mml:mo><mml:mi mathvariant="normal">Glu</mml:mi><mml:mo stretchy="false">]</mml:mo></mml:mrow><mml:mo linebreak="goodbreak">=</mml:mo><mml:mfrac><mml:msubsup><mml:mi mathvariant="normal">f</mml:mi><mml:mi mathvariant="normal">H</mml:mi><mml:mi mathvariant="normal">Glu</mml:mi></mml:msubsup><mml:mn>3</mml:mn></mml:mfrac><mml:mo linebreak="goodbreak">&#x000d7;</mml:mo><mml:mn>2</mml:mn><mml:mrow><mml:mo stretchy="false">[</mml:mo><mml:mrow><mml:mi mathvariant="normal">H</mml:mi><mml:mn>2</mml:mn><mml:mi mathvariant="normal">O</mml:mi></mml:mrow><mml:mo stretchy="false">]</mml:mo></mml:mrow><mml:mo>,</mml:mo></mml:mrow></mml:mrow></mml:math>
+</disp-formula>
+with [H<sub>2</sub>O]&#x02009;=&#x02009;40.0&#x02009;M in corpus callosum and [H<sub>2</sub>O]&#x02009;=&#x02009;46.1&#x02009;M in the rest of the brain.<xref rid="mrm30353-bib-0038" ref-type="bibr">
+<sup>38</sup>
+</xref>
+</p></sec></sec></sec><sec sec-type="results" id="mrm30353-sec-0018"><label>3</label><title>RESULTS</title><sec id="mrm30353-sec-0019"><label>3.1</label><title>Quantitative <styled-content style="fixed-case" toggle="no">
+<sup>1</sup>H</styled-content>&#x02010;<styled-content style="fixed-case" toggle="no">MRS</styled-content>
+</title><p>LCModel analysis provided a reliable fit with Cram&#x000e9;r&#x02013;Rao bound &#x0003c;5% in both voxels (Figure&#x000a0;<xref rid="mrm30353-fig-0001" ref-type="fig">1B</xref>), for Glu, total creatine (tCr), myo&#x02010;inositol (Ins), total N&#x02010;acetyl aspartate (tNAA), and taurine (Tau).</p><p>T<sub>2</sub> values of the main metabolites were estimated with monoexponential fits (Figure&#x000a0;<xref rid="mrm30353-fig-0001" ref-type="fig">1C</xref>) and averaged over five animals (Table&#x000a0;<xref rid="mrm30353-tbl-0001" ref-type="table">1</xref>). Note that our set and range of TE values were chosen as a compromise to maximize Glu signal when accounting for J&#x02010;couplings, and therefore, are not the best for the estimation of other metabolites' T<sub>2</sub>. Even so, T<sub>2</sub> fits for Glu were not optimal, with an average R<sup>2</sup> of 0.97. This subpar quality of T<sub>2</sub> fit was likely because of inaccurate simulation of how J&#x02010;couplings affect the MRS signal, especially at longer TE, because of potentially slightly inaccurate J values. The same was also observed for Ins (R<sup>2</sup> &#x02248; 0.96), but not for metabolites without J&#x02010;couplings, like tCr, or tNAA (R<sup>2</sup> &#x0003e; 0.98). This difficulty has been reported before for metabolites with strong J&#x02010;couplings.<xref rid="mrm30353-bib-0038" ref-type="bibr">
+<sup>38</sup>
+</xref>, <xref rid="mrm30353-bib-0045" ref-type="bibr">
+<sup>45</sup>
+</xref> Moreover, Glu T<sub>2</sub> estimation would be improved if more points were acquired at longer TE, but this proved impossible to do because Glu signal rapidly drops at TE&#x02009;&#x0003e;150&#x02009;ms. Nonetheless, T<sub>2</sub> estimations for water were reliable with R<sup>2</sup>&#x02009;&#x0003e;0.99, which is the most primordial for quantitative spectroscopy.</p><table-wrap position="float" id="mrm30353-tbl-0001" content-type="TABLE"><label>TABLE 1</label><caption><p>
+<sup>1</sup>H&#x02010;MRS results in the mouse brain: T<sub>2</sub> values and metabolite concentrations.</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><thead valign="bottom"><tr style="border-bottom:solid 1px #000000"><th align="left" valign="bottom" rowspan="1" colspan="1"/><th align="left" valign="bottom" rowspan="1" colspan="1">Glu</th><th align="left" valign="bottom" rowspan="1" colspan="1">tCr</th><th align="left" valign="bottom" rowspan="1" colspan="1">Ins</th><th align="left" valign="bottom" rowspan="1" colspan="1">tNAA</th><th align="left" valign="bottom" rowspan="1" colspan="1">Tau</th><th align="left" valign="bottom" rowspan="1" colspan="1">Water</th></tr></thead><tbody valign="top"><tr><td colspan="7" align="left" valign="top" rowspan="1">Measured T<sub>2</sub> (ms)</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Striatum</td><td align="char" char="&#x000b1;" valign="top" rowspan="1" colspan="1">107&#x02009;&#x000b1;&#x02009;9</td><td align="char" char="&#x000b1;" valign="top" rowspan="1" colspan="1">145&#x02009;&#x000b1;&#x02009;12</td><td align="char" char="&#x000b1;" valign="top" rowspan="1" colspan="1">188&#x02009;&#x000b1;&#x02009;19</td><td align="char" char="&#x000b1;" valign="top" rowspan="1" colspan="1">243&#x02009;&#x000b1;&#x02009;19</td><td align="char" char="&#x000b1;" valign="top" rowspan="1" colspan="1">125&#x02009;&#x000b1;&#x02009;9</td><td align="left" valign="top" rowspan="1" colspan="1">31.7&#x02009;&#x000b1;&#x02009;0.6</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Corpus callosum</td><td align="char" char="&#x000b1;" valign="top" rowspan="1" colspan="1">99&#x02009;&#x000b1;&#x02009;8</td><td align="char" char="&#x000b1;" valign="top" rowspan="1" colspan="1">159&#x02009;&#x000b1;&#x02009;4</td><td align="char" char="&#x000b1;" valign="top" rowspan="1" colspan="1">129&#x02009;&#x000b1;&#x02009;10</td><td align="char" char="&#x000b1;" valign="top" rowspan="1" colspan="1">278&#x02009;&#x000b1;&#x02009;20</td><td align="char" char="&#x000b1;" valign="top" rowspan="1" colspan="1">125&#x02009;&#x000b1;&#x02009;6</td><td align="left" valign="top" rowspan="1" colspan="1">28.8&#x02009;&#x000b1;&#x02009;1.2</td></tr><tr><td colspan="7" align="left" valign="top" rowspan="1">Concentration in VOI (mM)</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Striatum</td><td align="char" char="&#x000b1;" valign="top" rowspan="1" colspan="1">6.5&#x02009;&#x000b1;&#x02009;0.3</td><td align="char" char="&#x000b1;" valign="top" rowspan="1" colspan="1">7.2&#x02009;&#x000b1;&#x02009;0.2</td><td align="char" char="&#x000b1;" valign="top" rowspan="1" colspan="1">3.4&#x02009;&#x000b1;&#x02009;0.3</td><td align="char" char="&#x000b1;" valign="top" rowspan="1" colspan="1">5.3&#x02009;&#x000b1;&#x02009;0.1</td><td align="char" char="&#x000b1;" valign="top" rowspan="1" colspan="1">12.2&#x02009;&#x000b1;&#x02009;0.7</td><td align="left" valign="top" rowspan="1" colspan="1">45.5&#x02009;&#x000b1;&#x02009;0.2&#x02009;</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Corpus callosum</td><td align="char" char="&#x000b1;" valign="top" rowspan="1" colspan="1">5.7&#x02009;&#x000b1;&#x02009;0.4</td><td align="char" char="&#x000b1;" valign="top" rowspan="1" colspan="1">5.8&#x02009;&#x000b1;&#x02009;0.2</td><td align="char" char="&#x000b1;" valign="top" rowspan="1" colspan="1">3.3&#x02009;&#x000b1;&#x02009;0.2</td><td align="char" char="&#x000b1;" valign="top" rowspan="1" colspan="1">4.6&#x02009;&#x000b1;&#x02009;0.3</td><td align="char" char="&#x000b1;" valign="top" rowspan="1" colspan="1">8.0&#x02009;&#x000b1;&#x02009;0.2</td><td align="left" valign="top" rowspan="1" colspan="1">46.5&#x02009;&#x000b1;&#x02009;0.7&#x02009;M</td></tr></tbody></table><table-wrap-foot id="mrm30353-ntgp-0001"><fn id="mrm30353-note-0001"><p>
+<italic toggle="yes">Note</italic>: T<sub>2</sub> values were averaged on five mice. Concentrations were averaged on 10 mice. SDs between animals are provided.</p></fn><fn id="mrm30353-note-0002"><p>Abbreviations: Glu, glutamate; Ins, myo&#x02010;inositol; tCr, total creatine; tNAA, total N&#x02010;acetyl aspartate; Tau, taurine; VOI, voxel of interest.</p></fn></table-wrap-foot></table-wrap><p>Estimated concentrations of main metabolites are reported in Table&#x000a0;<xref rid="mrm30353-tbl-0001" ref-type="table">1</xref>, averaged over 10 animals. Glu concentration measured in the striatum and the corpus callosum were 6.5&#x02009;&#x000b1;&#x02009;0.3&#x02009;mM and 5.7&#x02009;&#x000b1;&#x02009;0.4&#x02009;mM, respectively. Moreover, four successive measurements were made in the same experiment on five animals to ensure that [Glu] estimations were repeatable: mean intra&#x02010;individual SD were estimated to be 0.25&#x02009;mM and 0.30&#x02009;mM, respectively, in striatum and in corpus callosum.</p><p>Overall, concentrations of [Glu] were estimated to be of 5 to 7&#x02009;mM using quantitative <sup>1</sup>H&#x02010;MRS, which is slightly lower than what has been reported in literature in the mouse brain (6&#x02013;10&#x02009;mM).<xref rid="mrm30353-bib-0046" ref-type="bibr">
+<sup>46</sup>
+</xref>, <xref rid="mrm30353-bib-0047" ref-type="bibr">
+<sup>47</sup>
+</xref>, <xref rid="mrm30353-bib-0048" ref-type="bibr">
+<sup>48</sup>
+</xref>, <xref rid="mrm30353-bib-0049" ref-type="bibr">
+<sup>49</sup>
+</xref> It is known that concentrations evaluated through quantitative spectroscopy can be potentially biased by a systemic factor, due for instance to hardware, erroneous T<sub>2</sub> values, or to fitting bias.<xref rid="mrm30353-bib-0032" ref-type="bibr">
+<sup>32</sup>
+</xref>, <xref rid="mrm30353-bib-0050" ref-type="bibr">
+<sup>50</sup>
+</xref>, <xref rid="mrm30353-bib-0051" ref-type="bibr">
+<sup>51</sup>
+</xref> However, our quantitative <sup>1</sup>H&#x02010;MRS pipeline was validated on phantoms (Figure&#x000a0;<xref rid="mrm30353-supitem-0001" ref-type="supplementary-material">S2</xref>), where error on [Glu] was of 8% in average, ensuring that there was no significant bias because of hardware.</p></sec><sec id="mrm30353-sec-0020"><label>3.2</label><title>
+<styled-content style="fixed-case" toggle="no">CEST</styled-content> modeling in vivo</title><sec id="mrm30353-sec-0021"><label>3.2.1</label><title>Optimization of the multi&#x02010;pool model</title><p>Many biological molecules are known to exhibit a CEST signal,<xref rid="mrm30353-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref> and therefore, might contribute to the Z&#x02010;spectrum measured in vivo at 5 &#x003bc;T. However, to develop a robust quantitative model, the number of free parameters must be limited, and including too many proton&#x02010;exchanging pools should be avoided, because it might lead to overfitting. At lower saturation powers, CEST signatures of pools like amides, Cr or NOE come out on the Z&#x02010;spectrum as clearly defined peaks,<xref rid="mrm30353-bib-0031" ref-type="bibr">
+<sup>31</sup>
+</xref>, <xref rid="mrm30353-bib-0052" ref-type="bibr">
+<sup>52</sup>
+</xref> but at 5 &#x003bc;T, no clear resonance of a particular pool can be distinguished on the MTR<sub>asym</sub> (Figure&#x000a0;<xref rid="mrm30353-fig-0002" ref-type="fig">2</xref>). Hence, we chose in this work to empirically determine the best combination of CEST pools that would give the optimal quality of fit of our data. Different combinations of typical proton&#x02010;exchanging pools to include in our model were tested, and AIC, cAIC, and BIC were computed and minimized to find the best model to fit our data without overfitting.</p><p>Several candidate proton&#x02010;exchanging pools aside from MT were considered to model the Z&#x02010;spectrum<sub>localized</sub> at 5 &#x003bc;T. Fixed and free parameters of the different proton&#x02010;exchanging pools were defined in Tables&#x000a0;<xref rid="mrm30353-tbl-0002" ref-type="table">2</xref> and <xref rid="mrm30353-tbl-0003" ref-type="table">3</xref> respectively:
+<list list-type="bullet" id="mrm30353-list-0001"><list-item id="mrm30353-li-0001"><p>Glu was modeled as a 3&#x02010;protons exchanging group resonating at 3.0&#x02009;ppm. In an effort to reduce the number of unknown parameters, [Glu] was fixed in this optimization step to the value found with quantitative spectroscopy measurements, whereas k<sub>ex</sub>
+<sup>Glu</sup> was left as a free parameter.</p></list-item><list-item id="mrm30353-li-0002"><p>A guanidinium (Guan) pool, resonating at 2.0&#x02009;ppm, with an exchange rate fixed at 300&#x02009;Hz, which is approximately the value which has been reported in the mouse brain for Cr.<xref rid="mrm30353-bib-0031" ref-type="bibr">
+<sup>31</sup>
+</xref>
+</p></list-item><list-item id="mrm30353-li-0003"><p>An amide (APT) pool, resonating at 3.5&#x02009;ppm, with an exchange rate fixed at 22&#x02009;Hz, as already reported in the rodent brain.<xref rid="mrm30353-bib-0052" ref-type="bibr">
+<sup>52</sup>
+</xref>, <xref rid="mrm30353-bib-0053" ref-type="bibr">
+<sup>53</sup>
+</xref>, <xref rid="mrm30353-bib-0054" ref-type="bibr">
+<sup>54</sup>
+</xref>
+</p></list-item><list-item id="mrm30353-li-0004"><p>An hydroxyl (OH) pool, resonating at 1.0&#x02009;ppm. The exchange rate was fixed at 2000&#x02009;Hz, as reported in vitro for Ins.<xref rid="mrm30353-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref>
+</p></list-item><list-item id="mrm30353-li-0005"><p>Two NOE pools, resonating, respectively, at &#x02212;3.5&#x02009;ppm and&#x02009;&#x02212;&#x02009;1.6&#x02009;ppm. Although the first NOE<xref rid="mrm30353-bib-0001" ref-type="bibr">
+<sup>1</sup>
+</xref> pool has been extensively studied, with a typical exchange rate of 15&#x02009;Hz,<xref rid="mrm30353-bib-0052" ref-type="bibr">
+<sup>52</sup>
+</xref> the existence of the second NOE<xref rid="mrm30353-bib-0002" ref-type="bibr">
+<sup>2</sup>
+</xref> pool was demonstrated only recently.<xref rid="mrm30353-bib-0055" ref-type="bibr">
+<sup>55</sup>
+</xref> Its exchange rate has never been quantified to our knowledge, but the optimal saturation power observed to maximize the signal of this pool<xref rid="mrm30353-bib-0056" ref-type="bibr">
+<sup>56</sup>
+</xref> hints at an exchange rate of the order of 10&#x02009;Hz, which is the value we fixed here.</p></list-item><list-item id="mrm30353-li-0006"><p>A Tau pool resonating at 3.2&#x02009;ppm. Although the presence of Tau&#x02010;related CEST signal has never been demonstrated in vivo, in vitro studies have demonstrated a fast&#x02010;exchanging proton dynamic,<xref rid="mrm30353-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref>, <xref rid="mrm30353-bib-0029" ref-type="bibr">
+<sup>29</sup>
+</xref> which therefore, make Tau a potential candidate to contribute to CEST signal at 5 &#x003bc;T, especially considering [Tau] is &#x002dc;10 to 15&#x02009;mM in the mouse brain. An exchange rate of 50&#x02009;000&#x02009;Hz was used<xref rid="mrm30353-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref> (lower value of 10<sup>4</sup>&#x02009;Hz<sup>29</sup> was also tried in Table&#x000a0;<xref rid="mrm30353-supitem-0001" ref-type="supplementary-material">S4</xref>).</p></list-item></list>
+</p><p>Figure&#x000a0;<xref rid="mrm30353-fig-0003" ref-type="fig">3</xref> shows several fits of Z&#x02010;spectra<sub>localized</sub> acquired in vivo in the striatum with different combinations of pools. Criterions of fit quality are reported in Table&#x000a0;<xref rid="mrm30353-tbl-0004" ref-type="table">4</xref>. Additional combinations were tested in Table&#x000a0;<xref rid="mrm30353-supitem-0001" ref-type="supplementary-material">S4</xref>. The best model, with minimum AIC, cAIC, and BIC, included MT, Glu, Guan, APT, OH, and NOE<xref rid="mrm30353-bib-0001" ref-type="bibr">
+<sup>1</sup>
+</xref> as proton&#x02010;exchanging pools. Moreover, the evolution of residuals (Figure&#x000a0;<xref rid="mrm30353-fig-0003" ref-type="fig">3</xref>) when including these pools in the model further validates their relevance. For instance, the addition of the Guan pool (Figure&#x000a0;<xref rid="mrm30353-fig-0003" ref-type="fig">3C</xref>) significantly decreased the peak of residuals at 2.0&#x02009;ppm. Similarly, the inclusions of APT pool (Figure&#x000a0;<xref rid="mrm30353-fig-0003" ref-type="fig">3D</xref>), OH pool (Figure&#x000a0;<xref rid="mrm30353-fig-0003" ref-type="fig">3E</xref>), or NOE<sup>1</sup> (Figure&#x000a0;<xref rid="mrm30353-fig-0003" ref-type="fig">3F</xref>) pool reduced respectively the residual peaks at 3.5&#x02009;ppm, 1.0&#x02009;ppm, and in the negative offsets. However, at this saturation power, addition of Tau and NOE<xref rid="mrm30353-bib-0002" ref-type="bibr">
+<sup>2</sup>
+</xref> pools systematically increased AIC and BIC, and therefore, were not taken into account in the final model.</p><table-wrap position="float" id="mrm30353-tbl-0002" content-type="TABLE"><label>TABLE 2</label><caption><p>Fixed parameters of the different proton&#x02010;exchanging pools tested in the fitting models of CEST data in Figure&#x000a0;<xref rid="mrm30353-fig-0003" ref-type="fig">3</xref>.</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><thead valign="bottom"><tr style="border-bottom:solid 1px #000000"><th colspan="3" align="left" style="border-bottom:solid 1px #000000" valign="bottom" rowspan="1">Fixed parameters of the candidate pools</th></tr><tr style="border-bottom:solid 1px #000000"><th align="left" valign="bottom" rowspan="1" colspan="1">Pool</th><th align="left" valign="bottom" rowspan="1" colspan="1">Parameter</th><th align="left" valign="bottom" rowspan="1" colspan="1">Fixed value</th></tr></thead><tbody valign="top"><tr><td rowspan="2" align="left" valign="top" colspan="1">Glu</td><td align="left" valign="top" rowspan="1" colspan="1">&#x003b4;<sup>Glu</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">3.0&#x02009;ppm</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">f<sup>
+<bold>Glu</bold>
+</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">Fixed with MRS</td></tr><tr><td rowspan="2" align="left" valign="top" colspan="1">Guan</td><td align="left" valign="top" rowspan="1" colspan="1">&#x003b4;<sup>Guan</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">2.0&#x02009;ppm</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">k<sub>ex</sub>
+<sup>Guan</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">300&#x02009;Hz</td></tr><tr><td rowspan="2" align="left" valign="top" colspan="1">APT</td><td align="left" valign="top" rowspan="1" colspan="1">&#x003b4;<sup>APT</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">3.5&#x02009;ppm</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">k<sub>ex</sub>
+<sup>APT</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">25&#x02009;Hz</td></tr><tr><td rowspan="2" align="left" valign="top" colspan="1">OH</td><td align="left" valign="top" rowspan="1" colspan="1">&#x003b4;<sup>OH</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">1.0&#x02009;ppm</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">k<sub>ex</sub>
+<sup>OH</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">2000&#x02009;Hz</td></tr><tr><td rowspan="2" align="left" valign="top" colspan="1">NOE<xref rid="mrm30353-bib-0001" ref-type="bibr">
+<sup>1</sup>
+</xref>
+</td><td align="left" valign="top" rowspan="1" colspan="1">&#x003b4;<sup>NOE1</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">&#x02212;3.5&#x02009;ppm</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">k<sub>ex</sub>
+<sup>NOE1</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">15&#x02009;Hz</td></tr><tr><td rowspan="2" align="left" valign="top" colspan="1">NOE<xref rid="mrm30353-bib-0002" ref-type="bibr">
+<sup>2</sup>
+</xref>
+</td><td align="left" valign="top" rowspan="1" colspan="1">&#x003b4;<sup>NOE2</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">&#x02212;1.6&#x02009;ppm</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">k<sub>ex</sub>
+<sup>NOE2</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">10&#x02009;Hz</td></tr><tr><td rowspan="2" align="left" valign="top" colspan="1">Tau</td><td align="left" valign="top" rowspan="1" colspan="1">&#x003b4;<sup>Tau</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">3.2&#x02009;ppm</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">k<sub>ex</sub>
+<sup>Tau</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">50&#x02009;000&#x02009;Hz</td></tr></tbody></table><table-wrap-foot id="mrm30353-ntgp-0002"><fn id="mrm30353-note-0003"><p>
+<italic toggle="yes">Note</italic>: All T<sub>2</sub> values for metabolites were set to 10&#x02009;ms, and to 10&#x02009;&#x003bc;s for MT pool. T<sub>1</sub> values were set to the same value as water pool.</p></fn><fn id="mrm30353-note-0004"><p>Abbreviations: APT, amide; Glu, glutamate; Guan, guanidium; OH, hydroxyl; NOE, nuclear Overhauser effects; Tau, taurine; k<sub>ex</sub>
+<sup>
+<italic toggle="yes">i</italic>
+</sup>, exchange rate of pool <italic toggle="yes">i</italic>.</p></fn></table-wrap-foot></table-wrap><table-wrap position="float" id="mrm30353-tbl-0003" content-type="TABLE"><label>TABLE 3</label><caption><p>Free parameters of the different proton&#x02010;exchanging pools tested in the fitting models of CEST data in Figure&#x000a0;<xref rid="mrm30353-fig-0003" ref-type="fig">3</xref>.</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><thead valign="bottom"><tr style="border-bottom:solid 1px #000000"><th colspan="5" align="left" style="border-bottom:solid 1px #000000" valign="bottom" rowspan="1">Free parameters of the candidate pools</th></tr><tr style="border-bottom:solid 1px #000000"><th align="left" valign="bottom" rowspan="1" colspan="1">Pool</th><th align="left" valign="bottom" rowspan="1" colspan="1">Parameter</th><th align="left" valign="bottom" rowspan="1" colspan="1">Initial value</th><th align="left" valign="bottom" rowspan="1" colspan="1">Lower bound</th><th align="left" valign="bottom" rowspan="1" colspan="1">Upper bound</th></tr></thead><tbody valign="top"><tr><td rowspan="2" align="left" valign="top" colspan="1">Water</td><td align="left" valign="top" rowspan="1" colspan="1">T<sub>1</sub>
+</td><td align="left" valign="top" rowspan="1" colspan="1">
+<p>1.95&#x02009;s (striatum)</p>
+<p>1.85&#x02009;s (corpus callosum)</p>
+</td><td align="left" valign="top" rowspan="1" colspan="1">&#x02212;10%</td><td align="left" valign="top" rowspan="1" colspan="1">+10%</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">T<sub>2</sub>
+</td><td align="left" valign="top" rowspan="1" colspan="1">
+<p>31.7&#x02009;ms (striatum)</p>
+<p>28.8&#x02009;ms (corpus callosum)</p>
+</td><td align="left" valign="top" rowspan="1" colspan="1">&#x02212;10%</td><td align="left" valign="top" rowspan="1" colspan="1">+10%</td></tr><tr><td rowspan="3" align="left" valign="top" colspan="1">MT</td><td align="left" valign="top" rowspan="1" colspan="1">&#x003b4;<sup>MT</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">&#x02212;2.34&#x02009;ppm</td><td align="left" valign="top" rowspan="1" colspan="1">&#x02212;2.5&#x02009;ppm</td><td align="left" valign="top" rowspan="1" colspan="1">0&#x02009;ppm</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">k<sub>ex</sub>
+<sup>MT</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">20&#x02009;Hz</td><td align="left" valign="top" rowspan="1" colspan="1">10&#x02009;Hz</td><td align="left" valign="top" rowspan="1" colspan="1">60&#x02009;Hz</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">f<sub>H</sub>
+<sup>MT</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">5%</td><td align="left" valign="top" rowspan="1" colspan="1">0%</td><td align="left" valign="top" rowspan="1" colspan="1">50%</td></tr><tr><td rowspan="2" align="left" valign="top" colspan="1">Glu</td><td align="left" valign="top" rowspan="1" colspan="1">k<sub>ex</sub>
+<sup>Glu</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">8000&#x02009;Hz</td><td align="left" valign="top" rowspan="1" colspan="1">0&#x02009;Hz</td><td align="left" valign="top" rowspan="1" colspan="1">20&#x02009;000&#x02009;Hz</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">f<sub>H</sub>
+<sup>Glu</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">Fixed with MRS</td><td align="left" valign="top" rowspan="1" colspan="1">Fixed with MRS</td><td align="left" valign="top" rowspan="1" colspan="1">Fixed with MRS</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Guan</td><td align="left" valign="top" rowspan="1" colspan="1">f<sub>H</sub>
+<sup>Guan</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">0.07%</td><td align="left" valign="top" rowspan="1" colspan="1">0%</td><td align="left" valign="top" rowspan="1" colspan="1">2.2%</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">APT</td><td align="left" valign="top" rowspan="1" colspan="1">f<sub>H</sub>
+<sup>APT</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">0.2%</td><td align="left" valign="top" rowspan="1" colspan="1">0%</td><td align="left" valign="top" rowspan="1" colspan="1">10%</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">OH</td><td align="left" valign="top" rowspan="1" colspan="1">f<sub>H</sub>
+<sup>OH</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">0.03%</td><td align="left" valign="top" rowspan="1" colspan="1">0%</td><td align="left" valign="top" rowspan="1" colspan="1">0.6%</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">NOE<xref rid="mrm30353-bib-0001" ref-type="bibr">
+<sup>1</sup>
+</xref>
+</td><td align="left" valign="top" rowspan="1" colspan="1">f<sub>H</sub>
+<sup>NOE1</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">0.5%</td><td align="left" valign="top" rowspan="1" colspan="1">0%</td><td align="left" valign="top" rowspan="1" colspan="1">8%</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">NOE<xref rid="mrm30353-bib-0002" ref-type="bibr">
+<sup>2</sup>
+</xref>
+</td><td align="left" valign="top" rowspan="1" colspan="1">f<sub>H</sub>
+<sup>NOE2</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">0.5%</td><td align="left" valign="top" rowspan="1" colspan="1">0%</td><td align="left" valign="top" rowspan="1" colspan="1">8%</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Tau</td><td align="left" valign="top" rowspan="1" colspan="1">f<sub>H</sub>
+<sup>Tau</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">0.03%</td><td align="left" valign="top" rowspan="1" colspan="1">0%</td><td align="left" valign="top" rowspan="1" colspan="1">0.3%</td></tr></tbody></table><table-wrap-foot id="mrm30353-ntgp-0003"><fn id="mrm30353-note-0005"><p>
+<italic toggle="yes">Note</italic>: All T<sub>2</sub> values for metabolites were set to 10&#x02009;ms, and to 10&#x02009;&#x003bc;s for MT pool. T<sub>1</sub> values were set to the same value as water pool.</p></fn><fn id="mrm30353-note-0006"><p>Abbreviations: APT, amide; Glu, glutamate; Guan, guanidium; MT, magnetization transfer; OH, hydroxyl; NOE, nuclear Overhauser effects; Tau, taurine; k<sub>ex</sub>
+<sup>
+<italic toggle="yes">i</italic>
+</sup>, exchange rate of pool <italic toggle="yes">i</italic>; f<sub>H</sub>
+<sup>
+<italic toggle="yes">i</italic>
+</sup>, proton fraction of pool <italic toggle="yes">i</italic>.</p></fn></table-wrap-foot></table-wrap><fig position="float" fig-type="FIGURE" id="mrm30353-fig-0003"><label>FIGURE 3</label><caption><p>Selection of a suitable multi&#x02010;pool model for glutamate&#x02010;weighted CEST (gluCEST) modeling. Modeling of Z&#x02010;spectra<sub>localized</sub> data with several models including different proton&#x02010;exchanging pools, with [Glu] fixed to the <sup>1</sup>H&#x02010;MRS m easured value. Typical fits (solid line) of experimental data points (red crosses) acquired in the striatum of a mouse at B<sub>1</sub>&#x02009;=&#x02009;5 &#x003bc;T using several models. Residuals (absolute values) are plotted under each fit.</p></caption><graphic xlink:href="MRM-93-1394-g002" position="anchor" id="jats-graphic-5"/></fig><table-wrap position="float" id="mrm30353-tbl-0004" content-type="TABLE"><label>TABLE 4</label><caption><p>Suitability of the candidate models for fitting Z&#x02010;spectra<sub>localized</sub> data.</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><thead valign="bottom"><tr style="border-bottom:solid 1px #000000"><th align="left" valign="bottom" rowspan="1" colspan="1">Pools included in the candidate model</th><th align="left" valign="bottom" rowspan="1" colspan="1">R<sup>2</sup>
+</th><th align="left" valign="bottom" rowspan="1" colspan="1">AIC</th><th align="left" valign="bottom" rowspan="1" colspan="1">cAIC</th><th align="left" valign="bottom" rowspan="1" colspan="1">BIC</th></tr></thead><tbody valign="top"><tr><td align="left" valign="top" rowspan="1" colspan="1">Water, MT (Figure&#x000a0;<xref rid="mrm30353-fig-0003" ref-type="fig">3A</xref>)</td><td align="char" char="." valign="top" rowspan="1" colspan="1">0.96211</td><td align="char" char="." valign="top" rowspan="1" colspan="1">&#x02212;250</td><td align="char" char="." valign="top" rowspan="1" colspan="1">&#x02212;248</td><td align="char" char="." valign="top" rowspan="1" colspan="1">&#x02212;240</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Water, MT, Glu (Figure&#x000a0;<xref rid="mrm30353-fig-0003" ref-type="fig">3B</xref>)</td><td align="char" char="." valign="top" rowspan="1" colspan="1">0.97140</td><td align="char" char="." valign="top" rowspan="1" colspan="1">&#x02212;262</td><td align="char" char="." valign="top" rowspan="1" colspan="1">&#x02212;260</td><td align="char" char="." valign="top" rowspan="1" colspan="1">&#x02212;250</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Water, MT, Glu, Guan (Figure&#x000a0;<xref rid="mrm30353-fig-0003" ref-type="fig">3C</xref>)</td><td align="char" char="." valign="top" rowspan="1" colspan="1">0.99225</td><td align="char" char="." valign="top" rowspan="1" colspan="1">&#x02212;327</td><td align="char" char="." valign="top" rowspan="1" colspan="1">&#x02212;324</td><td align="char" char="." valign="top" rowspan="1" colspan="1">&#x02212;313</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Water, MT, Glu, Guan, APT (Figure&#x000a0;<xref rid="mrm30353-fig-0003" ref-type="fig">3D</xref>)</td><td align="char" char="." valign="top" rowspan="1" colspan="1">0.99709</td><td align="char" char="." valign="top" rowspan="1" colspan="1">&#x02212;375</td><td align="char" char="." valign="top" rowspan="1" colspan="1">&#x02212;371</td><td align="char" char="." valign="top" rowspan="1" colspan="1">&#x02212;359</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Water, MT, Glu, Guan, APT, OH (Figure&#x000a0;<xref rid="mrm30353-fig-0003" ref-type="fig">3E</xref>)</td><td align="char" char="." valign="top" rowspan="1" colspan="1">0.99912</td><td align="char" char="." valign="top" rowspan="1" colspan="1">&#x02212;433</td><td align="char" char="." valign="top" rowspan="1" colspan="1">&#x02212;429</td><td align="char" char="." valign="top" rowspan="1" colspan="1">&#x02212;416</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Water, MT, Glu, Guan, APT, OH, NOE<sup>1</sup> (Figure&#x000a0;<xref rid="mrm30353-fig-0003" ref-type="fig">3F</xref>)</td><td align="char" char="." valign="top" rowspan="1" colspan="1">0.99958</td><td align="char" char="." valign="top" rowspan="1" colspan="1">&#x02212;469</td><td align="char" char="." valign="top" rowspan="1" colspan="1">&#x02212;464</td><td align="char" char="." valign="top" rowspan="1" colspan="1">&#x02212;450</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Water, MT, Glu, Guan, APT, OH, Tau (Figure&#x000a0;<xref rid="mrm30353-fig-0003" ref-type="fig">3G</xref>)</td><td align="char" char="." valign="top" rowspan="1" colspan="1">0.99912</td><td align="char" char="." valign="top" rowspan="1" colspan="1">&#x02212;431</td><td align="char" char="." valign="top" rowspan="1" colspan="1">&#x02212;426</td><td align="char" char="." valign="top" rowspan="1" colspan="1">&#x02212;412</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Water, MT, Glu, Guan, APT, OH, NOE,<xref rid="mrm30353-bib-0001" ref-type="bibr">
+<sup>1</sup>
+</xref> NOE<sup>2</sup> (Figure&#x000a0;<xref rid="mrm30353-fig-0003" ref-type="fig">3H</xref>)</td><td align="char" char="." valign="top" rowspan="1" colspan="1">0.99958</td><td align="char" char="." valign="top" rowspan="1" colspan="1">&#x02212;467</td><td align="char" char="." valign="top" rowspan="1" colspan="1">&#x02212;460</td><td align="char" char="." valign="top" rowspan="1" colspan="1">&#x02212;446</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Water, MT, Glu, Guan, APT, OH, NOE,<xref rid="mrm30353-bib-0001" ref-type="bibr">
+<sup>1</sup>
+</xref> Tau (Figure&#x000a0;<xref rid="mrm30353-fig-0003" ref-type="fig">3I</xref>)</td><td align="char" char="." valign="top" rowspan="1" colspan="1">0.99957</td><td align="char" char="." valign="top" rowspan="1" colspan="1">&#x02212;466</td><td align="char" char="." valign="top" rowspan="1" colspan="1">&#x02212;459</td><td align="char" char="." valign="top" rowspan="1" colspan="1">&#x02212;444</td></tr></tbody></table><table-wrap-foot id="mrm30353-ntgp-0004"><fn id="mrm30353-note-0007"><p>
+<italic toggle="yes">Note</italic>: Quality of each model using several statistical criterions. Best quality is achieved for the highlighted model. Additional combinations are reported in the Table&#x000a0;<xref rid="mrm30353-supitem-0001" ref-type="supplementary-material">S3</xref>.</p></fn><fn id="mrm30353-note-0008"><p>Abbreviations: AIC, Akaike information criterion; cAIC, corrected AIC; APT, amide; BIC, Bayesian information criterion; Glu, glutamate; Guan, guanidium; Ins, myo&#x02010;inositol; MT, magnetization transfer; NOE, nuclear Overhauser effects; OH, hydroxyl; tCr, total creatine; tNAA, total N&#x02010;acetyl aspartate; Tau, taurine; VOI, voxel of interest.</p></fn></table-wrap-foot></table-wrap></sec><sec id="mrm30353-sec-0022"><label>3.2.2</label><title>Glu protons exchange rate in vivo</title><p>To obtain accurate [Glu] quantification for Glu mapping, it is essential to first estimate the exchange rate of its amine protons in vivo. Using the optimized multi&#x02010;pools model, the set of Z&#x02010;spectra<sub>localized</sub> was fitted with prior fixed value on [Glu] thanks to individual <sup>1</sup>H&#x02010;MRS measurements performed in the same VOI, in both striatum and corpus callosum (Figure&#x000a0;<xref rid="mrm30353-fig-0002" ref-type="fig">2C</xref> and <xref rid="mrm30353-fig-0002" ref-type="fig">T</xref>able&#x000a0;<xref rid="mrm30353-tbl-0005" ref-type="table">5</xref>). Good quality of fits were obtained, with mean R<sup>2</sup> of 0.9996 in striatum, and a bit lower quality of R<sup>2</sup> of 0.996 in the corpus callosum, probably because of noisier data. Glu exchange rate was estimated to be 1301&#x02009;&#x000b1;&#x02009;21&#x02009;Hz (n&#x02009;=&#x02009;5 mice) with a pretty good confidence (average 95% CI of 19&#x02009;Hz) in the striatum. In the corpus callosum, Glu exchange rate was estimated with much more variability (k<sub>ex</sub>
+<sup>Glu</sup>&#x02009;=&#x02009;1276&#x02009;&#x000b1;&#x02009;76&#x02009;Hz, n&#x02009;=&#x02009;8 mice), probably because of the difficulty to place the VOI reproducibly between animals in the corpus callosum, and with less confidence because of noise (average 95% CI of 161&#x02009;Hz).</p><table-wrap position="float" id="mrm30353-tbl-0005" content-type="TABLE"><label>TABLE 5</label><caption><p>Average fitting results in the striatum and corpus callosum and SDs.</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><thead valign="bottom"><tr style="border-bottom:solid 1px #000000"><th rowspan="3" align="left" valign="bottom" colspan="1">Mean R<sup>2</sup>
+</th><th colspan="2" align="left" style="border-bottom:solid 1px #000000" valign="bottom" rowspan="1">Striatum</th><th colspan="2" align="left" style="border-bottom:solid 1px #000000" valign="bottom" rowspan="1">Corpus callosum</th></tr><tr style="border-bottom:solid 1px #000000"><th colspan="2" align="left" style="border-bottom:solid 1px #000000" valign="bottom" rowspan="1">0.9996</th><th colspan="2" align="left" style="border-bottom:solid 1px #000000" valign="bottom" rowspan="1">0.9959</th></tr><tr style="border-bottom:solid 1px #000000"><th align="left" valign="bottom" rowspan="1" colspan="1">Mean fitted value</th><th align="left" valign="bottom" rowspan="1" colspan="1">Mean 95% CI</th><th align="left" valign="bottom" rowspan="1" colspan="1">Mean fitted value</th><th align="left" valign="bottom" rowspan="1" colspan="1">Mean 95% CI</th></tr></thead><tbody valign="top"><tr><td align="left" valign="top" rowspan="1" colspan="1">k<sub>ex</sub>
+<sup>Glu</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">1301&#x02009;&#x000b1;&#x02009;26&#x02009;Hz</td><td align="left" valign="top" rowspan="1" colspan="1">19&#x02009;&#x000b1;&#x02009;9</td><td align="left" valign="top" rowspan="1" colspan="1">1276&#x02009;&#x000b1;&#x02009;76&#x02009;Hz</td><td align="left" valign="top" rowspan="1" colspan="1">161&#x02009;&#x000b1;&#x02009;151</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">f<sub>H</sub>
+<sup>Guan</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">0.4&#x02009;&#x000b1;&#x02009;0.1%</td><td align="left" valign="top" rowspan="1" colspan="1">(2&#x02009;&#x000b1;&#x02009;1)e&#x02013;3%</td><td align="left" valign="top" rowspan="1" colspan="1">0.7&#x02009;&#x000b1;&#x02009;0.2%</td><td align="left" valign="top" rowspan="1" colspan="1">(17&#x02009;&#x000b1;&#x02009;15)e&#x02013;3%</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">f<sub>H</sub>
+<sup>APT</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">3.5&#x02009;&#x000b1;&#x02009;0.5%</td><td align="left" valign="top" rowspan="1" colspan="1">(14&#x02009;&#x000b1;&#x02009;6)e&#x02013;3%</td><td align="left" valign="top" rowspan="1" colspan="1">4.4&#x02009;&#x000b1;&#x02009;0.8%</td><td align="left" valign="top" rowspan="1" colspan="1">(109&#x02009;&#x000b1;&#x02009;105)e&#x02013;3%</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">f<sub>H</sub>
+<sup>OH</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">0.5&#x02009;&#x000b1;&#x02009;0.3%</td><td align="left" valign="top" rowspan="1" colspan="1">(2&#x02009;&#x000b1;&#x02009;2)e&#x02013;3%</td><td align="left" valign="top" rowspan="1" colspan="1">0.5&#x02009;&#x000b1;&#x02009;0.6%</td><td align="left" valign="top" rowspan="1" colspan="1">(6&#x02009;&#x000b1;&#x02009;4)e&#x02013;3%</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">f<sub>H</sub>
+<sup>NOE</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">4.1&#x02009;&#x000b1;&#x02009;0.2%</td><td align="left" valign="top" rowspan="1" colspan="1">(34&#x02009;&#x000b1;&#x02009;9)e&#x02013;3%</td><td align="left" valign="top" rowspan="1" colspan="1">3.6&#x02009;&#x000b1;&#x02009;1.2%</td><td align="left" valign="top" rowspan="1" colspan="1">(181&#x02009;&#x000b1;&#x02009;206)e&#x02013;3%</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">f<sub>H</sub>
+<sup>MT</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">10.4&#x02009;&#x000b1;&#x02009;0.9%</td><td align="left" valign="top" rowspan="1" colspan="1">0.11&#x02009;&#x000b1;&#x02009;0.04%</td><td align="left" valign="top" rowspan="1" colspan="1">12.9&#x02009;&#x000b1;&#x02009;5.6%</td><td align="left" valign="top" rowspan="1" colspan="1">0.8&#x02009;&#x000b1;&#x02009;1.3%</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">k<sub>ex</sub>
+<sup>MT</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">13.3&#x02009;&#x000b1;&#x02009;0.8&#x02009;Hz</td><td align="left" valign="top" rowspan="1" colspan="1">0.20&#x02009;&#x000b1;&#x02009;0.05&#x02009;Hz</td><td align="left" valign="top" rowspan="1" colspan="1">25.8&#x02009;&#x000b1;&#x02009;18.9&#x02009;Hz</td><td align="left" valign="top" rowspan="1" colspan="1">0.16&#x02009;&#x000b1;&#x02009;0.25&#x02009;Hz</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">&#x003b4;<sup>MT</sup>
+</td><td align="left" valign="top" rowspan="1" colspan="1">&#x02212;0.03&#x02009;&#x000b1;&#x02009;0.04&#x02009;ppm</td><td align="left" valign="top" rowspan="1" colspan="1">0.04&#x02009;&#x000b1;&#x02009;0.01&#x02009;ppm</td><td align="left" valign="top" rowspan="1" colspan="1">&#x02212;0.53&#x02009;&#x000b1;&#x02009;0.82&#x02009;ppm</td><td align="left" valign="top" rowspan="1" colspan="1">0.2&#x02009;&#x000b1;&#x02009;0.25&#x02009;ppm</td></tr></tbody></table><table-wrap-foot id="mrm30353-ntgp-0005"><fn id="mrm30353-note-0009"><p>
+<italic toggle="yes">Note</italic>: Fitted values were averaged on 5 mice for the striatum and 8 mice for the corpus callosum.</p></fn><fn id="mrm30353-note-0010"><p>Abbreviations: APT, amide; Glu, glutamate; Guan, guanidium; MT, magnetization transfer; OH, hydroxyl; NOE, nuclear Overhauser effects; Tau, taurine.</p></fn></table-wrap-foot></table-wrap></sec><sec id="mrm30353-sec-0023"><label>3.2.3</label><title>Quantitative Glu mapping in the mouse brain</title><p>Using the optimized multi&#x02010;pool model and the estimated value of Glu's exchange rate, CEST images were acquired in the mouse brain to fit pixel by pixel the corresponding Z&#x02010;spectrum<sub>imaging</sub>. Table&#x000a0;<xref rid="mrm30353-supitem-0001" ref-type="supplementary-material">S1</xref> reports the parameters and bounds used for fitting. Representative [Glu] maps obtained in three different mice are shown in Figure&#x000a0;<xref rid="mrm30353-fig-0004" ref-type="fig">4C</xref>.</p><fig position="float" fig-type="FIGURE" id="mrm30353-fig-0004"><label>FIGURE 4</label><caption><p>Quantitative glutamate mapping in the mouse brain in several mice. (A) M<sub>0</sub> images acquired at &#x02212;100&#x02009;ppm and (B) measurement of the magnetization transfer ratio with asymmetric analysis (MTR<sub>asym</sub>) (3&#x02009;ppm) maps corrected with the water saturation shift referencing and normalized by M<sub>Z</sub>(&#x02212;3&#x02009;ppm).<xref rid="mrm30353-bib-0001" ref-type="bibr">
+<sup>1</sup>
+</xref> (C) [Glu] maps obtained by pixel&#x02010;by&#x02010;pixel fit of Z&#x02010;spectra<sub>imaging</sub> data acquired at B<sub>1</sub>&#x02009;=&#x02009;5 &#x003bc;T.</p></caption><graphic xlink:href="MRM-93-1394-g006" position="anchor" id="jats-graphic-7"/></fig><p>Average [Glu] values were evaluated in several manually segmented regions of the mouse brain (Figure&#x000a0;<xref rid="mrm30353-supitem-0001" ref-type="supplementary-material">S3</xref>). On average, [Glu]&#x02009;=&#x02009;9.1&#x02009;&#x000b1;&#x02009;0.6&#x02009;mM was estimated in the corpus callosum, 11.8&#x02009;&#x000b1;&#x02009;1.0&#x02009;mM in cortex, 11.2&#x02009;&#x000b1;&#x02009;1.6&#x02009;mM in hippocampus and 10.9&#x02009;&#x000b1;&#x02009;0.8&#x02009;mM in striatum. By calculating average ratio of mean to SD in those regions, a better SNR was systematically observed in quantitative [Glu] maps (1.95, 3.98, 4.32, and 5.01, respectively) than in conventional MTR<sub>asym</sub> contrast maps (0.57, 3.10, 3.57, and 3.96, respectively). Lower [Glu] were systematically found in corpus callosum than in other regions. Ventricular regions, with almost zero [Glu], were more clearly defined on [Glu] maps (Figure&#x000a0;<xref rid="mrm30353-fig-0004" ref-type="fig">4C</xref>) compared to MTR<sub>asym</sub>(3&#x02009;ppm) maps (Figure&#x000a0;<xref rid="mrm30353-fig-0004" ref-type="fig">4B</xref>).</p></sec><sec id="mrm30353-sec-0024"><label>3.2.4</label><title>Quality of the quantitative fitting model</title><p>To assess the quality of the fitting model, several sets of Z&#x02010;spectra at 5 &#x003bc;T were simulated and fitted with our quantitative pipeline. In each simulation, T<sub>1</sub>, T<sub>2</sub>, [Glu], [Guan], [OH], [NOE], f<sup>H</sup>
+<sub>MT</sub>, k<sub>ex</sub>
+<sup>MT</sup>, and &#x00394;B<sub>0</sub> were varied in a range of realistic values (Table&#x000a0;<xref rid="mrm30353-supitem-0001" ref-type="supplementary-material">S5</xref>). The accuracy and precision of our model was estimated on a set of 2000 simulations, with different levels of Rician noise.</p><p>On average, without noise (Figure&#x000a0;<xref rid="mrm30353-fig-0005" ref-type="fig">5A</xref>), the model has intrinsic good accuracy ([Glu] error limited to 1.4%), and good precision (SD of 1.4%). However, when noise is added to the data, the precision degrades quickly, with SD of error rising up to 152% for 2% of Rician noise (Table&#x000a0;<xref rid="mrm30353-supitem-0001" ref-type="supplementary-material">S6</xref>). Accuracy remains good for low level of noise. When noise rises above 1%, the fitting algorithm tends to overestimate [Glu], up to +41% for 2% of noise. This highlights the sensitivity of the model to noise and the need to use denoised CEST data for fitting.</p><fig position="float" fig-type="FIGURE" id="mrm30353-fig-0005"><label>FIGURE 5</label><caption><p>Accuracy, precision and robustness of the fitting model. (A) Histogram of estimation errors of the fitting model on a set of 2000 simulations (no noise). (B&#x02013;F) Robustness of the fitting model to deviations in exchange rate values varying &#x0201c;true values&#x0201d; of exchange rate k<sub>ex</sub>
+<sup>Glu</sup>, k<sub>ex</sub>
+<sup>APT</sup>, k<sub>ex</sub>
+<sup>Guan</sup>, k<sub>ex</sub>
+<sup>OH</sup>, k<sub>ex</sub>
+<sup>NOE</sup> respectively, with additionally the mean absolute error made on estimations of [APT], [Guan], [OH] and [NOE], respectively.</p></caption><graphic xlink:href="MRM-93-1394-g005" position="anchor" id="jats-graphic-9"/></fig><p>Additionally, the robustness of the quantitative model to potential deviations in exchange rate values was evaluated. Indeed, physiological changes (pH, temperature, &#x02026;) may impact exchange rates and could lead to biased estimation of [Glu]. Multiple sets of 100 simulations with different values of pools' exchange rates were generated and then fitted to estimate the absolute error of the quantitative model. The error made on [Glu] estimations remained acceptably low (&#x0003c;&#x02009;20%) when k<sub>ex</sub>
+<sup>Guan</sup>, k<sub>ex</sub>
+<sup>APT</sup>, k<sub>ex</sub>
+<sup>OH</sup>, or k<sub>ex</sub>
+<sup>NOE</sup> deviate from the values hypothesized in the model (Figure&#x000a0;<xref rid="mrm30353-fig-0005" ref-type="fig">5C&#x02013;F</xref>). However, [Glu] estimations were significantly more sensitive to potential deviations in k<sub>ex</sub>
+<sup>Glu</sup> (Figure&#x000a0;<xref rid="mrm30353-fig-0005" ref-type="fig">5B</xref>). For instance, if the exchange rate of Glu was 3500&#x02009;Hz instead of the previously determined 1301&#x02009;Hz, then the typical [Glu] error could rise to 50%. Nonetheless, the accuracy remained rather good, with an error &#x0003c;10%, for a k<sub>ex</sub>
+<sup>Glu</sup> ranging from 800 to 1850&#x02009;Hz.</p></sec></sec></sec><sec sec-type="discussion" id="mrm30353-sec-0025"><label>4</label><title>DISCUSSION</title><p>We developed a multi&#x02010;pool CEST model to quantify Glu concentration in vivo and to establish quantitative maps in the mouse brain. The choice of using <sup>1</sup>H&#x02010;MRS as an internal reference was motivated by the need to have an in vivo control of [Glu] to calibrate a CEST model, and because post&#x02010;mortem and in situ measurements of [Glu] are known to deviate from in vivo values.<xref rid="mrm30353-bib-0057" ref-type="bibr">
+<sup>57</sup>
+</xref>
+</p><p>In this study, the relevant exchanging&#x02010;proton pools to include in the model to describe the CEST signal at 5 &#x003bc;T were empirically determined. A 6&#x02010;pool model including MT, Glu, Guan, APT, OH, and NOE (&#x02212;3.5&#x02009;ppm) matched data the best (Figure&#x000a0;<xref rid="mrm30353-fig-0003" ref-type="fig">3</xref>) without overfitting (Table&#x000a0;<xref rid="mrm30353-tbl-0004" ref-type="table">4</xref>). This empirically determined model is not necessarily the &#x0201c;true&#x0201d; model to describe the CEST signal at this saturation power, especially because only a few candidate pools that are usually found in literature were tested. Nevertheless, using this model, the typical contribution of Glu to the MTR<sub>asym</sub> (3&#x02009;ppm) at 5 &#x003bc;T is estimated to be &#x002dc;15% (Figure&#x000a0;<xref rid="mrm30353-supitem-0001" ref-type="supplementary-material">S4</xref>). However, based on typical concentrations and exchange rate values reported in vitro,<xref rid="mrm30353-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref> a contribution of Glu of &#x002dc;30% would have been expected at 5&#x02009;&#x003bc;T. This mismatch can be explained because in vitro measurement is not enough to describe in vivo data. Note that this estimation of 15% Glu contribution to gluCEST signal is close to the result of Cui et al.,<xref rid="mrm30353-bib-0058" ref-type="bibr">
+<sup>58</sup>
+</xref> which reported a Glu contribution &#x0003c;12% at 3.6 &#x003bc;T in the rat brain.</p><p>One of the main parameter influencing the [Glu] estimation is the value of the exchange rate of amine protons. One result of particular interest was the in vivo estimation of Glu exchange rate, measured at 1301&#x02009;Hz and 1276&#x02009;Hz in the striatum and in the corpus callosum respectively. These values are significantly lower than the typical values of 5000 to 9000&#x02009;Hz that can be measured in vitro at pH&#x02009;=&#x02009;7 (Figure&#x000a0;<xref rid="mrm30353-supitem-0001" ref-type="supplementary-material">S1</xref> and Table&#x000a0;<xref rid="mrm30353-supitem-0001" ref-type="supplementary-material">S3</xref>, as well as values reported in the literature<xref rid="mrm30353-bib-0001" ref-type="bibr">
+<sup>1</sup>
+</xref>, <xref rid="mrm30353-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref>, <xref rid="mrm30353-bib-0029" ref-type="bibr">
+<sup>29</sup>
+</xref>, <xref rid="mrm30353-bib-0030" ref-type="bibr">
+<sup>30</sup>
+</xref>). This can be explained by the fact that the exchange dynamics of Glu's protons are extremely sensitive to its chemical environment: pH, but also the type of buffer (Table&#x000a0;<xref rid="mrm30353-supitem-0001" ref-type="supplementary-material">S3</xref>) and its concentration.<xref rid="mrm30353-bib-0029" ref-type="bibr">
+<sup>29</sup>
+</xref> Hence, it might not be unrealistic to have a lower k<sub>ex</sub>
+<sup>Glu</sup> in vivo. Therefore, we hypothesize that the physiological environment of Glu in the mouse brain considerably slows down the exchange dynamics of its protons. Note that this conclusion is consistent with the work of Zhang et al.<xref rid="mrm30353-bib-0031" ref-type="bibr">
+<sup>31</sup>
+</xref> which found a 2 to 3 times lower exchange rate of Cr in the mouse brain as compared to in vitro studies. This result also points out that using Glu exchange rate determined ex vivo in a buffer, far from physiological environment, can drastically affect modeling of in vivo data and can lead to biased estimation of [Glu] (Figure&#x000a0;<xref rid="mrm30353-fig-0005" ref-type="fig">5B</xref>).</p><p>A limit of this quantification model is that it is not suitable to map other metabolite's concentrations, as it was designed to evaluate [Glu]. In particular, the exchange rates of these other pools (Guan, APT, OH, and NOE<xref rid="mrm30353-bib-0001" ref-type="bibr">
+<sup>1</sup>
+</xref>) were fixed to values reported in literature, in an effort to reduce the number of free parameters and make [Glu] estimations more robust. These k<sub>ex</sub> values were usually measured at lower saturation powers or in vitro, and might not the best to describe the CEST signal at 5 &#x003bc;T. For instance, suspicions of the existence of fast exchanging Guan pool<xref rid="mrm30353-bib-0059" ref-type="bibr">
+<sup>59</sup>
+</xref> or proteins<xref rid="mrm30353-bib-0058" ref-type="bibr">
+<sup>58</sup>
+</xref> (i.e., amides have been reported before). To describe these potential pools, the low k<sub>ex</sub> values chosen here might not be appropriate. This most likely explains why fitted values of f<sub>Guan</sub> and f<sub>APT</sub> are so high in Table&#x000a0;<xref rid="mrm30353-tbl-0005" ref-type="table">5</xref> (&#x0003e;100&#x02009;mM for instance for a Guan pool with 4 protons per molecule). Although the k<sub>ex</sub> values of these pools seem to not affect too much the [Glu] predictions of our model, predictions of [Guan], [APT], [OH], or [NOE<xref rid="mrm30353-bib-0001" ref-type="bibr">
+<sup>1</sup>
+</xref>] are very sensitive to the first hypothesis on their exchange rate value (Figure&#x000a0;<xref rid="mrm30353-fig-0005" ref-type="fig">5C&#x02013;F</xref>). Considering additionally that B<sub>1</sub>&#x02009;=&#x02009;5 &#x003bc;T is not an optimal saturation power for sensitive detection of these pools, we conclude that mapping of [Guan], [APT], or [OH] using the model developed here is unreliable.</p><p>Interestingly, the fitting model tended to predict higher [Glu] on experimental Z&#x02010;spectra<sub>imaging</sub> data (in the range of 9&#x02013;13&#x02009;mM) (Figure&#x000a0;<xref rid="mrm30353-fig-0004" ref-type="fig">4C</xref>) than the typical [Glu] predicted by <sup>1</sup>H&#x02010;MRS (&#x002dc;5&#x02013;7&#x02009;mM) (Table&#x000a0;<xref rid="mrm30353-tbl-0001" ref-type="table">1</xref>). This inaccuracy in prediction cannot be explained by a fitting bias alone. We estimated in our experimental conditions that the noise level of our Z&#x02010;spectra<sub>imaging</sub> data was &#x002dc;0.5%, which, according to Table&#x000a0;<xref rid="mrm30353-supitem-0001" ref-type="supplementary-material">S6</xref>, should not lead to overestimation. This effect was also observed when fitting Z&#x02010;spectra<sub>localized</sub> data acquired in the striatum or corpus callosum (Figure&#x000a0;<xref rid="mrm30353-fig-0006" ref-type="fig">6</xref>), where predicted [Glu] was on average overestimated by, respectively, 4.8&#x02009;mM and 8.8&#x02009;mM, but with rather consistent bias (SD&#x02009;=&#x02009;1.6&#x02009;mM and 2.3&#x02009;mM). It appears that relaxing the constraint on [Glu] in the fitting process inevitably leads to converging toward a higher [Glu] than that measured by <sup>1</sup>H&#x02010;MRS, even with a properly defined k<sub>ex</sub>
+<sup>Glu</sup>. Therefore, one more likely explanation to this systematic overestimation of [Glu] might be the existence of another fast&#x02010;exchanging pool contributing to gluCEST signal, which was not considered here, because it has been previously suggested by Cui et al.<sup>58</sup>. In fact, we hypothesized that cellular Glu was the only proton&#x02010;exchanging pool accountable at 3.0&#x02009;ppm. There might also be other molecules (like GABA or Tau) with amine groups resonating at 3.0&#x02009;ppm, although the convincing correlations between [Glu] and MTR<sub>asym</sub> (3&#x02009;ppm) that have been reported before<xref rid="mrm30353-bib-0005" ref-type="bibr">
+<sup>5</sup>
+</xref>, <xref rid="mrm30353-bib-0007" ref-type="bibr">
+<sup>7</sup>
+</xref> hints at rebuking this hypothesis. Still, the existence of a second pool of Glu, encapsulated in synaptic vesicles, with different exchange dynamics, is an hypothesis that has been suggested before.<xref rid="mrm30353-bib-0058" ref-type="bibr">
+<sup>58</sup>
+</xref> In particular, this second pool of Glu might not be well detected by <sup>1</sup>H&#x02010;MRS if its T<sub>2</sub> were ultra&#x02010;short, which could impact the results of the modeling methodology presented in this article and could explain the discrepancy in Glu concentration estimated using quantitative gluCEST and quantitative <sup>1</sup>H&#x02010;MRS approaches. Nevertheless, although the molecular origin of this potential unknown pool cannot be determined with certainty, the quantification bias of [Glu] appears to be systematic, which makes the fitting model still relevant.</p><fig position="float" fig-type="FIGURE" id="mrm30353-fig-0006"><label>FIGURE 6</label><caption><p>Prediction of [Glu] by quantitative CEST model versus <sup>1</sup>H&#x02010;MRS measurements on localized LASER data. (A) Plot of the measurement of the magnetization transfer ratio with asymmetric analysis (MTR<sub>asym</sub>) (3&#x02009;ppm) versus the measured [Glu] with <sup>1</sup>H&#x02010;MRS for n&#x02009;=&#x02009;5 mice in the striatum voxel of interest (VOI). Error bars indicated in the x&#x02010;axis direction correspond to the standard error of the mean estimated for individual <sup>1</sup>H&#x02010;MRS measurements. (B) [Glu] predicted by the quantitative glutamate&#x02010;weighted CEST (gluCEST) fitting model of Table&#x000a0;<xref rid="mrm30353-supitem-0001" ref-type="supplementary-material">S1</xref> versus the measured [Glu] with <sup>1</sup>H&#x02010;MRS for n&#x02009;=&#x02009;5 mice in the striatum VOI. On average, the predicted [Glu] was overestimated by 4.8&#x02009;&#x000b1;&#x02009;1.6&#x02009;mM. Error bars indicated in the y&#x02010;axis direction correspond to the 95% CI estimated for [Glu] predictions. (C) Plot of the measurement of the magnetization transfer ratio with asymmetric analysis (MTR<sub>asym</sub>) (3&#x02009;ppm) versus the measured [Glu] with <sup>1</sup>H&#x02010;MRS for n&#x02009;=&#x02009;8 mice in the corpus callosum VOI. (D) [Glu] predicted by the quantitative gluCEST fitting model of Table&#x000a0;<xref rid="mrm30353-supitem-0001" ref-type="supplementary-material">S1</xref> versus the measured [Glu] with <sup>1</sup>H&#x02010;MRS for n&#x02009;=&#x02009;8 mice in the corpus callosum VOI. On average, the predicted [Glu] was overestimated by 8.8&#x02009;&#x000b1;&#x02009;2.3&#x02009;mM.</p></caption><graphic xlink:href="MRM-93-1394-g004" position="anchor" id="jats-graphic-11"/></fig><p>Despite this point, this study is, to our knowledge, the first to propose a method to perform quantitative in vivo [Glu] mapping, with a much better resolution than what can be achieved with <sup>1</sup>H&#x02010;MRS. Compared to the conventional gluCEST contrast, this quantitative [Glu] mapping allowed for more reliable identification of Glu repartition in several brain regions (Figure&#x000a0;<xref rid="mrm30353-fig-0004" ref-type="fig">4</xref>), with better SNR on quantitative maps and provides a more universal metric than MTR<sub>asym</sub>. However, the sensitivity of the quantification model to noise is also highlighted in Table&#x000a0;<xref rid="mrm30353-supitem-0001" ref-type="supplementary-material">S6</xref>, which points out the need for high SNR or efficient denoising techniques. Furthermore, at lower field strength, quantification of [Glu] is likely to lose in accuracy, because of the reduced spectral separation in CEST resonance frequencies. However, these flaws, along with the current long acquisition time (&#x002dc;1&#x02009;h compared to 20&#x02013;30&#x02009;min for conventional gluCEST imaging), might be overcome using machine learning or fingerprinting techniques to optimize acquisition point sampling.<xref rid="mrm30353-bib-0060" ref-type="bibr">
+<sup>60</sup>
+</xref>
+</p></sec><sec sec-type="conclusions" id="mrm30353-sec-0026"><label>5</label><title>CONCLUSION</title><p>We propose in this work a quantitative gluCEST model and demonstrate its ability for high&#x02010;resolution Glu mapping in the mouse brain. In particular, we reported a much lower Glu exchange rate in the mouse brain than what can be measured in vitro. This highlights the need to develop quantitative gluCEST modeling while accounting for the differences between in vitro and in vivo conditions, which were largely achieved here by calibrating the fitting model using <sup>1</sup>H&#x02010;MRS as an internal reference in vivo, although further investigations might be required about the contributions to gluCEST signal of other unknown in vivo CEST agents. This work, therefore, potentially opens new perspectives for neuroimaging and new possibilities for the monitoring of metabolism in the context of neuropathologies.</p></sec><sec sec-type="supplementary-material"><title>Supporting information</title><supplementary-material id="mrm30353-supitem-0001" position="float" content-type="local-data"><caption><p>
+<bold>Appendix S1.</bold> Supporting Information.</p></caption><media xlink:href="MRM-93-1394-s001.docx"/></supplementary-material></sec></body><back><ack id="mrm30353-sec-0027"><title>ACKNOWLEDGMENTS</title><p>The 11.7&#x02009;T MRI scanner was funded by a grant from NeurATRIS: A Translational Research Infrastructure for Biotherapies in Neurosciences (&#x0201c;Investissements d'Avenir&#x0201d;, [ANR&#x02010;11&#x02010;INBS&#x02010;0011]).</p></ack><sec sec-type="data-availability" id="mrm30353-sec-0029"><title>DATA AVAILABILITY STATEMENT</title><p>The source codes and data underlying the results are available at <ext-link xlink:href="https://osf.io/65n8c/" ext-link-type="uri" specific-use="software is-supplemented-by">https://osf.io/65n8c/</ext-link>.</p></sec><ref-list id="mrm30353-bibl-0001" content-type="cited-references"><title>REFERENCES</title><ref id="mrm30353-bib-0001"><label>1</label><mixed-citation publication-type="journal" id="mrm30353-cit-0001">
+<string-name>
+<surname>Cai</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Haris</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Singh</surname>
+<given-names>A</given-names>
+</string-name>, et al. <article-title>Magnetic resonance imaging of glutamate</article-title>. <source>Nat Med</source>. <year>2012</year>;<volume>18</volume>:<fpage>302</fpage>&#x02010;<lpage>306</lpage>. doi:<pub-id pub-id-type="doi">10.1038/nm.2615</pub-id>
+<pub-id pub-id-type="pmid">22270722</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0002"><label>2</label><mixed-citation publication-type="book" id="mrm30353-cit-0002">
+<string-name>
+<surname>P&#x000e9;pin</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Jego</surname>
+<given-names>P</given-names>
+</string-name>, <string-name>
+<surname>Valette</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Bonvento</surname>
+<given-names>G</given-names>
+</string-name>, <string-name>
+<surname>Flament</surname>
+<given-names>J</given-names>
+</string-name>. <part-title>Imaging of neuronal compartment using gluCEST method</part-title>. <source>Proceedings of the 25th Annual Meeting of ISMRM</source>; <year>2017</year>:<fpage>3741</fpage>.</mixed-citation></ref><ref id="mrm30353-bib-0003"><label>3</label><mixed-citation publication-type="journal" id="mrm30353-cit-0003">
+<string-name>
+<surname>P&#x000e9;pin</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Francelle</surname>
+<given-names>L</given-names>
+</string-name>, <string-name>
+<surname>Carrillo&#x02010;de Sauvage</surname>
+<given-names>MA</given-names>
+</string-name>, et al. <article-title>In vivo imaging of brain glutamate defects in a knock&#x02010;in mouse model of Huntington's disease</article-title>. <source>Neuroimage</source>. <year>2016</year>;<volume>139</volume>:<fpage>53</fpage>&#x02010;<lpage>64</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.neuroimage.2016.06.023</pub-id>
+<pub-id pub-id-type="pmid">27318215</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0004"><label>4</label><mixed-citation publication-type="journal" id="mrm30353-cit-0004">
+<string-name>
+<surname>P&#x000e9;pin</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>de Longprez</surname>
+<given-names>L</given-names>
+</string-name>, <string-name>
+<surname>Trovero</surname>
+<given-names>F</given-names>
+</string-name>, <string-name>
+<surname>Brouillet</surname>
+<given-names>E</given-names>
+</string-name>, <string-name>
+<surname>Valette</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Flament</surname>
+<given-names>J</given-names>
+</string-name>. <article-title>Complementarity of gluCEST and 1H&#x02010;MRS for the study of mouse models of Huntington's disease</article-title>. <source>NMR Biomed</source>. <year>2020</year>;<volume>33</volume>:<elocation-id>e4301</elocation-id>. doi:<pub-id pub-id-type="doi">10.1002/nbm.4301</pub-id>
+<pub-id pub-id-type="pmid">32198958</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0005"><label>5</label><mixed-citation publication-type="journal" id="mrm30353-cit-0005">
+<string-name>
+<surname>Haris</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Nath</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Cai</surname>
+<given-names>K</given-names>
+</string-name>, et al. <article-title>Imaging of glutamate neurotransmitter alterations in Alzheimer's disease</article-title>. <source>NMR Biomed</source>. <year>2013</year>;<volume>26</volume>:<fpage>386</fpage>&#x02010;<lpage>391</lpage>. doi:<pub-id pub-id-type="doi">10.1002/nbm.2875</pub-id>
+<pub-id pub-id-type="pmid">23045158</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0006"><label>6</label><mixed-citation publication-type="journal" id="mrm30353-cit-0006">
+<string-name>
+<surname>Bagga</surname>
+<given-names>P</given-names>
+</string-name>, <string-name>
+<surname>Crescenzi</surname>
+<given-names>R</given-names>
+</string-name>, <string-name>
+<surname>Krishnamoorthy</surname>
+<given-names>G</given-names>
+</string-name>, et al. <article-title>Mapping the alterations in glutamate with GluCEST MRI in a mouse model of dopamine deficiency</article-title>. <source>J Neurochem</source>. <year>2016</year>;<volume>139</volume>:<fpage>432</fpage>&#x02010;<lpage>439</lpage>. doi:<pub-id pub-id-type="doi">10.1111/jnc.13771</pub-id>
+<pub-id pub-id-type="pmid">27529288</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0007"><label>7</label><mixed-citation publication-type="journal" id="mrm30353-cit-0007">
+<string-name>
+<surname>Bagga</surname>
+<given-names>P</given-names>
+</string-name>, <string-name>
+<surname>Pickup</surname>
+<given-names>S</given-names>
+</string-name>, <string-name>
+<surname>Crescenzi</surname>
+<given-names>R</given-names>
+</string-name>, et al. <article-title>In vivo GluCEST MRI: reproducibility, background contribution and source of glutamate changes in the MPTP model of Parkinson's disease</article-title>. <source>Sci Rep</source>. <year>2018</year>;<volume>8</volume>:<fpage>2883</fpage>. doi:<pub-id pub-id-type="doi">10.1038/s41598-018-21035-3</pub-id>
+<pub-id pub-id-type="pmid">29440753</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0008"><label>8</label><mixed-citation publication-type="journal" id="mrm30353-cit-0008">
+<string-name>
+<surname>Lucas</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Nanga</surname>
+<given-names>RPR</given-names>
+</string-name>, <string-name>
+<surname>Hadar</surname>
+<given-names>P</given-names>
+</string-name>, et al. <article-title>Mapping hippocampal glutamate in mesial temporal lobe epilepsy with glutamate weighted CEST (GluCEST) imaging</article-title>. <source>Hum Brain Mapp</source>. <year>2022</year>;<volume>44</volume>:<fpage>549</fpage>&#x02010;<lpage>558</lpage>. doi:<pub-id pub-id-type="doi">10.1002/hbm.26083</pub-id>
+<pub-id pub-id-type="pmid">36173151</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0009"><label>9</label><mixed-citation publication-type="journal" id="mrm30353-cit-0009">
+<string-name>
+<surname>Zhuang</surname>
+<given-names>Z</given-names>
+</string-name>, <string-name>
+<surname>Shen</surname>
+<given-names>Z</given-names>
+</string-name>, <string-name>
+<surname>Chen</surname>
+<given-names>Y</given-names>
+</string-name>, et al. <article-title>Mapping the changes of glutamate using glutamate chemical exchange saturation transfer (GluCEST) technique in a traumatic brain injury model: a longitudinal pilot study</article-title>. <source>ACS Chem Nerosci</source>. <year>2019</year>;<volume>10</volume>:<fpage>649</fpage>&#x02010;<lpage>657</lpage>. doi:<pub-id pub-id-type="doi">10.1021/acschemneuro.8b00482</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0010"><label>10</label><mixed-citation publication-type="journal" id="mrm30353-cit-0010">
+<string-name>
+<surname>Neal</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Moffat</surname>
+<given-names>BA</given-names>
+</string-name>, <string-name>
+<surname>Stein</surname>
+<given-names>JM</given-names>
+</string-name>, et al. <article-title>Glutamate weighted imaging contrast in gliomas with 7&#x02009;tesla magnetic resonance imaging</article-title>. <source>NeuroImage Clin</source>. <year>2019</year>;<volume>22</volume>:<elocation-id>101694</elocation-id>. doi:<pub-id pub-id-type="doi">10.1016/j.nicl.2019.101694</pub-id>
+<pub-id pub-id-type="pmid">30822716</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0011"><label>11</label><mixed-citation publication-type="journal" id="mrm30353-cit-0011">
+<string-name>
+<surname>Davis</surname>
+<given-names>KA</given-names>
+</string-name>, <string-name>
+<surname>Nanga</surname>
+<given-names>RPR</given-names>
+</string-name>, <string-name>
+<surname>Das</surname>
+<given-names>S</given-names>
+</string-name>, et al. <article-title>Glutamate imaging (GluCEST) lateralizes epileptic foci in non&#x02010;Lesional temporal lobe epilepsy</article-title>. <source>Sci Transl Med</source>. <year>2015</year>;<volume>7</volume>:<elocation-id>309ra161</elocation-id>. doi:<pub-id pub-id-type="doi">10.1126/scitranslmed.aaa7095</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0012"><label>12</label><mixed-citation publication-type="journal" id="mrm30353-cit-0012">
+<string-name>
+<surname>Hadar</surname>
+<given-names>PN</given-names>
+</string-name>, <string-name>
+<surname>Kini</surname>
+<given-names>LG</given-names>
+</string-name>, <string-name>
+<surname>Nanga</surname>
+<given-names>RPR</given-names>
+</string-name>, et al. <article-title>Volumetric glutamate imaging (GluCEST) using 7T MRI can lateralize nonlesional temporal lobe epilepsy: a preliminary study</article-title>. <source>Brain Behav</source>. <year>2021</year>;<volume>11</volume>:<elocation-id>e02134</elocation-id>. doi:<pub-id pub-id-type="doi">10.1002/brb3.2134</pub-id>
+<pub-id pub-id-type="pmid">34255437</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0013"><label>13</label><mixed-citation publication-type="journal" id="mrm30353-cit-0013">
+<string-name>
+<surname>Jia</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name>
+<surname>Chen</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name>
+<surname>Geng</surname>
+<given-names>K</given-names>
+</string-name>, et al. <article-title>Glutamate chemical exchange saturation transfer (GluCEST) magnetic resonance imaging in pre&#x02010;clinical and clinical applications for encephalitis</article-title>. <source>Front Neurosci</source>. <year>2020</year>;<volume>14</volume>:<fpage>750</fpage>. doi:<pub-id pub-id-type="doi">10.3389/fnins.2020.00750</pub-id>
+<pub-id pub-id-type="pmid">32848546</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0014"><label>14</label><mixed-citation publication-type="journal" id="mrm30353-cit-0014">
+<string-name>
+<surname>Roalf</surname>
+<given-names>DR</given-names>
+</string-name>, <string-name>
+<surname>Nanga</surname>
+<given-names>RPR</given-names>
+</string-name>, <string-name>
+<surname>Rupert</surname>
+<given-names>PE</given-names>
+</string-name>, et al. <article-title>Glutamate imaging (GluCEST) reveals lower brain GluCEST contrast in patients on the psychosis spectrum</article-title>. <source>Mol Psychiatry</source>. <year>2017</year>;<volume>22</volume>:<fpage>1298</fpage>&#x02010;<lpage>1305</lpage>. doi:<pub-id pub-id-type="doi">10.1038/mp.2016.258</pub-id>
+<pub-id pub-id-type="pmid">28115738</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0015"><label>15</label><mixed-citation publication-type="journal" id="mrm30353-cit-0015">
+<string-name>
+<surname>Sydnor</surname>
+<given-names>VJ</given-names>
+</string-name>, <string-name>
+<surname>Larsen</surname>
+<given-names>B</given-names>
+</string-name>, <string-name>
+<surname>Kohler</surname>
+<given-names>C</given-names>
+</string-name>, et al. <article-title>Diminished reward responsiveness is associated with lower reward network GluCEST: an ultra&#x02010;high field glutamate imaging study</article-title>. <source>Mol Psychiatry</source>. <year>2021</year>;<volume>26</volume>:<fpage>2137</fpage>&#x02010;<lpage>2147</lpage>. doi:<pub-id pub-id-type="doi">10.1038/s41380-020-00986-y</pub-id>
+<pub-id pub-id-type="pmid">33479514</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0016"><label>16</label><mixed-citation publication-type="journal" id="mrm30353-cit-0016">
+<string-name>
+<surname>O'Grady</surname>
+<given-names>KP</given-names>
+</string-name>, <string-name>
+<surname>Dula</surname>
+<given-names>AN</given-names>
+</string-name>, <string-name>
+<surname>Lyttle</surname>
+<given-names>BD</given-names>
+</string-name>, et al. <article-title>Glutamate sensitive imaging and evaluation of cognitive impairment in multiple sclerosis</article-title>. <source>Mult Scler Houndmills Basingstoke Engl</source>. <year>2019</year>;<volume>25</volume>:<fpage>1580</fpage>&#x02010;<lpage>1592</lpage>. doi:<pub-id pub-id-type="doi">10.1177/1352458518799583</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0017"><label>17</label><mixed-citation publication-type="journal" id="mrm30353-cit-0017">
+<string-name>
+<surname>Colonna</surname>
+<given-names>I</given-names>
+</string-name>, <string-name>
+<surname>Koini</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Pirpamer</surname>
+<given-names>L</given-names>
+</string-name>, et al. <article-title>Microstructural tissue changes in Alzheimer disease brains: insights from magnetization transfer imaging</article-title>. <source>Am J Neuroradiol</source>. <year>2021</year>;<volume>42</volume>:<fpage>688</fpage>&#x02010;<lpage>693</lpage>. doi:<pub-id pub-id-type="doi">10.3174/ajnr.A6975</pub-id>
+<pub-id pub-id-type="pmid">33509922</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0018"><label>18</label><mixed-citation publication-type="journal" id="mrm30353-cit-0018">
+<string-name>
+<surname>Zaiss</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Xu</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Goerke</surname>
+<given-names>S</given-names>
+</string-name>, et al. <article-title>Inverse Z&#x02010;spectrum analysis for spillover&#x02010;, MT&#x02010;, and T1&#x02010;corrected steady&#x02010;state pulsed CEST&#x02010;MRI&#x000a0;&#x02013;&#x000a0;application to pH&#x02010;weighted MRI of acute stroke</article-title>. <source>NMR Biomed</source>. <year>2014</year>;<volume>27</volume>:<fpage>240</fpage>&#x02010;<lpage>252</lpage>. doi:<pub-id pub-id-type="doi">10.1002/nbm.3054</pub-id>
+<pub-id pub-id-type="pmid">24395553</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0019"><label>19</label><mixed-citation publication-type="journal" id="mrm30353-cit-0019">
+<string-name>
+<surname>Khlebnikov</surname>
+<given-names>V</given-names>
+</string-name>, <string-name>
+<surname>van der Kemp</surname>
+<given-names>WJM</given-names>
+</string-name>, <string-name>
+<surname>Hoogduin</surname>
+<given-names>H</given-names>
+</string-name>, <string-name>
+<surname>Klomp</surname>
+<given-names>DWJ</given-names>
+</string-name>, <string-name>
+<surname>Prompers</surname>
+<given-names>JJ</given-names>
+</string-name>. <article-title>Analysis of chemical exchange saturation transfer contributions from brain metabolites to the Z&#x02010;spectra at various field strengths and pH</article-title>. <source>Sci Rep</source>. <year>2019</year>;<volume>9</volume>:<fpage>1089</fpage>. doi:<pub-id pub-id-type="doi">10.1038/s41598-018-37295-y</pub-id>
+<pub-id pub-id-type="pmid">30705355</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0020"><label>20</label><mixed-citation publication-type="journal" id="mrm30353-cit-0020">
+<string-name>
+<surname>Cember</surname>
+<given-names>ATJ</given-names>
+</string-name>, <string-name>
+<surname>Nanga</surname>
+<given-names>RPR</given-names>
+</string-name>, <string-name>
+<surname>Reddy</surname>
+<given-names>R</given-names>
+</string-name>. <article-title>Glutamate&#x02010;weighted CEST (gluCEST) imaging for mapping neurometabolism: an update on the state of the art and emerging findings from in vivo applications</article-title>. <source>NMR Biomed</source>. <year>2023</year>;<volume>36</volume>:<elocation-id>e4780</elocation-id>. doi:<pub-id pub-id-type="doi">10.1002/nbm.4780</pub-id>
+<pub-id pub-id-type="pmid">35642353</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0021"><label>21</label><mixed-citation publication-type="journal" id="mrm30353-cit-0021">
+<string-name>
+<surname>Jin</surname>
+<given-names>X</given-names>
+</string-name>, <string-name>
+<surname>Zhou</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Chen</surname>
+<given-names>S</given-names>
+</string-name>, <string-name>
+<surname>Li</surname>
+<given-names>D</given-names>
+</string-name>, <string-name>
+<surname>Cao</surname>
+<given-names>X</given-names>
+</string-name>, <string-name>
+<surname>Liu</surname>
+<given-names>B</given-names>
+</string-name>. <article-title>Effects of pH alterations on stress&#x02010; and aging&#x02010;induced protein phase separation</article-title>. <source>Cell Mol Life Sci</source>. <year>2022</year>;<volume>79</volume>:<fpage>380</fpage>. doi:<pub-id pub-id-type="doi">10.1007/s00018-022-04393-0</pub-id>
+<pub-id pub-id-type="pmid">35750966</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0022"><label>22</label><mixed-citation publication-type="journal" id="mrm30353-cit-0022">
+<string-name>
+<surname>Kim</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Wu</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name>
+<surname>Guo</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name>
+<surname>Zheng</surname>
+<given-names>H</given-names>
+</string-name>, <string-name>
+<surname>Sun</surname>
+<given-names>PZ</given-names>
+</string-name>. <article-title>A review of optimization and quantification techniques for chemical exchange saturation transfer MRI toward sensitive in vivo imaging: OPTIMIZATION AND QUANTIFICATION OF CEST MRI</article-title>. <source>Contrast Media Mol Imaging</source>. <year>2015</year>;<volume>10</volume>:<fpage>163</fpage>&#x02010;<lpage>178</lpage>. doi:<pub-id pub-id-type="doi">10.1002/cmmi.1628</pub-id>
+<pub-id pub-id-type="pmid">25641791</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0023"><label>23</label><mixed-citation publication-type="journal" id="mrm30353-cit-0023">
+<string-name>
+<surname>Zaiss</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Schmitt</surname>
+<given-names>B</given-names>
+</string-name>, <string-name>
+<surname>Bachert</surname>
+<given-names>P</given-names>
+</string-name>. <article-title>Quantitative separation of CEST effect from magnetization transfer and spillover effects by Lorentzian&#x02010;line&#x02010;fit analysis of z&#x02010;spectra</article-title>. <source>J Magn Reson</source>. <year>2011</year>;<volume>211</volume>:<fpage>149</fpage>&#x02010;<lpage>155</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.jmr.2011.05.001</pub-id>
+<pub-id pub-id-type="pmid">21641247</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0024"><label>24</label><mixed-citation publication-type="journal" id="mrm30353-cit-0024">
+<string-name>
+<surname>Chen</surname>
+<given-names>L</given-names>
+</string-name>, <string-name>
+<surname>Barker</surname>
+<given-names>PB</given-names>
+</string-name>, <string-name>
+<surname>Weiss</surname>
+<given-names>RG</given-names>
+</string-name>, <string-name>
+<surname>van Zijl</surname>
+<given-names>PCM</given-names>
+</string-name>, <string-name>
+<surname>Xu</surname>
+<given-names>J</given-names>
+</string-name>. <article-title>Creatine and phosphocreatine mapping of mouse skeletal muscle by a polynomial and Lorentzian line&#x02010;shape fitting CEST method</article-title>. <source>Magn Reson Med</source>. <year>2019</year>;<volume>81</volume>:<fpage>69</fpage>&#x02010;<lpage>78</lpage>. doi:<pub-id pub-id-type="doi">10.1002/mrm.27514</pub-id>
+<pub-id pub-id-type="pmid">30246265</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0025"><label>25</label><mixed-citation publication-type="journal" id="mrm30353-cit-0025">
+<string-name>
+<surname>Desmond</surname>
+<given-names>KL</given-names>
+</string-name>, <string-name>
+<surname>Moosvi</surname>
+<given-names>F</given-names>
+</string-name>, <string-name>
+<surname>Stanisz</surname>
+<given-names>GJ</given-names>
+</string-name>. <article-title>Mapping of amide, amine, and aliphatic peaks in the CEST spectra of murine xenografts at 7 T</article-title>. <source>Magn Reson Med</source>. <year>2014</year>;<volume>71</volume>:<fpage>1841</fpage>&#x02010;<lpage>1853</lpage>. doi:<pub-id pub-id-type="doi">10.1002/mrm.24822</pub-id>
+<pub-id pub-id-type="pmid">23801344</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0026"><label>26</label><mixed-citation publication-type="journal" id="mrm30353-cit-0026">
+<string-name>
+<surname>Igarashi</surname>
+<given-names>H</given-names>
+</string-name>, <string-name>
+<surname>Ueki</surname>
+<given-names>S</given-names>
+</string-name>, <string-name>
+<surname>Ohno</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Ohkubo</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Suzuki</surname>
+<given-names>Y</given-names>
+</string-name>. <article-title>Magnetic resonance imaging of neurotransmitter&#x02010;related molecules</article-title>. <source>J Nippon Med Sch</source>. <year>2017</year>;<volume>84</volume>:<fpage>160</fpage>&#x02010;<lpage>164</lpage>. doi:<pub-id pub-id-type="doi">10.1272/jnms.84.160</pub-id>
+<pub-id pub-id-type="pmid">28978895</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0027"><label>27</label><mixed-citation publication-type="journal" id="mrm30353-cit-0027">
+<string-name>
+<surname>Zaiss</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Angelovski</surname>
+<given-names>G</given-names>
+</string-name>, <string-name>
+<surname>Demetriou</surname>
+<given-names>E</given-names>
+</string-name>, <string-name>
+<surname>McMahon</surname>
+<given-names>MT</given-names>
+</string-name>, <string-name>
+<surname>Golay</surname>
+<given-names>X</given-names>
+</string-name>, <string-name>
+<surname>Scheffler</surname>
+<given-names>K</given-names>
+</string-name>. <article-title>QUESP and QUEST revisited &#x02010; fast and accurate quantitative CEST experiments</article-title>. <source>Magn Reson Med</source>. <year>2018</year>;<volume>79</volume>:<fpage>1708</fpage>&#x02010;<lpage>1721</lpage>. doi:<pub-id pub-id-type="doi">10.1002/mrm.26813</pub-id>
+<pub-id pub-id-type="pmid">28686796</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0028"><label>28</label><mixed-citation publication-type="journal" id="mrm30353-cit-0028">
+<string-name>
+<surname>Randtke</surname>
+<given-names>EA</given-names>
+</string-name>, <string-name>
+<surname>Chen</surname>
+<given-names>LQ</given-names>
+</string-name>, <string-name>
+<surname>Corrales</surname>
+<given-names>LR</given-names>
+</string-name>, <string-name>
+<surname>Pagel</surname>
+<given-names>MD</given-names>
+</string-name>. <article-title>The Hanes&#x02010;Woolf linear QUESP method improves the measurements of fast chemical exchange rates with CEST MRI</article-title>. <source>Magn Reson Med</source>. <year>2014</year>;<volume>71</volume>:<fpage>1603</fpage>&#x02010;<lpage>1612</lpage>. doi:<pub-id pub-id-type="doi">10.1002/mrm.24792</pub-id>
+<pub-id pub-id-type="pmid">23780911</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0029"><label>29</label><mixed-citation publication-type="journal" id="mrm30353-cit-0029">
+<string-name>
+<surname>Wermter</surname>
+<given-names>FC</given-names>
+</string-name>, <string-name>
+<surname>Bock</surname>
+<given-names>C</given-names>
+</string-name>, <string-name>
+<surname>Dreher</surname>
+<given-names>W</given-names>
+</string-name>. <article-title>Investigating GluCEST and its specificity for pH mapping at low temperatures</article-title>. <source>NMR Biomed</source>. <year>2015</year>;<volume>28</volume>:<fpage>1507</fpage>&#x02010;<lpage>1517</lpage>. doi:<pub-id pub-id-type="doi">10.1002/nbm.3416</pub-id>
+<pub-id pub-id-type="pmid">26412088</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0030"><label>30</label><mixed-citation publication-type="journal" id="mrm30353-cit-0030">
+<string-name>
+<surname>Yadav</surname>
+<given-names>NN</given-names>
+</string-name>, <string-name>
+<surname>Xu</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Xu</surname>
+<given-names>X</given-names>
+</string-name>, <string-name>
+<surname>McMahon</surname>
+<given-names>MT</given-names>
+</string-name>, <string-name>
+<surname>van Zijl</surname>
+<given-names>PCM</given-names>
+</string-name>. <part-title>Hybrid frequency encoding/water relaxation method for detecting exchangeable solute protons with increased sensitivity and specificity</part-title>. <source>Proceedings of the International Society for Magnetic Resonance in Medicine</source>. Vol <volume>22</volume>; <year>2014</year>.</mixed-citation></ref><ref id="mrm30353-bib-0031"><label>31</label><mixed-citation publication-type="journal" id="mrm30353-cit-0031">
+<string-name>
+<surname>Zhang</surname>
+<given-names>Z</given-names>
+</string-name>, <string-name>
+<surname>Wang</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Park</surname>
+<given-names>S</given-names>
+</string-name>, et al. <article-title>The exchange rate of creatine CEST in mouse brain</article-title>. <source>Magn Reson Med</source>. <year>2023</year>;<volume>90</volume>:<fpage>373</fpage>&#x02010;<lpage>384</lpage>. doi:<pub-id pub-id-type="doi">10.1002/mrm.29662</pub-id>
+<pub-id pub-id-type="pmid">37036030</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0032"><label>32</label><mixed-citation publication-type="journal" id="mrm30353-cit-0032">
+<string-name>
+<surname>Near</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Harris</surname>
+<given-names>AD</given-names>
+</string-name>, <string-name>
+<surname>Juchem</surname>
+<given-names>C</given-names>
+</string-name>, et al. <article-title>Preprocessing, analysis and quantification in single&#x02010;voxel magnetic resonance spectroscopy: Experts' consensus recommendations</article-title>. <source>NMR Biomed</source>. <year>2021</year>;<volume>34</volume>:<elocation-id>e4257</elocation-id>. doi:<pub-id pub-id-type="doi">10.1002/nbm.4257</pub-id>
+<pub-id pub-id-type="pmid">32084297</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0033"><label>33</label><mixed-citation publication-type="journal" id="mrm30353-cit-0033">
+<string-name>
+<surname>Garwood</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>DelaBarre</surname>
+<given-names>L</given-names>
+</string-name>. <article-title>The return of the frequency sweep: designing adiabatic pulses for contemporary NMR</article-title>. <source>J Magn Reson</source>. <year>2001</year>;<volume>153</volume>:<fpage>155</fpage>&#x02010;<lpage>177</lpage>. doi:<pub-id pub-id-type="doi">10.1006/jmre.2001.2340</pub-id>
+<pub-id pub-id-type="pmid">11740891</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0034"><label>34</label><mixed-citation publication-type="journal" id="mrm30353-cit-0034">
+<string-name>
+<surname>Tk&#x000e1;&#x0010d;</surname>
+<given-names>I</given-names>
+</string-name>, <string-name>
+<surname>Deelchand</surname>
+<given-names>D</given-names>
+</string-name>, <string-name>
+<surname>Dreher</surname>
+<given-names>W</given-names>
+</string-name>, et al. <article-title>Water and lipid suppression techniques for advanced 1 H MRS and MRSI of the human brain: Experts' consensus recommendations</article-title>. <source>NMR Biomed</source>. <year>2021</year>;<volume>34</volume>:<elocation-id>e4459</elocation-id>. doi:<pub-id pub-id-type="doi">10.1002/nbm.4459</pub-id>
+<pub-id pub-id-type="pmid">33327042</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0035"><label>35</label><mixed-citation publication-type="journal" id="mrm30353-cit-0035">
+<string-name>
+<surname>Provencher</surname>
+<given-names>SW</given-names>
+</string-name>. <article-title>Automatic quantitation of localized in vivo 1H spectra with LCModel</article-title>. <source>NMR Biomed</source>. <year>2001</year>;<volume>14</volume>:<fpage>260</fpage>&#x02010;<lpage>264</lpage>. doi:<pub-id pub-id-type="doi">10.1002/nbm.698</pub-id>
+<pub-id pub-id-type="pmid">11410943</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0036"><label>36</label><mixed-citation publication-type="journal" id="mrm30353-cit-0036">
+<string-name>
+<surname>Hoefemann</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>D&#x000f6;ring</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Fichtner</surname>
+<given-names>ND</given-names>
+</string-name>, <string-name>
+<surname>Kreis</surname>
+<given-names>R</given-names>
+</string-name>. <article-title>Combining chemical exchange saturation transfer and 1H magnetic resonance spectroscopy for simultaneous determination of metabolite concentrations and effects of magnetization exchange</article-title>. <source>Magn Reson Med</source>. <year>2021</year>;<volume>85</volume>:<fpage>1766</fpage>&#x02010;<lpage>1782</lpage>. doi:<pub-id pub-id-type="doi">10.1002/mrm.28574</pub-id>
+<pub-id pub-id-type="pmid">33151011</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0037"><label>37</label><mixed-citation publication-type="journal" id="mrm30353-cit-0037">
+<string-name>
+<surname>Kim</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Gillen</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Landman</surname>
+<given-names>BA</given-names>
+</string-name>, <string-name>
+<surname>Zhou</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>van Zijl</surname>
+<given-names>PCM</given-names>
+</string-name>. <article-title>Water saturation shift referencing (WASSR) for chemical exchange saturation transfer (CEST) experiments</article-title>. <source>Magn Reson Med</source>. <year>2009</year>;<volume>61</volume>:<fpage>1441</fpage>&#x02010;<lpage>1450</lpage>. doi:<pub-id pub-id-type="doi">10.1002/mrm.21873</pub-id>
+<pub-id pub-id-type="pmid">19358232</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0038"><label>38</label><mixed-citation publication-type="journal" id="mrm30353-cit-0038">
+<string-name>
+<surname>Lopez&#x02010;Kolkovsky</surname>
+<given-names>AL</given-names>
+</string-name>, <string-name>
+<surname>M&#x000e9;riaux</surname>
+<given-names>S</given-names>
+</string-name>, <string-name>
+<surname>Boumezbeur</surname>
+<given-names>F</given-names>
+</string-name>. <article-title>Metabolite and macromolecule T1 and T2 relaxation times in the rat brain in vivo at 17.2T</article-title>. <source>Magn Reson Med</source>. <year>2016</year>;<volume>75</volume>:<fpage>503</fpage>&#x02010;<lpage>514</lpage>. doi:<pub-id pub-id-type="doi">10.1002/mrm.25602</pub-id>
+<pub-id pub-id-type="pmid">25820200</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0039"><label>39</label><mixed-citation publication-type="journal" id="mrm30353-cit-0039">
+<string-name>
+<surname>Zaiss</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Bachert</surname>
+<given-names>P</given-names>
+</string-name>. <article-title>Exchange&#x02010;dependent relaxation in the rotating frame for slow and intermediate exchange&#x000a0;&#x02013;&#x000a0;modeling off&#x02010;resonant spin&#x02010;lock and chemical exchange saturation transfer</article-title>. <source>NMR Biomed</source>. <year>2013</year>;<volume>26</volume>:<fpage>507</fpage>&#x02010;<lpage>518</lpage>. doi:<pub-id pub-id-type="doi">10.1002/nbm.2887</pub-id>
+<pub-id pub-id-type="pmid">23281186</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0040"><label>40</label><mixed-citation publication-type="journal" id="mrm30353-cit-0040">
+<string-name>
+<surname>Zaiss</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Zu</surname>
+<given-names>Z</given-names>
+</string-name>, <string-name>
+<surname>Xu</surname>
+<given-names>J</given-names>
+</string-name>, et al. <article-title>A combined analytical solution for chemical exchange saturation transfer and semi&#x02010;solid magnetization transfer</article-title>. <source>NMR Biomed</source>. <year>2015</year>;<volume>28</volume>:<fpage>217</fpage>&#x02010;<lpage>230</lpage>. doi:<pub-id pub-id-type="doi">10.1002/nbm.3237</pub-id>
+<pub-id pub-id-type="pmid">25504828</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0041"><label>41</label><mixed-citation publication-type="journal" id="mrm30353-cit-0041">
+<string-name>
+<surname>Morrison</surname>
+<given-names>C</given-names>
+</string-name>, <string-name>
+<surname>Stanisz</surname>
+<given-names>G</given-names>
+</string-name>, <string-name>
+<surname>Henkelman</surname>
+<given-names>RM</given-names>
+</string-name>. <article-title>Modeling magnetization transfer for biological&#x02010;like systems using a semi&#x02010;solid Pool with a super&#x02010;Lorentzian Lineshape and dipolar reservoir</article-title>. <source>J Magn Reson B</source>. <year>1995</year>;<volume>108</volume>:<fpage>103</fpage>&#x02010;<lpage>113</lpage>. doi:<pub-id pub-id-type="doi">10.1006/jmrb.1995.1111</pub-id>
+<pub-id pub-id-type="pmid">7648009</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0042"><label>42</label><mixed-citation publication-type="journal" id="mrm30353-cit-0042">
+<string-name>
+<surname>Hua</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Jones</surname>
+<given-names>CK</given-names>
+</string-name>, <string-name>
+<surname>Blakeley</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Smith</surname>
+<given-names>SA</given-names>
+</string-name>, <string-name>
+<surname>van Zijl</surname>
+<given-names>PCM</given-names>
+</string-name>, <string-name>
+<surname>Zhou</surname>
+<given-names>J</given-names>
+</string-name>. <article-title>Quantitative description of the asymmetry in magnetization transfer effects around the water resonance in the human brain</article-title>. <source>Magn Reson Med</source>. <year>2007</year>;<volume>58</volume>:<fpage>786</fpage>&#x02010;<lpage>793</lpage>. doi:<pub-id pub-id-type="doi">10.1002/mrm.21387</pub-id>
+<pub-id pub-id-type="pmid">17899597</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0043"><label>43</label><mixed-citation publication-type="journal" id="mrm30353-cit-0043">
+<string-name>
+<surname>Chen</surname>
+<given-names>L</given-names>
+</string-name>, <string-name>
+<surname>Cao</surname>
+<given-names>S</given-names>
+</string-name>, <string-name>
+<surname>Koehler</surname>
+<given-names>RC</given-names>
+</string-name>, <string-name>
+<surname>van Zijl</surname>
+<given-names>PCM</given-names>
+</string-name>, <string-name>
+<surname>Xu</surname>
+<given-names>J</given-names>
+</string-name>. <article-title>High&#x02010;sensitivity CEST mapping using a spatiotemporal correlation&#x02010;enhanced method</article-title>. <source>Magn Reson Med</source>. <year>2020</year>;<volume>84</volume>:<fpage>3342</fpage>&#x02010;<lpage>3350</lpage>. doi:<pub-id pub-id-type="doi">10.1002/mrm.28380</pub-id>
+<pub-id pub-id-type="pmid">32597519</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0044"><label>44</label><mixed-citation publication-type="journal" id="mrm30353-cit-0044">
+<string-name>
+<surname>Wang</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Huang</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Ju</surname>
+<given-names>L</given-names>
+</string-name>, et al. <article-title>Creatidne mapping of the brain at 3T by CEST MRI</article-title>. <source>Magn Reson Med</source>. 2024;<volume>91</volume>:<fpage>51</fpage>&#x02010;<lpage>60</lpage>. doi:<pub-id pub-id-type="doi">10.1002/mrm.29876</pub-id>
+<pub-id pub-id-type="pmid">37814487</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0045"><label>45</label><mixed-citation publication-type="journal" id="mrm30353-cit-0045">
+<string-name>
+<surname>Xin</surname>
+<given-names>L</given-names>
+</string-name>, <string-name>
+<surname>Gambarota</surname>
+<given-names>G</given-names>
+</string-name>, <string-name>
+<surname>Mlyn&#x000e1;rik</surname>
+<given-names>V</given-names>
+</string-name>, <string-name>
+<surname>Gruetter</surname>
+<given-names>R</given-names>
+</string-name>. <article-title>Proton T2 relaxation time of J&#x02010;coupled cerebral metabolites in rat brain at 9.4 T</article-title>. <source>NMR Biomed</source>. <year>2008</year>;<volume>21</volume>:<fpage>396</fpage>&#x02010;<lpage>401</lpage>. doi:<pub-id pub-id-type="doi">10.1002/nbm.1205</pub-id>
+<pub-id pub-id-type="pmid">17907262</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0046"><label>46</label><mixed-citation publication-type="journal" id="mrm30353-cit-0046">
+<string-name>
+<surname>Duarte</surname>
+<given-names>JMN</given-names>
+</string-name>, <string-name>
+<surname>Do</surname>
+<given-names>KQ</given-names>
+</string-name>, <string-name>
+<surname>Gruetter</surname>
+<given-names>R</given-names>
+</string-name>. <article-title>Longitudinal neurochemical modifications in the aging mouse brain measured in vivo by 1H magnetic resonance spectroscopy</article-title>. <source>Neurobiol Aging</source>. <year>2014</year>;<volume>35</volume>:<fpage>1660</fpage>&#x02010;<lpage>1668</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.neurobiolaging.2014.01.135</pub-id>
+<pub-id pub-id-type="pmid">24560998</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0047"><label>47</label><mixed-citation publication-type="journal" id="mrm30353-cit-0047">
+<string-name>
+<surname>Kulak</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Duarte</surname>
+<given-names>JMN</given-names>
+</string-name>, <string-name>
+<surname>Do</surname>
+<given-names>KQ</given-names>
+</string-name>, <string-name>
+<surname>Gruetter</surname>
+<given-names>R</given-names>
+</string-name>. <article-title>Neurochemical profile of the developing mouse cortex determined by in vivo 1H NMR spectroscopy at 14.1 T and the effect of recurrent anaesthesia</article-title>. <source>J Neurochem</source>. <year>2010</year>;<volume>115</volume>:<fpage>1466</fpage>&#x02010;<lpage>1477</lpage>. doi:<pub-id pub-id-type="doi">10.1111/j.1471-4159.2010.07051.x</pub-id>
+<pub-id pub-id-type="pmid">20946416</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0048"><label>48</label><mixed-citation publication-type="journal" id="mrm30353-cit-0048">
+<string-name>
+<surname>Tkac</surname>
+<given-names>I</given-names>
+</string-name>, <string-name>
+<surname>Dubinsky</surname>
+<given-names>JM</given-names>
+</string-name>, <string-name>
+<surname>Keene</surname>
+<given-names>CD</given-names>
+</string-name>, <string-name>
+<surname>Gruetter</surname>
+<given-names>R</given-names>
+</string-name>, <string-name>
+<surname>Low</surname>
+<given-names>WC</given-names>
+</string-name>. <article-title>Neurochemical changes in Huntington R6/2 mouse striatum detected by in vivo 1H NMR spectroscopy</article-title>. <source>J Neurochem</source>. <year>2007</year>;<volume>100</volume>:<fpage>1397</fpage>&#x02010;<lpage>1406</lpage>. doi:<pub-id pub-id-type="doi">10.1111/j.1471-4159.2006.04323.x</pub-id>
+<pub-id pub-id-type="pmid">17217418</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0049"><label>49</label><mixed-citation publication-type="journal" id="mrm30353-cit-0049">
+<string-name>
+<surname>Lei</surname>
+<given-names>H</given-names>
+</string-name>, <string-name>
+<surname>Poitry&#x02010;Yamate</surname>
+<given-names>C</given-names>
+</string-name>, <string-name>
+<surname>Preitner</surname>
+<given-names>F</given-names>
+</string-name>, <string-name>
+<surname>Thorens</surname>
+<given-names>B</given-names>
+</string-name>, <string-name>
+<surname>Gruetter</surname>
+<given-names>R</given-names>
+</string-name>. <article-title>Neurochemical profile of the mouse hypothalamus using in vivo 1H MRS at 14.1T</article-title>. <source>NMR Biomed</source>. <year>2010</year>;<volume>23</volume>:<fpage>578</fpage>&#x02010;<lpage>583</lpage>. doi:<pub-id pub-id-type="doi">10.1002/nbm.1498</pub-id>
+<pub-id pub-id-type="pmid">20235335</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0050"><label>50</label><mixed-citation publication-type="miscellaneous" id="mrm30353-cit-0050">
+<string-name>
+<surname>Provencher</surname>
+<given-names>SW</given-names>
+</string-name>. <article-title>LCModel &#x00026; LCMgui User's Manual</article-title>. <year>2021</year>
+<ext-link xlink:href="http://s-provencher.com/pub/LCModel/manual/manual.pdf" ext-link-type="uri">http://s&#x02010;provencher.com/pub/LCModel/manual/manual.pdf</ext-link>
+</mixed-citation></ref><ref id="mrm30353-bib-0051"><label>51</label><mixed-citation publication-type="journal" id="mrm30353-cit-0051">
+<string-name>
+<surname>Instrella</surname>
+<given-names>R</given-names>
+</string-name>, <string-name>
+<surname>Juchem</surname>
+<given-names>C</given-names>
+</string-name>. <article-title>Uncertainty propagation in absolute metabolite quantification for in vivo MRS of the human brain</article-title>. <source>Magn Reson Med</source>. <year>2024</year>;<volume>91</volume>:<fpage>1284</fpage>&#x02010;<lpage>1300</lpage>. doi:<pub-id pub-id-type="doi">10.1002/mrm.29903</pub-id>
+<pub-id pub-id-type="pmid">38029371</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0052"><label>52</label><mixed-citation publication-type="journal" id="mrm30353-cit-0052">
+<string-name>
+<surname>Heo</surname>
+<given-names>HY</given-names>
+</string-name>, <string-name>
+<surname>Zhang</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name>
+<surname>Lee</surname>
+<given-names>DH</given-names>
+</string-name>, <string-name>
+<surname>Hong</surname>
+<given-names>X</given-names>
+</string-name>, <string-name>
+<surname>Zhou</surname>
+<given-names>J</given-names>
+</string-name>. <article-title>Quantitative assessment of amide proton transfer (APT) and nuclear overhauser enhancement (NOE) imaging with extrapolated semi&#x02010;solid magnetization transfer reference (EMR) signals: application to a rat glioma model at 4.7 tesla</article-title>. <source>Magn Reson Med</source>. <year>2016</year>;<volume>75</volume>:<fpage>137</fpage>&#x02010;<lpage>149</lpage>. doi:<pub-id pub-id-type="doi">10.1002/mrm.25581</pub-id>
+<pub-id pub-id-type="pmid">25753614</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0053"><label>53</label><mixed-citation publication-type="journal" id="mrm30353-cit-0053">
+<string-name>
+<surname>Zhou</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Payen</surname>
+<given-names>JF</given-names>
+</string-name>, <string-name>
+<surname>Wilson</surname>
+<given-names>DA</given-names>
+</string-name>, <string-name>
+<surname>Traystman</surname>
+<given-names>RJ</given-names>
+</string-name>, <string-name>
+<surname>van Zijl</surname>
+<given-names>PCM</given-names>
+</string-name>. <article-title>Using the amide proton signals of intracellular proteins and peptides to detect pH effects in MRI</article-title>. <source>Nat Med</source>. <year>2003</year>;<volume>9</volume>:<fpage>1085</fpage>&#x02010;<lpage>1090</lpage>. doi:<pub-id pub-id-type="doi">10.1038/nm907</pub-id>
+<pub-id pub-id-type="pmid">12872167</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0054"><label>54</label><mixed-citation publication-type="journal" id="mrm30353-cit-0054">
+<string-name>
+<surname>Ji</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name>
+<surname>Lu</surname>
+<given-names>D</given-names>
+</string-name>, <string-name>
+<surname>Sun</surname>
+<given-names>PZ</given-names>
+</string-name>, <string-name>
+<surname>Zhou</surname>
+<given-names>IY</given-names>
+</string-name>. <article-title>In vivo pH mapping with omega plot&#x02010;based quantitative chemical exchange saturation transfer MRI</article-title>. <source>Magn Reson Med</source>. <year>2023</year>;<volume>89</volume>:<fpage>299</fpage>&#x02010;<lpage>307</lpage>. doi:<pub-id pub-id-type="doi">10.1002/mrm.29444</pub-id>
+<pub-id pub-id-type="pmid">36089834</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0055"><label>55</label><mixed-citation publication-type="journal" id="mrm30353-cit-0055">
+<string-name>
+<surname>Zhang</surname>
+<given-names>XY</given-names>
+</string-name>, <string-name>
+<surname>Wang</surname>
+<given-names>F</given-names>
+</string-name>, <string-name>
+<surname>Jin</surname>
+<given-names>T</given-names>
+</string-name>, et al. <article-title>MR imaging of a novel NOE&#x02010;mediated magnetization transfer with water in rat brain at 9.4&#x02009;T</article-title>. <source>Magn Reson Med</source>. <year>2017</year>;<volume>78</volume>:<fpage>588</fpage>&#x02010;<lpage>597</lpage>. doi:<pub-id pub-id-type="doi">10.1002/mrm.26396</pub-id>
+<pub-id pub-id-type="pmid">27604612</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0056"><label>56</label><mixed-citation publication-type="journal" id="mrm30353-cit-0056">
+<string-name>
+<surname>Viswanathan</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Kurmi</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name>
+<surname>Zu</surname>
+<given-names>Z</given-names>
+</string-name>. <article-title>Nuclear Overhauser enhancement imaging at &#x02212;1.6 ppm in rat brain at 4.7T</article-title>. <source>Magn Reson Med</source>. 2024;<volume>91</volume>:<fpage>615</fpage>&#x02010;<lpage>629</lpage>. doi:<pub-id pub-id-type="doi">10.1002/mrm.29896</pub-id>
+<pub-id pub-id-type="pmid">37867419</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0057"><label>57</label><mixed-citation publication-type="journal" id="mrm30353-cit-0057">
+<string-name>
+<surname>Hsu</surname>
+<given-names>CH</given-names>
+</string-name>, <string-name>
+<surname>Lin</surname>
+<given-names>S</given-names>
+</string-name>, <string-name>
+<surname>Ho</surname>
+<given-names>AC</given-names>
+</string-name>, et al. <article-title>Comparison of in vivo and in situ detection of hippocampal metabolites in mouse brain using 1H&#x02010;MRS</article-title>. <source>NMR Biomed</source>. <year>2021</year>;<volume>34</volume>:<elocation-id>e4451</elocation-id>. doi:<pub-id pub-id-type="doi">10.1002/nbm.4451</pub-id>
+<pub-id pub-id-type="pmid">33258202</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0058"><label>58</label><mixed-citation publication-type="journal" id="mrm30353-cit-0058">
+<string-name>
+<surname>Cui</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Zu</surname>
+<given-names>Z</given-names>
+</string-name>. <article-title>Towards the molecular origin of glutamate CEST (GluCEST) imaging in rat brain</article-title>. <source>Magn Reson Med</source>. <year>2020</year>;<volume>83</volume>:<fpage>1405</fpage>&#x02010;<lpage>1417</lpage>. doi:<pub-id pub-id-type="doi">10.1002/mrm.28021</pub-id>
+<pub-id pub-id-type="pmid">31691367</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0059"><label>59</label><mixed-citation publication-type="journal" id="mrm30353-cit-0059">
+<string-name>
+<surname>Sun</surname>
+<given-names>C</given-names>
+</string-name>, <string-name>
+<surname>Zhao</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name>
+<surname>Zu</surname>
+<given-names>Z</given-names>
+</string-name>. <article-title>Validation of the presence of fast exchanging amine CEST effect at low saturation powers and its influence on the quantification of APT</article-title>. <source>Magn Reson Med</source>. <year>2023</year>;<volume>90</volume>:<fpage>1502</fpage>&#x02010;<lpage>1517</lpage>. doi:<pub-id pub-id-type="doi">10.1002/mrm.29742</pub-id>
+<pub-id pub-id-type="pmid">37317709</pub-id>
+</mixed-citation></ref><ref id="mrm30353-bib-0060"><label>60</label><mixed-citation publication-type="journal" id="mrm30353-cit-0060">
+<string-name>
+<surname>Perlman</surname>
+<given-names>O</given-names>
+</string-name>, <string-name>
+<surname>Zhu</surname>
+<given-names>B</given-names>
+</string-name>, <string-name>
+<surname>Zaiss</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Rosen</surname>
+<given-names>MS</given-names>
+</string-name>, <string-name>
+<surname>Farrar</surname>
+<given-names>CT</given-names>
+</string-name>. <article-title>An end&#x02010;to&#x02010;end AI&#x02010;based framework for automated discovery of rapid CEST/MT MRI acquisition protocols and molecular parameter quantification (AutoCEST)</article-title>. <source>Magn Reson Med</source>. <year>2022</year>;<volume>87:2792&#x02010;2810</volume>. doi:<pub-id pub-id-type="doi">10.1002/mrm.29173</pub-id>
+</mixed-citation></ref></ref-list></back></article>

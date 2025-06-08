@@ -1,0 +1,455 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Sci Rep</journal-id><journal-id journal-id-type="iso-abbrev">Sci Rep</journal-id><journal-title-group><journal-title>Scientific Reports</journal-title></journal-title-group><issn pub-type="epub">2045-2322</issn><publisher><publisher-name>Nature Publishing Group UK</publisher-name><publisher-loc>London</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">39730526</article-id><article-id pub-id-type="pmc">PMC11681210</article-id><article-id pub-id-type="publisher-id">81703</article-id><article-id pub-id-type="doi">10.1038/s41598-024-81703-5</article-id><article-categories><subj-group subj-group-type="heading"><subject>Article</subject></subj-group></article-categories><title-group><article-title>Innovative modified-net architecture: enhanced segmentation of deep vein thrombosis</article-title></title-group><contrib-group><contrib contrib-type="author" equal-contrib="yes"><name><surname>B.</surname><given-names>Pavihaa Lakshmi</given-names></name><xref ref-type="aff" rid="Aff1"/></contrib><contrib contrib-type="author" corresp="yes" equal-contrib="yes"><name><surname>S.</surname><given-names>Vidhya</given-names></name><address><email>svidhyavalentina@vit.ac.in</email></address><xref ref-type="aff" rid="Aff1"/></contrib><aff id="Aff1"><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/00qzypv28</institution-id><institution-id institution-id-type="GRID">grid.412813.d</institution-id><institution-id institution-id-type="ISNI">0000 0001 0687 4946</institution-id><institution>School of Electronics Engineering, </institution><institution>Vellore Institute of Technology, </institution></institution-wrap>Vellore, 632014 Tamilnadu India </aff></contrib-group><pub-date pub-type="epub"><day>28</day><month>12</month><year>2024</year></pub-date><pub-date pub-type="pmc-release"><day>28</day><month>12</month><year>2024</year></pub-date><pub-date pub-type="collection"><year>2024</year></pub-date><volume>14</volume><elocation-id>30835</elocation-id><history><date date-type="received"><day>10</day><month>6</month><year>2024</year></date><date date-type="accepted"><day>28</day><month>11</month><year>2024</year></date></history><permissions><copyright-statement>&#x000a9; The Author(s) 2024</copyright-statement><copyright-year>2024</copyright-year><license><ali:license_ref specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p><bold>Open Access</bold> This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article&#x02019;s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article&#x02019;s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link>.</license-p></license></permissions><abstract id="Abs1"><p id="Par1">A new era for diagnosing and treating Deep Vein Thrombosis (DVT) relies on precise segmentation from medical images. Our research introduces a novel algorithm, the Modified-Net architecture, which integrates a broad spectrum of architectural components tailored to detect the intricate patterns and variances in DVT imaging data. Our work integrates advanced components such as dilated convolutions for larger receptive fields, spatial pyramid pooling for context, residual and inception blocks for multiscale feature extraction, and attention mechanisms for highlighting key features. Our framework enhances precision of DVT region identification, attaining an accuracy of 98.92%, with a loss of 0.0269. The model also validates sensitivity 96.55%, specificity 96.70%, precision 98.61%, dice 97.48% and Intersection over Union (IoU) 95.10% offering valuable insights into DVT segmentation. Our framework significantly improves segmentation performance over traditional methods such as Convolutional Neural Network , Sequential, U-Net, Schematic. The management of DVT can be improved through enhanced segmentation techniques, which can improve clinical observation, treatment planning, and ultimately patient outcomes.</p></abstract><kwd-group kwd-group-type="npg-subject"><title>Subject terms</title><kwd>Health care</kwd><kwd>Medical imaging</kwd></kwd-group><funding-group><award-group><funding-source><institution>Vellore Institute of Technology, Vellore</institution></funding-source></award-group><open-access><p>Open access funding provided by Vellore Institute of Technology.</p></open-access></funding-group><custom-meta-group><custom-meta><meta-name>issue-copyright-statement</meta-name><meta-value>&#x000a9; Springer Nature Limited 2024</meta-value></custom-meta></custom-meta-group></article-meta></front><body><sec id="Sec1"><title>Introduction</title><p id="Par2">Deep vein thrombosis (DVT) is a blood clot that forms in the deep vein of our calf muscle region in the lower extremities, causing leg pain or swelling. In rare cases, it may also occur in the arms. If the clot travels through the bloodstream, blocking blood flow in the lungs, it can lead to Pulmonary Embolism (PE)<sup><xref ref-type="bibr" rid="CR1">1</xref></sup>. Emerging techniques in medical imaging, such as Deep Learning (DL), Machine Learning (ML), and Artificial Intelligence (AI), are revolutionizing the diagnosis of conditions like tumors, clots, cancer, etc., using different imaging modalities such as, Duplex Ultrasonography, Computed Tomography (CT), Magnetic Resonance Imaging (MRI) and Venography. DL uses neural networks to recognize patterns and features in medical images, enhancing efficiency and accuracy. ML uses algorithmic learning to discern patterns from historical data, aiding in the identification of thrombosis in deep veins. The integration of AI technologies further enhances the capabilities of image segmentation, allowing for analysis and interpretation of distinct features in medical images. In the realm of medical imaging, emerging techniques in image segmentation play a pivotal role. These advancements contribute significantly to accurate diagnosis and effective treatment planning across various medical fields. Especially, focusing on DVT segmentation techniques help in the accurate identification and delineation of affected areas, improving the performance in a more effective manner and early diagnosis. By segmenting relevant structures, clinicians can obtain valuable insights for timely diagnosis, enhancing patient outcomes. Qureshi, Imran, et al. investigated the benefits, potential drawbacks and future prospects of existing architectures in the field of medical image segmentation for diagnosing possible diseases<sup><xref ref-type="bibr" rid="CR2">2</xref></sup>. Image segmentation is crucial for detecting different types of disease and lesion regions. It also introduces standard image segmentation algorithms and U-Net, examining their clinical applications<sup><xref ref-type="bibr" rid="CR3">3</xref></sup>.</p><sec id="Sec2"><title>Hierarchy of epidemiological risks</title><p id="Par3">DVT is a serious and dangerous condition that needs immediate care to avoid its blocking and risky state. DVT often affects the lower limb, where a clot forms in a deep vein of the calf muscle region. Figure <xref rid="Fig1" ref-type="fig">1</xref> shows a visual representation of DVT and PE. It is a common venous thromboembolic (VTE) disorder with an incidence of 1.6 per 1000 annually. DVT is a significant medical concern, part of VTE disorders, and the third leading cause of cardiovascular disease-related deaths. DVT and PE are often undiagnosed due to their silent nature, leading to an underestimated incidence and prevalence. DVT&#x02019;s annual incidence is around 80 cases per 100,000, with a prevalence of 1 case per 1000 for lower limb DVT. In the U.S., over 200,000 people develop venous thrombosis annually, and 50,000 cases are complicated by PE<sup><xref ref-type="bibr" rid="CR4">4</xref></sup>.</p><p>
+<fig id="Fig1"><label>Fig. 1</label><caption><p>Anatomical representation of DVT occurrence and PE development.</p></caption><graphic xlink:href="41598_2024_81703_Fig1_HTML" id="MO1"/></fig>
+</p></sec><sec id="Sec3"><title>Clinical diagnosis and assessment of DVT patients</title><p id="Par4">Zhang, Zejun, et al. investigated the history of DVT diagnostic procedures, early diagnosis using point of care equipment, the current state of diagnostic equipment, performance measurements, and emerging trends in detection methods, highlighting issues for improvement<sup><xref ref-type="bibr" rid="CR5">5</xref></sup>. Shaziya Humera, and K. Shyamala compared CT images of lungs using Convolutional Neural Network (CNN) and U-Net models, finding U-Net outperforms CNN in lung field segmentation, highlighting DL&#x02019;s potential in image recognition<sup><xref ref-type="bibr" rid="CR6">6</xref></sup>. The study proposed a fully automatic method for identifying DVT using DL and Contrast Enhanced-MRI images. The approach was evaluated on 58 people who had recently been diagnosed with DVT. CNN outperformed other DL models, with a median Dice Similarity Coefficient (DSC) of 0.74 &#x000b1; 0.17<sup><xref ref-type="bibr" rid="CR7">7</xref></sup>. Hwang Jung Han, et al. compared the classification of DVT using CNN and ML algorithms on 659 participants. ML included logistic regression, SVM, RF, and extreme gradient boosts, while CNN-based models like VGG16, VGG19, Resnet50, and Resnet152 were evaluated. CNN models, particularly via the VGG16 model, classified DVT more effectively and accurately<sup><xref ref-type="bibr" rid="CR8">8</xref></sup>. Liu Shing-Hong, et al. used a 2D CNN to evaluate the quality of light reflection rheography (LRR) signals and classify positive or negative DVT with high reliability. The LRR technique is used to assess DVT risks, and DVT is classified using a 2D CNN after signal quality is assessed. The study aimed to develop a wearable device using the LRR technique, which could help people with hidden DVT risks be examined for embolus formation. The accuracy of determining LRR signal quality was higher than the previous studies<sup><xref ref-type="bibr" rid="CR9">9</xref></sup>.</p><p id="Par5">This study demonstrates early-stage DVT segmentation and diagnosis using clinical data, starting with pre-processing, training, testing, and comparative analysis of classifiers using performance measures. The entire work is categorised as follows: Section 1 provides a detailed explanation of the DVT cause, sign and prevalence of risk factors, along with monitoring and identifying the DVT techniques. Section 2 focuses on analysing image processing techniques and addressing significant limitations. A detailed description of our proposed framework with a schematic block diagram and algorithm is explained in section 3. Section 4 discusses the performance of our model and comparative summary of existing techniques. Furthermore, it is concluded with discussion and the future scope in sections 5 and 6.</p></sec></sec><sec id="Sec4"><title>Technical background</title><p id="Par6">Schraut Jaiden Xuan, et al. developed a multi-output network using U-Net for segmentation and a CNN for classification. The model improved simultaneous classification results, achieving 97.72% accuracy and a 0.9691 dice coefficient<sup><xref ref-type="bibr" rid="CR10">10</xref></sup>. The study introduced a deep multiscale convolutional neural networks for image segmentation. This approach was composed of three phases: an encoder, a U-net, and a decoder. The encoder was responsible for feature extraction from 2D image slices, and these features were then cascaded via deconvolution in the decoder by the U-net. The results showed improved accuracy and robustness in segmentation<sup><xref ref-type="bibr" rid="CR11">11</xref></sup>. The Transformer-based Attention-Guided Network improved semantic segmentation in medical images by learning non-local interactions among encoder features, generating discriminative features, and reducing fine detail loss<sup><xref ref-type="bibr" rid="CR12">12</xref></sup>.</p><sec id="Sec5"><title>Immersive segmentation techniques</title><p id="Par7">The Multi-scale Attention Net (MA-Net) is a neural network technique that integrated two blocks: the Position-wise Attention Block (PAB) and the Multi-scale Fusion Attention Block (MFAB). It improved performance under shadow, dynamic background, and illumination challenges. This showed potential for background-foreground segmentation in computer vision tasks<sup><xref ref-type="bibr" rid="CR13">13</xref></sup>. In medical imaging research, DL play a crucial role by facilitating identification and segmentation, morphology, classification, and disease recognition. The development of U-Net architecture for internal organ area segmentation was examined by Krithika alias AnbuDevi M and K. Suganthi, with a focus on specific segmentation and performance metrics. GAN and U-Net could be cascaded for effective image synthesis<sup><xref ref-type="bibr" rid="CR14">14</xref></sup>.</p><p id="Par8">A DL-based automatic segmentation model was designed based on multiscale input and encoding-decoding technique. This model effectively extracted global and local images for segmentation tasks. As a result, it was able to accurately separate different lesion regions in 3D medical images<sup><xref ref-type="bibr" rid="CR15">15</xref></sup>. Researchers used the modified seeded region growing algorithm to develop a semi-automated model for measuring and segmenting clots. The outcomes revealed better performance as compared to the traditional approaches<sup><xref ref-type="bibr" rid="CR16">16</xref></sup>. Suberi Anis Azwani Muhd, et al. presented a computer-aided approach (CAD) for early DVT diagnosis. The system has improved the image quality using image processing techniques such as enhancement, segmentation, and morphology<sup><xref ref-type="bibr" rid="CR17">17</xref></sup>. A deep neural network (DNN)-based CAD system was developed to segment and classify DVT and evaluate the DL approaches. The system was segmented with 2D U-Net, 2D VGG, and 3D U-Net and classified using 2D ResNet, CNN- recurrent neural network (RNN), and 3D Inception. VGG outperformed CNN-RNN without masks in segmentation, whereas 3D Inception with masks performed best in classification<sup><xref ref-type="bibr" rid="CR18">18</xref></sup>. The researchers have used the mask R-CNN DNN, which was trained on PE images. The performance of their model was manually evaluated and compared with existing methods. It was stated that their model exhibited high performance in identifying locations and the size of the PE<sup><xref ref-type="bibr" rid="CR19">19</xref></sup>. Table-<xref rid="Tab1" ref-type="table">1</xref> presents a comparative analysis of various relevant approaches.<table-wrap id="Tab1"><label>Table 1</label><caption><p>A comparative studies of different pertinent approaches.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Mechanism</th><th align="left">Features</th><th align="left">Advantages</th><th align="left"> Limitations</th><th align="left">Observations</th><th align="left">Key Finding</th><th align="left">Effectiveness in Segmentation Tasks</th></tr></thead><tbody><tr><td align="left">CNN <sup><xref ref-type="bibr" rid="CR7">7</xref></sup></td><td align="left">Fully automated segmentation</td><td align="left">High accuracy, fully automated</td><td align="left">Potential overfitting</td><td align="left">Effective for lower extremity DVT</td><td align="left">CNN effective for automated segmentation</td><td align="left">High</td></tr><tr><td align="left">Comparison of DL and ML methods <sup><xref ref-type="bibr" rid="CR8">8</xref></sup></td><td align="left">Classification of iliofemoral DVT on CT venography</td><td align="left">Comparison provides insights on performance</td><td align="left">Resource-intensive comparison</td><td align="left">DL methods outperform conventional ML</td><td align="left">DL shows superior performance</td><td align="left">High (DL methods)</td></tr><tr><td align="left">CNN with light reflection rheography<sup><xref ref-type="bibr" rid="CR9">9</xref></sup></td><td align="left">Detection with light reflection rheography</td><td align="left">Non-invasive detection</td><td align="left">Dependent on quality of light reflection</td><td align="left">Promising for non-invasive detection</td><td align="left">CNN effective with rheography</td><td align="left">Moderate</td></tr><tr><td align="left">U-Net enhanced class activation map<sup><xref ref-type="bibr" rid="CR10">10</xref></sup></td><td align="left">Multi-output network, robust classification</td><td align="left">Enhanced performance with U-Net</td><td align="left">Complexity, high computational cost</td><td align="left">Robust against varied data</td><td align="left">U-Net enhances classification performance</td><td align="left">High</td></tr><tr><td align="left">Multiscale CNN <sup><xref ref-type="bibr" rid="CR11">11</xref></sup></td><td align="left">Deep multiscale convolutional network</td><td align="left">Handles multiscale features</td><td align="left">Complex model training</td><td align="left">Handles complex segmentation tasks</td><td align="left">Multiscale CNN effective for medical segmentation</td><td align="left">Significant</td></tr><tr><td align="left">Attention-guided U-Net with Transformer<sup><xref ref-type="bibr" rid="CR12">12</xref></sup></td><td align="left">Multi-level attention-guided segmentation</td><td align="left">Combines attention mechanisms with transformer</td><td align="left">Complexity, resource-intensive</td><td align="left">Improved segmentation accuracy</td><td align="left">Attention mechanisms improve accuracy</td><td align="left">Considerable</td></tr><tr><td align="left">Multi-scale attention net (MA-Net)<sup><xref ref-type="bibr" rid="CR13">13</xref></sup></td><td align="left">Background-foreground segmentation</td><td align="left">Effective background-foreground separation</td><td align="left">Requires extensive training data</td><td align="left">Clear separation of features</td><td align="left">MA-Net effective for segmentation</td><td align="left">Potential</td></tr><tr><td align="left">3D DL<sup><xref ref-type="bibr" rid="CR18">18</xref></sup></td><td align="left">3D analysis of lower extremity CT</td><td align="left">Detailed 3D screening</td><td align="left">High computational cost</td><td align="left">Detailed analysis possible</td><td align="left">3D DL effective for DVT screening</td><td align="left">Substantial</td></tr><tr><td align="left">Advanced Imaging Techniques<sup><xref ref-type="bibr" rid="CR20">20</xref></sup></td><td align="left">Advanced imaging in acute and chronic DVT</td><td align="left">Comprehensive imaging insights</td><td align="left">Requires advanced imaging equipment</td><td align="left">Useful for both acute and chronic cases</td><td align="left">Advanced imaging provides comprehensive analysis</td><td align="left">Moderate to High</td></tr></tbody></table></table-wrap></p><p id="Par9">Dang Truong, et al. provided a two-layer ensemble of DL models for segmenting medical images, which included probability prediction and weight-based approaches. Extension to image classification tasks, ensemble selection for optimal subsets, and parallelization of cross-validation processes were among the next improvements<sup><xref ref-type="bibr" rid="CR21">21</xref></sup>. The U-Net segmentation model improved organ and lesion segmentation accuracy by incorporating different scale semantics of feature maps, directing model pruning, and attaining higher accuracy using two classification-guided modules<sup><xref ref-type="bibr" rid="CR22">22</xref></sup>. Researchers introduced AdaResU-Net, which was based on adaptive CNN designed specifically for medical image segmentation. This network was capable of automatically adjusting to inputs and also reduced the network size<sup><xref ref-type="bibr" rid="CR23">23</xref></sup>. New technologies have been leading to the development of different imaging modalities. A study by de Jong et al. explored potential applications of AI in PE diagnosis<sup><xref ref-type="bibr" rid="CR24">24</xref></sup>. Karande Gita Yashwantrao, et al. established methods for the identification and diagnosis of DVT investigating promising innovative techniques and recent trends in this field<sup><xref ref-type="bibr" rid="CR20">20</xref></sup>. The study carried out by Hemalakshmi G. R, et al. introduced attention-based multi-task model (Y-Net) for PE segmentation and detection. This model, combined with multi head attention mechanism, enhanced performance by concentrating on significant regions and minimizing irrelevant information<sup><xref ref-type="bibr" rid="CR25">25</xref></sup>. Metlek Sedat proposed CellSegUNet approach for image segmentation based on U-Net++ and residual blocks, and it features a redesigned encoder block structure compared to traditional models<sup><xref ref-type="bibr" rid="CR26">26</xref></sup>.</p></sec><sec id="Sec6"><title>Highlights of gap in the literature</title><p id="Par10">
+<list list-type="order"><list-item><p id="Par11">The most significant issue accentuated in the studies is over-segmentation. Class imbalances in DVT analysis datasets frequently impact model performance and training. Model consistency is also impacted by image quality and variability, which calls for preprocessing actions like contrast and normalization. Model development is hindered by a lack of labeled data. Conventional qualitative evaluation is tedious and is susceptible to misinterpretation.</p></list-item><list-item><p id="Par12">The erratic architecture of the examined literature makes automated analysis highly challenging, resulting in increased noise sensitivity.</p></list-item><list-item><p id="Par13">The paucity of labelled data for training has an impact on the performance of DL models.</p></list-item><list-item><p id="Par14">Manual annotating of data is cost-intensive and difficult to execute. As a result, self-supervised and transfer learning techniques need to be analysed and implemented.</p></list-item></list>
+</p></sec><sec id="Sec7"><title>Significant limitations of these papers are as follows:</title><p id="Par15">
+<list list-type="bullet"><list-item><p id="Par16">The majority of DVT-based research has employed baseline models, which include conventional ML approaches or well-known DL architectures like basic CNNs or random forests, as a starting point for comparison. These models are generally used as benchmarks to assess the effectiveness of more sophisticated or tailored methods for diagnosing DVT.</p></list-item><list-item><p id="Par17">DVT analysis datasets often have a significant imbalance between positive and negative cases, affecting model training and performance. Image quality and variability also affect model consistency, requiring different preprocessing steps like normalization and contrast adjustment. DVT datasets often lack sufficient annotated data for segmentation tasks, limiting the development and validation of accurate models.</p></list-item><list-item><p id="Par18">The focus is on diagnosing DVT, without providing knowledge on its various categories or techniques for addressing and segmenting it.</p></list-item><list-item><p id="Par19">The specific scenario of DVT syndrome is not addressed in any scientific research investigations and recommendations.</p></list-item><list-item><p id="Par20">The variability in imaging modalities (CT, MR) presents challenges in developing models that generalize well across different datasets. We now specify how this impacts cross-study comparisons and results. Many DL models are black-box systems, which poses a challenge in clinical validation and trust. This lack of interpretability limits the adoption of these models in practice.</p></list-item></list>
+</p><p>The authors aim to overcome the limitations of this research, with the following highlights being summarised: <list list-type="bullet"><list-item><p id="Par21">The paper presents theoretical knowledge on DVT and its risk factors, enabling the development of techniques for segmenting DVT.</p></list-item><list-item><p id="Par22">It analyses available datasets, provides a proposed framework and architecture that involves the baseline of the algorithm and develops an advanced method for medical image segmentation and analyses the performance of the model.</p></list-item><list-item><p id="Par23">Our research proposes DL algorithms for diagnosing and segmenting DVT and offers advanced research directions for DVT diagnosis and classification.</p></list-item></list></p></sec></sec><sec id="Sec8"><title>Proposed methodology</title><p id="Par24">Our research is to design and build a Modified-Net architecture with attention mechanisms for DVT segmentation. We are using publicly available CT venography data, specifically the axial view of the left lower limb DVT, as our input dataset<sup><xref ref-type="bibr" rid="CR27">27</xref></sup>. The preprocessing stage enhances the quality of images by boosting contrast, reducing noise, normalizing intensity, ensuring uniform input, and assisting in feature extraction. The preprocessing stage uses techniques like adaptive histogram equalization, noise reduction, intensity normalization, uniform input size, and feature extraction assistance to improve image quality and ensure dataset consistency. These techniques enhance contrast, minimize noise, normalize image intensities, and emphasize important structures for accurate feature extraction during the learning process. The heart of our framework is the modified-Net architecture, specifically designed for medical image segmentation. The encoder uses a variety of specialized blocks, including inception, spatial pyramid pooling, dilated convolution, attention, and residual blocks. These blocks extract hierarchical features, capturing intricate patterns and variations at multiple resolutions. An attention mechanism is integrated into the network&#x02019;s intermediate stage to enhance feature representation. It calculates attention maps that emphasize relevant areas and suppress irrelevant ones, thereby improving the model&#x02019;s segmentation precision. In the decoder section, the network employs up-sampling layers to revert the segmented regions to the original image size. Each decoder block refines the segmented regions, enhancing the spatial resolution of the segmentation masks by reconstructing details. The output layer of our model generates a probability map, where each pixel&#x02019;s value indicates the likelihood of belonging to the specified class. We apply a threshold to this probability map to create the final binary segmentation mask, which classifies each pixel as either part of the region of interest or the background. In the training phase, our model reduces the discrepancy between the predicted segmentation mask and the ground truth annotations using binary cross-entropy loss and the Adam optimizer. In the testing phase, the trained model creates a segmentation mask for DVT regions from an input image. This mask can be further refined or directly used for medical diagnosis and treatment planning. By incorporating different architectural blocks, our modified-Net approach demonstrates enhanced performance in segmenting DVT regions. This robust technique helps medical professionals make precise diagnoses and treatment decisions, ultimately enhancing patient care and outcomes. Proposed model is an integration of convolutional layers, Residual, Inception, Dilated Convolution, Spatial Pyramid Pooling, and Attention blocks within the modified-Net architecture as shown in Figure-2.<fig id="Fig2"><label>Fig. 2</label><caption><p>The workflow of modified-Net architecture model.</p></caption><graphic xlink:href="41598_2024_81703_Fig2_HTML" id="MO2"/></fig></p><sec id="Sec9"><title>Residual block</title><p id="Par25">Residual Block plays a key role in learning residual mappings, which is beneficial for deeper networks. It consists of two convolutional layers with a rectified linear unit (ReLU) as an activation function, followed by batch normalization and dropout regularization. This setup allows our model to effectually capture and study residual features, which is essential for deeper networks. The residual connection, attained through the addition operation between the input and output of the second convolutional layer, enables the network to mitigate the vanishing gradient problem and facilitates the training of deeper architectures.</p><p id="Par26">The purpose of this block, based on the ResNet architecture, is to help mitigate the vanishing gradient problem by introducing skip connections. It allows the gradient to flow directly through the network, making it easier to train deeper networks. We contribute it to improve the gradient flow, which enables the training of deeper networks and can also potentially capture more complex patterns and representations.</p><p id="Par27">Output of the residual block, denoted as <inline-formula id="IEq1"><alternatives><tex-math id="M1">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {X}}_{\text {residual}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq1.gif"/></alternatives></inline-formula>, is obtained by adding the input tensor <inline-formula id="IEq2"><alternatives><tex-math id="M2">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {X}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq2.gif"/></alternatives></inline-formula> to the result of applying ReLU activation, dropout, and batch normalization to the output of a convolutional operation with filters <inline-formula id="IEq3"><alternatives><tex-math id="M3">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {F}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq3.gif"/></alternatives></inline-formula>, kernel size <inline-formula id="IEq4"><alternatives><tex-math id="M4">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {K}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq4.gif"/></alternatives></inline-formula>, and padding <inline-formula id="IEq5"><alternatives><tex-math id="M5">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {P}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq5.gif"/></alternatives></inline-formula>.</p><p id="Par28">
+<bold>Output:</bold>
+</p><p id="Par29">
+<inline-formula id="IEq6"><alternatives><tex-math id="M6">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {X}}_{\text {residual}} = {\textbf {X}} + {\textbf {H}}({\textbf {B}}({\textbf {D}}(\text {Conv2D}({\textbf {X}}, {\textbf {F}}, {\textbf {K}}, {\textbf {P}}))))$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq6.gif"/></alternatives></inline-formula>
+</p></sec><sec id="Sec10"><title>Inception block</title><p id="Par30">Inception Block, inspired by Google&#x02019;s Inception module, integrates features from multiple receptive fields. Comprising convolutional layers with varying kernel sizes (1x1, 3x3, 5x5), alongside a max-pooling layer, this block enables the network to capture features at different spatial scales effectively. By using information from diverse receptive fields, the model becomes more robust to variations in object sizes and shapes present in the input images, enhancing its segmentation capabilities. The contribution enhances the model&#x02019;s ability to extract features at various scales, capturing both fine and coarse details in the input image.</p><p id="Par31">Output of the inception block, denoted as <inline-formula id="IEq7"><alternatives><tex-math id="M7">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {X}}_{\text {inception}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq7.gif"/></alternatives></inline-formula>, is computed by concatenating the results of applying convolutional operations with different kernel sizes <inline-formula id="IEq8"><alternatives><tex-math id="M8">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {K}}_i$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq8.gif"/></alternatives></inline-formula> and a max pooling layer to the input tensor <inline-formula id="IEq9"><alternatives><tex-math id="M9">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {X}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq9.gif"/></alternatives></inline-formula>, followed by ReLU activation.</p><p id="Par32">
+<bold>Output:</bold>
+</p><p id="Par33">
+<inline-formula id="IEq10"><alternatives><tex-math id="M10">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {X}}_{\text {inception}} = {\textbf {H}}([\text {Conv2D}({\textbf {X}}, {\textbf {F}}, {\textbf {K}}_1, {\textbf {P}}), \text {Conv2D}({\textbf {X}}, {\textbf {F}}, {\textbf {K}}_2, {\textbf {P}}),\text {Conv2D}({\textbf {X}}, {\textbf {F}}, {\textbf {K}}_3, {\textbf {P}}), {\textbf {M}}({\textbf {X}})])$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq10.gif"/></alternatives></inline-formula>
+</p></sec><sec id="Sec11"><title>Dilated convolution block</title><p id="Par34">In Dilated Convolution Block dilated convolutions happen, which expands the receptive field of the network without losing the spatial resolution. It is also known as atrous convolutions. Through applying convolutions with holes (dilation rate &#x0003e; 1), this effectively captures contextual data from a broader area while preserving finer details. This feature is mainly helpful for medical image segmentation tasks, where precise delineation of structures is crucial.</p><p id="Par35">The purpose of incorporating these blocks into our model is to increase the receptive field without reducing resolution. They help capture larger contextual information without downsampling the feature map. The model incorporates dilated convolutions, allowing it to consider a wider context, making it particularly useful for segmentation tasks requiring contextual information.</p><p id="Par36">Output of the dilated convolution block, denoted as <inline-formula id="IEq11"><alternatives><tex-math id="M11">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {X}}_{\text {dilated}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq11.gif"/></alternatives></inline-formula>, is obtained by applying a convolutional operation with filters <inline-formula id="IEq12"><alternatives><tex-math id="M12">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {F}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq12.gif"/></alternatives></inline-formula>, kernel size <inline-formula id="IEq13"><alternatives><tex-math id="M13">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {K}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq13.gif"/></alternatives></inline-formula>, and a specified dilation rate <inline-formula id="IEq14"><alternatives><tex-math id="M14">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {D}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq14.gif"/></alternatives></inline-formula> to the input tensor <inline-formula id="IEq15"><alternatives><tex-math id="M15">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {X}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq15.gif"/></alternatives></inline-formula>.</p><p id="Par37">
+<bold>Output:</bold>
+</p><p id="Par38">
+<inline-formula id="IEq16"><alternatives><tex-math id="M16">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {X}}_{\text {dilated}} = \text {Conv2D}({\textbf {X}}, {\textbf {F}}, {\textbf {K}}, \text {padding='same'}, \text {dilation\_rate}={\textbf {D}})$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq16.gif"/></alternatives></inline-formula>
+</p></sec><sec id="Sec12"><title>Spatial pyramid pooling block</title><p id="Par39">Spatial Pyramid Pooling Block helps to capture features at multiple scales without introducing additional parameters. By performing global max pooling, global average pooling, and 1x1 convolutions followed by global average pooling, this block aggregates information across different spatial dimensions. Consequently, the model becomes capable of handling objects of varying sizes within the input images, contributing to its versatility and robustness.</p><p id="Par40">The purpose of this block is to capture information at multiple scales by using different pooling sizes. This is beneficial for handling objects of various sizes in the input image. The model enhances its ability to make predictions at various scales, making it more robust to variations in object sizes and improving overall segmentation performance.</p><p id="Par41">Output of the spatial pyramid pooling, denoted as <inline-formula id="IEq17"><alternatives><tex-math id="M17">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {X}}_{\text {pooling}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq17.gif"/></alternatives></inline-formula>, is formed by concatenating the results of global max pooling, global average pooling, and another global average pooling operation applied to the input tensor <inline-formula id="IEq18"><alternatives><tex-math id="M18">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {X}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq18.gif"/></alternatives></inline-formula>, followed by ReLU activation.</p><p id="Par42">
+<bold>Output:</bold>
+</p><p id="Par43">
+<inline-formula id="IEq19"><alternatives><tex-math id="M19">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {X}}_{\text {pooling}} = [{\textbf {M}}({\textbf {X}}), {\textbf {A}}({\textbf {X}}), {\textbf {A}}(\text {Conv2D}({\textbf {X}}, {\textbf {F}}, (1, 1), \text {padding='same'}))]$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq19.gif"/></alternatives></inline-formula>
+</p></sec><sec id="Sec13"><title>Attention block</title><p id="Par44">Attention Block incorporates an attention mechanism to selectively focus on relevant regions of the input feature map. By comparing the input feature map with a guidance signal (often a feature map from a previous layer), the block generates attention maps that highlight informative regions while suppressing noise and irrelevant features. This attention mechanism enhances the discriminative power of the network, enabling it to allocate more resources to crucial areas during the segmentation process.</p><p id="Par45">The purpose of the attention mechanisms is to focus on relevant parts of the input while suppressing irrelevant regions. In this case, it helps the model focus on important features during the segmentation task. Our contribution to the attention block enhances the model&#x02019;s ability to attend to critical regions, potentially improving the delineation of DVT related structures and reducing false positives.</p><p id="Par46">Output of the attention block, denoted as <inline-formula id="IEq20"><alternatives><tex-math id="M20">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {X}}_{\text {attention}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq20.gif"/></alternatives></inline-formula>, is computed by applying ReLU activation to the sum of the input tensor <inline-formula id="IEq21"><alternatives><tex-math id="M21">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {X}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq21.gif"/></alternatives></inline-formula> and a gating tensor <inline-formula id="IEq22"><alternatives><tex-math id="M22">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {G}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq22.gif"/></alternatives></inline-formula>, followed by a sigmoid activation applied to the result of a convolutional operation with filters <inline-formula id="IEq23"><alternatives><tex-math id="M23">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {F}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq23.gif"/></alternatives></inline-formula> and kernel size <inline-formula id="IEq24"><alternatives><tex-math id="M24">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {K}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq24.gif"/></alternatives></inline-formula>, resulting in an attention mask <inline-formula id="IEq25"><alternatives><tex-math id="M25">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {F'}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq25.gif"/></alternatives></inline-formula> which is then element-wise multiplied with the input tensor <inline-formula id="IEq26"><alternatives><tex-math id="M26">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {X}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq26.gif"/></alternatives></inline-formula>.</p><p id="Par47">
+<bold>Output:</bold>
+</p><p id="Par48">
+<inline-formula id="IEq27"><alternatives><tex-math id="M27">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {F}} = {\textbf {H}}({\textbf {X}} + {\textbf {G}})$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq27.gif"/></alternatives></inline-formula>
+</p><p>
+<inline-formula id="IEq28"><alternatives><tex-math id="M28">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {F'}} = {\textbf {S}}(\text {Conv2D}({\textbf {F}}, {\textbf {F}}, (1, 1), \text {padding='same'}))$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq28.gif"/></alternatives></inline-formula>
+</p><p>
+<inline-formula id="IEq29"><alternatives><tex-math id="M29">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\textbf {X}}_{\text {attention}} = {\textbf {X}} \cdot {\textbf {F'}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq29.gif"/></alternatives></inline-formula>
+</p><p id="Par49">These blocks collectively contribute to the model&#x02019;s ability to capture intricate details, to handle variations in object sizes, and to focus on relevant features. In essence, the integration of specific modules in our modified-Net structure equips the model with the ability to proficiently delineate regions. The model&#x02019;s improved performance and stability, which contribute to more precise and dependable medical image interpretation and diagnosis, are achieved by utilizing residual links, extracting features at multiple scales, employing dilated convolutions, implementing spatial pyramid pooling, and applying attention mechanisms.</p><p id="Par50">The proposed segmentation technique for diagnosing DVT from CT venography images improves early diagnoses, reduces complications, and aids physicians in creating personalized treatment plans. It also enhances monitoring, reduces diagnostic workload, and can be extended to other vascular diseases, highlighting the importance of integrating advanced ML techniques in clinical workflows.</p></sec></sec><sec id="Sec14"><title>Algorithm</title><p id="Par51"><bold>Algorithm:</bold> Modified-Net Framework.</p><p id="Par52"><bold>Input:</bold> Input image tensor with masks.</p><p id="Par53"><bold>Output:</bold> Predicted segmentation which segments DVT.</p><p id="Par54">
+<bold>Steps:</bold>
+<list list-type="bullet"><list-item><p id="Par55"><bold>Initialization:</bold> Provide the Modified-Net architecture incorporating the output layer, dilated convolution, encoder, intermediate block with attention, and spatial pyramid pooling.</p></list-item><list-item><p id="Par56"><bold>Encoder:</bold> Apply a residual block to the input after applying the inception block. Utilize max-pooling to down-sample feature maps, then dropout and batch normalization.</p></list-item><list-item><p id="Par57"><bold>Intermediate block with attention mechanism:</bold> Connect the encoder&#x02019;s output to an inception block. Compute the attention mechanism by utilizing convolutional layers to combine the encoder&#x02019;s output with the input feature maps. Sigmoid stimulation can be used to normalize attention weights. Using the encoder&#x02019;s output, multiply the attention weights to get attended feature maps.</p></list-item><list-item><p id="Par58"><bold>Dilated convolution block:</bold> On the attended feature maps, apply dilated convolutions with a dilation rate of two.</p></list-item><list-item><p id="Par59"><bold>Spatial pyramid pooling:</bold> To extract multi-scale data from feature maps, use spatial pyramid pooling. Combine 1x1 feature map convolutions with global max-pooling.</p></list-item><list-item><p id="Par60"><bold>Decoder:</bold> Transpose convolutions are used to up-sample feature maps. Apply inception and residual blocks to every feature map that has been up-sampled. Up-sample feature maps successively until the desired output size is reached.</p></list-item><list-item><p id="Par61"><bold>Output layer:</bold> To get the final segmentation mask output, apply a convolutional layer with sigmoid activation.</p></list-item><list-item><p id="Par62"><bold>Model compilation:</bold> Use the Adam optimizer with a binary cross-entropy loss and a learning rate of 0.001 to compile the model.</p></list-item><list-item><p id="Par63"><bold>Training:</bold> Use labeled data and segmentation masks based on ground truth to train the model.</p></list-item><list-item><p id="Par64"><bold>Prediction:</bold> To forecast segmentation masks for fresh input images, apply the trained model.</p></list-item></list>
+</p></sec><sec id="Sec15"><title>Results and interpretation</title><p id="Par65">Our Modified-Net Model, enriched with a combination of advanced architectural blocks made-to-order for DVT segmentation, demonstrates remarkable performance across various metrics. It also addresses the challenges in DVT segmentation tasks by utilizing residual blocks, inception blocks, dilated convolutions, spatial pyramid pooling, and attention mechanisms. After training the model using the Adam optimizer with a learning rate of 0.001 for 50 epochs on an HP system equipped with an Intel Core i7-1165G7 processor and 64GB of RAM running Windows 11, we achieved compelling results. The training phase yielded an accuracy of 98.92% with a corresponding loss of 0.02692. Furthermore, precision, recall, sensitivity, specificity, dice and IoU metrics were observed as 98.61%, 95.48%, 96.55%, 96.70%, 97.48% and 95.10% respectively. During validation phase, our model demonstrated a validation accuracy of 96.77%, accompanied by a validation loss of 0.05487. Precision, recall, sensitivity, specificity, dice and IoU were measured at 97.43%, 96.14%, 94.07%, 94.49%, 95.65% and 91.63% respectively. The graphical representations of accuracy and loss can be observed in Figure-3, while Figure-4 depicts precision, sensitivity, and specificity. These results underscore the efficacy of our proposed framework in accurately delineating DVT regions, highlighting its potential for clinical application and further research exploration.</p><sec id="Sec16"><title>Performance evaluation</title><p id="Par66">We have listed the important parameters used for model training and evaluation of our model in Table <xref rid="Tab2" ref-type="table">2</xref> in order to promote transparency and guarantee reproducibility of our training setup. Important details including the optimizer, learning rate, data partitioning plan, and other hyperparameters like batch size and early stopping conditions are listed in this table. We provide a clear understanding of the methods employed in our experiments by providing these facts.<table-wrap id="Tab2"><label>Table 2</label><caption><p>Training Configuration of our Modified-Net.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Parameter</th><th align="left"><bold>Description</bold></th></tr></thead><tbody><tr><td align="left">Model</td><td align="left">Modified-net</td></tr><tr><td align="left">Data partitioning</td><td align="left">Random split (80% train, 10% validation, 10% test)</td></tr><tr><td align="left">Optimizer</td><td align="left">Adam</td></tr><tr><td align="left">Learning rate</td><td align="left">0.001</td></tr><tr><td align="left">Activation function</td><td align="left">ReLU</td></tr><tr><td align="left">Loss function</td><td align="left">Binary cross-entropy</td></tr><tr><td align="left">Number of epochs</td><td align="left">50</td></tr><tr><td align="left">Batch size</td><td align="left">16</td></tr><tr><td align="left">Early stopping</td><td align="left">Patience of 10 epochs (based on validation loss)</td></tr><tr><td align="left">Dropout rate</td><td align="left">0.25</td></tr><tr><td align="left">Batch normalization</td><td align="left">Applied after key layers to stabilize and accelerate training</td></tr></tbody></table></table-wrap></p><p id="Par67">
+<fig id="Fig3"><label>Fig. 3</label><caption><p>Graphical representation of performance metric: accuracy and loss.</p></caption><graphic xlink:href="41598_2024_81703_Fig3_HTML" id="MO3"/></fig>
+<fig id="Fig4"><label>Fig. 4</label><caption><p>Graphical representation of performance metric: precision, sensitivity, and specificity.</p></caption><graphic xlink:href="41598_2024_81703_Fig4_HTML" id="MO4"/></fig>
+</p></sec><sec id="Sec17"><title>Quantitative analysis metrics</title><p id="Par68">The performance of our model is assessed using several evaluation metrics, which provide insights into its effectiveness in segmenting DVT. Following are the metrics used in this study are given in Table <xref rid="Tab3" ref-type="table">3</xref>.<table-wrap id="Tab3"><label>Table 3</label><caption><p>Evaluation metrics with formulas and its significance.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Metric</th><th align="left">Formula</th><th align="left">Meaning</th></tr></thead><tbody><tr><td align="left">Accuracy</td><td align="left"><inline-formula id="IEq30"><alternatives><tex-math id="M30">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\frac{P_{\text {correct}} + N_{\text {correct}}}{P_{\text {correct}} + N_{\text {correct}} + P_{\text {incorrect}} + N_{\text {incorrect}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq30.gif"/></alternatives></inline-formula></td><td align="left">Compares the number of accurate predictions-both positive and negative against the total number of predictions in order to assess the overall accuracy of the model.</td></tr><tr><td align="left">Precision</td><td align="left"><inline-formula id="IEq31"><alternatives><tex-math id="M31">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\frac{P_{\text {correct}}}{P_{\text {correct}} + P_{\text {incorrect}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq31.gif"/></alternatives></inline-formula></td><td align="left">Demonstrates the model&#x02019;s capacity to reduce false positives by displaying the proportion of true positive predictions among all positive predictions.</td></tr><tr><td align="left">Sensitivity</td><td align="left"><inline-formula id="IEq32"><alternatives><tex-math id="M32">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\frac{P_{\text {correct}}}{P_{\text {correct}} + N_{\text {incorrect}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq32.gif"/></alternatives></inline-formula></td><td align="left">Demonstrates the efficacy of the model in detecting DVT by accurately identifying true positives among all actual positive cases.</td></tr><tr><td align="left">Specificity</td><td align="left"><inline-formula id="IEq33"><alternatives><tex-math id="M33">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\frac{N_{\text {correct}}}{N_{\text {correct}} + P_{\text {incorrect}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq33.gif"/></alternatives></inline-formula></td><td align="left">Evaluates the model&#x02019;s ability to prevent false positives by calculating the percentage of accurate negative predictions across all real negative cases.</td></tr><tr><td align="left">Loss</td><td align="left"><inline-formula id="IEq34"><alternatives><tex-math id="M34">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$-\frac{1}{N} \sum _{i=1}^{N} [y_i \log (\hat{y}_i) + (1 - y_i) \log (1 - \hat{y}_i)]$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq34.gif"/></alternatives></inline-formula></td><td align="left">Calculates the prediction error of the model and uses the difference between the expected and actual values to optimize the model.</td></tr><tr><td align="left">Dice</td><td align="left"><inline-formula id="IEq35"><alternatives><tex-math id="M35">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\frac{2P_{\text {correct}}}{2P_{\text {correct}} + P_{\text {incorrect}} + N_{\text {incorrect}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq35.gif"/></alternatives></inline-formula></td><td align="left">Measures the overlap between the predicted positive class and the actual positive class, assessing segmentation accuracy in terms of overlap between the two sets.</td></tr><tr><td align="left">Intersection over Union (IoU)</td><td align="left"><inline-formula id="IEq36"><alternatives><tex-math id="M36">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\frac{P_{\text {correct}}}{P_{\text {correct}} + P_{\text {incorrect}} + N_{\text {incorrect}}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq36.gif"/></alternatives></inline-formula></td><td align="left">Calculates the intersection over union of the predicted and actual segments, reflecting the proportion of overlap between the prediction and ground truth.</td></tr></tbody></table></table-wrap></p><p id="Par69">The binary cross-entropy loss measures the difference between the predicted probabilities and the actual labels, guiding the model&#x02019;s optimization during training.</p><p id="Par70">Where <inline-formula id="IEq37"><alternatives><tex-math id="M37">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$P_{\text {correct}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq37.gif"/></alternatives></inline-formula> refers to True Positives, <inline-formula id="IEq38"><alternatives><tex-math id="M38">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$N_{\text {correct}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq38.gif"/></alternatives></inline-formula> represents True Negatives, <inline-formula id="IEq39"><alternatives><tex-math id="M39">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$P_{\text {incorrect}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq39.gif"/></alternatives></inline-formula> stands for False Positives, and <inline-formula id="IEq40"><alternatives><tex-math id="M40">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$N_{\text {incorrect}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq40.gif"/></alternatives></inline-formula> corresponds to False Negatives. Additionally, <inline-formula id="IEq41"><alternatives><tex-math id="M41">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y_i$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq41.gif"/></alternatives></inline-formula> denotes the actual labels, <inline-formula id="IEq42"><alternatives><tex-math id="M42">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\hat{y}_i$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq42.gif"/></alternatives></inline-formula> the predicted probabilities, and <inline-formula id="IEq43"><alternatives><tex-math id="M43">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$N$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq43.gif"/></alternatives></inline-formula> the total number of samples.</p><p id="Par71">These metrics provide a comprehensive evaluation of the model&#x02019;s performance, facilitating comparisons with other existing techniques in DVT segmentation. Our obtained results are displayed in a tabular format in Table-4.<table-wrap id="Tab4"><label>Table 4</label><caption><p>Performance evaluation of our proposed framework Modified-Net.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Parameters</th><th align="left">Training Set</th><th align="left">Validation Set</th></tr></thead><tbody><tr><td align="left">Accuracy</td><td align="left">98.92%</td><td align="left">96.77%</td></tr><tr><td align="left">Loss</td><td align="left">0.02692</td><td align="left">0.05487</td></tr><tr><td align="left">Precision</td><td align="left">98.61%</td><td align="left">97.43%</td></tr><tr><td align="left">Dice</td><td align="left">97.48%</td><td align="left">95.65%</td></tr><tr><td align="left">IoU</td><td align="left">95.10%</td><td align="left">91.63%</td></tr><tr><td align="left">Sensitivity</td><td align="left">96.55%</td><td align="left">94.07%</td></tr><tr><td align="left">Specificity</td><td align="left">96.70%</td><td align="left">94.49%</td></tr></tbody></table></table-wrap></p><p id="Par72">
+<fig id="Fig5"><label>Fig. 5</label><caption><p>Comparative summary between our proposed model and traditional techniques.</p></caption><graphic xlink:href="41598_2024_81703_Fig5_HTML" id="MO5"/></fig>
+</p></sec><sec id="Sec18"><title>Comparison of recent studies</title><p id="Par73">In our research, we examined and compared existing techniques such as CNN, U-Net, Sequential, Schematic, and our proposed Modified-Net. We evaluated each method&#x02019;s performance metrics, including accuracy, loss, sensitivity, and precision. Our Modified-Net consistently surpassed and outperformed conventional methods. Figure-5 graphically represents the comparative outcomes. Compared results which was also trained and executed. The numerical values of outcomes are given in Table-5.<table-wrap id="Tab5"><label>Table 5</label><caption><p>Comparison of our performance with conventional techniques.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Model</th><th align="left">Accuracy</th><th align="left">Loss</th><th align="left">Precision</th><th align="left">Sensitivity</th><th align="left">Specificity</th></tr></thead><tbody><tr><td align="left">CNN</td><td align="left">0.6795</td><td align="left">0.5277</td><td align="left">0.6994</td><td align="left">0.7527</td><td align="left">0.623170</td></tr><tr><td align="left">Sequential</td><td align="left">0.7589</td><td align="left">0.4465</td><td align="left">0.7499</td><td align="left">0.8512</td><td align="left">0.819276</td></tr><tr><td align="left">U-net</td><td align="left">0.8288</td><td align="left">0.3987</td><td align="left">0.7892</td><td align="left">0.8902</td><td align="left">0.889290</td></tr><tr><td align="left">Schematic</td><td align="left">0.8646</td><td align="left">0.3936</td><td align="left">0.871</td><td align="left">0.9521</td><td align="left">0.921218</td></tr><tr><td align="left">Our model</td><td align="left">0. 989240</td><td align="left">0.02692</td><td align="left">0.986140</td><td align="left">0.965536</td><td align="left">0.967053</td></tr></tbody></table></table-wrap></p></sec></sec><sec id="Sec19"><title>Conclusion</title><p id="Par74">Our novel modified-Net framework is specifically designed for the segmentation of DVT regions from medical images. Through the integration of advanced architectural block, including spatial pyramid pooling, dilated convolutions, residual blocks, inception blocks, and attention mechanisms, we have devised a methodical strategy to tackle the difficulties related to DVT segmentation. Our proposed framework outperforms conventional techniques in accurately defining DVT regions by exhibiting better segmentation performance when compared to conventional techniques.</p></sec><sec id="Sec20"><title>Discussion and future directions</title><p id="Par75">Modified-Net framework gave promising outcomes, but further research is needed to improve segmentation robustness and precision. The effectiveness of the model could be improved by adding more architectural features, patient-specific data, multi-modal imaging data, and temporal information. Unsupervised or semi-supervised learning strategies could improve scalability and generalization. Our framework serves as a foundation for future research on DVT segmentation practices. Implementation in clinical settings and real-world studies are crucial for evaluating its effectiveness.</p></sec><sec id="Sec21"><title>System requirements</title><p id="Par76">Employing the Google Colab platform, we successfully developed and executed Python scripts specifically designed for a ML application. The experimental setup was configured with a Windows 11 operating system, an 11th Gen Intel<inline-formula id="IEq44"><alternatives><tex-math id="M44">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\circledR$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq44.gif"/></alternatives></inline-formula> Core<inline-formula id="IEq45"><alternatives><tex-math id="M45">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$^\textrm{TM}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81703_Article_IEq45.gif"/></alternatives></inline-formula> i7-1195G7 processor operating between 2.90GHz and 2.92GHz, a 64-bit system architecture, and 16GB of RAM.</p></sec></body><back><fn-group><fn><p><bold>Publisher&#x02019;s note</bold></p><p>Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></fn><fn><p>Pavihaa Lakshmi B. and Vidhya S. contributed equally.</p></fn></fn-group><ack><title>Acknowledgements</title><p>We would like to thank the Vellore Institute of Technology for providing us the required facilities to pursue this research, and the researchers of our institution who motivate us to conduct this work.</p></ack><notes notes-type="author-contribution"><title>Author contributions</title><p>All authors contributed to the collection and analysis of data, as well as the initial drafting of the manuscript. The conceptual framework and methodology were collaboratively developed by all authors. The original draft was prepared by Pavihaa Lakshmi B, while all authors participated in the review and editing process. The study&#x02019;s design was a collective effort by all authors, who also carried out the statistical computations and conducted the majority of the assays. All authors have reviewed and consented to the final published version of the manuscript.</p></notes><notes notes-type="funding-information"><title>Funding</title><p>Open access funding provided by Vellore Institute of Technology.</p></notes><notes notes-type="data-availability"><title>Data availability</title><p>All data subjected to analysis for this review are encapsulated within this published scholarly piece. The data employed and/or examined within the manuscript can be obtained from the corresponding author upon a justifiable request.</p></notes><notes><title>Declarations</title><notes id="FPar4" notes-type="COI-statement"><title>Competing interests</title><p id="Par77">The authors declare no competing interests.</p></notes></notes><ref-list id="Bib1"><title>References</title><ref id="CR1"><label>1.</label><mixed-citation publication-type="other">Schick, M.&#x000a0;A. &#x00026; Pacifico, L. Deep venous thrombosis of the lower extremity. In StatPearls [Internet] (StatPearls Publishing, 2022).</mixed-citation></ref><ref id="CR2"><label>2.</label><citation-alternatives><element-citation id="ec-CR2" publication-type="journal"><person-group person-group-type="author"><name><surname>Qureshi</surname><given-names>I</given-names></name><etal/></person-group><article-title>Medical image segmentation using deep semantic-based methods: A review of techniques, applications and emerging trends</article-title><source>Information Fusion</source><year>2023</year><volume>90</volume><fpage>316</fpage><lpage>352</lpage><pub-id pub-id-type="doi">10.1016/j.inffus.2022.09.031</pub-id></element-citation><mixed-citation id="mc-CR2" publication-type="journal">Qureshi, I. et al. Medical image segmentation using deep semantic-based methods: A review of techniques, applications and emerging trends. <italic>Information Fusion</italic><bold>90</bold>, 316&#x02013;352 (2023).</mixed-citation></citation-alternatives></ref><ref id="CR3"><label>3.</label><mixed-citation publication-type="other">Chen, Z. Medical image segmentation based on u-net. In Journal of Physics: Conference Series, vol. 2547, 012010 (IOP Publishing, 2023).</mixed-citation></ref><ref id="CR4"><label>4.</label><mixed-citation publication-type="other">Waheed, S.&#x000a0;M., Kudaravalli, P. &#x00026; Hotwagner, D.&#x000a0;T. Deep vein thrombosis. (2018).</mixed-citation></ref><ref id="CR5"><label>5.</label><citation-alternatives><element-citation id="ec-CR5" publication-type="journal"><person-group person-group-type="author"><name><surname>Zhang</surname><given-names>Z</given-names></name><etal/></person-group><article-title>Point-of-care testing in the diagnosis of deep vein thrombosis: A review</article-title><source>IEEE Systems, Man, and Cybernetics Magazine</source><year>2023</year><volume>9</volume><fpage>49</fpage><lpage>56</lpage><pub-id pub-id-type="doi">10.1109/MSMC.2022.3224595</pub-id></element-citation><mixed-citation id="mc-CR5" publication-type="journal">Zhang, Z. et al. Point-of-care testing in the diagnosis of deep vein thrombosis: A review. <italic>IEEE Systems, Man, and Cybernetics Magazine</italic><bold>9</bold>, 49&#x02013;56 (2023).</mixed-citation></citation-alternatives></ref><ref id="CR6"><label>6.</label><mixed-citation publication-type="other">Shaziya, H. &#x00026; Shyamala, K. Pulmonary ct images segmentation using cnn and unet models of deep learning. In 2020 IEEE Pune Section International Conference (PuneCon), 195&#x02013;201, 10.1109/PuneCon50868.2020.9362463 (2020).</mixed-citation></ref><ref id="CR7"><label>7.</label><mixed-citation publication-type="other">Huang, C. et al. Fully automated segmentation of lower extremity deep vein thrombosis using convolutional neural network. BioMed research international <bold>2019</bold> (2019).</mixed-citation></ref><ref id="CR8"><label>8.</label><citation-alternatives><element-citation id="ec-CR8" publication-type="journal"><person-group person-group-type="author"><name><surname>Hwang</surname><given-names>JH</given-names></name><etal/></person-group><article-title>Comparison between deep learning and conventional machine learning in classifying iliofemoral deep venous thrombosis upon ct venography</article-title><source>Diagnostics</source><year>2022</year><volume>12</volume><fpage>274</fpage><pub-id pub-id-type="doi">10.3390/diagnostics12020274</pub-id><pub-id pub-id-type="pmid">35204365</pub-id>
+</element-citation><mixed-citation id="mc-CR8" publication-type="journal">Hwang, J. H. et al. Comparison between deep learning and conventional machine learning in classifying iliofemoral deep venous thrombosis upon ct venography. <italic>Diagnostics</italic><bold>12</bold>, 274 (2022).<pub-id pub-id-type="pmid">35204365</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR9"><label>9.</label><citation-alternatives><element-citation id="ec-CR9" publication-type="journal"><person-group person-group-type="author"><name><surname>Liu</surname><given-names>S-H</given-names></name><name><surname>Chen</surname><given-names>W</given-names></name><name><surname>Su</surname><given-names>C-H</given-names></name><name><surname>Pan</surname><given-names>K-L</given-names></name></person-group><article-title>Convolutional neural network-based detection of deep vein thrombosis in a low limb with light reflection rheography</article-title><source>Measurement</source><year>2022</year><volume>189</volume><fpage>110457</fpage><pub-id pub-id-type="doi">10.1016/j.measurement.2021.110457</pub-id></element-citation><mixed-citation id="mc-CR9" publication-type="journal">Liu, S.-H., Chen, W., Su, C.-H. &#x00026; Pan, K.-L. Convolutional neural network-based detection of deep vein thrombosis in a low limb with light reflection rheography. <italic>Measurement</italic><bold>189</bold>, 110457 (2022).</mixed-citation></citation-alternatives></ref><ref id="CR10"><label>10.</label><citation-alternatives><element-citation id="ec-CR10" publication-type="journal"><person-group person-group-type="author"><name><surname>Schraut</surname><given-names>JX</given-names></name><name><surname>Liu</surname><given-names>L</given-names></name><name><surname>Gong</surname><given-names>J</given-names></name><name><surname>Yin</surname><given-names>Y</given-names></name></person-group><article-title>A multi-output network with u-net enhanced class activation map and robust classification performance for medical imaging analysis</article-title><source>Discover Artificial Intelligence</source><year>2023</year><volume>3</volume><fpage>1</fpage><pub-id pub-id-type="doi">10.1007/s44163-022-00045-1</pub-id></element-citation><mixed-citation id="mc-CR10" publication-type="journal">Schraut, J. X., Liu, L., Gong, J. &#x00026; Yin, Y. A multi-output network with u-net enhanced class activation map and robust classification performance for medical imaging analysis. <italic>Discover Artificial Intelligence</italic><bold>3</bold>, 1 (2023).</mixed-citation></citation-alternatives></ref><ref id="CR11"><label>11.</label><mixed-citation publication-type="other">Teng, L., Li, H., Karim, S. et al. Dmcnn: a deep multiscale convolutional neural network model for medical image segmentation. Journal of Healthcare Engineering <bold>2019</bold> (2019).</mixed-citation></ref><ref id="CR12"><label>12.</label><mixed-citation publication-type="other">Chen, B., Liu, Y., Zhang, Z., Lu, G. &#x00026; Kong, A. W.&#x000a0;K. Transattunet: Multi-level attention-guided u-net with transformer for medical image segmentation. IEEE Transactions on Emerging Topics in Computational Intelligence (2023).</mixed-citation></ref><ref id="CR13"><label>13.</label><citation-alternatives><element-citation id="ec-CR13" publication-type="journal"><person-group person-group-type="author"><name><surname>Gowda</surname><given-names>VB</given-names></name><name><surname>Thimmaiah</surname><given-names>GM</given-names></name><name><surname>Jaishankar</surname><given-names>M</given-names></name><name><surname>Lokkondra</surname><given-names>CY</given-names></name></person-group><article-title>Background-foreground segmentation using multi-scale attention net (ma-net): A deep learning approach</article-title><source>Revue d&#x02019;Intelligence Artificielle</source><year>2023</year><volume>37</volume><fpage>557</fpage><pub-id pub-id-type="doi">10.18280/ria.370304</pub-id></element-citation><mixed-citation id="mc-CR13" publication-type="journal">Gowda, V. B., Thimmaiah, G. M., Jaishankar, M. &#x00026; Lokkondra, C. Y. Background-foreground segmentation using multi-scale attention net (ma-net): A deep learning approach. <italic>Revue d&#x02019;Intelligence Artificielle</italic><bold>37</bold>, 557 (2023).</mixed-citation></citation-alternatives></ref><ref id="CR14"><label>14.</label><mixed-citation publication-type="other">Krithika alias AnbuDevi, M. &#x00026; Suganthi, K. Review of semantic segmentation of medical images using modified architectures of unet. Diagnostics <bold>12</bold>, 3064 (2022).</mixed-citation></ref><ref id="CR15"><label>15.</label><citation-alternatives><element-citation id="ec-CR15" publication-type="journal"><person-group person-group-type="author"><name><surname>Xing</surname><given-names>W</given-names></name><etal/></person-group><article-title>Cm-segnet: A deep learning-based automatic segmentation approach for medical images by combining convolution and multilayer perceptron</article-title><source>Computers in Biology and Medicine</source><year>2022</year><volume>147</volume><fpage>105797</fpage><pub-id pub-id-type="doi">10.1016/j.compbiomed.2022.105797</pub-id><pub-id pub-id-type="pmid">35780603</pub-id>
+</element-citation><mixed-citation id="mc-CR15" publication-type="journal">Xing, W. et al. Cm-segnet: A deep learning-based automatic segmentation approach for medical images by combining convolution and multilayer perceptron. <italic>Computers in Biology and Medicine</italic><bold>147</bold>, 105797 (2022).<pub-id pub-id-type="pmid">35780603</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR16"><label>16.</label><mixed-citation publication-type="other">Park, B., Furlan, A., Patil, A. &#x00026; Bae, K.&#x000a0;T. Segmentation of blood clot from ct pulmonary angiographic images using a modified seeded region growing algorithm method. In Medical Imaging 2010: Image Processing, vol. 7623, 1412&#x02013;1416 (SPIE, 2010).</mixed-citation></ref><ref id="CR17"><label>17.</label><mixed-citation publication-type="other">Suberi, A. A.&#x000a0;M., Zakaria, W. N.&#x000a0;W., Tomari, R. &#x00026; Ibrahim, N. Quantitative ultrasound venous valve movement: early diagnosis of deep vein thrombosis. In First International Workshop on Pattern Recognition, vol. 10011, 119&#x02013;123 (SPIE, 2016).</mixed-citation></ref><ref id="CR18"><label>18.</label><mixed-citation publication-type="other">Kozemzak, B., Manjunath, A., Tsue, T., Wang, J.&#x000a0;X. &#x00026; Contributors, E. Deep vein thrombosis screening with three-dimensional deep learning on lower extremity computed tomography studies.</mixed-citation></ref><ref id="CR19"><label>19.</label><mixed-citation publication-type="other">Do&#x0011f;an, K., SEL&#x000c7;UK, T. &#x00026; ALKAN, A. An improved machine learning model for pulmonary embolism detection and segmentation. (2024).</mixed-citation></ref><ref id="CR20"><label>20.</label><citation-alternatives><element-citation id="ec-CR20" publication-type="journal"><person-group person-group-type="author"><name><surname>Karande</surname><given-names>GY</given-names></name><etal/></person-group><article-title>Advanced imaging in acute and chronic deep vein thrombosis</article-title><source>Cardiovascular diagnosis and therapy</source><year>2016</year><volume>6</volume><fpage>493</fpage><pub-id pub-id-type="doi">10.21037/cdt.2016.12.06</pub-id><pub-id pub-id-type="pmid">28123971</pub-id>
+</element-citation><mixed-citation id="mc-CR20" publication-type="journal">Karande, G. Y. et al. Advanced imaging in acute and chronic deep vein thrombosis. <italic>Cardiovascular diagnosis and therapy</italic><bold>6</bold>, 493 (2016).<pub-id pub-id-type="pmid">28123971</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR21"><label>21.</label><mixed-citation publication-type="other">Dang, T., Nguyen, T.&#x000a0;T., McCall, J., Elyan, E. &#x00026; Moreno-Garc&#x000ed;a, C.&#x000a0;F. Two-layer ensemble of deep learning models for medical image segmentation. Cognitive Computation 1&#x02013;20 (2024).</mixed-citation></ref><ref id="CR22"><label>22.</label><citation-alternatives><element-citation id="ec-CR22" publication-type="journal"><person-group person-group-type="author"><name><surname>Qian</surname><given-names>L</given-names></name><etal/></person-group><article-title>Multi-scale context unet-like network with redesigned skip connections for medical image segmentation</article-title><source>Computer Methods and Programs in Biomedicine</source><year>2024</year><volume>243</volume><fpage>107885</fpage><pub-id pub-id-type="doi">10.1016/j.cmpb.2023.107885</pub-id><pub-id pub-id-type="pmid">37897988</pub-id>
+</element-citation><mixed-citation id="mc-CR22" publication-type="journal">Qian, L. et al. Multi-scale context unet-like network with redesigned skip connections for medical image segmentation. <italic>Computer Methods and Programs in Biomedicine</italic><bold>243</bold>, 107885 (2024).<pub-id pub-id-type="pmid">37897988</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR23"><label>23.</label><citation-alternatives><element-citation id="ec-CR23" publication-type="journal"><person-group person-group-type="author"><name><surname>Baldeon-Calisto</surname><given-names>M</given-names></name><name><surname>Lai-Yuen</surname><given-names>SK</given-names></name></person-group><article-title>Adaresu-net: Multiobjective adaptive convolutional neural network for medical image segmentation</article-title><source>Neurocomputing</source><year>2020</year><volume>392</volume><fpage>325</fpage><lpage>340</lpage><pub-id pub-id-type="doi">10.1016/j.neucom.2019.01.110</pub-id></element-citation><mixed-citation id="mc-CR23" publication-type="journal">Baldeon-Calisto, M. &#x00026; Lai-Yuen, S. K. Adaresu-net: Multiobjective adaptive convolutional neural network for medical image segmentation. <italic>Neurocomputing</italic><bold>392</bold>, 325&#x02013;340 (2020).</mixed-citation></citation-alternatives></ref><ref id="CR24"><label>24.</label><mixed-citation publication-type="other">de Jong, C. et al. Modern imaging of acute pulmonary embolism. Thrombosis Research (2024).</mixed-citation></ref><ref id="CR25"><label>25.</label><mixed-citation publication-type="other">Hemalakshmi, G. et al. Pe-ynet: a novel attention-based multi-task model for pulmonary embolism detection using ct pulmonary angiography (ctpa) scan images. Physical and engineering sciences in medicine 1&#x02013;18 (2024).</mixed-citation></ref><ref id="CR26"><label>26.</label><mixed-citation publication-type="other">Metlek, S. Cellsegunet: an improved deep segmentation model for the cell segmentation based on unet++ and residual unet models. Neural Computing and Applications 1&#x02013;27 (2024).</mixed-citation></ref><ref id="CR27"><label>27.</label><mixed-citation publication-type="other">Radiopaedia. <ext-link ext-link-type="uri" xlink:href="https://radiopaedia.org/cases/deep-vein-thrombosis-ct">https://radiopaedia.org/cases/deep-vein-thrombosis-ct</ext-link>. [Accessed 25-09-2024].</mixed-citation></ref></ref-list></back></article>

@@ -1,0 +1,709 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="1.3" id="pro70168" xml:lang="en" article-type="methods-article"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Protein Sci</journal-id><journal-id journal-id-type="iso-abbrev">Protein Sci</journal-id><journal-id journal-id-type="doi">10.1002/(ISSN)1469-896X</journal-id><journal-id journal-id-type="publisher-id">PRO</journal-id><journal-title-group><journal-title>Protein Science : A Publication of the Protein Society</journal-title></journal-title-group><issn pub-type="ppub">0961-8368</issn><issn pub-type="epub">1469-896X</issn><publisher><publisher-name>John Wiley &#x00026; Sons, Inc.</publisher-name><publisher-loc>Hoboken, USA</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">40411377</article-id><article-id pub-id-type="pmc">PMC12102732</article-id><article-id pub-id-type="doi">10.1002/pro.70168</article-id><article-id pub-id-type="publisher-id">PRO70168</article-id><article-categories><subj-group subj-group-type="overline"><subject>Tools for Protein Science</subject></subj-group><subj-group subj-group-type="heading"><subject>Tools for Protein Science</subject></subj-group></article-categories><title-group><article-title>
+<styled-content style="fixed-case" toggle="no">MultiPassMerger</styled-content>: Automated data processing for multipass cyclic ion mobility <styled-content style="fixed-case" toggle="no">HDX</styled-content>&#x02010;<styled-content style="fixed-case" toggle="no">MS</styled-content>
+</article-title><alt-title alt-title-type="left-running-head">Duerr et al.</alt-title></title-group><contrib-group><contrib id="pro70168-cr-0001" contrib-type="author"><name><surname>Duerr</surname><given-names>Vanessa</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0009-0007-0632-3619</contrib-id><address><email>vanessa.duerr@postgrad.manchester.ac.uk</email></address><xref rid="pro70168-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="pro70168-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="pro70168-cr-0002" contrib-type="author"><name><surname>Griffiths</surname><given-names>Damon</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0009-0003-1314-7503</contrib-id><address><email>damon.griffiths@manchester.ac.uk</email></address><xref rid="pro70168-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="pro70168-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="pro70168-cr-0003" contrib-type="author" corresp="yes"><name><surname>Politis</surname><given-names>Argyris</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-6658-3224</contrib-id><xref rid="pro70168-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="pro70168-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="pro70168-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref><address><email>argyris.politis@manchester.ac.uk</email></address></contrib></contrib-group><aff id="pro70168-aff-0001">
+<label>
+<sup>1</sup>
+</label>
+<named-content content-type="organisation-division">Faculty of Biology, Medicine and Health, School of Biological Sciences</named-content>
+<institution>The University of Manchester</institution>
+<city>Manchester</city>
+<country country="GB">UK</country>
+</aff><aff id="pro70168-aff-0002">
+<label>
+<sup>2</sup>
+</label>
+<named-content content-type="organisation-division">Manchester Institute of Biotechnology</named-content>
+<institution>The University of Manchester</institution>
+<city>Manchester</city>
+<country country="GB">UK</country>
+</aff><aff id="pro70168-aff-0003">
+<label>
+<sup>3</sup>
+</label>
+<named-content content-type="organisation-division">Institute for Bioinnovation</named-content>
+<institution>Biomedical Sciences Research Center &#x0201c;Alexander Fleming&#x0201d;</institution>
+<city>Vari</city>
+<country country="GR">Greece</country>
+</aff><author-notes><corresp id="correspondenceTo">
+<label>*</label>
+<bold>Correspondence</bold>
+<break/>
+Argyris Politis, Faculty of Biology, Medicine and Health, School of Biological Sciences, The University of Manchester, Michael Smith Building, Dover St., Manchester, M13 9PT, UK.<break/>
+Email: <email>argyris.politis@manchester.ac.uk</email>
+<break/>
+</corresp></author-notes><pub-date pub-type="epub"><day>24</day><month>5</month><year>2025</year></pub-date><pub-date pub-type="collection"><month>6</month><year>2025</year></pub-date><pub-date pub-type="pmc-release"><day>24</day><month>5</month><year>2025</year></pub-date><volume>34</volume><issue seq="270">6</issue><issue-id pub-id-type="doi">10.1002/pro.v34.6</issue-id><elocation-id>e70168</elocation-id><history>
+<date date-type="rev-recd"><day>04</day><month>4</month><year>2025</year></date>
+<date date-type="received"><day>28</day><month>11</month><year>2024</year></date>
+<date date-type="accepted"><day>02</day><month>5</month><year>2025</year></date>
+</history><permissions><!--&#x000a9; 2025 The Protein Society--><copyright-statement content-type="article-copyright">&#x000a9; 2025 The Author(s). <italic toggle="yes">Protein Science</italic> published by Wiley Periodicals LLC on behalf of The Protein Society.</copyright-statement><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>This is an open access article under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link> License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions><self-uri content-type="pdf" xlink:href="file:PRO-34-e70168.pdf"/><abstract><title>Abstract</title><p>Hydrogen/deuterium exchange&#x02010;mass spectrometry (HDX&#x02010;MS) is a powerful tool for studying protein structure and dynamics. As a bottom&#x02010;up LC&#x02010;MS technique, its success largely depends on peptide identifications made by peptide mapping prior to HDX measurements. We previously demonstrated that combining peptide mapping results from complementary single&#x02010; and multipass cyclic ion mobility&#x02010;mass spectrometry (cIM&#x02010;MS) experiments, an approach we term &#x0201c;multi&#x02010;sequence&#x0201d; cIM&#x02010;MS, can enhance HDX&#x02010;MS by increasing peptide identifications. However, this approach required labor&#x02010;intensive, manual handling of the acquired data, including lengthy optimization of drift time (DT) versus DT full width half maximum (FWHM) trendlines during peak detection processing to combat cyclic wrap&#x02010;around effects. Here, we present MultiPassMerger, an open&#x02010;source software tool that automates the processing, merging, and filtering of single&#x02010; and multipass cIM&#x02010;MS peptide mapping data. MultiPassMerger was validated through re&#x02010;analysis of several model proteins. Its automated capabilities enabled better optimization of DT versus DT FWHM trendlines on a protein&#x02010;specific basis, enhancing peptide identification relative to manually optimized trendlines. Beyond automating our previous approach, MultiPassMerger also introduces a novel &#x0201c;multi&#x02010;trendline&#x0201d; processing method, involving iterative processing using multiple trendlines and merging of results to better sample ions across the DT versus DT FWHM distribution. Using MultiPassMerger with both multi&#x02010;sequence and multi&#x02010;trendline strategies increased peptide identifications up to 392% relative to SYNAPT G2&#x02010;Si with linear ion mobility and 102% relative to use of single&#x02010;pass cIM&#x02010;MS alone. Consequently, MultiPassMerger can enhance peptide mapping and makes this approach practical and more accessible to the wider HDX&#x02010;MS community. MultiPassMerger is available as a downloadable Windows executable at <ext-link xlink:href="https://politislab.uk/multipassmerger" ext-link-type="uri">https://politislab.uk/multipassmerger</ext-link>.</p></abstract><kwd-group kwd-group-type="author-generated"><kwd id="pro70168-kwd-0001">cIM&#x02010;MS</kwd><kwd id="pro70168-kwd-0002">cyclic ion mobility</kwd><kwd id="pro70168-kwd-0003">HDMS<sup>E</sup>
+</kwd><kwd id="pro70168-kwd-0004">HDX</kwd><kwd id="pro70168-kwd-0005">hydrogen/deuterium exchange</kwd><kwd id="pro70168-kwd-0006">integral membrane proteins</kwd><kwd id="pro70168-kwd-0007">multipass</kwd><kwd id="pro70168-kwd-0008">peptide mapping</kwd></kwd-group><funding-group><award-group id="funding-0001"><funding-source><institution-wrap><institution>Engineering and Physical Sciences Research Council
+</institution><institution-id institution-id-type="doi">10.13039/501100000266</institution-id></institution-wrap></funding-source><award-id>EP/V011715/1</award-id></award-group><award-group id="funding-0002"><funding-source>Waters Corporation through iCASE partnership PhD programmes</funding-source></award-group><award-group id="funding-0003"><funding-source><institution-wrap><institution>Medical Research Centre
+</institution><institution-id institution-id-type="doi">10.13039/501100020643</institution-id></institution-wrap></funding-source><award-id>MR/X013030/1</award-id></award-group><award-group id="funding-0004"><funding-source><institution-wrap><institution>Biotechnology and Biological Sciences Research Council
+</institution><institution-id institution-id-type="doi">10.13039/501100000268</institution-id></institution-wrap></funding-source><award-id>BB/V006487/2</award-id><award-id>BB/Y004981/1</award-id></award-group><award-group id="funding-0005"><funding-source><institution-wrap><institution>European Commission
+</institution><institution-id institution-id-type="doi">10.13039/501100000780</institution-id></institution-wrap></funding-source><award-id>101183630</award-id></award-group></funding-group><counts><fig-count count="7"/><table-count count="1"/><page-count count="14"/><word-count count="8100"/></counts><custom-meta-group><custom-meta><meta-name>source-schema-version-number</meta-name><meta-value>2.0</meta-value></custom-meta><custom-meta><meta-name>cover-date</meta-name><meta-value>June 2025</meta-value></custom-meta><custom-meta><meta-name>details-of-publishers-convertor</meta-name><meta-value>Converter:WILEY_ML3GV2_TO_JATSPMC version:6.5.6 mode:remove_FC converted:24.05.2025</meta-value></custom-meta></custom-meta-group></article-meta><notes><p content-type="self-citation">
+<mixed-citation publication-type="journal" id="pro70168-cit-9001">
+<string-name>
+<surname>Duerr</surname>
+<given-names>V</given-names>
+</string-name>, <string-name>
+<surname>Griffiths</surname>
+<given-names>D</given-names>
+</string-name>, <string-name>
+<surname>Politis</surname>
+<given-names>A</given-names>
+</string-name>. <article-title>
+<styled-content style="fixed-case" toggle="no">MultiPassMerger</styled-content>: Automated data processing for multipass cyclic ion mobility <styled-content style="fixed-case" toggle="no">HDX</styled-content>&#x02010;<styled-content style="fixed-case" toggle="no">MS</styled-content>
+</article-title>. <source>Protein Science</source>. <year>2025</year>;<volume>34</volume>(<issue>6</issue>):<elocation-id>e70168</elocation-id>. <pub-id pub-id-type="doi">10.1002/pro.70168</pub-id>
+</mixed-citation>
+</p><fn-group id="pro70168-ntgp-0001"><fn id="pro70168-note-0001" fn-type="equal"><p>Vanessa Duerr and Damon Griffiths contributed equally to this study.</p></fn><fn id="pro70168-note-0002"><p>
+<bold>Review Editor:</bold> Nir Ben&#x02010;Tal</p></fn></fn-group></notes></front><body id="pro70168-body-0001"><sec id="pro70168-sec-0001"><label>1</label><title>INTRODUCTION</title><p>HDX&#x02010;MS is being increasingly used to study protein higher&#x02010;order structure (Masson et al.&#x000a0;<xref rid="pro70168-bib-0022" ref-type="bibr">2019</xref>). The principle of HDX&#x02010;MS is to measure mass increases associated with the isotopic exchange of amide hydrogens to deuterons along the polypeptide backbone (Zhang and Smith&#x000a0;<xref rid="pro70168-bib-0040" ref-type="bibr">1993</xref>). This process is time dependent, with the rate of exchange in folded proteins being primarily determined by their amide hydrogen bonding status and solvent accessibility (Vinciauskaite and Masson&#x000a0;<xref rid="pro70168-bib-0037" ref-type="bibr">2023</xref>). As such, HDX&#x02010;MS can report on several key protein characteristics, including conformational dynamics (Trabjerg et al.&#x000a0;<xref rid="pro70168-bib-0034" ref-type="bibr">2018</xref>) and folding pathways (Englander and Mayne&#x000a0;<xref rid="pro70168-bib-0010" ref-type="bibr">2014</xref>), as well as protein interactions with proteins (Mandell et al.&#x000a0;<xref rid="pro70168-bib-0020" ref-type="bibr">1998</xref>), lipids (Martens et al.&#x000a0;<xref rid="pro70168-bib-0021" ref-type="bibr">2018</xref>), nucleic acids (Ahmad et al.&#x000a0;<xref rid="pro70168-bib-0001" ref-type="bibr">2021</xref>), and small molecules (Chalmers et al.&#x000a0;<xref rid="pro70168-bib-0005" ref-type="bibr">2011</xref>). In a traditional HDX&#x02010;MS experiment (Masson et al.&#x000a0;<xref rid="pro70168-bib-0022" ref-type="bibr">2019</xref>), proteins are first incubated in a deuterated buffer to induce HDX, followed by reaction quenching by decreasing the temperature and pH to 0&#x02013;1&#x000b0;C and 2.5, respectively. Proteins then undergo digestion via an on&#x02010;line column containing an immobilized acid&#x02010;active protease. The generated peptides are then separated by LC, followed by a MS measurement. By comparing deuterated peptide masses with their non&#x02010;deuterated control equivalents, this &#x0201c;bottom&#x02010;up&#x0201d; LC&#x02010;MS approach allows deuterium uptake to be measured at peptide level resolution and, thus, localized to specific structural regions of the protein(s). Consequently, the quality of bottom&#x02010;up HDX&#x02010;MS data is largely dependent on the extent of successful peptide identifications (IDs) made during non&#x02010;deuterated peptide mapping experiments prior to the HDX measurement. Whereas higher sequence coverage provides broader information across the protein sequence length, higher redundancy (the number of unique peptides covering each amide position) enhances analytical rigor and improves the resolution of deuterium uptake measurements by leveraging data from overlapping peptides (James et al.&#x000a0;<xref rid="pro70168-bib-0017" ref-type="bibr">2022</xref>; Mayne et al.&#x000a0;<xref rid="pro70168-bib-0023" ref-type="bibr">2011</xref>; Mullahoo et al.&#x000a0;<xref rid="pro70168-bib-0025" ref-type="bibr">2020</xref>; Nirudodhi et al.&#x000a0;<xref rid="pro70168-bib-0026" ref-type="bibr">2017</xref>).</p><p>For peptide identification, most HDX&#x02010;MS platforms employ MS instruments capable of data&#x02010;dependent or data&#x02010;independent acquisition (DIA) (James et al.&#x000a0;<xref rid="pro70168-bib-0017" ref-type="bibr">2022</xref>). One such example is MS<sup>E</sup>, a DIA&#x02010;based approach originally developed by Waters Corporation (Bateman et al.&#x000a0;<xref rid="pro70168-bib-0003" ref-type="bibr">2002</xref>; Law and Lim&#x000a0;<xref rid="pro70168-bib-0019" ref-type="bibr">2013</xref>). During MS<sup>E</sup> acquisition, the MS instrument collision energy (CE) dynamically switches between low&#x02010; and high&#x02010;energy states without quadrupolar mass selection to simultaneously generate alternating spectra containing all precursor and product ions detected throughout the LC&#x02010;MS experiment. The resulting data can then be processed using three algorithms&#x02014;Apex3D, Peptide3D, and IDENTITY<sup>E</sup>&#x02014;within Waters Corporation's ProteinLynx Global SERVER (PLGS) software package. These perform peak detection and charge/isotope deconvolution, followed by matching of precursor ions with their associated products and database searching against the target protein(s) sequence (Law and Lim&#x000a0;<xref rid="pro70168-bib-0019" ref-type="bibr">2013</xref>). Owing to the high complexity of the DIA spectra, the MS<sup>E</sup> approach benefits greatly from retention time (RT)&#x02010;assisted alignment of precursor and product ions, which can increase the number and confidence of matches made.</p><p>One historical limitation of the HDX&#x02010;MS method is the need to keep LC separations short and under quench conditions. A failure to do so can result in excessive deuterium/hydrogen back&#x02010;exchange and, thus, a loss of information content generated at the labelling step (Walters et al.&#x000a0;<xref rid="pro70168-bib-0038" ref-type="bibr">2012</xref>). This, in turn, limits available LC&#x02010;MS peak capacity, which often results in insufficient peptide IDs owing to peptide co&#x02010;elution and MS spectral overlap. As a result, challenging targets, such as integral membrane proteins (IMPs) or large multi&#x02010;subunit complexes with high unique sequence complexity (Engen and Komives&#x000a0;<xref rid="pro70168-bib-0009" ref-type="bibr">2020</xref>), often require lengthy and laborious optimization processes to achieve the peptide IDs required for sufficient data quality (M&#x000f6;ller et al.&#x000a0;<xref rid="pro70168-bib-0024" ref-type="bibr">2019</xref>; Toporowska et al.&#x000a0;<xref rid="pro70168-bib-0033" ref-type="bibr">2024</xref>; Zhang et al.&#x000a0;<xref rid="pro70168-bib-0039" ref-type="bibr">2010</xref>).</p><p>Several approaches have been adopted to alleviate this issue (Anderson and Hudgens&#x000a0;<xref rid="pro70168-bib-0002" ref-type="bibr">2023</xref>; Hamuro and Coales&#x000a0;<xref rid="pro70168-bib-0013" ref-type="bibr">2018</xref>; Hansen and Politis&#x000a0;<xref rid="pro70168-bib-0014" ref-type="bibr">2020</xref>; M&#x000f6;ller et al.&#x000a0;<xref rid="pro70168-bib-0024" ref-type="bibr">2019</xref>; Peterle et al.&#x000a0;<xref rid="pro70168-bib-0028" ref-type="bibr">2023</xref>; Rincon Pabon et al.&#x000a0;<xref rid="pro70168-bib-0030" ref-type="bibr">2024</xref>; Venable et al.&#x000a0;<xref rid="pro70168-bib-0036" ref-type="bibr">2012</xref>). One example is ion mobility (IM), a gas&#x02010;phase technique that separates ions based on their differential mobilities through an inert buffer gas under the influence of an electric field (Dodds and Baker&#x000a0;<xref rid="pro70168-bib-0007" ref-type="bibr">2019</xref>). The time taken for ions to traverse the IM cell, known as their drift time (DT) or arrival time, occurs on millisecond timescales, thereby allowing IM to increase LC&#x02010;MS peak capacity without detrimentally increasing the length of the experiment. The widespread use of IM in LC&#x02010;MS was initially driven by the commercialization of the SYNAPT quadrupole time&#x02010;of&#x02010;flight (QTOF) instruments by Waters Corporation. These instruments contain a traveling&#x02010;wave IM spectrometry (TWIMS) cell of linear geometry positioned in between trap and transfer cells capable of performing analyte fragmentation (Pringle et al.&#x000a0;<xref rid="pro70168-bib-0029" ref-type="bibr">2007</xref>). Ion DT profiles are recorded by synchronizing TOF acquisition with gated ion release from the trap, where each gate pulse triggers 200 TOF acceleration pushes and DT is measured by the specific push (or bin) in which the ion is detected. By performing post&#x02010;TWIMS fragmentation throughout MS<sup>E</sup> (referred to as HDMS<sup>E</sup>), peptide identification can be further enhanced via DT&#x02010;assisted alignment in addition to RT&#x02010;alignment (Law and Lim&#x000a0;<xref rid="pro70168-bib-0019" ref-type="bibr">2013</xref>; Shliaha et al.&#x000a0;<xref rid="pro70168-bib-0031" ref-type="bibr">2013</xref>), as precursor ions and their associated products should have identical DT (Ibrahim et al.&#x000a0;<xref rid="pro70168-bib-0016" ref-type="bibr">2010</xref>). Moreover, IM improves spectral deconvolution and monitoring of peptide isotopic distributions by generating processed MS spectra based on their DT extraction. IM has previously been shown to enhance HDX&#x02010;MS analyses (Cryar et al.&#x000a0;<xref rid="pro70168-bib-0006" ref-type="bibr">2017</xref>; Griffiths et al.&#x000a0;<xref rid="pro70168-bib-0012" ref-type="bibr">2024</xref>; Iacob et al.&#x000a0;<xref rid="pro70168-bib-0015" ref-type="bibr">2008</xref>).</p><p>Despite the increased LC&#x02010;MS peak capacity provided by IM, the increasing complexity of samples, such in situ IMPs, is driving a need for instrumentation with greater resolving power (Javed et al.&#x000a0;<xref rid="pro70168-bib-0018" ref-type="bibr">2023</xref>). The SELECT SERIES Cyclic IM spectrometer with cyclic ion mobility (cIM) technology by Waters Corporation provides a unique means to tackle this issue (Eldrid et al.&#x000a0;<xref rid="pro70168-bib-0008" ref-type="bibr">2019</xref>; Giles et al.&#x000a0;<xref rid="pro70168-bib-0011" ref-type="bibr">2019</xref>; Ujma et al.&#x000a0;<xref rid="pro70168-bib-0035" ref-type="bibr">2019</xref>). While architecturally similar to the SYNAPT, this instrument contains a TWIMS cell of cyclical geometry that permits &#x0201c;dialing up&#x0201d; of IM resolution by extended separations across multiple device passes; known as &#x0201c;multipass&#x0201d; separations. We previously demonstrated the potential of this technology to enhance bottom&#x02010;up HDX&#x02010;MS applications (Griffiths et al.&#x000a0;<xref rid="pro70168-bib-0012" ref-type="bibr">2024</xref>). When analyzing model IMPs, utilization of a &#x0201c;multi&#x02010;sequence&#x0201d; approach, involving contiguous cIM separations under both single&#x02010; and multipass sequences during HDMS<sup>E</sup> peptide mapping, resulted in both common and unique peptide populations. Combining results from single&#x02010; and multipass cIM&#x02010;HDMS<sup>E</sup> increased peptide ID up to 222% relative to linear geometry IM&#x02010;MS and up to 37% relative to use of single&#x02010;pass cIM alone. In addition, we also introduced an alternative PLGS&#x02010;based data processing strategy for multipass cIM&#x02010;HDMS<sup>E</sup> peptide mapping data (Griffiths et al.&#x000a0;<xref rid="pro70168-bib-0012" ref-type="bibr">2024</xref>). This approach used user&#x02010;defined and optimized DT versus DT FWHM trendlines to apply more appropriate kernel smoothing to IM peak features prior to peak detection by the Apex3D algorithm. This adjustment was essential, as the multipass cIM&#x02010;HDMS<sup>E</sup> datasets exhibited a loss of positive linear correlation in DT versus DT FWHM owing to cyclic &#x0201c;wrap&#x02010;around&#x0201d; (Breen et al.&#x000a0;<xref rid="pro70168-bib-0004" ref-type="bibr">2022</xref>). This phenomenon compromised peptide IDs when using trendlines auto&#x02010;calculated by the default linear regression model in Apex3D, which can normally be used to determine appropriate kernel smoothers for each IM peak feature. Cyclic warp&#x02010;around has been described previously (Breen et al.&#x000a0;<xref rid="pro70168-bib-0004" ref-type="bibr">2022</xref>; Giles et al.&#x000a0;<xref rid="pro70168-bib-0011" ref-type="bibr">2019</xref>), and a more in&#x02010;depth description of its impact on peptide ID and mitigation via optimized trendlines can be found in Data&#x000a0;<xref rid="pro70168-supitem-0001" ref-type="supplementary-material">S1</xref>, Supporting Information.</p><p>Despite its effectiveness, this data processing approach required hours of laborious manual input. This included iterative processing using different DT versus DT FWHM trendlines, filtering each resulting dataset to identify the best performing trendline(s), and merging the results from single&#x02010;pass and multipass cIM&#x02010;HDMS<sup>E</sup> experiments. Here, we present MultiPassMerger, a software tool for the automation of multi&#x02010;sequence cIM&#x02010;HDMS<sup>E</sup> peptide mapping data processing (Figure&#x000a0;<xref rid="pro70168-fig-0001" ref-type="fig">1</xref>). MultiPassMerger provides a user&#x02010;friendly graphical user interface that can operate the PLGS ion search algorithms for iterative processing of multipass cIM data using a list of user&#x02010;defined trendlines (and auto&#x02010;calculated trendlines for single&#x02010;pass cIM), filter multipass cIM peptide ID lists to identify the top performing trendline(s), and pool common and unique peptides from single&#x02010; and multipass cIM&#x02010;HDMS<sup>E</sup> experiments to generate larger peptide ID lists for subsequent HDX&#x02010;MS experiments. In addition to automating our previously published workflow (Griffiths et al.&#x000a0;<xref rid="pro70168-bib-0012" ref-type="bibr">2024</xref>), MultiPassMerger also permits pooling of peptide IDs made across all of the different DT versus DT FWHM trendline variants applied. We demonstrate the effectiveness of this &#x0201c;multi&#x02010;trendline&#x0201d; approach by reanalyzing previously published data from two model detergent&#x02010;solubilized IMPs: XylE and smoothened receptor (SMO) (Griffiths et al.&#x000a0;<xref rid="pro70168-bib-0012" ref-type="bibr">2024</xref>). Using multi&#x02010;sequence cIM&#x02010;HDMS<sup>E</sup> with multi&#x02010;trendline processing, MultiPassMerger achieved peptide ID increases of up to 102% compared to standalone single&#x02010;pass cIM with auto&#x02010;calculated trendlines, and up to 392% compared to linear geometry TWIMS&#x02010;MS. Furthermore, these results significantly outperform previous results obtained using multi&#x02010;sequence cIM&#x02010;HDMS<sup>E</sup> using a single optimized trendline (Griffiths et al.&#x000a0;<xref rid="pro70168-bib-0012" ref-type="bibr">2024</xref>). As such, MultiPassMerger represents a notable advancement in HDX&#x02010;MS methodology, increasing the information content and resolution of existing cIM&#x02010;HDMS<sup>E</sup> and HDX&#x02010;MS data without additional manual effort.</p><fig position="float" fig-type="FIGURE" id="pro70168-fig-0001"><label>FIGURE 1</label><caption><p>Schematic of the MultiPassMerger workflow. A target protein undergoes enzymatic digestion (e.g., pepsin column) and RP&#x02010;LC separation in a classic HDMS<sup>E</sup> peptide mapping experiment. The cIM&#x02010;MS instrument acquires HDMS<sup>E</sup> data using single&#x02010; and multipass cIM sequences. Single&#x02010;pass data is processed with an auto&#x02010;calculated trendline, while multipass data uses custom&#x02010;set trendlines. Merging these datasets enhances peptide mapping quality, improving subsequent HDX&#x02010;MS analyses.</p></caption><graphic xlink:href="PRO-34-e70168-g001" position="anchor" id="jats-graphic-1"/></fig></sec><sec id="pro70168-sec-0002"><label>2</label><title>IMPLEMENTATION</title><p>Prior to processing via MultiPassMerger, users must first acquire two LC&#x02010;cIM&#x02010;HDMS<sup>E</sup> peptide mapping datasets of the target protein(s) using a SELECT SERIES Cyclic IM spectrometer; one dataset with a single&#x02010;pass cIM separation (1&#x02013;2&#x02009;ms) and the other with a multipass cIM separation (&#x02265;3&#x02009;ms) (Breen et al.&#x000a0;<xref rid="pro70168-bib-0004" ref-type="bibr">2022</xref>). 18&#x02009;ms multipass cIM separations were applied here, but optimal separation times will likely be protein&#x02010; and/or instrument parameter&#x02010;dependent. Furthermore, it is essential that single&#x02010; and multipass cIM&#x02010;HDMS<sup>E</sup> experiments are performed with identical LC parameters and have comparable RT profiles so that the precursor ions of unique peptides identified during multipass cIM peptide mapping can be successfully monitored in subsequent HDX&#x02010;MS experiments acquired using single&#x02010;pass cIM&#x02010;MS, and vice versa. MultiPassMerger for windows operating systems can be downloaded free of charge via the Politis group website (<ext-link xlink:href="https://politislab.uk/multipassmerger" ext-link-type="uri">https://politislab.uk/multipassmerger</ext-link>), which also contains an interactive quick&#x02010;start guide, or via GitHub (<ext-link xlink:href="https://github.com/vanessaduerr/MultiPassMerger" ext-link-type="uri">https://github.com/vanessaduerr/MultiPassMerger</ext-link>), which contains the open access source code. As MultiPassMerger uses the PLGS ion search algorithms, a PLGS (Waters, Wilmslow, UK) license and installation are required. Lastly, the user may choose to manually curate peptide mass spectra, which can be done via DynamX (Waters, Wilmslow, UK) or similar software.</p><sec id="pro70168-sec-0003"><label>2.1</label><title>Automation of previous workflow: Multi&#x02010;sequence <styled-content style="fixed-case" toggle="no">cIM</styled-content>&#x02010;<styled-content style="fixed-case" toggle="no">MS</styled-content> with optimized trendline data processing</title><sec id="pro70168-sec-0004"><label>2.1.1</label><title>
+Step 1: Process data
+</title><p>After data acquisition, the user opens the &#x0201c;Step 1: Process Data&#x0201d; function via the main MultiPassMerger interface (Figure&#x000a0;<xref rid="pro70168-fig-0002" ref-type="fig">2</xref>). The user selects two different input folders containing the raw data files from the single&#x02010; and multipass cIM&#x02010;HDMS<sup>E</sup> peptide mapping experiments, respectively (Figure&#x000a0;<xref rid="pro70168-fig-0002" ref-type="fig">2b</xref>). For the multipass cIM&#x02010;HDMS<sup>E</sup> data, various DT versus DT FWHM trendlines can be manually set by typing in each of the desired trendlines separated by commas in the &#x0201c;Multipass processing trendlines&#x0201d; section. Trendlines are inputted using notation we previously established (Griffiths et al.&#x000a0;<xref rid="pro70168-bib-0012" ref-type="bibr">2024</xref>), where the driftFWHM&#x02010;start and &#x02010;end input arguments (which define the drift FWHM at DT bin 0 and 200, respectively) are inputted in hyphen separated format (i.e., 11&#x02013;13&#x02009;=&#x02009;driftFWHMstart of 11 and driftFWHMend of 13). Manual trendline setting via driftFWHM&#x02010;start and &#x02010;end is explained further in Data&#x000a0;<xref rid="pro70168-supitem-0001" ref-type="supplementary-material">S1</xref>. For the single&#x02010;pass data, an auto&#x02010;calculated trendline is generated via Apex3D using its in&#x02010;built linear regression model. The user must also provide a FASTA file containing the target protein(s) sequences, and a workflow parameter XML file that can be exported from PLGS (instructions are available on the Politis group website: <ext-link xlink:href="https://politislab.uk/multipassmerger" ext-link-type="uri">https://politislab.uk/multipassmerger</ext-link>). Additional processing parameters including low and high energy count thresholds, RT start and end values, and lock mass <italic toggle="yes">m</italic>/<italic toggle="yes">z</italic> can be specified to suit user requirements. Finally, after defining an output folder, the data can be processed. Using the information provided, MultiPassMerger writes and executes a Windows batch file that accesses the PLGS executables (Apex3D, Peptide3D, and IADBs), thereby allowing it to iteratively process the data using the user&#x02010;specified trendlines (Figure&#x000a0;<xref rid="pro70168-fig-0002" ref-type="fig">2a</xref>). The resulting peptide ID lists are then saved and sorted into sub&#x02010;folders that are named corresponding to the trendline that was applied (e.g., 11&#x02013;13 will be 11_13); apart from the single&#x02010;pass data which is always &#x0201c;1_1.&#x0201d; The time taken to complete processing is variable and dependent on the available computing power and the size/complexity of the raw files analyzed. For most samples, we recommend using high performance computing, if available, and/or running the data processing function overnight to minimize wait times.</p><fig position="float" fig-type="FIGURE" id="pro70168-fig-0002"><label>FIGURE 2</label><caption><p>Overview of data processing function in MultiPassMerger. (a) The code logic and (b) interface of the processing step of MultiPassMerger. The user selects different input folders which contain single&#x02010;pass and multipass raw data files, which is then processed using an auto&#x02010;calculated (for single&#x02010;pass) or one or more custom&#x02010;set (for multipass) data smoothening trendlines. The PLGS ion and peptide search algorithm is then used to identify the peptides. The finished files containing the peptide IDs are then sorted either into a single&#x02010;pass folder (named 1_1) or various multi&#x02010;pass folders (named according to the custom&#x02010;set trendlines that were used for processing).</p></caption><graphic xlink:href="PRO-34-e70168-g003" position="anchor" id="jats-graphic-3"/></fig></sec><sec id="pro70168-sec-0005"><label>2.1.2</label><title>
+Optional: Best trendline identifier
+</title><p>After data processing, the resulting peptide ID lists from multipass cIM&#x02010;HDMS<sup>E</sup> peptide mapping can be assessed using the &#x0201c;Optional: Best Trendline Identifier&#x0201d; function (Figure&#x000a0;<xref rid="pro70168-fig-0003" ref-type="fig">3</xref>). This tool allows users to filter the results generated from each trendline to predict which performed best. These threshold parameters include a sample replicate threshold, minimum products per amino acid, minimum intensity, minimum and maximum peptide sequence length, minimum matched products, minimum consecutive products, minimum sum intensity of products, minimum PLGS score, MH+ ppm error, and RT relative standard deviation (RT&#x02010;RSD), (Figure&#x000a0;<xref rid="pro70168-fig-0003" ref-type="fig">3b</xref>). Here, thresholds based on previously optimized values have been applied (S&#x000f8;rensen and Salbo&#x000a0;<xref rid="pro70168-bib-0032" ref-type="bibr">2018</xref>). Once started, the tool first merges the replicate peptide ID lists within each individual trendline subfolder, followed by filtering of the merged peptide ID lists based on sample replicate and RT&#x02010;RSD thresholds (Figure&#x000a0;<xref rid="pro70168-fig-0003" ref-type="fig">3a</xref>). The remaining threshold values for each peptide are then averaged across replicate experiment, and filtered using the remaining threshold parameters. Peptides are then ranked by PLGS score, and duplicates removed, leaving only the top scoring peptide ID per sequence. By doing so, a list containing predictions for how many unique peptides have been identified by each trendline is provided to indicate which trendline(s) performed best. A peptide ID list of only the top&#x02010;performing trendline is then saved.</p><fig position="float" fig-type="FIGURE" id="pro70168-fig-0003"><label>FIGURE 3</label><caption><p>Overview of the best trendline identifier function. The code logic (a) and interface (b) for &#x0201c;Optional: Best Trendline Identifier.&#x0201d; This tool allows the user to identify the best performing trendline(s) for multipass data. Peptide lists are merged per trendline, and the results are filtered according to user&#x02010;defined parameters. Peptides are then ranked by PLGS score, and the best scoring unique IDs are kept. The interface displays how many unique peptides were found in each trendline dataset.</p></caption><graphic xlink:href="PRO-34-e70168-g005" position="anchor" id="jats-graphic-5"/></fig></sec><sec id="pro70168-sec-0006"><label>2.1.3</label><title>
+Step 2: Merge and filter data
+</title><p>To automate our previously published multi&#x02010;sequence cIM&#x02010;HDMS<sup>E</sup> peptide mapping approach (Griffiths et al.&#x000a0;<xref rid="pro70168-bib-0012" ref-type="bibr">2024</xref>), MultiPassMerger provides the &#x0201c;Step 2: Merge and Filter Data&#x0201d; function, where common and unique peptide IDs from both single&#x02010; and multipass cIM&#x02010;HDMS<sup>E</sup> peptide mapping experiments can be merged to generate larger peptide ID lists for use in subsequent HDX&#x02010;MS experiments (Figure&#x000a0;<xref rid="pro70168-fig-0004" ref-type="fig">4</xref>). To achieve this, the user provides a folder location containing both the single&#x02010;pass cIM&#x02010;HDMS<sup>E</sup> peptide ID list from processing with auto&#x02010;calculated trendline, and the multipass cIM&#x02010;HDMS<sup>E</sup> peptide ID list from the &#x0201c;Optional: Best Trendline Identifier&#x0201d; function containing IDs from the best performing trendline only (Figure&#x000a0;<xref rid="pro70168-fig-0004" ref-type="fig">4b</xref>). After the user specifies the input folder and the desired threshold filtering parameters, the &#x0201c;Merge and Filter Data&#x0201d; function merges sample replicates, to which the RT&#x02010;RSD and sample replicate thresholds are applied (Figure&#x000a0;<xref rid="pro70168-fig-0004" ref-type="fig">4a</xref>). Then, results from the single&#x02010; and multipass cIM&#x02010;HDMS<sup>E</sup> experiments are merged, and all other user&#x02010;specified filtering parameters are applied. Peptides are then ranked by PLGS score and redundant IDs removed, leaving only the best performing unique IDs in a final peptide list. This list is then timestamped and saved in the parent directory, from where it can be subsequently imported into DynamX or a similar software to use as a peptide ID database for manual data curation.</p><fig position="float" fig-type="FIGURE" id="pro70168-fig-0004"><label>FIGURE 4</label><caption><p>Overview of the merge and filter function. The code logic (a) and user interface (b) for &#x0201c;Step 2: Merge and Filter Data.&#x0201d; The purpose of this tool is to merge and subsequently filter all identified peptides across single&#x02010; and multipass cIM&#x02010;HDMS<sup>E</sup> experiments into a single peptide ID list. Peptide lists are merged per sample replicate, replicate threshold and RT&#x02010;RSD filters are applied, and then everything is merged into a single file. Following this, all other filtering parameters are applied, peptides are ranked by their PLGS score, and only the highest performing unique ones across the included datasets are kept.</p></caption><graphic xlink:href="PRO-34-e70168-g004" position="anchor" id="jats-graphic-7"/></fig></sec></sec><sec id="pro70168-sec-0007"><label>2.2</label><title>Automation of new workflow: Multi&#x02010;sequence <styled-content style="fixed-case" toggle="no">cIM</styled-content>&#x02010;<styled-content style="fixed-case" toggle="no">MS</styled-content> with multi&#x02010;trendline data processing</title><p>In addition to multi&#x02010;sequence analysis, the merge and filter function in MultiPassMerger also permits multi&#x02010;trendline analysis, whereby peptide ID results obtained across all of the different trendlines applied in the initial data processing step are merged to generate even larger peptide ID lists. Multi&#x02010;trendline processing can be achieved simply by skipping use of the &#x0201c;Optional: Best Trendline Identifier&#x0201d; function altogether, and instead directly providing the &#x0201c;Step 2: Merge and Filter&#x0201d; function input file location as the &#x0201c;Step1: Process Data&#x0201d; function output location. As this folder location contains the entire data processing output from the iterative trendline processing step (i.e., the single&#x02010;pass cIM peptide mapping IDs generated using auto&#x02010;calculated trendline and the multipass cIM peptide mapping IDs obtained across the use of multiple trendlines), the merge and filter function combines all data together (instead of just the single&#x02010; and multipass peptide IDs from use of auto&#x02010;calculated and a single optimized trendline, respectively), filters via the specified thresholds, and then removes duplications to keep only the best performing ID per peptide sequence. The advantage of this approach is that, while trendline optimization can provide a single trendline that best compromises between under&#x02010; and over&#x02010;smoothing of IM peak features across the DT versus DT FWHM distribution, the nonlinearity of multipass cIM data means that any given trendline is still unlikely to appropriately smoothen all IM features simultaneously. Consequently, during the development of MultiPassMerger, we hypothesized that each trendline would likely also contain unique peptide populations (owing to optimal smoothing conditions for different IM features under different trendlines), and that merging of results obtained across all trendlines would further increase peptide IDs. Here, we demonstrate the ability of this approach to increase peptide ID count beyond use of multi&#x02010;sequence cIM&#x02010;HDMS<sup>E</sup> alone, without any increase in manual input by the user. The underlying principle of multi&#x02010;trendline processing is further explained and visualized in Data&#x000a0;<xref rid="pro70168-supitem-0001" ref-type="supplementary-material">S1</xref>.</p></sec></sec><sec id="pro70168-sec-0008"><label>3</label><title>RESULTS AND DISCUSSION</title><sec id="pro70168-sec-0009"><label>3.1</label><title>Peptide mapping results from <styled-content style="fixed-case" toggle="no">MultiPassMerger</styled-content> processing</title><p>To assess its functionality, we applied MultiPassMerger for peptide ID analysis of several multipass cIM&#x02010;HDMS<sup>E</sup> peptide mapping datasets that we previously published using the same data processing approach but performed manually (Griffiths et al.&#x000a0;<xref rid="pro70168-bib-0012" ref-type="bibr">2024</xref>). This included the frizzled class G protein&#x02010;coupled receptor (GPCR) SMO, the secondary active transporter XylE, the ATP binding cassette transporter MsbA, and the protein translocase SecYEG, with data being generated on both SELECT SERIES Cyclic IMS and SYNAPT G2&#x02010;Si instrumentation. Due to the practical limitations of manual data processing and handling at the time, the best performing trendline for multipass cIM&#x02010;HDMS<sup>E</sup> peptide mapping was optimized only for XylE and only across 7 different trendlines. This optimized trendline was then extrapolated across all multipass cIM&#x02010;HDMS<sup>E</sup> datasets in an attempt to generally improve results. MultiPassMerger was employed for data processing and trendline selection for all datasets independently, using identical trendlines as were used previously (Figure&#x000a0;<xref rid="pro70168-fig-0005" ref-type="fig">5a</xref>) (Griffiths et al.&#x000a0;<xref rid="pro70168-bib-0012" ref-type="bibr">2024</xref>). Here, a similar profile was observed across all the proteins, which is highly characteristic for this type of analysis; whereby peptide IDs are lower when using very low (e.g., 1&#x02013;4) or high (e.g., 81&#x02013;84) trendlines, owing to peptide ID loss from excessive under&#x02010; and over&#x02010;smoothing of IM peak features, respectively. Interestingly, the best performing trendline for XylE was found to be 5&#x02013;8, which is in contrast to our previous work where the best performing trendline was 11&#x02013;14 (Griffiths et al.&#x000a0;<xref rid="pro70168-bib-0012" ref-type="bibr">2024</xref>). This discrepancy could be owing to slight differences in the PLGS release used (3.0.2 vs. 3.0.3). Nevertheless, as expected, use of MultiPassMerger with optimized trendline provided increased peptide IDs relative to default PLGS processing with auto&#x02010;calculated trendlines (Figure&#x000a0;<xref rid="pro70168-fig-0005" ref-type="fig">5c</xref>). Moreover, for SMO, MsbA, and SecYEG, MultiPassMerger identified the best performing trendline to be 11&#x02013;14 across all 3 datasets and was, therefore, comparable to previous trendline optimization efforts via XylE (Figure&#x000a0;<xref rid="pro70168-fig-0005" ref-type="fig">5a</xref>). In an attempt to better optimize these trendlines, the data was reprocessed using 13 alternative trendlines, with the majority being clustered closely to the 11&#x02013;14 trendline (Figure&#x000a0;<xref rid="pro70168-fig-0005" ref-type="fig">5b</xref>). Here, the best performing trendline was variable between the datasets (XylE: 9&#x02013;11, SMO&#x02010;BRIL: 11&#x02013;13, MsbA: 11&#x02013;13, SecYEG: 21&#x02013;23), thereby highlighting the ability of MultiPassMerger to provide more accurate trendline optimization on a protein&#x02010;specific basis and in a fully automated fashion.</p><fig position="float" fig-type="FIGURE" id="pro70168-fig-0005"><label>FIGURE 5</label><caption><p>Overview of peptide mapping results from cIM&#x02010;HDMS<sup>E</sup> peptide mapping analysis of model IMPs using MultiPassMerger. (a) Number of peptide IDs from multipass cIM peptide mapping of XylE, MsbA, SMO, and SecYEG using previously applied DT FWHM trendlines (Griffiths et al.&#x000a0;<xref rid="pro70168-bib-0012" ref-type="bibr">2024</xref>). (b) Number of peptide IDs in multipass cIM peptide mapping data of XylE, MsbA, SMO, and SecYEG using additional DT FWHM trendlines. (c) Number of peptide IDs after MultiPassMerger processing and DynamX manual curation of SMO and XylE data obtained using single&#x02010;pass (auto&#x02010;calculated trendline)&#x02009;+&#x02009;multipass (multi&#x02010;trendline), single&#x02010;pass (auto&#x02010;calculated trendline)&#x02009;+&#x02009;multipass (optimized trendline), and multipass (optimized trendline). Previous data generated using SYNAPT G2&#x02010;Si, Cyclic multipass, and Cyclic single&#x02010;pass processed using auto&#x02010;calculated trendline are also displayed for comparison (Griffiths et al.&#x000a0;<xref rid="pro70168-bib-0012" ref-type="bibr">2024</xref>).</p></caption><graphic xlink:href="PRO-34-e70168-g007" position="anchor" id="jats-graphic-9"/></fig><p>To assess the improvement in peptide mapping data quality provided by MultiPassMerger, using the same multipass cIM&#x02010;HDMS<sup>E</sup> peptide mapping data of SMO and XylE, we compared results obtained using data processing with optimized trendlines via MultiPassMerger with results obtained using the &#x0201c;default&#x0201d; PLGS workflow with auto&#x02010;calculated trendlines (Figure&#x000a0;<xref rid="pro70168-fig-0005" ref-type="fig">5c</xref>). Here, the SMO and XylE peptide ID counts increased from 125 and 197 (when using the default PLGS workflow) to 199 and 300 (when using trendlines optimized via MultiPassMerger), respectively (Figure&#x000a0;<xref rid="pro70168-fig-0005" ref-type="fig">5c</xref>). This also translated into increased sequence coverage and redundancy for both targets; SMO increasing from 71% coverage and 3.3 redundancy to 86% and 3.5, and XylE increasing from 87% coverage and 5.2 redundancy to 96% and 6.9 (Figure&#x000a0;<xref rid="pro70168-fig-0006" ref-type="fig">6</xref>). As such, these results demonstrate the capability of MultiPassMerger to offset issues related to cyclic wrap&#x02010;around in multipass cIM&#x02010;HDMS<sup>E</sup> peptide mapping data and increase data quality to levels comparable to, or even better than, use of single&#x02010;pass cIM&#x02010;HDMS<sup>E</sup> peptide mapping with auto&#x02010;calculated trendlines (Figures&#x000a0;<xref rid="pro70168-fig-0005" ref-type="fig">5c</xref> and <xref rid="pro70168-fig-0006" ref-type="fig">6</xref>). Once the single&#x02010; and multipass pass cIM&#x02010;HDMS<sup>E</sup> peptide mapping data were processed using the auto&#x02010;calculated and optimized trendlines, respectively, the merge and filter function in MultiPassMerger was employed to autonomously pool the results for a &#x0201c;multi&#x02010;sequence&#x0201d; peptide mapping approach, as previously described (Griffiths et al.&#x000a0;<xref rid="pro70168-bib-0012" ref-type="bibr">2024</xref>). The combination of common and unique peptide populations from each peptide mapping experiment resulted in even further increases in SMO and XylE peptide ID counts to 259 and 368 (Figure&#x000a0;<xref rid="pro70168-fig-0005" ref-type="fig">5c</xref>), respectively, which translated into further increases in sequence coverage and redundancy to 91% and 4.4 for SMO and 97% and 8.5 for XylE (Figure&#x000a0;<xref rid="pro70168-fig-0006" ref-type="fig">6</xref>). Crucially, the overall trends observed in these results closely mirror our previously published findings which relied on manual processing, filtering, and merging of the data (Griffiths et al.&#x000a0;<xref rid="pro70168-bib-0012" ref-type="bibr">2024</xref>). Consequently, these results highlight the capability of MultiPassMerger to markedly enhance peptide identification via multi&#x02010;sequence analysis, delivering a fully automated workflow that eliminates the labor&#x02010;intensive manual data handling efforts that this approach previously required.</p><fig position="float" fig-type="FIGURE" id="pro70168-fig-0006"><label>FIGURE 6</label><caption><p>Overview of peptide coverage maps of model IMPs from cIM&#x02010;HDMS<sup>E</sup> peptide mapping analysis using MultiPassMerger. Peptide coverage maps for SMO (a) and XylE (b) after MultiPassMerger processing and DynamX manual curation. Data was obtained using Cyclic IMS with single&#x02010;pass (auto&#x02010;calculated trendline)&#x02009;+&#x02009;multipass (multi&#x02010;trendline), single&#x02010;pass (auto&#x02010;calculated trendline)&#x02009;+&#x02009;multipass (optimized trendline), and multipass (optimized trendline). Previous data generated using SYNAPT G2&#x02010;Si, Cyclic IMS multipass, and Cyclic IMS single&#x02010;pass processed using auto&#x02010;calculated trendline are also displayed for comparison (Griffiths et al.&#x000a0;<xref rid="pro70168-bib-0012" ref-type="bibr">2024</xref>). The color scheme used here is identical to that used in Figure&#x000a0;<xref rid="pro70168-fig-0005" ref-type="fig">5c</xref>.</p></caption><graphic xlink:href="PRO-34-e70168-g002" position="anchor" id="jats-graphic-11"/></fig><p>As MultiPassMerger offers a means to effortlessly pool different peptide ID lists together into a single merged database, we attempted to further exploit this feature by pooling the different peptide ID lists generated by the process data function using different trendlines (i.e., as opposed to using a single optimized trendline for multipass cIM&#x02010;HDMS<sup>E</sup>). We hypothesized that this &#x0201c;multi&#x02010;trendline&#x0201d; approach would offer even further increases in peptide ID from the multipass cIM&#x02010;HDMS<sup>E</sup> peptide mapping datasets, owing to each trendline being optimal for appropriate smoothing of different peptide populations throughout their nonlinear DT versus DT FWHM distributions. As predicted, use of MultiPassMerger to perform multi&#x02010;sequence analysis with multi&#x02010;trendline processing resulted in a significant increase in SMO and XylE peptide IDs up to 359 and 475, respectively (Figure&#x000a0;<xref rid="pro70168-fig-0005" ref-type="fig">5c</xref>). Moreover, the increased peptide identification afforded by multi&#x02010;trendline processing also translated into further increases in sequence coverage and redundancy: 95% coverage and 6.2 redundancy for SMO and 98% coverage and 11.4 redundancy for XylE, thereby providing more information content and at better spatial resolution, far beyond what was previously obtained (Figure&#x000a0;<xref rid="pro70168-fig-0006" ref-type="fig">6</xref>). For example, when compared to use of SYNAPT G2&#x02010;Si instrumentation with auto&#x02010;calculated trendlines under identical HDX&#x02010;MS conditions, our multi&#x02010;sequence approach on Cyclic IMS instrumentation with multi&#x02010;trendline processing via MultiPassMerger provided a SMO peptide ID increase of 392%, resulting in a 31% increase in sequence coverage and a 181% increase in redundancy. Moreover, when compared to use of Cyclic IMS with standalone single&#x02010;pass cIM and default PLGS processing, this approach increased SMO peptide ID, sequence coverage, and redundancy by 102, 9, and 68%, respectively.</p><p>It is important to highlight that the values presented above reflect peptide mapping results following curation/validation of the data in DynamX, where false positives and/or low&#x02010;quality peptides are manually removed. For SMO, manual curation of the single&#x02010;pass (auto&#x02010;calculated)&#x02009;+&#x02009;multipass (multi&#x02010;trendline) peptide mapping data led to the removal of only 13.5% of peptides from the raw identification list after filtering (Table&#x000a0;<xref rid="pro70168-tbl-0001" ref-type="table">1</xref>). This indicates that the previously optimized threshold value (S&#x000f8;rensen and Salbo&#x000a0;<xref rid="pro70168-bib-0032" ref-type="bibr">2018</xref>) applied here was effective in eliminating the vast majority of false positives and/or low&#x02010;quality IDs prior to manual curation of the data. In contrast, manual curation of the XylE single&#x02010;pass (auto&#x02010;calculated)&#x02009;+&#x02009;multipass (multi&#x02010;trendline) data resulted in the removal of 27% of peptides, highlighting a higher rate of false positives and/or low&#x02010;quality peptide IDs passing the initial threshold filtering parameters prior to manual curation. This suggests that, for this type of iterative multi&#x02010;trendline processing, the previously optimized thresholds may no longer be ideal in all cases (S&#x000f8;rensen and Salbo&#x000a0;<xref rid="pro70168-bib-0032" ref-type="bibr">2018</xref>), and that further refinement of stricter thresholds could be beneficial. Nevertheless, the final curated peptide mapping results underscore the potential of Cyclic IMS instrumentation, coupled with MultiPassMerger processing, to significantly enhance results in HDX&#x02010;MS and other applications using cIM&#x02010;HDMS<sup>E</sup> for peptide identification.</p><table-wrap position="float" id="pro70168-tbl-0001" content-type="TABLE"><label>TABLE 1</label><caption><p>Number of peptides, sequence coverage, and redundancy for SMO and XylE using multi&#x02010;sequence cIM peptide mapping and multi&#x02010;trendline processing.</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><thead valign="bottom"><tr style="border-bottom:solid 1px #000000"><th rowspan="2" align="left" valign="bottom" colspan="1"/><th colspan="3" align="left" valign="bottom" rowspan="1">SMO</th><th colspan="3" align="left" valign="bottom" rowspan="1">XylE</th></tr><tr style="border-bottom:solid 1px #000000"><th align="left" valign="bottom" rowspan="1" colspan="1">Number of peptide</th><th align="left" valign="bottom" rowspan="1" colspan="1">Sequence coverage (%)</th><th align="left" valign="bottom" rowspan="1" colspan="1">Sequence redundancy</th><th align="left" valign="bottom" rowspan="1" colspan="1">Number of peptide</th><th align="left" valign="bottom" rowspan="1" colspan="1">Sequence coverage (%)</th><th align="left" valign="bottom" rowspan="1" colspan="1">Sequence redundancy</th></tr></thead><tbody valign="top"><tr><td align="left" valign="top" rowspan="1" colspan="1">Raw PLGS database (uncurated)</td><td align="left" valign="top" rowspan="1" colspan="1">415</td><td align="left" valign="top" rowspan="1" colspan="1">97</td><td align="char" char="." valign="top" rowspan="1" colspan="1">7.19</td><td align="left" valign="top" rowspan="1" colspan="1">647</td><td align="char" char="." valign="top" rowspan="1" colspan="1">100</td><td align="char" char="." valign="top" rowspan="1" colspan="1">15.95</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Peptide mapping (curated)</td><td align="left" valign="top" rowspan="1" colspan="1">359</td><td align="left" valign="top" rowspan="1" colspan="1">95</td><td align="char" char="." valign="top" rowspan="1" colspan="1">6.20</td><td align="left" valign="top" rowspan="1" colspan="1">475</td><td align="char" char="." valign="top" rowspan="1" colspan="1">99</td><td align="char" char="." valign="top" rowspan="1" colspan="1">11.28</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">HDX&#x02010;MS (curated)</td><td align="left" valign="top" rowspan="1" colspan="1">305</td><td align="left" valign="top" rowspan="1" colspan="1">94</td><td align="char" char="." valign="top" rowspan="1" colspan="1">5.25</td><td align="left" valign="top" rowspan="1" colspan="1">414</td><td align="char" char="." valign="top" rowspan="1" colspan="1">99</td><td align="char" char="." valign="top" rowspan="1" colspan="1">10.07</td></tr></tbody></table><table-wrap-foot id="pro70168-ntgp-0002"><fn id="pro70168-note-0003"><p>
+<italic toggle="yes">Note</italic>: Values are shown for the uncurated raw PLGS database, after manual curation of the peptide mapping data, and after manual curation of the 1&#x02009;min HDX timepoint data.</p></fn></table-wrap-foot></table-wrap></sec><sec id="pro70168-sec-0010"><label>3.2</label><title>
+<styled-content style="fixed-case" toggle="no">HDX</styled-content>&#x02010;<styled-content style="fixed-case" toggle="no">MS</styled-content> analysis using peptide maps from <styled-content style="fixed-case" toggle="no">MultiPassMerger</styled-content>
+</title><p>Owing to the increased complexity of deuterated isotopic distributions, it is common for identified peptides to be removed during HDX&#x02010;MS analysis as they cannot be reliably monitored across deuterium labelling timepoints. As such, it is important to manually validate peptides under deuterated condition to ensure accurate and reliable HDX measurements. Our previous work demonstrated that, in most cases, peptides uniquely identified in either single&#x02010;pass or multipass cIM&#x02010;HDMS<sup>E</sup> experiments remain trackable in subsequent HDX measurements conducted using the converse cIM sequence (Griffiths et al.&#x000a0;<xref rid="pro70168-bib-0012" ref-type="bibr">2024</xref>). This is because the DynamX software used here for manual curation relies solely on the <italic toggle="yes">m</italic>/<italic toggle="yes">z</italic> and RT values from the peptide ID list to locate precursor ions within HDX measurement data. As long as the peptide <italic toggle="yes">m</italic>/<italic toggle="yes">z</italic> and RT remain stable between peptide mapping (e.g., identified using multipass cIM) and exchange measurements (e.g., monitored using single&#x02010;pass cIM), variations in DT values arising from use of different cIM sequences do not prevent DynamX from detecting precursor ions in the HDX measurement. Nor do DT variations hinder the generation of processed spectra based on DT extraction, as DynamX does this based on the DT value of the HDX measurement instead of the DT value in the peptide ID list itself. Therefore, while complementary single&#x02010;pass and multipass cIM&#x02010;HDMS<sup>E</sup> experiments can be used to maximize peptide IDs during peptide mapping, HDX measurements only need to be performed using either standalone single&#x02010;pass or multipass cIM, not both. This suggests that, rather than better resolving precursor ions in IM space, the advantage of multi&#x02010;sequence cIM is primarily associated with enhanced precursor&#x02010;product matching, and also has the advantage of minimizing the number of LC&#x02010;MS replicates needed to generate a &#x0201c;complete&#x0201d; HDX&#x02010;MS dataset.</p><p>To ensure that the additional peptide IDs provided by MultiPassMerger with multi&#x02010;trendline processing were of high quality and trackable in HDX measurements, the SMO and XylE single&#x02010;pass (auto&#x02010;calculated)&#x02009;+&#x02009;multipass (multi&#x02010;trendline) peptide maps were used to track deuteration in a 1&#x02009;min HDX&#x02010;MS timepoint captured using standalone single&#x02010;pass (SMO) or multipass (XylE) cIM&#x02010;MS. Of the total 834 peptides assessed, 719 (86%) were successfully monitored (Table&#x000a0;<xref rid="pro70168-tbl-0001" ref-type="table">1</xref>), thereby demonstrating that the proposed multi&#x02010;sequence/multi&#x02010;trendline approach not only provides increased peptide IDs but also provides high&#x02010;quality peptides that remain monitorable in subsequent HDX measurements. This is supported by the strong correlation between the observed HDX&#x02010;MS profile and known IMP transmembrane topology, which is expected owing to high protection from exchange owing to low solvent accessibility for residues within the detergent&#x02010;micelle belt (Figure&#x000a0;<xref rid="pro70168-fig-0007" ref-type="fig">7</xref>). Importantly, of the 115 peptides removed after manual curation of the SMO and XylE data, only 62 (54%) originated uniquely from multisequence analysis with multi&#x02010;trendline processing, while the remaining 53 (46%) had already been identified using multi&#x02010;sequence with a single optimized trendline. This suggests no clear removal bias against peptides uniquely originating from multi&#x02010;trendline analysis, further reinforcing that it can provide additional high&#x02010;quality peptides that improve data quality in subsequent HDX measurements. Consequently, using single&#x02010;pass (auto&#x02010;calculated)&#x02009;+ multipass (multi&#x02010;trendline) peptide maps maintained high effective sequence coverage after deuteration for both SMO (94%) and XylE (98%) (Table&#x000a0;<xref rid="pro70168-tbl-0001" ref-type="table">1</xref>), in contrast to our previous multi&#x02010;sequence analyses with a single optimized trendline which led to a decline in coverage to 85% and 96%, respectively, upon deuteration (Griffiths et al.&#x000a0;<xref rid="pro70168-bib-0012" ref-type="bibr">2024</xref>). Similarly, redundancy remained high after deuteration with multi&#x02010;trendline processing (5.25 for SMO, 10.07 for XylE) (Table&#x000a0;<xref rid="pro70168-tbl-0001" ref-type="table">1</xref>), whereas the use of multi&#x02010;sequence with a single optimized trendline saw reductions to 4.2 and 7.3 (Griffiths et al.&#x000a0;<xref rid="pro70168-bib-0012" ref-type="bibr">2024</xref>). Overall, these results highlight that multi&#x02010;trendline processing can not only increase the number of peptide IDs during peptide mapping but also increase the number of monitorable peptides in subsequent HDX&#x02010;MS experiments. This is crucial, as increased peptide content in the deuterated case is ultimately the purpose for improving peptide identification in HDX&#x02010;MS applications; leading to greater insights from deuterium incorporation in the case of sequence coverage and at greater resolution in the case of redundancy.</p><fig position="float" fig-type="FIGURE" id="pro70168-fig-0007"><label>FIGURE 7</label><caption><p>Overview of 1&#x02009;min HDX&#x02010;MS timepoint data from SMO&#x02010;BRIL and XylE analyses. Heat maps of 1&#x02009;min timepoint (0&#x02013;20% of relative fractional uptake) from SMO (a) and XylE (b). A corresponding domain map is shown including the cystine rich domain (CRD), the transmembrane helices (TMH) and BRIL fusion protein of SMO and the TMHs of XylE. (c) Homology model of SMO (generated using PDB template: 5L7D) heat mapped with 1&#x02009;min HDX timepoint. (d) Homology model of XylE (generated using PDB template: 4JA4) heat mapped with 1&#x02009;min HDX timepoint.</p></caption><graphic xlink:href="PRO-34-e70168-g006" position="anchor" id="jats-graphic-13"/></fig></sec></sec><sec id="pro70168-sec-0011"><label>4</label><title>CONCLUSIONS AND FUTURE OUTLOOK</title><p>Previously, we demonstrated that HDMS<sup>E</sup> peptide mapping experiments could be enhanced by utilizing Cyclic IMS instrumentation with multipass cIM capabilities (Griffiths et al.&#x000a0;<xref rid="pro70168-bib-0012" ref-type="bibr">2024</xref>). This was achieved through a &#x0201c;multi&#x02010;sequence&#x0201d; cIM&#x02010;HDMS<sup>E</sup> approach that involved performing two complementary peptide mapping experiments: one using a single&#x02010;pass cIM sequence and the other using a multipass sequence. To address challenges associated with cyclic wrap&#x02010;around, the multipass cIM&#x02010;HDMS<sup>E</sup> peptide mapping data were also processed using user&#x02010;optimized DT versus DT FWHM trendlines. The processed results were then merged with single&#x02010;pass outputs to generate larger peptide ID databases for use in subsequent HDX&#x02010;MS experiments. Despite its effectiveness, this approach was limited by the substantial manual input required during data processing. This made the workflow time&#x02010;consuming, labor&#x02010;intensive, and impractical for routine use. To overcome these limitations, we have developed MultiPassMerger, a PLGS&#x02010;based software tool designed to automate the processing, merging, and filtering of multi&#x02010;sequence cIM peptide mapping data. By streamlining these steps, MultiPassMerger simplifies this experimental approach, making it more accessible to the broader HDX&#x02010;MS community.</p><p>As the automation provided by MultiPassMerger eliminated human time constraints, we re&#x02010;analyzed previously acquired data with a wider array of trendlines, thereby allowing improvement in DT versus DT FWHM trendline optimization on a protein&#x02010;specific basis. This resulted in higher sequence coverage and redundancy for several model IMP targets during multi&#x02010;sequence cIM&#x02010;HDMS<sup>E</sup> peptide mapping. Moreover, MultiPassMerger supports a &#x0201c;multi&#x02010;trendline&#x0201d; processing approach, where multiple DT versus DT FWHM trendlines can be applied iteratively to the same multipass cIM peptide mapping data, and the results are merged. This approach ensures more effective smoothing of ions across the entire DT versus DT FWHM distribution, avoiding the compromises of under&#x02010; or over&#x02010;smoothing inherent to single&#x02010;trendline methods. Without requiring additional manual effort, the use of MultiPassMerger with multi&#x02010;trendline processing led to a significant increase in the number of peptides identified for the model IMPs SMO and XylE. Specifically, peptide IDs were up to 392% higher compared to SYNAPT G2&#x02010;Si instrumentation with linear IM and up to 102% higher than the use of Cyclic IMS instrumentation with single&#x02010;pass cIM alone. As such, whilst MultiPassMerger is capable of automating our previous multi&#x02010;sequence cIM&#x02010;MS approach with optimized trendlines (Griffiths et al.&#x000a0;<xref rid="pro70168-bib-0012" ref-type="bibr">2024</xref>), we recommend adopting a multi&#x02010;trendline approach via MultiPassMerger to provide further improvement in peptide ID. These findings demonstrate that MultiPassMerger not only improves cIM&#x02010;HDMS<sup>E</sup> peptide mapping performance but also offers a user&#x02010;friendly interface that can facilitate broader adoption by the wider HDX&#x02010;MS community.</p><p>Whether employing a multi&#x02010;trendline or an optimized trendline approach, a current limitation of MultiPassMerger is the requirement for iterative processing of the same dataset, which leads to longer processing times compared to default PLGS processing. It has previously been demonstrated that use a combination of zero&#x02010;, single&#x02010;, and multipass cIM&#x02010;MS experiments can be applied to &#x0201c;unwrap&#x0201d; cIM&#x02010;MS data and allow calculation of ion periodic DT (Breen et al.&#x000a0;<xref rid="pro70168-bib-0004" ref-type="bibr">2022</xref>). By using periodic DT (how quickly the ion traverses the cIM cell once) as opposed to absolute DT (the time at which it hits the detector), this approach could potentially be adopted in the future to re&#x02010;linearize the DT versus DT FWHM relationship, thereby allowing more appropriate smoothing using a single auto&#x02010;calculated trendline. However, the tools required to implement this strategy effectively are unavailable using the current PLGS release. Nevertheless, MultiPassMerger offers a robust solution, as it automates this iterative data processing approach without requiring frequent human intervention. As such, we anticipate that MultiPassMerger will prove valuable not only for HDX&#x02010;MS but also for other structural proteomics workflows that use HDMS<sup>E</sup> for peptide identification, thereby enabling a wider use of cIM&#x02010;MS technology.</p></sec><sec id="pro70168-sec-0015"><title>AUTHOR CONTRIBUTIONS</title><p>
+<bold>Vanessa Duerr:</bold> Investigation; methodology; validation; visualization; writing &#x02013; original draft; writing &#x02013; review and editing; software. <bold>Damon Griffiths:</bold> Conceptualization; methodology; validation; investigation; data curation; project administration; visualization; writing &#x02013; review and editing; writing &#x02013; original draft; supervision; formal analysis. <bold>Argyris Politis:</bold> Funding acquisition; resources; project administration; supervision; writing &#x02013; review and editing; conceptualization.</p></sec><sec sec-type="supplementary-material"><title>Supporting information</title><supplementary-material id="pro70168-supitem-0001" position="float" content-type="local-data"><caption><p>
+<bold>Data S1.</bold> Supporting Information.</p></caption><media xlink:href="PRO-34-e70168-s001.docx"/></supplementary-material></sec></body><back><ack id="pro70168-sec-0012"><title>ACKNOWLEDGMENTS</title><p>The work was supported by an EPSRC Fellowship (EP/V011715/1), BBSRC grants (BB/V006487/2 and BB/Y004981/1) and MRC Equip grant (MR/X013030/1) to Argyris Politis. Vanessa Duerr and Damon Griffiths are co&#x02010;funded by Waters Corporation (Wilmslow, UK) through BBSRC iCASE partnership PhD programmes. AP is supported by the European Union through funding of the Horizon Europe ERA Chair &#x0201c;masstruct&#x0201d; project number 101183630. The authors would like to acknowledge Malcolm Anderson, Owen Cornwell, Keith Richardson, Mike Morris, and Kevin Giles (Waters Corporation) for their assistance in answering questions regarding PLGS. The authors would also like to thank Juan Pablo Rincon Pabon (University of Manchester) for critical reading.</p></ack><sec sec-type="data-availability" id="pro70168-sec-0014"><title>DATA AVAILABILITY STATEMENT</title><p>The data that support the findings of this study are openly available in PRIDE at <ext-link xlink:href="https://www.ebi.ac.uk/pride/archive/projects/PXD048293" ext-link-type="uri" specific-use="software is-supplemented-by">https://www.ebi.ac.uk/pride/archive/projects/PXD048293</ext-link>, reference number Project PXD048293. MultiPassMerger is free of charge and accessible via the Politis group website (<ext-link xlink:href="https://politislab.uk/multipassmerger" ext-link-type="uri" specific-use="software is-supplemented-by">https://politislab.uk/multipassmerger</ext-link>). The source code is freely available on GitHub (<ext-link xlink:href="https://github.com/vanessaduerr/MultiPassMerger" ext-link-type="uri" specific-use="software is-supplemented-by">https://github.com/vanessaduerr/MultiPassMerger</ext-link>). All mass spectrometry data is deposited in the ProteomeXchange Consortium via the PRIDE partner repository (Perez&#x02010;Riverol et al.&#x000a0;<xref rid="pro70168-bib-0027" ref-type="bibr">2021</xref>) with the identifier PXD048293. Other data are available upon reasonable request.</p></sec><ref-list id="pro70168-bibl-0001" content-type="cited-references"><title>REFERENCES</title><ref id="pro70168-bib-0001"><mixed-citation publication-type="journal" id="pro70168-cit-0001">
+<string-name>
+<surname>Ahmad</surname>
+<given-names>F</given-names>
+</string-name>, <string-name>
+<surname>Patterson</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Deveryshetty</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Mattice</surname>
+<given-names>JR</given-names>
+</string-name>, <string-name>
+<surname>Pokhrel</surname>
+<given-names>N</given-names>
+</string-name>, <string-name>
+<surname>Bothner</surname>
+<given-names>B</given-names>
+</string-name>, et al. <article-title>Hydrogen&#x02013;deuterium exchange reveals a dynamic DNA&#x02010;binding map of replication protein a</article-title>. <source>Nucleic Acids Res</source>. <year>2021</year>;<volume>49</volume>(<issue>3</issue>):<fpage>1455</fpage>&#x02013;<lpage>1469</lpage>. <pub-id pub-id-type="doi">10.1093/nar/gkaa1288</pub-id>
+<pub-id pub-id-type="pmid">33444457</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0002"><mixed-citation publication-type="journal" id="pro70168-cit-0002">
+<string-name>
+<surname>Anderson</surname>
+<given-names>KW</given-names>
+</string-name>, <string-name>
+<surname>Hudgens</surname>
+<given-names>JW</given-names>
+</string-name>. <article-title>Hydrophilic interaction liquid chromatography at subzero temperature for hydrogen&#x02013;deuterium exchange mass spectrometry</article-title>. <source>J Am Soc Mass Spectrom</source>. <year>2023</year>;<volume>34</volume>(<issue>12</issue>):<fpage>2672</fpage>&#x02013;<lpage>2679</lpage>. <pub-id pub-id-type="doi">10.1021/jasms.3c00243</pub-id>
+<pub-id pub-id-type="pmid">37930109</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0003"><mixed-citation publication-type="journal" id="pro70168-cit-0003">
+<string-name>
+<surname>Bateman</surname>
+<given-names>RH</given-names>
+</string-name>, <string-name>
+<surname>Carruthers</surname>
+<given-names>R</given-names>
+</string-name>, <string-name>
+<surname>Hoyes</surname>
+<given-names>JB</given-names>
+</string-name>, <string-name>
+<surname>Jones</surname>
+<given-names>C</given-names>
+</string-name>, <string-name>
+<surname>Langridge</surname>
+<given-names>JI</given-names>
+</string-name>, <string-name>
+<surname>Millar</surname>
+<given-names>A</given-names>
+</string-name>, et al. <article-title>A novel precursor ion discovery method on a hybrid quadrupole orthogonal acceleration time&#x02010;of&#x02010;flight (Q&#x02010;TOF) mass spectrometer for studying protein phosphorylation</article-title>. <source>J Am Soc Mass Spectrom</source>. <year>2002</year>;<volume>13</volume>(<issue>7</issue>):<fpage>792</fpage>&#x02013;<lpage>803</lpage>. <pub-id pub-id-type="doi">10.1016/S1044-0305(02)00420-8</pub-id>
+<pub-id pub-id-type="pmid">12148804</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0004"><mixed-citation publication-type="journal" id="pro70168-cit-0004">
+<string-name>
+<surname>Breen</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Hashemihedeshi</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Amiri</surname>
+<given-names>R</given-names>
+</string-name>, <string-name>
+<surname>Dorman</surname>
+<given-names>FL</given-names>
+</string-name>, <string-name>
+<surname>Jobst</surname>
+<given-names>KJ</given-names>
+</string-name>. <article-title>Unwrapping wrap&#x02010;around in gas (or liquid) chromatographic cyclic ion mobility&#x02013;mass spectrometry</article-title>. <source>Anal Chem</source>. <year>2022</year>;<volume>94</volume>(<issue>32</issue>):<fpage>11113</fpage>&#x02013;<lpage>11117</lpage>. <pub-id pub-id-type="doi">10.1021/acs.analchem.2c02351</pub-id>
+<pub-id pub-id-type="pmid">35913896</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0005"><mixed-citation publication-type="journal" id="pro70168-cit-0005">
+<string-name>
+<surname>Chalmers</surname>
+<given-names>MJ</given-names>
+</string-name>, <string-name>
+<surname>Busby</surname>
+<given-names>SA</given-names>
+</string-name>, <string-name>
+<surname>Pascal</surname>
+<given-names>BD</given-names>
+</string-name>, <string-name>
+<surname>West</surname>
+<given-names>GM</given-names>
+</string-name>, <string-name>
+<surname>Griffin</surname>
+<given-names>PR</given-names>
+</string-name>. <article-title>Differential hydrogen/deuterium exchange mass spectrometry analysis of protein&#x02013;ligand interactions</article-title>. <source>Expert Rev Proteomics</source>. <year>2011</year>;<volume>8</volume>(<issue>1</issue>):<fpage>43</fpage>&#x02013;<lpage>59</lpage>. <pub-id pub-id-type="doi">10.1586/epr.10.109</pub-id>
+<pub-id pub-id-type="pmid">21329427</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0006"><mixed-citation publication-type="journal" id="pro70168-cit-0006">
+<string-name>
+<surname>Cryar</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Groves</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Quaglia</surname>
+<given-names>M</given-names>
+</string-name>. <article-title>Online hydrogen&#x02010;deuterium exchange traveling wave ion mobility mass spectrometry (HDX&#x02010;IM&#x02010;MS): a systematic evaluation</article-title>. <source>J Am Soc Mass Spectrom</source>. <year>2017</year>;<volume>28</volume>(<issue>6</issue>):<fpage>1192</fpage>&#x02013;<lpage>1202</lpage>. <pub-id pub-id-type="doi">10.1007/s13361-017-1633-z</pub-id>
+<pub-id pub-id-type="pmid">28374315</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0007"><mixed-citation publication-type="journal" id="pro70168-cit-0007">
+<string-name>
+<surname>Dodds</surname>
+<given-names>JN</given-names>
+</string-name>, <string-name>
+<surname>Baker</surname>
+<given-names>ES</given-names>
+</string-name>. <article-title>Ion mobility spectrometry: fundamental concepts, instrumentation, applications, and the road ahead</article-title>. <source>J Am Soc Mass Spectrom</source>. <year>2019</year>;<volume>30</volume>(<issue>11</issue>):<fpage>2185</fpage>&#x02013;<lpage>2195</lpage>. <pub-id pub-id-type="doi">10.1007/s13361-019-02288-2</pub-id>
+<pub-id pub-id-type="pmid">31493234</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0008"><mixed-citation publication-type="journal" id="pro70168-cit-0008">
+<string-name>
+<surname>Eldrid</surname>
+<given-names>C</given-names>
+</string-name>, <string-name>
+<surname>Ujma</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Kalfas</surname>
+<given-names>S</given-names>
+</string-name>, <string-name>
+<surname>Tomczyk</surname>
+<given-names>N</given-names>
+</string-name>, <string-name>
+<surname>Giles</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Morris</surname>
+<given-names>M</given-names>
+</string-name>, et al. <article-title>Gas phase stability of protein ions in a cyclic ion mobility spectrometry traveling wave device</article-title>. <source>Anal Chem</source>. <year>2019</year>;<volume>91</volume>(<issue>12</issue>):<fpage>7554</fpage>&#x02013;<lpage>7561</lpage>. <pub-id pub-id-type="doi">10.1021/acs.analchem.8b05641</pub-id>
+<pub-id pub-id-type="pmid">31117399</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0009"><mixed-citation publication-type="journal" id="pro70168-cit-0009">
+<string-name>
+<surname>Engen</surname>
+<given-names>JR</given-names>
+</string-name>, <string-name>
+<surname>Komives</surname>
+<given-names>EA</given-names>
+</string-name>. <article-title>Complementarity of hydrogen/deuterium exchange mass spectrometry and cryo&#x02010;electron microscopy</article-title>. <source>Trends Biochem Sci</source>. <year>2020</year>;<volume>45</volume>(<issue>10</issue>):<fpage>906</fpage>&#x02013;<lpage>918</lpage>. <pub-id pub-id-type="doi">10.1016/j.tibs.2020.05.005</pub-id>
+<pub-id pub-id-type="pmid">32487353</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0010"><mixed-citation publication-type="journal" id="pro70168-cit-0010">
+<string-name>
+<surname>Englander</surname>
+<given-names>SW</given-names>
+</string-name>, <string-name>
+<surname>Mayne</surname>
+<given-names>L</given-names>
+</string-name>. <article-title>The nature of protein folding pathways</article-title>. <source>Proc Natl Acad Sci U S A</source>. <year>2014</year>;<volume>111</volume>(<issue>45</issue>):<fpage>15873</fpage>&#x02013;<lpage>15880</lpage>. <pub-id pub-id-type="doi">10.1073/pnas.1411798111</pub-id>
+<pub-id pub-id-type="pmid">25326421</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0011"><mixed-citation publication-type="journal" id="pro70168-cit-0011">
+<string-name>
+<surname>Giles</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Ujma</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Wildgoose</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Pringle</surname>
+<given-names>S</given-names>
+</string-name>, <string-name>
+<surname>Richardson</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Langridge</surname>
+<given-names>D</given-names>
+</string-name>, et al. <article-title>A cyclic ion mobility&#x02010;mass spectrometry system</article-title>. <source>Anal Chem</source>. <year>2019</year>;<volume>91</volume>(<issue>13</issue>):<fpage>8564</fpage>&#x02013;<lpage>8573</lpage>. <pub-id pub-id-type="doi">10.1021/acs.analchem.9b01838</pub-id>
+<pub-id pub-id-type="pmid">31141659</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0012"><mixed-citation publication-type="journal" id="pro70168-cit-0012">
+<string-name>
+<surname>Griffiths</surname>
+<given-names>D</given-names>
+</string-name>, <string-name>
+<surname>Anderson</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Richardson</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Inaba&#x02010;Inoue</surname>
+<given-names>S</given-names>
+</string-name>, <string-name>
+<surname>Allen</surname>
+<given-names>WJ</given-names>
+</string-name>, <string-name>
+<surname>Collinson</surname>
+<given-names>I</given-names>
+</string-name>, et al. <article-title>Cyclic ion mobility for hydrogen/deuterium exchange&#x02010;mass spectrometry applications</article-title>. <source>Anal Chem</source>. <year>2024</year>;<volume>96</volume>(<issue>15</issue>):<fpage>5869</fpage>&#x02013;<lpage>5877</lpage>. <pub-id pub-id-type="doi">10.1021/acs.analchem.3c05753</pub-id>
+<pub-id pub-id-type="pmid">38561318</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0013"><mixed-citation publication-type="journal" id="pro70168-cit-0013">
+<string-name>
+<surname>Hamuro</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name>
+<surname>Coales</surname>
+<given-names>SJ</given-names>
+</string-name>. <article-title>Optimization of feasibility stage for hydrogen/deuterium exchange mass spectrometry</article-title>. <source>J Am Soc Mass Spectrom</source>. <year>2018</year>;<volume>29</volume>(<issue>3</issue>):<fpage>623</fpage>&#x02013;<lpage>629</lpage>. <pub-id pub-id-type="doi">10.1007/s13361-017-1860-3</pub-id>
+<pub-id pub-id-type="pmid">29299838</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0014"><mixed-citation publication-type="journal" id="pro70168-cit-0014">
+<string-name>
+<surname>Hansen</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Politis</surname>
+<given-names>A</given-names>
+</string-name>. <article-title>Improving peptide fragmentation for hydrogen&#x02013;deuterium exchange mass spectrometry using a time&#x02010;dependent collision energy calculator</article-title>. <source>J Am Soc Mass Spectrom</source>. <year>2020</year>;<volume>31</volume>(<issue>4</issue>):<fpage>996</fpage>&#x02013;<lpage>999</lpage>. <pub-id pub-id-type="doi">10.1021/jasms.9b00133</pub-id>
+<pub-id pub-id-type="pmid">32141743</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0015"><mixed-citation publication-type="journal" id="pro70168-cit-0015">
+<string-name>
+<surname>Iacob</surname>
+<given-names>RE</given-names>
+</string-name>, <string-name>
+<surname>Murphy</surname>
+<given-names>JP</given-names>
+<suffix>III</suffix>
+</string-name>, <string-name>
+<surname>Engen</surname>
+<given-names>JR</given-names>
+</string-name>. <article-title>Ion mobility adds an additional dimension to mass spectrometric analysis of solution&#x02010;phase hydrogen/deuterium exchange</article-title>. <source>Rapid Commun Mass Spectrom</source>. <year>2008</year>;<volume>22</volume>(<issue>18</issue>):<fpage>2898</fpage>&#x02013;<lpage>2904</lpage>. <pub-id pub-id-type="doi">10.1002/rcm.3688</pub-id>
+<pub-id pub-id-type="pmid">18727141</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0016"><mixed-citation publication-type="journal" id="pro70168-cit-0016">
+<string-name>
+<surname>Ibrahim</surname>
+<given-names>YM</given-names>
+</string-name>, <string-name>
+<surname>Prior</surname>
+<given-names>DC</given-names>
+</string-name>, <string-name>
+<surname>Baker</surname>
+<given-names>ES</given-names>
+</string-name>, <string-name>
+<surname>Smith</surname>
+<given-names>RD</given-names>
+</string-name>, <string-name>
+<surname>Belov</surname>
+<given-names>ME</given-names>
+</string-name>. <article-title>Characterization of an ion mobility&#x02010;multiplexed collision&#x02010;induced dissociation&#x02010;tandem time&#x02010;of&#x02010;flight mass spectrometry approach</article-title>. <source>Int J Mass Spectrom</source>. <year>2010</year>;<volume>293</volume>(<issue>1</issue>):<fpage>34</fpage>&#x02013;<lpage>44</lpage>. <pub-id pub-id-type="doi">10.1016/j.ijms.2010.03.009</pub-id>
+<pub-id pub-id-type="pmid">20596241</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0017"><mixed-citation publication-type="journal" id="pro70168-cit-0017">
+<string-name>
+<surname>James</surname>
+<given-names>EI</given-names>
+</string-name>, <string-name>
+<surname>Murphree</surname>
+<given-names>TA</given-names>
+</string-name>, <string-name>
+<surname>Vorauer</surname>
+<given-names>C</given-names>
+</string-name>, <string-name>
+<surname>Engen</surname>
+<given-names>JR</given-names>
+</string-name>, <string-name>
+<surname>Guttman</surname>
+<given-names>M</given-names>
+</string-name>. <article-title>Advances in hydrogen/deuterium exchange mass spectrometry and the pursuit of challenging biological systems</article-title>. <source>Chem Rev</source>. <year>2022</year>;<volume>122</volume>(<issue>8</issue>):<fpage>7562</fpage>&#x02013;<lpage>7623</lpage>. <pub-id pub-id-type="doi">10.1021/acs.chemrev.1c00279</pub-id>
+<pub-id pub-id-type="pmid">34493042</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0018"><mixed-citation publication-type="journal" id="pro70168-cit-0018">
+<string-name>
+<surname>Javed</surname>
+<given-names>W</given-names>
+</string-name>, <string-name>
+<surname>Griffiths</surname>
+<given-names>D</given-names>
+</string-name>, <string-name>
+<surname>Politis</surname>
+<given-names>A</given-names>
+</string-name>. <article-title>Hydrogen/deuterium exchange&#x02010;mass spectrometry of integral membrane proteins in native&#x02010;like environments: current scenario and the way forward</article-title>. <source>Essays Biochem</source>. <year>2023</year>;<volume>67</volume>(<issue>2</issue>):<fpage>187</fpage>&#x02013;<lpage>200</lpage>. <pub-id pub-id-type="doi">10.1042/ebc20220173</pub-id>
+<pub-id pub-id-type="pmid">36876893</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0019"><mixed-citation publication-type="journal" id="pro70168-cit-0019">
+<string-name>
+<surname>Law</surname>
+<given-names>KP</given-names>
+</string-name>, <string-name>
+<surname>Lim</surname>
+<given-names>YP</given-names>
+</string-name>. <article-title>Recent advances in mass spectrometry: data independent analysis and hyper reaction monitoring</article-title>. <source>Expert Rev Proteomics</source>. <year>2013</year>;<volume>10</volume>(<issue>6</issue>):<fpage>551</fpage>&#x02013;<lpage>566</lpage>. <pub-id pub-id-type="doi">10.1586/14789450.2013.858022</pub-id>
+<pub-id pub-id-type="pmid">24206228</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0020"><mixed-citation publication-type="journal" id="pro70168-cit-0020">
+<string-name>
+<surname>Mandell</surname>
+<given-names>JG</given-names>
+</string-name>, <string-name>
+<surname>Falick</surname>
+<given-names>AM</given-names>
+</string-name>, <string-name>
+<surname>Komives</surname>
+<given-names>EA</given-names>
+</string-name>. <article-title>Identification of protein&#x02013;protein interfaces by decreased amide proton solvent accessibility</article-title>. <source>Proc Natl Acad Sci U S A</source>. <year>1998</year>;<volume>95</volume>(<issue>25</issue>):<fpage>14705</fpage>&#x02013;<lpage>14710</lpage>. <pub-id pub-id-type="doi">10.1073/pnas.95.25.14705</pub-id>
+<pub-id pub-id-type="pmid">9843953</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0021"><mixed-citation publication-type="journal" id="pro70168-cit-0021">
+<string-name>
+<surname>Martens</surname>
+<given-names>C</given-names>
+</string-name>, <string-name>
+<surname>Shekhar</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Borysik</surname>
+<given-names>AJ</given-names>
+</string-name>, <string-name>
+<surname>Lau</surname>
+<given-names>AM</given-names>
+</string-name>, <string-name>
+<surname>Reading</surname>
+<given-names>E</given-names>
+</string-name>, <string-name>
+<surname>Tajkhorshid</surname>
+<given-names>E</given-names>
+</string-name>, et al. <article-title>Direct protein&#x02010;lipid interactions shape the conformational landscape of secondary transporters</article-title>. <source>Nat Commun</source>. <year>2018</year>;<volume>9</volume>(<issue>1</issue>):<fpage>4151</fpage>. <pub-id pub-id-type="doi">10.1038/s41467-018-06704-1</pub-id>
+<pub-id pub-id-type="pmid">30297844</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0022"><mixed-citation publication-type="journal" id="pro70168-cit-0022">
+<string-name>
+<surname>Masson</surname>
+<given-names>GR</given-names>
+</string-name>, <string-name>
+<surname>Burke</surname>
+<given-names>JE</given-names>
+</string-name>, <string-name>
+<surname>Ahn</surname>
+<given-names>NG</given-names>
+</string-name>, <string-name>
+<surname>Anand</surname>
+<given-names>GS</given-names>
+</string-name>, <string-name>
+<surname>Borchers</surname>
+<given-names>C</given-names>
+</string-name>, <string-name>
+<surname>Brier</surname>
+<given-names>S</given-names>
+</string-name>, et al. <article-title>Recommendations for performing, interpreting and reporting hydrogen deuterium exchange mass spectrometry (HDX&#x02010;MS) experiments</article-title>. <source>Nat Methods</source>. <year>2019</year>;<volume>16</volume>(<issue>7</issue>):<fpage>595</fpage>&#x02013;<lpage>602</lpage>. <pub-id pub-id-type="doi">10.1038/s41592-019-0459-y</pub-id>
+<pub-id pub-id-type="pmid">31249422</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0023"><mixed-citation publication-type="journal" id="pro70168-cit-0023">
+<string-name>
+<surname>Mayne</surname>
+<given-names>L</given-names>
+</string-name>, <string-name>
+<surname>Kan</surname>
+<given-names>Z&#x02010;Y</given-names>
+</string-name>, <string-name>
+<surname>Sevugan Chetty</surname>
+<given-names>P</given-names>
+</string-name>, <string-name>
+<surname>Ricciuti</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Walters</surname>
+<given-names>BT</given-names>
+</string-name>, <string-name>
+<surname>Englander</surname>
+<given-names>SW</given-names>
+</string-name>. <article-title>Many overlapping peptides for protein hydrogen exchange experiments by the fragment separation&#x02010;mass spectrometry method</article-title>. <source>J Am Soc Mass Spectrom</source>. <year>2011</year>;<volume>22</volume>(<issue>11</issue>):<fpage>1898</fpage>&#x02013;<lpage>1905</lpage>. <pub-id pub-id-type="doi">10.1007/s13361-011-0235-4</pub-id>
+<pub-id pub-id-type="pmid">21952777</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0024"><mixed-citation publication-type="journal" id="pro70168-cit-0024">
+<string-name>
+<surname>M&#x000f6;ller</surname>
+<given-names>IR</given-names>
+</string-name>, <string-name>
+<surname>Slivacka</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Hausner</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Nielsen</surname>
+<given-names>AK</given-names>
+</string-name>, <string-name>
+<surname>Posp&#x000ed;&#x00161;ilov&#x000e1;</surname>
+<given-names>E</given-names>
+</string-name>, <string-name>
+<surname>Merkle</surname>
+<given-names>PS</given-names>
+</string-name>, et al. <article-title>Improving the sequence coverage of integral membrane proteins during hydrogen/deuterium exchange mass spectrometry experiments</article-title>. <source>Anal Chem</source>. <year>2019</year>;<volume>91</volume>(<issue>17</issue>):<fpage>10970</fpage>&#x02013;<lpage>10978</lpage>. <pub-id pub-id-type="doi">10.1021/acs.analchem.9b00973</pub-id>
+<pub-id pub-id-type="pmid">31408320</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0025"><mixed-citation publication-type="journal" id="pro70168-cit-0025">
+<string-name>
+<surname>Mullahoo</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Zhang</surname>
+<given-names>T</given-names>
+</string-name>, <string-name>
+<surname>Clauser</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Carr</surname>
+<given-names>SA</given-names>
+</string-name>, <string-name>
+<surname>Jaffe</surname>
+<given-names>JD</given-names>
+</string-name>, <string-name>
+<surname>Papanastasiou</surname>
+<given-names>M</given-names>
+</string-name>. <article-title>Dual protease type XIII/pepsin digestion offers superior resolution and overlap for the analysis of histone tails by HX&#x02010;MS</article-title>. <source>Methods</source>. <year>2020</year>;<volume>184</volume>:<fpage>135</fpage>&#x02013;<lpage>140</lpage>. <pub-id pub-id-type="doi">10.1016/j.ymeth.2020.01.016</pub-id>
+<pub-id pub-id-type="pmid">32004545</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0026"><mixed-citation publication-type="journal" id="pro70168-cit-0026">
+<string-name>
+<surname>Nirudodhi</surname>
+<given-names>SN</given-names>
+</string-name>, <string-name>
+<surname>Sperry</surname>
+<given-names>JB</given-names>
+</string-name>, <string-name>
+<surname>Rouse</surname>
+<given-names>JC</given-names>
+</string-name>, <string-name>
+<surname>Carroll</surname>
+<given-names>JA</given-names>
+</string-name>. <article-title>Application of dual protease column for HDX&#x02010;MS analysis of monoclonal antibodies</article-title>. <source>J Pharm Sci</source>. <year>2017</year>;<volume>106</volume>(<issue>2</issue>):<fpage>530</fpage>&#x02013;<lpage>536</lpage>. <pub-id pub-id-type="doi">10.1016/j.xphs.2016.10.023</pub-id>
+<pub-id pub-id-type="pmid">27916388</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0027"><mixed-citation publication-type="journal" id="pro70168-cit-0027">
+<string-name>
+<surname>Perez&#x02010;Riverol</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name>
+<surname>Bai</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Bandla</surname>
+<given-names>C</given-names>
+</string-name>, <string-name>
+<surname>Garc&#x000ed;a&#x02010;Seisdedos</surname>
+<given-names>D</given-names>
+</string-name>, <string-name>
+<surname>Hewapathirana</surname>
+<given-names>S</given-names>
+</string-name>, <string-name>
+<surname>Kamatchinathan</surname>
+<given-names>S</given-names>
+</string-name>, et al. <article-title>The PRIDE database resources in 2022: a hub for mass spectrometry&#x02010;based proteomics evidences</article-title>. <source>Nucleic Acids Res</source>. <year>2021</year>;<volume>50</volume>(<issue>D1</issue>):<fpage>D543</fpage>&#x02013;<lpage>D552</lpage>. <pub-id pub-id-type="doi">10.1093/nar/gkab1038</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0028"><mixed-citation publication-type="journal" id="pro70168-cit-0028">
+<string-name>
+<surname>Peterle</surname>
+<given-names>D</given-names>
+</string-name>, <string-name>
+<surname>DePice</surname>
+<given-names>D</given-names>
+</string-name>, <string-name>
+<surname>Wales</surname>
+<given-names>TE</given-names>
+</string-name>, <string-name>
+<surname>Engen</surname>
+<given-names>JR</given-names>
+</string-name>. <article-title>Increase the flow rate and improve hydrogen deuterium exchange mass spectrometry</article-title>. <source>J Chromatogr A</source>. <year>2023</year>;<volume>1689</volume>:<elocation-id>463742</elocation-id>. <pub-id pub-id-type="doi">10.1016/j.chroma.2022.463742</pub-id>
+<pub-id pub-id-type="pmid">36586285</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0029"><mixed-citation publication-type="journal" id="pro70168-cit-0029">
+<string-name>
+<surname>Pringle</surname>
+<given-names>SD</given-names>
+</string-name>, <string-name>
+<surname>Giles</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Wildgoose</surname>
+<given-names>JL</given-names>
+</string-name>, <string-name>
+<surname>Williams</surname>
+<given-names>JP</given-names>
+</string-name>, <string-name>
+<surname>Slade</surname>
+<given-names>SE</given-names>
+</string-name>, <string-name>
+<surname>Thalassinos</surname>
+<given-names>K</given-names>
+</string-name>, et al. <article-title>An investigation of the mobility separation of some peptide and protein ions using a new hybrid quadrupole/travelling wave IMS/oa&#x02010;ToF instrument</article-title>. <source>Int J Mass Spectrom</source>. <year>2007</year>;<volume>261</volume>(<issue>1</issue>):<fpage>1</fpage>&#x02013;<lpage>12</lpage>. <pub-id pub-id-type="doi">10.1016/j.ijms.2006.07.021</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0030"><mixed-citation publication-type="journal" id="pro70168-cit-0030">
+<string-name>
+<surname>Rincon Pabon</surname>
+<given-names>JP</given-names>
+</string-name>, <string-name>
+<surname>Akbar</surname>
+<given-names>Z</given-names>
+</string-name>, <string-name>
+<surname>Politis</surname>
+<given-names>A</given-names>
+</string-name>. <article-title>MSe collision energy optimization for the analysis of membrane proteins using HDX&#x02010;cIMS</article-title>. <source>J Am Soc Mass Spectrom</source>. <year>2024</year>;<volume>35</volume>(<issue>7</issue>):<fpage>1383</fpage>&#x02013;<lpage>1389</lpage>. <pub-id pub-id-type="doi">10.1021/jasms.4c00093</pub-id>
+<pub-id pub-id-type="pmid">38842540</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0031"><mixed-citation publication-type="journal" id="pro70168-cit-0031">
+<string-name>
+<surname>Shliaha</surname>
+<given-names>PV</given-names>
+</string-name>, <string-name>
+<surname>Bond</surname>
+<given-names>NJ</given-names>
+</string-name>, <string-name>
+<surname>Gatto</surname>
+<given-names>L</given-names>
+</string-name>, <string-name>
+<surname>Lilley</surname>
+<given-names>KS</given-names>
+</string-name>. <article-title>Effects of traveling wave ion mobility separation on data independent acquisition in proteomics studies</article-title>. <source>J Proteome Res</source>. <year>2013</year>;<volume>12</volume>(<issue>6</issue>):<fpage>2323</fpage>&#x02013;<lpage>2339</lpage>. <pub-id pub-id-type="doi">10.1021/pr300775k</pub-id>
+<pub-id pub-id-type="pmid">23514362</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0032"><mixed-citation publication-type="journal" id="pro70168-cit-0032">
+<string-name>
+<surname>S&#x000f8;rensen</surname>
+<given-names>L</given-names>
+</string-name>, <string-name>
+<surname>Salbo</surname>
+<given-names>R</given-names>
+</string-name>. <article-title>Optimized workflow for selecting peptides for HDX&#x02010;MS data analyses</article-title>. <source>J Am Soc Mass Spectrom</source>. <year>2018</year>;<volume>29</volume>(<issue>11</issue>):<fpage>2278</fpage>&#x02013;<lpage>2281</lpage>. <pub-id pub-id-type="doi">10.1007/s13361-018-2056-1</pub-id>
+<pub-id pub-id-type="pmid">30171440</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0033"><mixed-citation publication-type="journal" id="pro70168-cit-0033">
+<string-name>
+<surname>Toporowska</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Kapoor</surname>
+<given-names>P</given-names>
+</string-name>, <string-name>
+<surname>Musgaard</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Gherbi</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Sengmany</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Qu</surname>
+<given-names>F</given-names>
+</string-name>, et al. <article-title>Ligand&#x02010;induced conformational changes in the &#x003b2;1&#x02010;adrenergic receptor revealed by hydrogen&#x02010;deuterium exchange mass spectrometry</article-title>. <source>Nat Commun</source>. <year>2024</year>;<volume>15</volume>(<issue>1</issue>):<elocation-id>8993</elocation-id>. <pub-id pub-id-type="doi">10.1038/s41467-024-53161-0</pub-id>
+<pub-id pub-id-type="pmid">39424782</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0034"><mixed-citation publication-type="journal" id="pro70168-cit-0034">
+<string-name>
+<surname>Trabjerg</surname>
+<given-names>E</given-names>
+</string-name>, <string-name>
+<surname>Nazari</surname>
+<given-names>ZE</given-names>
+</string-name>, <string-name>
+<surname>Rand</surname>
+<given-names>KD</given-names>
+</string-name>. <article-title>Conformational analysis of complex protein states by hydrogen/deuterium exchange mass spectrometry (HDX&#x02010;MS): challenges and emerging solutions</article-title>. <source>TrAC Trends Anal Chem</source>. <year>2018</year>;<volume>106</volume>:<fpage>125</fpage>&#x02013;<lpage>138</lpage>. <pub-id pub-id-type="doi">10.1016/j.trac.2018.06.008</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0035"><mixed-citation publication-type="journal" id="pro70168-cit-0035">
+<string-name>
+<surname>Ujma</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Ropartz</surname>
+<given-names>D</given-names>
+</string-name>, <string-name>
+<surname>Giles</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Richardson</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Langridge</surname>
+<given-names>D</given-names>
+</string-name>, <string-name>
+<surname>Wildgoose</surname>
+<given-names>J</given-names>
+</string-name>, et al. <article-title>Cyclic ion mobility mass spectrometry distinguishes anomers and open&#x02010;ring forms of pentasaccharides</article-title>. <source>J Am Soc Mass Spectrom</source>. <year>2019</year>;<volume>30</volume>(<issue>6</issue>):<fpage>1028</fpage>&#x02013;<lpage>1037</lpage>. <pub-id pub-id-type="doi">10.1007/s13361-019-02168-9</pub-id>
+<pub-id pub-id-type="pmid">30977045</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0036"><mixed-citation publication-type="journal" id="pro70168-cit-0036">
+<string-name>
+<surname>Venable</surname>
+<given-names>JD</given-names>
+</string-name>, <string-name>
+<surname>Okach</surname>
+<given-names>L</given-names>
+</string-name>, <string-name>
+<surname>Agarwalla</surname>
+<given-names>S</given-names>
+</string-name>, <string-name>
+<surname>Brock</surname>
+<given-names>A</given-names>
+</string-name>. <article-title>Subzero temperature chromatography for reduced Back&#x02010;exchange and improved dynamic range in amide hydrogen/deuterium exchange mass spectrometry</article-title>. <source>Anal Chem</source>. <year>2012</year>;<volume>84</volume>(<issue>21</issue>):<fpage>9601</fpage>&#x02013;<lpage>9608</lpage>. <pub-id pub-id-type="doi">10.1021/ac302488h</pub-id>
+<pub-id pub-id-type="pmid">23025328</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0037"><mixed-citation publication-type="journal" id="pro70168-cit-0037">
+<string-name>
+<surname>Vinciauskaite</surname>
+<given-names>V</given-names>
+</string-name>, <string-name>
+<surname>Masson</surname>
+<given-names>GR</given-names>
+</string-name>. <article-title>Fundamentals of HDX&#x02010;MS</article-title>. <source>Essays Biochem</source>. <year>2023</year>;<volume>67</volume>(<issue>2</issue>):<fpage>301</fpage>&#x02013;<lpage>314</lpage>. <pub-id pub-id-type="doi">10.1042/ebc20220111</pub-id>
+<pub-id pub-id-type="pmid">36251047</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0038"><mixed-citation publication-type="journal" id="pro70168-cit-0038">
+<string-name>
+<surname>Walters</surname>
+<given-names>BT</given-names>
+</string-name>, <string-name>
+<surname>Ricciuti</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Mayne</surname>
+<given-names>L</given-names>
+</string-name>, <string-name>
+<surname>Englander</surname>
+<given-names>SW</given-names>
+</string-name>. <article-title>Minimizing Back exchange in the hydrogen exchange&#x02010;mass spectrometry experiment</article-title>. <source>J Am Soc Mass Spectrom</source>. <year>2012</year>;<volume>23</volume>(<issue>12</issue>):<fpage>2132</fpage>&#x02013;<lpage>2139</lpage>. <pub-id pub-id-type="doi">10.1007/s13361-012-0476-x</pub-id>
+<pub-id pub-id-type="pmid">22965280</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0039"><mixed-citation publication-type="journal" id="pro70168-cit-0039">
+<string-name>
+<surname>Zhang</surname>
+<given-names>X</given-names>
+</string-name>, <string-name>
+<surname>Chien</surname>
+<given-names>EYT</given-names>
+</string-name>, <string-name>
+<surname>Chalmers</surname>
+<given-names>MJ</given-names>
+</string-name>, <string-name>
+<surname>Pascal</surname>
+<given-names>BD</given-names>
+</string-name>, <string-name>
+<surname>Gatchalian</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Stevens</surname>
+<given-names>RC</given-names>
+</string-name>, et al. <article-title>Dynamics of the &#x003b2;2&#x02010;adrenergic G&#x02010;protein coupled receptor revealed by hydrogen&#x02010;deuterium exchange</article-title>. <source>Anal Chem</source>. <year>2010</year>;<volume>82</volume>(<issue>3</issue>):<fpage>1100</fpage>&#x02013;<lpage>1108</lpage>. <pub-id pub-id-type="doi">10.1021/ac902484p</pub-id>
+<pub-id pub-id-type="pmid">20058880</pub-id>
+</mixed-citation></ref><ref id="pro70168-bib-0040"><mixed-citation publication-type="journal" id="pro70168-cit-0040">
+<string-name>
+<surname>Zhang</surname>
+<given-names>Z</given-names>
+</string-name>, <string-name>
+<surname>Smith</surname>
+<given-names>DL</given-names>
+</string-name>. <article-title>Determination of amide hydrogen exchange by mass spectrometry: a new tool for protein structure elucidation</article-title>. <source>Protein Sci</source>. <year>1993</year>;<volume>2</volume>(<issue>4</issue>):<fpage>522</fpage>&#x02013;<lpage>531</lpage>. <pub-id pub-id-type="doi">10.1002/pro.5560020404</pub-id>
+<pub-id pub-id-type="pmid">8390883</pub-id>
+</mixed-citation></ref></ref-list></back></article>

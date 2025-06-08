@@ -1,0 +1,561 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="1.3" id="cnr270175" xml:lang="en" article-type="research-article"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Cancer Rep (Hoboken)</journal-id><journal-id journal-id-type="iso-abbrev">Cancer Rep (Hoboken)</journal-id><journal-id journal-id-type="doi">10.1002/(ISSN)2573-8348</journal-id><journal-id journal-id-type="publisher-id">CNR2</journal-id><journal-title-group><journal-title>Cancer Reports</journal-title></journal-title-group><issn pub-type="epub">2573-8348</issn><publisher><publisher-name>John Wiley and Sons Inc.</publisher-name><publisher-loc>Hoboken</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">40176498</article-id><article-id pub-id-type="pmc">PMC11965882</article-id>
+<article-id pub-id-type="doi">10.1002/cnr2.70175</article-id><article-id pub-id-type="publisher-id">CNR270175</article-id><article-id pub-id-type="other">CNR2-24-0297.R4</article-id><article-categories><subj-group subj-group-type="overline"><subject>Original Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Original Article</subject></subj-group></article-categories><title-group><article-title>Comparison of Machine Learning Models for Classification of Breast Cancer Risk Based on Clinical Data</article-title></title-group><contrib-group><contrib id="cnr270175-cr-0001" contrib-type="author"><name><surname>Rafiepoor</surname><given-names>Haniyeh</given-names></name><xref rid="cnr270175-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="cnr270175-cr-0002" contrib-type="author"><name><surname>Ghorbankhanloo</surname><given-names>Alireza</given-names></name><xref rid="cnr270175-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="cnr270175-cr-0003" contrib-type="author"><name><surname>Zendehdel</surname><given-names>Kazem</given-names></name><xref rid="cnr270175-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="cnr270175-cr-0004" contrib-type="author"><name><surname>Madar</surname><given-names>Zahra Zangeneh</given-names></name><xref rid="cnr270175-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="cnr270175-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref></contrib><contrib id="cnr270175-cr-0005" contrib-type="author"><name><surname>Hajivalizadeh</surname><given-names>Sepideh</given-names></name><xref rid="cnr270175-aff-0004" ref-type="aff">
+<sup>4</sup>
+</xref></contrib><contrib id="cnr270175-cr-0006" contrib-type="author"><name><surname>Hasani</surname><given-names>Zeinab</given-names></name><xref rid="cnr270175-aff-0005" ref-type="aff">
+<sup>5</sup>
+</xref></contrib><contrib id="cnr270175-cr-0007" contrib-type="author"><name><surname>Sarmadi</surname><given-names>Ali</given-names></name><xref rid="cnr270175-aff-0006" ref-type="aff">
+<sup>6</sup>
+</xref></contrib><contrib id="cnr270175-cr-0008" contrib-type="author"><name><surname>Amanpour&#x02010;Gharaei</surname><given-names>Behzad</given-names></name><xref rid="cnr270175-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="cnr270175-cr-0009" contrib-type="author"><name><surname>Barati</surname><given-names>Mohammad Amin</given-names></name><xref rid="cnr270175-aff-0007" ref-type="aff">
+<sup>7</sup>
+</xref></contrib><contrib id="cnr270175-cr-0010" contrib-type="author"><name><surname>Saadat</surname><given-names>Mozafar</given-names></name><xref rid="cnr270175-aff-0008" ref-type="aff">
+<sup>8</sup>
+</xref></contrib><contrib id="cnr270175-cr-0011" contrib-type="author" corresp="yes"><name><surname>Sadegh&#x02010;Zadeh</surname><given-names>Seyed&#x02010;Ali</given-names></name><xref rid="cnr270175-aff-0009" ref-type="aff">
+<sup>9</sup>
+</xref><address><email>ali.sadegh-zadeh@staffs.ac.uk</email></address></contrib><contrib id="cnr270175-cr-0012" contrib-type="author" corresp="yes"><name><surname>Amanpour</surname><given-names>Saeid</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-0395-418X</contrib-id><xref rid="cnr270175-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><address><email>amanpour_s@tums.ac.ir</email></address></contrib></contrib-group><aff id="cnr270175-aff-0001">
+<label>
+<sup>1</sup>
+</label>
+<named-content content-type="organisation-division">Cancer Biology Research Center</named-content>
+<institution>Cancer Institute, Tehran University of Medical Sciences</institution>
+<city>Tehran</city>
+<country country="IR">Iran</country>
+</aff><aff id="cnr270175-aff-0002">
+<label>
+<sup>2</sup>
+</label>
+<institution>School of Industrial Engineering, Iran University of Science and Technology</institution>
+<city>Tehran</city>
+<country country="IR">Iran</country>
+</aff><aff id="cnr270175-aff-0003">
+<label>
+<sup>3</sup>
+</label>
+<named-content content-type="organisation-division">Department of Industrial Engineering</named-content>
+<institution>Iran University of Science and Technology</institution>
+<city>Tehran</city>
+<country country="IR">Iran</country>
+</aff><aff id="cnr270175-aff-0004">
+<label>
+<sup>4</sup>
+</label>
+<named-content content-type="organisation-division">Osteoporosis Research Center, Endocrinology and Metabolism Research Institute</named-content>
+<institution>Tehran University of Medical Sciences</institution>
+<city>Tehran</city>
+<country country="IR">Iran</country>
+</aff><aff id="cnr270175-aff-0005">
+<label>
+<sup>5</sup>
+</label>
+<institution>School of Medicine, Tehran University of Medical Science</institution>
+<city>Tehran</city>
+<country country="IR">Iran</country>
+</aff><aff id="cnr270175-aff-0006">
+<label>
+<sup>6</sup>
+</label>
+<institution>Faculty of Mechanical Engineering, K. N. Toosi University of Technology</institution>
+<city>Tehran</city>
+<country country="IR">Iran</country>
+</aff><aff id="cnr270175-aff-0007">
+<label>
+<sup>7</sup>
+</label>
+<institution>School of Mechanical Engineering, University of Tehran</institution>
+<city>Tehran</city>
+<country country="IR">Iran</country>
+</aff><aff id="cnr270175-aff-0008">
+<label>
+<sup>8</sup>
+</label>
+<named-content content-type="organisation-division">Department of Mechanical Engineering</named-content>
+<institution>School of Engineering, University of Birmingham</institution>
+<city>Birmingham</city>
+<country country="GB">UK</country>
+</aff><aff id="cnr270175-aff-0009">
+<label>
+<sup>9</sup>
+</label>
+<named-content content-type="organisation-division">Department of Computing</named-content>
+<institution>School of Digital, Technologies and Arts, Staffordshire University</institution>
+<city>Stoke&#x02010;on&#x02010;Trent</city>
+<country country="GB">UK</country>
+</aff><author-notes><corresp id="correspondenceTo">
+<label>*</label>
+<bold>Correspondence:</bold>
+<break/>
+Seyed&#x02010;Ali Sadegh&#x02010;Zadeh (<email>ali.sadegh-zadeh@staffs.ac.uk</email>)<break/>
+Saeid Amanpour (<email>amanpour_s@tums.ac.ir</email>)<break/>
+</corresp></author-notes><pub-date pub-type="epub"><day>02</day><month>4</month><year>2025</year></pub-date><pub-date pub-type="collection"><month>4</month><year>2025</year></pub-date><volume>8</volume><issue seq="67">4</issue><issue-id pub-id-type="doi">10.1002/cnr2.v8.4</issue-id><elocation-id>e70175</elocation-id><history>
+<date date-type="rev-recd"><day>01</day><month>2</month><year>2025</year></date>
+<date date-type="received"><day>26</day><month>4</month><year>2024</year></date>
+<date date-type="accepted"><day>20</day><month>2</month><year>2025</year></date>
+</history><permissions><!--&#x000a9; 2025 Wiley Periodicals LLC.--><copyright-statement content-type="article-copyright">&#x000a9; 2025 The Author(s). <italic toggle="yes">Cancer Reports</italic> published by Wiley Periodicals LLC.</copyright-statement><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>This is an open access article under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link> License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions><self-uri content-type="pdf" xlink:href="file:CNR2-8-e70175.pdf"/><abstract><title>ABSTRACT</title><sec id="cnr270175-sec-0001"><title>Background</title><p>Breast cancer (BC) is a major global health concern with rising incidence and mortality rates in many developing countries. Effective BC risk assessment models are crucial for prevention and early detection. While the Gail model, a traditional logistic regression&#x02010;based model, has been broadly used, its predictive performance may be limited by its linear assumptions. With the rapid advancement of artificial intelligence (AI) in medical sciences, various complex machine learning algorithms have been developed for risk prediction, including for BC.</p></sec><sec id="cnr270175-sec-0002"><title>Aims</title><p>This study aims to compare the quality of AI&#x02010;based models with the traditional Gail model in assessing BC risk using a population dataset. It also evaluates the performance of these models in predicting BC risk.</p></sec><sec id="cnr270175-sec-0003"><title>Methods and Results</title><p>This study involved 942 newly diagnosed BC patients and 975 healthy controls at the Cancer Institute in IKH hospital Complex, Tehran. Ten classification algorithms were applied to the dataset. The accuracy, sensitivity, precision, and feature importance in the machine learning algorithms were assessed and compared to previous studies for evaluation. The study found that AI algorithms alone did not significantly improve predictability compared to the Gail model. However, the importance of variables varied significantly among the AI algorithms. Understanding feature importance and interactions is crucial in AI modeling in order to enhance accuracy and identify critical risk factors.</p></sec><sec id="cnr270175-sec-0004"><title>Conclusion</title><p>This study concluded that, in BC risk prediction, incorporating specific risk factors, such as genetic and image&#x02010;related variables, may be necessary to further enhance accuracy in BC risk prediction models. Furthermore, it is crucial to address modeling issues in models with a restricted number of features for future research.</p></sec></abstract><kwd-group kwd-group-type="author-generated"><kwd id="cnr270175-kwd-0001">artificial intelligence</kwd><kwd id="cnr270175-kwd-0002">breast cancer</kwd><kwd id="cnr270175-kwd-0003">conventional models</kwd><kwd id="cnr270175-kwd-0004">machine learning</kwd><kwd id="cnr270175-kwd-0005">risk assessment</kwd></kwd-group><counts><fig-count count="2"/><table-count count="3"/><page-count count="9"/><word-count count="5800"/></counts><custom-meta-group><custom-meta><meta-name>source-schema-version-number</meta-name><meta-value>2.0</meta-value></custom-meta><custom-meta><meta-name>cover-date</meta-name><meta-value>April 2025</meta-value></custom-meta><custom-meta><meta-name>details-of-publishers-convertor</meta-name><meta-value>Converter:WILEY_ML3GV2_TO_JATSPMC version:6.5.4 mode:remove_FC converted:07.04.2025</meta-value></custom-meta></custom-meta-group></article-meta><notes><fn-group id="cnr270175-ntgp-0001"><fn fn-type="funding" id="cnr270175-note-0001"><p>
+<bold>Funding:</bold> The authors received no specific funding for this work.</p></fn></fn-group></notes></front><body id="cnr270175-body-0001"><def-list list-content="abbreviations" id="cnr270175-dl-0001"><title>Abbreviations</title><def-item><term id="cnr270175-li-0001">BC</term><def id="cnr270175-li-0002"><p>breast cancer</p></def></def-item><def-item><term id="cnr270175-li-0003">BCRAT</term><def id="cnr270175-li-0004"><p>breast cancer risk assessment tool</p></def></def-item><def-item><term id="cnr270175-li-0005">DT</term><def id="cnr270175-li-0006"><p>decision tree</p></def></def-item><def-item><term id="cnr270175-li-0007">IARC</term><def id="cnr270175-li-0008"><p>International Agency for Research on Cancer</p></def></def-item><def-item><term id="cnr270175-li-0009">KNN</term><def id="cnr270175-li-0010"><p>
+<italic toggle="yes">k</italic>&#x02010;nearest neighbor</p></def></def-item><def-item><term id="cnr270175-li-0011">LR</term><def id="cnr270175-li-0012"><p>logistic regression</p></def></def-item><def-item><term id="cnr270175-li-0013">ML</term><def id="cnr270175-li-0014"><p>machine learning</p></def></def-item><def-item><term id="cnr270175-li-0015">RF</term><def id="cnr270175-li-0016"><p>random forest</p></def></def-item><def-item><term id="cnr270175-li-0017">SVM</term><def id="cnr270175-li-0018"><p>support vector machine</p></def></def-item></def-list><sec id="cnr270175-sec-0005"><label>1</label><title>Introduction</title><p>Estimates from the International Agency for Research on Cancer (IARC) in GLOBOCAN 2020 suggest that breast cancer (BC) is the most common cancer globally, with over 2&#x02009;million new cases annually [<xref rid="cnr270175-bib-0001" ref-type="bibr">1</xref>]. In developing countries such as Iran, the incidence and mortality of BC are increasing. Iran reported approximately 17&#x02009;000 new cases and over 4800 deaths in GLOBOCAN 2020, showing an increase from 13&#x02009;000 new cases in 2018 [<xref rid="cnr270175-bib-0002" ref-type="bibr">2</xref>]. Given the high prevalence and the burden on healthcare systems, the importance of BC prevention has become even more significant. The Gail model, a well&#x02010;known BC risk assessment tool (BCRAT), is a comprehensive logistic regression&#x02010;based model developed in 1989 to assess BC risk in over 28&#x02009;000 American women [<xref rid="cnr270175-bib-0003" ref-type="bibr">3</xref>]. Based on this model, six factors&#x02014;age, number of breast biopsies, age at first birth, number of first&#x02010;degree relatives with BC, race/ethnicity, and age at menarche&#x02014;influence the risk of BC.</p><p>Logistic regression is a classification model that utilizes maximum likelihood functions to estimate the probabilities of various outcomes. It is traditionally employed to analyze right&#x02010;censored data&#x000a0;[<xref rid="cnr270175-bib-0004" ref-type="bibr">4</xref>]. The primary advantages of logistic regressions are their clarity, interpretability, and lack of assumptions about the distribution of the explanatory data&#x000a0;[<xref rid="cnr270175-bib-0005" ref-type="bibr">5</xref>]. However, logistic regressions are constrained by their lack of statistical complexity, as they presuppose a linear relationship between the input variables and the log odds of the outcome [<xref rid="cnr270175-bib-0006" ref-type="bibr">6</xref>]. Over the past few years, due to the rapid advancement of artificial intelligence (AI) in medical sciences, various complex modern algorithms, including different machine learning (ML) and deep learning methods, have been developed for breast cancer risk prediction [<xref rid="cnr270175-bib-0007" ref-type="bibr">7</xref>, <xref rid="cnr270175-bib-0008" ref-type="bibr">8</xref>, <xref rid="cnr270175-bib-0009" ref-type="bibr">9</xref>, <xref rid="cnr270175-bib-0010" ref-type="bibr">10</xref>]. Despite previous efforts to construct BC prediction models using ML algorithms&#x000a0;[<xref rid="cnr270175-bib-0007" ref-type="bibr">7</xref>, <xref rid="cnr270175-bib-0008" ref-type="bibr">8</xref>, <xref rid="cnr270175-bib-0011" ref-type="bibr">11</xref>, <xref rid="cnr270175-bib-0012" ref-type="bibr">12</xref>, <xref rid="cnr270175-bib-0013" ref-type="bibr">13</xref>, <xref rid="cnr270175-bib-0014" ref-type="bibr">14</xref>], there are currently limitations in the predictive performance of traditional and ML&#x02010;based risk prediction models. This study is aimed at evaluating the accuracy of 10 ML&#x02010;based models compared to traditional models for predicting BC using parameters from the Gail model. It used the Iranian population dataset from the Rostami et&#x000a0;al. study [<xref rid="cnr270175-bib-0015" ref-type="bibr">15</xref>].</p></sec><sec sec-type="materials-and-methods" id="cnr270175-sec-0006"><label>2</label><title>Material and Methods</title><sec id="cnr270175-sec-0007"><label>2.1</label><title>Study Design</title><p>This study used data from a hospital&#x02010;based, case&#x02013;control investigation conducted at the Cancer Institute in IKH hospital Complex, Tehran, from September 23, 2011, to May 16, 2016. The recruitment of cases and controls and the study design were detailed in a previous publication [<xref rid="cnr270175-bib-0016" ref-type="bibr">16</xref>]. In total, there were 942 newly diagnosed patients with In&#x000a0;situ or invasive BC as incident cases. The 975 healthy controls were frequency&#x02010;matched to the cases by 5&#x02010;year age categories and residential locations. Participants in both the case and control groups were interviewed utilizing a structured questionnaire designed to gather comprehensive data on various sociodemographic characteristics, anthropometric measurements, menstrual and reproductive history, age at menarche, parity, family history of BC, age at first pregnancy, and duration of breastfeeding. These interviews were conducted at the hospital by trained interviewers who were unaware of the study's hypotheses. Interviewers visited the surgery and chemotherapy wards to identify patients who were admitted for treatment at the Cancer Institute. Patients were explained the study and asked to sign a written informed consent form before participating in the interview. Patients' personal information was numerically coded to protect their privacy. Eligible patients included those with a histopathologically confirmed diagnosis of either In&#x000a0;situ or invasive BC, who were at least 18&#x02009;years of age, had no history of concurrent cancer in other organs, and had been newly diagnosed with cancer within the 12 months preceding the interview. Patient recruitment was limited to those who were hospitalized for treatment in the surgery and oncology wards and occurred 3&#x02009;days a week due to logistic issues. For each case, a control individual was chosen among healthy female acquaintances of patients admitted to Imam Khomeini Hospital Complex for non&#x02010;cancer&#x02010;related illnesses. The controls were selected to be frequency&#x02010;matched by age (within 5&#x02010;year intervals), place of residence (Tehran or other provinces), and recruited around the same period as the cases. The control group was evaluated based on the absence of any BC diagnosis or related conditions in the preceding 12&#x02009;months. BC patients were prompted to disclose their exposure status during the year leading up to their diagnosis. These controls were not associated with the cancer patients. Out of the 1324 eligible controls invited, 967 (73%) participated in the study, while 357 (27%) declined to participate. The details of the study design and establishment of this case&#x02013;control have been previously described in Maleki et&#x000a0;al. [<xref rid="cnr270175-bib-0015" ref-type="bibr">15</xref>, <xref rid="cnr270175-bib-0016" ref-type="bibr">16</xref>]. This study was approved by the National Research Ethics Committee, Ministry of Health and Medical Education (code number: IR.TUMS.IKHC.REC.1399.454, Date: December 2020), and the authors accessed the data on January 15, 2021.</p></sec><sec id="cnr270175-sec-0008"><label>2.2</label><title>Data Pre&#x02010;Processing</title><p>Gail variables needed to be extracted from the dataset. They were used for training and validating the algorithms. The dataset was divided into 80% for training and 20% for validation.</p></sec><sec id="cnr270175-sec-0009"><label>2.3</label><title>Model Development</title><p>In this study, a total of 10 classification algorithms were systematically applied to a dataset aimed at BC risk assessment. The algorithms utilized in this analysis included decision tree (DT), bagging decision tree (Bagging&#x02010;DT), random forest (RF), logistic regression (LR), support vector machine (SVM), bagging support vector machine (Bagging&#x02010;SVM), gradient boosting, AdaBoost, XGBoost, <italic toggle="yes">k</italic>&#x02010;nearest neighbor (KNN), and statistically inspired modification of partial least squares (SMPLS). The evaluation process was structured around both training and validation datasets, with the validation cohort consisting of 384 subjects. This subset was generated through an automated random sampling technique, representing 20% of the total population of 1917 participants. The prediction models were constructed using all variables. To quantify the performance and reliability of each classification model, several statistical metrics were calculated, including accuracy, precision, and sensitivity. These metrics are critical for assessing the effectiveness of predictive models and were derived through cross&#x02010;validation (CV) methodologies. Specifically, the leave&#x02010;one&#x02010;out CV procedure was employed in the SIMPLS analysis to derive <italic toggle="yes">Q</italic>
+<sup>2</sup> (goodness of prediction) and <italic toggle="yes">R</italic>
+<sup>2</sup>
+<italic toggle="yes">Y</italic> (goodness of variation) values. The optimal prediction model was determined based on the maximum values of accuracy and <italic toggle="yes">Q</italic>
+<sup>2</sup>, ensuring that these metrics did not show a decline, which would indicate potential overfitting. Furthermore, it was essential that <italic toggle="yes">R</italic>
+<sup>2</sup>
+<italic toggle="yes">Y</italic> exceeded <italic toggle="yes">Q</italic>
+<sup>2</sup>, as this relationship serves as a safeguard against overfitting, thereby enhancing the model's generalizability. Grid search was used to fine&#x02010;tune hyperparameters for all methods. In this study, the grid search hyperparameter tuning algorithm was employed for several key reasons: (1) Exhaustiveness: Grid search examines every possible combination of hyperparameters, ensuring the identification of an optimal solution. (2) Simplicity and clarity: The grid search method is straightforward and easy to implement. As a comprehensive exploratory algorithm, grid search evaluates the performance of hyperparameters across all potential configurations. It systematically tests each unique combination within the search space to identify the one that yields the best performance [<xref rid="cnr270175-bib-0017" ref-type="bibr">17</xref>]. In the context of DTs, several key hyperparameters are critical for model performance that were used in this study. These include the maximum tree depth (<italic toggle="yes">max_depth</italic>), the minimum number of samples required to split an internal node (<italic toggle="yes">min_sample_split</italic>), and the minimum number of samples necessary to be at a leaf node (<italic toggle="yes">min_samples_leaf</italic>). In the KNN model, the hyperparameter <italic toggle="yes">k</italic> (the number of nearest neighbors) is utilized for optimization through grid search. Grid search also optimizes the parameters of SVM, specifically <italic toggle="yes">C</italic>, <italic toggle="yes">&#x003b3;</italic>, and degree using a CV technique as a performance metric to identify optimal hyperparameters. This study primarily focuses on two parameters of the RF classifier. The grid search incorporates the maximum tree depth, the minimum number of samples, <italic toggle="yes">max_features</italic> (which denotes the maximum number of variables used in individual trees), and <italic toggle="yes">n_estimators</italic> (which indicates the total number of trees to be constructed in the forest). In the gradient boosting method, <italic toggle="yes">max_depth</italic>, <italic toggle="yes">min_sample_split</italic>, and min<italic toggle="yes">_samples_leaf</italic> are considered as hyperparameters that are tuned using grid search. AdaBoost can sometimes be challenging to tune due to its numerous hyperparameters. In this instance, we will perform grid search on two key hyperparameters for AdaBoost: the number of trees used in the ensemble and the learning rate. We will employ a range of well&#x02010;performing values for each hyperparameter. Additionally, we will define a grid of hyperparameters, including <italic toggle="yes">max_depth</italic>, learning<italic toggle="yes">_rate</italic>, and <italic toggle="yes">n_estimators</italic> in the XGBoost model, and subsequently conduct grid search.</p><p>The algorithms, training, and validation processes were all developed and implemented using the Python programming language. version 3.8.3 and Scikit&#x02010;learn library version 0.23.2 and the class GridSearchCV available in Scikit Learn is used for this study.</p></sec><sec id="cnr270175-sec-0010"><label>2.4</label><title>DT</title><p>DTs are a popular supervised learning algorithm used for both classification and regression tasks. They work by recursively partitioning the input space based on the feature that provides the maximum information gain at each step. This results in a tree&#x02010;like structure where internal nodes represent decision rules and leaf nodes represent the final predictions. DTs are known for their interpretability, ability to handle both numerical and categorical data, and robustness to outliers. However, they can be prone to overfitting, especially on complex datasets&#x000a0;[<xref rid="cnr270175-bib-0018" ref-type="bibr">18</xref>].</p></sec><sec id="cnr270175-sec-0011"><label>2.5</label><title>Bagging&#x02010;<styled-content style="fixed-case" toggle="no">DT</styled-content>
+</title><p>Bagging, short for Bootstrap Aggregating, is an ensemble learning technique that can be applied to DTs to improve their stability and accuracy. In Bagging&#x02010;DT, multiple DT models are trained on random subsets of the training data, and their predictions are combined through majority voting (for classification) or averaging (for regression) to make the final prediction. This helps reduce the variance of the individual DTs and improve the overall model performance [<xref rid="cnr270175-bib-0019" ref-type="bibr">19</xref>].</p></sec><sec id="cnr270175-sec-0012"><label>2.6</label><title>RF</title><p>RF is another ensemble learning method that is built on the concept of DTs. It creates a collection of DTs, each trained on a random subset of the features. The final prediction is made by aggregating the predictions of the individual trees. This approach helps to reduce the overfitting problem associated with individual DTs and thus improves the model's generalization ability. RF is widely used for both classification and regression tasks and is known for its robustness to noise and outliers [<xref rid="cnr270175-bib-0020" ref-type="bibr">20</xref>].</p></sec><sec id="cnr270175-sec-0013"><label>2.7</label><title>LR</title><p>LR is a supervised learning algorithm primarily used for binary classification problems. It models the probability of a binary outcome as a function of the input features by using a logistic sigmoid function. LR is simple to implement, interpretable, and performs well on linearly separable datasets. Nevertheless, it may struggle with non&#x02010;linear relationships and high&#x02010;dimensional data&#x000a0;[<xref rid="cnr270175-bib-0021" ref-type="bibr">21</xref>].</p></sec><sec id="cnr270175-sec-0014"><label>2.8</label><title>SVM</title><p>SVMs are a class of supervised learning algorithms that can be used for both classification and regression tasks. SVMs work by finding the optimal hyperplane that separates the classes with the maximum margin. They are particularly effective in high&#x02010;dimensional feature spaces and can handle non&#x02010;linear relationships using kernel functions. SVMs are known for their strong generalization performance, but they can be sensitive to the choice of hyperparameters [<xref rid="cnr270175-bib-0022" ref-type="bibr">22</xref>].</p></sec><sec id="cnr270175-sec-0015"><label>2.9</label><title>Bagging&#x02010;<styled-content style="fixed-case" toggle="no">SVM</styled-content>
+</title><p>Similar to Bagging&#x02010;DT, Bagging can also be applied to SVMs to create an ensemble model called Bagging&#x02010;SVM. In this approach, multiple SVM models are trained on random subsets of the training data, and their predictions are combined to make the final prediction. Bagging&#x02010;SVM can improve the stability and accuracy of individual SVM models, especially on complex or noisy datasets&#x000a0;[<xref rid="cnr270175-bib-0023" ref-type="bibr">23</xref>].</p></sec><sec id="cnr270175-sec-0016"><label>2.10</label><title>Gradient Boosting</title><p>Gradient Boosting is an ensemble learning technique that combines multiple weak learners, often DTs, to eventually create a strong predictive model. It works by iteratively adding new models to the ensemble, where each new model is trained to correct the errors made by the previous models. Gradient Boosting is known for its high performance on a wide range of tasks and its ability to handle various types of data&#x000a0;[<xref rid="cnr270175-bib-0024" ref-type="bibr">24</xref>].</p></sec><sec id="cnr270175-sec-0017"><label>2.11</label><title>AdaBoost</title><p>AdaBoost, short for Adaptive Boosting, is another ensemble learning algorithm that combines multiple weak learners, typically decision stumps, to create a strong classifier. It works by iteratively adjusting the weights of the training examples, focusing more on the misclassified instances in each iteration. AdaBoost is known for its ability to improve the performance of weak learners and its robustness to overfitting [<xref rid="cnr270175-bib-0025" ref-type="bibr">25</xref>] and is well described in the term of cancer prediction in the study of Kumar et&#x000a0;al. [<xref rid="cnr270175-bib-0026" ref-type="bibr">26</xref>].</p></sec><sec id="cnr270175-sec-0018"><label>2.12</label><title>XGBoost</title><p>XGBoost, or Extreme Gradient Boosting, is a highly efficient and scalable implementation of the Gradient Boosting algorithm. It incorporates several optimizations, such as regularization, parallel processing, and efficient handling of sparse data, making it a powerful tool for a wide range of ML tasks, including classification, regression, and ranking [<xref rid="cnr270175-bib-0027" ref-type="bibr">27</xref>].</p></sec><sec id="cnr270175-sec-0019"><label>2.13</label><title>KNN</title><p>KNN is a non&#x02010;parametric, instance&#x02010;based learning algorithm used for both classification and regression problems. It works by finding the K closest training examples to a new input and using their labels or values to make a prediction. KNN is simple to implement, can handle non&#x02010;linear relationships, and is robust to noisy data. However, it can be computationally expensive for large datasets and may suffer from the curse of dimensionality [<xref rid="cnr270175-bib-0028" ref-type="bibr">28</xref>].</p></sec><sec id="cnr270175-sec-0020"><label>2.14</label><title>Partial Least Squares</title><p>A method for partial least squares (PLS) regression, known as the SIMPLS, computes the PLS factors by directly combining the original variables in a linear manner. The PLS factors are chosen to optimize a covariance criterion while adhering to specific constraints related to orthogonality and normalization [<xref rid="cnr270175-bib-0029" ref-type="bibr">29</xref>, <xref rid="cnr270175-bib-0030" ref-type="bibr">30</xref>].</p></sec><sec id="cnr270175-sec-0021"><label>2.15</label><title>Partition Analysis</title><p>To classify the continuous and ordinal data values effectively, a partition analysis was conducted by employing a DT algorithm. This analysis aimed to partition the data set in a way that would identify the optimal cutoff points for variables, taking into consideration the relationship between the outcome and the predictors. By utilizing the DT method, the study sought to determine the most appropriate segmentation of the data that would enhance the understanding of the predictive power of the variables in relation to the outcome variable.</p></sec><sec id="cnr270175-sec-0022"><label>2.16</label><title>Assessing the Importance of Features in <styled-content style="fixed-case" toggle="no">ML</styled-content> Algorithms</title><p>The effect of each feature on the results was investigated by deleting that feature from the input and checking the result changes while the data was shuffled for each investigation. All the possible permutations of the features were tested using accuracy changes as the measure.</p></sec></sec><sec sec-type="results" id="cnr270175-sec-0023"><label>3</label><title>Results</title><sec id="cnr270175-sec-0024"><label>3.1</label><title>Patients' Characteristic</title><p>All participants were selected from a hospital&#x02010;based, case&#x02013;control study conducted in 2016 at the Cancer Institute of Iran, Tehran. A total of 1917 women, including 942 cases and 975 controls, were chosen to participate. The gathered data contained registry data plus Gail model variables (Table&#x000a0;<xref rid="cnr270175-tbl-0001" ref-type="table">1</xref>).</p><table-wrap position="float" id="cnr270175-tbl-0001" content-type="TABLE"><label>TABLE 1</label><caption><p>Patients' characteristics.</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><thead valign="bottom"><tr style="border-bottom:solid 1px #000000"><th align="left" rowspan="2" valign="bottom" colspan="1">Variables</th><th align="center" rowspan="2" valign="bottom" colspan="1">Code</th><th align="center" colspan="2" valign="bottom" rowspan="1">Numbers</th><th align="center" colspan="2" valign="bottom" rowspan="1">Total mean</th></tr><tr style="border-bottom:solid 1px #000000"><th align="center" valign="bottom" rowspan="1" colspan="1">Cases (<italic toggle="yes">n</italic>&#x02009;=&#x02009;942)</th><th align="center" valign="bottom" rowspan="1" colspan="1">Controls (<italic toggle="yes">n</italic>&#x02009;=&#x02009;975)</th><th align="center" valign="bottom" rowspan="1" colspan="1">Cases (<italic toggle="yes">n</italic>&#x02009;=&#x02009;942)</th><th align="center" valign="bottom" rowspan="1" colspan="1">Controls (<italic toggle="yes">n</italic>&#x02009;=&#x02009;975)</th></tr></thead><tbody valign="top"><tr><td align="left" colspan="6" valign="top" rowspan="1">Age at diagnosis (AGECAT)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">&#x0003c;&#x02009;50</td><td align="center" valign="top" rowspan="1" colspan="1">0</td><td align="center" valign="top" rowspan="1" colspan="1">579 (61.5%)</td><td align="center" valign="top" rowspan="1" colspan="1">638 (65.4%)</td><td align="center" valign="top" rowspan="1" colspan="1">47.19 (&#x000b1;10.93)</td><td align="center" valign="top" rowspan="1" colspan="1">44.99 (&#x000b1;10.99)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">&#x0003e;&#x02009;50</td><td align="center" valign="top" rowspan="1" colspan="1">1</td><td align="center" valign="top" rowspan="1" colspan="1">363 (38.5%)</td><td align="center" valign="top" rowspan="1" colspan="1">337 (34.6%)</td><td align="center" valign="top" rowspan="1" colspan="1"/><td align="center" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" colspan="6" valign="top" rowspan="1">Age of menarche (AGEMEN)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">&#x02265;&#x02009;14</td><td align="center" valign="top" rowspan="1" colspan="1">0</td><td align="center" valign="top" rowspan="1" colspan="1">431 (45.8%)</td><td align="center" valign="top" rowspan="1" colspan="1">438 (44.9%)</td><td align="center" valign="top" rowspan="1" colspan="1">13.29 (&#x000b1;1.69)</td><td align="center" valign="top" rowspan="1" colspan="1">13.41 (&#x000b1;1.66)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">12&#x02013;13</td><td align="center" valign="top" rowspan="1" colspan="1">1</td><td align="center" valign="top" rowspan="1" colspan="1">377 (40%)</td><td align="center" valign="top" rowspan="1" colspan="1">435 (44.6%)</td><td align="center" valign="top" rowspan="1" colspan="1"/><td align="center" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">&#x0003c;&#x02009;12</td><td align="center" valign="top" rowspan="1" colspan="1">2</td><td align="center" valign="top" rowspan="1" colspan="1">134 (14.2%)</td><td align="center" valign="top" rowspan="1" colspan="1">102 (10.2%)</td><td align="center" valign="top" rowspan="1" colspan="1"/><td align="center" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" colspan="6" valign="top" rowspan="1">Number of biopsies (NBIOPS)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">0</td><td align="center" valign="top" rowspan="1" colspan="1">0</td><td align="center" valign="top" rowspan="1" colspan="1">869 (92.2%)</td><td align="center" valign="top" rowspan="1" colspan="1">960 (98.5%)</td><td align="center" valign="top" rowspan="1" colspan="1">0.95 (&#x000b1;0.45)</td><td align="center" valign="top" rowspan="1" colspan="1">0.02 (&#x000b1;0.15)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">1</td><td align="center" valign="top" rowspan="1" colspan="1">1</td><td align="center" valign="top" rowspan="1" colspan="1">67 (7.1%)</td><td align="center" valign="top" rowspan="1" colspan="1">13 (1.3%)</td><td align="center" valign="top" rowspan="1" colspan="1"/><td align="center" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">&#x02265;&#x02009;2</td><td align="center" valign="top" rowspan="1" colspan="1">2</td><td align="center" valign="top" rowspan="1" colspan="1">6 (0.6%)</td><td align="center" valign="top" rowspan="1" colspan="1">2 (0.2%)</td><td align="center" valign="top" rowspan="1" colspan="1"/><td align="center" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" colspan="6" valign="top" rowspan="1">Age at first live birth (AGEFLB)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">&#x0003c;&#x02009;20 or null parity</td><td align="center" valign="top" rowspan="1" colspan="1">0</td><td align="center" valign="top" rowspan="1" colspan="1">424 (45%)</td><td align="center" valign="top" rowspan="1" colspan="1">573 (58.8%)</td><td align="center" valign="top" rowspan="1" colspan="1">22.39 (&#x000b1;5.36)</td><td align="center" valign="top" rowspan="1" colspan="1">20.02 (&#x000b1;4.58)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">20&#x02013;24</td><td align="center" valign="top" rowspan="1" colspan="1">1</td><td align="center" valign="top" rowspan="1" colspan="1">281 (29.8%)</td><td align="center" valign="top" rowspan="1" colspan="1">284 (29.1%)</td><td align="center" valign="top" rowspan="1" colspan="1"/><td align="center" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">25&#x02013;29</td><td align="center" valign="top" rowspan="1" colspan="1">2</td><td align="center" valign="top" rowspan="1" colspan="1">149 (15.8%)</td><td align="center" valign="top" rowspan="1" colspan="1">78 (8%)</td><td align="center" valign="top" rowspan="1" colspan="1"/><td align="center" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">&#x02265;&#x02009;30</td><td align="center" valign="top" rowspan="1" colspan="1">3</td><td align="center" valign="top" rowspan="1" colspan="1">88 (9.3%)</td><td align="center" valign="top" rowspan="1" colspan="1">40 (4.1%)</td><td align="center" valign="top" rowspan="1" colspan="1"/><td align="center" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Number of first&#x02010;degree relatives with breast cancer (NUMREL)</td><td align="center" valign="top" rowspan="1" colspan="1"/><td align="center" valign="top" rowspan="1" colspan="1"/><td align="center" valign="top" rowspan="1" colspan="1"/><td align="center" valign="top" rowspan="1" colspan="1">0.09 (&#x000b1;0.36)</td><td align="center" valign="top" rowspan="1" colspan="1">0.03 (&#x000b1;0.19)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">0</td><td align="center" valign="top" rowspan="1" colspan="1">0</td><td align="center" valign="top" rowspan="1" colspan="1">870 (92.4%)</td><td align="center" valign="top" rowspan="1" colspan="1">947 (97.1%)</td><td align="center" valign="top" rowspan="1" colspan="1"/><td align="center" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">1</td><td align="center" valign="top" rowspan="1" colspan="1">1</td><td align="center" valign="top" rowspan="1" colspan="1">58 (6.2%)</td><td align="center" valign="top" rowspan="1" colspan="1">25 (2.6%)</td><td align="center" valign="top" rowspan="1" colspan="1"/><td align="center" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">&#x02265;&#x02009;2</td><td align="center" valign="top" rowspan="1" colspan="1">2</td><td align="center" valign="top" rowspan="1" colspan="1">14 (1.5%)</td><td align="center" valign="top" rowspan="1" colspan="1">3 (0.3%)</td><td align="center" valign="top" rowspan="1" colspan="1"/><td align="center" valign="top" rowspan="1" colspan="1"/></tr></tbody></table></table-wrap></sec><sec id="cnr270175-sec-0025"><label>3.2</label><title>Models' Characteristics</title><p>The outcomes derived from the application of 10 ML algorithms are outlined in Table&#x000a0;<xref rid="cnr270175-tbl-0002" ref-type="table">2</xref>. Within the context of this study, the focal variable pertained to the patient's condition post 5&#x02009;years subsequent to the prognostication of BC risk from the date of the interview. Table&#x000a0;<xref rid="cnr270175-tbl-0002" ref-type="table">2</xref> exhibits four key metrics&#x02014;namely, training accuracy, validation accuracy, sensitivity, and precision&#x02014;for the various ML techniques employed. Notably, the training datasets revealed that the highest accuracies achieved were 70.88% for the Bagging&#x02010;DT and 70.08% for the DT model. In contrast, the validation datasets indicated that AdaBoost attained the highest accuracy at 64.73%, followed closely by Gradient Boosting at 64.52%. Additionally, both Bagging&#x02010;DT and Bagging&#x02010;SVM exhibited the highest sensitivity rates, recorded at 55.13%. The SVM model demonstrated the greatest precision, achieving a rate of 74.58%. To visually illustrate the predictive performance of these ML methods on the validation set, Receiver Operating Characteristic (ROC) curves were generated and are presented in Figure&#x000a0;<xref rid="cnr270175-fig-0001" ref-type="fig">1</xref>. Furthermore, the SIMPLS model was assessed using quality metrics, yielding a <italic toggle="yes">Q</italic>
+<sup>2</sup> value of 0.084 and an <italic toggle="yes">R</italic>
+<sup>2</sup>
+<italic toggle="yes">Y</italic> value of 0.068, which serve as indicators of model quality.</p><table-wrap position="float" id="cnr270175-tbl-0002" content-type="TABLE"><label>TABLE 2</label><caption><p>Performance comparison of various classifiers. Gradient Boosting emerges as the most accurate ML algorithm.</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><thead valign="bottom"><tr style="border-bottom:solid 1px #000000"><th align="left" valign="bottom" rowspan="1" colspan="1">Approach</th><th align="center" valign="bottom" rowspan="1" colspan="1">Train accuracy</th><th align="center" valign="bottom" rowspan="1" colspan="1">Validation accuracy</th><th align="center" valign="bottom" rowspan="1" colspan="1">Sensitivity</th><th align="center" valign="bottom" rowspan="1" colspan="1">Precision</th></tr></thead><tbody valign="top"><tr><td align="left" valign="top" rowspan="1" colspan="1">Decision tree</td><td align="center" valign="top" rowspan="1" colspan="1">0.700801</td><td align="center" valign="top" rowspan="1" colspan="1">0.574689</td><td align="center" valign="top" rowspan="1" colspan="1">0.478632</td><td align="center" valign="top" rowspan="1" colspan="1">0.574359</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">KNN</td><td align="center" valign="top" rowspan="1" colspan="1">0.659840</td><td align="center" valign="top" rowspan="1" colspan="1">0.636929</td><td align="center" valign="top" rowspan="1" colspan="1">0.491453</td><td align="center" valign="top" rowspan="1" colspan="1">0.672515</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">SVM</td><td align="center" valign="top" rowspan="1" colspan="1">0.645592</td><td align="center" valign="top" rowspan="1" colspan="1">0.634855</td><td align="center" valign="top" rowspan="1" colspan="1">0.376068</td><td align="center" valign="top" rowspan="1" colspan="1">0.745763</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Random forest</td><td align="center" valign="top" rowspan="1" colspan="1">0.695459</td><td align="center" valign="top" rowspan="1" colspan="1">0.632780</td><td align="center" valign="top" rowspan="1" colspan="1">0.482906</td><td align="center" valign="top" rowspan="1" colspan="1">0.668639</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Bagging&#x02010;DT</td><td align="center" valign="top" rowspan="1" colspan="1">0.708816</td><td align="center" valign="top" rowspan="1" colspan="1">0.628631</td><td align="center" valign="top" rowspan="1" colspan="1">0.551282</td><td align="center" valign="top" rowspan="1" colspan="1">0.635468</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Bagging&#x02010;SVM</td><td align="center" valign="top" rowspan="1" colspan="1">0.642030</td><td align="center" valign="top" rowspan="1" colspan="1">0.628631</td><td align="center" valign="top" rowspan="1" colspan="1">0.551282</td><td align="center" valign="top" rowspan="1" colspan="1">0.635468</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Gradient boosting</td><td align="center" valign="top" rowspan="1" colspan="1">0.666963</td><td align="center" valign="top" rowspan="1" colspan="1">0.645228</td><td align="center" valign="top" rowspan="1" colspan="1">0.517094</td><td align="center" valign="top" rowspan="1" colspan="1">0.675978</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">AdaBoost</td><td align="center" valign="top" rowspan="1" colspan="1">0.647373</td><td align="center" valign="top" rowspan="1" colspan="1">0.647303</td><td align="center" valign="top" rowspan="1" colspan="1">0.538462</td><td align="center" valign="top" rowspan="1" colspan="1">0.670213</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">XGBoost</td><td align="center" valign="top" rowspan="1" colspan="1">0.706144</td><td align="center" valign="top" rowspan="1" colspan="1">0.616183</td><td align="center" valign="top" rowspan="1" colspan="1">0.470085</td><td align="center" valign="top" rowspan="1" colspan="1">0.643275</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Rostami et&#x000a0;al.</td><td align="center" colspan="2" valign="top" rowspan="1">0.63</td><td align="center" valign="top" rowspan="1" colspan="1">&#x02014;</td><td align="center" valign="top" rowspan="1" colspan="1">&#x02014;</td></tr></tbody></table></table-wrap><fig position="float" fig-type="FIGURE" id="cnr270175-fig-0001"><label>FIGURE 1</label><caption><p>ROC curves for all algorithms on the validation set. The highest validation accuracy was related to gradient boosting (AUC&#x02009;=&#x02009;0.65).</p></caption><graphic xlink:href="CNR2-8-e70175-g002" position="anchor" id="jats-graphic-1"/></fig></sec><sec id="cnr270175-sec-0026"><label>3.3</label><title>The Importance of <styled-content style="fixed-case" toggle="no">ML</styled-content> Algorithm Features</title><p>In Table&#x000a0;<xref rid="cnr270175-tbl-0003" ref-type="table">3</xref>, we present the crucial variables identified by different ML algorithms, along with their relative ranks in descending order. Among the five ML algorithms, namely DT, SVM, RF, Bagging&#x02010;SVM, and Gradient Boosting, the variable age at first live birth (AGEFLB) emerged as the top&#x02010;ranked risk factor. This indicates that AGEFLB had the highest importance in predicting the patient's condition post 5&#x02009;years subsequent to the prediction of BC risk. Additionally, AGEFLB secured the second rank in three other algorithms, SIMPLS, Bagging&#x02010;DT, and AdaBoost, further highlighting its significance. However, it is worth noting that age at diagnosis (AGECAT) and number of biopsies (NBIOPSIS) exhibited variations in their rankings across the different ML models. This suggests that these variables had differing levels of importance in predicting the patient's condition depending on the specific ML algorithm employed. The variability in rankings underscores the complexity of the predictive models and the diverse ways in which different algorithms weigh the importance of risk factors. This result gave insights into the relative importance of variables across various ML algorithms, enabling them to understand which factors play a significant role in predicting BC risk and subsequent patient outcomes.</p><table-wrap position="float" id="cnr270175-tbl-0003" content-type="TABLE"><label>TABLE 3</label><caption><p>Top five key risk factors in descending order for various ML algorithms.</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><thead valign="bottom"><tr style="border-bottom:solid 1px #000000"><th align="left" valign="bottom" rowspan="1" colspan="1"/><th align="center" valign="bottom" rowspan="1" colspan="1">Decision tree</th><th align="center" valign="bottom" rowspan="1" colspan="1">SVM</th><th align="center" valign="bottom" rowspan="1" colspan="1">Random forest</th><th align="center" valign="bottom" rowspan="1" colspan="1">Bagging&#x02010;DT</th><th align="center" valign="bottom" rowspan="1" colspan="1">Bagging&#x02010;SVM</th><th align="center" valign="bottom" rowspan="1" colspan="1">Gradient boosting</th><th align="center" valign="bottom" rowspan="1" colspan="1">AdaBoost</th><th align="center" valign="bottom" rowspan="1" colspan="1">XGBoost</th><th align="center" valign="bottom" rowspan="1" colspan="1">SIMPLS</th><th align="center" valign="bottom" rowspan="1" colspan="1">Rostami et&#x000a0;al.</th></tr></thead><tbody valign="top"><tr><td align="left" valign="top" rowspan="1" colspan="1">1</td><td align="center" valign="top" rowspan="1" colspan="1">AGEFLB</td><td align="center" valign="top" rowspan="1" colspan="1">AGEFLB</td><td align="center" valign="top" rowspan="1" colspan="1">AGEFLB</td><td align="center" valign="top" rowspan="1" colspan="1">AGECAT</td><td align="center" valign="top" rowspan="1" colspan="1">AGEFLB</td><td align="center" valign="top" rowspan="1" colspan="1">AGEFLB</td><td align="center" valign="top" rowspan="1" colspan="1">AGECAT</td><td align="center" valign="top" rowspan="1" colspan="1">AGECAT</td><td align="center" valign="top" rowspan="1" colspan="1">NBIOPS</td><td align="center" valign="top" rowspan="1" colspan="1">NBIOPS</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">2</td><td align="center" valign="top" rowspan="1" colspan="1">AGECAT</td><td align="center" valign="top" rowspan="1" colspan="1">NBIOPS</td><td align="center" valign="top" rowspan="1" colspan="1">AGECAT</td><td align="center" valign="top" rowspan="1" colspan="1">AGEFLB</td><td align="center" valign="top" rowspan="1" colspan="1">NBIOPS</td><td align="center" valign="top" rowspan="1" colspan="1">NBIOPS</td><td align="center" valign="top" rowspan="1" colspan="1">AGEFLB</td><td align="center" valign="top" rowspan="1" colspan="1">AGEMEN</td><td align="center" valign="top" rowspan="1" colspan="1">AGECAT</td><td align="center" valign="top" rowspan="1" colspan="1">NUMREL</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">3</td><td align="center" valign="top" rowspan="1" colspan="1">NBIOPS</td><td align="center" valign="top" rowspan="1" colspan="1">NUMREL</td><td align="center" valign="top" rowspan="1" colspan="1">NBIOPS</td><td align="center" valign="top" rowspan="1" colspan="1">AGEMEN</td><td align="center" valign="top" rowspan="1" colspan="1">NUMREL</td><td align="center" valign="top" rowspan="1" colspan="1">NUMREL</td><td align="center" valign="top" rowspan="1" colspan="1">AGEMEN</td><td align="center" valign="top" rowspan="1" colspan="1">AGEFLB</td><td align="center" valign="top" rowspan="1" colspan="1">NUMREL</td><td align="center" valign="top" rowspan="1" colspan="1">AGEFLB</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">4</td><td align="center" valign="top" rowspan="1" colspan="1">AGEMEN</td><td align="center" valign="top" rowspan="1" colspan="1">AGEMEN</td><td align="center" valign="top" rowspan="1" colspan="1">AGEMEN</td><td align="center" valign="top" rowspan="1" colspan="1">NBIOPS</td><td align="center" valign="top" rowspan="1" colspan="1">AGEMEN</td><td align="center" valign="top" rowspan="1" colspan="1">AGEMEN</td><td align="center" valign="top" rowspan="1" colspan="1">NUMREL</td><td align="center" valign="top" rowspan="1" colspan="1">NUMREL</td><td align="center" valign="top" rowspan="1" colspan="1">AGEMEN</td><td align="center" valign="top" rowspan="1" colspan="1">AGECAT</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">5</td><td align="center" valign="top" rowspan="1" colspan="1">NUMREL</td><td align="center" valign="top" rowspan="1" colspan="1">AGECAT</td><td align="center" valign="top" rowspan="1" colspan="1">NUMREL</td><td align="center" valign="top" rowspan="1" colspan="1">NUMREL</td><td align="center" valign="top" rowspan="1" colspan="1">AGECAT</td><td align="center" valign="top" rowspan="1" colspan="1">AGECAT</td><td align="center" valign="top" rowspan="1" colspan="1">NBIOPS</td><td align="center" valign="top" rowspan="1" colspan="1">NBIOPS</td><td align="center" valign="top" rowspan="1" colspan="1">AGEFLB</td><td align="center" valign="top" rowspan="1" colspan="1">AGEMEN</td></tr></tbody></table><table-wrap-foot id="cnr270175-ntgp-0002"><fn id="cnr270175-note-0002"><p>
+<italic toggle="yes">Note:</italic> AGEFLB and AGECAT are considered the top two predictors among ML algorithms.</p></fn><fn id="cnr270175-note-0003"><p>Abbreviations: AGECAT: age at diagnosis; AGEFLB: age at first live birth; AGEMEN: age of menarche; NBIOPS: number of biopsies; NUMREL: number of first&#x02010;degree relatives with breast cancer.</p></fn></table-wrap-foot></table-wrap></sec><sec id="cnr270175-sec-0027"><label>3.4</label><title>Predictive Partition Analysis</title><p>The analysis of BC risk prediction, using partition analysis, revealed two primary branches on either side. These branches indicated that patients with a history of one or more biopsies, an age at first childbirth of less than 24, and an AGECAT of less than 26 were linked to the prediction of BC risk, and this combination of factors could predict the risk with an accuracy of 64%. This finding suggests that further evaluation with a larger population is necessary to assess the identification of cut points for risk prediction (Figure&#x000a0;<xref rid="cnr270175-fig-0002" ref-type="fig">2</xref>).</p><fig position="float" fig-type="FIGURE" id="cnr270175-fig-0002"><label>FIGURE 2</label><caption><p>Prediction partition analysis of breast cancer risk prediction. Red: Cases, blue: Controls.</p></caption><graphic xlink:href="CNR2-8-e70175-g001" position="anchor" id="jats-graphic-3"/></fig></sec></sec><sec sec-type="discussion" id="cnr270175-sec-0028"><label>4</label><title>Discussion</title><p>We examined if ML algorithms can enhance the accuracy of the Gail BC prediction model in Rostami et&#x000a0;al.'s study [<xref rid="cnr270175-bib-0015" ref-type="bibr">15</xref>]. In this process, we analyzed 10 ML&#x02010;based algorithms that included Gail model indicators (age, NBIOPSIS, age at first birth, number of first&#x02010;degree relatives with BC, and age at menarche) to assess their predictive accuracy and quality features like sensitivity and precision. The average accuracy of ML&#x02010;based models was determined to be 0.63, a result consistent with the findings of Rostami et&#x000a0;al., indicating that the AI algorithms alone did not significantly improve the predictability of the model. The SIMPLS model with <italic toggle="yes">Q</italic>
+<sup>2</sup>&#x02009;=&#x02009;0.0.084 also shows the same result. However, there were notable differences in the importance of variables between the ML algorithms and traditional models. The model development process likely involved various ML&#x02010;based analytical approaches, including hyperparameter optimization methods. Comprehending the importance and interactions of features is crucial in AI modeling [<xref rid="cnr270175-bib-0031" ref-type="bibr">31</xref>]. Giving a higher weight to a specific feature can significantly improve model accuracy. Conversely, omitting that feature can lead to a notable decrease in accuracy and, thus, diminish the model's utility [<xref rid="cnr270175-bib-0032" ref-type="bibr">32</xref>]. In this study, the importance ranking of variables varied significantly across different algorithms, with some assigning a high rank to a feature while others assigned it a low rank (Table&#x000a0;<xref rid="cnr270175-tbl-0003" ref-type="table">3</xref>). However, the final accuracy of the models was generally consistent. Consequently, considering the relationships and correlations between features in AI modeling can greatly facilitate the identification of crucial risk factors and enhance model accuracy with better comprehension of the modeling process.</p><p>BC risk prediction models are typically categorized into two types based on the statistical analysis used: traditional and AI models. Traditional models can be categorized into three groups based on their prediction outcomes. The first group includes models that predict the risk of BC, stratified by the risk factors utilized in model development, such as demographic and hereditary factors. The second group comprises models that predict the risk of genetic mutations inheritance, while the third group incorporates both [<xref rid="cnr270175-bib-0033" ref-type="bibr">33</xref>]. AI models are divided into two major groups, employing genetic and demographic risk factors for model design. However, certain AI models incorporate histopathological and radiological images through deep learning and convolutional neuronal network (CNN) analysis [<xref rid="cnr270175-bib-0034" ref-type="bibr">34</xref>]. In recent years, there has been a rise in the extensive utilization of AI models, aimed at increasing the accuracy of the models. Nevertheless, divergent outcomes have been reported in various researches in terms of BC risk prediction [<xref rid="cnr270175-bib-0035" ref-type="bibr">35</xref>]. Therefore, there is a probability that the observed increase in accuracy of the models is not due to the type of algorithms used, but rather it is related to the features being used. For instance, models considering indicators such as genetic factors, radiological images, and other strongly correlated risk factors of BC showed higher accuracy in comparison with similar models. In a systematic review conducted by Gao et&#x000a0;al. [<xref rid="cnr270175-bib-0036" ref-type="bibr">36</xref>], it has been shown that using image features and genetic risk factors are able to increase the area under curve (AUC) from 0.61 to 0.73 and 0.71 to 0.76 respectively in ML&#x02010;based BC risk prediction models. This difference is also presented in the studies of Louro et&#x000a0;al. [<xref rid="cnr270175-bib-0008" ref-type="bibr">8</xref>] and Cintolo&#x02010;Gonzalez et&#x000a0;al. [<xref rid="cnr270175-bib-0034" ref-type="bibr">34</xref>], which examined and compared traditional models. On the other hand, the observed high accuracy noted in models such as Ming et&#x000a0;al. [<xref rid="cnr270175-bib-0009" ref-type="bibr">9</xref>] (AUC&#x02009;=&#x02009;0.91) and Rajendran et&#x000a0;al. [<xref rid="cnr270175-bib-0037" ref-type="bibr">37</xref>] (AUC&#x02009;=&#x02009;0.98) used &#x0201c;Personal history of cancer&#x0201d; and &#x0201c;Previous breast procedures&#x0201d; as risk factors, respectively, which strongly correlated with breast neoplasms. As expected, the incorporation of a greater number of intricate features tends to enhance the accuracy of predictive models. However, this augmentation also results in increased model complexity, potentially hindering the feasibility of utilizing the models for practical applications, such as patient assessment via online services. Consequently, this trade&#x02010;off may ultimately yield models with reduced accuracy but with simpler user interfaces. This study is subject to some limitations, the consideration of patient demographics in the clinical assessment of an individual's risk may reduce the generalizability of the study findings [<xref rid="cnr270175-bib-0038" ref-type="bibr">38</xref>]. Also, this publication lacks longitudinal follow&#x02010;up data for the healthy controls. In conclusion, by applying and comparing both ML&#x02010;based and traditional models, their AUC ranges were close. According to various research, it has been suggested that enhancing the accuracy of the model requires adding special risk factors such as genetic and image&#x02010;related variables. Altering the algorithms alone does not appear to be adequate for increasing the accuracy of a breast risk assessment model. The lack of a special advantage of AI&#x02010;based models for predicting the risk of BC in comparison with traditional models, observed in this study, highlights some limitations inherent in the AI modeling process, particularly in models that run with a limited number of features.</p></sec><sec id="cnr270175-sec-0032"><title>Author Contributions</title><p>Conceptualization: Haniyeh Rafiepoor, Alireza Ghorbankhanloo, Kazem Zendehdel, Saeid Amanpour. Data curation: Haniyeh Rafiepoor, Sepideh Hajivalizadeh, Zeinab Hasani. Formal analysis: Zahra Zangeneh Madar, Ali Sarmadi, Behzad Amanpour&#x02010;Gharaei, Mohammad Amin Barati, Seyed&#x02010;Ali Sadegh&#x02010;Zadeh. Funding acquisition: Mozafar Saadat, Seyed&#x02010;Ali Sadegh&#x02010;Zadeh, Saeid Amanpour. Methodology: Kazem Zendehdel. Supervision: Seyed&#x02010;Ali Sadegh&#x02010;Zadeh, Saeid Amanpour, Kazem Zendehdel. Visualization: Sepideh Hajivalizadeh, Behzad Amanpour&#x02010;Gharaei. Writing &#x02013; original draft: Haniyeh Rafiepoor, Alireza Ghorbankhanloo. Writing &#x02013; review and editing: Haniyeh Rafiepoor, Alireza Ghorbankhanloo, Seyed&#x02010;Ali Sadegh&#x02010;Zadeh, Kazem Zendehdel, Saeid Amanpour.</p></sec><sec id="cnr270175-sec-0029"><title>Ethics Statement</title><p>This study was approved by the ethics committee of IKHC&#x02013;Tehran University of Medical Sciences, Tehran, Iran (No. IR.TUMS.IKHC.REC.1399.454).</p></sec><sec sec-type="COI-statement" id="cnr270175-sec-0031"><title>Conflicts of Interest</title><p>The authors declare no conflicts of interest.</p></sec></body><back><ack id="cnr270175-sec-0030"><title>Acknowledgments</title><p>The authors have nothing to report.</p></ack><sec sec-type="data-availability" id="cnr270175-sec-0034"><title>Data Availability Statement</title><p>The data that support the findings of this study are available on request from the corresponding author. The data are not publicly available due to privacy or ethical restrictions.</p></sec><ref-list content-type="cited-references" id="cnr270175-bibl-0001"><title>References</title><ref id="cnr270175-bib-0001"><label>1</label><mixed-citation publication-type="journal" id="cnr270175-cit-0001">
+<string-name>
+<given-names>H.</given-names>
+<surname>Sung</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Ferlay</surname>
+</string-name>, <string-name>
+<given-names>R. L.</given-names>
+<surname>Siegel</surname>
+</string-name>, et&#x000a0;al., &#x0201c;<article-title>Global Cancer Statistics 2020: GLOBOCAN Estimates of Incidence and Mortality Worldwide for 36 Cancers in 185 Countries</article-title>,&#x0201d; <source>CA: A Cancer Journal for Clinicians</source>
+<volume>71</volume>, no. <issue>3</issue> (<year>2021</year>): <fpage>209</fpage>&#x02013;<lpage>249</lpage>.<pub-id pub-id-type="pmid">33538338</pub-id>
+</mixed-citation></ref><ref id="cnr270175-bib-0002"><label>2</label><mixed-citation publication-type="journal" id="cnr270175-cit-0002">
+<string-name>
+<given-names>F.</given-names>
+<surname>Bray</surname>
+</string-name>, <string-name>
+<given-names>J.</given-names>
+<surname>Ferlay</surname>
+</string-name>, <string-name>
+<given-names>I.</given-names>
+<surname>Soerjomataram</surname>
+</string-name>, <string-name>
+<given-names>R. L.</given-names>
+<surname>Siegel</surname>
+</string-name>, <string-name>
+<given-names>L. A.</given-names>
+<surname>Torre</surname>
+</string-name>, and <string-name>
+<given-names>A.</given-names>
+<surname>Jemal</surname>
+</string-name>, &#x0201c;<article-title>Global Cancer Statistics 2018: GLOBOCAN Estimates of Incidence and Mortality Worldwide for 36 Cancers in 185 Countries</article-title>,&#x0201d; <source>CA: A Cancer Journal for Clinicians</source>
+<volume>68</volume>, no. <issue>6</issue> (<year>2018</year>): <fpage>394</fpage>&#x02013;<lpage>424</lpage>.<pub-id pub-id-type="pmid">30207593</pub-id>
+</mixed-citation></ref><ref id="cnr270175-bib-0003"><label>3</label><mixed-citation publication-type="journal" id="cnr270175-cit-0003">
+<string-name>
+<given-names>M. H.</given-names>
+<surname>Gail</surname>
+</string-name>, <string-name>
+<given-names>L. A.</given-names>
+<surname>Brinton</surname>
+</string-name>, <string-name>
+<given-names>D. P.</given-names>
+<surname>Byar</surname>
+</string-name>, et&#x000a0;al., &#x0201c;<article-title>Projecting Individualized Probabilities of Developing Breast Cancer for White Females Who Are Being Examined Annually</article-title>,&#x0201d; <source>Journal of the National Cancer Institute</source>
+<volume>81</volume>, no. <issue>24</issue> (<year>1989</year>): <fpage>1879</fpage>&#x02013;<lpage>1886</lpage>.<pub-id pub-id-type="pmid">2593165</pub-id>
+</mixed-citation></ref><ref id="cnr270175-bib-0004"><label>4</label><mixed-citation publication-type="journal" id="cnr270175-cit-0004">
+<string-name>
+<given-names>Y.</given-names>
+<surname>Zhao</surname>
+</string-name>, <string-name>
+<given-names>X.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Wang</surname>
+</string-name>, and <string-name>
+<given-names>Z.</given-names>
+<surname>Zhu</surname>
+</string-name>, &#x0201c;<article-title>Logistic Regression Analysis and a Risk Prediction Model of Pneumothorax After CT&#x02010;Guided Needle Biopsy</article-title>,&#x0201d; <source>Journal of Thoracic Disease</source>
+<volume>9</volume>, no. <issue>11</issue> (<year>2017</year>): <fpage>4750</fpage>&#x02013;<lpage>4757</lpage>.<pub-id pub-id-type="pmid">29268546</pub-id>
+</mixed-citation></ref><ref id="cnr270175-bib-0005"><label>5</label><mixed-citation publication-type="journal" id="cnr270175-cit-0005">
+<string-name>
+<given-names>P.</given-names>
+<surname>Schober</surname>
+</string-name> and <string-name>
+<given-names>T. R.</given-names>
+<surname>Vetter</surname>
+</string-name>, &#x0201c;<article-title>Logistic Regression in Medical Research</article-title>,&#x0201d; <source>Anesthesia and Analgesia</source>
+<volume>132</volume>, no. <issue>2</issue> (<year>2021</year>): <fpage>365</fpage>&#x02013;<lpage>366</lpage>.<pub-id pub-id-type="pmid">33449558</pub-id>
+</mixed-citation></ref><ref id="cnr270175-bib-0006"><label>6</label><mixed-citation publication-type="journal" id="cnr270175-cit-0006">
+<string-name>
+<given-names>P.</given-names>
+<surname>Ranganathan</surname>
+</string-name>, <string-name>
+<given-names>C. S.</given-names>
+<surname>Pramesh</surname>
+</string-name>, and <string-name>
+<given-names>R.</given-names>
+<surname>Aggarwal</surname>
+</string-name>, &#x0201c;<article-title>Common Pitfalls in Statistical Analysis: Logistic Regression</article-title>,&#x0201d; <source>Perspectives in Clinical Research</source>
+<volume>8</volume>, no. <issue>3</issue> (<year>2017</year>): <fpage>148</fpage>&#x02013;<lpage>151</lpage>.<pub-id pub-id-type="pmid">28828311</pub-id>
+</mixed-citation></ref><ref id="cnr270175-bib-0007"><label>7</label><mixed-citation publication-type="journal" id="cnr270175-cit-0007">
+<string-name>
+<given-names>H.</given-names>
+<surname>Asri</surname>
+</string-name>, <string-name>
+<given-names>H.</given-names>
+<surname>Mousannif</surname>
+</string-name>, <string-name>
+<given-names>H. A.</given-names>
+<surname>Moatassime</surname>
+</string-name>, and <string-name>
+<given-names>T.</given-names>
+<surname>Noel</surname>
+</string-name>, &#x0201c;<article-title>Using Machine Learning Algorithms for Breast Cancer Risk Prediction and Diagnosis</article-title>,&#x0201d; <source>Procedia Computer Science</source>
+<volume>83</volume> (<year>2016</year>): <fpage>1064</fpage>&#x02013;<lpage>1069</lpage>.</mixed-citation></ref><ref id="cnr270175-bib-0008"><label>8</label><mixed-citation publication-type="journal" id="cnr270175-cit-0008">
+<string-name>
+<given-names>J.</given-names>
+<surname>Louro</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Posso</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Hilton Boon</surname>
+</string-name>, et&#x000a0;al., &#x0201c;<article-title>A Systematic Review and Quality Assessment of Individualised Breast Cancer Risk Prediction Models</article-title>,&#x0201d; <source>British Journal of Cancer</source>
+<volume>121</volume>, no. <issue>1</issue> (<year>2019</year>): <fpage>76</fpage>&#x02013;<lpage>85</lpage>.<pub-id pub-id-type="pmid">31114019</pub-id>
+</mixed-citation></ref><ref id="cnr270175-bib-0009"><label>9</label><mixed-citation publication-type="journal" id="cnr270175-cit-0009">
+<string-name>
+<given-names>C.</given-names>
+<surname>Ming</surname>
+</string-name>, <string-name>
+<given-names>V.</given-names>
+<surname>Viassolo</surname>
+</string-name>, <string-name>
+<given-names>N.</given-names>
+<surname>Probst&#x02010;Hensch</surname>
+</string-name>, <string-name>
+<given-names>P. O.</given-names>
+<surname>Chappuis</surname>
+</string-name>, <string-name>
+<given-names>I. D.</given-names>
+<surname>Dinov</surname>
+</string-name>, and <string-name>
+<given-names>M. C.</given-names>
+<surname>Katapodi</surname>
+</string-name>, &#x0201c;<article-title>Machine Learning Techniques for Personalized Breast Cancer Risk Prediction: Comparison With the BCRAT and BOADICEA Models</article-title>,&#x0201d; <source>Breast Cancer Research</source>
+<volume>21</volume>, no. <issue>1</issue> (<year>2019</year>): <fpage>75</fpage>.<pub-id pub-id-type="pmid">31221197</pub-id>
+</mixed-citation></ref><ref id="cnr270175-bib-0010"><label>10</label><mixed-citation publication-type="journal" id="cnr270175-cit-0010">
+<string-name>
+<given-names>G. F.</given-names>
+<surname>Stark</surname>
+</string-name>, <string-name>
+<given-names>G. R.</given-names>
+<surname>Hart</surname>
+</string-name>, <string-name>
+<given-names>B. J.</given-names>
+<surname>Nartowt</surname>
+</string-name>, and <string-name>
+<given-names>J.</given-names>
+<surname>Deng</surname>
+</string-name>, &#x0201c;<article-title>Predicting Breast Cancer Risk Using Personal Health Data and Machine Learning Models</article-title>,&#x0201d; <source>PLoS One</source>
+<volume>14</volume>, no. <issue>12</issue> (<year>2019</year>): <elocation-id>e0226765</elocation-id>.<pub-id pub-id-type="pmid">31881042</pub-id>
+</mixed-citation></ref><ref id="cnr270175-bib-0011"><label>11</label><mixed-citation publication-type="journal" id="cnr270175-cit-0011">
+<string-name>
+<given-names>W. Y.</given-names>
+<surname>Chay</surname>
+</string-name>, <string-name>
+<given-names>W. S.</given-names>
+<surname>Ong</surname>
+</string-name>, <string-name>
+<given-names>P. H.</given-names>
+<surname>Tan</surname>
+</string-name>, et&#x000a0;al., &#x0201c;<article-title>Validation of the Gail Model for Predicting Individual Breast Cancer Risk in a Prospective Nationwide Study of 28,104 Singapore Women</article-title>,&#x0201d; <source>Breast Cancer Research: BCR</source>
+<volume>14</volume>, no. <issue>1</issue> (<year>2012</year>): <fpage>R19</fpage>.<pub-id pub-id-type="pmid">22289271</pub-id>
+</mixed-citation></ref><ref id="cnr270175-bib-0012"><label>12</label><mixed-citation publication-type="journal" id="cnr270175-cit-0012">
+<string-name>
+<given-names>D. G.</given-names>
+<surname>Evans</surname>
+</string-name> and <string-name>
+<given-names>A.</given-names>
+<surname>Howell</surname>
+</string-name>, &#x0201c;<article-title>Breast Cancer Risk&#x02010;Assessment Models</article-title>,&#x0201d; <source>Breast Cancer Research</source>
+<volume>9</volume>, no. <issue>5</issue> (<year>2007</year>): <fpage>213</fpage>.<pub-id pub-id-type="pmid">17888188</pub-id>
+</mixed-citation></ref><ref id="cnr270175-bib-0013"><label>13</label><mixed-citation publication-type="journal" id="cnr270175-cit-0013">
+<string-name>
+<given-names>C.</given-names>
+<surname>Nickson</surname>
+</string-name>, <string-name>
+<given-names>P.</given-names>
+<surname>Procopio</surname>
+</string-name>, <string-name>
+<given-names>L. S.</given-names>
+<surname>Velentzis</surname>
+</string-name>, et&#x000a0;al., &#x0201c;<article-title>Prospective Validation of the NCI Breast Cancer Risk Assessment Tool (Gail Model) on 40,000 Australian Women</article-title>,&#x0201d; <source>Breast Cancer Research</source>
+<volume>20</volume>, no. <issue>1</issue> (<year>2018</year>): <fpage>155</fpage>.<pub-id pub-id-type="pmid">30572910</pub-id>
+</mixed-citation></ref><ref id="cnr270175-bib-0014"><label>14</label><mixed-citation publication-type="journal" id="cnr270175-cit-0014">
+<string-name>
+<given-names>B.</given-names>
+<surname>Rockhill</surname>
+</string-name>, <string-name>
+<given-names>D.</given-names>
+<surname>Spiegelman</surname>
+</string-name>, <string-name>
+<given-names>C.</given-names>
+<surname>Byrne</surname>
+</string-name>, <string-name>
+<given-names>D. J.</given-names>
+<surname>Hunter</surname>
+</string-name>, and <string-name>
+<given-names>G. A.</given-names>
+<surname>Colditz</surname>
+</string-name>, &#x0201c;<article-title>Validation of the Gail et&#x000a0;al. Model of Breast Cancer Risk Prediction and Implications for Chemoprevention</article-title>,&#x0201d; <source>JNCI Journal of the National Cancer Institute</source>
+<volume>93</volume>, no. <issue>5</issue> (<year>2001</year>): <fpage>358</fpage>&#x02013;<lpage>366</lpage>.<pub-id pub-id-type="pmid">11238697</pub-id>
+</mixed-citation></ref><ref id="cnr270175-bib-0015"><label>15</label><mixed-citation publication-type="journal" id="cnr270175-cit-0015">
+<string-name>
+<given-names>S.</given-names>
+<surname>Rostami</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Rafei</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Damghanian</surname>
+</string-name>, <string-name>
+<given-names>Z.</given-names>
+<surname>Khakbazan</surname>
+</string-name>, <string-name>
+<given-names>F.</given-names>
+<surname>Maleki</surname>
+</string-name>, and <string-name>
+<given-names>K.</given-names>
+<surname>Zendehdel</surname>
+</string-name>, &#x0201c;<article-title>Discriminatory Accuracy of the Gail Model for Breast Cancer Risk Assessment Among Iranian Women</article-title>,&#x0201d; <source>Iranian Journal of Public Health</source>
+<volume>49</volume>, no. <issue>11</issue> (<year>2020</year>): <fpage>2205</fpage>&#x02013;<lpage>2213</lpage>.<pub-id pub-id-type="pmid">33708742</pub-id>
+</mixed-citation></ref><ref id="cnr270175-bib-0016"><label>16</label><mixed-citation publication-type="journal" id="cnr270175-cit-0016">
+<string-name>
+<given-names>F.</given-names>
+<surname>Maleki</surname>
+</string-name>, <string-name>
+<given-names>A.</given-names>
+<surname>Fotouhi</surname>
+</string-name>, <string-name>
+<given-names>R.</given-names>
+<surname>Ghiasvand</surname>
+</string-name>, et&#x000a0;al., &#x0201c;<article-title>Association of Physical Activity, Body Mass Index and Reproductive History With Breast Cancer by Menopausal Status in Iranian Women</article-title>,&#x0201d; <source>Cancer Epidemiology</source>
+<volume>67</volume> (<year>2020</year>): <elocation-id>101738</elocation-id>.<pub-id pub-id-type="pmid">32512496</pub-id>
+</mixed-citation></ref><ref id="cnr270175-bib-0017"><label>17</label><mixed-citation publication-type="journal" id="cnr270175-cit-0017">
+<string-name>
+<given-names>M.</given-names>
+<surname>Ogunsanya</surname>
+</string-name> and <string-name>
+<given-names>J.</given-names>
+<surname>Isichei</surname>
+</string-name>, &#x0201c;<article-title>Grid Search Hyperparameter Tuning in Additive Manufacturing Processes</article-title>,&#x0201d; <source>Manufacturing Letters</source>
+<volume>35</volume> (<year>2023</year>): <fpage>1031</fpage>&#x02013;<lpage>1042</lpage>, <pub-id pub-id-type="doi">10.1016/j.mfglet.2023.08.056</pub-id>.</mixed-citation></ref><ref id="cnr270175-bib-0018"><label>18</label><mixed-citation publication-type="journal" id="cnr270175-cit-0018">
+<string-name>
+<given-names>J. R.</given-names>
+<surname>Quinlan</surname>
+</string-name>, &#x0201c;<article-title>Induction of Decision Trees</article-title>,&#x0201d; <source>Machine Learning</source>
+<volume>1</volume>, no. <issue>1</issue> (<year>1986</year>): <fpage>81</fpage>&#x02013;<lpage>106</lpage>.</mixed-citation></ref><ref id="cnr270175-bib-0019"><label>19</label><mixed-citation publication-type="journal" id="cnr270175-cit-0019">
+<string-name>
+<given-names>L.</given-names>
+<surname>Breiman</surname>
+</string-name>, &#x0201c;<article-title>Bagging Predictors</article-title>,&#x0201d; <source>Machine Learning</source>
+<volume>24</volume>, no. <issue>2</issue> (<year>1996</year>): <fpage>123</fpage>&#x02013;<lpage>140</lpage>.</mixed-citation></ref><ref id="cnr270175-bib-0020"><label>20</label><mixed-citation publication-type="journal" id="cnr270175-cit-0020">
+<string-name>
+<given-names>L.</given-names>
+<surname>Breiman</surname>
+</string-name>, &#x0201c;<article-title>Random Forests</article-title>,&#x0201d; <source>Machine Learning</source>
+<volume>45</volume>, no. <issue>1</issue> (<year>2001</year>): <fpage>5</fpage>&#x02013;<lpage>32</lpage>.</mixed-citation></ref><ref id="cnr270175-bib-0021"><label>21</label><mixed-citation publication-type="book" id="cnr270175-cit-0021">
+<string-name>
+<given-names>D. W.</given-names>
+<surname>Hosmer</surname>, <suffix>Jr.</suffix>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Lemeshow</surname>
+</string-name>, and <string-name>
+<given-names>R. X.</given-names>
+<surname>Sturdivant</surname>
+</string-name>, &#x0201c;<part-title>Logistic Regression Models for Multinomial and Ordinal Outcomes</part-title>,&#x0201d; in <source>Applied Logistic Regression</source>, eds. <person-group person-group-type="editor">
+<string-name>
+<given-names>D. W.</given-names>
+<surname>Hosmer</surname>
+</string-name>
+</person-group>, <person-group person-group-type="editor">
+<string-name>
+<given-names>S.</given-names>
+<surname>Lemeshow</surname>
+</string-name>
+</person-group>, and <person-group person-group-type="editor">
+<string-name>
+<given-names>R. X.</given-names>
+<surname>Sturdivant</surname>
+</string-name>
+</person-group> (<publisher-name>Wiley Series in Probability and Statistics</publisher-name>, <year>2013</year>), <fpage>269</fpage>&#x02013;<lpage>311</lpage>, <pub-id pub-id-type="doi">10.1002/9781118548387.ch8</pub-id>.</mixed-citation></ref><ref id="cnr270175-bib-0022"><label>22</label><mixed-citation publication-type="journal" id="cnr270175-cit-0022">
+<string-name>
+<given-names>C.</given-names>
+<surname>Cortes</surname>
+</string-name> and <string-name>
+<given-names>V.</given-names>
+<surname>Vapnik</surname>
+</string-name>, &#x0201c;<article-title>Support&#x02010;Vector Networks</article-title>,&#x0201d; <source>Machine Learning</source>
+<volume>20</volume>, no. <issue>3</issue> (<year>1995</year>): <fpage>273</fpage>&#x02013;<lpage>297</lpage>.</mixed-citation></ref><ref id="cnr270175-bib-0023"><label>23</label><mixed-citation publication-type="journal" id="cnr270175-cit-0023">
+<string-name>
+<given-names>G.</given-names>
+<surname>Valentini</surname>
+</string-name> and <string-name>
+<given-names>T.</given-names>
+<surname>Dietterich</surname>
+</string-name>, &#x0201c;<article-title>Bias&#x02010;Variance Analysis of Support Vector Machines for the Development of SVM&#x02010;Based Ensemble Methods</article-title>,&#x0201d; <source>Journal of Machine Learning Research</source>
+<volume>5</volume> (<year>2004</year>): <fpage>725</fpage>&#x02013;<lpage>775</lpage>.</mixed-citation></ref><ref id="cnr270175-bib-0024"><label>24</label><mixed-citation publication-type="journal" id="cnr270175-cit-0024">
+<string-name>
+<given-names>H. F.</given-names>
+<surname>Jerome</surname>
+</string-name>, &#x0201c;<article-title>Greedy Function Approximation: A Gradient Boosting Machine</article-title>,&#x0201d; <source>Annals of Statistics</source>
+<volume>29</volume>, no. <issue>5</issue> (<year>2001</year>): <fpage>1189</fpage>&#x02013;<lpage>1232</lpage>.</mixed-citation></ref><ref id="cnr270175-bib-0025"><label>25</label><mixed-citation publication-type="journal" id="cnr270175-cit-0025">
+<string-name>
+<given-names>Y.</given-names>
+<surname>Freund</surname>
+</string-name> and <string-name>
+<given-names>R. E.</given-names>
+<surname>Schapire</surname>
+</string-name>, &#x0201c;<article-title>A Decision&#x02010;Theoretic Generalization of on&#x02010;Line Learning and an Application to Boosting</article-title>,&#x0201d; <source>Journal of Computer and System Sciences</source>
+<volume>55</volume>, no. <issue>1</issue> (<year>1997</year>): <fpage>119</fpage>&#x02013;<lpage>139</lpage>.</mixed-citation></ref><ref id="cnr270175-bib-0026"><label>26</label><mixed-citation publication-type="journal" id="cnr270175-cit-0026">
+<string-name>
+<given-names>S.</given-names>
+<surname>Kumar</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Patnaik</surname>
+</string-name>, and <string-name>
+<given-names>A.</given-names>
+<surname>Dixit</surname>
+</string-name>, &#x0201c;<article-title>Predictive Models for Stage and Risk Classification in Head and Neck Squamous Cell Carcinoma (HNSCC)</article-title>,&#x0201d; <source>PeerJ</source>
+<volume>8</volume> (<year>2020</year>): <elocation-id>e9656</elocation-id>, <pub-id pub-id-type="doi">10.7717/peerj.9656</pub-id>.<pub-id pub-id-type="pmid">33024622</pub-id>
+</mixed-citation></ref><ref id="cnr270175-bib-0027"><label>27</label><mixed-citation publication-type="book" id="cnr270175-cit-0027">
+<string-name>
+<given-names>T.</given-names>
+<surname>Chen</surname>
+</string-name> and <string-name>
+<given-names>C.</given-names>
+<surname>Guestrin</surname>
+</string-name>, &#x0201c;<part-title>XGBoost: A Scalable Tree Boosting System</part-title>,&#x0201d; in <source>Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</source> (<publisher-name>Association for Computing Machinery</publisher-name>, <year>2016</year>), <fpage>785</fpage>&#x02013;<lpage>794</lpage>.</mixed-citation></ref><ref id="cnr270175-bib-0028"><label>28</label><mixed-citation publication-type="journal" id="cnr270175-cit-0028">
+<string-name>
+<given-names>T.</given-names>
+<surname>Cover</surname>
+</string-name> and <string-name>
+<given-names>P.</given-names>
+<surname>Hart</surname>
+</string-name>, &#x0201c;<article-title>Nearest Neighbor Pattern Classification</article-title>,&#x0201d; <source>IEEE Transactions on Information Theory</source>
+<volume>13</volume>, no. <issue>1</issue> (<year>1967</year>): <fpage>21</fpage>&#x02013;<lpage>27</lpage>.</mixed-citation></ref><ref id="cnr270175-bib-0029"><label>29</label><mixed-citation publication-type="journal" id="cnr270175-cit-0029">
+<string-name>
+<given-names>M. M.</given-names>
+<surname>Banoei</surname>
+</string-name>, <string-name>
+<given-names>H.</given-names>
+<surname>Rafiepoor</surname>
+</string-name>, <string-name>
+<given-names>K.</given-names>
+<surname>Zendehdel</surname>
+</string-name>, et&#x000a0;al., &#x0201c;<article-title>Unraveling Complex Relationships Between COVID&#x02010;19 Risk Factors Using Machine Learning Based Models for Predicting Mortality of Hospitalized Patients and Identification of High&#x02010;Risk Group: A Large Retrospective Study</article-title>,&#x0201d; <source>Frontiers in Medicine</source>
+<volume>10</volume> (<year>2023</year>): <elocation-id>1170331</elocation-id>.<pub-id pub-id-type="pmid">37215714</pub-id>
+</mixed-citation></ref><ref id="cnr270175-bib-0030"><label>30</label><mixed-citation publication-type="journal" id="cnr270175-cit-0030">
+<string-name>
+<given-names>S.</given-names>
+<surname>de Jong</surname>
+</string-name>, &#x0201c;<article-title>SIMPLS: An Alternative Approach to Partial Least Squares Regression</article-title>,&#x0201d; <source>Chemometrics and Intelligent Laboratory Systems</source>
+<volume>18</volume>, no. <issue>3</issue> (<year>1993</year>): <fpage>251</fpage>&#x02013;<lpage>263</lpage>.</mixed-citation></ref><ref id="cnr270175-bib-0031"><label>31</label><mixed-citation publication-type="journal" id="cnr270175-cit-0031">
+<string-name>
+<given-names>S.</given-names>
+<surname>Oh</surname>
+</string-name>, &#x0201c;<article-title>Predictive Case&#x02010;Based Feature Importance and Interaction</article-title>,&#x0201d; <source>Information Sciences</source>
+<volume>593</volume> (<year>2022</year>): <fpage>155</fpage>&#x02013;<lpage>176</lpage>.</mixed-citation></ref><ref id="cnr270175-bib-0032"><label>32</label><mixed-citation publication-type="book" id="cnr270175-cit-0032">
+<string-name>
+<given-names>M.</given-names>
+<surname>Dorey</surname>
+</string-name>, <string-name>
+<given-names>P.</given-names>
+<surname>Joubert</surname>
+</string-name>, and <string-name>
+<given-names>C.</given-names>
+<surname>Vencatasawmy</surname>
+</string-name>, &#x0201c;<part-title>Modelling Dependencies: An Overview</part-title>,&#x0201d; in <source>Finance &#x00026; Investment Conference</source> (<year>2005</year>), accessed December 17, 2021, <ext-link xlink:href="https://www.actuaries.org.uk/system/files/documents/pdf/joubert.pdf" ext-link-type="uri">https://www.actuaries.org.uk/system/files/documents/pdf/joubert.pdf</ext-link>.</mixed-citation></ref><ref id="cnr270175-bib-0033"><label>33</label><mixed-citation publication-type="journal" id="cnr270175-cit-0033">
+<string-name>
+<given-names>J. A.</given-names>
+<surname>Cintolo&#x02010;Gonzalez</surname>
+</string-name>, <string-name>
+<given-names>D.</given-names>
+<surname>Braun</surname>
+</string-name>, <string-name>
+<given-names>A. L.</given-names>
+<surname>Blackford</surname>
+</string-name>, et&#x000a0;al., &#x0201c;<article-title>Breast Cancer Risk Models: A Comprehensive Overview of Existing Models, Validation, and Clinical Applications</article-title>,&#x0201d; <source>Breast Cancer Research and Treatment</source>
+<volume>164</volume>, no. <issue>2</issue> (<year>2017</year>): <fpage>263</fpage>&#x02013;<lpage>284</lpage>.<pub-id pub-id-type="pmid">28444533</pub-id>
+</mixed-citation></ref><ref id="cnr270175-bib-0034"><label>34</label><mixed-citation publication-type="journal" id="cnr270175-cit-0034">
+<string-name>
+<given-names>M.</given-names>
+<surname>Nasser</surname>
+</string-name> and <string-name>
+<given-names>U. K.</given-names>
+<surname>Yusof</surname>
+</string-name>, &#x0201c;<article-title>Deep Learning Based Methods for Breast Cancer Diagnosis: A Systematic Review and Future Direction</article-title>,&#x0201d; <source>Diagnostics (Basel, Switzerland)</source>
+<volume>13</volume>, no. <issue>1</issue> (<year>2023</year>): <elocation-id>161</elocation-id>, <pub-id pub-id-type="doi">10.3390/diagnostics13010161</pub-id>.<pub-id pub-id-type="pmid">36611453</pub-id>
+</mixed-citation></ref><ref id="cnr270175-bib-0035"><label>35</label><mixed-citation publication-type="journal" id="cnr270175-cit-0035">
+<string-name>
+<given-names>G.</given-names>
+<surname>Dileep</surname>
+</string-name> and <string-name>
+<given-names>S. G. G.</given-names>
+<surname>Gyani</surname>
+</string-name>, &#x0201c;<article-title>Artificial Intelligence in Breast Cancer Screening and Diagnosis</article-title>,&#x0201d; <source>Cureus</source>
+<volume>14</volume>, no. <issue>10</issue> (<year>2022</year>): <elocation-id>e30318</elocation-id>.<pub-id pub-id-type="pmid">36381716</pub-id>
+</mixed-citation></ref><ref id="cnr270175-bib-0036"><label>36</label><mixed-citation publication-type="journal" id="cnr270175-cit-0036">
+<string-name>
+<given-names>Y.</given-names>
+<surname>Gao</surname>
+</string-name>, <string-name>
+<given-names>S.</given-names>
+<surname>Li</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Jin</surname>
+</string-name>, et&#x000a0;al., &#x0201c;<article-title>An Assessment of the Predictive Performance of Current Machine Learning&#x02010;Based Breast Cancer Risk Prediction Models: Systematic Review</article-title>,&#x0201d; <source>JMIR Public Health and Surveillance</source>
+<volume>8</volume>, no. <issue>12</issue> (<year>2022</year>): <elocation-id>e35750</elocation-id>.<pub-id pub-id-type="pmid">36426919</pub-id>
+</mixed-citation></ref><ref id="cnr270175-bib-0037"><label>37</label><mixed-citation publication-type="journal" id="cnr270175-cit-0037">
+<string-name>
+<given-names>K.</given-names>
+<surname>Rajendran</surname>
+</string-name>, <string-name>
+<given-names>M.</given-names>
+<surname>Jayabalan</surname>
+</string-name>, and <string-name>
+<given-names>V.</given-names>
+<surname>Thiruchelvam</surname>
+</string-name>, &#x0201c;<article-title>Predicting Breast Cancer via Supervised Machine Learning Methods on Class Imbalanced Data</article-title>,&#x0201d; <source>International Journal of Advanced Computer Science and Applications</source>
+<volume>11</volume>, no. <issue>8</issue> (<year>2020</year>): <fpage>54</fpage>&#x02013;<lpage>63</lpage>.</mixed-citation></ref><ref id="cnr270175-bib-0038"><label>38</label><mixed-citation publication-type="journal" id="cnr270175-cit-0038">
+<string-name>
+<given-names>D. L.</given-names>
+<surname>Nguyen</surname>
+</string-name>, <string-name>
+<given-names>Y.</given-names>
+<surname>Ren</surname>
+</string-name>, <string-name>
+<given-names>T. M.</given-names>
+<surname>Jones</surname>
+</string-name>, <string-name>
+<given-names>S. M.</given-names>
+<surname>Thomas</surname>
+</string-name>, <string-name>
+<given-names>J. Y.</given-names>
+<surname>Lo</surname>
+</string-name>, and <string-name>
+<given-names>L. J.</given-names>
+<surname>Grimm</surname>
+</string-name>, &#x0201c;<article-title>Patient Characteristics Impact Performance of AI Algorithm in Interpreting Negative Screening Digital Breast Tomosynthesis Studies</article-title>,&#x0201d; <source>Radiology</source>
+<volume>311</volume>, no. <issue>2</issue> (<year>2024</year>): <elocation-id>232286</elocation-id>, <pub-id pub-id-type="doi">10.1148/radiol.232286</pub-id>.</mixed-citation></ref></ref-list></back></article>

@@ -1,0 +1,675 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Sci Rep</journal-id><journal-id journal-id-type="iso-abbrev">Sci Rep</journal-id><journal-title-group><journal-title>Scientific Reports</journal-title></journal-title-group><issn pub-type="epub">2045-2322</issn><publisher><publisher-name>Nature Publishing Group UK</publisher-name><publisher-loc>London</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">39730405</article-id><article-id pub-id-type="pmc">PMC11681021</article-id><article-id pub-id-type="publisher-id">78037</article-id><article-id pub-id-type="doi">10.1038/s41598-024-78037-7</article-id><article-categories><subj-group subj-group-type="heading"><subject>Article</subject></subj-group></article-categories><title-group><article-title>Physics-regularized neural networks for predictive modeling of silicon carbide swelling with limited experimental data</article-title></title-group><contrib-group><contrib contrib-type="author"><name><surname>Kobayashi</surname><given-names>Kazuma</given-names></name><xref ref-type="aff" rid="Aff1">1</xref></contrib><contrib contrib-type="author" corresp="yes"><name><surname>Alam</surname><given-names>Syed Bahauddin</given-names></name><address><email>alams@illinois.edu</email></address><xref ref-type="aff" rid="Aff1">1</xref><xref ref-type="aff" rid="Aff2">2</xref></contrib><aff id="Aff1"><label>1</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/047426m28</institution-id><institution-id institution-id-type="GRID">grid.35403.31</institution-id><institution-id institution-id-type="ISNI">0000 0004 1936 9991</institution-id><institution>Nuclear, Plasma &#x00026; Radiological Engineering, </institution><institution>University of Illinois Urbana-Champaign, </institution></institution-wrap>Urbana, USA </aff><aff id="Aff2"><label>2</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/047426m28</institution-id><institution-id institution-id-type="GRID">grid.35403.31</institution-id><institution-id institution-id-type="ISNI">0000 0004 1936 9991</institution-id><institution>National Center for Supercomputing Application, </institution><institution>University of Illinois Urbana-Champaign, </institution></institution-wrap>Urbana, USA </aff></contrib-group><pub-date pub-type="epub"><day>28</day><month>12</month><year>2024</year></pub-date><pub-date pub-type="pmc-release"><day>28</day><month>12</month><year>2024</year></pub-date><pub-date pub-type="collection"><year>2024</year></pub-date><volume>14</volume><elocation-id>30666</elocation-id><history><date date-type="received"><day>30</day><month>3</month><year>2024</year></date><date date-type="accepted"><day>28</day><month>10</month><year>2024</year></date></history><permissions><copyright-statement>&#x000a9; The Author(s) 2024</copyright-statement><copyright-year>2024</copyright-year><license><ali:license_ref specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p><bold>Open Access</bold> This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article&#x02019;s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article&#x02019;s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link>.</license-p></license></permissions><abstract id="Abs1"><p id="Par1">This study introduces a physics-regularized neural network (PRNN) as a computational approach to predict silicon carbide&#x02019;s (SiC) swelling under irradiation, particularly at high temperatures.&#x000a0;The PRNN model combines physics-based regularization with neural network methodologies to generalize the behavior of SiC, even in conditions beyond the traditional empirical model&#x02019;s valid range. This approach ensures continuity and accuracy in SiC behavior predictions in extreme environments. A key aspect of this research is using nested cross-validation to ensure robustness and generalizability. The PRNN model effectively bridges empirical and sparse experimental data by integrating prior knowledge and refined tuning procedures. It demonstrates its SiC&#x02019;s predictive power in high-irradiation conditions essential for nuclear and aerospace applications.</p></abstract><kwd-group kwd-group-type="npg-subject"><title>Subject terms</title><kwd>Engineering</kwd><kwd>Energy science and technology</kwd><kwd>Nuclear energy</kwd></kwd-group><custom-meta-group><custom-meta><meta-name>issue-copyright-statement</meta-name><meta-value>&#x000a9; Springer Nature Limited 2024</meta-value></custom-meta></custom-meta-group></article-meta></front><body><sec id="Sec1"><title>Introduction</title><p id="Par2">Silicon carbide (SiC) material can be used in the under extreme conditions, showcasing exceptional thermal, mechanical, and electrical properties<sup><xref ref-type="bibr" rid="CR1">1</xref>&#x02013;<xref ref-type="bibr" rid="CR3">3</xref></sup>. Its superior thermal conductivity and structural strength have the potential to be effectively implemented in a wide variety of fields. At the same time, its resistance to radiation makes it invaluable within harsh environments such as nuclear reactors. However, irradiation-induced changes in material properties, particularly swelling, remain a key challenge that can critically undermine material integrity and performance.</p><p id="Par3">In nuclear technology, the deployment of SiC as a cladding material in fuel rods can enhance the efficiency and safety of reactors<sup><xref ref-type="bibr" rid="CR4">4</xref>&#x02013;<xref ref-type="bibr" rid="CR7">7</xref></sup>. SiC&#x02019;s resistance to high temperatures and corrosive fission products leads to higher burnup rates and extended fuel life. However, the volume changes induced by neutron irradiation present a critical issue, potentially impacting material reliability and, by extension, the entire operation of a nuclear reactor. The ability to predict and control these irradiation-induced changes is not just of academic interest but essential for the safe and effective deployment of SiC in nuclear reactors.</p><p id="Par4">In addition to nuclear technology, SiC&#x02019;s robustness is harnessed in aerospace engineering for structural components within spacecraft and jet engines, where stability under thermal and mechanical stress is paramount<sup><xref ref-type="bibr" rid="CR8">8</xref>,<xref ref-type="bibr" rid="CR9">9</xref></sup>. However, irradiation can induce swelling, compromising the structural integrity required in high-performance aerospace applications. This presents a significant challenge for advancing aerospace technologies. Similarly, in the burgeoning field of semiconductor devices, SiC&#x02019;s superior properties allow for devices that operate at higher temperatures and voltages compared to traditional silicon. Yet, irradiation-induced swelling can compromise the semiconductor&#x02019;s crystalline structure, affecting its electrical properties and overall device performance<sup><xref ref-type="bibr" rid="CR10">10</xref>,<xref ref-type="bibr" rid="CR11">11</xref></sup>. There is a need across these fields to develop models capable of quantitatively evaluating SiC volume swelling under irradiation. Previous empirical swelling studies<sup><xref ref-type="bibr" rid="CR12">12</xref>&#x02013;<xref ref-type="bibr" rid="CR14">14</xref></sup> formulated models as functions of irradiation temperature and neutron fluence. However, they face significant limitations in high-temperature regimes exceeding 713 K, where irradiation-induced swelling becomes more complex and the empirical models fail to predict behavior accurately. While 713 K represents the normal operating temperature range for conventional light water reactors<sup><xref ref-type="bibr" rid="CR15">15</xref>&#x02013;<xref ref-type="bibr" rid="CR17">17</xref></sup>, it is not sufficient for simulating the more severe operating environments of accident conditions or next-generation reactors such as Fast Modular Reactors (FMR)<sup><xref ref-type="bibr" rid="CR18">18</xref>&#x02013;<xref ref-type="bibr" rid="CR21">21</xref></sup>. These reactors operate at much higher temperatures, ranging from 1300 to 1500 K in normal conditions, and can experience temperatures up to 2300 K under accident conditions<sup><xref ref-type="bibr" rid="CR18">18</xref></sup>. Therefore, there is a critical research gap in extending models to cover these high-temperature regimes, which are vital for the practical design and development of future nuclear systems. To address these challenges, this study introduces a physics-regularized neural network (PRNN) approach focusing on the unique complexities of irradiation-induced material property changes, particularly swelling under high-temperature irradiation. By combining the available empirical model<sup><xref ref-type="bibr" rid="CR13">13</xref></sup> with sparse high-temperature experimental data, the PRNN framework bridges the gap between empirical knowledge and the need for accurate predictions in extreme conditions. This method integrates known physical relationships where reliable while allowing for data-driven learning in regions of uncertainty, such as temperatures exceeding 713 K. The use of PRNN offers flexibility by incorporating physical constraints derived from empirical models only in temperature ranges where sufficient data is available, ensuring consistency with known behavior. In higher-temperature regimes, where experimental data is sparse, the regularization is deactivated, allowing the model to generalize based on the available data while mitigating overfitting risks. The strategy of combining known knowledge with machine learning has unfolded through the emergence of Physics-Informed Neural Networks (PINNs)<sup><xref ref-type="bibr" rid="CR22">22</xref></sup>. PINNs inherently encode known physical relationships within the neural network design. By embedding the governing equations and boundary conditions into the loss function and using automatic differentiation, PINNs ensure agreement with the laws of physics across the entire input domain during training<sup><xref ref-type="bibr" rid="CR22">22</xref></sup>. However, adapting such methods<sup><xref ref-type="bibr" rid="CR22">22</xref>,<xref ref-type="bibr" rid="CR23">23</xref></sup> to material modeling-where irradiation effects drive complex material behavior may present challenges, particularly when governing physics is incomplete, unclear,&#x000a0; or experimentally confirmed only in specific conditions. The PRNN approach aims to apply a selective regularization, allowing it to generalize a material behavior where physics (or an empirical model available) and ensure continuity with new data obtained in new conditions that exceed their valid range.&#x000a0;</p><p id="Par5">In this paper, the sequence of modeling methods proposed here, combining PRNN, cross-validation, and ensemble methods, provides a pathway to reliably bridge empirical and sparse experimental data through integrating prior knowledge and tuning procedures. This integrated approach, focused on irradiation-induced changes in material properties, offers improved generalization and robustness in predicting material behavior under extreme conditions, contributing to advancements in nuclear and aerospace technologies.</p></sec><sec id="Sec2"><title>Methods</title><sec id="Sec3"><title>Data augmentation</title><p id="Par6">The primary dataset used in this study was derived from the previous research by Snead et al.<sup><xref ref-type="bibr" rid="CR14">14</xref></sup>, which documents 58 unique entries of the volumetric swelling behavior of SiC under specific irradiation conditions. These conditions span temperatures from 1200 to 1873 K, with displacement damage per atom &#x000a0;(dpa)&#x000a0;levels set at 1.75, 5, and 8.5. However, the limited size of this dataset posed challenges for the model&#x02019;s generalization, particularly in predicting behavior at high temperatures. To address this limitation, a data augmentation strategy was implemented using the k-nearest neighbors (KNN) algorithm from the scikit-learn library<sup><xref ref-type="bibr" rid="CR24">24</xref>,<xref ref-type="bibr" rid="CR25">25</xref></sup>, generating synthetic data points to enhance the variability and coverage of the dataset. As a first step, the features of the original dataset were normalized using min&#x02013;max scaling, which transformed all data points to a range between 0 and 1. This normalization ensured that the KNN algorithm operated on a uniform scale, thereby improving the quality of the generated synthetic data. KNN, a non-parametric machine learning algorithm, is used for classification or regression problems; however, it can also be employed for data augmentation by generating synthetic data points based on relationships between existing data points in the feature space<sup><xref ref-type="bibr" rid="CR26">26</xref></sup>. The algorithm identifies the k-nearest neighbors of a given point based on a distance metric (in this case, Euclidean distance), with the proximity of these neighbors providing a foundation for generating new, realistic data points.</p><p id="Par7">For this study, the KNN-based augmentation process was initiated by randomly selecting a seed point from the normalized dataset. The algorithm then identified its five nearest neighbors (<inline-formula id="IEq1"><alternatives><tex-math id="M1">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$k=5$$\end{document}</tex-math><mml:math id="M2"><mml:mrow><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mn>5</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq1.gif"/></alternatives></inline-formula>), representing data points most similar to the seed point in the feature space. These neighboring data points were used to estimate the general trend or structure around the seed point. After identifying the five nearest neighbors, their attributes were averaged to create a base synthetic point. Gaussian noise with a standard deviation of 0.10 was added to the averaged attributes to introduce realistic variability and avoid overfitting. This addition of noise ensured that the generated synthetic points were not mere duplications of existing data but instead represented plausible variations that reflected the natural fluctuations and uncertainties in experimental data. The KNN-based augmentation process was iteratively repeated by selecting different seed points and generating new synthetic data points from their respective neighbors. This iterative process was carried out until 10,000 synthetic data points were generated. By utilizing KNN, the augmented dataset was constructed to maintain the overall structure of the original data while expanding the dataset to capture a wider range of variability. In addition to augmenting the dataset with synthetic data, predictions from an empirical swelling model (Eq. <xref rid="Equ1" ref-type="disp-formula">1</xref>) were incorporated to further enrich the data, particularly in temperature ranges where experimental data were sparse. For each dpa level, ten temperatures uniformly sampled between 493 and 1273.15 K were used, and the empirical model was employed to predict the corresponding swelling values. These predictions were then integrated into the augmented dataset, resulting in a combined set of 22,000 data points.</p><p id="Par8">The dataset was expanded by combining KNN-based synthetic data generation with empirical swelling predictions. The resulting augmented dataset spans a broader range of temperatures and dpa levels, providing a more variation for training the PRNN model. This approach improves the model&#x02019;s ability to generalize across various irradiation scenarios, including high-temperature regions where empirical data are sparse.</p></sec><sec id="Sec4"><title>Implementation of PRNN and nested-cross validation</title><p id="Par9">The development of the PRNN was conducted using PyTorch version 1.13.1<sup><xref ref-type="bibr" rid="CR27">27</xref></sup>. PyTorch, with its dynamic computational graph, provided the necessary flexibility for implementing the complex neural network architecture. In parallel, the nested-cross validation (NCV) process was set up using the scikit-learn library<sup><xref ref-type="bibr" rid="CR24">24</xref></sup>, a tool chosen for ensuring a model robustness. NCV, critical for preventing overfitting, incorporates an outer loop for model performance evaluation and an inner loop for hyperparameter tuning. Hyperparameter optimization was carried out using Optuna<sup><xref ref-type="bibr" rid="CR28">28</xref></sup>. </p><p id="Par10">This approach encompassing the use of PyTorch for PRNN development, scikit-learn for nested cross-validation, and Optuna for hyperparameter optimization, ensured a robust and physically consistent predictive model. </p></sec></sec><sec id="Sec5"><title>Results and discussions</title><sec id="Sec6"><title>Empirical model</title><p id="Par11">The Katoh model was empirically formulated to describe swelling in CVD SiC and SiC/SiC as a function of irradiation temperature and neutron fluence<sup><xref ref-type="bibr" rid="CR12">12</xref>,<xref ref-type="bibr" rid="CR13">13</xref></sup>. It was developed by<sup><xref ref-type="bibr" rid="CR13">13</xref></sup> using an extensive experimental database on swelling in CVD SiC and SiC/SiC. The dataset included historic swelling results from multiple studies on high-purity CVD SiC irradiated at temperatures ranging from 473 to 1073 K. This collected dataset allowed correlation of swelling with both irradiation temperature and fluence over a wide range encompassing the point defect and void swelling regions. Reference<sup><xref ref-type="bibr" rid="CR13">13</xref></sup> derived the mathematical form of the model (Eq. <xref rid="Equ1" ref-type="disp-formula">1</xref>) based on theoretical considerations of point defect accumulation and swelling saturation mechanisms.<disp-formula id="Equ1"><label>1</label><alternatives><tex-math id="M3">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} S = S_s\left[ 1-\exp \left( \frac{\gamma }{\gamma _c} \right) \right] ^{2/3}, \end{aligned}$$\end{document}</tex-math><mml:math id="M4" display="block"><mml:mrow><mml:mtable><mml:mtr><mml:mtd columnalign="right"><mml:mrow><mml:mi>S</mml:mi><mml:mo>=</mml:mo><mml:msub><mml:mi>S</mml:mi><mml:mi>s</mml:mi></mml:msub><mml:msup><mml:mfenced close="]" open="["><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:mo>exp</mml:mo><mml:mfenced close=")" open="("><mml:mfrac><mml:mi>&#x003b3;</mml:mi><mml:msub><mml:mi>&#x003b3;</mml:mi><mml:mi>c</mml:mi></mml:msub></mml:mfrac></mml:mfenced></mml:mfenced><mml:mrow><mml:mn>2</mml:mn><mml:mo stretchy="false">/</mml:mo><mml:mn>3</mml:mn></mml:mrow></mml:msup><mml:mo>,</mml:mo></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:math><graphic xlink:href="41598_2024_78037_Article_Equ1.gif" position="anchor"/></alternatives></disp-formula>where the critical dose <inline-formula id="IEq2"><alternatives><tex-math id="M5">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\gamma _c$$\end{document}</tex-math><mml:math id="M6"><mml:msub><mml:mi>&#x003b3;</mml:mi><mml:mi>c</mml:mi></mml:msub></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq2.gif"/></alternatives></inline-formula> and saturable swelling <inline-formula id="IEq3"><alternatives><tex-math id="M7">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$S_s$$\end{document}</tex-math><mml:math id="M8"><mml:msub><mml:mi>S</mml:mi><mml:mi>s</mml:mi></mml:msub></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq3.gif"/></alternatives></inline-formula> are:<disp-formula id="Equ2"><label>2</label><alternatives><tex-math id="M9">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} \gamma _c= &#x00026; -0.57533+3.3342\times 10^{-3}T-5.3970\times 10^{-6}T^{2}+2.9754\times 10^{-9}T^{3}, \end{aligned}$$\end{document}</tex-math><mml:math id="M10" display="block"><mml:mrow><mml:mtable><mml:mtr><mml:mtd columnalign="right"><mml:mrow><mml:msub><mml:mi>&#x003b3;</mml:mi><mml:mi>c</mml:mi></mml:msub><mml:mo>=</mml:mo></mml:mrow></mml:mtd><mml:mtd columnalign="left"><mml:mrow><mml:mo>-</mml:mo><mml:mn>0.57533</mml:mn><mml:mo>+</mml:mo><mml:mn>3.3342</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>3</mml:mn></mml:mrow></mml:msup><mml:mi>T</mml:mi><mml:mo>-</mml:mo><mml:mn>5.3970</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>6</mml:mn></mml:mrow></mml:msup><mml:msup><mml:mi>T</mml:mi><mml:mn>2</mml:mn></mml:msup><mml:mo>+</mml:mo><mml:mn>2.9754</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>9</mml:mn></mml:mrow></mml:msup><mml:msup><mml:mi>T</mml:mi><mml:mn>3</mml:mn></mml:msup><mml:mo>,</mml:mo></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:math><graphic xlink:href="41598_2024_78037_Article_Equ2.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ3"><label>3</label><alternatives><tex-math id="M11">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} S_s= &#x00026; 5.8366\times 10^{-2} - 1.0089 \times 10^{-4}T + 6.9368\times 10^{-8}T^{2} - 1.8152\times 10^{-11}T^{3}, \end{aligned}$$\end{document}</tex-math><mml:math id="M12" display="block"><mml:mrow><mml:mtable><mml:mtr><mml:mtd columnalign="right"><mml:mrow><mml:msub><mml:mi>S</mml:mi><mml:mi>s</mml:mi></mml:msub><mml:mo>=</mml:mo></mml:mrow></mml:mtd><mml:mtd columnalign="left"><mml:mrow><mml:mn>5.8366</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup><mml:mo>-</mml:mo><mml:mn>1.0089</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>4</mml:mn></mml:mrow></mml:msup><mml:mi>T</mml:mi><mml:mo>+</mml:mo><mml:mn>6.9368</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>8</mml:mn></mml:mrow></mml:msup><mml:msup><mml:mi>T</mml:mi><mml:mn>2</mml:mn></mml:msup><mml:mo>-</mml:mo><mml:mn>1.8152</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>11</mml:mn></mml:mrow></mml:msup><mml:msup><mml:mi>T</mml:mi><mml:mn>3</mml:mn></mml:msup><mml:mo>,</mml:mo></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:math><graphic xlink:href="41598_2024_78037_Article_Equ3.gif" position="anchor"/></alternatives></disp-formula>where <italic>S</italic>, <inline-formula id="IEq4"><alternatives><tex-math id="M13">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\gamma$$\end{document}</tex-math><mml:math id="M14"><mml:mi>&#x003b3;</mml:mi></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq4.gif"/></alternatives></inline-formula>, and <italic>T</italic> denote swelling (%), displacement damage per atom (dpa), and temperature (K), respectively. The model is validated on irradiation temperatures from 473 to 713 K. Figure <xref rid="Fig1" ref-type="fig">1</xref>a shows the model calculation with several dpa values. As the author<sup><xref ref-type="bibr" rid="CR13">13</xref></sup> pointed out, the model shows agreement with previously published swelling data for CVD SiC and CVI SiC/SiC at temperatures up to 1073 K. In higher-temperature regions, the decrease in swell is slower, but the influence of dpa on the change is evident. As the dpa increases, the decrease in the swelling is mitigated. However, as Fig. <xref rid="Fig1" ref-type="fig">1</xref>b shows, the model can not describe void swelling phenomena as shown in experimental data reported in Ref.<sup><xref ref-type="bibr" rid="CR14">14</xref></sup>. Although the applicable temperature of this model is sufficient for conventional light water reactor operation, the current model is insufficient for future power increases of nuclear reactors, core design such as fast reactors, or estimation of accident scenarios such as loss of coolant accident (LOCA). Against this background, there is a need in the field of nuclear engineering to expand the limitations of existing models.</p><p id="Par12">In order to extend an existing empirical model, gathering experimental data under new conditions such as irradiation temperature and neutron fluence is necessary. However, obtaining new data poses experimental challenges. Irradiation experiments require specialized facilities like research reactors or particle accelerators with limited availability and high utilization costs. Test setup and instrumentation to provide desired environmental conditions and measure property changes further add complexity. Executing experiments to accumulate sufficient data across a wide range of temperatures, dpa, and compositions relevant to nuclear applications is tremendously time-consuming. These experiments often take months to years, from design to analysis. Moreover, effects like swelling accumulate over a long duration, necessitating lengthy irradiation. The expense and effort to generate comprehensive experimental data represent a key bottleneck in developing predictive irradiation effects models.<fig id="Fig1"><label>Figure 1</label><caption><p>(<bold>a</bold>) Katoh model prediction of SiC volumetric swelling versus temperature and neutron fluence quantified in displacement per atom (dpa). Up to approximately 800 K irradiation temperature, dpa has no effect on volume swelling, but above that temperature, the effect becomes more pronounced (i.e., point defect). (<bold>b</bold>) CVD SiC volumetric swelling experimental data combined by Ref.<sup><xref ref-type="bibr" rid="CR14">14</xref></sup>.&#x000a0;Only a part of the synthetic data generated in this work is depicted for visibility here.</p></caption><graphic xlink:href="41598_2024_78037_Fig1_HTML" id="MO1"/></fig></p></sec><sec id="Sec7"><title>Physics-regularized neural network</title><p id="Par13">The extended volume swelling model was built with the proposed PRNN. The schematic of the proposed PRNN architecture is shown in Fig. <xref rid="Fig2" ref-type="fig">2</xref>a. This study employs a fully connected neural network (FCNN) with a dropout with one input layer, hidden layers, and one output layer. Conventional NNs only use an output from an output layer to compute a loss function during training. However, the proposed method is utilized to compute the loss value and to obtain an additional quantification. The loss value of the proposed PRNN comprises three terms: data loss, physics regularization, and L2 regularization.</p><p id="Par14">For an input vector <inline-formula id="IEq5"><alternatives><tex-math id="M15">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$x \in \mathbb {R}^{n}$$\end{document}</tex-math><mml:math id="M16"><mml:mrow><mml:mi>x</mml:mi><mml:mo>&#x02208;</mml:mo><mml:msup><mml:mrow><mml:mi mathvariant="double-struck">R</mml:mi></mml:mrow><mml:mi>n</mml:mi></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq5.gif"/></alternatives></inline-formula>, let <inline-formula id="IEq6"><alternatives><tex-math id="M17">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y_{i}$$\end{document}</tex-math><mml:math id="M18"><mml:msub><mml:mi>y</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq6.gif"/></alternatives></inline-formula> be the true target value and <inline-formula id="IEq7"><alternatives><tex-math id="M19">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\hat{y}}_{i}$$\end{document}</tex-math><mml:math id="M20"><mml:msub><mml:mover accent="true"><mml:mi>y</mml:mi><mml:mo stretchy="false">^</mml:mo></mml:mover><mml:mi>i</mml:mi></mml:msub></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq7.gif"/></alternatives></inline-formula> be the model output for the <italic>i</italic>-th training data point, where <italic>i</italic> indexes over the <italic>N</italic> total training points. The data loss term measures the mean-squared error (MSE) between the predicted <inline-formula id="IEq8"><alternatives><tex-math id="M21">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\hat{y}}_{i}$$\end{document}</tex-math><mml:math id="M22"><mml:msub><mml:mover accent="true"><mml:mi>y</mml:mi><mml:mo stretchy="false">^</mml:mo></mml:mover><mml:mi>i</mml:mi></mml:msub></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq8.gif"/></alternatives></inline-formula> and true <inline-formula id="IEq9"><alternatives><tex-math id="M23">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y_{i}$$\end{document}</tex-math><mml:math id="M24"><mml:msub><mml:mi>y</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq9.gif"/></alternatives></inline-formula> values over all training data points:<disp-formula id="Equ4"><label>4</label><alternatives><tex-math id="M25">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} \text {Data loss} = \frac{1}{N}\sum _{i=1}^{N}(y_{i} - {\hat{y}}_{i})^2. \end{aligned}$$\end{document}</tex-math><mml:math id="M26" display="block"><mml:mrow><mml:mtable><mml:mtr><mml:mtd columnalign="right"><mml:mrow><mml:mtext>Data loss</mml:mtext><mml:mo>=</mml:mo><mml:mfrac><mml:mn>1</mml:mn><mml:mi>N</mml:mi></mml:mfrac><mml:munderover><mml:mo>&#x02211;</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mi>N</mml:mi></mml:munderover><mml:msup><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:msub><mml:mi>y</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>-</mml:mo><mml:msub><mml:mover accent="true"><mml:mi>y</mml:mi><mml:mo stretchy="false">^</mml:mo></mml:mover><mml:mi>i</mml:mi></mml:msub><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mn>2</mml:mn></mml:msup><mml:mo>.</mml:mo></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:math><graphic xlink:href="41598_2024_78037_Article_Equ4.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par15">By minimizing this MSE loss, the model is trained to make predictions <inline-formula id="IEq10"><alternatives><tex-math id="M27">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\hat{y}}_{i}$$\end{document}</tex-math><mml:math id="M28"><mml:msub><mml:mover accent="true"><mml:mi>y</mml:mi><mml:mo stretchy="false">^</mml:mo></mml:mover><mml:mi>i</mml:mi></mml:msub></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq10.gif"/></alternatives></inline-formula> that are as close as possible to the true targets <inline-formula id="IEq11"><alternatives><tex-math id="M29">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y_{i}$$\end{document}</tex-math><mml:math id="M30"><mml:msub><mml:mi>y</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq11.gif"/></alternatives></inline-formula>, averaged over the <italic>N</italic> training data points.</p><p id="Par16">The proposed model uses a physics regularization term in the loss function to integrate scientific domain knowledge into the training process for improved generalization and extrapolation. This term serves multiple objectives. It encodes consistency with established physical principles and new experiment data. Penalizing deviations from known behavior prevents unphysical predictions while guiding the model in line with validated relationships. It also supplements data-driven learning with scientific priors to compensate for limited training data. Moreover, the physics-based loss allows encoding specific constraints as needed, such as enforcing agreement with empirical swelling models under certain conditions. This term enables flexible integration of domain knowledge, only applying principles where reliably known. This characteristic maintains a blend of data-driven flexibility and scientific consistency even when new data is sparse.</p><p id="Par17">Let <inline-formula id="IEq12"><alternatives><tex-math id="M31">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$N$$\end{document}</tex-math><mml:math id="M32"><mml:mi>N</mml:mi></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq12.gif"/></alternatives></inline-formula> represent the total number of training data points. The physics regularization term is applied to each data point <inline-formula id="IEq13"><alternatives><tex-math id="M33">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$i$$\end{document}</tex-math><mml:math id="M34"><mml:mi>i</mml:mi></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq13.gif"/></alternatives></inline-formula> based on a temperature threshold. Specifically, within the training set <inline-formula id="IEq14"><alternatives><tex-math id="M35">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\mathcal {D}}$$\end{document}</tex-math><mml:math id="M36"><mml:mi mathvariant="script">D</mml:mi></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq14.gif"/></alternatives></inline-formula>, the physics regularization term is defined as:<disp-formula id="Equ5"><label>5</label><alternatives><tex-math id="M37">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} \text {Physics Regularization} = \frac{\lambda _{\text {phys}}}{N}\sum _{i=1}^{N} R_{i}^{2}, \end{aligned}$$\end{document}</tex-math><mml:math id="M38" display="block"><mml:mrow><mml:mtable><mml:mtr><mml:mtd columnalign="right"><mml:mrow><mml:mtext>Physics Regularization</mml:mtext><mml:mo>=</mml:mo><mml:mfrac><mml:msub><mml:mi>&#x003bb;</mml:mi><mml:mtext>phys</mml:mtext></mml:msub><mml:mi>N</mml:mi></mml:mfrac><mml:munderover><mml:mo>&#x02211;</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mi>N</mml:mi></mml:munderover><mml:msubsup><mml:mi>R</mml:mi><mml:mrow><mml:mi>i</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup><mml:mo>,</mml:mo></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:math><graphic xlink:href="41598_2024_78037_Article_Equ5.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq15"><alternatives><tex-math id="M39">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\lambda _{\text {phys}}$$\end{document}</tex-math><mml:math id="M40"><mml:msub><mml:mi>&#x003bb;</mml:mi><mml:mtext>phys</mml:mtext></mml:msub></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq15.gif"/></alternatives></inline-formula> is the physics regularization hyperparameter, and <inline-formula id="IEq16"><alternatives><tex-math id="M41">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$R_{i}$$\end{document}</tex-math><mml:math id="M42"><mml:msub><mml:mi>R</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq16.gif"/></alternatives></inline-formula> represents the residual between the model output <inline-formula id="IEq17"><alternatives><tex-math id="M43">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$${\hat{y}}_{i}$$\end{document}</tex-math><mml:math id="M44"><mml:msub><mml:mover accent="true"><mml:mi>y</mml:mi><mml:mo stretchy="false">^</mml:mo></mml:mover><mml:mi>i</mml:mi></mml:msub></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq17.gif"/></alternatives></inline-formula> and the physics model output <inline-formula id="IEq18"><alternatives><tex-math id="M45">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y_{\text {phys},i}$$\end{document}</tex-math><mml:math id="M46"><mml:msub><mml:mi>y</mml:mi><mml:mrow><mml:mtext>phys</mml:mtext><mml:mo>,</mml:mo><mml:mi>i</mml:mi></mml:mrow></mml:msub></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq18.gif"/></alternatives></inline-formula>, as given by:<disp-formula id="Equ6"><label>6</label><alternatives><tex-math id="M47">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} R_{i} = {\left\{ \begin{array}{ll} {\hat{y}}_{i} - y_{\text {phys},i} &#x00026; \text {if } T_{i} &#x0003c; 713 \, \text {K},\\ 0 &#x00026; \text {otherwise.} \end{array}\right. } \end{aligned}$$\end{document}</tex-math><mml:math id="M48" display="block"><mml:mrow><mml:mtable><mml:mtr><mml:mtd columnalign="right"><mml:mrow><mml:msub><mml:mi>R</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mfenced open="{"><mml:mrow><mml:mtable><mml:mtr><mml:mtd columnalign="left"><mml:mrow><mml:msub><mml:mover accent="true"><mml:mi>y</mml:mi><mml:mo stretchy="false">^</mml:mo></mml:mover><mml:mi>i</mml:mi></mml:msub><mml:mo>-</mml:mo><mml:msub><mml:mi>y</mml:mi><mml:mrow><mml:mtext>phys</mml:mtext><mml:mo>,</mml:mo><mml:mi>i</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mtd><mml:mtd columnalign="left"><mml:mrow><mml:mtext>if</mml:mtext><mml:mspace width="0.333333em"/><mml:msub><mml:mi>T</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>&#x0003c;</mml:mo><mml:mn>713</mml:mn><mml:mspace width="0.166667em"/><mml:mtext>K</mml:mtext><mml:mo>,</mml:mo></mml:mrow></mml:mtd></mml:mtr><mml:mtr><mml:mtd columnalign="left"><mml:mrow><mml:mrow/><mml:mn>0</mml:mn></mml:mrow></mml:mtd><mml:mtd columnalign="left"><mml:mtext>otherwise.</mml:mtext></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:mfenced></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:math><graphic xlink:href="41598_2024_78037_Article_Equ6.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par18">In addition to the data loss and physics regularization terms, the model loss function includes an L2 regularization term:<disp-formula id="Equ7"><label>7</label><alternatives><tex-math id="M49">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} \text {L2 Regularization} = \lambda _{reg}\sum _{k=1}^{L}w_k^2, \end{aligned}$$\end{document}</tex-math><mml:math id="M50" display="block"><mml:mrow><mml:mtable><mml:mtr><mml:mtd columnalign="right"><mml:mrow><mml:mtext>L2 Regularization</mml:mtext><mml:mo>=</mml:mo><mml:msub><mml:mi>&#x003bb;</mml:mi><mml:mrow><mml:mi mathvariant="italic">reg</mml:mi></mml:mrow></mml:msub><mml:munderover><mml:mo>&#x02211;</mml:mo><mml:mrow><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mi>L</mml:mi></mml:munderover><mml:msubsup><mml:mi>w</mml:mi><mml:mi>k</mml:mi><mml:mn>2</mml:mn></mml:msubsup><mml:mo>,</mml:mo></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:math><graphic xlink:href="41598_2024_78037_Article_Equ7.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq19"><alternatives><tex-math id="M51">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w_k$$\end{document}</tex-math><mml:math id="M52"><mml:msub><mml:mi>w</mml:mi><mml:mi>k</mml:mi></mml:msub></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq19.gif"/></alternatives></inline-formula> are the weight parameters of the neural network model, <inline-formula id="IEq20"><alternatives><tex-math id="M53">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\lambda _{reg}$$\end{document}</tex-math><mml:math id="M54"><mml:msub><mml:mi>&#x003bb;</mml:mi><mml:mrow><mml:mi mathvariant="italic">reg</mml:mi></mml:mrow></mml:msub></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq20.gif"/></alternatives></inline-formula> is the L2 regularization hyperparameter, and the summation is over all <italic>L</italic> weight parameters <inline-formula id="IEq21"><alternatives><tex-math id="M55">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$w_k$$\end{document}</tex-math><mml:math id="M56"><mml:msub><mml:mi>w</mml:mi><mml:mi>k</mml:mi></mml:msub></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq21.gif"/></alternatives></inline-formula>. L2 regularization reduces model complexity and sensitivity to training data variations by preventing the weights from reaching excessive values. The roles of these terms in the proposed method are to avoid overfitting, enhance numerical stability during training, and allow the integration of physics terms without dominating training.</p><p id="Par19">By combining Eqs. (<xref rid="Equ4" ref-type="disp-formula">4</xref>), (<xref rid="Equ5" ref-type="disp-formula">5</xref>), and (<xref rid="Equ7" ref-type="disp-formula">7</xref>), the total loss to be used during training is expressed as follows:<disp-formula id="Equ8"><label>8</label><alternatives><tex-math id="M57">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} Loss = \underbrace{\frac{1}{N}\sum _{i=1}^{N}(y_{i} - {\hat{y}}_{i})^{2}}_{\text {Data Loss}} + \underbrace{ \frac{\lambda _{phys}}{N}\sum _{i=1}^{N}R_{i}^{2}}_{\text {Physics Regularization}} + \underbrace{\lambda _{reg}\sum _{k}^{L}w_{k}^{2}}_{\text {L2 Regularization}}. \end{aligned}$$\end{document}</tex-math><mml:math id="M58" display="block"><mml:mrow><mml:mtable><mml:mtr><mml:mtd columnalign="right"><mml:mrow><mml:mi>L</mml:mi><mml:mi>o</mml:mi><mml:mi>s</mml:mi><mml:mi>s</mml:mi><mml:mo>=</mml:mo><mml:munder><mml:munder accentunder="true"><mml:mrow><mml:mfrac><mml:mn>1</mml:mn><mml:mi>N</mml:mi></mml:mfrac><mml:msubsup><mml:mo>&#x02211;</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mi>N</mml:mi></mml:msubsup><mml:msup><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:msub><mml:mi>y</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>-</mml:mo><mml:msub><mml:mover accent="true"><mml:mi>y</mml:mi><mml:mo stretchy="false">^</mml:mo></mml:mover><mml:mi>i</mml:mi></mml:msub><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mn>2</mml:mn></mml:msup></mml:mrow><mml:mo>&#x023df;</mml:mo></mml:munder><mml:mrow><mml:mtext>Data Loss</mml:mtext></mml:mrow></mml:munder><mml:mo>+</mml:mo><mml:munder><mml:munder accentunder="true"><mml:mrow><mml:mfrac><mml:msub><mml:mi>&#x003bb;</mml:mi><mml:mrow><mml:mi mathvariant="italic">phys</mml:mi></mml:mrow></mml:msub><mml:mi>N</mml:mi></mml:mfrac><mml:msubsup><mml:mo>&#x02211;</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mi>N</mml:mi></mml:msubsup><mml:msubsup><mml:mi>R</mml:mi><mml:mrow><mml:mi>i</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup></mml:mrow><mml:mo>&#x023df;</mml:mo></mml:munder><mml:mrow><mml:mtext>Physics Regularization</mml:mtext></mml:mrow></mml:munder><mml:mo>+</mml:mo><mml:munder><mml:munder accentunder="true"><mml:mrow><mml:msub><mml:mi>&#x003bb;</mml:mi><mml:mrow><mml:mi mathvariant="italic">reg</mml:mi></mml:mrow></mml:msub><mml:msubsup><mml:mo>&#x02211;</mml:mo><mml:mrow><mml:mi>k</mml:mi></mml:mrow><mml:mi>L</mml:mi></mml:msubsup><mml:msubsup><mml:mi>w</mml:mi><mml:mrow><mml:mi>k</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup></mml:mrow><mml:mo>&#x023df;</mml:mo></mml:munder><mml:mrow><mml:mtext>L2 Regularization</mml:mtext></mml:mrow></mml:munder><mml:mo>.</mml:mo></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:math><graphic xlink:href="41598_2024_78037_Article_Equ8.gif" position="anchor"/></alternatives></disp-formula><fig id="Fig2"><label>Figure 2</label><caption><p>(<bold>a</bold>) Schematic of the physics-regularized neural network (PRNN) architecture comprising fully connected layers. (<bold>b</bold>) Overview of the nested cross-validation (NCV) procedure with inner loops for hyperparameter tuning and outer loops for ensemble model training and evaluation.</p></caption><graphic xlink:href="41598_2024_78037_Fig2_HTML" id="MO2"/></fig></p></sec><sec id="Sec8"><title>Training and cross-validation</title><p id="Par20">The PRNN model training aims to minimize the composite loss function defined in Eq. (<xref rid="Equ8" ref-type="disp-formula">8</xref>). Optimization is performed using stochastic gradient descent via the Adam algorithm<sup><xref ref-type="bibr" rid="CR29">29</xref></sup>. At each training iteration, it computes the gradient of the loss with respect to model parameters based on a randomly sampled batch of training data. Model weights are then updated in the direction that reduces the loss, iteratively converging to a minimized loss value. During the training process, the number of epochs is fixed to 100. Other hyperparameters, including learning rate and batch size, are optimized for cross-validation to ensure stable and efficient training dynamics given the data constraints.</p><p id="Par21">In this study, the development of ML models is confronted by the limitations of a small dataset, which causes the inability to establish a comprehensive training and testing framework and increases the risk of model overfitting. The sparsity of data also demands a methodological approach that can provide an unbiased assessment of the ML models&#x02019; performance. NCV<sup><xref ref-type="bibr" rid="CR30">30</xref>,<xref ref-type="bibr" rid="CR31">31</xref></sup> is employed to meet these challenges, optimizing the use of limited data via a stratified two-level cross-validation process. Specifically, the NCV structure is composed of a fivefold outer loop for the final model performance assessment, coupled with a twofold inner loop dedicated to hyperparameter optimization, resulting in a total of 5 outer folds <inline-formula id="IEq22"><alternatives><tex-math id="M59">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><mml:math id="M60"><mml:mo>&#x000d7;</mml:mo></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq22.gif"/></alternatives></inline-formula> two inner folds as illustrated in Fig. <xref rid="Fig2" ref-type="fig">2</xref>b.</p><p id="Par22">Within the inner loop, the training data for each outer fold is split into two distinct subsets via a twofold cross-validation (CV). One subset functions as a validation set, while the complementary subset is utilized for model training across varying hyperparameters. This inner validation cycle is iteratively conducted for each of the five outer folds (see Fig. <xref rid="Fig3" ref-type="fig">3</xref>) to refine hyperparameters tailored to the dataset of the respective outer fold. Conversely, the outer loop employs a fivefold CV to partition the dataset into five separate subsets. Subsequently, for each iteration of the outer fold, an ensemble model is trained on the aggregate of the remaining four subsets, applying the hyperparameters refined in the inner loop. This process yields five independently tuned ensemble models corresponding to the five outer folds. The reserved outer test sets serve as instruments for an unbiased final evaluation.</p><p id="Par23">The deployment of NCV enables the full exploitation of the constrained dataset for model calibration and validation, thereby assuring that the model&#x02019;s performance reflects its predictive capabilities on unseen data. Hence, the application of NCV transcends methodological preference, becoming a compelled strategy due to the data limitations inherent in this study.</p></sec><sec id="Sec9"><title>Hyperparameter tuning in NCV</title><p id="Par24">A key advantage of NCV is the ability to extensively search for an optimal combination of hyperparameters that maximize model performance. Table <xref rid="Tab1" ref-type="table">1</xref> summarizes the hyperparameters and search space explored through the inner folds of the NCV routine.</p><p id="Par25">The physics weighting parameter <inline-formula id="IEq23"><alternatives><tex-math id="M61">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\lambda _{phys}$$\end{document}</tex-math><mml:math id="M62"><mml:msub><mml:mi>&#x003bb;</mml:mi><mml:mrow><mml:mi mathvariant="italic">phys</mml:mi></mml:mrow></mml:msub></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq23.gif"/></alternatives></inline-formula> determines the balance between data-driven and physics-based loss terms. The L2 regularization strength <inline-formula id="IEq24"><alternatives><tex-math id="M63">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\lambda _{reg}$$\end{document}</tex-math><mml:math id="M64"><mml:msub><mml:mi>&#x003bb;</mml:mi><mml:mrow><mml:mi mathvariant="italic">reg</mml:mi></mml:mrow></mml:msub></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq24.gif"/></alternatives></inline-formula> controls model complexity. Neural network architecture is tuned by varying the number of layers from 1 to 4 and the number of units in each layer. Additional hyperparameters like dropout rate, learning rate, batch size, and activation functions&#x02014;with a choice between hyperbolic tangent and rectified linear unit (ReLU) functions&#x02014;are also optimized. For efficient Bayesian optimization over the defined search space, the tree-structured Parzen estimator (TPE) algorithm is employed<sup><xref ref-type="bibr" rid="CR32">32</xref>&#x02013;<xref ref-type="bibr" rid="CR35">35</xref></sup>. The objective function for tuning is the NCV inner loop validation loss. One hundred hyperparameter configurations are sampled to find the setting minimizing validation error for each inner loop.</p><p id="Par26">Table <xref rid="Tab2" ref-type="table">2</xref> provides the best hyperparameters selected for each of the five outer fold models through this NCV-based search. The ReLU activation function is the preferred choice across all outer loops. The optimized configurations vary across folds, demonstrating the importance of fold-specific tuning. Full hyperparameter optimization details are available in the Methods section.<table-wrap id="Tab1"><label>Table 1</label><caption><p>List of hyperparameter search space used in NCV.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Hyper parameter</th><th align="left">Type</th><th align="left">Search space</th></tr></thead><tbody><tr><td align="left"><inline-formula id="IEq25"><alternatives><tex-math id="M65">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\lambda _{phys}$$\end{document}</tex-math><mml:math id="M66"><mml:msub><mml:mi>&#x003bb;</mml:mi><mml:mrow><mml:mi mathvariant="italic">phys</mml:mi></mml:mrow></mml:msub></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq25.gif"/></alternatives></inline-formula></td><td align="left">Float</td><td align="left">[0.001,&#x000a0;1.0)</td></tr><tr><td align="left"><inline-formula id="IEq26"><alternatives><tex-math id="M67">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\lambda _{reg}$$\end{document}</tex-math><mml:math id="M68"><mml:msub><mml:mi>&#x003bb;</mml:mi><mml:mrow><mml:mi mathvariant="italic">reg</mml:mi></mml:mrow></mml:msub></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq26.gif"/></alternatives></inline-formula></td><td align="left">LogUniform</td><td align="left">[0.00005,&#x000a0;0.1)</td></tr><tr><td align="left">Droprate</td><td align="left">Float</td><td align="left">[0.0,&#x000a0;0.5)</td></tr><tr><td align="left">Learning rate</td><td align="left">LogUniform</td><td align="left">[0.00005,&#x000a0;0.1)</td></tr><tr><td align="left">Batch size</td><td align="left">Categorical</td><td align="left">[16,&#x000a0;32,&#x000a0;64,&#x000a0;128]</td></tr><tr><td align="left">Number of layers</td><td align="left">Int</td><td align="left">[1,&#x000a0;4]</td></tr><tr><td align="left">Units in 1st layer</td><td align="left">Int</td><td align="left">[32,&#x000a0;1024]</td></tr><tr><td align="left">(Units in 2nd layer)</td><td align="left">Int</td><td align="left">[32,&#x000a0;1024]</td></tr><tr><td align="left">(Units in 3rd layer)</td><td align="left">Int</td><td align="left">[32,&#x000a0;1024]</td></tr><tr><td align="left">(Units in 4th layer)</td><td align="left">Int</td><td align="left">[32,&#x000a0;1024]</td></tr><tr><td align="left">Activation function</td><td align="left">Categorical</td><td align="left">&#x02018;Tanh&#x02019; or &#x02018;ReLU&#x02019;</td></tr></tbody></table></table-wrap><table-wrap id="Tab2"><label>Table 2</label><caption><p>Hyperparameters determined through nested cross-validation.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Fold</th><th align="left">Layers/units</th><th align="left"><inline-formula id="IEq27"><alternatives><tex-math id="M69">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\lambda _{\text {phys}}$$\end{document}</tex-math><mml:math id="M70"><mml:msub><mml:mi>&#x003bb;</mml:mi><mml:mtext>phys</mml:mtext></mml:msub></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq27.gif"/></alternatives></inline-formula></th><th align="left"><inline-formula id="IEq28"><alternatives><tex-math id="M71">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\lambda _{\text {reg}}$$\end{document}</tex-math><mml:math id="M72"><mml:msub><mml:mi>&#x003bb;</mml:mi><mml:mtext>reg</mml:mtext></mml:msub></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq28.gif"/></alternatives></inline-formula></th><th align="left">Droprate</th><th align="left">Learning rate</th><th align="left">Batch size</th></tr></thead><tbody><tr><td align="left">1</td><td align="left">[1021, 848, 516]</td><td align="left"><inline-formula id="IEq29"><alternatives><tex-math id="M73">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$3.61 \times 10^{-1}$$\end{document}</tex-math><mml:math id="M74"><mml:mrow><mml:mn>3.61</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq29.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq30"><alternatives><tex-math id="M75">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$2.72 \times 10^{-5}$$\end{document}</tex-math><mml:math id="M76"><mml:mrow><mml:mn>2.72</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>5</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq30.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq31"><alternatives><tex-math id="M77">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$3.80 \times 10^{-4}$$\end{document}</tex-math><mml:math id="M78"><mml:mrow><mml:mn>3.80</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>4</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq31.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq32"><alternatives><tex-math id="M79">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1.02 \times 10^{-5}$$\end{document}</tex-math><mml:math id="M80"><mml:mrow><mml:mn>1.02</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>5</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq32.gif"/></alternatives></inline-formula></td><td align="left">16</td></tr><tr><td align="left">2</td><td align="left">[986]</td><td align="left"><inline-formula id="IEq33"><alternatives><tex-math id="M81">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$8.20 \times 10^{-1}$$\end{document}</tex-math><mml:math id="M82"><mml:mrow><mml:mn>8.20</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq33.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq34"><alternatives><tex-math id="M83">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1.39 \times 10^{-4}$$\end{document}</tex-math><mml:math id="M84"><mml:mrow><mml:mn>1.39</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>4</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq34.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq35"><alternatives><tex-math id="M85">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1.17 \times 10^{-2}$$\end{document}</tex-math><mml:math id="M86"><mml:mrow><mml:mn>1.17</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq35.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq36"><alternatives><tex-math id="M87">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1.82 \times 10^{-4}$$\end{document}</tex-math><mml:math id="M88"><mml:mrow><mml:mn>1.82</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>4</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq36.gif"/></alternatives></inline-formula></td><td align="left">16</td></tr><tr><td align="left">3</td><td align="left">[221, 480, 297, 35]</td><td align="left"><inline-formula id="IEq37"><alternatives><tex-math id="M89">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$3.66 \times 10^{-1}$$\end{document}</tex-math><mml:math id="M90"><mml:mrow><mml:mn>3.66</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq37.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq38"><alternatives><tex-math id="M91">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1.60 \times 10^{-5}$$\end{document}</tex-math><mml:math id="M92"><mml:mrow><mml:mn>1.60</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>5</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq38.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq39"><alternatives><tex-math id="M93">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$3.18 \times 10^{-4}$$\end{document}</tex-math><mml:math id="M94"><mml:mrow><mml:mn>3.18</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>4</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq39.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq40"><alternatives><tex-math id="M95">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$3.51 \times 10^{-5}$$\end{document}</tex-math><mml:math id="M96"><mml:mrow><mml:mn>3.51</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>5</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq40.gif"/></alternatives></inline-formula></td><td align="left">16</td></tr><tr><td align="left">4</td><td align="left">[967]</td><td align="left"><inline-formula id="IEq41"><alternatives><tex-math id="M97">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$4.89 \times 10^{-2}$$\end{document}</tex-math><mml:math id="M98"><mml:mrow><mml:mn>4.89</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq41.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq42"><alternatives><tex-math id="M99">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$4.16 \times 10^{-5}$$\end{document}</tex-math><mml:math id="M100"><mml:mrow><mml:mn>4.16</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>5</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq42.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq43"><alternatives><tex-math id="M101">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$4.34 \times 10^{-1}$$\end{document}</tex-math><mml:math id="M102"><mml:mrow><mml:mn>4.34</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq43.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq44"><alternatives><tex-math id="M103">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$4.15 \times 10^{-4}$$\end{document}</tex-math><mml:math id="M104"><mml:mrow><mml:mn>4.15</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>4</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq44.gif"/></alternatives></inline-formula></td><td align="left">32</td></tr><tr><td align="left">5</td><td align="left">[904]</td><td align="left"><inline-formula id="IEq45"><alternatives><tex-math id="M105">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$3.09 \times 10^{-1}$$\end{document}</tex-math><mml:math id="M106"><mml:mrow><mml:mn>3.09</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq45.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq46"><alternatives><tex-math id="M107">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$9.27 \times 10^{-5}$$\end{document}</tex-math><mml:math id="M108"><mml:mrow><mml:mn>9.27</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>5</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq46.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq47"><alternatives><tex-math id="M109">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$9.46 \times 10^{-2}$$\end{document}</tex-math><mml:math id="M110"><mml:mrow><mml:mn>9.46</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq47.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq48"><alternatives><tex-math id="M111">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$3.18 \times 10^{-4}$$\end{document}</tex-math><mml:math id="M112"><mml:mrow><mml:mn>3.18</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>4</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq48.gif"/></alternatives></inline-formula></td><td align="left">32</td></tr></tbody></table></table-wrap></p><p id="Par27">
+<fig id="Fig3"><label>Figure 3</label><caption><p>Model architectures of physics-regularized neural networks (PRNNs) for swelling prediction, determined through fivefold NCV. Numerical annotations indicate the number of units in fully connected layers, each employing ReLU activations. Each layer features a dropout mechanism with a specified rate, denoted as &#x02018;Droprate &#x02019;.</p></caption><graphic xlink:href="41598_2024_78037_Fig3_HTML" id="MO3"/></fig>
+</p></sec><sec id="Sec10"><title>Swelling model via PRNN</title><p id="Par28">The PRNN approach to predict the volumetric swelling of SiC due to irradiation is divided into five distinct volume swelling models, as seen in Fig. <xref rid="Fig4" ref-type="fig">4</xref>a&#x02013;e. Each model&#x02019;s unique architectural and hyperparameter makeup was refined through NCV, ensuring accuracy and robustness.</p><p id="Par29">Figure <xref rid="Fig4" ref-type="fig">4</xref> demonstrates the models&#x02019; capability to capture the varying swelling behaviors across different temperature regimes. Notably, at temperatures below approximately 1000 K, swelling exhibits little to no dependence on irradiation dose, indicative of the point defect swelling regime. In contrast, above 1200 K, the models show a dose-dependent swelling trend, characteristic of the void swelling regime, where higher doses lead to greater volume expansion.</p><p id="Par30">A swelling model was derived by averaging the predictions from these individual PRNN models and is illustrated in Fig. <xref rid="Fig4" ref-type="fig">4</xref>f. This model characterizes the swelling behavior over the entire temperature spectrum, encompassing all irradiation doses. It confirms the PRNN&#x02019;s adaptability to diverse irradiation conditions.</p><p id="Par31">Figure <xref rid="Fig5" ref-type="fig">5</xref> enhances our understanding by presenting the relationship between dpa and volume swelling across two distinct temperature regimes. Panel (a) of Fig. <xref rid="Fig5" ref-type="fig">5</xref> focuses on swelling at irradiation temperatures below 1200 K, while panel (b) examines temperatures above 1300 K. These visualizations provide an assessment of the PRNN model&#x02019;s performance across various temperature ranges, offering insights into the responce of SiC to irradiation. The distinction between lower and higher temperature regimes is crucial, as it highlights the model&#x02019;s accuracy and reliability in predicting swelling behavior under varying operational conditions.</p><p id="Par32">Quantitative assessments, detailed in Table <xref rid="Tab3" ref-type="table">3</xref>, further validate the PRNN models&#x02019; predictive accuracy. Test mean squared error values, ranging from <inline-formula id="IEq49"><alternatives><tex-math id="M113">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1.17 \times 10^{-2}$$\end{document}</tex-math><mml:math id="M114"><mml:mrow><mml:mn>1.17</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq49.gif"/></alternatives></inline-formula> to <inline-formula id="IEq50"><alternatives><tex-math id="M115">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1.43 \times 10^{-2}$$\end{document}</tex-math><mml:math id="M116"><mml:mrow><mml:mn>1.43</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq50.gif"/></alternatives></inline-formula>, confirm to the model&#x02019;s robust generalization capabilities, far beyond mere fitting to the training data.</p><p id="Par33">In summary, the PRNN models&#x02019; extension of the empirical swelling relationship to higher temperatures, utilizing sparse experimental data, marks a advancement. Integrating physics-based constraints and data-driven learning within these models is important for expanding predictive capabilities. <table-wrap id="Tab3"><label>Table 3</label><caption><p>Best average validation and test scores from nested cross-validation for each fold, where hyper parameter tuning in an inner loop and the total loss function defined by Eq. (<xref rid="Equ8" ref-type="disp-formula">8</xref>).</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left" rowspan="2">Fold</th><th align="left">Validation</th><th align="left" colspan="2">Test</th></tr><tr><th align="left">Custom loss</th><th align="left">Custom loss</th><th align="left">MSE</th></tr></thead><tbody><tr><td align="left">1</td><td align="left"><inline-formula id="IEq51"><alternatives><tex-math id="M117">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1.27 \times 10^{-2}$$\end{document}</tex-math><mml:math id="M118"><mml:mrow><mml:mn>1.27</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq51.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq52"><alternatives><tex-math id="M119">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1.38 \times 10^{-2}$$\end{document}</tex-math><mml:math id="M120"><mml:mrow><mml:mn>1.38</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq52.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq53"><alternatives><tex-math id="M121">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1.38 \times 10^{-2}$$\end{document}</tex-math><mml:math id="M122"><mml:mrow><mml:mn>1.38</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq53.gif"/></alternatives></inline-formula></td></tr><tr><td align="left">2</td><td align="left"><inline-formula id="IEq54"><alternatives><tex-math id="M123">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1.33 \times 10^{-2}$$\end{document}</tex-math><mml:math id="M124"><mml:mrow><mml:mn>1.33</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq54.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq55"><alternatives><tex-math id="M125">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1.20 \times 10^{-2}$$\end{document}</tex-math><mml:math id="M126"><mml:mrow><mml:mn>1.20</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq55.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq56"><alternatives><tex-math id="M127">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1.20 \times 10^{-2}$$\end{document}</tex-math><mml:math id="M128"><mml:mrow><mml:mn>1.20</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq56.gif"/></alternatives></inline-formula></td></tr><tr><td align="left">3</td><td align="left"><inline-formula id="IEq57"><alternatives><tex-math id="M129">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1.31 \times 10^{-2}$$\end{document}</tex-math><mml:math id="M130"><mml:mrow><mml:mn>1.31</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq57.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq58"><alternatives><tex-math id="M131">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1.32 \times 10^{-2}$$\end{document}</tex-math><mml:math id="M132"><mml:mrow><mml:mn>1.32</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq58.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq59"><alternatives><tex-math id="M133">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1.32 \times 10^{-2}$$\end{document}</tex-math><mml:math id="M134"><mml:mrow><mml:mn>1.32</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq59.gif"/></alternatives></inline-formula></td></tr><tr><td align="left">4</td><td align="left"><inline-formula id="IEq60"><alternatives><tex-math id="M135">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1.36 \times 10^{-2}$$\end{document}</tex-math><mml:math id="M136"><mml:mrow><mml:mn>1.36</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq60.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq61"><alternatives><tex-math id="M137">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1.17 \times 10^{-2}$$\end{document}</tex-math><mml:math id="M138"><mml:mrow><mml:mn>1.17</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq61.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq62"><alternatives><tex-math id="M139">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1.17 \times 10^{-2}$$\end{document}</tex-math><mml:math id="M140"><mml:mrow><mml:mn>1.17</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq62.gif"/></alternatives></inline-formula></td></tr><tr><td align="left">5</td><td align="left"><inline-formula id="IEq63"><alternatives><tex-math id="M141">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1.28 \times 10^{-2}$$\end{document}</tex-math><mml:math id="M142"><mml:mrow><mml:mn>1.28</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq63.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq64"><alternatives><tex-math id="M143">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1.43 \times 10^{-2}$$\end{document}</tex-math><mml:math id="M144"><mml:mrow><mml:mn>1.43</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq64.gif"/></alternatives></inline-formula></td><td align="left"><inline-formula id="IEq65"><alternatives><tex-math id="M145">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1.42 \times 10^{-2}$$\end{document}</tex-math><mml:math id="M146"><mml:mrow><mml:mn>1.42</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq65.gif"/></alternatives></inline-formula></td></tr></tbody></table></table-wrap></p><p id="Par34">
+<fig id="Fig4"><label>Figure 4</label><caption><p>(<bold>a&#x02013;e</bold>) Individual volume swelling predictive models generated across each cross-validation fold via the physics-regularized neural network (PRNN). Markers represent experimental data, lines show predictions. Models display consistency in capturing distinct point defect and void swelling regimes. (<bold>f</bold>) Aggregated swelling model obtained by ensembling the predictions of the models in (<bold>a&#x02013;e</bold>). The final model accurately describes the full temperature range, aligning well with measured data for all irradiation doses. The ensembling demonstrates improved generalization ability versus individual models.</p></caption><graphic xlink:href="41598_2024_78037_Fig4_HTML" id="MO4"/></fig>
+<fig id="Fig5"><label>Figure 5</label><caption><p>Dose-dependent swelling predictions by PRNN models across different temperature regimes. Panel (<bold>a</bold>) illustrates the relationship between displacements per atom (dpa) and volume swelling for irradiation temperatures less than 1200 K, highlighting the model&#x02019;s predictions under lower temperature conditions. Panel (<bold>b</bold>) depicts a similar relationship for temperatures greater than 1300 K, showcasing the model&#x02019;s performance under higher temperature conditions. The graphs in both panels demonstrate the PRNN model&#x02019;s capability to accurately capture the swelling behavior of SiC across a range of irradiation doses and temperatures, effectively distinguishing between different swelling regimes.</p></caption><graphic xlink:href="41598_2024_78037_Fig5_HTML" id="MO5"/></fig>
+</p></sec></sec><sec id="Sec11"><title>Conclusions</title><p id="Par35">This study presents an approach in the form of a PRNN for predicting the swelling in SiC due to irradiation. The PRNN model demonstrates an advancement over traditional empirical models, especially in the high-temperature domain, which is critical for applications in harsh irradiation environments like nuclear reactors and aerospace applications.</p><p id="Par36">A key feature of the PRNN model is its ability to integrate empirical data with sparse experimental measurements, thus overcoming the limitations of existing models that struggle with high irradiation temperatures. The model&#x02019;s architecture, empowered by physics-based regularization, allows for more robust predictions and helps in guiding extrapolation efforts. It is particularly important in SiC, where the accurate prediction of swelling behavior is crucial for ensuring material integrity and performance under extreme conditions.</p><p id="Par37">The use of NCV in the model development process addresses the challenge of limited data availability, a common issue in high-stakes environments like nuclear engineering. The NCV minimizes the risk of the model overfitting to the limited data and simultaneously ensures the models&#x02019; accuracy in unseen scenarios. Furthermore, implementing hyperparameter optimization through Optuna adds another layer of precision, enabling the fine-tuning of the model to achieve optimal performance.</p><p id="Par38">This study&#x02019;s findings have an implications for advancing materials science, particularly nuclear engineering. The PRNN model&#x02019;s ability to predict SiC swelling under various irradiation conditions with high accuracy enhances our understanding of material behavior under extreme conditions and opens up new avenues for developing more robust materials capable of withstanding harsh environments.</p><p id="Par39">In conclusion, the integrated approach combining empirical knowledge, advanced machine learning techniques, and careful model tuning provides a pathway for enhancing predictive modeling in materials science. While the study focuses on SiC, the methodology, and insights gained can be applied to other materials and scenarios, broadening the scope of this research.</p></sec></body><back><fn-group><fn><p><bold>Publisher&#x02019;s note</bold></p><p>Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></fn></fn-group><ack><title>Acknowledgements</title><p>This research used the Delta advanced computing and data resource which is supported by the National Science Foundation (award OAC 2005572) and the State of Illinois. Delta is a joint effort of the University of Illinois Urbana-Champaign and its National Center for Supercomputing Applications.</p><p>Timothy J. Boerner, Stephen Deems, Thomas R. Furlani, Shelley L. Knuth, and John Towns. 2023. ACCESS: Advancing Innovation: NSF&#x02019;s Advanced Cyberinfrastructure Coordination Ecosystem: Services &#x00026; Support. &#x0201c;In Practice and Experience in Advanced Research Computing (PEARC &#x02019;23)&#x0201d;, July 23&#x02013;27, 2023, Portland, OR, USA. ACM, New York, NY, USA, 4 pages. 10.1145/3569951.3597559.</p><p>This work used Delta at National Center for Supercomputing Applications (NCSA) from the Advanced Cyberinfrastructure Coordination Ecosystem: Services &#x00026; Support (ACCESS) program, which is supported by U.S. National Science Foundation grants #2138259, #2138286, #2138307, #2137603, and #2138296.</p></ack><notes notes-type="author-contribution"><title>Author contributions</title><p>Conceptualization, S.A. and K.K.; methodology, K.K.; Writing&#x02014;original draft, K.K.; Writing&#x02014;review &#x00026; editing, S.A.; Formal analysis, K.K.; Visualization, K.K.; Data curation, K.K.; Supervision, S.A.; Project administration, S.A.; All authors have read and agreed to the published version of the manuscript.</p></notes><notes notes-type="data-availability"><title>Data availability</title><p>The data that support the findings of this study are available within the article. Additional simulation outputs and neural network predictions supporting the findings are available from the corresponding author upon reasonable request.</p></notes><notes><title>Declarations</title><notes id="FPar1" notes-type="COI-statement"><title>Competing interests</title><p id="Par43">The authors declare no competing interests.</p></notes></notes><ref-list id="Bib1"><title>References</title><ref id="CR1"><label>1.</label><citation-alternatives><element-citation id="ec-CR1" publication-type="journal"><person-group person-group-type="author"><name><surname>Chen</surname><given-names>S</given-names></name><name><surname>Li</surname><given-names>W</given-names></name><name><surname>Li</surname><given-names>X</given-names></name><name><surname>Yang</surname><given-names>W</given-names></name></person-group><article-title>One-dimensional sic nanostructures: Designed growth, properties, and applications</article-title><source>Prog. Mater. Sci.</source><year>2019</year><volume>104</volume><fpage>138</fpage><pub-id pub-id-type="doi">10.1016/j.pmatsci.2019.04.004</pub-id></element-citation><mixed-citation id="mc-CR1" publication-type="journal">Chen, S., Li, W., Li, X. &#x00026; Yang, W. One-dimensional sic nanostructures: Designed growth, properties, and applications. <italic>Prog. Mater. Sci.</italic><bold>104</bold>, 138 (2019).</mixed-citation></citation-alternatives></ref><ref id="CR2"><label>2.</label><citation-alternatives><element-citation id="ec-CR2" publication-type="journal"><person-group person-group-type="author"><name><surname>Liu</surname><given-names>G</given-names></name><name><surname>Zhang</surname><given-names>X</given-names></name><name><surname>Yang</surname><given-names>J</given-names></name><name><surname>Qiao</surname><given-names>G</given-names></name></person-group><article-title>Recent advances in joining of sic-based materials (monolithic sic and sicf/sic composites): Joining processes, joint strength, and interfacial behavior</article-title><source>J. Adv. Ceram.</source><year>2019</year><volume>8</volume><fpage>19</fpage><lpage>38</lpage><pub-id pub-id-type="doi">10.1007/s40145-018-0297-x</pub-id></element-citation><mixed-citation id="mc-CR2" publication-type="journal">Liu, G., Zhang, X., Yang, J. &#x00026; Qiao, G. Recent advances in joining of sic-based materials (monolithic sic and sicf/sic composites): Joining processes, joint strength, and interfacial behavior. <italic>J. Adv. Ceram.</italic><bold>8</bold>, 19&#x02013;38 (2019).</mixed-citation></citation-alternatives></ref><ref id="CR3"><label>3.</label><citation-alternatives><element-citation id="ec-CR3" publication-type="journal"><person-group person-group-type="author"><name><surname>Kondrath</surname><given-names>N</given-names></name><name><surname>Kazimierczuk</surname><given-names>M</given-names></name></person-group><article-title>Characteristics and applications of silicon carbide power devices in power electronics</article-title><source>Int. J. Electron. Telecommun.</source><year>2010</year><volume>56</volume><fpage>231</fpage><lpage>236</lpage><pub-id pub-id-type="doi">10.2478/v10177-010-0030-3</pub-id></element-citation><mixed-citation id="mc-CR3" publication-type="journal">Kondrath, N. &#x00026; Kazimierczuk, M. Characteristics and applications of silicon carbide power devices in power electronics. <italic>Int. J. Electron. Telecommun.</italic><bold>56</bold>, 231&#x02013;236 (2010).</mixed-citation></citation-alternatives></ref><ref id="CR4"><label>4.</label><citation-alternatives><element-citation id="ec-CR4" publication-type="journal"><person-group person-group-type="author"><name><surname>Naslain</surname><given-names>R</given-names></name></person-group><article-title>Design, preparation and properties of non-oxide cmcs for application in engines and nuclear reactors: An overview</article-title><source>Compos. Sci. Technol.</source><year>2004</year><volume>64</volume><fpage>155</fpage><lpage>170</lpage><pub-id pub-id-type="doi">10.1016/S0266-3538(03)00230-6</pub-id></element-citation><mixed-citation id="mc-CR4" publication-type="journal">Naslain, R. Design, preparation and properties of non-oxide cmcs for application in engines and nuclear reactors: An overview. <italic>Compos. Sci. Technol.</italic><bold>64</bold>, 155&#x02013;170 (2004).</mixed-citation></citation-alternatives></ref><ref id="CR5"><label>5.</label><mixed-citation publication-type="other">Carmack, J., Goldner, F., Bragg-Sitton, S.&#x000a0;M. &#x00026; Snead, L.&#x000a0;L. <italic>Overview of the US Doe Accident Tolerant Fuel Development Program. Tech. Rep.</italic> (Idaho National Lab., 2013).</mixed-citation></ref><ref id="CR6"><label>6.</label><mixed-citation publication-type="other">Koyanagi, T., Katoh, Y., Jacobsen, G. &#x00026; Deck, C. <italic>Handbook of lwr sic/sic Cladding Properties-Revision 1</italic>. <ext-link ext-link-type="uri" xlink:href="https://www.osti.gov/servlets/purl/1479750">https://www.osti.gov/servlets/purl/1479750</ext-link> (Oak Ridge National Laboratory, 2018).</mixed-citation></ref><ref id="CR7"><label>7.</label><citation-alternatives><element-citation id="ec-CR7" publication-type="book"><person-group person-group-type="author"><name><surname>Kobayashi</surname><given-names>K</given-names></name><etal/></person-group><source>Uncertainty Quantification and Sensitivity Analysis for Digital Twin Enabling Technology: Application for BISON Fuel Performance Code</source><year>2021</year><publisher-name>Springer</publisher-name><fpage>1</fpage><lpage>13</lpage></element-citation><mixed-citation id="mc-CR7" publication-type="book">Kobayashi, K. et al. <italic>Uncertainty Quantification and Sensitivity Analysis for Digital Twin Enabling Technology: Application for BISON Fuel Performance Code</italic> 1&#x02013;13 (Springer, 2021).</mixed-citation></citation-alternatives></ref><ref id="CR8"><label>8.</label><mixed-citation publication-type="other">Alfano, D. Spectroscopic properties of carbon fibre reinforced silicon carbide composites for aerospace applications. In <italic>Properties and Applications of Silicon Carbide</italic> 231&#x02013;250 ( 2011).</mixed-citation></ref><ref id="CR9"><label>9.</label><citation-alternatives><element-citation id="ec-CR9" publication-type="journal"><person-group person-group-type="author"><name><surname>Besmann</surname><given-names>TM</given-names></name><name><surname>Stinton</surname><given-names>DP</given-names></name><name><surname>Lowden</surname><given-names>RA</given-names></name></person-group><article-title>Chemical vapor infiltration of non-oxide ceramic matrix composites</article-title><source>MRS Online Proc. Libr.</source><year>1993</year><volume>327</volume><fpage>1</fpage><pub-id pub-id-type="doi">10.1557/PROC-327-253</pub-id></element-citation><mixed-citation id="mc-CR9" publication-type="journal">Besmann, T. M., Stinton, D. P. &#x00026; Lowden, R. A. Chemical vapor infiltration of non-oxide ceramic matrix composites. <italic>MRS Online Proc. Libr.</italic><bold>327</bold>, 1 (1993).</mixed-citation></citation-alternatives></ref><ref id="CR10"><label>10.</label><mixed-citation publication-type="other">Rowden, B. et al. <italic>High Temperature SIC Power Module Packaging</italic> 85&#x02013;90 (2009).</mixed-citation></ref><ref id="CR11"><label>11.</label><citation-alternatives><element-citation id="ec-CR11" publication-type="journal"><person-group person-group-type="author"><name><surname>Asumadu</surname><given-names>J</given-names></name><name><surname>Scofield</surname><given-names>J</given-names></name></person-group><article-title>Static and dynamic characterization of high-speed silicon carbide (sic) power transistors</article-title><source>Engineering</source><year>2010</year><volume>02</volume><fpage>673</fpage><lpage>682</lpage><pub-id pub-id-type="doi">10.4236/eng.2010.29087</pub-id></element-citation><mixed-citation id="mc-CR11" publication-type="journal">Asumadu, J. &#x00026; Scofield, J. Static and dynamic characterization of high-speed silicon carbide (sic) power transistors. <italic>Engineering</italic><bold>02</bold>, 673&#x02013;682 (2010).</mixed-citation></citation-alternatives></ref><ref id="CR12"><label>12.</label><citation-alternatives><element-citation id="ec-CR12" publication-type="journal"><person-group person-group-type="author"><name><surname>Katoh</surname><given-names>Y</given-names></name><etal/></person-group><article-title>Continuous sic fiber, cvi sic matrix composites for nuclear applications: Properties and irradiation effects</article-title><source>J. Nucl. Mater.</source><year>2014</year><volume>448</volume><fpage>448</fpage><lpage>476</lpage><pub-id pub-id-type="doi">10.1016/j.jnucmat.2013.06.040</pub-id></element-citation><mixed-citation id="mc-CR12" publication-type="journal">Katoh, Y. et al. Continuous sic fiber, CVI SiC matrix composites for nuclear applications: Properties and irradiation effects. <italic>J. Nucl. Mater.</italic><bold>448</bold>, 448&#x02013;476 (2014).</mixed-citation></citation-alternatives></ref><ref id="CR13"><label>13.</label><citation-alternatives><element-citation id="ec-CR13" publication-type="journal"><person-group person-group-type="author"><name><surname>Katoh</surname><given-names>Y</given-names></name><name><surname>Koyanagi</surname><given-names>T</given-names></name><name><surname>McDuffee</surname><given-names>JL</given-names></name><name><surname>Snead</surname><given-names>LL</given-names></name><name><surname>Yueh</surname><given-names>K</given-names></name></person-group><article-title>Dimensional stability and anisotropy of sic and sic-based composites in transition swelling regime</article-title><source>J. Nucl. Mater.</source><year>2018</year><volume>499</volume><fpage>471</fpage><lpage>479</lpage><pub-id pub-id-type="doi">10.1016/j.jnucmat.2017.12.009</pub-id></element-citation><mixed-citation id="mc-CR13" publication-type="journal">Katoh, Y., Koyanagi, T., McDuffee, J. L., Snead, L. L. &#x00026; Yueh, K. Dimensional stability and anisotropy of SiC and SiC-based composites in transition swelling regime. <italic>J. Nucl. Mater.</italic><bold>499</bold>, 471&#x02013;479 (2018).</mixed-citation></citation-alternatives></ref><ref id="CR14"><label>14.</label><citation-alternatives><element-citation id="ec-CR14" publication-type="journal"><person-group person-group-type="author"><name><surname>Snead</surname><given-names>LL</given-names></name><etal/></person-group><article-title>Handbook of sic properties for fuel performance modeling</article-title><source>J. Nucl. Mater.</source><year>2007</year><volume>371</volume><fpage>329</fpage><lpage>377</lpage><pub-id pub-id-type="doi">10.1016/j.jnucmat.2007.05.016</pub-id></element-citation><mixed-citation id="mc-CR14" publication-type="journal">Snead, L. L. et al. Handbook of sic properties for fuel performance modeling. <italic>J. Nucl. Mater.</italic><bold>371</bold>, 329&#x02013;377 (2007).</mixed-citation></citation-alternatives></ref><ref id="CR15"><label>15.</label><citation-alternatives><element-citation id="ec-CR15" publication-type="journal"><person-group person-group-type="author"><name><surname>Oka</surname><given-names>Y</given-names></name><name><surname>Koshizuka</surname><given-names>S</given-names></name><name><surname>Yamasaki</surname><given-names>T</given-names></name></person-group><article-title>Direct cycle light water reactor operating at supercritical pressure</article-title><source>J. Nucl. Sci. Technol.</source><year>1992</year><volume>29</volume><fpage>585</fpage><lpage>588</lpage><pub-id pub-id-type="doi">10.1080/18811248.1992.9731568</pub-id></element-citation><mixed-citation id="mc-CR15" publication-type="journal">Oka, Y., Koshizuka, S. &#x00026; Yamasaki, T. Direct cycle light water reactor operating at supercritical pressure. <italic>J. Nucl. Sci. Technol.</italic><bold>29</bold>, 585&#x02013;588 (1992).</mixed-citation></citation-alternatives></ref><ref id="CR16"><label>16.</label><citation-alternatives><element-citation id="ec-CR16" publication-type="journal"><person-group person-group-type="author"><name><surname>Schulenberg</surname><given-names>T</given-names></name><name><surname>Mar&#x000e1;czy</surname><given-names>C</given-names></name><name><surname>Heinecke</surname><given-names>J</given-names></name><name><surname>Bernnat</surname><given-names>W</given-names></name></person-group><article-title>Design and analysis of a thermal core for a high performance light water reactor</article-title><source>Nucl. Eng. Des.</source><year>2011</year><volume>241</volume><fpage>4420</fpage><lpage>4426</lpage><pub-id pub-id-type="doi">10.1016/j.nucengdes.2010.09.025</pub-id></element-citation><mixed-citation id="mc-CR16" publication-type="journal">Schulenberg, T., Mar&#x000e1;czy, C., Heinecke, J. &#x00026; Bernnat, W. Design and analysis of a thermal core for a high performance light water reactor. <italic>Nucl. Eng. Des.</italic><bold>241</bold>, 4420&#x02013;4426 (2011).</mixed-citation></citation-alternatives></ref><ref id="CR17"><label>17.</label><citation-alternatives><element-citation id="ec-CR17" publication-type="journal"><person-group person-group-type="author"><name><surname>Garner</surname><given-names>F</given-names></name></person-group><article-title>Materials issues involving austenitic pressure vessel internals arising from void swelling and irradiation creep</article-title><source>Trans. Am. Nucl. Soc.</source><year>1994</year><volume>71</volume><fpage>1</fpage></element-citation><mixed-citation id="mc-CR17" publication-type="journal">Garner, F. Materials issues involving austenitic pressure vessel internals arising from void swelling and irradiation creep. <italic>Trans. Am. Nucl. Soc.</italic><bold>71</bold>, 1 (1994).</mixed-citation></citation-alternatives></ref><ref id="CR18"><label>18.</label><citation-alternatives><element-citation id="ec-CR18" publication-type="journal"><person-group person-group-type="author"><name><surname>Dawi</surname><given-names>K</given-names></name><name><surname>Balat-Pichelin</surname><given-names>M</given-names></name><name><surname>Charpentier</surname><given-names>L</given-names></name><name><surname>Audubert</surname><given-names>F</given-names></name></person-group><article-title>High temperature oxidation of sic under helium with low-pressure oxygen Part 3: <inline-formula id="IEq67"><alternatives><tex-math id="M147">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\beta$$\end{document}</tex-math><mml:math id="M148"><mml:mi>&#x003b2;</mml:mi></mml:math><inline-graphic xlink:href="41598_2024_78037_Article_IEq67.gif"/></alternatives></inline-formula>-sic-sic/pyc/sic</article-title><source>J. Eur. Ceram. Soc.</source><year>2012</year><volume>32</volume><fpage>485</fpage><lpage>494</lpage><pub-id pub-id-type="doi">10.1016/j.jeurceramsoc.2011.08.005</pub-id></element-citation><mixed-citation id="mc-CR18" publication-type="journal">Dawi, K., Balat-Pichelin, M., Charpentier, L. &#x00026; Audubert, F. High temperature oxidation of sic under helium with low-pressure oxygen Part 3: <inline-graphic xlink:href="41598_2024_78037_Article_IEq68.gif"/>-sic-sic/pyc/sic. <italic>J. Eur. Ceram. Soc.</italic><bold>32</bold>, 485&#x02013;494 (2012).</mixed-citation></citation-alternatives></ref><ref id="CR19"><label>19.</label><citation-alternatives><element-citation id="ec-CR19" publication-type="journal"><person-group person-group-type="author"><name><surname>P&#x000e9;rez</surname><given-names>FJ</given-names></name><name><surname>Ghoniem</surname><given-names>N</given-names></name></person-group><article-title>Chemical compatibility of sic composite structures with fusion reactor helium coolant at high temperatures</article-title><source>Fusion Eng. Des.</source><year>1993</year><volume>22</volume><fpage>415</fpage><lpage>426</lpage><pub-id pub-id-type="doi">10.1016/0920-3796(93)90008-6</pub-id></element-citation><mixed-citation id="mc-CR19" publication-type="journal">P&#x000e9;rez, F. J. &#x00026; Ghoniem, N. Chemical compatibility of sic composite structures with fusion reactor helium coolant at high temperatures. <italic>Fusion Eng. Des.</italic><bold>22</bold>, 415&#x02013;426 (1993).</mixed-citation></citation-alternatives></ref><ref id="CR20"><label>20.</label><citation-alternatives><element-citation id="ec-CR20" publication-type="journal"><person-group person-group-type="author"><name><surname>Charpentier</surname><given-names>L</given-names></name><name><surname>Balat-Pichelin</surname><given-names>M</given-names></name></person-group><article-title>Behavior at high temperature of metallic liners (ta, nb) used in the sandwich cladding material of the gfr</article-title><source>Adv. Sci. Technol.</source><year>2014</year><volume>94</volume><fpage>17</fpage><lpage>22</lpage><pub-id pub-id-type="doi">10.4028/www.scientific.net/AST.94.17</pub-id></element-citation><mixed-citation id="mc-CR20" publication-type="journal">Charpentier, L. &#x00026; Balat-Pichelin, M. Behavior at high temperature of metallic liners (ta, nb) used in the sandwich cladding material of the GFR. <italic>Adv. Sci. Technol.</italic><bold>94</bold>, 17&#x02013;22 (2014).</mixed-citation></citation-alternatives></ref><ref id="CR21"><label>21.</label><mixed-citation publication-type="other">Contescu, C.&#x000a0;I. Initial assessment of environmental effects on sic/sic composites in helium-cooled nuclear systems. <italic>ORNL/TM-2013/319</italic>, Vol. 1096306 (2013).</mixed-citation></ref><ref id="CR22"><label>22.</label><citation-alternatives><element-citation id="ec-CR22" publication-type="journal"><person-group person-group-type="author"><name><surname>Raissi</surname><given-names>M</given-names></name><name><surname>Perdikaris</surname><given-names>P</given-names></name><name><surname>Karniadakis</surname><given-names>GE</given-names></name></person-group><article-title>Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations</article-title><source>J. Comput. Phys.</source><year>2019</year><volume>378</volume><fpage>686</fpage><lpage>707</lpage><pub-id pub-id-type="doi">10.1016/j.jcp.2018.10.045</pub-id></element-citation><mixed-citation id="mc-CR22" publication-type="journal">Raissi, M., Perdikaris, P. &#x00026; Karniadakis, G. E. Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations. <italic>J. Comput. Phys.</italic><bold>378</bold>, 686&#x02013;707 (2019).</mixed-citation></citation-alternatives></ref><ref id="CR23"><label>23.</label><mixed-citation publication-type="other">Kobayashi, K., Usman, S., Castano, C., Alajo, A., Kumar, D., Alam, S. Surrogate Modeling-Driven Physics-Informed Multi-fidelity Kriging for the Prediction of Accident-Tolerant Fuel Properties. In <italic>Handbook of Smart Energy Systems</italic>, 1313-1323 (2023)</mixed-citation></ref><ref id="CR24"><label>24.</label><citation-alternatives><element-citation id="ec-CR24" publication-type="journal"><person-group person-group-type="author"><name><surname>Pedregosa</surname><given-names>F</given-names></name><etal/></person-group><article-title>Scikit-learn: Machine learning in Python</article-title><source>J. Mach. Learn. Res.</source><year>2011</year><volume>12</volume><fpage>2825</fpage><lpage>2830</lpage></element-citation><mixed-citation id="mc-CR24" publication-type="journal">Pedregosa, F. et al. Scikit-learn: Machine learning in Python. <italic>J. Mach. Learn. Res.</italic><bold>12</bold>, 2825&#x02013;2830 (2011).</mixed-citation></citation-alternatives></ref><ref id="CR25"><label>25.</label><citation-alternatives><element-citation id="ec-CR25" publication-type="journal"><person-group person-group-type="author"><name><surname>Cover</surname><given-names>T</given-names></name><name><surname>Hart</surname><given-names>P</given-names></name></person-group><article-title>Nearest neighbor pattern classification</article-title><source>IEEE Trans. Inf. Theory</source><year>1967</year><volume>13</volume><fpage>21</fpage><lpage>27</lpage><pub-id pub-id-type="doi">10.1109/TIT.1967.1053964</pub-id></element-citation><mixed-citation id="mc-CR25" publication-type="journal">Cover, T. &#x00026; Hart, P. Nearest neighbor pattern classification. <italic>IEEE Trans. Inf. Theory</italic><bold>13</bold>, 21&#x02013;27 (1967).</mixed-citation></citation-alternatives></ref><ref id="CR26"><label>26.</label><citation-alternatives><element-citation id="ec-CR26" publication-type="journal"><person-group person-group-type="author"><name><surname>Shorten</surname><given-names>C</given-names></name><name><surname>Khoshgoftaar</surname><given-names>TM</given-names></name></person-group><article-title>A survey on image data augmentation for deep learning</article-title><source>J. Big Data</source><year>2019</year><volume>6</volume><fpage>1</fpage><lpage>48</lpage><pub-id pub-id-type="doi">10.1186/s40537-019-0197-0</pub-id></element-citation><mixed-citation id="mc-CR26" publication-type="journal">Shorten, C. &#x00026; Khoshgoftaar, T. M. A survey on image data augmentation for deep learning. <italic>J. Big Data</italic><bold>6</bold>, 1&#x02013;48 (2019).</mixed-citation></citation-alternatives></ref><ref id="CR27"><label>27.</label><mixed-citation publication-type="other">Paszke, A. et al. Pytorch: An imperative style, high-performance deep learning library. In <italic>Advances in Neural Information Processing Systems</italic>, Vol. 32 (2019).</mixed-citation></ref><ref id="CR28"><label>28.</label><mixed-citation publication-type="other">Akiba, T., Sano, S., Yanase, T., Ohta, T. &#x00026; Koyama, M. Optuna: A next-generation hyperparameter optimization framework. In <italic>Proc. 25th ACM SIGKDD International Conference on Knowledge Discovery &#x00026; Data Mining</italic> 2623&#x02013;2631 (2019).</mixed-citation></ref><ref id="CR29"><label>29.</label><mixed-citation publication-type="other">Kingma, D.&#x000a0;P. &#x00026; Ba, J. Adam: A method for stochastic optimization. Preprint at <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/1412.6980">http://arxiv.org/abs/1412.6980</ext-link> (2014).</mixed-citation></ref><ref id="CR30"><label>30.</label><citation-alternatives><element-citation id="ec-CR30" publication-type="journal"><person-group person-group-type="author"><name><surname>Cawley</surname><given-names>GC</given-names></name><name><surname>Talbot</surname><given-names>NL</given-names></name></person-group><article-title>On over-fitting in model selection and subsequent selection bias in performance evaluation</article-title><source>J. Mach. Learn. Res.</source><year>2010</year><volume>11</volume><fpage>2079</fpage><lpage>2107</lpage></element-citation><mixed-citation id="mc-CR30" publication-type="journal">Cawley, G. C. &#x00026; Talbot, N. L. On over-fitting in model selection and subsequent selection bias in performance evaluation. <italic>J. Mach. Learn. Res.</italic><bold>11</bold>, 2079&#x02013;2107 (2010).</mixed-citation></citation-alternatives></ref><ref id="CR31"><label>31.</label><citation-alternatives><element-citation id="ec-CR31" publication-type="journal"><person-group person-group-type="author"><name><surname>Varma</surname><given-names>S</given-names></name><name><surname>Simon</surname><given-names>R</given-names></name></person-group><article-title>Bias in error estimation when using cross-validation for model selection</article-title><source>BMC Bioinform.</source><year>2006</year><volume>7</volume><fpage>1</fpage><lpage>8</lpage><pub-id pub-id-type="doi">10.1186/1471-2105-7-91</pub-id></element-citation><mixed-citation id="mc-CR31" publication-type="journal">Varma, S. &#x00026; Simon, R. Bias in error estimation when using cross-validation for model selection. <italic>BMC Bioinform.</italic><bold>7</bold>, 1&#x02013;8 (2006).</mixed-citation></citation-alternatives></ref><ref id="CR32"><label>32.</label><mixed-citation publication-type="other">Bergstra, J., Bardenet, R., Bengio, Y. &#x00026; K&#x000e9;gl, B. Algorithms for hyper-parameter optimization. In <italic>Advances in Neural Information Processing Systems</italic>, Vol. 24 (2011).</mixed-citation></ref><ref id="CR33"><label>33.</label><mixed-citation publication-type="other">Bergstra, J., Yamins, D. &#x00026; Cox, D. Making a science of model search: Hyperparameter optimization in hundreds of dimensions for vision architectures. In <italic>International Conference on Machine Learning</italic> 115&#x02013;123 (PMLR, 2013).</mixed-citation></ref><ref id="CR34"><label>34.</label><mixed-citation publication-type="other">Ozaki, Y., Tanigaki, Y., Watanabe, S. &#x00026; Onishi, M. Multiobjective tree-structured parzen estimator for computationally expensive optimization problems. In <italic>Proceedings of the 2020 Genetic and Evolutionary Computation Conference</italic> 533&#x02013;541 (2020).</mixed-citation></ref><ref id="CR35"><label>35.</label><citation-alternatives><element-citation id="ec-CR35" publication-type="journal"><person-group person-group-type="author"><name><surname>Ozaki</surname><given-names>Y</given-names></name><name><surname>Tanigaki</surname><given-names>Y</given-names></name><name><surname>Watanabe</surname><given-names>S</given-names></name><name><surname>Nomura</surname><given-names>M</given-names></name><name><surname>Onishi</surname><given-names>M</given-names></name></person-group><article-title>Multiobjective tree-structured parzen estimator</article-title><source>J. Artif. Intell. Res.</source><year>2022</year><volume>73</volume><fpage>1209</fpage><lpage>1250</lpage><pub-id pub-id-type="doi">10.1613/jair.1.13188</pub-id></element-citation><mixed-citation id="mc-CR35" publication-type="journal">Ozaki, Y., Tanigaki, Y., Watanabe, S., Nomura, M. &#x00026; Onishi, M. Multiobjective tree-structured parzen estimator. <italic>J. Artif. Intell. Res.</italic><bold>73</bold>, 1209&#x02013;1250 (2022).</mixed-citation></citation-alternatives></ref></ref-list></back></article>

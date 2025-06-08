@@ -1,0 +1,960 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" dtd-version="1.3" xml:lang="EN" article-type="research-article"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">J Chem Inf Model</journal-id><journal-id journal-id-type="iso-abbrev">J Chem Inf Model</journal-id><journal-id journal-id-type="publisher-id">ci</journal-id><journal-id journal-id-type="coden">jcisd8</journal-id><journal-title-group><journal-title>Journal of Chemical Information and Modeling</journal-title></journal-title-group><issn pub-type="ppub">1549-9596</issn><issn pub-type="epub">1549-960X</issn><publisher><publisher-name>American Chemical Society</publisher-name></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">39933880</article-id><article-id pub-id-type="pmc">PMC11863375</article-id>
+<article-id pub-id-type="doi">10.1021/acs.jcim.4c01896</article-id><article-categories><subj-group><subject>Article</subject></subj-group></article-categories><title-group><article-title>AGDIFF: Attention-Enhanced
+Diffusion for Molecular
+Geometry Prediction</article-title></title-group><contrib-group><contrib contrib-type="author" id="ath1"><name><surname>Vieira Wyzykowski</surname><given-names>Andr&#x000e9;
+Brasil</given-names></name><xref rid="aff1" ref-type="aff">&#x02020;</xref></contrib><contrib contrib-type="author" id="ath2"><name><surname>Niazi</surname><given-names>Fatemeh Fathi</given-names></name><xref rid="aff2" ref-type="aff">&#x02021;</xref></contrib><contrib contrib-type="author" corresp="yes" id="ath3"><contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0002-9640-1380</contrib-id><name><surname>Dickson</surname><given-names>Alex</given-names></name><xref rid="cor1" ref-type="other">*</xref><xref rid="aff1" ref-type="aff">&#x02020;</xref><xref rid="aff2" ref-type="aff">&#x02021;</xref></contrib><aff id="aff1"><label>&#x02020;</label><institution>Department
+of Biochemistry &#x00026; Molecular Biology Michigan State University</institution>, East Lansing, Michigan 48824, <country>United States</country></aff><aff id="aff2"><label>&#x02021;</label>Department
+of Computational Mathematics, <institution>Science &#x00026;
+Engineering Michigan State University</institution>, East Lansing, Michigan 48824, <country>United States</country></aff></contrib-group><author-notes><corresp id="cor1"><label>*</label>E-mail: <email>alexrd@msu.edu</email>.</corresp></author-notes><pub-date pub-type="epub"><day>11</day><month>02</month><year>2025</year></pub-date><pub-date pub-type="collection"><day>24</day><month>02</month><year>2025</year></pub-date><volume>65</volume><issue>4</issue><fpage>1798</fpage><lpage>1811</lpage><history><date date-type="received"><day>28</day><month>10</month><year>2024</year></date><date date-type="accepted"><day>03</day><month>02</month><year>2025</year></date><date date-type="rev-recd"><day>30</day><month>01</month><year>2025</year></date></history><permissions><copyright-statement>&#x000a9; 2025 The Authors. Published by American Chemical Society</copyright-statement><copyright-year>2025</copyright-year><copyright-holder>The Authors</copyright-holder><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>Permits the broadest form of re-use including for commercial purposes, provided that author attribution and integrity are maintained (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</ext-link>).</license-p></license></permissions><abstract><p content-type="toc-graphic"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_0013" id="ab-tgr1"/></p><p>Accurate prediction
+of molecular geometries is crucial
+for drug
+discovery and materials science. Existing fast conformer prediction
+algorithms often rely on approximate empirical energy functions, resulting
+in low accuracy. More accurate methods like ab initio molecular dynamics
+and Markov chain Monte Carlo can be computationally expensive due
+to the need for evaluating quantum mechanical energy functions. To
+address this, we introduce AGDIFF, a novel machine learning framework
+that utilizes diffusion models for efficient and accurate molecular
+structure prediction. AGDIFF extends previous models (such as GeoDiff)
+by enhancing the global, local, and edge encoders with attention mechanisms,
+an improved SchNet architecture, batch normalization, and feature
+expansion techniques. AGDIFF outperforms GeoDiff on both the GEOM-QM9
+and GEOM-Drugs data sets. For GEOM-QM9, with a threshold (&#x003b4;)
+of 0.5 &#x000c5;, AGDIFF achieves a mean COV-R of 93.08% and a mean MAT-R
+of 0.1965 &#x000c5;. On the more complex GEOM-Drugs data set, using &#x003b4;
+= 1.25 &#x000c5;, AGDIFF attains a median COV-R of 100.00% and a mean
+MAT-R of 0.8237 &#x000c5;. These findings demonstrate AGDIFF&#x02019;s
+potential to advance molecular modeling techniques, enabling more
+efficient and accurate prediction of molecular geometries, thus contributing
+to computational chemistry, drug discovery, and materials design. <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/ADicksonLab/AGDIFF">https://github.com/ADicksonLab/AGDIFF</uri></p></abstract><funding-group><award-group><funding-source><institution-wrap><institution>National Institute of General Medical Sciences</institution><institution-id institution-id-type="doi">10.13039/100000057</institution-id></institution-wrap></funding-source><award-id>R01GM130794</award-id></award-group></funding-group><custom-meta-group><custom-meta><meta-name>document-id-old-9</meta-name><meta-value>ci4c01896</meta-value></custom-meta><custom-meta><meta-name>document-id-new-14</meta-name><meta-value>ci4c01896</meta-value></custom-meta><custom-meta><meta-name>ccc-price</meta-name><meta-value/></custom-meta></custom-meta-group></article-meta></front><body><sec id="sec1"><label>1</label><title>Introduction</title><p>The accurate prediction
+of molecular geometries is a fundamental
+challenge in computational chemistry. 3D structures of molecules,
+characterized by their atomic Cartesian coordinates, dictate their
+biological and physical properties, making them crucial for advancements
+in materials science and drug discovery. Traditional methods such
+as molecular dynamics (MD) and Markov chain Monte Carlo (MCMC) are
+theoretically robust. However, they are computationally demanding&#x02014;particularly when combined
+with quantum mechanical energy functions, which are very expensive
+to evaluate.<sup><xref ref-type="bibr" rid="ref1">1</xref></sup> In addition, widely used
+cheminformatics toolkits like RDKit<sup><xref ref-type="bibr" rid="ref2">2</xref></sup> implement
+structure prediction algorithms that are efficient, but often struggle
+to generate accurate molecular geometries. A comparison of RDKit and
+a recently developed generative machine learning model called &#x0201c;GeoDiff&#x0201d;<sup><xref ref-type="bibr" rid="ref3">3</xref></sup> in conformer generation on the GEOM-Drugs data
+set<sup><xref ref-type="bibr" rid="ref4">4</xref></sup> reveals that RDKit has limited coverage
+of the reference conformational space and generates conformers of
+suboptimal quality. Further development is still needed for methods
+that can balance the needs for efficiency and accuracy.</p><p>The
+prediction of molecular geometries has evolved significantly
+over the decades, with each new approach addressing the limitations
+of its predecessors. Force field methods like MM2 and MM3 in the 1980s
+and 1990s were followed by semiempirical methods such as AM1 and PM3
+in the 1990s and 2000s, which combined empirical data with quantum
+mechanical calculations for improved accuracy.<sup><xref ref-type="bibr" rid="ref5">5</xref>&#x02212;<xref ref-type="bibr" rid="ref7">7</xref></sup> Simultaneously,
+Monte Carlo simulations and simulated annealing were used for low-energy
+conformer searches.<sup><xref ref-type="bibr" rid="ref8">8</xref>,<xref ref-type="bibr" rid="ref9">9</xref></sup> The 2000s saw the rise of quantum
+mechanical methods, including Hartree&#x02013;Fock and DFT, which provided
+accurate 3D structures by solving the Schr&#x000f6;dinger equation.<sup><xref ref-type="bibr" rid="ref10">10</xref>,<xref ref-type="bibr" rid="ref11">11</xref></sup> In the 2010s, cheminformatics toolkits like RDKit and Open Babel
+emerged, facilitating 3D structure generation from SMILES strings.<sup><xref ref-type="bibr" rid="ref2">2</xref></sup> Early machine learning approaches, such as autoencoders,<sup><xref ref-type="bibr" rid="ref12">12</xref></sup> began exploring molecular structure prediction,
+laying the foundation for modern deep learning techniques in this
+field.</p><p>The general goal for structure prediction algorithms
+is to take
+the graph structure of a molecule as input (&#x0201c;2D&#x0201d; structure)
+and return a prediction of the 3D coordinates for each atom. The graph
+structure of a molecule is comprised of a set of nodes, one for each
+atom, and a set of edges, which show interactions between the atoms.
+The edges typically represent covalent bonds between atoms, but can
+also represent other things, such as spatial proximity. Each node
+can be annotated with a set of features, encoding information such
+as the element of the atom and the presence of an explicit charge.
+Similarly, edges are also given features, typically encoding the covalent
+bond type (single, double, aromatic, nonbonded, etc.). Here we denote
+a molecular graph with <italic>n</italic> nodes as <italic>G</italic><sub><italic>n</italic></sub>, and the set of all molecular graphs
+as <inline-formula id="d34e161"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m001.gif"/></inline-formula>. The task
+of molecular structure prediction
+is then to develop a function (<italic>f</italic>) that maps <inline-formula id="d34e166"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m002.gif"/></inline-formula>.</p><p>These functions can be informed
+by earlier work in approaches developed
+for the prediction of molecular properties (<inline-formula id="d34e171"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m003.gif"/></inline-formula>). Early
+Quantitative Structure&#x02013;Activity
+Relationship (QSAR) models relied on statistical methods and descriptors
+to correlate molecular structures with activities.<sup><xref ref-type="bibr" rid="ref13">13</xref></sup> Later, topological descriptors provided algebraic characterizations
+of molecular structures,<sup><xref ref-type="bibr" rid="ref14">14</xref></sup> and physicochemical
+descriptors improved predictive accuracy by considering properties
+like lipophilicity and solubility.<sup><xref ref-type="bibr" rid="ref15">15</xref></sup> The
+integration of machine learning algorithms, such as Support Vector
+Machines (SVM), Random Forest (RF), and Gradient Boosting Machines
+(GBM), further enhanced the predictive models by leveraging computational
+power to analyze complex data sets.<sup><xref ref-type="bibr" rid="ref16">16</xref></sup> These
+approaches have been particularly useful for predicting scalar molecular
+properties, including the internal energy, solubility constant, and
+partition coefficient (log P).<sup><xref ref-type="bibr" rid="ref17">17</xref>,<xref ref-type="bibr" rid="ref18">18</xref></sup></p><p>All of the above
+approaches use projections of the graph onto an
+intermediate subspace of relevant features. However, the emergence
+of Graph Neural Networks (GNNs) revolutionized the field by providing
+a powerful framework for learning directly from molecular graph representations,
+eliminating the need for manual feature engineering and outperforming
+traditional methods in various predictive tasks.<sup><xref ref-type="bibr" rid="ref19">19</xref></sup> GNN-based approaches have shown promising results in various
+tasks within the domain of computational chemistry and drug discovery,
+as extensively reviewed elsewhere.<sup><xref ref-type="bibr" rid="ref20">20</xref></sup> One
+example is Attentive FP,<sup><xref ref-type="bibr" rid="ref21">21</xref></sup> a graph neural
+network architecture that leverages a graph attention mechanism for
+enhanced molecular representation in drug discovery. Attentive FP
+achieves state-of-the-art predictive performance for properties such
+as solubility, bioactivity, and lipophilicity. A prior study from
+our laboratory used the Geometric Scattering for Graphs method to
+automatically transform atomic features to a set of invariant graph-level
+features that could be used as inputs to a machine learning model.<sup><xref ref-type="bibr" rid="ref22">22</xref></sup> This obtained competitive results for prediction
+of log P,<sup><xref ref-type="bibr" rid="ref23">23</xref></sup> including in a blind, prospective
+study.<sup><xref ref-type="bibr" rid="ref24">24</xref></sup></p><p>GNN approaches have also
+been used for the <inline-formula id="d34e203"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m004.gif"/></inline-formula> problem with the help of diffusion models.
+Diffusion models are a class of generative models that gradually transform
+simple random noise into complex data distributions. These models
+have achieved superior quality compared to state-of-the-art Generative
+Adversarial Networks (GANs).<sup><xref ref-type="bibr" rid="ref25">25</xref></sup> Latent Diffusion
+Models (LDMs), which operate in a learned latent space, can capture
+more complex patterns and generate high-quality samples. For example,
+Luo and Hu (2021)<sup><xref ref-type="bibr" rid="ref26">26</xref></sup> treated point clouds
+as particles in a thermodynamic system, utilizing a heat bath to facilitate
+diffusion from the original distribution to a noise distribution.
+These advancements showcase the versatility of diffusion models in
+handling complex data structures.</p><p>A key requirement for GNN-based
+diffusion models in molecular structure
+prediction is equivariance. That is, a transformation of the input
+should be equivalent to performing the same transformation on the
+output. Mathematically, for a given rotation matrix, R: <inline-formula id="d34e212"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m005.gif"/></inline-formula>. In a diffusion model, a GNN must
+transform
+input structures to a slightly &#x0201c;de-noised&#x0201d; version of
+the input. It is thus natural for these GNNs to be equivariant to
+displacements and rotations, in order to ensure adherence to underlying
+physical laws. A number of equivariant graph models have been developed
+that carry explicit geometric information with each node, and where
+all intermediate calculations satisfy the equivariance property.<sup><xref ref-type="bibr" rid="ref27">27</xref>&#x02212;<xref ref-type="bibr" rid="ref30">30</xref></sup> There has recently been a growing interest in the application of
+these models to molecular structure prediction in a diffusion model
+framework. Hoogeboom et al.<sup><xref ref-type="bibr" rid="ref30">30</xref></sup> introduced
+the E(3) Equivariant Diffusion Model (EDM) for 3D molecule generation,
+offering a model equivariant to Euclidean transformations that improves
+the quality and efficiency of generated molecular samples. Similarly,
+Liao and Smidt<sup><xref ref-type="bibr" rid="ref27">27</xref></sup> presented Equiformer,
+incorporating SE(3)/E(3)-equivariant features in a Transformer network
+for 3D atomistic graphs, demonstrating significant performance across
+data sets in the domain of 3D atomistic graphs.</p><p>An alternative
+strategy for achieving equivariance is to use the
+model to learn scalar &#x0201c;edge gradients&#x0201d; that are used
+to push and pull the atoms along interparticle displacement vectors.
+This simpler and effective approach is used by GeoDiff,<sup><xref ref-type="bibr" rid="ref3">3</xref></sup> a diffusion-based model for molecular conformation
+generation (summarized in Appendix B). Here, we build upon this approach
+to introduce AGDIFF, a diffusion model framework that incorporates
+a self-attention mechanism for efficient prediction of molecular structures.
+We extend GeoDiff by incorporating several enhancements to the global
+and local encoders, as well as the edge encoder, to improve the model&#x02019;s
+expressiveness and adaptability. This direct <inline-formula id="d34e230"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m006.gif"/></inline-formula> modeling approach circumvents the limitations
+inherent in indirect modeling and aims to capture the complex distribution
+of molecular geometries with high accuracy and efficiency.</p><p>In
+this work we first provide some background on diffusion models
+and their application to chemical systems. The AGDIFF model is described
+in detail, including a discussion of the model architecture, training
+and inference procedures. We present example inference trajectories
+and measure the overall quality of the structures generated for two
+commonly used data sets. We find that AGDIFF shows consistent improvement
+compared to previous GeoDiff results presented in Xu et al.<sup><xref ref-type="bibr" rid="ref3">3</xref></sup> We correlate sources of error with different
+molecular properties in the data sets and conclude with a discussion
+and outlook, including potential application of these algorithms in
+drug discovery.</p></sec><sec id="sec2"><label>2</label><title>Background on Diffusion Models</title><p>Diffusion
+models are a class of probabilistic generative models
+that learn to reverse a diffusion process to generate new data samples.<sup><xref ref-type="bibr" rid="ref31">31</xref></sup> Different formulations of these models include
+denoising diffusion probabilistic models (DDPMs),<sup><xref ref-type="bibr" rid="ref32">32</xref>,<xref ref-type="bibr" rid="ref33">33</xref></sup> score-based generative models (SGMs),<sup><xref ref-type="bibr" rid="ref34">34</xref></sup> and models based on stochastic differential equations (score SDEs).<sup><xref ref-type="bibr" rid="ref35">35</xref></sup> As our work is specifically based on DDPMs,
+we will focus our discussion on this particular formulation.</p><p>DDPMs consist of two Markovian processes: a forward diffusion process
+and a reverse denoising process (<xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>). In the forward diffusion process <italic>q</italic>, the noise is added to a data point <italic>X</italic> to generate a sequence of noisy points <inline-formula id="d34e263"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m007.gif"/></inline-formula>, ultimately resulting in a pure Gaussian
+distribution at time step <italic>t</italic>. In the reverse denoising
+process, a neural network is trained to iteratively remove the noise
+from the noisy data <italic>&#x00058;&#x00303;</italic><sub><italic>T</italic></sub> back to the original clean distribution. The forward diffusion
+process is characterized by <italic>q</italic>(<italic>&#x00058;&#x00303;</italic><sub><italic>t</italic></sub> | <italic>&#x00058;&#x00303;</italic><sub><italic>t&#x02013;1</italic></sub>), which is the probability of the structure <italic>&#x00058;&#x00303;</italic><sub><italic>T</italic></sub> and time <italic>t</italic>, given a structure <italic>&#x00058;&#x00303;</italic><sub><italic>t&#x02013;1</italic></sub> at time <italic>t</italic> &#x02013; 1. This probability is
+given by a multivariate normal distribution:<disp-formula id="eq1"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m008" position="anchor"/><label>1</label></disp-formula>where the notation <inline-formula id="d34e302"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m009.gif"/></inline-formula> shows that the quantity <italic>X</italic> is distributed according
+to a Gaussian distribution with mean &#x003bc;
+and variance <italic>v</italic>. The values of &#x003b2;<sub><italic>t</italic></sub> follow a fixed variance schedule that controls how
+much noise is added, and should be selected to ensure that the final
+distribution follows a standard Gaussian.</p><fig id="fig1" position="float"><label>Figure 1</label><caption><p>Illustration of the denoising
+diffusion probabilistic model (DDPM)
+approach for molecular conformation generation. The forward process
+involves adding noise to the molecular structure, transitioning from
+an initial structure <italic>X</italic><sub>0</sub> to a noisy version <italic>X</italic><sub><italic>T</italic></sub>. The reverse process, modeled
+by <sub><italic>p</italic>&#x003b8;</sub>(<italic>X</italic><sub><italic>t&#x02013;1</italic></sub>|<italic>X</italic><sub><italic>t</italic></sub>), helps reconstruct the original structure by gradually removing
+the noise.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_0001" id="gr3" position="float"/></fig><p>This can be generally solved for
+the conditional
+distribution at
+any time step <italic>t</italic>:<disp-formula id="eq2"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m010" position="anchor"/><label>2</label></disp-formula>where <inline-formula id="d34e347"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m011.gif"/></inline-formula> and <inline-formula id="d34e350"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m012.gif"/></inline-formula>. In our work, the forward process has 5000
+steps, with &#x003b2;<sub><italic>t</italic></sub> defined as a sigmoidal
+function between &#x003b2;<sub>min</sub> = 1<italic>e &#x02013;</italic> 7 and &#x003b2;<sub>max</sub> = 2<italic>e &#x02013;</italic> 3. Specifically,
+5000 values of <italic>X</italic> are linearly spaced between &#x02212;6
+and 6, these are used to define &#x003b2;<sub><italic>t</italic></sub> as<disp-formula id="eq3"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m013" position="anchor"/><label>3</label></disp-formula></p><p>The reverse process
+aims to gradually
+denoise <italic>&#x00058;&#x00303;</italic><sub><italic>T</italic></sub>, arriving
+at an approximation (<italic>&#x00058;&#x00311;</italic><sub>0</sub>) of the
+original data using a neural
+network, whose parameters are denoted by &#x003b8;. The probability
+distribution governing this process is referred to as <italic>p</italic><sub>&#x003b8;</sub>, which is generally formulated as<disp-formula id="eq4"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m014" position="anchor"/><label>4</label></disp-formula>where in our work, &#x003a3;<sub>&#x003b8;</sub>(<italic>&#x00058;&#x00303;</italic><sub><italic>t</italic></sub>,<italic>t</italic>) is predefined and
+thus can be expressed as &#x003c3;<sub><italic>t</italic></sub><sup>2</sup><italic>I</italic>, where <inline-formula id="d34e407"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m015.gif"/></inline-formula>. The mean &#x003bc;<sub>&#x003b8;</sub>(<italic>&#x00058;&#x00303;</italic><sub><italic>t</italic></sub>,<italic>t</italic>) is computed using the predicted noise &#x003f5;<sub>&#x003b8;</sub>(<italic>&#x00058;&#x00303;</italic><sub><italic>t</italic></sub>,<italic>t</italic>) from the neural network as follows:<disp-formula id="eq5"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m016" position="anchor"/><label>5</label></disp-formula></p><p>The goal during training is to minimize
+the negative log-likelihood
+of the source data as our objective function. However, since calculating&#x02013;log(<italic>p</italic><sub><italic>&#x003b8;</italic></sub>(<italic>X</italic>))
+is intractable, DDPMs instead train the neural network by maximizing
+the Evidence Lower Bound (ELBO), which approximates the log-likelihood.<sup><xref ref-type="bibr" rid="ref33">33</xref></sup> After simplifying, this training objective can
+ultimately be described as<disp-formula id="eq6"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m017" position="anchor"/><label>6</label></disp-formula>where <inline-formula id="d34e447"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m018.gif"/></inline-formula> refers to a
+weight term. By using <italic>&#x00058;&#x00303;</italic><sub><italic>T</italic></sub> from <xref rid="eq2" ref-type="disp-formula">eq <xref rid="eq2" ref-type="disp-formula">2</xref></xref>, the
+training objective function
+can also be rewritten as<disp-formula id="eq7"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m019" position="anchor"/><label>7</label></disp-formula></p><p>To infer samples
+from our trained model,
+we begin by drawing a
+sample from Gaussian prior, <inline-formula id="d34e464"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m020.gif"/></inline-formula>. A slightly denoised state <italic>&#x00058;&#x00311;</italic><sub><italic>T-1</italic></sub> is then calculated as<disp-formula id="eq8"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m021" position="anchor"/><label>8</label></disp-formula></p><p>This process is repeated for <italic>t</italic> iterations, progressively
+sampling <italic>&#x00058;&#x00311;</italic><sub><italic>T&#x02013;1</italic></sub> at each step, until the final data state <italic>&#x00058;&#x00311;</italic><sub>0</sub> is obtained.</p></sec><sec id="sec3"><label>3</label><title>Methods</title><p>The GeoDiff<sup><xref ref-type="bibr" rid="ref3">3</xref></sup> method employed a dual-encoder
+architecture for node embedding comprised of a SchNet-based<sup><xref ref-type="bibr" rid="ref36">36</xref></sup> global encoder that captures the overall geometric
+arrangement and long-range atomic interactions, a local encoder (GIN)
+that processes fine-grained details and local chemical environments.
+Edge features are generated with an MLP-based edge encoder that processes
+edge attributes such as bond types and lengths. AGDIFF extends and
+improves upon these foundational elements by introducing learnable
+activation functions, attention mechanisms, adaptive scaling modules,
+dual pathway processing, enhanced CFConv layers, batch normalization,
+and feature expansion (<xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>).</p><fig id="fig2" position="float"><label>Figure 2</label><caption><p>Schematic overview of the AGDIFF workflow. The input to the model
+is the 3D structure of the molecule, which includes information about
+atom types <italic>Z</italic>, bond indices <italic>A</italic>, bond
+types <italic>E</italic>, and atom coordinates <italic>X</italic>.
+This information is passed to two separate encoder streams, &#x0201c;global&#x0201d;
+and &#x0201c;local&#x0201d;, with the latter receiving a reduced set
+of edge indices focusing on local covalent bonds. Each stream uses
+a multilayer perceptron (MLP) and an equivariant transformation to
+predict conformation gradients, or directions attached to each atom
+that are used for coordinate updates during the reverse process.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_0002" id="gr4" position="float"/></fig><p>The global encoder, operating on the complete molecular
+graph,
+processes node positions (<italic>X</italic>), attributes (<italic>Z</italic>), edge indices (<italic>A</italic>), and edge attributes
+(<italic>E</italic>) to produce a set of features for each node (<italic>h</italic><sub><italic>g</italic></sub>) that encode the molecule&#x02019;s
+overall structure. The local encoder, focuses on the local environment
+of each atom and operates on a smaller set of edges. The &#x0201c;local&#x0201d;
+set of edges is determined starting with the set of covalent bonds,
+with edge types discriminating between single, double, triple and
+aromatic bonds. This is supplemented with additional edges for atoms
+that are separated by two or three hops in the molecular graph, each
+given a distinct edge type. The &#x0201c;non-local&#x0201d; edges are
+determined using spatial proximity, where all pairs of atoms within
+a cutoff (10 &#x000c5;) are joined with an edge, again given a distinct
+edge type. Both local and nonlocal edges are passed to the global
+encoder and only local edges are passed to the local encoder.</p><p>Both encoders are run through separate MLP modules that transform
+the node features into &#x0201c;scores&#x0201d; for each edge (<italic>S</italic><sub><italic>g</italic></sub> for the global branch and <italic>S</italic><sub><italic>l</italic></sub> for the local branch). These
+are separately transformed into vectors for each atom that, when successfully
+trained, will point in the direction that best lowers the loss function
+defined in <xref rid="eq6" ref-type="disp-formula">eq <xref rid="eq6" ref-type="disp-formula">6</xref></xref>. Following
+previous work,<sup><xref ref-type="bibr" rid="ref3">3</xref></sup> separate loss values are
+computed for the global and local perturbations, which are combined
+as <inline-formula id="d34e544"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m022.gif"/></inline-formula>. During inference the global and local
+gradients are mixed as <inline-formula id="d34e547"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m023.gif"/></inline-formula>. In the following
+subsections, we will
+delve into the details of each encoder and its respective architectures,
+highlighting the key components and enhancements introduced in AGDIFF.</p><sec id="sec3.1"><label>3.1</label><title>Global Encoder</title><p>In this work, we propose
+an enhanced version of the SchNet architecture, a deep learning framework
+introduced by Sch&#x000fc;tt et al.<sup><xref ref-type="bibr" rid="ref36">36</xref></sup> for
+learning molecular representations. SchNet is a graph neural network
+that utilizes continuous-filter convolutions (CFConv) and interaction
+blocks to capture the complex interactions between atoms in a molecule.
+In comparison with other graph neural network models such as Nequip,<sup><xref ref-type="bibr" rid="ref37">37</xref></sup> the SchNet model has roughly 9-fold fewer parameters
+and is over 5 times faster in a molecular simulation context.<sup><xref ref-type="bibr" rid="ref38">38</xref></sup><xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>A shows the SchNet architecture previously used to generate
+molecular conformations in ref<sup><xref ref-type="bibr" rid="ref3">3</xref></sup>. The architecture consists of an embedding layer (creating
+128 features per node) followed by multiple interaction blocks, each
+comprised of a CFConv layer, a softplus and an atom-wise dense layer.
+The outputs of the interaction blocks are sequentially added to the
+node features using a residual connection. The CFConv layer applies
+a filter-generating network to the atom embeddings and aggregates
+the results based on the interatomic distances. By stacking multiple
+interaction blocks, SchNet enables multiple rounds of message passing
+and feature extraction, allowing the model to learn intricate patterns
+and relationships within the molecular structure. Here we aim to improve
+the expressiveness of invariant GNN models, such as SchNet, while
+maintaining the advantages of their relatively lightweight neural
+network structure.</p><fig id="fig3" position="float"><label>Figure 3</label><caption><p>Enhancement of the global SchNet encoder. A) The SchNet
+implementation
+used in previous work. B) The Attention SchNet architecture. Comparison
+of the two panels shows how the modifications&#x02014;including learnable
+activation functions, attention mechanisms, adaptive scaling modules,
+dual pathway processing, and enhanced CFConv layers&#x02014;are integrated
+into the SchNet framework. In both panels, <bold>*</bold> denotes
+element-wise multiplication, <bold>+</bold> denotes element-wise addition,
+and numbers like 128 represent the dimensionality of the output feature
+vectors (per node) after each layer.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_0003" id="gr5" position="float"/></fig><p>We introduce several modifications to the SchNet
+architecture that
+are shown in <xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>B. These enhancements are designed to be computationally efficient,
+ensuring that the model remains fast and scalable, which is particularly
+important when considering the time-consuming nature of diffusion
+model steps. The proposed modifications include the incorporation
+of attention mechanisms, and adaptive scaling modules, enabling the
+model to dynamically focus on relevant features and interactions.
+Additionally, we introduce dual pathway processing and enhanced CFConv
+layers to increase the model&#x02019;s expressiveness and learning
+capacity. Each enhancement is discussed in detail below:</p><list id="list_0001" list-type="simple"><list-item><label>(1)</label><p>Enhanced
+CFConv Layers: We modified
+the CFConv layer to improve its learning capacity, robustness and
+training stability. Batch normalization is applied to the feature
+maps to stabilize training and speed up convergence. A LeakyReLU activation
+is used before the message passing layer, which maintains a small
+gradient for inactive units, preventing them from becoming completely
+inactive during training. Additionally, we integrate a learnable distance
+weighting (pink box in <xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>B) into the edge weight calculation stream to allow for more
+complex distance dependencies between atoms.</p><p>To speed up convergence
+during training, the distance weighting module operates in conjunction
+with a Gaussian-based distance function and a cutoff:<disp-formula id="eq9"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m024" position="anchor"/><label>9</label></disp-formula>where <italic>d</italic> represents the interatomic
+distance, <italic>d</italic><sub>cutoff</sub> is the predefined maximum
+distance for interactions, and &#x003c3; is set to <italic>d</italic><sub>cutoff</sub> to control the spread of the Gaussian envelope.
+Here, <italic>d</italic><sub>cutoff</sub> is set to 10.0 &#x000c5;. All
+edge weights are set to zero for <italic>d</italic> &#x0003e; <italic>d</italic><sub>cutoff</sub> to ensure that physically irrelevant interactions
+are not considered. These cutoff-based weights are then combined with
+the learnable weights to produce the final weights used in the convolution,
+enhancing the model&#x02019;s ability to prioritize relevant interactions
+dynamically.</p></list-item><list-item><label>(2)</label><p>Enhanced
+interaction block: To increase
+the expressiveness of the interaction blocks, we introduce a dual
+pathway processing scheme. Each interaction block now consists of
+two parallel CFConv layers with separate filter-generating networks.
+The motivation behind this design is to allow the model to learn different
+aspects of the molecular data simultaneously. One pathway uses a higher
+number of hidden dimensions for the graph convolution operation, and
+one uses a lower number. The rationale for incorporating both pathways
+is grounded in their complementary strengths, with the standard CFConv
+(128 filters) enabling the identification of long-range dependencies
+and high-order interactions, and the reduced CFConv (64 filters) capturing
+more general patterns and interactions that might be missed by the
+more complex pathway.</p><p>The outputs of the CFConv layers are concatenated
+and then passed through a <italic>ShiftedSoftplus</italic> activation
+layer. This introduces a set of learnable parameters that enable the
+model to dynamically adapt the activation function&#x02019;s response
+curve for each element during training. These outputs are then concatenated
+and processed using an attention mechanism to effectively integrate
+the information from both pathways by focusing on the most relevant
+features. This approach is a simplified idea of a multihead attention
+mechanism,<sup><xref ref-type="bibr" rid="ref39">39</xref></sup> where multiple heads operate
+in parallel, each learning to focus on different parts of the input
+data. Here, the attention module learns a set of weights using a neural
+network comprising two linear layers (blue box in <xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>B). The first linear layer
+reduces the dimensionality by half and applies a ReLU activation function.
+The second linear layer further processes these features, followed
+by a Sigmoid activation function to produce the final attention weights.
+This allows the model to scale feature values in an atom-wise manner,
+affecting the subsequent message passing steps.</p></list-item><list-item><label>(3)</label><p>Adaptive Feature Scaling: We integrate
+adaptive scaling modules into the main encoder loop of the SchNet
+architecture that dynamically scale the features based on global information.
+This module computes scaling factors for each feature channel, which
+are then combined with the original features using element-wise multiplication.
+This adaptive scaling mechanism enables the model to emphasize or
+suppress certain features based on their relevance to the global molecular
+representation. By dynamically adjusting the feature scales, the model
+can adapt to different molecular properties and prioritize the most
+informative features for the given task.</p></list-item></list></sec><sec id="sec3.2"><label>3.2</label><title>Local Encoder</title><p>The local encoder,
+based on the GINEncoder from GeoDiff,<sup><xref ref-type="bibr" rid="ref3">3</xref></sup> utilizes
+layers from GINEConv<sup><xref ref-type="bibr" rid="ref40">40</xref></sup> to process node
+features, edge indices, and edge attributes. We introduce batch normalization
+layers after each convolution in the GINEncoder to stabilize training
+and improve convergence. As illustrated in <xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>, the GINEncoder begins with node type embeddings
+and passes them through a series of GINEConv layers. Each GINEConv
+layer performs a message passing step that aggregates and updates
+node features, these are recombined with the additional node features
+with a residual connection. The node features are then passed through
+a two-layer MLP with ReLU activation. Batch normalization and ReLU
+activation are applied after each GINEConv layer, except for the last
+layer. The final output represents the updated node features.</p><fig id="fig4" position="float"><label>Figure 4</label><caption><p>Architecture
+of the local encoder used in this work. This is similar
+to that used in ref<sup><xref ref-type="bibr" rid="ref3">3</xref></sup>, except that a batch normalization is used to stabilize the training.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_0004" id="gr6" position="float"/></fig></sec><sec id="sec3.3"><label>3.3</label><title>Edge Encoder</title><p>The
+edge encoder is
+responsible for capturing the geometric and chemical information on
+the molecular graph by processing edge attributes such as edge types
+and edge lengths. The edge types include different covalent bond types
+(e.g., single, double, triple, aromatic) as well as graph proximity
+(2-hop and 3-hop) and spatial proximity. The edge encoder takes both
+edge lengths and edge types as input and outputs a feature vector
+representing the encoded edge information (<xref rid="fig5" ref-type="fig">Figure <xref rid="fig5" ref-type="fig">5</xref></xref>). Our work expands upon the edge encoder
+proposed by GeoDiff,<sup><xref ref-type="bibr" rid="ref3">3</xref></sup> which employed a
+multilayer perceptron (MLP) to process edge lengths and combined them
+with bond embeddings using element-wise multiplication.</p><fig id="fig5" position="float"><label>Figure 5</label><caption><p>Architecture
+of the MLP Edge Encoder. This encoder processes edge
+types and lengths, producing feature vectors that capture both geometric
+and chemical information on the molecular graph. Each edge is encoded
+independently, and the numbers specified in the Linear and Embedding
+layers show the number of features used to represent each edge.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_0005" id="gr7" position="float"/></fig><p>Our enhanced MLP Edge Encoder first uses a linear
+layer to expand
+the edge lengths to a higher-dimensional space. These are concatenated
+with edge type embeddings which are also learned using an embedding
+layer. The concatenated features are passed through a multilayer perceptron
+to introduce nonlinearity to allow the model to learn more abstract
+representations. The Gaussian error Linear Unit (GeLU) activation
+function is used in MLP<sub>1</sub> for smooth and efficient activation.<sup><xref ref-type="bibr" rid="ref41">41</xref></sup> The processed edge features are then reintegrated
+with the bond type embeddings and passed through a second MLP. In
+the forward pass of the model, the MLP Edge Encoder is applied to
+all edges in the molecular graph, regardless of their context. The
+encoded edge attributes are then utilized by the subsequent components
+of the model, such as the local and global encoders discussed above.</p></sec><sec id="sec3.4"><label>3.4</label><title>Data Sets</title><p>The data sets used in this
+study include GEOM-QM9 and GEOM-Drugs.<sup><xref ref-type="bibr" rid="ref4">4</xref></sup> These provide a diverse range of molecular structures to comprehensively
+assess the performance and generalization capabilities of our model,
+and a concrete benchmark for comparison to other approaches.</p><p>The GEOM-QM9 data set is a subset of the larger QM9 data set, consisting
+of small organic molecules with up to 9 heavy atoms (C, O, N, and
+F). The data set includes optimized 3D geometries computed using density
+functional theory (DFT), making it valuable for training models aimed
+at predicting molecular conformations. The data set is split into
+training, validation, and test sets, with 40000, 5000, and 200 molecules,
+respectively.</p><p>The GEOM-Drugs data set contains larger and more
+complex drug-like
+molecules, providing a greater challenge due to increased molecular
+size and diversity. The data set is split into training, validation,
+and test sets, with 39000, 5000, and 200 molecules, respectively.</p></sec><sec id="sec3.5"><label>3.5</label><title>Training Procedure</title><p>The Adam optimizer
+is used with a learning rate of 1 &#x000d7; 10<sup>&#x02013;3</sup>, no
+weight decay, and &#x003b2;<sub>1</sub> and &#x003b2;<sub>2</sub> values
+set to 0.95 and 0.999, respectively. A learning rate scheduler of
+type&#x02019;plateau&#x02019; is applied, reducing the learning rate
+by a factor of 0.6 if the validation performance does not improve
+for 10 consecutive validations. Training is conducted using batches
+of 64 for GEOM-QM9 and 32 for GEOM-Drugs. To ensure stable training,
+gradients are clipped to a maximum norm of 10,000 for GEOM-QM9 and
+30,000 for GEOM-Drugs. Model performance is monitored on the validation
+set every 5,000 iterations to ensure effective learning and prevent
+overfitting. A complete set of the model parameters and configurations
+is given in Appendix A.</p></sec></sec><sec id="sec4"><label>4</label><title>Results</title><sec id="sec4.1"><label>4.1</label><title>Analysis
+of Alanine-Dipeptide Diffusion Trajectories</title><p>To understand
+the AGDIFF model&#x02019;s refinement process over
+the course of an inference trajectory, we first study the structure
+generation trajectories of alanine dipeptide. Alanine dipeptide is
+a common benchmarking system in computational chemistry with a well-known
+conformational energy landscape (<xref rid="fig6" ref-type="fig">Figure <xref rid="fig6" ref-type="fig">6</xref></xref>A). <xref rid="fig6" ref-type="fig">Figure <xref rid="fig6" ref-type="fig">6</xref></xref>B shows the RMSD as a function of the 5000 steps for
+a set of 20 trajectories, as well as the mean RMSD. The high initial
+RMSD values (approximately 1.5 nm) decrease quickly in the first few
+time steps, followed by a slower more gradual improvement. By approximately
+3000 steps, the structures are largely locked in, with only minimal
+changes to follow.</p><fig id="fig6" position="float"><label>Figure 6</label><caption><p>A) The 2D (left) and 3D (right) structure of alanine dipeptide.
+Note that this is one of many conformers. B) RMSD to the 3D conformer
+from A measured for 20 different assembly simulations (gray). The
+average is shown as a thick black line.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_0006" id="gr8" position="float"/></fig><p><xref rid="fig7" ref-type="fig">Figure <xref rid="fig7" ref-type="fig">7</xref></xref> visualizes
+the molecular conformations at different timesteps for a representative
+trajectory. The <italic>t</italic> = 0 structure shows randomly distributed
+atoms within a broad envelope. By <italic>t</italic> = 1000 the atoms
+have consolidated, but have not yet found their binding partners.
+The <italic>t</italic> = 2000 structure shows atoms in the correct
+general area, with reasonable bond lengths between atoms, but with
+incorrect local geometries in the angles and torsions. For <italic>t</italic> &#x02265; 3000, the atoms have settled into a reasonable
+conformation, with steadily improving geometric properties over time.
+As many structures are possible, the RMSD is not an absolute measure
+of structural quality, but is only meant to act as a rough indicator
+of assembly progress.</p><fig id="fig7" position="float"><label>Figure 7</label><caption><p>An example alanine dipeptide diffusion trajectory. RMSD
+is calculated
+to the single reference structure in <xref rid="fig6" ref-type="fig">Figure <xref rid="fig6" ref-type="fig">6</xref></xref>A using heavy atoms. The bonds shown in each
+frame are consistent with the final covalent bonding pattern and help
+track the progress of assembly.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_0007" id="gr9" position="float"/></fig><p>By running multiple independent assembly trajectories,
+we can generate
+many possible alanine dipeptide conformations. <xref rid="fig8" ref-type="fig">Figure <xref rid="fig8" ref-type="fig">8</xref></xref> shows four different assembled conformations
+of alanine dipeptide created with different initial conditions and
+random seeds. To more thoroughly assess the quality and diversity
+of the conformations generated by AGDIFF, we analyze the Ramachandran
+plot of alanine dipeptide, which depicts the probability density as
+a function of the dihedral angles &#x003a6; and &#x003a8; (<xref rid="fig9" ref-type="fig">Figure <xref rid="fig9" ref-type="fig">9</xref></xref>).</p><fig id="fig8" position="float"><label>Figure 8</label><caption><p>Generated conformations
+for alanine dipeptide using the AGDIFF
+model.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_0008" id="gr10" position="float"/></fig><fig id="fig9" position="float"><label>Figure 9</label><caption><p>Ramachandran plot for alanine dipeptide, showing
+the probability
+density as a function of dihedral angles &#x003a6; and &#x003a8;. The
+plot is overlaid with 200 generated conformers (orange dots) from
+the AGDIFF model. The color gradient represents the probability density,
+with yellow/green indicating high probability (stable conformations)
+and dark blue/black indicating low probability (less likely conformations).
+The free energy landscape (background) was obtained by calculating
+the density of the dihedral angles &#x003a6; and &#x003a8; (orange points)
+using a Gaussian kernel density estimator (KDE) including periodic
+images of the points. This closely resembles other Ramachandran plots
+of alanine dipeptide in vacuum (e.g., ref<sup><xref ref-type="bibr" rid="ref42">42</xref></sup> and ref.<sup><xref ref-type="bibr" rid="ref43">43</xref></sup>).</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_0009" id="gr11" position="float"/></fig><p>The high probability regions of the plot are largely
+consistent
+with prior studies of alanine dipeptide using quantum mechanical geometry
+optimizations (e.g., <xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref> of ref<sup><xref ref-type="bibr" rid="ref43">43</xref></sup>). The highest probability region on the map is the C7<sub>eq</sub> region, around (&#x003d5;&#x003c8;) = (&#x02212;60,60). This coverage
+extends well to the C5 and &#x003b2; regions, at (&#x003d5;&#x003c8;) =
+(&#x02212;150,150) and (&#x02212;60,150), respectively. The highest
+probability region on the <inline-formula id="d34e773"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m025.gif"/></inline-formula> 0 side was (100,&#x02013;50),
+also consistent
+with previous work. Overall, the coverage of the high-free-energy
+areas demonstrates the accuracy of AGDIFF in identifying a variety
+of stable molecular conformations.</p><p>Moreover, the conformers
+are well-distributed across the entire
+free energy landscape, including regions of lower probability. For
+instance, the small cluster of points around (&#x003d5;&#x003c8;) = (60,150)
+were also previously shown to be a local free energy minimum, although
+globally unstable. This highlights AGDIFF&#x02019;s ability to explore
+the entire conformational space of a molecule, which is valuable for
+chemists studying the conformational ensembles. However, it also underscores
+the need to draw ensembles of structures from the model in order to
+distinguish which structures are the most common. It also highlights
+the importance of using multiple target structures when assessing
+the accuracy of the model predictions.</p></sec><sec id="sec4.2"><label>4.2</label><title>Evaluation
+of Generated Conformation Quality
+and Diversity</title><p>We now shift toward a more broad-scale assessment
+of the model on the testing portions of the QM9 and DRUGS data set
+discussed above. We used two primary metrics, Coverage (COV) and Matching
+(MAT), as introduced by<sup><xref ref-type="bibr" rid="ref44">44</xref></sup>, to compare a set of generated conformations (<italic>S</italic><sub><italic>g</italic></sub>) with a reference set (<italic>S</italic><sub><italic>r</italic></sub>). These metrics are defined as follows:<disp-formula id="eq10"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m026" position="anchor"/><label>10</label></disp-formula><disp-formula id="eq11"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m027" position="anchor"/><label>11</label></disp-formula>where &#x003b4; is a predefined RMSD threshold.
+COV-R measures the proportion of reference conformations covered by
+the generated set, indicating diversity. A higher COV-R score suggests
+a better coverage of the reference conformational space. MAT-R calculates
+the average RMSD between each reference conformation and its nearest
+neighbor in the generated set, indicating quality. A lower MAT-R score
+implies higher quality generated conformations. We also use precision
+counterparts, COV-P and MAT-P, which swap the roles of generated and
+reference sets. COV-P measures the proportion of generated conformations
+close to any reference conformation, while MAT-P computes the average
+RMSD between each generated conformation and its nearest reference
+conformation, focusing on realism and plausibility.</p><p>The RMSD
+threshold &#x003b4; is data set-specific, based on previous studies.<sup><xref ref-type="bibr" rid="ref44">44</xref>,<xref ref-type="bibr" rid="ref45">45</xref></sup> For the QM9 data set, &#x003b4; is set to 0.5 &#x000c5;, and for the
+Drugs data set, &#x003b4; is 1.25 &#x000c5;. These thresholds balance precise
+matching with tolerance for conformational variations. In our experiments,
+we generate a set of conformations <italic>S</italic><sub><italic>g</italic></sub> that is twice the size of the reference set <italic>S</italic><sub><italic>r</italic></sub> for each molecule. This allows
+us to generate structures next to each reference, considering that
+not all reference structures will be of the same probability. It also
+follows previous work, allowing a precise comparison with results
+from GEODIFF.<sup><xref ref-type="bibr" rid="ref3">3</xref></sup> GEODIFF was trained with
+two types of modified ELBO, named &#x0201c;alignment&#x0201d; and &#x0201c;chain-rule&#x0201d;
+approaches. We denote models learned by these two objectives as GEODIFF-A
+and GEODIFF-C respectively, consistent with their nomenclature in
+ref<sup><xref ref-type="bibr" rid="ref3">3</xref></sup>.</p><p><xref rid="tbl1" ref-type="other">Table <xref rid="tbl1" ref-type="other">1</xref></xref> presents
+the results on the GEOM-QM9 data set.<sup><xref ref-type="bibr" rid="ref4">4</xref></sup> Our
+AGDIFF model outperforms the GEODIFF-A and GEODIFF-C baselines across
+all metrics<xref rid="fn1" ref-type="fn">1</xref>. To isolate the contributions of
+individual components we introduced two variants: AGDIFF-EDGE (only
+edge encoder enhancements) and AGDIFF-GLOBAL (only global encoder
+enhancements).<xref rid="fn2" ref-type="fn">2</xref> This approach quantifies the
+impact of each component on AGDIFF&#x02019;s overall performance.</p><table-wrap id="tbl1" position="float"><label>Table 1</label><caption><title>Results on the <bold>GEOM-QM9</bold> Dataset (T =
+5000 Steps)</title></caption><table frame="hsides" rules="groups" border="0"><colgroup><col align="left"/><col align="char" char="."/><col align="char" char="."/><col align="char" char="."/><col align="char" char="."/></colgroup><thead><tr><th style="border:none;" align="center">&#x000a0;</th><th colspan="2" align="center" char=".">COV-R
+(%) &#x02191;<hr/></th><th colspan="2" align="center" char=".">MAT-R
+(&#x000c5;) &#x02193;<hr/></th></tr><tr><th style="border:none;" align="center">Models</th><th style="border:none;" align="center" char=".">Mean</th><th style="border:none;" align="center" char=".">Median</th><th style="border:none;" align="center" char=".">Mean</th><th style="border:none;" align="center" char=".">Median</th></tr></thead><tbody><tr><td style="border:none;" align="left">GraphDG</td><td style="border:none;" align="char" char=".">73.33</td><td style="border:none;" align="char" char=".">84.21</td><td style="border:none;" align="char" char=".">0.4245</td><td style="border:none;" align="char" char=".">0.3973</td></tr><tr><td style="border:none;" align="left">CGCF</td><td style="border:none;" align="char" char=".">78.05</td><td style="border:none;" align="char" char=".">82.48</td><td style="border:none;" align="char" char=".">0.4219</td><td style="border:none;" align="char" char=".">0.3900</td></tr><tr><td style="border:none;" align="left">ConfVAE</td><td style="border:none;" align="char" char=".">77.84</td><td style="border:none;" align="char" char=".">88.20</td><td style="border:none;" align="char" char=".">0.4154</td><td style="border:none;" align="char" char=".">0.3739</td></tr><tr><td style="border:none;" align="left">GeoMol</td><td style="border:none;" align="char" char=".">71.26</td><td style="border:none;" align="char" char=".">72.00</td><td style="border:none;" align="char" char=".">0.3731</td><td style="border:none;" align="char" char=".">0.3731</td></tr><tr><td style="border:none;" align="left">ConfGF</td><td style="border:none;" align="char" char=".">88.49</td><td style="border:none;" align="char" char=".">94.31</td><td style="border:none;" align="char" char=".">0.2673</td><td style="border:none;" align="char" char=".">0.2685</td></tr><tr><td style="border:none;" align="left">GEODIFF-A</td><td style="border:none;" align="char" char=".">90.54</td><td style="border:none;" align="char" char=".">94.61</td><td style="border:none;" align="char" char=".">0.2104</td><td style="border:none;" align="char" char=".">0.2021</td></tr><tr><td style="border:none;" align="left">GEODIFF-C</td><td style="border:none;" align="char" char=".">90.07</td><td style="border:none;" align="char" char=".">93.39</td><td style="border:none;" align="char" char=".">0.2090</td><td style="border:none;" align="char" char=".">0.1988</td></tr><tr><td style="border:none;" align="left">GADIFF</td><td style="border:none;" align="char" char=".">90.50</td><td style="border:none;" align="char" char=".">93.33</td><td style="border:none;" align="char" char=".">0.2142</td><td style="border:none;" align="char" char=".">0.2140</td></tr><tr><td style="border:none;" align="left">AGDIFF-EDGE</td><td style="border:none;" align="char" char=".">91.79</td><td style="border:none;" align="char" char=".">94.84</td><td style="border:none;" align="char" char=".">0.2071</td><td style="border:none;" align="char" char=".">0.2045</td></tr><tr><td style="border:none;" align="left">AGDIFF-GLOBAL</td><td style="border:none;" align="char" char=".">92.30</td><td style="border:none;" align="char" char=".">95.75</td><td style="border:none;" align="char" char=".">0.2200</td><td style="border:none;" align="char" char=".">0.2060</td></tr><tr><td style="border:none;" align="left">AGDIFF</td><td style="border:none;" align="char" char="."><bold>93.08</bold></td><td style="border:none;" align="char" char="."><bold>96.25</bold></td><td style="border:none;" align="char" char="."><bold>0.1965</bold></td><td style="border:none;" align="char" char="."><bold>0.1919</bold></td></tr></tbody></table><table frame="hsides" rules="groups" border="0"><colgroup><col align="left"/><col align="char" char="."/><col align="char" char="."/><col align="char" char="."/><col align="char" char="."/></colgroup><thead><tr><th style="border:none;" align="center">&#x000a0;</th><th colspan="2" align="center" char=".">COV-P
+(%) &#x02191;<hr/></th><th colspan="2" align="center" char=".">MAT-P
+(&#x000c5;) &#x02193;<hr/></th></tr><tr><th style="border:none;" align="center">&#x000a0;</th><th style="border:none;" align="center" char=".">Mean</th><th style="border:none;" align="center" char=".">Median</th><th style="border:none;" align="center" char=".">Mean</th><th style="border:none;" align="center" char=".">Median</th></tr></thead><tbody><tr><td style="border:none;" align="left">GraphDG</td><td style="border:none;" align="char" char=".">43.90</td><td style="border:none;" align="char" char=".">35.33</td><td style="border:none;" align="char" char=".">0.5809</td><td style="border:none;" align="char" char=".">0.5823</td></tr><tr><td style="border:none;" align="left">CGCF</td><td style="border:none;" align="char" char=".">36.49</td><td style="border:none;" align="char" char=".">33.57</td><td style="border:none;" align="char" char=".">0.6615</td><td style="border:none;" align="char" char=".">0.6427</td></tr><tr><td style="border:none;" align="left">ConfVAE</td><td style="border:none;" align="char" char=".">38.02</td><td style="border:none;" align="char" char=".">34.67</td><td style="border:none;" align="char" char=".">0.6215</td><td style="border:none;" align="char" char=".">0.6091</td></tr><tr><td style="border:none;" align="left">ConfGF</td><td style="border:none;" align="char" char=".">46.43</td><td style="border:none;" align="char" char=".">43.41</td><td style="border:none;" align="char" char=".">0.5224</td><td style="border:none;" align="char" char=".">0.5124</td></tr><tr><td style="border:none;" align="left">GEODIFF-A</td><td style="border:none;" align="char" char=".">52.35</td><td style="border:none;" align="char" char=".">50.10</td><td style="border:none;" align="char" char=".">0.4539</td><td style="border:none;" align="char" char=".">0.4399</td></tr><tr><td style="border:none;" align="left">GEODIFF-C</td><td style="border:none;" align="char" char=".">52.79</td><td style="border:none;" align="char" char=".">50.29</td><td style="border:none;" align="char" char=".">0.4448</td><td style="border:none;" align="char" char=".">0.4267</td></tr><tr><td style="border:none;" align="left">GADIFF</td><td style="border:none;" align="char" char="."><bold>59.52</bold></td><td style="border:none;" align="char" char="."><bold>56.41</bold></td><td style="border:none;" align="char" char="."><bold>0.4070</bold></td><td style="border:none;" align="char" char="."><bold>0.3579</bold></td></tr><tr><td style="border:none;" align="left">AGDIFF-EDGE</td><td style="border:none;" align="char" char=".">56.49</td><td style="border:none;" align="char" char=".">55.22</td><td style="border:none;" align="char" char=".">0.4211</td><td style="border:none;" align="char" char=".">0.3897</td></tr><tr><td style="border:none;" align="left">AGDIFF-GLOBAL</td><td style="border:none;" align="char" char=".">55.12</td><td style="border:none;" align="char" char=".">52.63</td><td style="border:none;" align="char" char=".">0.4377</td><td style="border:none;" align="char" char=".">0.4224</td></tr><tr><td style="border:none;" align="left">AGDIFF</td><td style="border:none;" align="char" char=".">56.62</td><td style="border:none;" align="char" char=".">54.69</td><td style="border:none;" align="char" char=".">0.4156</td><td style="border:none;" align="char" char=".">0.3987</td></tr></tbody></table></table-wrap><p>For the coverage metric (COV-R),
+AGDIFF achieves the
+highest mean
+(93.08%) and median (96.25%), surpassing all other models. AGDIFF-GLOBAL
+(mean: 92.30%, median: 95.75%) slightly outperforms AGDIFF-EDGE (mean:
+91.79%, median: 94.84%), and both models show a slight improvement
+over the GEODIFF results. In terms of matching (MAT-R), again AGDIFF
+achieves the lowest values (mean: 0.1965 &#x000c5;, median: 0.1919 &#x000c5;),
+demonstrating superior performance in reducing RMSD. In this measure,
+AGDIFF-EDGE (mean: 0.2071 &#x000c5;, median: 0.2045 &#x000c5;) performs
+slightly better than AGDIFF-GLOBAL (mean: 0.2200 &#x000c5;, median: 0.2060
+&#x000c5;), although both models are in the neighborhood of previous
+GEODIFF results. The precision metrics (COV-P and MAT-P) further confirm
+AGDIFF&#x02019;s enhancements over GEODIFF. AGDIFF achieves a higher
+mean COV-P (56.62%) and lower mean MAT-P (0.4156 &#x000c5;). Notably,
+AGDIFF-EDGE shows strong performance in precision, with the highest
+median COV-P (55.22%) and lowest median MAT-P (0.3897 &#x000c5;) among
+all variants, highlighting the edge encoder&#x02019;s importance for
+precise predictions. These results demonstrate that while both encoder
+enhancements contribute to AGDIFF&#x02019;s performance, they excel
+in different aspects, and across almost all measures, work better
+when combined. We note that GADIFF,<sup><xref ref-type="bibr" rid="ref50">50</xref></sup> another
+attention-enhanced SchNet encoder-based method published recently,
+outperforms AGDIFF in precision metrics for QM9.</p><p><xref rid="tbl2" ref-type="other">Table <xref rid="tbl2" ref-type="other">2</xref></xref> shows the
+results on the GEOM-Drugs data set, which contains larger and more
+complex molecules compared to QM9. AGDIFF again consistently outperforms
+the GEODIFF-A and GEODIFF-C baselines across all metrics. Notably,
+AGDIFF achieves a median COV-R of 100.00%, indicating that it generates
+conformations that fully cover the reference conformational space
+for the majority of molecules in the data set. The lower MAT-R values
+(mean: 0.8237 &#x000c5;, median: 0.8058 &#x000c5;) demonstrate the high
+quality of the generated conformations. The precision metrics, COV-P
+and MAT-P, also showcase the superior performance of AGDIFF, with
+higher COV-P values and lower MAT-P values compared to the GEODIFF
+baselines. We again note that GADIFF<sup><xref ref-type="bibr" rid="ref50">50</xref></sup> shows
+improved performance in comparison to AGDIFF in all metrics for the
+GEOM-Drugs data set besides the median COV-R, where both methods achieved
+100.0%.</p><table-wrap id="tbl2" position="float"><label>Table 2</label><caption><title>Results on the <bold>GEOM-Drugs</bold> Dataset
+(T = 5000 Steps)</title></caption><table frame="hsides" rules="groups" border="0"><colgroup><col align="left"/><col align="char" char="."/><col align="char" char="."/><col align="char" char="."/><col align="char" char="."/></colgroup><thead><tr><th style="border:none;" align="center">&#x000a0;</th><th colspan="2" align="center" char=".">COV-R
+(%) &#x02191;<hr/></th><th colspan="2" align="center" char=".">MAT-R
+(&#x000c5;) &#x02193;<hr/></th></tr><tr><th style="border:none;" align="center">Models</th><th style="border:none;" align="center" char=".">Mean</th><th style="border:none;" align="center" char=".">Median</th><th style="border:none;" align="center" char=".">Mean</th><th style="border:none;" align="center" char=".">Median</th></tr></thead><tbody><tr><td style="border:none;" align="left">GraphDG</td><td style="border:none;" align="char" char=".">8.27</td><td style="border:none;" align="char" char=".">0.00</td><td style="border:none;" align="char" char=".">1.9722</td><td style="border:none;" align="char" char=".">1.9845</td></tr><tr><td style="border:none;" align="left">CGCF</td><td style="border:none;" align="char" char=".">53.96</td><td style="border:none;" align="char" char=".">57.06</td><td style="border:none;" align="char" char=".">1.2487</td><td style="border:none;" align="char" char=".">1.2247</td></tr><tr><td style="border:none;" align="left">ConfVAE</td><td style="border:none;" align="char" char=".">55.20</td><td style="border:none;" align="char" char=".">59.43</td><td style="border:none;" align="char" char=".">1.2380</td><td style="border:none;" align="char" char=".">1.1417</td></tr><tr><td style="border:none;" align="left">GeoMol</td><td style="border:none;" align="char" char=".">67.16</td><td style="border:none;" align="char" char=".">71.71</td><td style="border:none;" align="char" char=".">1.0875</td><td style="border:none;" align="char" char=".">1.0586</td></tr><tr><td style="border:none;" align="left">ConfGF</td><td style="border:none;" align="char" char=".">62.15</td><td style="border:none;" align="char" char=".">70.93</td><td style="border:none;" align="char" char=".">1.1629</td><td style="border:none;" align="char" char=".">1.1596</td></tr><tr><td style="border:none;" align="left">GEODIFF-A</td><td style="border:none;" align="char" char=".">88.36</td><td style="border:none;" align="char" char=".">96.09</td><td style="border:none;" align="char" char=".">0.8704</td><td style="border:none;" align="char" char=".">0.8628</td></tr><tr><td style="border:none;" align="left">GEODIFF-C</td><td style="border:none;" align="char" char=".">89.13</td><td style="border:none;" align="char" char=".">97.88</td><td style="border:none;" align="char" char=".">0.8629</td><td style="border:none;" align="char" char=".">0.8529</td></tr><tr><td style="border:none;" align="left">GADIFF</td><td style="border:none;" align="char" char="."><bold>95.37</bold></td><td style="border:none;" align="char" char="."><bold>100.00</bold></td><td style="border:none;" align="char" char="."><bold>0.6209</bold></td><td style="border:none;" align="char" char="."><bold>0.5960</bold></td></tr><tr><td style="border:none;" align="left">AGDIFF</td><td style="border:none;" align="char" char=".">91.31</td><td style="border:none;" align="char" char="."><bold>100.00</bold></td><td style="border:none;" align="char" char=".">0.8237</td><td style="border:none;" align="char" char=".">0.8058</td></tr></tbody></table><table frame="hsides" rules="groups" border="0"><colgroup><col align="left"/><col align="char" char="."/><col align="char" char="."/><col align="char" char="."/><col align="char" char="."/></colgroup><thead><tr><th style="border:none;" align="center">&#x000a0;</th><th colspan="2" align="center" char=".">COV-P
+(%) &#x02191;<hr/></th><th colspan="2" align="center" char=".">MAT-P
+(&#x000c5;) &#x02193;<hr/></th></tr><tr><th style="border:none;" align="center">&#x000a0;</th><th style="border:none;" align="center" char=".">Mean</th><th style="border:none;" align="center" char=".">Median</th><th style="border:none;" align="center" char=".">Mean</th><th style="border:none;" align="center" char=".">Median</th></tr></thead><tbody><tr><td style="border:none;" align="left">GraphDG</td><td style="border:none;" align="char" char=".">2.08</td><td style="border:none;" align="char" char=".">0.00</td><td style="border:none;" align="char" char=".">2.4340</td><td style="border:none;" align="char" char=".">2.4100</td></tr><tr><td style="border:none;" align="left">CGCF</td><td style="border:none;" align="char" char=".">21.68</td><td style="border:none;" align="char" char=".">13.72</td><td style="border:none;" align="char" char=".">1.8571</td><td style="border:none;" align="char" char=".">1.8066</td></tr><tr><td style="border:none;" align="left">ConfVAE</td><td style="border:none;" align="char" char=".">22.96</td><td style="border:none;" align="char" char=".">14.05</td><td style="border:none;" align="char" char=".">1.8287</td><td style="border:none;" align="char" char=".">1.8159</td></tr><tr><td style="border:none;" align="left">ConfGF</td><td style="border:none;" align="char" char=".">23.42</td><td style="border:none;" align="char" char=".">15.52</td><td style="border:none;" align="char" char=".">1.7219</td><td style="border:none;" align="char" char=".">1.6863</td></tr><tr><td style="border:none;" align="left">GEODIFF-A</td><td style="border:none;" align="char" char=".">60.14</td><td style="border:none;" align="char" char=".">61.25</td><td style="border:none;" align="char" char=".">1.1864</td><td style="border:none;" align="char" char=".">1.1391</td></tr><tr><td style="border:none;" align="left">GEODIFF-C</td><td style="border:none;" align="char" char=".">61.47</td><td style="border:none;" align="char" char=".">64.55</td><td style="border:none;" align="char" char=".">1.1712</td><td style="border:none;" align="char" char=".">1.1232</td></tr><tr><td style="border:none;" align="left">GADIFF</td><td style="border:none;" align="char" char="."><bold>74.59</bold></td><td style="border:none;" align="char" char="."><bold>80.73</bold></td><td style="border:none;" align="char" char="."><bold>0.9282</bold></td><td style="border:none;" align="char" char="."><bold>0.8696</bold></td></tr><tr><td style="border:none;" align="left">AGDIFF</td><td style="border:none;" align="char" char=".">64.34</td><td style="border:none;" align="char" char=".">69.36</td><td style="border:none;" align="char" char=".">1.1316</td><td style="border:none;" align="char" char=".">1.0805</td></tr></tbody></table></table-wrap><p>The Drugs data set contains larger and more
+challenging
+molecules
+than QM9. <xref rid="fig10" ref-type="fig">Figure <xref rid="fig10" ref-type="fig">10</xref></xref> shows predicted structures for three representative molecules in
+the data set. These examples demonstrate the diversity and complexity
+of the molecules, including conjoined aromatic ring structures, polyfluorinated
+compounds, and a diversity of bond types, including C&#x02013;C triple
+bonds. The predicted structures show some revealing differences. For
+RDKit, the local geometry is mostly flawless, but some longer range
+interactions (such as the two adjacent polar &#x02212;NH hydrogens
+in panel B) are clearly suboptimal. In the diffusion approaches there
+are some noticeable imperfections: some aromatic ring structures in
+a) and b) are not perfectly planar, and the methylidyne group in c)
+is nonlinear. But overall this showcases the ability of the AGDIFF
+model to generate realistic and chemically valid conformations for
+more complex, drug-like compounds.</p><fig id="fig10" position="float"><label>Figure 10</label><caption><p>Generated conformations for drug-like
+molecules from the GEOM-Drugs
+data set. Each column displays 3D structures for a given molecule,
+determined using RDKit (top), GeoDiff (middle) and AGDIFF (bottom),
+with its corresponding SMILES string representation shown below. Molecules
+are shown in a licorice representation where carbon is tan, oxygen
+is red, nitrogen is blue, hydrogen is white, and fluorine is green.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_0010" id="gr12" position="float"/></fig></sec><sec id="sec4.3"><label>4.3</label><title>Prediction Accuracy as
+a Function of Molecular
+Flexibility</title><p>We now investigate another means of assessment
+that examines the relationship between structure accuracy and molecular
+flexibility. <xref rid="fig11" ref-type="fig">Figure <xref rid="fig11" ref-type="fig">11</xref></xref> shows the mean RMSD between a given generated structure and the
+entire set of reference structures. This is directly compared with
+the mean RMSD between different reference structures for that compound.
+For the QM9 data set (panel A) we see mean reference-reference RMSDs
+ranging from about 1.0&#x02013;1.9 &#x000c5;. Mean generated-reference
+RMSDs are lower, indicating that our generated structures are high
+quality structures toward the center of the reference distribution.
+For the Drugs data set (panel B), the structures have higher mean
+reference-reference RMSDs, ranging from about 1.5&#x02013;3.1 &#x000c5;.
+The mean generated-reference RMSDs are again mostly lower than the
+reference-reference RMSDs, although we see a strong correlation between
+the two variables. This is unsurprising: for the more flexible targets,
+a broader range of structures will be possible, increasing both reference-reference
+RMSD and generated-reference RMSD.</p><fig id="fig11" position="float"><label>Figure 11</label><caption><p>Scatter plot comparing the mean RMSD
+of each generated structure
+to all of the reference structures (vertical axis) with the mean of
+all reference-reference RMSDs (horizontal axis). Each point represents
+a single compound in the GEOM-QM9 data set (A) or the GEOM-Drugs data
+set (B). The dashed gray lines in both panels indicate <italic>y =
+x</italic>.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_0011" id="gr13" position="float"/></fig><p>To evaluate how the best-case
+performance of the
+model is impacted
+by molecular properties, we built 200 structures for each molecule
+in the QM9 and Drugs test sets, and found the 5 best molecules with
+the smallest RMSDs to one of the target structures. Distributions
+of the Best 5 RMSD for QM9 and Drugs are shown in <xref rid="fig12" ref-type="fig">Figure <xref rid="fig12" ref-type="fig">12</xref></xref>. For QM9, this is sharply
+peaked at approximately 0.05 &#x000c5;, indicating that near perfect
+matches are found for the vast majority of molecules in the data set.
+There are a small group of outlying molecules with higher RMSD values,
+extending to 0.8 &#x000c5;. For Drugs, the distribution is peaked at
+roughly 0.7 &#x000c5;, with the high end of RMSD reaching to 2.1 &#x000c5;. <xref rid="tbl3" ref-type="other">Table <xref rid="tbl3" ref-type="other">3</xref></xref> shows the correlation
+coefficients between molecular properties and the average of the best
+5 RMSD values for each molecule. The correlation matrix for the Drugs
+data set reveals significant relationships between specific molecular
+properties and the average of the best 5 RMSD values, highlighting
+the challenges in accurately predicting conformations for drug-like
+molecules. A high positive correlation of 0.72 between the number
+of atoms and RMSD suggests that larger molecules with more atoms tend
+to have higher RMSD values, indicating increased difficulty in predicting
+their conformations. Similarly, the number of rotatable bonds shows
+a strong positive correlation of 0.55 with RMSD, emphasizing the challenge
+posed by molecular flexibility. The topological polar surface area
+(TPSA) also has a moderate positive correlation of 0.40, and also
+is extensive with the number of atoms. In that vein it is notable
+that the number of hydrogen bond donors does not show a strong correlation
+with RMSD. Finally, the logP shows a weak positive correlation with
+RMSD, indicating that more hydrophobic compounds are more challenging.</p><fig id="fig12" position="float"><label>Figure 12</label><caption><p>Comparison
+of the Best-5 RMSD Distribution between QM9 and Drugs
+Data sets. The top plot represents the QM9 data set, while the bottom
+plot represents the Drugs data set.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_0012" id="gr14" position="float"/></fig><table-wrap id="tbl3" position="float"><label>Table 3</label><caption><title>Correlation Coefficients Between Molecular
+Properties and the Average of RMSD Values for All Test Dataset</title></caption><table frame="hsides" rules="groups" border="0"><colgroup><col align="left"/><col align="char" char="."/><col align="char" char="."/></colgroup><thead><tr><th style="border:none;" align="center">Property</th><th style="border:none;" align="center" char=".">QM9 data set</th><th style="border:none;" align="center" char=".">Drug
+data set</th></tr></thead><tbody><tr><td style="border:none;" align="left">Number of Atoms</td><td style="border:none;" align="char" char=".">0.22</td><td style="border:none;" align="char" char=".">0.72</td></tr><tr><td style="border:none;" align="left">Topological
+Polar Surface Area</td><td style="border:none;" align="char" char=".">0.26</td><td style="border:none;" align="char" char=".">0.40</td></tr><tr><td style="border:none;" align="left">logP</td><td style="border:none;" align="char" char=".">&#x02013;0.06</td><td style="border:none;" align="char" char=".">0.29</td></tr><tr><td style="border:none;" align="left">Number of Hydrogen Donors</td><td style="border:none;" align="char" char=".">0.18</td><td style="border:none;" align="char" char=".">0.08</td></tr><tr><td style="border:none;" align="left">Number of
+Hydrogen Acceptors</td><td style="border:none;" align="char" char=".">0.17</td><td style="border:none;" align="char" char=".">0.38</td></tr><tr><td style="border:none;" align="left">Number of Rotatable Bonds</td><td style="border:none;" align="char" char=".">0.40</td><td style="border:none;" align="char" char=".">0.55</td></tr></tbody></table></table-wrap><p>Similar
+analysis for the QM9 data set does not yield
+much insight,
+possibly due to the relatively low variation in best 5 RMSD values.
+The strongest correlation is seen with the number of rotatable bonds,
+which is intuitive, although this correlation (0.40) is limited by
+the smaller size of the molecules in QM9.</p></sec></sec><sec id="sec5"><label>5</label><title>Limitations</title><p>While AGDIFF demonstrates
+promising results in molecular geometry
+prediction, several limitations and areas for future research warrant
+consideration:<list id="list_0002" list-type="simple"><list-item><label>(1)</label><p>Environmental Conditions: The GEOM-QM9
+data set represents molecular conformations optimized in vacuo at
+0 K using density functional theory (DFT) calculations. Future studies
+should assess AGDIFF&#x02019;s performance on data sets incorporating
+solvent effects and temperature-dependent conformational ensembles,
+such as those derived from ab initio molecular dynamics simulations.
+This extension would provide insights into the model&#x02019;s capability
+to capture environmentally induced conformational changes and entropic
+effects, critical for understanding molecular behavior under physiological
+conditions.</p></list-item><list-item><label>(2)</label><p>Method
+Dependence: The reference data
+in this study relies on specific computational methods (e.g., DFT
+for GEOM-QM9, CREST for GEOM-Drugs). Future research should evaluate
+AGDIFF&#x02019;s performance across data sets generated using various
+levels of theory, including high-level ab initio methods (e.g., coupled-cluster,
+multireference methods) and classical force fields. Such comparisons
+would elucidate the model&#x02019;s sensitivity to underlying energy
+surface representations and its transferability across different computational
+chemistry paradigms.</p></list-item><list-item><label>(3)</label><p>Chemical Property Prediction: Our
+current evaluation metrics focus primarily on structural accuracy.
+Future studies should assess AGDIFF&#x02019;s ability to predict chemically
+relevant properties such as electronic characteristics (e.g., dipole
+moments, polarizabilities), thermodynamic properties (e.g., conformational
+free energies), and spectroscopic observables (e.g., NMR chemical
+shifts, vibrational frequencies). This comprehensive evaluation would
+provide deeper insights into the model&#x02019;s capacity to represent
+the underlying physics and chemistry of molecular systems.</p></list-item><list-item><label>(4)</label><p>Rare Event Sampling: While
+the diffusion
+process in AGDIFF allows for conformational space exploration, it
+may face challenges in capturing rare events or high-energy transition
+states crucial in certain chemical processes. Previous work has shown
+that transition state structures can be generated using reactant and
+product states as input.<sup><xref ref-type="bibr" rid="ref51">51</xref></sup> Future work
+could focus on the prediction of transition state and other lower
+probability structures directly, without end point structures. This
+could potentially incorporate concepts from enhanced sampling techniques
+used in molecular dynamics, such as metadynamics<sup><xref ref-type="bibr" rid="ref52">52</xref></sup> or replica exchange,<sup><xref ref-type="bibr" rid="ref53">53</xref></sup> either
+during the inference process or in the generation of training data.</p></list-item></list></p></sec><sec id="sec6"><label>6</label><title>Conclusions</title><p>We introduced
+AGDIFF, a
+novel computational framework that leverages
+diffusion models for efficient and accurate molecular structure prediction.
+By extending the GeoDiff model with enhancements to the global, local,
+and edge encoders, AGDIFF demonstrates superior performance on both
+the GEOM-QM9 and GEOM-Drugs data sets compared to existing baselines.
+The incorporation of attention mechanisms, improved SchNet architecture,
+batch normalization, and feature expansion techniques enables AGDIFF
+to learn rich and expressive molecular representations while maintaining
+computational efficiency.</p><p>The experimental results highlight
+the effectiveness of AGDIFF
+in generating high-quality and diverse molecular conformations. On
+the GEOM-QM9 data set, AGDIFF achieves a mean COV-R of 93.08% and
+a mean MAT-R of 0.1965 &#x000c5;, surpassing the GeoDiff baselines. Similarly,
+on the more challenging GEOM-Drugs data set, AGDIFF attains a median
+COV-R of 100.00% and a mean MAT-R of 0.8237 &#x000c5;, demonstrating
+its ability to capture the conformational space of complex drug-like
+molecules.</p><p>The qualitative analysis of generated conformations,
+such as the
+Ramachandran plot for alanine dipeptide and the visualization of drug
+molecule predictions, further validates the quality and plausibility
+of the structures generated by AGDIFF. These results underscore the
+potential of AGDIFF to advance molecular modeling techniques and contribute
+to fields such as computational chemistry, drug discovery, and materials
+design.</p><p>Future work could explore the integration of AGDIFF
+with other
+molecular property prediction tasks, such as binding affinity, to
+provide a more comprehensive tool for drug discovery pipelines. Additionally,
+investigating the interpretability of the learned molecular representations
+and the incorporation of domain-specific knowledge could further enhance
+the model&#x02019;s performance and applicability. Another potential
+direction is the incorporation of diffusion models as guiding forces
+in molecular dynamics simulations. The Flexible Topology method,<sup><xref ref-type="bibr" rid="ref54">54</xref></sup> developed by our laboratory, is one means of
+accomplishing this task, which would allow for external environments
+such as solvent or binding site atoms to influence the assembly of
+the diffusive particles as they evolve.</p><p>AGDIFF represents a
+step forward in molecular structure prediction,
+offering a powerful and efficient framework for generating accurate
+and diverse molecular conformations. By leveraging the strengths of
+diffusion models and introducing novel enhancements to the model architecture,
+AGDIFF has the potential to accelerate drug discovery efforts and
+advance our understanding of molecular systems.</p></sec></body><back><app-group><app id="app1"><title>Appendix A</title><sec id="app-sec1"><title>Training Configurations</title><p>AGDIFF employs a dual encoder
+network architecture and utilizes the diffusion model for both GEOM-QM9
+and GEOM-Drugs datasets. The training configurations for both datasets
+are summarized in <xref rid="tbl4" ref-type="other">Tables <xref rid="tbl4" ref-type="other">4</xref></xref> and <xref rid="tbl5" ref-type="other">5</xref>.</p><table-wrap id="tbl4" position="float"><label>Table 4</label><caption><title>Training
+Configuration for GEOM-QM9</title></caption><table frame="hsides" rules="groups" border="0"><colgroup><col align="left"/><col align="left"/></colgroup><thead><tr><th style="border:none;" align="center">Parameter</th><th style="border:none;" align="center">Value</th></tr></thead><tbody><tr><td style="border:none;" align="left">Hidden
+Dimension</td><td style="border:none;" align="left">128</td></tr><tr><td style="border:none;" align="left">Number of Convolutions</td><td style="border:none;" align="left">6</td></tr><tr><td style="border:none;" align="left">Number of Local Convolutions</td><td style="border:none;" align="left">4</td></tr><tr><td style="border:none;" align="left">Cutoff Distance</td><td style="border:none;" align="left">10.0</td></tr><tr><td style="border:none;" align="left">Activation Function</td><td style="border:none;" align="left">ReLU</td></tr><tr><td style="border:none;" align="left">Beta
+Schedule</td><td style="border:none;" align="left">Sigmoid</td></tr><tr><td style="border:none;" align="left">Beta Start</td><td style="border:none;" align="left">1&#x000a0;&#x000d7;&#x000a0;10<sup>&#x02013;7</sup></td></tr><tr><td style="border:none;" align="left">Beta End</td><td style="border:none;" align="left">2&#x000a0;&#x000d7;&#x000a0;10<sup>&#x02013;3</sup></td></tr><tr><td style="border:none;" align="left">Number of Diffusion Timesteps</td><td style="border:none;" align="left">5000</td></tr><tr><td style="border:none;" align="left">Edge Order</td><td style="border:none;" align="left">3</td></tr><tr><td style="border:none;" align="left">Edge Encoder</td><td style="border:none;" align="left">MLP</td></tr><tr><td style="border:none;" align="left">Smooth Convolution</td><td style="border:none;" align="left">False</td></tr><tr><td style="border:none;" align="left">Batch Size</td><td style="border:none;" align="left">64</td></tr><tr><td style="border:none;" align="left">Validation Frequency</td><td style="border:none;" align="left">5000 iterations</td></tr><tr><td style="border:none;" align="left">Maximum Iterations</td><td style="border:none;" align="left">1,000,000</td></tr><tr><td style="border:none;" align="left">Maximum Gradient Norm</td><td style="border:none;" align="left">10,000</td></tr><tr><td style="border:none;" align="left">Anneal Power</td><td style="border:none;" align="left">2.0</td></tr><tr><td style="border:none;" align="left">Optimizer</td><td style="border:none;" align="left">Adam</td></tr><tr><td style="border:none;" align="left">Learning
+Rate</td><td style="border:none;" align="left">1&#x000a0;&#x000d7;&#x000a0;10<sup>&#x02013;3</sup></td></tr><tr><td style="border:none;" align="left">Weight Decay</td><td style="border:none;" align="left">0</td></tr><tr><td style="border:none;" align="left">&#x003b2;<sub>1</sub></td><td style="border:none;" align="left">0.95</td></tr><tr><td style="border:none;" align="left">&#x003b2;<sub>2</sub></td><td style="border:none;" align="left">0.999</td></tr><tr><td style="border:none;" align="left">Scheduler Type</td><td style="border:none;" align="left">Plateau</td></tr><tr><td style="border:none;" align="left">Scheduler
+Factor</td><td style="border:none;" align="left">0.6</td></tr><tr><td style="border:none;" align="left">Scheduler Patience</td><td style="border:none;" align="left">10</td></tr></tbody></table></table-wrap><table-wrap id="tbl5" position="float"><label>Table 5</label><caption><title>Training Configuration for GEOM-Drugs</title></caption><table frame="hsides" rules="groups" border="0"><colgroup><col align="left"/><col align="left"/></colgroup><thead><tr><th style="border:none;" align="center">Parameter</th><th style="border:none;" align="center">Value</th></tr></thead><tbody><tr><td style="border:none;" align="left">Hidden Dimension</td><td style="border:none;" align="left">128</td></tr><tr><td style="border:none;" align="left">Number
+of Convolutions</td><td style="border:none;" align="left">6</td></tr><tr><td style="border:none;" align="left">Number of
+Local Convolutions</td><td style="border:none;" align="left">4</td></tr><tr><td style="border:none;" align="left">Cutoff
+Distance</td><td style="border:none;" align="left">10.0</td></tr><tr><td style="border:none;" align="left">Activation Function</td><td style="border:none;" align="left">ReLU</td></tr><tr><td style="border:none;" align="left">Beta
+Schedule</td><td style="border:none;" align="left">Sigmoid</td></tr><tr><td style="border:none;" align="left">Beta Start</td><td style="border:none;" align="left">1&#x000a0;&#x000d7;&#x000a0;10<sup>&#x02013;7</sup></td></tr><tr><td style="border:none;" align="left">Beta End</td><td style="border:none;" align="left">2&#x000a0;&#x000d7;&#x000a0;10<sup>&#x02013;3</sup></td></tr><tr><td style="border:none;" align="left">Number of Diffusion Timesteps</td><td style="border:none;" align="left">5000</td></tr><tr><td style="border:none;" align="left">Edge Order</td><td style="border:none;" align="left">3</td></tr><tr><td style="border:none;" align="left">Edge Encoder</td><td style="border:none;" align="left">MLP</td></tr><tr><td style="border:none;" align="left">Smooth Convolution</td><td style="border:none;" align="left">True</td></tr><tr><td style="border:none;" align="left">Batch Size</td><td style="border:none;" align="left">32</td></tr><tr><td style="border:none;" align="left">Validation Frequency</td><td style="border:none;" align="left">5000 iterations</td></tr><tr><td style="border:none;" align="left">Maximum Iterations</td><td style="border:none;" align="left">2,000,000</td></tr><tr><td style="border:none;" align="left">Maximum Gradient Norm</td><td style="border:none;" align="left">30,000</td></tr><tr><td style="border:none;" align="left">Anneal Power</td><td style="border:none;" align="left">2.0</td></tr><tr><td style="border:none;" align="left">Optimizer</td><td style="border:none;" align="left">Adam</td></tr><tr><td style="border:none;" align="left">Learning
+Rate</td><td style="border:none;" align="left">1&#x000a0;&#x000d7;&#x000a0;10<sup>&#x02013;3</sup></td></tr><tr><td style="border:none;" align="left">Weight Decay</td><td style="border:none;" align="left">0</td></tr><tr><td style="border:none;" align="left">&#x003b2;<sub>1</sub></td><td style="border:none;" align="left">0.95</td></tr><tr><td style="border:none;" align="left">&#x003b2;<sub>2</sub></td><td style="border:none;" align="left">0.999</td></tr><tr><td style="border:none;" align="left">Scheduler Type</td><td style="border:none;" align="left">Plateau</td></tr><tr><td style="border:none;" align="left">Scheduler
+Factor</td><td style="border:none;" align="left">0.6</td></tr><tr><td style="border:none;" align="left">Scheduler Patience</td><td style="border:none;" align="left">10</td></tr></tbody></table></table-wrap></sec></app><app id="app2"><title>Appendix B</title><sec id="app-sec2"><title>Equivariant Diffusion from
+Invariant Graph Neural Networks</title><p>Here we use the same technique
+implemented by Xu et al.<sup><xref ref-type="bibr" rid="ref3">3</xref></sup> to convert invariant
+graph neural network outputs
+to equivariant conformation gradients (&#x003f5;<sub>&#x003b8;</sub>).
+The outputs from the global and local encoders are sets of features
+for each node that are invariant to translation, rotation, and inversion,
+as they are determined solely using the distances between nodes. The
+global node features are denoted <inline-formula id="d34e1552"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m028.gif"/></inline-formula> for each atom <italic>i</italic>, and the
+local features are denoted <inline-formula id="d34e1557"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m029.gif"/></inline-formula>. Separately for the global and local features,
+a scalar &#x0201c;edge strength&#x0201d; is determined for each edge.
+This is the output of a 3-layer multilayer perceptron (MLP) function
+that takes as input the concatenation of 1) the element-wise product
+of the node features for the source and target nodes corresponding
+to that particular edge, and 2) the edge features for that edge. The
+number of nodes input to each layer is [256, 128, 64], with a final
+output dimension of 1.</p><p>The global (<inline-formula id="d34e1562"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m030.gif"/></inline-formula>) and local (<inline-formula id="d34e1565"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m031.gif"/></inline-formula>)</p><p>edge strengths are used
+to create
+equivariant conformation gradients
+(&#x003f5;<sub>&#x003b8;</sub>) as follows:<disp-formula id="eq12"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m032" position="anchor"/><label>12</label></disp-formula>where <italic>E</italic><sub><italic>i</italic></sub> is the set of destination nodes for edges that originate in
+node <italic>i</italic>, <italic>x</italic><sub><italic>i</italic></sub> is the position of node <italic>i</italic> and <italic>d</italic><sub><italic>ij</italic></sub> is the distance between nodes <italic>i</italic> and <italic>j</italic>. A set of corresponding local transforms
+(<inline-formula id="d34e1599"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m033.gif"/></inline-formula>) are computed using the local
+edge strengths, <inline-formula id="d34e1602"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01896_m034.gif"/></inline-formula>. It is easy to show
+that these will be
+equivariant with changes in the atomic positions {<italic>x</italic><sub><italic>i</italic></sub>}, as they only operate along inter-atomic
+displacement vectors, which rotate along with the reference frame.</p></sec></app></app-group><notes notes-type="data-availability" id="notes4"><title>Data Availability Statement</title><p>The software
+used to produce these results is available in the AGDIFF github repository
+(<uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/ADicksonLab/AGDIFF">https://github.com/ADicksonLab/AGDIFF</uri>). The training data can be found at this link maintained by the
+Harvard dataverse (<uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/JNGTDF">https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/JNGTDF</uri>).</p></notes><notes notes-type="" id="notes1"><title>Author Contributions</title><p>A.B.V.W. and
+A.D. designed the project, A.B.V.W. and F.F.N. wrote the code and
+collected the data, with assistance from A.D. All authors wrote, edited
+and revised the manuscript.</p></notes><notes notes-type="funding-statement" id="notes3"><p>This work was
+supported by grant R01GM130794 from the National Institutes of Health.</p></notes><notes notes-type="COI-statement" id="notes2"><p>The authors
+declare no competing financial interest.</p></notes><fn-group><fn id="fn1"><label>1</label><p>All results
+presented in <xref rid="tbl1" ref-type="other">Tables <xref rid="tbl1" ref-type="other">1</xref></xref> and <xref rid="tbl2" ref-type="other">2</xref>, except those for the AGDIFF and GADIFF
+models, are as reported
+in GeoDiff Xu et al.<sup><xref ref-type="bibr" rid="ref3">3</xref></sup> This includes results
+originally obtained from methods such as CVGAE,<sup><xref ref-type="bibr" rid="ref46">46</xref></sup> GraphDG,<sup><xref ref-type="bibr" rid="ref47">47</xref></sup> CGCF,<sup><xref ref-type="bibr" rid="ref44">44</xref></sup> ConfVAE,<sup><xref ref-type="bibr" rid="ref48">48</xref></sup> ConfGF,<sup><xref ref-type="bibr" rid="ref49">49</xref></sup> and GeoMol,<sup><xref ref-type="bibr" rid="ref45">45</xref></sup> consolidated
+and evaluated in the same experimental settings by Xu et al.<sup><xref ref-type="bibr" rid="ref3">3</xref></sup></p></fn><fn id="fn2"><label>2</label><p>The GADIFF<sup><xref ref-type="bibr" rid="ref50">50</xref></sup> method is another attention-enhanced SchNet
+encoder-based method
+that was reported between manuscript submission and publication and
+is included here for completeness.</p></fn></fn-group><ref-list><title>References</title><ref id="ref1"><mixed-citation publication-type="journal" id="cit1"><person-group person-group-type="allauthors"><name><surname>Li</surname><given-names>P.</given-names></name>; <name><surname>Wang</surname><given-names>J.</given-names></name>; <name><surname>Qiao</surname><given-names>Y.</given-names></name>; <name><surname>Chen</surname><given-names>H.</given-names></name>; <name><surname>Yu</surname><given-names>Y.</given-names></name>; <name><surname>Yao</surname><given-names>X.</given-names></name>; <name><surname>Gao</surname><given-names>P.</given-names></name>; <name><surname>Xie</surname><given-names>G.</given-names></name>; <name><surname>Song</surname><given-names>S.</given-names></name></person-group><article-title>Learn molecular representations
+from large-scale unlabeled molecules for drug discovery</article-title>. <source>arXiv</source>, <year>2020</year>.</mixed-citation></ref><ref id="ref2"><mixed-citation publication-type="journal" id="cit2"><name><surname>Landrum</surname><given-names>G.</given-names></name>
+<article-title>Rdkit documentation</article-title>. <source>Release</source>
+<year>2013</year>, <volume>1</volume> (<issue>1&#x02013;79</issue>), <fpage>4</fpage>.</mixed-citation></ref><ref id="ref3"><mixed-citation publication-type="book" id="cit3"><person-group person-group-type="allauthors"><name><surname>Xu</surname><given-names>M.</given-names></name>; <name><surname>Yu</surname><given-names>L.</given-names></name>; <name><surname>Song</surname><given-names>Y.</given-names></name>; <name><surname>Shi</surname><given-names>C.</given-names></name>; <name><surname>Ermon</surname><given-names>S.</given-names></name>; <name><surname>Tang</surname><given-names>J.</given-names></name></person-group><article-title>Geodiff: A geometric diffusion model for molecular conformation generation</article-title> In <source>International Conference on Learning Representations</source>, <publisher-name>ICLR</publisher-name>, <year>2022</year>.</mixed-citation></ref><ref id="ref4"><mixed-citation publication-type="journal" id="cit4"><name><surname>Axelrod</surname><given-names>S.</given-names></name>; <name><surname>Gomez-Bombarelli</surname><given-names>R.</given-names></name>
+<article-title>GEOM, energy-annotated molecular
+conformations for
+property prediction and molecular generation</article-title>. <source>Sci. Data</source>
+<year>2022</year>, <volume>9</volume>, <fpage>185</fpage><pub-id pub-id-type="doi">10.1038/s41597-022-01288-4</pub-id>.<pub-id pub-id-type="pmid">35449137</pub-id>
+</mixed-citation></ref><ref id="ref5"><mixed-citation publication-type="journal" id="cit5"><name><surname>Pissurlenkar</surname><given-names>R. R. S.</given-names></name>; <name><surname>Shaikh</surname><given-names>M. S.</given-names></name>; <name><surname>Iyer</surname><given-names>R. P.</given-names></name>; <name><surname>Coutinho</surname><given-names>E. C.</given-names></name>
+<article-title>Molecular mechanics
+force fields and their applications in drug design</article-title>. <source>Anti-Infect. Agents Med. Chem.</source>
+<year>2009</year>, <volume>8</volume> (<issue>2</issue>), <fpage>128</fpage>&#x02013;<lpage>150</lpage>. <pub-id pub-id-type="doi">10.2174/187152109787846088</pub-id>.</mixed-citation></ref><ref id="ref6"><mixed-citation publication-type="journal" id="cit6"><name><surname>Bryce</surname><given-names>R. A.</given-names></name>; <name><surname>Hillier</surname><given-names>I. H.</given-names></name>
+<article-title>Quantum chemical approaches: Semiempirical
+molecular
+orbital and hybrid quantum mechanical/molecular mechanical techniques</article-title>. <source>Curr. Pharm. Des.</source>
+<year>2014</year>, <volume>20</volume> (<issue>20</issue>), <fpage>3293</fpage>&#x02013;<lpage>3302</lpage>. <pub-id pub-id-type="doi">10.2174/13816128113199990601</pub-id>.<pub-id pub-id-type="pmid">23947649</pub-id>
+</mixed-citation></ref><ref id="ref7"><mixed-citation publication-type="journal" id="cit7"><name><surname>McNamara</surname><given-names>J. P.</given-names></name>; <name><surname>Hillier</surname><given-names>I. H.</given-names></name>
+<article-title>Semi-empirical molecular
+orbital methods including
+dispersion corrections for the accurate prediction of the full range
+of intermolecular interactions in biomolecules</article-title>. <source>Phys. Chem. Chem. Phys.</source>
+<year>2007</year>, <volume>9</volume> (<issue>19</issue>), <fpage>2362</fpage>&#x02013;<lpage>2370</lpage>. <pub-id pub-id-type="doi">10.1039/b701890h</pub-id>.<pub-id pub-id-type="pmid">17492099</pub-id>
+</mixed-citation></ref><ref id="ref8"><mixed-citation publication-type="journal" id="cit8"><name><surname>Wilson</surname><given-names>S. R.</given-names></name>; <name><surname>Cui</surname><given-names>W.</given-names></name>; <name><surname>Moskowitz</surname><given-names>J. W.</given-names></name>; <name><surname>Schmidt</surname><given-names>K. E.</given-names></name>
+<article-title>Applications of simulated annealing
+to the conformational analysis of flexible molecules</article-title>. <source>J. Comput. Chem.</source>
+<year>1991</year>, <volume>12</volume> (<issue>3</issue>), <fpage>342</fpage>&#x02013;<lpage>349</lpage>. <pub-id pub-id-type="doi">10.1002/jcc.540120307</pub-id>.</mixed-citation></ref><ref id="ref9"><mixed-citation publication-type="journal" id="cit9"><name><surname>Parish</surname><given-names>C.</given-names></name>; <name><surname>Lombardi</surname><given-names>R.</given-names></name>; <name><surname>Sinclair</surname><given-names>K.</given-names></name>; <name><surname>Smith</surname><given-names>E.</given-names></name>; <name><surname>Goldberg</surname><given-names>A.</given-names></name>; <name><surname>Rappleye</surname><given-names>M.</given-names></name>; <name><surname>Dure</surname><given-names>M.</given-names></name>
+<article-title>A comparison
+of the low mode and
+monte carlo conformational search methods</article-title>. <source>J.
+Mol. Graphics Modell.</source>
+<year>2002</year>, <volume>21</volume> (<issue>2</issue>), <fpage>129</fpage>&#x02013;<lpage>150</lpage>. <pub-id pub-id-type="doi">10.1016/S1093-3263(02)00144-4</pub-id>.</mixed-citation></ref><ref id="ref10"><mixed-citation publication-type="journal" id="cit10"><name><surname>LaPointe</surname><given-names>S. M.</given-names></name>; <name><surname>Weaver</surname><given-names>D. F.</given-names></name>
+<article-title>A review of density
+functional theory quantum mechanics
+as applied to pharmaceutically relevant systems</article-title>. <source>Curr. Comput.-Aided Drug Des.</source>
+<year>2007</year>, <volume>3</volume> (<issue>4</issue>), <fpage>290</fpage>&#x02013;<lpage>296</lpage>. <pub-id pub-id-type="doi">10.2174/157340907782799390</pub-id>.</mixed-citation></ref><ref id="ref11"><mixed-citation publication-type="journal" id="cit11"><name><surname>Ratcliff</surname><given-names>L. E.</given-names></name>; <name><surname>Mohr</surname><given-names>S.</given-names></name>; <name><surname>Huhs</surname><given-names>G.</given-names></name>; <name><surname>Deutsch</surname><given-names>T.</given-names></name>; <name><surname>Masella</surname><given-names>M.</given-names></name>; <name><surname>Genovese</surname><given-names>L.</given-names></name>
+<article-title>Challenges in large
+scale quantum mechanical calculations</article-title>. <source>Wiley
+Interdiscip. Rev.: Comput. Mol. Sci.</source>
+<year>2017</year>, <volume>7</volume> (<issue>1</issue>), <elocation-id>e1290</elocation-id><pub-id pub-id-type="doi">10.1002/wcms.1290</pub-id>.</mixed-citation></ref><ref id="ref12"><mixed-citation publication-type="journal" id="cit12"><name><surname>Xu</surname><given-names>Y.</given-names></name>; <name><surname>Lin</surname><given-names>K.</given-names></name>; <name><surname>Wang</surname><given-names>S.</given-names></name>; <name><surname>Wang</surname><given-names>L.</given-names></name>; <name><surname>Cai</surname><given-names>C.</given-names></name>; <name><surname>Song</surname><given-names>C.</given-names></name>; <name><surname>Lai</surname><given-names>L.</given-names></name>; <name><surname>Pei</surname><given-names>J.</given-names></name>
+<article-title>Deep learning for molecular generation</article-title>. <source>Future Med. Chem.</source>
+<year>2019</year>, <volume>11</volume> (<issue>6</issue>), <fpage>567</fpage>&#x02013;<lpage>597</lpage>. <pub-id pub-id-type="doi">10.4155/fmc-2018-0358</pub-id>.<pub-id pub-id-type="pmid">30698019</pub-id>
+</mixed-citation></ref><ref id="ref13"><mixed-citation publication-type="journal" id="cit13"><name><surname>Dudek</surname><given-names>A. Z.</given-names></name>; <name><surname>Arodz</surname><given-names>T.</given-names></name>; <name><surname>G&#x000e1;lvez</surname><given-names>J.</given-names></name>
+<article-title>Computational
+methods in developing
+quantitative structure-activity relationships (qsar): A review</article-title>. <source>Comb. Chem. High Throughput Screening</source>
+<year>2006</year>, <volume>9</volume> (<issue>3</issue>), <fpage>213</fpage>&#x02013;<lpage>228</lpage>. <pub-id pub-id-type="doi">10.2174/138620706776055539</pub-id>.</mixed-citation></ref><ref id="ref14"><mixed-citation publication-type="journal" id="cit14"><name><surname>Randi&#x00107;</surname><given-names>M.</given-names></name>
+<article-title>Generalized
+molecular descriptors</article-title>. <source>J. Math. Chem.</source>
+<year>1991</year>, <volume>7</volume> (<issue>1</issue>), <fpage>155</fpage>&#x02013;<lpage>168</lpage>. <pub-id pub-id-type="doi">10.1007/BF01200821</pub-id>.</mixed-citation></ref><ref id="ref15"><mixed-citation publication-type="journal" id="cit15"><name><surname>Raevsky</surname><given-names>O.
+A.</given-names></name>
+<article-title>Physicochemical
+descriptors in property-based drug design</article-title>. <source>Mini-Rev.
+Med. Chem.</source>
+<year>2004</year>, <volume>4</volume> (<issue>10</issue>), <fpage>1041</fpage>&#x02013;<lpage>1052</lpage>. <pub-id pub-id-type="doi">10.2174/1389557043402964</pub-id>.<pub-id pub-id-type="pmid">15579112</pub-id>
+</mixed-citation></ref><ref id="ref16"><mixed-citation publication-type="journal" id="cit16"><name><surname>Nayarisseri</surname><given-names>A.</given-names></name>; <name><surname>Khandelwal</surname><given-names>R.</given-names></name>; <name><surname>Tanwar</surname><given-names>P.</given-names></name>; <name><surname>Madhavi</surname><given-names>M.</given-names></name>; <name><surname>Sharma</surname><given-names>D.</given-names></name>; <name><surname>Thakur</surname><given-names>G.</given-names></name>; <name><surname>Speck-Planche</surname><given-names>A.</given-names></name>; <name><surname>Singh</surname><given-names>S. K.</given-names></name>
+<article-title>Artificial Intelligence,
+Big Data and Machine Learning Approaches in Precision Medicine &#x00026;
+Drug Discovery</article-title>. <source>Curr. Drug Targets</source>
+<year>2021</year>, <volume>22</volume> (<issue>6</issue>), <fpage>631</fpage>&#x02013;<lpage>655</lpage>. <pub-id pub-id-type="doi">10.2174/18735592MTEzsMDMnz</pub-id>.<pub-id pub-id-type="pmid">33397265</pub-id>
+</mixed-citation></ref><ref id="ref17"><mixed-citation publication-type="journal" id="cit17"><name><surname>Win</surname><given-names>Z.-M.</given-names></name>; <name><surname>Cheong</surname><given-names>A. M.</given-names></name>; <name><surname>Hopkins</surname><given-names>W. S.</given-names></name>
+<article-title>Using machine
+learning to predict
+partition coefficient (log p) and distribution coefficient (log d)
+with molecular descriptors and liquid chromatography retention time</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2023</year>, <volume>63</volume> (<issue>7</issue>), <fpage>1906</fpage>&#x02013;<lpage>1913</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.2c01373</pub-id>.<pub-id pub-id-type="pmid">36926888</pub-id>
+</mixed-citation></ref><ref id="ref18"><mixed-citation publication-type="journal" id="cit18"><name><surname>Scalia</surname><given-names>G.</given-names></name>; <name><surname>Grambow</surname><given-names>C. A.</given-names></name>; <name><surname>Pernici</surname><given-names>B.</given-names></name>; <name><surname>Li</surname><given-names>Y.-P.</given-names></name>; <name><surname>Green</surname><given-names>W. H.</given-names></name>
+<article-title>Evaluating
+scalable uncertainty estimation methods for deep learning-based molecular
+property prediction</article-title>. <source>J. Chem. Inf. Model.</source>
+<year>2020</year>, <volume>60</volume> (<issue>6</issue>), <fpage>2697</fpage>&#x02013;<lpage>2717</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jcim.9b00975</pub-id>.<pub-id pub-id-type="pmid">32243154</pub-id>
+</mixed-citation></ref><ref id="ref19"><mixed-citation publication-type="journal" id="cit19"><name><surname>Wieder</surname><given-names>O.</given-names></name>; <name><surname>Kohlbacher</surname><given-names>S.</given-names></name>; <name><surname>Kuenemann</surname><given-names>M.</given-names></name>; <name><surname>Garon</surname><given-names>A.</given-names></name>; <name><surname>Ducrot</surname><given-names>P.</given-names></name>; <name><surname>Seidel</surname><given-names>T.</given-names></name>; <name><surname>Langer</surname><given-names>T.</given-names></name>
+<article-title>A compact review of molecular property
+prediction with graph neural networks</article-title>. <source>Drug
+Discovery Today: Technol.</source>
+<year>2020</year>, <volume>37</volume>, <fpage>1</fpage>&#x02013;<lpage>12</lpage>. <pub-id pub-id-type="doi">10.1016/j.ddtec.2020.11.009</pub-id>.</mixed-citation></ref><ref id="ref20"><mixed-citation publication-type="journal" id="cit20"><name><surname>Yi</surname><given-names>H.-C.</given-names></name>; <name><surname>You</surname><given-names>Z.-H.</given-names></name>; <name><surname>Huang</surname><given-names>D.-S.</given-names></name>; <name><surname>Kwoh</surname><given-names>C. K.</given-names></name>
+<article-title>Graph representation
+learning in bioinformatics: Trends, methods and applications</article-title>. <source>Briefings Bioinf.</source>
+<year>2022</year>, <volume>23</volume> (<issue>1</issue>), <fpage>bbab340</fpage><pub-id pub-id-type="doi">10.1093/bib/bbab340</pub-id>.</mixed-citation></ref><ref id="ref21"><mixed-citation publication-type="journal" id="cit21"><name><surname>Xiong</surname><given-names>Z.</given-names></name>; <name><surname>Wang</surname><given-names>D.</given-names></name>; <name><surname>Liu</surname><given-names>X.</given-names></name>; <name><surname>Zhong</surname><given-names>F.</given-names></name>; <name><surname>Wan</surname><given-names>X.</given-names></name>; <name><surname>Li</surname><given-names>X.</given-names></name>; <name><surname>Li</surname><given-names>Z.</given-names></name>; <name><surname>Luo</surname><given-names>X.</given-names></name>; <name><surname>Chen</surname><given-names>K.</given-names></name>; <name><surname>Jiang</surname><given-names>H.</given-names></name>
+<article-title>Pushing the
+Boundaries of Molecular Representation for Drug Discovery with the
+Graph Attention Mechanism</article-title>. <source>J. Med. Chem.</source>
+<year>2020</year>, <volume>63</volume>, <fpage>8749</fpage>&#x02013;<lpage>8760</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jmedchem.9b00959</pub-id>.<pub-id pub-id-type="pmid">31408336</pub-id>
+</mixed-citation></ref><ref id="ref22"><mixed-citation publication-type="book" id="cit22"><person-group person-group-type="allauthors"><name><surname>Gao</surname><given-names>F.</given-names></name>; <name><surname>Wolf</surname><given-names>G.</given-names></name>; <name><surname>Hirn</surname><given-names>M.</given-names></name></person-group><article-title>Geometric scattering
+for graph data
+analysis</article-title> In <source>Proceedings of the 36th International
+Conference on Machine Learning</source>, <publisher-name>PMLR</publisher-name><year>2019</year>.</mixed-citation></ref><ref id="ref23"><mixed-citation publication-type="journal" id="cit23"><name><surname>Donyapour</surname><given-names>N.</given-names></name>; <name><surname>Hirn</surname><given-names>M.</given-names></name>; <name><surname>Dickson</surname><given-names>A.</given-names></name>
+<article-title>Classicalgsg: Prediction of log p
+using classical molecular force fields and geometric scattering for
+graphs</article-title>. <source>J. Comput. Chem.</source>
+<year>2021</year>, <volume>42</volume>, <fpage>1006</fpage>&#x02013;<lpage>1017</lpage>. <pub-id pub-id-type="doi">10.1002/jcc.26519</pub-id>.<pub-id pub-id-type="pmid">33786857</pub-id>
+</mixed-citation></ref><ref id="ref24"><mixed-citation publication-type="journal" id="cit24"><name><surname>Donyapour</surname><given-names>N.</given-names></name>; <name><surname>Dickson</surname><given-names>A.</given-names></name>
+<article-title>Predicting partition
+coefficients for the sampl7 physical
+property challenge using the classicalgsg method</article-title>. <source>J. Comput.-Aided Mol. Des.</source>
+<year>2021</year>, <volume>35</volume>, <fpage>819</fpage>&#x02013;<lpage>830</lpage>. <pub-id pub-id-type="doi">10.1007/s10822-021-00400-x</pub-id>.<pub-id pub-id-type="pmid">34181200</pub-id>
+</mixed-citation></ref><ref id="ref25"><mixed-citation publication-type="journal" id="cit25"><name><surname>Croitoru</surname><given-names>F.-A.</given-names></name>; <name><surname>Hondru</surname><given-names>V.</given-names></name>; <name><surname>Ionescu</surname><given-names>R. T.</given-names></name>; <name><surname>Shah</surname><given-names>M.</given-names></name>
+<article-title>Diffusion
+models in
+vision: A survey</article-title>. <source>IEEE Trans. Pattern Anal.
+Mach. Intell.</source>
+<year>2023</year>, <volume>45</volume>, <fpage>10850</fpage>&#x02013;<lpage>10869</lpage>. <pub-id pub-id-type="doi">10.1109/TPAMI.2023.3261988</pub-id>.<pub-id pub-id-type="pmid">37030794</pub-id>
+</mixed-citation></ref><ref id="ref26"><mixed-citation publication-type="book" id="cit26"><person-group person-group-type="allauthors"><name><surname>Luo</surname><given-names>S.</given-names></name>; <name><surname>Hu</surname><given-names>W.</given-names></name></person-group><article-title>Diffusion
+probabilistic models
+for 3d point cloud generation</article-title> In <source>Proceedings
+of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</source>, <publisher-name>IEEE</publisher-name>, <year>2021</year>, <fpage>2837</fpage>&#x02013;<lpage>2845</lpage>.</mixed-citation></ref><ref id="ref27"><mixed-citation publication-type="journal" id="cit27"><person-group person-group-type="allauthors"><name><surname>Liao</surname><given-names>Y.-L.</given-names></name>; <name><surname>Smidt</surname><given-names>T.</given-names></name></person-group><article-title>Equiformer: Equivariant
+graph attention transformer for 3d atomistic graphs</article-title>. <source>arXiv</source>, <year>2022</year>.</mixed-citation></ref><ref id="ref28"><mixed-citation publication-type="journal" id="cit28"><person-group person-group-type="allauthors"><name><surname>Liao</surname><given-names>Y.-L.</given-names></name>; <name><surname>Wood</surname><given-names>B.</given-names></name>; <name><surname>Das</surname><given-names>A.</given-names></name>; <name><surname>Smidt</surname><given-names>T.</given-names></name></person-group><article-title>Equiformerv2: Improved equivariant
+transformer for scaling to higher-degree representations</article-title>. <source>arXiv</source>, <year>2023</year>.</mixed-citation></ref><ref id="ref29"><mixed-citation publication-type="book" id="cit29"><person-group person-group-type="allauthors"><name><surname>Satorras</surname><given-names>V. G.</given-names></name>; <name><surname>Hoogeboom</surname><given-names>E.</given-names></name>; <name><surname>Welling</surname><given-names>M.</given-names></name></person-group><article-title>E (n) equivariant
+graph neural networks</article-title>in <source>International conference
+on machine learning</source>. <publisher-name>PMLR</publisher-name>, <year>2021</year>; pp <fpage>9323</fpage>&#x02013;<lpage>9332</lpage>.</mixed-citation></ref><ref id="ref30"><mixed-citation publication-type="journal" id="cit30"><person-group person-group-type="allauthors"><name><surname>Hoogeboom</surname><given-names>E.</given-names></name>; <name><surname>Satorras</surname><given-names>V. G.</given-names></name>; <name><surname>Vignac</surname><given-names>C.</given-names></name>; <name><surname>Welling</surname><given-names>M.</given-names></name></person-group><article-title>Equivariant diffusion
+for molecule generation in 3d</article-title>. <source>arXiv</source>, <year>2022</year>.</mixed-citation></ref><ref id="ref31"><mixed-citation publication-type="journal" id="cit31"><name><surname>Yang</surname><given-names>L.</given-names></name>; <name><surname>Zhang</surname><given-names>Z.</given-names></name>; <name><surname>Song</surname><given-names>Y.</given-names></name>; <name><surname>Hong</surname><given-names>S.</given-names></name>; <name><surname>Xu</surname><given-names>R.</given-names></name>; <name><surname>Zhao</surname><given-names>Y.</given-names></name>; <name><surname>Zhang</surname><given-names>W.</given-names></name>; <name><surname>Cui</surname><given-names>B.</given-names></name>; <name><surname>Yang</surname><given-names>M.-H.</given-names></name>
+<article-title>Diffusion
+Models: A Comprehensive Survey of Methods and Applications</article-title>. <source>ACM Comput. Surv.</source>
+<year>2024</year>, <volume>56</volume> (<issue>4</issue>), <fpage>1</fpage>&#x02013;<lpage>39</lpage>. <pub-id pub-id-type="doi">10.1145/3626235</pub-id>.</mixed-citation></ref><ref id="ref32"><mixed-citation publication-type="journal" id="cit32"><person-group person-group-type="allauthors"><name><surname>Sohl-Dickstein</surname><given-names>J.</given-names></name>; <name><surname>Weiss</surname><given-names>E. A.</given-names></name>; <name><surname>Maheswaranathan</surname><given-names>N.</given-names></name>; <name><surname>Ganguli</surname><given-names>S.</given-names></name></person-group><article-title>Deep
+Unsupervised Learning using Nonequilibrium Thermodynamics</article-title>. <source>arXiv</source>, <year>2015</year>.</mixed-citation></ref><ref id="ref33"><mixed-citation publication-type="journal" id="cit33"><person-group person-group-type="allauthors"><name><surname>Ho</surname><given-names>J.</given-names></name>; <name><surname>Jain</surname><given-names>A.</given-names></name>; <name><surname>Abbeel</surname><given-names>P.</given-names></name></person-group><article-title>Denoising Diffusion Probabilistic
+Models</article-title>. <source>arXiv</source>, <year>2020</year>.</mixed-citation></ref><ref id="ref34"><mixed-citation publication-type="journal" id="cit34"><person-group person-group-type="allauthors"><name><surname>Song</surname><given-names>Y.</given-names></name>; <name><surname>Ermon</surname><given-names>S.</given-names></name></person-group><article-title>Generative Modeling
+by Estimating
+Gradients of the Data Distribution</article-title>. <source>arXiv</source>, <year>2020</year>.</mixed-citation></ref><ref id="ref35"><mixed-citation publication-type="journal" id="cit35"><person-group person-group-type="allauthors"><name><surname>Karras</surname><given-names>T.</given-names></name>; <name><surname>Aittala</surname><given-names>M.</given-names></name>; <name><surname>Aila</surname><given-names>T.</given-names></name>; <name><surname>Laine</surname><given-names>S.</given-names></name></person-group><article-title>Elucidating the Design Space of Diffusion-Based
+Generative Models</article-title>. <source>arXiv</source>, <year>2022</year>.</mixed-citation></ref><ref id="ref36"><mixed-citation publication-type="book" id="cit36"><person-group person-group-type="allauthors"><name><surname>Sch&#x000fc;tt</surname><given-names>K.</given-names></name>; <name><surname>Kindermans</surname><given-names>P.-J.</given-names></name>; <name><surname>Sauceda Felix</surname><given-names>H. E.</given-names></name>; <name><surname>Chmiela</surname><given-names>S.</given-names></name>; <name><surname>Tkatchenko</surname><given-names>A.</given-names></name>; <name><surname>M&#x000fc;ller</surname><given-names>K.-R.</given-names></name></person-group><article-title>Schnet: A continuous-filter convolutional
+neural network for modeling
+quantum interactions</article-title> In <source>Advances in neural
+information processing systems</source>, <publisher-name>NIPS</publisher-name>, <year>2017</year>, <volume>30</volume>.</mixed-citation></ref><ref id="ref37"><mixed-citation publication-type="journal" id="cit37"><name><surname>Batzner</surname><given-names>S.</given-names></name>; <name><surname>Musaelian</surname><given-names>A.</given-names></name>; <name><surname>Sun</surname><given-names>L.</given-names></name>; <name><surname>Geiger</surname><given-names>M.</given-names></name>; <name><surname>Mailoa</surname><given-names>J. P.</given-names></name>; <name><surname>Kornbluth</surname><given-names>M.</given-names></name>; <name><surname>Molinari</surname><given-names>N.</given-names></name>; <name><surname>Smidt</surname><given-names>T. E.</given-names></name>; <name><surname>Kozinsky</surname><given-names>B.</given-names></name>
+<article-title>E(3)-equivariant
+graph neural networks for data-efficient and accurate interatomic
+potentials</article-title>. <source>Nat. Commun.</source>
+<year>2022</year>, <volume>13</volume> (<issue>1</issue>), <fpage>2453</fpage><pub-id pub-id-type="doi">10.1038/s41467-022-29939-5</pub-id>.<pub-id pub-id-type="pmid">35508450</pub-id>
+</mixed-citation></ref><ref id="ref38"><mixed-citation publication-type="journal" id="cit38"><person-group person-group-type="allauthors"><name><surname>Fu</surname><given-names>X.</given-names></name>; <name><surname>Wu</surname><given-names>Z.</given-names></name>; <name><surname>Wang</surname><given-names>W.</given-names></name>; <name><surname>Xie</surname><given-names>T.</given-names></name>; <name><surname>Research</surname><given-names>M.</given-names></name>; <name><surname>Gomez-Bombarelli</surname><given-names>R.</given-names></name>; <name><surname>Jaakkola</surname><given-names>T.</given-names></name></person-group><article-title>Forces are not enough: Benchmark
+and
+critical evaluation for machine learning force fields with molecular
+simulations</article-title>. <source>arXiv</source>, <year>2022</year>.</mixed-citation></ref><ref id="ref39"><mixed-citation publication-type="journal" id="cit39"><person-group person-group-type="allauthors"><name><surname>Vaswani</surname><given-names>A.</given-names></name>; <name><surname>Shazeer</surname><given-names>N.</given-names></name>; <name><surname>Parmar</surname><given-names>N.</given-names></name>; <name><surname>Uszkoreit</surname><given-names>J.</given-names></name>; <name><surname>Jones</surname><given-names>L.</given-names></name>; <name><surname>Gomez</surname><given-names>A. N.</given-names></name>; <name><surname>Kaiser</surname><given-names>L.</given-names></name>; <name><surname>Polosukhin</surname><given-names>I.</given-names></name></person-group><article-title>Attention
+is all you need</article-title>. <source>arXiv</source>, <year>2017</year>.</mixed-citation></ref><ref id="ref40"><mixed-citation publication-type="journal" id="cit40"><person-group person-group-type="allauthors"><name><surname>Hu</surname><given-names>W.</given-names></name>; <name><surname>Liu</surname><given-names>B.</given-names></name>; <name><surname>Gomes</surname><given-names>J.</given-names></name>; <name><surname>Zitnik</surname><given-names>M.</given-names></name>; <name><surname>Liang</surname><given-names>P.</given-names></name>; <name><surname>Pande</surname><given-names>V.</given-names></name>; <name><surname>Leskovec</surname><given-names>J.</given-names></name></person-group><article-title>Strategies for pre-training graph
+neural networks</article-title>. <source>arXiv</source>, <year>2019</year>.</mixed-citation></ref><ref id="ref41"><mixed-citation publication-type="journal" id="cit41"><person-group person-group-type="allauthors"><name><surname>Hendrycks</surname><given-names>D.</given-names></name>; <name><surname>Gimpel</surname><given-names>K.</given-names></name></person-group><article-title>Gaussian error
+linear units (gelus)</article-title>. <source>arXiv</source>, <year>2016</year>.</mixed-citation></ref><ref id="ref42"><mixed-citation publication-type="journal" id="cit42"><name><surname>Bolhuis</surname><given-names>P. G.</given-names></name>; <name><surname>Dellago</surname><given-names>C.</given-names></name>; <name><surname>Chandler</surname><given-names>D.</given-names></name>
+<article-title>Reaction coordinates
+of biomolecular
+isomerization</article-title>. <source>Proc. Natl. Acad. Sci. U. S.
+A.</source>
+<year>2000</year>, <volume>97</volume> (<issue>11</issue>), <fpage>5877</fpage>&#x02013;<lpage>5882</lpage>. <pub-id pub-id-type="doi">10.1073/pnas.100127697</pub-id>.<pub-id pub-id-type="pmid">10801977</pub-id>
+</mixed-citation></ref><ref id="ref43"><mixed-citation publication-type="journal" id="cit43"><name><surname>Mironov</surname><given-names>V.</given-names></name>; <name><surname>Alexeev</surname><given-names>Y.</given-names></name>; <name><surname>Mulligan</surname><given-names>V. K.</given-names></name>; <name><surname>Fedorov</surname><given-names>D. G.</given-names></name>
+<article-title>A systematic study
+of minima in alanine dipeptide</article-title>. <source>J. Comput. Chem.</source>
+<year>2019</year>, <volume>40</volume> (<issue>1</issue>), <fpage>297</fpage>&#x02013;<lpage>309</lpage>. <pub-id pub-id-type="doi">10.1002/jcc.25589</pub-id>.<pub-id pub-id-type="pmid">30368851</pub-id>
+</mixed-citation></ref><ref id="ref44"><mixed-citation publication-type="book" id="cit44"><person-group person-group-type="allauthors"><name><surname>Xu</surname><given-names>M.</given-names></name>; <name><surname>Luo</surname><given-names>S.</given-names></name>; <name><surname>Bengio</surname><given-names>Y.</given-names></name>; <name><surname>Peng</surname><given-names>J.</given-names></name>; <name><surname>Tang</surname><given-names>J.</given-names></name></person-group><article-title>Learning neural generative dynamics for molecular
+conformation generation</article-title>. In <source>International
+Conference on Learning Representations</source>, <year>2021</year>.</mixed-citation></ref><ref id="ref45"><mixed-citation publication-type="journal" id="cit45"><person-group person-group-type="allauthors"><name><surname>Ganea</surname><given-names>O.-E.</given-names></name>; <name><surname>Pattanaik</surname><given-names>L.</given-names></name>; <name><surname>Coley</surname><given-names>C.
+W.</given-names></name>; <name><surname>Barzilay</surname><given-names>R.</given-names></name>; <name><surname>Jensen</surname><given-names>K. F.</given-names></name>; <name><surname>Green</surname><given-names>W. H.</given-names></name>; <name><surname>Jaakkola</surname><given-names>T. S.</given-names></name></person-group><article-title>Geomol: Torsional
+geometric generation of molecular 3d conformer ensembles</article-title>. <source>arXiv</source>, <year>2021</year>.</mixed-citation></ref><ref id="ref46"><mixed-citation publication-type="journal" id="cit46"><name><surname>Mansimov</surname><given-names>E.</given-names></name>; <name><surname>Mahmood</surname><given-names>O.</given-names></name>; <name><surname>Kang</surname><given-names>S.</given-names></name>; <name><surname>Cho</surname><given-names>K.</given-names></name>
+<article-title>Molecular geometry
+prediction using a deep generative graph neural network</article-title>. <source>Sci. Rep.</source>
+<year>2019</year>, <volume>9</volume> (<issue>1</issue>), <fpage>20381</fpage><pub-id pub-id-type="doi">10.1038/s41598-019-56773-5</pub-id>.<pub-id pub-id-type="pmid">31892716</pub-id>
+</mixed-citation></ref><ref id="ref47"><mixed-citation publication-type="book" id="cit47"><person-group person-group-type="allauthors"><name><surname>Simm</surname><given-names>G. N.</given-names></name>; <name><surname>Hern&#x000e1;ndez-Lobato</surname><given-names>J. M.</given-names></name></person-group><article-title>A generative model for molecular distance
+geometry</article-title><source>37th International Conference on Machine
+Learning, ICML 2020</source><publisher-name>PMLR</publisher-name><year>2019</year><fpage>8896</fpage>&#x02013;<lpage>8905</lpage></mixed-citation></ref><ref id="ref48"><mixed-citation publication-type="book" id="cit48"><person-group person-group-type="allauthors"><name><surname>Xu</surname><given-names>M.</given-names></name>; <name><surname>Wang</surname><given-names>W.</given-names></name>; <name><surname>Luo</surname><given-names>S.</given-names></name>; <name><surname>Shi</surname><given-names>C.</given-names></name>; <name><surname>Bengio</surname><given-names>Y.</given-names></name>; <name><surname>Gomez-Bombarelli</surname><given-names>R.</given-names></name>; <name><surname>Tang</surname><given-names>J.</given-names></name></person-group><article-title>An end-to-end framework for molecular conformation
+generation via bilevel programming</article-title><source>Proceedings
+of Machine Learning Research</source><year>2021</year><volume>139</volume><fpage>11537</fpage>&#x02013;<lpage>11547</lpage></mixed-citation></ref><ref id="ref49"><mixed-citation publication-type="journal" id="cit49"><person-group person-group-type="allauthors"><name><surname>Shi</surname><given-names>C.</given-names></name>; <name><surname>Luo</surname><given-names>S.</given-names></name>; <name><surname>Xu</surname><given-names>M.</given-names></name>; <name><surname>Tang</surname><given-names>J.</given-names></name></person-group><article-title>Learning gradient fields for molecular conformation
+generation</article-title>. <source>arXiv</source>, <year>2021</year>.</mixed-citation></ref><ref id="ref50"><mixed-citation publication-type="journal" id="cit50"><name><surname>Wang</surname><given-names>D.</given-names></name>; <name><surname>Dong</surname><given-names>X.</given-names></name>; <name><surname>Zhang</surname><given-names>X.</given-names></name>; <name><surname>Hu</surname><given-names>L. H.</given-names></name>
+<article-title>Gadiff: A transferable
+graph attention diffusion model for generating molecular conformations</article-title>. <source>Briefings Bioinf.</source>
+<year>2024</year>, <volume>26</volume>, <fpage>11</fpage><pub-id pub-id-type="doi">10.1093/bib/bbae676</pub-id>.</mixed-citation></ref><ref id="ref51"><mixed-citation publication-type="journal" id="cit51"><name><surname>Duan</surname><given-names>C.</given-names></name>; <name><surname>Du</surname><given-names>Y.</given-names></name>; <name><surname>Jia</surname><given-names>H.</given-names></name>; <name><surname>Kulik</surname><given-names>H. J.</given-names></name>
+<article-title>Accurate transition state generation
+with an object-aware equivariant elementary reaction diffusion model</article-title>. <source>Nat. Comput. Sci.</source>
+<year>2023</year>, <volume>3</volume> (<issue>12</issue>), <fpage>1045</fpage>&#x02013;<lpage>1055</lpage>. <pub-id pub-id-type="doi">10.1038/s43588-023-00563-7</pub-id>.<pub-id pub-id-type="pmid">38177724</pub-id>
+</mixed-citation></ref><ref id="ref52"><mixed-citation publication-type="journal" id="cit52"><name><surname>Laio</surname><given-names>A.</given-names></name>; <name><surname>Parrinello</surname><given-names>M.</given-names></name>
+<article-title>Escaping free-energy minima</article-title>. <source>Proc. Natl. Acad. Sci. U. S. A.</source>
+<year>2002</year>, <volume>99</volume>, <fpage>12562</fpage>&#x02013;<lpage>12566</lpage>. <pub-id pub-id-type="doi">10.1073/pnas.202427399</pub-id>.<pub-id pub-id-type="pmid">12271136</pub-id>
+</mixed-citation></ref><ref id="ref53"><mixed-citation publication-type="journal" id="cit53"><name><surname>Sugita</surname><given-names>Y.</given-names></name>; <name><surname>Okamoto</surname><given-names>Y.</given-names></name>
+<article-title>Replica-exchange molecular dynamics method for protein
+folding</article-title>. <source>Chem. Phys. Lett.</source>
+<year>1999</year>, <volume>314</volume> (<issue>1</issue>), <fpage>141</fpage>&#x02013;<lpage>151</lpage>. <pub-id pub-id-type="doi">10.1016/S0009-2614(99)01123-9</pub-id>.</mixed-citation></ref><ref id="ref54"><mixed-citation publication-type="journal" id="cit54"><name><surname>Donyapour</surname><given-names>N.</given-names></name>; <name><surname>Niazi</surname><given-names>F. F.</given-names></name>; <name><surname>Roussey</surname><given-names>N. M.</given-names></name>; <name><surname>Bose</surname><given-names>S.</given-names></name>; <name><surname>Dickson</surname><given-names>A.</given-names></name>
+<article-title>Flexible topology:
+A dynamic model of a continuous chemical space</article-title>. <source>J. Chem. Theory Comput.</source>
+<year>2023</year>, <volume>19</volume> (<issue>8</issue>), <fpage>5088</fpage>&#x02013;<lpage>5098</lpage>. <pub-id pub-id-type="doi">10.1021/acs.jctc.3c00409</pub-id>.<pub-id pub-id-type="pmid">37487141</pub-id>
+</mixed-citation></ref></ref-list></back></article>

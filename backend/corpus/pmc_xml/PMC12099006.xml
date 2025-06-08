@@ -1,0 +1,474 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Sci Rep</journal-id><journal-id journal-id-type="iso-abbrev">Sci Rep</journal-id><journal-title-group><journal-title>Scientific Reports</journal-title></journal-title-group><issn pub-type="epub">2045-2322</issn><publisher><publisher-name>Nature Publishing Group UK</publisher-name><publisher-loc>London</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">40404663</article-id><article-id pub-id-type="pmc">PMC12099006</article-id>
+<article-id pub-id-type="publisher-id">565</article-id><article-id pub-id-type="doi">10.1038/s41598-025-00565-7</article-id><article-categories><subj-group subj-group-type="heading"><subject>Article</subject></subj-group></article-categories><title-group><article-title>3 months transit time to Mars for human missions using SpaceX Starship</article-title></title-group><contrib-group><contrib contrib-type="author" corresp="yes"><name><surname>Kingdon</surname><given-names>Jack</given-names></name><address><email>jackkingdon@ucsb.edu</email></address><xref ref-type="aff" rid="Aff1"/></contrib><aff id="Aff1"><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/02t274463</institution-id><institution-id institution-id-type="GRID">grid.133342.4</institution-id><institution-id institution-id-type="ISNI">0000 0004 1936 9676</institution-id><institution>Physics Department, </institution><institution>University of California, </institution></institution-wrap>Santa Barbara, 93106 USA </aff></contrib-group><pub-date pub-type="epub"><day>22</day><month>5</month><year>2025</year></pub-date><pub-date pub-type="pmc-release"><day>22</day><month>5</month><year>2025</year></pub-date><pub-date pub-type="collection"><year>2025</year></pub-date><volume>15</volume><elocation-id>17764</elocation-id><history><date date-type="received"><day>21</day><month>1</month><year>2025</year></date><date date-type="accepted"><day>29</day><month>4</month><year>2025</year></date></history><permissions><copyright-statement>&#x000a9; The Author(s) 2025</copyright-statement><copyright-year>2025</copyright-year><license><ali:license_ref specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p><bold>Open Access</bold> This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article&#x02019;s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article&#x02019;s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link>.</license-p></license></permissions><abstract id="Abs1"><p id="Par1">Historically, spacecraft have followed trajectories that took between six and nine months to reach Mars, using traditional chemical propulsion on roughly Hohmann transfers. It is commonly believed that advances in propulsion technology, such as nuclear thermal or VASIMR, are necessary to reduce that transit time. In this paper, we show the feasibility of transit to Mars using the SpaceX Starship taking 90 days. We outline two trajectories that reduce each transit to between 90 and 104 days each way. These trajectories are within NASA career radiation limits, while 180-day trajectories are not.</p></abstract><kwd-group kwd-group-type="npg-subject"><title>Subject terms</title><kwd>Aerospace engineering</kwd><kwd>Astronomical instrumentation</kwd></kwd-group><custom-meta-group><custom-meta><meta-name>issue-copyright-statement</meta-name><meta-value>&#x000a9; Springer Nature Limited 2025</meta-value></custom-meta></custom-meta-group></article-meta></front><body><sec id="Sec1"><title>Introduction</title><p id="Par2">A key challenge for human missions to Mars is the lengthy transit time (6&#x02013;9 months<sup><xref ref-type="bibr" rid="CR1">1</xref>,<xref ref-type="bibr" rid="CR2">2</xref></sup>) using low-energy trajectories. Such durations not only complicate mission design and technology requirements, but also raise questions about crew survivability and overall success. Studies<sup><xref ref-type="bibr" rid="CR3">3</xref>,<xref ref-type="bibr" rid="CR4">4</xref></sup> regularly emphasize how time in interplanetary space increases mission risks in multiple ways: crew health, radiation, resupply logistics, and psychological factors. Notably, bone health<sup><xref ref-type="bibr" rid="CR5">5</xref></sup> risks and cancer risk<sup><xref ref-type="bibr" rid="CR4">4</xref></sup> scale roughly linearly with time in space. As a result, shortening the Mars transit window has emerged as a priority, with numerous studies proposing advanced propulsion options-such as VASIMR engines operating with high specific impulse<sup><xref ref-type="bibr" rid="CR6">6</xref></sup>, nuclear thermal approaches to achieve faster transfers<sup><xref ref-type="bibr" rid="CR7">7</xref></sup> and laser propulsion<sup><xref ref-type="bibr" rid="CR8">8</xref></sup>. Concurrently, NASA&#x02019;s Journey to Mars and other policy frameworks have emphasized the need for safer, more rapid human missions<sup><xref ref-type="bibr" rid="CR9">9</xref></sup>. Certain NASA presentations<sup><xref ref-type="bibr" rid="CR10">10</xref></sup> even claim nuclear powered propulsion systems are the only primary contenders for human Mars missions. This study challenges the prevailing assumption that advanced propulsion technologies, such as nuclear thermal or VASIMR, must be employed for rapid human transit to Mars. By demonstrating that 90-day transfers are feasible using existing chemical propulsion technology, our work provides a near-term, practical alternative to proposed nuclear thermal or nuclear electric propulsion solutions that have low technology readiness levels and require significant regulatory approval processes<sup><xref ref-type="bibr" rid="CR11">11</xref></sup>.</p></sec><sec id="Sec2"><title>Mission outline</title><p id="Par3">As outlined in the SpaceX Starship Mars plan<sup><xref ref-type="bibr" rid="CR12">12</xref></sup> the crew mission would involve four cargo Starships and two crew Starships. The crew Starships would require 15 refuels in low Earth orbit (LEO) assuming Block 2 Starship is capable of 100t (metric tonnes) to LEO<sup><xref ref-type="bibr" rid="CR13">13</xref></sup> and has 1500t propellant capacity. The cargo ships would be sent on longer low-energy trajectories, each requiring four refuels in LEO. The outlined mission involves <inline-formula id="IEq1"><alternatives><tex-math id="d33e195">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sim$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq1.gif"/></alternatives></inline-formula> 45 launches of Starship Superheavy (Fig. <xref rid="Fig1" ref-type="fig">1</xref>) which given a speculative cadence of 1000<sup><xref ref-type="bibr" rid="CR14">14</xref></sup> launches per year would be achievable in 2&#x02013;3 weeks. If SpaceX is unable to improve launch rate beyond their current Falcon 9 cadence (15 launches/month as demonstrated in November 2024) these launches would take 2&#x02013;3 months.<fig id="Fig1"><label>Fig. 1</label><caption><p>Starship 2033 mission with 90-day transit architecture. The DV cost of each step is labeled next to the arrows.</p></caption><graphic xlink:href="41598_2025_565_Fig1_HTML" id="MO1"/></fig></p><p id="Par4">Upon arrival at Mars, 1500t of propellant per ship would be produced from local carbon dioxide and water ice using electrolyzers and a Sabatier ISRU (in situ-resource-utilization) reactor<sup><xref ref-type="bibr" rid="CR12">12</xref></sup><sup><xref ref-type="bibr" rid="CR15">15</xref></sup>. Astronauts would explore the local area and perform science experiments. When near the return window, one crew and 3&#x02013;4 cargo ships would be refuelled. All ships would launch into LMO (low Mars orbit) where the cargo ships would transfer the majority of their propellant to the crew ship until it is fully refueled. The cargo ships would then return to the surface of Mars, while the crew ship would head for Earth. This could be repeated for the other crew ship.</p></sec><sec id="Sec3"><title>Trajectory</title><sec id="Sec4"><title>Assumptions and methods</title><p id="Par5">We took the dry mass of an empty tanker Starship to be 100t<sup><xref ref-type="bibr" rid="CR16">16</xref></sup> and the mass of a crew habitat to be 63t (see Appendix A). We took the tanks to have 1500t of propellant capacity, of which 1170t is LOX (liquid Oxygen) and 330t is LCH4 (liquid Methane)<sup><xref ref-type="bibr" rid="CR13">13</xref></sup>. SpaceX aims to reach a specific impulse of 380 s<sup><xref ref-type="bibr" rid="CR17">17</xref></sup> with the Raptor Vacuum engine, but this is a highly ambitious goal that may not be achieved. There is no recent public information on specific impulse other than a claim that the ISP will reach 380 s in a few years, however Elon Musk has claimed that the 2021 version of Raptor Vacuum had an ISP of 378 s<sup><xref ref-type="bibr" rid="CR18">18</xref></sup>. We can estimate performance based on known parameters such as chamber pressure<sup><xref ref-type="bibr" rid="CR19">19</xref></sup> and expansion ratio<sup><xref ref-type="bibr" rid="CR20">20</xref></sup> using NASA CEA<sup><xref ref-type="bibr" rid="CR21">21</xref></sup>. We end up with specific impulses between 367 s and 384 s, roughly backing up public info&#x02014;we do not know temperatures of propellants upon combustion chamber entrance, exact chamber pressure during vacuum operation, quantity of film cooling and throat diameter. We also note that the expansion ratio has likely increased since 2020<sup><xref ref-type="bibr" rid="CR17">17</xref></sup>. We take 370 s as a conservative estimate based off public information<sup><xref ref-type="bibr" rid="CR18">18</xref></sup> and 380 s as the future case. All burns are assumed to be done with only the Raptor vacuum engines as the extra thrust from the sea level engines is not necessary during orbital maneuvers.</p><p id="Par6">The trajectories were calculated with patched conics 2-body approximations using the poliastro python library<sup><xref ref-type="bibr" rid="CR22">22</xref></sup><sup><xref ref-type="bibr" rid="CR23">23</xref></sup>. As is standard in preliminary Mars mission architecture studies<sup><xref ref-type="bibr" rid="CR1">1</xref></sup>, we employ Lambert-arc solutions for Earth-Mars transfers, effectively treating the spacecraft&#x02019;s heliocentric leg as a two-body problem (Sun + vehicle), and each hyperbolic planet exit/entry as a two-body problem (Earth/Mars + vehicle). Higher-order multi-body perturbations are negligible for initial DV (delta-velocity) estimates and remain consistent with the approach used historically by NASA. We iterated the poliastro Lambert-arc solver over 1-day timesteps in the 2030 s to look for the lowest ejection DV solutions in the Sun reference frame.</p><p id="Par7">We then calculated the C3 (characteristic energy) of said trajectory when propagated to edge of Mars/Earths sphere of influence. Then a hyperbolic trajectory with that C3 could be calculated, and thus the ejection/arrival DVs could be calculated. The Delta-V for 5 day timesteps in both departure date and time of flight in the 2030 s is plotted in two Porkchop plots below (Figs. <xref rid="Fig4" ref-type="fig">4</xref>, <xref rid="Fig5" ref-type="fig">5</xref>). Red colors indicate more energetically favorable transits. Our model predicts transits with delta-velocity and arrival characteristics that closely align with those presented by Wooster et al.<sup><xref ref-type="bibr" rid="CR24">24</xref></sup>&#x02014;e.g. an Earth ejection DV of 3.57 km/s for a 180-day 2033 trajectory matches their <inline-formula id="IEq2"><alternatives><tex-math id="d33e293">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sim$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq1.gif"/></alternatives></inline-formula> 3.6 km/s.</p></sec></sec><sec id="Sec5"><title>Earth to Mars</title><p id="Par8">We outline two 90-day Earth to Mars transit opportunities in the mid 2030s.<list list-type="bullet"><list-item><p id="Par9">2033 trajectory: Ejection from Earth on 2033-04-30 with <inline-formula id="IEq3"><alternatives><tex-math id="d33e307">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sim$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq1.gif"/></alternatives></inline-formula> 4.6 km/s from a 150 km circular LEO. Mars aerocapture <inline-formula id="IEq4"><alternatives><tex-math id="d33e313">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sim 90$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq4.gif"/></alternatives></inline-formula> days later (Fig. <xref rid="Fig2" ref-type="fig">2</xref>).</p></list-item><list-item><p id="Par10">2035 trajectory: Ejection on 2035-07-15, also <inline-formula id="IEq5"><alternatives><tex-math id="d33e325">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sim$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq1.gif"/></alternatives></inline-formula> 4.6 km/s from LEO, with aerocapture at Mars <inline-formula id="IEq6"><alternatives><tex-math id="d33e331">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sim$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq1.gif"/></alternatives></inline-formula> 90 days later (Fig. <xref rid="Fig3" ref-type="fig">3</xref>).</p></list-item></list><fig id="Fig2"><label>Fig. 2</label><caption><p>2033 90 day transit.</p></caption><graphic xlink:href="41598_2025_565_Fig2_HTML" id="MO2"/></fig><fig id="Fig3"><label>Fig. 3</label><caption><p>2035 90 day transit.</p></caption><graphic xlink:href="41598_2025_565_Fig3_HTML" id="MO3"/></fig></p><p id="Par11">The respective characteristic energies (<inline-formula id="IEq7"><alternatives><tex-math id="d33e356">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$C_3$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq7.gif"/></alternatives></inline-formula>) for each trajectory are roughly <inline-formula id="IEq8"><alternatives><tex-math id="d33e362">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$31.5 \; km^2/s^2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq8.gif"/></alternatives></inline-formula> and <inline-formula id="IEq9"><alternatives><tex-math id="d33e368">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$32 \; km^2/s^2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq9.gif"/></alternatives></inline-formula>. There are no trajectories with similarly low ejection DV until 2048-04-08 with 4.60 km/s. Each trajectory leaves the Starship with <inline-formula id="IEq10"><alternatives><tex-math id="d33e374">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sim$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq1.gif"/></alternatives></inline-formula> 3.5 km/s of DV, of which 0.5 km/s<sup><xref ref-type="bibr" rid="CR25">25</xref></sup> (Appendix B) is used for the landing burn and the other <inline-formula id="IEq11"><alternatives><tex-math id="d33e385">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sim 3 \; km/s$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq11.gif"/></alternatives></inline-formula> is used for a deceleration burn near Mars entry to reduce aeroloads during aerocapture (Fig. <xref rid="Fig6" ref-type="fig">6</xref>). For the both trajectories, we assume a deceleration burn 400 s prior to periapsis, of which <inline-formula id="IEq12"><alternatives><tex-math id="d33e394">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sim 200 \; m/s$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq12.gif"/></alternatives></inline-formula> is lost to non-optimal oberth effect. For instance, on the 2035 trajectory with 380s ISP, the arrival speed without a deceleration burn would be 9.73 km/s, but is 6.87 km/s with it. This leaves 1.85 km/s to be shaved off by Mars aerocapture. In each case, a 370s ISP Starship takes the same time to reach Mars, but aerocaptures at a higher velocity due to reduced DV for the braking burn.<fig id="Fig4"><label>Fig. 4</label><caption><p>Earth to Mars Porkchop plot for the 2030s.</p></caption><graphic xlink:href="41598_2025_565_Fig4_HTML" id="MO4"/></fig><fig id="Fig5"><label>Fig. 5</label><caption><p>Mars to Earth Porkchop plot for the 2030s.</p></caption><graphic xlink:href="41598_2025_565_Fig5_HTML" id="MO5"/></fig><fig id="Fig6"><label>Fig. 6</label><caption><p>Arrival at Mars on 2035-10-13. The blue dotted hyperbola is trajectory after deceleration burn, and the blue dot is where the deceleration burn takes place.</p></caption><graphic xlink:href="41598_2025_565_Fig6_HTML" id="MO6"/></fig></p><sec id="Sec6"><title>Mars to Earth</title><p id="Par12">Upon launch from Mars, the crew Starship enters LMO and is refueled by the empty cargo Starships also fueled by ISRU on the surface of Mars. Each tanker flight may deliver approximately <inline-formula id="IEq13"><alternatives><tex-math id="d33e425">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$300 \, \text {t}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq13.gif"/></alternatives></inline-formula> of propellant if the Mars ascent <inline-formula id="IEq14"><alternatives><tex-math id="d33e431">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$DV$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq14.gif"/></alternatives></inline-formula> is about 4800 m/s<sup><xref ref-type="bibr" rid="CR26">26</xref></sup>. Approximately 4&#x02013;5 flights will be needed for full refueling. As with the Earth to Mars trajectories, some propellant is used for a deceleration burn prior to Earth arrival. We identify only one suitable 90-day return in 2035&#x02014;on 2035-07-02 (Fig. <xref rid="Fig7" ref-type="fig">7</xref>), requiring a <inline-formula id="IEq15"><alternatives><tex-math id="d33e444">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$DV$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq14.gif"/></alternatives></inline-formula> of about <inline-formula id="IEq16"><alternatives><tex-math id="d33e451">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$4.32 \, \text {km/s}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq16.gif"/></alternatives></inline-formula> for ejection from LMO. Summer/Autumn 2037 offers a 90-day route (2037-08-31, requiring <inline-formula id="IEq17"><alternatives><tex-math id="d33e457">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sim 5.87$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq17.gif"/></alternatives></inline-formula> km/s) but yields a dangerously high Earth arrival velocity (<inline-formula id="IEq18"><alternatives><tex-math id="d33e463">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sim 14.1 \, \text {km/s}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq18.gif"/></alternatives></inline-formula> at periapsis). Instead, we recommend a 104-day trip starting 2037-08-23 (Fig. <xref rid="Fig8" ref-type="fig">8</xref>), arriving at Earth on 2037-12-05 at a periapsis velocity of about <inline-formula id="IEq19"><alternatives><tex-math id="d33e472">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$12 \, \text {km/s}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq19.gif"/></alternatives></inline-formula>&#x02014;closer to typical lunar<sup><xref ref-type="bibr" rid="CR27">27</xref></sup> or Hohmann-like reentry energies and presumably within Starship&#x02019;s aerodynamic/thermal design limits<sup><xref ref-type="bibr" rid="CR28">28</xref></sup>.<fig id="Fig7"><label>Fig. 7</label><caption><p>2035 90 day return.</p></caption><graphic xlink:href="41598_2025_565_Fig7_HTML" id="MO7"/></fig><fig id="Fig8"><label>Fig. 8</label><caption><p>2037 104 day return.</p></caption><graphic xlink:href="41598_2025_565_Fig8_HTML" id="MO8"/></fig></p></sec><sec id="Sec7"><title>Boiloff</title><p id="Par13">The cryogenic LOX &#x00026; LCH4 propellant stored in the main tanks of the Starship used in the deceleration burns must survive the 3 month transit. Starship Human landing system (HLS) is contracted to land the next humans on the Moon (by NASA) and requires 100-day loiter time in cislunar near rectilinear halo orbit. The vehicle, with modifications, can store cryogenic propellant for extended periods of time in deep space. The HLS modifications preclude atmospheric entry, thus we calculate the expected thermal properties without these modifications on Block 2 Starship. The thermally optimal attitude is where the Starship points directly at the Sun to both reduce the area absorbing solar radiation, and to insulate the main tanks with the crew cabin. Any propellant in the header tanks could be moved to the main tanks during cruise and moved back for landing<sup><xref ref-type="bibr" rid="CR29">29</xref></sup>.<fig id="Fig9"><label>Fig. 9</label><caption><p>Starship internal diagram<sup><xref ref-type="bibr" rid="CR30">30</xref></sup>. The astronaut habitat will be placed in the payload region.</p></caption><graphic xlink:href="41598_2025_565_Fig9_HTML" id="MO9"/></fig></p><p id="Par14">Both tanks will nominally be pressurized to 6 bar<sup><xref ref-type="bibr" rid="CR31">31</xref></sup> where methane has a boiling point of 140 K<sup><xref ref-type="bibr" rid="CR32">32</xref></sup> and oxygen at 113 K<sup><xref ref-type="bibr" rid="CR33">33</xref></sup>. The methane tank externally is composed of three 1.83 m tall, 9 m diameter steel rings<sup><xref ref-type="bibr" rid="CR34">34</xref></sup> (Fig. <xref rid="Fig9" ref-type="fig">9</xref>). The oxygen tank is composed of six of these rings thus has twice the area. Half of each tank is bare 304X stainless steel, and the other half is that steel covered with proprietary ceramic thermal protection tiles. As these are proprietary SpaceX materials, we do not know their exact specifications, but they are similar to/derivatives of 304 L stainless steel and the NASA TUFI TPS<sup><xref ref-type="bibr" rid="CR35">35</xref></sup> material respectively and thus have very similar emissivities. The emissivity of both vary with flight wear and other parameters, but we take them to be 0.4<sup><xref ref-type="bibr" rid="CR36">36</xref></sup> and 0.9<sup><xref ref-type="bibr" rid="CR37">37</xref></sup> respectively. The average emissivity <inline-formula id="IEq20"><alternatives><tex-math id="d33e555">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\bar{\epsilon }$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq20.gif"/></alternatives></inline-formula> of the Starship tank section is thus 0.65. We take the area of the methane tank to be <inline-formula id="IEq21"><alternatives><tex-math id="d33e561">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$A_m$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq21.gif"/></alternatives></inline-formula>, the area of the oxygen tank to be <inline-formula id="IEq22"><alternatives><tex-math id="d33e567">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$A_o$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq22.gif"/></alternatives></inline-formula>, the respective temperatures to be <inline-formula id="IEq23"><alternatives><tex-math id="d33e574">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$T_a$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq23.gif"/></alternatives></inline-formula> and <inline-formula id="IEq24"><alternatives><tex-math id="d33e580">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$T_o$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq24.gif"/></alternatives></inline-formula> and the Stefan&#x02013;Boltzmann constant to be <inline-formula id="IEq25"><alternatives><tex-math id="d33e586">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sigma$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq25.gif"/></alternatives></inline-formula>. By the Stefan&#x02013;Boltzmann law the radiated power from the tanks each at saturation temperature is:<disp-formula id="Equ1"><alternatives><tex-math id="d33e592">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$P_r = \bar{\epsilon } \sigma (A_mT_m^4+A_oT_o^4) = 0.65\sigma (310*(140^4)+620*(113^4))m^2K^4 = 8114W$$\end{document}</tex-math><graphic xlink:href="41598_2025_565_Article_Equ1.gif" position="anchor"/></alternatives></disp-formula>If the methane tank is in thermal equilibrium with the oxygen tank, then the radiated power is:<disp-formula id="Equ2"><alternatives><tex-math id="d33e598">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$P_r = \bar{\epsilon } \sigma T_o^4 (A_m+A_o) = 0.65\sigma *113^4*(310+620)m^2K^4 = 5596W$$\end{document}</tex-math><graphic xlink:href="41598_2025_565_Article_Equ2.gif" position="anchor"/></alternatives></disp-formula>The crew cabin is assumed to be at a human friendly 290K temperature, and assuming the bottom plate facing the propellant tanks is a polished aluminium sheet of emissivity of 0.06, the emitted power is:<disp-formula id="Equ3"><alternatives><tex-math id="d33e604">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$P = 0.06*\sigma *290^4*(\pi * 4.5^2)m^2K^4 = 1530W$$\end{document}</tex-math><graphic xlink:href="41598_2025_565_Article_Equ3.gif" position="anchor"/></alternatives></disp-formula>into the methane tank. Conduction through the steel skin is negligible: the conductivity of stainless steel is <inline-formula id="IEq26"><alternatives><tex-math id="d33e611">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sim 15 \text {W}\text {K}^{-1}\text {m}^{-1}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq26.gif"/></alternatives></inline-formula><sup><xref ref-type="bibr" rid="CR38">38</xref></sup> at 300 K, and decreases with temperature. There is a <inline-formula id="IEq27"><alternatives><tex-math id="d33e620">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sim 200 \text {K}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq27.gif"/></alternatives></inline-formula> temperature drop from the crew cabin outer steel to the tank outer steel, which we can assume takes place over the distance of one ring segment. The steel is 9m diameter and 4mm thick<sup><xref ref-type="bibr" rid="CR39">39</xref></sup>, thus the conducted power is <inline-formula id="IEq28"><alternatives><tex-math id="d33e630">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sim 400\;W$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq28.gif"/></alternatives></inline-formula>, which is small compared to the radiated heat. As the Sun is only hitting the nose cone, solar radiation management is only a problem for the crew cabin. Thus the tanks will radiate more power out (<inline-formula id="IEq29"><alternatives><tex-math id="d33e636">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$5 \text {kW}-10 \text {kW}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq29.gif"/></alternatives></inline-formula>) than they receive (<inline-formula id="IEq30"><alternatives><tex-math id="d33e643">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sim 2 \text {kW}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq30.gif"/></alternatives></inline-formula>) and the cryogenic propellant will not boil off in the 90-day transit to Mars. These calculations obviously ignore radiation from sources other than the Sun. Radiation from interstellar sources is negligible, but Earth/Mars-shine along with planetary black-body emissions is nominally not negligible and contributes significantly to the engineering challenges of long-duration LEO cryogenic storage. We ignore it as the Starship spends very little time near Earth or Mars (except when the tanks are intended to be empty, or being actively filled). We acknowledge that these calculations are simplified, modeling the Starship as a cylinder, ignoring both absorption and emission from the flaps along with the challenges of crew cabin thermal management, but we believe they show Starship interplanetary transit cryogenic storage is a manageable problem.</p></sec></sec><sec id="Sec8"><title>Reentry simulations</title><p id="Par15">Both trajectories involve significant aerocapture maneuvers where the Starship enters the upper atmosphere of Earth or Mars and uses atmospheric drag to decelerate from a hyperbolic trajectory that moves faster than the respective planet&#x02019;s escape velocity to an elliptical captured orbit. Because hyperbolic trajectories around planets have a lower curvature than captured orbits, the amount of time spent in the atmosphere is not long, so the necessary acceleration to capture is high.</p><sec id="Sec9"><title>Assumptions and methods</title><p id="Par16">We performed an approximate simulation of the Starship atmospheric entry for each entry trajectory. The hyperbolic trajectory, generated from the Lambert&#x02019;s problem solution, was numerically propagated through Earth and Mars&#x02019; upper atmosphere. Earth&#x02019;s atmosphere was modeled by COESA76<sup><xref ref-type="bibr" rid="CR40">40</xref></sup> while Mars&#x02019; used an exponential model empirically fit to NASA measurements<sup><xref ref-type="bibr" rid="CR41">41</xref></sup>. We assumed a constant lift to drag ratio of 0.5<sup><xref ref-type="bibr" rid="CR42">42</xref></sup>, and an inverted <inline-formula id="IEq31"><alternatives><tex-math id="d33e669">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$60^\circ$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq31.gif"/></alternatives></inline-formula> AoA (Angle of Attack) entry angle during the majority of the trajectory allowing for negative lift to bend the trajectory downwards. The stagnation point heat flux was calculated with the Sutton-Graves equation<sup><xref ref-type="bibr" rid="CR43">43</xref></sup>. While far more complex reentry analysis tools exist, we found that Sutton-Graves accurately approximated the peak stagnation point heat flux for historical missions using our model. Starship was assumed to have an equivalent body radius of 4.5 m. We calibrated our model by estimating the heat flux during the Zond 5 ballistic entry and Soyuz LEO entries. Our model calculated the Zond peak convective heatflux to be <inline-formula id="IEq32"><alternatives><tex-math id="d33e680">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$3.05 \; \text {MW}/\text {m}^2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq32.gif"/></alternatives></inline-formula> and the Soyuz LEO reentry peak convective flux to be <inline-formula id="IEq33"><alternatives><tex-math id="d33e686">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$700 \; \text {kW}/\text {m}^2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq33.gif"/></alternatives></inline-formula> which lines up with historical data<sup><xref ref-type="bibr" rid="CR44">44</xref></sup>. We did not calibrate the model on Starship reentries (IFT 4, 5 &#x00026; 6) as public heat flux information does not exist, but our model estimates the peak convective flux during a Starship LEO reentry to be <inline-formula id="IEq34"><alternatives><tex-math id="d33e696">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sim 350 \; \text {kW}/\text {m}^2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq34.gif"/></alternatives></inline-formula>. We also estimated radiative flux during both Zond and Starship aerocapture, using empirical formulas<sup><xref ref-type="bibr" rid="CR45">45</xref></sup> (correctly estimating the Zond radiative flux) and found the peak radiative flux to be negligible. We do acknowledge that the complexity of radiative heating is substantial at the velocities considered for Mars and Earth aerocapture. Accurately modeling this requires resolving non-equilibrium radiation transport in a superheated shock layer composed of dissociated and ionized gas, where radiative transfer is strongly wavelength-dependent and tightly coupled to gas chemistry. Furthermore, effects such as shock layer optical thickness and reabsorption must be taken into account. Although our analysis suggests that convective heating dominates and radiative flux may be subdominant, only a full radiative-hydrodynamic simulation can confirm whether the Starship airframe and TPS can withstand the proposed aerocapture trajectories with adequate thermal margins. We acknowledge that there are large differences between capsule entries and lifting-body aerocapture entries, so a model originally validated for capsules may not yield perfectly accurate predictions for a large vehicle like Starship. However, the total hyperbolic energy that must be dissipated in our 90-day trajectory profiles is on the same order-or even somewhat lower-than that of typical LEO return missions, which are well-characterized in both historical and modern analyses. Consequently, the peak heat flux and deceleration loads Starship would encounter at these velocities are likely to remain within the envelope that simpler capsule-derived models (Sutton-Graves for heat flux) can reasonably estimate at a first-pass level.</p></sec><sec id="Sec10"><title>Conclusions</title><p id="Par17">We estimate the trajectory with the highest flux and acceleration to be an arrival at Earth in 2037 if we assume a 370 s RVac ISP. The reentry angle is <inline-formula id="IEq35"><alternatives><tex-math id="d33e710">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$4.2^\circ$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq35.gif"/></alternatives></inline-formula> with a peak convective stagnation point heat flux of <inline-formula id="IEq36"><alternatives><tex-math id="d33e716">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$530 \; \text {kW}/\text {m}^2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq36.gif"/></alternatives></inline-formula> (Fig. <xref rid="Fig12" ref-type="fig">12</xref>) and peak acceleration of 1.43G (Fig. <xref rid="Fig13" ref-type="fig">13</xref>). The specific energy lost is <inline-formula id="IEq37"><alternatives><tex-math id="d33e728">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$20 \; \text {km}^2/\text {s}^2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq37.gif"/></alternatives></inline-formula> and the post capture orbit is 136,000 km by 90 km. The altitude and velocity plots are given by (Figs. <xref rid="Fig10" ref-type="fig">10</xref>, <xref rid="Fig11" ref-type="fig">11</xref>).</p><p id="Par18">The highest flux and acceleration Mars arrival is the 2033 arrival, again assuming a 370s RVac ISP. The entry angle is <inline-formula id="IEq38"><alternatives><tex-math id="d33e743">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$7^\circ$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq38.gif"/></alternatives></inline-formula>, peak heat stagnation point convective flux is <inline-formula id="IEq39"><alternatives><tex-math id="d33e749">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$330 \; \text {kW}/\text {m}^2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq39.gif"/></alternatives></inline-formula> (Fig. <xref rid="Fig16" ref-type="fig">16</xref>) and the peak acceleration is 3.51 g (Fig. <xref rid="Fig17" ref-type="fig">17</xref>). Figure <xref rid="Fig17" ref-type="fig">17</xref> shows a sharp spike in acceleration around 230 s, corresponding to a flip in vehicle orientation from inverted to upright to control post aerocapture orbit parameters. This maneuver is not required, but helps relax targeting constraints. The specific energy lost is <inline-formula id="IEq40"><alternatives><tex-math id="d33e765">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$27 \; \text {km}^2/\text {s}^2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq40.gif"/></alternatives></inline-formula>, and the post capture orbit is 35,600 km by 25 km. The altitude and velocity plots are given by (Figs. <xref rid="Fig14" ref-type="fig">14</xref>, <xref rid="Fig15" ref-type="fig">15</xref>). We do not know the exact maximum temperature of the Starship tiles, but they are known to be coated with material similar to the Shuttle TUFI coating with a max temperature of <inline-formula id="IEq41"><alternatives><tex-math id="d33e777">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sim 1920$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq41.gif"/></alternatives></inline-formula> K and an emissivity of <inline-formula id="IEq42"><alternatives><tex-math id="d33e783">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sim 0.9$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq42.gif"/></alternatives></inline-formula><sup><xref ref-type="bibr" rid="CR37">37</xref></sup>. At this temperature, the tiles can radiate <inline-formula id="IEq43"><alternatives><tex-math id="d33e793">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$700 \; \text {kW}/\text {m}^2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq33.gif"/></alternatives></inline-formula>, which is greater than the peak heat flux encountered during even the most extreme entry profiles studied here. This suggests that, in theory, the tiles possess sufficient radiative capacity to reject the incoming thermal load. However, this balance alone does not guarantee that the vehicle will survive the entry. The actual survivability of the system depends on a variety of factors beyond peak heat flux, including the duration of thermal exposure, heat soak into the underlying structure, mechanical stresses on tile retention, and the vehicle&#x02019;s overall thermal and structural margins. Consequently, our model, while useful for a first-order estimate, does not capture the full complexity of the thermal environment and cannot definitively assess vehicle survivability. More detailed simulations-incorporating time-dependent conduction, radiative coupling, material response, and structural analysis-are necessary to validate the feasibility of the proposed entry maneuvers. That said, it is not unreasonable to believe that such maneuvers are within the design envelope of Starship, which is explicitly intended for high-speed hyperbolic returns from Mars<sup><xref ref-type="bibr" rid="CR12">12</xref></sup>, with entry velocities comparable to those analyzed in this study.<fig id="Fig10"><label>Fig. 10</label><caption><p>Altitude against time for the 2037 Earth aerocapture.</p></caption><graphic xlink:href="41598_2025_565_Fig10_HTML" id="MO10"/></fig><fig id="Fig11"><label>Fig. 11</label><caption><p>Speed against time for the 2037 Earth aerocapture.</p></caption><graphic xlink:href="41598_2025_565_Fig11_HTML" id="MO11"/></fig><fig id="Fig12"><label>Fig. 12</label><caption><p>2037 aerocapture stagnation point heatflux.</p></caption><graphic xlink:href="41598_2025_565_Fig12_HTML" id="MO12"/></fig><fig id="Fig13"><label>Fig. 13</label><caption><p>2037 aerocapture acceleration.</p></caption><graphic xlink:href="41598_2025_565_Fig13_HTML" id="MO13"/></fig><fig id="Fig14"><label>Fig. 14</label><caption><p>Altitude against time for the 2033 Martian aerocapture.</p></caption><graphic xlink:href="41598_2025_565_Fig14_HTML" id="MO14"/></fig><fig id="Fig15"><label>Fig. 15</label><caption><p>Speed against time for the 2033 Martian aerocapture.</p></caption><graphic xlink:href="41598_2025_565_Fig15_HTML" id="MO15"/></fig><fig id="Fig16"><label>Fig. 16</label><caption><p>Flux against time for the 2033 Martian aerocapture.</p></caption><graphic xlink:href="41598_2025_565_Fig16_HTML" id="MO16"/></fig><fig id="Fig17"><label>Fig. 17</label><caption><p>Acceleration against time for the 2033 Martian aerocapture.</p></caption><graphic xlink:href="41598_2025_565_Fig17_HTML" id="MO17"/></fig></p></sec></sec><sec id="Sec11"><title>Implications of faster trajectories</title><sec id="Sec12"><title>Launch cadence</title><p id="Par19">Because the rapid transit trajectory demands a very high launch cadence on both Earth and Mars, requiring a dozen tanker flights in the period prior to the launch window, ground systems must operate at a pace at or beyond the current SpaceX rate (which is already extremely high). While Earth&#x02019;s launch infrastructure is expected to handle rapid turnaround-thanks to growing launch demand from projects like Artemis and Starlink-the more substantial challenge lies in setting up robust ISRU facilities on Mars. While ISRU is necessary for any Mars direct style mission<sup><xref ref-type="bibr" rid="CR46">46</xref></sup>, the faster trajectory calls for more propellant production per Earth return window and thus further burden on the ISRU system. ISRU remains an outstanding concern that SpaceX/NASA must address before human missions can take place.</p></sec><sec id="Sec13"><title>Estimated radiation dosage</title><p id="Par20">The majority of radiation dosage in interplanetary space is GCR (galactic cosmic ray)<sup><xref ref-type="bibr" rid="CR47">47</xref></sup>, with the exception of Solar storms. Modern human deep space craft employ solar storm shelters<sup><xref ref-type="bibr" rid="CR48">48</xref></sup>, and Starship will also, thus the radiation exposure from Solar events will be mitigated. The main focus is on GCR, which cannot be easily shielded. The GCR dosage in interplanetary space has been measured at <inline-formula id="IEq44"><alternatives><tex-math id="d33e882">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1.84\pm 0.33$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq44.gif"/></alternatives></inline-formula> mSv per day<sup><xref ref-type="bibr" rid="CR47">47</xref></sup> which does not significantly change with distance to the Sun during a Mars mission. Thus the radiation dosage for a 90-day transit is halved from a 180-day transit. Assuming significant shielding on the surface of Mars (which can be provided by local materials such as ice and Mars dirt), the radiation during transit will be the majority of the total mission radiation. This is <inline-formula id="IEq45"><alternatives><tex-math id="d33e892">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$331\pm 54$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq45.gif"/></alternatives></inline-formula> mSv. Taking the 104-day return trajectory in 2037 will lead to the total dose increasing to <inline-formula id="IEq46"><alternatives><tex-math id="d33e899">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$357\pm 58$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq46.gif"/></alternatives></inline-formula> mSv. This is below the allowed career radiation dose for astronauts<sup><xref ref-type="bibr" rid="CR49">49</xref></sup>&#x02014;1000 mSv and 600 mSv for 35-year-old men and women respectively.</p></sec><sec id="Sec14"><title>Medical impacts of faster trajectory</title><p id="Par21">According to NASA&#x02019;s risk models<sup><xref ref-type="bibr" rid="CR4">4</xref></sup>, 1Sv of absorbed dose can increase the lifetime cancer risk by roughly 3&#x02013;7% percent for a middle-aged adult. Thus the faster trajectory will decrease the estimated risk of GCR induced cancer from <inline-formula id="IEq47"><alternatives><tex-math id="d33e917">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sim 4\%$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq47.gif"/></alternatives></inline-formula> to <inline-formula id="IEq48"><alternatives><tex-math id="d33e923">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sim 1.5\%$$\end{document}</tex-math><inline-graphic xlink:href="41598_2025_565_Article_IEq48.gif"/></alternatives></inline-formula>. A 6 month mission already puts the crew at the threshold of NASA&#x02019;s risk of exposure-induced death (REID) limit; exceeding it could effectively end an astronaut&#x02019;s opportunity to fly again or, more gravely, irreversibly harm their long-term health. The accelerated trip makes it far easier for mission planners to keep each astronaut&#x02019;s lifetime exposure below the agency&#x02019;s career dose guidelines, allowing for more operational flexibility, greater opportunities for long-term spaceflight assignments, and lower long-term health risks. The reduced time in microgravity will also decrease bone mass loss<sup><xref ref-type="bibr" rid="CR50">50</xref></sup> before arrival at Mars. Astronauts lose bone mass at roughly 1% per month even with exercise, thus faster trajectories will maintain a few hundred extra grams of bone mass. Preserving bone mass is key to performing physically demanding tasks on the surface (setting up an ISRU plant) without heightened risk of fractures or debilitating muscle fatigue.</p></sec></sec><sec id="Sec15"><title>Conclusion</title><p id="Par22">Our results suggest that a 90-day Mars transit is technically feasible using chemical propulsion capabilities&#x02014;specifically, the SpaceX Starship with anticipated orbital refueling and aerocapture capabilities. This markedly shorter transit time, relative to the standard six to nine month Hohmann windows, has the potential to reduce radiation exposure, minimize microgravity-related health risks, and lower the logistical burdens of prolonged spaceflight.</p><p id="Par23">Nonetheless, several considerations highlight that this approach, while promising, is not free of challenges. First, the high launch cadence and large propellant demands require a level of operational maturity and ISRU that has yet to be demonstrated. Second, the limited publicly available data on Starship&#x02019;s aerothermal performance introduces uncertainty into our atmospheric entry and deceleration simulations, which rely on simplified models and extrapolated heat flux estimates. Starship must also demonstrate the performance anticipated by this paper - the Raptor Vacuum ISP, structures mass and propellant mass must be in the range used by these calculations. Additionally, crew health factors-such as long-duration life support, microgravity countermeasures, and psychological well-being-must be thoroughly validated under the faster yet still significant interplanetary journey.</p><p id="Par24">We therefore view this study as an initial framework that outlines the key elements required for a three-month Earth-Mars transfer, recognizing that more in-depth analyses (e.g., high-fidelity aerothermal simulations, updated propulsion performance data, and operational demonstrations) are necessary to fully validate the concept. With these caveats in mind, our findings indicate that the near-term capability for shorter transit time human Mars missions may be within reach, warranting further research.</p></sec></body><back><app-group><app id="App1"><sec id="Sec16"><title>Appendix-A: Crew habitat mass estimates</title><p id="Par25">The design of a crew habitat necessary to keep astronauts alive during this 90 day transit has not been revealed by SpaceX so it is necessary to estimate this. Skylab is the most relevant historical spacecraft as it involved adding a habitat to an existing rocket stage, similar to what will have to be done with Starship. Skylab took an S-IVB Saturn third stage which weighed 13t and added habitats that kept three astronauts alive without resupply for up to 84 days<sup><xref ref-type="bibr" rid="CR51">51</xref></sup> pushing the mass to 76t. Thus we can estimate a similar habitat for Starship might mass 63t.</p><p id="Par26">We note that a team at the DLR German Aerospace Center<sup><xref ref-type="bibr" rid="CR26">26</xref></sup> did attempt to estimate the dry mass of a crew Starship, and estimated it at 204t. They calculate the structural mass of steel in Starship to be 40t, and then calculate the mass of the propellant tanks to be 20t, assuming they are spherical tanks inside the Starship structure, adding that to the structural mass. Starship does not have spherical tanks, and instead the steel outer structure is the outside of the tank<sup><xref ref-type="bibr" rid="CR30">30</xref></sup> (Fig. <xref rid="Fig9" ref-type="fig">9</xref>), so this paper &#x02018;double counts&#x02019; the mass of the propellant tanks. The paper assumes cold gas helium is used for Starship&#x02019;s RCS (Reaction Control System), but in reality it uses hot gas from the main tanks<sup><xref ref-type="bibr" rid="CR52">52</xref></sup>. They add an extra 5.5t for this hypothetical helium RCS and the supporting tanks. The paper claims Starship uses PICA-X as its thermal protection system, which was in the design from 2016 to 2019, but was changed to ceramic tiles in 2019<sup><xref ref-type="bibr" rid="CR53">53</xref></sup>. The paper uses the mass of Raptor 1 engines which are 2t. Raptor 1 last flew in 2021, and the under testing Raptor 3 engines weigh 1.5t<sup><xref ref-type="bibr" rid="CR54">54</xref></sup>, reducing the mass for a 9-engine<sup><xref ref-type="bibr" rid="CR13">13</xref></sup> Starship by 4.5t, or 6-engine<sup><xref ref-type="bibr" rid="CR53">53</xref></sup> by 3t. These stated reasons are why we think that a crew Starship could mass significantly less than their estimate.</p></sec><sec id="Sec17"><title>Appendix B: Landing burn DV</title><p id="Par27">The 500 m/s landing burn DV estimate is from Elon Musk&#x02019;s 2017 IAC presentation<sup><xref ref-type="bibr" rid="CR25">25</xref></sup> where he claims Mars reentry bleeds 99% of the orbital energy off. This is 90% of the orbital velocity, thus we believe 500m/s is a reasonable estimate for landing burn DV. These values are for the 2017 BFS design, which is similar size and shape to the 2025 Starship design, thus will have similar terminal velocity and landing burn DV.</p></sec></app></app-group><fn-group><fn><p><bold>Publisher&#x02019;s note</bold></p><p>Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></fn></fn-group><ack><title>Acknowledgements</title><p>The author would like to thank Dr Jason Kingdon, Dr Laura Dekker and Dr David Weld for proof-reading the paper and helpful suggestions.</p></ack><notes notes-type="author-contribution"><title>Author contributions</title><p>The author conducted the orbital trajectory and aerocapture analysis, created the figures (except Fig. <xref rid="Fig9" ref-type="fig">9</xref>) and wrote the paper. There were no other significant persons involved in this paper.</p></notes><notes notes-type="data-availability"><title>Data Availability</title><p>All data generated or analyzed during this study are included in this published article, or in the Github at <ext-link ext-link-type="uri" xlink:href="https://github.com/jackSN8/mars-3-months.">https://github.com/jackSN8/mars-3-months.</ext-link></p></notes><notes><title>Declarations</title><notes id="FPar1" notes-type="COI-statement"><title>Competing interests</title><p id="Par31">The authors are not aware of any conflict of interest affecting the results of this work.</p></notes></notes><ref-list id="Bib1"><title>References</title><ref id="CR1"><label>1.</label><mixed-citation publication-type="other">National Aeronautics and Space Administration (NASA). Human Exploration of Mars Design Reference Architecture 5.0 . Tech. Rep. NASA/SP-2009-566, NASA (2009) (accessed 31 Dec 2024).</mixed-citation></ref><ref id="CR2"><label>2.</label><mixed-citation publication-type="other">NASA. Mars exploration: NASA&#x02019;s Mars page (2024). <ext-link ext-link-type="uri" xlink:href="https://nssdc.gsfc.nasa.gov/planetary/planets/marspage.html">https://nssdc.gsfc.nasa.gov/planetary/planets/marspage.html</ext-link> (accessed 31 Dec 2024).</mixed-citation></ref><ref id="CR3"><label>3.</label><mixed-citation publication-type="other">Patel, Z. S., et al. Red risks for a journey to the red planet: The highest priority human health risks for a mission to Mars. <italic>NPJ Micrograv.</italic><bold>6</bold>, 10.1038/s41526-020-00124-6 (2020).</mixed-citation></ref><ref id="CR4"><label>4.</label><citation-alternatives><element-citation id="ec-CR4" publication-type="journal"><person-group person-group-type="author"><name><surname>Cucinotta</surname><given-names>FA</given-names></name><name><surname>Kim</surname><given-names>M-HY</given-names></name><name><surname>Chappell</surname><given-names>LJ</given-names></name><name><surname>Huff</surname><given-names>JL</given-names></name></person-group><article-title>How safe is safe enough? Radiation risk for a human mission to mars</article-title><source>PLoS One</source><year>2013</year><volume>8</volume><fpage>e74988</fpage><pub-id pub-id-type="doi">10.1371/journal.pone.0074988</pub-id><pub-id pub-id-type="pmid">24146746</pub-id>
+</element-citation><mixed-citation id="mc-CR4" publication-type="journal">Cucinotta, F. A., Kim, M.-H.Y., Chappell, L. J. &#x00026; Huff, J. L. How safe is safe enough? Radiation risk for a human mission to mars. <italic>PLoS One</italic><bold>8</bold>, e74988. 10.1371/journal.pone.0074988 (2013) (<bold>Accessed: 2024-12-31.</bold>).<pub-id pub-id-type="pmid">24146746</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR5"><label>5.</label><citation-alternatives><element-citation id="ec-CR5" publication-type="journal"><person-group person-group-type="author"><name><surname>Lang</surname><given-names>T</given-names></name><etal/></person-group><article-title>Cortical and trabecular bone mineral loss from the spine and hip in long-duration spaceflight</article-title><source>J. Bone Miner. Res.</source><year>2004</year><volume>19</volume><fpage>1006</fpage><lpage>1012</lpage><pub-id pub-id-type="doi">10.1359/JBMR.040307</pub-id><pub-id pub-id-type="pmid">15125798</pub-id>
+</element-citation><mixed-citation id="mc-CR5" publication-type="journal">Lang, T. et al. Cortical and trabecular bone mineral loss from the spine and hip in long-duration spaceflight. <italic>J. Bone Miner. Res.</italic><bold>19</bold>, 1006&#x02013;1012. 10.1359/JBMR.040307 (2004) (<bold>Accessed: 2025-02-24.</bold>).<pub-id pub-id-type="pmid">15125798</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR6"><label>6.</label><mixed-citation publication-type="other">Chang-D&#x000ed;az, D. F. Mars in 39 days? The VASIMR Plasma Engine. In <italic>Presented at the DDP 31st Annual Meeting, July 13, 2013, Houston, TX</italic> (2013). <ext-link ext-link-type="uri" xlink:href="https://www.youtube.com/watch?v=-nyepvfuHho">https://www.youtube.com/watch?v=-nyepvfuHho</ext-link> (accessed 31 Dec 2024).</mixed-citation></ref><ref id="CR7"><label>7.</label><mixed-citation publication-type="other">Borowski, S.&#x000a0;K., McCurdy, D.&#x000a0;R. &#x00026; Packard, T.&#x000a0;W. Nuclear Thermal Propulsion (NTP): A Proven, Growth Technology for &#x0201c;Fast Transit&#x0201d; Human Missions to Mars. Tech. Rep. NASA/TM-2014-218104, NASA Glenn Research Center (2014) (accessed 24 Feb 2025).</mixed-citation></ref><ref id="CR8"><label>8.</label><citation-alternatives><element-citation id="ec-CR8" publication-type="journal"><person-group person-group-type="author"><name><surname>Duplay</surname><given-names>E</given-names></name><name><surname>Bao</surname><given-names>ZF</given-names></name><name><surname>Rosero</surname><given-names>SR</given-names></name><name><surname>Sinha</surname><given-names>A</given-names></name><name><surname>Higgins</surname><given-names>A</given-names></name></person-group><article-title>Design of a rapid transit to Mars mission using laser-thermal propulsion</article-title><source>Acta Astronaut.</source><year>2022</year><volume>192</volume><fpage>143</fpage><lpage>156</lpage><pub-id pub-id-type="doi">10.1016/j.actaastro.2021.11.032</pub-id></element-citation><mixed-citation id="mc-CR8" publication-type="journal">Duplay, E., Bao, Z. F., Rosero, S. R., Sinha, A. &#x00026; Higgins, A. Design of a rapid transit to Mars mission using laser-thermal propulsion. <italic>Acta Astronaut.</italic><bold>192</bold>, 143&#x02013;156. 10.1016/j.actaastro.2021.11.032 (2022) (<bold>Accessed: 2025-02-24.</bold>).</mixed-citation></citation-alternatives></ref><ref id="CR9"><label>9.</label><mixed-citation publication-type="other">National Aeronautics and Space Administration (NASA). NASA&#x02019;s Journey to Mars: Pioneering Next Steps in Space Exploration. Tech. Rep. (2015) (accessed 31 Dec 2024).</mixed-citation></ref><ref id="CR10"><label>10.</label><mixed-citation publication-type="other">Stark, A. <italic>et al.</italic> ECI Modular Assembled Radiators for NEP Vehicles (MARVL), an Overview. In <italic>Thermal &#x00026; Fluids Analysis Workshop (TFAWS 2024)</italic> (NASA Glenn Research Center, Cleveland, OH, 2024) (accessed 24 Feb 2025).</mixed-citation></ref><ref id="CR11"><label>11.</label><mixed-citation publication-type="other">Buenconsejo, R.&#x000a0;S., Lal, B., Howieson, S.&#x000a0;V., Behrens, J.&#x000a0;R. &#x00026; Kowal, K. Launch approval processes for the space nuclear power and propulsion enterprise. Tech. Rep. IDA Document D-10910, IDA Science &#x00026; Technology Policy Institute (2019) (accessed 24 Feb 2025).</mixed-citation></ref><ref id="CR12"><label>12.</label><mixed-citation publication-type="other">SpaceX. Human Spaceflight: Mars Mission. <ext-link ext-link-type="uri" xlink:href="https://www.spacex.com/humanspaceflight/mars/">https://www.spacex.com/humanspaceflight/mars/</ext-link> (2024) (accessed 31 Dec 2024).</mixed-citation></ref><ref id="CR13"><label>13.</label><mixed-citation publication-type="other">SpaceX. SpaceX Starship Update 2024 (2024). <ext-link ext-link-type="uri" xlink:href="https://x.com/SpaceX/status/1776669097490776563">https://x.com/SpaceX/status/1776669097490776563</ext-link> (accessed 31 Dec 2024).</mixed-citation></ref><ref id="CR14"><label>14.</label><mixed-citation publication-type="other">Musk, E. Tweet from Elon Musk on January 17, 2020 (2020). <ext-link ext-link-type="uri" xlink:href="https://x.com/elonmusk/status/1217989066181898240">https://x.com/elonmusk/status/1217989066181898240</ext-link> (accessed 31 Dec 2024).</mixed-citation></ref><ref id="CR15"><label>15.</label><mixed-citation publication-type="other">SpaceX. SpaceX Mars Presentation 2016 (2016). <ext-link ext-link-type="uri" xlink:href="https://web.archive.org/web/20160928040332/">https://web.archive.org/web/20160928040332/</ext-link><ext-link ext-link-type="uri" xlink:href="http://www.spacex.com/sites/spacex/files/mars_presentation.pdf">http://www.spacex.com/sites/spacex/files/mars_presentation.pdf</ext-link> (accessed 31 Dec 2024).</mixed-citation></ref><ref id="CR16"><label>16.</label><mixed-citation publication-type="other">Musk, E. &#x00026; Dodd, T. Starbase tour and interview with Elon Musk (2022). <ext-link ext-link-type="uri" xlink:href="https://everydayastronaut.com/starbase-tour-and-interview-with-elon-musk/">https://everydayastronaut.com/starbase-tour-and-interview-with-elon-musk/</ext-link> (accessed 31 Dec 2024).</mixed-citation></ref><ref id="CR17"><label>17.</label><mixed-citation publication-type="other">Musk, E. Tweet from Elon Musk (2024). <ext-link ext-link-type="uri" xlink:href="https://x.com/elonmusk/status/1819781279828636041">https://x.com/elonmusk/status/1819781279828636041</ext-link> (accessed 24 Feb 2025).</mixed-citation></ref><ref id="CR18"><label>18.</label><mixed-citation publication-type="other">Musk, E. Tweet from Elon Musk (2021). <ext-link ext-link-type="uri" xlink:href="https://x.com/elonmusk/status/1409368907480113155">https://x.com/elonmusk/status/1409368907480113155</ext-link> (accessed 23 Feb 2025).</mixed-citation></ref><ref id="CR19"><label>19.</label><mixed-citation publication-type="other">Musk, E. Tweet from Elon Musk (2023). <ext-link ext-link-type="uri" xlink:href="https://x.com/elonmusk/status/1657249739925258240">https://x.com/elonmusk/status/1657249739925258240</ext-link> (accessed 24 Feb 2025).</mixed-citation></ref><ref id="CR20"><label>20.</label><mixed-citation publication-type="other">Musk, E. Tweet from Elon Musk (2020). <ext-link ext-link-type="uri" xlink:href="https://x.com/elonmusk/status/1309385646033842176">https://x.com/elonmusk/status/1309385646033842176</ext-link> (accessed 23 Feb 2025).</mixed-citation></ref><ref id="CR21"><label>21.</label><mixed-citation publication-type="other">NASA Glenn Research Center. Chemical Equilibrium with Applications (CEA) (2025). <ext-link ext-link-type="uri" xlink:href="https://cearun.grc.nasa.gov/">https://cearun.grc.nasa.gov/</ext-link> (accessed 23 Feb 2025).</mixed-citation></ref><ref id="CR22"><label>22.</label><mixed-citation publication-type="other">Rodr&#x000ed;guez, J. L.&#x000a0;C. &#x00026; contributors. poliastro: Python library for interactive Astrodynamics (2024). <ext-link ext-link-type="uri" xlink:href="https://github.com/poliastro/poliastro">https://github.com/poliastro/poliastro</ext-link> (accessed 31 Dec 2024).</mixed-citation></ref><ref id="CR23"><label>23.</label><mixed-citation publication-type="other">Kingdon, J. Mars-3-Months: Lambert solver and entry sims (2024). <ext-link ext-link-type="uri" xlink:href="https://github.com/jackSN8/mars-3-months">https://github.com/jackSN8/mars-3-months</ext-link> (accessed 31 Dec 2024).</mixed-citation></ref><ref id="CR24"><label>24.</label><mixed-citation publication-type="other">Wooster, P.&#x000a0;D., Braun, R.&#x000a0;D., Ahn, J. &#x00026; Putnam, Z.&#x000a0;R. Trajectory Options for Human Mars Missions. Tech. Rep., Massachusetts Institute of Technology and Georgia Institute of Technology (2009) (accessed 24 Feb 2025).</mixed-citation></ref><ref id="CR25"><label>25.</label><mixed-citation publication-type="other">SpaceX. Making Life Multiplanetary (2017). <ext-link ext-link-type="uri" xlink:href="https://www.youtube.com/watch?v=tdUX3ypDVwIt=1388s">https://www.youtube.com/watch?v=tdUX3ypDVwIt=1388s</ext-link> (accessed 31 Dec 2024).</mixed-citation></ref><ref id="CR26"><label>26.</label><mixed-citation publication-type="other">Maiwald, V., Bauerfeind, M., F&#x000e4;lker, S., Westphal, B. &#x00026; Bach, C. About the feasibility of SpaceX&#x02019;s human exploration Mars mission scenario with Starship. <italic>Sci. Rep.</italic>10.1038/s41598-024-54012-0 (2024).</mixed-citation></ref><ref id="CR27"><label>27.</label><mixed-citation publication-type="other">NASA. Apollo 11 Flight Journal-Day 9: Entry (1969). <ext-link ext-link-type="uri" xlink:href="https://www.nasa.gov/history/afj/ap11fj/27day9-entry.html">https://www.nasa.gov/history/afj/ap11fj/27day9-entry.html</ext-link> (accessed 31 Dec 2024).</mixed-citation></ref><ref id="CR28"><label>28.</label><mixed-citation publication-type="other">SpaceX. Human Spaceflight: Moon Mission (2024). <ext-link ext-link-type="uri" xlink:href="https://www.spacex.com/humanspaceflight/moon/">https://www.spacex.com/humanspaceflight/moon/</ext-link> (accessed 31 Dec 2024).</mixed-citation></ref><ref id="CR29"><label>29.</label><mixed-citation publication-type="other">SpaceX. Tweet from SpaceX on May 24th 2024 (2024). <ext-link ext-link-type="uri" xlink:href="https://x.com/SpaceX/status/1793998848584794574?lang=en">https://x.com/SpaceX/status/1793998848584794574?lang=en</ext-link> (accessed 07 Jan 2025).</mixed-citation></ref><ref id="CR30"><label>30.</label><mixed-citation publication-type="other">Federal Aviation Administration (FAA). Written Re-evaluation of the 2022 Final Programmatic Environmental Assessment for the SpaceX Starship/Super Heavy Launch Vehicle Program at the Boca Chica Launch Site in Cameron County, Texas (2022). <ext-link ext-link-type="uri" xlink:href="https://www.faa.gov/media/27236">https://www.faa.gov/media/27236</ext-link> (accessed 31 Dec 2024).</mixed-citation></ref><ref id="CR31"><label>31.</label><mixed-citation publication-type="other">Musk, E. Tweet from Elon Musk on January 11, 2020 (2020). <ext-link ext-link-type="uri" xlink:href="https://x.com/elonmusk/status/1215719463913345024">https://x.com/elonmusk/status/1215719463913345024</ext-link> (accessed 31 Dec 2024).</mixed-citation></ref><ref id="CR32"><label>32.</label><mixed-citation publication-type="other">Veiga, A. 3 Semin&#x000e1;rio Internacional de Transporte e Desenvolvimento Hidrovi&#x000e1;rio Interior: Development of an Inland Containerized Cargo Barge for LNG Transportation on Par&#x000e1; Basin. In <italic>3 Semin&#x000e1;rio Internacional de Transporte e Desenvolvimento Hidrovi&#x000e1;rio Interior</italic> (Aprumar Marine Systems, 2023) (accessed 31 Dec 2024).</mixed-citation></ref><ref id="CR33"><label>33.</label><mixed-citation publication-type="other">Oxygen-Thermophysical Properties: Chemical, Physical, and Thermal Properties of Oxygen-O2. <ext-link ext-link-type="uri" xlink:href="https://www.engineeringtoolbox.com/oxygen-d_1422.html">https://www.engineeringtoolbox.com/oxygen-d_1422.html</ext-link> (accessed 31 Dec 2024).</mixed-citation></ref><ref id="CR34"><label>34.</label><mixed-citation publication-type="other">Ring Watchers. Stacking Diagrams (2024). <ext-link ext-link-type="uri" xlink:href="https://ringwatchers.com/diagrams/stacking-diagrams/">https://ringwatchers.com/diagrams/stacking-diagrams/</ext-link> (accessed 31 Dec 2024).</mixed-citation></ref><ref id="CR35"><label>35.</label><mixed-citation publication-type="other">Hackaday. How Different Are SpaceX Thermal Tiles From the Space Shuttle&#x02019;s? (2024) <ext-link ext-link-type="uri" xlink:href="https://hackaday.com/2024/02/14/how-different-are-spacex-thermal-tiles-from-the-space-shuttles/">https://hackaday.com/2024/02/14/how-different-are-spacex-thermal-tiles-from-the-space-shuttles/</ext-link> (accessed 24 Feb 2025).</mixed-citation></ref><ref id="CR36"><label>36.</label><mixed-citation publication-type="other">Emissivity Table: Pyrometry and Thermography (2024). <ext-link ext-link-type="uri" xlink:href="https://www.transmetra.ch/images/transmetra_pdf/publikationen_literatur/pyrometrie-thermografie/emissivity_table.pdf">https://www.transmetra.ch/images/transmetra_pdf/publikationen_literatur/pyrometrie-thermografie/emissivity_table.pdf</ext-link> (accessed 31 Dec 2024).</mixed-citation></ref><ref id="CR37"><label>37.</label><mixed-citation publication-type="other">NASA. Thermal Protection Materials Branch-Coatings (2023). <ext-link ext-link-type="uri" xlink:href="https://www.nasa.gov/general/thermal-protection-materials-branch-coatings/">https://www.nasa.gov/general/thermal-protection-materials-branch-coatings/</ext-link> (accessed 24 Feb 2025).</mixed-citation></ref><ref id="CR38"><label>38.</label><mixed-citation publication-type="other">Jr, J.&#x000a0;M. Thermal Conductivity and Electrical Resitivity of type 316 stainless steel. Tech. Rep. NASA-TM-X-53428, National Aeronautics and Space Administration (1965) (accessed 31 Dec 2024).</mixed-citation></ref><ref id="CR39"><label>39.</label><mixed-citation publication-type="other">Berger, E. Inside Elon Musk&#x02019;s plan to build one Starship a week-and settle Mars (2020). <ext-link ext-link-type="uri" xlink:href="https://arstechnica.com/science/2020/03/inside-elon-musks-plan-to-build-one-starship-a-week-and-settle-mars/">https://arstechnica.com/science/2020/03/inside-elon-musks-plan-to-build-one-starship-a-week-and-settle-mars/</ext-link> (accessed 31 Dec 2024).</mixed-citation></ref><ref id="CR40"><label>40.</label><mixed-citation publication-type="other">National Oceanic and Atmospheric Administration (NOAA), National Aeronautics and Space Administration (NASA) &#x00026; United States Air Force. U.S. Standard Atmosphere, 1976. Tech. Rep., NOAA, NASA, and U.S. Air Force (1976) (accessed 24 Feb 2025).</mixed-citation></ref><ref id="CR41"><label>41.</label><mixed-citation publication-type="other">Jet Propulsion Laboratory (JPL). Martian Atmosphere and Its Effects on Propagation. Tech. Rep., NASA Jet Propulsion Laboratory (Year Unknown) (accessed 24 Feb 2025).</mixed-citation></ref><ref id="CR42"><label>42.</label><mixed-citation publication-type="other">Zhiwen, L., Lei, Z., Liang, L., Bin, H. &#x00026; Haitao, Y. Performance and characteristics analysis on the Starship aerodynamic configuration. <italic>Acta Aerodyn. Sin.</italic><bold>40</bold> (2022). (accessed 31 Dec 2024).</mixed-citation></ref><ref id="CR43"><label>43.</label><mixed-citation publication-type="other">Sutton, K. &#x00026; Jr., R. A.&#x000a0;G. A General Stagnation-Point Convective-Heating Equation for Arbitrary Gas Mixtures. Tech. Rep. NASA TR R-376, NASA Langley Research Center (1971) (accessed 24 Feb 2025).</mixed-citation></ref><ref id="CR44"><label>44.</label><mixed-citation publication-type="other">European Space Agency (ESA). Study Report: [High Lift over Drag Earth Reentry]. Tech. Rep., European Space Agency (2009) (accessed 23 Feb 2025).</mixed-citation></ref><ref id="CR45"><label>45.</label><citation-alternatives><element-citation id="ec-CR45" publication-type="journal"><person-group person-group-type="author"><name><surname>Brykina</surname><given-names>IG</given-names></name><name><surname>Egorova</surname><given-names>LA</given-names></name></person-group><article-title>Approximation formulas for the radiative heat flux at high velocities</article-title><source>Fluid Dyn.</source><year>2019</year><volume>54</volume><fpage>562</fpage><lpage>574</lpage><pub-id pub-id-type="doi">10.1134/S0015462819040037</pub-id></element-citation><mixed-citation id="mc-CR45" publication-type="journal">Brykina, I. G. &#x00026; Egorova, L. A. Approximation formulas for the radiative heat flux at high velocities. <italic>Fluid Dyn.</italic><bold>54</bold>, 562&#x02013;574. 10.1134/S0015462819040037 (2019).</mixed-citation></citation-alternatives></ref><ref id="CR46"><label>46.</label><mixed-citation publication-type="other">Zubrin, R.&#x000a0;M., Baker, D.&#x000a0;A. &#x00026; Gwynne, O. Mars direct: A simple, robust, and cost effective architecture for the space exploration initiative. In <italic>AIAA Aerospace Sciences Meeting and Exhibit, AIAA-91-0328</italic> (American Institute of Aeronautics and Astronautics (AIAA), 1991).</mixed-citation></ref><ref id="CR47"><label>47.</label><citation-alternatives><element-citation id="ec-CR47" publication-type="journal"><person-group person-group-type="author"><name><surname>Zeitlin</surname><given-names>C</given-names></name><etal/></person-group><article-title>Measurements of energetic particle radiation in transit to mars on the mars science laboratory</article-title><source>Science</source><year>2013</year><volume>340</volume><fpage>1080</fpage><lpage>1084</lpage><pub-id pub-id-type="doi">10.1126/science.1235989</pub-id><pub-id pub-id-type="pmid">23723233</pub-id>
+</element-citation><mixed-citation id="mc-CR47" publication-type="journal">Zeitlin, C. et al. Measurements of energetic particle radiation in transit to mars on the mars science laboratory. <italic>Science</italic><bold>340</bold>, 1080&#x02013;1084. 10.1126/science.1235989 (2013).<pub-id pub-id-type="pmid">23723233</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR48"><label>48.</label><mixed-citation publication-type="other">Hu, S., Monadjemi, S., Barzilla, J. &#x00026; Semones, E. Acute radiation risks tool (ARRT) development for the upcoming human exploration missions. <italic>Space Weather</italic>. <bold>18</bold>, e2020SW002586. 10.1029/2020SW002586 (2020).</mixed-citation></ref><ref id="CR49"><label>49.</label><citation-alternatives><element-citation id="ec-CR49" publication-type="journal"><person-group person-group-type="author"><name><surname>Townsend</surname><given-names>LW</given-names></name><name><surname>Fry</surname><given-names>RJM</given-names></name></person-group><article-title>Radiation protection guidance for activities in low-Earth orbit</article-title><source>Adv. Space Res.</source><year>2002</year><volume>30</volume><fpage>957</fpage><lpage>963</lpage><pub-id pub-id-type="doi">10.1016/s0273-1177(02)00160-6</pub-id><pub-id pub-id-type="pmid">12539765</pub-id>
+</element-citation><mixed-citation id="mc-CR49" publication-type="journal">Townsend, L. W. &#x00026; Fry, R. J. M. Radiation protection guidance for activities in low-Earth orbit. <italic>Adv. Space Res.</italic><bold>30</bold>, 957&#x02013;963. 10.1016/s0273-1177(02)00160-6 (2002) (<bold>Accessed: 2024-12-31.</bold>).<pub-id pub-id-type="pmid">12539765</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR50"><label>50.</label><citation-alternatives><element-citation id="ec-CR50" publication-type="journal"><person-group person-group-type="author"><name><surname>LeBlanc</surname><given-names>A</given-names></name><etal/></person-group><article-title>Bone mineral and lean tissue loss after long duration space flight</article-title><source>J. Musculoskelet. Neuronal Interact.</source><year>2000</year><volume>1</volume><fpage>157</fpage><lpage>160</lpage><pub-id pub-id-type="pmid">15758512</pub-id>
+</element-citation><mixed-citation id="mc-CR50" publication-type="journal">LeBlanc, A. et al. Bone mineral and lean tissue loss after long duration space flight. <italic>J. Musculoskelet. Neuronal Interact.</italic><bold>1</bold>, 157&#x02013;160 (2000) (<bold>Accessed: 2025-02-24.</bold>).<pub-id pub-id-type="pmid">15758512</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR51"><label>51.</label><mixed-citation publication-type="other">NASA. Skylab: A guidebook (1973). <ext-link ext-link-type="uri" xlink:href="https://ntrs.nasa.gov/api/citations/19730025070/downloads/19730025070.pdf">https://ntrs.nasa.gov/api/citations/19730025070/downloads/19730025070.pdf</ext-link> (accessed 15th May 2025).</mixed-citation></ref><ref id="CR52"><label>52.</label><mixed-citation publication-type="other">Musk, E. &#x00026; Dodd, T. Starship RCS engineering change (2022). <ext-link ext-link-type="uri" xlink:href="https://www.youtube.com/watch?v=t705r8ICkRw">https://www.youtube.com/watch?v=t705r8ICkRw</ext-link>, <ext-link ext-link-type="uri" xlink:href="https://www.youtube.com/watch?v=3Ux6B3bvO0w">https://www.youtube.com/watch?v=3Ux6B3bvO0w</ext-link> (accessed 31 Dec 2024).</mixed-citation></ref><ref id="CR53"><label>53.</label><mixed-citation publication-type="other">SpaceX. Starship Update 2019 (2019). <ext-link ext-link-type="uri" xlink:href="https://www.youtube.com/watch?v=sOpMrVnjYeYt=10s">https://www.youtube.com/watch?v=sOpMrVnjYeYt=10s</ext-link> (accessed 31 Dec 2024).</mixed-citation></ref><ref id="CR54"><label>54.</label><mixed-citation publication-type="other">SpaceX. Tweet from SpaceX on Aug 3, 2024 (2024). <ext-link ext-link-type="uri" xlink:href="https://x.com/SpaceX/status/1819772716339339664">https://x.com/SpaceX/status/1819772716339339664</ext-link> (accessed 31 Dec 2024).</mixed-citation></ref></ref-list></back></article>

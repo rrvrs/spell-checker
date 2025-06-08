@@ -1,0 +1,765 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Sci Rep</journal-id><journal-id journal-id-type="iso-abbrev">Sci Rep</journal-id><journal-title-group><journal-title>Scientific Reports</journal-title></journal-title-group><issn pub-type="epub">2045-2322</issn><publisher><publisher-name>Nature Publishing Group UK</publisher-name><publisher-loc>London</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">39730546</article-id><article-id pub-id-type="pmc">PMC11680771</article-id><article-id pub-id-type="publisher-id">81346</article-id><article-id pub-id-type="doi">10.1038/s41598-024-81346-6</article-id><article-categories><subj-group subj-group-type="heading"><subject>Article</subject></subj-group></article-categories><title-group><article-title>Numerical proceeding to calculate impurity states in 2D semiconductor heterostructures</article-title></title-group><contrib-group><contrib contrib-type="author" corresp="yes"><name><surname>Akimov</surname><given-names>Volodymyr</given-names></name><address><email>intremum@gmail.com</email></address><xref ref-type="aff" rid="Aff1">1</xref><xref ref-type="aff" rid="Aff2">2</xref></contrib><contrib contrib-type="author"><name><surname>Tulupenko</surname><given-names>Viktor</given-names></name><xref ref-type="aff" rid="Aff2">2</xref><xref ref-type="aff" rid="Aff3">3</xref></contrib><contrib contrib-type="author"><name><surname>Demediuk</surname><given-names>Roman</given-names></name><xref ref-type="aff" rid="Aff4">4</xref></contrib><contrib contrib-type="author"><name><surname>Tiutiunnyk</surname><given-names>Anton</given-names></name><xref ref-type="aff" rid="Aff5">5</xref></contrib><contrib contrib-type="author"><name><surname>Duque</surname><given-names>Carlos A.</given-names></name><xref ref-type="aff" rid="Aff2">2</xref></contrib><contrib contrib-type="author"><name><surname>Morales</surname><given-names>Alvaro L.</given-names></name><xref ref-type="aff" rid="Aff2">2</xref></contrib><contrib contrib-type="author"><name><surname>Laroze</surname><given-names>David</given-names></name><xref ref-type="aff" rid="Aff6">6</xref></contrib><contrib contrib-type="author"><name><surname>Mora-Ramos</surname><given-names>Miguel Eduardo</given-names></name><xref ref-type="aff" rid="Aff7">7</xref></contrib><aff id="Aff1"><label>1</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/030kw0b65</institution-id><institution-id institution-id-type="GRID">grid.440796.8</institution-id><institution-id institution-id-type="ISNI">0000 0001 0083 1304</institution-id><institution>Facultad de Ciencias B&#x000e1;sicas, </institution><institution>Universidad de Medell&#x000ed;n, </institution></institution-wrap>Medell&#x000ed;n, Colombia </aff><aff id="Aff2"><label>2</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/03bp5hc83</institution-id><institution-id institution-id-type="GRID">grid.412881.6</institution-id><institution-id institution-id-type="ISNI">0000 0000 8882 5269</institution-id><institution>Grupo de Materia Condensada-UdeA, Instituto de F&#x000ed;sica, Facultad de Ciencias Exactas y Naturales, </institution><institution>Universidad de Antioquia UdeA, </institution></institution-wrap>Calle 70 No. 52-21, Medell&#x000ed;n, 050010 Colombia </aff><aff id="Aff3"><label>3</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/02k14cb26</institution-id><institution-id institution-id-type="GRID">grid.445605.6</institution-id><institution-id institution-id-type="ISNI">0000 0004 0515 5634</institution-id><institution>Physics department, </institution><institution>Donbas State Engineering Academy, </institution></institution-wrap>Kramatorsk, Ukraine </aff><aff id="Aff4"><label>4</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/059mp4e63</institution-id><institution-id institution-id-type="GRID">grid.459461.b</institution-id><institution>Physics department, </institution><institution>Donbas State Pedagogical University, </institution></institution-wrap>Sloviansk, Ukraine </aff><aff id="Aff5"><label>5</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/04xe01d27</institution-id><institution-id institution-id-type="GRID">grid.412182.c</institution-id><institution-id institution-id-type="ISNI">0000 0001 2179 0636</institution-id><institution>Departamento de F&#x000ed;sica, FACI, </institution><institution>Universidad de Tarapac&#x000e1;, </institution></institution-wrap>Casilla 7D, Arica, Chile </aff><aff id="Aff6"><label>6</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/04xe01d27</institution-id><institution-id institution-id-type="GRID">grid.412182.c</institution-id><institution-id institution-id-type="ISNI">0000 0001 2179 0636</institution-id><institution>Instituto de Alta Investigaci&#x000f3;n, </institution><institution>Universidad de Tarapac&#x000e1;, </institution></institution-wrap>Casilla 7D, Arica, Chile </aff><aff id="Aff7"><label>7</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/03rzb4f20</institution-id><institution-id institution-id-type="GRID">grid.412873.b</institution-id><institution-id institution-id-type="ISNI">0000 0004 0484 1712</institution-id><institution>Centro de Investigaci&#x000f3;n en Ciencias-IICBA, </institution><institution>Universidad Aut&#x000f3;noma del Estado de Morelos, </institution></institution-wrap>Cuernavaca, CP 62209 M&#x000e9;xico </aff></contrib-group><pub-date pub-type="epub"><day>28</day><month>12</month><year>2024</year></pub-date><pub-date pub-type="pmc-release"><day>28</day><month>12</month><year>2024</year></pub-date><pub-date pub-type="collection"><year>2024</year></pub-date><volume>14</volume><elocation-id>30810</elocation-id><history><date date-type="received"><day>15</day><month>4</month><year>2024</year></date><date date-type="accepted"><day>26</day><month>11</month><year>2024</year></date></history><permissions><copyright-statement>&#x000a9; The Author(s) 2024</copyright-statement><copyright-year>2024</copyright-year><license><ali:license_ref specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p><bold>Open Access</bold> This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article&#x02019;s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article&#x02019;s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link>.</license-p></license></permissions><abstract id="Abs1"><p id="Par1">The article provides and discusses details of numerical proceeding for the expansion method to calculate energy positions and wave functions of the localized and resonant electronic states emerging in quantum well-type semiconductor nanostructures because of perturbation of confined states by the Coulomb potential of the hydrogenic impurity center. Effective mass approximation is used. Several excited both resonant and non-resonant states are calculated and classified for the case of a simple rectangular GaAs/AlGaAs quantum well. Results are compared to the ones in literature.</p></abstract><kwd-group xml:lang="en"><title>Keywords</title><kwd>Semiconductor heterostructures</kwd><kwd>Hydrogenic impurity states</kwd><kwd>Expansion method</kwd></kwd-group><kwd-group kwd-group-type="npg-subject"><title>Subject terms</title><kwd>Two-dimensional materials</kwd><kwd>Quantum mechanics</kwd><kwd>Two-dimensional materials</kwd></kwd-group><custom-meta-group><custom-meta><meta-name>issue-copyright-statement</meta-name><meta-value>&#x000a9; Springer Nature Limited 2024</meta-value></custom-meta></custom-meta-group></article-meta></front><body><sec id="Sec1" sec-type="introduction"><title>Introduction</title><p id="Par2">Semiconductor structures are the main source of actual technologies in the areas of sensing, computing, electronics, optical electronics and communications. Bandgap engineering is the main tool to obtain the necessary properties of semiconductor devices. Particularly, layered semiconductor structures containing quasi-two-dimensional electron gas become one of the most popular configurations for existing and perspective applications<sup><xref ref-type="bibr" rid="CR1">1</xref></sup>. Therefore, the interest of scientific community to this kind of materials grows exponentially<sup><xref ref-type="bibr" rid="CR2">2</xref></sup>.</p><p id="Par3">Atomic impurities in semiconductor devices generally considered as an interference in an ideal crystallographic structure of semiconductor and are therefore one of the main reasons for the resistance of the whole structure. That is why modulation doping is mainly used outside the active areas as a source of free carriers. However, there are technologies that use impurities in semiconductor structures as a key feature<sup><xref ref-type="bibr" rid="CR3">3</xref></sup>. In our previous works we proposed some ideas about possible applications of impurity-connected effects in quantum well (QW) type structures<sup><xref ref-type="bibr" rid="CR4">4</xref>&#x02013;<xref ref-type="bibr" rid="CR7">7</xref></sup>.</p><p id="Par4">The first work to calculate impurity states energies in a quantum well<sup><xref ref-type="bibr" rid="CR8">8</xref></sup>used variational technique and gave birth to a series of subsequent publications<sup><xref ref-type="bibr" rid="CR9">9</xref>&#x02013;<xref ref-type="bibr" rid="CR11">11</xref></sup>among others). This kind of method remains actual up to very recently<sup><xref ref-type="bibr" rid="CR12">12</xref>,<xref ref-type="bibr" rid="CR13">13</xref></sup>, etc.). Nevertheless, the information variational method can provide us is somewhat limited. It does not allow to reliably calculate the impurity wave function (WF), which implies that we cannot, for example, obtain matrix elements and, accordingly, the rates for all kinds of electronic transitions involving impurity states. Alternatively, expansion techniques, in which the impurity states wave function is expanded over QW subband wave functions, are used as well<sup><xref ref-type="bibr" rid="CR14">14</xref>&#x02013;<xref ref-type="bibr" rid="CR16">16</xref></sup>. Those methods provide both wave functions and energy positions. However, they require significant processing powers and have their limitations. For instance, the well should be sufficiently deep to contain enough subbands to converge the results.</p><p id="Par5">It is known that shallow impurity atom in/near the QW produces several states resembling Rydberg series. Some impurity states go out of the bandgap and appear in the background of the continuous energy spectrum of lower subbands. Such states are called resonant ones (with a reference to Fano resonance<sup><xref ref-type="bibr" rid="CR17">17</xref></sup>) and they appear below every energy subband situated above the gap edge. Sometimes they described as broadened states.</p><p id="Par6">In this work we describe in detail the numerical method based on the expansion mathematical model proposed by<sup><xref ref-type="bibr" rid="CR14">14</xref></sup>. It can be used to numerically obtain energy positions and WFs of resonant and non-resonant impurity state in QW-like layered semiconductor heteroctructures. We use it to calculate some of the impurity states associated to a hydrogenic donor doped to the center of a rectangular GaAs/AlGaAs QW. Our results agree with an older work using the same mathematical model<sup><xref ref-type="bibr" rid="CR15">15</xref></sup>. However, it contains much more data, which were missed by that work presumably due to the lack of access to necessary computational powers. Such data allowed us to propose the new classification of impurity states based on energy positions and the shapes of wave functions in QW-like semiconductor structures.</p><sec id="Sec2"><title>Mathematical model</title><p id="Par7">To apply the method below to the 2D semiconductor nanostructure first we need to find the subband electronic description of the structure without the impurity atom. To find the subband energies and wave functions <italic>&#x003be;</italic><sub><italic>j</italic></sub>(<italic>z</italic>) we must solve the one-dimensional time-independent Schrodinger equation<sup><xref ref-type="bibr" rid="CR18">18</xref></sup><disp-formula id="Equ1"><label>1</label><alternatives><tex-math id="M1">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{H}_{0}\xi\:\left(z\right)=E\xi\:\left(z\right)$$\end{document}</tex-math><graphic xlink:href="41598_2024_81346_Article_Equ1.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par8">For the simple case of one particle problem in a rectangular quantum well the Hamiltonian can be written as<disp-formula id="Equ2"><label>2</label><alternatives><tex-math id="M2">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{H}_{0}=-\frac{{\hbar}^{2}}{2{m}^{*}}\frac{{d}^{2}}{d{z}^{2}}+V\left(z\right).$$\end{document}</tex-math><graphic xlink:href="41598_2024_81346_Article_Equ2.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par9">Here the potential part <inline-formula id="IEq1"><alternatives><tex-math id="M3">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:V\left(z\right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq1.gif"/></alternatives></inline-formula> is a well profile <inline-formula id="IEq2"><alternatives><tex-math id="M4">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:V\left(z\right)=\left\{\begin{array}{c}{V}_{b},\:\:\:\:\:\:\:\:\:\left|z\right|&#x0003e;L/2\\\:0,\:\:\:\:\:\:\:\:\:\:\:\left|z\right|\le\:L/2\end{array}\right\}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq2.gif"/></alternatives></inline-formula>, <italic>L</italic> is a well width with <italic>V</italic><sub><italic>b</italic></sub> being a barrier height. In the more complex cases of external fields the Hamiltonian (2) is modified by adding respective terms. Such Hamiltonian is used when there is a small concentration of impurities or at low, usually helium, temperatures. In the case of elevated temperatures and high concentrations one can add a Hartree potential term, created by electrons and ionized impurities to the Hamiltonian and solve the Eq.&#x000a0;(<xref rid="Equ1" ref-type="disp-formula">1</xref>) self-consistently along with Poisson and -maybe- electroneutrality ones. Anyway, that is a trivial task, which can be performed by available commercial<sup><xref ref-type="bibr" rid="CR19">19</xref></sup>and free<sup><xref ref-type="bibr" rid="CR20">20</xref></sup> software available. For the solution we need to specify the structure geometry and some properties of the materials, particularly effective mass <inline-formula id="IEq3"><alternatives><tex-math id="M5">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{m}^{*}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq3.gif"/></alternatives></inline-formula>(z). and dielectric permittivity &#x003b5;(z), as function of structure growth direction coordinate z. As a result of such a solution we get al.l the necessary data for our problem, namely the wave functions of localized subbands <inline-formula id="IEq4"><alternatives><tex-math id="M6">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{\xi\:}_{i}\left(z\right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq4.gif"/></alternatives></inline-formula>, and energy positions of subband bottoms <inline-formula id="IEq5"><alternatives><tex-math id="M7">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{E}_{i}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq5.gif"/></alternatives></inline-formula>.</p><p id="Par10">As a base of the method to find impurity levels we used the one developed in<sup><xref ref-type="bibr" rid="CR14">14</xref></sup>. The Hamiltonian to find the impurity states is written in cylindric coordinates <italic>r</italic>, <italic>&#x00472;</italic>, <italic>z</italic> to take advantage of azimuthal symmetry of the system (assuming that in the directions perpendicular to z all the parameters are constant):<disp-formula id="Equ3"><label>3</label><alternatives><tex-math id="M8">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:H=-\frac{{\hbar}^{2}}{2{m}^{*}}\frac{{d}^{2}}{d{z}^{2}}-\frac{{\hbar}^{2}}{2{m}^{*}}\left(\frac{{d}^{2}}{d{R}^{2}}+\frac{1}{R}\frac{d}{dR}+\frac{1}{{R}^{2}}\frac{{d}^{2}}{d{\theta\:}^{2}}\right)+V\left(z\right)-\frac{{e}^{2}}{4\pi\:\epsilon\:{\epsilon\:}_{0}\sqrt{{R}^{2}+{\left(z-{z}_{D}\right)}^{2}}}$$\end{document}</tex-math><graphic xlink:href="41598_2024_81346_Article_Equ3.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par11">where <inline-formula id="IEq6"><alternatives><tex-math id="M9">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{m}^{*}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq6.gif"/></alternatives></inline-formula> is the electron effective mass, <italic>z</italic><sub><italic>D</italic></sub> is z position of impurity center.</p><p id="Par12">Accordingly, the WF&#x000a0;<inline-formula id="IEq7"><alternatives><tex-math id="M10">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\Psi\left(R,\theta,z\right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq7.gif"/></alternatives></inline-formula> is sought as<disp-formula id="Equ4"><label>4</label><alternatives><tex-math id="M11">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{\Psi\:}\left(R,\theta\:,z\right)\equiv\:{e}^{im\theta\:}{\psi\:}_{m}\left(R,z\right),$$\end{document}</tex-math><graphic xlink:href="41598_2024_81346_Article_Equ4.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par13">were <italic>m</italic> is the azimuthal quantum number and i is the imaginary unit. <inline-formula id="IEq8"><alternatives><tex-math id="M12">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{\psi\:}_{m}\left(R,z\right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq8.gif"/></alternatives></inline-formula> is presented as an expansion over subband WFs:<disp-formula id="Equ5"><label>5</label><alternatives><tex-math id="M13">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{\psi\:}_{m}\left(R,z\right)=\sum\:_{j}{f}_{j}\left(R\right){\xi\:}_{j}\left(z\right).$$\end{document}</tex-math><graphic xlink:href="41598_2024_81346_Article_Equ5.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par14">Now using the solution of the Schrodinger equation with Hamiltonian <inline-formula id="IEq9"><alternatives><tex-math id="M14">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{H}_{0}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq9.gif"/></alternatives></inline-formula> along with the equation with <inline-formula id="IEq10"><alternatives><tex-math id="M15">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:H$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq10.gif"/></alternatives></inline-formula> after some math one can get the Eq.&#x000a0;<disp-formula id="Equ6"><label>6</label><alternatives><tex-math id="M16">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:\left[\frac{{d}^{2}}{d{R}^{2}}+\frac{1}{R}\frac{d}{dR}+\left({k}_{N}^{2}-\frac{{m}^{2}}{{R}^{2}}\right)\right]{f}_{N}\left(R\right)={U}_{Nn}\left(R\right){f}_{n}\left(R\right),$$\end{document}</tex-math><graphic xlink:href="41598_2024_81346_Article_Equ6.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par15">were <inline-formula id="IEq11"><alternatives><tex-math id="M17">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{k}_{N}^{2}=\frac{2{m}^{*}}{{\hbar}^{2}}(E-{E}_{N})$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq11.gif"/></alternatives></inline-formula>, <inline-formula id="IEq12"><alternatives><tex-math id="M18">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{U}_{Nn}\left(R\right)=\frac{2{m}^{*}}{{\hbar}^{2}}\frac{1}{4\pi\:\epsilon\:{\epsilon\:}_{0}}\int\:{\xi\:}_{N}^{\text{*}}\left(z\right)\frac{{e}^{2}}{\sqrt{{R}^{2}+{\left(z-{z}_{D}\right)}^{2}}}{\xi\:}_{n}\left(z\right)dz$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq12.gif"/></alternatives></inline-formula>, and <inline-formula id="IEq13"><alternatives><tex-math id="M19">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{E}_{N}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq13.gif"/></alternatives></inline-formula> (<italic>N</italic>&#x02009;=&#x02009;1,2,3&#x02026;) are energy solutions of (1).</p><p id="Par16">The solution of (6) is found as<sup><xref ref-type="bibr" rid="CR14">14</xref></sup>:<disp-formula id="Equ7"><label>7</label><alternatives><tex-math id="M20">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{f}_{N}\left(R\right)=\underset{0}{\overset{{\infty\:}}{\int\:}}{G}_{N}\left(R,{R}^{{\prime\:}},E\right)\sum\:_{n}{U}_{Nn}\left({R}^{{\prime\:}}\right){f}_{n}\left({R}^{{\prime\:}}\right)R{\prime\:}dR{\prime\:},$$\end{document}</tex-math><graphic xlink:href="41598_2024_81346_Article_Equ7.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par17">where <inline-formula id="IEq14"><alternatives><tex-math id="M21">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{G}_{N}\left(R,{R}^{{\prime\:}},E\right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq14.gif"/></alternatives></inline-formula> are Green functions given by:<disp-formula id="Equ8"><label>8</label><alternatives><tex-math id="M22">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{G}_{N}\left(R,{R}^{{\prime\:}},E\right)=\left\{\begin{array}{c}-{K}_{m}\left({k}_{N}{R}^{{\prime\:}}\right){I}_{m}\left({k}_{N}R\right),\:\:R&#x0003c;{R}^{{\prime\:}},\:E&#x0003c;{E}_{N}\\\:-{I}_{m}\left({k}_{N}{R}^{{\prime\:}}\right){K}_{m}\left({k}_{N}R\right),\:\:\:R\ge\:{R}^{{\prime\:}},\:E&#x0003c;{E}_{N}\\\:\frac{\pi\:}{2}{N}_{m}\left({k}_{N}{R}^{{\prime\:}}\right){J}_{m}\left({k}_{N}R\right),\:\:\:\:R&#x0003c;{R}^{{\prime\:}},E\ge\:{E}_{N}\:\\\:\frac{\pi\:}{2}{J}_{m}\left({k}_{N}{R}^{{\prime\:}}\right){N}_{m}\left({k}_{N}R\right),\:\:\:\:R\ge\:{R}^{{\prime\:}},E\ge\:{E}_{N}\end{array}\right.,$$\end{document}</tex-math><graphic xlink:href="41598_2024_81346_Article_Equ8.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par18">where J, N (I, K) are the Bessel functions of first (second) kind.</p><p id="Par19">To solve the Eqs.&#x000a0;(<xref rid="Equ6" ref-type="disp-formula">6</xref>&#x02013;<xref rid="Equ8" ref-type="disp-formula">8</xref>) an overcomplicated version of shooting method was used in<sup><xref ref-type="bibr" rid="CR14">14</xref></sup>. It was based on border conditions and continuity of WF expansion terms. Instead we employ a simpler way described below. Apart from this, we use the same system of equations and expect to get the same solutions within the numerical error.</p><p id="Par20">Replacing in (7) integral with a sum of finite differences we get:<disp-formula id="Equ9"><label>9</label><alternatives><tex-math id="M23">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{f}_{N}\left({R}_{p}\right)=\sum\:_{q}\left[{G}_{N}\left({R}_{p},{R}_{q},E\right){R}_{q}{\varDelta\:R}_{q}\sum\:_{n}{U}_{Nn}\left({R}_{q}\right){f}_{n}\left({R}_{q}\right)\right],$$\end{document}</tex-math><graphic xlink:href="41598_2024_81346_Article_Equ9.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par21">Where <inline-formula id="IEq15"><alternatives><tex-math id="M24">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{R}_{p}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq15.gif"/></alternatives></inline-formula>and <inline-formula id="IEq16"><alternatives><tex-math id="M25">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{R}_{q}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq16.gif"/></alternatives></inline-formula> get the same series of <italic>N</italic><sub><italic>R</italic></sub> consequent magnitudes between 0 and some <inline-formula id="IEq17"><alternatives><tex-math id="M26">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{R}_{max}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq17.gif"/></alternatives></inline-formula>, <inline-formula id="IEq18"><alternatives><tex-math id="M27">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{\varDelta\:R}_{j}={R}_{j+1}-{R}_{j}\:(j=p,q$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq18.gif"/></alternatives></inline-formula>) <inline-formula id="IEq19"><alternatives><tex-math id="M28">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:p,q=1..{N}_{R}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq19.gif"/></alternatives></inline-formula>. We did not find any numerical advantage of choosing variable <inline-formula id="IEq20"><alternatives><tex-math id="M29">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:\varDelta\:R\:$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq20.gif"/></alternatives></inline-formula>and used the simple case of uniform step <inline-formula id="IEq21"><alternatives><tex-math id="M30">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:\varDelta\:R=const=\frac{{R}_{max}}{{N}_{R}-1}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq21.gif"/></alternatives></inline-formula>, where <inline-formula id="IEq22"><alternatives><tex-math id="M31">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:\:{R}_{j}=(j-1)\times\:\varDelta\:R$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq22.gif"/></alternatives></inline-formula>. For given <italic>E</italic>, <inline-formula id="IEq23"><alternatives><tex-math id="M32">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{R}_{p}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq23.gif"/></alternatives></inline-formula> and <inline-formula id="IEq24"><alternatives><tex-math id="M33">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{R}_{q}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq24.gif"/></alternatives></inline-formula>, <inline-formula id="IEq25"><alternatives><tex-math id="M34">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{G}_{N}\left({R}_{p},{R}_{q},E\right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq25.gif"/></alternatives></inline-formula> and <inline-formula id="IEq26"><alternatives><tex-math id="M35">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{U}_{Nn}\left({R}_{q}\right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq26.gif"/></alternatives></inline-formula> can be calculated, and (9) in fact is a system of linear algebraic equations with respect to variables <inline-formula id="IEq27"><alternatives><tex-math id="M36">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:f\left(R\right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq27.gif"/></alternatives></inline-formula>. The system consists of <italic>N</italic><sub><italic>s</italic></sub>&#x000d7;<italic>N</italic><sub><italic>R</italic></sub> equations (<italic>N</italic><sub><italic>s</italic></sub> is the number of subbands used for expansion) and can be presented as:<disp-formula id="Equ10"><label>10</label><alternatives><tex-math id="M37">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:M\varvec{f}=0,$$\end{document}</tex-math><graphic xlink:href="41598_2024_81346_Article_Equ10.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par22">Where <bold><italic>f</italic></bold> is a vector of <italic>N</italic><sub><italic>s</italic></sub>&#x000d7;<italic>N</italic><sub><italic>R</italic></sub> elements and contains all tabulated functions <italic>f</italic><sub><italic>N</italic></sub>, starting from 1st to <inline-formula id="IEq28"><alternatives><tex-math id="M38">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{N}_{s}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq28.gif"/></alternatives></inline-formula>-th (<inline-formula id="IEq29"><alternatives><tex-math id="M39">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{f}_{p+\left(N-1\right)*{N}_{R}}={f}_{N}\left({R}_{p}\right),\:N=1..{N}_{s},\:p=1..{N}_{R}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq29.gif"/></alternatives></inline-formula>), whilst <italic>M</italic> is a square matrix:<disp-formula id="Equ11"><label>11</label><alternatives><tex-math id="M40">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{M}_{p+\left(N-1\right)\text{*}{N}_{R},\:\:\:q+\left(n-1\right)\text{*}{N}_{R}}={\delta\:}_{pq}{\delta\:}_{nN}-{G}_{N}\left({R}_{p},{R}_{q},E\right){R}_{q}{\varDelta\:R}_{q}{U}_{Nn}\left({R}_{q}\right)$$\end{document}</tex-math><graphic xlink:href="41598_2024_81346_Article_Equ11.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par23">where <inline-formula id="IEq30"><alternatives><tex-math id="M41">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:N,n=1..{N}_{s},\:p,q=1..{N}_{R}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq30.gif"/></alternatives></inline-formula>.</p><p id="Par24">In<sup><xref ref-type="bibr" rid="CR21">21</xref></sup> it is shown that energy positions of both resonant and non-resonant impurity levels correspond to energy values for which the condition Det(M)&#x02009;=&#x02009;0 fulfills. So, the solution of this equation gives impurity level energies and the solution of the system (9) provides with the set of <italic>N</italic><sub><italic>s</italic></sub>&#x000d7;<italic>N</italic><sub><italic>R</italic></sub> numerical elements of column vector <inline-formula id="IEq31"><alternatives><tex-math id="M42">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{f}_{j}\left(R\right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq31.gif"/></alternatives></inline-formula>, which allows to build the complete impurity WFs using Eqs.&#x000a0;(<xref rid="Equ4" ref-type="disp-formula">4</xref>) and (<xref rid="Equ5" ref-type="disp-formula">5</xref>). Mathematically the equation system (9) has infinite number of solutions but owing to it is linear, we can just equate any of <inline-formula id="IEq32"><alternatives><tex-math id="M43">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{f}_{j}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq32.gif"/></alternatives></inline-formula> scalar variables to any real constant, find other variables and then normalize the WF (4) which can be written in cylindric coordinates as:<disp-formula id="Equ12"><label>12</label><alternatives><tex-math id="M44">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{{\Psi\:}}_{norm}\left(R,\theta\:,z\right)=\frac{{\Psi\:}\left(R,\theta\:,z\right)}{\sqrt{2\pi\:\underset{z=-{\infty\:}}{\overset{{\infty\:}}{\int\:}}\underset{R=0}{\overset{{\infty\:}}{\int\:}}{{\Psi\:}(\text{R},\text{z})}^{2}RdRdz}}$$\end{document}</tex-math><graphic xlink:href="41598_2024_81346_Article_Equ12.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par25">We guess that this -or similar- simple method was not proposed in<sup><xref ref-type="bibr" rid="CR14">14</xref></sup> because at the time the author did not have access to computers with big enough memory to properly deal with very large matrices. For instance, a typical matrix appearing in this work contained about 576,000,000 real elements.</p><p id="Par26">To characterize the impurity WFs we used transverse <inline-formula id="IEq33"><alternatives><tex-math id="M45">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{a}_{R}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq33.gif"/></alternatives></inline-formula> and longitudinal <inline-formula id="IEq34"><alternatives><tex-math id="M46">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{a}_{z}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq34.gif"/></alternatives></inline-formula> localization characteristics calculated as follows.<disp-formula id="Equ13"><label>13</label><alternatives><tex-math id="M47">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{a}_{R}=\underset{V}{\overset{}{\int\:}}{{\Psi\:}}^{2}RdV=2\pi\:\underset{z=-{\infty\:}}{\overset{{\infty\:}}{\int\:}}dz\underset{R=0}{\overset{{\infty\:}}{\int\:}}{{\Psi\:}(\text{R},\text{z})}^{2}{R}^{2}dR$$\end{document}</tex-math><graphic xlink:href="41598_2024_81346_Article_Equ13.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ14"><label>14</label><alternatives><tex-math id="M48">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{a}_{z}=\underset{V}{\overset{}{\int\:}}{{\Psi\:}}^{2}RdV=2\pi\:\underset{z=-{\infty\:}}{\overset{{\infty\:}}{\int\:}}\left|{z}_{cm}-z\right|dz\underset{R=0}{\overset{{\infty\:}}{\int\:}}{{\Psi\:}(\text{R},\text{z})}^{2}RdR$$\end{document}</tex-math><graphic xlink:href="41598_2024_81346_Article_Equ14.gif" position="anchor"/></alternatives></disp-formula></p><p id="Par27">One may interpret <inline-formula id="IEq35"><alternatives><tex-math id="M49">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{a}_{R}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq35.gif"/></alternatives></inline-formula> and <inline-formula id="IEq36"><alternatives><tex-math id="M50">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{a}_{z}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq36.gif"/></alternatives></inline-formula> as some kind of quantities equivalent to Bohr radius, defined as the most probable transverse and longitudinal distances to the center of mass of the WF <inline-formula id="IEq37"><alternatives><tex-math id="M51">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{z}_{cm}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq37.gif"/></alternatives></inline-formula>. In this work we considered only the case of a center doped well <inline-formula id="IEq38"><alternatives><tex-math id="M52">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{z}_{D}=0$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq38.gif"/></alternatives></inline-formula>, therefore the center of the WF coincides with the well center <inline-formula id="IEq39"><alternatives><tex-math id="M53">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{z}_{cm}=0$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq39.gif"/></alternatives></inline-formula> because of the well symmetry along z.</p></sec><sec id="Sec3"><title>Numerical proceeding</title><p id="Par28">First, we numerically find the subband WFs <inline-formula id="IEq40"><alternatives><tex-math id="M54">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{\xi\:}_{j}\left(z\right)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq40.gif"/></alternatives></inline-formula> and respective energies <inline-formula id="IEq41"><alternatives><tex-math id="M55">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{E}_{j}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq41.gif"/></alternatives></inline-formula> as eigenfunctions and eigenvalues of Hamiltonian <inline-formula id="IEq42"><alternatives><tex-math id="M56">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{H}_{0}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq42.gif"/></alternatives></inline-formula> [Eq.&#x000a0;(<xref rid="Equ2" ref-type="disp-formula">2</xref>)], employing effective mass <inline-formula id="IEq43"><alternatives><tex-math id="M57">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{m}^{*}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq43.gif"/></alternatives></inline-formula>=0.067<italic>m</italic><sub>0</sub> (<italic>m</italic><sub>0</sub> is a free electron mass), dielectric constant <inline-formula id="IEq44"><alternatives><tex-math id="M58">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:\epsilon\:$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq44.gif"/></alternatives></inline-formula>=12.565 and rectangular well profile: well width <italic>L</italic>=30&#x000a0;nm, and barrier potential <italic>V</italic><sub><italic>b</italic></sub>=50Ry (with effective Rydberg value 1Ry=<inline-formula id="IEq45"><alternatives><tex-math id="M59">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:\frac{{\hbar}^{2}}{2{m}^{*}{a}_{b}^{2}}=$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq45.gif"/></alternatives></inline-formula>5.80meV, <inline-formula id="IEq46"><alternatives><tex-math id="M60">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{a}_{b}=\frac{4\pi\:\epsilon\:{\epsilon\:}_{0}{\hbar}^{2}}{{m}^{*}{e}^{2}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq46.gif"/></alternatives></inline-formula>). These parameters of our structure correspond to one structure used in<sup><xref ref-type="bibr" rid="CR15">15</xref></sup>, in order to compare the outcoming results. The task above is trivial and we shall not discuss it.</p><p id="Par29">In our reference system the center of the well is at z&#x02009;=&#x02009;0 and we take z in units of L. Here we consider impurity position in the center of the well <italic>z</italic><sub><italic>D</italic></sub>=0.</p><p id="Par30">Now we form the matrix <italic>M</italic> as (10) and evaluate its discriminant <italic>D</italic>(<italic>E</italic>) for a given energy <italic>E</italic>. To find the energy positions of impurity we must solve the equation <italic>D</italic>(<italic>E</italic>)&#x02009;=&#x02009;0 (that provides a series of solutions described below) and then to construct the impurity wave functions for the obtained energies, we solve the Eq.&#x000a0;<xref rid="Equ9" ref-type="disp-formula">9</xref> obtaining the corresponding functions <italic>f</italic><sub><italic>j</italic></sub> and form the full WFs according to Eqs.&#x000a0;(<xref rid="Equ4" ref-type="disp-formula">4</xref>) and (<xref rid="Equ5" ref-type="disp-formula">5</xref>). Note that to correctly reproduce the WF the energy should be found with high numerical precision (we used 7 significative digits) for exactly the same set of numerical parameters.</p><p id="Par31">The primary possible numerical error sources for the proceeding above are the following: (1) <inline-formula id="IEq47"><alternatives><tex-math id="M61">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:\varDelta\:R$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq47.gif"/></alternatives></inline-formula> in finite differences, (2) number of subbands used for expansion <italic>N</italic><sub><italic>s</italic></sub>, (3) the maximum magnitude of <italic>R</italic> used to replace the infinity in the integral of Eq.&#x000a0;<xref rid="Equ7" ref-type="disp-formula">7</xref> for the numerical purposes <inline-formula id="IEq48"><alternatives><tex-math id="M62">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{{R}_{max}=N}_{R}\varDelta\:R$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq48.gif"/></alternatives></inline-formula>. Our calculations showed that for all impurity states we report in this work varying parameters <inline-formula id="IEq49"><alternatives><tex-math id="M63">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:\varDelta\:R$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq49.gif"/></alternatives></inline-formula> and <italic>N</italic><sub><italic>s</italic></sub> provide good convergence of the results. Thus, for our calculations we stuck with <italic>N</italic><sub><italic>s</italic></sub>=7 and <inline-formula id="IEq50"><alternatives><tex-math id="M64">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:\varDelta\:R$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq50.gif"/></alternatives></inline-formula>=0.07&#x000a0;nm, values such that negligible changes appear when refined further. It is worth noting here that among the solutions found, the most vulnerable to an increase in &#x02206;R turned out to be the lowest energy one, corresponding to the wave function most localized in R, which is quite expectable.</p><p id="Par32">A more complex situation occurs when varying <italic>R</italic><sub><italic>max</italic></sub>. Obviously, <italic>R</italic><sub><italic>max</italic></sub> should cover absolutely most of the WF, so the bigger <italic>R</italic><sub><italic>max</italic></sub> the better. On the other hand, we find that when <italic>R</italic><sub><italic>max</italic></sub> is too big in comparison to the WF extension, the calculated WF can exhibit an artificial peak at the border <italic>R</italic>&#x02009;=&#x02009;<italic>R</italic><sub><italic>max</italic></sub>. The impurity level energy is not affected much by <italic>R</italic><sub><italic>max</italic></sub>, which causes that peak, if we continue increasing <italic>R</italic><sub><italic>max</italic></sub>, it remains stable but at some <italic>R</italic><sub><italic>max</italic></sub> the energy solution can disappear. We associate this behavior with an equivalent of numerical integration error. On the other hand, decreasing <inline-formula id="IEq51"><alternatives><tex-math id="M65">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:\varDelta\:R$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq51.gif"/></alternatives></inline-formula> does not have much effect on energy solution. So, for better reproduction of impurity WFs and to be able to find the energy of some specific impurity levels, the calculations should be performed with <italic>R</italic><sub><italic>max</italic></sub> within the specific reasonable range that depends on the localization of respective state.</p><p id="Par33">The Fig.&#x000a0;<xref rid="Fig1" ref-type="fig">1</xref> is an illustration of the series of solutions provided by the method. Here the modified determinant <inline-formula id="IEq52"><alternatives><tex-math id="M66">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{D}_{M}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq52.gif"/></alternatives></inline-formula> of the matrix M is depicted as a function of energy for different <italic>R</italic><sub><italic>max</italic></sub>. <inline-formula id="IEq53"><alternatives><tex-math id="M67">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{D}_{M}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq53.gif"/></alternatives></inline-formula> is used for visualization purposes in the graph and calculated as follows</p><p id="Par34">
+<fig id="Fig1"><label>Fig. 1</label><caption><p>Modified determinant <italic>D</italic><sub><italic>M</italic></sub> of the matrix <italic>M</italic> for GaAs/AlGaAs 30&#x000a0;nm-wide rectangular quantum well with barrier height <italic>V</italic><sub><italic>b</italic></sub>=50Ry as a function of energy in Ry for different values of <italic>R</italic><sub><italic>max</italic></sub>. s-levels (m&#x02009;=&#x02009;0), <italic>R</italic><sub><italic>max</italic></sub>=120 (orange squares), 180 (grey diamonds), 240 (light blue triangles), 480 (blue minuses) and 720&#x000a0;nm (green circles).</p></caption><graphic xlink:href="41598_2024_81346_Fig1_HTML" id="d33e1130"/></fig>
+<disp-formula id="Equ15"><label>15</label><alternatives><tex-math id="M68">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{D}_{M}=\frac{\left|D\right|}{D}\times\:\left[\sqrt{{\text{l}\text{n}}^{2}\left({D}^{2}\right)+\beta\:}+\text{l}\text{n}\left({D}^{2}\right)\right],$$\end{document}</tex-math><graphic xlink:href="41598_2024_81346_Article_Equ15.gif" position="anchor"/></alternatives></disp-formula>
+</p><p id="Par35">where D is a matrix determinant in some arbitrary units, and &#x003b2; is a parameter used to adjust the visualization (here &#x003b2;&#x02009;=&#x02009;100). This visualization concept has some advantages of semilogarithmic scale (particularly it conserves the smoothness and monotonousness of original determinant while allowing comparison of curve shapes with different orders of magnitude) and preserve the sign of original determinant which is important to see its zeros.</p><p id="Par36">In Fig.&#x000a0;<xref rid="Fig1" ref-type="fig">1</xref> the solutions appear at the points where the curve intersects the horizontal axis. We can see that some of the solutions coincide for different <italic>R</italic><sub><italic>max</italic></sub> or at least converge to some energy when <italic>R</italic><sub><italic>max</italic></sub> grows. We shall refer to those solutions as to numerically stable ones and assume that a stable solution corresponds to a real physical impurity level. Other solutions are unstable; that is they change significantly with <italic>R</italic><sub><italic>max</italic></sub> and do not converge within reasonable magnitudes of <italic>R</italic><sub><italic>max</italic></sub>. Such numerically unstable solutions may not have any physical meaning and we will ignore them. As one can see, the stable solutions tend to form a ladder asymptotically approaching the bottom of each subband whereas unstable ones are either above the subband bottoms and below the stable solutions of the next subband; or just in the immediate proximity of subband bottom. The latter can be attributed to the upper steps of respective ladders and can be calculated more exactly with bigger <italic>R</italic><sub><italic>max</italic></sub>. All the plots in Fig.&#x000a0;<xref rid="Fig1" ref-type="fig">1</xref> are for m&#x02009;=&#x02009;0. We performed similar calculations for m&#x02009;=&#x02009;1 and 2 and identified stable levels.</p><p id="Par37">In the Fig.&#x000a0;<xref rid="Fig2" ref-type="fig">2</xref> we present <italic>D</italic><sub><italic>M</italic></sub> graphs with curves for m&#x02009;=&#x02009;0,1 and 2 for <italic>R</italic><sub><italic>max</italic></sub>=240&#x000a0;nm (which we used for calculations). The graphs for m different than 0 have the same general behavior (stable levels just below respective subbands with somewhat bigger energies for zero determinant, unstable levels above the subbands) with one notable exception: an unstable level with m&#x02009;=&#x02009;2 just below the first stable m&#x02009;=&#x02009;0 level (marked in the figure).</p><p id="Par38">
+<fig id="Fig2"><label>Fig. 2</label><caption><p>Modified determinant <italic>D</italic><sub><italic>M</italic></sub> GaAs/AlGaAs 30&#x000a0;nm-wide rectangular quantum well with barrier height <italic>V</italic><sub><italic>b</italic></sub>=50Ry as a function of energy in Ry for different m: m=0 (s, orange squares), m=1 (p, blue triangles), m=2 (d, grey circles), <italic>R</italic><sub><italic>max</italic></sub>=240 nm.</p></caption><graphic xlink:href="41598_2024_81346_Fig2_HTML" id="d33e1225"/></fig>
+</p><p id="Par39">Analyzing Figs.&#x000a0;<xref rid="Fig1" ref-type="fig">1</xref> and <xref rid="Fig2" ref-type="fig">2</xref> one can conclude that the set of solutions provided by zero determinants resembles a kind of Rydberg series with three independent quantum numbers. In particular, we explicitly have the azimuthal one, m, which appears in exponent of the wave function [Eq.&#x000a0;(<xref rid="Equ4" ref-type="disp-formula">4</xref>)], and then determines the order of Bessel functions in Eq.&#x000a0;(<xref rid="Equ8" ref-type="disp-formula">8</xref>). Two other quantum numbers can be deduced from existing solutions for each m. One of them corresponds to the number of specific subband number and another one to the step number within the respective ladder. Naturally we expect that increasing each of those quantum numbers leads to increasing energy and less localized corresponding wave function.</p><p id="Par40">Here and below, for a proper classification of impurity levels we will employ the following notation. Following<sup><xref ref-type="bibr" rid="CR15">15</xref></sup>, we use letters &#x0201c;s&#x0201d;, &#x0201c;p&#x0201d;, &#x0201c;d&#x0201d;, &#x0201c;f&#x0201d; &#x02026; to refer to m&#x02009;=&#x02009;0, 1, 2, 3&#x02026; accordingly; in loose analogy to the classification of electronic states in hydrogenic atom. However, it is necessary to have in mind that the analogy is far from perfect and can be confusing in some situations. In regard, a particular impurity state is denoted as &#x0201c;letter, n<sub>1</sub>, n<sub>2</sub>&#x0201d;, where n<sub>1</sub> is a subband number where 1 corresponds to the ground subband, and n<sub>2</sub> is a ladder number starting from 1 for the lowest level in the ladder. For example, s11 is a ground impurity state that corresponds to &#x02212;0.606Ry and s21 is a first step of the ladder below the second subband (2.622Ry), see Fig.&#x000a0;<xref rid="Fig1" ref-type="fig">1</xref>.</p></sec></sec><sec id="Sec4"><title>Discussion of physical results</title><p id="Par41">In the Figs.&#x000a0;<xref rid="Fig3" ref-type="fig">3</xref> and <xref rid="Fig4" ref-type="fig">4</xref> one can see two kinds of visual representations for the impurity wave functions of s11, s12, s21, s22 levels and p11, p12, p21, p22 levels respectively. The code of the respective state is recognized on the base of wave function shape (see discussion below, and corresponding energy positions in Table&#x000a0;<xref rid="Tab1" ref-type="table">1</xref>). The fist kind is a 3D graph against R-z plane orientated in the way that z axis corresponds the right bottom edge of the plot cube. Note that the mathematical model implies cylindrical symmetry and the only part where the angle <italic>&#x003b8;</italic> appears is the exponent in the complete WF Eq.&#x000a0;(<xref rid="Equ4" ref-type="disp-formula">4</xref>). But the squared exponent is always equal to 1, so the full squared WF is obtained by the 360&#x000b0; rotation of R-z graph around z axis. Another way used here to represent such state function is by means of an isosurface plot, compatible with the typical way the atomic orbitals are often represented. It is a 3D plot of surfaces that correspond to some particular value of squared wave function. The latter plot contains less information but gives better intuitive idea about volumetric shape of an electronic cloud. We can discuss the WFs in terms of peaks on R-z plots. Note that in an isosurface plot an R-z peak forms an ellipsoid-like shape or torus-like shape depending whether the peak extremum is positioned on z axis or elsewhere.</p><p id="Par42">
+<fig id="Fig3"><label>Fig. 3</label><caption><p>R-z plots and isosurfaces for squared wave functions of s11, s12, s21 and s22 impurity states. R and z are in nanometers.</p></caption><graphic xlink:href="41598_2024_81346_Fig3_HTML" id="d33e1286"/></fig>
+</p><p id="Par43">
+<fig id="Fig4"><label>Fig. 4</label><caption><p>R-z plots and isosurfaces for squared wave functions of p11, p12, p21 and p22 impurity states. R and z are in nanometers.</p></caption><graphic xlink:href="41598_2024_81346_Fig4_HTML" id="d33e1296"/></fig>
+</p><p id="Par44">
+<table-wrap id="Tab1"><label>Table 1</label><caption><p>Energy structure near the bottom of conduction band of 30&#x000a0;nm-wide GaAs/AlGaAs rectangular QW.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Level</th><th align="left">Energy, Ry</th><th align="left">Binding energy, Ry</th><th align="left"><italic>R</italic>-localization <inline-formula id="IEq54"><alternatives><tex-math id="M69">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{\varvec{a}}_{\varvec{R}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq54.gif"/></alternatives></inline-formula>, &#x000c5;</th><th align="left">z-localization <break/><inline-formula id="IEq55"><alternatives><tex-math id="M70">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{\varvec{a}}_{\varvec{z}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq55.gif"/></alternatives></inline-formula>, &#x000c5;</th><th align="left">Binding energy in [15], Ry</th></tr></thead><tbody><tr><td align="left">3rd subband</td><td char="." align="char">8.167</td><td align="left"/><td align="left"/><td align="left"/><td align="left"/></tr><tr><td align="left">s33</td><td char="." align="char">8.126</td><td char="." align="char">
+<italic>0.041</italic>
+</td><td char="." align="char">152</td><td char="." align="char">7.46</td><td align="left"><italic>0.053</italic> (s3)</td></tr><tr><td align="left">d32</td><td char="." align="char">8.093</td><td char="." align="char">0.074</td><td char="." align="char">145</td><td char="." align="char">7.83</td><td align="left"/></tr><tr><td align="left">d31</td><td char="." align="char">8.016</td><td char="." align="char">0.151</td><td char="." align="char">79</td><td char="." align="char">7.83</td><td align="left"/></tr><tr><td align="left">p32</td><td char="." align="char">8.031</td><td char="." align="char">0.136</td><td char="." align="char">106</td><td char="." align="char">7.19</td><td align="left"/></tr><tr><td align="left">s32</td><td char="." align="char">7.921</td><td char="." align="char">0.246</td><td char="." align="char">74</td><td char="." align="char">7.07</td><td align="left"/></tr><tr><td align="left">p31</td><td char="." align="char">7.820</td><td char="." align="char">0.347</td><td char="." align="char">67</td><td char="." align="char">6.74</td><td align="left"/></tr><tr><td align="left">s31</td><td char="." align="char">7.198</td><td char="." align="char">0.969</td><td char="." align="char">77</td><td char="." align="char">5.97</td><td align="left"/></tr><tr><td align="left">d23</td><td char="." align="char">3.659</td><td char="." align="char">&#x02212;0.020</td><td char="." align="char">136</td><td char="." align="char">8.18</td><td align="left"/></tr><tr><td align="left">p23</td><td char="." align="char">3.650</td><td char="." align="char">&#x02212;0.011</td><td char="." align="char">154</td><td char="." align="char">8.18</td><td align="left"/></tr><tr><td align="left">2nd subband</td><td char="." align="char">3.639</td><td align="left"/><td align="left"/><td align="left"/><td align="left"/></tr><tr><td align="left">d22</td><td char="." align="char">3.600</td><td char="." align="char">0.039</td><td char="." align="char">145</td><td char="." align="char">8.18</td><td align="left"/></tr><tr><td align="left">s24</td><td char="." align="char">3.593</td><td char="." align="char">0.046</td><td char="." align="char">156</td><td char="." align="char">8.18</td><td align="left"/></tr><tr><td align="left">s23</td><td char="." align="char">3.525</td><td char="." align="char">0.114</td><td char="." align="char">127</td><td char="." align="char">8.18</td><td align="left"/></tr><tr><td align="left">p22</td><td char="." align="char">3.497</td><td char="." align="char">0.142</td><td char="." align="char">100</td><td char="." align="char">8.18</td><td align="left"/></tr><tr><td align="left">d21</td><td char="." align="char">3.486</td><td char="." align="char">0.153</td><td char="." align="char">78</td><td char="." align="char">8.18</td><td align="left"/></tr><tr><td align="left">s22</td><td char="." align="char">3.379</td><td char="." align="char">
+<italic>0.260</italic>
+</td><td char="." align="char">58</td><td char="." align="char">8.16</td><td align="left"><italic>0.312</italic> (s2)</td></tr><tr><td align="left">p21</td><td char="." align="char">3.278</td><td char="." align="char">0.361</td><td char="." align="char">36</td><td char="." align="char">8.16</td><td align="left"/></tr><tr><td align="left">s21</td><td char="." align="char">2.622</td><td char="." align="char">1.017</td><td char="." align="char">14</td><td char="." align="char">8.05</td><td align="left"/></tr><tr><td align="left">1st subband</td><td char="." align="char">0.911</td><td align="left"/><td align="left"/><td align="left"/><td align="left"/></tr><tr><td align="left">d13</td><td char="." align="char">0.896</td><td char="." align="char">0.015</td><td char="." align="char">144</td><td char="." align="char">4.86</td><td align="left"/></tr><tr><td align="left">p13</td><td char="." align="char">0.840</td><td char="." align="char">0.071</td><td char="." align="char">153</td><td char="." align="char">4.85</td><td align="left"/></tr><tr><td align="left">d12</td><td char="." align="char">0.834</td><td char="." align="char">0.077</td><td char="." align="char">114</td><td char="." align="char">4.86</td><td align="left"/></tr><tr><td align="left">s13</td><td char="." align="char">0.783</td><td char="." align="char">0.128</td><td char="." align="char">116</td><td char="." align="char">4.85</td><td align="left"/></tr><tr><td align="left">p12</td><td char="." align="char">0.761</td><td char="." align="char">0.150</td><td char="." align="char">95</td><td char="." align="char">4.85</td><td align="left"/></tr><tr><td align="left">d11</td><td char="." align="char">0.754</td><td char="." align="char">0.157</td><td char="." align="char">76</td><td char="." align="char">4.86</td><td align="left"/></tr><tr><td align="left">s12</td><td char="." align="char">0.600</td><td char="." align="char">0.311</td><td char="." align="char">49</td><td char="." align="char">4.83</td><td align="left"/></tr><tr><td align="left">p11</td><td char="." align="char">0.514</td><td char="." align="char">
+<italic>0.397</italic>
+</td><td char="." align="char">33</td><td char="." align="char">4.82</td><td align="left"><italic>0.397</italic> (p1)</td></tr><tr><td align="left">s11</td><td char="." align="char">&#x02212;0.606</td><td char="." align="char">
+<italic>1.517</italic>
+</td><td char="." align="char">10</td><td char="." align="char">4.42</td><td align="left"><italic>1.574</italic> (s1)</td></tr></tbody></table></table-wrap>
+</p><p id="Par45">Since the impurity WFs are found through the expansion over subband states it makes sense comparing their cross-section profiles with the shapes of subband WFs. Squared subband WFs have a number of peaks equal to its assigned quantum number <italic>j</italic> (counted from 1). We can clearly see in Fig.&#x000a0;<xref rid="Fig5" ref-type="fig">5</xref> that the shapes of the impurity WFs follow a pattern. The peaks always form a rectangular matrix <italic>j</italic>&#x000d7;<italic>k</italic>. Series of levels below each subband qualitatively reproduce the shape of corresponding subband WFs in cross-sections along z so that it <italic>j</italic> columns of peaks along z and <italic>k</italic> rows along R (where <italic>k</italic>&#x02009;=&#x02009;1,2,3&#x02026;) are formed. And this behavior is reproduced for each <italic>m</italic>. Based on those observations and following to a degree the formalism of<sup><xref ref-type="bibr" rid="CR15">15</xref></sup> we have proposed a notation for impurity states, consisting of three indices as described above in the comments to Fig.&#x000a0;<xref rid="Fig1" ref-type="fig">1</xref> (letter, <italic>j</italic>, <italic>k</italic>). It should be noted, however, that the position in energy is secondary in our notation. In our structure, well subbands are far enough from each other in energy but in other configurations (for example, in wider QWs) the states related to different subbands can be intermixed in energy and do not form obvious ladders as in Fig.&#x000a0;<xref rid="Fig1" ref-type="fig">1</xref>. Therefore, as a primary criterion for classification we take the shape of the WFs. We expect however that as soon as our indices <italic>j</italic> and <italic>k</italic> don&#x02019;t have explicit presence in mathematical model, in other situation (structure asymmetry, external fields, effective mass anisotropy etc.) the identification of states by shape can be problematic though potentially possible by slowly changing parameters and following the evolution of the WF.</p><p id="Par46">
+<fig id="Fig5"><label>Fig. 5</label><caption><p>R-z plot of 18 impurity WFs, the scale in R is the same in all plots. z=&#x02212;25.25&#x000a0;nm, <italic>R</italic>&#x02009;=&#x02009;0.230&#x000a0;nm.</p></caption><graphic xlink:href="41598_2024_81346_Fig5_HTML" id="d33e1779"/></fig>
+</p><p id="Par47">In all plots of Figs.&#x000a0;<xref rid="Fig3" ref-type="fig">3</xref> and <xref rid="Fig4" ref-type="fig">4</xref> the units are nanometers; z is scaled from &#x02212;&#x02009;25 to 25&#x000a0;nm and the heterointerfaces between the well and the barriers correspond to &#x02212;15 and 15&#x000a0;nm. Note that scale in R is different in distinct plots because the impurity WFs have very different localization in R (see Table&#x000a0;<xref rid="Tab1" ref-type="table">1</xref>) while this feature along z becomes mainly dictated by well barriers. Therefore, the WFs are jammed between the barriers in z and stretched in other two dimensions with <inline-formula id="IEq56"><alternatives><tex-math id="M71">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{a}_{R}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq56.gif"/></alternatives></inline-formula> growing by an order of magnitude for upper excited states. It is necessary to have in mind that for the very upper states, when the levels become numerically unstable, the <inline-formula id="IEq57"><alternatives><tex-math id="M72">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{a}_{R}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq57.gif"/></alternatives></inline-formula> is especially vulnerable to numerical error and, actually, can be significantly bigger. <italic>s</italic>,<italic> p</italic> and <italic>d</italic> WFs with the same j and k indices qualitatively preserve the shape with a notable exception that <italic>s</italic> WFs have first peak maximums exactly on z-axis while p and d peaks displace to bigger <italic>R</italic>.</p><p id="Par48">Table&#x000a0;<xref rid="Tab1" ref-type="table">1</xref> represents the energies of calculated impurity states. Zero energy corresponds to the well bottom potential. For all calculations, values <italic>R</italic><sub><italic>max</italic></sub> =<italic>240</italic> nm, <inline-formula id="IEq58"><alternatives><tex-math id="M73">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:\varDelta\:R$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq58.gif"/></alternatives></inline-formula> =<italic>0.07</italic> nm, <italic>N</italic><sub><italic>s</italic></sub>=<italic>7</italic> were used. Note that the energies not presented in the table do not have a stable behavior with respect to <italic>R</italic><sub><italic>max</italic></sub> levels, which can mean that they are not localized enough within <italic>240</italic> nm. In Fig.&#x000a0;<xref rid="Fig5" ref-type="fig">5</xref> we present some WFs of levels not included in Table&#x000a0;<xref rid="Tab1" ref-type="table">1</xref> because their numerical instability does not allow to reliably calculate their energies; but still it was possible to construct their wave functions for the specific <italic>R</italic><sub><italic>max</italic></sub>.</p><p id="Par49">In the first column of Table&#x000a0;<xref rid="Tab1" ref-type="table">1</xref> we indicate each level along the lines of the code described above. In the second one we present the energy in effective Rydbergs, counted from the bottom of the well profile, which can be seen as an abscissa in graphs Figs.&#x000a0;<xref rid="Fig1" ref-type="fig">1</xref> and <xref rid="Fig2" ref-type="fig">2</xref>. The third column contains the values of the &#x0201c;binding energy&#x0201d; defined as the difference between the energy of corresponding subband and the impurity level. <italic>R</italic>-localization <inline-formula id="IEq59"><alternatives><tex-math id="M74">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{a}_{R}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq59.gif"/></alternatives></inline-formula> and <italic>z</italic>-localization <inline-formula id="IEq60"><alternatives><tex-math id="M75">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{a}_{z}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq60.gif"/></alternatives></inline-formula>, which are calculated as described above, appear in the following two columns and, finally, in the last column we put the binding energies calculated in<sup><xref ref-type="bibr" rid="CR15">15</xref></sup> for the very same structure -with their notation in parenthesis. For convenience we underlined the numbers to be compared.</p><p id="Par50">The states are sorted by energy in descending order. Energies above the first subband energy (that is, above 0.911 Ry) are resonant ones. We report all s, p and d (m&#x02009;=&#x02009;0, 1 and 2) states with energies lower than the 3rd subband (including series below 1st, 2nd and 3rd subbands), which demonstrate stable energy with respect to <italic>R</italic><sub><italic>max</italic></sub>. As expected, such states locate below the corresponding subband (the second index in our notation). Two exceptions are p23 and d23, which are above their corresponding subband and thus have negative &#x0201c;binding energies&#x0201d;. However, their difference with subband energy is minor (about 0.1 meV) and can be attributed to numerical error due to <italic>R</italic><sub><italic>max</italic></sub>, because their WFs are strongly delocalized in <italic>R</italic> and, in such case, error is expected to be significant. The first (letter) and the third indices of our notation increase the energy and <inline-formula id="IEq61"><alternatives><tex-math id="M76">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{a}_{R}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq61.gif"/></alternatives></inline-formula> but apparently do it in an independent way. <inline-formula id="IEq62"><alternatives><tex-math id="M77">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{a}_{z}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq62.gif"/></alternatives></inline-formula> mainly depends on the second index and is dictated by the shape of subband wave function so that <inline-formula id="IEq63"><alternatives><tex-math id="M78">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{\xi\:}_{1}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq63.gif"/></alternatives></inline-formula>, having one peak at the well center, is the most localized in <italic>z</italic> (<italic>4.8</italic> nm for a <italic>30</italic> nm well); antisymmetric <inline-formula id="IEq64"><alternatives><tex-math id="M79">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{\xi\:}_{2}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq64.gif"/></alternatives></inline-formula>, with two peaks, is the least localized (8.2&#x000a0;nm), and symmetric <inline-formula id="IEq65"><alternatives><tex-math id="M80">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{\xi\:}_{3}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq65.gif"/></alternatives></inline-formula>, which exhibits three peaks, tends to be somewhat less localized than <inline-formula id="IEq66"><alternatives><tex-math id="M81">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{\xi\:}_{2}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq66.gif"/></alternatives></inline-formula> because the central peak moves the WF closer to the well center, though the other peaks move away from the it, in comparison to <inline-formula id="IEq67"><alternatives><tex-math id="M82">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\:{\xi\:}_{2}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81346_Article_IEq67.gif"/></alternatives></inline-formula>, which compensates the effect.</p><p id="Par51">In general, the pattern of variation for each analyzed subband tends to be of the form &#x0201c;s-p-s-(p, d)-s-(p, d)&#x0201d; with the &#x0201c;binding energy&#x0201d; of the first s state more than 2 times bigger then the neighboring first p state.</p><p id="Par52">The comparison of our results with<sup><xref ref-type="bibr" rid="CR15">15</xref></sup>shows very good coincidence for the s11 and p11 states and somewhat a worse one for the resonant states, which however allows to identify any state confidently. The authors of<sup><xref ref-type="bibr" rid="CR15">15</xref></sup> revealed only one solution for <italic>s</italic>series below each subband, while we have found several ones. As we have already mentioned, the reason for the disagreement is, probably, their limited access to numerical processing powers, which did not allow them to scan all the energy range with proper precision. The authors of<sup><xref ref-type="bibr" rid="CR15">15</xref></sup> expected only one solution below each subband and probably they used a kind of bisection method to resolve the equation, which gives only one solution for an initial range. The difference in exact numeric values most probably is a result of different numerical parameters. Particularly, we believe they used a number of subbands much lesser than we did (because some of the wells they calculated contain less than 7 subbands). And naturally the upper energy levels require more refined calculation for the same precision.</p></sec><sec id="Sec5" sec-type="conclusion"><title>Conclusions</title><p id="Par53">In our work we have calculated a series of both resonant and non-resonant hydrogenic impurity states in a 2D semiconductor heterostructure. We used an old mathematical model based on cylindric symmetry and expansion over 1D subband wave functions and improved it taking advantage of modern possibilities of computational performance. Our results refined the understanding of the pattern of impurity state series and showed its more complicated structure in comparison with what was put forward in previous works. Particularly, we have proposed a new classification system for impurity levels, based on the wave function shape, considering the wave function z-cross-section which has a qualitative resemblance to the wave function of corresponding size-quantized subband. Besides, we describe in detail the numerical proceeding along with several of its -not apparent- peculiarities, so it can be reproduced. In addition, we present and discuss the numerical outcome for a center-doped relatively narrow rectangular GaAs/AlGaAs quantum well including the shapes of the wave functions.</p><p id="Par54">The results of our work can be useful for the bandgap engineering of the layered semiconductor devices using impurities to obtain necessary electrical and optical properties.</p></sec></body><back><fn-group><fn><p><bold>Publisher&#x02019;s note</bold></p><p>Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></fn></fn-group><ack><title>Acknowledgements</title><p>VA, CAD and ALM worked within the Project 2022-52190 &#x0201c;Nanoestructuras semiconductoras con simetr&#x000ed;a axial basadas en InAs y GaAs para aplicaciones en electr&#x000f3;nica ultra e h&#x000ed;per r&#x000e1;pida&#x0201d; 2710 - Program&#x000e1;tica 2021-2022: Ciencias Exactas y Naturales of the University of Antioquia co-financed by the University of Medellin Ref. 1323. CAD and ALM are grateful to Colombian agencies CODI Universidad de Antioquia (Estrategia de Sostenibilidad de la Universidad de Antioquia and projects &#x0201c;Propiedades magneto-&#x000f3;pticas y &#x000f3;ptica no lineal en superredes de Grafeno&#x0201d;, &#x0201c;Estudio de propiedades &#x000f3;pticas en sistemas semiconductores de dimensiones nanosc&#x000f3;picas&#x0201d;, &#x0201c;Propiedades de transporte, espintr&#x000f3;nicas y t&#x000e9;rmicas en el sistema molecular ZincPorfirina&#x0201d;, &#x0201c;Complejos excit&#x000f3;nicos y propiedades de transporte en sistemas nanom&#x000e9;tricos de semiconductores con simetr&#x000ed;a axial&#x0201d;, and &#x0201d;Nanoestructuras semiconductoras con simetr&#x000ed;a axial basadas en InAs y GaAs para aplicaciones en electr&#x000f3;nica ultra e h&#x000ed;per r&#x000e1;pida&#x0201d;) and Facultad de Ciencias Exactas y Naturales-Universidad de Antioquia (CAD and ALM exclusive dedication projects 2023-2024). MEMR acknowledges support form Mexican CONAHCYT through Grant A1-S-8218.</p></ack><notes notes-type="author-contribution"><title>Author contributions</title><p>The authors made following contributions. VA: task formulation, algorithms and code optimization, manuscript text; RD: programming, calculations, data processing; VT and CAD: general supervision, results interpretation, discussions, manuscript revisions; AT and DL: calculations, data processing, discussions; ALM, MEMR: discussions, manuscript revisions. All authors have read and agreed to the published version of the manuscript.</p></notes><notes notes-type="data-availability"><title>Data availability</title><p>The data underlying this article will be shared on reasonable request to the corresponding author.</p></notes><notes><title>Declarations</title><notes id="FPar1" notes-type="COI-statement"><title>Competing interests</title><p id="Par55">The authors declare no competing interests.</p></notes></notes><ref-list id="Bib1"><title>References</title><ref id="CR1"><label>1.</label><citation-alternatives><element-citation id="ec-CR1" publication-type="journal"><person-group person-group-type="author"><name><surname>Chaves</surname><given-names>A</given-names></name><etal/></person-group><article-title>Bandgap engineering of two-dimensional semiconductor materials</article-title><source>npj 2D Mater. Appl.</source><year>2020</year><volume>4</volume><fpage>29</fpage><pub-id pub-id-type="doi">10.1038/s41699-020-00162-4</pub-id></element-citation><mixed-citation id="mc-CR1" publication-type="journal">Chaves, A. et al. Bandgap engineering of two-dimensional semiconductor materials. <italic>npj 2D Mater. Appl.</italic><bold>4</bold>, 29 (2020).</mixed-citation></citation-alternatives></ref><ref id="CR2"><label>2.</label><citation-alternatives><element-citation id="ec-CR2" publication-type="journal"><person-group person-group-type="author"><name><surname>Xu</surname><given-names>H</given-names></name><name><surname>Akbari</surname><given-names>MK</given-names></name><name><surname>Zhuiykov</surname><given-names>S</given-names></name></person-group><article-title>2D Semiconductor nanomaterials and heterostructures: controlled synthesis and functional applications</article-title><source>Nanoscale Res. Lett.</source><year>2021</year><volume>16</volume><fpage>94</fpage><pub-id pub-id-type="doi">10.1186/s11671-021-03551-w</pub-id><pub-id pub-id-type="pmid">34032946</pub-id>
+</element-citation><mixed-citation id="mc-CR2" publication-type="journal">Xu, H., Akbari, M. K. &#x00026; Zhuiykov, S. 2D Semiconductor nanomaterials and heterostructures: controlled synthesis and functional applications. <italic>Nanoscale Res. Lett.</italic><bold>16</bold>, 94 (2021).<pub-id pub-id-type="pmid">34032946</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR3"><label>3.</label><citation-alternatives><element-citation id="ec-CR3" publication-type="journal"><person-group person-group-type="author"><name><surname>Holmberg</surname><given-names>VC</given-names></name><name><surname>Helps</surname><given-names>JR</given-names></name><name><surname>Mkhoyan</surname><given-names>KA</given-names></name><name><surname>Norris</surname><given-names>JD</given-names></name></person-group><article-title>Imaging impurities in Semiconductor nanostructures</article-title><source>Chem. Mater.</source><year>2013</year><volume>25</volume><fpage>1332</fpage><lpage>1350</lpage><pub-id pub-id-type="doi">10.1021/cm400004x</pub-id></element-citation><mixed-citation id="mc-CR3" publication-type="journal">Holmberg, V. C., Helps, J. R., Mkhoyan, K. A. &#x00026; Norris, J. D. Imaging impurities in Semiconductor nanostructures. <italic>Chem. Mater.</italic><bold>25</bold>, 8, 1332&#x02013;1350 (2013).</mixed-citation></citation-alternatives></ref><ref id="CR4"><label>4.</label><citation-alternatives><element-citation id="ec-CR4" publication-type="journal"><person-group person-group-type="author"><name><surname>Tulupenko</surname><given-names>V</given-names></name><etal/></person-group><article-title>On the possibility of tuning the energy separation between space-quantized levels in a quantum well</article-title><source>Phil Mag Lett.</source><year>2012</year><volume>93</volume><fpage>42</fpage><lpage>49</lpage><pub-id pub-id-type="doi">10.1080/09500839.2012.729959</pub-id></element-citation><mixed-citation id="mc-CR4" publication-type="journal">Tulupenko, V. et al. On the possibility of tuning the energy separation between space-quantized levels in a quantum well. <italic>Phil Mag Lett.</italic><bold>93</bold>, 1, 42&#x02013;49 (2012).</mixed-citation></citation-alternatives></ref><ref id="CR5"><label>5.</label><citation-alternatives><element-citation id="ec-CR5" publication-type="journal"><person-group person-group-type="author"><name><surname>Duque</surname><given-names>CA</given-names></name><etal/></person-group><article-title>About possible THz modulator on the base of delta-doped QWs</article-title><source>Superlattice Microst</source><year>2015</year><volume>87</volume><fpage>5</fpage><lpage>11</lpage><pub-id pub-id-type="doi">10.1016/j.spmi.2015.07.048</pub-id></element-citation><mixed-citation id="mc-CR5" publication-type="journal">Duque, C. A. et al. About possible THz modulator on the base of delta-doped QWs. <italic>Superlattice Microst</italic>. <bold>87</bold>, 5&#x02013;11 (2015).</mixed-citation></citation-alternatives></ref><ref id="CR6"><label>6.</label><citation-alternatives><element-citation id="ec-CR6" publication-type="journal"><person-group person-group-type="author"><name><surname>Tulupenko</surname><given-names>V</given-names></name><etal/></person-group><article-title>Background impurities in Si0.8 Ge0.2/Si/Si0.8 Ge0.2 n-type delta-doped QW</article-title><source>Phys. Stat. Sol (b)</source><year>2016</year><volume>254</volume><issue>4</issue><fpage>464</fpage></element-citation><mixed-citation id="mc-CR6" publication-type="journal">Tulupenko, V. et al. Background impurities in Si0.8 Ge0.2/Si/Si0.8 Ge0.2 n-type delta-doped QW. <italic>Phys. Stat. Sol (b)</italic>. <bold>254</bold> (4), 464 (2016).</mixed-citation></citation-alternatives></ref><ref id="CR7"><label>7.</label><citation-alternatives><element-citation id="ec-CR7" publication-type="journal"><person-group person-group-type="author"><name><surname>Akimov</surname><given-names>V</given-names></name><etal/></person-group><article-title>Background impurities and a delta-doped QW. Part II: Edge doping</article-title><source>Semicond. Sci. Technol.</source><year>2021</year><volume>36</volume><fpage>065011</fpage><pub-id pub-id-type="doi">10.1088/1361-6641/abe65b</pub-id></element-citation><mixed-citation id="mc-CR7" publication-type="journal">Akimov, V. et al. Background impurities and a delta-doped QW. Part II: Edge doping. <italic>Semicond. Sci. Technol.</italic><bold>36</bold>, 065011 (2021).</mixed-citation></citation-alternatives></ref><ref id="CR8"><label>8.</label><citation-alternatives><element-citation id="ec-CR8" publication-type="journal"><person-group person-group-type="author"><name><surname>Bastard</surname><given-names>G</given-names></name></person-group><article-title>Hydrogenic impurity states in a quantum well: a simple model</article-title><source>Phys. Rev. B</source><year>1981</year><volume>24</volume><fpage>4714</fpage><pub-id pub-id-type="doi">10.1103/PhysRevB.24.4714</pub-id></element-citation><mixed-citation id="mc-CR8" publication-type="journal">Bastard, G. Hydrogenic impurity states in a quantum well: a simple model. <italic>Phys. Rev. B</italic>. <bold>24</bold>, 4714 (1981).</mixed-citation></citation-alternatives></ref><ref id="CR9"><label>9.</label><citation-alternatives><element-citation id="ec-CR9" publication-type="journal"><person-group person-group-type="author"><name><surname>Greene</surname><given-names>RL</given-names></name><name><surname>Bajaj</surname><given-names>KK</given-names></name></person-group><article-title>Energy levels of hydrogenic impurity states in GaAs-Ga1&#x02009;&#x02013;&#x02009;xAlxAs quantum well structures</article-title><source>Solid State Commun.</source><year>1983</year><volume>45</volume><fpage>825</fpage><lpage>829</lpage><pub-id pub-id-type="doi">10.1016/0038-1098(83)90809-8</pub-id></element-citation><mixed-citation id="mc-CR9" publication-type="journal">Greene, R. L. &#x00026; Bajaj, K. K. Energy levels of hydrogenic impurity states in GaAs-Ga1&#x02009;&#x02013;&#x02009;xAlxAs quantum well structures. <italic>Solid State Commun.</italic><bold>45</bold>, 9, 825&#x02013;829 (1983).</mixed-citation></citation-alternatives></ref><ref id="CR10"><label>10.</label><citation-alternatives><element-citation id="ec-CR10" publication-type="journal"><person-group person-group-type="author"><name><surname>Liu</surname><given-names>W</given-names></name><name><surname>Quinn</surname><given-names>JJ</given-names></name></person-group><article-title>Shallow-impurity states in semiconductor quantum-well structures</article-title><source>Phys. Rev. B</source><year>1985</year><volume>31</volume><fpage>2348</fpage><pub-id pub-id-type="doi">10.1103/PhysRevB.31.2348</pub-id></element-citation><mixed-citation id="mc-CR10" publication-type="journal">Liu, W. &#x00026; Quinn, J. J. Shallow-impurity states in semiconductor quantum-well structures. <italic>Phys. Rev. B</italic>. <bold>31</bold>, 2348 (1985).</mixed-citation></citation-alternatives></ref><ref id="CR11"><label>11.</label><citation-alternatives><element-citation id="ec-CR11" publication-type="journal"><person-group person-group-type="author"><name><surname>Weber</surname><given-names>G</given-names></name><name><surname>Schulz</surname><given-names>PA</given-names></name><name><surname>Oliveira</surname><given-names>LE</given-names></name></person-group><article-title>Density of states and energy spectra of hydrogenic impurities in quantum-well wires</article-title><source>Phys. Rev. B</source><year>1988</year><volume>38</volume><fpage>2179</fpage><pub-id pub-id-type="doi">10.1103/PhysRevB.38.2179</pub-id></element-citation><mixed-citation id="mc-CR11" publication-type="journal">Weber, G., Schulz, P. A. &#x00026; Oliveira, L. E. Density of states and energy spectra of hydrogenic impurities in quantum-well wires. <italic>Phys. Rev. B</italic>. <bold>38</bold>, 2179 (1988).</mixed-citation></citation-alternatives></ref><ref id="CR12"><label>12.</label><citation-alternatives><element-citation id="ec-CR12" publication-type="journal"><person-group person-group-type="author"><name><surname>&#x000c7;ak&#x00131;r</surname><given-names>R</given-names></name><name><surname>Y&#x00131;ld&#x00131;r&#x00131;m</surname><given-names>H</given-names></name></person-group><article-title>Binding energies of shallow donors in polar ZnO/ZnBeO quantum well</article-title><source>Solid State Commun.</source><year>2024</year><volume>379</volume><fpage>115425</fpage><pub-id pub-id-type="doi">10.1016/j.ssc.2024.115425</pub-id></element-citation><mixed-citation id="mc-CR12" publication-type="journal">&#x000c7;ak&#x00131;r, R. &#x00026; Y&#x00131;ld&#x00131;r&#x00131;m, H. Binding energies of shallow donors in polar ZnO/ZnBeO quantum well. <italic>Solid State Commun.</italic><bold>379</bold>, 115425 (2024).</mixed-citation></citation-alternatives></ref><ref id="CR13"><label>13.</label><citation-alternatives><element-citation id="ec-CR13" publication-type="journal"><person-group person-group-type="author"><name><surname>Liu</surname><given-names>X</given-names></name><etal/></person-group><article-title>Thermodynamic property of one-dimensional hydrogenic impurity in Nitride semiconductor quantum well</article-title><source>Philos. Mag</source><year>2023</year><volume>103</volume><fpage>2179</fpage><lpage>2205</lpage><pub-id pub-id-type="doi">10.1080/14786435.2023.2270436</pub-id></element-citation><mixed-citation id="mc-CR13" publication-type="journal">Liu, X. et al. Thermodynamic property of one-dimensional hydrogenic impurity in Nitride semiconductor quantum well. <italic>Philos. Mag</italic>. <bold>103</bold>, 24, 2179&#x02013;2205 (2023).</mixed-citation></citation-alternatives></ref><ref id="CR14"><label>14.</label><citation-alternatives><element-citation id="ec-CR14" publication-type="journal"><person-group person-group-type="author"><name><surname>Vinter</surname><given-names>B</given-names></name></person-group><article-title>Influence of charged impurities on Si inversion-layer electrons</article-title><source>Phys. Rev. B</source><year>1982</year><volume>26</volume><fpage>6808</fpage><pub-id pub-id-type="doi">10.1103/PhysRevB.26.6808</pub-id></element-citation><mixed-citation id="mc-CR14" publication-type="journal">Vinter, B. Influence of charged impurities on Si inversion-layer electrons. <italic>Phys. Rev. B</italic>. <bold>26</bold>, 6808 (1982).</mixed-citation></citation-alternatives></ref><ref id="CR15"><label>15.</label><citation-alternatives><element-citation id="ec-CR15" publication-type="journal"><person-group person-group-type="author"><name><surname>Stopa</surname><given-names>M</given-names></name><name><surname>DasSarma</surname><given-names>S</given-names></name></person-group><article-title>Calculated shallow-donor-level binding energies in GaAs-AlxGa1&#x02009;&#x02013;&#x02009;xAs quantum wells</article-title><source>Phys. Rev. B</source><year>1988</year><volume>40</volume><fpage>8466</fpage><lpage>8462</lpage><pub-id pub-id-type="doi">10.1103/PhysRevB.40.8466</pub-id></element-citation><mixed-citation id="mc-CR15" publication-type="journal">Stopa, M. &#x00026; DasSarma, S. Calculated shallow-donor-level binding energies in GaAs-AlxGa1&#x02009;&#x02013;&#x02009;xAs quantum wells. <italic>Phys. Rev. B</italic>. <bold>40</bold>, 12, 8466&#x02013;8462 (1988).</mixed-citation></citation-alternatives></ref><ref id="CR16"><label>16.</label><citation-alternatives><element-citation id="ec-CR16" publication-type="journal"><person-group person-group-type="author"><name><surname>Blom</surname><given-names>A</given-names></name><name><surname>Odnoblyudov</surname><given-names>MA</given-names></name><name><surname>Yassievich</surname><given-names>IN</given-names></name><name><surname>Chao</surname><given-names>KA</given-names></name></person-group><article-title>Donor states in modulation-doped Si/SiGe heterostructures</article-title><source>Phys. Rev. B</source><year>2003</year><volume>68</volume><fpage>165338</fpage><pub-id pub-id-type="doi">10.1103/PhysRevB.68.165338</pub-id></element-citation><mixed-citation id="mc-CR16" publication-type="journal">Blom, A., Odnoblyudov, M. A., Yassievich, I. N. &#x00026; Chao, K. A. Donor states in modulation-doped Si/SiGe heterostructures. <italic>Phys. Rev. B</italic>. <bold>68</bold>, 165338 (2003).</mixed-citation></citation-alternatives></ref><ref id="CR17"><label>17.</label><citation-alternatives><element-citation id="ec-CR17" publication-type="journal"><person-group person-group-type="author"><name><surname>Fano</surname><given-names>U</given-names></name></person-group><article-title>Effects of Configuration Interaction on intensities and Phase shifts</article-title><source>Phys. Rev.</source><year>1961</year><volume>124</volume><fpage>1866</fpage><pub-id pub-id-type="doi">10.1103/PhysRev.124.1866</pub-id></element-citation><mixed-citation id="mc-CR17" publication-type="journal">Fano, U. Effects of Configuration Interaction on intensities and Phase shifts. <italic>Phys. Rev.</italic><bold>124</bold>, 1866 (1961).</mixed-citation></citation-alternatives></ref><ref id="CR18"><label>18.</label><citation-alternatives><element-citation id="ec-CR18" publication-type="journal"><person-group person-group-type="author"><name><surname>BenDaniel</surname><given-names>DJ</given-names></name><name><surname>Duke</surname><given-names>CB</given-names></name></person-group><article-title>Space-Charge effects on Electron Tunneling</article-title><source>Phys. Rev.</source><year>1966</year><volume>152</volume><fpage>683</fpage><pub-id pub-id-type="doi">10.1103/PhysRev.152.683</pub-id></element-citation><mixed-citation id="mc-CR18" publication-type="journal">BenDaniel, D. J. &#x00026; Duke, C. B. Space-Charge effects on Electron Tunneling. <italic>Phys. Rev.</italic><bold>152</bold>, 683 (1966).</mixed-citation></citation-alternatives></ref><ref id="CR19"><label>19.</label><mixed-citation publication-type="other">COMSOL Multiphysics<sup>&#x000ae;</sup> v. 6.2. www.comsol.com. COMSOL AB, Stockholm, Sweden.</mixed-citation></ref><ref id="CR20"><label>20.</label><citation-alternatives><element-citation id="ec-CR20" publication-type="journal"><person-group person-group-type="author"><name><surname>Tan</surname><given-names>IH</given-names></name><name><surname>Snider</surname><given-names>GL</given-names></name><name><surname>Hu</surname><given-names>EL</given-names></name></person-group><article-title>A self-consistent solution of Schr&#x000f6;dinger-Poisson equations using a nonuniform mesh</article-title><source>J. Appl. Phys.</source><year>1990</year><volume>68</volume><fpage>15</fpage><pub-id pub-id-type="doi">10.1063/1.346245</pub-id></element-citation><mixed-citation id="mc-CR20" publication-type="journal">Tan, I. H., Snider, G. L. &#x00026; Hu, E. L. A self-consistent solution of Schr&#x000f6;dinger-Poisson equations using a nonuniform mesh. <italic>J. Appl. Phys.</italic><bold>68</bold>, 4071, 15 (1990).</mixed-citation></citation-alternatives></ref><ref id="CR21"><label>21.</label><citation-alternatives><element-citation id="ec-CR21" publication-type="journal"><person-group person-group-type="author"><name><surname>Abramov</surname><given-names>A</given-names></name></person-group><article-title>Resonant donor states in quantum well</article-title><source>Mod. Phys. Lett. B</source><year>2011</year><volume>25</volume><issue>2</issue><fpage>89</fpage><lpage>96</lpage><pub-id pub-id-type="doi">10.1142/S0217984911025493</pub-id></element-citation><mixed-citation id="mc-CR21" publication-type="journal">Abramov, A. Resonant donor states in quantum well. <italic>Mod. Phys. Lett. B</italic>. <bold>25</bold> (2), 89&#x02013;96 (2011).</mixed-citation></citation-alternatives></ref></ref-list></back></article>

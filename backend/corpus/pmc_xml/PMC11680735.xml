@@ -1,0 +1,1338 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="1.3" id="mrm30347" xml:lang="en" article-type="research-article"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Magn Reson Med</journal-id><journal-id journal-id-type="iso-abbrev">Magn Reson Med</journal-id><journal-id journal-id-type="doi">10.1002/(ISSN)1522-2594</journal-id><journal-id journal-id-type="publisher-id">MRM</journal-id><journal-title-group><journal-title>Magnetic Resonance in Medicine</journal-title></journal-title-group><issn pub-type="ppub">0740-3194</issn><issn pub-type="epub">1522-2594</issn><publisher><publisher-name>John Wiley and Sons Inc.</publisher-name><publisher-loc>Hoboken</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">39480807</article-id><article-id pub-id-type="pmc">PMC11680735</article-id>
+<article-id pub-id-type="doi">10.1002/mrm.30347</article-id><article-id pub-id-type="publisher-id">MRM30347</article-id><article-categories><subj-group subj-group-type="overline"><subject>Research Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Imaging Methodology</subject></subj-group></article-categories><title-group><article-title>
+<styled-content style="fixed-case" toggle="no">
+<sup>129</sup>Xe</styled-content> Image Processing Pipeline: An open&#x02010;source, graphical user interface application for the analysis of <styled-content style="fixed-case" toggle="no">hyperpolarized <sup>129</sup>Xe MRI</styled-content>
+</article-title><alt-title alt-title-type="left-running-head">BDAIWI et al.</alt-title></title-group><contrib-group><contrib id="mrm30347-cr-0001" contrib-type="author"><name><surname>Bdaiwi</surname><given-names>Abdullah S.</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0001-7835-7032</contrib-id><xref rid="mrm30347-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="mrm30347-cr-0002" contrib-type="author"><name><surname>Willmering</surname><given-names>Matthew M.</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-4356-9622</contrib-id><xref rid="mrm30347-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="mrm30347-cr-0003" contrib-type="author"><name><surname>Plummer</surname><given-names>Joseph W.</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-0200-7869</contrib-id><xref rid="mrm30347-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="mrm30347-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="mrm30347-cr-0004" contrib-type="author"><name><surname>Hussain</surname><given-names>Riaz</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0003-4406-2345</contrib-id><xref rid="mrm30347-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="mrm30347-cr-0005" contrib-type="author"><name><surname>Roach</surname><given-names>David J.</given-names></name><xref rid="mrm30347-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="mrm30347-cr-0006" contrib-type="author"><name><surname>Parra&#x02010;Robles</surname><given-names>Juan</given-names></name><xref rid="mrm30347-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="mrm30347-cr-0007" contrib-type="author"><name><surname>Niedbalski</surname><given-names>Peter J.</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-0528-2508</contrib-id><xref rid="mrm30347-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref><xref rid="mrm30347-aff-0004" ref-type="aff">
+<sup>4</sup>
+</xref><xref rid="mrm30347-aff-0005" ref-type="aff">
+<sup>5</sup>
+</xref></contrib><contrib id="mrm30347-cr-0008" contrib-type="author"><name><surname>Woods</surname><given-names>Jason C.</given-names></name><xref rid="mrm30347-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="mrm30347-aff-0006" ref-type="aff">
+<sup>6</sup>
+</xref><xref rid="mrm30347-aff-0007" ref-type="aff">
+<sup>7</sup>
+</xref></contrib><contrib id="mrm30347-cr-0009" contrib-type="author"><name><surname>Walkup</surname><given-names>Laura L.</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-5060-6401</contrib-id><xref rid="mrm30347-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="mrm30347-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="mrm30347-aff-0006" ref-type="aff">
+<sup>6</sup>
+</xref><xref rid="mrm30347-aff-0007" ref-type="aff">
+<sup>7</sup>
+</xref></contrib><contrib id="mrm30347-cr-0010" contrib-type="author" corresp="yes"><name><surname>Cleveland</surname><given-names>Zackary I.</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0001-6195-9061</contrib-id><xref rid="mrm30347-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="mrm30347-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="mrm30347-aff-0006" ref-type="aff">
+<sup>6</sup>
+</xref><xref rid="mrm30347-aff-0007" ref-type="aff">
+<sup>7</sup>
+</xref><address><email>zackary.cleveland@cchmc.org</email></address></contrib></contrib-group><aff id="mrm30347-aff-0001">
+<label>
+<sup>1</sup>
+</label>
+<named-content content-type="organisation-division">Center for Pulmonary Imaging Research, Division of Pulmonary Medicine</named-content>
+<institution>Cincinnati Children's Hospital Medical Center</institution>
+<city>
+Cincinnati</city>
+<named-content content-type="country-part">Ohio</named-content>
+<country country="US">USA</country>
+</aff><aff id="mrm30347-aff-0002">
+<label>
+<sup>2</sup>
+</label>
+<named-content content-type="organisation-division">Department of Biomedical Engineering</named-content>
+<institution>University of Cincinnati</institution>
+<city>Cincinnati</city>
+<named-content content-type="country-part">Ohio</named-content>
+<country country="US">USA</country>
+</aff><aff id="mrm30347-aff-0003">
+<label>
+<sup>3</sup>
+</label>
+<named-content content-type="organisation-division">Division of Pulmonary, Critical Care, and Sleep Medicine, Department of Internal Medicine</named-content>
+<institution>University of Kansas Medical Center</institution>
+<city>Kansas City</city>
+<named-content content-type="country-part">Kansas</named-content>
+<country country="US">USA</country>
+</aff><aff id="mrm30347-aff-0004">
+<label>
+<sup>4</sup>
+</label>
+<named-content content-type="organisation-division">Department of Bioengineering</named-content>
+<institution>University of Kansas</institution>
+<city>Lawrence</city>
+<named-content content-type="country-part">Kansas</named-content>
+<country country="US">USA</country>
+</aff><aff id="mrm30347-aff-0005">
+<label>
+<sup>5</sup>
+</label>
+<named-content content-type="organisation-division">Hoglund Biomedical Imaging Center</named-content>
+<institution>University of Kansas Medical Center</institution>
+<city>Kansas City</city>
+<named-content content-type="country-part">Kansas</named-content>
+<country country="US">USA</country>
+</aff><aff id="mrm30347-aff-0006">
+<label>
+<sup>6</sup>
+</label>
+<named-content content-type="organisation-division">Department of Pediatrics</named-content>
+<institution>University of Cincinnati</institution>
+<city>Cincinnati</city>
+<named-content content-type="country-part">Ohio</named-content>
+<country country="US">USA</country>
+</aff><aff id="mrm30347-aff-0007">
+<label>
+<sup>7</sup>
+</label>
+<named-content content-type="organisation-division">Imaging Research Center, Department of Radiology</named-content>
+<institution>Cincinnati Children's Hospital Medical Center</institution>
+<city>Cincinnati</city>
+<named-content content-type="country-part">Ohio</named-content>
+<country country="US">USA</country>
+</aff><author-notes><corresp id="correspondenceTo">
+<label>*</label>
+<bold>Correspondence</bold>
+<break/>
+Zackary I. Cleveland, Center for Pulmonary Imaging Research, Cincinnati Children's Hospital Medical Center, 3333 Burnet Ave., MLC&#x02010;2021, Cincinnati, OH 45229, USA.<break/>
+Email: <email>zackary.cleveland@cchmc.org</email>
+<break/>
+</corresp></author-notes><pub-date pub-type="epub"><day>31</day><month>10</month><year>2024</year></pub-date><pub-date pub-type="ppub"><month>3</month><year>2025</year></pub-date><volume>93</volume><issue seq="240">3</issue><issue-id pub-id-type="doi">10.1002/mrm.v93.3</issue-id><fpage>1220</fpage><lpage>1237</lpage><history>
+<date date-type="rev-recd"><day>07</day><month>9</month><year>2024</year></date>
+<date date-type="received"><day>28</day><month>7</month><year>2024</year></date>
+<date date-type="accepted"><day>01</day><month>10</month><year>2024</year></date>
+</history><permissions><!--&#x000a9; 2025 International Society for Magnetic Resonance in Medicine.--><copyright-statement content-type="article-copyright">&#x000a9; 2024 The Author(s). <italic toggle="yes">Magnetic Resonance in Medicine</italic> published by Wiley Periodicals LLC on behalf of International Society for Magnetic Resonance in Medicine.</copyright-statement><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>This is an open access article under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link> License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions><self-uri content-type="pdf" xlink:href="file:MRM-93-1220.pdf"/><abstract><title>Abstract</title><sec id="mrm30347-sec-0001"><title>Purpose</title><p>Hyperpolarized <sup>129</sup>Xe MRI presents opportunities to assess regional pulmonary microstructure and function. Ongoing advancements in hardware, sequences, and image processing have helped it become increasingly adopted for both research and clinical use. As the number of applications and users increase, standardization becomes crucial. To that end, this study developed an executable, open&#x02010;source <sup>129</sup>Xe image processing pipeline (XIPline) to provide a user&#x02010;friendly, graphical user interface&#x02010;based analysis pipeline to analyze and visualize <sup>129</sup>Xe MR data, including scanner calibration, ventilation, diffusion&#x02010;weighted, and gas exchange images.</p></sec><sec id="mrm30347-sec-0002"><title>Methods</title><p>The customizable XIPline is designed in MATLAB to analyze data from all three major scanner platforms. Calibration data is processed to calculate optimal flip angle and determine<sup>129</sup>Xe frequency offset. Data processing includes loading, reconstructing, registering, segmenting, and post&#x02010;processing images. Ventilation analysis incorporates three common algorithms to calculate ventilation defect percentage and novel techniques to assess defect distribution and ventilation texture. Diffusion analysis features ADC mapping, modified linear binning to account for ADC age&#x02010;dependence, and common diffusion morphometry methods. Gas exchange processing uses a generalized linear binning for data acquired using 1&#x02010;point Dixon imaging.</p></sec><sec id="mrm30347-sec-0003"><title>Results</title><p>The XIPline workflow is demonstrated using analysis from representative calibration, ventilation, diffusion, and gas exchange data.</p></sec><sec id="mrm30347-sec-0004"><title>Conclusion</title><p>The application will reduce redundant effort when implementing new techniques across research sites by providing an open&#x02010;source framework for developers. In its current form, it offers a robust and adaptable platform for <sup>129</sup>Xe MRI analysis to ensure methodological consistency, transparency, and support for collaborative research across multiple sites and MRI manufacturers.</p></sec></abstract><kwd-group kwd-group-type="author-generated"><kwd id="mrm30347-kwd-0001">diffusion analysis</kwd><kwd id="mrm30347-kwd-0002">gas exchange analysis</kwd><kwd id="mrm30347-kwd-0003">hyperpolarized <sup>129</sup>Xe</kwd><kwd id="mrm30347-kwd-0004">ventilation analysis</kwd></kwd-group><funding-group><award-group id="funding-0001"><funding-source><institution-wrap><institution>National Institute of Health
+</institution><institution-id institution-id-type="doi">10.13039/100000002</institution-id></institution-wrap></funding-source><award-id>R00HL138255</award-id><award-id>R01HL131012</award-id><award-id>R01HL143011</award-id><award-id>R01HL166335</award-id><award-id>R01HL168446</award-id></award-group></funding-group><counts><fig-count count="8"/><table-count count="2"/><page-count count="18"/><word-count count="10500"/></counts><custom-meta-group><custom-meta><meta-name>source-schema-version-number</meta-name><meta-value>2.0</meta-value></custom-meta><custom-meta><meta-name>cover-date</meta-name><meta-value>March 2025</meta-value></custom-meta><custom-meta><meta-name>details-of-publishers-convertor</meta-name><meta-value>Converter:WILEY_ML3GV2_TO_JATSPMC version:6.5.1 mode:remove_FC converted:27.12.2024</meta-value></custom-meta></custom-meta-group></article-meta><notes><p content-type="self-citation">
+<mixed-citation publication-type="journal" id="mrm30347-cit-1001">
+<string-name>
+<surname>Bdaiwi</surname>
+<given-names>AS</given-names>
+</string-name>, <string-name>
+<surname>Willmering</surname>
+<given-names>MM</given-names>
+</string-name>, <string-name>
+<surname>Plummer</surname>
+<given-names>JW</given-names>
+</string-name>, et al. <article-title>
+<styled-content style="fixed-case" toggle="no">
+<sup>129</sup>Xe</styled-content> Image Processing Pipeline: An open&#x02010;source, graphical user interface application for the analysis of <styled-content style="fixed-case" toggle="no">hyperpolarized <sup>129</sup>Xe MRI</styled-content>
+</article-title>. <source>Magn Reson Med</source>. <year>2025</year>;<volume>93</volume>(<issue>3</issue>):<fpage>1220</fpage>&#x02010;<lpage>1237</lpage>. doi: <pub-id pub-id-type="doi">10.1002/mrm.30347</pub-id>
+</mixed-citation>
+</p></notes></front><body id="mrm30347-body-0001"><sec id="mrm30347-sec-0005"><label>1</label><title>INTRODUCTION</title><p>Hyperpolarized (HP) <sup>129</sup>Xe MRI has emerged as a powerful pulmonary imaging technique that offers high signal and unique contrast without ionizing radiation.<xref rid="mrm30347-bib-0001" ref-type="bibr">
+<sup>1</sup>
+</xref>, <xref rid="mrm30347-bib-0002" ref-type="bibr">
+<sup>2</sup>
+</xref> This enables regional ventilation, alveolar&#x02010;airspace microstructure, and gas exchange to be visualized and quantified within the lungs. Because of its excellent safety profile,<xref rid="mrm30347-bib-0003" ref-type="bibr">
+<sup>3</sup>
+</xref>, <xref rid="mrm30347-bib-0004" ref-type="bibr">
+<sup>4</sup>
+</xref> sensitivity to early pathology and high reproducibility,<xref rid="mrm30347-bib-0005" ref-type="bibr">
+<sup>5</sup>
+</xref>, <xref rid="mrm30347-bib-0006" ref-type="bibr">
+<sup>6</sup>
+</xref>, <xref rid="mrm30347-bib-0007" ref-type="bibr">
+<sup>7</sup>
+</xref>
+<sup>129</sup>Xe MRI is ideally suited to assess lung pathology longitudinally.<xref rid="mrm30347-bib-0008" ref-type="bibr">
+<sup>8</sup>
+</xref> Recent advances in coil hardware,<xref rid="mrm30347-bib-0003" ref-type="bibr">
+<sup>3</sup>
+</xref>, <xref rid="mrm30347-bib-0004" ref-type="bibr">
+<sup>4</sup>
+</xref> sequence design,<xref rid="mrm30347-bib-0005" ref-type="bibr">
+<sup>5</sup>
+</xref>, <xref rid="mrm30347-bib-0006" ref-type="bibr">
+<sup>6</sup>
+</xref>, <xref rid="mrm30347-bib-0009" ref-type="bibr">
+<sup>9</sup>
+</xref> and image reconstruction<xref rid="mrm30347-bib-0010" ref-type="bibr">
+<sup>10</sup>
+</xref>, <xref rid="mrm30347-bib-0011" ref-type="bibr">
+<sup>11</sup>
+</xref>, <xref rid="mrm30347-bib-0012" ref-type="bibr">
+<sup>12</sup>
+</xref>, <xref rid="mrm30347-bib-0013" ref-type="bibr">
+<sup>13</sup>
+</xref>, <xref rid="mrm30347-bib-0014" ref-type="bibr">
+<sup>14</sup>
+</xref> are expected to further increase the use of HP <sup>129</sup>Xe MRI in human subjects. Moreover, <sup>129</sup>Xe MRI has transitioned from basic and translational science to clinical implementation, with the University of Sheffield in the United Kingdom receiving approval from the Medicines and Healthcare products Regulatory Agency to clinically produce HP gases in 2015. Following, approval over 500 patients have been referred for HP <sup>129</sup>Xe MRI through the United Kingdom National Health Service.<xref rid="mrm30347-bib-0015" ref-type="bibr">
+<sup>15</sup>
+</xref> In the United States (US), phase&#x02010;III clinical trials were successfully concluded in January 2020, and the US Food and Drug Administration (FDA) approved <sup>129</sup>Xe MRI for assessing ventilation in patients 12&#x02009;years of age and older in late 2022.<xref rid="mrm30347-bib-0016" ref-type="bibr">
+<sup>16</sup>
+</xref>, <xref rid="mrm30347-bib-0017" ref-type="bibr">
+<sup>17</sup>
+</xref> As the number of sites able to perform routine clinical and translational HP <sup>129</sup>Xe MRI grow, the technology will become increasingly well&#x02010;positioned to serve as an endpoint in multi&#x02010;site clinical trials that assess the efficacy of new therapies for lung diseases.</p><p>To enable robust and routine multi&#x02010;site trials with HP <sup>129</sup>Xe MRI, data acquisition and analysis must be standardized. Therefore, it is crucial to establish protocols and methods that can be made uniform across sites and implemented easily&#x02014;particularly for sites that lack extensive expertise with HP gas MRI.<xref rid="mrm30347-bib-0018" ref-type="bibr">
+<sup>18</sup>
+</xref> To facilitate the use HP <sup>129</sup>Xe MRI in multi&#x02010;site translational and clinical research, the <sup>129</sup>Xe MRI Clinical Trials Consortium (XeCTC) (<ext-link xlink:href="https://www.129xectc.org/" ext-link-type="uri">https://www.129xectc.org/</ext-link>) recently published a position paper describing harmonized and easily implemented <sup>129</sup>Xe MRI acquisition protocols.<xref rid="mrm30347-bib-0015" ref-type="bibr">
+<sup>15</sup>
+</xref> However, standardized protocols must still be developed to enable robust and harmonized analysis of multi&#x02010;site data.</p><p>Challenges that hinder standardized data processing across sites include the (1) lack of automated center frequency determination of <sup>129</sup>Xe data (particularly for non&#x02010;Cartesian data), (2) the absence of online flip&#x02010;angle calibration for non&#x02010;equilibrium X&#x02010;nucleus imaging, and (3) platform and vendor&#x02010;specific raw data structures and image reconstruction conventions. Further, the large and often flexible coils used in <sup>129</sup>Xe MRI typically display significant B<sub>1</sub> inhomogeneity, which necessitates bias&#x02010;field correction.<xref rid="mrm30347-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref>, <xref rid="mrm30347-bib-0020" ref-type="bibr">
+<sup>20</sup>
+</xref>, <xref rid="mrm30347-bib-0021" ref-type="bibr">
+<sup>21</sup>
+</xref> These challenges have historically encouraged the use of site&#x02010;specific mixtures of on&#x02010;line and custom off&#x02010;line image reconstruction, correction, and analysis tools, which introduce another&#x02014;arguably more significant&#x02014;layer of complexity when comparing results across study sites. These challenges must be addressed, and imaging pipelines must be systematically harmonized, to generate the precise and reliable data needed for robust, multi&#x02010;site clinical studies.</p><p>To address the need for standardized data processing and analysis, we developed <sup>129</sup>Xe image processing pipeline (XIPline). XIPline is an executable application in MATLAB R2023b (The MathWorks) that provides a user&#x02010;friendly, graphical user interface (GUI)&#x02010;based pipeline to import, reconstruct (if needed), process, and analyze HP <sup>129</sup>Xe MR data. By incorporating a GUI, the analysis process simplified and made more accessible to researchers with varying levels of image processing and coding expertise. Moreover, the application is designed to be highly modular, allowing new analysis methods and functions to be incorporated as technology, sequences, and clinical&#x02010;translational applications evolve. Finally, the open&#x02010;source framework will promote transparency, community involvement, and collaboration across the growing HP <sup>129</sup>Xe MRI community.</p></sec><sec sec-type="methods" id="mrm30347-sec-0006"><label>2</label><title>METHODS</title><sec id="mrm30347-sec-0007"><label>2.1</label><title>Application overview and layout</title><p>XIPline was developed using MATLAB R2023b with the Application Designer Toolbox. Figure&#x000a0;<xref rid="mrm30347-fig-0001" ref-type="fig">1</xref> illustrates the fundamental layout of the compiled application. Notably, the institution and scanner options (top right) offer the ability to customize the application for meeting the site&#x02010;specific requirements, which will be particularly valuable when working across multiple scanners (vendors, hardware generations, field strengths, etc.), different scanner software versions, and classes of pulse sequence. Note, the &#x0201c;Institution&#x0201d; option in XIPline provides developers and advanced users with the flexibility to implement custom workflows or institution&#x02010;specific analysis protocols, while maintaining the core functionality of the application for general use. XIPline is structured into two primary tabs. The &#x0201c;Calibration&#x0201d; tab is dedicated to analyzing data from a dedicated spectroscopy&#x02010;based calibration scan. It computes operating parameters such as flip angles and <sup>129</sup>Xe center frequency for subsequent Xe ventilation, diffusion&#x02010;weighted, or gas&#x02010;exchange acquisitions. The status window, featuring a text box, offers real&#x02010;time updates on ongoing tasks and displays error messages when necessary.</p><fig position="float" fig-type="FIGURE" id="mrm30347-fig-0001"><label>FIGURE 1</label><caption><p>
+<sup>129</sup>Xe image processing pipeline (XIPline) and &#x0201c;Calibration&#x0201d; tab layout. A brief XIPline description and help documents are found in the main menu. Institutes and scanner options allow for site&#x02010;specific customization. Two key tabs drive the workflow: the Calibration tab is used to analyze data from a dedicated calibration scan, whereas the &#x0201c;Image Analysis&#x0201d; tab enables processing and analysis of <sup>129</sup>Xe images. A status window with a text box provides real&#x02010;time task updates and error messages.</p></caption><graphic xlink:href="MRM-93-1220-g002" position="anchor" id="jats-graphic-1"/></fig><p>Figure&#x000a0;<xref rid="mrm30347-fig-0002" ref-type="fig">2</xref> shows the layout of the &#x0201c;Image Analysis&#x0201d; tab, which enables processing and analyzing of <sup>129</sup>Xe images. This includes first importing images reconstructed on&#x02010;line or raw data for off&#x02010;line image reconstruction (Figures&#x000a0;<xref rid="mrm30347-supitem-0001" ref-type="supplementary-material">S1</xref>). Reconstructed images can then be registered (e.g., with corresponding <sup>1</sup>H anatomical images) (Figures&#x000a0;<xref rid="mrm30347-supitem-0001" ref-type="supplementary-material">S2</xref>), segmented to generate lung masks (Figure&#x000a0;<xref rid="mrm30347-supitem-0001" ref-type="supplementary-material">S3</xref>), and analyzed using various post&#x02010;processing routines. The &#x0201c;Post&#x02010;Process&#x0201d; panel (Figures&#x000a0;<xref rid="mrm30347-supitem-0001" ref-type="supplementary-material">S4&#x02013;S6</xref>) further encompasses three additional tabs, each containing analysis input parameters for quantifying ventilation, diffusion, or gas&#x02010;exchange images. Similarly, under the &#x0201c;Results&#x0201d; panel, three separate tabs display the primary findings for each analysis type. Moreover, XIPline includes a report panel that can be used to generate and display subject&#x02010;specific analyses (e.g., subject info, scan info, summary of findings, etc., see Figure&#x000a0;<xref rid="mrm30347-supitem-0001" ref-type="supplementary-material">S7</xref>). The Image Analysis tab also provides a display window and basic image processing tools (e.g., flipping, rotation, etc) to visualize and manipulate the data.</p><fig position="float" fig-type="FIGURE" id="mrm30347-fig-0002"><label>FIGURE 2</label><caption><p>
+<sup>129</sup>Xe image processing pipeline and &#x0201c;Image Analysis&#x0201d; tab layout. This application guides users through <sup>129</sup>Xe MRI analysis for ventilation, diffusion, and gas exchange. After selecting the analysis type, users load <sup>129</sup>Xe and anatomical data (raw or reconstructed) (Figure&#x000a0;<xref rid="mrm30347-supitem-0001" ref-type="supplementary-material">S1</xref>, Table&#x000a0;<xref rid="mrm30347-tbl-0002" ref-type="table">2</xref>). If available, anatomical images can be registered with <sup>129</sup>Xe images for improved lung segmentation (Figure&#x000a0;<xref rid="mrm30347-supitem-0001" ref-type="supplementary-material">S2</xref>). Lung masks are then created using manual tools, thresholding, or pretrained models (Figure&#x000a0;<xref rid="mrm30347-supitem-0001" ref-type="supplementary-material">S3</xref>). Analysis settings and methods are chosen in the &#x0201c;Post&#x02010;Processing&#x0201d; panel for ventilation (Figure&#x000a0;<xref rid="mrm30347-supitem-0001" ref-type="supplementary-material">S4</xref>), diffusion (Figure&#x000a0;<xref rid="mrm30347-supitem-0001" ref-type="supplementary-material">S5</xref>), and gas exchange (Figure&#x000a0;<xref rid="mrm30347-supitem-0001" ref-type="supplementary-material">S6</xref>). Results summaries and visualizations are displayed in the &#x0201c;Results&#x0201d; panel, with patient reports generated under the Report panel. The right&#x02010;side window allows image visualization with basic editing tools.</p></caption><graphic xlink:href="MRM-93-1220-g003" position="anchor" id="jats-graphic-3"/></fig></sec><sec id="mrm30347-sec-0008"><label>2.2</label><title>Calibration analysis</title><p>For conventional proton (<sup>1</sup>H) MRI, important image acquisition parameters&#x02014;including transmitter power, excitation frequency, and receiver frequency&#x02014;are typically calibrated using automated routines offered by vendors. Unfortunately, automated calibration routines for multi&#x02010;nuclear (<sup>129</sup>Xe) acquisitions are typically not available. Moreover, these automated routines assume T<sub>1</sub>&#x02010;induced signal recovery to equilibrium and steady&#x02010;state signal behavior, and are therefore, ill&#x02010;suited for use with non&#x02010;equilibrium magnetization inherent to HP MR. Additionally, quality assurance relies on thermally polarized xenon phantoms under pressure,<xref rid="mrm30347-bib-0022" ref-type="bibr">
+<sup>22</sup>
+</xref> but they lack insights into dissolved&#x02010;phase xenon, including individual coil loading (i.e., homogeneity) or the <sup>129</sup>Xe signal's precise frequency in the heterogeneous lung environment.<xref rid="mrm30347-bib-0015" ref-type="bibr">
+<sup>15</sup>
+</xref> To account for variations in the coil performance and subject variation, it is necessary to perform scan calibrations on an individual basis.</p><p>The XeCTC position manuscript<xref rid="mrm30347-bib-0015" ref-type="bibr">
+<sup>15</sup>
+</xref> recommends a dedicated scan that provides the data needed to calculate nominal/global flip angle setting, center frequency of the gas phase, and TR for dissolved phase. This scan comprises 500 acquisitions of the free induction decay (FID) with RF excitation centered at the dissolved <sup>129</sup>Xe frequency (218&#x02009;ppm), followed by 20 acquisitions at the gaseous frequency (0&#x02009;ppm). This allows frequencies of the gas and dissolved phase resonances to be determined, as well as the timing parameters (e.g., TE, TR, and the optimal flip angle for each subject). TR strongly influences the relative ratio of red blood cell (RBC) to membrane signal and has been set to 15&#x02009;ms, per the XeCTC recommendation.<xref rid="mrm30347-bib-0015" ref-type="bibr">
+<sup>15</sup>
+</xref>
+</p><p>Steps for the proposed calibration analysis are shown in Figure&#x000a0;<xref rid="mrm30347-fig-0003" ref-type="fig">3</xref>. The gas spectra obtained are used to calibrate the flip angle, <mml:math id="jats-math-1" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">&#x003b1;</mml:mi></mml:mrow></mml:mrow></mml:math>, by fitting the peak intensities to a simple model of gas signal decay. Assuming <mml:math id="jats-math-2" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi mathvariant="normal">T</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:mrow></mml:mrow></mml:math> relaxation is negligible during data acquisition, signal decay is given by 
+<disp-formula id="mrm30347-disp-0001">
+<label>(1)</label>
+<mml:math id="jats-math-3" display="block" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>S</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo linebreak="goodbreak">=</mml:mo><mml:msub><mml:mi>S</mml:mi><mml:mn>0</mml:mn></mml:msub><mml:mi>cos</mml:mi><mml:msup><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>&#x003b1;</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mrow><mml:mi>i</mml:mi><mml:mo>&#x02212;</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup><mml:mo linebreak="goodbreak">+</mml:mo><mml:mi>C</mml:mi><mml:mo>,</mml:mo></mml:mrow></mml:mrow></mml:math>
+</disp-formula>
+where (<mml:math id="jats-math-4" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>S</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math>) is magnitude of the signal intensity resulting from the <italic toggle="yes">ith</italic> RF excitation, <mml:math id="jats-math-5" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>S</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:mrow></mml:mrow></mml:math> is the signal magnitude expected from the first excitation, and <mml:math id="jats-math-6" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>C</mml:mi></mml:mrow></mml:mrow></mml:math> a mean of the noise offset present in magnitude data.</p><fig position="float" fig-type="FIGURE" id="mrm30347-fig-0003"><label>FIGURE 3</label><caption><p>Calibration analysis pipeline for raw data acquired with the <sup>129</sup>Xe MRI Clinical Trials Consortium calibration sequence.<xref rid="mrm30347-bib-0015" ref-type="bibr">
+<sup>15</sup>
+</xref> The diagram illustrates the calibration analysis process, involving gas data fitted for the flip angle scale factor and frequency offset and dissolved data fitted for the <mml:math id="jats-math-7" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="italic">TE</mml:mi><mml:mn>90</mml:mn></mml:mrow></mml:mrow></mml:math> and RBC: Membrane ratio. These procedures ensure accurate measurements and reliable results for subsequent <sup>129</sup>Xe scans.</p></caption><graphic xlink:href="MRM-93-1220-g004" position="anchor" id="jats-graphic-5"/></fig><p>Once the actual flip angle delivered during the calibration sequence is determined, the prescribed flip angle can be scaled accordingly. That is, if flip angle initially prescribed to acquire calibration data is <mml:math id="jats-math-8" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>&#x003b1;</mml:mi><mml:mi>p</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math>, but signal decay indicates an applied flip angle of <mml:math id="jats-math-9" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>&#x003b1;</mml:mi><mml:mi>a</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math>, subsequent desired flip angles (or reference voltages) for future scans can be achieved by scaling the angle prescribed for data acquisition by <mml:math id="jats-math-10" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>&#x003b1;</mml:mi><mml:mi>p</mml:mi></mml:msub><mml:mo stretchy="false">/</mml:mo><mml:msub><mml:mi>&#x003b1;</mml:mi><mml:mi>a</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math>. The optimal flip angle for each imaging sequence is determined using equations provided in Table&#x000a0;<xref rid="mrm30347-tbl-0001" ref-type="table">1</xref>.</p><table-wrap position="float" id="mrm30347-tbl-0001" content-type="TABLE"><label>TABLE 1</label><caption><p>Mathematical expressions for calculating the optimal flip angles for each imaging type with references provided for additional information.</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="left" span="1"/><thead valign="bottom"><tr style="border-bottom:solid 1px #000000"><th align="left" valign="bottom" rowspan="1" colspan="1">Imaging type</th><th align="left" valign="bottom" rowspan="1" colspan="1">Mathematical expression</th></tr></thead><tbody valign="top"><tr><td align="left" valign="top" rowspan="1" colspan="1">Ventilation</td><td align="left" valign="top" rowspan="1" colspan="1">
+<p>
+<mml:math id="jats-math-11" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mtext mathvariant="italic">Cartesian</mml:mtext></mml:mrow></mml:mrow></mml:math>: <mml:math id="jats-math-12" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>&#x003b1;</mml:mi><mml:mo>=</mml:mo><mml:mi mathvariant="italic">max</mml:mi><mml:mspace width="0.25em"/><mml:mfenced open="[" close="]" separators=""><mml:mrow><mml:mi mathvariant="italic">sin</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>&#x003b1;</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mspace width="0.25em"/><mml:mfenced open="(" close=")" separators=""><mml:mfrac><mml:mrow><mml:mi mathvariant="italic">cos</mml:mi><mml:msup><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>&#x003b1;</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mi>N</mml:mi></mml:msup><mml:mo>&#x02212;</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:mi mathvariant="italic">ln</mml:mi><mml:mi mathvariant="italic">cos</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>&#x003b1;</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mfrac></mml:mfenced></mml:mrow></mml:mfenced></mml:mrow></mml:mrow></mml:math>
+</p>
+<p>
+<mml:math id="jats-math-13" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mtext mathvariant="italic">Center Out</mml:mtext><mml:mspace width="0.25em"/><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mtext mathvariant="italic">spiral</mml:mtext><mml:mo>,</mml:mo><mml:mtext mathvariant="italic">radial</mml:mtext><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math>: <mml:math id="jats-math-14" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>&#x003b1;</mml:mi><mml:mo>=</mml:mo><mml:mi mathvariant="italic">max</mml:mi><mml:mspace width="0.25em"/><mml:mfenced open="[" close="]" separators=""><mml:mrow><mml:mspace width="0.25em"/><mml:mfrac><mml:mrow><mml:mspace width="0.25em"/><mml:mi mathvariant="italic">sin</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>&#x003b1;</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mi>N</mml:mi></mml:mfrac><mml:mfenced open="[" close="]" separators=""><mml:mfrac><mml:mrow><mml:mn>1</mml:mn><mml:mo>&#x02212;</mml:mo><mml:mi mathvariant="italic">cos</mml:mi><mml:msup><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>&#x003b1;</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mi>N</mml:mi></mml:msup></mml:mrow><mml:mrow><mml:mn>1</mml:mn><mml:mo>&#x02212;</mml:mo><mml:mi mathvariant="italic">cos</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>&#x003b1;</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mfrac></mml:mfenced></mml:mrow></mml:mfenced></mml:mrow></mml:mrow></mml:math>(<xref rid="mrm30347-bib-0020" ref-type="bibr">20</xref>)</p>
+</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Diffusion</td><td align="left" valign="top" rowspan="1" colspan="1">
+<p>
+<mml:math id="jats-math-15" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mtext mathvariant="italic">Cartesian</mml:mtext></mml:mrow></mml:mrow></mml:math>: <mml:math id="jats-math-16" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>&#x003b1;</mml:mi><mml:mo>=</mml:mo><mml:mi mathvariant="italic">max</mml:mi><mml:mspace width="0.25em"/><mml:mfenced open="[" close="]" separators=""><mml:mrow><mml:mi mathvariant="italic">sin</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>&#x003b1;</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mspace width="0.25em"/><mml:mfenced open="(" close=")" separators=""><mml:mfrac><mml:mrow><mml:mi mathvariant="italic">cos</mml:mi><mml:msup><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>&#x003b1;</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mrow><mml:mi>N</mml:mi><mml:mo>&#x000d7;</mml:mo><mml:mi mathvariant="italic">Nb</mml:mi></mml:mrow></mml:msup><mml:mo>&#x02212;</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:mi mathvariant="italic">ln</mml:mi><mml:mi mathvariant="italic">cos</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>&#x003b1;</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mfrac></mml:mfenced></mml:mrow></mml:mfenced></mml:mrow></mml:mrow></mml:math>
+</p>
+<p>
+<mml:math id="jats-math-17" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mtext mathvariant="italic">Center Out</mml:mtext><mml:mspace width="0.25em"/><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mtext mathvariant="italic">spiral</mml:mtext><mml:mo>,</mml:mo><mml:mtext mathvariant="italic">radial</mml:mtext><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math>: <mml:math id="jats-math-18" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>&#x003b1;</mml:mi><mml:mo>=</mml:mo><mml:mi mathvariant="italic">max</mml:mi><mml:mspace width="0.25em"/><mml:mfenced open="[" close="]" separators=""><mml:mrow><mml:mspace width="0.25em"/><mml:mfrac><mml:mrow><mml:mspace width="0.25em"/><mml:mi mathvariant="italic">sin</mml:mi><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>&#x003b1;</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mi>N</mml:mi></mml:mfrac><mml:mfenced open="[" close="]" separators=""><mml:mfrac><mml:mrow><mml:mn>1</mml:mn><mml:mo>&#x02212;</mml:mo><mml:mi mathvariant="italic">cos</mml:mi><mml:msup><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>&#x003b1;</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mrow><mml:mi>N</mml:mi><mml:mo>&#x000d7;</mml:mo><mml:mi mathvariant="italic">Nb</mml:mi></mml:mrow></mml:msup></mml:mrow><mml:mrow><mml:mn>1</mml:mn><mml:mo>&#x02212;</mml:mo><mml:mi mathvariant="italic">cos</mml:mi><mml:msup><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi>&#x003b1;</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mi mathvariant="italic">Nb</mml:mi></mml:msup></mml:mrow></mml:mfrac></mml:mfenced></mml:mrow></mml:mfenced></mml:mrow></mml:mrow></mml:math> (<xref rid="mrm30347-bib-0009" ref-type="bibr">9</xref>)</p>
+</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Gas exchange</td><td align="left" valign="top" rowspan="1" colspan="1">
+<p>
+<mml:math id="jats-math-19" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mtext mathvariant="italic">Radial</mml:mtext></mml:mrow></mml:mrow></mml:math>: <mml:math id="jats-math-20" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>&#x003b1;</mml:mi><mml:mi mathvariant="italic">gas</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>0.5</mml:mn></mml:mrow></mml:mrow></mml:math> (<xref rid="mrm30347-bib-0015" ref-type="bibr">15</xref>)</p>
+<p>
+<mml:math id="jats-math-21" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>&#x003b1;</mml:mi><mml:mtext mathvariant="italic">dissolve</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:mn>20</mml:mn></mml:mrow></mml:mrow></mml:math> (<xref rid="mrm30347-bib-0015" ref-type="bibr">15</xref>)</p>
+</td></tr></tbody></table><table-wrap-foot id="mrm30347-ntgp-0001"><fn id="mrm30347-note-0001"><p>
+<italic toggle="yes">Note</italic>: <mml:math id="jats-math-22" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>N</mml:mi></mml:mrow></mml:mrow></mml:math> is the number of excitations, and <mml:math id="jats-math-23" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="italic">Nb</mml:mi></mml:mrow></mml:mrow></mml:math> is the number of b&#x02010;values. For both ventilation and diffusion, a 2D slice&#x02010;selective approach is assumed. Additionally, the same mathematical expressions for calculating optimal flip angles can be applied to Cartesian acquisition with either linear or centric encoding order for both ventilation and diffusion.</p></fn></table-wrap-foot></table-wrap><p>The dissolved FIDs are used to determine the optimal TE for 1&#x02010;point Dixon gas&#x02010;exchange measurements. The initial 100 dissolved FIDs are discarded to remove the confounding effect of <sup>129</sup>Xe signal in the larger vasculature downstream of the pulmonary capillary bed during inhalation.<xref rid="mrm30347-bib-0015" ref-type="bibr">
+<sup>15</sup>
+</xref> Additionally, the dissolved spectrum is fit to determine the amplitudes of the RBC and membrane peaks and the phase separation that evolved between the two peaks during the RF pulse and subsequent acquisition delay. The TE required for the RBC and membrane peaks to achieve a 90&#x000b0; phase separation at the k&#x02010;zero point, <mml:math id="jats-math-24" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="italic">TE</mml:mi><mml:mn>90</mml:mn><mml:mo>,</mml:mo></mml:mrow></mml:mrow></mml:math> (assuming a center&#x02010;out trajectory such as radial acquisition) is calculated as follows:</p><p>
+<disp-formula id="mrm30347-disp-0002">
+<label>(2)</label>
+<mml:math id="jats-math-25" display="block" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="italic">TE</mml:mi><mml:mn>90</mml:mn><mml:mo linebreak="goodbreak">=</mml:mo><mml:mi mathvariant="italic">TE</mml:mi><mml:mo linebreak="goodbreak">+</mml:mo><mml:mfrac><mml:mrow><mml:mn>90</mml:mn><mml:mo>&#x02212;</mml:mo><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mrow><mml:mtext mathvariant="italic">Phase</mml:mtext><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi mathvariant="italic">RBC</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo linebreak="goodbreak">&#x02212;</mml:mo><mml:mtext mathvariant="italic">Phase</mml:mtext><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mtext mathvariant="italic">Membrane</mml:mtext><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:mn>360</mml:mn><mml:mo>&#x000d7;</mml:mo><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mrow><mml:mtext mathvariant="italic">Frequency</mml:mtext><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mi mathvariant="italic">RBC</mml:mi><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo linebreak="goodbreak">&#x02212;</mml:mo><mml:mtext mathvariant="italic">Frequency</mml:mtext><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mtext mathvariant="italic">Membrane</mml:mtext><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mfrac><mml:mo>.</mml:mo></mml:mrow></mml:mrow></mml:math>
+</disp-formula>
+where <mml:math id="jats-math-26" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">TE</mml:mi></mml:mrow></mml:mrow></mml:math> is the echo time used in the calibration scan.</p><p>XIPline currently supports calibration analysis using various raw data formats, including .data/.list for Philips scanners, .dat for Siemens scanners and .7 for GE scanners (Table&#x000a0;<xref rid="mrm30347-tbl-0002" ref-type="table">2</xref>). XIPline also supports International Society for Magnetic Resonance in Medicine raw data (ISMRMRD) format.<xref rid="mrm30347-bib-0023" ref-type="bibr">
+<sup>23</sup>
+</xref> New raw data formats can also be incorporated by users into the analysis pipeline. Step&#x02010;by&#x02010;step instructions for performing the calibration analysis can be found in the user's manual document in supporting documents (it can also be found here: <ext-link xlink:href="https://github.com/aboodbdaiwi/XIPline/tree/main/user_manual" ext-link-type="uri">https://github.com/aboodbdaiwi/XIPline/tree/main/user_manual</ext-link>).</p><table-wrap position="float" id="mrm30347-tbl-0002" content-type="TABLE"><label>TABLE 2</label><caption><p>Currently supported data formats (XIPline V1.1.0).</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><thead valign="bottom"><tr style="border-bottom:solid 1px #000000"><th rowspan="3" align="left" valign="bottom" colspan="1">Imaging type</th><th colspan="5" align="left" style="border-bottom:solid 1px #000000" valign="bottom" rowspan="1">Supported data type</th></tr><tr style="border-bottom:solid 1px #000000"><th rowspan="2" align="left" style="border-bottom:solid 1px #000000" valign="bottom" colspan="1">General image formats</th><th colspan="4" align="left" style="border-bottom:solid 1px #000000" valign="bottom" rowspan="1">Raw data</th></tr><tr style="border-bottom:solid 1px #000000"><th align="left" valign="bottom" rowspan="1" colspan="1">Philips</th><th align="left" valign="bottom" rowspan="1" colspan="1">Siemens</th><th align="left" valign="bottom" rowspan="1" colspan="1">GE</th><th align="left" valign="bottom" rowspan="1" colspan="1">ISMRMRD</th></tr></thead><tbody valign="top"><tr><td align="left" valign="top" rowspan="1" colspan="1">Calibration</td><td align="left" valign="top" rowspan="1" colspan="1">&#x02013;</td><td align="left" valign="top" rowspan="1" colspan="1">.data/.list</td><td align="left" valign="top" rowspan="1" colspan="1">.dat</td><td align="left" valign="top" rowspan="1" colspan="1">&#x02212;.7</td><td align="left" valign="top" rowspan="1" colspan="1">.h5 or .mrd</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Ventilation</td><td align="left" valign="top" rowspan="1" colspan="1">
+<p>.dcm (single or multiple files)</p>
+<p>.mat (single): one 3D variable size (x,y,slices)</p>
+<p>.nii or .gz (single): one 3D variable size (x,y,slices)</p>
+</td><td align="left" valign="top" rowspan="1" colspan="1">.data/.list (2D Cartesian only)</td><td align="left" valign="top" rowspan="1" colspan="1">.dat (2D Cartesian only)</td><td align="left" valign="top" rowspan="1" colspan="1">&#x02212;.7 (2D Cartesian only)</td><td align="left" valign="top" rowspan="1" colspan="1">.h5 or .mrd (2D Cartesian only)</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Diffusion</td><td align="left" valign="top" rowspan="1" colspan="1">
+<p>.dcm (single or multiple files): have to specify the number of b&#x02010;values and acquisition order</p>
+<p>.mat (single): one 4D variable (x,y,slices,b&#x02010;values)</p>
+<p>.nii or .gz (single): one 4D variable size (x,y,slices,b&#x02010;values)</p>
+</td><td align="left" valign="top" rowspan="1" colspan="1">.data/.list (2D Cartesian only)</td><td align="left" valign="top" rowspan="1" colspan="1">.dat (2D Cartesian only)</td><td align="left" valign="top" rowspan="1" colspan="1">&#x02212;.7 (2D Cartesian only)</td><td align="left" valign="top" rowspan="1" colspan="1">.h5 or .mrd (2D Cartesian only)</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Gas Exchange</td><td align="left" valign="top" rowspan="1" colspan="1">.mat (single): not recommended; see user's manual</td><td align="left" valign="top" rowspan="1" colspan="1">.data/.list/.sin (3D radial only)</td><td align="left" valign="top" rowspan="1" colspan="1">.dat (3D radial only)</td><td align="left" valign="top" rowspan="1" colspan="1">.7 (3D radial only)</td><td align="left" valign="top" rowspan="1" colspan="1">.h5 or .mrd (3D radial only)</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Anatomical</td><td align="left" valign="top" rowspan="1" colspan="1">
+<p>.dcm (single or multiple files)</p>
+<p>.mat (single): one 3D variable size (x,y,slices)</p>
+<p>.nii or .gz (single): one 3D variable size (x,y,slices)</p>
+<p>See user's manual for gas exchange data</p>
+</td><td align="left" valign="top" rowspan="1" colspan="1">
+<p>.data/.list</p>
+<p>.data/.lab/.sin (2D Cartesian or 3D radial only)</p>
+</td><td align="left" valign="top" rowspan="1" colspan="1">.dat (2D Cartesian or 3D radial only)</td><td align="left" valign="top" rowspan="1" colspan="1">.7 (2D Cartesian or 3D radial only)</td><td align="left" valign="top" rowspan="1" colspan="1">.mrd or .h5 (2D Cartesian or 3D radial only)</td></tr></tbody></table><table-wrap-foot><fn id="mrm30347-note-1011"><p>
+<italic toggle="yes">Note</italic>: ISMRMRD: International Society for Magnetic Resonance in Medicine Raw Data.</p></fn></table-wrap-foot></table-wrap></sec><sec id="mrm30347-sec-0009"><label>2.3</label><title>Image analysis</title><p>The steps for image analysis of all HP <sup>129</sup>Xe scans are shown in Figure&#x000a0;<xref rid="mrm30347-fig-0004" ref-type="fig">4</xref>. The image analysis process encompasses ventilation, diffusion&#x02010;weighted, and gas exchange. It starts with loading reconstructed or raw k&#x02010;space data. This is followed by image editing and anatomical registration to the <sup>129</sup>Xe image. Next, segmentation of lungs and airways masks is performed. This leads to post&#x02010;processing analysis, which includes ventilation defect percentage (VDP), defect distribution index (DDI), and texture analysis for ventilation. Additionally, ADC and morphometry fitting for diffusion&#x02010;weighted imaging and 1&#x02010;point Dixon analysis for gas exchange are conducted. The upcoming sections provide detailed descriptions of each individual step.</p><fig position="float" fig-type="FIGURE" id="mrm30347-fig-0004"><label>FIGURE 4</label><caption><p>Analysis pipeline for ventilation, diffusion, and gas exchange images. The process begins by loading reconstructed images or reconstructing images from raw data (A), followed by any necessary image formatting before registering (B) the <sup>129</sup>Xe and anatomical images (if available). Subsequently, the segmentation process (C) creates lung and airways masks. The post&#x02010;processing analysis is the final step (D). Ventilation analysis: (D[i]), ventilation defect percentage (VDP) analysis is conducted using thresholding, K&#x02010;means or linear binning methods. Moreover, defect distribution index (DDI) can also be calculated in 2D or 3D for a specific defect map. Texture analysis can also be performed for ventilation images. Diffusion analysis: (D[ii]), the ADC maps are generated using different fitting methods. Linear binning analysis can also be performed based on a patient's age. For multiple b&#x02010;value diffusion acquisition, morphometric analysis can be conducted using the cylindrical model (CM) or the stretched exponential model (SEM). Gas exchange analysis: (D[iii]) involves performing 1&#x02010;point Dixon analysis. All results are saved and exported (E). Optionally, a patient report can be generated as well (F).</p></caption><graphic xlink:href="MRM-93-1220-g008" position="anchor" id="jats-graphic-7"/></fig><sec id="mrm30347-sec-0010"><label>2.3.1</label><title>Input data</title><p>Figure&#x000a0;<xref rid="mrm30347-supitem-0001" ref-type="supplementary-material">S1</xref> displays the interface and options of the &#x0201c;Loading Data&#x0201d; tab. XIPline is designed to provide compatibility with various imaging formats, including DICOM, MATLAB, NIFTI files, and more. This range of supported formats ensures easy integration with online or offline image reconstruction software. Moreover, XIPline offers support for offline reconstruction of 2D Cartesian gradient echo (2D GRE) acquisitions using .data/.list (Philips), .dat (Siemens) and .7 (GE) formats for ventilation, anatomical and diffusion imaging. XIPline also supports non&#x02010;Cartesian image reconstruction for 3D radial gas exchange data (gas and anatomical) acquired on Philips, Siemens or GE scanners.</p><p>However, the intricacy arising from diverse input raw data, including variations in format, ordering, and preprocessing, poses challenges for developing a universally applicable pipeline. Fortunately, widely used open&#x02010;source data formats, like the MR raw data (MRD)<xref rid="mrm30347-bib-0023" ref-type="bibr">
+<sup>23</sup>
+</xref> for image data, have been developed standardize data structures and facilitate efficient algorithm sharing. XIPline supports offline reconstruction of 2D GRE (for ventilation and diffusion) and 3D radial (for gas exchange) acquisitions with ISMRMRD format. These types of data format are supported for both <sup>129</sup>Xe gas and anatomical <sup>1</sup>H images. For a comprehensive breakdown of the supported imaging and raw data formats, please refer to Table&#x000a0;<xref rid="mrm30347-tbl-0002" ref-type="table">2</xref>. Additionally, a denoising option for xenon images is also available based on the block matching 3D method.<xref rid="mrm30347-bib-0024" ref-type="bibr">
+<sup>24</sup>
+</xref>
+</p></sec><sec id="mrm30347-sec-0011"><label>2.3.2</label><title>Registration</title><p>For ventilation and gas&#x02010;exchange imaging, it is common to acquire an anatomical proton scan with imaging parameters (e.g., patient location, voxel size, FOV, and lung inflation level<xref rid="mrm30347-bib-0015" ref-type="bibr">
+<sup>15</sup>
+</xref>) that match those used to acquired xenon images. This alignment provides thoracic cavity image spatially congruent with the functional images to serve as reference for generating lung masks. Note, proton images are used exclusively for registration and as a reference for lung parenchyma segmentation, but if the &#x0201c;no proton images&#x0201d; option is selected, segmentation will rely solely on xenon images, bypassing the registration step.</p><p>Figure&#x000a0;<xref rid="mrm30347-supitem-0001" ref-type="supplementary-material">S2</xref> shows the interface and options of the &#x0201c;Registration&#x0201d; tab. To facilitate image co&#x02010;registration, the multimodal 3D image registration capabilities integrated into MATLAB is used. Manual edits of registration for finer adjustments are also available. This registration technique enables anatomical images to be aligned with the corresponding HP gas image, taking advantage of the shared structural features present in both datasets. By leveraging this tool, users can achieve accurate spatial alignment between the anatomical and HP gas images, allowing for precise analysis and interpretation of the gas distribution patterns within the lungs.</p></sec><sec id="mrm30347-sec-0012"><label>2.3.3</label><title>Segmentation</title><p>Figure&#x000a0;<xref rid="mrm30347-supitem-0001" ref-type="supplementary-material">S3</xref> displays the interface and options of the &#x0201c;Segmentation&#x0201d; tab. XIPline offers three lung and airway segmentation approaches: manual, thresholding, and pretrained convolutional neural network (CNN) models (see Supporting Information&#x000a0;<xref rid="mrm30347-supitem-0001" ref-type="supplementary-material">
+<bold>S1</bold>
+</xref> for details of the CNN models). It is recommended to start with the deep learning&#x02010;based segmentation (pretrained models) for initial processing, followed by manual adjustments as necessary.</p><sec id="mrm30347-sec-0013"><title>
+Manual Segmentation
+</title><p>XIPline leverages the capabilities of using free&#x02010;hand method or the volume segmenter application (a standard MATLAB app within the Image Processing Toolbox) that provides a range of powerful methods to segment the lung parenchyma and airways, including freehand drawing, painting, and thresholding. Lung segmentation can be performed in just a few simple steps. To access all features provided by this method, XIPline must be run in developer mode. However, if the complied XIPline is used, a simpler version will be employed for segmentation.</p></sec><sec id="mrm30347-sec-0014"><title>
+Threshold segmentation
+</title><p>XIPline also includes a convenient and simple thresholding technique based on Otsu's approach,<xref rid="mrm30347-bib-0025" ref-type="bibr">
+<sup>25</sup>
+</xref> which allows for customizable threshold level and structuring element size (default values&#x02009;=&#x02009;1 for both, a relatively small structuring element is used, and the threshold is applied without any scaling). Additionally, this thresholding technique can be used to eliminate airways from the lung masks using a manual freehand tool included in the XIPline package.</p></sec><sec id="mrm30347-sec-0015"><title>
+Automatic segmentation
+</title><p>In the rapidly evolving field of HP imaging, significant advancements have been made to enhance accuracy and reproducibility, minimize human error, and reduce post&#x02010;processing time through the development of automatic lung segmentation approaches.<xref rid="mrm30347-bib-0026" ref-type="bibr">
+<sup>26</sup>
+</xref>, <xref rid="mrm30347-bib-0027" ref-type="bibr">
+<sup>27</sup>
+</xref>, <xref rid="mrm30347-bib-0028" ref-type="bibr">
+<sup>28</sup>
+</xref> XIPline provides deep&#x02010;learning models that are capable of accurately segmenting the lungs in both 2D and 3D images, considering scenarios with and without anatomical images (single or dual channel inputs<xref rid="mrm30347-bib-0027" ref-type="bibr">
+<sup>27</sup>
+</xref>). To provide comprehensive information about the trained models, detailed descriptions and specifications are presented in the supplementary materials (Supporting Information&#x000a0;<xref rid="mrm30347-supitem-0001" ref-type="supplementary-material">
+<bold>S1</bold>
+</xref>).</p></sec></sec><sec id="mrm30347-sec-0016"><label>2.3.4</label><title>Post processing</title><sec id="mrm30347-sec-0017"><title>
+Ventilation
+</title><p>Ventilation imaging using HP <sup>129</sup>Xe MRI<xref rid="mrm30347-bib-0029" ref-type="bibr">
+<sup>29</sup>
+</xref> is a widely used and straightforward way to visualize regional distribution of inhaled gas in the lungs and ventilation imaging may be performed with both 2D and 3D strategies with fast gradient echo or steady state sequences.<xref rid="mrm30347-bib-0016" ref-type="bibr">
+<sup>16</sup>
+</xref>, <xref rid="mrm30347-bib-0029" ref-type="bibr">
+<sup>29</sup>
+</xref>, <xref rid="mrm30347-bib-0030" ref-type="bibr">
+<sup>30</sup>
+</xref>, <xref rid="mrm30347-bib-0031" ref-type="bibr">
+<sup>31</sup>
+</xref>, <xref rid="mrm30347-bib-0032" ref-type="bibr">
+<sup>32</sup>
+</xref>, <xref rid="mrm30347-bib-0033" ref-type="bibr">
+<sup>33</sup>
+</xref> Figure&#x000a0;<xref rid="mrm30347-supitem-0001" ref-type="supplementary-material">S4</xref> shows the interface and options for the &#x0201c;Ventilation Analysis&#x0201d; tab (also see Figure&#x000a0;<xref rid="mrm30347-fig-0004" ref-type="fig">4</xref> D[i] diagram). XIPline includes an option for N4ITK bias field correction<xref rid="mrm30347-bib-0034" ref-type="bibr">
+<sup>34</sup>
+</xref> (settings are shown in Supporting Information <xref rid="mrm30347-supitem-0001" ref-type="supplementary-material">S2</xref>). By applying this correction, intensity variations caused by non&#x02010;uniformity in the MRI data because of coil sensitivity and regional variations in RF&#x02010;induced and T<sub>1</sub>&#x02010;induced signal decay are mitigated partially, therefore, enhancing the reliability and accuracy of subsequent analysis steps. SNR is calculated according to <mml:math id="jats-math-27" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mspace width="0.25em"/><mml:msub><mml:mi>S</mml:mi><mml:mtext mathvariant="italic">lung</mml:mtext></mml:msub><mml:mo stretchy="false">/</mml:mo><mml:msub><mml:mi>&#x003c3;</mml:mi><mml:mi mathvariant="italic">BG</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math>, where <mml:math id="jats-math-28" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>S</mml:mi><mml:mtext mathvariant="italic">lung</mml:mtext></mml:msub></mml:mrow></mml:mrow></mml:math> is mean signal amplitude within the mask; and <mml:math id="jats-math-29" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>&#x003c3;</mml:mi><mml:mi mathvariant="italic">BG</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math> is the SD of the noise (excluding airways). <mml:math id="jats-math-30" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>&#x003c3;</mml:mi><mml:mi mathvariant="italic">BG</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math> is calculated from the noise measured in the background of the magnitude image,<mml:math id="jats-math-31" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mspace width="0.25em"/><mml:msub><mml:mi>&#x003c3;</mml:mi><mml:mi>M</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math>, according to <mml:math id="jats-math-32" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mspace width="0.25em"/><mml:msubsup><mml:mrow><mml:msubsup><mml:mrow><mml:mspace width="0.25em"/><mml:mi>&#x003c3;</mml:mi></mml:mrow><mml:mi mathvariant="italic">BG</mml:mi><mml:mn>2</mml:mn></mml:msubsup><mml:mo>=</mml:mo><mml:mi>&#x003c3;</mml:mi></mml:mrow><mml:mi>M</mml:mi><mml:mn>2</mml:mn></mml:msubsup><mml:mo stretchy="false">/</mml:mo><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mrow><mml:mn>2</mml:mn><mml:mo>&#x02212;</mml:mo><mml:mi>&#x003c0;</mml:mi><mml:mo stretchy="false">/</mml:mo><mml:mn>2</mml:mn></mml:mrow><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mo>.</mml:mo></mml:mrow></mml:mrow></mml:math>
+<xref rid="mrm30347-bib-0035" ref-type="bibr">
+<sup>35</sup>
+</xref>, <xref rid="mrm30347-bib-0036" ref-type="bibr">
+<sup>36</sup>
+</xref>, <xref rid="mrm30347-bib-0037" ref-type="bibr">
+<sup>37</sup>
+</xref>
+</p><p>Ventilation images are quantified by expressing the percentage of lung voxels with no or low signal intensity, indicating non&#x02010;ventilated or hypo&#x02010;ventilated airspaces, respectively. This measure is known as the VDP and can be defined as<xref rid="mrm30347-bib-0038" ref-type="bibr">
+<sup>38</sup>
+</xref>:
+<disp-formula id="mrm30347-disp-0003">
+<label>(3)</label>
+<mml:math id="jats-math-33" display="block" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="italic">VDP</mml:mi><mml:mo linebreak="goodbreak">=</mml:mo><mml:mfenced open="(" close=")" separators=""><mml:mrow><mml:mn>1</mml:mn><mml:mo linebreak="goodbreak">&#x02212;</mml:mo><mml:mfrac><mml:mrow><mml:mn>1</mml:mn><mml:mo>&#x02212;</mml:mo><mml:mi mathvariant="italic">VV</mml:mi></mml:mrow><mml:mi mathvariant="italic">TLV</mml:mi></mml:mfrac></mml:mrow></mml:mfenced><mml:mo linebreak="goodbreak">&#x000d7;</mml:mo><mml:mn>100</mml:mn><mml:mo>%</mml:mo><mml:mo>,</mml:mo></mml:mrow></mml:mrow></mml:math>
+</disp-formula>
+where, <mml:math id="jats-math-34" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="italic">VV</mml:mi></mml:mrow></mml:mrow></mml:math> represents the volume of the lung that is effectively ventilated, and the total lung volume (TLV) is determined through the segmentation of lung parenchyma. Several algorithms can be used to calculate VDP, including thresholding,<xref rid="mrm30347-bib-0039" ref-type="bibr">
+<sup>39</sup>
+</xref>, <xref rid="mrm30347-bib-0040" ref-type="bibr">
+<sup>40</sup>
+</xref>, <xref rid="mrm30347-bib-0041" ref-type="bibr">
+<sup>41</sup>
+</xref> linear binning,<xref rid="mrm30347-bib-0037" ref-type="bibr">
+<sup>37</sup>
+</xref>, <xref rid="mrm30347-bib-0039" ref-type="bibr">
+<sup>39</sup>
+</xref>, <xref rid="mrm30347-bib-0042" ref-type="bibr">
+<sup>42</sup>
+</xref>, <xref rid="mrm30347-bib-0043" ref-type="bibr">
+<sup>43</sup>
+</xref> hierarchical k&#x02010;means,<xref rid="mrm30347-bib-0044" ref-type="bibr">
+<sup>44</sup>
+</xref> fuzzy spatial c&#x02010;means,<xref rid="mrm30347-bib-0045" ref-type="bibr">
+<sup>45</sup>
+</xref> Gaussian mixture modeling with Markov random field,<xref rid="mrm30347-bib-0028" ref-type="bibr">
+<sup>28</sup>
+</xref> and trained CNN.<xref rid="mrm30347-bib-0026" ref-type="bibr">
+<sup>26</sup>
+</xref>, <xref rid="mrm30347-bib-0027" ref-type="bibr">
+<sup>27</sup>
+</xref>, <xref rid="mrm30347-bib-0028" ref-type="bibr">
+<sup>28</sup>
+</xref>, <xref rid="mrm30347-bib-0046" ref-type="bibr">
+<sup>46</sup>
+</xref> For the current release, thresholding, linear binning, and k&#x02010;means methods are implemented and supported in this analysis application.</p><p>Using the thresholding method,<xref rid="mrm30347-bib-0039" ref-type="bibr">
+<sup>39</sup>
+</xref>, <xref rid="mrm30347-bib-0040" ref-type="bibr">
+<sup>40</sup>
+</xref>, <xref rid="mrm30347-bib-0041" ref-type="bibr">
+<sup>41</sup>
+</xref> VDP is determined as the proportion of lung volume with signal below a specific threshold of the whole&#x02010;lung mean on ventilation images. Here, the default incomplete ventilation threshold is set to 60% of the mean whole&#x02010;lung signal, which was determined empirically to provide the maximum difference between healthy control and disease groups.<xref rid="mrm30347-bib-0040" ref-type="bibr">
+<sup>40</sup>
+</xref>, <xref rid="mrm30347-bib-0041" ref-type="bibr">
+<sup>41</sup>
+</xref> Furthermore, to enhance the accuracy of VDP quantification, a median filter, with a 3&#x02009;&#x000d7;&#x02009;3 kernel, is applied to the defect mask array. This step effectively eliminates &#x0201c;hot&#x0201d; pixels and small vessels and makes the analysis more robust to variations in <mml:math id="jats-math-35" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">SNR</mml:mi></mml:mrow></mml:mrow></mml:math>, which has the potential to impact the ventilation defect assessment.</p><p>In the linear&#x02010;binning method,<xref rid="mrm30347-bib-0037" ref-type="bibr">
+<sup>37</sup>
+</xref>, <xref rid="mrm30347-bib-0039" ref-type="bibr">
+<sup>39</sup>
+</xref>, <xref rid="mrm30347-bib-0042" ref-type="bibr">
+<sup>42</sup>
+</xref>, <xref rid="mrm30347-bib-0043" ref-type="bibr">
+<sup>43</sup>
+</xref> the signal from the airways is used to normalize and rescale the signal histogram, ranging from 0 to 1, using the 99th percentile of the cumulative distribution in the whole image (excluding airways). Mean (&#x003bc;) and SD (&#x003c3;) of the averaged rescaled intensity histogram from healthy controls were used to define the threshold values for six bin&#x02010;map boundaries (&#x003bc;&#x02009;&#x000b1;&#x02009;&#x003c3;). These bins were designed to identify regions with ventilation defects (&#x0003c;&#x003bc;&#x02010;2&#x003c3;), low ventilation (&#x003bc;&#x02010;2&#x003c3;&#x000a0;&#x02013;&#x000a0;&#x003bc;&#x02010;&#x003c3;), two normal ventilation bins (&#x003bc;&#x02010;&#x003c3;&#x000a0;&#x02013;&#x000a0;&#x003bc;&#x02009;+&#x02009;&#x003c3;), and two hyper&#x02010;ventilation bins (&#x0003e;&#x003bc;&#x02009;+&#x02009;&#x003c3;). For images with no bias&#x02010;field correction, the mean and SD were calculated to be 0.54&#x02009;&#x000b1;&#x02009;0.15, and for the same images with N4ITK bias&#x02010;field correction,<xref rid="mrm30347-bib-0034" ref-type="bibr">
+<sup>34</sup>
+</xref> the values were determined to be 0.68&#x02009;&#x000b1;&#x02009;0.14 and set as the default values. The default values for mean and SD are for 2D images, but they can be manually adjusted for different image acquisition (e.g., 3D acquisition).</p><p>For the k&#x02010;means method, the <sup>129</sup>Xe signal is categorized visually distinct classes, which typically include signal void, hypointense (or partial volume), normal intensity, and hyperintense signal. To achieve this classification, a hierarchical K&#x02010;means clustering approach was used,<xref rid="mrm30347-bib-0044" ref-type="bibr">
+<sup>44</sup>
+</xref> dividing the histogram of signal intensity frequencies into four clusters. However, the initial K&#x02010;means clustering resulted in a single cluster, C1, encompassing both signal void and hypointense regions (comprising partial volumes and/or partially ventilated volumes). To address this, K&#x02010;means clustering was reapplied in a three&#x02010;step process: (1) initial application of K&#x02010;means with four clusters to the <sup>129</sup>Xe image; (2) subsequent application of K&#x02010;means with four clusters to C1; and (3) merging the first two clusters from step 2 to represent the background and ventilation defects and combining the last two clusters from step 2 to represent the hypointense signal regions.</p><p>XIPline also incorporates the DDI<xref rid="mrm30347-bib-0047" ref-type="bibr">
+<sup>47</sup>
+</xref>, <xref rid="mrm30347-bib-0048" ref-type="bibr">
+<sup>48</sup>
+</xref> to assess the 2D spatial arrangement of ventilation defects. DDI evaluates the spatial &#x0201c;clustering&#x0201d; of defect voxels in the lung, producing a defect distribution index for the entire lung. This index indicates whether defects are dispersed (low DDI) or concentrated (high DDI). This approach enables an observer&#x02010;independent evaluation of defect distribution, supporting longitudinal analysis and interindividual comparisons. Additionally, we extend the application of the DDI technique to quantify the 3D spatial distribution of ventilation defects observed in <sup>129</sup>Xe imaging.</p><p>Moreover, texture analysis using the gray level run lengths method (GLRLM)<xref rid="mrm30347-bib-0049" ref-type="bibr">
+<sup>49</sup>
+</xref> metwas integrated into XIPline, enhancing its capability to quantitatively assess ventilation heterogeneity, spatial distribution, and gray&#x02010;level run patterns within the ventilation data. As part of this process, the images are normalized to a signal intensity range of 0 to 1, ensuring consistency in the quantitative measurements and allowing for a more accurate evaluation of ventilation characteristics.</p></sec><sec id="mrm30347-sec-0018"><title>
+Diffusion
+</title><p>Diffusion&#x02010;weighted <sup>129</sup>Xe MRI is a histologically validated approach to assess lung microstructure&#x02014;most commonly by calculating the ADC of the Xe gas.<xref rid="mrm30347-bib-0050" ref-type="bibr">
+<sup>50</sup>
+</xref>, <xref rid="mrm30347-bib-0051" ref-type="bibr">
+<sup>51</sup>
+</xref> By imaging <sup>129</sup>Xe with multiple diffusion&#x02010;weightings (b&#x02010;values), it becomes possible to quantify morphological parameters like alveolar dimensions. In general, <sup>129</sup>Xe diffusion&#x02010;weighted imaging enables the detection of age and disease&#x02010;related pulmonary microstructure changes like emphysema.<xref rid="mrm30347-bib-0051" ref-type="bibr">
+<sup>51</sup>
+</xref>, <xref rid="mrm30347-bib-0052" ref-type="bibr">
+<sup>52</sup>
+</xref>, <xref rid="mrm30347-bib-0053" ref-type="bibr">
+<sup>53</sup>
+</xref>, <xref rid="mrm30347-bib-0054" ref-type="bibr">
+<sup>54</sup>
+</xref>, <xref rid="mrm30347-bib-0055" ref-type="bibr">
+<sup>55</sup>
+</xref>, <xref rid="mrm30347-bib-0056" ref-type="bibr">
+<sup>56</sup>
+</xref>, <xref rid="mrm30347-bib-0057" ref-type="bibr">
+<sup>57</sup>
+</xref>
+</p><p>The most common approach for diffusion&#x02010;weighted imaging involves using a 2D slice selective gradient echo sequence with bipolar diffusion gradients.<xref rid="mrm30347-bib-0052" ref-type="bibr">
+<sup>52</sup>
+</xref>, <xref rid="mrm30347-bib-0054" ref-type="bibr">
+<sup>54</sup>
+</xref>, <xref rid="mrm30347-bib-0055" ref-type="bibr">
+<sup>55</sup>
+</xref>, <xref rid="mrm30347-bib-0058" ref-type="bibr">
+<sup>58</sup>
+</xref>, <xref rid="mrm30347-bib-0059" ref-type="bibr">
+<sup>59</sup>
+</xref> In cases where only ADC is of interest, it is common to apply only two diffusion weightings (b&#x02010;values) and calculate ADC as follows:
+<disp-formula id="mrm30347-disp-0004">
+<label>(4)</label>
+<mml:math id="jats-math-36" display="block" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="italic">ADC</mml:mi><mml:mo linebreak="goodbreak">=</mml:mo><mml:mo linebreak="goodbreak">&#x02212;</mml:mo><mml:mfrac><mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mi>b</mml:mi></mml:msub><mml:munderover><mml:mo>&#x02211;</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mi>b</mml:mi></mml:msub></mml:munderover><mml:msub><mml:mi>b</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mspace width="0.25em"/><mml:mi mathvariant="italic">ln</mml:mi><mml:mfenced open="(" close=")" separators=""><mml:msub><mml:mi>S</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mfenced><mml:mo>&#x02212;</mml:mo><mml:munderover><mml:mo>&#x02211;</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mi>b</mml:mi></mml:msub></mml:munderover><mml:msub><mml:mi>b</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mspace width="0.25em"/><mml:munderover><mml:mo>&#x02211;</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mi>b</mml:mi></mml:msub></mml:munderover><mml:mi mathvariant="italic">ln</mml:mi><mml:mfenced open="(" close=")" separators=""><mml:msub><mml:mi>S</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mfenced></mml:mrow><mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mi>b</mml:mi></mml:msub><mml:mspace width="0.25em"/><mml:munderover><mml:mo>&#x02211;</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mi>b</mml:mi></mml:msub></mml:munderover><mml:msubsup><mml:mi>b</mml:mi><mml:mi>i</mml:mi><mml:mn>2</mml:mn></mml:msubsup><mml:mo>&#x02212;</mml:mo><mml:msup><mml:mfenced open="(" close=")" separators=""><mml:mrow><mml:munderover><mml:mo>&#x02211;</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mi>b</mml:mi></mml:msub></mml:munderover><mml:msub><mml:mi>b</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mspace width="0.25em"/></mml:mrow></mml:mfenced><mml:mn>2</mml:mn></mml:msup></mml:mrow></mml:mfrac><mml:mo>,</mml:mo></mml:mrow></mml:mrow></mml:math>
+</disp-formula>
+where <mml:math id="jats-math-37" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mi>b</mml:mi></mml:msub><mml:mo>&#x02265;</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:mrow></mml:math>; <mml:math id="jats-math-38" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mspace width="0.25em"/><mml:msub><mml:mi>b</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:mrow></mml:math> s/cm<sup>2</sup>.</p><p>Here, <mml:math id="jats-math-39" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>N</mml:mi><mml:mi>b</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math> is the number of diffusion weightings (i.e., b&#x02010;values) and <mml:math id="jats-math-40" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>S</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math> is the signal for the image acquired with the specific b&#x02010;value, <mml:math id="jats-math-41" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mspace width="0.25em"/><mml:msub><mml:mi>b</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math>.</p><p>Figure&#x000a0;<xref rid="mrm30347-supitem-0001" ref-type="supplementary-material">S5</xref> shows the interface and options for the &#x0201c;Diffusion Analysis&#x0201d; tab (Figure&#x000a0;<xref rid="mrm30347-fig-0004" ref-type="fig">4</xref> D[ii] diagram). Note, <mml:math id="jats-math-42" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">SNR</mml:mi></mml:mrow></mml:mrow></mml:math> is computed following the procedure outlined for ventilation analysis. XIPline enables standard ADC mapping, which includes multiple fitting options such as linear, weighted&#x02010;linear, and Bayesian methods.<xref rid="mrm30347-bib-0036" ref-type="bibr">
+<sup>36</sup>
+</xref> These fitting options enable users to model the diffusion behavior and obtain ADC maps that are suitable for their specific analysis requirements.</p><p>In addition to the standard ADC mapping, the linear&#x02010;binning method was modified<xref rid="mrm30347-bib-0037" ref-type="bibr">
+<sup>37</sup>
+</xref> to account for age dependency in the healthy reference distribution of ADC maps. The default healthy reference equations for mean and SD are &#x003bc;&#x02009;=&#x02009;0.0002 &#x000d7; age + 0.029 and &#x003c3;&#x02009;=&#x02009;5 &#x000d7;&#x02009;10<sup>&#x02212;5</sup> &#x000d7; age + 0.0121&#x02009;cm<sup>2</sup>/s.<xref rid="mrm30347-bib-0007" ref-type="bibr">
+<sup>7</sup>
+</xref> This modification ensures age&#x02010;related variations in diffusion parameters are appropriately considered during the mapping process. Importantly, these equations can be modified by the user to best serve their needs.</p><p>Finally, XIPline offers morphometry&#x02010;fitting capabilities based on two distinct models of the lung microstructure: the cylindrical model<xref rid="mrm30347-bib-0060" ref-type="bibr">
+<sup>60</sup>
+</xref> and stretched&#x02010;exponential model.<xref rid="mrm30347-bib-0061" ref-type="bibr">
+<sup>61</sup>
+</xref> These models provide the ability to extract additional parameters (e.g., acinar duct radius, alveolar sleeve depth, mean linear intercept, surface to volume ratio, alveolar density, and mean diffusive length scale) and gain deeper insights into tissue microstructure and morphology.</p></sec><sec id="mrm30347-sec-0019"><title>
+Gas exchange
+</title><p>HP <sup>129</sup>Xe has a unique capability to dissolve into tissues, including pulmonary tissues, where it displays distinct chemical shifts in the membrane (198&#x02009;ppm) and RBCs (217&#x02009;ppm).<xref rid="mrm30347-bib-0062" ref-type="bibr">
+<sup>62</sup>
+</xref>, <xref rid="mrm30347-bib-0063" ref-type="bibr">
+<sup>63</sup>
+</xref> This makes it well&#x02010;suited for &#x0201c;gas exchange imaging&#x0201d;, and in the common and XeCTC&#x02010;recommended 1&#x02010;point Dixon method,<xref rid="mrm30347-bib-0064" ref-type="bibr">
+<sup>64</sup>
+</xref> gas and dissolved phase signals are acquired in an interleaved fashion using 3D radial imaging with an appropriate echo time, resulting in a 90&#x000b0; phase separation between RBC and membrane signals at the k&#x02010;zero point.<xref rid="mrm30347-bib-0064" ref-type="bibr">
+<sup>64</sup>
+</xref>
+</p><p>For gas&#x02010;exchange data analysis, the generalized linear binning method using a healthy&#x02010;reference distribution was implemented.<xref rid="mrm30347-bib-0065" ref-type="bibr">
+<sup>65</sup>
+</xref> Figure&#x000a0;<xref rid="mrm30347-supitem-0001" ref-type="supplementary-material">S6</xref> shows the interface and options for the &#x0201c;Gas&#x02010;Exchange Analysis&#x0201d; tab (Figure&#x000a0;<xref rid="mrm30347-fig-0004" ref-type="fig">4D[iii]</xref>). The analysis process is initiated by selecting the healthy reference distribution. The default option selects healthy distributions derived from gas exchange data at Cincinnati Children's Hospital Medical Center. Users can alternatively import a healthy distribution file in (.mat) format. Additionally, these distributions can be input manually. Initial manual values are gas&#x02009;=&#x02009;0.51&#x02009;&#x000b1;&#x02009;0.19, dissolved&#x02009;=&#x02009;0.0075&#x02009;&#x000b1;&#x02009;0.00125, membrane&#x02009;=&#x02009;0.0049&#x02009;&#x000b1;&#x02009;0.0015, RBC&#x02009;=&#x02009;0.0026&#x02009;&#x000b1;&#x02009;0.001, RBC/membrane&#x02009;=&#x02009;0.53&#x02009;&#x000b1;&#x02009;0.18, and RBC oscillations&#x02009;=&#x02009;8.96&#x02009;&#x000b1;&#x02009;10.56. After fitting the accompanying dissolved spectra, the RBC/membrane ratio, <mml:math id="jats-math-43" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi mathvariant="normal">T</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> values, frequencies (gas, RBC, and membrane), and contamination factors are computed. <mml:math id="jats-math-44" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi mathvariant="normal">T</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> values are determined as <mml:math id="jats-math-45" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mfrac><mml:mn>1</mml:mn><mml:mrow><mml:mi>&#x003c0;</mml:mi><mml:mo>.</mml:mo><mml:mtext mathvariant="italic">FWHM</mml:mtext></mml:mrow></mml:mfrac><mml:mo>*</mml:mo><mml:mn>1000</mml:mn></mml:mrow></mml:mrow></mml:math> (in ms), where full width at half maximum (FWHM) of the fitted spectra for gas, membrane, and RBC.</p><p>The <sup>129</sup>Xe dissolved&#x02010;phase image is separated into distinct RBC and membrane images, using the Dixon method.<xref rid="mrm30347-bib-0064" ref-type="bibr">
+<sup>64</sup>
+</xref>, <xref rid="mrm30347-bib-0066" ref-type="bibr">
+<sup>66</sup>
+</xref> First, a phase map derived from the single&#x02010;resonance <sup>129</sup>Xe gas&#x02010;phase image is used to account for any phase shift due to B<sub>0</sub> inhomogeneities. In this process, the dissolved <sup>129</sup>Xe image, captured at <mml:math id="jats-math-46" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="italic">TE</mml:mi><mml:mn>90</mml:mn></mml:mrow></mml:mrow></mml:math>, is phase&#x02010;shifted to align the RBC and membrane signals within the real and imaginary components of the dissolved image. RBC has zero phase, and membrane has 90&#x000b0; phase, effectively confining the signal at k&#x02010;zero to the real and imaginary portions of the data, respectively. The specific phase shift was chosen such that the overall RBC:membrane ratio, derived from the B<sub>0</sub>&#x02010;corrected image, corresponded to the ratio obtained from whole&#x02010;lung spectroscopy. Because the RBC, membrane, and gas signal intensities are affected by <mml:math id="jats-math-47" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi mathvariant="normal">T</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> to different extents, the image intensities are adjusted to account for the relaxation before the imaging <mml:math id="jats-math-48" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">TE</mml:mi></mml:mrow></mml:mrow></mml:math>. Following these corrections, any residual negative signal of negligible magnitude was set to zero.</p><p>For quantitative maps, the raw intensities in RBC, membrane, and gas images are corrected to account for <mml:math id="jats-math-49" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi mathvariant="normal">T</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math> decay caused by signal loss before the <mml:math id="jats-math-50" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="italic">TE</mml:mi><mml:mn>90</mml:mn></mml:mrow></mml:mrow></mml:math> according to <mml:math id="jats-math-51" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>I</mml:mi><mml:mo>=</mml:mo><mml:mi>I</mml:mi><mml:mo stretchy="false">/</mml:mo><mml:msup><mml:mi>e</mml:mi><mml:mfenced open="(" close=")" separators=""><mml:mrow><mml:mo>&#x02212;</mml:mo><mml:mi mathvariant="italic">TE</mml:mi><mml:mn>90</mml:mn><mml:mo stretchy="false">/</mml:mo><mml:msubsup><mml:mi>T</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mfenced></mml:msup></mml:mrow></mml:mrow></mml:math>. Furthermore, the intensity of the <sup>129</sup>Xe gas&#x02010;phase image are scaled by a factor of <mml:math id="jats-math-52" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi>I</mml:mi><mml:mo>=</mml:mo><mml:mi>I</mml:mi><mml:mo>*</mml:mo><mml:mfrac><mml:mrow><mml:mi>sin</mml:mi><mml:mfenced open="(" close=")" separators=""><mml:msub><mml:mi>&#x003b1;</mml:mi><mml:mtext mathvariant="italic">diss</mml:mtext></mml:msub></mml:mfenced></mml:mrow><mml:mrow><mml:mi>sin</mml:mi><mml:mfenced open="(" close=")" separators=""><mml:msub><mml:mi>&#x003b1;</mml:mi><mml:mi mathvariant="italic">gas</mml:mi></mml:msub></mml:mfenced></mml:mrow></mml:mfrac><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:mi>sin</mml:mi><mml:mfenced open="(" close=")" separators=""><mml:msup><mml:mn>20</mml:mn><mml:mo>&#x000b0;</mml:mo></mml:msup></mml:mfenced></mml:mrow><mml:mrow><mml:mi>sin</mml:mi><mml:mfenced open="(" close=")" separators=""><mml:msup><mml:mn>0.5</mml:mn><mml:mo>&#x000b0;</mml:mo></mml:msup></mml:mfenced></mml:mrow></mml:mfrac><mml:mo>=</mml:mo><mml:mn>39</mml:mn></mml:mrow></mml:mrow></mml:math>, compensating for the higher flip angle applied to the dissolved images compared to the gas&#x02010;phase images. Last, the <mml:math id="jats-math-53" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi mathvariant="normal">T</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math>&#x02010;corrected RBC and membrane images are divided by the <mml:math id="jats-math-54" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msubsup><mml:mi mathvariant="normal">T</mml:mi><mml:mn>2</mml:mn><mml:mo>*</mml:mo></mml:msubsup></mml:mrow></mml:mrow></mml:math>&#x02010; and flip&#x02010;angle&#x02010;adjusted <sup>129</sup>Xe gas image. This yields RBC:gas and membrane:gas maps to normalize polarization discrepancies and variations in inhaled gas volume across subjects. Additionally, the high&#x02010;resolution gas&#x02010;phase image itself is normalized, anchored by its 99th percentile of intensities similar to that done in the above dedicated ventilation analysis.<xref rid="mrm30347-bib-0043" ref-type="bibr">
+<sup>43</sup>
+</xref>, <xref rid="mrm30347-bib-0066" ref-type="bibr">
+<sup>66</sup>
+</xref>
+</p><p>All images are subsequently categorized into bins based on the mean and SD of the healthy distributions. Gas, dissolved, and RBC images are distributed into six bins, whereas the membrane images are distributed into eight bins because of the elongated distribution tail.<xref rid="mrm30347-bib-0066" ref-type="bibr">
+<sup>66</sup>
+</xref>
+<mml:math id="jats-math-55" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="normal">SNR</mml:mi></mml:mrow></mml:mrow></mml:math> is calculated according to <mml:math id="jats-math-56" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mspace width="0.25em"/><mml:mfenced open="(" close=")" separators=""><mml:mrow><mml:msub><mml:mi>S</mml:mi><mml:mtext mathvariant="italic">lung</mml:mtext></mml:msub><mml:mo>&#x02212;</mml:mo><mml:msub><mml:mi>S</mml:mi><mml:mi mathvariant="italic">BG</mml:mi></mml:msub></mml:mrow></mml:mfenced><mml:mo stretchy="false">/</mml:mo><mml:msub><mml:mi>&#x003c3;</mml:mi><mml:mi mathvariant="italic">BG</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math>, where <mml:math id="jats-math-57" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>S</mml:mi><mml:mtext mathvariant="italic">lung</mml:mtext></mml:msub></mml:mrow></mml:mrow></mml:math> is mean signal amplitude within the mask; <mml:math id="jats-math-58" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>S</mml:mi><mml:mi mathvariant="italic">BG</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math> is the mean of the noise; and <mml:math id="jats-math-59" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:msub><mml:mi>&#x003c3;</mml:mi><mml:mi mathvariant="italic">BG</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math> is the SD of the noise (excluding airways).</p><p>It is important to note that the gas&#x02010;exchange analysis in the initial XIPline release (V1.1.0) is customized to suit the specific requirements of our center's data. However, the gas&#x02010;exchange analysis was implemented based on the XeCTC guidelines. Users also have the freedom to edit the analysis code and customize it according to the specific characteristics of their gas&#x02010;exchange data.</p></sec></sec></sec><sec id="mrm30347-sec-0020"><label>2.4</label><title>Open research statement</title><p>XIPline provides both compiled, which does not require MATLAB installation or license, and source code access (available at <ext-link xlink:href="https://github.com/aboodbdaiwi/XIPline" ext-link-type="uri">https://github.com/aboodbdaiwi/XIPline</ext-link>), offering users a ready&#x02010;to&#x02010;use application or the freedom to customize it. This emphasis on open&#x02010;source principles not only promotes repeatability, version tracking, and full method transparency, but also paves the way for seamless multi&#x02010;site studies with harmonized data analysis. As a result, XIPline can become a catalyst for fostering collaboration, moving toward a consensus analysis, and offering a range of diverse user experiences.</p><p>Note, a comprehensive tutorial (videos) on installing and using the XIPline application is available at the following link: <ext-link xlink:href="https://www.youtube.com/@user-bd4qv6eg4i" ext-link-type="uri">https://www.youtube.com/@user&#x02010;bd4qv6eg4i</ext-link>.</p></sec><sec id="mrm30347-sec-0021"><label>2.5</label><title>Ethics statement and imaging protocol</title><p>The images presented in the results were obtained from data collected under protocols approved by the institutional review board at Cincinnati Children's Hospital (IND 123577). Written informed consent or assent was obtained from all participants or their guardians for pediatric subjects undergoing <sup>129</sup>Xe MRI. Isotopically enriched xenon (85% <sup>129</sup>Xe, Linde Elec and Specialty Gases) was polarized to 10% to 40%<xref rid="mrm30347-bib-0030" ref-type="bibr">
+<sup>30</sup>
+</xref> using Polarean polarizers (Polarean Imaging). The xenon dose administered was 1 L for adults or 1/6th of the estimated total lung capacity for pediatric subjects, with a maximum dose of 1 L, adhering to American Thoracic Society guidelines.<xref rid="mrm30347-bib-0031" ref-type="bibr">
+<sup>31</sup>
+</xref>
+<sup>129</sup>Xe images were captured during a breath&#x02010;hold of up to 16&#x02009;s post&#x02010;inhalation. A medical professional monitored heart rate and oxygenation throughout the procedure. Imaging was conducted using a 3&#x02009;T Philips scanner (Philips Healthcare). Additionally, a <sup>1</sup>H scan was performed during a separate breath&#x02010;hold with a volume&#x02010;matched air bag for thoracic cavity segmentation, using the same imaging sequence.</p></sec></sec><sec sec-type="results" id="mrm30347-sec-0022"><label>3</label><title>RESULTS</title><sec id="mrm30347-sec-0023"><label>3.1</label><title>Calibration analysis</title><p>An example of the results from the calibration analysis on real in&#x02010;vivo data is shown in Figure&#x000a0;<xref rid="mrm30347-fig-0005" ref-type="fig">5</xref>. In the top&#x02010;left panel of the Calibration tab, the calibration input parameters (number of excitations, number of b&#x02010;values, etc) are shown, which can be adjusted both before and after conducting the analysis. In the bottom&#x02010;left panel of the Calibration tab, the scaling factor, frequency offset, and the optimal flip angles are displayed. For non&#x02010;Cartesian sequences, the optimal flip angle is calculated based on maximizing the <sup>129</sup>Xe signal.<xref rid="mrm30347-bib-0067" ref-type="bibr">
+<sup>67</sup>
+</xref>
+</p><fig position="float" fig-type="FIGURE" id="mrm30347-fig-0005"><label>FIGURE 5</label><caption><p>Calibration analysis results. The calibration input parameters are shown in the top&#x02010;left panel, which can be adjusted both before and after conducting the analysis. The optimal flip angles and frequency offset are depicted in the bottom&#x02010;left panel. On the right side, graphs display the fitting of gas and dissolved spectra. The top&#x02010;left graph illustrates the gas signal decay fitting, used to extract the flip angle scale factor. On the top&#x02010;right graph, the gas phase spectrum is fit to determine the frequency offset. The bottom&#x02010;left graph shows the dissolved phase spectrum, along with the red blood cells (RBC):membrane ratio. Last, the bottom&#x02010;right graph demonstrates the overall spectrum of RBC, membrane, and gas.</p></caption><graphic xlink:href="MRM-93-1220-g007" position="anchor" id="jats-graphic-9"/></fig><p>On the right side, a series of informative graphs permit visual assessment of the quality of the data. The intensities of the gas FIDs (to extract the flip angle scale factor) are shown in the top&#x02010;left graph. On the top&#x02010;right graph, the gas&#x02010;phase spectrum is fit to determine the frequency offset. The bottom&#x02010;left graph shows the dissolved&#x02010;phase spectrum, providing valuable insights into the RBC:membrane ratio and the quality of the fit to the spectrum. Finally, the bottom&#x02010;right graph shows the individual components that contribute to the acquired spectrum encompassing the RBC, membrane, and gas components, and is used to calculate the <mml:math id="jats-math-60" display="inline" overflow="scroll"><mml:mrow><mml:mrow><mml:mi mathvariant="italic">TE</mml:mi><mml:mn>90</mml:mn></mml:mrow></mml:mrow></mml:math>.</p></sec><sec id="mrm30347-sec-0024"><label>3.2</label><title>Ventilation analysis</title><p>In Figure&#x000a0;<xref rid="mrm30347-fig-0006" ref-type="fig">6</xref>, the left panel of the Results tab provides a comprehensive summary of the ventilation analysis. Notably, VDP as well as the mean and SD of the signal intensities are shown for the chosen VDP analysis methods. In addition to numerical summaries, the visualization of VDP maps and corresponding histograms are available (Figure&#x000a0;<xref rid="mrm30347-supitem-0001" ref-type="supplementary-material">S8A,B</xref>), providing a visual representation of the distribution of ventilation defects and deeper characterization of the spatial patterns and severity of non&#x02010;ventilated or hypo&#x02010;ventilated airspaces. Moreover, mean, SD and maps of DDI for both 2D and 3D are also displayed, with the option to view the DDI maps.</p><fig position="float" fig-type="FIGURE" id="mrm30347-fig-0006"><label>FIGURE 6</label><caption><p>Ventilation analysis results. Summary of the ventilation analysis results are shown in the left panel of the results tab, including the mean and SD of VDP for thresholding, linear binning, and k&#x02010;means analysis methods. Additionally, VDP maps can be displayed. Moreover, mean, SD and maps of DDI for both 2D and 3D are also displayed, with the option to view the DDI maps. The mean parameters of the texture analysis are also presented, with the option to view the map of all parameters.</p></caption><graphic xlink:href="MRM-93-1220-g006" position="anchor" id="jats-graphic-11"/></fig><p>Moreover, comprehensive analyses extend to the computation and visualization of additional metrics, encompassing the mean, SD, and maps of the DDI for both 2D and 3D approaches. Users are provided with the flexibility to explore DDI maps, enhancing their understanding of defect distribution patterns.</p><p>Furthermore, the mean texture analysis parameters are shown, offering a comprehensive overview of the lung's ventilation characteristics. For a more detailed examination, an option to view the mean of all parameters is available (Figure&#x000a0;<xref rid="mrm30347-supitem-0001" ref-type="supplementary-material">S8C</xref>), allowing users to explore the finer nuances of the ventilation patterns throughout the lung. The file outputs for the ventilation analysis are shown in Figure&#x000a0;<xref rid="mrm30347-supitem-0001" ref-type="supplementary-material">S9</xref>.</p></sec><sec id="mrm30347-sec-0025"><label>3.3</label><title>Diffusion analysis</title><p>In Figure&#x000a0;<xref rid="mrm30347-fig-0007" ref-type="fig">7</xref>, the Results tab for the diffusion analysis is shown, including the whole&#x02010;lung mean and SD of the ADC maps. These key statistical measures provide a concise overview of the global gas diffusion behavior and its variability across the lungs. Moreover, ADC maps and corresponding histograms (Figure&#x000a0;<xref rid="mrm30347-supitem-0001" ref-type="supplementary-material">S10</xref>) provide a visual representation of the distribution of diffusion coefficients and aid in the identification of regional variations or anomalies within the patient lungs. Additionally, the outcomes of the age&#x02010;adjusted linear binning diffusion analysis include the distribution of ADC values across various bins, presented as a percentage. Users have the option to visualize both maps and histograms depicting this distribution. The Results tab also features a summary of the morphometry analysis. This includes mean and SDs for the morphometric outcomes, as well as corresponding maps and histograms, providing insights into the structural characteristics of the data. The file outputs for the diffusion analysis are shown in Figure&#x000a0;<xref rid="mrm30347-supitem-0001" ref-type="supplementary-material">S11</xref>.</p><fig position="float" fig-type="FIGURE" id="mrm30347-fig-0007"><label>FIGURE 7</label><caption><p>Diffusion analysis results. Summary of the diffusion analysis results are shown in the left panel of the results tab, including the mean and SD of ADC. ADC maps can also be displayed. Additionally, the results from the linear binning diffusion analysis consist of the percentage of ADC values falling into each bin, are also displayed, with an option to view the maps and the histograms. Furthermore, a summary of the morphometry analysis is available, featuring mean, SDs, maps, and histograms.</p></caption><graphic xlink:href="MRM-93-1220-g005" position="anchor" id="jats-graphic-13"/></fig></sec><sec id="mrm30347-sec-0026"><label>3.4</label><title>Gas exchange analysis</title><p>In Figure&#x000a0;<xref rid="mrm30347-fig-0008" ref-type="fig">8</xref>, the Results tab for an example gas&#x02010;exchange analysis is shown. Specifically, the left panel includes essential statistical measures, such as the mean and SDs of ventilation, total dissolved phase, membrane&#x02010;uptake, RBC&#x02010;transfer, and RBC oscillations maps as well as the percentage of lung in each bin. To enrich the analysis, maps and corresponding histograms (Figure&#x000a0;<xref rid="mrm30347-supitem-0001" ref-type="supplementary-material">S12</xref>) provide valuable spatial representation of the distribution and variation of gas exchange components of the data being processed. The file outputs for the gas exchange analysis are shown in Figure&#x000a0;<xref rid="mrm30347-supitem-0001" ref-type="supplementary-material">S13</xref>. The ratio (membrane:gas, RBC:gas) maps are also calculated and exported in the final report.</p><fig position="float" fig-type="FIGURE" id="mrm30347-fig-0008"><label>FIGURE 8</label><caption><p>Gas exchange analysis results. In the left panel of the results tab, a comprehensive summary is presented, featuring the mean and SDs of ventilation, dissolved, membrane, red blood cells (RBC), and oscillations. The linear binning analysis method is used. Additionally, maps and corresponding histograms can be viewed, providing valuable insights into gas exchange efficiency and distribution.</p></caption><graphic xlink:href="MRM-93-1220-g001" position="anchor" id="jats-graphic-15"/></fig></sec></sec><sec sec-type="discussion" id="mrm30347-sec-0027"><label>4</label><title>DISCUSSION</title><p>XIPline offers a robust and intuitive platform specifically designed for the analysis and visualization of HP <sup>129</sup>Xe MRI data. Following progress in standardizing data acquisition,<xref rid="mrm30347-bib-0015" ref-type="bibr">
+<sup>15</sup>
+</xref> this application is designed to initiate the same for analysis methods to facilitate harmonization in multi&#x02010;site studies and encourage the broader utilization of HP <sup>129</sup>Xe MRI as a valuable clinical&#x02010;research tool.</p><p>Developed in MATLAB, a widely used language for MRI data analysis, XIPline allows for swift implementation of new functions and code modifications. Moreover, XIPline can be compiled as stand&#x02010;alone installers, catering to users without access to MATLAB and ensuring wider accessibility.</p><p>The ongoing development of XIPline aims to streamline the implementation of novel techniques across research sites. By providing an open&#x02010;source framework via GitHub, developers can collaborate and share their analysis techniques, reducing redundant efforts and optimizing the analysis workflow across multiple sites. This collaborative approach not only benefits experienced researchers, but also accelerates the training process for newcomers, facilitating efficient and standardized analyses.</p><sec id="mrm30347-sec-0028"><label>4.1</label><title>Limitations and future work</title><p>The current XIPline release offers limited compatibility with raw data from various vendors, and future work will focus on accommodating data from a wider range of vendors to enhance the application's functionality. Additionally, users have the flexibility to incorporate their own image&#x02010;reconstruction algorithms. The current XIPline also lacks the support for non&#x02010;Cartesian image reconstruction, except for 3D radial gas&#x02010;exchange data. To address this, future work will focus on incorporating tools for non&#x02010;Cartesian imaging, particularly for spiral acquisition, which has many benefits including rapid acquisition, high resolution, and B<sub>1</sub> field corrections.<xref rid="mrm30347-bib-0006" ref-type="bibr">
+<sup>6</sup>
+</xref>, <xref rid="mrm30347-bib-0020" ref-type="bibr">
+<sup>20</sup>
+</xref>, <xref rid="mrm30347-bib-0068" ref-type="bibr">
+<sup>68</sup>
+</xref>, <xref rid="mrm30347-bib-0069" ref-type="bibr">
+<sup>69</sup>
+</xref> However, XIPline supports 2D Cartesian and 3D radial ISMRMRD formats. This would offer a significant advantage, as users could convert their raw data into the standardized ISMRMRD format for processing by XIPline.</p><p>Although this application demonstrates the effectiveness of the implemented methods for global analysis of ventilation, diffusion, and gas exchange, it is important to acknowledge that regional analysis at the lobar or segmental level was not included. This represents a significant limitation, as region&#x02010;specific analysis, such as lobar or segmental VDP and gas exchange, could provide more detailed insights into the heterogeneity of lung function. These advanced analyses are particularly relevant for clinical applications such as image&#x02010;guided bronchial thermoplasty and bronchoscopy, where precise localization of functional impairments is critical. Future work will focus on developing and integrating methods for regional analysis within the existing framework. This will include refining the software to allow for automated segmentation and analysis of specific lung regions, thereby enhancing the precision and clinical applicability of the findings.</p><p>Another limitation of the current version of XIPline is that it does not support switching between coronal, axial, and sagittal planes for 2D images; the images are displayed based on their original acquisition plane. Although it is possible to consider interpolation methods to account for slice thickness and improve visualization, this could lead to inaccuracies because of the limitations associated with interpolating between slices of varying resolutions. Future developments could explore more advanced methods to address this issue and enhance the accuracy and flexibility of image registration and visualization within the application.</p><p>Additionally, numerous enhancements and analyses are forthcoming. Examples of these include the examination of cardiogenic oscillations derived from spectroscopy data, exploration of pulmonary capillary dynamics,<xref rid="mrm30347-bib-0005" ref-type="bibr">
+<sup>5</sup>
+</xref> and introduction of tailored analysis reports designed for easy interpretation by clinicians.</p></sec></sec><sec sec-type="conclusions" id="mrm30347-sec-0029"><label>5</label><title>CONCLUSIONS</title><p>XIPline provides a comprehensive and user&#x02010;friendly platform for analyzing and visualizing HP <sup>129</sup>Xe MRI data. Standardizing data acquisition and analysis methods will enable multi&#x02010;site clinical trials with harmonized analysis across vendor platforms and simplify the adoption of HP <sup>129</sup>Xe MRI as a valuable endpoint in research and clinical settings. The modular and open&#x02010;source nature of XIPline ensures its adaptability and encourages the integration of new analysis techniques as the field progresses.</p></sec><sec sec-type="COI-statement" id="mrm30347-sec-0031"><title>CONFLICT OF INTEREST STATEMENT</title><p>M.M.W., J.C.W., P.J.N., and L.W.W. are consultants to Polarean.</p></sec><sec sec-type="supplementary-material"><title>Supporting information</title><supplementary-material id="mrm30347-supitem-0001" position="float" content-type="local-data"><caption><p>
+<bold>Figure S1.</bold> Interface and options of the Loading Data Panel. The Xenon data's location and name are determined by using the &#x0201c;Select Gas Data&#x0201d; button. Depending on the file extension of the chosen file (.dcm, .nii, etc.), the suitable function is automatically selected to load the data. A denoising option for xenon images is also available based on the Block Matching 3D (BM3D) method. If anatomical images are not available, the &#x0201c;No Proton&#x0201d; option should be chosen. Otherwise, the anatomical data location and name are specified using the &#x0201c;Select Anatomical Data&#x0201d; button. Subsequently, all data will be imported through the &#x0201c;Load/Read Data&#x0201d; button located at the bottom. The preferred images can then be visualized using the &#x0201c;View Images&#x0201d; panel. For additional details, please refer to the user's manual document.</p><p>
+<bold>Figure S2.</bold> Interface and options of the Registration Panel. If anatomical images are available, registering the proton to xenon images becomes feasible. Users can choose the transformation type and specify image resolution for precise registration. Opting for the &#x0201c;Use Ratio&#x0201d; feature allows setting image resolution as the ratio of the proton image size over the xenon image size. In cases where the number of slices between xenon and proton images differs, users can select start and end slice indices based on lung anatomy. Linear interpolation is then executed to match the number of slices before registration. Finally, registration can be initiated with the &#x0201c;Perform Registration&#x0201d; button. The registered images can then be visualized using the &#x0201c;View Images&#x0201d; panel. For additional details, please refer to the user's manual document.</p><p>
+<bold>Figure S3.</bold> Interface and options of the Segmentation Panel. Segmentation of the lung and airways mask is done through various methods, including manual, thresholding, and automatic (deep learning&#x02010;based) approaches. Additionally, pre&#x02010;existing masks can be loaded and modified as needed. For additional details, please refer to the user's manual document.</p><p>
+<bold>Figure S4.</bold> Interface and options of the Ventilation Post Process Panel. Ventilation defect percentage (VDP) and texture analysis can be performed on ventilation images. Users have the flexibility to adjust specific threshold values for the threshold method. In the linear binning method, mean and standard deviation parameters from a healthy reference can be modified. Defect distribution index can also be performed in 2D or 3D for a specific defect map. Texture analysis, utilizing the Gray Level Run Lengths Method (GLRLM) (49), is also integrated into the process. (GLRLM). For additional details, please refer to the user's manual document.</p><p>
+<bold>Figure S5.</bold> Interface and options of the Diffusion Post Process Panel. The diffusion analysis encompasses the generation of the apparent diffusion coefficient (ADC) and morphometry parameter maps (e.g., mean linear intercept, surface&#x02010;to&#x02010;volume ratio, and alveolar density, etc). ADC maps can be generated through log&#x02010;linear fitting, weighted&#x02010;linear fitting, non&#x02010;linear fitting, or Bayesian methods. Morphometry analysis relies on cylindrical and stretch&#x02010;exponential models. Additionally, linear binning analysis can be conducted using age&#x02010;adjusted mean and standard deviation values from a healthy reference (equations can be modified by the user). For additional details, please refer to the user's manual document.</p><p>
+<bold>Figure S6.</bold> Interface and options of the Gas Exchange Post Process Panel. Three options in the dropdown menu for selecting the healthy reference distributions: default, import, and manual. Default will select the healthy distributions based on gas exchange data from Cincinnati's Children's Hospital Center. The user can also import a healthy distribution file in (.mat) format; otherwise, manual values are provided, and users have the option to modify these values as needed. For additional details, please refer to the user's manual document.</p><p>
+<bold>Figure S7.</bold> Interface and options of the Patient Report Panel. A PDF report will be automatically generated, incorporating information supplied by the data analyst (as illustrated in the figure) and the results of the image analysis.</p><p>
+<bold>Figure S8.</bold> (A) An example of a VDP histogram resulted from the VDP threshold method. (B) An example of a VDP histogram resulted from the VDP linear binning method. (C) An example of mean parameters of gray level run lengths method (GLRLM) (49) analysis.</p><p>
+<bold>Figure S9:</bold> Ventilation analysis file output. The main analysis results will be saved in a folder named &#x0201c;Ventilation Analysis.&#x0201d; Within this folder, two subfolders will be present, one for the VDP analysis and another for the texture analysis. Additionally, the main analysis output will be saved as a .mat file, while a report summarizing the findings will be saved as a .pptx file. This comprehensive file organization ensures easy access to the results and facilitates further examination and documentation of the ventilation analysis outcomes.</p><p>
+<bold>Figure S10.</bold> (A) An example of an ADC histogram resulted from log&#x02010;linear fitting method. (B) An example of an ADC histogram resulted from linear binning method.</p><p>
+<bold>Figure S11:</bold> Diffusion analysis file output. The main analysis results will be saved in a folder named &#x0201c;Diffusion Analysis.&#x0201d; The main analysis output will be saved as a .mat file, while a report summarizing the findings will be saved as a .pptx file.</p><p>
+<bold>Figure S12.</bold> (A) An example of gas&#x02010;ventilation histogram resulted from linear binning method. (B) An example of membrane:Gas histogram resulted from linear binning method. (C) An example of RBC:Gas histogram resulted from linear binning method. (D) An example of RBC:Membrane histogram resulted from linear binning method. (E) An example of RBC Oscillation histogram resulted from linear binning method.</p><p>
+<bold>Figure S13:</bold> Gas Exchange analysis file output. The main analysis results will be saved in a folder named &#x0201c;Gas Exchange Analysis.&#x0201d; The main analysis output will be saved as a .mat file, while a report summarizing the findings will be saved as a .pptx file.</p></caption><media xlink:href="MRM-93-1220-s001.docx"/></supplementary-material></sec></body><back><ack id="mrm30347-sec-0030"><title>ACKNOWLEDGMENTS</title><p>We thank the following sources for research funding and support: NIH: R01HL131012, R01HL143011, R01HL166335, R00HL138255 and R01HL168446 and the Cincinnati Children's Research Foundation. We also express our gratitude to Andrew Hahn for his efforts in developing the MATLAB functions for reading the GE data and to Sam Tcherner for providing the GE testing data. The authors thank the ISMRM Reproducible Research Study Group for conducting a code review of the code (Version 1.1.0) supplied in the Data Availability Statement. The scope of the code review covered only the code's ease of download, quality of documentation, and ability to run, but did not consider scientific accuracy or code efficiency.</p></ack><sec sec-type="data-availability" id="mrm30347-sec-0033"><title>DATA AVAILABILITY STATEMENT</title><p>The compiled application, along with the open&#x02010;source code and sample data, can be accessed here: <ext-link xlink:href="https://github.com/aboodbdaiwi/XIPline" ext-link-type="uri" specific-use="software is-supplemented-by">https://github.com/aboodbdaiwi/XIPline</ext-link>. We invite users to engage with us by asking questions, reporting issues, and collaborating on this repository. Additionally, a comprehensive tutorial, including video guides on installing and using the XIPline application, is available at the following link: <ext-link xlink:href="https://www.youtube.com/@user-bd4qv6eg4i" ext-link-type="uri" specific-use="software is-supplemented-by">https://www.youtube.com/@user&#x02010;bd4qv6eg4i</ext-link>.</p></sec><ref-list id="mrm30347-bibl-0001" content-type="cited-references"><title>REFERENCES</title><ref id="mrm30347-bib-0001"><label>1</label><mixed-citation publication-type="journal" id="mrm30347-cit-0001">
+<string-name>
+<surname>Walkup</surname>
+<given-names>LL</given-names>
+</string-name>, <string-name>
+<surname>Woods</surname>
+<given-names>JC</given-names>
+</string-name>. <article-title>Translational applications of hyperpolarized 3He and 129Xe</article-title>. <source>NMR in Biomedicine</source>. <year>2014</year>;<volume>27</volume>:<fpage>1429</fpage>&#x02010;<lpage>1438</lpage>.<pub-id pub-id-type="pmid">24953709</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0002"><label>2</label><mixed-citation publication-type="journal" id="mrm30347-cit-0002">
+<string-name>
+<surname>Roos</surname>
+<given-names>JE</given-names>
+</string-name>, <string-name>
+<surname>McAdams</surname>
+<given-names>HP</given-names>
+</string-name>, <string-name>
+<surname>Kaushik</surname>
+<given-names>SS</given-names>
+</string-name>, <string-name>
+<surname>Driehuys</surname>
+<given-names>B</given-names>
+</string-name>. <article-title>Hyperpolarized Gas MR Imaging: Technique and Applications</article-title>. <source>Magn Reson Imaging Clin N Am</source>. <year>2015</year>;<volume>23</volume>:<fpage>217</fpage>&#x02010;<lpage>229</lpage>.<pub-id pub-id-type="pmid">25952516</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0003"><label>3</label><mixed-citation publication-type="miscellaneous" id="mrm30347-cit-0003">
+<string-name>
+<surname>Loew</surname>
+<given-names>W</given-names>
+</string-name>, <string-name>
+<surname>Thomen</surname>
+<given-names>R</given-names>
+</string-name>, <string-name>
+<surname>Pratt</surname>
+<given-names>R</given-names>
+</string-name>, et al. <article-title>A dual loop T/R &#x02010;Xenon coil for homogenous excitation with improved comfort and size ISMRM. 2016</article-title>.</mixed-citation></ref><ref id="mrm30347-bib-0004"><label>4</label><mixed-citation publication-type="journal" id="mrm30347-cit-0004">
+<string-name>
+<surname>Puddu</surname>
+<given-names>C</given-names>
+</string-name>, <string-name>
+<surname>Rao</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Xu</surname>
+<given-names>X</given-names>
+</string-name>, et al. <article-title>An asymmetrical whole&#x02010;body birdcage RF coil without RF shield for hyperpolarized 129Xe lung MR imaging at 1.5 T</article-title>. <source>Magn Reson Med</source>. <year>2021</year>;<volume>86</volume>:<fpage>3373</fpage>&#x02010;<lpage>3381</lpage>.<pub-id pub-id-type="pmid">34268802</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0005"><label>5</label><mixed-citation publication-type="journal" id="mrm30347-cit-0005">
+<string-name>
+<surname>Niedbalski</surname>
+<given-names>PJ</given-names>
+</string-name>, <string-name>
+<surname>Bier</surname>
+<given-names>EA</given-names>
+</string-name>, <string-name>
+<surname>Wang</surname>
+<given-names>Z</given-names>
+</string-name>, <string-name>
+<surname>Willmering</surname>
+<given-names>MM</given-names>
+</string-name>, <string-name>
+<surname>Driehuys</surname>
+<given-names>B</given-names>
+</string-name>, <string-name>
+<surname>Cleveland</surname>
+<given-names>ZI</given-names>
+</string-name>. <article-title>Mapping cardiopulmonary dynamics within the microvasculature of the lungs using dissolved 129Xe MRI</article-title>. <year>2020</year>;<volume>129</volume>:<fpage>218</fpage>&#x02010;<lpage>229</lpage>.</mixed-citation></ref><ref id="mrm30347-bib-0006"><label>6</label><mixed-citation publication-type="journal" id="mrm30347-cit-0006">
+<string-name>
+<surname>Willmering</surname>
+<given-names>MM</given-names>
+</string-name>, <string-name>
+<surname>Niedbalski</surname>
+<given-names>PJ</given-names>
+</string-name>, <string-name>
+<surname>Wang</surname>
+<given-names>H</given-names>
+</string-name>, et al. <article-title>Improved pulmonary 129Xe ventilation imaging via 3D&#x02010;spiral UTE MRI</article-title>. <source>Magn Reson Med</source>. <year>2020</year>;<volume>84</volume>:<fpage>312</fpage>&#x02010;<lpage>320</lpage>.<pub-id pub-id-type="pmid">31788858</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0007"><label>7</label><mixed-citation publication-type="journal" id="mrm30347-cit-0007">
+<string-name>
+<surname>Bdaiwi</surname>
+<given-names>AS</given-names>
+</string-name>, <string-name>
+<surname>Svoboda</surname>
+<given-names>AM</given-names>
+</string-name>, <string-name>
+<surname>Murdock</surname>
+<given-names>KE</given-names>
+</string-name>, et al. <article-title>Quantifying abnormal alveolar microstructure in cystic fibrosis lung disease via hyperpolarized 129Xe diffusion MRI</article-title>. <source>J Cystic Fibrosis</source>. <year>2024</year>;<volume>23</volume>:<fpage>926</fpage>&#x02010;<lpage>935</lpage>.</mixed-citation></ref><ref id="mrm30347-bib-0008"><label>8</label><mixed-citation publication-type="journal" id="mrm30347-cit-0008">
+<string-name>
+<surname>West</surname>
+<given-names>ME</given-names>
+</string-name>, <string-name>
+<surname>Spielberg</surname>
+<given-names>DR</given-names>
+</string-name>, <string-name>
+<surname>Roach</surname>
+<given-names>DJ</given-names>
+</string-name>, et al. <article-title>Short&#x02010;term structural and functional changes after airway clearance therapy in cystic fibrosis</article-title>. <source>J Cyst Fibros</source>. <year>2023</year>;<volume>22</volume>:<fpage>926</fpage>&#x02010;<lpage>932</lpage>.<pub-id pub-id-type="pmid">36740542</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0009"><label>9</label><mixed-citation publication-type="journal" id="mrm30347-cit-0009">
+<string-name>
+<surname>Bdaiwi</surname>
+<given-names>AS</given-names>
+</string-name>, <string-name>
+<surname>Willmering</surname>
+<given-names>MM</given-names>
+</string-name>, <string-name>
+<surname>Wang</surname>
+<given-names>H</given-names>
+</string-name>, <string-name>
+<surname>Cleveland</surname>
+<given-names>ZI</given-names>
+</string-name>. <article-title>Diffusion weighted hyperpolarized 129Xe MRI of the lung with 2D and 3D (FLORET) spiral</article-title>. <source>Magn Reson Med</source>. <year>2023</year>;<volume>89</volume>:<fpage>1342</fpage>&#x02010;<lpage>1356</lpage>.<pub-id pub-id-type="pmid">36352793</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0010"><label>10</label><mixed-citation publication-type="journal" id="mrm30347-cit-0010">
+<string-name>
+<surname>Zhang</surname>
+<given-names>H</given-names>
+</string-name>, <string-name>
+<surname>Xie</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Xiao</surname>
+<given-names>S</given-names>
+</string-name>, et al. <article-title>Lung morphometry using hyperpolarized 129Xe multi&#x02010;b diffusion MRI with compressed sensing in healthy subjects and patients with COPD</article-title>. <source>Med Phys</source>. <year>2018</year>;<volume>45</volume>:<fpage>3097</fpage>&#x02010;<lpage>3108</lpage>.<pub-id pub-id-type="pmid">29729010</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0011"><label>11</label><mixed-citation publication-type="journal" id="mrm30347-cit-0011">
+<string-name>
+<surname>Collier</surname>
+<given-names>GJ</given-names>
+</string-name>, <string-name>
+<surname>Hughes</surname>
+<given-names>PJ</given-names>
+</string-name>, <string-name>
+<surname>Horn</surname>
+<given-names>FC</given-names>
+</string-name>, et al. <article-title>Single breath&#x02010;held acquisition of coregistered 3D 129Xe lung ventilation and anatomical proton images of the human lung with compressed sensing</article-title>. <source>Magn Reson Med</source>. <year>2019</year>;<volume>82</volume>:<fpage>342</fpage>&#x02010;<lpage>347</lpage>.<pub-id pub-id-type="pmid">30821003</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0012"><label>12</label><mixed-citation publication-type="journal" id="mrm30347-cit-0012">
+<string-name>
+<surname>Dregely</surname>
+<given-names>I</given-names>
+</string-name>, <string-name>
+<surname>Ruset</surname>
+<given-names>IC</given-names>
+</string-name>, <string-name>
+<surname>Wiggins</surname>
+<given-names>G</given-names>
+</string-name>, et al. <article-title>32&#x02010;channel phased&#x02010;array receive with asymmetric birdcage transmit coil for hyperpolarized xenon&#x02010;129 lung imaging</article-title>. <source>Magnetic Resonance in Medicine</source>. <year>2013</year>;<volume>70</volume>:<fpage>576</fpage>&#x02010;<lpage>583</lpage>.<pub-id pub-id-type="pmid">23132336</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0013"><label>13</label><mixed-citation publication-type="journal" id="mrm30347-cit-0013">
+<string-name>
+<surname>Plummer</surname>
+<given-names>JW</given-names>
+</string-name>, <string-name>
+<surname>Hussain</surname>
+<given-names>R</given-names>
+</string-name>, <string-name>
+<surname>Bdaiwi</surname>
+<given-names>AS</given-names>
+</string-name>, et al. <article-title>A decay&#x02010;modeled compressed sensing reconstruction approach for non&#x02010;Cartesian hyperpolarized 129Xe MRI</article-title>. <source>Magn Reson Med</source>. <year>2024</year>;<volume>92</volume>:<fpage>1363</fpage>&#x02010;<lpage>1375</lpage>.<pub-id pub-id-type="pmid">38860514</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0014"><label>14</label><mixed-citation publication-type="journal" id="mrm30347-cit-0014">
+<string-name>
+<surname>Soderlund</surname>
+<given-names>SA</given-names>
+</string-name>, <string-name>
+<surname>Bdaiwi</surname>
+<given-names>AS</given-names>
+</string-name>, <string-name>
+<surname>Plummer</surname>
+<given-names>JW</given-names>
+</string-name>, <string-name>
+<surname>Woods</surname>
+<given-names>JC</given-names>
+</string-name>, <string-name>
+<surname>Walkup</surname>
+<given-names>LL</given-names>
+</string-name>, <string-name>
+<surname>Cleveland</surname>
+<given-names>ZI</given-names>
+</string-name>. <article-title>Improved Diffusion&#x02010;Weighted Hyperpolarized 129Xe Lung MRI with Patch&#x02010;Based Higher&#x02010;Order, Singular Value Decomposition Denoising</article-title>. <source>Academic Radiology</source>. <year>2024</year>. doi:<pub-id pub-id-type="doi">10.1016/j.acra.2024.06.029</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0015"><label>15</label><mixed-citation publication-type="journal" id="mrm30347-cit-0015">
+<string-name>
+<surname>Niedbalski</surname>
+<given-names>PJ</given-names>
+</string-name>, <string-name>
+<surname>Hall</surname>
+<given-names>CS</given-names>
+</string-name>, <string-name>
+<surname>Castro</surname>
+<given-names>M</given-names>
+</string-name>, et al. <article-title>Protocols for multi&#x02010;site trials using hyperpolarized 129Xe MRI for imaging of ventilation, alveolar&#x02010;airspace size, and gas exchange: A position paper from the 129Xe MRI clinical trials consortium</article-title>. <source>Magn Reson Med</source>. <year>2021</year>;<volume>86</volume>:<fpage>2966</fpage>&#x02010;<lpage>2986</lpage>.<pub-id pub-id-type="pmid">34478584</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0016"><label>16</label><mixed-citation publication-type="journal" id="mrm30347-cit-0016">
+<string-name>
+<surname>Shim</surname>
+<given-names>YMM</given-names>
+</string-name>, <string-name>
+<surname>Mata</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Hartwig</surname>
+<given-names>M</given-names>
+</string-name>, et al. <article-title>Positive Results from Two Randomized Phase III Trials Assessing Hyperpolarized 129Xenon Gas MRI as a Measure of Regional Lung Function as Compared to Imaging with 133Xenon Scintigraphy</article-title>. <source>Am J Respir Crit Care Med</source>. <year>2020</year>;<volume>201</volume>:A3265&#x02010;A3265.</mixed-citation></ref><ref id="mrm30347-bib-0017"><label>17</label><mixed-citation publication-type="journal" id="mrm30347-cit-0017">
+<string-name>
+<surname>Shim</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name>
+<surname>Mata</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Hartwig</surname>
+<given-names>M</given-names>
+</string-name>, et al. <article-title>Randomized Phase III Trial Assessing Regional Lung Function for Thoracic Resection by Hyperpolarized 129Xenon Gas MRI</article-title>. <source>Eur Respir J</source>. <year>2020</year>;<volume>56</volume>:<fpage>2080</fpage>.</mixed-citation></ref><ref id="mrm30347-bib-0018"><label>18</label><mixed-citation publication-type="journal" id="mrm30347-cit-0018">
+<string-name>
+<surname>Niedbalski</surname>
+<given-names>PJ</given-names>
+</string-name>, <string-name>
+<surname>Hall</surname>
+<given-names>CS</given-names>
+</string-name>, <string-name>
+<surname>Castro</surname>
+<given-names>M</given-names>
+</string-name>, et al. <article-title>Protocols for multi&#x02010;site trials using hyperpolarized129Xe MRI for imaging of ventilation, alveolar&#x02010;airspace size, and gas exchange: A position paper from the129Xe MRI clinical trials consortium</article-title>. <year>2021</year>;<volume>86</volume>:<fpage>2966</fpage>&#x02010;<lpage>2986</lpage>.</mixed-citation></ref><ref id="mrm30347-bib-0019"><label>19</label><mixed-citation publication-type="journal" id="mrm30347-cit-0019">
+<string-name>
+<surname>Miller</surname>
+<given-names>G</given-names>
+</string-name>, <string-name>
+<surname>Altes</surname>
+<given-names>T</given-names>
+</string-name>, <string-name>
+<surname>Brookeman</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>De Lange</surname>
+<given-names>E</given-names>
+</string-name>, <string-name>
+<surname>Mugler</surname>
+<given-names>IJ</given-names>
+</string-name>. <article-title>Hyperpolarized 3 He lung ventilation imaging with B 1&#x02010;inhomogeneity correction in a single breath&#x02010;hold scan</article-title>. <source>Magn Reson Mater Phys Biol Med</source>. <year>2004</year>;<volume>16</volume>:<fpage>218</fpage>&#x02010;<lpage>226</lpage>.</mixed-citation></ref><ref id="mrm30347-bib-0020"><label>20</label><mixed-citation publication-type="journal" id="mrm30347-cit-0020">
+<string-name>
+<surname>Bdaiwi</surname>
+<given-names>AS</given-names>
+</string-name>, <string-name>
+<surname>Costa</surname>
+<given-names>ML</given-names>
+</string-name>, <string-name>
+<surname>Plummer</surname>
+<given-names>JW</given-names>
+</string-name>, <string-name>
+<surname>Willmering</surname>
+<given-names>MM</given-names>
+</string-name>, <string-name>
+<surname>Walkup</surname>
+<given-names>LL</given-names>
+</string-name>, <string-name>
+<surname>Cleveland</surname>
+<given-names>ZI</given-names>
+</string-name>. <article-title>B1 and magnetization decay correction for hyperpolarized 129Xe lung imaging using sequential 2D spiral acquisitions</article-title>. <source>Magn Reson Med</source>. <year>2023</year>;<volume>90</volume>:<fpage>473</fpage>&#x02010;<lpage>482</lpage>.<pub-id pub-id-type="pmid">36989185</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0021"><label>21</label><mixed-citation publication-type="journal" id="mrm30347-cit-0021">
+<string-name>
+<surname>Lu</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Wang</surname>
+<given-names>Z</given-names>
+</string-name>, <string-name>
+<surname>Bier</surname>
+<given-names>E</given-names>
+</string-name>, <string-name>
+<surname>Leewiwatwong</surname>
+<given-names>S</given-names>
+</string-name>, <string-name>
+<surname>Mummy</surname>
+<given-names>D</given-names>
+</string-name>, <string-name>
+<surname>Driehuys</surname>
+<given-names>B</given-names>
+</string-name>. <article-title>Bias field correction in hyperpolarized 129Xe ventilation MRI using templates derived by RF&#x02010;depolarization mapping</article-title>. <source>Magn Reson Med</source>. <year>2022</year>;<volume>88</volume>:<fpage>802</fpage>&#x02010;<lpage>816</lpage>.<pub-id pub-id-type="pmid">35506520</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0022"><label>22</label><mixed-citation publication-type="journal" id="mrm30347-cit-0022">
+<string-name>
+<surname>Bier</surname>
+<given-names>EA</given-names>
+</string-name>, <string-name>
+<surname>Nouls</surname>
+<given-names>JC</given-names>
+</string-name>, <string-name>
+<surname>Wang</surname>
+<given-names>Z</given-names>
+</string-name>, et al. <article-title>A thermally polarized 129Xe phantom for quality assurance in multi&#x02010;center hyperpolarized gas MRI studies</article-title>. <source>Magn Reson Med</source>. <year>2019</year>;<volume>82</volume>:<fpage>1961</fpage>&#x02010;<lpage>1968</lpage>.<pub-id pub-id-type="pmid">31218753</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0023"><label>23</label><mixed-citation publication-type="journal" id="mrm30347-cit-0023">
+<string-name>
+<surname>Inati</surname>
+<given-names>SJ</given-names>
+</string-name>, <string-name>
+<surname>Naegele</surname>
+<given-names>JD</given-names>
+</string-name>, <string-name>
+<surname>Zwart</surname>
+<given-names>NR</given-names>
+</string-name>, et al. <article-title>ISMRM Raw data format: A proposed standard for MRI raw datasets</article-title>. <source>Magn Reson Med</source>. <year>2017</year>;<volume>77</volume>:<fpage>411</fpage>&#x02010;<lpage>421</lpage>.<pub-id pub-id-type="pmid">26822475</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0024"><label>24</label><mixed-citation publication-type="journal" id="mrm30347-cit-0024">
+<string-name>
+<surname>Dabov</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Foi</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Katkovnik</surname>
+<given-names>V</given-names>
+</string-name>, <string-name>
+<surname>Egiazarian</surname>
+<given-names>K</given-names>
+</string-name>. <article-title>Image denoising by sparse 3&#x02010;D transform&#x02010;domain collaborative filtering</article-title>. <source>IEEE Transactions on image processing</source>. <year>2007</year>;<volume>16</volume>:<fpage>2080</fpage>&#x02010;<lpage>2095</lpage>.<pub-id pub-id-type="pmid">17688213</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0025"><label>25</label><mixed-citation publication-type="journal" id="mrm30347-cit-0025">
+<string-name>
+<surname>Otsu</surname>
+<given-names>N</given-names>
+</string-name>. <article-title>A threshold selection method from gray&#x02010;level histograms</article-title>. <source>IEEE transactions on systems, man, and cybernetics</source>. <year>1979</year>;<volume>9</volume>:<fpage>62</fpage>&#x02010;<lpage>66</lpage>.</mixed-citation></ref><ref id="mrm30347-bib-0026"><label>26</label><mixed-citation publication-type="journal" id="mrm30347-cit-0026">
+<string-name>
+<surname>Astley</surname>
+<given-names>JR</given-names>
+</string-name>, <string-name>
+<surname>Biancardi</surname>
+<given-names>AM</given-names>
+</string-name>, <string-name>
+<surname>Hughes</surname>
+<given-names>PJ</given-names>
+</string-name>, et al. <article-title>Large&#x02010;scale investigation of deep learning approaches for ventilated lung segmentation using multi&#x02010;nuclear hyperpolarized gas MRI</article-title>. <source>Sci Rep</source>. <year>2022</year>;<volume>12</volume>:10566.</mixed-citation></ref><ref id="mrm30347-bib-0027"><label>27</label><mixed-citation publication-type="journal" id="mrm30347-cit-0027">
+<string-name>
+<surname>Astley</surname>
+<given-names>JR</given-names>
+</string-name>, <string-name>
+<surname>Biancardi</surname>
+<given-names>AM</given-names>
+</string-name>, <string-name>
+<surname>Marshall</surname>
+<given-names>H</given-names>
+</string-name>, et al. <article-title>A Dual&#x02010;Channel Deep Learning Approach for Lung Cavity Estimation From Hyperpolarized Gas and Proton MRI</article-title>. <source>J Magn Reson Imaging</source>. <year>2023</year>;<volume>57</volume>:<fpage>1878</fpage>&#x02010;<lpage>1890</lpage>.<pub-id pub-id-type="pmid">36373828</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0028"><label>28</label><mixed-citation publication-type="journal" id="mrm30347-cit-0028">
+<string-name>
+<surname>Tustison</surname>
+<given-names>NJ</given-names>
+</string-name>, <string-name>
+<surname>Avants</surname>
+<given-names>BB</given-names>
+</string-name>, <string-name>
+<surname>Flors</surname>
+<given-names>L</given-names>
+</string-name>, et al. <article-title>Ventilation&#x02010;based segmentation of the lungs using hyperpolarized 3He MRI</article-title>. <source>J Magn Reson Imaging</source>. <year>2011</year>;<volume>34</volume>:<fpage>831</fpage>&#x02010;<lpage>841</lpage>.<pub-id pub-id-type="pmid">21837781</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0029"><label>29</label><mixed-citation publication-type="journal" id="mrm30347-cit-0029">
+<string-name>
+<surname>Mugler</surname>
+<given-names>JP</given-names>
+</string-name>, <string-name>
+<surname>Altes</surname>
+<given-names>TA</given-names>
+</string-name>. <article-title>Hyperpolarized 129Xe MRI of the human lung</article-title>. <source>J Magn Reson Imaging</source>. <year>2013</year>;<volume>37</volume>:<fpage>313</fpage>&#x02010;<lpage>331</lpage>.<pub-id pub-id-type="pmid">23355432</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0030"><label>30</label><mixed-citation publication-type="journal" id="mrm30347-cit-0030">
+<string-name>
+<surname>He</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Driehuys</surname>
+<given-names>B</given-names>
+</string-name>, <string-name>
+<surname>Que</surname>
+<given-names>LG</given-names>
+</string-name>, <string-name>
+<surname>Huang</surname>
+<given-names>YCT</given-names>
+</string-name>. <article-title>Using Hyperpolarized 129Xe MRI to Quantify the Pulmonary Ventilation Distribution</article-title>. <source>Acad Radiol</source>. <year>2016</year>;<volume>23</volume>:<fpage>1521</fpage>&#x02010;<lpage>1531</lpage>.<pub-id pub-id-type="pmid">27617823</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0031"><label>31</label><mixed-citation publication-type="journal" id="mrm30347-cit-0031">
+<string-name>
+<surname>Couch</surname>
+<given-names>MJ</given-names>
+</string-name>, <string-name>
+<surname>Thomen</surname>
+<given-names>R</given-names>
+</string-name>, <string-name>
+<surname>Kanhere</surname>
+<given-names>N</given-names>
+</string-name>, et al. <article-title>A two&#x02010;center analysis of hyperpolarized 129Xe lung MRI in stable pediatric cystic fibrosis: Potential as a biomarker for multi&#x02010;site trials</article-title>. <source>J Cyst Fibros</source>. <year>2019</year>;<volume>18</volume>:<fpage>728</fpage>&#x02010;<lpage>733</lpage>.<pub-id pub-id-type="pmid">30922812</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0032"><label>32</label><mixed-citation publication-type="journal" id="mrm30347-cit-0032">
+<string-name>
+<surname>Stewart</surname>
+<given-names>NJ</given-names>
+</string-name>, <string-name>
+<surname>Chan</surname>
+<given-names>H&#x02010;F</given-names>
+</string-name>, <string-name>
+<surname>Hughes</surname>
+<given-names>PJC</given-names>
+</string-name>, et al. <article-title>Comparison of 3He and 129Xe MRI for evaluation of lung microstructure and ventilation at 1.5T</article-title>. <source>J Magn Reson Imaging</source>. <year>2018</year>;<volume>48</volume>:<fpage>632</fpage>&#x02010;<lpage>642</lpage>.<pub-id pub-id-type="pmid">29504181</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0033"><label>33</label><mixed-citation publication-type="journal" id="mrm30347-cit-0033">
+<string-name>
+<surname>Stewart</surname>
+<given-names>NJ</given-names>
+</string-name>, <string-name>
+<surname>Norquay</surname>
+<given-names>G</given-names>
+</string-name>, <string-name>
+<surname>Griffiths</surname>
+<given-names>PD</given-names>
+</string-name>, <string-name>
+<surname>Wild</surname>
+<given-names>JM</given-names>
+</string-name>. <article-title>Feasibility of human lung ventilation imaging using highly polarized naturally abundant xenon and optimized three&#x02010;dimensional steady&#x02010;state free precession</article-title>. <source>Magn Reson Med</source>. <year>2015</year>;<volume>74</volume>:<fpage>346</fpage>&#x02010;<lpage>352</lpage>.<pub-id pub-id-type="pmid">25916276</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0034"><label>34</label><mixed-citation publication-type="journal" id="mrm30347-cit-0034">
+<string-name>
+<surname>Tustison</surname>
+<given-names>NJ</given-names>
+</string-name>, <string-name>
+<surname>Avants</surname>
+<given-names>BB</given-names>
+</string-name>, <string-name>
+<surname>Cook</surname>
+<given-names>PA</given-names>
+</string-name>, et al. <article-title>N4ITK: improved N3 bias correction</article-title>. <source>IEEE Trans Med Imaging</source>. <year>2010</year>;<volume>29</volume>:<fpage>1310</fpage>&#x02010;<lpage>1320</lpage>.<pub-id pub-id-type="pmid">20378467</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0035"><label>35</label><mixed-citation publication-type="journal" id="mrm30347-cit-0035">
+<string-name>
+<surname>O'Halloran</surname>
+<given-names>RL</given-names>
+</string-name>, <string-name>
+<surname>Holmes</surname>
+<given-names>JH</given-names>
+</string-name>, <string-name>
+<surname>Altes</surname>
+<given-names>TA</given-names>
+</string-name>, <string-name>
+<surname>Salerno</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Fain</surname>
+<given-names>SB</given-names>
+</string-name>. <article-title>The effects of SNR on ADC measurements in diffusion&#x02010;weighted hyperpolarized He&#x02010;3 MRI</article-title>. <source>J Magn Reson</source>. <year>2007</year>;<volume>185</volume>:<fpage>42</fpage>&#x02010;<lpage>49</lpage>.<pub-id pub-id-type="pmid">17150391</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0036"><label>36</label><mixed-citation publication-type="journal" id="mrm30347-cit-0036">
+<string-name>
+<surname>Bdaiwi</surname>
+<given-names>AS</given-names>
+</string-name>, <string-name>
+<surname>Niedbalski</surname>
+<given-names>PJ</given-names>
+</string-name>, <string-name>
+<surname>Hossain</surname>
+<given-names>MM</given-names>
+</string-name>, et al. <article-title>Improving hyperpolarized 129Xe ADC mapping in pediatric and adult lungs with uncertainty propagation</article-title>. <source>NMR Biomed</source>. <year>2021</year>;<volume>35</volume>:<elocation-id>e4639</elocation-id>.<pub-id pub-id-type="pmid">34729838</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0037"><label>37</label><mixed-citation publication-type="journal" id="mrm30347-cit-0037">
+<string-name>
+<surname>He</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Zha</surname>
+<given-names>W</given-names>
+</string-name>, <string-name>
+<surname>Tan</surname>
+<given-names>F</given-names>
+</string-name>, <string-name>
+<surname>Rankine</surname>
+<given-names>L</given-names>
+</string-name>, <string-name>
+<surname>Fain</surname>
+<given-names>S</given-names>
+</string-name>, <string-name>
+<surname>Driehuys</surname>
+<given-names>B</given-names>
+</string-name>. <article-title>A comparison of two hyperpolarized 129Xe MRI ventilation quantification pipelines: the effect of signal to noise ratio</article-title>. <source>Academic radiology</source>. <year>2019</year>;<volume>26</volume>:<fpage>949</fpage>&#x02010;<lpage>959</lpage>.<pub-id pub-id-type="pmid">30269957</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0038"><label>38</label><mixed-citation publication-type="journal" id="mrm30347-cit-0038">
+<string-name>
+<surname>Woodhouse</surname>
+<given-names>N</given-names>
+</string-name>, <string-name>
+<surname>Wild</surname>
+<given-names>JM</given-names>
+</string-name>, <string-name>
+<surname>Paley</surname>
+<given-names>MNJ</given-names>
+</string-name>, et al. <article-title>Combined helium&#x02010;3/proton magnetic resonance imaging measurement of ventilated lung volumes in smokers compared to never&#x02010;smokers</article-title>. <source>J Magn Reson Imaging</source>. <year>2005</year>;<volume>21</volume>:<fpage>365</fpage>&#x02010;<lpage>369</lpage>.<pub-id pub-id-type="pmid">15779032</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0039"><label>39</label><mixed-citation publication-type="journal" id="mrm30347-cit-0039">
+<string-name>
+<surname>Roach</surname>
+<given-names>DJ</given-names>
+</string-name>, <string-name>
+<surname>Willmering</surname>
+<given-names>MM</given-names>
+</string-name>, <string-name>
+<surname>Plummer</surname>
+<given-names>JW</given-names>
+</string-name>, et al. <article-title>Hyperpolarized 129Xenon MRI ventilation defect quantification via thresholding and linear binning in multiple pulmonary diseases</article-title>. <source>Academic Radiology</source>. <year>2022</year>;<volume>29</volume>:<fpage>S145</fpage>&#x02010;<lpage>S155</lpage>.</mixed-citation></ref><ref id="mrm30347-bib-0040"><label>40</label><mixed-citation publication-type="journal" id="mrm30347-cit-0040">
+<string-name>
+<surname>Walkup</surname>
+<given-names>LL</given-names>
+</string-name>, <string-name>
+<surname>Roach</surname>
+<given-names>DJ</given-names>
+</string-name>, <string-name>
+<surname>Hall</surname>
+<given-names>CS</given-names>
+</string-name>, et al. <article-title>Cyst ventilation heterogeneity and alveolar airspace dilation as early disease markers in lymphangioleiomyomatosis</article-title>. <source>Ann Am Thorac Soc</source>. <year>2019</year>;<volume>16</volume>:<fpage>1008</fpage>&#x02010;<lpage>1016</lpage>.<pub-id pub-id-type="pmid">31038987</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0041"><label>41</label><mixed-citation publication-type="journal" id="mrm30347-cit-0041">
+<string-name>
+<surname>Thomen</surname>
+<given-names>RP</given-names>
+</string-name>, <string-name>
+<surname>Walkup</surname>
+<given-names>LL</given-names>
+</string-name>, <string-name>
+<surname>Roach</surname>
+<given-names>DJ</given-names>
+</string-name>, <string-name>
+<surname>Cleveland</surname>
+<given-names>ZI</given-names>
+</string-name>, <string-name>
+<surname>Clancy</surname>
+<given-names>JP</given-names>
+</string-name>, <string-name>
+<surname>Woods</surname>
+<given-names>JC</given-names>
+</string-name>. <article-title>Hyperpolarized 129Xe for investigation of mild cystic fibrosis lung disease in pediatric patients</article-title>. <source>Journal of Cystic Fibrosis</source>. <year>2017</year>;<volume>16</volume>:<fpage>275</fpage>&#x02010;<lpage>282</lpage>.<pub-id pub-id-type="pmid">27477942</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0042"><label>42</label><mixed-citation publication-type="journal" id="mrm30347-cit-0042">
+<string-name>
+<surname>He</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Driehuys</surname>
+<given-names>B</given-names>
+</string-name>, <string-name>
+<surname>Que</surname>
+<given-names>LG</given-names>
+</string-name>, <string-name>
+<surname>Huang</surname>
+<given-names>Y&#x02010;CT</given-names>
+</string-name>. <article-title>Using hyperpolarized 129Xe MRI to quantify the pulmonary ventilation distribution</article-title>. <source>Academic radiology</source>. <year>2016</year>;<volume>23</volume>:<fpage>1521</fpage>&#x02010;<lpage>1531</lpage>.<pub-id pub-id-type="pmid">27617823</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0043"><label>43</label><mixed-citation publication-type="journal" id="mrm30347-cit-0043">
+<string-name>
+<surname>He</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Kaushik</surname>
+<given-names>SS</given-names>
+</string-name>, <string-name>
+<surname>Robertson</surname>
+<given-names>SH</given-names>
+</string-name>, et al. <article-title>Extending semiautomatic ventilation defect analysis for hyperpolarized 129Xe ventilation MRI</article-title>. <source>Acad Radiol</source>. <year>2014</year>;<volume>21</volume>:<fpage>1530</fpage>&#x02010;<lpage>1541</lpage>.<pub-id pub-id-type="pmid">25262951</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0044"><label>44</label><mixed-citation publication-type="journal" id="mrm30347-cit-0044">
+<string-name>
+<surname>Kirby</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Heydarian</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Svenningsen</surname>
+<given-names>S</given-names>
+</string-name>, et al. <article-title>Hyperpolarized 3He magnetic resonance functional imaging semiautomated segmentation</article-title>. <source>Acad Radiol</source>. <year>2012</year>;<volume>19</volume>:<fpage>141</fpage>&#x02010;<lpage>152</lpage>.<pub-id pub-id-type="pmid">22104288</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0045"><label>45</label><mixed-citation publication-type="journal" id="mrm30347-cit-0045">
+<string-name>
+<surname>Hughes</surname>
+<given-names>PJ</given-names>
+</string-name>, <string-name>
+<surname>Horn</surname>
+<given-names>FC</given-names>
+</string-name>, <string-name>
+<surname>Collier</surname>
+<given-names>GJ</given-names>
+</string-name>, <string-name>
+<surname>Biancardi</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Marshall</surname>
+<given-names>H</given-names>
+</string-name>, <string-name>
+<surname>Wild</surname>
+<given-names>JM</given-names>
+</string-name>. <article-title>Spatial fuzzy c&#x02010;means thresholding for semiautomated calculation of percentage lung ventilated volume from hyperpolarized gas and 1H MRI</article-title>. <source>J Magn Reson Imaging</source>. <year>2018</year>;<volume>47</volume>:<fpage>640</fpage>&#x02010;<lpage>646</lpage>.<pub-id pub-id-type="pmid">28681470</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0046"><label>46</label><mixed-citation publication-type="journal" id="mrm30347-cit-0046">
+<string-name>
+<surname>Tustison</surname>
+<given-names>NJ</given-names>
+</string-name>, <string-name>
+<surname>Altes</surname>
+<given-names>TA</given-names>
+</string-name>, <string-name>
+<surname>Qing</surname>
+<given-names>K</given-names>
+</string-name>, et al. <article-title>Image&#x02010;versus histogram&#x02010;based considerations in semantic segmentation of pulmonary hyperpolarized gas images</article-title>. <source>Magn Reson Med</source>. <year>2021</year>;<volume>86</volume>:<fpage>2822</fpage>&#x02010;<lpage>2836</lpage>.<pub-id pub-id-type="pmid">34227163</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0047"><label>47</label><mixed-citation publication-type="journal" id="mrm30347-cit-0047">
+<string-name>
+<surname>Valk</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Willers</surname>
+<given-names>C</given-names>
+</string-name>, <string-name>
+<surname>Shahim</surname>
+<given-names>K</given-names>
+</string-name>, et al. <article-title>Defect distribution index: A novel metric for functional lung MRI in cystic fibrosis</article-title>. <source>Magnetic resonance in medicine</source>. <year>2021</year>;<volume>86</volume>:<fpage>3224</fpage>&#x02010;<lpage>3235</lpage>.<pub-id pub-id-type="pmid">34337778</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0048"><label>48</label><mixed-citation publication-type="book" id="mrm30347-cit-0048">
+<string-name>
+<surname>Bdaiwi</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Willmering</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Walkup</surname>
+<given-names>L</given-names>
+</string-name>, <string-name>
+<surname>Woods</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Cleveland</surname>
+<given-names>Z</given-names>
+</string-name>. <part-title>Quantifying Spatial Distribution of Ventilation Defects in Lung Imaging With Hyperpolarized 129Xenon MRI</part-title>. <source>B80&#x02010;1 Methodological Advancements in Pulmonary Imaging</source>. <publisher-name>American Thoracic Society</publisher-name>; <year>2024</year> A4492&#x02010;A4492.</mixed-citation></ref><ref id="mrm30347-bib-0049"><label>49</label><mixed-citation publication-type="journal" id="mrm30347-cit-0049">
+<string-name>
+<surname>Galloway</surname>
+<given-names>MM</given-names>
+</string-name>. <article-title>Texture analysis using gray level run lengths</article-title>. <source>Comput Graphics Image Process</source>. <year>1975</year>;<volume>4.2</volume>:<fpage>172</fpage>&#x02010;<lpage>179</lpage>.</mixed-citation></ref><ref id="mrm30347-bib-0050"><label>50</label><mixed-citation publication-type="journal" id="mrm30347-cit-0050">
+<string-name>
+<surname>Yablonskiy</surname>
+<given-names>DA</given-names>
+</string-name>, <string-name>
+<surname>Sukstanskii</surname>
+<given-names>AL</given-names>
+</string-name>, <string-name>
+<surname>Quirk</surname>
+<given-names>JD</given-names>
+</string-name>. <article-title>Diffusion lung imaging with hyperpolarized gas MRI</article-title>. <source>NMR Biomed</source>. <year>2017</year>;<volume>30</volume>:<elocation-id>e3448</elocation-id>.</mixed-citation></ref><ref id="mrm30347-bib-0051"><label>51</label><mixed-citation publication-type="journal" id="mrm30347-cit-0051">
+<string-name>
+<surname>Thomen</surname>
+<given-names>RP</given-names>
+</string-name>, <string-name>
+<surname>Quirk</surname>
+<given-names>JD</given-names>
+</string-name>, <string-name>
+<surname>Roach</surname>
+<given-names>D</given-names>
+</string-name>, et al. <article-title>Direct comparison of 129Xe diffusion measurements with quantitative histology in human lungs</article-title>. <source>Magn Reson Med</source>. <year>2017</year>;<volume>77</volume>:<fpage>265</fpage>&#x02010;<lpage>272</lpage>.<pub-id pub-id-type="pmid">26778748</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0052"><label>52</label><mixed-citation publication-type="journal" id="mrm30347-cit-0052">
+<string-name>
+<surname>Kaushik</surname>
+<given-names>SS</given-names>
+</string-name>, <string-name>
+<surname>Cleveland</surname>
+<given-names>ZI</given-names>
+</string-name>, <string-name>
+<surname>Cofer</surname>
+<given-names>GP</given-names>
+</string-name>, et al. <article-title>Diffusion Weighted Imaging of Hyperpolarized 129Xe in Patients with Chronic Obstructive Pulmonary Disease</article-title>. <source>Magn Reson Med</source>. <year>2011</year>;<volume>65</volume>:<fpage>1154</fpage>&#x02010;<lpage>1165</lpage>.<pub-id pub-id-type="pmid">21413080</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0053"><label>53</label><mixed-citation publication-type="journal" id="mrm30347-cit-0053">
+<string-name>
+<surname>Ouriadov</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Farag</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Kirby</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>McCormack</surname>
+<given-names>DG</given-names>
+</string-name>, <string-name>
+<surname>Parraga</surname>
+<given-names>G</given-names>
+</string-name>, <string-name>
+<surname>Santyr</surname>
+<given-names>GE</given-names>
+</string-name>. <article-title>Pulmonary hyperpolarized 129Xe morphometry for mapping xenon gas concentrations and alveolar oxygen partial pressure: Proof&#x02010;of&#x02010;concept demonstration in healthy and COPD subjects</article-title>. <source>Magn Reson Med</source>. <year>2015</year>;<volume>74</volume>:<fpage>1726</fpage>&#x02010;<lpage>1732</lpage>.<pub-id pub-id-type="pmid">25483611</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0054"><label>54</label><mixed-citation publication-type="journal" id="mrm30347-cit-0054">
+<string-name>
+<surname>Kirby</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Ouriadov</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Svenningsen</surname>
+<given-names>S</given-names>
+</string-name>, et al. <article-title>Hyperpolarized 3He and 129Xe magnetic resonance imaging apparent diffusion coefficients: physiological relevance in older never&#x02010; and ex&#x02010;smokers</article-title>. <source>Physiol Rep</source>. <year>2014</year>;<volume>2</volume>:<elocation-id>e12068</elocation-id>.<pub-id pub-id-type="pmid">25347853</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0055"><label>55</label><mixed-citation publication-type="journal" id="mrm30347-cit-0055">
+<string-name>
+<surname>Kirby</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Svenningsen</surname>
+<given-names>S</given-names>
+</string-name>, <string-name>
+<surname>Owrangi</surname>
+<given-names>A</given-names>
+</string-name>, et al. <article-title>Hyperpolarized 3He and 129Xe MR imaging in healthy volunteers and patients with chronic obstructive pulmonary disease</article-title>. <source>Radiology</source>. <year>2012</year>;<volume>265</volume>:<fpage>600</fpage>&#x02010;<lpage>610</lpage>.<pub-id pub-id-type="pmid">22952383</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0056"><label>56</label><mixed-citation publication-type="journal" id="mrm30347-cit-0056">
+<string-name>
+<surname>Ruppert</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Qing</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Patrie</surname>
+<given-names>JT</given-names>
+</string-name>, <string-name>
+<surname>Altes</surname>
+<given-names>TA</given-names>
+</string-name>, <string-name>
+<surname>Mugler</surname>
+<given-names>JP</given-names>
+<suffix>III</suffix>
+</string-name>. <article-title>Using Hyperpolarized Xenon&#x02010;129 MRI to quantify early&#x02010;stage lung disease in smokers</article-title>. <source>Acad Radiol</source>. <year>2019</year>;<volume>26</volume>:<fpage>355</fpage>&#x02010;<lpage>366</lpage>.<pub-id pub-id-type="pmid">30522808</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0057"><label>57</label><mixed-citation publication-type="journal" id="mrm30347-cit-0057">
+<string-name>
+<surname>Kirby</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Svenningsen</surname>
+<given-names>S</given-names>
+</string-name>, <string-name>
+<surname>Kanhere</surname>
+<given-names>N</given-names>
+</string-name>, et al. <article-title>Pulmonary ventilation visualized using hyperpolarized helium&#x02010;3 and xenon&#x02010;129 magnetic resonance imaging: differences in COPD and relationship to emphysema</article-title>. <source>J Appl Physiol</source>. <year>2013</year>;<volume>114</volume>:<fpage>707</fpage>&#x02010;<lpage>715</lpage>.<pub-id pub-id-type="pmid">23239874</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0058"><label>58</label><mixed-citation publication-type="journal" id="mrm30347-cit-0058">
+<string-name>
+<surname>Ouriadov</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Guo</surname>
+<given-names>F</given-names>
+</string-name>, <string-name>
+<surname>McCormack</surname>
+<given-names>DG</given-names>
+</string-name>, <string-name>
+<surname>Parraga</surname>
+<given-names>G</given-names>
+</string-name>. <article-title>Accelerated 129Xe MRI morphometry of terminal airspace enlargement: Feasibility in volunteers and those with alpha&#x02010;1 antitrypsin deficiency</article-title>. <source>Magn Reson Med</source>. <year>2020</year>;<volume>84</volume>:<fpage>416</fpage>&#x02010;<lpage>426</lpage>.<pub-id pub-id-type="pmid">31765497</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0059"><label>59</label><mixed-citation publication-type="journal" id="mrm30347-cit-0059">
+<string-name>
+<surname>Tafti</surname>
+<given-names>S</given-names>
+</string-name>, <string-name>
+<surname>Garrison</surname>
+<given-names>WJ</given-names>
+</string-name>, <string-name>
+<surname>John</surname>
+<given-names>P</given-names>
+</string-name>, et al. <article-title>Emphysema Index Based on Hyperpolarized 3He or 129Xe Diffusion MRI: Performance and Comparison with Quantitative CT and Pulmonary Function Tests</article-title>. <source>Radiology</source>. <year>2020</year>;<volume>297</volume>:<fpage>201</fpage>&#x02010;<lpage>210</lpage>.<pub-id pub-id-type="pmid">32779976</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0060"><label>60</label><mixed-citation publication-type="journal" id="mrm30347-cit-0060">
+<string-name>
+<surname>Sukstanskii</surname>
+<given-names>A</given-names>
+</string-name>, <string-name>
+<surname>Yablonskiy</surname>
+<given-names>D</given-names>
+</string-name>. <article-title>Lung morphometry with hyperpolarized 129Xe: theoretical background</article-title>. <source>Magn Reson Med</source>. <year>2012</year>;<volume>67</volume>:<fpage>856</fpage>&#x02010;<lpage>866</lpage>.<pub-id pub-id-type="pmid">21713985</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0061"><label>61</label><mixed-citation publication-type="journal" id="mrm30347-cit-0061">
+<string-name>
+<surname>Chan</surname>
+<given-names>HF</given-names>
+</string-name>, <string-name>
+<surname>Stewart</surname>
+<given-names>NJ</given-names>
+</string-name>, <string-name>
+<surname>Norquay</surname>
+<given-names>G</given-names>
+</string-name>, <string-name>
+<surname>Collier</surname>
+<given-names>GJ</given-names>
+</string-name>, <string-name>
+<surname>Wild</surname>
+<given-names>JM</given-names>
+</string-name>. <article-title>3D diffusion&#x02010;weighted 129Xe MRI for whole lung morphometry</article-title>. <source>Magn Reson Med</source>. <year>2018</year>;<volume>79</volume>:<fpage>2986</fpage>&#x02010;<lpage>2995</lpage>.<pub-id pub-id-type="pmid">29034509</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0062"><label>62</label><mixed-citation publication-type="journal" id="mrm30347-cit-0062">
+<string-name>
+<surname>Driehuys</surname>
+<given-names>B</given-names>
+</string-name>, <string-name>
+<surname>Cofer</surname>
+<given-names>GP</given-names>
+</string-name>, <string-name>
+<surname>Pollaro</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Mackel</surname>
+<given-names>JB</given-names>
+</string-name>, <string-name>
+<surname>Hedlund</surname>
+<given-names>LW</given-names>
+</string-name>, <string-name>
+<surname>Johnson</surname>
+<given-names>GA</given-names>
+</string-name>. <article-title>Imaging alveolar&#x02010;capillary gas transfer using hyperpolarized Xe&#x02010;129 MRI</article-title>. <source>Proc Natl Acad Sci USA</source>. <year>2006</year>;<volume>103</volume>:<fpage>18278</fpage>&#x02010;<lpage>18283</lpage>.<pub-id pub-id-type="pmid">17101964</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0063"><label>63</label><mixed-citation publication-type="journal" id="mrm30347-cit-0063">
+<string-name>
+<surname>Cleveland</surname>
+<given-names>ZI</given-names>
+</string-name>, <string-name>
+<surname>Cofer</surname>
+<given-names>GP</given-names>
+</string-name>, <string-name>
+<surname>Metz</surname>
+<given-names>G</given-names>
+</string-name>, et al. <article-title>Hyperpolarized Xe MR Imaging of Alveolar Gas Uptake in Humans</article-title>. <source>PLoS One</source>. <year>2010</year>;<volume>5</volume>:<elocation-id>e12192</elocation-id>.<pub-id pub-id-type="pmid">20808950</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0064"><label>64</label><mixed-citation publication-type="journal" id="mrm30347-cit-0064">
+<string-name>
+<surname>Kaushik</surname>
+<given-names>SS</given-names>
+</string-name>, <string-name>
+<surname>Robertson</surname>
+<given-names>SH</given-names>
+</string-name>, <string-name>
+<surname>Freeman</surname>
+<given-names>MS</given-names>
+</string-name>, et al. <article-title>Single&#x02010;Breath Clinical Imaging of Hyperpolarized 129Xe in the Airspaces, Barrier, and Red Blood Cells Using an Interleaved 3D Radial 1&#x02010;Point Dixon Acquisition</article-title>. <source>Magn Reson Med</source>. <year>2016</year>;<volume>75</volume>:<fpage>1434</fpage>&#x02010;<lpage>1443</lpage>.<pub-id pub-id-type="pmid">25980630</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0065"><label>65</label><mixed-citation publication-type="journal" id="mrm30347-cit-0065">
+<string-name>
+<surname>He</surname>
+<given-names>M</given-names>
+</string-name>, <string-name>
+<surname>Wang</surname>
+<given-names>Z</given-names>
+</string-name>, <string-name>
+<surname>Rankine</surname>
+<given-names>L</given-names>
+</string-name>, et al. <article-title>Generalized linear binning to compare hyperpolarized 129Xe ventilation maps derived from 3D radial gas exchange versus dedicated multislice gradient echo MRI</article-title>. <source>Acad Radiol</source>. <year>2020</year>;<volume>27</volume>:<elocation-id>e193&#x02010;e203</elocation-id>.<pub-id pub-id-type="pmid">31786076</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0066"><label>66</label><mixed-citation publication-type="journal" id="mrm30347-cit-0066">
+<string-name>
+<surname>Wang</surname>
+<given-names>Z</given-names>
+</string-name>, <string-name>
+<surname>Robertson</surname>
+<given-names>SH</given-names>
+</string-name>, <string-name>
+<surname>Wang</surname>
+<given-names>J</given-names>
+</string-name>, et al. <article-title>Quantitative analysis of hyperpolarized 129Xe gas transfer MRI</article-title>. <source>Med Phys</source>. <year>2017</year>;<volume>44</volume>:<fpage>2415</fpage>&#x02010;<lpage>2428</lpage>.<pub-id pub-id-type="pmid">28382694</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0067"><label>67</label><mixed-citation publication-type="journal" id="mrm30347-cit-0067">
+<string-name>
+<surname>Niedbalski</surname>
+<given-names>PJ</given-names>
+</string-name>, <string-name>
+<surname>Cleveland</surname>
+<given-names>ZI</given-names>
+</string-name>. <article-title>Improved preclinical hyperpolarized 129Xe ventilation imaging with constant flip angle 3D radial golden means acquisition and keyhole reconstruction</article-title>. <source>NMR Biomed</source>. <year>2021</year>;<volume>34</volume>:<elocation-id>e4464</elocation-id>.<pub-id pub-id-type="pmid">33354833</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0068"><label>68</label><mixed-citation publication-type="journal" id="mrm30347-cit-0068">
+<string-name>
+<surname>Zanette</surname>
+<given-names>B</given-names>
+</string-name>, <string-name>
+<surname>Munidasa</surname>
+<given-names>S</given-names>
+</string-name>, <string-name>
+<surname>Friedlander</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name>
+<surname>Ratjen</surname>
+<given-names>F</given-names>
+</string-name>, <string-name>
+<surname>Santyr</surname>
+<given-names>G</given-names>
+</string-name>. <article-title>A 3D stack&#x02010;of&#x02010;spirals approach for rapid hyperpolarized 129Xe ventilation mapping in pediatric cystic fibrosis lung disease</article-title>. <source>Magn Reson Med</source>. <year>2022</year>;<volume>89</volume>:<fpage>1083</fpage>&#x02010;<lpage>1091</lpage>.<pub-id pub-id-type="pmid">36433705</pub-id>
+</mixed-citation></ref><ref id="mrm30347-bib-0069"><label>69</label><mixed-citation publication-type="journal" id="mrm30347-cit-0069">
+<string-name>
+<surname>Plummer</surname>
+<given-names>JW</given-names>
+</string-name>, <string-name>
+<surname>Hussain</surname>
+<given-names>R</given-names>
+</string-name>, <string-name>
+<surname>Bdaiwi</surname>
+<given-names>AS</given-names>
+</string-name>, et al. <article-title>Analytical corrections for B1&#x02010;inhomogeneity and signal decay in multi&#x02010;slice 2D spiral hyperpolarized 129Xe MRI using keyhole reconstruction</article-title>. <source>Magn Reson Med</source>. <year>2024</year>;<volume>92</volume>:<fpage>967</fpage>&#x02010;<lpage>981</lpage>.<pub-id pub-id-type="pmid">38297511</pub-id>
+</mixed-citation></ref></ref-list></back></article>

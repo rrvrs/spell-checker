@@ -1,0 +1,1132 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Sci Rep</journal-id><journal-id journal-id-type="iso-abbrev">Sci Rep</journal-id><journal-title-group><journal-title>Scientific Reports</journal-title></journal-title-group><issn pub-type="epub">2045-2322</issn><publisher><publisher-name>Nature Publishing Group UK</publisher-name><publisher-loc>London</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">39730795</article-id><article-id pub-id-type="pmc">PMC11681063</article-id><article-id pub-id-type="publisher-id">82112</article-id><article-id pub-id-type="doi">10.1038/s41598-024-82112-4</article-id><article-categories><subj-group subj-group-type="heading"><subject>Article</subject></subj-group></article-categories><title-group><article-title>Performance metrics outperform physiological indicators in robotic teleoperation workload assessment</article-title></title-group><contrib-group><contrib contrib-type="author"><name><surname>Odoh</surname><given-names>Gift</given-names></name><xref ref-type="aff" rid="Aff1">1</xref></contrib><contrib contrib-type="author"><name><surname>Landowska</surname><given-names>Aleksandra</given-names></name><xref ref-type="aff" rid="Aff1">1</xref></contrib><contrib contrib-type="author"><name><surname>Crowe</surname><given-names>Emily M.</given-names></name><xref ref-type="aff" rid="Aff2">2</xref></contrib><contrib contrib-type="author"><name><surname>Benali</surname><given-names>Khairidine</given-names></name><xref ref-type="aff" rid="Aff1">1</xref></contrib><contrib contrib-type="author"><name><surname>Cobb</surname><given-names>Sue</given-names></name><xref ref-type="aff" rid="Aff3">3</xref></contrib><contrib contrib-type="author"><name><surname>Wilson</surname><given-names>Max L.</given-names></name><xref ref-type="aff" rid="Aff1">1</xref></contrib><contrib contrib-type="author"><name><surname>Maior</surname><given-names>Horia A.</given-names></name><xref ref-type="aff" rid="Aff1">1</xref></contrib><contrib contrib-type="author" corresp="yes"><name><surname>Kucukyilmaz</surname><given-names>Ayse</given-names></name><address><email>Ayse.Kucukyilmaz@nottingham.ac.uk</email></address><xref ref-type="aff" rid="Aff1">1</xref></contrib><aff id="Aff1"><label>1</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/01ee9ar58</institution-id><institution-id institution-id-type="GRID">grid.4563.4</institution-id><institution-id institution-id-type="ISNI">0000 0004 1936 8868</institution-id><institution>School of Computer Science, </institution><institution>University of Nottingham, </institution></institution-wrap>Nottingham, UK </aff><aff id="Aff2"><label>2</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/01ee9ar58</institution-id><institution-id institution-id-type="GRID">grid.4563.4</institution-id><institution-id institution-id-type="ISNI">0000 0004 1936 8868</institution-id><institution>School of Psychology, </institution><institution>University of Nottingham, </institution></institution-wrap>Nottingham, UK </aff><aff id="Aff3"><label>3</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/01ee9ar58</institution-id><institution-id institution-id-type="GRID">grid.4563.4</institution-id><institution-id institution-id-type="ISNI">0000 0004 1936 8868</institution-id><institution>Faculty of Engineering, </institution><institution>University of Nottingham, </institution></institution-wrap>Nottingham, UK </aff></contrib-group><pub-date pub-type="epub"><day>28</day><month>12</month><year>2024</year></pub-date><pub-date pub-type="pmc-release"><day>28</day><month>12</month><year>2024</year></pub-date><pub-date pub-type="collection"><year>2024</year></pub-date><volume>14</volume><elocation-id>30984</elocation-id><history><date date-type="received"><day>23</day><month>8</month><year>2024</year></date><date date-type="accepted"><day>2</day><month>12</month><year>2024</year></date></history><permissions><copyright-statement>&#x000a9; The Author(s) 2024</copyright-statement><copyright-year>2024</copyright-year><license><ali:license_ref specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p><bold>Open Access</bold> This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article&#x02019;s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article&#x02019;s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link>.</license-p></license></permissions><abstract id="Abs1"><p id="Par1">Robotics holds the potential to streamline the execution of repetitive and dangerous tasks, which are difficult or impossible for a human operator. However, in complex scenarios, such as nuclear waste management or disaster response, full automation often proves unfeasible due to the diverse and intricate nature of tasks, coupled with the unpredictable hazards, and is typically prevented by stringent regulatory frameworks. Consequently, the predominant approach to managing activities in such settings remains human teleoperation. Teleoperation can be demanding, especially in high-stress situations, and involves a complex blend of both cognitive and physical workload. We present an experiment to explore a range of physiological and performance-related metrics for workload assessment during robotic teleoperation. Thirty-five participants performed a teleoperation task, during which we manipulated cognitive and physical workload conditions. We recorded multiple metrics, including brain activity using functional Near-Infrared Spectroscopy, galvanic skin responses, cardiovascular responses, subjective workload ratings, task and robot performance data. Our results suggest that robotic teleoperation performance may be the most robust metric for distinguishing between different levels of workload experienced during teleoperation, with most physiological measures becoming insignificant to distinguish high cognitive workload.</p></abstract><kwd-group kwd-group-type="npg-subject"><title>Subject terms</title><kwd>Computer science</kwd><kwd>Information technology</kwd></kwd-group><funding-group><award-group><funding-source><institution-wrap><institution-id institution-id-type="FundRef">501100000266</institution-id><institution>RCUK | Engineering and Physical Sciences Research Council (EPSRC)</institution></institution-wrap></funding-source><award-id>EP/W006839/1</award-id><award-id>EP/S023305/1</award-id><award-id>EP/S036113/1</award-id><award-id>EP/V00784X/1</award-id><award-id>EP/S023305/1</award-id><principal-award-recipient><name><surname>Odoh</surname><given-names>Gift</given-names></name><name><surname>Kucukyilmaz</surname><given-names>Ayse</given-names></name></principal-award-recipient></award-group></funding-group><custom-meta-group><custom-meta><meta-name>issue-copyright-statement</meta-name><meta-value>&#x000a9; Springer Nature Limited 2024</meta-value></custom-meta></custom-meta-group></article-meta></front><body><sec id="Sec1"><title>Introduction</title><p id="Par2">Teleoperation is widely used to control robots in environments that are dangerous or difficult for humans to access safely, such as nuclear waste decommissioning<sup><xref ref-type="bibr" rid="CR1">1</xref></sup>, space robotics<sup><xref ref-type="bibr" rid="CR2">2</xref></sup>, underwater robotics<sup><xref ref-type="bibr" rid="CR3">3</xref></sup>, and surgery<sup><xref ref-type="bibr" rid="CR4">4</xref></sup>. These systems frequently utilise leader-follower manipulators with joint-to-joint mapping to offer intuitive and convenient control interfaces for human operators<sup><xref ref-type="bibr" rid="CR5">5</xref></sup> (Fig.&#x000a0;<xref rid="Fig1" ref-type="fig">1</xref>). However, teleoperation presents several challenges for human operators. These challenges include suboptimal display systems and limited views from static cameras, leading to <italic>blind operation</italic>; difficulty in controlling heavy objects against gravity; unergonomic postures due to extensive motion ranges of local (leader) manipulators; and need to coordinate with other humans in the control room. These issues increase both the physical and cognitive effort required from operators, causing fatigue and poor operation<sup><xref ref-type="bibr" rid="CR6">6</xref>,<xref ref-type="bibr" rid="CR7">7</xref></sup>. Operators are also challenged to adapt to a fundamentally different sensorimotor control loop, relying on limited visual feedback from cameras<sup><xref ref-type="bibr" rid="CR8">8</xref></sup>.</p><p id="Par3">
+The resulting high cognitive demand in teleoperation places significant strain on operators<sup><xref ref-type="bibr" rid="CR9">9</xref></sup>, underscoring the need for system-based assistance to operators experiencing high levels of mental workload<sup><xref ref-type="bibr" rid="CR10">10</xref>&#x02013;<xref ref-type="bibr" rid="CR12">12</xref></sup>. While technological progress has facilitated the development of fully autonomous robotic systems in controlled settings, many teleoperation applications resist automation due to the essential requirement for human problem-solving abilities and dexterous manipulation skills<sup><xref ref-type="bibr" rid="CR8">8</xref></sup>. Additionally, stringent regulatory requirements in safety-critical domains hinder the adoption of autonomous robotic approaches<sup><xref ref-type="bibr" rid="CR13">13</xref></sup>. As a result, human-in-the-loop assistance mechanisms are preferred, in the form of shared control&#x02014;merging operator and system inputs<sup><xref ref-type="bibr" rid="CR14">14</xref>&#x02013;<xref ref-type="bibr" rid="CR16">16</xref></sup>&#x02014;or traded control&#x02014;alternating control between operator and system<sup><xref ref-type="bibr" rid="CR17">17</xref>&#x02013;<xref ref-type="bibr" rid="CR20">20</xref></sup>. Both paradigms require trigger mechanisms to determine when robot autonomy should intervene. Although real-time workload monitoring can be used for the application of these assistance paradigms, existing workload assessment techniques typically address only a single dimension of workload: They focus on either cognitive load induced by tasks such as arithmetic<sup><xref ref-type="bibr" rid="CR21">21</xref>,<xref ref-type="bibr" rid="CR22">22</xref></sup>, working memory<sup><xref ref-type="bibr" rid="CR23">23</xref></sup>, stress<sup><xref ref-type="bibr" rid="CR24">24</xref></sup>, or delays and interruptions in information flow<sup><xref ref-type="bibr" rid="CR25">25</xref></sup>; or on physical load, reflected by spatial teleoperation performance<sup><xref ref-type="bibr" rid="CR9">9</xref></sup> or latency in sensory feedback<sup><xref ref-type="bibr" rid="CR26">26</xref></sup>. On the other hand, in teleoperation, multitasking is expected under critical task conditions with little freedom to switch between the primary physical task (the teleoperation) and accompanying cognitive sub-tasks (decision making, coordination within the human team etc.). Consequently, it remains unclear which workload assessment techniques are suitable for accounting for both cognitive and physical workload elements and their interplay in teleoperation.<fig id="Fig1"><label>Fig. 1</label><caption><p>A representative leader-follower teleoperation system used by the nuclear industry involves a human operator using a bimanual interface to control two identical arms situated in a remote location. The operator must monitor the scene through multiple displays and communicate with others in the control room to coordinate the operation.</p></caption><graphic xlink:href="41598_2024_82112_Fig1_HTML" id="MO1"/></fig></p><p id="Par4">This article presents a controlled study to identify appropriate measures for real-time workload assessment in teleoperation with the ultimate goal of developing systematic robotic assistance. For this purpose, we designed an experiment, in which participants interact with a robotic teleoperation system to fulfill a physical ring-on-a-wire task. Meanwhile, they were presented with a secondary working memory task. We controlled the physical (teleoperation vs no teleoperation) and cognitive demand (as modulated by the secondary working memory task) to observe measurable differences in these two workload dimensions. We computed a variety of metrics using various physiological channels, including brain, cardiovascular and electrodermal activity, as well as robot movement and task performance data. Interestingly, we found that physiological measures can detect changes in either cognitive or physical workload individually, but not both simultaneously. Our findings suggest that robot performance data shows the most promise for developing a workload assessment system for teleoperation.</p><p id="Par5">The article is organised as follows: The methodology described in detail in Section <xref rid="Sec2" ref-type="sec">Methods</xref>. Section <xref rid="Sec16" ref-type="sec">Results</xref> presents the experimental findings, followed by a discussion of these results and the study&#x02019;s limitations in Section <xref rid="Sec28" ref-type="sec">Discussion</xref>. Finally, Section <xref rid="Sec33" ref-type="sec">Conclusion</xref> offers key insights and conclusions.<fig id="Fig2"><label>Fig. 2</label><caption><p>(<bold>a</bold>, <bold>b</bold>) The experimental setup uses a kinematically identical leader-follower teleoperation system. (<bold>a</bold>) The local arm (a.k.a. the leader) is controlled by the operator, while (<bold>b</bold>) the remote arm (a.k.a. the follower) is placed in a remote workplace. The operator moves the local arm and these movements are replicated by the remote arm. A participant engages in (<bold>d</bold>) a remote ring-on-wire task as the primary physical activity, concentrating on the visual display of front and side camera feeds while simultaneously performing (<bold>c</bold>) a secondary auditory n-back task to induce cognitive workload. In the subfigure n-back task is visually demonstrated for <inline-formula id="IEq1"><alternatives><tex-math id="M1">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$n \in \{0,1,2,3\}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq1.gif"/></alternatives></inline-formula>, where green squares are <italic>hits</italic>. The participant wears sensors to measure physiological data and a microphone records the participant&#x02019;s responses to the secondary n-back task and subjective workload scores.</p></caption><graphic xlink:href="41598_2024_82112_Fig2_HTML" id="MO2"/></fig></p></sec><sec id="Sec2"><title>Methods</title><sec id="Sec3"><title>Robotic teleoperation setup</title><p id="Par6">The teleoperation architecture is described in detail by Singh et al.<sup><xref ref-type="bibr" rid="CR27">27</xref></sup> and consists of two identical Franka Emika Panda robot arms (i.e. a local and a remote manipulator), arranged in a unilateral leader-follower setup as shown in Fig.&#x000a0;<xref rid="Fig2" ref-type="fig">2</xref>. Each Panda arm is equipped with torque sensors integrated at joint actuators. A static Ethernet connection is utilised to link each robot to a dedicated workstation, minimising potential time delays. The Franka Control Interface (FCI) enables communication with the workstations through a low-level, bidirectional connection operating at 1 kHz. The open-source libfranka library is used to control the robots, providing various control options, including joint torques, positions and velocities, as well as Cartesian poses and velocities. Both the local and remote arms operate at a frequency of 1 kHz through the Simulation Lab (SL) robotics simulator and real-time control engine in real-time control mode. A control script running on the local system acts as a centralised point for controlling the robots. It also serves as a hub for ROS communication for integrating multiple sensors, such as the Octamon wireless fNIRS headset for brain activity monitoring and Shimmer GSR+ unit for GSR (Galvanic Skin Response) and PPG (Photoplethysmograph) measurements. It also incorporates an Arduino for real-time primary task performance monitoring, automatically tracking the contact between the ring and wire. This centralization simplifies operations and enhances coordinated data collection for accuracy, synchronization, and event tracking. The remote robot is connected to a dedicated controller and a separate remote PC with the capability of data exchange and coordination with the local robot workstation. This architecture is illustrated in Fig.&#x000a0;<xref rid="Fig3" ref-type="fig">3</xref>. Custom Python scripts, using a wrapper-based approach and dedicated driver-based APIs, were implemented to ensure seamless integration of fNIRS and Shimmer sensors with the main ROS system, converting sensor data into ROS messages. The Arduino board is connected via rosserial, facilitating communication.<fig id="Fig3"><label>Fig. 3</label><caption><p>Teleoperation system architecture with workstations and sensor integration.</p></caption><graphic xlink:href="41598_2024_82112_Fig3_HTML" id="MO9"/></fig></p><p id="Par7">In our setup, the robotic arms are equipped with a zero torque controller for gravity compensation. This gravity compensation allows the operator to move the local arm effortlessly and intuitively through space as an extension of their movements without additional torque commands. The forward dynamics of an <inline-formula id="IEq2"><alternatives><tex-math id="M2">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$n$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq2.gif"/></alternatives></inline-formula>-dof robot manipulator, where <inline-formula id="IEq3"><alternatives><tex-math id="M3">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$n = 7$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq3.gif"/></alternatives></inline-formula> in our setup, is given by (<xref rid="Equ1" ref-type="disp-formula">1</xref>), where <inline-formula id="IEq4"><alternatives><tex-math id="M4">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\mathbf{M}(\mathbf{q}) \in {\mathbb {R}}^{n \times n}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq4.gif"/></alternatives></inline-formula> represents the mass matrix for joint configuration, <italic>q</italic>, <inline-formula id="IEq5"><alternatives><tex-math id="M5">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\mathbf{C}(\mathbf{q}, \ddot{\mathbf{q}}) \in {\mathbb {R}}^{n \times n}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq5.gif"/></alternatives></inline-formula> accounts for the Coriolis effect and <inline-formula id="IEq6"><alternatives><tex-math id="M6">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\mathbf{g}(\mathbf{q}) \in {\mathbb {R}}^n$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq6.gif"/></alternatives></inline-formula> denotes the joint torques due to gravity. In our setup, we omit <italic>g</italic>(<italic>q</italic>) because the robot arms are already gravity-compensated. The Coriolis term, <inline-formula id="IEq7"><alternatives><tex-math id="M7">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$C(q,\ddot{q})$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq7.gif"/></alternatives></inline-formula>, is also negligible due to the low velocities of motion, hence omitted.<disp-formula id="Equ1"><label>1</label><alternatives><tex-math id="M8">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} \tau = {M}(q) \ddot{q} + {C}(q, \dot{q}) \dot{q} + g(q) + \tau _{\text {ext}} \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_82112_Article_Equ1.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq8"><alternatives><tex-math id="M9">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$q,\dot{q},\ddot{q} \in {\mathbb {R}}^n$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq8.gif"/></alternatives></inline-formula> are the joint positions, velocities and accelerations, respectively and <inline-formula id="IEq9"><alternatives><tex-math id="M10">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\tau \in {\mathbb {R}}^n$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq9.gif"/></alternatives></inline-formula> is the vector of joint actuation torques.</p><p id="Par8">The remote robot acts on commands from the local robot and translates these instructions into physical actions by replicating the operator&#x02019;s movements within the operational environment. The system uses a PD controller for unilateral position-position teleoperation to synchronise joints movements as formulated in (<xref rid="Equ2" ref-type="disp-formula">2</xref>):<disp-formula id="Equ2"><label>2</label><alternatives><tex-math id="M11">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} \tau _{\text {cmd}} = K_p (q_r - q_l) - K_d \dot{q}_l , \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_82112_Article_Equ2.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq10"><alternatives><tex-math id="M12">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$q_r$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq10.gif"/></alternatives></inline-formula> and <inline-formula id="IEq11"><alternatives><tex-math id="M13">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$q_l$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq11.gif"/></alternatives></inline-formula> denote the remote and local joint angles, respectively. <inline-formula id="IEq12"><alternatives><tex-math id="M14">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$K_p$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq12.gif"/></alternatives></inline-formula> and <inline-formula id="IEq13"><alternatives><tex-math id="M15">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$K_d$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq13.gif"/></alternatives></inline-formula> are diagonal matrices that define the controller&#x02019;s proportional and derivative gains, respectively, with set values: <inline-formula id="IEq14"><alternatives><tex-math id="M16">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$K_p = diag([120,120,120,120,20,20,4])$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq14.gif"/></alternatives></inline-formula> and <inline-formula id="IEq15"><alternatives><tex-math id="M17">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$K_d = diag([10,10,10,10,6,5,3])$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq15.gif"/></alternatives></inline-formula>.</p></sec><sec id="Sec4"><title>Experimental tasks</title><sec id="Sec5"><title>Primary physical task: teleoperated ring-on-a-wire</title><p id="Par9">The participants operated a local Franka Emika Panda arm to perform a ring-on-a-wire task with a kinematically identical remote arm, as illustrated in Fig.&#x000a0;<xref rid="Fig2" ref-type="fig">2</xref>. The task required maneuvering a 12 cm diameter ring, attached to the gripper of the remote arm, along a straight wire spanning 75 cm between two designated points. Participants had 60 seconds to move the ring back and forth as many times as possible without touching the wire.</p><p id="Par10">To prevent direct observation, the remote arm was concealed behind a curtain. Frontal and side views of the ring-on-wire setup were captured by two cameras (also shown in Fig.&#x000a0;<xref rid="Fig2" ref-type="fig">2</xref>), and displayed side-by-side on a 65-inch screen, enabling participants to monitor and complete the remote task.</p><p id="Par11">An Arduino board controlled both the buzzer and the LED strip. If the ring touched the wire at any point during the task, a circuit was completed that changed the voltage state of an Arduino&#x02019;s input, activating a buzzer and an LED strip. Both the buzzer and the LED strip remained activated for as long as the contact was maintained. The Arduino communicated with the local arm computer via a serial port connection using the ROSSerial protocol, and published a ROS topic at 10 Hz to record the contact state between the ring and the wire.</p></sec><sec id="Sec6"><title>Secondary cognitive task: auditory n-back working memory task</title><p id="Par12">An auditory n-back task was implemented as a secondary task to modulate participants&#x02019; cognitive workload levels. The n-back task was chosen for its established efficacy in manipulating cognitive workload<sup><xref ref-type="bibr" rid="CR28">28</xref></sup>. In the auditory n-back task, participants listened to a stream of spoken stimuli. The auditory stimuli were pre-recorded spoken digits ranging from 0 to 9, played through audio speakers at 90 dB for 1 second each, with a sampling rate of 16,000 Hz. The objective of the task was to determine whether each current stimuli matched the one heard &#x02018;n&#x02019; steps ago in the sequence, by verbally responding &#x0201c;yes&#x0201d; for a match (hit) or &#x0201c;no&#x0201d; for a non-match (miss). For example, if &#x02018;n&#x02019; is 2, participants compared the current digit with the digit heard two positions earlier. Following each digit presentation, there was a 2-second interval for participants to provide their verbal response. In the zero-back condition, participants were instructed to respond with a &#x0201c;yes&#x0201d; to every digit, serving as a baseline to control for brain activity related to speech production. Responses were recorded through a microphone, and analysed post-experiment to compute the n-back task accuracy.</p><p id="Par13">Each n-back task lasted 60 seconds to match the duration of the teleoperation task, comprising 20 trials. Within these trials, 30% of the digits were designated as targets (digits matching the n-back criterion) and 70% as non-targets (digits not matching the criterion). The sequence of digits was presented in a pseudo-random order across all trials; hence, the auditory stimuli was uniform across participants, although an illusion of randomness was created per individual.</p></sec></sec><sec id="Sec7"><title>Design and procedure</title><p id="Par14">We controlled both the physical demand (Teleoperation [T] vs No Teleoperation [NT]) and cognitive demand (as varied by <inline-formula id="IEq16"><alternatives><tex-math id="M18">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$n \in \{0,1,2,3\}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq16.gif"/></alternatives></inline-formula> in the auditory n-back task) to observe measurable differences in these workload dimensions. Participants engaged in two blocks: one in which they performed the teleoperation task and another, in which they stood with their hands on the robot workbench, maintaining an upright posture to prevent blood from rushing to the forehead. In each block, they completed three 60-second trials for each <inline-formula id="IEq17"><alternatives><tex-math id="M19">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$n \in \{0,1,2,3\}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq17.gif"/></alternatives></inline-formula>, with 10-15 second rest periods between trials. These trials coincided with the ring-on-a-wire task in the Teleoperation condition. During the rest periods between trials, participants verbally responded to three questions about perceived physical, cognitive, and overall workload, providing a subjective rating between 1 (lowest) to 5 (highest). The order of all conditions were counterbalanced using a Latin square method. Figure&#x000a0;<xref rid="Fig4" ref-type="fig">4</xref> illustrates the experimental blocks.<fig id="Fig4"><label>Fig. 4</label><caption><p>The experimental design features two blocks: Teleoperation [T] and No-Teleoperation [NT], which are presented to participants in counterbalanced order. Within each block, four task conditions (0-back, 1-back, 2-back, 3-back) were administered sequentially, however the starting condition for each participant was counterbalanced using a Latin square method. Each n-back trial lasted 60 seconds, with a 10&#x02013;15 second rest interval between trials, during which participants responded to three subjective workload assessment questions. Each task block was repeated 3 times.</p></caption><graphic xlink:href="41598_2024_82112_Fig4_HTML" id="MO3"/></fig></p><p id="Par15">The study used a <inline-formula id="IEq18"><alternatives><tex-math id="M20">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$2 \times 4$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq18.gif"/></alternatives></inline-formula> within-subjects design. The independent variables were teleoperation mode (teleoperation, no-teleoperation) and n-back condition (0-back, 1-back, 2-back, 3-back). Participants took place in the experiment over two days, completing a familiarization session, followed by the experimental sessions.</p><sec id="Sec8"><title>Familiarization session</title><p id="Par16">Participants attended a familiarization session at least one day prior to their experimental session to acquaint themselves with the tasks, mitigate novelty effects and enable more reliable brain data collection by controlling for brain plasticity-related responses. During this session, they practiced with both the n-back task and teleoperation until they felt comfortable with the procedures. No data were recorded during this session.</p></sec><sec id="Sec9"><title>Experimental session</title><p id="Par17">Upon arrival at the lab, participants received instructions regarding the experimental session and had the opportunity to ask questions. They then completed a brief demographic questionnaire consisting of 9 items, which took approximately 3 minutes. Following this, participants were fitted with the Octamon fNIRS headset and Shimmer sensors, and the researcher adjusted each fNIRS channel to ensure stable signal acquisition. Participants were then shown the teleoperation system once more and given a brief reminder about the ring-on-a-wire and n-back tasks.</p><p id="Par18">Prior to the start of the experimental sessions, a three-minute resting period was recorded to establish a baseline of each participant&#x02019;s brain activity using fNIRS. Following this baseline recording, the main data collection phase commenced.</p><p id="Par19">During the experimental sessions, participants received brief prompts about the experimental conditions via prerecorded messages played over speakers. Each of the four n-back levels were performed in either the Teleoperation (T) condition, prompted by instruction &#x0201c;n-back, motion&#x0201d;, or the No-Teleoperation (NT) condition, prompted by instruction &#x0201c;n-back, no motion&#x0201d;, where n is a value between 0 and 3 depending on the current condition.</p><p id="Par20">In T condition, participants were asked to actively observe the screen to move the local arm to execute the teleoperation, and simultaneously respond to the sequence of digits for the n-back task, by vocalising &#x0201c;yes&#x0201d; for a hit or &#x0201c;no&#x0201d; for a miss. At the end of the trial, participants heard a &#x0201c;Park&#x0201d; prompt, instructing them to guide the local arm back to the starting position on the wire, as marked by a red tape clearly visible in the camera feed. In NT, participants rested their arms on the workbench instead of performing the ring-on-a-wire task.</p><p id="Par21">After each trial, regardless of the teleoperation condition, participants heard a &#x0201c;Rest&#x0201d; prompt. In T mode, this prompt meant they should let go of the local arm. In both modes, during rest, participants were asked to relax, and fix their gaze on a visual marker (a yellow sticker) attached to the local arm, while maintaining their arms in a restful position on the workstation. In this period, the experimenter asked participants to verbally rate their cognitive, physical, and overall workload. These concepts were explained to them prior to the beginning of the experiments. The total duration of the experiment was approximately 1 hour.</p></sec></sec><sec id="Sec10"><title>Participants</title><p id="Par22">Thirty-five healthy participants (22 males, 12 females, 1 non-binary, average age 25.9) took part in the experiment. Each participant signed an informed consent form, agreeing to the publication of identifying information and images in an online open-access publication. They received a &#x000a3;20 gift voucher as compensation for their time. Ethical approval was obtained from the School of Computer Science Ethics Committee of the University of Nottingham under reference CS-2021-R55 and all experiments were performed in accordance with relevant guidelines and regulations<sup><xref ref-type="bibr" rid="CR29">29</xref></sup>.</p></sec><sec id="Sec11"><title>Metrics</title><p id="Par23">In this study, we employ a variety of physiological and robotic performance measurements to evaluate physical and cognitive workload during robotic teleoperation. Additionally, we use a subjective workload assessment scale to gain insights into participants&#x02019; perceived physical, cognitive, and overall workload. This scale also serves to verify the effectiveness of the experimental conditions in altering the workload dimensions.</p><p id="Par24">Performance measurements are indicators of robot teleoperation efficiency and effectiveness. The measured physiological data include electrodermal and cardiovascular measurements, as well as brain activity. Specifically, we utilise Galvanic Skin Response (GSR) and Photoplethysmography (PPG) to assess autonomic nervous system activity. Additionally, we measure functional Near-Infrared Spectroscopy (fNIRS) to monitor brain activity, providing valuable information on cerebral oxygenation and hemodynamics.</p><p id="Par25">These measures, collectively, allow for a comprehensive analysis of both central and peripheral physiological responses, task performance, and subjective experiences, offering a holistic view of the body&#x02019;s and mind&#x02019;s reactions to changes in physical and cognitive workload levels.</p><sec id="Sec12"><title>Subjective perceptions of workload</title><p id="Par26">We drew inspiration from the NASA Task Load Index (NASA-TLX) when selecting our subjective workload questions, which encompass both cognitive and physical aspects of workload. During piloting, we found that administering a NASA-TLX after each block was impractical for our methods: Participants had to leave the teleoperation workbench to complete paper or computer-based questionnaires, which would disrupt physiological data collection. Additionally, integrating NASA-TLX into the precise timing of tasks proved challenging, and overall participation duration became excessive. As a result, we opted for three single-dimensional rating scales:<list list-type="bullet"><list-item><p id="Par27"><bold>Cognitive Workload:</bold> How much mental and perceptual activity was required? Was the task easy or demanding, simple or complex?</p></list-item><list-item><p id="Par28"><bold>Physical Workload:</bold> How much physical activity was required? Was the task easy or demanding, slack or strenuous?</p></list-item><list-item><p id="Par29"><bold>Overall Workload:</bold> How hard did you have to work (mentally and physically) to accomplish your level of performance?</p></list-item></list>Each of these components was rated on a 5-pt Likert scale. The participants verbally reported their ratings after each trial when prompted. We presented participant with guidelines for interpretation as shown in Table&#x000a0;<xref rid="Tab1" ref-type="table">1</xref>.<table-wrap id="Tab1"><label>Table 1</label><caption><p>Participant instructions for the subjective workload scale.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Score</th><th align="left">Workload</th><th align="left">Spare Capacity</th></tr></thead><tbody><tr><td align="left">1</td><td align="left">Under-utilised</td><td align="left">Very high</td></tr><tr><td align="left">2</td><td align="left">Relaxed</td><td align="left">Ample</td></tr><tr><td align="left">3</td><td align="left">Comfortable busy pace</td><td align="left">Some</td></tr><tr><td align="left">4</td><td align="left">High</td><td align="left">Very little</td></tr><tr><td align="left">5</td><td align="left">Excessive</td><td align="left">None</td></tr></tbody></table></table-wrap></p></sec><sec id="Sec13"><title>Teleoperation performance measures</title><p id="Par30"><bold>N-back Accuracy:</bold> Performance on the n-back task was quantified as the percentage of correctly identified responses.</p><p id="Par31"><bold>Number of Ring Touches:</bold> The count of instances when the ring touches the wire, triggering the buzzer.</p><p id="Par32"><bold>Ring Contact Time:</bold> The average duration of contact between the ring and the wire.</p><p id="Par33"><bold>Average Speed of the End Effector:</bold> This metric quantifies the average speed of the remote arm&#x02019;s end-effector throughout a trial. It indicates how quickly a participant operates the remote robot to complete the ring-on-a-wire task. The speed is calculated by dividing the total trajectory length covered during the trial by the trial&#x02019;s duration.<disp-formula id="Equ3"><label>3</label><alternatives><tex-math id="M21">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} {\text {Average speed}} = \frac{\sum _{i=1}^{N-1} \sqrt{(x_{i+1} - x_i)^2 + (y_{i+1} - y_i)^2 + (z_{i+1} - z_i)^2}}{t_{\text {finish}}({\mathrm{trial}}) - t_{\text {start}}({\mathrm{trial}})} , \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_82112_Article_Equ3.gif" position="anchor"/></alternatives></disp-formula>where <italic>N</italic> is the number of data samples in a trial; <inline-formula id="IEq19"><alternatives><tex-math id="M22">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$x_i$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq19.gif"/></alternatives></inline-formula>, <inline-formula id="IEq20"><alternatives><tex-math id="M23">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y_i$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq20.gif"/></alternatives></inline-formula> and <inline-formula id="IEq21"><alternatives><tex-math id="M24">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$z_i$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq21.gif"/></alternatives></inline-formula> are respectively the <italic>x</italic>, <italic>y</italic> and <italic>z</italic> Cartesian coordinates of the remote arm&#x02019;s end effector for the <italic>i</italic>th sample; and <inline-formula id="IEq22"><alternatives><tex-math id="M25">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_{\mathrm {start}}(\text {trial})$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq22.gif"/></alternatives></inline-formula> and <inline-formula id="IEq23"><alternatives><tex-math id="M26">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_{\mathrm {finish}}(\text {trial})$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq23.gif"/></alternatives></inline-formula> are respectively start and end times of the trial.</p><p id="Par34"><bold>Average Power Consumption:</bold> This metric represents the robot arm&#x02019;s average power output, providing a measure of the participant&#x02019;s efficiency in controlling the robot arm. The average power is calculated as:<disp-formula id="Equ4"><label>4</label><alternatives><tex-math id="M27">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} \text {P} = \frac{1}{N} \sum _{i=1}^{N} \left( \sum _{j=1}^{7} |\tau _{i,j} \cdot \dot{\theta }_{i,j}| \right) , \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_82112_Article_Equ4.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq24"><alternatives><tex-math id="M28">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\tau _{i,j}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq24.gif"/></alternatives></inline-formula> is the torque applied at the <italic>j</italic>th joint at the <italic>i</italic>th time point. <inline-formula id="IEq25"><alternatives><tex-math id="M29">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\dot{\theta }_{i,j}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq25.gif"/></alternatives></inline-formula> is the angular velocity of the <italic>j</italic>th joint at the <italic>i</italic>th time point.</p><p id="Par35"><bold>Total Energy Consumption:</bold> This metric quantifies the total energy expended by the robot arm during a trial, reflecting the overall energy demands placed on the robot and the participant controlling it. It takes into account both the intensity and duration of the interaction. Total energy consumed is computed as:<disp-formula id="Equ5"><label>5</label><alternatives><tex-math id="M30">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} E = \sum _{i=1}^{N} \left( \sum _{j=1}^{7} |\tau _{i,j} \cdot \dot{\theta }_{i,j}| \right) \Delta t_i , \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_82112_Article_Equ5.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq26"><alternatives><tex-math id="M31">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\tau _{i,j}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq26.gif"/></alternatives></inline-formula> is the torque applied at the <italic>j</italic>th joint at the <italic>i</italic>th time point, <inline-formula id="IEq27"><alternatives><tex-math id="M32">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\dot{\theta }_{i,j}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq27.gif"/></alternatives></inline-formula> is the angular velocity of the <italic>j</italic>th joint at the <italic>i</italic>th time point, and <inline-formula id="IEq28"><alternatives><tex-math id="M33">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\Delta t_i$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq28.gif"/></alternatives></inline-formula> is the duration between <italic>i</italic>th and <inline-formula id="IEq29"><alternatives><tex-math id="M34">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$i-1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq29.gif"/></alternatives></inline-formula>th samples.</p><p id="Par36"><bold>Robot Motion Smoothness:</bold> Spectral arc length (SAL)<sup><xref ref-type="bibr" rid="CR30">30</xref></sup> is computed using the local robot&#x02019;s end-effector speed for each trial to quantify motion smoothness. SAL reflects the participant&#x02019;s ability to execute fluid and controlled movements, which is crucial for precision and efficiency in robotic manipulation tasks. It is derived by computing the SAL of the frequency spectra of the speed profiles of the end-effector of the local arm during a trial. SAL is typically a negative metric when computed using speed profiles, and values closer to zero indicate smoother profiles.</p></sec><sec id="Sec14"><title>Electrodermal and cardiovascular measurements</title><p id="Par37"><bold>Galvanic skin response (GSR)</bold> is also known as skin conductance or electrodermal activity (EDA), and is measured using exosomatic methods that pass a small current, either AC or DC, through the skin to determine its resistance<sup><xref ref-type="bibr" rid="CR31">31</xref>,<xref ref-type="bibr" rid="CR32">32</xref></sup>. GSR is significantly influenced by eccrine sweat glands<sup><xref ref-type="bibr" rid="CR31">31</xref></sup>, which are regulated by the sympathetic nervous system. When a person is aroused, sweat gland activity increases, leading to higher skin conductance. These glands are linked to psychological responses and stimulus processing, unlike other glands primarily involved in temperature regulation<sup><xref ref-type="bibr" rid="CR32">32</xref></sup>.</p><p id="Par38">We used a Shimmer3 GSR+ device to record GSR data. This device uses reusable electrodes attached to two fingers on one hand to measure the electrical conductance. The GSR data were acquired at 10 Hz. A third-order low-pass filter with a cutoff frequency of 1Hz was applied to the GSR signal to remove motion artefacts<sup><xref ref-type="bibr" rid="CR33">33</xref></sup>. Since GSR signals vary significantly between individuals, we normalised each participant&#x02019;s data using mean normalisation<sup><xref ref-type="bibr" rid="CR34">34</xref></sup>.</p><p id="Par39">We use the <bold>average normalised GSR</bold> as a workload measure. This metric is calculated by subtracting the mean GSR value of each trial from the raw time series data for each participant and then averaging the result:<disp-formula id="Equ6"><label>6</label><alternatives><tex-math id="M35">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} \text {average GSR} = \frac{1}{N} \sum _{i=1}^{N} (\text {GSR}_i - \frac{1}{N} \sum _{i=1}^{N} \text {GSR}_i) , \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_82112_Article_Equ6.gif" position="anchor"/></alternatives></disp-formula>where <italic>N</italic> is the number of data samples in a trial.</p><p id="Par40"><bold>Cardiovascular response</bold> is expected to be significantly impacted by increasing workload<sup><xref ref-type="bibr" rid="CR35">35</xref></sup>. Elevated workload typically results in heightened sympathetic activity and diminished parasympathetic activity<sup><xref ref-type="bibr" rid="CR36">36</xref></sup>. Under increased cognitive load, the sympathetic nervous system response is expected to lead to increased heart rate and decreased heart rate variability.</p><p id="Par41">Shimmer3 GSR+ device was also used to measure Photoplethysmography (PPG) data by attaching an optical pulse probe to a finger. The AC component of the PPG signal indicates the heart&#x02019;s rhythmic blood volume changes. PPG also efficiently measures Pulse Rate Variability (PRV) based on the time intervals between adjacent cardiac cycles<sup><xref ref-type="bibr" rid="CR37">37</xref>,<xref ref-type="bibr" rid="CR38">38</xref></sup>. The PPG data were acquired at 10 Hz. We extracted the following metrics using the PPG data:</p><p id="Par42"><bold>Pulse Rate:</bold> Pulse rate is the rate at which the arteries expand and contract in response to heartbeats due to blood volume changes in the microvascular bed of tissue. It is closely related to the heart rate and reflects the same physiological process<sup><xref ref-type="bibr" rid="CR39">39</xref>,<xref ref-type="bibr" rid="CR40">40</xref></sup>. The pulse rate is computed as the ratio of 60 seconds to the time interval between consecutive PPG peaks. The average pulse rate is computed as the mean of these individual pulse rate values over a given period:<disp-formula id="Equ7"><label>7</label><alternatives><tex-math id="M36">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} PR = \frac{1}{P-1} \sum _{i=1}^{P-1} \left( \frac{60}{\Delta t_i} \right) , \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_82112_Article_Equ7.gif" position="anchor"/></alternatives></disp-formula>Where <italic>P</italic> is the number of PPG peaks in a trial, and <inline-formula id="IEq30"><alternatives><tex-math id="M37">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\Delta t_i$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq30.gif"/></alternatives></inline-formula> is the time duration between two consecutive peaks in a trial, also known as the interbeat interval (IBI).</p><p id="Par43"><bold>Pulse Rate Variability:</bold> Closely related to heart rate variability, pulse rate variability refers to the variation in time intervals between consecutive beats as measured by changes in blood volume. This metric indicates the heart&#x02019;s adaptability and the overall balance of the autonomic nervous system. It is obtained by measuring the time intervals between consecutive peaks in PPG data during a trial. In this study, the average pulse rate variability is computed as:<disp-formula id="Equ8"><label>8</label><alternatives><tex-math id="M38">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} PRV = \frac{1}{P-1} \sum _{i=1}^{P-1} \Delta t_{i} , \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_82112_Article_Equ8.gif" position="anchor"/></alternatives></disp-formula>Where <italic>P</italic> is the number of PPG peaks in a trial, and <inline-formula id="IEq31"><alternatives><tex-math id="M39">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\Delta t_i$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq31.gif"/></alternatives></inline-formula> is the time duration between two consecutive peaks in a trial.</p></sec></sec><sec id="Sec15"><title>Brain activity measurements</title><p id="Par44">The assessment of brain activity has become increasingly popular as a physiological measure of workload, based on the idea that task-related brain activity consumes specific mental resources, correlating with the cognitive complexity of a task<sup><xref ref-type="bibr" rid="CR41">41</xref></sup>. Functional near-infrared spectroscopy (fNIRS) offers portable, movement-friendly imaging that effectively measures workload through variations in brain hemoglobin levels in response to varying working memory loads<sup><xref ref-type="bibr" rid="CR23">23</xref></sup>. Unlike fMRI and Positron Emission Tomography (PET), which rely on neurovascular coupling<sup><xref ref-type="bibr" rid="CR42">42</xref>,<xref ref-type="bibr" rid="CR43">43</xref></sup>, or EEG and Magnetoencephalography (MEG), which are based on electromagnetic brain activity<sup><xref ref-type="bibr" rid="CR44">44</xref>,<xref ref-type="bibr" rid="CR45">45</xref></sup>, fNIRS offers robust monitoring of cortical hemodynamics with minimal sensitivity to bodily movements<sup><xref ref-type="bibr" rid="CR46">46</xref></sup>. fNIRS is thus beneficial in investigating workplace tasks, providing insights into areas for improvement through enhanced interfaces or systematic assistance.</p><p id="Par45">In this study, we measure brain activity using the Octamon wireless fNIRS system (Artinis Medical Systems, Elst) and the Oxysoft software (version 3.2.72). The fNIRS probe covers the frontal cortex (over the forehead) where mental workload is typically observed, as shown in Fig.&#x000a0;<xref rid="Fig5" ref-type="fig">5</xref>. The octamon has 8 infrared light emitters and 2 detectors, creating 8 distinct data channels, including two short-separation channels (S4 and S6 as shown in Fig.&#x000a0;<xref rid="Fig5" ref-type="fig">5</xref>), which were all acquired at 10 Hz. The distance between emitters and detectors in data channels is 35 mm and measures activity in the brain. The short-separation channels (S4 and S6), at 10 mm, measure blood oxygenation in the skin, in order to subtract this data as noise. fNIRS emitters use 760 nm and 850 nm wavelengths, which reflect oxygenated and deoxygenated hemoglobin, respectively:<list list-type="bullet"><list-item><p id="Par46"><bold>Oxygenated Hemoglobin (HbO)</bold> is the amount of blood cells containing oxygen, indicating activation in the brain.</p></list-item><list-item><p id="Par47"><bold>Deoxygenated Hemoglobin (HbR)</bold> is the amount of cells where oxygen has been used. HbR should change inversely to HbO in order for HbO changes to be considered as workload changes.</p></list-item></list><fig id="Fig5"><label>Fig. 5</label><caption><p>Diagram showing the location of the emitters (S1-S8) and receivers (D1 and D2) in the fNIRS probe. HbO and HbR are calculated for each channel, which is made up of the eight emitter-receiver pairs. S4 and S6 are short-separation channels.</p></caption><graphic xlink:href="41598_2024_82112_Fig5_HTML" id="MO10"/></fig></p><p id="Par48">Brain activation leads to an increase in HbO in order to function, and in tandem this should lead to a decrease in HbR. Therefore, only channels with a negatively correlated haemoglobin species (an increased HbO and decreased HbR at <inline-formula id="IEq32"><alternatives><tex-math id="M40">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$q &#x0003c; 0.5$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq32.gif"/></alternatives></inline-formula>) are considered significant<sup><xref ref-type="bibr" rid="CR47">47</xref></sup>. An increase or decrease in both HbO and HbR at the same time, or a change in only one of the variables is considered a noise artefact.</p><p id="Par49">The analysis of the fNIRS data was carried out using the NIRS Toolbox<sup><xref ref-type="bibr" rid="CR48">48</xref></sup>. Initially, the raw data were downsampled to a frequency of 4Hz to improve the signal-to-noise ratio<sup><xref ref-type="bibr" rid="CR49">49</xref></sup>. The raw signals were then converted into optical density changes and subsequently into measures of oxygenated (HbO) and deoxygenated hemoglobin (HbR) using the Beer-Lambert law, incorporating a partial path length correction factor of 0.1 for both wavelengths<sup><xref ref-type="bibr" rid="CR50">50</xref></sup>. To mitigate the impact of motion artifacts, the Temporal Derivative Distribution Repair (TDDR) method was applied. Additionally, a short-separation channel was included as a regressor in the General Linear Model (GLM) to correct for physiological noise<sup><xref ref-type="bibr" rid="CR51">51</xref></sup>. Beta coefficients, indicative of activations, were determined using the autoregressive iteratively reweighted least squares method<sup><xref ref-type="bibr" rid="CR52">52</xref></sup>. Finally, the hemodynamic response was modeled using the BoxCar function.</p></sec></sec><sec id="Sec16"><title>Results</title><sec id="Sec17"><title>Subjective perceptions of workload</title><p id="Par50">Figure&#x000a0;<xref rid="Fig6" ref-type="fig">6</xref> shows the subjective workload ratings. These Likert scale data were analysed using non-parametric tests due to the ordinal nature of the responses. Specifically, the Wilcoxon signed-rank paired test was used for comparisons between T and NT, and the Kruskal&#x02013;Wallis was used for discovering main effects of the n-back condition. In case of main effects, Dwass-Steel-Crichtlow-Fligner (DSCF) non-parametric post-hoc tests were used for pairwise comparisons between n-back levels. As DSCF is designed to control the familywise error rate inherently, we do not perform additional alpha correction for multiple comparisons.<fig id="Fig6"><label>Fig. 6</label><caption><p>Subjective workload ratings across conditions. (<bold>a</bold>) Perceived cognitive workload (<bold>b</bold>) perceived physical workload (<bold>c</bold>) perceived overall workload. Asterisks (*) over bars indicate statistically significant differences with *<inline-formula id="IEq33"><alternatives><tex-math id="M41">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$p&#x0003c;0.05$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq33.gif"/></alternatives></inline-formula>, **<inline-formula id="IEq34"><alternatives><tex-math id="M42">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$p&#x0003c;0.01$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq34.gif"/></alternatives></inline-formula>, ***<inline-formula id="IEq35"><alternatives><tex-math id="M43">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$p&#x0003c;0.001$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq35.gif"/></alternatives></inline-formula>. Error bars use 95% CI.</p></caption><graphic xlink:href="41598_2024_82112_Fig6_HTML" id="MO4"/></fig></p><sec id="Sec18"><title>Perceived cognitive workload</title><p id="Par51">A Wilcoxon signed-rank test revealed a significant difference in perceived cognitive workload between the T and NT conditions (<inline-formula id="IEq36"><alternatives><tex-math id="M44">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$z = -8.263, p &#x0003c; 0.001$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq36.gif"/></alternatives></inline-formula>). The Ranks table showed that there were 13 negative ranks (<inline-formula id="IEq37"><alternatives><tex-math id="M45">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$N = 13, {\text {Mean Rank}} = 28.00, \text {Sum of Ranks} = 364.00$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq37.gif"/></alternatives></inline-formula>), 101 positive ranks (<inline-formula id="IEq38"><alternatives><tex-math id="M46">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$N = 101, {\text {Mean Rank}} = 61.30, \text {Sum of Ranks} = 6191.00$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq38.gif"/></alternatives></inline-formula>), and 26 ties (<inline-formula id="IEq39"><alternatives><tex-math id="M47">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$N = 26$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq39.gif"/></alternatives></inline-formula>), demonstrating that the perceived cognitive workload ratings were generally higher under the teleoperation condition compared to the no teleoperation condition. This suggests that participants perceived teleoperation as imposing additional cognitive demands rather than solely physical ones.</p><p id="Par52">Kruskal&#x02013;Wallis tests revealed significant differences in perceived cognitive workload between the different levels of the n-back task under NT (<inline-formula id="IEq40"><alternatives><tex-math id="M48">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\chi ^2(3) = 107, p &#x0003c; 0.001, \varepsilon ^2 = 0.750$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq40.gif"/></alternatives></inline-formula>) and under T (<inline-formula id="IEq41"><alternatives><tex-math id="M49">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\chi ^2(3) = 80.0, p &#x0003c; 0.001, \varepsilon ^2 = 0.560$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq41.gif"/></alternatives></inline-formula>). Pairwise post-hoc comparisons indicated significant differences between all levels of the n-back task as summarised in Table&#x000a0;<xref rid="Tab2" ref-type="table">2</xref>, with lower n-back levels consistently corresponding to lower perceived cognitive workload.</p><p id="Par53">These results confirm that the n-back task was able to manipulate the perceived cognitive workload as expected under the NT condition and observed significant differences were maintained whilst performing teleoperation in T.<table-wrap id="Tab2"><label>Table 2</label><caption><p>Pairwise comparisons of perceived cognitive workload between n-back conditions under NT and T.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left" rowspan="2"/><th align="left" rowspan="2"/><th align="left" colspan="2">NT Condition</th><th align="left" colspan="2">T Condition</th></tr><tr><th align="left">W Value</th><th align="left"><italic>p</italic> value</th><th align="left">W Value</th><th align="left"><italic>p</italic> value</th></tr></thead><tbody><tr><td align="left" rowspan="3">0-back vs.</td><td align="left">1-back</td><td align="left">7.04</td><td align="left">&#x0003c; 0.001</td><td align="left">6.20</td><td align="left">&#x0003c; 0.001</td></tr><tr><td align="left">2-back</td><td align="left">10.16</td><td align="left">&#x0003c; 0.001</td><td align="left">8.95</td><td align="left">&#x0003c; 0.001</td></tr><tr><td align="left">3-back</td><td align="left">10.65</td><td align="left">&#x0003c; 0.001</td><td align="left">9.96</td><td align="left">&#x0003c; 0.001</td></tr><tr><td align="left" rowspan="2">1-back vs.</td><td align="left">2-back</td><td align="left">7.58</td><td align="left">&#x0003c; 0.001</td><td align="left">4.36</td><td align="left">0.011</td></tr><tr><td align="left">3-back</td><td align="left">9.75</td><td align="left">&#x0003c; 0.001</td><td align="left">8.11</td><td align="left">&#x0003c; 0.001</td></tr><tr><td align="left">2-back vs.</td><td align="left">3-back</td><td align="left">7.62</td><td align="left">&#x0003c; 0.001</td><td align="left">5.17</td><td align="left">0.001</td></tr></tbody></table></table-wrap></p></sec><sec id="Sec19"><title>Perceived physical workload</title><p id="Par54">A Wilcoxon signed-rank test revealed a significant difference in perceived physical workload between the T and NT conditions (<inline-formula id="IEq42"><alternatives><tex-math id="M50">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$z = -9.988, p &#x0003c; 0.001$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq42.gif"/></alternatives></inline-formula>). The Ranks table showed that there were 0 negative ranks (<inline-formula id="IEq43"><alternatives><tex-math id="M51">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$N = 0$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq43.gif"/></alternatives></inline-formula>), indicating that no perceived physical workload ratings under the teleoperation condition were lower than the perceived physical workload ratings under the no teleoperation condition. However, there were 132 positive ranks (<inline-formula id="IEq44"><alternatives><tex-math id="M52">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$N = 132, {\text {Mean Rank}} = 66.50, \text {Sum of Ranks} = 8778.00$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq44.gif"/></alternatives></inline-formula>) and 8 ties (<inline-formula id="IEq45"><alternatives><tex-math id="M53">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$N = 8$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq45.gif"/></alternatives></inline-formula>), indicating that perceived physical workload ratings were generally higher under the teleoperation condition compared to the no teleoperation condition. This suggests that physical workload was significantly greater during teleoperation, as expected</p><p id="Par55">The Kruskal&#x02013;Wallis test revealed no significant differences in perceived physical workload under NT across the different levels of the n-back task (<inline-formula id="IEq46"><alternatives><tex-math id="M54">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\chi ^2(3) = 0.590, p = 0.899, \varepsilon ^2 = 0.0004$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq46.gif"/></alternatives></inline-formula>). This indicates that participants did not experience significantly different levels of physical workload during n-back tasks alone.</p><p id="Par56">On the other hand, under T, the Kruskal&#x02013;Wallis test revealed significant differences in physical workload across the different levels of the n-back task (<inline-formula id="IEq47"><alternatives><tex-math id="M55">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\chi ^2(3) = 11.2, p = 0.011, \varepsilon ^2 = 0.007$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq47.gif"/></alternatives></inline-formula>). Pairwise comparisons indicated that physical workload was perceived to be significantly lower in the 0-back condition compared to the 3-back condition (<inline-formula id="IEq48"><alternatives><tex-math id="M56">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$W = 4.15, p = 0.018$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq48.gif"/></alternatives></inline-formula>), but other comparisons were not significant. The results are presented in Table&#x000a0;<xref rid="Tab3" ref-type="table">3</xref>.<table-wrap id="Tab3"><label>Table 3</label><caption><p>Pairwise comparisons of perceived physical workload between n-back conditions under NT and T.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left" rowspan="2"/><th align="left" rowspan="2"/><th align="left" colspan="2">NT Condition</th><th align="left" colspan="2">T Condition</th></tr><tr><th align="left">W Value</th><th align="left"><italic>p</italic> value</th><th align="left">W Value</th><th align="left"><italic>p</italic> value</th></tr></thead><tbody><tr><td align="left" rowspan="3">0-back vs.</td><td align="left">1-back</td><td align="left">-0.238</td><td align="left">0.998</td><td align="left">1.40</td><td align="left">0.755</td></tr><tr><td align="left">2-back</td><td align="left">0.618</td><td align="left">0.972</td><td align="left">3.33</td><td align="left">0.086</td></tr><tr><td align="left">3-back</td><td align="left">0.708</td><td align="left">0.959</td><td align="left">4.15</td><td align="left">0.018</td></tr><tr><td align="left" rowspan="2">1-back vs.</td><td align="left">2-back</td><td align="left">0.784</td><td align="left">0.945</td><td align="left">1.78</td><td align="left">0.589</td></tr><tr><td align="left">3-back</td><td align="left">0.888</td><td align="left">0.923</td><td align="left">2.97</td><td align="left">0.152</td></tr><tr><td align="left">2-back vs.</td><td align="left">3-back</td><td align="left">0.153</td><td align="left">1.000</td><td align="left">1.63</td><td align="left">0.657</td></tr></tbody></table></table-wrap></p></sec><sec id="Sec20"><title>Perceived overall workload</title><p id="Par57">A Wilcoxon signed-rank test revealed a significant difference in perceived overall workload between the T and NT conditions (<inline-formula id="IEq49"><alternatives><tex-math id="M57">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$z = -9.372, p &#x0003c; 0.001$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq49.gif"/></alternatives></inline-formula>). The Ranks table showed that there were 6 negative ranks (<inline-formula id="IEq50"><alternatives><tex-math id="M58">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$N = 6, {\text {Mean Rank}} = 27.50, \text {Sum of Ranks} = 165.00$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq50.gif"/></alternatives></inline-formula>), 120 positive ranks (<inline-formula id="IEq51"><alternatives><tex-math id="M59">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$N = 120, {\text {Mean Rank}} = 65.30, \text {Sum of Ranks} = 7836.00$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq51.gif"/></alternatives></inline-formula>), and 14 ties (<inline-formula id="IEq52"><alternatives><tex-math id="M60">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$N = 14$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq52.gif"/></alternatives></inline-formula>), demonstrating that the perceived overall workload ratings were generally higher under the teleoperation condition compared to the no teleoperation condition. This suggests that the overall workload was significantly higher while performing teleoperation.</p><p id="Par58">The Kruskal&#x02013;Wallis test revealed significant differences in overall workload across the different levels of the n-back task under NT (<inline-formula id="IEq53"><alternatives><tex-math id="M61">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\chi ^2(3) = 85.2, p &#x0003c; 0.001, \varepsilon ^2 = 0.596$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq53.gif"/></alternatives></inline-formula>) and T (<inline-formula id="IEq54"><alternatives><tex-math id="M62">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\chi ^2(3) = 53.1, p &#x0003c; 0.001, \varepsilon ^2 = 0.372).$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq54.gif"/></alternatives></inline-formula> Pairwise comparisons indicated significant differences between all levels of the n-back task, except between 1-back and 2-back in T, as summarised in Table&#x000a0;<xref rid="Tab4" ref-type="table">4</xref>. Lower n-back levels consistently corresponded to lower perceived cognitive workload. These findings suggest that perceptions of overall workload increases consistently with the difficulty of the n-back tasks. This is a trend that primarily echoes the results of the cognitive workload component rather than the experienced physical workload.<table-wrap id="Tab4"><label>Table 4</label><caption><p>Pairwise comparisons of perceived overall workload between n-back conditions under NT and T.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left" rowspan="2"/><th align="left" rowspan="2"/><th align="left" colspan="2">NT condition</th><th align="left" colspan="2">T condition</th></tr><tr><th align="left">W Value</th><th align="left"><italic>p</italic> value</th><th align="left">W Value</th><th align="left"><italic>p</italic> value</th></tr></thead><tbody><tr><td align="left" rowspan="3">0-back vs.</td><td align="left">1-back</td><td align="left">5.54</td><td align="left">&#x0003c; 0.001</td><td align="left">4.34</td><td align="left">0.011</td></tr><tr><td align="left">2-back</td><td align="left">8.31</td><td align="left">&#x0003c; 0.001</td><td align="left">6.87</td><td align="left">&#x0003c; 0.001</td></tr><tr><td align="left">3-back</td><td align="left">10.23</td><td align="left">&#x0003c; 0.001</td><td align="left">8.85</td><td align="left">&#x0003c; 0.001</td></tr><tr><td align="left" rowspan="2">1-back vs.</td><td align="left">2-back</td><td align="left">5.38</td><td align="left">&#x0003c; 0.001</td><td align="left">3.42</td><td align="left">0.074</td></tr><tr><td align="left">3-back</td><td align="left">9.12</td><td align="left">&#x0003c; 0.001</td><td align="left">6.50</td><td align="left">&#x0003c; 0.001</td></tr><tr><td align="left">2-back vs.</td><td align="left">3-back</td><td align="left">7.01</td><td align="left">&#x0003c; 0.001</td><td align="left">3.93</td><td align="left">0.028</td></tr></tbody></table></table-wrap></p></sec></sec><sec id="Sec21"><title>N-back task performance</title><p id="Par59">Figure&#x000a0;<xref rid="Fig7" ref-type="fig">7</xref> shows the mean accuracy of the n-back task for all conditions, which is the percentage of correctly identified responses. A Shapiro-Wilks test revealed that the data were not normally distributed <inline-formula id="IEq55"><alternatives><tex-math id="M63">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(W = 0.683,p &#x0003c;0.001),$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq55.gif"/></alternatives></inline-formula> so the n-back task performance was analysed using non-parametric tests. Specifically, the Wilcoxon signed-rank paired test was used for comparisons between T and NT, and the Kruskal&#x02013;Wallis was used for discovering main effects of the n-back condition. In case of main effects, DSCF was used for pairwise comparisons between n-back levels.<fig id="Fig7"><label>Fig. 7</label><caption><p>Accuracy of n-back task under T and NT conditions for each n-back level. Asterisks between bars indicate statistically significant differences between conditions with *<inline-formula id="IEq56"><alternatives><tex-math id="M64">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$p&#x0003c;0.05$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq56.gif"/></alternatives></inline-formula>, ***<inline-formula id="IEq57"><alternatives><tex-math id="M65">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$p&#x0003c;0.001$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq57.gif"/></alternatives></inline-formula>. Error bars indicate the standard error of the mean (SEM).</p></caption><graphic xlink:href="41598_2024_82112_Fig7_HTML" id="MO5"/></fig></p><p id="Par60">A Wilcoxon signed-rank test revealed a significant difference in average accuracy between the NT and T conditions (<inline-formula id="IEq58"><alternatives><tex-math id="M66">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$z = -4.394, p &#x0003c; 0.001$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq58.gif"/></alternatives></inline-formula>). The Ranks table showed that there were 27 negative ranks (<inline-formula id="IEq59"><alternatives><tex-math id="M67">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$N = 27, {\text {Mean Rank}} = 37.57, \text {Sum of Ranks} = 1014.50$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq59.gif"/></alternatives></inline-formula>), 65 positive ranks (<inline-formula id="IEq60"><alternatives><tex-math id="M68">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$N = 65, {\text {Mean Rank}} = 50.21, \text {Sum of Ranks} = 3263.50$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq60.gif"/></alternatives></inline-formula>), and 13 ties (<inline-formula id="IEq61"><alternatives><tex-math id="M69">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$N = 13$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq61.gif"/></alternatives></inline-formula>), demonstrating that n-back performance was generally higher under the no teleoperation condition compared to the teleoperation condition. The results indicates that performing a teleoperation task simultaneously as the n-back task reduced the n-back performance.</p><p id="Par61">Consistent with findings in the literature for n-back tasks performed without additional stimuli<sup><xref ref-type="bibr" rid="CR53">53</xref>,<xref ref-type="bibr" rid="CR54">54</xref></sup>, Kruskal&#x02013;Wallis tests revealed significant differences in accuracy across the different levels of the n-back task under both NT (<inline-formula id="IEq62"><alternatives><tex-math id="M70">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\chi ^2(3) = 106, p &#x0003c; 0.001, \varepsilon ^2 = 0.763$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq62.gif"/></alternatives></inline-formula>) and T conditions (<inline-formula id="IEq63"><alternatives><tex-math id="M71">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\chi ^2(3) = 89.3, p &#x0003c; 0.001, \varepsilon ^2 = 0.642$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq63.gif"/></alternatives></inline-formula>).</p><p id="Par62">Pairwise comparisons showed that under NT, accuracy was significantly better in the 1-back condition compared to the 2-back (<inline-formula id="IEq64"><alternatives><tex-math id="M72">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$W = -8.04, p &#x0003c; 0.001$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq64.gif"/></alternatives></inline-formula>) and the 3-back (<inline-formula id="IEq65"><alternatives><tex-math id="M73">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$W = -8.17, p &#x0003c; 0.001$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq65.gif"/></alternatives></inline-formula>) conditions. Under T, accuracy was significantly higher in the 1-back condition compared to the 3-back condition (<inline-formula id="IEq66"><alternatives><tex-math id="M74">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$W = -5.57, p &#x0003c; 0.001$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq66.gif"/></alternatives></inline-formula>) and higher in the 2-back condition compared to the 3-back condition (<inline-formula id="IEq67"><alternatives><tex-math id="M75">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$W = -3.96, p = 0.026$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq67.gif"/></alternatives></inline-formula>).</p></sec><sec id="Sec22"><title>Teleoperation performance</title><p id="Par63">Several metrics are utilised to represent teleoperation performance, as detailed in &#x0201c;Section <xref rid="Sec11" ref-type="sec">Metrics</xref>&#x0201d;. Since robot performance data exist only in the T condition, analyses were conducted using one-way ANOVAs, followed by Tukey posthoc multiple comparison tests. ANOVA showed no significant differences in the number of ring touches or the ring contact time between the four n-back conditions. The mean of other performance measures are illustrated in Fig.&#x000a0;<xref rid="Fig8" ref-type="fig">8</xref>.<fig id="Fig8"><label>Fig. 8</label><caption><p>Robot performance metrics across the different workload conditions under T. (<bold>a</bold>) Average speed (<bold>b</bold>) Average power (<bold>c</bold>) Energy consumption (<bold>d</bold>) Average robot joint motion smoothness (spectral arc length<sup><xref ref-type="bibr" rid="CR30">30</xref></sup>). Asterisks (*) over bars indicate statistically significant differences between conditions with *<inline-formula id="IEq68"><alternatives><tex-math id="M76">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$p&#x0003c;0.05$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq68.gif"/></alternatives></inline-formula>, **<inline-formula id="IEq69"><alternatives><tex-math id="M77">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$p&#x0003c;0.01$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq69.gif"/></alternatives></inline-formula>. Error bars use 95% CI.</p></caption><graphic xlink:href="41598_2024_82112_Fig8_HTML" id="MO6"/></fig></p><p id="Par64"><bold>Average Speed of the End Effector</bold> ANOVA indicated significant differences in average speed of the remote robot&#x02019;s end effector (<inline-formula id="IEq70"><alternatives><tex-math id="M78">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F(3,416) = 2.761, p = 0.042$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq70.gif"/></alternatives></inline-formula>). Post-hoc analysis using the Tukey test demonstrated that the average speed in the 0-back condition (<inline-formula id="IEq71"><alternatives><tex-math id="M79">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$0.0357 \pm 0.0149 m/s$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq71.gif"/></alternatives></inline-formula>) was significantly higher than in the 3-back condition (<inline-formula id="IEq72"><alternatives><tex-math id="M80">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$0.0303 \pm 0.0149 m/s, p = 0.044$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq72.gif"/></alternatives></inline-formula>). No other comparisons between n-back conditions showed significant differences in average speed.</p><p id="Par65"><bold>Average Power Consumption</bold> ANOVA revealed significant differences between n-back conditions in average power consumption (<inline-formula id="IEq73"><alternatives><tex-math id="M81">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F(3,416) = 5.222, p = 0.002$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq73.gif"/></alternatives></inline-formula>). The Tukey post-hoc test indicated that the average power was significantly lower in the 2-back (<inline-formula id="IEq74"><alternatives><tex-math id="M82">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1.59 \pm 0.84 W, p = 0.041$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq74.gif"/></alternatives></inline-formula>) and 3-back conditions (<inline-formula id="IEq75"><alternatives><tex-math id="M83">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1.45 \pm 0.82 W, p = 0.001$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq75.gif"/></alternatives></inline-formula>) compared to the 0-back condition (<inline-formula id="IEq76"><alternatives><tex-math id="M84">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1.93 \pm 0.99 W$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq76.gif"/></alternatives></inline-formula>). There were no significant differences found in comparisons between other workload conditions.</p><p id="Par66"><bold>Total Energy Consumption</bold> ANOVA also showed significant differences in the total energy consumption between workload conditions (<inline-formula id="IEq77"><alternatives><tex-math id="M85">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F(3,416) = 3.622, p = 0.013$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq77.gif"/></alternatives></inline-formula>). Post-hoc Tukey tests revealed that energy consumed in the 0-back condition (<inline-formula id="IEq78"><alternatives><tex-math id="M86">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$64.79 \pm 42.51 J$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq78.gif"/></alternatives></inline-formula>) was significantly higher than in the 3-back condition (<inline-formula id="IEq79"><alternatives><tex-math id="M87">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$48.03 \pm 35.03 J, p = 0.009$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq79.gif"/></alternatives></inline-formula>). No significant differences in energy consumption were observed between the other workload conditions.</p><p id="Par67"><bold>Robot Motion Smoothness</bold> ANOVA for robot motion smoothness across different n-back conditions revealed no significant differences (<inline-formula id="IEq80"><alternatives><tex-math id="M88">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F(3,416) = 1.251, p = 0.291$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq80.gif"/></alternatives></inline-formula>).</p></sec><sec id="Sec23"><title>Electrodermal and cardiovascular measurements</title><p id="Par68">Galvanic skin response (GSR) and Photoplethysmography (PPG) data were recorded from 34 participants out of 35, as data recording failed for one individual. Mean normalised GSR, heart rate and heart rate variability are computed from the recorded data as mentioned in &#x0201c;Section&#x000a0;<xref rid="Sec14" ref-type="sec">Electrodermal and cardiovascular measurements</xref>&#x0201d;. Figure&#x000a0;<xref rid="Fig9" ref-type="fig">9</xref> illustrates the means and confidence intervals for these physiological variables for the teleoperation conditions across all levels of the n-back task.</p><sec id="Sec24"><title>Galvanic skin response (GSR)</title><p id="Par69">A two-way ANOVA revealed a significant main effect of the teleoperation condition on the mean-normalised GSR (<inline-formula id="IEq81"><alternatives><tex-math id="M89">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F(1, 800) = 3.993, p = 0.046$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq81.gif"/></alternatives></inline-formula>), with a very small effect size (partial <inline-formula id="IEq82"><alternatives><tex-math id="M90">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\eta ^2 = 0.005$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq82.gif"/></alternatives></inline-formula>). Specifically, GSR was higher in T, compared to NT. The main effect of the n-back conditions was not significant (<inline-formula id="IEq83"><alternatives><tex-math id="M91">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F(3, 800) = 1.148, p = 0.329,$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq83.gif"/></alternatives></inline-formula> partial <inline-formula id="IEq84"><alternatives><tex-math id="M92">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\eta ^2 = 0.004$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq84.gif"/></alternatives></inline-formula>). No interaction effects were found (<inline-formula id="IEq85"><alternatives><tex-math id="M93">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F(3, 800) = 1.484, p = 0.217$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq85.gif"/></alternatives></inline-formula>, partial <inline-formula id="IEq86"><alternatives><tex-math id="M94">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\eta ^2 = 0.006)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq86.gif"/></alternatives></inline-formula>.</p></sec><sec id="Sec25"><title>Pulse rate (PR)</title><p id="Par70">A two-way ANOVA revealed that the main effect of teleoperation was statistically significant (<inline-formula id="IEq87"><alternatives><tex-math id="M95">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F(1, 800) = 4.073, p = 0.044$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq87.gif"/></alternatives></inline-formula>, partial <inline-formula id="IEq88"><alternatives><tex-math id="M96">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\eta ^2 = 0.005$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq88.gif"/></alternatives></inline-formula>), suggesting that teleoperation has an effect on pulse rate, albeit with a small effect size. The main effect of the n-back condition on pulse rate was not significant (<inline-formula id="IEq89"><alternatives><tex-math id="M97">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F(3, 800) = 0.011, p = 0.998$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq89.gif"/></alternatives></inline-formula>, partial <inline-formula id="IEq90"><alternatives><tex-math id="M98">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\eta ^2 = 0.000$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq90.gif"/></alternatives></inline-formula>), suggesting that an increasing cognitive demand does not significantly influence pulse rate, although physical demand does. No significant interaction effects were found (<inline-formula id="IEq91"><alternatives><tex-math id="M99">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F(3, 800) = 0.063, p = 0.979$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq91.gif"/></alternatives></inline-formula>, partial <inline-formula id="IEq92"><alternatives><tex-math id="M100">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\eta ^2 = 0.000$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq92.gif"/></alternatives></inline-formula>).</p></sec><sec id="Sec26"><title>Pulse rate variability (PRV)</title><p id="Par71">A two-way ANOVA analysis revealed that neither the main effect of teleoperation (<inline-formula id="IEq93"><alternatives><tex-math id="M101">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F(1, 800) = 1.656, p = 0.199,$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq93.gif"/></alternatives></inline-formula> Partial <inline-formula id="IEq94"><alternatives><tex-math id="M102">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\eta ^2 = 0.002$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq94.gif"/></alternatives></inline-formula>) nor the main effect of the working memory conditions (<inline-formula id="IEq95"><alternatives><tex-math id="M103">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F(3, 800) = 0.090, p = 0.966,$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq95.gif"/></alternatives></inline-formula> Partial <inline-formula id="IEq96"><alternatives><tex-math id="M104">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\eta ^2 &#x0003c; .000$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq96.gif"/></alternatives></inline-formula>) on PRV were statistically significant. This suggests that neither teleoperation or working memory conditions alone impacted the PRV. No significant interaction effects were found <inline-formula id="IEq97"><alternatives><tex-math id="M105">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(F(3, 800) = 0.090, p = 0.965,$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq97.gif"/></alternatives></inline-formula> Partial <inline-formula id="IEq98"><alternatives><tex-math id="M106">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\eta ^2 = 0.000)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq98.gif"/></alternatives></inline-formula>.<fig id="Fig9"><label>Fig. 9</label><caption><p>GSR and PPG relationships between teleoperation and working memory conditions. (<bold>a</bold>) Mean-normalised GSR indicating skin conductance response (<bold>b</bold>) The PPG-derived pulse rate (PR) reflecting blood volume changes at the finger (<bold>c</bold>) The PPG-derived pulse rate variability (PRV) indicating the inter-beat interval. Asterisks (*) over bars indicate statistically significant differences with <inline-formula id="IEq99"><alternatives><tex-math id="M107">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$p&#x0003c;0.05$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq99.gif"/></alternatives></inline-formula>. Error bars use 95% CI.</p></caption><graphic xlink:href="41598_2024_82112_Fig9_HTML" id="MO7"/></fig></p></sec></sec><sec id="Sec27"><title>Brain activity measurements</title><p id="Par72">To analyse fNIRS data, we employed a General Linear Model (GLM) approach. This method allows for the subtraction of data from the short-distance channels and considers the shape of the fNIRS signal rather than its mean values. After performing the GLM analysis, we applied a mixed-effects model to each channel independently to assess the impact of each experimental condition as fixed effects, with participants treated as random effects. This model helps identify significant changes in oxyhemoglobin (HbO) and deoxyhemoglobin (HbR) levels, attributing these changes to the independent variables for each fNIRS channel. Shifts in blood oxygen levels show brain activation as an impact of mental workload. Specifically, an activation due to an increase in mental workload is characterised by an increase in HbO and a decrease in HbR. For multiple comparisons, we utilised the false discovery rate (FDR) correction, setting the significance threshold at 0.05 (<inline-formula id="IEq100"><alternatives><tex-math id="M108">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$q \le 0.05$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq100.gif"/></alternatives></inline-formula>) as per Benjamini and Hochberg&#x02019;s method<sup><xref ref-type="bibr" rid="CR55">55</xref></sup>. Finally, we conducted contrast analyses to evaluate differences between experimental conditions. For any significant differences found, we verified that the changes were present in opposite directions for both HbO and HbR to ensure that the observed changes were due to neural activation rather than artefacts, such as those caused by motion.</p><p id="Par73">We observed a significant HbR decrease in channel S5-D2, located over the left dorsolateral prefrontal cortex (DLPFC), in response to the teleoperation variable irrespective of the n-back condition (<inline-formula id="IEq101"><alternatives><tex-math id="M109">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$beta = 1.86, SE = 3.80, t = -7.09, q &#x0003c; 0.001, power = 0.96$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq101.gif"/></alternatives></inline-formula>). However, there was no corresponding significant increase in HbO. The mixed effects model identified a significant difference over channel S5-D2 between T and NT, while performing the 1-back task.</p><p id="Par74">As shown in Fig.&#x000a0;<xref rid="Fig10" ref-type="fig">10</xref>, we observed a significant increase in HbO levels (<inline-formula id="IEq102"><alternatives><tex-math id="M110">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$beta = 3.10, SE = 0.99, t = 3.10, q = 0.012, power = 0.90$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq102.gif"/></alternatives></inline-formula>) and a significant decrease in HbR levels (<inline-formula id="IEq103"><alternatives><tex-math id="M111">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$beta = -4.60, SE = 0.93, t-statistic = -4.90, q &#x0003c; 0.001, power = 0.96$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq103.gif"/></alternatives></inline-formula>). We also observed a significant increase in HbO in channel S8-D2, which is also over the left DLPFC, in the 0-back task under T condition compared to NT (<inline-formula id="IEq104"><alternatives><tex-math id="M112">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$beta = 6.39, SE = 2.12, t = 3.00, q = 0.035, power = 0.42$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq104.gif"/></alternatives></inline-formula>). However, contrary to normal expectations, this increase in HbO was not accompanied by a corresponding decrease in HbR, meaning that it cannot be confirmed as significant.</p><p id="Par75">The mixed effects model did not identify a consistent significant effect of n-back conditions on brain activity. Under the 1-back condition, we observe a significant decrease in HbR in S8-D2 <inline-formula id="IEq105"><alternatives><tex-math id="M113">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(beta = -1.62, SE = 0.47,t = -3.45, q = 0.23, power = 0.76).$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq105.gif"/></alternatives></inline-formula> Similarly, under the 3-back condition, a significant decrease in HbR was observed in S8-D2 (<inline-formula id="IEq106"><alternatives><tex-math id="M114">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$beta = -1.98, SE = 0.47,t = -4.21, q = 0.02, power = 0.76$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq106.gif"/></alternatives></inline-formula>). However, neither of these were associated with a significant in HbO regardless of whether participants were performing teleoperation or not.</p><p id="Par76">Under NT, comparing the 1-back task to the 0-back task, our analysis found a significant decrease in HbO (<inline-formula id="IEq107"><alternatives><tex-math id="M115">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$beta = -5.50, SE = 0.99, t = -5.51, q &#x0003c; 0.001, power = 0.89$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq107.gif"/></alternatives></inline-formula>) and a significant increase in HbR (<inline-formula id="IEq108"><alternatives><tex-math id="M116">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$beta = 4.53, SE = 0.93, t = 4.84, q &#x0003c; 0.001, power = 0.95$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq108.gif"/></alternatives></inline-formula>) in the left DLPFC, this time in channel S5-D2. We note here that this response is contrary to what is normally expected. More in line with what is expected, there was a significant increase in HbO <inline-formula id="IEq109"><alternatives><tex-math id="M117">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(beta = 4.13, SE = 0.99, t = 4.16, q &#x0003c; 0.001, power = 0.90)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq109.gif"/></alternatives></inline-formula> and a decrease in HbR (<inline-formula id="IEq110"><alternatives><tex-math id="M118">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$beta = -2.51, SE = 0.93, t = -2.69, q = 0.04, power = 0.96$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq110.gif"/></alternatives></inline-formula>) in the same channel, when comparing the 2-back task to the 1-back task. Similarly, we observed a significant increase in HbO (<inline-formula id="IEq111"><alternatives><tex-math id="M119">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$beta = 5.13, SE = 0.99, t = 5.15, q &#x0003c; 0.001, power = 0.90$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq111.gif"/></alternatives></inline-formula>) and a decrease in HbR (<inline-formula id="IEq112"><alternatives><tex-math id="M120">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$beta = -3.56, SE = 0.93, t = -3.80, q &#x0003c; 0.001, power = 0.95$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq112.gif"/></alternatives></inline-formula>) in the S5-D2 during the 3-back task in contrast to the 1-back task.</p><p id="Par77">Under T, the mixed effects model did not find the same significant differences. The only significant difference found was between the 0-back and 1-back conditions: there was a noticeable increase in HbO (<inline-formula id="IEq113"><alternatives><tex-math id="M121">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$beta = 2.50, SE = 0.99, t = 2.51, q = 0.007, power = 0.90$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_82112_Article_IEq113.gif"/></alternatives></inline-formula>); however, there was no corresponding decrease in HbR, indicating a potential noise. This implies that the significant differences observable by fNIRS performing different n-back tasks alone were no longer observable for the workload induced by the teleoperation task.<fig id="Fig10"><label>Fig. 10</label><caption><p>Results of contrast analysis from fNIRS data. Solid bold lines indicate significant channels (source-detector pairs) where differences in HbO and HbR concentrations were detected. Dashed lines are not significant. Results are only shown if HbO and HbR exhibit significant changes in the expected opposite directions. Instances where only one of these measures changes are considered noise artifacts. The left panel shows differences in NT across different tasks: (<bold>a</bold>)&#x000a0;1-back&#x02013;0-back, (<bold>b</bold>)&#x000a0;2-back&#x02013;1-back, (<bold>c</bold>)&#x000a0;3-back&#x02013;1-back. (<bold>d</bold>) presents significant findings from the 1-back task, comparing T vs NT. Significance in contrasts is represented through a colour scale reflecting t-statistics, with the intensity of red and blue colours indicating the magnitude of HbO and HbR changes, respectively. Red and blue respectively represent positive and negative t-statistics values.</p></caption><graphic xlink:href="41598_2024_82112_Fig10_HTML" id="MO8"/></fig></p></sec></sec><sec id="Sec28"><title>Discussion</title><p id="Par78">This study evaluated the effectiveness of various metrics in assessing workload as a combination of physical and cognitive demands during robotic teleoperation tasks. These metrics included teleoperation performance, physiological data, and subjective workload scores. Notably, the number of ring touches and the error duration did not vary significantly across conditions, suggesting that participants may have adapted their strategies to manage workload changes while maintaining accuracy in avoiding ring-wire contact. In the rest of this section, we discuss the results and highlighting key findings, study limitations, and directions for future work.</p><sec id="Sec29"><title>How workload was experienced during teleoperation</title><p id="Par79">Performance measures and subjective ratings confirmed that workload was successfully manipulated by the primary teleoperation task and the secondary n-back task. Comparative analysis between Teleoperation (T) and No-Teleoperation (NT) conditions revealed that teleoperation adds a layer of workload, reducing n-back task accuracy while increasing perceived cognitive, physical, and overall workload. In NT, participants performed better on lower-complexity n-back tasks (1-back) compared to higher complexity ones (3-back). This performance difference persisted during teleoperation in the T condition, consistent with previous studies using the n-back task<sup><xref ref-type="bibr" rid="CR53">53</xref>,<xref ref-type="bibr" rid="CR54">54</xref></sup>.</p><p id="Par80">Subjective workload perceptions varied significantly across cognitive, physical, and overall workload variables under the teleoperation and n-back conditions. Perceived cognitive workload increased with n-back task difficulty, and these effects were amplified under teleoperation, indicating an extra cognitive load beyond the n-back task alone. Perceived physical workload was also significantly higher in T, compared to NT, particularly in the most challenging n-back condition (3-back), suggesting that physical demands are heightened when cognitive workload is high. This perhaps indicates that physical workload during teleoperation is exacerbated by high cognitive workload. Overall workload trends were influenced by both cognitive and physical workload components, indicating that participants&#x02019; general workload experience during teleoperation is not determined solely by one factor.</p><p id="Par81">These findings highlight that secondary task complexity and the existence of teleoperation significantly affect the perceived workload. The comparison between tasks done with and without teleoperation underscores the extra cognitive and physical effort required for teleoperation, emphasising the importance of understanding the impact of secondary tasks on operators.</p></sec><sec id="Sec30"><title>Measuring workload during teleoperation for dynamic task demand</title><p id="Par82">While subjective workload scores and task performance varied with n-back task difficulty during teleoperation, objective physiological measures did not show discernible differences across these levels. GSR and PR variables significantly differed between T and NT conditions, yet remained unaffected by different cognitive workload levels imposed by the n-back tasks. While physiological measures like GSR and PR indicated significant responses to teleoperation, the relationship between cognitive workload and physiological responses does not straightforwardly correlate with cognitive demands as might be intuitively expected.</p><p id="Par83">This suggests that physiological stress responses, as reflected in GSR and PR, are more closely tied to the demands of the teleoperation task itself rather than the cognitive complexity of working memory tasks. This aligns with prior findings, which suggest that such variables, along with breathing rate, are better indicative of accumulated fatigue over time<sup><xref ref-type="bibr" rid="CR56">56</xref></sup> rather than cognitive workload fluctuations within a task.</p><p id="Par84">fNIRS was able to detect differences between n-back tasks in NT, however these differences were not observable during the high-workload primary teleoperation task in T. The analysis showed a clear pattern of brain activity in response to increasing mental workload from 0-back to 3-back tasks in NT, but not in T. Notably, moving from 0-back to 1-back tasks resulted in a decrease in HbO and an increase in HbR (the opposite to what is normally expected), indicating a significantly lower level of neural response to the 1-back task. The unexpected initial decrease in neural response from 0-back to 1-back might suggest that the 0-back condition engages participants differently, possibly due to its demand for continuous response (i.e., saying no to every stimulus) rather than a decisive response to stimuli. Anecdotally, we have found it hard in our past work to make sure participants do not mind-wander when doing near-zero effort repetitive tasks. This could lead to increased cognitive workload levels during 0-back, which then reduces when participants are engaged in a low workload 1-back task. As the tasks became more challenging (from 1-back to 3-back), the expected increases in HbO and decreases in HbR were observed, reflecting increased neural engagement and cognitive effort.</p><p id="Par85">When comparing T and NT, only the 1-back task showed a significant increase in HbO and a decrease in HbR during teleoperation. This suggests that teleoperation introduces an additional layer of workload or requires a different cognitive strategy, as evidenced by the distinct neural activation patterns. Another explanation for this outcome could be that 1-back task is a balance between a task which is sufficiently engaging cognitively, but not overly demanding. This moderate level of difficulty, combined with teleoperation, might be enough to see a significant increase in workload. However, the same significant difference was not observed between T and NT for other levels of n-back task, implying again that fNIRS may not be sufficiently sensitive to distinguish already high-levels of cognitive workload.</p><p id="Par86">These findings are relevant for ongoing research on using physiological data to adapt task demand in human-robot interaction. The lack of objective physiological measure differences between 1-back, 2-back, and 3-back conditions during teleoperation could be attributed to several factors. One possibility is the redistribution of cognitive resources, where individuals allocate cognitive capabilities in a way that task difficulty differences do not alter their measured cognitive workload. Another possibility is that fNIRS may not have the necessary sensitivity to detect subtle variations in cognitive workload during high workload tasks like teleoperation. Furthermore, teleoperation involves physical movements, which can introduce motion artefacts into fNIRS data, affecting brain signal quality and making it challenging to accurately measure brain activity related to teleoperation. Therefore, considering the complexity of the observed neural responses, the potential for motion artifacts inherent in teleoperation tasks, and the limitations in sensitivity to discrete variations in cognitive workload, our analysis might suggest that while fNIRS may provide useful insights in certain contexts, it may not be ideal for measuring nuanced workload variations in teleoperation.</p></sec><sec id="Sec31"><title>Implications for teleoperation and human-machine interface</title><p id="Par87">Increased cognitive workload negatively impacted teleoperation effectiveness across several dimensions, including remote end-effector speed, power usage, and energy expenditure, while robot motion smoothness remained largely unaffected.</p><p id="Par88">Significant differences in performance indicators, particularly between the least and most demanding cognitive conditions, underscore how elevated cognitive demands compromise teleoperation. Operators facing higher workload levels may prioritise precision over speed to reduce errors, a conservative strategy often observed in various domains under increased cognitive demands. Significant differences in power and energy consumption, with lower values in higher n-back conditions, suggest that operators adopt slower, more efficient maneuvers when under cognitive strain, further indicating a cautious approach. The consistency in robot motion smoothness across cognitive workload levels may reflect either resilience in basic motor skills required for teleoperation, or a limitation in the sensitivity of smoothness measures used in the study.</p><p id="Par89">Our findings suggest that a combination of subjective reports and teleoperation performance indicators offers the most robust tools for measuring workload in teleoperation. These methods provide insights into both the operator&#x02019;s subjective experience and the challenges faced during the task. These insights are essential for designing teleoperation systems and interfaces for human-machine interaction. They reinforce existing research emphasizing that teleoperation interface design critically influences workload, hence affect operator performance. Misalignment in interface design can increase workload, potentially compromising operational efficiency and increasing cognitive strain on operators<sup><xref ref-type="bibr" rid="CR57">57</xref></sup>. Therefore, interface design should aim to minimize workload and stress by observing, measuring and responding to how users interact with teleoperation tasks and adapting to users&#x02019; needs and responses. In addition, strategies such as incorporating partial automation and prioritizing interface consistency, reliability, and transparency could enhance operator satisfaction and efficiency by reducing the cognitive demands of robot teleoperation and facilitating behavior prediction.</p></sec><sec id="Sec32"><title>Limitations of the study</title><p id="Par90">This study presents findings that should be considered alongside certain limitations related to participant experience, setup complexity, and metric scope. The participant pool, primarily consisting of University of Nottingham students and staff with limited teleoperation experience, may not fully represent the real-world settings. Although participants received training and participated in practice sessions before the experimental trials, experienced teleoperators with substantial field experience may exhibit different operational patterns and physiological responses, having developed skills and strategies to manage cognitive and physical demands more effectively.</p><p id="Par91">Additionally, the experimental setup was basic, involving only two Franka Emika robotic arms separated by a curtain. This simple arrangement does not reflect the complexity of real-world teleoperation control rooms, which often feature advanced information systems, sophisticated control interfaces, complex visual displays, and strict supervision protocols. These additional elements could significantly impact teleoperator performance and workload, aspects not captured in this study.</p><p id="Par92">Finally, the study focused on a limited range of performance and physiological metrics. Examining a broader set of metrics could offer a more comprehensive understanding of teleoperation under different workload levels. Additional performance measures, such as path efficiency, along with further physiological metrics, such as gaze tracking, detailed cardiovascular responses, and muscle activity through electromyography (EMG), could provide deeper understanding around the impacts of workload on teleoperation.</p></sec></sec><sec id="Sec33"><title>Conclusion</title><p id="Par93">In teleoperation, where multitasking is expected under critical conditions with little freedom to switch between primary tasks and accompanying sub-tasks, it becomes crucial to investigate how workload varies with primary and secondary task demands. Most existing studies in teleoperation have focused extensively on measuring cognitive workload and physical workload relating to feedback limitations, such as latency in sensory feedback. This study is a first to explore the cognitive and physical aspects of teleoperation separately in a controlled factorial design study, aiming to identify how high workload levels from various sources can be detected. An extended goal of this work is to investigate how we can dynamically manage task demands, offering tailored support when users experience high workload.</p><p id="Par94">Our results clearly show that both the primary task (teleoperation) and the secondary task (working memory) impacted performance and subjective perceptions of workload. Physiological measures related to galvanic skin response and cardiovascular activity showed significant differences in different levels of the primary task but remained unaffected by the secondary task demand. Finally, fNIRS successfully detected changes in cognitive workload for different levels of the n-back working memory task, but not for workload variations during teleoperation.</p><p id="Par95">Among the approaches investigated during this study, task performance measurements were most robust to recognising variations in task demand during a high mental workload teleoperation task. Although it is possible that a larger study sample may reach levels of significance, future research could explore additional objective physiological measures like breathing patterns, pupil dilation, and facial thermography, to see if the changes in these are observable across different levels of workload during teleoperation.</p></sec></body><back><fn-group><fn><p><bold>Publisher&#x02019;s note</bold></p><p>Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></fn></fn-group><ack><title>Acknowledgements</title><p>This work was supported by EPSRC Energy Programme [Grant Number EP/W006839/1], Centre for Doctoral Training in Horizon [Grant Number EP/S023305/1], Connected Everything II Network+ [Grant Number EP/S036113/1], and UKRI Trustworthy Autonomous Systems Hub [Grant Number EP/V00784X/1]. The authors would like to thank Dr Pablo Lopez-Custodio for his contributions to the early-stage experiments and Dr Harun Tugal for his valuable comments on the manuscript and his insights on the nuclear teleoperation use case scenario.</p></ack><notes notes-type="author-contribution"><title>Author contributions</title><p>A.K. and H.M. conceptualized the study and designed the experiment in collaboration with E.M.C., S.C. and M.W.. A.K. provided the robotic teleoperation setup and its human-machine interface. K.B. and G.O. implemented the human-robot data collection pipeline, while A.L. developed the brain data collection utilities. A.L., G.O., and K.B conducted the experiments. G.O. and A.L. analysed the data. The majority of the text is written by G.O., A.L., A.K. and M.W. All authors attended meetings, interpreted the data and reviewed the manuscript.</p></notes><notes notes-type="data-availability"><title>Data availability</title><p>The datasets used and/or analysed during the current study are available from the corresponding author upon reasonable request.</p></notes><notes><title>Declarations</title><notes id="FPar1" notes-type="COI-statement"><title>Competing interests</title><p id="Par99">The authors declare no competing interests.</p></notes></notes><ref-list id="Bib1"><title>References</title><ref id="CR1"><label>1.</label><mixed-citation publication-type="other">Talha, M. <italic>et al.</italic> Towards robotic decommissioning of legacy nuclear plant: Results of human-factors experiments with tele-robotic manipulation, and a discussion of challenges and approaches for decommissioning. In <italic>2016 IEEE International Symposium on Safety, Security, and Rescue Robotics (SSRR)</italic>, 166&#x02013;173 (IEEE, Lausanne, Switzerland, 2016).</mixed-citation></ref><ref id="CR2"><label>2.</label><citation-alternatives><element-citation id="ec-CR2" publication-type="journal"><person-group person-group-type="author"><name><surname>Schmaus</surname><given-names>P</given-names></name><etal/></person-group><article-title>Knowledge driven orbit-to-ground teleoperation of a robot coworker</article-title><source>IEEE Robot. Autom. Lett.</source><year>2019</year><volume>5</volume><fpage>143</fpage><lpage>150</lpage><pub-id pub-id-type="doi">10.1109/LRA.2019.2948128</pub-id></element-citation><mixed-citation id="mc-CR2" publication-type="journal">Schmaus, P. et al. Knowledge driven orbit-to-ground teleoperation of a robot coworker. <italic>IEEE Robot. Autom. Lett.</italic><bold>5</bold>, 143&#x02013;150 (2019).</mixed-citation></citation-alternatives></ref><ref id="CR3"><label>3.</label><citation-alternatives><element-citation id="ec-CR3" publication-type="journal"><person-group person-group-type="author"><name><surname>Xia</surname><given-names>P</given-names></name><name><surname>Xu</surname><given-names>F</given-names></name><name><surname>Song</surname><given-names>Z</given-names></name><name><surname>Li</surname><given-names>S</given-names></name><name><surname>Du</surname><given-names>J</given-names></name></person-group><article-title>Sensory augmentation for subsea robot teleoperation</article-title><source>Comput. Ind.</source><year>2023</year><volume>145</volume><fpage>103836</fpage><pub-id pub-id-type="doi">10.1016/j.compind.2022.103836</pub-id></element-citation><mixed-citation id="mc-CR3" publication-type="journal">Xia, P., Xu, F., Song, Z., Li, S. &#x00026; Du, J. Sensory augmentation for subsea robot teleoperation. <italic>Comput. Ind.</italic><bold>145</bold>, 103836 (2023).</mixed-citation></citation-alternatives></ref><ref id="CR4"><label>4.</label><citation-alternatives><element-citation id="ec-CR4" publication-type="journal"><person-group person-group-type="author"><name><surname>Alambeigi</surname><given-names>F</given-names></name><etal/></person-group><article-title>A curved-drilling approach in core decompression of the femoral head osteonecrosis using a continuum manipulator</article-title><source>IEEE Robot. Autom. Lett.</source><year>2017</year><volume>2</volume><fpage>1480</fpage><lpage>1487</lpage><pub-id pub-id-type="doi">10.1109/LRA.2017.2668469</pub-id></element-citation><mixed-citation id="mc-CR4" publication-type="journal">Alambeigi, F. et al. A curved-drilling approach in core decompression of the femoral head osteonecrosis using a continuum manipulator. <italic>IEEE Robot. Autom. Lett.</italic><bold>2</bold>, 1480&#x02013;1487 (2017).</mixed-citation></citation-alternatives></ref><ref id="CR5"><label>5.</label><citation-alternatives><element-citation id="ec-CR5" publication-type="journal"><person-group person-group-type="author"><name><surname>Gong</surname><given-names>D</given-names></name><name><surname>Zhao</surname><given-names>J</given-names></name><name><surname>Yu</surname><given-names>J</given-names></name><name><surname>Zuo</surname><given-names>G</given-names></name></person-group><article-title>Motion mapping of the heterogeneous master-slave system for intuitive telemanipulation</article-title><source>Int. J. Adv. Robot. Syst.</source><year>2018</year><volume>15</volume><fpage>1729881417748134</fpage><pub-id pub-id-type="doi">10.1177/1729881417748134</pub-id></element-citation><mixed-citation id="mc-CR5" publication-type="journal">Gong, D., Zhao, J., Yu, J. &#x00026; Zuo, G. Motion mapping of the heterogeneous master-slave system for intuitive telemanipulation. <italic>Int. J. Adv. Robot. Syst.</italic><bold>15</bold>, 1729881417748134. 10.1177/1729881417748134 (2018).</mixed-citation></citation-alternatives></ref><ref id="CR6"><label>6.</label><citation-alternatives><element-citation id="ec-CR6" publication-type="journal"><person-group person-group-type="author"><name><surname>Ju</surname><given-names>C</given-names></name><name><surname>Son</surname><given-names>HI</given-names></name></person-group><article-title>Human-centered evaluation of shared teleoperation system for maintenance and repair tasks in nuclear power plants</article-title><source>Int. J. Control Autom. Syst.</source><year>2022</year><volume>20</volume><fpage>3418</fpage><lpage>3432</lpage><pub-id pub-id-type="doi">10.1007/s12555-021-0770-0</pub-id></element-citation><mixed-citation id="mc-CR6" publication-type="journal">Ju, C. &#x00026; Son, H. I. Human-centered evaluation of shared teleoperation system for maintenance and repair tasks in nuclear power plants. <italic>Int. J. Control Autom. Syst.</italic><bold>20</bold>, 3418&#x02013;3432. 10.1007/s12555-021-0770-0 (2022).</mixed-citation></citation-alternatives></ref><ref id="CR7"><label>7.</label><citation-alternatives><element-citation id="ec-CR7" publication-type="journal"><person-group person-group-type="author"><name><surname>Wang</surname><given-names>J</given-names></name><etal/></person-group><article-title>Control strategy of master-slave manipulator based on force feedback for decommissioning of nuclear facilities</article-title><source>Math. Probl. Eng.</source><year>2022</year><volume>2022</volume><fpage>1</fpage><lpage>9</lpage><pub-id pub-id-type="doi">10.1155/2022/9945758</pub-id></element-citation><mixed-citation id="mc-CR7" publication-type="journal">Wang, J. et al. Control strategy of master-slave manipulator based on force feedback for decommissioning of nuclear facilities. <italic>Math. Probl. Eng.</italic><bold>2022</bold>, 1&#x02013;9. 10.1155/2022/9945758 (2022).</mixed-citation></citation-alternatives></ref><ref id="CR8"><label>8.</label><citation-alternatives><element-citation id="ec-CR8" publication-type="journal"><person-group person-group-type="author"><name><surname>Toet</surname><given-names>A</given-names></name><name><surname>Kuling</surname><given-names>IA</given-names></name><name><surname>Krom</surname><given-names>BN</given-names></name><name><surname>Van Erp</surname><given-names>JB</given-names></name></person-group><article-title>Toward enhanced teleoperation through embodiment</article-title><source>Front. Robot. AI</source><year>2020</year><volume>7</volume><fpage>14</fpage><pub-id pub-id-type="doi">10.3389/frobt.2020.00014</pub-id><pub-id pub-id-type="pmid">33501183</pub-id>
+</element-citation><mixed-citation id="mc-CR8" publication-type="journal">Toet, A., Kuling, I. A., Krom, B. N. &#x00026; Van Erp, J. B. Toward enhanced teleoperation through embodiment. <italic>Front. Robot. AI</italic><bold>7</bold>, 14 (2020).<pub-id pub-id-type="pmid">33501183</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR9"><label>9.</label><mixed-citation publication-type="other">Shao, S., Zhou, Q. &#x00026; Liu, Z. Mental workload characteristics of manipulator teleoperators with different spatial cognitive abilities. <italic>Int. J. Adv. Robot. Syst.</italic><bold>16</bold>. 10.1177/1729881419888042 (2019).</mixed-citation></ref><ref id="CR10"><label>10.</label><citation-alternatives><element-citation id="ec-CR10" publication-type="journal"><person-group person-group-type="author"><name><surname>Panzirsch</surname><given-names>M</given-names></name><name><surname>Balachandran</surname><given-names>R</given-names></name><name><surname>Weber</surname><given-names>B</given-names></name><name><surname>Ferre</surname><given-names>M</given-names></name><name><surname>Artigas</surname><given-names>J</given-names></name></person-group><article-title>Haptic augmentation for teleoperation through virtual grasping points</article-title><source>IEEE Trans. Haptics</source><year>2018</year><volume>11</volume><fpage>400</fpage><lpage>416</lpage><pub-id pub-id-type="doi">10.1109/toh.2018.2809746</pub-id><pub-id pub-id-type="pmid">29994289</pub-id>
+</element-citation><mixed-citation id="mc-CR10" publication-type="journal">Panzirsch, M., Balachandran, R., Weber, B., Ferre, M. &#x00026; Artigas, J. Haptic augmentation for teleoperation through virtual grasping points. <italic>IEEE Trans. Haptics</italic><bold>11</bold>, 400&#x02013;416. 10.1109/toh.2018.2809746 (2018).<pub-id pub-id-type="pmid">29994289</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR11"><label>11.</label><citation-alternatives><element-citation id="ec-CR11" publication-type="journal"><person-group person-group-type="author"><name><surname>Luo</surname><given-names>J</given-names></name><name><surname>He</surname><given-names>W</given-names></name><name><surname>Yang</surname><given-names>C</given-names></name></person-group><article-title>Combined perception, control, and learning for teleoperation: key technologies, applications, and challenges</article-title><source>Cognit. Comput. Syst.</source><year>2020</year><volume>2</volume><fpage>33</fpage><lpage>43</lpage><pub-id pub-id-type="doi">10.1049/ccs.2020.0005</pub-id></element-citation><mixed-citation id="mc-CR11" publication-type="journal">Luo, J., He, W. &#x00026; Yang, C. Combined perception, control, and learning for teleoperation: key technologies, applications, and challenges. <italic>Cognit. Comput. Syst.</italic><bold>2</bold>, 33&#x02013;43. 10.1049/ccs.2020.0005 (2020).</mixed-citation></citation-alternatives></ref><ref id="CR12"><label>12.</label><mixed-citation publication-type="other">Bandala, M., West, C., Monk, S., Montazeri, A. &#x00026; Taylor, C.&#x000a0;J. Vision-based assisted tele-operation of a dual-arm hydraulically actuated robot for pipe cutting and grasping in nuclear environments. <italic>Robotics</italic><bold>8</bold>. 10.3390/robotics8020042 (2019).</mixed-citation></ref><ref id="CR13"><label>13.</label><mixed-citation publication-type="other">Royal College of Surgeons of England. Robotic assisted surgery&#x02014;A pathway to the future (2023).</mixed-citation></ref><ref id="CR14"><label>14.</label><citation-alternatives><element-citation id="ec-CR14" publication-type="journal"><person-group person-group-type="author"><name><surname>Wang</surname><given-names>L</given-names></name><name><surname>Li</surname><given-names>Q</given-names></name><name><surname>Lam</surname><given-names>J</given-names></name><name><surname>Wang</surname><given-names>Z</given-names></name><name><surname>Zhang</surname><given-names>Z</given-names></name></person-group><article-title>Intent inference in shared-control teleoperation system in consideration of user behavior</article-title><source>Complex Intell. Syst.</source><year>2021</year><volume>8</volume><fpage>2971</fpage><lpage>2981</lpage><pub-id pub-id-type="doi">10.1007/s40747-021-00533-4</pub-id></element-citation><mixed-citation id="mc-CR14" publication-type="journal">Wang, L., Li, Q., Lam, J., Wang, Z. &#x00026; Zhang, Z. Intent inference in shared-control teleoperation system in consideration of user behavior. <italic>Complex Intell. Syst.</italic><bold>8</bold>, 2971&#x02013;2981 (2021).</mixed-citation></citation-alternatives></ref><ref id="CR15"><label>15.</label><mixed-citation publication-type="other">Kucukyilmaz, A., Oguz, S.&#x000a0;O., Sezgin, T.&#x000a0;M. &#x00026; Basdogan, C. Improving human-computer cooperation through haptic role exchange and negotiation. In <italic>Immersive Multimodal Interactive Presence</italic> 229&#x02013;254 (2012).</mixed-citation></ref><ref id="CR16"><label>16.</label><mixed-citation publication-type="other">Al-Saadi, Z., Hamad, Y.&#x000a0;M., Aydin, Y., Kucukyilmaz, A. &#x00026; Basdogan, C. Resolving conflicts during human-robot co-manipulation. In <italic>Proceedings of the 2023 ACM/IEEE International Conference on Human-Robot Interaction</italic>, 243&#x02013;251 (2023).</mixed-citation></ref><ref id="CR17"><label>17.</label><mixed-citation publication-type="other">Oh, Y., Schafer, T., Ruther, B., Toussaint, M. &#x00026; Mainprice, J. A system for traded control teleoperation of manipulation tasks using intent prediction from hand gestures. In <italic>2021 30th IEEE International Conference on Robot &#x00026; Human Interactive Communication (RO-MAN)</italic>. 10.1109/ro-man50785.2021.9515440 (IEEE, 2021).</mixed-citation></ref><ref id="CR18"><label>18.</label><mixed-citation publication-type="other">Ly, K.&#x000a0;T., Poozhiyil, M., Pandya, H., Neumann, G. &#x00026; Kucukyilmaz, A. Intent-aware predictive haptic guidance and its application to shared control teleoperation. In <italic>2021 30th IEEE international conference on robot &#x00026; human interactive communication (RO-MAN)</italic>, 565&#x02013;572 (IEEE, 2021).</mixed-citation></ref><ref id="CR19"><label>19.</label><citation-alternatives><element-citation id="ec-CR19" publication-type="journal"><person-group person-group-type="author"><name><surname>Phillips-Grafflin</surname><given-names>C</given-names></name><etal/></person-group><article-title>From autonomy to cooperative traded control of humanoid manipulation tasks with unreliable communication: Applications to the valve-turning task of the darpa robotics challenge and lessons learned</article-title><source>J. Intell. Robot. Syst.</source><year>2015</year><volume>82</volume><fpage>341</fpage><lpage>361</lpage><pub-id pub-id-type="doi">10.1007/s10846-015-0256-5</pub-id></element-citation><mixed-citation id="mc-CR19" publication-type="journal">Phillips-Grafflin, C. et al. From autonomy to cooperative traded control of humanoid manipulation tasks with unreliable communication: Applications to the valve-turning task of the darpa robotics challenge and lessons learned. <italic>J. Intell. Robot. Syst.</italic><bold>82</bold>, 341&#x02013;361 (2015).</mixed-citation></citation-alternatives></ref><ref id="CR20"><label>20.</label><citation-alternatives><element-citation id="ec-CR20" publication-type="journal"><person-group person-group-type="author"><name><surname>Del Duchetto</surname><given-names>F</given-names></name><name><surname>Kucukyilmaz</surname><given-names>A</given-names></name><name><surname>Iocchi</surname><given-names>L</given-names></name><name><surname>Hanheide</surname><given-names>M</given-names></name></person-group><article-title>Do not make the same mistakes again and again: Learning local recovery policies for navigation from human demonstrations</article-title><source>IEEE Robot. Autom. Lett.</source><year>2018</year><volume>3</volume><fpage>4084</fpage><lpage>4091</lpage><pub-id pub-id-type="doi">10.1109/LRA.2018.2861080</pub-id></element-citation><mixed-citation id="mc-CR20" publication-type="journal">Del Duchetto, F., Kucukyilmaz, A., Iocchi, L. &#x00026; Hanheide, M. Do not make the same mistakes again and again: Learning local recovery policies for navigation from human demonstrations. <italic>IEEE Robot. Autom. Lett.</italic><bold>3</bold>, 4084&#x02013;4091 (2018).</mixed-citation></citation-alternatives></ref><ref id="CR21"><label>21.</label><citation-alternatives><element-citation id="ec-CR21" publication-type="journal"><person-group person-group-type="author"><name><surname>Nourbakhsh</surname><given-names>N</given-names></name><name><surname>Chen</surname><given-names>F</given-names></name><name><surname>Wang</surname><given-names>Y</given-names></name><name><surname>Calvo</surname><given-names>RA</given-names></name></person-group><article-title>Detecting users&#x02019; cognitive load by galvanic skin response with affective interference</article-title><source>ACM Trans. Interactive Intell. Syst.</source><year>2017</year><volume>7</volume><fpage>1</fpage><lpage>20</lpage><pub-id pub-id-type="doi">10.1145/2960413</pub-id></element-citation><mixed-citation id="mc-CR21" publication-type="journal">Nourbakhsh, N., Chen, F., Wang, Y. &#x00026; Calvo, R. A. Detecting users&#x02019; cognitive load by galvanic skin response with affective interference. <italic>ACM Trans. Interactive Intell. Syst.</italic><bold>7</bold>, 1&#x02013;20 (2017).</mixed-citation></citation-alternatives></ref><ref id="CR22"><label>22.</label><citation-alternatives><element-citation id="ec-CR22" publication-type="journal"><person-group person-group-type="author"><name><surname>Engstr&#x000f6;m</surname><given-names>J</given-names></name><name><surname>Johansson</surname><given-names>E</given-names></name><name><surname>&#x000d6;stlund</surname><given-names>J</given-names></name></person-group><article-title>Effects of visual and cognitive load in real and simulated motorway driving</article-title><source>Transport. Res. F Traffic Psychol. Behav.</source><year>2005</year><volume>8</volume><fpage>97</fpage><lpage>120</lpage><pub-id pub-id-type="doi">10.1016/j.trf.2005.04.012</pub-id></element-citation><mixed-citation id="mc-CR22" publication-type="journal">Engstr&#x000f6;m, J., Johansson, E. &#x00026; &#x000d6;stlund, J. Effects of visual and cognitive load in real and simulated motorway driving. <italic>Transport. Res. F Traffic Psychol. Behav.</italic><bold>8</bold>, 97&#x02013;120 (2005).</mixed-citation></citation-alternatives></ref><ref id="CR23"><label>23.</label><citation-alternatives><element-citation id="ec-CR23" publication-type="journal"><person-group person-group-type="author"><name><surname>Ayaz</surname><given-names>H</given-names></name><etal/></person-group><article-title>Optical brain monitoring for operator training and mental workload assessment</article-title><source>Neuroimage</source><year>2012</year><volume>59</volume><fpage>36</fpage><lpage>47</lpage><pub-id pub-id-type="doi">10.1016/j.neuroimage.2011.06.023</pub-id><pub-id pub-id-type="pmid">21722738</pub-id>
+</element-citation><mixed-citation id="mc-CR23" publication-type="journal">Ayaz, H. et al. Optical brain monitoring for operator training and mental workload assessment. <italic>Neuroimage</italic><bold>59</bold>, 36&#x02013;47 (2012).<pub-id pub-id-type="pmid">21722738</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR24"><label>24.</label><mixed-citation publication-type="other">Sam, Y.&#x000a0;T., Natarajan, M. &#x00026; Gombolay, M.&#x000a0;C. Stress and performance in human-robot space teleoperation tasks (2020).</mixed-citation></ref><ref id="CR25"><label>25.</label><mixed-citation publication-type="other">Fernandez Rojas, R. <italic>et al.</italic> Electroencephalographic workload indicators during teleoperation of an unmanned aerial vehicle shepherding a swarm of unmanned ground vehicles in contested environments. <italic>Front. Neurosci.</italic><bold>14</bold> (2020).</mixed-citation></ref><ref id="CR26"><label>26.</label><mixed-citation publication-type="other">Ye, Y., Zhou, T., Zhu, Q., Vann, W. &#x00026; Du, J. Brain functional connectivity under teleoperation latency: a fNIRs study. 10.48550/ARXIV.2311.09062 (2023).</mixed-citation></ref><ref id="CR27"><label>27.</label><citation-alternatives><element-citation id="ec-CR27" publication-type="journal"><person-group person-group-type="author"><name><surname>Singh</surname><given-names>J</given-names></name><name><surname>Srinivasan</surname><given-names>AR</given-names></name><name><surname>Neumann</surname><given-names>G</given-names></name><name><surname>Kucukyilmaz</surname><given-names>A</given-names></name></person-group><article-title>Haptic-guided teleoperation of a 7-dof collaborative robot arm with an identical twin master</article-title><source>IEEE Trans. Haptics</source><year>2020</year><volume>13</volume><fpage>246</fpage><lpage>252</lpage><pub-id pub-id-type="doi">10.1109/TOH.2020.2971485</pub-id><pub-id pub-id-type="pmid">32012028</pub-id>
+</element-citation><mixed-citation id="mc-CR27" publication-type="journal">Singh, J., Srinivasan, A. R., Neumann, G. &#x00026; Kucukyilmaz, A. Haptic-guided teleoperation of a 7-dof collaborative robot arm with an identical twin master. <italic>IEEE Trans. Haptics</italic><bold>13</bold>, 246&#x02013;252 (2020).<pub-id pub-id-type="pmid">32012028</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR28"><label>28.</label><citation-alternatives><element-citation id="ec-CR28" publication-type="journal"><person-group person-group-type="author"><name><surname>Kirchner</surname><given-names>WK</given-names></name></person-group><article-title>Age differences in short-term retention of rapidly changing information</article-title><source>J. Exp. Psychol.</source><year>1958</year><volume>55</volume><fpage>352</fpage><pub-id pub-id-type="doi">10.1037/h0043688</pub-id><pub-id pub-id-type="pmid">13539317</pub-id>
+</element-citation><mixed-citation id="mc-CR28" publication-type="journal">Kirchner, W. K. Age differences in short-term retention of rapidly changing information. <italic>J. Exp. Psychol.</italic><bold>55</bold>, 352 (1958).<pub-id pub-id-type="pmid">13539317</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR29"><label>29.</label><mixed-citation publication-type="other">University of Nottingham. Ethics and integrity. <ext-link ext-link-type="uri" xlink:href="https://www.nottingham.ac.uk/research/ethics-and-integrity/index.aspx">https://www.nottingham.ac.uk/research/ethics-and-integrity/index.aspx</ext-link>. Last Accessed 22 August 2024.</mixed-citation></ref><ref id="CR30"><label>30.</label><citation-alternatives><element-citation id="ec-CR30" publication-type="journal"><person-group person-group-type="author"><name><surname>Balasubramanian</surname><given-names>S</given-names></name><name><surname>Melendez-Calderon</surname><given-names>A</given-names></name><name><surname>Burdet</surname><given-names>E</given-names></name></person-group><article-title>A robust and sensitive metric for quantifying movement smoothness</article-title><source>IEEE Trans. Biomed. Eng.</source><year>2011</year><volume>59</volume><fpage>2126</fpage><lpage>2136</lpage><pub-id pub-id-type="doi">10.1109/TBME.2011.2179545</pub-id><pub-id pub-id-type="pmid">22180502</pub-id>
+</element-citation><mixed-citation id="mc-CR30" publication-type="journal">Balasubramanian, S., Melendez-Calderon, A. &#x00026; Burdet, E. A robust and sensitive metric for quantifying movement smoothness. <italic>IEEE Trans. Biomed. Eng.</italic><bold>59</bold>, 2126&#x02013;2136 (2011).<pub-id pub-id-type="pmid">22180502</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR31"><label>31.</label><citation-alternatives><element-citation id="ec-CR31" publication-type="book"><person-group person-group-type="author"><name><surname>Boucsein</surname><given-names>W</given-names></name></person-group><source>Electrodermal Activity</source><year>2012</year><publisher-name>Springer</publisher-name></element-citation><mixed-citation id="mc-CR31" publication-type="book">Boucsein, W. <italic>Electrodermal Activity</italic> (Springer, 2012).</mixed-citation></citation-alternatives></ref><ref id="CR32"><label>32.</label><citation-alternatives><element-citation id="ec-CR32" publication-type="book"><person-group person-group-type="author"><name><surname>Stern</surname><given-names>RM</given-names></name><name><surname>Ray</surname><given-names>WJ</given-names></name><name><surname>Quigley</surname><given-names>KS</given-names></name></person-group><source>Psychophysiological Recording</source><year>2001</year><publisher-name>Oxford University Press</publisher-name></element-citation><mixed-citation id="mc-CR32" publication-type="book">Stern, R. M., Ray, W. J. &#x00026; Quigley, K. S. <italic>Psychophysiological Recording</italic> (Oxford University Press, 2001).</mixed-citation></citation-alternatives></ref><ref id="CR33"><label>33.</label><mixed-citation publication-type="other">Topoglu, Y., Watson, J., Suri, R. &#x00026; Ayaz, H. <italic>Electrodermal Activity in Ambulatory Settings: A Narrative Review of Literature</italic>, 91&#x02013;102 (Springer International Publishing, 2019).</mixed-citation></ref><ref id="CR34"><label>34.</label><citation-alternatives><element-citation id="ec-CR34" publication-type="journal"><person-group person-group-type="author"><name><surname>Chao</surname><given-names>C-J</given-names></name><name><surname>Lin</surname><given-names>C-H</given-names></name><name><surname>Hsu</surname><given-names>S-H</given-names></name></person-group><article-title>An assessment of the effects of navigation maps on drivers&#x02019; mental workloads</article-title><source>Percept. Mot. Skills</source><year>2014</year><volume>118</volume><fpage>709</fpage><lpage>731</lpage><pub-id pub-id-type="doi">10.2466/22.29.PMS.118k28w4</pub-id><pub-id pub-id-type="pmid">25068742</pub-id>
+</element-citation><mixed-citation id="mc-CR34" publication-type="journal">Chao, C.-J., Lin, C.-H. &#x00026; Hsu, S.-H. An assessment of the effects of navigation maps on drivers&#x02019; mental workloads. <italic>Percept. Mot. Skills</italic><bold>118</bold>, 709&#x02013;731 (2014).<pub-id pub-id-type="pmid">25068742</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR35"><label>35.</label><mixed-citation publication-type="other">Delliaux, S., Delaforge, A., Deharo, J.-C. &#x00026; Chaumet, G. Mental workload alters heart rate variability, lowering non-linear dynamics. <italic>Front. Physiol.</italic><bold>10</bold> (2019).</mixed-citation></ref><ref id="CR36"><label>36.</label><mixed-citation publication-type="other">Moses, Z.&#x000a0;B., Luecken, L.&#x000a0;J. &#x00026; Eason, J.&#x000a0;C. Measuring task-related changes in heart rate variability. In <italic>2007 29th Annual International Conference of the IEEE Engineering in Medicine and Biology Society</italic> (IEEE, 2007).</mixed-citation></ref><ref id="CR37"><label>37.</label><mixed-citation publication-type="other">Ghamari, M. A review on wearable photoplethysmography sensors and their potential future applications in health care. <italic>Int. J. Biosens. Bioelectron.</italic><bold>4</bold> (2018).</mixed-citation></ref><ref id="CR38"><label>38.</label><mixed-citation publication-type="other">Gonzalez, R. <italic>et al.</italic> A computer based photoplethysmographic vascular analyzer through derivatives. In <italic>2008 Computers in Cardiology</italic> (IEEE, 2008).</mixed-citation></ref><ref id="CR39"><label>39.</label><citation-alternatives><element-citation id="ec-CR39" publication-type="journal"><person-group person-group-type="author"><name><surname>Huveneers</surname><given-names>S</given-names></name><name><surname>Daemen</surname><given-names>MJ</given-names></name><name><surname>Hordijk</surname><given-names>PL</given-names></name></person-group><article-title>Between rho(k) and a hard place: The relation between vessel wall stiffness, endothelial contractility, and cardiovascular disease</article-title><source>Circ. Res.</source><year>2015</year><volume>116</volume><fpage>895</fpage><lpage>908</lpage><pub-id pub-id-type="doi">10.1161/CIRCRESAHA.116.305720</pub-id><pub-id pub-id-type="pmid">25722443</pub-id>
+</element-citation><mixed-citation id="mc-CR39" publication-type="journal">Huveneers, S., Daemen, M. J. &#x00026; Hordijk, P. L. Between rho(k) and a hard place: The relation between vessel wall stiffness, endothelial contractility, and cardiovascular disease. <italic>Circ. Res.</italic><bold>116</bold>, 895&#x02013;908 (2015).<pub-id pub-id-type="pmid">25722443</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR40"><label>40.</label><citation-alternatives><element-citation id="ec-CR40" publication-type="journal"><person-group person-group-type="author"><name><surname>Hamilton</surname><given-names>P</given-names></name><name><surname>Lockhart</surname><given-names>C</given-names></name><name><surname>Quinn</surname><given-names>C</given-names></name><name><surname>Mcveigh</surname><given-names>G</given-names></name></person-group><article-title>Arterial stiffness: clinical relevance, measurement and treatment</article-title><source>Clin. Sci.</source><year>2007</year><volume>113</volume><fpage>157</fpage><lpage>170</lpage><pub-id pub-id-type="doi">10.1042/CS20070080</pub-id></element-citation><mixed-citation id="mc-CR40" publication-type="journal">Hamilton, P., Lockhart, C., Quinn, C. &#x00026; Mcveigh, G. Arterial stiffness: clinical relevance, measurement and treatment. <italic>Clin. Sci.</italic><bold>113</bold>, 157&#x02013;170 (2007).</mixed-citation></citation-alternatives></ref><ref id="CR41"><label>41.</label><mixed-citation publication-type="other">Causse, M., Chua, Z., Peysakhovich, V., Del Campo, N. &#x00026; Matton, N. Mental workload and neural efficiency quantified in the prefrontal cortex using fnirs. <italic>Sci. Rep.</italic><bold>7</bold>. 10.1038/s41598-017-05378-x (2017).</mixed-citation></ref><ref id="CR42"><label>42.</label><citation-alternatives><element-citation id="ec-CR42" publication-type="journal"><person-group person-group-type="author"><name><surname>Ochsner</surname><given-names>KN</given-names></name><name><surname>Bunge</surname><given-names>SA</given-names></name><name><surname>Gross</surname><given-names>JJ</given-names></name><name><surname>Gabrieli</surname><given-names>JDE</given-names></name></person-group><article-title>Rethinking feelings: An fMRI study of the cognitive regulation of emotion</article-title><source>J. Cogn. Neurosci.</source><year>2002</year><volume>14</volume><fpage>1215</fpage><lpage>1229</lpage><pub-id pub-id-type="doi">10.1162/089892902760807212</pub-id><pub-id pub-id-type="pmid">12495527</pub-id>
+</element-citation><mixed-citation id="mc-CR42" publication-type="journal">Ochsner, K. N., Bunge, S. A., Gross, J. J. &#x00026; Gabrieli, J. D. E. Rethinking feelings: An fMRI study of the cognitive regulation of emotion. <italic>J. Cogn. Neurosci.</italic><bold>14</bold>, 1215&#x02013;1229 (2002).<pub-id pub-id-type="pmid">12495527</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR43"><label>43.</label><citation-alternatives><element-citation id="ec-CR43" publication-type="journal"><person-group person-group-type="author"><name><surname>Andreasen</surname><given-names>NC</given-names></name><etal/></person-group><article-title>Schizophrenia and cognitive dysmetria: A positron-emission tomography study of dysfunctional prefrontal-thalamic-cerebellar circuitry</article-title><source>Proc. Natl. Acad. Sci.</source><year>1996</year><volume>93</volume><fpage>9985</fpage><lpage>9990</lpage><pub-id pub-id-type="doi">10.1073/pnas.93.18.9985</pub-id><pub-id pub-id-type="pmid">8790444</pub-id>
+</element-citation><mixed-citation id="mc-CR43" publication-type="journal">Andreasen, N. C. et al. Schizophrenia and cognitive dysmetria: A positron-emission tomography study of dysfunctional prefrontal-thalamic-cerebellar circuitry. <italic>Proc. Natl. Acad. Sci.</italic><bold>93</bold>, 9985&#x02013;9990 (1996).<pub-id pub-id-type="pmid">8790444</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR44"><label>44.</label><citation-alternatives><element-citation id="ec-CR44" publication-type="journal"><person-group person-group-type="author"><name><surname>Ray</surname><given-names>WJ</given-names></name><name><surname>Cole</surname><given-names>HW</given-names></name></person-group><article-title>EEG alpha activity reflects attentional demands, and beta activity reflects emotional and cognitive processes</article-title><source>Science</source><year>1985</year><volume>228</volume><fpage>750</fpage><lpage>752</lpage><pub-id pub-id-type="doi">10.1126/science.3992243</pub-id><pub-id pub-id-type="pmid">3992243</pub-id>
+</element-citation><mixed-citation id="mc-CR44" publication-type="journal">Ray, W. J. &#x00026; Cole, H. W. EEG alpha activity reflects attentional demands, and beta activity reflects emotional and cognitive processes. <italic>Science</italic><bold>228</bold>, 750&#x02013;752 (1985).<pub-id pub-id-type="pmid">3992243</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR45"><label>45.</label><citation-alternatives><element-citation id="ec-CR45" publication-type="journal"><person-group person-group-type="author"><name><surname>Halgren</surname><given-names>E</given-names></name></person-group><article-title>Cognitive response profile of the human fusiform face area as determined by meg</article-title><source>Cereb. Cortex</source><year>2000</year><volume>10</volume><fpage>69</fpage><lpage>81</lpage><pub-id pub-id-type="doi">10.1093/cercor/10.1.69</pub-id><pub-id pub-id-type="pmid">10639397</pub-id>
+</element-citation><mixed-citation id="mc-CR45" publication-type="journal">Halgren, E. Cognitive response profile of the human fusiform face area as determined by meg. <italic>Cereb. Cortex</italic><bold>10</bold>, 69&#x02013;81 (2000).<pub-id pub-id-type="pmid">10639397</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR46"><label>46.</label><citation-alternatives><element-citation id="ec-CR46" publication-type="journal"><person-group person-group-type="author"><name><surname>Pinti</surname><given-names>P</given-names></name><etal/></person-group><article-title>The present and future use of functional near-infrared spectroscopy (fNIRs) for cognitive neuroscience</article-title><source>Ann. N. Y. Acad. Sci.</source><year>2018</year><volume>1464</volume><fpage>5</fpage><lpage>29</lpage><pub-id pub-id-type="doi">10.1111/nyas.13948</pub-id><pub-id pub-id-type="pmid">30085354</pub-id>
+</element-citation><mixed-citation id="mc-CR46" publication-type="journal">Pinti, P. et al. The present and future use of functional near-infrared spectroscopy (fNIRs) for cognitive neuroscience. <italic>Ann. N. Y. Acad. Sci.</italic><bold>1464</bold>, 5&#x02013;29. 10.1111/nyas.13948 (2018).<pub-id pub-id-type="pmid">30085354</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR47"><label>47.</label><citation-alternatives><element-citation id="ec-CR47" publication-type="journal"><person-group person-group-type="author"><name><surname>Cui</surname><given-names>X</given-names></name><name><surname>Bray</surname><given-names>S</given-names></name><name><surname>Reiss</surname><given-names>AL</given-names></name></person-group><article-title>Functional near infrared spectroscopy (NIRs) signal improvement based on negative correlation between oxygenated and deoxygenated hemoglobin dynamics</article-title><source>Neuroimage</source><year>2010</year><volume>49</volume><fpage>3039</fpage><lpage>3046</lpage><pub-id pub-id-type="doi">10.1016/j.neuroimage.2009.11.050</pub-id><pub-id pub-id-type="pmid">19945536</pub-id>
+</element-citation><mixed-citation id="mc-CR47" publication-type="journal">Cui, X., Bray, S. &#x00026; Reiss, A. L. Functional near infrared spectroscopy (NIRs) signal improvement based on negative correlation between oxygenated and deoxygenated hemoglobin dynamics. <italic>Neuroimage</italic><bold>49</bold>, 3039&#x02013;3046 (2010).<pub-id pub-id-type="pmid">19945536</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR48"><label>48.</label><citation-alternatives><element-citation id="ec-CR48" publication-type="journal"><person-group person-group-type="author"><name><surname>Santosa</surname><given-names>H</given-names></name><name><surname>Zhai</surname><given-names>X</given-names></name><name><surname>Fishburn</surname><given-names>F</given-names></name><name><surname>Huppert</surname><given-names>T</given-names></name></person-group><article-title>The NIRs brain analyzir toolbox</article-title><source>Algorithms</source><year>2018</year><volume>11</volume><fpage>73</fpage><pub-id pub-id-type="doi">10.3390/a11050073</pub-id><pub-id pub-id-type="pmid">38957522</pub-id>
+</element-citation><mixed-citation id="mc-CR48" publication-type="journal">Santosa, H., Zhai, X., Fishburn, F. &#x00026; Huppert, T. The NIRs brain analyzir toolbox. <italic>Algorithms</italic><bold>11</bold>, 73 (2018).<pub-id pub-id-type="pmid">38957522</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR49"><label>49.</label><citation-alternatives><element-citation id="ec-CR49" publication-type="journal"><person-group person-group-type="author"><name><surname>Huppert</surname><given-names>TJ</given-names></name></person-group><article-title>Commentary on the statistical properties of noise and its implication on general linear models in functional near-infrared spectroscopy</article-title><source>Neurophotonics</source><year>2016</year><volume>3</volume><fpage>010401</fpage><lpage>010401</lpage><pub-id pub-id-type="doi">10.1117/1.NPh.3.1.010401</pub-id><pub-id pub-id-type="pmid">26989756</pub-id>
+</element-citation><mixed-citation id="mc-CR49" publication-type="journal">Huppert, T. J. Commentary on the statistical properties of noise and its implication on general linear models in functional near-infrared spectroscopy. <italic>Neurophotonics</italic><bold>3</bold>, 010401&#x02013;010401 (2016).<pub-id pub-id-type="pmid">26989756</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR50"><label>50.</label><citation-alternatives><element-citation id="ec-CR50" publication-type="journal"><person-group person-group-type="author"><name><surname>Strangman</surname><given-names>G</given-names></name><name><surname>Franceschini</surname><given-names>MA</given-names></name><name><surname>Boas</surname><given-names>DA</given-names></name></person-group><article-title>Factors affecting the accuracy of near-infrared spectroscopy concentration calculations for focal changes in oxygenation parameters</article-title><source>Neuroimage</source><year>2003</year><volume>18</volume><fpage>865</fpage><lpage>879</lpage><pub-id pub-id-type="doi">10.1016/S1053-8119(03)00021-1</pub-id><pub-id pub-id-type="pmid">12725763</pub-id>
+</element-citation><mixed-citation id="mc-CR50" publication-type="journal">Strangman, G., Franceschini, M. A. &#x00026; Boas, D. A. Factors affecting the accuracy of near-infrared spectroscopy concentration calculations for focal changes in oxygenation parameters. <italic>Neuroimage</italic><bold>18</bold>, 865&#x02013;879 (2003).<pub-id pub-id-type="pmid">12725763</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR51"><label>51.</label><citation-alternatives><element-citation id="ec-CR51" publication-type="journal"><person-group person-group-type="author"><name><surname>Fishburn</surname><given-names>FA</given-names></name><name><surname>Norr</surname><given-names>ME</given-names></name><name><surname>Medvedev</surname><given-names>AV</given-names></name><name><surname>Vaidya</surname><given-names>CJ</given-names></name></person-group><article-title>Sensitivity of fNIRs to cognitive state and load</article-title><source>Front. Hum. Neurosci.</source><year>2014</year><volume>8</volume><fpage>76</fpage><pub-id pub-id-type="doi">10.3389/fnhum.2014.00076</pub-id><pub-id pub-id-type="pmid">24600374</pub-id>
+</element-citation><mixed-citation id="mc-CR51" publication-type="journal">Fishburn, F. A., Norr, M. E., Medvedev, A. V. &#x00026; Vaidya, C. J. Sensitivity of fNIRs to cognitive state and load. <italic>Front. Hum. Neurosci.</italic><bold>8</bold>, 76 (2014).<pub-id pub-id-type="pmid">24600374</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR52"><label>52.</label><citation-alternatives><element-citation id="ec-CR52" publication-type="journal"><person-group person-group-type="author"><name><surname>Barker</surname><given-names>JW</given-names></name><name><surname>Aarabi</surname><given-names>A</given-names></name><name><surname>Huppert</surname><given-names>TJ</given-names></name></person-group><article-title>Autoregressive model based algorithm for correcting motion and serially correlated errors in fNIRs</article-title><source>Biomed. Opt. Express</source><year>2013</year><volume>4</volume><fpage>1366</fpage><lpage>1379</lpage><pub-id pub-id-type="doi">10.1364/BOE.4.001366</pub-id><pub-id pub-id-type="pmid">24009999</pub-id>
+</element-citation><mixed-citation id="mc-CR52" publication-type="journal">Barker, J. W., Aarabi, A. &#x00026; Huppert, T. J. Autoregressive model based algorithm for correcting motion and serially correlated errors in fNIRs. <italic>Biomed. Opt. Express</italic><bold>4</bold>, 1366&#x02013;1379 (2013).<pub-id pub-id-type="pmid">24009999</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR53"><label>53.</label><citation-alternatives><element-citation id="ec-CR53" publication-type="journal"><person-group person-group-type="author"><name><surname>Dimitrakopoulos</surname><given-names>GN</given-names></name><etal/></person-group><article-title>Cognitive reorganization due to mental workload: A functional connectivity analysis based on working memory paradigms</article-title><source>Appl. Sci.</source><year>2023</year><volume>13</volume><fpage>2129</fpage><pub-id pub-id-type="doi">10.3390/app13042129</pub-id></element-citation><mixed-citation id="mc-CR53" publication-type="journal">Dimitrakopoulos, G. N. et al. Cognitive reorganization due to mental workload: A functional connectivity analysis based on working memory paradigms. <italic>Appl. Sci.</italic><bold>13</bold>, 2129 (2023).</mixed-citation></citation-alternatives></ref><ref id="CR54"><label>54.</label><citation-alternatives><element-citation id="ec-CR54" publication-type="journal"><person-group person-group-type="author"><name><surname>von Janczewski</surname><given-names>N</given-names></name><name><surname>Wittmann</surname><given-names>J</given-names></name><name><surname>Engeln</surname><given-names>A</given-names></name><name><surname>Baumann</surname><given-names>M</given-names></name><name><surname>Krau&#x000df;</surname><given-names>L</given-names></name></person-group><article-title>A meta-analysis of the n-back task while driving and its effects on cognitive workload</article-title><source>Transport. Res. F: Traffic Psychol. Behav.</source><year>2021</year><volume>76</volume><fpage>269</fpage><lpage>285</lpage><pub-id pub-id-type="doi">10.1016/j.trf.2020.11.014</pub-id></element-citation><mixed-citation id="mc-CR54" publication-type="journal">von Janczewski, N., Wittmann, J., Engeln, A., Baumann, M. &#x00026; Krau&#x000df;, L. A meta-analysis of the n-back task while driving and its effects on cognitive workload. <italic>Transport. Res. F: Traffic Psychol. Behav.</italic><bold>76</bold>, 269&#x02013;285 (2021).</mixed-citation></citation-alternatives></ref><ref id="CR55"><label>55.</label><citation-alternatives><element-citation id="ec-CR55" publication-type="journal"><person-group person-group-type="author"><name><surname>Benjamini</surname><given-names>Y</given-names></name><name><surname>Hochberg</surname><given-names>Y</given-names></name></person-group><article-title>Controlling the false discovery rate: a practical and powerful approach to multiple testing</article-title><source>J. R. Stat. Soc. Ser. B (Methodol.)</source><year>1995</year><volume>57</volume><fpage>289</fpage><lpage>300</lpage><pub-id pub-id-type="doi">10.1111/j.2517-6161.1995.tb02031.x</pub-id></element-citation><mixed-citation id="mc-CR55" publication-type="journal">Benjamini, Y. &#x00026; Hochberg, Y. Controlling the false discovery rate: a practical and powerful approach to multiple testing. <italic>J. R. Stat. Soc. Ser. B (Methodol.)</italic><bold>57</bold>, 289&#x02013;300 (1995).</mixed-citation></citation-alternatives></ref><ref id="CR56"><label>56.</label><citation-alternatives><element-citation id="ec-CR56" publication-type="journal"><person-group person-group-type="author"><name><surname>Argyle</surname><given-names>EM</given-names></name><name><surname>Marinescu</surname><given-names>A</given-names></name><name><surname>Wilson</surname><given-names>ML</given-names></name><name><surname>Lawson</surname><given-names>G</given-names></name><name><surname>Sharples</surname><given-names>S</given-names></name></person-group><article-title>Physiological indicators of task demand, fatigue, and cognition in future digital manufacturing environments</article-title><source>Int. J. Hum Comput. Stud.</source><year>2021</year><volume>145</volume><fpage>102522</fpage><pub-id pub-id-type="doi">10.1016/j.ijhcs.2020.102522</pub-id></element-citation><mixed-citation id="mc-CR56" publication-type="journal">Argyle, E. M., Marinescu, A., Wilson, M. L., Lawson, G. &#x00026; Sharples, S. Physiological indicators of task demand, fatigue, and cognition in future digital manufacturing environments. <italic>Int. J. Hum Comput. Stud.</italic><bold>145</bold>, 102522 (2021).</mixed-citation></citation-alternatives></ref><ref id="CR57"><label>57.</label><mixed-citation publication-type="other">Rea, D.&#x000a0;J. &#x00026; Seo, S.&#x000a0;H. Still not solved: A call for renewed focus on user-centered teleoperation interfaces. <italic>Front. Robot. AI</italic><bold>9</bold> (2022).</mixed-citation></ref></ref-list></back></article>

@@ -1,0 +1,645 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Sci Rep</journal-id><journal-id journal-id-type="iso-abbrev">Sci Rep</journal-id><journal-title-group><journal-title>Scientific Reports</journal-title></journal-title-group><issn pub-type="epub">2045-2322</issn><publisher><publisher-name>Nature Publishing Group UK</publisher-name><publisher-loc>London</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">39730501</article-id><article-id pub-id-type="pmc">PMC11680919</article-id><article-id pub-id-type="publisher-id">81666</article-id><article-id pub-id-type="doi">10.1038/s41598-024-81666-7</article-id><article-categories><subj-group subj-group-type="heading"><subject>Article</subject></subj-group></article-categories><title-group><article-title>Road terrain recognition based on tire noise for autonomous vehicle</article-title></title-group><contrib-group><contrib contrib-type="author"><name><surname>Yang</surname><given-names>Dongsheng</given-names></name><xref ref-type="aff" rid="Aff1"/></contrib><contrib contrib-type="author" corresp="yes"><name><surname>Zhang</surname><given-names>Dongmin</given-names></name><address><email>zhang.dongmin@163.com</email></address><xref ref-type="aff" rid="Aff1"/></contrib><contrib contrib-type="author"><name><surname>Yuan</surname><given-names>Yi</given-names></name><xref ref-type="aff" rid="Aff1"/></contrib><contrib contrib-type="author"><name><surname>Lei</surname><given-names>Zhaoyu</given-names></name><xref ref-type="aff" rid="Aff1"/></contrib><contrib contrib-type="author"><name><surname>Ding</surname><given-names>Binlei</given-names></name><xref ref-type="aff" rid="Aff1"/></contrib><contrib contrib-type="author"><name><surname>Bo</surname><given-names>Lei</given-names></name><xref ref-type="aff" rid="Aff1"/></contrib><aff id="Aff1">New Technology Research Institute, BYD Auto Industry Co., Ltd., Shenzhen, 518118 China </aff></contrib-group><pub-date pub-type="epub"><day>28</day><month>12</month><year>2024</year></pub-date><pub-date pub-type="pmc-release"><day>28</day><month>12</month><year>2024</year></pub-date><pub-date pub-type="collection"><year>2024</year></pub-date><volume>14</volume><elocation-id>30913</elocation-id><history><date date-type="received"><day>3</day><month>9</month><year>2024</year></date><date date-type="accepted"><day>28</day><month>11</month><year>2024</year></date></history><permissions><copyright-statement>&#x000a9; The Author(s) 2024</copyright-statement><copyright-year>2024</copyright-year><license><ali:license_ref specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p><bold>Open Access</bold> This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article&#x02019;s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article&#x02019;s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link>.</license-p></license></permissions><abstract id="Abs1"><p id="Par1">Effective road terrain recognition is crucial for enhancing the driving safety, passability, and comfort of autonomous vehicles. This study addresses the challenges of accurately identifying diverse road surfaces using deep learning in complex environments. We introduce a novel end-to-end Tire Noise Recognition Residual Network (TNResNet) integrated with a time-frequency attention module, designed to capture and leverage time-frequency information from tire noise signals for road terrain classification. Our method was evaluated on five distinct road types: asphalt, cement, grass, mud, and sand. The performance of TNResNet was rigorously compared against traditional machine learning techniques, including Decision Trees, K-Nearest Neighbors, and Support Vector Machines, as well as advanced deep learning models like Long Short-Term Memory and Convolutional Neural Networks. Experimental results demonstrate that TNResNet achieves superior classification accuracy of 99.48%, outperforming all comparative methods. This work not only establishes a robust framework for road terrain identification but also showcases the significant practical implications of TNResNet in the realm of autonomous vehicle navigation.</p></abstract><kwd-group xml:lang="en"><title>Keywords</title><kwd>Road recognition</kwd><kwd>Tire noise</kwd><kwd>Deep learning</kwd><kwd>Mel spectrogram</kwd><kwd>Classification</kwd></kwd-group><kwd-group kwd-group-type="npg-subject"><title>Subject terms</title><kwd>Mechanical engineering</kwd><kwd>Engineering</kwd><kwd>Mathematics and computing</kwd></kwd-group><custom-meta-group><custom-meta><meta-name>issue-copyright-statement</meta-name><meta-value>&#x000a9; Springer Nature Limited 2024</meta-value></custom-meta></custom-meta-group></article-meta></front><body><sec id="Sec1"><title>Introduction</title><p id="Par2">The rapid advancements in automated and semi-automated driving technologies have catalyzed the development of advanced driver assistance systems (ADAS), significantly enhancing driver convenience and safety. At the core of these innovations lies vehicle control technology, which is essential for realizing fully automated driving systems&#x000a0;<sup><xref ref-type="bibr" rid="CR1">1</xref>&#x02013;<xref ref-type="bibr" rid="CR3">3</xref></sup>. A critical aspect of vehicle control is understanding how different road terrains affect vehicle handling, ride quality, and overall stability&#x000a0;<sup><xref ref-type="bibr" rid="CR4">4</xref></sup>. Accurate information regarding road terrain is crucial for optimizing various vehicle control systems, including electronic stability control (ESC), automatic emergency braking (AEB), and electronic stability program (ESP). Variations in road friction coefficients directly influence tire-road interaction forces, impacting the vehicle&#x02019;s ability to drive, brake, and steer effectively. Consequently, precise terrain information is necessary for enhancing vehicle performance and safety across diverse environments&#x000a0;<sup><xref ref-type="bibr" rid="CR5">5</xref>&#x02013;<xref ref-type="bibr" rid="CR7">7</xref></sup>. Furthermore, a robust road terrain identification system can proactively adjust vehicle settings-such as throttle, transmission, and stability control-during transitions between different surfaces, thereby maintaining control and safety&#x000a0;<sup><xref ref-type="bibr" rid="CR8">8</xref></sup>.</p><p id="Par3">Currently, road terrain recognition techniques primarily include machine vision, vehicle dynamic responses, and tire-pavement interaction noise analysis. Among these, machine vision is the most widely employed method. Notable contributions in this area include a wavelet and support vector machine (SVM)-based approach by Yang et al.&#x000a0;<sup><xref ref-type="bibr" rid="CR9">9</xref></sup>, a convolutional neural network (CNN)-based classification method by Nolte et al.&#x000a0;<sup><xref ref-type="bibr" rid="CR10">10</xref></sup>, and the RTQ-CNN developed by Tumen et al.&#x000a0;<sup><xref ref-type="bibr" rid="CR11">11</xref></sup>. While these machine vision techniques have demonstrated effectiveness, they often face challenges due to environmental disturbances, such as variable lighting and physical obstacles.</p><p id="Par4">In addition, the dynamic responses of vehicles, which are influenced by road roughness and surface materials, provide valuable insights into road conditions. Guan et al.&#x000a0;<sup><xref ref-type="bibr" rid="CR12">12</xref></sup> proposed a method that focuses on tire cornering stiffness, while Lee et al.&#x000a0;<sup><xref ref-type="bibr" rid="CR13">13</xref></sup> employed a deep neural network utilizing accelerometer data for real-time classification. Moreover, recent research emphasizes the integration of deep learning approaches for vision sensor-based control in autonomous vehicles&#x000a0;<sup><xref ref-type="bibr" rid="CR14">14</xref></sup>. Despite their promise, these methods frequently encounter challenges in signal acquisition and processing.</p><p id="Par5">Given the limitations of existing methods, there is increasing interest in utilizing tire noise for road terrain recognition. Variations in tire noise intensity across different surfaces present a unique opportunity for analysis. For example, research has shown that tire noise amplitude increases significantly on wet roads&#x000a0;<sup><xref ref-type="bibr" rid="CR15">15</xref></sup>. Techniques such as power spectral density (PSD)&#x000a0;<sup><xref ref-type="bibr" rid="CR16">16</xref>,<xref ref-type="bibr" rid="CR17">17</xref></sup> and Mel-frequency cepstral coefficients (MFCC)&#x000a0;<sup><xref ref-type="bibr" rid="CR18">18</xref></sup> have been employed for feature extraction; however, complex background noise can impede recognition tasks. Recent advancements that incorporate attention mechanisms into network architectures have demonstrated potential in overcoming these challenges&#x000a0;<sup><xref ref-type="bibr" rid="CR19">19</xref></sup>. The works of Xu&#x000a0;<sup><xref ref-type="bibr" rid="CR20">20</xref></sup> and Zhao et al.&#x000a0;<sup><xref ref-type="bibr" rid="CR21">21</xref></sup> illustrate the effectiveness of residual networks in tackling complex classification problems.</p><p id="Par6">Additionally, an investigation by Zhong et al.&#x000a0;<sup><xref ref-type="bibr" rid="CR22">22</xref></sup> explored the relationship between surface texture and friction, emphasizing the importance of surface characteristics in assessing road conditions. This aligns with ongoing efforts to improve skid resistance evaluation through innovative image-based methods&#x000a0;<sup><xref ref-type="bibr" rid="CR23">23</xref></sup>. Furthermore, Khanum et al.&#x000a0;<sup><xref ref-type="bibr" rid="CR24">24</xref></sup> developed a deep-learning-based network for lane following in autonomous vehicles, showcasing the potential of advanced neural networks to enhance vehicle control systems.</p><p id="Par7">In this study, we introduce the Deep Learning-based Tire Noise Recognition Residual Network (TNResNet), designed to improve the accuracy of road terrain recognition for autonomous vehicles. We conduct a series of experiments to evaluate TNResNet&#x02019;s performance across various road types, including asphalt, cement, grass, mud, and sand, at different speeds. Our comparisons include established methods such as Decision Trees, K-Nearest Neighbors (KNN), SVM, Long Short-Term Memory (LSTM), and conventional CNNs, ensuring a comprehensive assessment.</p><p id="Par8">The results reveal that TNResNet significantly outperforms comparative methods, achieving an average classification accuracy of 99.48%, which is markedly higher than the best performances recorded for SVM, KNN, and Decision Trees at 86.8%, 78.7%, and 82.7%, respectively. Additionally, TNResNet excels in recall and F1 scores, demonstrating its capacity to minimize false negatives and positives. These findings affirm TNResNet&#x02019;s effectiveness in recognizing diverse road terrains under complex conditions, leveraging the advantages of deep residual networks and a time-frequency attention mechanism to enhance feature representation and overall model reliability.</p></sec><sec id="Sec2"><title>Methodology</title><p id="Par9">In this paper, we propose a time-frequency domain CNN coupled with Mel spectrograms to solve road terrain classification task. The architecture of the TNResNet model, the time-frequency attention mechanism, as well as the process of Mel spectrogram computation will be described in this section.<fig id="Fig1"><label>Fig. 1</label><caption><p>The architecture of the TNResNet.</p></caption><graphic xlink:href="41598_2024_81666_Fig1_HTML" id="MO1"/></fig></p><sec id="Sec3"><title>Model architecture</title><p id="Par10">The TNResNet model is an innovative adaptation of the ResNet-18&#x000a0;<sup><xref ref-type="bibr" rid="CR25">25</xref></sup> architecture tailored for road terrain classification tasks. As shown in Fig.&#x000a0;<xref rid="Fig1" ref-type="fig">1</xref>, the architecture consists of five blocks. The initial block includes a convolutional layer with a kernel size of 7x7 and a stride of 2, followed by a batch normalization layer and a ReLU activation function. This block is crucial as it extracts initial features from the input Mel spectrograms, enhancing the model&#x02019;s ability to discern intricate patterns in the data.</p><p id="Par11">The remaining four blocks are structured as residual blocks, each containing two basic blocks. Each basic block consists of convolutional layers with a 3x3 filter size and a stride of 1. The residual connections in these blocks allow for more effective training by mitigating the vanishing gradient problem, thus improving model convergence. The design rules followed are: (i) When the output feature map&#x02019;s size matches the input, the number of filters equals the number of input feature maps. (ii) When the output feature map size is halved, which is achieved using convolutional layers with a stride of 2, the number of filters is doubled.</p><p id="Par12">Each convolutional layer is succeeded by batch normalization and ReLU activation layers. Additionally, we implement a time-frequency attention layer to effectively extract and emphasize time and frequency information from the input feature map, contributing to the model&#x02019;s adaptability to varying conditions. The architecture concludes with a global average pooling layer and a fully-connected layer equipped with a softmax activation function for classification.</p><p id="Par13">The feature map is obtained by a convolution operation as Eq.&#x000a0;<xref rid="Equ1" ref-type="disp-formula">1</xref> between input data and convolutional kernel.<disp-formula id="Equ1"><label>1</label><alternatives><tex-math id="M1">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} y_{k} = \sum _{u = 1}^{N_{h}}{\sum _{v = 1}^{N_{w}}{\sum _{w = 1}^{N_{c}}x}} \bullet \ \omega _{u,v,w,k} + b_{k} \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_81666_Article_Equ1.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq1"><alternatives><tex-math id="M2">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y_{k}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq1.gif"/></alternatives></inline-formula> denotes <inline-formula id="IEq2"><alternatives><tex-math id="M3">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$k^{\textrm{th}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq2.gif"/></alternatives></inline-formula> feature map; <inline-formula id="IEq3"><alternatives><tex-math id="M4">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$N_{h}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq3.gif"/></alternatives></inline-formula> and <inline-formula id="IEq4"><alternatives><tex-math id="M5">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$N_{w}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq4.gif"/></alternatives></inline-formula> are the convolutional kernel height and width, respectively; <inline-formula id="IEq5"><alternatives><tex-math id="M6">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$N_{c}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq5.gif"/></alternatives></inline-formula> denotes the number of input feature map; <inline-formula id="IEq6"><alternatives><tex-math id="M7">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$b_{k}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq6.gif"/></alternatives></inline-formula> is the bias for <inline-formula id="IEq7"><alternatives><tex-math id="M8">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$k^{\textrm{th}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq7.gif"/></alternatives></inline-formula> convolutional kernel; and <inline-formula id="IEq8"><alternatives><tex-math id="M9">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\omega$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq8.gif"/></alternatives></inline-formula> is the learnable weight of the convolutional kernel. The output of convolutional layer is fed to the batch normalization which is applied to reduce internal co-variate shift for accelerating deep network training. The computation process of batch normalization can be summarized as:<disp-formula id="Equ2"><label>2</label><alternatives><tex-math id="M10">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} \mu _{\textrm{B}}&#x00026;=\frac{1}{m} \sum _{i=1}^m x_i \nonumber \\ \sigma _B^2&#x00026;=\frac{1}{m} \sum _{i=1}^m\left( x_i-\mu _B\right) ^2 \nonumber \\ x_i&#x00026;=\frac{x_i-\mu _B}{\sqrt{\sigma _B^2+\varepsilon }} \nonumber \\ y_i&#x00026;=\gamma \cdot x_i+\beta \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_81666_Article_Equ2.gif" position="anchor"/></alternatives></disp-formula>where <italic>x</italic> denotes input feature map, <inline-formula id="IEq9"><alternatives><tex-math id="M11">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\gamma$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq9.gif"/></alternatives></inline-formula> and <inline-formula id="IEq10"><alternatives><tex-math id="M12">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\beta$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq10.gif"/></alternatives></inline-formula>are learnable parameters, <inline-formula id="IEq11"><alternatives><tex-math id="M13">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\varepsilon$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq11.gif"/></alternatives></inline-formula> is a constant value to prevent the denominator from being zero. In general, the batch normalization layer is followed by an activation function layer. The activation functions are usually defined as nonlinear functions to deal with complex nonlinear problem and improve the expressiveness of the model. The most widely used activation function is ReLU. After above operations, the final feature map (3-dimensional) is flattened to an 1-dimensional feature vector to fed the fully connected layer which has as many nodes as the number of classes for classification. In order to obtain probability of each class the deep neural network generally have a softmax output layer which is used the softmax function defined as Eq.&#x000a0;<xref rid="Equ3" ref-type="disp-formula">3</xref>. After get the probability of each class, the model selects the output class that has the greatest possibility, as shown in Eq.&#x000a0;<xref rid="Equ4" ref-type="disp-formula">4</xref><disp-formula id="Equ3"><label>3</label><alternatives><tex-math id="M14">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} P_{i}= &#x00026; \frac{\exp \left( o_{i} \right) }{\sum _{k = 1}^{n}{\exp \left( o_{k} \right) }} \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_81666_Article_Equ3.gif" position="anchor"/></alternatives></disp-formula><disp-formula id="Equ4"><label>4</label><alternatives><tex-math id="M15">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} y_{out}= &#x00026; \max {P_1,P_2,\cdot ,P_{n-1},P_n} \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_81666_Article_Equ4.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq12"><alternatives><tex-math id="M16">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$o_i$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq12.gif"/></alternatives></inline-formula> denotes the output value of <inline-formula id="IEq13"><alternatives><tex-math id="M17">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$o^{th}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq13.gif"/></alternatives></inline-formula> node in the fully connected layer, and <inline-formula id="IEq14"><alternatives><tex-math id="M18">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$P_i$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq14.gif"/></alternatives></inline-formula> denotes the probability value for <inline-formula id="IEq15"><alternatives><tex-math id="M19">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$i^{th}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq15.gif"/></alternatives></inline-formula> class.</p></sec><sec id="Sec4"><title>Time-frequency attention</title><p id="Par14">We propose a time-frequency attention module inspired by the convolutional block attention module (CBAM) [34] module. For a given input feature map <inline-formula id="IEq16"><alternatives><tex-math id="M20">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F \in \mathbb {R}^{C \times F \times T}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq16.gif"/></alternatives></inline-formula>, the time-frequency attention module sequentially infers a time-weighted feature map <inline-formula id="IEq17"><alternatives><tex-math id="M21">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_{T} \in \mathbb {R}^{C \times 1 \times T}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq17.gif"/></alternatives></inline-formula> and a frequency-weighted feature map <inline-formula id="IEq18"><alternatives><tex-math id="M22">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_{F} \in \mathbb {R}^{C \times F \times 1}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq18.gif"/></alternatives></inline-formula> as illustrated in Fig.&#x000a0;<xref rid="Fig2" ref-type="fig">2</xref>.<fig id="Fig2"><label>Fig. 2</label><caption><p>The overview of time-frequency attention module.</p></caption><graphic xlink:href="41598_2024_81666_Fig2_HTML" id="MO2"/></fig></p></sec><sec id="Sec5"><title>Model architecture</title><p id="Par15">The overall attention process can be represented as:<disp-formula id="Equ5"><label>5</label><alternatives><tex-math id="M23">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} F_T&#x00026;=M_T(F) \nonumber \\ F_F&#x00026;=M_F(F) \nonumber \\ F_{\text {out }}&#x00026;=F \otimes F_T \otimes F_F \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_81666_Article_Equ5.gif" position="anchor"/></alternatives></disp-formula>in which <inline-formula id="IEq19"><alternatives><tex-math id="M24">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_{T}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq19.gif"/></alternatives></inline-formula>, <inline-formula id="IEq20"><alternatives><tex-math id="M25">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_{F}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq20.gif"/></alternatives></inline-formula> and <inline-formula id="IEq21"><alternatives><tex-math id="M26">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_{out}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq21.gif"/></alternatives></inline-formula> are the output of time attention module, frequency attention module, and final output of time-frequency attention module, respectively. And the symbol &#x0201c;<inline-formula id="IEq22"><alternatives><tex-math id="M27">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\otimes$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq22.gif"/></alternatives></inline-formula>&#x0201d; denotes element-wise multiplication, in which the weight values are broadcasted during multiplication: time-weighted values are broadcasted along frequency axis, while frequency-weighted values are broadcasted along time axis.</p><p id="Par16">The computation process of time-weighted and frequency-weighted feature map are depicted in Fig.&#x000a0;<xref rid="Fig3" ref-type="fig">3</xref>. The time-weighted feature map focuses on the meaningful moments for a given input feature map, and can be generated by utilizing the inter-time relationship of feature map. We first apply average-pooling operation along the frequency axis. To reduce parameter overhead, we apply a 1x1 kernel size convolutional layer for reducing dimensions to produce a feature map <inline-formula id="IEq23"><alternatives><tex-math id="M28">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_{m} \in \mathbb {R}^{C/r \times 1 \times T}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq23.gif"/></alternatives></inline-formula>, and batch normalization and ReLU activation function followed by the 1x1 kernel size convolutional layer. On the concatenated feature descriptor, we apply a 3x3 kernel size convolutional layer and Sigmoid activation function to generate a time-weighted feature map <inline-formula id="IEq24"><alternatives><tex-math id="M29">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$F_{T} \in \mathbb {R}^{C \times 1 \times T}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq24.gif"/></alternatives></inline-formula> that encodes which moments to emphasize or suppress. In summary, the time-weighted map is computed as:<disp-formula id="Equ6"><label>6</label><alternatives><tex-math id="M30">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} F_T=f_{\text {sigmoid }}\left( f_{\text {conv }}^{3 \times 3}\left( f_{\operatorname {ReLU}}\left( f_{\textrm{BN}}\left( f_{\text {conv }}^{1 \times 1}\left( f_{\text {avgpool }}^F(F)\right) \right) \right) \right) \right) \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_81666_Article_Equ6.gif" position="anchor"/></alternatives></disp-formula>where <italic>F</italic> denotes input feature map, <inline-formula id="IEq25"><alternatives><tex-math id="M31">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$f^{F}_{\textrm{avgpool}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq25.gif"/></alternatives></inline-formula> denotes average-pooling operation along the frequency axis, <inline-formula id="IEq26"><alternatives><tex-math id="M32">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$f_{BN}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq26.gif"/></alternatives></inline-formula> denotes batch normalization operation, <inline-formula id="IEq27"><alternatives><tex-math id="M33">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$f_{\text {conv}}^{1 \times 1}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq27.gif"/></alternatives></inline-formula> and <inline-formula id="IEq28"><alternatives><tex-math id="M34">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$f_{\text {conv}}^{3 \times 3}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq28.gif"/></alternatives></inline-formula> represent convolution operations with filter size of <inline-formula id="IEq29"><alternatives><tex-math id="M35">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1\times 1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq29.gif"/></alternatives></inline-formula> and <inline-formula id="IEq30"><alternatives><tex-math id="M36">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$3\times 3$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq30.gif"/></alternatives></inline-formula>, <inline-formula id="IEq31"><alternatives><tex-math id="M37">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$f_{\textrm{ReLU}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq31.gif"/></alternatives></inline-formula> and <inline-formula id="IEq32"><alternatives><tex-math id="M38">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$f_{\textrm{sigmoid}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq32.gif"/></alternatives></inline-formula> represent ReLU activation function and Sigmoid activation function, respectively. The frequency-weighted feature map is mostly similar to the time-weighted feature map but focuses on meaningful frequency for a given input feature map, which is computed as<disp-formula id="Equ7"><label>7</label><alternatives><tex-math id="M39">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} F_F=f_{\text {sigmoid }}\left( f_{\text {conv }}^{3 \times 3}\left( f_{\operatorname {ReLU}}\left( f_{\textrm{BN}}\left( f_{\text {conv }}^{1 \times 1}\left( f_{\text {avgpool }}^F(F)\right) \right) \right) \right) \right) \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_81666_Article_Equ7.gif" position="anchor"/></alternatives></disp-formula>in which <inline-formula id="IEq33"><alternatives><tex-math id="M40">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$f^{T}_{\textrm{avgpool}}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq33.gif"/></alternatives></inline-formula> denotes average-pooling operation along the time axis.<fig id="Fig3"><label>Fig. 3</label><caption><p>Time-frequency attention module for computing time-weighted and frequency-weighted feature map.</p></caption><graphic xlink:href="41598_2024_81666_Fig3_HTML" id="MO3"/></fig></p></sec><sec id="Sec6"><title>Mel spectrogram</title><p id="Par17">Spectrogram is a graphical representation that visualizes the time-frequency characteristics of a signal. It shows the frequency content of a signal over time and is commonly used to analyze how a signal changes in time and frequency. There are several ways to obtain a spectrogram in digital signal processing, such as generating by an optical spectrometer, a bank of band-pass filters, Fourier transform, and a wavelet transform, etc. In this work, we compute spectrogram <italic>S</italic> by the short-time Fourier transform (STFT)&#x000a0;<sup><xref ref-type="bibr" rid="CR26">26</xref></sup> of a tire noise audio signal. Since the frequency of the tire noise signal is mainly concentrated in the range of 20 - 5000 Hz, in order to show the low-frequency information more clearly, we log-convert its energy value on the basis of the spectrogram:<disp-formula id="Equ8"><label>8</label><alternatives><tex-math id="M41">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} S=\log _{10}\left( |X(\tau , \omega )|^2+\varepsilon \right) \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_81666_Article_Equ8.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq34"><alternatives><tex-math id="M42">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\varepsilon$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq34.gif"/></alternatives></inline-formula> is added to prevent the log value infinite, and <inline-formula id="IEq35"><alternatives><tex-math id="M43">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$X_{\tau ,\omega }$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq35.gif"/></alternatives></inline-formula>denotes magnitude and phase of basis sinusoidal frequencies <inline-formula id="IEq36"><alternatives><tex-math id="M44">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\omega$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq36.gif"/></alternatives></inline-formula> at different time points <inline-formula id="IEq37"><alternatives><tex-math id="M45">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\varepsilon$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq37.gif"/></alternatives></inline-formula>, which is obtained by STFT as<disp-formula id="Equ9"><label>9</label><alternatives><tex-math id="M46">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} X(\tau , \omega )=\sum _{n=-\infty }^{+\infty } x[n] \cdot w[n-\tau ] \textrm{e}^{-\textrm{j} \omega n} \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_81666_Article_Equ9.gif" position="anchor"/></alternatives></disp-formula>in which <italic>x</italic> denotes input time-domain signal, and <italic>w</italic> denotes window function which can reduce spectral leakage caused by the sub-framing. Here the Hamming window as Eq.&#x000a0;<xref rid="Equ9" ref-type="disp-formula">9</xref> is used to provide a narrower main flap in the frequency domain, which helps to concentrate the energy of the signal,<disp-formula id="Equ10"><label>10</label><alternatives><tex-math id="M47">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} w(k)=a_0-a_1 \cos \left( \frac{2 k \pi }{N-1}\right) \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_81666_Article_Equ10.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq38"><alternatives><tex-math id="M48">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$a_{0} = 0.54$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq38.gif"/></alternatives></inline-formula> and <inline-formula id="IEq39"><alternatives><tex-math id="M49">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$a_{1} = 0.46$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq39.gif"/></alternatives></inline-formula>.</p><p id="Par18">Mel-frequency analysis begins by converting linear frequency to Mel frequency which is given by Eq.&#x000a0;<xref rid="Equ10" ref-type="disp-formula">10</xref>, and averaging the bandwidth occupied by the signal within the Mel frequency to obtain a set of filters. Each filter in the filter bank is triangular, with a response of 1 at the center frequency and decreasing linearly to 0 until it reaches the center frequency of two adjacent filters:<disp-formula id="Equ11"><label>11</label><alternatives><tex-math id="M50">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} m \cdot =2595 \cdot \log _{10}\left( 1+\frac{f}{700}\right) \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_81666_Article_Equ11.gif" position="anchor"/></alternatives></disp-formula>where <italic>m</italic> and <italic>f</italic> denote Mel frequency and linear frequency, respectively. For a balance of time and frequency resolution, we split the input tire noise signal into frames of 50 ms length. The corresponding overlap between subsequent frames is 40 ms length. In our work, the input tire noise signal of <italic>t</italic> seconds is converted into a sequence of 64-dimensional log Mel-filter bank features computed with a 50 ms Hamming window every 10 ms. The results are a series of 96<italic>t</italic>
+<inline-formula id="IEq40"><alternatives><tex-math id="M51">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\times$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq40.gif"/></alternatives></inline-formula> 64 Mel spectrograms as input to the TNResNet.</p></sec></sec><sec id="Sec7"><title>Experiment</title><sec id="Sec8"><title>Datasets</title><p id="Par19">As suggested by Lee et al.&#x000a0;<sup><xref ref-type="bibr" rid="CR13">13</xref></sup>, the testing vehicle was instrumented with a single microphone installed on the front wing of the right-rear wheel proximity, which permits to achieve a better signal to noise ratio (SNR), and prevents noise disturbance from the vehicle&#x02019;s engine, exhaust pipe and other parts. In addition, to avoid the influence of wind, a windscreen was used for the microphone. We used a microphone with 44.1 kHz sampling frequency to collect tire noise signal driving on asphalt road, cement road, mud road, grass road, and sand road. In addition, the driving speed is controlled from 10 to 80 km/h with a 10 km/h interval,as shown in Fig.&#x000a0;<xref rid="Fig4" ref-type="fig">4</xref>. The time length for different roads under varying speed segments are shown in the Supplementary Table <xref rid="MOESM1" ref-type="media">S1</xref>.<fig id="Fig4"><label>Fig. 4</label><caption><p>Type of road to be inspected for data collection.</p></caption><graphic xlink:href="41598_2024_81666_Fig4_HTML" id="MO4"/></fig></p></sec><sec id="Sec9"><title>Model training</title><p id="Par20"><bold>Data augmentation</bold>: Data augmentation is a useful technique to increase variability in the training data and prevent over-fitting. In this work, we apply time pitch shift, time inversion&#x000a0;<sup><xref ref-type="bibr" rid="CR27">27</xref></sup>, time mask and mix up&#x000a0;<sup><xref ref-type="bibr" rid="CR28">28</xref></sup> to augment data during training: <list list-type="order"><list-item><p id="Par21">Pitch shift. This method allows to adjust pitch of audio depended on the frequency. Therefore, it can be viewed as a scale shift of the frequency;</p></list-item><list-item><p id="Par22">Time inversion. Time inversion is an effective data augmentation technique that is related to random horizontally flip of images during the training on the visual classification datasets;</p></list-item><list-item><p id="Par23">Time mask. Time mask is applied such that t consecutive time interval <inline-formula id="IEq41"><alternatives><tex-math id="M52">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\left[ t_0, t_0 \cdot +\cdot t\right]$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq41.gif"/></alternatives></inline-formula> are masked, where t - is chosen from a uniform distribution from 0 to a time mask parameter <italic>t</italic>, and t 0 is chosen from <inline-formula id="IEq42"><alternatives><tex-math id="M53">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$[0, T-t]$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq42.gif"/></alternatives></inline-formula>, where <italic>T</italic> is the number of sample points for the audio. There can be more than one time mask in each audio. The time mask can improve the robustness of the TNResNet to time distortion of audio clips.</p></list-item><list-item><p id="Par24">Mix up. Mix up is a way to augment datasets by interpolating two audios of identical target. For instance, we denote the input of two audios as <inline-formula id="IEq43"><alternatives><tex-math id="M54">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$x_1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq43.gif"/></alternatives></inline-formula> and <inline-formula id="IEq44"><alternatives><tex-math id="M55">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$x_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq44.gif"/></alternatives></inline-formula> which have the same target. Then, the augmented input can be obtained by <inline-formula id="IEq45"><alternatives><tex-math id="M56">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$x=a x_1+(1-a) x_2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq45.gif"/></alternatives></inline-formula>, where <italic>a</italic> is hyper-parameter.</p></list-item></list><bold>Optimizer</bold>: We follow and adapt Ruder&#x02019;s summary&#x000a0;<sup><xref ref-type="bibr" rid="CR29">29</xref></sup>of the state-of-the-art optimization algorithms. For training a deep or complex neural network, adaptive moment estimation (Adam) is used to compute adaptive learning rates for each parameter. Adam is designed to combine the advantages of Adadelta and RMSprop, and keep an average exponential decay rate of past gradients like momentum. The formula for updating Adam&#x02019;s weights is as follows:<disp-formula id="Equ12"><label>12</label><alternatives><tex-math id="M57">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} g_t&#x00026;=\nabla _\theta f_t\left( \theta _{t-1}\right) \nonumber \\ m_t&#x00026;=\beta _1 \cdot m_{t-1}+\left( 1-\beta _1\right) \cdot g_t \nonumber \\ v_t&#x00026;=\beta _2 \cdot v_{t-1}+\left( 1-\beta _2\right) \cdot g_t^2 \nonumber \\ \widehat{m}_t&#x00026;=\frac{m_t}{\left( 1-\beta _1^t\right) } \nonumber \\ \hat{v}_t&#x00026;=\frac{v_t}{\left( 1-\beta _2^t\right) } \nonumber \\ \theta _t&#x00026;=\theta _{t-1}-\alpha \frac{\widehat{m}_t}{\sqrt{\hat{v}_t}+\epsilon } \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_81666_Article_Equ12.gif" position="anchor"/></alternatives></disp-formula>where <italic>a</italic> denotes learning rate, <inline-formula id="IEq46"><alternatives><tex-math id="M58">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$g_{t}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq46.gif"/></alternatives></inline-formula> denotes the gradient of the current parameter, <inline-formula id="IEq47"><alternatives><tex-math id="M59">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\beta _1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq47.gif"/></alternatives></inline-formula> and <inline-formula id="IEq48"><alternatives><tex-math id="M60">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\beta _2$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq48.gif"/></alternatives></inline-formula>denote the exponential decay rates of the first and the second moment estimate, respectively. In this work, <inline-formula id="IEq49"><alternatives><tex-math id="M61">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\beta _{1}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq49.gif"/></alternatives></inline-formula>and <inline-formula id="IEq50"><alternatives><tex-math id="M62">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\beta _{2}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq50.gif"/></alternatives></inline-formula> are defined as 0.9 and 0.999.</p><p id="Par25"><bold>Loss function</bold>: For a classification task, cross entropy is usually employed as its loss function which can be expressed by the following equation,<disp-formula id="Equ13"><label>13</label><alternatives><tex-math id="M63">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} Loss(j) = \ - \sum _{i = 1}^{K}{y_{i,j}\log \left( p_{i} \right) } \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_81666_Article_Equ13.gif" position="anchor"/></alternatives></disp-formula>where <italic>K</italic> denotes the number of road terrain classes, <inline-formula id="IEq51"><alternatives><tex-math id="M64">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$y_{i,j}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq51.gif"/></alternatives></inline-formula> equals 1 if <inline-formula id="IEq52"><alternatives><tex-math id="M65">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$i = j$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq52.gif"/></alternatives></inline-formula> and otherwise 0, <inline-formula id="IEq53"><alternatives><tex-math id="M66">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$p_{i}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_81666_Article_IEq53.gif"/></alternatives></inline-formula> denotes the possibility when the prediction is for label <italic>i</italic>.</p><p id="Par26"><bold>Metrics</bold>:</p><p id="Par27">To rigorously assess the effectiveness of a multi-class classifier, it is essential to employ a comprehensive suite of metrics that can holistically capture the model&#x02019;s performance. The chosen metrics&#x02014;accuracy, precision, recall, and F1-score&#x02014;are derived from the confusion matrix, as illustrated in Fig.&#x000a0;<xref rid="Fig5" ref-type="fig">5</xref>. These metrics are critically selected because they provide a balanced evaluation of the classifier&#x02019;s performance across various aspects:</p><p id="Par28">Accuracy measures the overall ability of the model to correctly predict both positive and negative classes. In the context of autonomous vehicle terrain recognition, a high accuracy indicates that the model can reliably differentiate between various types of road surfaces. This capability is crucial for minimizing the risk of erroneous navigational and control decisions in practical applications. By ensuring high accuracy, the model aids in enhancing the operational reliability of autonomous driving systems, contributing to safer and more efficient vehicle operations.<disp-formula id="Equ14"><label>14</label><alternatives><tex-math id="M67">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} \text { accuracy } = \frac{T P+T N}{T P+F P+T N+F N} \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_81666_Article_Equ14.gif" position="anchor"/></alternatives></disp-formula>Precision quantifies the accuracy of the model when it predicts positive outcomes. In the realm of autonomous driving vehicle terrain recognition, high precision means that when the model predicts a certain type of road surface, it is likely correct. This is crucial for avoiding unnecessary or incorrect vehicle responses to perceived road conditions, which could compromise the vehicle&#x02019;s safety and operational efficiency. High precision ensures that the autonomous system&#x02019;s adjustments to vehicle dynamics-like speed adaptation and stability control-are based on accurate detections, minimizing the likelihood of inappropriate reactions that could lead to hazardous driving situations.<disp-formula id="Equ15"><label>15</label><alternatives><tex-math id="M68">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} \text {precision } = \frac{T P}{T P+F P} \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_81666_Article_Equ15.gif" position="anchor"/></alternatives></disp-formula>where <italic>TP</italic>, <italic>FP</italic>, <italic>FN</italic> and <italic>TN</italic> are true positive, false positive, false negative and true negative, respectively.</p><p id="Par29">Recall, also known as the true positive rate, measures the proportion of actual positives that the model correctly identifies. For autonomous driving systems, a high recall is essential as it signifies the model&#x02019;s ability to recognize most of the actual road terrains. This capability is particularly critical to prevent safety issues that could arise from unrecognized road conditions. Ensuring high recall helps in reducing the chances of accidents caused by inadequate response to actual road terrains, thereby enhancing the predictive safety features of the vehicle.<disp-formula id="Equ16"><label>16</label><alternatives><tex-math id="M69">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} \text { recall } = \frac{T P}{T P+F N} \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_81666_Article_Equ16.gif" position="anchor"/></alternatives></disp-formula>F1-Score is the harmonic mean of precision and recall, providing a balance between these two metrics. It is particularly useful in scenarios where there is an imbalance among classes, as it takes into account both the precision and the coverage of the positive class by the model. The F1 score is a critical metric in autonomous driving applications where missing a road type (low recall) or falsely identifying a road type (low precision) could have severe implications. By optimizing for a high F1 score, developers can achieve a balanced model that performs well under varied and unpredictable environmental conditions, which is paramount for the adaptive response systems of autonomous vehicles.<disp-formula id="Equ17"><label>17</label><alternatives><tex-math id="M70">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} F1_{Score} = 2\frac{{\text {precision}\cdot \text {recall}}}{\text {precision} + \text {recall} } \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_81666_Article_Equ17.gif" position="anchor"/></alternatives></disp-formula><fig id="Fig5"><label>Fig. 5</label><caption><p>Confusion matrix.</p></caption><graphic xlink:href="41598_2024_81666_Fig5_HTML" id="MO5"/></fig></p><p id="Par30">We implement TNResNet in MATLAB, and the model was trained with the batch size of 128 for 1000 iterations. Adam is used as the optimizer with initial learning rate of 0.001 and decreased by a factor 0.1 for every 400 iterations. We evaluate the results using accuracy, precision, recall and F1-score. All the experiments are performed using NVIDIA GeForce RTX 3080 with 10 GB memory.</p><p id="Par31">The input of TNResNet is the Mel spectrogram, and the output is the prediction label of road terrain type. We have collected tire noise signals of different road terrains and extracted the Mel spectrogram from original signals. To improve the training accuracy and prevent over-fitting, we use pitch shift, time inversion, time mask and mix up to expand the tire noise signals. The workflow diagram for road terrain recognition is shown as Fig.&#x000a0;<xref rid="Fig6" ref-type="fig">6</xref>.</p><p id="Par32">The training samples contain two parts: 80% training data and 20% validation data. As the training time increases, the model tends to be stable after iterations 600, where the training loss of the model decreases to 0, and the training accuracy of the model increases to 100%, shown as Fig. &#x000a0;<xref rid="Fig7" ref-type="fig">7</xref>.</p><p id="Par33">We use 3670 validation samples to verify the prediction accuracy of the model and the classification accuracy of all the validations is 99.48%. The average recognition precision, recall and F1-score are 99.48%, 99.50% and 99.46%, respectively. More details of the validation results can be seen in Fig.&#x000a0;<xref rid="Fig8" ref-type="fig">8</xref> and Tab.&#x000a0;<xref rid="Tab1" ref-type="table">1</xref>.Each sample contains 5000 sampled signal points and the number of sampled signal points remains consistent across speeds and road conditions. To increase transparency, specific data for some of the experimental samples are provided in the appendix.Fig.&#x000a0;<xref rid="Fig8" ref-type="fig">8</xref> illustrates the signal data for different road conditions, with confidence labels derived by analysing the probability distributions of the model outputs. Specifically, the model&#x02019;s predictive confidence for each road type is determined by its corresponding output probability.</p><p id="Par34">Different road terrains are selected to evaluate the trained TNResNet, the valuate results of the model are shown in Fig&#x000a0;<xref rid="Fig9" ref-type="fig">9</xref>. The prediction result of the model contains label and confidence, and the confidence is the probability of the current prediction label.<fig id="Fig6"><label>Fig. 6</label><caption><p>Workflow diagram for road terrain recognition.</p></caption><graphic xlink:href="41598_2024_81666_Fig6_HTML" id="MO6"/></fig><fig id="Fig7"><label>Fig. 7</label><caption><p>The evolutions of (<bold>a</bold>) training loss and (<bold>b</bold>) training accuracy of TNResNet model with iterations. After 600 iterations the model tends to be stable.</p></caption><graphic xlink:href="41598_2024_81666_Fig7_HTML" id="MO7"/></fig><fig id="Fig8"><label>Fig. 8</label><caption><p>The confusion matrix of TNResNet model validation.</p></caption><graphic xlink:href="41598_2024_81666_Fig8_HTML" id="MO8"/></fig><fig id="Fig9"><label>Fig. 9</label><caption><p>Valuate results of TNResNet contain label of road type and confidence.</p></caption><graphic xlink:href="41598_2024_81666_Fig9_HTML" id="MO9"/></fig><table-wrap id="Tab1"><label>Table 1</label><caption><p>Evaluation metrics results of the TNResNet.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Classes</th><th align="left">Precision</th><th align="left">Recall</th><th align="left">F1-score</th></tr></thead><tbody><tr><td align="left">Asphalt</td><td align="left">99.7%</td><td align="left">99.4%</td><td align="left">99.5%</td></tr><tr><td align="left">Cement</td><td align="left">99.3%</td><td align="left">99.7%</td><td align="left">99.5%</td></tr><tr><td align="left">Grass</td><td align="left">99.5%</td><td align="left">99.4%</td><td align="left">99.4%</td></tr><tr><td align="left">Mud</td><td align="left">99.1%</td><td align="left">99.5%</td><td align="left">99.3%</td></tr><tr><td align="left">Sand</td><td align="left">99.8%</td><td align="left">99.5%</td><td align="left">99.6%</td></tr></tbody></table></table-wrap></p></sec><sec id="Sec10"><title>Comparison with machine learning</title><p id="Par35">Machine learning methods can be used in related studies about tire noise signals. Different with deep learning approaches, machine learning methods require pre-processing step to extract high-level features from the tire noise signals, which will represent the patterns to be recognized. Among these features, we extracted 12 kinds of common signal features from time domain and frequency domain which are attached in Supplementary Table <xref rid="MOESM1" ref-type="media">S2</xref>, And here we will compare our TNResNet model with 3 machine learning methods, including decision tree (DT), KNN and SVM.<fig id="Fig10"><label>Fig. 10</label><caption><p>Validation accuracy curves for three machine learning methods: (<bold>a</bold>) DT, (<bold>b</bold>) KNN and (<bold>c</bold>) SVM. The highest validation accuracy for DT, KNN and SVM is 82.7%, 78.7% and 86.8%, respectively.</p></caption><graphic xlink:href="41598_2024_81666_Fig10_HTML" id="MO10"/></fig></p><p id="Par36">DT is a supervised learning method applied in classification, which is a kind of tree structure, each internal node represents a judgement on a feature, each branch represents the output of a judgement and finally, and each leaf node represents a classification result. In the method, each sample has a set of features and the prediction is obtained by making judgement on each feature. Here, 3 split criterions were analyzed including Gini&#x02019;s diversity index, twoing rule and maximum deviance reduction. Shown as Table&#x000a0;<xref rid="Tab2" ref-type="table">2</xref> and Fig.&#x000a0;<xref rid="Fig10" ref-type="fig">10</xref>(a), when the maximum number of splits does not exceed 500, the more splits, the greater the accuracy values for DT. And when using Gini&#x02019;s diversity index as split criterion, DT model has the highest validation accuracy reaching 82.7% when the maximum number of splits is 500.<table-wrap id="Tab2"><label>Table 2</label><caption><p>Validation accuracy values for DT.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left" rowspan="2">Split criterion</th><th align="left" colspan="4">Maximum number of splits</th><th align="left" rowspan="2">Average</th></tr><tr><th align="left">50</th><th align="left">100</th><th align="left">500</th><th align="left">1000</th></tr></thead><tbody><tr><td align="left">Gini&#x02019;s diversity index</td><td align="left">73.8%</td><td align="left">79.2%</td><td align="left">82.7%</td><td align="left">82.0%</td><td align="left">79.4%</td></tr><tr><td align="left">Twoing rule</td><td align="left">74.5%</td><td align="left">78.3%</td><td align="left">82.5%</td><td align="left">81.6%</td><td align="left">79.2%</td></tr><tr><td align="left">Maximum deviance reduction</td><td align="left">72.4%</td><td align="left">75.7%</td><td align="left">81.4%</td><td align="left">81.7%</td><td align="left">77.8%</td></tr><tr><td align="left">Average</td><td align="left">73.7%</td><td align="left">77.7%</td><td align="left">82.2%</td><td align="left">81.8%</td><td align="left">78.8%</td></tr></tbody></table></table-wrap></p><p id="Par37">KNN is a classification method based on similarity metrics between samples to recognize patterns. For a new sample, the distance from the sample to each training sample is calculated, identifying the <italic>k</italic> nearest neighbors. The new sample class is obtained by the most common class among the <italic>k</italic> neighbors. Here, KNN models with 1, 5, 10, 100 neighbors and Euclidean, Chebyshev, Minkowski, Cosine distances were analyzed for the optimal neighbor&#x02019;s value and distance type. For the KNN technique, the best model is using Euclidean distance as similarity metric with 10 neighbors, whose validation accuracy reaches 78.7%, shown in Table&#x000a0;<xref rid="Tab3" ref-type="table">3</xref> and Fig.&#x000a0;<xref rid="Fig10" ref-type="fig">10</xref>(b).<table-wrap id="Tab3"><label>Table 3</label><caption><p>Validation accuracy values for KNN</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left" rowspan="2">Distance</th><th align="left" colspan="4">Neighbors</th><th align="left" rowspan="2">Average</th></tr><tr><th align="left">1</th><th align="left">5</th><th align="left">10</th><th align="left">100</th></tr></thead><tbody><tr><td align="left">Euclidean</td><td align="left">76.1%</td><td align="left">78.6%</td><td align="left">78.7%</td><td align="left">77.1%</td><td align="left">77.6%</td></tr><tr><td align="left">Chebyshev</td><td align="left">74.3%</td><td align="left">76.3%</td><td align="left">76.5%</td><td align="left">75.3%</td><td align="left">75.6%</td></tr><tr><td align="left">Minkowski</td><td align="left">75.2%</td><td align="left">76.7%</td><td align="left">77.9%</td><td align="left">75.4%</td><td align="left">76.3%</td></tr><tr><td align="left">Cosine</td><td align="left">71.1%</td><td align="left">75.1%</td><td align="left">76.2%</td><td align="left">74.8%</td><td align="left">74.3%</td></tr><tr><td align="left">Average</td><td align="left">74.2%</td><td align="left">76.7%</td><td align="left">77.3%</td><td align="left">75.7%</td><td align="left">76.0%</td></tr></tbody></table></table-wrap></p><p id="Par38">SVM is also a supervised learning method for classification, where the technique searches for an optimal hyperplane that splits the samples classes. For non-linear problem, it is necessary to use the kernel hyper-parameter, which converts a non-separable problem into a separable problem. Here, models for 4 kernel function were analyzed: Gaussian, linear, quadratic and triangle. For the SVM technique shown in Table&#x000a0;<xref rid="Tab4" ref-type="table">4</xref> and Fig.&#x000a0;<xref rid="Fig10" ref-type="fig">10</xref>(c), the linear kernel function obtained the worst validation accuracy values. The kernel scale has much influence on the final result, with larger kernel scale, the results tend to get worse. In addition, the best model is using Gaussian kernel function with kernel scale 1, reaching 86.8% validation accuracy.<table-wrap id="Tab4"><label>Table 4</label><caption><p>Validation accuracy values for SVM.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left" rowspan="2">Kernel function</th><th align="left" colspan="4">Kernel scale</th><th align="left" rowspan="2">Average</th></tr><tr><th align="left">0.87</th><th align="left">1</th><th align="left">3.5</th><th align="left">14</th></tr></thead><tbody><tr><td align="left">Gaussian</td><td align="left">86.2%</td><td align="left">86.8%</td><td align="left">83.8%</td><td align="left">69.4%</td><td align="left">81.6%</td></tr><tr><td align="left">Linear</td><td align="left">66.5%</td><td align="left">66.4%</td><td align="left">64.1%</td><td align="left">59.9%</td><td align="left">64.2%</td></tr><tr><td align="left">Quadratic</td><td align="left">83.7%</td><td align="left">83.8%</td><td align="left">81.0%</td><td align="left">65.5%</td><td align="left">78.5%</td></tr><tr><td align="left">Triangle</td><td align="left">68.5%</td><td align="left">82.1%</td><td align="left">84.1%</td><td align="left">71.4%</td><td align="left">76.5%</td></tr><tr><td align="left">Average</td><td align="left">76.2%</td><td align="left">79.8%</td><td align="left">78.3%</td><td align="left">66.6%</td><td align="left">75.2%</td></tr></tbody></table></table-wrap></p><p id="Par39">To evaluate the performance of the proposed TNResNet model, the confusion matrix for each best model of machine learning methods and TNResNet were calculated and are shown as Fig.&#x000a0;<xref rid="Fig11" ref-type="fig">11</xref>, which displaies the robust and high accuracy of the proposed TNResNet method. More details could be found in Fig.&#x000a0;<xref rid="Fig12" ref-type="fig">12</xref> and Supplementary Table S3, where the accuracy, precision, recall and F1-score were calculated for each terrain on the same datasets, it&#x02019;s apparent that the TNResNet has a much better performance than DT, KNN and SVM, improving 16.2%, 23.2%, 12.5% in average precision; 16.8%, 23.5%, 12.7% in average recall; and 16.6%, 23.4%, 2.6% in average F1-score, respectively.<fig id="Fig11"><label>Fig. 11</label><caption><p>Confusion matrix for each best model of machine learning methods and TNResNet: (<bold>a</bold>) DT; (<bold>b</bold>) KNN; (<bold>c</bold>) SVM; (<bold>d</bold>) TNResNet. The TNResNet method shows robust and accurate prediction.</p></caption><graphic xlink:href="41598_2024_81666_Fig11_HTML" id="MO11"/></fig><fig id="Fig12"><label>Fig. 12</label><caption><p>Evaluation metrics curve for each best model of machine learning methods and TNResNet: (<bold>a</bold>) precision; (<bold>b</bold>) recall; (<bold>c</bold>) F1-score. The TNResNet shows a much better performance than DT, KNN and SVM.</p></caption><graphic xlink:href="41598_2024_81666_Fig12_HTML" id="MO12"/></fig></p></sec><sec id="Sec11"><title>Comparison with deep-learning</title><p id="Par40">Effective feature extraction of signals is a complex problem in the application of machine learning techniques, and sometimes, it is very difficult to extract high-level features. But this problem has been mostly solved by deep learning models composed of multiple processing layers to the data high-level representation. Speech recognition, audio classification and many other applications have been significantly improved based on deep learning models. To make comparison, we built and analyzed long short-term memory (LSTM) and CNN models, which were trained the same as TNResNet, using Adam optimizer and cross entropy as loss function.<fig id="Fig13"><label>Fig. 13</label><caption><p>The architecture of LSTM.</p></caption><graphic xlink:href="41598_2024_81666_Fig13_HTML" id="MO13"/></fig></p><p id="Par41">LSTM is a specific form of recurrent neural network (RNN). Compared to RNNs, LSTM can better solve the gradient vanishing and gradient explosion problems during long sequence training. In this technique, the combination of three gating units (input gate, forgetting gate and output gate) determines the out of each time step, shown as Fig.&#x000a0;<xref rid="Fig13" ref-type="fig">13</xref>. This structure enables LSTM to learn long-term dependencies. The input gate controls the current state information, the forgetting gate controls how much of the history information is retained, and the output determines which information will eventually be outputted. We analyzed several LSTM-based models both in unidirectional and bidirectional forms as listed in Table&#x000a0;<xref rid="Tab5" ref-type="table">5</xref>, in which LSTM 6 composed of an input layer, three recurrent and regularization blocks and a block of fully connected layers for output production is the best model with 96.40% validation accuracy, and bidirectional LSTM has superior performance than unidirectional LSTM.<table-wrap id="Tab5"><label>Table 5</label><caption><p>Validation accuracy values for LSTM-based models.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Models</th><th align="left">Accuracy</th><th align="left">Layers</th></tr></thead><tbody><tr><td align="left">LSMT 1</td><td align="left">94.34%</td><td align="left">1 LSTM with 256 units, 1 Dropout of 0.2, 1 Fully-connect layer of 256 units and ReLU activation</td></tr><tr><td align="left">LSTM 2</td><td align="left">94.89%</td><td align="left">Same as LSTM 1, but LSTM are bidirectional</td></tr><tr><td align="left">LSTM 3</td><td align="left">95.29%</td><td align="left">3 blocks of LSTM with 256 units and Dropout of 0.2, 1 Fully-connect layer of 256 units and ReLU activation</td></tr><tr><td align="left">LSTM 4</td><td align="left">95.87%</td><td align="left">Same as LSTM 3, but LSTM are bidirectional</td></tr><tr><td align="left">LSTM 5</td><td align="left">96.12%</td><td align="left">3 blocks of LSTM with 256 units, Batch Normalization and Dropout of 0.2, 1 Fully-connect layer of 256 units and ReLU activation</td></tr><tr><td align="left">LSTM 6</td><td align="left">96.40%</td><td align="left">Same as LSTM 5, but LSTM are bidirectional</td></tr></tbody></table></table-wrap></p><p id="Par42">CNN can extract features directly from tire noise signal, which is inspired by the mechanism of the biological receptive field and is specifically designed to process data with a grid-like structure, such as image. The tire noise signal was transformed into a RGB image by using CWT as the input of CNN-based models. The convolutional layer is the most important layer for CNN, each convolutional layer has <italic>n</italic> filters with a kernel size of <italic>m</italic>. Convolution layer is usually followed by pooling and fully connected layers, which are used to perform dimension reduction and integrate the extracted features. For the CNN-based approach, we analyzed several network models using different pooling layers as listed in Table&#x000a0;<xref rid="Tab6" ref-type="table">6</xref>, from which it can be found that the average pooling is better than max pooling and CNN 3 is the best model with 95.20% validation accuracy. CNN 3 is composed of three blocks of convolution, batch normalization, ReLU activation and average pooling, and a block of fully connected layer. The feature is extracted by convolutional layers with kernel size of 3, which has 16, 32 and 64 filters respectively. Batch normalization is used to standardize the inputs for regularization, and average pooling 2D layer is used to down-sampling for accelerating training and avoiding over-fitting. Finally, a block of fully connected layers for output production.<table-wrap id="Tab6"><label>Table 6</label><caption><p>Validation accuracy values for CNN-based models.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Models</th><th align="left">Accuracy</th><th align="left">Layers</th></tr></thead><tbody><tr><td align="left">AIM&#x000a0;<sup><xref ref-type="bibr" rid="CR25">25</xref></sup></td><td align="left">93.11%</td><td align="left">2 blocks of Conv2D with 16-32 filters, kernel 3, batch normalization, ReLU activation and average pooling 2D</td></tr><tr><td align="left">CNN 2</td><td align="left">93.08%</td><td align="left">Same as AIM, but the pooling operations of blocks are max pooling 2D</td></tr><tr><td align="left">CNN 3</td><td align="left">95.20%</td><td align="left">3 blocks of Conv2D with 16-32-64 filters, kernel 3, batch normalization, ReLU activation and average pooling 2D</td></tr><tr><td align="left">CNN 4</td><td align="left">94.70%</td><td align="left">Same as CNN 3, but the pooling operations of blocks are max pooling 2D</td></tr><tr><td align="left">CNN 5</td><td align="left">95.10%</td><td align="left">3 blocks of Conv2D with 32-64-128 filters, kernel 3, batch normalization, ReLU activation and average pooling 2D</td></tr><tr><td align="left">CNN 6</td><td align="left">94.82%</td><td align="left">Same as CNN 5, but the pooling operations of blocks are max pooling 2D</td></tr></tbody></table></table-wrap></p><p id="Par43">The confusion matrices for each best model of deep learning methods and TNResNet are shown in Fig.&#x000a0;<xref rid="Fig14" ref-type="fig">14</xref>. It&#x02019;s easy to note that deep learning-based methods achieve significant boost performance over the machine learning-based methods. The precision, recall and F1-score values are displayed in Fig.&#x000a0;<xref rid="Fig15" ref-type="fig">15</xref> and listed in Supplementary Table S4, from which it can be found that the proposed TNResNet achieves the best precision, recall and F1-score values and outperforms other compared deep learning methods. Comparing to LSTM, CNN and AIM, there are 3.0%, 4.1%, 6.5% improvements in average precision; 3.2%, 4.4%, 6.5% improvements in average recall; and 3.1%, 4.3%, 6.6% improvements in average F1-score, respectively. While AIM shows the worst performance among these methods, which indicates that increasing the number of layers of the network can improve the road terrains recognition performance.<fig id="Fig14"><label>Fig. 14</label><caption><p>Confusion matrix for each best model of deep learning methods and TNResNet: (<bold>a</bold>) LSTM; (<bold>b</bold>) CNN; (<bold>c</bold>) AIM; (<bold>d</bold>) TNResNet. Deep learning-based methods have better performance than machine learning-based methods.</p></caption><graphic xlink:href="41598_2024_81666_Fig14_HTML" id="MO14"/></fig><fig id="Fig15"><label>Fig. 15</label><caption><p>Evaluation metrics curve for each best model of deep learning methods and TNResNet: (<bold>a</bold>) precision; (<bold>b</bold>) recall; (<bold>c</bold>) F1-score. TNResNet has the best precision, recall and F1-score values and outperforms other compared deep learning methods.</p></caption><graphic xlink:href="41598_2024_81666_Fig15_HTML" id="MO15"/></fig></p><p id="Par44">Enhancing precision indicates that TNResNet achieves greater precision in identifying road terrains across all categories. This enhanced accuracy suggests that the model has improved its ability to discern and categorize different road conditions effectively, crucial for the diverse environments encountered during autonomous vehicle operations.</p><p id="Par45">Increasing the recall rate reduces the instances of missed critical terrain information, which is essential for autonomous vehicles during driving decision-making and route planning. For instance, ensuring that the vehicle control systems are correctly adjusted for different terrains can significantly mitigate the risk of potential accidents. This highlights the importance of a model that reliably identifies varying road conditions to ensure safety and efficiency.</p><p id="Par46">A high F1-score indicates that TNResNet maintains a balance between high recall and high accuracy. This balance ensures that the system neither misses critical terrain features nor overidentifies non-target terrains. Such equilibrium is crucial for optimizing the performance of autonomous driving systems, ensuring that they operate effectively without unnecessary adjustments or errors in terrain recognition, thus enhancing both safety and operational efficiency in real-world conditions.</p></sec><sec id="Sec12"><title>Experimental results analysis</title><p id="Par47">The comparison of TNResNet with traditional machine learning methods (such as Decision Trees, KNN, and SVM) and other deep learning models (including LSTM and CNN) highlights its significant advantages and innovations in diverse conditions.</p><p id="Par48">In the evaluation against machine learning approaches, TNResNet demonstrates a remarkable improvement in road surface recognition tasks. The Decision Tree (DT) model achieves a maximum validation accuracy of 82.7%, while KNN and SVM attain maximum accuracies of 78.7% and 86.8%, respectively. However, TNResNet surpasses all these methods, illustrating its effectiveness in complex pattern recognition. Specifically, TNResNet outperforms DT, KNN, and SVM by enhancing average precision, recall, and F1 scores by 16.2%, 23.2%, 12.5%; 16.8%, 23.5%, 12.7%; and 16.6%, 23.4%, and 2.6%, respectively. These results indicate that TNResNet&#x02019;s capability to extract high-level features enables it to better adapt to diverse road conditions.</p><p id="Par49">When compared to deep learning models, TNResNet continues to excel. It consistently achieves superior performance across various evaluation metrics compared to LSTM and CNN. Notably, TNResNet shows improvements of 3.0%, 3.2%, and 3.1% in average precision, recall, and F1 score, respectively, over LSTM. This enhancement underscores TNResNet&#x02019;s unique architecture in feature extraction and pattern recognition, making it more reliable for complex applications such as autonomous driving.</p><p id="Par50">Furthermore, TNResNet&#x02019;s design not only exhibits superior accuracy but also demonstrates exceptional adaptability. Its multi-layer network architecture effectively processes tire noise signals in varying environments, as validated by the experimental results. Whether on sandy, muddy, or concrete surfaces, TNResNet consistently displays high stability and accuracy. This adaptability meets the requirements of autonomous driving systems in dynamic environments, thereby improving driving safety and decision-making efficiency.</p><p id="Par51">The high F1 score of TNResNet signifies a well-maintained balance between recall and precision. This balance is crucial for ensuring the system&#x02019;s efficiency and accuracy in identifying critical road surface features, thus mitigating the risks of potential accidents and optimizing the overall performance of autonomous driving systems.</p><p id="Par52">In summary, TNResNet not only proves its superiority in road surface recognition tasks but also provides a solid foundation for future research and applications in related fields through its innovative design and robust adaptability.</p></sec></sec><sec id="Sec13"><title>Discussion</title><p id="Par53">In this section, we address key considerations regarding the TNResNet model&#x02019;s applicability, computational efficiency, and generalization capabilities for road terrain recognition in autonomous vehicles.</p><p id="Par54">One of the critical aspects of TNResNet&#x02019;s long-term viability is its operational stability and adaptability under varied environmental conditions. Our longitudinal simulations reveal fluctuations in model performance during extreme weather events, underscoring the need for enhanced training with weather-specific datasets. Implementing adaptive retraining mechanisms will be essential for maintaining sustained accuracy. Additionally, while TNResNet demonstrates high classification accuracy on common terrains, an analysis of misclassified data has revealed specific scenarios-such as unusual road textures and transitions-that lead to errors. Identifying these causes will inform future improvements at both the data pre-processing and model optimization levels.</p><p id="Par55">Regarding computational efficiency, the demands of TNResNet on edge devices, typical in autonomous vehicles, necessitate further discussion. Strategies such as model pruning, quantization, and knowledge distillation can be employed to optimize the network for real-time processing, effectively reducing computational load while maintaining performance.</p><p id="Par56">Furthermore, the experimental validation of TNResNet currently focuses on five common road surfaces, which limits its robustness demonstration. To enhance the model&#x02019;s applicability, we recommend conducting additional tests on more challenging terrains, including snow, ice, and gravel. This diversity in terrain types will provide a more comprehensive understanding of the model&#x02019;s generalization capabilities.</p><p id="Par57">While our findings highlight the strengths of TNResNet, it is essential to acknowledge its limitations. The model&#x02019;s performance on unmarked and degraded road surfaces has been inconsistent, suggesting a potential lack of generalization in unfamiliar conditions. Expanding the training datasets to encompass a wider range of terrain types and employing transfer learning techniques could enhance TNResNet&#x02019;s robustness and adaptability.</p><p id="Par58">To further refine TNResNet&#x02019;s utility in autonomous driving applications, we recommend the following research directions: <list list-type="order"><list-item><p id="Par59">Analysis of Misclassifications: Conduct a thorough analysis to understand the causes of misclassified data, leading to targeted improvements in data pre-processing and model optimization.</p></list-item><list-item><p id="Par60">Environmental Adaptability Testing: Regularly implement environmental simulation tests to prepare the model for diverse operating conditions, ensuring better performance in real-world scenarios.</p></list-item><list-item><p id="Par61">Resource Optimization Research: Explore efficient computation techniques specifically designed for autonomous driving systems to align the model&#x02019;s requirements with computational constraints.</p></list-item><list-item><p id="Par62">Enhancement of Generalization Skills: Expand the training datasets to include a broader variety of road conditions and investigate machine learning techniques that support better transferability and learning from sparse data environments.</p></list-item></list>By addressing these considerations, we aim to enhance the TNResNet model&#x02019;s effectiveness and reliability in real-world autonomous driving applications.</p></sec><sec id="Sec14"><title>Conclusion</title><p id="Par63">In this study, we introduce TNResNet, an end-to-end tire noise recognition residual network for road terrain recognition using tire noise signals captured by a low-cost microphone. TNResNet&#x02019;s innovative features include a residual architecture that enhances deep learning capabilities and attention mechanisms that focus on critical signal features. This design significantly improves accuracy in distinguishing subtle variations between different road surfaces.</p><p id="Par64">TNResNet achieved an impressive validation accuracy of 99.48%, outperforming classical machine learning methods (Decision Trees: 82.7%, KNN: 78.7%, SVM: 86.8%) and other deep learning models (LSTM: 96.4%, CNN: 95.2%). Additionally, it exhibited superior precision, recall, and F1-scores, underscoring its effectiveness in reducing false positives and negatives.</p><p id="Par65">The model&#x02019;s adaptability is a key advantage, enabling it to perform well under varied environmental conditions and handle background noise effectively. Its diverse training dataset equips TNResNet to recognize terrains that were not explicitly included in training, enhancing its robustness.</p><p id="Par66">By advancing the field of road terrain recognition through acoustic analysis, TNResNet fills gaps in existing literature that often rely on visual or sensor-based methods. This innovation not only offers insights into tire-road interactions but also demonstrates the potential for integrating multi-sensory data in autonomous vehicle systems.</p><p id="Par67">Overall, the accurate recognition capabilities of TNResNet contribute to improved vehicle control systems, enhancing the safety and efficiency of autonomous driving. Its unique architecture and adaptability make it a valuable asset for future research and practical applications in the field.</p></sec><sec id="Sec15" sec-type="supplementary-material"><title>Supplementary Information</title><p>
+<supplementary-material content-type="local-data" id="MOESM1"><media xlink:href="41598_2024_81666_MOESM1_ESM.pdf"><caption><p>Supplementary Information.</p></caption></media></supplementary-material>
+</p></sec></body><back><fn-group><fn><p><bold>Publisher&#x02019;s note</bold></p><p>Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></fn></fn-group><sec><title>Supplementary Information</title><p>The online version contains supplementary material available at 10.1038/s41598-024-81666-7.</p></sec><notes notes-type="author-contribution"><title>Author contributions</title><p>Dongsheng Yang: Writing - original draft, Methodology, Resources, Supervision. Dongmin Zhang: Conceptualization, Validation, Supervision, Resources. Yi Yuan: Methodology, Writing - original draft, Visualization, Software, Investigation. Zhaoyun Lei: Project administration, Supervision. Binlei Ding: Validation, Formal analysis.Lei Bo: Methodology, Writing - original draft, Visualization, Software, Investigation.</p></notes><notes notes-type="data-availability"><title>Data availability</title><p>The datasets used and analysed during the current study available from the corresponding author on reasonable request.</p></notes><notes id="FPar1" notes-type="COI-statement"><title>Competing interests</title><p id="Par71">The authors declare no competing interests.</p></notes><ref-list id="Bib1"><title>References</title><ref id="CR1"><label>1.</label><citation-alternatives><element-citation id="ec-CR1" publication-type="journal"><person-group person-group-type="author"><name><surname>Dong</surname><given-names>Y</given-names></name><name><surname>Hu</surname><given-names>Z</given-names></name><name><surname>Uchimura</surname><given-names>K</given-names></name><name><surname>Murayama</surname><given-names>N</given-names></name></person-group><article-title>Driver inattention monitoring system for intelligent vehicles: A review</article-title><source>IEEE Transactions on Intelligent Transportation Systems</source><year>2011</year><volume>12</volume><fpage>596</fpage><lpage>614</lpage><pub-id pub-id-type="doi">10.1109/TITS.2010.2092770</pub-id></element-citation><mixed-citation id="mc-CR1" publication-type="journal">Dong, Y., Hu, Z., Uchimura, K. &#x00026; Murayama, N. Driver inattention monitoring system for intelligent vehicles: A review. <italic>IEEE Transactions on Intelligent Transportation Systems</italic><bold>12</bold>, 596&#x02013;614. 10.1109/TITS.2010.2092770 (2011).</mixed-citation></citation-alternatives></ref><ref id="CR2"><label>2.</label><citation-alternatives><element-citation id="ec-CR2" publication-type="journal"><person-group person-group-type="author"><name><surname>Soy</surname><given-names>H</given-names></name><name><surname>Toy</surname><given-names>I</given-names></name></person-group><article-title>Design and implementation of smart pressure sensor for automotive applications</article-title><source>Measurement</source><year>2021</year><volume>176</volume><fpage>109184</fpage><pub-id pub-id-type="doi">10.1016/j.measurement.2021.109184</pub-id></element-citation><mixed-citation id="mc-CR2" publication-type="journal">Soy, H. &#x00026; Toy, I. Design and implementation of smart pressure sensor for automotive applications. <italic>Measurement</italic><bold>176</bold>, 109184. 10.1016/j.measurement.2021.109184 (2021).</mixed-citation></citation-alternatives></ref><ref id="CR3"><label>3.</label><citation-alternatives><element-citation id="ec-CR3" publication-type="journal"><person-group person-group-type="author"><name><surname>Ly</surname><given-names>A</given-names></name><name><surname>Akhloufi</surname><given-names>M</given-names></name></person-group><article-title>Learning to drive by imitation: An overview of deep behavior cloning methods</article-title><source>IEEE Transactions on Intelligent Vehicles</source><year>2021</year><volume>6</volume><fpage>195</fpage><lpage>209</lpage><pub-id pub-id-type="doi">10.1109/TIV.2020.3002505</pub-id></element-citation><mixed-citation id="mc-CR3" publication-type="journal">Ly, A. &#x00026; Akhloufi, M. Learning to drive by imitation: An overview of deep behavior cloning methods. <italic>IEEE Transactions on Intelligent Vehicles</italic><bold>6</bold>, 195&#x02013;209. 10.1109/TIV.2020.3002505 (2021).</mixed-citation></citation-alternatives></ref><ref id="CR4"><label>4.</label><mixed-citation publication-type="other">Bing, Z., Tianle, B. &#x00026; Weiping, L. Ride comfort research of off-road vehicle based on soft terrain. In <italic>IEEE 11th International Conference on Computer-Aided Industrial Design &#x00026; Conceptual Design</italic>, vol. 1, 579&#x02013;584, 10.1109/CAIDCD.2010.5681281 (2010).</mixed-citation></ref><ref id="CR5"><label>5.</label><citation-alternatives><element-citation id="ec-CR5" publication-type="journal"><person-group person-group-type="author"><name><surname>Zhang</surname><given-names>X</given-names></name><name><surname>G&#x000f6;hlich</surname><given-names>D</given-names></name></person-group><article-title>A hierarchical estimator development for estimation of tire-road friction coefficient</article-title><source>PloS One</source><year>2017</year><volume>12</volume><fpage>e0171085</fpage><pub-id pub-id-type="doi">10.1371/journal.pone.0171085</pub-id><pub-id pub-id-type="pmid">28178332</pub-id>
+</element-citation><mixed-citation id="mc-CR5" publication-type="journal">Zhang, X. &#x00026; G&#x000f6;hlich, D. A hierarchical estimator development for estimation of tire-road friction coefficient. <italic>PloS One</italic><bold>12</bold>, e0171085. 10.1371/journal.pone.0171085 (2017).<pub-id pub-id-type="pmid">28178332</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR6"><label>6.</label><citation-alternatives><element-citation id="ec-CR6" publication-type="journal"><person-group person-group-type="author"><name><surname>Li</surname><given-names>B</given-names></name><name><surname>Du</surname><given-names>H</given-names></name><name><surname>Li</surname><given-names>W</given-names></name></person-group><article-title>Comparative study of vehicle tyre-road friction coefficient estimation with a novel cost-effective method</article-title><source>Vehicle System Dynamics</source><year>2014</year><volume>52</volume><fpage>1066</fpage><lpage>1098</lpage><pub-id pub-id-type="doi">10.1080/00423114.2014.920090</pub-id></element-citation><mixed-citation id="mc-CR6" publication-type="journal">Li, B., Du, H. &#x00026; Li, W. Comparative study of vehicle tyre-road friction coefficient estimation with a novel cost-effective method. <italic>Vehicle System Dynamics</italic><bold>52</bold>, 1066&#x02013;1098. 10.1080/00423114.2014.920090 (2014).</mixed-citation></citation-alternatives></ref><ref id="CR7"><label>7.</label><citation-alternatives><element-citation id="ec-CR7" publication-type="journal"><person-group person-group-type="author"><name><surname>Zhao</surname><given-names>J</given-names></name><name><surname>Zhang</surname><given-names>J</given-names></name><name><surname>Zhu</surname><given-names>B</given-names></name></person-group><article-title>Development and verification of the tire/road friction estimation algorithm for antilock braking system</article-title><source>Mathematical Problems in Engineering</source><year>2014</year><volume>2014</volume><fpage>e786492</fpage><pub-id pub-id-type="doi">10.1155/2014/786492</pub-id></element-citation><mixed-citation id="mc-CR7" publication-type="journal">Zhao, J., Zhang, J. &#x00026; Zhu, B. Development and verification of the tire/road friction estimation algorithm for antilock braking system. <italic>Mathematical Problems in Engineering</italic><bold>2014</bold>, e786492. 10.1155/2014/786492 (2014).</mixed-citation></citation-alternatives></ref><ref id="CR8"><label>8.</label><citation-alternatives><element-citation id="ec-CR8" publication-type="journal"><person-group person-group-type="author"><name><surname>Pan</surname><given-names>Y</given-names></name><name><surname>Nie</surname><given-names>X</given-names></name><name><surname>Li</surname><given-names>Z</given-names></name><name><surname>Gu</surname><given-names>S</given-names></name></person-group><article-title>Data-driven vehicle modeling of longitudinal dynamics based on a multibody model and deep neural networks</article-title><source>Measurement</source><year>2021</year><volume>180</volume><fpage>109541</fpage><pub-id pub-id-type="doi">10.1016/j.measurement.2021.109541</pub-id></element-citation><mixed-citation id="mc-CR8" publication-type="journal">Pan, Y., Nie, X., Li, Z. &#x00026; Gu, S. Data-driven vehicle modeling of longitudinal dynamics based on a multibody model and deep neural networks. <italic>Measurement</italic><bold>180</bold>, 109541. 10.1016/j.measurement.2021.109541 (2021).</mixed-citation></citation-alternatives></ref><ref id="CR9"><label>9.</label><mixed-citation publication-type="other">Yang, H.-J., Jang, H. &#x00026; Jeong, D.-S. Detection algorithm for road surface condition using wavelet packet transform and svm. In <italic>The 19th Korea-Japan Joint Workshop on Frontiers of Computer Vision</italic>, 323&#x02013;326, 10.1109/FCV.2013.6485514 (2013).</mixed-citation></ref><ref id="CR10"><label>10.</label><mixed-citation publication-type="other">Nolte, M., Kister, N. &#x00026; Maurer, M. Assessment of deep convolutional neural networks for road surface classification. In <italic>21st International Conference on Intelligent Transportation Systems (ITSC)</italic>, 381&#x02013;386, 10.1109/ITSC.2018.8569396 (2018).</mixed-citation></ref><ref id="CR11"><label>11.</label><citation-alternatives><element-citation id="ec-CR11" publication-type="journal"><person-group person-group-type="author"><name><surname>Tumen</surname><given-names>V</given-names></name><name><surname>Yildirim</surname><given-names>O</given-names></name><name><surname>Ergen</surname><given-names>B</given-names></name></person-group><article-title>Recognition of road type and quality for advanced driver assistance systems with deep learning</article-title><source>Elektronika Ir Elektrotechnika</source><year>2018</year><volume>24</volume><fpage>67</fpage><lpage>74</lpage><pub-id pub-id-type="doi">10.5755/j01.eie.24.6.22293</pub-id></element-citation><mixed-citation id="mc-CR11" publication-type="journal">Tumen, V., Yildirim, O. &#x00026; Ergen, B. Recognition of road type and quality for advanced driver assistance systems with deep learning. <italic>Elektronika Ir Elektrotechnika</italic><bold>24</bold>, 67&#x02013;74. 10.5755/j01.eie.24.6.22293 (2018).</mixed-citation></citation-alternatives></ref><ref id="CR12"><label>12.</label><citation-alternatives><element-citation id="ec-CR12" publication-type="journal"><person-group person-group-type="author"><name><surname>Guan</surname><given-names>H</given-names></name><name><surname>Wang</surname><given-names>B</given-names></name><name><surname>Lu</surname><given-names>P</given-names></name><name><surname>Xu</surname><given-names>L</given-names></name></person-group><article-title>Identification of maximum road friction coefficient and optimal slip ratio based on road type recognition</article-title><source>Chin. J. Mech. Eng.</source><year>2014</year><volume>27</volume><fpage>1018</fpage><lpage>1026</lpage><pub-id pub-id-type="doi">10.3901/CJME.2014.0725.128</pub-id></element-citation><mixed-citation id="mc-CR12" publication-type="journal">Guan, H., Wang, B., Lu, P. &#x00026; Xu, L. Identification of maximum road friction coefficient and optimal slip ratio based on road type recognition. <italic>Chin. J. Mech. Eng.</italic><bold>27</bold>, 1018&#x02013;1026. 10.3901/CJME.2014.0725.128 (2014).</mixed-citation></citation-alternatives></ref><ref id="CR13"><label>13.</label><citation-alternatives><element-citation id="ec-CR13" publication-type="journal"><person-group person-group-type="author"><name><surname>Lee</surname><given-names>D</given-names></name><name><surname>Kim</surname><given-names>J-C</given-names></name><name><surname>Kim</surname><given-names>M</given-names></name><name><surname>Lee</surname><given-names>H</given-names></name></person-group><article-title>Intelligent tire sensor-based real-time road surface classification using an artificial neural network</article-title><source>Sensors</source><year>2021</year><volume>21</volume><fpage>3233</fpage><pub-id pub-id-type="doi">10.3390/s21093233</pub-id><pub-id pub-id-type="pmid">34067009</pub-id>
+</element-citation><mixed-citation id="mc-CR13" publication-type="journal">Lee, D., Kim, J.-C., Kim, M. &#x00026; Lee, H. Intelligent tire sensor-based real-time road surface classification using an artificial neural network. <italic>Sensors</italic><bold>21</bold>, 3233. 10.3390/s21093233 (2021).<pub-id pub-id-type="pmid">34067009</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR14"><label>14.</label><citation-alternatives><element-citation id="ec-CR14" publication-type="journal"><person-group person-group-type="author"><name><surname>Khanum</surname><given-names>A</given-names></name><name><surname>Lee</surname><given-names>C-Y</given-names></name><name><surname>Yang</surname><given-names>C-S</given-names></name></person-group><article-title>Involvement of deep learning for vision sensor-based autonomous driving control: A review</article-title><source>IEEE Sensors Journal</source><year>2023</year><volume>23</volume><fpage>15321</fpage><lpage>15341</lpage><pub-id pub-id-type="doi">10.1109/JSEN.2023.3280959</pub-id></element-citation><mixed-citation id="mc-CR14" publication-type="journal">Khanum, A., Lee, C.-Y. &#x00026; Yang, C.-S. Involvement of deep learning for vision sensor-based autonomous driving control: A review. <italic>IEEE Sensors Journal</italic><bold>23</bold>, 15321&#x02013;15341. 10.1109/JSEN.2023.3280959 (2023).</mixed-citation></citation-alternatives></ref><ref id="CR15"><label>15.</label><citation-alternatives><element-citation id="ec-CR15" publication-type="journal"><person-group person-group-type="author"><name><surname>Alonso</surname><given-names>J</given-names></name><etal/></person-group><article-title>On-board wet road surface identification using tyre/road noise and support vector machines</article-title><source>Applied Acoustics</source><year>2014</year><volume>76</volume><fpage>407</fpage><lpage>415</lpage><pub-id pub-id-type="doi">10.1016/j.apacoust.2013.09.011</pub-id></element-citation><mixed-citation id="mc-CR15" publication-type="journal">Alonso, J. et al. On-board wet road surface identification using tyre/road noise and support vector machines. <italic>Applied Acoustics</italic><bold>76</bold>, 407&#x02013;415. 10.1016/j.apacoust.2013.09.011 (2014).</mixed-citation></citation-alternatives></ref><ref id="CR16"><label>16.</label><citation-alternatives><element-citation id="ec-CR16" publication-type="journal"><person-group person-group-type="author"><name><surname>Masino</surname><given-names>J</given-names></name><name><surname>Pinay</surname><given-names>J</given-names></name><name><surname>Reischl</surname><given-names>M</given-names></name><name><surname>Gauterin</surname><given-names>F</given-names></name></person-group><article-title>Road surface prediction from acoustical measurements in the tire cavity using support vector machine</article-title><source>Applied Acoustics</source><year>2017</year><volume>125</volume><fpage>41</fpage><lpage>48</lpage><pub-id pub-id-type="doi">10.1016/j.apacoust.2017.03.018</pub-id></element-citation><mixed-citation id="mc-CR16" publication-type="journal">Masino, J., Pinay, J., Reischl, M. &#x00026; Gauterin, F. Road surface prediction from acoustical measurements in the tire cavity using support vector machine. <italic>Applied Acoustics</italic><bold>125</bold>, 41&#x02013;48. 10.1016/j.apacoust.2017.03.018 (2017).</mixed-citation></citation-alternatives></ref><ref id="CR17"><label>17.</label><citation-alternatives><element-citation id="ec-CR17" publication-type="journal"><person-group person-group-type="author"><name><surname>Masino</surname><given-names>J</given-names></name><name><surname>Foitzik</surname><given-names>M-J</given-names></name><name><surname>Frey</surname><given-names>M</given-names></name><name><surname>Gauterin</surname><given-names>F</given-names></name></person-group><article-title>Pavement type and wear condition classification from tire cavity acoustic measurements with artificial neural networks</article-title><source>The Journal of the Acoustical Society of America</source><year>2017</year><volume>141</volume><fpage>4220</fpage><lpage>4229</lpage><pub-id pub-id-type="doi">10.1121/1.4983757</pub-id><pub-id pub-id-type="pmid">28618828</pub-id>
+</element-citation><mixed-citation id="mc-CR17" publication-type="journal">Masino, J., Foitzik, M.-J., Frey, M. &#x00026; Gauterin, F. Pavement type and wear condition classification from tire cavity acoustic measurements with artificial neural networks. <italic>The Journal of the Acoustical Society of America</italic><bold>141</bold>, 4220&#x02013;4229. 10.1121/1.4983757 (2017).<pub-id pub-id-type="pmid">28618828</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR18"><label>18.</label><mixed-citation publication-type="other">Atibi, M., Boussaa, M., Atouf, I., Bennis, A. &#x00026; Tabaa, M. Mfcc coefficient and ann classifier applied to roadway classification. In <italic>31st International Conference on Microelectronics (ICM)</italic>, 44&#x02013;47, 10.1109/ICM48031.2019.9021595 (2019).</mixed-citation></ref><ref id="CR19"><label>19.</label><citation-alternatives><element-citation id="ec-CR19" publication-type="journal"><person-group person-group-type="author"><name><surname>Su</surname><given-names>E</given-names></name><name><surname>Cai</surname><given-names>S</given-names></name><name><surname>Xie</surname><given-names>L</given-names></name><name><surname>Li</surname><given-names>H</given-names></name><name><surname>Schultz</surname><given-names>T</given-names></name></person-group><article-title>Stanet: A spatiotemporal attention network for decoding auditory spatial attention from eeg</article-title><source>IEEE Transactions on Biomedical Engineering</source><year>2022</year><volume>69</volume><fpage>2233</fpage><lpage>2242</lpage><pub-id pub-id-type="doi">10.1109/TBME.2022.3140246</pub-id><pub-id pub-id-type="pmid">34982671</pub-id>
+</element-citation><mixed-citation id="mc-CR19" publication-type="journal">Su, E., Cai, S., Xie, L., Li, H. &#x00026; Schultz, T. Stanet: A spatiotemporal attention network for decoding auditory spatial attention from eeg. <italic>IEEE Transactions on Biomedical Engineering</italic><bold>69</bold>, 2233&#x02013;2242. 10.1109/TBME.2022.3140246 (2022).<pub-id pub-id-type="pmid">34982671</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR20"><label>20.</label><citation-alternatives><element-citation id="ec-CR20" publication-type="journal"><person-group person-group-type="author"><name><surname>Xu</surname><given-names>T</given-names></name></person-group><article-title>A novel multi-featured decision system for multi-classification tasks</article-title><source>Measurement Science and Technology</source><year>2023</year><volume>34</volume><fpage>125110</fpage><pub-id pub-id-type="doi">10.1088/1361-6501/aceb11</pub-id></element-citation><mixed-citation id="mc-CR20" publication-type="journal">Xu, T. A novel multi-featured decision system for multi-classification tasks. <italic>Measurement Science and Technology</italic><bold>34</bold>, 125110. 10.1088/1361-6501/aceb11 (2023).</mixed-citation></citation-alternatives></ref><ref id="CR21"><label>21.</label><citation-alternatives><element-citation id="ec-CR21" publication-type="journal"><person-group person-group-type="author"><name><surname>Zhao</surname><given-names>X</given-names></name><name><surname>Zhang</surname><given-names>Y</given-names></name></person-group><article-title>An intelligent diagnosis method of rolling bearing based on multi-scale residual shrinkage convolutional neural network</article-title><source>Measurement Science and Technology</source><year>2022</year><volume>33</volume><fpage>085103</fpage><pub-id pub-id-type="doi">10.1088/1361-6501/ac68d1</pub-id></element-citation><mixed-citation id="mc-CR21" publication-type="journal">Zhao, X. &#x00026; Zhang, Y. An intelligent diagnosis method of rolling bearing based on multi-scale residual shrinkage convolutional neural network. <italic>Measurement Science and Technology</italic><bold>33</bold>, 085103. 10.1088/1361-6501/ac68d1 (2022).</mixed-citation></citation-alternatives></ref><ref id="CR22"><label>22.</label><citation-alternatives><element-citation id="ec-CR22" publication-type="journal"><person-group person-group-type="author"><name><surname>Zhong</surname><given-names>J</given-names></name><etal/></person-group><article-title>An investigation of texture-friction relationship with laboratory ring-shaped asphalt mixture specimens via close-range photogrammetry</article-title><source>Construction and Building Materials</source><year>2024</year><volume>442</volume><fpage>137508</fpage><pub-id pub-id-type="doi">10.1016/j.conbuildmat.2024.137508</pub-id></element-citation><mixed-citation id="mc-CR22" publication-type="journal">Zhong, J. et al. An investigation of texture-friction relationship with laboratory ring-shaped asphalt mixture specimens via close-range photogrammetry. <italic>Construction and Building Materials</italic><bold>442</bold>, 137508. 10.1016/j.conbuildmat.2024.137508 (2024).</mixed-citation></citation-alternatives></ref><ref id="CR23"><label>23.</label><mixed-citation publication-type="other">Lee, C.-Y., Khanum, A. &#x00026; Sung, T.-W. Robust autonomous driving control using deep hybrid-learning network under rainy/snown conditions. <italic>Multimedia Tools and Applications</italic> (2024).</mixed-citation></ref><ref id="CR24"><label>24.</label><mixed-citation publication-type="other">Khanum, A., Lee, C.-Y. &#x00026; Yang, C.-S. Deep-learning-based network for lane following in autonomous vehicles. <italic>Electronics</italic><bold>11</bold>, 10.3390/electronics11193084 (2022).</mixed-citation></ref><ref id="CR25"><label>25.</label><mixed-citation publication-type="other">He, K., Zhang, X., Ren, S. &#x00026; Sun, J. Deep residual learning for image recognition. In <italic>IEEE Conference on Computer Vision and Pattern Recognition</italic>, 770&#x02013;778, 10.1109/CVPR.2016.90 (2016).</mixed-citation></ref><ref id="CR26"><label>26.</label><citation-alternatives><element-citation id="ec-CR26" publication-type="journal"><person-group person-group-type="author"><name><surname>Cooley</surname><given-names>J</given-names></name><name><surname>Tukey</surname><given-names>J</given-names></name></person-group><article-title>An algorithm for the machine calculation of complex fourier series</article-title><source>Math. Comp.</source><year>1965</year><volume>19</volume><fpage>297</fpage><lpage>301</lpage><pub-id pub-id-type="doi">10.1090/S0025-5718-1965-0178586-1</pub-id></element-citation><mixed-citation id="mc-CR26" publication-type="journal">Cooley, J. &#x00026; Tukey, J. An algorithm for the machine calculation of complex fourier series. <italic>Math. Comp.</italic><bold>19</bold>, 297&#x02013;301. 10.1090/S0025-5718-1965-0178586-1 (1965).</mixed-citation></citation-alternatives></ref><ref id="CR27"><label>27.</label><mixed-citation publication-type="other">Tokozume, Y., Ushiku, Y. &#x00026; Harada, T. Learning from between-class examples for deep sound recognition, 10.48550/arXiv.1711.10282 (2018).</mixed-citation></ref><ref id="CR28"><label>28.</label><mixed-citation publication-type="other">Zhang, H., Cisse, M., Dauphin, Y. &#x00026; Lopez-Paz, D. mixup: Beyond empirical risk minimization, 10.48550/arXiv.1710.09412 (2018).</mixed-citation></ref><ref id="CR29"><label>29.</label><mixed-citation publication-type="other">Ruder, S. An overview of gradient descent optimization algorithms (2016).</mixed-citation></ref></ref-list></back></article>

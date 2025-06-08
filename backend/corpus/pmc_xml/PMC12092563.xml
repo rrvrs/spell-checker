@@ -1,0 +1,1194 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Psychon Bull Rev</journal-id><journal-id journal-id-type="iso-abbrev">Psychon Bull Rev</journal-id><journal-title-group><journal-title>Psychonomic Bulletin &#x00026; Review</journal-title></journal-title-group><issn pub-type="ppub">1069-9384</issn><issn pub-type="epub">1531-5320</issn><publisher><publisher-name>Springer US</publisher-name><publisher-loc>New York</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">39777607</article-id><article-id pub-id-type="pmc">PMC12092563</article-id>
+<article-id pub-id-type="publisher-id">2621</article-id><article-id pub-id-type="doi">10.3758/s13423-024-02621-1</article-id><article-categories><subj-group subj-group-type="heading"><subject>Brief Report</subject></subj-group></article-categories><title-group><article-title>Parameter identifiability in evidence-accumulation models: The effect of error rates on the diffusion decision model and the linear ballistic accumulator</article-title></title-group><contrib-group><contrib contrib-type="author" corresp="yes"><contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-7095-203X</contrib-id><name><surname>L&#x000fc;ken</surname><given-names>Malte</given-names></name><address><email>malte_lueken@arcor.de</email></address><xref ref-type="aff" rid="Aff1">1</xref><xref ref-type="aff" rid="Aff2">2</xref></contrib><contrib contrib-type="author"><contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-4324-5537</contrib-id><name><surname>Heathcote</surname><given-names>Andrew</given-names></name><xref ref-type="aff" rid="Aff2">2</xref></contrib><contrib contrib-type="author"><contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-5122-706X</contrib-id><name><surname>Haaf</surname><given-names>Julia M.</given-names></name><xref ref-type="aff" rid="Aff3">3</xref></contrib><contrib contrib-type="author"><contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-1990-0175</contrib-id><name><surname>Matzke</surname><given-names>Dora</given-names></name><xref ref-type="aff" rid="Aff2">2</xref></contrib><aff id="Aff1"><label>1</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/00rbjv475</institution-id><institution-id institution-id-type="GRID">grid.454309.f</institution-id><institution-id institution-id-type="ISNI">0000 0004 5345 7063</institution-id><institution>Netherlands eScience Center, </institution></institution-wrap>Science Park 402, 1098 XH Amsterdam, The Netherlands </aff><aff id="Aff2"><label>2</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/04dkp9463</institution-id><institution-id institution-id-type="GRID">grid.7177.6</institution-id><institution-id institution-id-type="ISNI">0000 0000 8499 2262</institution-id><institution>Department of Psychology, </institution><institution>University of Amsterdam, </institution></institution-wrap>Amsterdam, The Netherlands </aff><aff id="Aff3"><label>3</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/03bnmw459</institution-id><institution-id institution-id-type="GRID">grid.11348.3f</institution-id><institution-id institution-id-type="ISNI">0000 0001 0942 1117</institution-id><institution>Department of Psychology, </institution><institution>University of Potsdam, </institution></institution-wrap>Potsdam, Germany </aff></contrib-group><pub-date pub-type="epub"><day>7</day><month>1</month><year>2025</year></pub-date><pub-date pub-type="pmc-release"><day>7</day><month>1</month><year>2025</year></pub-date><pub-date pub-type="ppub"><year>2025</year></pub-date><volume>32</volume><issue>3</issue><fpage>1411</fpage><lpage>1424</lpage><history><date date-type="accepted"><day>18</day><month>11</month><year>2024</year></date></history><permissions><copyright-statement>&#x000a9; The Author(s) 2025</copyright-statement><copyright-year>2025</copyright-year><license><ali:license_ref specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p><bold>Open Access</bold> This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article&#x02019;s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article&#x02019;s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link>.</license-p></license></permissions><abstract id="Abs1"><p id="Par1">A variety of different evidence-accumulation models (EAMs) account for common response time and accuracy patterns in two-alternative forced choice tasks by assuming that subjects collect and sum information from their environment until a response threshold is reached. Estimates of model parameters mapped to components of this decision process can be used to explain the causes of observed behavior. However, such explanations are only meaningful when parameters can be identified, that is, when their values can be uniquely estimated from data generated by the model. Prior studies suggest that parameter identifiability is poor when error rates are low but have not systematically compared this issue across different EAMs. We conducted a simulation study investigating the identifiability and estimation properties of model parameters at low error rates in the two most popular EAMs: The diffusion decision model (DDM) and the linear ballistic accumulator (LBA). We found poor identifiability at low error rates for both models but less so for the DDM and for a larger number of trials. The DDM also showed better identifiability than the LBA at low trial numbers for a design with a manipulation of response caution. Based on our results, we recommend tasks with error rates between 15% and 35% for small, and between 5% and 35% for large trial numbers. We explain the identifiability problem in terms of trade-offs caused by correlations between decision-threshold and accumulation-rate parameters and discuss why the models differ in terms of their estimation properties.</p></abstract><kwd-group xml:lang="en"><title>Keywords</title><kwd>Decision making</kwd><kwd>Response times</kwd><kwd>Parameter recovery</kwd><kwd>Bayesian statistics</kwd><kwd>Esxperimental design</kwd></kwd-group><funding-group><award-group><funding-source><institution-wrap><institution-id institution-id-type="FundRef">http://dx.doi.org/10.13039/501100003246</institution-id><institution>Nederlandse Organisatie voor Wetenschappelijk Onderzoek</institution></institution-wrap></funding-source><award-id>VI.Veni.201G.019, VI.Vidi.191.091</award-id></award-group></funding-group><custom-meta-group><custom-meta><meta-name>issue-copyright-statement</meta-name><meta-value>&#x000a9; The Psychonomic Society, Inc. 2025</meta-value></custom-meta></custom-meta-group></article-meta></front><body><p id="Par3">In psychological experiments, speeded decisions are commonly described by response times (RTs) and accuracy. For instance, in the classic lexical decision task (Meyer &#x00026; Schvaneveldt, <xref ref-type="bibr" rid="CR22">1971</xref>), participants press a left or right button depending on whether stimuli are words or nonwords. RT is typically measured as the time between stimulus onset and button press and accuracy as the proportion of correct responses. RT and accuracy patterns observed in these two-alternative forced choice (2AFC) tasks are governed by experimental manipulations. For example, when a task becomes more difficult, subjects tend to respond more slowly and less accurately.</p><p id="Par4">Joint RT and accuracy patterns in 2AFC tasks can be accounted for by evidence-accumulation models (EAM; see Donkin and Brown, <xref ref-type="bibr" rid="CR7">2018</xref>, for a review). EAMs assume that decision-makers sequentially accumulate (noisy) information from their environment that favors one of the available responses. When the amount of information regarding one choice reaches a threshold, accumulation stops, and the decision-maker executes the corresponding response.<fig id="Fig1"><label>Fig. 1</label><caption><p>Graphical illustration of the diffusion decision model and the linear ballistic accumulator. Diffusion decision model (DDM): Evidence accumulation starts at <italic>z</italic> and drifts towards the upper (<italic>solid trajectory</italic>) or lower response threshold (<italic>dashed trajectory</italic>). The thresholds are separated by <italic>a</italic>. Starting points vary across trials with uniform range <inline-formula id="IEq1"><alternatives><tex-math id="d33e205">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_z$$\end{document}</tex-math><mml:math id="d33e210"><mml:msub><mml:mi>s</mml:mi><mml:mi>z</mml:mi></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq1.gif"/></alternatives></inline-formula> and drift rates according to a normal distribution with mean <italic>v</italic> and standard deviation <inline-formula id="IEq2"><alternatives><tex-math id="d33e220">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_v$$\end{document}</tex-math><mml:math id="d33e225"><mml:msub><mml:mi>s</mml:mi><mml:mi>v</mml:mi></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq2.gif"/></alternatives></inline-formula>. Linear ballistic accumulator (LBA): Two independent accumulators start at uniformly distributed starting points with range <italic>A</italic> and grow linearly until one of them reaches the decision threshold <italic>b</italic>. The accumulation rates are normally distributed across trials with mean <inline-formula id="IEq3"><alternatives><tex-math id="d33e237">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {true}}$$\end{document}</tex-math><mml:math id="d33e242"><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq3.gif"/></alternatives></inline-formula> and standard deviation <inline-formula id="IEq4"><alternatives><tex-math id="d33e248">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_{v_\text {true}}$$\end{document}</tex-math><mml:math id="d33e253"><mml:msub><mml:mi>s</mml:mi><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq4.gif"/></alternatives></inline-formula> for the accumulator for the response that matches the stimulus, and <inline-formula id="IEq5"><alternatives><tex-math id="d33e262">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {false}}$$\end{document}</tex-math><mml:math id="d33e267"><mml:msub><mml:mi>v</mml:mi><mml:mtext>false</mml:mtext></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq5.gif"/></alternatives></inline-formula> and <inline-formula id="IEq6"><alternatives><tex-math id="d33e273">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_{v_\text {false}}$$\end{document}</tex-math><mml:math id="d33e278"><mml:msub><mml:mi>s</mml:mi><mml:msub><mml:mi>v</mml:mi><mml:mtext>false</mml:mtext></mml:msub></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq6.gif"/></alternatives></inline-formula> for the accumulator that mismatches the stimulus. In both models, the duration of processes that are not part of the decision-making process (e.g., encoding and motor execution) are captured by the non-decision time parameter <inline-formula id="IEq7"><alternatives><tex-math id="d33e286">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_0$$\end{document}</tex-math><mml:math id="d33e291"><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq7.gif"/></alternatives></inline-formula>. Densities represent the response time distributions for correct and incorrect responses</p></caption><graphic xlink:href="13423_2024_2621_Fig1_HTML" id="MO1"/></fig></p><p id="Par5">Whereas traditional analyses treat RTs and accuracy separately, EAMs simultaneously account for both measures and capture multivariate effects (Voss et al., <xref ref-type="bibr" rid="CR47">2013</xref>). As computational models, they formalize the theory of sequential sampling and allow researchers to make precise, falsifiable predictions about decision making in 2AFC tasks. Moreover, EAMs are suitable measurement tools that quantify individual differences in the cognitive processes represented by the model parameters (Donkin &#x00026; Brown, <xref ref-type="bibr" rid="CR7">2018</xref>; Forstmann et al., <xref ref-type="bibr" rid="CR13">2016</xref>; van&#x000a0;der Maas et al., <xref ref-type="bibr" rid="CR44">2011</xref>). Thus, by decomposing observed performance in terms of the underlying cognitive processes and separating different sources of variability, EAMs can enhance the specificity and sensitivity of inferences drawn from choice RT data. The most popular EAMs are the diffusion decision model (DDM; Ratcliff, <xref ref-type="bibr" rid="CR30">1978</xref>, Ratcliff and McKoon, <xref ref-type="bibr" rid="CR32">2008</xref>) and the linear ballistic accumulator (LBA; Brown and Heathcote, <xref ref-type="bibr" rid="CR4">2008</xref>), both illustrated in Fig.&#x000a0;<xref rid="Fig1" ref-type="fig">1</xref>.</p><p id="Par6">The DDM describes evidence accumulation as a single fractional Gaussian drift process that is bounded by an upper and lower threshold. The process has a starting point denoted by <italic>z</italic> and drifts with rate <italic>v</italic> and standard deviation <italic>s</italic>. The response thresholds are separated by the distance <italic>a</italic>. Accumulation stops when the process reaches the upper or lower threshold. The time between the beginning and end of the accumulation process is the decision time <inline-formula id="IEq8"><alternatives><tex-math id="d33e340">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_d$$\end{document}</tex-math><mml:math id="d33e345"><mml:msub><mml:mi>t</mml:mi><mml:mi>d</mml:mi></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq8.gif"/></alternatives></inline-formula>. Processes that are not part of the decision-making process (e.g., encoding the stimuli and executing a motor response) are captured in the non-decision time parameter <inline-formula id="IEq9"><alternatives><tex-math id="d33e352">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_0$$\end{document}</tex-math><mml:math id="d33e357"><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq7.gif"/></alternatives></inline-formula>. Observed RT is given by the sum of <inline-formula id="IEq10"><alternatives><tex-math id="d33e363">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_d$$\end{document}</tex-math><mml:math id="d33e368"><mml:msub><mml:mi>t</mml:mi><mml:mi>d</mml:mi></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq8.gif"/></alternatives></inline-formula> and <inline-formula id="IEq11"><alternatives><tex-math id="d33e374">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_0$$\end{document}</tex-math><mml:math id="d33e379"><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq7.gif"/></alternatives></inline-formula> (Ratcliff, <xref ref-type="bibr" rid="CR30">1978</xref>; Ratcliff &#x00026; McKoon, <xref ref-type="bibr" rid="CR32">2008</xref>; Voss et al., <xref ref-type="bibr" rid="CR47">2013</xref>; Stone, <xref ref-type="bibr" rid="CR39">1960</xref>). The DDM has been extended several times to more accurately account for typical RT patterns (Ratcliff et al., <xref ref-type="bibr" rid="CR34">2016</xref>). To accommodate different RT distributions for correct and error responses, Ratcliff (<xref ref-type="bibr" rid="CR30">1978</xref>) allowed drift rate to vary across trials according to a normal distribution with mean <italic>v</italic> and standard deviation <inline-formula id="IEq12"><alternatives><tex-math id="d33e407">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_v$$\end{document}</tex-math><mml:math id="d33e412"><mml:msub><mml:mi>s</mml:mi><mml:mi>v</mml:mi></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq2.gif"/></alternatives></inline-formula>. Furthermore, Ratcliff and Rouder (<xref ref-type="bibr" rid="CR33">1998</xref>) added variability in starting point <italic>z</italic>, allowing it to vary across trials with range <inline-formula id="IEq13"><alternatives><tex-math id="d33e425">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_z$$\end{document}</tex-math><mml:math id="d33e430"><mml:msub><mml:mi>s</mml:mi><mml:mi>z</mml:mi></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq1.gif"/></alternatives></inline-formula> (see also Laming, <xref ref-type="bibr" rid="CR19">1968</xref>). Lastly, Ratcliff and Tuerlinckx (<xref ref-type="bibr" rid="CR35">2002</xref>) added a uniform <inline-formula id="IEq14"><alternatives><tex-math id="d33e442">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_0$$\end{document}</tex-math><mml:math id="d33e447"><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq7.gif"/></alternatives></inline-formula>-variability with range <inline-formula id="IEq15"><alternatives><tex-math id="d33e453">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_{t_0}$$\end{document}</tex-math><mml:math id="d33e458"><mml:msub><mml:mi>s</mml:mi><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq15.gif"/></alternatives></inline-formula>.</p><p id="Par7">In contrast to the DDM, the LBA assumes independent, linear accumulation processes for each response that are only bounded by an upper threshold. Each accumulator starts at a uniformly distributed value with range <italic>A</italic> and increases linearly towards the threshold. The slopes of the accumulator trajectories (drift rates) vary across trials according to Gaussian distributions with different means and standard deviations for the accumulator for the response that matches the stimulus (<inline-formula id="IEq16"><alternatives><tex-math id="d33e471">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {true}}$$\end{document}</tex-math><mml:math id="d33e476"><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq3.gif"/></alternatives></inline-formula> and <inline-formula id="IEq17"><alternatives><tex-math id="d33e482">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_{v_\text {true}}$$\end{document}</tex-math><mml:math id="d33e487"><mml:msub><mml:mi>s</mml:mi><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq4.gif"/></alternatives></inline-formula>) and mismatches the stimulus (<inline-formula id="IEq18"><alternatives><tex-math id="d33e495">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {false}}$$\end{document}</tex-math><mml:math id="d33e500"><mml:msub><mml:mi>v</mml:mi><mml:mtext>false</mml:mtext></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq5.gif"/></alternatives></inline-formula> and <inline-formula id="IEq19"><alternatives><tex-math id="d33e506">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_{v_\text {false}}$$\end{document}</tex-math><mml:math id="d33e511"><mml:msub><mml:mi>s</mml:mi><mml:msub><mml:mi>v</mml:mi><mml:mtext>false</mml:mtext></mml:msub></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq6.gif"/></alternatives></inline-formula>). The decision process stops when the first accumulator reaches its threshold <italic>b</italic>; the response is determined by the &#x0201d;winning&#x0201d; accumulator. Starting point variability <italic>A</italic> and decision threshold <italic>b</italic> can vary between accumulators. The LBA also includes a non-decision time parameter <inline-formula id="IEq20"><alternatives><tex-math id="d33e529">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_0$$\end{document}</tex-math><mml:math id="d33e534"><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq7.gif"/></alternatives></inline-formula> and assumes that observed RT is the sum of decision and non-decision time (Brown &#x00026; Heathcote, <xref ref-type="bibr" rid="CR4">2008</xref>).</p><p id="Par8">An attractive characteristic of EAMs is that their parameters can be used to quantify the different components of the decision process (Turner et al., <xref ref-type="bibr" rid="CR42">2017</xref>). However, parameter estimates can only be meaningfully interpreted when they are unique for a given dataset (Moran, <xref ref-type="bibr" rid="CR24">2016</xref>; van Maanen &#x00026; Mileti&#x00107;, <xref ref-type="bibr" rid="CR45">2020</xref>). This property of <italic>parameter identifiability</italic> depends both on the experimental design from which data are obtained (Turner et al., <xref ref-type="bibr" rid="CR43">2013</xref>; Spektor &#x00026; Kellen, <xref ref-type="bibr" rid="CR38">2018</xref>) and the mathematical structure of the model<xref ref-type="fn" rid="Fn1">1</xref>. For most EAMs, one or more parameters must be fixed to ensure identifiability (Donkin et al., <xref ref-type="bibr" rid="CR8">2009</xref>), conventionally <inline-formula id="IEq21"><alternatives><tex-math id="d33e574">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s = 1$$\end{document}</tex-math><mml:math id="d33e579"><mml:mrow><mml:mi>s</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq21.gif"/></alternatives></inline-formula> in the DDM and <inline-formula id="IEq22"><alternatives><tex-math id="d33e586">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_{v_\text {false}}=1$$\end{document}</tex-math><mml:math id="d33e591"><mml:mrow><mml:msub><mml:mi>s</mml:mi><mml:msub><mml:mi>v</mml:mi><mml:mtext>false</mml:mtext></mml:msub></mml:msub><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq22.gif"/></alternatives></inline-formula> in the LBA. However, even then, identifiability can remain problematic (e.g., Evans, <xref ref-type="bibr" rid="CR10">2020</xref>; Ratcliff and Tuerlinckx, <xref ref-type="bibr" rid="CR35">2002</xref>; Boehm et al., <xref ref-type="bibr" rid="CR2">2018</xref>; Visser and Poess&#x000e9;, <xref ref-type="bibr" rid="CR46">2017</xref>; Turner et al., <xref ref-type="bibr" rid="CR43">2013</xref>; Palestro et al., <xref ref-type="bibr" rid="CR27">2018</xref>) because EAM parameters are often &#x0201c;sloppy&#x0201d; (Brown &#x00026; Sethna, <xref ref-type="bibr" rid="CR5">2003</xref>), that is, highly correlated. If two parameters are highly correlated, they can trade off without much changing the predictions of the model. Thus, for a given dataset, there are multiple sets of parameter estimates that yield almost equivalent model fit, making parameter-based inference ambiguous.</p><p id="Par10">Previous studies suggest that error responses play an important role in parameter identifiability. Ratcliff and Tuerlinckx (<xref ref-type="bibr" rid="CR35">2002</xref>) explain parameter identifiability issues in the DDM by extremely slow error responses that shift parameters in the same direction away from their true values, leading to correlations among them (p. 454). Ratcliff (<xref ref-type="bibr" rid="CR31">2014</xref>) examined estimation performance for the DDM in 11 datasets from different perceptual discrimination tasks with a range of difficulty conditions causing error rates to vary from near floor to ceiling. The difficulty manipulation was entirely accounted for by the accumulation rate parameters, with the other parameters held constant across conditions. Consistent with good identifiability, the rate estimates decreased as difficulty increased, leading to the conclusion that accumulation rates can be identified even when error rates are low, as long as enough errors occur in other conditions and other parameters are fixed across these conditions. Ratcliff (<xref ref-type="bibr" rid="CR31">2014</xref>), however, did not give recommendations on how many errors are necessary to identify parameters in a single condition. For the LBA, Heathcote et al. (<xref ref-type="bibr" rid="CR17">2019</xref>) used simulations to show better estimation performance when the data included 25% compared to 2.5% errors but again did not make any specific recommendations.</p><p id="Par11">Although demonstrating the importance of errors, previous studies do not provide a clear picture of how error rates influence parameter identifiability in the DDM and LBA. This study aims to fill this gap by systematically manipulating the prevalence of errors in simulated data and analyzing how correlations between parameter estimates affect parameter identifiability at different levels of error rates. Our analysis may provide caveats for the interpretation of past studies that had applied the DDM and LBA to datasets with extremely low error rates (e.g., O&#x02019;Callaghan et al., <xref ref-type="bibr" rid="CR26">2017</xref>; Hartmann et al., <xref ref-type="bibr" rid="CR14">2019</xref>; Mattes et al., <xref ref-type="bibr" rid="CR21">2020</xref>), potentially questioning the reliability and validity of the reported parameter estimates and the inferences based on them.</p><sec id="Sec1"><title>Method</title><p id="Par12">We conducted three studies simulating binary choices and corresponding RTs to investigate the influence of error rates on parameter identifiability. The corresponding code and simulated data are available in the Supplementary Materials at <ext-link ext-link-type="uri" xlink:href="https://osf.io/d389x/">https://osf.io/d389x/</ext-link>. The first study simulated a simple design where subjects respond to two different stimuli. The second and third studies added manipulations of stimulus difficulty and speed-vs-accuracy instructions, respectively. In each study, we examined three versions of the DDM and LBA that differed in the number of free parameters and range of data-generating values. As the conclusions were largely congruent, here we focus on the versions that resemble the models most commonly used in applications, producing errors that are slower than correct responses (see section Data Generation). We discuss the other two versions, where errors are faster than/equally fast as correct responses in the Discussion, and present details in the Supplementary Materials.</p><p id="Par13">Parameter identifiability is typically investigated through parameter-recovery studies (Heathcote et al., <xref ref-type="bibr" rid="CR15">2015</xref>). First, data are generated from the model with a known set of parameters. Second, the same model is fit to the generated data to estimate its parameters. Third, the resulting parameter estimates are compared to the &#x0201c;true&#x0201d; data-generating parameters. Identifiability is implied if the estimates are close to the true values.</p><sec id="Sec2"><title>Data generation</title><p id="Par14">In Study 1, we generated synthetic datasets for seven different error rates (0, 1, 5, 15, 25, 35, and 50%), and in Study 2 and 3 for three different error rates (5, 25, and 45%). In Study 2, each dataset featured three conditions (easy, medium, and difficult) with equal trial numbers. For each error rate scenario, the easy condition had 2.5% less and the difficult 2.5% more errors than the target error rate (e.g., for a target error rate of 5%, the easy condition had 2.5%, the medium 5%, and the difficult 7.5% errors). In Study 3, each dataset featured two conditions (speed vs. accuracy instructions) with equal trial numbers, where the accuracy condition had 2.5% less and the speed condition 2.5% more errors than the target error rate. After evaluating the results of these simulations, we additionally generated datasets with 7.5, 10, and 12.5% errors for Study 1 to gain further insight into parameter identifiability within this critical region, which is commonly observed in experiments.</p><p id="Par15">In Studies 1 and 2, we explored situations with 150 and 1200 trials per dataset; in Study 3, we used 200 and 1200 trials per dataset (the difference is due to the number of design cells over which trials were equally distributed). In the Supplementary Materials, we also report results for 450 and 750 trials for Studies 1 and 2, and 500 and 800 trials for Study 3. For each model, error rate, and trial number, 100 datasets were generated.</p><p id="Par16">For the DDM, the diffusion coefficient was set to <inline-formula id="IEq23"><alternatives><tex-math id="d33e670">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s=1$$\end{document}</tex-math><mml:math id="d33e675"><mml:mrow><mml:mi>s</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq23.gif"/></alternatives></inline-formula>, as is conventional, and non-decision time variability was fixed to <inline-formula id="IEq24"><alternatives><tex-math id="d33e682">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_{t_0}=0$$\end{document}</tex-math><mml:math id="d33e687"><mml:mrow><mml:msub><mml:mi>s</mml:mi><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:msub><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq24.gif"/></alternatives></inline-formula> as this parameter has no impact on error rates. For the LBA, we expressed decision thresholds as <inline-formula id="IEq25"><alternatives><tex-math id="d33e698">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$B = b - A$$\end{document}</tex-math><mml:math id="d33e703"><mml:mrow><mml:mi>B</mml:mi><mml:mo>=</mml:mo><mml:mi>b</mml:mi><mml:mo>-</mml:mo><mml:mi>A</mml:mi></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq25.gif"/></alternatives></inline-formula> and followed the <inline-formula id="IEq26"><alternatives><tex-math id="d33e712">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_{v_\text {false}} = 1$$\end{document}</tex-math><mml:math id="d33e717"><mml:mrow><mml:msub><mml:mi>s</mml:mi><mml:msub><mml:mi>v</mml:mi><mml:mtext>false</mml:mtext></mml:msub></mml:msub><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq26.gif"/></alternatives></inline-formula> convention for scaling.</p><p id="Par17">All other data-generating parameter values were sampled from empirically observed distributions of parameter estimates. Kuhne (<xref ref-type="bibr" rid="CR18">2024</xref>) used a bottom-up model selection approach (as described in Donkin et al., <xref ref-type="bibr" rid="CR9">2011</xref>) to obtain separate maximum likelihood estimates for each participant (Myung, <xref ref-type="bibr" rid="CR25">2003</xref>) for the DDM and LBA from 17 published experiments reporting RT and accuracy data in perceptual decision making, random dot motion, lexical decision, and various cognitive-conflict tasks. Their procedure started by fitting the most simple model (in terms of the number of parameters) to the data and then used the resulting parameter estimates as starting values to fit more complex models. Then, the best fitting model was chosen using the AIC (Akaike, <xref ref-type="bibr" rid="CR1">1974</xref>) and BIC (Schwarz, <xref ref-type="bibr" rid="CR36">1978</xref>). If the AIC and BIC selected different models, the AIC-selected model was chosen. In total, Kuhne (<xref ref-type="bibr" rid="CR18">2024</xref>) estimated 580 parameter sets for the DDM and 765 for the LBA. The empirical distributions of parameter estimates were then transformed into a normal shape and fit with truncated multivariate normal distributions. Table <xref rid="Tab1" ref-type="table">1</xref> shows the correlation matrices of the truncated multivariate normal distributions for the DDM and LBA, respectively. These are between-subject correlations reflecting individual differences among estimated parameters within each model. We used these truncated multivariate normal distributions to sample the data-generating values for our simulations while taking the empirically observed between-subject correlation structure of the parameters into account.<table-wrap id="Tab1"><label>Table 1</label><caption><p>Correlation matrices of the multivariate normal distributions used for sampling the data-generating parameter values</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left"/><th align="left" colspan="5">DDM</th><th align="left"/><th align="left" colspan="5">LBA</th></tr><tr><th align="left"/><th align="left"><italic>a</italic></th><th align="left"><italic>v</italic></th><th align="left"><inline-formula id="IEq27"><alternatives><tex-math id="d33e791">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_v$$\end{document}</tex-math><mml:math id="d33e796"><mml:msub><mml:mi>s</mml:mi><mml:mi>v</mml:mi></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq2.gif"/></alternatives></inline-formula></th><th align="left"><italic>z</italic></th><th align="left"><inline-formula id="IEq28"><alternatives><tex-math id="d33e807">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_z$$\end{document}</tex-math><mml:math id="d33e812"><mml:msub><mml:mi>s</mml:mi><mml:mi>z</mml:mi></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq1.gif"/></alternatives></inline-formula></th><th align="left"/><th align="left"><italic>A</italic></th><th align="left"><inline-formula id="IEq29"><alternatives><tex-math id="d33e824">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_0$$\end{document}</tex-math><mml:math id="d33e829"><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq7.gif"/></alternatives></inline-formula></th><th align="left"><italic>B</italic></th><th align="left"><inline-formula id="IEq30"><alternatives><tex-math id="d33e840">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_{v_\text {true}}$$\end{document}</tex-math><mml:math id="d33e845"><mml:msub><mml:mi>s</mml:mi><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq4.gif"/></alternatives></inline-formula></th><th align="left"><inline-formula id="IEq31"><alternatives><tex-math id="d33e855">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {true}}$$\end{document}</tex-math><mml:math id="d33e860"><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq3.gif"/></alternatives></inline-formula></th></tr></thead><tbody><tr><td align="left"><italic>v</italic></td><td align="left">0.09</td><td align="left"/><td align="left"/><td align="left"/><td align="left"/><td align="left"><inline-formula id="IEq32"><alternatives><tex-math id="d33e879">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_0$$\end{document}</tex-math><mml:math id="d33e884"><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq7.gif"/></alternatives></inline-formula></td><td align="left">0.59</td><td align="left"/><td align="left"/><td align="left"/><td align="left"/></tr><tr><td align="left"><inline-formula id="IEq33"><alternatives><tex-math id="d33e899">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_v$$\end{document}</tex-math><mml:math id="d33e904"><mml:msub><mml:mi>s</mml:mi><mml:mi>v</mml:mi></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq2.gif"/></alternatives></inline-formula></td><td align="left">0.49</td><td align="left">0.67</td><td align="left"/><td align="left"/><td align="left"/><td align="left"><italic>B</italic></td><td align="left">-0.21</td><td align="left">-0.50</td><td align="left"/><td align="left"/><td align="left"/></tr><tr><td align="left"><italic>z</italic></td><td align="left">0.01</td><td align="left">0.01</td><td align="left">0.01</td><td align="left"/><td align="left"/><td align="left"><inline-formula id="IEq34"><alternatives><tex-math id="d33e943">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_{v_\text {true}}$$\end{document}</tex-math><mml:math id="d33e948"><mml:msub><mml:mi>s</mml:mi><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq4.gif"/></alternatives></inline-formula></td><td align="left">0.61</td><td align="left">0.43</td><td align="left">0.29</td><td align="left"/><td align="left"/></tr><tr><td align="left"><inline-formula id="IEq35"><alternatives><tex-math id="d33e967">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_z^{'}$$\end{document}</tex-math><mml:math id="d33e972"><mml:mmultiscripts><mml:mi>s</mml:mi><mml:mi>z</mml:mi><mml:mmultiscripts><mml:mrow/><mml:mrow/><mml:mo>&#x02032;</mml:mo></mml:mmultiscripts></mml:mmultiscripts></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq35.gif"/></alternatives></inline-formula></td><td align="left">0.01</td><td align="left">0.41</td><td align="left">0.44</td><td align="left">0.00</td><td align="left"/><td align="left"><inline-formula id="IEq36"><alternatives><tex-math id="d33e992">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {true}}$$\end{document}</tex-math><mml:math id="d33e997"><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq3.gif"/></alternatives></inline-formula></td><td align="left">0.54</td><td align="left">0.33</td><td align="left">0.30</td><td align="left">0.87</td><td align="left"/></tr><tr><td align="left"><inline-formula id="IEq37"><alternatives><tex-math id="d33e1015">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_0$$\end{document}</tex-math><mml:math id="d33e1020"><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq7.gif"/></alternatives></inline-formula></td><td align="left">0.23</td><td align="left">-0.03</td><td align="left">-0.05</td><td align="left">0.00</td><td align="left">-0.15</td><td align="left"><inline-formula id="IEq38"><alternatives><tex-math id="d33e1037">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {false}}$$\end{document}</tex-math><mml:math id="d33e1042"><mml:msub><mml:mi>v</mml:mi><mml:mtext>false</mml:mtext></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq5.gif"/></alternatives></inline-formula></td><td align="left">0.38</td><td align="left">0.09</td><td align="left">0.26</td><td align="left">0.50</td><td align="left">0.49</td></tr></tbody></table><table-wrap-foot><p>The parameters from Kuhne (<xref ref-type="bibr" rid="CR18">2024</xref>) were transformed to a normal shape prior to estimation of the correlation matrices. DDM = diffusion decision model; LBA = linear ballistic accumulator</p></table-wrap-foot></table-wrap></p><p id="Par18">As the error rate is determined by the data-generating parameters, we repeatedly generated datasets with different parameter samples until the following criteria were met: <list list-type="order"><list-item><p id="Par19">For Study 1, the empirical error rate was within a margin of 1% around the target error rate (e.g., in the 5%-error scenario, datasets included between 4% and 6% errors). For Studies 2 and 3, the summed difference between empirical and target across conditions was within a margin of 2%.</p></list-item><list-item><p id="Par20">To produce datasets with slower error than correct responses, the constraints <inline-formula id="IEq39"><alternatives><tex-math id="d33e1077">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_v &#x0003e; s_z$$\end{document}</tex-math><mml:math id="d33e1082"><mml:mrow><mml:msub><mml:mi>s</mml:mi><mml:mi>v</mml:mi></mml:msub><mml:mo>&#x0003e;</mml:mo><mml:msub><mml:mi>s</mml:mi><mml:mi>z</mml:mi></mml:msub></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq39.gif"/></alternatives></inline-formula> (DDM) and <inline-formula id="IEq40"><alternatives><tex-math id="d33e1093">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_{v_\text {true}} &#x0003e; s_{v_\text {false}}$$\end{document}</tex-math><mml:math id="d33e1098"><mml:mrow><mml:msub><mml:mi>s</mml:mi><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:msub><mml:mo>&#x0003e;</mml:mo><mml:msub><mml:mi>s</mml:mi><mml:msub><mml:mi>v</mml:mi><mml:mtext>false</mml:mtext></mml:msub></mml:msub></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq40.gif"/></alternatives></inline-formula> (LBA) had to hold.</p></list-item><list-item><p id="Par21">The RT distributions (in seconds) fulfilled the following criteria (adapted from Evans, <xref ref-type="bibr" rid="CR10">2020</xref>): <inline-formula id="IEq41"><alternatives><tex-math id="d33e1121">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$0.4 \le \text {Mean(RT)} \le 2.5$$\end{document}</tex-math><mml:math id="d33e1126"><mml:mrow><mml:mn>0.4</mml:mn><mml:mo>&#x02264;</mml:mo><mml:mtext>Mean(RT)</mml:mtext><mml:mo>&#x02264;</mml:mo><mml:mn>2.5</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq41.gif"/></alternatives></inline-formula>; <inline-formula id="IEq42"><alternatives><tex-math id="d33e1135">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$0.4 \le \text {Median(RT)} \le 2.5$$\end{document}</tex-math><mml:math id="d33e1140"><mml:mrow><mml:mn>0.4</mml:mn><mml:mo>&#x02264;</mml:mo><mml:mtext>Median(RT)</mml:mtext><mml:mo>&#x02264;</mml:mo><mml:mn>2.5</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq42.gif"/></alternatives></inline-formula>; <inline-formula id="IEq43"><alternatives><tex-math id="d33e1149">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$0.1 \le \text {IQR(RT)} \le 2$$\end{document}</tex-math><mml:math id="d33e1154"><mml:mrow><mml:mn>0.1</mml:mn><mml:mo>&#x02264;</mml:mo><mml:mtext>IQR(RT)</mml:mtext><mml:mo>&#x02264;</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq43.gif"/></alternatives></inline-formula><xref ref-type="fn" rid="Fn2">2</xref>; <inline-formula id="IEq44"><alternatives><tex-math id="d33e1166">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$1.5 \le \text {Maximum(RT)}$$\end{document}</tex-math><mml:math id="d33e1171"><mml:mrow><mml:mn>1.5</mml:mn><mml:mo>&#x02264;</mml:mo><mml:mtext>Maximum(RT)</mml:mtext></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq44.gif"/></alternatives></inline-formula>; <inline-formula id="IEq45"><alternatives><tex-math id="d33e1179">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$0.5 \ge \text {Minimum(RT)}$$\end{document}</tex-math><mml:math id="d33e1184"><mml:mrow><mml:mn>0.5</mml:mn><mml:mo>&#x02265;</mml:mo><mml:mtext>Minimum(RT)</mml:mtext></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq45.gif"/></alternatives></inline-formula>.</p></list-item></list>These inclusion criteria ensured that the generated RT distributions were approximately in line with those observed in typical empirical studies. Datasets that failed to meet all three criteria were discarded, and replaced with a new one, with the maximum number of replacements set to 100,&#x000a0;000, after which no new dataset was returned.</p><p id="Par23">For the 50%-error scenario in Study 1, no datasets generated by the DDM met all three criteria, most likely because parameters leading to such a high error rate could not be sampled from the empirical distribution. Specifically, it was impossible to sample drift rates sufficiently close to zero to obtain chance performance. In many applications, participants with near-chance performance are excluded because they are assumed to disregard the task instructions (Evans et al., <xref ref-type="bibr" rid="CR12">2017</xref>). However, it is theoretically interesting to explore the 50%-error scenario, so instead of sampling drift rates from the empirical distribution, we used a uniform distribution bounded by 0.005 and 0.05 to obtain sufficiently small drift rates to generate the targeted error rate of 50%.</p><p id="Par24">In Studies 2 and 3, we modified the data generation procedure: We computed the <inline-formula id="IEq46"><alternatives><tex-math id="d33e1199">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$25^{th}$$\end{document}</tex-math><mml:math id="d33e1204"><mml:mrow><mml:msup><mml:mn>25</mml:mn><mml:mrow><mml:mi mathvariant="italic">th</mml:mi></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq46.gif"/></alternatives></inline-formula> and <inline-formula id="IEq47"><alternatives><tex-math id="d33e1213">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$75^{th}$$\end{document}</tex-math><mml:math id="d33e1218"><mml:mrow><mml:msup><mml:mn>75</mml:mn><mml:mrow><mml:mi mathvariant="italic">th</mml:mi></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq47.gif"/></alternatives></inline-formula> quantiles of the data-generating drift rates for the different error rates from Study 1 and matched them to the target error rates in Studies 2 and 3 (e.g., quantiles for drift rates in the 5% error condition in Study 1 would be matched to the 5% error conditions in Studies 2 and 3). New drift rates were sampled from a uniform distribution bounded by the two quantiles for the conditions in Studies 2 and 3. The other parameters were generated using the truncated multivariate normal distribution conditional on the new drift rates. In Study 3, parameters were first sampled for the accuracy condition (these were conditional only on the new drift rates). For the speed condition, we sampled a second decision threshold parameter conditional on the other newly generated model parameters (these were conditional on all parameters besides the threshold in the accuracy condition, including the new drift rates). This modification ensured ordinal consistency between the data-generating parameter values across conditions (e.g., lower drift rates in the difficult vs. easy condition).</p><p id="Par25">Some of the DDM datasets, even though they met our inclusion criteria, were generated from parameters that were larger than typically observed in empirical studies. To ensure that the data-generating values align well with the literature at large, we removed datasets generated with <inline-formula id="IEq48"><alternatives><tex-math id="d33e1229">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$a &#x0003e; 3$$\end{document}</tex-math><mml:math id="d33e1234"><mml:mrow><mml:mi>a</mml:mi><mml:mo>&#x0003e;</mml:mo><mml:mn>3</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq48.gif"/></alternatives></inline-formula> or <inline-formula id="IEq49"><alternatives><tex-math id="d33e1241">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v &#x0003e; 5$$\end{document}</tex-math><mml:math id="d33e1246"><mml:mrow><mml:mi>v</mml:mi><mml:mo>&#x0003e;</mml:mo><mml:mn>5</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq49.gif"/></alternatives></inline-formula> (Study 1: <inline-formula id="IEq50"><alternatives><tex-math id="d33e1253">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$20.8\%$$\end{document}</tex-math><mml:math id="d33e1258"><mml:mrow><mml:mn>20.8</mml:mn><mml:mo>%</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq50.gif"/></alternatives></inline-formula>; Study 2: <inline-formula id="IEq51"><alternatives><tex-math id="d33e1264">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$26.7\%$$\end{document}</tex-math><mml:math id="d33e1269"><mml:mrow><mml:mn>26.7</mml:mn><mml:mo>%</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq51.gif"/></alternatives></inline-formula>; Study 3: <inline-formula id="IEq52"><alternatives><tex-math id="d33e1275">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$35.9\%$$\end{document}</tex-math><mml:math id="d33e1280"><mml:mrow><mml:mn>35.9</mml:mn><mml:mo>%</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq52.gif"/></alternatives></inline-formula>). These thresholds were based on visual inspection of empirically observed parameter distributions reported by Tran et al. (<xref ref-type="bibr" rid="CR41">2021</xref>). Removing these datasets did not change the conclusions of our simulations. In the Supplementary Materials, we show results that include all datasets and results that include only the excluded datasets.</p><p id="Par26">For data generation, we used the Dynamic Model of Choice software (DMC; version: 210114; Heathcote et al., <xref ref-type="bibr" rid="CR17">2019</xref>) which relies on the R packages rtdists (version: 0.11-2; Singmann et al., <xref ref-type="bibr" rid="CR37">2020</xref>), which in turn uses parts of the fast-dm software (Voss &#x00026; Voss, <xref ref-type="bibr" rid="CR48">2007</xref>). The simulations and analyses were run using R (version: 3.6.3; R Core Team, <xref ref-type="bibr" rid="CR29">2020</xref>).</p></sec><sec id="Sec3"><title>Parameter estimation</title><p id="Par27">Response boundaries in the DDM and accumulators in the LBA were mapped to correct vs. incorrect responses. In Study 2, separate DDM <italic>v</italic> and LBA <inline-formula id="IEq53"><alternatives><tex-math id="d33e1311">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {true}}$$\end{document}</tex-math><mml:math id="d33e1316"><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq3.gif"/></alternatives></inline-formula> and <inline-formula id="IEq54"><alternatives><tex-math id="d33e1322">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {false}}$$\end{document}</tex-math><mml:math id="d33e1327"><mml:msub><mml:mi>v</mml:mi><mml:mtext>false</mml:mtext></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq5.gif"/></alternatives></inline-formula> parameters were estimated for the three difficulty conditions; in Study 3, separate DDM <italic>a</italic> and LBA <italic>B</italic> parameters were estimated for the speed-vs-accuracy conditions.</p><p id="Par28">For each dataset, the joint posterior distributions of the model parameters were estimated with Bayesian differential-evolution Markov chain Monte Carlo (MCMC) sampling (Turner et al., <xref ref-type="bibr" rid="CR43">2013</xref>), as implemented in DMC. Specifically, parameters were estimated using the RUN.dmc function which repeatedly removes and adds samples to the MCMC chains until they converge to their stationary distribution (Heathcote et al., <xref ref-type="bibr" rid="CR17">2019</xref>). We ran 3<italic>k</italic> MCMC chains, where <italic>k</italic> is the number of free parameters in the model. Each chain was initialized with 120 samples and samples were added and removed in steps of 40 until (a) multivariate <inline-formula id="IEq55"><alternatives><tex-math id="d33e1357">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\hat{R}$$\end{document}</tex-math><mml:math id="d33e1362"><mml:mover accent="true"><mml:mi>R</mml:mi><mml:mo stretchy="false">^</mml:mo></mml:mover></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq55.gif"/></alternatives></inline-formula> and <inline-formula id="IEq56"><alternatives><tex-math id="d33e1369">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\hat{R}$$\end{document}</tex-math><mml:math id="d33e1374"><mml:mover accent="true"><mml:mi>R</mml:mi><mml:mo stretchy="false">^</mml:mo></mml:mover></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq55.gif"/></alternatives></inline-formula> for all parameters were below 1.1 (Brooks &#x00026; Gelman, <xref ref-type="bibr" rid="CR3">1998</xref>); and (b) effective sample size (computed using the effectiveSize function from the coda R package; Plummer et al. , Plummer et al. ) for every parameter was at least 1000. These criteria ensured that the MCMC chains were well mixed and enough samples were available to robustly estimate summary statistics of the posterior distributions. We visually inspected random samples of chains to confirm convergence.</p><p id="Par29">For the DDM, prior distributions were based on Tran et al. (<xref ref-type="bibr" rid="CR41">2021</xref>), who provided an overview of DDM parameter estimates based on a systematic literature review. For the LBA, priors were adapted from Evans (<xref ref-type="bibr" rid="CR10">2020</xref>). As both sets of prior distributions were relatively informative (i.e., had a narrow spread), we increased their variances to reduce their influence on the posterior distributions (see Supplementary Materials for details).</p></sec><sec id="Sec4"><title>Assessing parameter-recovery performance</title><p id="Par30">We used the median of the marginal posterior distributions as point estimates for the parameters. We compared these point estimates to the true data-generating values using scatterplots, Pearson correlations, and the root mean squared deviation <inline-formula id="IEq57"><alternatives><tex-math id="d33e1399">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$RMSD = \sqrt{\frac{1}{n}\sum (x_{true} - x_{est})^2}$$\end{document}</tex-math><mml:math id="d33e1404"><mml:mrow><mml:mi>R</mml:mi><mml:mi>M</mml:mi><mml:mi>S</mml:mi><mml:mi>D</mml:mi><mml:mo>=</mml:mo><mml:msqrt><mml:mrow><mml:mfrac><mml:mn>1</mml:mn><mml:mi>n</mml:mi></mml:mfrac><mml:mo>&#x02211;</mml:mo><mml:msup><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:msub><mml:mi>x</mml:mi><mml:mrow><mml:mi mathvariant="italic">true</mml:mi></mml:mrow></mml:msub><mml:mo>-</mml:mo><mml:msub><mml:mi>x</mml:mi><mml:mrow><mml:mi mathvariant="italic">est</mml:mi></mml:mrow></mml:msub><mml:mo stretchy="false">)</mml:mo></mml:mrow><mml:mn>2</mml:mn></mml:msup></mml:mrow></mml:msqrt></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq57.gif"/></alternatives></inline-formula>. RMSD can be compared across the various error-rate scenarios but not across parameters or models due to scale differences, whereas Pearson correlations can be compared across both. To assess the uncertainty of the results, we also calculated the 95% interval (i.e., <inline-formula id="IEq58"><alternatives><tex-math id="d33e1437">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$2.5^{th}$$\end{document}</tex-math><mml:math id="d33e1442"><mml:mrow><mml:mn>2</mml:mn><mml:mo>.</mml:mo><mml:msup><mml:mn>5</mml:mn><mml:mrow><mml:mi mathvariant="italic">th</mml:mi></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq58.gif"/></alternatives></inline-formula> and <inline-formula id="IEq59"><alternatives><tex-math id="d33e1453">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$97.5^{th}$$\end{document}</tex-math><mml:math id="d33e1458"><mml:mrow><mml:mn>97</mml:mn><mml:mo>.</mml:mo><mml:msup><mml:mn>5</mml:mn><mml:mrow><mml:mi mathvariant="italic">th</mml:mi></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq59.gif"/></alternatives></inline-formula> quantiles) of the absolute deviations between the true and estimated parameter values <inline-formula id="IEq60"><alternatives><tex-math id="d33e1469">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$abs(x_{true} - x_{est})$$\end{document}</tex-math><mml:math id="d33e1474"><mml:mrow><mml:mi>a</mml:mi><mml:mi>b</mml:mi><mml:mi>s</mml:mi><mml:mo stretchy="false">(</mml:mo><mml:msub><mml:mi>x</mml:mi><mml:mrow><mml:mi mathvariant="italic">true</mml:mi></mml:mrow></mml:msub><mml:mo>-</mml:mo><mml:msub><mml:mi>x</mml:mi><mml:mrow><mml:mi mathvariant="italic">est</mml:mi></mml:mrow></mml:msub><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq60.gif"/></alternatives></inline-formula>. To investigate parameter trade-offs, we computed pairwise Pearson correlations between MCMC samples comprising the marginal posterior distributions. To account for conditional dependencies, we also calculated <italic>partial</italic> pairwise correlations between the marginals. Importantly, the correlations encapsulated in the posterior distributions reflect the mathematical structure of the model and are defined within participants, whereas the correlations between data-generating parameter values (Table <xref rid="Tab1" ref-type="table">1</xref>) reflect individual differences and are defined between participants. The two types of correlations therefore cannot be compared.</p><p id="Par31">For Study 1, we focus on the core DDM and LBA parameters, and present results for the DDM <inline-formula id="IEq61"><alternatives><tex-math id="d33e1505">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_v$$\end{document}</tex-math><mml:math id="d33e1510"><mml:msub><mml:mi>s</mml:mi><mml:mi>v</mml:mi></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq2.gif"/></alternatives></inline-formula> and <inline-formula id="IEq62"><alternatives><tex-math id="d33e1516">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_z$$\end{document}</tex-math><mml:math id="d33e1521"><mml:msub><mml:mi>s</mml:mi><mml:mi>z</mml:mi></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq1.gif"/></alternatives></inline-formula> parameters and the LBA <italic>A</italic> parameter in the Supplementary Materials. For Studies 2 and 3, results related to DDM <italic>z</italic> and DDM and LBA <inline-formula id="IEq63"><alternatives><tex-math id="d33e1533">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_0$$\end{document}</tex-math><mml:math id="d33e1538"><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq7.gif"/></alternatives></inline-formula> are also relegated to the Supplementary Materials.</p></sec></sec><sec id="Sec5"><title>Results</title><sec id="Sec6"><title>Parameter-recovery performance</title><sec id="Sec7"><title>Study 1: stimulus manipulation</title><p id="Par32">Figure <xref rid="Fig2" ref-type="fig">2</xref>A and B show scatterplots of true vs. estimated DDM parameters across 100 synthetic datasets for different error rates. For 150 trials per dataset (Fig. <xref rid="Fig2" ref-type="fig">2</xref>A), estimates of <italic>a</italic> and <italic>v</italic> increasingly overestimate the true values as error rates decrease. The overestimation is still present for 1200 trials (Fig. <xref rid="Fig2" ref-type="fig">2</xref>B) with 0% and 1% errors, but it is substantially smaller than for 150 trials. The overestimation is reflected in weaker correlations between true and estimated parameters as error rates decrease (Table <xref rid="Tab2" ref-type="table">2</xref>). These results are supported by Fig. <xref rid="Fig2" ref-type="fig">2</xref>C and D, where RMSDs of <italic>a</italic> and <italic>v</italic> are generally higher for lower error rates. RMSDs decline steeply from 0% to 5% (for both <italic>a</italic> and <italic>v</italic>) and more gradually for higher error rates. For <inline-formula id="IEq64"><alternatives><tex-math id="d33e1587">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_0$$\end{document}</tex-math><mml:math id="d33e1592"><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq7.gif"/></alternatives></inline-formula> and <italic>z</italic>, estimates align well with true parameter values even at low error rates, with RMSDs being relatively stable across the different error scenarios.<fig id="Fig2"><label>Fig. 2</label><caption><p>Parameter recovery for the diffusion decision model. <bold>A</bold>, <bold>B</bold>: Bivariate distributions of true values and posterior medians for the diffusion decision model for different error rates (<italic>colors</italic>). Each <italic>point</italic> represents a dataset of 150 (<bold>A</bold>) or 1200 (<bold>B</bold>) trials; the <italic>dashed line</italic> represents perfect recovery. <bold>C</bold>, <bold>D</bold>: Root mean squared deviation (RMSD) between true values and posterior medians for 150 and 1200 trials, respectively, for different error rates. <italic>Error bars</italic> indicate the <inline-formula id="IEq65"><alternatives><tex-math id="d33e1638">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$2.5^{th}$$\end{document}</tex-math><mml:math id="d33e1643"><mml:mrow><mml:mn>2</mml:mn><mml:mo>.</mml:mo><mml:msup><mml:mn>5</mml:mn><mml:mrow><mml:mi mathvariant="italic">th</mml:mi></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq58.gif"/></alternatives></inline-formula> and <inline-formula id="IEq66"><alternatives><tex-math id="d33e1655">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$97.5^{th}$$\end{document}</tex-math><mml:math id="d33e1660"><mml:mrow><mml:mn>97</mml:mn><mml:mo>.</mml:mo><mml:msup><mml:mn>5</mml:mn><mml:mrow><mml:mi mathvariant="italic">th</mml:mi></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq59.gif"/></alternatives></inline-formula> quantiles of the absolute deviations. Note that the <italic>x</italic>-axis in C and D is not linear and has a discrete scale</p></caption><graphic xlink:href="13423_2024_2621_Fig2_HTML" id="MO2"/></fig></p><p id="Par33">Figure <xref rid="Fig3" ref-type="fig">3</xref>A and B show scatterplots of true vs. estimated LBA parameters across error rates. Estimates of <italic>B</italic>, <inline-formula id="IEq67"><alternatives><tex-math id="d33e1684">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_{v_\text {true}}$$\end{document}</tex-math><mml:math id="d33e1689"><mml:msub><mml:mi>s</mml:mi><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq4.gif"/></alternatives></inline-formula>, <inline-formula id="IEq68"><alternatives><tex-math id="d33e1697">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {false}}$$\end{document}</tex-math><mml:math id="d33e1702"><mml:msub><mml:mi>v</mml:mi><mml:mtext>false</mml:mtext></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq5.gif"/></alternatives></inline-formula>, and <inline-formula id="IEq69"><alternatives><tex-math id="d33e1708">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {true}}$$\end{document}</tex-math><mml:math id="d33e1713"><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq3.gif"/></alternatives></inline-formula> are biased upwards for decreasing error rates for 150 trials. The bias largely disappears above 5% errors for 1200 trials. The bias is also evident in correlations between true and estimated parameters in Table <xref rid="Tab2" ref-type="table">2</xref>, where correlations are weaker for lower error rates. Notably, correlations between true and estimated LBA parameters are lower overall than for the DDM, both with 150 and 1200 trials. Figure&#x000a0;<xref rid="Fig3" ref-type="fig">3</xref>C and D show that RMSDs increase with decreasing error rates, except for <inline-formula id="IEq70"><alternatives><tex-math id="d33e1726">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_0$$\end{document}</tex-math><mml:math id="d33e1731"><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq7.gif"/></alternatives></inline-formula>.<table-wrap id="Tab2"><label>Table 2</label><caption><p>Pearson correlations between true and estimated parameters</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left"/><th align="left" colspan="5">DDM</th><th align="left" colspan="6">LBA</th></tr><tr><th align="left"> Errors (<inline-formula id="IEq71"><alternatives><tex-math id="d33e1767">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\%$$\end{document}</tex-math><mml:math id="d33e1772"><mml:mo>%</mml:mo></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq71.gif"/></alternatives></inline-formula>)</th><th align="left"><italic>a</italic></th><th align="left"><inline-formula id="IEq72"><alternatives><tex-math id="d33e1782">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_{0}$$\end{document}</tex-math><mml:math id="d33e1787"><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq72.gif"/></alternatives></inline-formula></th><th align="left"><italic>v</italic></th><th align="left"><italic>z</italic></th><th align="left"><italic>v</italic>/<italic>a</italic></th><th align="left"><italic>B</italic></th><th align="left"><inline-formula id="IEq73"><alternatives><tex-math id="d33e1813">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_{v_{\text {true}}}$$\end{document}</tex-math><mml:math id="d33e1818"><mml:msub><mml:mi>s</mml:mi><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq73.gif"/></alternatives></inline-formula></th><th align="left"><inline-formula id="IEq74"><alternatives><tex-math id="d33e1827">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_0$$\end{document}</tex-math><mml:math id="d33e1832"><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq7.gif"/></alternatives></inline-formula></th><th align="left"><inline-formula id="IEq75"><alternatives><tex-math id="d33e1839">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {false}}$$\end{document}</tex-math><mml:math id="d33e1844"><mml:msub><mml:mi>v</mml:mi><mml:mtext>false</mml:mtext></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq5.gif"/></alternatives></inline-formula></th><th align="left"><inline-formula id="IEq76"><alternatives><tex-math id="d33e1851">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {true}}$$\end{document}</tex-math><mml:math id="d33e1856"><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq3.gif"/></alternatives></inline-formula></th><th align="left"><inline-formula id="IEq77"><alternatives><tex-math id="d33e1864">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {true}}/B$$\end{document}</tex-math><mml:math id="d33e1869"><mml:mrow><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub><mml:mo stretchy="false">/</mml:mo><mml:mi>B</mml:mi></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq77.gif"/></alternatives></inline-formula></th></tr></thead><tbody><tr><td align="left" colspan="12">150 trials</td></tr><tr><td align="left">0.0</td><td align="left">0.47</td><td align="left">0.83</td><td align="left">0.29</td><td align="left">0.96</td><td align="left">0.93</td><td align="left">0.41</td><td align="left">0.13</td><td align="left">0.64</td><td align="left">0.08</td><td align="left">0.19</td><td align="left">0.34</td></tr><tr><td align="left">1.0</td><td align="left">0.55</td><td align="left">0.77</td><td align="left">0.50</td><td align="left">0.95</td><td align="left">0.94</td><td align="left">0.47</td><td align="left">-0.07</td><td align="left">0.72</td><td align="left">0.22</td><td align="left">0.01</td><td align="left">0.58</td></tr><tr><td align="left">5.0</td><td align="left">0.72</td><td align="left">0.89</td><td align="left">0.76</td><td align="left">0.96</td><td align="left">0.96</td><td align="left">0.70</td><td align="left">0.31</td><td align="left">0.81</td><td align="left">0.38</td><td align="left">0.28</td><td align="left">0.49</td></tr><tr><td align="left">7.5</td><td align="left">0.83</td><td align="left">0.90</td><td align="left">0.69</td><td align="left">0.97</td><td align="left">0.97</td><td align="left">0.55</td><td align="left">0.21</td><td align="left">0.53</td><td align="left">0.58</td><td align="left">0.42</td><td align="left">0.42</td></tr><tr><td align="left">10.0</td><td align="left">0.91</td><td align="left">0.93</td><td align="left">0.77</td><td align="left">0.96</td><td align="left">0.97</td><td align="left">0.71</td><td align="left">0.18</td><td align="left">0.64</td><td align="left">0.66</td><td align="left">0.52</td><td align="left">0.50</td></tr><tr><td align="left">12.5</td><td align="left">0.88</td><td align="left">0.94</td><td align="left">0.75</td><td align="left">0.97</td><td align="left">0.97</td><td align="left">0.75</td><td align="left">0.37</td><td align="left">0.69</td><td align="left">0.67</td><td align="left">0.57</td><td align="left">0.37</td></tr><tr><td align="left">15.0</td><td align="left">0.85</td><td align="left">0.88</td><td align="left">0.82</td><td align="left">0.93</td><td align="left">0.94</td><td align="left">0.71</td><td align="left">0.16</td><td align="left">0.66</td><td align="left">0.64</td><td align="left">0.47</td><td align="left">0.65</td></tr><tr><td align="left">25.0</td><td align="left">0.84</td><td align="left">0.93</td><td align="left">0.84</td><td align="left">0.97</td><td align="left">0.91</td><td align="left">0.62</td><td align="left">0.43</td><td align="left">0.61</td><td align="left">0.57</td><td align="left">0.54</td><td align="left">0.56</td></tr><tr><td align="left">35.0</td><td align="left">0.88</td><td align="left">0.86</td><td align="left">0.80</td><td align="left">0.96</td><td align="left">0.91</td><td align="left">0.79</td><td align="left">0.28</td><td align="left">0.70</td><td align="left">0.72</td><td align="left">0.65</td><td align="left">0.44</td></tr><tr><td align="left">50.0</td><td align="left">0.89</td><td align="left">0.81</td><td align="left">-0.09</td><td align="left">0.95</td><td align="left">0.33</td><td align="left">0.64</td><td align="left">0.62</td><td align="left">0.66</td><td align="left">0.74</td><td align="left">0.72</td><td align="left">0.62</td></tr><tr><td align="left" colspan="12">1200 trials</td></tr><tr><td align="left">0.0</td><td align="left">0.60</td><td align="left">0.95</td><td align="left">0.85</td><td align="left">1.00</td><td align="left">0.99</td><td align="left">0.61</td><td align="left">0.55</td><td align="left">0.92</td><td align="left">0.46</td><td align="left">0.59</td><td align="left">0.90</td></tr><tr><td align="left">1.0</td><td align="left">0.81</td><td align="left">0.96</td><td align="left">0.81</td><td align="left">0.99</td><td align="left">0.99</td><td align="left">0.72</td><td align="left">0.51</td><td align="left">0.90</td><td align="left">0.56</td><td align="left">0.61</td><td align="left">0.88</td></tr><tr><td align="left">5.0</td><td align="left">0.96</td><td align="left">0.97</td><td align="left">0.97</td><td align="left">0.99</td><td align="left">0.99</td><td align="left">0.89</td><td align="left">0.62</td><td align="left">0.89</td><td align="left">0.68</td><td align="left">0.73</td><td align="left">0.90</td></tr><tr><td align="left">7.5</td><td align="left">0.98</td><td align="left">0.98</td><td align="left">0.95</td><td align="left">1.00</td><td align="left">1.00</td><td align="left">0.87</td><td align="left">0.73</td><td align="left">0.90</td><td align="left">0.79</td><td align="left">0.77</td><td align="left">0.89</td></tr><tr><td align="left">10.0</td><td align="left">0.98</td><td align="left">0.97</td><td align="left">0.96</td><td align="left">1.00</td><td align="left">1.00</td><td align="left">0.96</td><td align="left">0.62</td><td align="left">0.94</td><td align="left">0.76</td><td align="left">0.72</td><td align="left">0.93</td></tr><tr><td align="left">12.5</td><td align="left">0.98</td><td align="left">0.99</td><td align="left">0.96</td><td align="left">0.99</td><td align="left">0.99</td><td align="left">0.94</td><td align="left">0.81</td><td align="left">0.91</td><td align="left">0.86</td><td align="left">0.80</td><td align="left">0.90</td></tr><tr><td align="left">15.0</td><td align="left">0.98</td><td align="left">0.96</td><td align="left">0.97</td><td align="left">0.99</td><td align="left">0.99</td><td align="left">0.95</td><td align="left">0.59</td><td align="left">0.94</td><td align="left">0.81</td><td align="left">0.77</td><td align="left">0.87</td></tr><tr><td align="left">25.0</td><td align="left">0.98</td><td align="left">0.97</td><td align="left">0.97</td><td align="left">1.00</td><td align="left">0.99</td><td align="left">0.95</td><td align="left">0.80</td><td align="left">0.94</td><td align="left">0.91</td><td align="left">0.85</td><td align="left">0.94</td></tr><tr><td align="left">35.0</td><td align="left">0.97</td><td align="left">0.98</td><td align="left">0.96</td><td align="left">1.00</td><td align="left">0.97</td><td align="left">0.95</td><td align="left">0.84</td><td align="left">0.95</td><td align="left">0.92</td><td align="left">0.90</td><td align="left">0.92</td></tr><tr><td align="left">50.0</td><td align="left">0.98</td><td align="left">0.96</td><td align="left">0.31</td><td align="left">1.00</td><td align="left">0.54</td><td align="left">0.95</td><td align="left">0.91</td><td align="left">0.97</td><td align="left">0.94</td><td align="left">0.93</td><td align="left">0.94</td></tr></tbody></table><table-wrap-foot><p>Correlations for DDM <italic>v</italic> are low at 50% errors due to low variance in the true parameters. DDM = diffusion decision model; LBA = linear ballistic accumulator</p></table-wrap-foot></table-wrap></p><p id="Par34">
+<fig id="Fig3"><label>Fig. 3</label><caption><p>Parameter recovery for the linear ballistic accumulator. <bold>A</bold>, <bold>B</bold>: Bivariate distributions of true values and posterior medians for the linear ballistic accumulator for different error rates (<italic>colors</italic>). Each <italic>point</italic> represents a dataset of 150 (<bold>A</bold>) or 1200 (<bold>B</bold>) trials; the <italic>dashed line</italic> represents perfect recovery. <bold>C</bold>, <bold>D</bold>: Root mean squared deviation (RMSD) between true values and posterior medians for 150 and 1200 trials, respectively, for different error rates. <italic>Error bars</italic> indicate the <inline-formula id="IEq78"><alternatives><tex-math id="d33e2451">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$2.5^{th}$$\end{document}</tex-math><mml:math id="d33e2456"><mml:mrow><mml:mn>2</mml:mn><mml:mo>.</mml:mo><mml:msup><mml:mn>5</mml:mn><mml:mrow><mml:mi mathvariant="italic">th</mml:mi></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq58.gif"/></alternatives></inline-formula> and <inline-formula id="IEq79"><alternatives><tex-math id="d33e2468">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$97.5^{th}$$\end{document}</tex-math><mml:math id="d33e2473"><mml:mrow><mml:mn>97</mml:mn><mml:mo>.</mml:mo><mml:msup><mml:mn>5</mml:mn><mml:mrow><mml:mi mathvariant="italic">th</mml:mi></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq59.gif"/></alternatives></inline-formula> quantiles of the absolute deviations. Note that the <italic>x</italic>-axis in C and D is not linear and has a discrete scale</p></caption><graphic xlink:href="13423_2024_2621_Fig3_HTML" id="MO3"/></fig>
+</p></sec><sec id="Sec8"><title>Studies 2 and 3: difficulty and speed-vs-accuracy manipulation</title><p id="Par35">Figure <xref rid="Fig4" ref-type="fig">4</xref>A shows RMSDs for the DDM with a simulated difficulty (Study 2) and speed-vs-accuracy manipulation (Study 3) for different error rates and trial numbers. As in Study 1, RMSDs of <italic>a</italic> and <italic>v</italic> are higher for decreasing error rates and for 150 (Study 2) and 200 (Study 3) compared to 1200 trials. RMSDs are also higher for drift rates estimated for conditions with lower difficulty (as these have a lower error rate) and similar to RMSDs for drift rates in Study 1 with a comparable error rate of 5%. RMSDs for decision thresholds are similar in accuracy and speed conditions. Interestingly, RMSDs for decision thresholds and drift rates are overall lower for the speed-vs-accuracy manipulation than for the difficulty manipulation. They are also lower than RMSDs for decision thresholds in Study 1 with a comparable error rate of 5%. This is true even for <inline-formula id="IEq80"><alternatives><tex-math id="d33e2503">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$a_{acc}$$\end{document}</tex-math><mml:math id="d33e2508"><mml:msub><mml:mi>a</mml:mi><mml:mrow><mml:mi mathvariant="italic">acc</mml:mi></mml:mrow></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq80.gif"/></alternatives></inline-formula> in the accuracy condition which was estimated with a lower error rate and smaller trial number than <italic>a</italic> in the difficulty manipulation.</p><p id="Par36">Figure <xref rid="Fig4" ref-type="fig">4</xref>B shows RMSDs for the LBA with a simulated difficulty and speed-vs-accuracy manipulation. Again, RMSDs are generally higher for decreasing error rates and for 150 compared to 1200 trials, as well as for parameters in conditions with lower error rates (e.g., <inline-formula id="IEq81"><alternatives><tex-math id="d33e2524">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v^{(\text {easy})}_{\text {true}}$$\end{document}</tex-math><mml:math id="d33e2529"><mml:msubsup><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext><mml:mrow><mml:mo stretchy="false">(</mml:mo><mml:mtext>easy</mml:mtext><mml:mo stretchy="false">)</mml:mo></mml:mrow></mml:msubsup></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq81.gif"/></alternatives></inline-formula> or <inline-formula id="IEq82"><alternatives><tex-math id="d33e2541">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$B_{\text {acc}}$$\end{document}</tex-math><mml:math id="d33e2546"><mml:msub><mml:mi>B</mml:mi><mml:mtext>acc</mml:mtext></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq82.gif"/></alternatives></inline-formula>). In contrast to the DDM, only <inline-formula id="IEq83"><alternatives><tex-math id="d33e2552">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_{v_\text {true}}$$\end{document}</tex-math><mml:math id="d33e2557"><mml:msub><mml:mi>s</mml:mi><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq4.gif"/></alternatives></inline-formula> appears to have lower RMSDs for the speed-vs-accuracy manipulation with 200 trials and 25% and 45% errors. Other parameters show no systematic differences between the manipulations. In the Supplementary Materials, we also show parameter estimates from Studies 2 and 3.</p></sec></sec><sec id="Sec9"><title>Pairwise within-subject correlations</title><p id="Par37">Figure <xref rid="Fig5" ref-type="fig">5</xref>A shows distributions of pairwise Pearson correlations between DDM parameters across the 100 synthetic datasets, each with 150 trials, for different error rates. Correlations for 1200 trials, which closely mirror the results in Fig.&#x000a0;<xref rid="Fig5" ref-type="fig">5</xref>, are reported in the Supplementary Materials. Correlations between <inline-formula id="IEq84"><alternatives><tex-math id="d33e2575">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$a-v$$\end{document}</tex-math><mml:math id="d33e2580"><mml:mrow><mml:mi>a</mml:mi><mml:mo>-</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq84.gif"/></alternatives></inline-formula> are very close to 1 at lower error rates and start decreasing at 15% errors and above. The near-perfect correlation between <inline-formula id="IEq85"><alternatives><tex-math id="d33e2587">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$a-v$$\end{document}</tex-math><mml:math id="d33e2592"><mml:mrow><mml:mi>a</mml:mi><mml:mo>-</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq84.gif"/></alternatives></inline-formula> at low error rates indicates a trade-off, where simultaneously increasing <italic>a</italic> and <italic>v</italic> leads to (almost) identical predictions.</p><p id="Par38">Trade-offs between other DDM parameters can be more easily observed when accounting for conditional dependencies, as shown with the partial correlations in Fig. <xref rid="Fig5" ref-type="fig">5</xref>B. Between <inline-formula id="IEq86"><alternatives><tex-math id="d33e2611">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$a-t_0$$\end{document}</tex-math><mml:math id="d33e2616"><mml:mrow><mml:mi>a</mml:mi><mml:mo>-</mml:mo><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq86.gif"/></alternatives></inline-formula>, partial correlations tend to become more negative with decreasing error rates, suggesting a trade-off where decreasing <italic>a</italic> and increasing <inline-formula id="IEq87"><alternatives><tex-math id="d33e2628">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_0$$\end{document}</tex-math><mml:math id="d33e2633"><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq7.gif"/></alternatives></inline-formula> leads to (almost) identical predictions. Partial correlations between <inline-formula id="IEq88"><alternatives><tex-math id="d33e2639">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$a-v$$\end{document}</tex-math><mml:math id="d33e2644"><mml:mrow><mml:mi>a</mml:mi><mml:mo>-</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq84.gif"/></alternatives></inline-formula> and also <inline-formula id="IEq89"><alternatives><tex-math id="d33e2652">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v-t_0$$\end{document}</tex-math><mml:math id="d33e2657"><mml:mrow><mml:mi>v</mml:mi><mml:mo>-</mml:mo><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq89.gif"/></alternatives></inline-formula> decrease from close to 1 in the 0% scenario to 0 in the 50% scenario, supporting our earlier conclusion based on Pearson correlations and again suggesting trade-offs between these parameters.</p><p id="Par39">Figure <xref rid="Fig5" ref-type="fig">5</xref>C shows correlations between LBA parameters for different error rates. Correlations are typically more extreme (i.e., closer to 1 or -1) than in the DDM. We observe correlations close to 1 at low error rates between <inline-formula id="IEq90"><alternatives><tex-math id="d33e2671">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$B-s_{v_\text {true}}$$\end{document}</tex-math><mml:math id="d33e2676"><mml:mrow><mml:mi>B</mml:mi><mml:mo>-</mml:mo><mml:msub><mml:mi>s</mml:mi><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:msub></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq90.gif"/></alternatives></inline-formula>, <inline-formula id="IEq91"><alternatives><tex-math id="d33e2687">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$B-v_{\text {false}}$$\end{document}</tex-math><mml:math id="d33e2692"><mml:mrow><mml:mi>B</mml:mi><mml:mo>-</mml:mo><mml:msub><mml:mi>v</mml:mi><mml:mtext>false</mml:mtext></mml:msub></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq91.gif"/></alternatives></inline-formula>, <inline-formula id="IEq92"><alternatives><tex-math id="d33e2701">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$B-v_{\text {true}}$$\end{document}</tex-math><mml:math id="d33e2706"><mml:mrow><mml:mi>B</mml:mi><mml:mo>-</mml:mo><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq92.gif"/></alternatives></inline-formula>, <inline-formula id="IEq93"><alternatives><tex-math id="d33e2715">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {false}}-s_{v_\text {true}}$$\end{document}</tex-math><mml:math id="d33e2720"><mml:mrow><mml:msub><mml:mi>v</mml:mi><mml:mtext>false</mml:mtext></mml:msub><mml:mo>-</mml:mo><mml:msub><mml:mi>s</mml:mi><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:msub></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq93.gif"/></alternatives></inline-formula>, and <inline-formula id="IEq94"><alternatives><tex-math id="d33e2734">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {true}}-s_{v_\text {true}}$$\end{document}</tex-math><mml:math id="d33e2739"><mml:mrow><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub><mml:mo>-</mml:mo><mml:msub><mml:mi>s</mml:mi><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:msub></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq94.gif"/></alternatives></inline-formula>. Correlations between <inline-formula id="IEq95"><alternatives><tex-math id="d33e2752">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {true}}-v_{\text {false}}$$\end{document}</tex-math><mml:math id="d33e2757"><mml:mrow><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub><mml:mo>-</mml:mo><mml:msub><mml:mi>v</mml:mi><mml:mtext>false</mml:mtext></mml:msub></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq95.gif"/></alternatives></inline-formula> are close to 1 regardless of error rate. Interestingly, correlations between <inline-formula id="IEq96"><alternatives><tex-math id="d33e2768">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$B-t_0$$\end{document}</tex-math><mml:math id="d33e2773"><mml:mrow><mml:mi>B</mml:mi><mml:mo>-</mml:mo><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq96.gif"/></alternatives></inline-formula> seem to approach <inline-formula id="IEq97"><alternatives><tex-math id="d33e2782">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$-1$$\end{document}</tex-math><mml:math id="d33e2787"><mml:mrow><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq97.gif"/></alternatives></inline-formula> as error rates increase. These results indicate strong and frequent parameter trade-offs, especially in the presence of near-chance or near-perfect performance.</p><p id="Par40">As shown in Fig. <xref rid="Fig5" ref-type="fig">5</xref>D, pairwise partial correlations in the LBA follow a qualitatively different pattern than Pearson correlations. Correlations generally become less extreme when we account for conditional dependencies, and some even switch signs (e.g., <inline-formula id="IEq98"><alternatives><tex-math id="d33e2798">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$B - s_{v_\text {true}}$$\end{document}</tex-math><mml:math id="d33e2803"><mml:mrow><mml:mi>B</mml:mi><mml:mo>-</mml:mo><mml:msub><mml:mi>s</mml:mi><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:msub></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq98.gif"/></alternatives></inline-formula>). The patterns for <inline-formula id="IEq99"><alternatives><tex-math id="d33e2814">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$B-v_{\text {true}}$$\end{document}</tex-math><mml:math id="d33e2819"><mml:mrow><mml:mi>B</mml:mi><mml:mo>-</mml:mo><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq92.gif"/></alternatives></inline-formula> and <inline-formula id="IEq100"><alternatives><tex-math id="d33e2828">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {true}}-s_{v_\text {true}}$$\end{document}</tex-math><mml:math id="d33e2833"><mml:mrow><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub><mml:mo>-</mml:mo><mml:msub><mml:mi>s</mml:mi><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:msub></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq94.gif"/></alternatives></inline-formula> remain largely unchanged, i.e., strong positive correlations for low error rates that decrease, and even reverse for <inline-formula id="IEq101"><alternatives><tex-math id="d33e2846">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {true}} - s_{v_\text {true}}$$\end{document}</tex-math><mml:math id="d33e2851"><mml:mrow><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub><mml:mo>-</mml:mo><mml:msub><mml:mi>s</mml:mi><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:msub></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq101.gif"/></alternatives></inline-formula>, as error rates increase. The pattern for <inline-formula id="IEq102"><alternatives><tex-math id="d33e2865">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$B - t_0$$\end{document}</tex-math><mml:math id="d33e2870"><mml:mrow><mml:mi>B</mml:mi><mml:mo>-</mml:mo><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq102.gif"/></alternatives></inline-formula> also remains similar in so far that correlations approach <inline-formula id="IEq103"><alternatives><tex-math id="d33e2879">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$-1$$\end{document}</tex-math><mml:math id="d33e2884"><mml:mrow><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq97.gif"/></alternatives></inline-formula> as error rates increase, but as opposed to Pearson correlations, the strength of partial correlations is only weakly influenced by error rates.</p><p id="Par41">Lastly, we investigated whether there are <italic>combinations</italic> of parameters that can be adequately recovered even if their constituents are poorly estimated due to strong trade-offs (as has been done for the LBA by Evans (<xref ref-type="bibr" rid="CR10">2020</xref>), and for conflict diffusion models by White et al. (<xref ref-type="bibr" rid="CR49">2018</xref>)). For the DDM, we examined the ratio of <italic>v</italic>/<italic>a</italic> and for the LBA <inline-formula id="IEq104"><alternatives><tex-math id="d33e2908">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {true}}/B$$\end{document}</tex-math><mml:math id="d33e2913"><mml:mrow><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub><mml:mo stretchy="false">/</mml:mo><mml:mi>B</mml:mi></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq77.gif"/></alternatives></inline-formula> because they showed similarly high Pearson and partial correlations indicating strong trade-offs independent of other model parameters. As shown in the most right panels in Figs.&#x000a0;<xref rid="Fig2" ref-type="fig">2</xref>A-D and <xref rid="Fig3" ref-type="fig">3</xref>A-D as well as Table <xref rid="Tab2" ref-type="table">2</xref>, ratios are substantially better recovered than individual parameters at low error rates, except for the LBA with 150 trials.<fig id="Fig4"><label>Fig. 4</label><caption><p>Parameter recovery for the diffusion decision model and the linear ballistic accumulator with a difficulty and speed&#x02013;accuracy manipulation. Root mean squared deviation (RMSD) between true values and posterior medians for the diffusion decision model (<bold>A</bold>) and the linear ballistic accumulator (<bold>B</bold>) for different error rates (<italic>x</italic>-axis), studies (<italic>color</italic> and <italic>point shape</italic>) and trial numbers (<italic>opacity</italic>). <italic>Error bars</italic> indicate the <inline-formula id="IEq105"><alternatives><tex-math id="d33e2960">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$2.5^{th}$$\end{document}</tex-math><mml:math id="d33e2965"><mml:mrow><mml:mn>2</mml:mn><mml:mo>.</mml:mo><mml:msup><mml:mn>5</mml:mn><mml:mrow><mml:mi mathvariant="italic">th</mml:mi></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq58.gif"/></alternatives></inline-formula> and <inline-formula id="IEq106"><alternatives><tex-math id="d33e2976">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$97.5^{th}$$\end{document}</tex-math><mml:math id="d33e2981"><mml:mrow><mml:mn>97</mml:mn><mml:mo>.</mml:mo><mml:msup><mml:mn>5</mml:mn><mml:mrow><mml:mi mathvariant="italic">th</mml:mi></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq59.gif"/></alternatives></inline-formula> quantiles of the absolute deviations. Study 2 has separate drift rates for difficulty conditions (easy, medium, hard) and Study 3 separate decision thresholds for speed (sp) and accuracy (acc) conditions. Studies 1 and 2 have datasets with 150 trials and Study 3 has datasets with 200 trials. Note that the <italic>x</italic>-axis is not linear and has a discrete scale</p></caption><graphic xlink:href="13423_2024_2621_Fig4_HTML" id="MO4"/></fig><fig id="Fig5"><label>Fig. 5</label><caption><p>Pairwise within-subject correlations between posterior distributions for each model. <bold>A</bold>, <bold>C</bold>: Distribution of the Pearson correlation between the marginal posterior distributions across the 100 synthetic datasets, each with 150 trials, for the diffusion decision model (DDM) and the linear ballistic accumulator (LBA), respectively. <bold>B</bold>, <bold>D</bold>: Distribution of partial correlations for the DDM and the LBA, respectively. <italic>Boxplot</italic> hinges show the <inline-formula id="IEq107"><alternatives><tex-math id="d33e3019">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$25^{th}$$\end{document}</tex-math><mml:math id="d33e3024"><mml:mrow><mml:msup><mml:mn>25</mml:mn><mml:mrow><mml:mi mathvariant="italic">th</mml:mi></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq46.gif"/></alternatives></inline-formula> and <inline-formula id="IEq108"><alternatives><tex-math id="d33e3033">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$75^{th}$$\end{document}</tex-math><mml:math id="d33e3038"><mml:mrow><mml:msup><mml:mn>75</mml:mn><mml:mrow><mml:mi mathvariant="italic">th</mml:mi></mml:mrow></mml:msup></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq47.gif"/></alternatives></inline-formula> quantiles; <italic>whiskers</italic> point to 1.5 times the interquartile range beyond the hinges; correlations beyond the whiskers are shown as outliers</p></caption><graphic xlink:href="13423_2024_2621_Fig5_HTML" id="MO5"/></fig></p></sec></sec><sec id="Sec10"><title>Discussion</title><p id="Par42">In three simulation studies, we investigated how error rates influence the identifiability of parameters in two prominent evidence-accumulation models, the diffusion decision model (DDM) and the linear ballistic accumulator (LBA). We also examined relationships between parameter estimates within each model, searching for parameter trade-offs that might contribute to estimation difficulties at low error rates.</p><p id="Par43">We observed increasing bias as error rates decreased for <italic>v</italic> and <italic>a</italic> in the DDM and <inline-formula id="IEq109"><alternatives><tex-math id="d33e3064">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {true}}$$\end{document}</tex-math><mml:math id="d33e3069"><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq3.gif"/></alternatives></inline-formula> and <italic>B</italic> in the LBA. The biases were stronger for small than large trial numbers (150 vs. 1200). In Studies 2 and 3, we showed that adding a speed-vs-accuracy manipulation with selective influence on the parameters reduced the bias at low error rates for the DDM but not for the LBA. The difficulty manipulation did not reduce the bias in either model. Overall, the bias at low error rates was less pronounced for the DDM than the LBA, especially for small trial numbers.</p><p id="Par44">Pairwise Pearson and partial correlations between marginal posterior distributions revealed strong positive relationships between <italic>v</italic> and <italic>a</italic> in the DDM, and <italic>B</italic> and <inline-formula id="IEq110"><alternatives><tex-math id="d33e3089">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {true}}$$\end{document}</tex-math><mml:math id="d33e3094"><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq3.gif"/></alternatives></inline-formula> in the LBA at low error rates. These high correlations occur because, at low error rates, the models are almost exclusively constrained by RTs. Different pairs of <inline-formula id="IEq111"><alternatives><tex-math id="d33e3100">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v-a$$\end{document}</tex-math><mml:math id="d33e3105"><mml:mrow><mml:mi>v</mml:mi><mml:mo>-</mml:mo><mml:mi>a</mml:mi></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq111.gif"/></alternatives></inline-formula> and <inline-formula id="IEq112"><alternatives><tex-math id="d33e3113">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$B-v_{\text {true}}$$\end{document}</tex-math><mml:math id="d33e3118"><mml:mrow><mml:mi>B</mml:mi><mml:mo>-</mml:mo><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq92.gif"/></alternatives></inline-formula> can lead to similar RT distributions causing trade-offs and hence high parameter correlations. The fact that these within-person posterior correlations did not differ systematically between low and high trial numbers indicates that parameter trade-offs at low error rates become less problematic as the number of trials increases. Therefore, it is likely that the absolute number of error trials is what matters most for parameter identifiability.</p><p id="Par45">We investigated parameter trade-offs further by looking at estimates of ratios of parameter pairs. For DDM <italic>v</italic> and <italic>a</italic>, parameter ratios were recovered substantially better for small trial numbers and excellently for large trial numbers across all error rates. For LBA <inline-formula id="IEq113"><alternatives><tex-math id="d33e3135">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {true}}$$\end{document}</tex-math><mml:math id="d33e3140"><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq3.gif"/></alternatives></inline-formula> and <italic>B</italic>, this was only evident for large trial numbers. For small trial numbers, <inline-formula id="IEq114"><alternatives><tex-math id="d33e3149">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {true}}/B$$\end{document}</tex-math><mml:math id="d33e3154"><mml:mrow><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub><mml:mo stretchy="false">/</mml:mo><mml:mi>B</mml:mi></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq77.gif"/></alternatives></inline-formula> was less well recovered than the individual parameters. For 150 trials and low error rates, the data might not provide enough information to estimate LBA parameters or their ratios with sufficient accuracy, irrespective of correlations between parameter posteriors. Moreover, we found strong negative dependencies between DDM <italic>a</italic> and <inline-formula id="IEq115"><alternatives><tex-math id="d33e3168">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_0$$\end{document}</tex-math><mml:math id="d33e3173"><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq7.gif"/></alternatives></inline-formula> as well as LBA <italic>B</italic> and <inline-formula id="IEq116"><alternatives><tex-math id="d33e3182">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_0$$\end{document}</tex-math><mml:math id="d33e3187"><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq7.gif"/></alternatives></inline-formula>. However, the dependencies did not compromise parameter recovery across error rates since <inline-formula id="IEq117"><alternatives><tex-math id="d33e3193">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$t_0$$\end{document}</tex-math><mml:math id="d33e3198"><mml:msub><mml:mi>t</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq7.gif"/></alternatives></inline-formula> only affects the leading edge of RT distributions and not accuracy.</p><p id="Par46">As detailed in the Supplementary Materials, for simpler models with no between-trial parameter variability (e.g., DDM <inline-formula id="IEq118"><alternatives><tex-math id="d33e3206">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_v= s_z=0$$\end{document}</tex-math><mml:math id="d33e3211"><mml:mrow><mml:msub><mml:mi>s</mml:mi><mml:mi>v</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mi>s</mml:mi><mml:mi>z</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq118.gif"/></alternatives></inline-formula> and LBA <inline-formula id="IEq119"><alternatives><tex-math id="d33e3224">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$A=0$$\end{document}</tex-math><mml:math id="d33e3229"><mml:mrow><mml:mi>A</mml:mi><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq119.gif"/></alternatives></inline-formula>), identifiability was generally better. In parameter regions producing faster error than correct responses, identifiability was comparable to or slightly worse than in slow-error regions. In Study 2, drift rates decreased with increasing difficulty, which is consistent with Ratcliff (<xref ref-type="bibr" rid="CR31">2014</xref>), but were biased at low error rates (see also Fig. <xref rid="Fig4" ref-type="fig">4</xref>). Thus, our results show that ordinally consistent yet poorly identified estimates can be obtained at low error rates when drift rates are estimated separately for difficulty levels. In Study 3, separate decision threshold parameters for response caution levels were well identified at low error rates when drift rate estimates were shared across levels.</p><p id="Par47">To strengthen our conclusion that parameter identifiability was compromised by <italic>within</italic>-subject parameter trade-offs and were not the result of <italic>between</italic>-subject correlations between the parameters in each model, we also looked at correlations between data-generating parameters in datasets that satisfied our inclusion criteria. As shown in the Supplementary Materials, these correlations are low and do not systematically vary with the error rate for most parameters. Exceptions are <inline-formula id="IEq120"><alternatives><tex-math id="d33e3250">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {true}}$$\end{document}</tex-math><mml:math id="d33e3255"><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq3.gif"/></alternatives></inline-formula> and <inline-formula id="IEq121"><alternatives><tex-math id="d33e3261">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {false}}$$\end{document}</tex-math><mml:math id="d33e3266"><mml:msub><mml:mi>v</mml:mi><mml:mtext>false</mml:mtext></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq5.gif"/></alternatives></inline-formula> in the LBA. However, the correlations between these two parameters are low at low error rates and the opposite of what would be required to explain our results.</p><p id="Par48">Lastly, we conducted a post hoc analysis of how well group differences could be identified at low error rates (see Supplementary Materials). For Studies 2 and 3, we created a between-group manipulation by treating datasets with slow and fast errors as independent experimental groups. For each group, we calculated the mean of the posterior medians for each parameter of each model. Then, we compared the group difference between estimated means to the difference between true means. For both studies, the analysis showed a bias where the mean group difference in drift rates was largely overestimated at low error rates. Despite being a crude approach to recovering group differences, it indicates that low error rates <italic>can</italic> interact with experimental manipulations biasing estimates of group differences in parameters.</p><p id="Par49">Why are the DDM parameters poorly identified at extremely low error rates? To produce low error rates, the drift rate must be high relative to the distance from the starting point of evidence accumulation to the response threshold, so that the lower, incorrect, boundary is (almost) never hit. Similarly, in the LBA, the matching accumulator tends to (almost) always win if <inline-formula id="IEq122"><alternatives><tex-math id="d33e3279">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {true}}$$\end{document}</tex-math><mml:math id="d33e3284"><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq3.gif"/></alternatives></inline-formula> is high relative to <italic>B</italic>. In both cases, the parameter pairs can trade off to produce almost identical model predictions because their ratio influences the predictions instead of their individual values. The trade-offs lead to high correlations between the parameter estimates and poor parameter identifiability.</p><p id="Par50">Why is the LBA more prone to these effects than the DDM? This is likely because the DDM assumes a simpler one-dimensional process driven by only the difference between the evidence for each response, whereas the LBA (and other racing accumulator models) are also sensitive to the magnitudes of each type of evidence (e.g., Mileti&#x00107; et al., <xref ref-type="bibr" rid="CR23">2021</xref>). When error rates are low, there is little information available to differentiate difference and magnitude effects, and so identifiability suffers.</p><p id="Par51">Our results are in line with those of Ratcliff and Tuerlinckx (<xref ref-type="bibr" rid="CR35">2002</xref>) who also observed a larger variation of estimates around true parameters for higher values of the DDM <italic>a</italic> and <italic>v</italic>, which produce lower error rates. Similarly, Lerche et al. (<xref ref-type="bibr" rid="CR20">2017</xref>) found that more trials are required to reliably estimate <italic>a</italic> and <italic>v</italic> when fewer than 4% of the responses reached the upper or lower decision boundary, respectively. For the LBA, we confirm findings by Heathcote et al. (<xref ref-type="bibr" rid="CR17">2019</xref>) that lower error rates impair the recovery of LBA parameters and provide a more comprehensive picture of the relationship between error rates and parameter identifiability. Our results can also explain the seemingly diverging results of Heathcote et al. (<xref ref-type="bibr" rid="CR17">2019</xref>); Evans (<xref ref-type="bibr" rid="CR10">2020</xref>); Palestro et al. (<xref ref-type="bibr" rid="CR27">2018</xref>). Evans (<xref ref-type="bibr" rid="CR10">2020</xref>) reported poor identifiability for high values of LBA <inline-formula id="IEq123"><alternatives><tex-math id="d33e3335">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {true}}$$\end{document}</tex-math><mml:math id="d33e3340"><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq3.gif"/></alternatives></inline-formula> and <italic>B</italic> and suspected a trade-off between these parameters, leading to the recommendation to use a constrained version of the LBA where <inline-formula id="IEq124"><alternatives><tex-math id="d33e3349">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {true}}/B$$\end{document}</tex-math><mml:math id="d33e3354"><mml:mrow><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub><mml:mo stretchy="false">/</mml:mo><mml:mi>B</mml:mi></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq77.gif"/></alternatives></inline-formula> is estimated. However, high <inline-formula id="IEq125"><alternatives><tex-math id="d33e3364">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$v_{\text {true}}$$\end{document}</tex-math><mml:math id="d33e3369"><mml:msub><mml:mi>v</mml:mi><mml:mtext>true</mml:mtext></mml:msub></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq3.gif"/></alternatives></inline-formula> and <italic>B</italic> parameters produce data with low error rates, which we showed causes poor identifiability. In contrast, Palestro et al. (<xref ref-type="bibr" rid="CR27">2018</xref>) generated data with <inline-formula id="IEq126"><alternatives><tex-math id="d33e3382">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sim 30$$\end{document}</tex-math><mml:math id="d33e3387"><mml:mrow><mml:mo>&#x0223c;</mml:mo><mml:mn>30</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq126.gif"/></alternatives></inline-formula>% errors and reported good recovery, similar to Heathcote et al. (<xref ref-type="bibr" rid="CR17">2019</xref>) with 25% errors. Thus, instead of Evan&#x02019;s conclusion that the standard LBA is an inherently flawed model that should generally not be used, our results indicate that it has an identifiability issue at low error rates, as does the DDM but is applicable in situations where error rates are higher.</p><p id="Par52">Based on our findings, we recommend future studies using the DDM and LBA to aim for choice tasks resulting in error rates between 15% and 35%. For small trial numbers (e.g., 150), error rates below 15% could compromise parameter identifiability for both models. For very small trial numbers (<inline-formula id="IEq127"><alternatives><tex-math id="d33e3399">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$&#x0003c; 150$$\end{document}</tex-math><mml:math id="d33e3404"><mml:mrow><mml:mo>&#x0003c;</mml:mo><mml:mn>150</mml:mn></mml:mrow></mml:math><inline-graphic xlink:href="13423_2024_2621_Article_IEq127.gif"/></alternatives></inline-formula>), although not explicitly investigated here, we expect identifiability at low error rates to be even worse. For large trial numbers, we recommend error rates of at least 5%, although for the DDM 2% may still be sufficient. Generally, higher error rates are more important for the LBA than for the DDM. We do not advise going much beyond 35% error rates as near-chance-level performance compromises the interpretability of the parameters. If accuracy in a task is low, our results suggest that manipulating response caution improves the identifiability of the DDM parameters more than manipulating task difficulty. We note that avoiding accuracy ceiling effects is also important for traditional analyses of choice data; ceiling effects reduce the variability in the data, which can bias correlations and decrease power.</p><p id="Par53">Our parameter-recovery study relied exclusively on differential-evolution Markov chain Monte Carlo (DE-MCMC) sampling for parameter estimation. Other estimation methods, for instance, those based on quantiles (Heathcote, <xref ref-type="bibr" rid="CR16">2004</xref>), may recover parameters differently across error rates. However, because DE-MCMC showed robust estimation of highly correlated parameters (Turner et al., <xref ref-type="bibr" rid="CR43">2013</xref>), it likely performs better than methods that are not equipped to deal with sloppiness.</p><sec id="Sec11"><title>Future directions</title><p id="Par54">Future studies can build on ours in multiple ways. Our systematic methodology might be used to investigate other EAMs, such as the increasingly popular racing diffusion model (Tillman et al., <xref ref-type="bibr" rid="CR40">2020</xref>), which combines elements of the DDM and the LBA (see Castro et al., <xref ref-type="bibr" rid="CR6">2019</xref>, for a parameter recovery study focused on their specific design). Similarly, it seems likely to be worthwhile to investigate the effect of errors in other models with potential identifiability issues (e.g., White et al., <xref ref-type="bibr" rid="CR49">2018</xref>).</p><p id="Par55">Our study based estimation on single-subject data, although hierarchical estimation is common in the contemporary EAM literature (Heathcote et al., <xref ref-type="bibr" rid="CR17">2019</xref>; Wiecki et al., <xref ref-type="bibr" rid="CR50">2013</xref>). Future studies could examine if shrinkage effects associated with hierarchical estimation (see Boehm et al., <xref ref-type="bibr" rid="CR2">2018</xref>) can be used to improve parameter identifiability at low error rates.</p><p id="Par56">Lastly, our results can be treated as an upper bound for identifiability under ideal conditions. It is important to assess whether our simulation results generalize to empirical data. This is challenging because the data-generating parameter values in empirical data are unknown. The comparison of empirically obtained and simulated pairwise correlations between marginal posteriors may provide a solution. If empirical correlations align with simulated correlations, identifiability patterns for empirical and simulated data will also likely align.</p></sec><sec id="Sec12"><title>Supplementary Materials</title><p id="Par57">
+<ext-link ext-link-type="uri" xlink:href="https://osf.io/d389x/">https://osf.io/d389x/</ext-link>
+</p></sec></sec></body><back><fn-group><fn id="Fn1"><label>1</label><p id="Par9">Models with non-identified parameters can still be theoretically informative and used for prediction or in model comparisons (Evans &#x00026; Wagenmakers, <xref ref-type="bibr" rid="CR11">2019</xref>).</p></fn><fn id="Fn2"><label>2</label><p id="Par22">IQR = interquartile range</p></fn><fn><p>DM and AH are supported by a Vidi grant (VI.Vidi.191.091) and JMH by a Veni grant (VI.Veni.201G.019) from the Dutch Research Council (NWO).</p></fn><fn><p><bold>Publisher's Note</bold></p><p>Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></fn></fn-group><notes notes-type="funding-information"><title>Funding</title><p>This work was supported by a Vidi grant (VI.Vidi.191.091) and Veni grant (VI.Veni.201G.019) from the Dutch Research Council (NWO).</p></notes><notes notes-type="data-availability"><title>Code Availability</title><p>The code used for the current study is available in the Open Science Framework repository, <ext-link ext-link-type="uri" xlink:href="https://osf.io/d389x/">https://osf.io/d389x/</ext-link>.</p></notes><notes notes-type="data-availability"><title>Availability of Data and Materials</title><p>The datasets generated during and/or analyzed during the current study are available in the Open Science Framework repository, <ext-link ext-link-type="uri" xlink:href="https://osf.io/d389x/">https://osf.io/d389x/</ext-link>, and figshare repository, <ext-link ext-link-type="uri" xlink:href="https://figshare.com/account/home#/projects/181213">https://figshare.com/account/home#/projects/181213</ext-link>. None of the simulation studies were preregistered.</p></notes><notes><title>Declarations</title><notes id="FPar1" notes-type="COI-statement"><title>Conflicts of interest</title><p id="Par62">The authors have no relevant financial or non-financial interests to disclose.</p></notes><notes id="FPar2"><title>Ethics Approval</title><p id="Par63">Not applicable.</p></notes><notes id="FPar3"><title>Consent to Participate</title><p id="Par64">Not applicable.</p></notes><notes id="FPar4"><title>Consent for Publication</title><p id="Par65">Not applicable.</p></notes></notes><ref-list id="Bib1"><title>References</title><ref id="CR1"><citation-alternatives><element-citation id="ec-CR1" publication-type="journal"><person-group person-group-type="author"><name><surname>Akaike</surname><given-names>H</given-names></name></person-group><article-title>A new look at the statistical model identification</article-title><source>IEEE Transactions on Automatic Control</source><year>1974</year><volume>19</volume><fpage>716</fpage><lpage>723</lpage><pub-id pub-id-type="doi">10.1109/TAC.1974.1100705</pub-id></element-citation><mixed-citation id="mc-CR1" publication-type="journal">Akaike, H. (1974). A new look at the statistical model identification. <italic>IEEE Transactions on Automatic Control,</italic><italic>19</italic>, 716&#x02013;723.</mixed-citation></citation-alternatives></ref><ref id="CR2"><citation-alternatives><element-citation id="ec-CR2" publication-type="journal"><person-group person-group-type="author"><name><surname>Boehm</surname><given-names>U</given-names></name><name><surname>Annis</surname><given-names>J</given-names></name><name><surname>Frank</surname><given-names>MJ</given-names></name><name><surname>Hawkins</surname><given-names>GE</given-names></name><name><surname>Heathcote</surname><given-names>A</given-names></name><name><surname>Kellen</surname><given-names>D</given-names></name><name><surname>Wagenmakers</surname><given-names>E-J</given-names></name></person-group><article-title>Estimating across-trial variability parameters of the Diffusion Decision Model: Expert advice and recommendations</article-title><source>Journal of Mathematical Psychology</source><year>2018</year><volume>87</volume><fpage>46</fpage><lpage>75</lpage><pub-id pub-id-type="doi">10.1016/j.jmp.2018.09.004</pub-id></element-citation><mixed-citation id="mc-CR2" publication-type="journal">Boehm, U., Annis, J., Frank, M. J., Hawkins, G. E., Heathcote, A., Kellen, D., &#x00026; Wagenmakers, E.-J. (2018). Estimating across-trial variability parameters of the Diffusion Decision Model: Expert advice and recommendations. <italic>Journal of Mathematical Psychology,</italic><italic>87</italic>, 46&#x02013;75. 10.1016/j.jmp.2018.09.004</mixed-citation></citation-alternatives></ref><ref id="CR3"><citation-alternatives><element-citation id="ec-CR3" publication-type="journal"><person-group person-group-type="author"><name><surname>Brooks</surname><given-names>SP</given-names></name><name><surname>Gelman</surname><given-names>A</given-names></name></person-group><article-title>General methods for monitoring convergence of iterative simulations</article-title><source>Journal of Computational and Graphical Statistics</source><year>1998</year><volume>7</volume><issue>4</issue><fpage>434</fpage><lpage>455</lpage><pub-id pub-id-type="doi">10.1080/10618600.1998.10474787</pub-id></element-citation><mixed-citation id="mc-CR3" publication-type="journal">Brooks, S. P., &#x00026; Gelman, A. (1998). General methods for monitoring convergence of iterative simulations. <italic>Journal of Computational and Graphical Statistics,</italic><italic>7</italic>(4), 434&#x02013;455. 10.1080/10618600.1998.10474787</mixed-citation></citation-alternatives></ref><ref id="CR4"><citation-alternatives><element-citation id="ec-CR4" publication-type="journal"><person-group person-group-type="author"><name><surname>Brown</surname><given-names>SD</given-names></name><name><surname>Heathcote</surname><given-names>A</given-names></name></person-group><article-title>The simplest complete model of choice response time: Linear ballistic accumulation</article-title><source>Cognitive Psychology</source><year>2008</year><volume>57</volume><issue>3</issue><fpage>153</fpage><lpage>178</lpage><pub-id pub-id-type="doi">10.1016/j.cogpsych.2007.12.002</pub-id><pub-id pub-id-type="pmid">18243170</pub-id>
+</element-citation><mixed-citation id="mc-CR4" publication-type="journal">Brown, S. D., &#x00026; Heathcote, A. (2008). The simplest complete model of choice response time: Linear ballistic accumulation. <italic>Cognitive Psychology,</italic><italic>57</italic>(3), 153&#x02013;178. 10.1016/j.cogpsych.2007.12.002<pub-id pub-id-type="pmid">18243170</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR5"><citation-alternatives><element-citation id="ec-CR5" publication-type="journal"><person-group person-group-type="author"><name><surname>Brown</surname><given-names>KS</given-names></name><name><surname>Sethna</surname><given-names>JP</given-names></name></person-group><article-title>Statistical mechanical approaches to models with many poorly known parameters</article-title><source>Physical Review E</source><year>2003</year><volume>68</volume><issue>2</issue><fpage>021904</fpage><pub-id pub-id-type="doi">10.1103/PhysRevE.68.021904</pub-id></element-citation><mixed-citation id="mc-CR5" publication-type="journal">Brown, K. S., &#x00026; Sethna, J. P. (2003). Statistical mechanical approaches to models with many poorly known parameters. <italic>Physical Review E,</italic><italic>68</italic>(2), 021904. 10.1103/PhysRevE.68.021904</mixed-citation></citation-alternatives></ref><ref id="CR6"><citation-alternatives><element-citation id="ec-CR6" publication-type="journal"><person-group person-group-type="author"><name><surname>Castro</surname><given-names>SC</given-names></name><name><surname>Strayer</surname><given-names>DL</given-names></name><name><surname>Matzke</surname><given-names>D</given-names></name><name><surname>Heathcote</surname><given-names>A</given-names></name></person-group><article-title>Cognitive workload measurement and modeling under divided attention</article-title><source>Journal of Experimental Psychology: Human Perception and Performance</source><year>2019</year><volume>45</volume><issue>6</issue><fpage>826</fpage><lpage>839</lpage><pub-id pub-id-type="doi">10.1037/xhp0000638</pub-id><pub-id pub-id-type="pmid">30998070</pub-id>
+</element-citation><mixed-citation id="mc-CR6" publication-type="journal">Castro, S. C., Strayer, D. L., Matzke, D., &#x00026; Heathcote, A. (2019). Cognitive workload measurement and modeling under divided attention. <italic>Journal of Experimental Psychology: Human Perception and Performance,</italic><italic>45</italic>(6), 826&#x02013;839. 10.1037/xhp0000638<pub-id pub-id-type="pmid">30998070</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR7"><mixed-citation publication-type="other">Donkin, C., &#x00026; Brown, S.D. (2018). Response times and decision-making. In E.-J.&#x000a0;Wagenmakers (Eds.), <italic>Stevens&#x02019; handbook of experimental psychology and cognitive neuroscience</italic> (4th ed., Vol. 5). Hoboken: John Wiley &#x00026; Sons, Inc. 10.1002/9781119170174.epcn509</mixed-citation></ref><ref id="CR8"><citation-alternatives><element-citation id="ec-CR8" publication-type="journal"><person-group person-group-type="author"><name><surname>Donkin</surname><given-names>C</given-names></name><name><surname>Brown</surname><given-names>SD</given-names></name><name><surname>Heathcote</surname><given-names>A</given-names></name></person-group><article-title>The overconstraint of response time models: Rethinking the scaling problem</article-title><source>Psychonomic Bulletin &#x00026; Review</source><year>2009</year><volume>16</volume><issue>6</issue><fpage>1129</fpage><lpage>1135</lpage><pub-id pub-id-type="doi">10.3758/PBR.16.6.1129</pub-id><pub-id pub-id-type="pmid">19966267</pub-id>
+</element-citation><mixed-citation id="mc-CR8" publication-type="journal">Donkin, C., Brown, S. D., &#x00026; Heathcote, A. (2009). The overconstraint of response time models: Rethinking the scaling problem. <italic>Psychonomic Bulletin &#x00026; Review,</italic><italic>16</italic>(6), 1129&#x02013;1135. 10.3758/PBR.16.6.1129<pub-id pub-id-type="pmid">19966267</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR9"><citation-alternatives><element-citation id="ec-CR9" publication-type="journal"><person-group person-group-type="author"><name><surname>Donkin</surname><given-names>C</given-names></name><name><surname>Brown</surname><given-names>S</given-names></name><name><surname>Heathcote</surname><given-names>A</given-names></name></person-group><article-title>Drawing conclusions from choice response time models: A tutorial using the linear ballistic accumulator</article-title><source>Journal of Mathematical Psychology</source><year>2011</year><volume>55</volume><issue>2</issue><fpage>140</fpage><lpage>151</lpage><pub-id pub-id-type="doi">10.1016/j.jmp.2010.10.001</pub-id></element-citation><mixed-citation id="mc-CR9" publication-type="journal">Donkin, C., Brown, S., &#x00026; Heathcote, A. (2011). Drawing conclusions from choice response time models: A tutorial using the linear ballistic accumulator. <italic>Journal of Mathematical Psychology,</italic><italic>55</italic>(2), 140&#x02013;151. 10.1016/j.jmp.2010.10.001</mixed-citation></citation-alternatives></ref><ref id="CR10"><mixed-citation publication-type="other">Evans, N.J. (2020). Same model, different conclusions: An identifiability issue in the linear ballistic accumulator model of decision-making. <italic>PsyArXiv</italic>. 10.31234/osf.io/2xu7f</mixed-citation></ref><ref id="CR11"><mixed-citation publication-type="other">Evans, N.J., &#x00026; Wagenmakers, E.-J. (2019). Evidence accumulation models: Current limitations and future directions. <italic>PsyArXiv</italic>. 10.31234/osf.io/74df9</mixed-citation></ref><ref id="CR12"><citation-alternatives><element-citation id="ec-CR12" publication-type="journal"><person-group person-group-type="author"><name><surname>Evans</surname><given-names>NJ</given-names></name><name><surname>Rae</surname><given-names>B</given-names></name><name><surname>Bushmakin</surname><given-names>M</given-names></name><name><surname>Rubin</surname><given-names>M</given-names></name><name><surname>Brown</surname><given-names>SD</given-names></name></person-group><article-title>Need for closure is associated with urgency in perceptual decision-making</article-title><source>Memory &#x00026; Cognition</source><year>2017</year><volume>45</volume><issue>7</issue><fpage>1193</fpage><lpage>1205</lpage><pub-id pub-id-type="doi">10.3758/s13421-017-0718-z</pub-id><pub-id pub-id-type="pmid">28585159</pub-id>
+</element-citation><mixed-citation id="mc-CR12" publication-type="journal">Evans, N. J., Rae, B., Bushmakin, M., Rubin, M., &#x00026; Brown, S. D. (2017). Need for closure is associated with urgency in perceptual decision-making. <italic>Memory &#x00026; Cognition,</italic><italic>45</italic>(7), 1193&#x02013;1205. 10.3758/s13421-017-0718-z<pub-id pub-id-type="pmid">28585159</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR13"><citation-alternatives><element-citation id="ec-CR13" publication-type="journal"><person-group person-group-type="author"><name><surname>Forstmann</surname><given-names>B</given-names></name><name><surname>Ratcliff</surname><given-names>R</given-names></name><name><surname>Wagenmakers</surname><given-names>E-J</given-names></name></person-group><article-title>Sequential sampling models in cognitive neuroscience: Advantages, applications, and extensions</article-title><source>Annual Review of Psychology</source><year>2016</year><volume>67</volume><issue>1</issue><fpage>641</fpage><lpage>666</lpage><pub-id pub-id-type="doi">10.1146/annurev-psych-122414-033645</pub-id><pub-id pub-id-type="pmid">26393872</pub-id>
+</element-citation><mixed-citation id="mc-CR13" publication-type="journal">Forstmann, B., Ratcliff, R., &#x00026; Wagenmakers, E.-J. (2016). Sequential sampling models in cognitive neuroscience: Advantages, applications, and extensions. <italic>Annual Review of Psychology,</italic><italic>67</italic>(1), 641&#x02013;666. 10.1146/annurev-psych-122414-033645<pub-id pub-id-type="pmid">26393872</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR14"><citation-alternatives><element-citation id="ec-CR14" publication-type="journal"><person-group person-group-type="author"><name><surname>Hartmann</surname><given-names>E-M</given-names></name><name><surname>Rey-Mermet</surname><given-names>A</given-names></name><name><surname>Gade</surname><given-names>M</given-names></name></person-group><article-title>Same same but different? Modeling N-1 switch cost and N-2 repetition cost with the diffusion model and the linear ballistic accumulator model</article-title><source>Acta Psychologica</source><year>2019</year><volume>198</volume><fpage>1</fpage><lpage>26</lpage><pub-id pub-id-type="doi">10.1016/j.actpsy.2019.05.010</pub-id></element-citation><mixed-citation id="mc-CR14" publication-type="journal">Hartmann, E.-M., Rey-Mermet, A., &#x00026; Gade, M. (2019). Same same but different? Modeling N-1 switch cost and N-2 repetition cost with the diffusion model and the linear ballistic accumulator model. <italic>Acta Psychologica,</italic><italic>198</italic>, 1&#x02013;26. 10.1016/j.actpsy.2019.05.010</mixed-citation></citation-alternatives></ref><ref id="CR15"><mixed-citation publication-type="other">Heathcote, A., Brown, S.D., Wagenmakers, &#x00026; E.-J. (2015). An introduction to good practices in cognitive modeling. In B.U.&#x000a0;Forstmann &#x00026; E.-J.&#x000a0;Wagenmakers (Eds.), <italic>An introduction to model-based cognitive neuroscience</italic> (pp. 25&#x02013;49). New York: Springer New York. 10.1007/978-1-4939-2236-9</mixed-citation></ref><ref id="CR16"><citation-alternatives><element-citation id="ec-CR16" publication-type="journal"><person-group person-group-type="author"><name><surname>Heathcote</surname><given-names>A</given-names></name></person-group><article-title>Fitting Wald and ex-Wald distributions to response time data: An example using functions for the S-PLUS package</article-title><source>Behavior Research Methods, Instruments, &#x00026; Computers</source><year>2004</year><volume>36</volume><issue>4</issue><fpage>678</fpage><lpage>694</lpage><pub-id pub-id-type="doi">10.3758/BF03206550</pub-id></element-citation><mixed-citation id="mc-CR16" publication-type="journal">Heathcote, A. (2004). Fitting Wald and ex-Wald distributions to response time data: An example using functions for the S-PLUS package. <italic>Behavior Research Methods, Instruments, &#x00026; Computers,</italic><italic>36</italic>(4), 678&#x02013;694. 10.3758/BF03206550</mixed-citation></citation-alternatives></ref><ref id="CR17"><citation-alternatives><element-citation id="ec-CR17" publication-type="journal"><person-group person-group-type="author"><name><surname>Heathcote</surname><given-names>A</given-names></name><name><surname>Lin</surname><given-names>Y-S</given-names></name><name><surname>Reynolds</surname><given-names>A</given-names></name><name><surname>Strickland</surname><given-names>L</given-names></name><name><surname>Gretton</surname><given-names>M</given-names></name><name><surname>Matzke</surname><given-names>D</given-names></name></person-group><article-title>Dynamic models of choice</article-title><source>Behavior Research Methods</source><year>2019</year><volume>51</volume><issue>2</issue><fpage>961</fpage><lpage>985</lpage><pub-id pub-id-type="doi">10.3758/s13428-018-1067-y</pub-id><pub-id pub-id-type="pmid">29959755</pub-id>
+</element-citation><mixed-citation id="mc-CR17" publication-type="journal">Heathcote, A., Lin, Y.-S., Reynolds, A., Strickland, L., Gretton, M., &#x00026; Matzke, D. (2019). Dynamic models of choice. <italic>Behavior Research Methods,</italic><italic>51</italic>(2), 961&#x02013;985. 10.3758/s13428-018-1067-y<pub-id pub-id-type="pmid">29959755</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR18"><mixed-citation publication-type="other">Kuhne, C. (2024). <italic>Improving the validity, reliability, and usability of evidence accumulation models</italic>(Doctoral dissertation, University of Newcastle)</mixed-citation></ref><ref id="CR19"><mixed-citation publication-type="other">Laming, D.R.J. (1968). <italic>Information theory of choice-reaction times</italic>. London: Academic Press. <ext-link ext-link-type="uri" xlink:href="https://trove.nla.gov.au/work/10790467?q%20&#x00026;versionId=12596990">https://trove.nla.gov.au/work/10790467?q&#x00026;versionId=12596990</ext-link></mixed-citation></ref><ref id="CR20"><citation-alternatives><element-citation id="ec-CR20" publication-type="journal"><person-group person-group-type="author"><name><surname>Lerche</surname><given-names>V</given-names></name><name><surname>Voss</surname><given-names>A</given-names></name><name><surname>Nagler</surname><given-names>M</given-names></name></person-group><article-title>How many trials are required for parameter estimation in diffusion modeling? A comparison of different optimization criteria</article-title><source>Behavior Research Methods</source><year>2017</year><volume>49</volume><issue>2</issue><fpage>513</fpage><lpage>537</lpage><pub-id pub-id-type="doi">10.3758/s13428-016-0740-2</pub-id><pub-id pub-id-type="pmid">27287445</pub-id>
+</element-citation><mixed-citation id="mc-CR20" publication-type="journal">Lerche, V., Voss, A., &#x00026; Nagler, M. (2017). How many trials are required for parameter estimation in diffusion modeling? A comparison of different optimization criteria. <italic>Behavior Research Methods,</italic><italic>49</italic>(2), 513&#x02013;537. 10.3758/s13428-016-0740-2<pub-id pub-id-type="pmid">27287445</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR21"><mixed-citation publication-type="other">Mattes, A., Tavera, F., Ophey, A., Roheger, M., Gaschler, R., &#x00026; Haider, H. (2020). Parallel and serial task processing in the PRP paradigm: A drift-diffusion model approach. <italic>Psychological Research,</italic><italic>1&#x02013;24</italic>. 10.1007/s00426-020-01337-w</mixed-citation></ref><ref id="CR22"><citation-alternatives><element-citation id="ec-CR22" publication-type="journal"><person-group person-group-type="author"><name><surname>Meyer</surname><given-names>DE</given-names></name><name><surname>Schvaneveldt</surname><given-names>RW</given-names></name></person-group><article-title>Facilitation in recognizing pairs of words: Evidence of a dependence between retrieval operations</article-title><source>Journal of Experimental Psychology</source><year>1971</year><volume>90</volume><issue>2</issue><fpage>227</fpage><lpage>234</lpage><pub-id pub-id-type="doi">10.1037/h0031564</pub-id><pub-id pub-id-type="pmid">5134329</pub-id>
+</element-citation><mixed-citation id="mc-CR22" publication-type="journal">Meyer, D. E., &#x00026; Schvaneveldt, R. W. (1971). Facilitation in recognizing pairs of words: Evidence of a dependence between retrieval operations. <italic>Journal of Experimental Psychology,</italic><italic>90</italic>(2), 227&#x02013;234. 10.1037/h0031564<pub-id pub-id-type="pmid">5134329</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR23"><mixed-citation publication-type="other">Mileti&#x00107;, S., Boag, R.J., Trutti, A.C., Stevenson, N., Forstmann, B.U., &#x00026; Heathcote, A. (2021). A new model of decision processing in instrumental learning tasks. <italic>eLife</italic>, <italic>10</italic>, e63055. 10.7554/elife.63055</mixed-citation></ref><ref id="CR24"><citation-alternatives><element-citation id="ec-CR24" publication-type="journal"><person-group person-group-type="author"><name><surname>Moran</surname><given-names>R</given-names></name></person-group><article-title>Thou shalt identify! The identifiability of two high-threshold models in confidence-rating recognition (and super-recognition) paradigms</article-title><source>Journal of Mathematical Psychology</source><year>2016</year><volume>73</volume><fpage>1</fpage><lpage>11</lpage><pub-id pub-id-type="doi">10.1016/j.jmp.2016.03.002</pub-id></element-citation><mixed-citation id="mc-CR24" publication-type="journal">Moran, R. (2016). Thou shalt identify! The identifiability of two high-threshold models in confidence-rating recognition (and super-recognition) paradigms. <italic>Journal of Mathematical Psychology,</italic><italic>73</italic>, 1&#x02013;11. 10.1016/j.jmp.2016.03.002</mixed-citation></citation-alternatives></ref><ref id="CR25"><citation-alternatives><element-citation id="ec-CR25" publication-type="journal"><person-group person-group-type="author"><name><surname>Myung</surname><given-names>IJ</given-names></name></person-group><article-title>Tutorial on maximum likelihood estimation</article-title><source>Journal of Mathematical Psychology</source><year>2003</year><volume>47</volume><fpage>90</fpage><lpage>100</lpage><pub-id pub-id-type="doi">10.1016/S0022-2496(02)00028-7</pub-id></element-citation><mixed-citation id="mc-CR25" publication-type="journal">Myung, I. J. (2003). Tutorial on maximum likelihood estimation. <italic>Journal of Mathematical Psychology,</italic><italic>47</italic>, 90&#x02013;100.</mixed-citation></citation-alternatives></ref><ref id="CR26"><mixed-citation publication-type="other">O&#x02019;Callaghan, C., Hall, J. M., Tomassini, A., Muller, A. J., Walpola, I. C., Moustafa, A. A., ... Lewis, S. J. (2017). Visual hallucinations are characterized by impaired sensory evidence accumulation: Insights from hierarchical drift diffusion modeling in Parkinson&#x02019;s Disease. <italic>Biological Psychiatry: Cognitive Neuroscience and Neuroimaging,</italic><italic>2</italic>(8), 680&#x02013;688. 10.1016/j.bpsc.2017.04.007</mixed-citation></ref><ref id="CR27"><mixed-citation publication-type="other">Palestro, J. J., Sederberg, P. B., Osth, A. F., Van Zandt, T., &#x00026; Turner, B. M. (2018). <italic>Likelihood-free methods for cognitive science</italic>. 10.1007/978-3-319-72425-6</mixed-citation></ref><ref id="CR28"><mixed-citation publication-type="other">Plummer, M., Best, N., Cowles, K., &#x00026; Vines, K. (2006). CODA: Convergence diagnosis and output analysis for MCMC. <italic>R News,</italic><italic>6</italic>(1), 7&#x02013;11. Retrieved from <ext-link ext-link-type="uri" xlink:href="https://journal.r-project.org/archive/">https://journal.r-project.org/archive/</ext-link></mixed-citation></ref><ref id="CR29"><mixed-citation publication-type="other">R Core Team (2020). <italic>R: A language and environment for statistical computing.</italic> R Foundation for Statistical Computing. <ext-link ext-link-type="uri" xlink:href="https://www.r-project.org/">https://www.r-project.org/</ext-link></mixed-citation></ref><ref id="CR30"><citation-alternatives><element-citation id="ec-CR30" publication-type="journal"><person-group person-group-type="author"><name><surname>Ratcliff</surname><given-names>R</given-names></name></person-group><article-title>A theory of memory retrieval</article-title><source>Psychological Review</source><year>1978</year><volume>85</volume><issue>2</issue><fpage>59</fpage><lpage>108</lpage><pub-id pub-id-type="doi">10.1037/0033-295X.85.2.59</pub-id></element-citation><mixed-citation id="mc-CR30" publication-type="journal">Ratcliff, R. (1978). A theory of memory retrieval. <italic>Psychological Review,</italic><italic>85</italic>(2), 59&#x02013;108.</mixed-citation></citation-alternatives></ref><ref id="CR31"><citation-alternatives><element-citation id="ec-CR31" publication-type="journal"><person-group person-group-type="author"><name><surname>Ratcliff</surname><given-names>R</given-names></name></person-group><article-title>Measuring psychometric functions with the diffusion model</article-title><source>Journal of Experimental Psychology: Human Perception and Performance</source><year>2014</year><volume>40</volume><issue>2</issue><fpage>870</fpage><lpage>888</lpage><pub-id pub-id-type="doi">10.1037/a0034954</pub-id><pub-id pub-id-type="pmid">24446719</pub-id>
+</element-citation><mixed-citation id="mc-CR31" publication-type="journal">Ratcliff, R. (2014). Measuring psychometric functions with the diffusion model. <italic>Journal of Experimental Psychology: Human Perception and Performance,</italic><italic>40</italic>(2), 870&#x02013;888. 10.1037/a0034954<pub-id pub-id-type="pmid">24446719</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR32"><citation-alternatives><element-citation id="ec-CR32" publication-type="journal"><person-group person-group-type="author"><name><surname>Ratcliff</surname><given-names>R</given-names></name><name><surname>McKoon</surname><given-names>G</given-names></name></person-group><article-title>The diffusion decision model: Theory and data for two-choice decision tasks</article-title><source>Neural Computation</source><year>2008</year><volume>20</volume><issue>4</issue><fpage>873</fpage><lpage>922</lpage><pub-id pub-id-type="doi">10.1162/neco.2008.12-06-420</pub-id><pub-id pub-id-type="pmid">18085991</pub-id>
+</element-citation><mixed-citation id="mc-CR32" publication-type="journal">Ratcliff, R., &#x00026; McKoon, G. (2008). The diffusion decision model: Theory and data for two-choice decision tasks. <italic>Neural Computation,</italic><italic>20</italic>(4), 873&#x02013;922. 10.1162/neco.2008.12-06-420<pub-id pub-id-type="pmid">18085991</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR33"><citation-alternatives><element-citation id="ec-CR33" publication-type="journal"><person-group person-group-type="author"><name><surname>Ratcliff</surname><given-names>R</given-names></name><name><surname>Rouder</surname><given-names>JN</given-names></name></person-group><article-title>Modeling response times for two-choice decisions</article-title><source>Psychological Science</source><year>1998</year><volume>9</volume><issue>5</issue><fpage>347</fpage><lpage>356</lpage><pub-id pub-id-type="doi">10.1111/1467-9280.00067</pub-id></element-citation><mixed-citation id="mc-CR33" publication-type="journal">Ratcliff, R., &#x00026; Rouder, J. N. (1998). Modeling response times for two-choice decisions. <italic>Psychological Science,</italic><italic>9</italic>(5), 347&#x02013;356. 10.1111/1467-9280.00067</mixed-citation></citation-alternatives></ref><ref id="CR34"><citation-alternatives><element-citation id="ec-CR34" publication-type="journal"><person-group person-group-type="author"><name><surname>Ratcliff</surname><given-names>R</given-names></name><name><surname>Smith</surname><given-names>PL</given-names></name><name><surname>Brown</surname><given-names>SD</given-names></name><name><surname>McKoon</surname><given-names>G</given-names></name></person-group><article-title>Diffusion decision model: Current issues and history</article-title><source>Trends in Cognitive Sciences</source><year>2016</year><volume>20</volume><issue>4</issue><fpage>260</fpage><lpage>281</lpage><pub-id pub-id-type="doi">10.1016/j.tics.2016.01.007</pub-id><pub-id pub-id-type="pmid">26952739</pub-id>
+</element-citation><mixed-citation id="mc-CR34" publication-type="journal">Ratcliff, R., Smith, P. L., Brown, S. D., &#x00026; McKoon, G. (2016). Diffusion decision model: Current issues and history. <italic>Trends in Cognitive Sciences,</italic><italic>20</italic>(4), 260&#x02013;281. 10.1016/j.tics.2016.01.007<pub-id pub-id-type="pmid">26952739</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR35"><citation-alternatives><element-citation id="ec-CR35" publication-type="journal"><person-group person-group-type="author"><name><surname>Ratcliff</surname><given-names>R</given-names></name><name><surname>Tuerlinckx</surname><given-names>F</given-names></name></person-group><article-title>Estimating parameters of the diffusion model: Approaches to dealing with contaminant reaction times and parameter variability</article-title><source>Psychonomic Bulletin &#x00026; Review</source><year>2002</year><volume>9</volume><issue>3</issue><fpage>438</fpage><lpage>481</lpage><pub-id pub-id-type="doi">10.3758/BF03196302</pub-id><pub-id pub-id-type="pmid">12412886</pub-id>
+</element-citation><mixed-citation id="mc-CR35" publication-type="journal">Ratcliff, R., &#x00026; Tuerlinckx, F. (2002). Estimating parameters of the diffusion model: Approaches to dealing with contaminant reaction times and parameter variability. <italic>Psychonomic Bulletin &#x00026; Review,</italic><italic>9</italic>(3), 438&#x02013;481. 10.3758/BF03196302<pub-id pub-id-type="pmid">12412886</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR36"><citation-alternatives><element-citation id="ec-CR36" publication-type="journal"><person-group person-group-type="author"><name><surname>Schwarz</surname><given-names>G</given-names></name></person-group><article-title>Estimating the dimension of a model</article-title><source>Annals of Statistics</source><year>1978</year><volume>6</volume><fpage>461</fpage><lpage>464</lpage><pub-id pub-id-type="doi">10.1214/aos/1176344136</pub-id></element-citation><mixed-citation id="mc-CR36" publication-type="journal">Schwarz, G. (1978). Estimating the dimension of a model. <italic>Annals of Statistics,</italic><italic>6</italic>, 461&#x02013;464.</mixed-citation></citation-alternatives></ref><ref id="CR37"><mixed-citation publication-type="other">Singmann, H., Brown, S.D., Gretton, M., &#x00026; Heathcote, A. (2020). <italic>Response time distributions.</italic> Retrieved from <ext-link ext-link-type="uri" xlink:href="https://github.com/rtdists/rtdists/">https://github.com/rtdists/rtdists/</ext-link></mixed-citation></ref><ref id="CR38"><citation-alternatives><element-citation id="ec-CR38" publication-type="journal"><person-group person-group-type="author"><name><surname>Spektor</surname><given-names>MS</given-names></name><name><surname>Kellen</surname><given-names>D</given-names></name></person-group><article-title>The relative merit of empirical priors in non-identifiable and sloppy models: Applications to models of learning and decision-making</article-title><source>Psychonomic Bulletin &#x00026; Review</source><year>2018</year><volume>25</volume><issue>6</issue><fpage>2047</fpage><lpage>2068</lpage><pub-id pub-id-type="doi">10.3758/s13423-018-1446-5</pub-id><pub-id pub-id-type="pmid">29589289</pub-id>
+</element-citation><mixed-citation id="mc-CR38" publication-type="journal">Spektor, M. S., &#x00026; Kellen, D. (2018). The relative merit of empirical priors in non-identifiable and sloppy models: Applications to models of learning and decision-making. <italic>Psychonomic Bulletin &#x00026; Review,</italic><italic>25</italic>(6), 2047&#x02013;2068. 10.3758/s13423-018-1446-5<pub-id pub-id-type="pmid">29589289</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR39"><mixed-citation publication-type="other">Stone, M. (1960). Models for choice-reaction time. <italic>Psychometrika,</italic><italic>25</italic>(3), 251&#x02013;260. 10.1007/BF02289729</mixed-citation></ref><ref id="CR40"><citation-alternatives><element-citation id="ec-CR40" publication-type="journal"><person-group person-group-type="author"><name><surname>Tillman</surname><given-names>G</given-names></name><name><surname>Van Zandt</surname><given-names>T</given-names></name><name><surname>Logan</surname><given-names>GD</given-names></name></person-group><article-title>Sequential sampling models without random between-trial variability: The racing diffusion model of speeded decision making</article-title><source>Psychonomic Bulletin &#x00026; Review</source><year>2020</year><volume>27</volume><issue>5</issue><fpage>911</fpage><lpage>936</lpage><pub-id pub-id-type="doi">10.3758/s13423-020-01719-6</pub-id><pub-id pub-id-type="pmid">32424622</pub-id>
+</element-citation><mixed-citation id="mc-CR40" publication-type="journal">Tillman, G., Van Zandt, T., &#x00026; Logan, G. D. (2020). Sequential sampling models without random between-trial variability: The racing diffusion model of speeded decision making. <italic>Psychonomic Bulletin &#x00026; Review,</italic><italic>27</italic>(5), 911&#x02013;936. 10.3758/s13423-020-01719-6<pub-id pub-id-type="pmid">32424622</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR41"><mixed-citation publication-type="other">Tran, N.-H., van Maanen, L., Heathcote, A., &#x00026; Matzke, D. (2021). Systematic parameter reviews in cognitive modeling: Towards a robust and cumulative characterization of psychological processes in the diffusion decision model. <italic>Frontiers in Psychology,</italic><italic>11</italic>, 608287. 10.3389/fpsyg.2020.608287</mixed-citation></ref><ref id="CR42"><citation-alternatives><element-citation id="ec-CR42" publication-type="journal"><person-group person-group-type="author"><name><surname>Turner</surname><given-names>BM</given-names></name><name><surname>Forstmann</surname><given-names>BU</given-names></name><name><surname>Love</surname><given-names>BC</given-names></name><name><surname>Palmeri</surname><given-names>TJ</given-names></name><name><surname>Van Maanen</surname><given-names>L</given-names></name></person-group><article-title>Approaches to analysis in model-based cognitive neuroscience</article-title><source>Journal of Mathematical Psychology</source><year>2017</year><volume>76</volume><fpage>65</fpage><lpage>79</lpage><pub-id pub-id-type="doi">10.1016/j.jmp.2016.01.001</pub-id><pub-id pub-id-type="pmid">31745373</pub-id>
+</element-citation><mixed-citation id="mc-CR42" publication-type="journal">Turner, B. M., Forstmann, B. U., Love, B. C., Palmeri, T. J., &#x00026; Van Maanen, L. (2017). Approaches to analysis in model-based cognitive neuroscience. <italic>Journal of Mathematical Psychology,</italic><italic>76</italic>, 65&#x02013;79. 10.1016/j.jmp.2016.01.001<pub-id pub-id-type="pmid">31745373</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR43"><citation-alternatives><element-citation id="ec-CR43" publication-type="journal"><person-group person-group-type="author"><name><surname>Turner</surname><given-names>BM</given-names></name><name><surname>Sederberg</surname><given-names>PB</given-names></name><name><surname>Brown</surname><given-names>SD</given-names></name><name><surname>Steyvers</surname><given-names>M</given-names></name></person-group><article-title>A method for efficiently sampling from distributions with correlated dimensions</article-title><source>Psychological Methods</source><year>2013</year><volume>18</volume><issue>3</issue><fpage>368</fpage><lpage>384</lpage><pub-id pub-id-type="doi">10.1037/a0032222</pub-id><pub-id pub-id-type="pmid">23646991</pub-id>
+</element-citation><mixed-citation id="mc-CR43" publication-type="journal">Turner, B. M., Sederberg, P. B., Brown, S. D., &#x00026; Steyvers, M. (2013). A method for efficiently sampling from distributions with correlated dimensions. <italic>Psychological Methods,</italic><italic>18</italic>(3), 368&#x02013;384. 10.1037/a0032222<pub-id pub-id-type="pmid">23646991</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR44"><citation-alternatives><element-citation id="ec-CR44" publication-type="journal"><person-group person-group-type="author"><name><surname>van der Maas</surname><given-names>HLJ</given-names></name><name><surname>Molenaar</surname><given-names>D</given-names></name><name><surname>Maris</surname><given-names>G</given-names></name><name><surname>Kievit</surname><given-names>RA</given-names></name><name><surname>Borsboom</surname><given-names>D</given-names></name></person-group><article-title>Cognitive psychology meets psychometric theory: On the relation between process models for decision making and latent variable models for individual differences</article-title><source>Psychological Review</source><year>2011</year><volume>118</volume><issue>2</issue><fpage>339</fpage><lpage>356</lpage><pub-id pub-id-type="doi">10.1037/a0022749</pub-id><pub-id pub-id-type="pmid">21401290</pub-id>
+</element-citation><mixed-citation id="mc-CR44" publication-type="journal">van der Maas, H. L. J., Molenaar, D., Maris, G., Kievit, R. A., &#x00026; Borsboom, D. (2011). Cognitive psychology meets psychometric theory: On the relation between process models for decision making and latent variable models for individual differences. <italic>Psychological Review,</italic><italic>118</italic>(2), 339&#x02013;356. 10.1037/a0022749<pub-id pub-id-type="pmid">21401290</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR45"><mixed-citation publication-type="other">van Maanen, L., &#x00026; Mileti&#x00107;, S. (2020). The interpretation of behavior-model correlations in unidentified cognitive models. <italic>Psychonomic Bulletin &#x00026; Review</italic>. 10.3758/s13423-020-01783-y</mixed-citation></ref><ref id="CR46"><citation-alternatives><element-citation id="ec-CR46" publication-type="journal"><person-group person-group-type="author"><name><surname>Visser</surname><given-names>I</given-names></name><name><surname>Poess&#x000e9;</surname><given-names>R</given-names></name></person-group><article-title>Parameter recovery, bias and standard errors in the linear ballistic accumulator model</article-title><source>British Journal of Mathematical and Statistical Psychology</source><year>2017</year><volume>70</volume><issue>2</issue><fpage>280</fpage><lpage>296</lpage><pub-id pub-id-type="doi">10.1111/bmsp.12100</pub-id><pub-id pub-id-type="pmid">28474771</pub-id>
+</element-citation><mixed-citation id="mc-CR46" publication-type="journal">Visser, I., &#x00026; Poess&#x000e9;, R. (2017). Parameter recovery, bias and standard errors in the linear ballistic accumulator model. <italic>British Journal of Mathematical and Statistical Psychology,</italic><italic>70</italic>(2), 280&#x02013;296. 10.1111/bmsp.12100<pub-id pub-id-type="pmid">28474771</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR47"><citation-alternatives><element-citation id="ec-CR47" publication-type="journal"><person-group person-group-type="author"><name><surname>Voss</surname><given-names>A</given-names></name><name><surname>Nagler</surname><given-names>M</given-names></name><name><surname>Lerche</surname><given-names>V</given-names></name></person-group><article-title>Diffusion models in experimental psychology: A practical introduction</article-title><source>Experimental Psychology</source><year>2013</year><volume>60</volume><issue>6</issue><fpage>385</fpage><lpage>402</lpage><pub-id pub-id-type="doi">10.1027/1618-3169/a000218</pub-id><pub-id pub-id-type="pmid">23895923</pub-id>
+</element-citation><mixed-citation id="mc-CR47" publication-type="journal">Voss, A., Nagler, M., &#x00026; Lerche, V. (2013). Diffusion models in experimental psychology: A practical introduction. <italic>Experimental Psychology,</italic><italic>60</italic>(6), 385&#x02013;402. 10.1027/1618-3169/a000218<pub-id pub-id-type="pmid">23895923</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR48"><citation-alternatives><element-citation id="ec-CR48" publication-type="journal"><person-group person-group-type="author"><name><surname>Voss</surname><given-names>A</given-names></name><name><surname>Voss</surname><given-names>J</given-names></name></person-group><article-title>Fast-dm: A free program for efficient diffusion model analysis</article-title><source>Behavior Research Methods</source><year>2007</year><volume>39</volume><issue>4</issue><fpage>767</fpage><lpage>775</lpage><pub-id pub-id-type="doi">10.3758/BF03192967</pub-id><pub-id pub-id-type="pmid">18183889</pub-id>
+</element-citation><mixed-citation id="mc-CR48" publication-type="journal">Voss, A., &#x00026; Voss, J. (2007). Fast-dm: A free program for efficient diffusion model analysis. <italic>Behavior Research Methods,</italic><italic>39</italic>(4), 767&#x02013;775. 10.3758/BF03192967<pub-id pub-id-type="pmid">18183889</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR49"><citation-alternatives><element-citation id="ec-CR49" publication-type="journal"><person-group person-group-type="author"><name><surname>White</surname><given-names>CN</given-names></name><name><surname>Servant</surname><given-names>M</given-names></name><name><surname>Logan</surname><given-names>GD</given-names></name></person-group><article-title>Testing the validity of conflict drift-diffusion models for use in estimating cognitive processes: A parameter-recovery study</article-title><source>Psychonomic Bulletin &#x00026; Review</source><year>2018</year><volume>25</volume><issue>1</issue><fpage>286</fpage><lpage>301</lpage><pub-id pub-id-type="doi">10.3758/s13423-017-1271-2</pub-id><pub-id pub-id-type="pmid">28357629</pub-id>
+</element-citation><mixed-citation id="mc-CR49" publication-type="journal">White, C. N., Servant, M., &#x00026; Logan, G. D. (2018). Testing the validity of conflict drift-diffusion models for use in estimating cognitive processes: A parameter-recovery study. <italic>Psychonomic Bulletin &#x00026; Review,</italic><italic>25</italic>(1), 286&#x02013;301. 10.3758/s13423-017-1271-2<pub-id pub-id-type="pmid">28357629</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR50"><mixed-citation publication-type="other">Wiecki, T., Sofer, I., &#x00026; Frank, M. (2013). HDDM: Hierarchical bayesian estimation of the drift-diffusion model in python. <italic>Frontiers in Neuroinformatics,</italic><italic>7</italic>. 10.3389/fninf.2013.00014</mixed-citation></ref></ref-list></back></article>

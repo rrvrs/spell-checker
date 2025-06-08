@@ -1,0 +1,939 @@
+<!DOCTYPE article
+PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.3"><?properties open_access?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Sci Rep</journal-id><journal-id journal-id-type="iso-abbrev">Sci Rep</journal-id><journal-title-group><journal-title>Scientific Reports</journal-title></journal-title-group><issn pub-type="epub">2045-2322</issn><publisher><publisher-name>Nature Publishing Group UK</publisher-name><publisher-loc>London</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="pmid">39730542</article-id><article-id pub-id-type="pmc">PMC11680906</article-id><article-id pub-id-type="publisher-id">80761</article-id><article-id pub-id-type="doi">10.1038/s41598-024-80761-z</article-id><article-categories><subj-group subj-group-type="heading"><subject>Article</subject></subj-group></article-categories><title-group><article-title>Cyclic quantum annealing: searching for deep low-energy states in 5000-qubit spin glass</article-title></title-group><contrib-group><contrib contrib-type="author" corresp="yes"><name><surname>Zhang</surname><given-names>Hao</given-names></name><address><email>zhan6302@umn.edu</email></address><xref ref-type="aff" rid="Aff1">1</xref></contrib><contrib contrib-type="author"><name><surname>Boothby</surname><given-names>Kelly</given-names></name><xref ref-type="aff" rid="Aff2">2</xref></contrib><contrib contrib-type="author"><name><surname>Kamenev</surname><given-names>Alex</given-names></name><xref ref-type="aff" rid="Aff1">1</xref><xref ref-type="aff" rid="Aff3">3</xref></contrib><aff id="Aff1"><label>1</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/017zqws13</institution-id><institution-id institution-id-type="GRID">grid.17635.36</institution-id><institution-id institution-id-type="ISNI">0000 0004 1936 8657</institution-id><institution>School of Physics and Astronomy, </institution><institution>University of Minnesota, </institution></institution-wrap>Minneapolis, MN 55455 USA </aff><aff id="Aff2"><label>2</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/01mmn7c12</institution-id><institution-id institution-id-type="GRID">grid.421761.7</institution-id><institution-id institution-id-type="ISNI">0000 0004 0450 6527</institution-id><institution>D-Wave Systems Inc, </institution></institution-wrap>Burnaby, BC Canada </aff><aff id="Aff3"><label>3</label><institution-wrap><institution-id institution-id-type="ROR">https://ror.org/017zqws13</institution-id><institution-id institution-id-type="GRID">grid.17635.36</institution-id><institution-id institution-id-type="ISNI">0000 0004 1936 8657</institution-id><institution>William I. Fine Theoretical Physics Institute, </institution><institution>University of Minnesota, </institution></institution-wrap>Minneapolis, MN 55455 USA </aff></contrib-group><pub-date pub-type="epub"><day>28</day><month>12</month><year>2024</year></pub-date><pub-date pub-type="pmc-release"><day>28</day><month>12</month><year>2024</year></pub-date><pub-date pub-type="collection"><year>2024</year></pub-date><volume>14</volume><elocation-id>30784</elocation-id><history><date date-type="received"><day>5</day><month>9</month><year>2024</year></date><date date-type="accepted"><day>21</day><month>11</month><year>2024</year></date></history><permissions><copyright-statement>&#x000a9; The Author(s) 2024</copyright-statement><copyright-year>2024</copyright-year><license><ali:license_ref specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p><bold>Open Access</bold> This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article&#x02019;s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article&#x02019;s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link>.</license-p></license></permissions><abstract id="Abs1"><p id="Par1">Quantum computers promise a qualitative speedup in solving a broad spectrum of practical optimization problems. The latter can be mapped onto the task of finding low-energy states of spin glasses, which is known to be exceedingly difficult. Using D-Wave&#x02019;s 5000-qubit quantum processor, we demonstrate that a recently proposed iterative cyclic quantum annealing algorithm can find deep low-energy states in record time. We also find intricate structures in a low-energy landscape of spin glasses, such as a power-law distribution of connected clusters with a small surface energy. These observations offer guidance for further improvement of the optimization algorithms.</p></abstract><kwd-group kwd-group-type="npg-subject"><title>Subject terms</title><kwd>Condensed-matter physics</kwd><kwd>Quantum simulation</kwd></kwd-group><funding-group><award-group><funding-source><institution-wrap><institution-id institution-id-type="FundRef">http://dx.doi.org/10.13039/100000001</institution-id><institution>National Science Foundation</institution></institution-wrap></funding-source><award-id>DMR-2037654</award-id><principal-award-recipient><name><surname>Kamenev</surname><given-names>Alex</given-names></name></principal-award-recipient></award-group></funding-group><custom-meta-group><custom-meta><meta-name>issue-copyright-statement</meta-name><meta-value>&#x000a9; Springer Nature Limited 2024</meta-value></custom-meta></custom-meta-group></article-meta></front><body><sec id="Sec1"><title>Introduction</title><p id="Par2">The concept of a quantum computer, as originally envisioned by Feynman<sup><xref ref-type="bibr" rid="CR1">1</xref></sup>, is a system consisting of a large number of spins. With the advent of quantum devices encompassing more than 5000 qubits in spin-like system<sup><xref ref-type="bibr" rid="CR2">2</xref>&#x02013;<xref ref-type="bibr" rid="CR8">8</xref></sup>, quantum computing has gained even more substantial momentum, showing promise across various fields<sup><xref ref-type="bibr" rid="CR9">9</xref>&#x02013;<xref ref-type="bibr" rid="CR13">13</xref></sup>, including the exploration of dynamics of quantum phase transition<sup><xref ref-type="bibr" rid="CR8">8</xref></sup>.</p><p id="Par3">One of the most promising applications is the approximate solving of a broad spectrum of discrete optimization problems. Many such problems can be formulated in terms of finding low-energy states of spin systems<sup><xref ref-type="bibr" rid="CR14">14</xref>&#x02013;<xref ref-type="bibr" rid="CR17">17</xref></sup>. Quantum annealing uses quantum fluctuations to navigate the system between local minima towards its low-energy states. It has been designed, developed, and validated as an effective method for an approximate solution of these optimization tasks<sup><xref ref-type="bibr" rid="CR2">2</xref>,<xref ref-type="bibr" rid="CR15">15</xref>,<xref ref-type="bibr" rid="CR18">18</xref>&#x02013;<xref ref-type="bibr" rid="CR31">31</xref></sup>. Ideally, the ground state is attainable if the adiabatic condition is strictly met<sup><xref ref-type="bibr" rid="CR22">22</xref>,<xref ref-type="bibr" rid="CR23">23</xref>,<xref ref-type="bibr" rid="CR25">25</xref>,<xref ref-type="bibr" rid="CR32">32</xref></sup>. However, the spin-glass phase<sup><xref ref-type="bibr" rid="CR10">10</xref>,<xref ref-type="bibr" rid="CR21">21</xref>,<xref ref-type="bibr" rid="CR33">33</xref>&#x02013;<xref ref-type="bibr" rid="CR37">37</xref></sup> presents significant challenges, characterized by a vast number of local minima and exponentially small energy gaps, which require exponential time to satisfy adiabaticity. Any deviations from adiabaticity lead to a cascade of Landau-Zener transitions<sup><xref ref-type="bibr" rid="CR21">21</xref>,<xref ref-type="bibr" rid="CR38">38</xref>&#x02013;<xref ref-type="bibr" rid="CR43">43</xref></sup> to higher energy states, making deep low-energy states improbable.</p><p id="Par4">This raises a question: how to minimize Landau-Zener transitions and go deeper into the energy landscape of the spin glass. Recently, an iterative cyclic quantum annealing algorithm<sup><xref ref-type="bibr" rid="CR43">43</xref></sup> has been proposed. In this paper we demonstrate that the key elements of this algorithm&#x02014;the reference Hamiltonian<sup><xref ref-type="bibr" rid="CR43">43</xref>&#x02013;<xref ref-type="bibr" rid="CR46">46</xref></sup> and cycling through the many-body localization transition<sup><xref ref-type="bibr" rid="CR47">47</xref>&#x02013;<xref ref-type="bibr" rid="CR49">49</xref></sup>&#x02014;are indeed useful steps towards improved quantum optimization routines. These elements, used together, allow for the manipulation of the spin-glass energy landscape, effectively reducing the number of Landau-Zener transitions and facilitating a deeper exploration of low-energy states.<fig id="Fig1"><label>Figure 1</label><caption><p>(<bold>a</bold>) Schematic phase diagram. Presented here is a schematic representation of the phase diagram for the system under study, as defined in Eq.&#x000a0;(<xref rid="Equ1" ref-type="disp-formula">1</xref>). The green line denotes the many-body localization transition, while the black dashed line indicates the first-order transition. The path of the cyclic annealing algorithm is represented by the orange triangle contrasting with the blue path, which illustrates the path taken by standard forward annealing. A trapezoid cycle for cyclic annealing is also shown here by the purple line. (<bold>b</bold>) Contour of hamming distance. Cycles with different <inline-formula id="IEq1"><alternatives><tex-math id="M1">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(b_z,b_x)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq1.gif"/></alternatives></inline-formula> are sampled to produce an approximate phase diagram. The average Hamming distance between the final and initial states of a single cycle is calculated and depicted as a contour plot. The contour lines in Hamming distance may indicate the boundary of the many-body localization transition. The disparate magnitudes of <inline-formula id="IEq2"><alternatives><tex-math id="M2">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$b_x$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq2.gif"/></alternatives></inline-formula> and <inline-formula id="IEq3"><alternatives><tex-math id="M3">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$b_z$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq3.gif"/></alternatives></inline-formula> arise from the normalization of the problem Hamiltonian.</p></caption><graphic xlink:href="41598_2024_80761_Fig1_HTML" id="MO1"/></fig></p><p id="Par5">Using D-Wave&#x02019;s 5000-qubit quantum processor, the Advantage<sup>&#x02122;</sup> system, to simulate large spin glasses<sup><xref ref-type="bibr" rid="CR8">8</xref></sup>, we demonstrate that cyclic quantum annealing can indeed reach deep low-energy states in the spin-glass landscape and can surprisingly save 85% of the annealing time resources as compared to traditional forward annealing. Considering the limited availability of annealing time, cyclic quantum annealing demonstrates significant practical utility.</p><p id="Par6">Analyzing the local energy minima found by the algorithm, we observed interesting structures in the low-energy landscape of the spin glasses. Spins flipped between relatively close local minima tend to cluster with a single large cluster contributing most to the energy difference. The distribution of cluster sizes follows a power-law distribution with an exponent close to &#x02212; 2.1, which shows that rare events (i.e., atypical clusters) predominantly contribute to energy balance. These findings provide useful clues into further improvements to optimization search.</p><p id="Par7">Cyclic quantum annealing can provide experimental data on the statistics of deep minima in large 3D spin glasses. This advancement has the potential to shed light on longstanding conjectures in the field, see, e.g.<sup><xref ref-type="bibr" rid="CR50">50</xref>&#x02013;<xref ref-type="bibr" rid="CR52">52</xref></sup>.</p></sec><sec id="Sec2"><title>Cyclic quantum annealing</title><p id="Par8">The traditional forward quantum annealing<sup><xref ref-type="bibr" rid="CR31">31</xref></sup> involves evolution along an open path that connects a Hamiltonian with ground state close to a product state with a Hamiltonian with unknown ground state. The idea is illustrated by the blue path in Fig.&#x000a0;<xref rid="Fig1" ref-type="fig">1</xref>a. Cyclic annealing<sup><xref ref-type="bibr" rid="CR43">43</xref></sup> takes a closed path in the parameter space, passing through the Hamiltonian of the problem, depicted as an orange path in Fig.&#x000a0;<xref rid="Fig1" ref-type="fig">1</xref>a. Such a cyclic process allows the energy to progressively decrease, cycle by cycle, until a satisfactorily deep low-energy state is achieved.</p><p id="Par9">The algorithm operates based on the following Hamiltonian:<disp-formula id="Equ1"><label>1</label><alternatives><tex-math id="M4">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} H(s) = H_p+B_z(s)H_\text {ref}+B_x(s)H_q, \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_80761_Article_Equ1.gif" position="anchor"/></alternatives></disp-formula>where <italic>s</italic> parameterizes the cycle. It comprises three components, each serving a distinct function and corresponding to different steps of the algorithm:</p><p id="Par10"><italic>Step 1&#x02014;Prepare the problem Hamiltonian:</italic><disp-formula id="Equ2"><label>2</label><alternatives><tex-math id="M5">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} H_p=\sum _{ij}^N J_{ij}\, \sigma _i^z\sigma _j^z. \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_80761_Article_Equ2.gif" position="anchor"/></alternatives></disp-formula>The problem Hamiltonian <inline-formula id="IEq4"><alternatives><tex-math id="M6">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$H_p$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq4.gif"/></alternatives></inline-formula> is an Ising-like spin Hamiltonian with <inline-formula id="IEq5"><alternatives><tex-math id="M7">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sigma _i^z$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq5.gif"/></alternatives></inline-formula> representing the <italic>z</italic>-Pauli matrices, realized by qubits. Coupling parameters, <inline-formula id="IEq6"><alternatives><tex-math id="M8">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$J_{ij}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq6.gif"/></alternatives></inline-formula>, encode information about the optimization problem at hand. All couplers <inline-formula id="IEq7"><alternatives><tex-math id="M9">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$J_{ij}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq7.gif"/></alternatives></inline-formula> available in the quantum processor are used in the simulations described below. The topology of <inline-formula id="IEq8"><alternatives><tex-math id="M10">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$J_{ij}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq8.gif"/></alternatives></inline-formula> is essentially a 3D lattice, more details can be found in<sup><xref ref-type="bibr" rid="CR53">53</xref></sup>. The initial qubit states for the first cycle can be chosen as an <italic>arbitrary</italic>
+<italic>z</italic> polarized product state. We use the trivial all-up-spin state for this purpose. In the last step of each cycle, the initial qubit state for the next cycle is updated. This state is called the reference state: it is a <italic>z</italic> polarized product state with components denoted as <inline-formula id="IEq9"><alternatives><tex-math id="M11">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_i^r$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq9.gif"/></alternatives></inline-formula>.</p><p id="Par11"><italic>Step 2&#x02014;Turn on the reference Hamiltonian:</italic><disp-formula id="Equ3"><label>3</label><alternatives><tex-math id="M12">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} H_\text {ref}=-\sum _i^N s_i^r\sigma _i^z. \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_80761_Article_Equ3.gif" position="anchor"/></alternatives></disp-formula>This term biases the problem&#x02019;s Hamiltonian towards the reference state <inline-formula id="IEq10"><alternatives><tex-math id="M13">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\{s_i^r\}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq10.gif"/></alternatives></inline-formula>. This step is realized by increasing <inline-formula id="IEq11"><alternatives><tex-math id="M14">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$B_z(s)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq11.gif"/></alternatives></inline-formula> from 0 to <inline-formula id="IEq12"><alternatives><tex-math id="M15">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$b_z$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq12.gif"/></alternatives></inline-formula>, passing through the first-order transition. This transition marks the <inline-formula id="IEq13"><alternatives><tex-math id="M16">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$B_z$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq13.gif"/></alternatives></inline-formula> field where the reference state becomes a true ground state of the Hamiltonian <inline-formula id="IEq14"><alternatives><tex-math id="M17">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$H_p+B_z(s)H_\text {ref}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq14.gif"/></alternatives></inline-formula> .</p><p id="Par12"><italic>Step 3&#x02014;Turn on the quantum Hamiltonian:</italic><disp-formula id="Equ4"><label>4</label><alternatives><tex-math id="M18">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} H_q = -\sum _i^N\sigma _i^x. \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_80761_Article_Equ4.gif" position="anchor"/></alternatives></disp-formula>This term, which is non-commuting with respect to <inline-formula id="IEq15"><alternatives><tex-math id="M19">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$H_p$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq15.gif"/></alternatives></inline-formula> and <inline-formula id="IEq16"><alternatives><tex-math id="M20">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$H_\text {ref}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq16.gif"/></alternatives></inline-formula>, makes the states to be superpositions of bit-string states by providing matrix elements between them. For sufficiently high <inline-formula id="IEq17"><alternatives><tex-math id="M21">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$B_x$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq17.gif"/></alternatives></inline-formula>, it drives the system through the many-body localization transition. This step is achieved by increasing <inline-formula id="IEq18"><alternatives><tex-math id="M22">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$B_x(s)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq18.gif"/></alternatives></inline-formula> from 0 to <inline-formula id="IEq19"><alternatives><tex-math id="M23">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$b_x$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq19.gif"/></alternatives></inline-formula>. Due to the bias induced in Step 2, the mixing is mainly with the states whose <inline-formula id="IEq20"><alternatives><tex-math id="M24">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$H_p$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq20.gif"/></alternatives></inline-formula> energy is less than that of the reference state.</p><p id="Par13"><italic>Step 4&#x02014;Complete the cycle and perform measurement:</italic> The final step is to turn off <inline-formula id="IEq21"><alternatives><tex-math id="M25">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$H_\text {ref}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq21.gif"/></alternatives></inline-formula> and <inline-formula id="IEq22"><alternatives><tex-math id="M26">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$H_q$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq22.gif"/></alternatives></inline-formula>, completing a full cycle by returning to the original problem Hamiltonian. Measurements taken in the end cause the state to collapse into a classical bit-string states. The turn-off process involves numerous Landau-Zener transitions, thus the final state is not the ground state. However, due to the bias <inline-formula id="IEq23"><alternatives><tex-math id="M27">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$H_\text {ref}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq23.gif"/></alternatives></inline-formula>, the final state has a considerable probability of being lower in energy than the initial reference state. Each cycle is repeatedly sampled multiple times in the quantum processor to obtain a distribution of states. The lowest-energy state of this distribution is then selected. If it is lower than the initial state of the current cycle, it becomes the new reference state for the next cycle; otherwise, the reference state does not change.</p></sec><sec id="Sec3"><title>Simulations</title><p id="Par14">Multiple cycles of the cyclic quantum annealing algorithm are executed, to progressively find deeper low-energy states, as illustrated by the decreasing energy curve (orange line) in Fig.<xref rid="Fig2" ref-type="fig">2</xref>a. More details can be found in the &#x0201c;<xref rid="Sec6" ref-type="sec">Methods</xref>&#x0201d; section.<fig id="Fig2"><label>Figure 2</label><caption><p>Performance of cyclic annealing. (<bold>a</bold>) Decreasing energy curve. The orange dots represent the progressively lower energy state found by cyclic annealing for a selected problem from our comparison set. Green stars and blue dashed lines mark the answers from cyclic annealing and forward annealing respectively. Notably, by the third cycle, cyclic annealing outperforms forward annealing. (<bold>b</bold>) Position in the Gaussian distribution. The histogram depicts the distribution of states obtained through forward annealing, fitting a Gaussian distribution with <inline-formula id="IEq24"><alternatives><tex-math id="M28">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\mu =-15{,}685.47, \sigma =19.30$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq24.gif"/></alternatives></inline-formula>; see the orange line. The relative positions of cyclic (green dashed line) and forward (blue dashed line) annealing solutions in the distribution highlight the deeper reach of the former; see inset. (<bold>c</bold>) Results of comparison experiment. In an equal-time comparison of cyclic and forward annealing across 50 problems, the energy differences <inline-formula id="IEq25"><alternatives><tex-math id="M29">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\Delta E$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq25.gif"/></alternatives></inline-formula> (normalized to the forward annealing&#x02019;s standard deviation <inline-formula id="IEq26"><alternatives><tex-math id="M30">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sigma$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq26.gif"/></alternatives></inline-formula>) are marked by crosses. Cyclic annealing&#x02019;s superiority is evident, with lower-energy solutions in <inline-formula id="IEq27"><alternatives><tex-math id="M31">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$86\%$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq27.gif"/></alternatives></inline-formula> of cases (green crosses).</p></caption><graphic xlink:href="41598_2024_80761_Fig2_HTML" id="MO2"/></fig></p><p id="Par15">Evaluation of cyclic annealing performance involves direct comparison with forward annealing with the same amount of annealing time <italic>T</italic>, that is, cyclic annealing takes <italic>T</italic>/<italic>N</italic> for each of the <italic>N</italic> cycles. The latter typically produces results that fit a Gaussian distribution; see the histogram and orange line in Fig. <xref rid="Fig2" ref-type="fig">2</xref>b. For a specific problem, we run it 1000 times and take the lowest energy as solution. This is marked by a blue dashed line in Fig. <xref rid="Fig2" ref-type="fig">2</xref>a and b. In contrast, cyclic annealing is executed for 10 cycles and takes the answer of last cycle as solution (illustrated by the green star in Fig. <xref rid="Fig2" ref-type="fig">2</xref>a and the green dashed line in Fig. <xref rid="Fig2" ref-type="fig">2</xref>b). The cycle is the triangle with parameter <inline-formula id="IEq28"><alternatives><tex-math id="M32">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$b_z=0.03, b_x=8.04$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq28.gif"/></alternatives></inline-formula>; see Fig. <xref rid="Fig1" ref-type="fig">1</xref>a.</p><p id="Par16">The comparative study encompassed a set of problems chosen to represent typical spin-glass-type hard optimization problems in the form of Eq. <xref rid="Equ2" ref-type="disp-formula">2</xref>, see the &#x0201c;<xref rid="Sec6" ref-type="sec">Methods</xref>&#x0201d; section. The energy differences <inline-formula id="IEq29"><alternatives><tex-math id="M33">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\Delta E$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq29.gif"/></alternatives></inline-formula> between the solutions obtained from cyclic annealing <inline-formula id="IEq30"><alternatives><tex-math id="M34">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$E_\text {cyclic}^f$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq30.gif"/></alternatives></inline-formula> and forward annealing <inline-formula id="IEq31"><alternatives><tex-math id="M35">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$E_\text {forward}^f$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq31.gif"/></alternatives></inline-formula>, normalized by the standard deviation of the latter <inline-formula id="IEq32"><alternatives><tex-math id="M36">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sigma$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq32.gif"/></alternatives></inline-formula>, are indicated by crosses. Notably, in <inline-formula id="IEq33"><alternatives><tex-math id="M37">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$86\%$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq33.gif"/></alternatives></inline-formula> of these comparisons, cyclic annealing achieved lower energy states (green crosses), affirming its enhanced performance, see Fig. <xref rid="Fig2" ref-type="fig">2</xref>c. Regarding the instances where the cyclic approach did not succeed, this can be attributed to fluctuations inherent in forward annealing, which occasionally explores deeper low-energy states due to the tail behavior of its distribution. The average improvement in energy achieved by cyclic annealing is quantified as:<disp-formula id="Equ5"><label>5</label><alternatives><tex-math id="M38">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} \overline{\left( \frac{\Delta E}{\sigma }\right) } = -0.56\pm 0.49. \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_80761_Article_Equ5.gif" position="anchor"/></alternatives></disp-formula>Consequently, solutions derived from cyclic annealing are positioned, averaging over the problem set, at a significantly lower energy level relative to the mean energy level of forward annealing (see green vertical line and blue vertical line in inset of Fig. <xref rid="Fig2" ref-type="fig">2</xref>b for a typical problem), as given by:<disp-formula id="Equ6"><label>6</label><alternatives><tex-math id="M39">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} \begin{aligned} \overline{\left( \frac{E_\text {cyclic}^f - \mu }{\sigma }\right) }&#x00026;= - 3.42 \pm 0.57 \\ \overline{\left( \frac{E_\text {forward}^f - \mu }{\sigma }\right) }&#x00026;= - 2.86 \pm 0.40 \end{aligned} \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_80761_Article_Equ6.gif" position="anchor"/></alternatives></disp-formula>with <inline-formula id="IEq34"><alternatives><tex-math id="M40">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\mu$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq34.gif"/></alternatives></inline-formula> representing the mean and <inline-formula id="IEq35"><alternatives><tex-math id="M41">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\sigma$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq35.gif"/></alternatives></inline-formula> the standard deviation of the forward annealing distribution. From Eq.&#x000a0;(<xref rid="Equ5" ref-type="disp-formula">5</xref>) one can show that to achieve the same performance as cyclic annealing, forward annealing should be performed about 7000 times instead of 1000 times. In other words, cyclic annealing saves about 85% of the annealing time to achieve same performance as forward annealing.<fig id="Fig3"><label>Figure 3</label><caption><p>Distribution of final states for a single cycle. A wide range of the path parameters <inline-formula id="IEq36"><alternatives><tex-math id="M42">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(b_z,b_x)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq36.gif"/></alternatives></inline-formula> of trapezoidal cycle were sampled, see main text. The problem Hamiltonian, initial qubit states, and other parameters were kept fixed. For each data point, a single cycle is executed 1000 times to produce a distribution of final states. They are shown as dots in the plane of energy and Hamming distance, which is measured from the reference state. Red dashed lines represent the energy of the reference state. (<bold>a</bold>) Overview. Sub-figures are arranged according to <inline-formula id="IEq37"><alternatives><tex-math id="M43">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(b_z,b_x)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq37.gif"/></alternatives></inline-formula>. (<bold>b</bold>) Enlarged view. Distributions of varying <inline-formula id="IEq38"><alternatives><tex-math id="M44">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$b_x$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq38.gif"/></alternatives></inline-formula> but identical <inline-formula id="IEq39"><alternatives><tex-math id="M45">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$b_z$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq39.gif"/></alternatives></inline-formula> are shown in the same sub-figure. Six distinct <inline-formula id="IEq40"><alternatives><tex-math id="M46">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$b_z$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq40.gif"/></alternatives></inline-formula> values are selected.</p></caption><graphic xlink:href="41598_2024_80761_Fig3_HTML" id="MO3"/></fig></p></sec><sec id="Sec4"><title>Phase diagram</title><p id="Par17">To better understand how cyclic annealing operates and to find the optimal parameters, we analyzed the distribution of final states reached by a single cycle. A trapezoidal cycle defined by the corners (0,&#x000a0;0), <inline-formula id="IEq41"><alternatives><tex-math id="M47">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(b_z',0)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq41.gif"/></alternatives></inline-formula>, <inline-formula id="IEq42"><alternatives><tex-math id="M48">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(b_z',b_x)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq42.gif"/></alternatives></inline-formula>, <inline-formula id="IEq43"><alternatives><tex-math id="M49">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(b_z, b_x)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq43.gif"/></alternatives></inline-formula> was used; see the purple cycle in Fig.&#x000a0;<xref rid="Fig1" ref-type="fig">1</xref>a. To ensure the occurrence of the first-order transition in step 2, <inline-formula id="IEq44"><alternatives><tex-math id="M50">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$b_z'$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq44.gif"/></alternatives></inline-formula> is set to a specific value. The choice of a trapezoidal path is intended to not miss the first-order transition. For larger values of <inline-formula id="IEq45"><alternatives><tex-math id="M51">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$b_z$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq45.gif"/></alternatives></inline-formula>, this trapezoid can be simplified to a triangle. A broad range of path parameters <inline-formula id="IEq46"><alternatives><tex-math id="M52">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(b_z,b_x)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq46.gif"/></alternatives></inline-formula> were sampled with each fixed problem Hamiltonian. A problem Hamiltonian is created by setting the <inline-formula id="IEq47"><alternatives><tex-math id="M53">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$J_{ij}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq47.gif"/></alternatives></inline-formula> values for all available couplers to be uniformly distributed between <inline-formula id="IEq48"><alternatives><tex-math id="M54">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$-1$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq48.gif"/></alternatives></inline-formula> and 1. For each data point, a single cycle is executed. It is repeated 1000 times to generate a distribution of final states. The outcomes are shown as dots in the plane of energy and Hamming distance, which is measured from the reference state; see Fig.&#x000a0;<xref rid="Fig3" ref-type="fig">3</xref>a,b.</p><p id="Par18">These distributions show that cyclic annealing can explore a wide range of the Hamming distances for a 5000-qubit spin glass, from several hundreds to several thousands away from the reference state. For a fixed <inline-formula id="IEq49"><alternatives><tex-math id="M55">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$b_x$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq49.gif"/></alternatives></inline-formula>, an increase in <inline-formula id="IEq50"><alternatives><tex-math id="M56">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$b_z$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq50.gif"/></alternatives></inline-formula> augments the magnitude of energy-spectrum distortion, thereby reducing the number of Landau-Zener transitions (as indicated by the shrinking distribution range). This facilitates a deeper exploration in the energy spectrum (evident from the lowering of the energy distribution). For a fixed <inline-formula id="IEq51"><alternatives><tex-math id="M57">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$b_z$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq51.gif"/></alternatives></inline-formula>, a higher <inline-formula id="IEq52"><alternatives><tex-math id="M58">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$b_x$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq52.gif"/></alternatives></inline-formula> increases the magnitude of the many-body delocalization effects (visible from the increased Hamming distance distribution), albeit at the cost of elevating the energy of distribution. Taking these two competing effects into account, optimal parameter combinations can be chosen in practice; see enlarged view in Fig. <xref rid="Fig3" ref-type="fig">3</xref>b.</p><p id="Par19">Furthermore, we calculate the average Hamming distance and present it as a contour plot in Fig. <xref rid="Fig1" ref-type="fig">1</xref>b. The lines of equal hamming distance potentially hint at the boundary of the many-body localization transition. It is also noteworthy that an advanced variant of the cyclic annealing algorithm can be designed to, for example, dynamically adjust the <inline-formula id="IEq53"><alternatives><tex-math id="M59">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(b_z, b_x)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq53.gif"/></alternatives></inline-formula> parameters for each cycle.</p></sec><sec id="Sec5"><title>Discussion</title><p id="Par20">Cyclic quantum annealing can explore the structure of low-energy states in spin-glass systems. It follows the same approach as above for data acquisition. Cyclic annealing of a single cycle is performed with a variety of annealing parameters <inline-formula id="IEq54"><alternatives><tex-math id="M60">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$b_x$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq54.gif"/></alternatives></inline-formula>, while maintaining <inline-formula id="IEq55"><alternatives><tex-math id="M61">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$b_z$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq55.gif"/></alternatives></inline-formula> at a constant value of 0.03. The reference state is chosen as a fixed low-energy state. In the analysis, each final state is compared to the reference state to identify flipped spins. These flipped spins are classified into clusters based on their connectivity via non-zero <inline-formula id="IEq56"><alternatives><tex-math id="M62">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$J_{ij}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq56.gif"/></alternatives></inline-formula> couplings. A flipped spin <italic>i</italic> is considered part of a cluster if it is connected to another flipped spin <italic>j</italic> in the cluster by a nonzero coefficient <inline-formula id="IEq57"><alternatives><tex-math id="M63">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$J_{ij}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq57.gif"/></alternatives></inline-formula>.<fig id="Fig4"><label>Figure 4</label><caption><p>Clusters of flipped spins in a low-energy state. This figure illustrates the clusters formed by flipped spins when a low-energy state is compared to the reference state. Flipped spins are identified, and those connected by nonzero <inline-formula id="IEq58"><alternatives><tex-math id="M64">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$J_{ij}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq58.gif"/></alternatives></inline-formula> values are grouped into the same cluster. The clusters thus identified are depicted here, with each cluster&#x02019;s size and contribution to the total energy difference (relative to the reference state) detailed alongside its percentage. Notably, a single, large cluster&#x02014;Cluster 27&#x02014;emerges as the most significant contributor, accounting for 40.31% of the total energy difference. The color coding represents the degree of each flipped spin in the original graph, which is constructed with nodes representing all spins and links denoting nonzero <inline-formula id="IEq59"><alternatives><tex-math id="M65">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$J_{ij}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq59.gif"/></alternatives></inline-formula> connections.</p></caption><graphic xlink:href="41598_2024_80761_Fig4_HTML" id="MO4"/></fig></p><p id="Par21">This analysis reveals a tendency for flipped spins to aggregate into clusters. Figure&#x000a0;<xref rid="Fig4" ref-type="fig">4</xref> illustrates the clusters for a typical low-energy state, showing the distribution and structure of all the flipped clusters. The size of a cluster is determined by the number of flipped spins it contains. The energy difference <inline-formula id="IEq60"><alternatives><tex-math id="M66">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\Delta E$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq60.gif"/></alternatives></inline-formula> represents the contribution of a particular cluster <italic>C</italic> of a state <inline-formula id="IEq61"><alternatives><tex-math id="M67">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\{s_i\}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq61.gif"/></alternatives></inline-formula> to the overall energy difference relative to the reference state <inline-formula id="IEq62"><alternatives><tex-math id="M68">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\{s_i^r\}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq62.gif"/></alternatives></inline-formula>,<disp-formula id="Equ7"><label>7</label><alternatives><tex-math id="M69">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} \Delta E= \sum _{i\in \text {C}}\sum _{j\in N_i} J_{ij}(s_is_j-s_i^rs_j^r), \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_80761_Article_Equ7.gif" position="anchor"/></alternatives></disp-formula>where <inline-formula id="IEq63"><alternatives><tex-math id="M70">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$N_i$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq63.gif"/></alternatives></inline-formula> is the set of all nearest neighbor spins of <inline-formula id="IEq64"><alternatives><tex-math id="M71">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$s_i$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq64.gif"/></alternatives></inline-formula>.</p><p id="Par22">Analyzing multiple low-energy states, we consistently observe the presence of a dominant cluster that plays a substantial role in the overall energy difference. For instance, in the case illustrated in Fig.&#x000a0;<xref rid="Fig4" ref-type="fig">4</xref>, the largest identified cluster, Cluster 27, contributes a significant <inline-formula id="IEq65"><alternatives><tex-math id="M72">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$40.31\%$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq65.gif"/></alternatives></inline-formula> to the total energy difference. This highlights the critical impact of the largest clusters within the spin system, underscoring their importance in the overall energy landscape of the system.</p><p id="Par23">Figure&#x000a0;<xref rid="Fig5" ref-type="fig">5</xref>a shows the frequency of finding a connected cluster of flipped spins of a given size for data from different <inline-formula id="IEq66"><alternatives><tex-math id="M73">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$b_x$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq66.gif"/></alternatives></inline-formula>, which has same number of states and roughly same number of clusters. It is plotted against the size of the cluster, normalized to the total Hamming distance, <italic>d</italic>, between the two low-energy states. For example, the normalized distance 1/2 means that the given cluster contains half of the spins flipped between the two states. The probability of finding a cluster of size <italic>s</italic> follows a power-law distribution <inline-formula id="IEq67"><alternatives><tex-math id="M74">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$P(s,d) \propto \left( \frac{s}{d}\right) ^{-\alpha }$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq67.gif"/></alternatives></inline-formula>. Since all data with different <italic>d</italic> collapse with same exponent, after summation over <italic>d</italic>, one get<disp-formula id="Equ8"><label>8</label><alternatives><tex-math id="M75">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\begin{aligned} P(s) \propto s^{-\alpha }, \end{aligned}$$\end{document}</tex-math><graphic xlink:href="41598_2024_80761_Article_Equ8.gif" position="anchor"/></alternatives></disp-formula>with the exponent <inline-formula id="IEq68"><alternatives><tex-math id="M76">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha \approx 2.12$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq68.gif"/></alternatives></inline-formula> from fitting. This pattern emerges consistently across clusters identified in final states obtained from cycles with varying annealing parameters <inline-formula id="IEq69"><alternatives><tex-math id="M77">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$b_x$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq69.gif"/></alternatives></inline-formula>. The data collapse observed for clusters from different <inline-formula id="IEq70"><alternatives><tex-math id="M78">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$b_x$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq70.gif"/></alternatives></inline-formula> values underscores this characteristic as a universal feature of the system. The fact the exponent <inline-formula id="IEq71"><alternatives><tex-math id="M79">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha &#x0003c;3$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq71.gif"/></alternatives></inline-formula> shows that the variance is not defined. This implies a prevalence of large clusters within the patterns of flipped spins, as mentioned above.</p><p id="Par24">Figure&#x000a0;<xref rid="Fig5" ref-type="fig">5</xref>b shows cluster&#x02019;s flip energy change, <inline-formula id="IEq72"><alternatives><tex-math id="M80">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\Delta E$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq72.gif"/></alternatives></inline-formula>, versus its size, <italic>s</italic>. It indicates a relationship between the magnitude of the energy reduction and the minimum size of the cluster required to achieve such a decrease. This shows that substantial energy decreases are possible upon the formation of larger clusters.<fig id="Fig5"><label>Figure 5</label><caption><p>Distribution of clusters. Clusters are identified for final states from cycles with different annealing parameters <inline-formula id="IEq73"><alternatives><tex-math id="M81">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$b_x$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq73.gif"/></alternatives></inline-formula>. The parameter <inline-formula id="IEq74"><alternatives><tex-math id="M82">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$b_z$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq74.gif"/></alternatives></inline-formula> is fixed as 0.03. (<bold>a</bold>) Power law distribution of cluster sizes. Data collapse for clusters of final states from cycles with different <inline-formula id="IEq75"><alternatives><tex-math id="M83">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$b_x$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq75.gif"/></alternatives></inline-formula>. The red line is fitted with power-law equation: <inline-formula id="IEq76"><alternatives><tex-math id="M84">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\log (y) = -2.12 \log (x) -0.03$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq76.gif"/></alternatives></inline-formula> with r-value &#x02212; 0.95. The exponent 2.12 shows the variance is not finite, implying the possibility of rare super clusters. (<bold>b</bold>) Energy contribution <inline-formula id="IEq77"><alternatives><tex-math id="M85">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\Delta E$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq77.gif"/></alternatives></inline-formula> vs. Cluster Sizes. For each cluster, we calculated its energy contribution <inline-formula id="IEq78"><alternatives><tex-math id="M86">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\Delta E$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq78.gif"/></alternatives></inline-formula> to the energy difference with respect to the reference state. Clusters from cycles with different annealing parameters <inline-formula id="IEq79"><alternatives><tex-math id="M87">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$b_x$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq79.gif"/></alternatives></inline-formula> are shown here in different color. The legend is the same as that in (<bold>a</bold>). Data of negative <inline-formula id="IEq80"><alternatives><tex-math id="M88">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\Delta$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq80.gif"/></alternatives></inline-formula>E are shown here. A dashed line shows the relation between energy decrease and smallest possible cluster size to achieve that. To find a large energy decrease, one must find a large cluster.</p></caption><graphic xlink:href="41598_2024_80761_Fig5_HTML" id="MO5"/></fig></p><p id="Par25">In summary, transitions between local minima of the spin-glass landscape involve flipping a certain number of connected clusters. Cluster sizes follow an algebraic distribution with the exponent <inline-formula id="IEq81"><alternatives><tex-math id="M89">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\alpha \approx 2.12$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq81.gif"/></alternatives></inline-formula>. This makes large clusters rather prevalent. Moreover, there is a direct proportionality between the achieved energy gain and the cluster size. Targeting the larger clusters with negative energy may be the key to achieving significant energy reductions within the low energy part of the spin-glass landscape, as it may help to escape the local energy basin. These observations have practical implications for the development of optimization algorithms, which should be geared towards identifying and flipping large clusters.</p><p id="Par26">It is of considerable interest to investigate the performance of cyclic quantum annealing in comparison with the classical algorithms. Furthermore, it would be pertinent to explore the potential integration of the idea of cyclic quantum annealing into classical algorithms to improve their performance<sup><xref ref-type="bibr" rid="CR54">54</xref></sup>.</p></sec><sec id="Sec6"><title>Methods</title><p id="Par27">This section outlines the details of the cyclic quantum annealing algorithm and simulations. The algorithm is implemented on D-Wave&#x02019;s Advantage 4.1 quantum processor, which features 5,627 functional qubits and 40,279 couplers. We utilized all available qubits and couplers in our studies.</p><p id="Par28">The problem set in the &#x0201c;<xref rid="Sec3" ref-type="sec">Simulations</xref>&#x0201d; section consists of 50 random realizations of spin glass configurations: for Problem 0 to problem 9, <inline-formula id="IEq82"><alternatives><tex-math id="M90">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$J_{ij}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq82.gif"/></alternatives></inline-formula> is randomly chosen as &#x000b1;1; for problem 10 to problem 19, <inline-formula id="IEq83"><alternatives><tex-math id="M91">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$J_{ij}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq83.gif"/></alternatives></inline-formula> is randomly chosen as &#x000b1;1, &#x000b1;2; for problem 20 to problem 29, <inline-formula id="IEq84"><alternatives><tex-math id="M92">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$J_{ij}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq84.gif"/></alternatives></inline-formula> is randomly chosen as &#x000b1;1, &#x000b1;2, &#x000b1;3, &#x000b1;4; for problem 30 to problem 39, <inline-formula id="IEq85"><alternatives><tex-math id="M93">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$J_{ij}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq85.gif"/></alternatives></inline-formula> is randomly chosen as &#x000b1; 1, &#x000b1; 2, &#x000b1; 3, &#x000b1; 4 ...&#x000b1; 8; for problem 40 to problem 49, <inline-formula id="IEq86"><alternatives><tex-math id="M94">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$J_{ij}$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq86.gif"/></alternatives></inline-formula> is randomly chosen as &#x000b1;1, &#x000b1;2, &#x000b1;3, &#x000b1;4 ...&#x000b1;16. Given that the underlying topology closely resembles a 3D lattice, these problems represent 3D spin glass systems, which are known to be NP-hard. We normalize the problem to have average <inline-formula id="IEq87"><alternatives><tex-math id="M95">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$|J_{ij}|$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq87.gif"/></alternatives></inline-formula>=1 before the simulations.</p><p id="Par29">For the cyclic annealing, the initial qubit state for the first cycle can be arbitrary <italic>z</italic> polarized product state. Interestingly, starting with a high-energy state does not hurt the algorithm&#x02019;s efficiency, as it rapidly converges to a low-energy state after the first cycle. An important aspect of the algorithm involves specifying the duration of each segment of the path. Table&#x000a0;<xref rid="Tab1" ref-type="table">1</xref> presents a typical path with corresponding time allocations, as used in the performance study described in the &#x0201c;<xref rid="Sec3" ref-type="sec">Simulations</xref>&#x0201d; Section.<table-wrap id="Tab1"><label>Table 1</label><caption><p>Cyclic annealing path with time.</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Time (<inline-formula id="IEq88"><alternatives><tex-math id="M96">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\upmu$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq88.gif"/></alternatives></inline-formula>s)</th><th align="left"><inline-formula id="IEq89"><alternatives><tex-math id="M97">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$(b_z, b_x)$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq89.gif"/></alternatives></inline-formula></th></tr></thead><tbody><tr><td align="left">0</td><td align="left">(0,&#x000a0;0)</td></tr><tr><td align="left">0.1</td><td align="left">(0.03,&#x000a0;0)</td></tr><tr><td align="left">0.6</td><td align="left">(0.03,&#x000a0;8.04)</td></tr><tr><td align="left">300</td><td align="left">(0,&#x000a0;0)</td></tr></tbody></table></table-wrap></p><p id="Par30">During the first step of the algorithm, all eigenstates are bitstring states, as the non-commuting driving Hamiltonian (Eq.&#x000a0;<xref rid="Equ4" ref-type="disp-formula">4</xref>) is not yet turned on. The evolution in this part can be fast. The second step, characterized by a finite energy gap above the ground state, can also be executed rapidly without consuming substantial annealing time. However, the third step, which goes into the spin-glass phase and encounters numerous Landau&#x02013;Zener transitions, necessitates a slower pace. It is recommended to set the annealing time within the range of 100&#x02013;1000 <inline-formula id="IEq90"><alternatives><tex-math id="M98">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\upmu$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq90.gif"/></alternatives></inline-formula>s. In our experiments, we used 300 <inline-formula id="IEq91"><alternatives><tex-math id="M99">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\upmu$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq91.gif"/></alternatives></inline-formula>s in the &#x0201c;<xref rid="Sec3" ref-type="sec">Simulations</xref>&#x0201d; section and 500 <inline-formula id="IEq92"><alternatives><tex-math id="M100">\documentclass[12pt]{minimal}
+				\usepackage{amsmath}
+				\usepackage{wasysym} 
+				\usepackage{amsfonts} 
+				\usepackage{amssymb} 
+				\usepackage{amsbsy}
+				\usepackage{mathrsfs}
+				\usepackage{upgreek}
+				\setlength{\oddsidemargin}{-69pt}
+				\begin{document}$$\upmu$$\end{document}</tex-math><inline-graphic xlink:href="41598_2024_80761_Article_IEq92.gif"/></alternatives></inline-formula>s in the subsequent sections.</p><p id="Par31">It is noteworthy that the cycle&#x02019;s shape is not confined to a triangular or trapezoidal shape. An intriguing and open question remains on how different cycle shapes influence the annealing performance and the quest for an optimal one.</p></sec></body><back><fn-group><fn><p><bold>Publisher&#x02019;s note</bold></p><p>Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></fn></fn-group><ack><title>Acknowledgements</title><p>We are grateful to Mohammad Amin, Kevin Chern, Pau Farr&#x000e9;, Fiona Hanington, Emile Hoskinson, Andrew King, Jack Raymond, Hanteng Wang, and Hsiu-Chung Yeh for useful discussions. This work was supported by the NSF grants DMR-2037654 and DMR-2338819.</p></ack><notes notes-type="author-contribution"><title>Author contributions</title><p>H.Z. and A.K. conceived and designed the algorithms and experiments, and analyzed the data. H.Z. performed the experiments and simulations. K.B. designed and conducted the test problem sets. H.Z., K.B., and A.K. discussed the data. H.Z. and A.K. drafted the manuscript, and all authors reviewed the manuscript.</p></notes><notes notes-type="data-availability"><title>Data availability</title><p>All data analyzed in this study are available from the corresponding author upon reasonable request.</p></notes><notes><title>Declarations</title><notes notes-type="COI-statement"><title>Competing interests</title><p>The authors declare no competing interests.</p></notes></notes><ref-list id="Bib1"><title>References</title><ref id="CR1"><label>1.</label><citation-alternatives><element-citation id="ec-CR1" publication-type="journal"><person-group person-group-type="author"><name><surname>Feynman</surname><given-names>RP</given-names></name></person-group><article-title>Simulating physics with computers</article-title><source>Int. J. Theor. Phys.</source><year>1982</year><volume>21</volume><fpage>467</fpage><pub-id pub-id-type="doi">10.1007/BF02650179</pub-id></element-citation><mixed-citation id="mc-CR1" publication-type="journal">Feynman, R. P. Simulating physics with computers. <italic>Int. J. Theor. Phys.</italic><bold>21</bold>, 467. 10.1007/BF02650179 (1982).</mixed-citation></citation-alternatives></ref><ref id="CR2"><label>2.</label><citation-alternatives><element-citation id="ec-CR2" publication-type="journal"><person-group person-group-type="author"><name><surname>Brooke</surname><given-names>J</given-names></name><name><surname>Bitko</surname><given-names>D</given-names></name><name><surname>Rosenbaum</surname><given-names>TF</given-names></name><name><surname>Aeppli</surname><given-names>G</given-names></name></person-group><article-title>Quantum annealing of a disordered magnet</article-title><source>Science</source><year>1999</year><volume>284</volume><fpage>779</fpage><pub-id pub-id-type="doi">10.1126/science.284.5415.779</pub-id><pub-id pub-id-type="pmid">10221904</pub-id>
+</element-citation><mixed-citation id="mc-CR2" publication-type="journal">Brooke, J., Bitko, D., Rosenbaum, T. F. &#x00026; Aeppli, G. Quantum annealing of a disordered magnet. <italic>Science</italic><bold>284</bold>, 779. 10.1126/science.284.5415.779 (1999).<pub-id pub-id-type="pmid">10221904</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR3"><label>3.</label><citation-alternatives><element-citation id="ec-CR3" publication-type="journal"><person-group person-group-type="author"><name><surname>Johnson</surname><given-names>MW</given-names></name><name><surname>Amin</surname><given-names>MHS</given-names></name><name><surname>Gildert</surname><given-names>S</given-names></name><name><surname>Lanting</surname><given-names>T</given-names></name><name><surname>Hamze</surname><given-names>F</given-names></name><name><surname>Dickson</surname><given-names>N</given-names></name><name><surname>Harris</surname><given-names>R</given-names></name><name><surname>Berkley</surname><given-names>AJ</given-names></name><name><surname>Johansson</surname><given-names>J</given-names></name><name><surname>Bunyk</surname><given-names>P</given-names></name><name><surname>Chapple</surname><given-names>EM</given-names></name><name><surname>Enderud</surname><given-names>C</given-names></name><name><surname>Hilton</surname><given-names>JP</given-names></name><name><surname>Karimi</surname><given-names>K</given-names></name><name><surname>Ladizinsky</surname><given-names>E</given-names></name><name><surname>Ladizinsky</surname><given-names>N</given-names></name><name><surname>Oh</surname><given-names>T</given-names></name><name><surname>Perminov</surname><given-names>I</given-names></name><name><surname>Rich</surname><given-names>C</given-names></name><name><surname>Thom</surname><given-names>MC</given-names></name><name><surname>Tolkacheva</surname><given-names>E</given-names></name><name><surname>Truncik</surname><given-names>CJS</given-names></name><name><surname>Uchaikin</surname><given-names>S</given-names></name><name><surname>Wang</surname><given-names>J</given-names></name><name><surname>Wilson</surname><given-names>B</given-names></name><name><surname>Rose</surname><given-names>G</given-names></name></person-group><article-title>Quantum annealing with manufactured spins</article-title><source>Nature</source><year>2011</year><volume>473</volume><fpage>194</fpage><pub-id pub-id-type="doi">10.1038/nature10012</pub-id><pub-id pub-id-type="pmid">21562559</pub-id>
+</element-citation><mixed-citation id="mc-CR3" publication-type="journal">Johnson, M. W. et al. Quantum annealing with manufactured spins. <italic>Nature</italic><bold>473</bold>, 194. 10.1038/nature10012 (2011).<pub-id pub-id-type="pmid">21562559</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR4"><label>4.</label><citation-alternatives><element-citation id="ec-CR4" publication-type="journal"><person-group person-group-type="author"><name><surname>Dickson</surname><given-names>NG</given-names></name><name><surname>Johnson</surname><given-names>MW</given-names></name><name><surname>Amin</surname><given-names>MH</given-names></name><name><surname>Harris</surname><given-names>R</given-names></name><name><surname>Altomare</surname><given-names>F</given-names></name><name><surname>Berkley</surname><given-names>AJ</given-names></name><name><surname>Bunyk</surname><given-names>P</given-names></name><name><surname>Cai</surname><given-names>J</given-names></name><name><surname>Chapple</surname><given-names>EM</given-names></name><name><surname>Chavez</surname><given-names>P</given-names></name><name><surname>Cioata</surname><given-names>F</given-names></name><name><surname>Cirip</surname><given-names>T</given-names></name><name><surname>Debuen</surname><given-names>P</given-names></name><name><surname>Drew-Brook</surname><given-names>M</given-names></name><name><surname>Enderud</surname><given-names>C</given-names></name><name><surname>Gildert</surname><given-names>S</given-names></name><name><surname>Hamze</surname><given-names>F</given-names></name><name><surname>Hilton</surname><given-names>JP</given-names></name><name><surname>Hoskinson</surname><given-names>E</given-names></name><name><surname>Karimi</surname><given-names>K</given-names></name><name><surname>Ladizinsky</surname><given-names>E</given-names></name><name><surname>Ladizinsky</surname><given-names>N</given-names></name><name><surname>Lanting</surname><given-names>T</given-names></name><name><surname>Mahon</surname><given-names>T</given-names></name><name><surname>Neufeld</surname><given-names>R</given-names></name><name><surname>Oh</surname><given-names>T</given-names></name><name><surname>Perminov</surname><given-names>I</given-names></name><name><surname>Petroff</surname><given-names>C</given-names></name><name><surname>Przybysz</surname><given-names>A</given-names></name><name><surname>Rich</surname><given-names>C</given-names></name><name><surname>Spear</surname><given-names>P</given-names></name><name><surname>Tcaciuc</surname><given-names>A</given-names></name><name><surname>Thom</surname><given-names>MC</given-names></name><name><surname>Tolkacheva</surname><given-names>E</given-names></name><name><surname>Uchaikin</surname><given-names>S</given-names></name><name><surname>Wang</surname><given-names>J</given-names></name><name><surname>Wilson</surname><given-names>AB</given-names></name><name><surname>Merali</surname><given-names>Z</given-names></name><name><surname>Rose</surname><given-names>G</given-names></name></person-group><article-title>Thermally assisted quantum annealing of a 16-qubit problem</article-title><source>Nat. Commun.</source><year>2013</year><volume>4</volume><fpage>1903</fpage><pub-id pub-id-type="doi">10.1038/ncomms2920</pub-id><pub-id pub-id-type="pmid">23695697</pub-id>
+</element-citation><mixed-citation id="mc-CR4" publication-type="journal">Dickson, N. G. et al. Thermally assisted quantum annealing of a 16-qubit problem. <italic>Nat. Commun.</italic><bold>4</bold>, 1903. 10.1038/ncomms2920 (2013).<pub-id pub-id-type="pmid">23695697</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR5"><label>5.</label><citation-alternatives><element-citation id="ec-CR5" publication-type="journal"><person-group person-group-type="author"><name><surname>King</surname><given-names>AD</given-names></name><name><surname>Carrasquilla</surname><given-names>J</given-names></name><name><surname>Raymond</surname><given-names>J</given-names></name><name><surname>Ozfidan</surname><given-names>I</given-names></name><name><surname>Andriyash</surname><given-names>E</given-names></name><name><surname>Berkley</surname><given-names>A</given-names></name><name><surname>Reis</surname><given-names>M</given-names></name><name><surname>Lanting</surname><given-names>T</given-names></name><name><surname>Harris</surname><given-names>R</given-names></name><name><surname>Altomare</surname><given-names>F</given-names></name><name><surname>Boothby</surname><given-names>K</given-names></name><name><surname>Bunyk</surname><given-names>PI</given-names></name><name><surname>Enderud</surname><given-names>C</given-names></name><name><surname>Fr&#x000e9;chette</surname><given-names>A</given-names></name><name><surname>Hoskinson</surname><given-names>E</given-names></name><name><surname>Ladizinsky</surname><given-names>N</given-names></name><name><surname>Oh</surname><given-names>T</given-names></name><name><surname>Poulin-Lamarre</surname><given-names>G</given-names></name><name><surname>Rich</surname><given-names>C</given-names></name><name><surname>Sato</surname><given-names>Y</given-names></name><name><surname>Smirnov</surname><given-names>AY</given-names></name><name><surname>Swenson</surname><given-names>LJ</given-names></name><name><surname>Volkmann</surname><given-names>MH</given-names></name><name><surname>Whittaker</surname><given-names>J</given-names></name><name><surname>Yao</surname><given-names>J</given-names></name><name><surname>Ladizinsky</surname><given-names>E</given-names></name><name><surname>Johnson</surname><given-names>MW</given-names></name><name><surname>Hilton</surname><given-names>J</given-names></name><name><surname>Amin</surname><given-names>MH</given-names></name></person-group><article-title>Observation of topological phenomena in a programmable lattice of 1,800 qubits</article-title><source>Nature</source><year>2018</year><volume>560</volume><fpage>456</fpage><pub-id pub-id-type="doi">10.1038/s41586-018-0410-x</pub-id><pub-id pub-id-type="pmid">30135527</pub-id>
+</element-citation><mixed-citation id="mc-CR5" publication-type="journal">King, A. D. et al. Observation of topological phenomena in a programmable lattice of 1,800 qubits. <italic>Nature</italic><bold>560</bold>, 456. 10.1038/s41586-018-0410-x (2018).<pub-id pub-id-type="pmid">30135527</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR6"><label>6.</label><citation-alternatives><element-citation id="ec-CR6" publication-type="journal"><person-group person-group-type="author"><name><surname>King</surname><given-names>AD</given-names></name><name><surname>Suzuki</surname><given-names>S</given-names></name><name><surname>Raymond</surname><given-names>J</given-names></name><name><surname>Zucca</surname><given-names>A</given-names></name><name><surname>Lanting</surname><given-names>T</given-names></name><name><surname>Altomare</surname><given-names>F</given-names></name><name><surname>Berkley</surname><given-names>AJ</given-names></name><name><surname>Ejtemaee</surname><given-names>S</given-names></name><name><surname>Hoskinson</surname><given-names>E</given-names></name><name><surname>Huang</surname><given-names>S</given-names></name><name><surname>Ladizinsky</surname><given-names>E</given-names></name><name><surname>MacDonald</surname><given-names>AJR</given-names></name><name><surname>Marsden</surname><given-names>G</given-names></name><name><surname>Oh</surname><given-names>T</given-names></name><name><surname>Poulin-Lamarre</surname><given-names>G</given-names></name><name><surname>Reis</surname><given-names>M</given-names></name><name><surname>Rich</surname><given-names>C</given-names></name><name><surname>Sato</surname><given-names>Y</given-names></name><name><surname>Whittaker</surname><given-names>JD</given-names></name><name><surname>Yao</surname><given-names>J</given-names></name><name><surname>Harris</surname><given-names>R</given-names></name><name><surname>Lidar</surname><given-names>DA</given-names></name><name><surname>Nishimori</surname><given-names>H</given-names></name><name><surname>Amin</surname><given-names>MH</given-names></name></person-group><article-title>Coherent quantum annealing in a programmable 2,000 qubit Ising chain</article-title><source>Nat. Phys.</source><year>2022</year><volume>18</volume><fpage>1324</fpage><pub-id pub-id-type="doi">10.1038/s41567-022-01741-6</pub-id></element-citation><mixed-citation id="mc-CR6" publication-type="journal">King, A. D. et al. Coherent quantum annealing in a programmable 2,000 qubit Ising chain. <italic>Nat. Phys.</italic><bold>18</bold>, 1324. 10.1038/s41567-022-01741-6 (2022).</mixed-citation></citation-alternatives></ref><ref id="CR7"><label>7.</label><citation-alternatives><element-citation id="ec-CR7" publication-type="journal"><person-group person-group-type="author"><name><surname>Mohseni</surname><given-names>N</given-names></name><name><surname>McMahon</surname><given-names>PL</given-names></name><name><surname>Byrnes</surname><given-names>T</given-names></name></person-group><article-title>Ising machines as hardware solvers of combinatorial optimization problems</article-title><source>Nat. Rev. Phys.</source><year>2022</year><volume>4</volume><fpage>363</fpage><pub-id pub-id-type="doi">10.1038/s42254-022-00440-8</pub-id></element-citation><mixed-citation id="mc-CR7" publication-type="journal">Mohseni, N., McMahon, P. L. &#x00026; Byrnes, T. Ising machines as hardware solvers of combinatorial optimization problems. <italic>Nat. Rev. Phys.</italic><bold>4</bold>, 363. 10.1038/s42254-022-00440-8 (2022).</mixed-citation></citation-alternatives></ref><ref id="CR8"><label>8.</label><mixed-citation publication-type="other">King, A.&#x000a0;D., Raymond, J., Lanting, T., Harris, R., Zucca, A., Altomare, F., et al. Quantum critical dynamics in a 5000-qubit programmable spin glass. <italic>Nature</italic> (2023). 10.1038/s41586-023-05867-2. <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/2207.13800">arXiv:2207.13800</ext-link> [cond-mat, physics:quant-ph]</mixed-citation></ref><ref id="CR9"><label>9.</label><citation-alternatives><element-citation id="ec-CR9" publication-type="journal"><person-group person-group-type="author"><name><surname>Perdomo-Ortiz</surname><given-names>A</given-names></name><name><surname>Dickson</surname><given-names>N</given-names></name><name><surname>Drew-Brook</surname><given-names>M</given-names></name><name><surname>Rose</surname><given-names>G</given-names></name><name><surname>Aspuru-Guzik</surname><given-names>A</given-names></name></person-group><article-title>Finding low-energy conformations of lattice protein models by quantum annealing</article-title><source>Sci. Rep.</source><year>2012</year><volume>2</volume><fpage>571</fpage><pub-id pub-id-type="doi">10.1038/srep00571</pub-id><pub-id pub-id-type="pmid">22891157</pub-id>
+</element-citation><mixed-citation id="mc-CR9" publication-type="journal">Perdomo-Ortiz, A., Dickson, N., Drew-Brook, M., Rose, G. &#x00026; Aspuru-Guzik, A. Finding low-energy conformations of lattice protein models by quantum annealing. <italic>Sci. Rep.</italic><bold>2</bold>, 571. 10.1038/srep00571 (2012).<pub-id pub-id-type="pmid">22891157</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR10"><label>10.</label><citation-alternatives><element-citation id="ec-CR10" publication-type="journal"><person-group person-group-type="author"><name><surname>Harris</surname><given-names>R</given-names></name><name><surname>Sato</surname><given-names>Y</given-names></name><name><surname>Berkley</surname><given-names>AJ</given-names></name><name><surname>Reis</surname><given-names>M</given-names></name><name><surname>Altomare</surname><given-names>F</given-names></name><name><surname>Amin</surname><given-names>MH</given-names></name><name><surname>Boothby</surname><given-names>K</given-names></name><name><surname>Bunyk</surname><given-names>P</given-names></name><name><surname>Deng</surname><given-names>C</given-names></name><name><surname>Enderud</surname><given-names>C</given-names></name><name><surname>Huang</surname><given-names>S</given-names></name><name><surname>Hoskinson</surname><given-names>E</given-names></name><name><surname>Johnson</surname><given-names>MW</given-names></name><name><surname>Ladizinsky</surname><given-names>E</given-names></name><name><surname>Ladizinsky</surname><given-names>N</given-names></name><name><surname>Lanting</surname><given-names>T</given-names></name><name><surname>Li</surname><given-names>R</given-names></name><name><surname>Medina</surname><given-names>T</given-names></name><name><surname>Molavi</surname><given-names>R</given-names></name><name><surname>Neufeld</surname><given-names>R</given-names></name><name><surname>Oh</surname><given-names>T</given-names></name><name><surname>Pavlov</surname><given-names>I</given-names></name><name><surname>Perminov</surname><given-names>I</given-names></name><name><surname>Poulin-Lamarre</surname><given-names>G</given-names></name><name><surname>Rich</surname><given-names>C</given-names></name><name><surname>Smirnov</surname><given-names>A</given-names></name><name><surname>Swenson</surname><given-names>L</given-names></name><name><surname>Tsai</surname><given-names>N</given-names></name><name><surname>Volkmann</surname><given-names>M</given-names></name><name><surname>Whittaker</surname><given-names>J</given-names></name><name><surname>Yao</surname><given-names>J</given-names></name></person-group><article-title>Phase transitions in a programmable quantum spin glass simulator</article-title><source>Science</source><year>2018</year><volume>361</volume><fpage>162</fpage><pub-id pub-id-type="doi">10.1126/science.aat2025</pub-id><pub-id pub-id-type="pmid">30002250</pub-id>
+</element-citation><mixed-citation id="mc-CR10" publication-type="journal">Harris, R. et al. Phase transitions in a programmable quantum spin glass simulator. <italic>Science</italic><bold>361</bold>, 162. 10.1126/science.aat2025 (2018).<pub-id pub-id-type="pmid">30002250</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR11"><label>11.</label><citation-alternatives><element-citation id="ec-CR11" publication-type="journal"><person-group person-group-type="author"><name><surname>Mott</surname><given-names>A</given-names></name><name><surname>Job</surname><given-names>J</given-names></name><name><surname>Vlimant</surname><given-names>J-R</given-names></name><name><surname>Lidar</surname><given-names>D</given-names></name><name><surname>Spiropulu</surname><given-names>M</given-names></name></person-group><article-title>Solving a Higgs optimization problem with quantum annealing for machine learning</article-title><source>Nature</source><year>2017</year><volume>550</volume><fpage>375</fpage><pub-id pub-id-type="doi">10.1038/nature24047</pub-id><pub-id pub-id-type="pmid">29052620</pub-id>
+</element-citation><mixed-citation id="mc-CR11" publication-type="journal">Mott, A., Job, J., Vlimant, J.-R., Lidar, D. &#x00026; Spiropulu, M. Solving a Higgs optimization problem with quantum annealing for machine learning. <italic>Nature</italic><bold>550</bold>, 375. 10.1038/nature24047 (2017).<pub-id pub-id-type="pmid">29052620</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR12"><label>12.</label><citation-alternatives><element-citation id="ec-CR12" publication-type="journal"><person-group person-group-type="author"><name><surname>King</surname><given-names>AD</given-names></name><name><surname>Batista</surname><given-names>CD</given-names></name><name><surname>Raymond</surname><given-names>J</given-names></name><name><surname>Lanting</surname><given-names>T</given-names></name><name><surname>Ozfidan</surname><given-names>I</given-names></name><name><surname>Poulin-Lamarre</surname><given-names>G</given-names></name><name><surname>Zhang</surname><given-names>H</given-names></name><name><surname>Amin</surname><given-names>MH</given-names></name></person-group><article-title>Quantum Annealing Simulation of Out-of-Equilibrium Magnetization in a Spin-Chain Compound</article-title><source>PRX Quantum</source><year>2021</year><volume>2</volume><fpage>030317</fpage><pub-id pub-id-type="doi">10.1103/PRXQuantum.2.030317</pub-id></element-citation><mixed-citation id="mc-CR12" publication-type="journal">King, A. D. et al. Quantum Annealing Simulation of Out-of-Equilibrium Magnetization in a Spin-Chain Compound. <italic>PRX Quantum</italic><bold>2</bold>, 030317. 10.1103/PRXQuantum.2.030317 (2021).</mixed-citation></citation-alternatives></ref><ref id="CR13"><label>13.</label><citation-alternatives><element-citation id="ec-CR13" publication-type="journal"><person-group person-group-type="author"><name><surname>AbelM</surname><given-names>S</given-names></name></person-group><article-title>Spannowsky, Quantum-Field-Theoretic Simulation Platform for Observing the Fate of the False Vacuum, PRX</article-title><source>Quantum</source><year>2021</year><volume>2</volume><fpage>010349</fpage><pub-id pub-id-type="doi">10.1103/PRXQuantum.2.010349</pub-id></element-citation><mixed-citation id="mc-CR13" publication-type="journal">AbelM, S. Spannowsky, Quantum-Field-Theoretic Simulation Platform for Observing the Fate of the False Vacuum, PRX. <italic>Quantum</italic><bold>2</bold>, 010349. 10.1103/PRXQuantum.2.010349 (2021).</mixed-citation></citation-alternatives></ref><ref id="CR14"><label>14.</label><citation-alternatives><element-citation id="ec-CR14" publication-type="journal"><person-group person-group-type="author"><name><surname>Barahona</surname><given-names>F</given-names></name></person-group><article-title>On the computational complexity of Ising spin glass models</article-title><source>J. Phys. A: Math. Gen.</source><year>1982</year><volume>15</volume><fpage>3241</fpage><pub-id pub-id-type="doi">10.1088/0305-4470/15/10/028</pub-id></element-citation><mixed-citation id="mc-CR14" publication-type="journal">Barahona, F. On the computational complexity of Ising spin glass models. <italic>J. Phys. A: Math. Gen.</italic><bold>15</bold>, 3241. 10.1088/0305-4470/15/10/028 (1982).</mixed-citation></citation-alternatives></ref><ref id="CR15"><label>15.</label><citation-alternatives><element-citation id="ec-CR15" publication-type="journal"><person-group person-group-type="author"><name><surname>Farhi</surname><given-names>E</given-names></name><name><surname>Goldstone</surname><given-names>J</given-names></name><name><surname>Gutmann</surname><given-names>S</given-names></name><name><surname>Lapan</surname><given-names>J</given-names></name><name><surname>Lundgren</surname><given-names>A</given-names></name><name><surname>Preda</surname><given-names>D</given-names></name></person-group><article-title>A Quantum Adiabatic Evolution Algorithm Applied to Random Instances of an NP-Complete Problem</article-title><source>Science</source><year>2001</year><volume>292</volume><fpage>472</fpage><pub-id pub-id-type="doi">10.1126/science.1057726</pub-id><pub-id pub-id-type="pmid">11313487</pub-id>
+</element-citation><mixed-citation id="mc-CR15" publication-type="journal">Farhi, E. et al. A Quantum Adiabatic Evolution Algorithm Applied to Random Instances of an NP-Complete Problem. <italic>Science</italic><bold>292</bold>, 472. 10.1126/science.1057726 (2001).<pub-id pub-id-type="pmid">11313487</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR16"><label>16.</label><citation-alternatives><element-citation id="ec-CR16" publication-type="journal"><person-group person-group-type="author"><name><surname>Battaglia</surname><given-names>DA</given-names></name><name><surname>Santoro</surname><given-names>GE</given-names></name><name><surname>Tosatti</surname><given-names>E</given-names></name></person-group><article-title>Optimization by quantum annealing: Lessons from hard satisfiability problems</article-title><source>Phys. Rev. E</source><year>2005</year><volume>71</volume><fpage>066707</fpage><pub-id pub-id-type="doi">10.1103/PhysRevE.71.066707</pub-id></element-citation><mixed-citation id="mc-CR16" publication-type="journal">Battaglia, D. A., Santoro, G. E. &#x00026; Tosatti, E. Optimization by quantum annealing: Lessons from hard satisfiability problems. <italic>Phys. Rev. E</italic><bold>71</bold>, 066707. 10.1103/PhysRevE.71.066707 (2005).</mixed-citation></citation-alternatives></ref><ref id="CR17"><label>17.</label><mixed-citation publication-type="other">Lucas, A. Ising formulations of many NP problems. Front. Phys. <bold>2</bold> (2014)</mixed-citation></ref><ref id="CR18"><label>18.</label><citation-alternatives><element-citation id="ec-CR18" publication-type="journal"><person-group person-group-type="author"><name><surname>Kirkpatrick</surname><given-names>S</given-names></name><name><surname>Gelatt</surname><given-names>CD</given-names></name><name><surname>Vecchi</surname><given-names>MP</given-names></name></person-group><article-title>Optimization by Simulated Annealing</article-title><source>Science</source><year>1983</year><volume>220</volume><fpage>671</fpage><pub-id pub-id-type="doi">10.1126/science.220.4598.671</pub-id><pub-id pub-id-type="pmid">17813860</pub-id>
+</element-citation><mixed-citation id="mc-CR18" publication-type="journal">Kirkpatrick, S., Gelatt, C. D. &#x00026; Vecchi, M. P. Optimization by Simulated Annealing. <italic>Science</italic><bold>220</bold>, 671. 10.1126/science.220.4598.671 (1983).<pub-id pub-id-type="pmid">17813860</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR19"><label>19.</label><citation-alternatives><element-citation id="ec-CR19" publication-type="journal"><person-group person-group-type="author"><name><surname>Finnila</surname><given-names>AB</given-names></name><name><surname>Gomez</surname><given-names>MA</given-names></name><name><surname>Sebenik</surname><given-names>C</given-names></name><name><surname>Stenson</surname><given-names>C</given-names></name><name><surname>Doll</surname><given-names>JD</given-names></name></person-group><article-title>Quantum annealing: A new method for minimizing multidimensional functions</article-title><source>Chem. Phys. Lett.</source><year>1994</year><volume>219</volume><fpage>343</fpage><pub-id pub-id-type="doi">10.1016/0009-2614(94)00117-0</pub-id></element-citation><mixed-citation id="mc-CR19" publication-type="journal">Finnila, A. B., Gomez, M. A., Sebenik, C., Stenson, C. &#x00026; Doll, J. D. Quantum annealing: A new method for minimizing multidimensional functions. <italic>Chem. Phys. Lett.</italic><bold>219</bold>, 343. 10.1016/0009-2614(94)00117-0 (1994).</mixed-citation></citation-alternatives></ref><ref id="CR20"><label>20.</label><citation-alternatives><element-citation id="ec-CR20" publication-type="journal"><person-group person-group-type="author"><name><surname>Kadowaki</surname><given-names>T</given-names></name><name><surname>Nishimori</surname><given-names>H</given-names></name></person-group><article-title>Quantum annealing in the transverse Ising model</article-title><source>Phys. Rev. E</source><year>1998</year><volume>58</volume><fpage>5355</fpage><pub-id pub-id-type="doi">10.1103/PhysRevE.58.5355</pub-id></element-citation><mixed-citation id="mc-CR20" publication-type="journal">Kadowaki, T. &#x00026; Nishimori, H. Quantum annealing in the transverse Ising model. <italic>Phys. Rev. E</italic><bold>58</bold>, 5355. 10.1103/PhysRevE.58.5355 (1998).</mixed-citation></citation-alternatives></ref><ref id="CR21"><label>21.</label><citation-alternatives><element-citation id="ec-CR21" publication-type="journal"><person-group person-group-type="author"><name><surname>Santoro</surname><given-names>GE</given-names></name><name><surname>Marto&#x00148;&#x000e1;k</surname><given-names>R</given-names></name><name><surname>Tosatti</surname><given-names>E</given-names></name><name><surname>Car</surname><given-names>R</given-names></name></person-group><article-title>Theory of Quantum Annealing of an Ising Spin Glass</article-title><source>Science</source><year>2002</year><volume>295</volume><fpage>2427</fpage><pub-id pub-id-type="doi">10.1126/science.1068774</pub-id><pub-id pub-id-type="pmid">11923532</pub-id>
+</element-citation><mixed-citation id="mc-CR21" publication-type="journal">Santoro, G. E., Marto&#x00148;&#x000e1;k, R., Tosatti, E. &#x00026; Car, R. Theory of Quantum Annealing of an Ising Spin Glass. <italic>Science</italic><bold>295</bold>, 2427. 10.1126/science.1068774 (2002).<pub-id pub-id-type="pmid">11923532</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR22"><label>22.</label><citation-alternatives><element-citation id="ec-CR22" publication-type="journal"><person-group person-group-type="author"><name><surname>Das</surname><given-names>A</given-names></name><name><surname>Chakrabarti</surname><given-names>BK</given-names></name></person-group><article-title>Colloquium: Quantum annealing and analog quantum computation</article-title><source>Rev. Mod. Phys.</source><year>2008</year><volume>80</volume><fpage>1061</fpage><pub-id pub-id-type="doi">10.1103/RevModPhys.80.1061</pub-id></element-citation><mixed-citation id="mc-CR22" publication-type="journal">Das, A. &#x00026; Chakrabarti, B. K. Colloquium: Quantum annealing and analog quantum computation. <italic>Rev. Mod. Phys.</italic><bold>80</bold>, 1061. 10.1103/RevModPhys.80.1061 (2008).</mixed-citation></citation-alternatives></ref><ref id="CR23"><label>23.</label><citation-alternatives><element-citation id="ec-CR23" publication-type="journal"><person-group person-group-type="author"><name><surname>Morita</surname><given-names>S</given-names></name><name><surname>Nishimori</surname><given-names>H</given-names></name></person-group><article-title>Mathematical foundation of quantum annealing</article-title><source>J. Math. Phys.</source><year>2008</year><volume>49</volume><fpage>125210</fpage><pub-id pub-id-type="doi">10.1063/1.2995837</pub-id></element-citation><mixed-citation id="mc-CR23" publication-type="journal">Morita, S. &#x00026; Nishimori, H. Mathematical foundation of quantum annealing. <italic>J. Math. Phys.</italic><bold>49</bold>, 125210. 10.1063/1.2995837 (2008).</mixed-citation></citation-alternatives></ref><ref id="CR24"><label>24.</label><citation-alternatives><element-citation id="ec-CR24" publication-type="journal"><person-group person-group-type="author"><name><surname>Young</surname><given-names>AP</given-names></name><name><surname>Knysh</surname><given-names>S</given-names></name><name><surname>Smelyanskiy</surname><given-names>VN</given-names></name></person-group><article-title>First-Order Phase Transition in the Quantum Adiabatic Algorithm</article-title><source>Phys. Rev. Lett.</source><year>2010</year><volume>104</volume><fpage>020502</fpage><pub-id pub-id-type="doi">10.1103/PhysRevLett.104.020502</pub-id><pub-id pub-id-type="pmid">20366577</pub-id>
+</element-citation><mixed-citation id="mc-CR24" publication-type="journal">Young, A. P., Knysh, S. &#x00026; Smelyanskiy, V. N. First-Order Phase Transition in the Quantum Adiabatic Algorithm. <italic>Phys. Rev. Lett.</italic><bold>104</bold>, 020502. 10.1103/PhysRevLett.104.020502 (2010).<pub-id pub-id-type="pmid">20366577</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR25"><label>25.</label><citation-alternatives><element-citation id="ec-CR25" publication-type="journal"><person-group person-group-type="author"><name><surname>Albash</surname><given-names>T</given-names></name><name><surname>Lidar</surname><given-names>DA</given-names></name></person-group><article-title>Adiabatic quantum computation</article-title><source>Rev. Mod. Phys.</source><year>2018</year><volume>90</volume><fpage>015002</fpage><pub-id pub-id-type="doi">10.1103/RevModPhys.90.015002</pub-id></element-citation><mixed-citation id="mc-CR25" publication-type="journal">Albash, T. &#x00026; Lidar, D. A. Adiabatic quantum computation. <italic>Rev. Mod. Phys.</italic><bold>90</bold>, 015002. 10.1103/RevModPhys.90.015002 (2018).</mixed-citation></citation-alternatives></ref><ref id="CR26"><label>26.</label><citation-alternatives><element-citation id="ec-CR26" publication-type="journal"><person-group person-group-type="author"><name><surname>Ohkuwa</surname><given-names>M</given-names></name><name><surname>Nishimori</surname><given-names>H</given-names></name><name><surname>Lidar</surname><given-names>DA</given-names></name></person-group><article-title>Reverse annealing for the fully connected $p$-spin model</article-title><source>Phys. Rev. A</source><year>2018</year><volume>98</volume><fpage>022314</fpage><pub-id pub-id-type="doi">10.1103/PhysRevA.98.022314</pub-id></element-citation><mixed-citation id="mc-CR26" publication-type="journal">Ohkuwa, M., Nishimori, H. &#x00026; Lidar, D. A. Reverse annealing for the fully connected \$p\$-spin model. <italic>Phys. Rev. A</italic><bold>98</bold>, 022314. 10.1103/PhysRevA.98.022314 (2018).</mixed-citation></citation-alternatives></ref><ref id="CR27"><label>27.</label><citation-alternatives><element-citation id="ec-CR27" publication-type="journal"><person-group person-group-type="author"><name><surname>Yamashiro</surname><given-names>Y</given-names></name><name><surname>Ohkuwa</surname><given-names>M</given-names></name><name><surname>Nishimori</surname><given-names>H</given-names></name><name><surname>Lidar</surname><given-names>DA</given-names></name></person-group><article-title>Dynamics of reverse annealing for the fully connected $p$-spin model</article-title><source>Phys. Rev. A</source><year>2019</year><volume>100</volume><fpage>052321</fpage><pub-id pub-id-type="doi">10.1103/PhysRevA.100.052321</pub-id></element-citation><mixed-citation id="mc-CR27" publication-type="journal">Yamashiro, Y., Ohkuwa, M., Nishimori, H. &#x00026; Lidar, D. A. Dynamics of reverse annealing for the fully connected \$p\$-spin model. <italic>Phys. Rev. A</italic><bold>100</bold>, 052321. 10.1103/PhysRevA.100.052321 (2019).</mixed-citation></citation-alternatives></ref><ref id="CR28"><label>28.</label><mixed-citation publication-type="other">Chancellor, N., &#x00026; Kendon,V. Experimental test of search range in quantum annealing. <italic>Phys. Rev. A</italic><bold>104</bold>, 012604. 10.1103/PhysRevA.104.012604.</mixed-citation></ref><ref id="CR29"><label>29.</label><citation-alternatives><element-citation id="ec-CR29" publication-type="journal"><person-group person-group-type="author"><name><surname>Hauke</surname><given-names>P</given-names></name><name><surname>Katzgraber</surname><given-names>HG</given-names></name><name><surname>Lechner</surname><given-names>W</given-names></name><name><surname>Nishimori</surname><given-names>H</given-names></name><name><surname>Oliver</surname><given-names>WD</given-names></name></person-group><article-title>Perspectives of quantum annealing: Methods and implementations</article-title><source>Rep. Prog. Phys.</source><year>2020</year><volume>83</volume><fpage>054401</fpage><pub-id pub-id-type="doi">10.1088/1361-6633/ab85b8</pub-id><pub-id pub-id-type="pmid">32235066</pub-id>
+</element-citation><mixed-citation id="mc-CR29" publication-type="journal">Hauke, P., Katzgraber, H. G., Lechner, W., Nishimori, H. &#x00026; Oliver, W. D. Perspectives of quantum annealing: Methods and implementations. <italic>Rep. Prog. Phys.</italic><bold>83</bold>, 054401. 10.1088/1361-6633/ab85b8 (2020).<pub-id pub-id-type="pmid">32235066</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR30"><label>30.</label><citation-alternatives><element-citation id="ec-CR30" publication-type="journal"><person-group person-group-type="author"><name><surname>Passarelli</surname><given-names>G</given-names></name><name><surname>Yip</surname><given-names>K-W</given-names></name><name><surname>Lidar</surname><given-names>DA</given-names></name><name><surname>Nishimori</surname><given-names>H</given-names></name><name><surname>Lucignano</surname><given-names>P</given-names></name></person-group><article-title>Reverse quantum annealing of the $p$-spin model with relaxation</article-title><source>Phys. Rev. A</source><year>2020</year><volume>101</volume><fpage>022331</fpage><pub-id pub-id-type="doi">10.1103/PhysRevA.101.022331</pub-id></element-citation><mixed-citation id="mc-CR30" publication-type="journal">Passarelli, G., Yip, K.-W., Lidar, D. A., Nishimori, H. &#x00026; Lucignano, P. Reverse quantum annealing of the \$p\$-spin model with relaxation. <italic>Phys. Rev. A</italic><bold>101</bold>, 022331. 10.1103/PhysRevA.101.022331 (2020).</mixed-citation></citation-alternatives></ref><ref id="CR31"><label>31.</label><mixed-citation publication-type="other">Rajak, A.,&#x000a0;Suzuki, S.,&#x000a0;Dutta,A., &#x00026; Chakrabarti,B.&#x000a0;K. Quantum annealing: An overview. <italic>Philos. Trans. R. Soc. A Math. Phys. Eng. Sci.</italic><bold>381</bold>, 20210417 (2023). 10.1098/rsta.2021.0417. <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/2207.01827">arxiv:2207.01827</ext-link> [cond-mat, physics:quant-ph]</mixed-citation></ref><ref id="CR32"><label>32.</label><citation-alternatives><element-citation id="ec-CR32" publication-type="journal"><person-group person-group-type="author"><name><surname>Santoro</surname><given-names>GE</given-names></name><name><surname>Tosatti</surname><given-names>E</given-names></name></person-group><article-title>TOPICAL REVIEW: Optimization using quantum mechanics: Quantum annealing through adiabatic evolution</article-title><source>J. Phys. A Math. Gen.</source><year>2006</year><volume>39</volume><fpage>R393</fpage><pub-id pub-id-type="doi">10.1088/0305-4470/39/36/R01</pub-id></element-citation><mixed-citation id="mc-CR32" publication-type="journal">Santoro, G. E. &#x00026; Tosatti, E. TOPICAL REVIEW: Optimization using quantum mechanics: Quantum annealing through adiabatic evolution. <italic>J. Phys. A Math. Gen.</italic><bold>39</bold>, R393. 10.1088/0305-4470/39/36/R01 (2006).</mixed-citation></citation-alternatives></ref><ref id="CR33"><label>33.</label><citation-alternatives><element-citation id="ec-CR33" publication-type="journal"><person-group person-group-type="author"><name><surname>Edwards</surname><given-names>SF</given-names></name><name><surname>Anderson</surname><given-names>PW</given-names></name></person-group><article-title>Theory of spin glasses</article-title><source>J. Phys. F Metal Phys.</source><year>1975</year><volume>5</volume><fpage>965</fpage><pub-id pub-id-type="doi">10.1088/0305-4608/5/5/017</pub-id></element-citation><mixed-citation id="mc-CR33" publication-type="journal">Edwards, S. F. &#x00026; Anderson, P. W. Theory of spin glasses. <italic>J. Phys. F Metal Phys.</italic><bold>5</bold>, 965. 10.1088/0305-4608/5/5/017 (1975).</mixed-citation></citation-alternatives></ref><ref id="CR34"><label>34.</label><citation-alternatives><element-citation id="ec-CR34" publication-type="journal"><person-group person-group-type="author"><name><surname>Binder</surname><given-names>K</given-names></name><name><surname>Young</surname><given-names>AP</given-names></name></person-group><article-title>Spin glasses: Experimental facts, theoretical concepts, and open questions</article-title><source>Rev. Mod. Phys.</source><year>1986</year><volume>58</volume><fpage>801</fpage><pub-id pub-id-type="doi">10.1103/RevModPhys.58.801</pub-id></element-citation><mixed-citation id="mc-CR34" publication-type="journal">Binder, K. &#x00026; Young, A. P. Spin glasses: Experimental facts, theoretical concepts, and open questions. <italic>Rev. Mod. Phys.</italic><bold>58</bold>, 801. 10.1103/RevModPhys.58.801 (1986).</mixed-citation></citation-alternatives></ref><ref id="CR35"><label>35.</label><citation-alternatives><element-citation id="ec-CR35" publication-type="journal"><person-group person-group-type="author"><name><surname>Crisanti</surname><given-names>A</given-names></name><name><surname>Leuzzi</surname><given-names>L</given-names></name><name><surname>Parisi</surname><given-names>G</given-names></name><name><surname>Rizzo</surname><given-names>T</given-names></name></person-group><article-title>Complexity in the Sherrington-Kirkpatrick model in the annealed approximation</article-title><source>Phys. Rev. B</source><year>2003</year><volume>68</volume><fpage>174401</fpage><pub-id pub-id-type="doi">10.1103/PhysRevB.68.174401</pub-id></element-citation><mixed-citation id="mc-CR35" publication-type="journal">Crisanti, A., Leuzzi, L., Parisi, G. &#x00026; Rizzo, T. Complexity in the Sherrington-Kirkpatrick model in the annealed approximation. <italic>Phys. Rev. B</italic><bold>68</bold>, 174401. 10.1103/PhysRevB.68.174401 (2003).</mixed-citation></citation-alternatives></ref><ref id="CR36"><label>36.</label><citation-alternatives><element-citation id="ec-CR36" publication-type="journal"><person-group person-group-type="author"><name><surname>Cavagna</surname><given-names>A</given-names></name><name><surname>Giardina</surname><given-names>I</given-names></name><name><surname>Parisi</surname><given-names>G</given-names></name></person-group><article-title>Numerical study of metastable states in Ising spin glasses</article-title><source>Phys. Rev. Lett.</source><year>2004</year><volume>92</volume><fpage>120603</fpage><pub-id pub-id-type="doi">10.1103/PhysRevLett.92.120603</pub-id><pub-id pub-id-type="pmid">15089660</pub-id>
+</element-citation><mixed-citation id="mc-CR36" publication-type="journal">Cavagna, A., Giardina, I. &#x00026; Parisi, G. Numerical study of metastable states in Ising spin glasses. <italic>Phys. Rev. Lett.</italic><bold>92</bold>, 120603. 10.1103/PhysRevLett.92.120603 (2004) <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/cond-mat/0312534">arxiv:cond-mat/0312534</ext-link>.<pub-id pub-id-type="pmid">15089660</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR37"><label>37.</label><citation-alternatives><element-citation id="ec-CR37" publication-type="journal"><person-group person-group-type="author"><name><surname>Mukherjee</surname><given-names>S</given-names></name><name><surname>Rajak</surname><given-names>A</given-names></name><name><surname>Chakrabarti</surname><given-names>BK</given-names></name></person-group><article-title>Possible ergodic-nonergodic regions in the quantum Sherrington-Kirkpatrick spin glass model and quantum annealing</article-title><source>Phys. Rev. E</source><year>2018</year><volume>97</volume><fpage>022146</fpage><pub-id pub-id-type="doi">10.1103/PhysRevE.97.022146</pub-id><pub-id pub-id-type="pmid">29548183</pub-id>
+</element-citation><mixed-citation id="mc-CR37" publication-type="journal">Mukherjee, S., Rajak, A. &#x00026; Chakrabarti, B. K. Possible ergodic-nonergodic regions in the quantum Sherrington-Kirkpatrick spin glass model and quantum annealing. <italic>Phys. Rev. E</italic><bold>97</bold>, 022146. 10.1103/PhysRevE.97.022146 (2018).<pub-id pub-id-type="pmid">29548183</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR38"><label>38.</label><mixed-citation publication-type="other">Zener, C., &#x00026; Fowler,R.&#x000a0;H. Non-adiabatic crossing of energy levels. <italic>Proc. R. Soc. Lond. Ser. A</italic><bold>137</bold>, 696 . 10.1098/rspa.1932.0165 (1932).</mixed-citation></ref><ref id="CR39"><label>39.</label><citation-alternatives><element-citation id="ec-CR39" publication-type="journal"><person-group person-group-type="author"><name><surname>Sinitsyn</surname><given-names>NA</given-names></name></person-group><article-title>Multiparticle Landau-Zener problem: Application to quantum dots</article-title><source>Phys. Rev. B</source><year>2002</year><volume>66</volume><fpage>205303</fpage><pub-id pub-id-type="doi">10.1103/PhysRevB.66.205303</pub-id></element-citation><mixed-citation id="mc-CR39" publication-type="journal">Sinitsyn, N. A. Multiparticle Landau-Zener problem: Application to quantum dots. <italic>Phys. Rev. B</italic><bold>66</bold>, 205303. 10.1103/PhysRevB.66.205303 (2002).</mixed-citation></citation-alternatives></ref><ref id="CR40"><label>40.</label><citation-alternatives><element-citation id="ec-CR40" publication-type="journal"><person-group person-group-type="author"><name><surname>Volkov</surname><given-names>MV</given-names></name><name><surname>Ostrovsky</surname><given-names>VN</given-names></name></person-group><article-title>Exact results for survival probability in the multistate Landau-Zener model</article-title><source>J. Phys. B: At. Mol. Opt. Phys.</source><year>2004</year><volume>37</volume><fpage>4069</fpage><pub-id pub-id-type="doi">10.1088/0953-4075/37/20/003</pub-id></element-citation><mixed-citation id="mc-CR40" publication-type="journal">Volkov, M. V. &#x00026; Ostrovsky, V. N. Exact results for survival probability in the multistate Landau-Zener model. <italic>J. Phys. B: At. Mol. Opt. Phys.</italic><bold>37</bold>, 4069. 10.1088/0953-4075/37/20/003 (2004).</mixed-citation></citation-alternatives></ref><ref id="CR41"><label>41.</label><citation-alternatives><element-citation id="ec-CR41" publication-type="journal"><person-group person-group-type="author"><name><surname>Damski</surname><given-names>B</given-names></name></person-group><article-title>The Simplest Quantum Model Supporting the Kibble-Zurek Mechanism of Topological Defect Production: Landau-Zener Transitions from a New Perspective</article-title><source>Phys. Rev. Lett.</source><year>2005</year><volume>95</volume><fpage>035701</fpage><pub-id pub-id-type="doi">10.1103/PhysRevLett.95.035701</pub-id><pub-id pub-id-type="pmid">16090756</pub-id>
+</element-citation><mixed-citation id="mc-CR41" publication-type="journal">Damski, B. The Simplest Quantum Model Supporting the Kibble-Zurek Mechanism of Topological Defect Production: Landau-Zener Transitions from a New Perspective. <italic>Phys. Rev. Lett.</italic><bold>95</bold>, 035701. 10.1103/PhysRevLett.95.035701 (2005).<pub-id pub-id-type="pmid">16090756</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR42"><label>42.</label><citation-alternatives><element-citation id="ec-CR42" publication-type="journal"><person-group person-group-type="author"><name><surname>Sinitsyn</surname><given-names>NA</given-names></name><name><surname>Li</surname><given-names>F</given-names></name></person-group><article-title>Solvable multistate model of Landau-Zener transitions in cavity QED</article-title><source>Phys. Rev. A</source><year>2016</year><volume>93</volume><fpage>063859</fpage><pub-id pub-id-type="doi">10.1103/PhysRevA.93.063859</pub-id></element-citation><mixed-citation id="mc-CR42" publication-type="journal">Sinitsyn, N. A. &#x00026; Li, F. Solvable multistate model of Landau-Zener transitions in cavity QED. <italic>Phys. Rev. A</italic><bold>93</bold>, 063859. 10.1103/PhysRevA.93.063859 (2016).</mixed-citation></citation-alternatives></ref><ref id="CR43"><label>43.</label><citation-alternatives><element-citation id="ec-CR43" publication-type="journal"><person-group person-group-type="author"><name><surname>Wang</surname><given-names>H</given-names></name><name><surname>Yeh</surname><given-names>H-C</given-names></name><name><surname>Kamenev</surname><given-names>A</given-names></name></person-group><article-title>Many-body localization enables iterative quantum optimization</article-title><source>Nat. Commun.</source><year>2022</year><volume>13</volume><fpage>5503</fpage><pub-id pub-id-type="doi">10.1038/s41467-022-33179-y</pub-id><pub-id pub-id-type="pmid">36127344</pub-id>
+</element-citation><mixed-citation id="mc-CR43" publication-type="journal">Wang, H., Yeh, H.-C. &#x00026; Kamenev, A. Many-body localization enables iterative quantum optimization. <italic>Nat. Commun.</italic><bold>13</bold>, 5503. 10.1038/s41467-022-33179-y (2022).<pub-id pub-id-type="pmid">36127344</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR44"><label>44.</label><mixed-citation publication-type="other">Perdomo,A., Venegas-Andraca, S.&#x000a0;E., &#x00026; Aspuru-Guzik,A. A study of heuristic guesses for adiabatic quantum computation (2010). 10.48550/arXiv.0807.0354. <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/0807.0354">arXiv:0807.0354</ext-link> [quant-ph]</mixed-citation></ref><ref id="CR45"><label>45.</label><citation-alternatives><element-citation id="ec-CR45" publication-type="journal"><person-group person-group-type="author"><name><surname>Chancellor</surname><given-names>N</given-names></name></person-group><article-title>Modernizing quantum annealing using local searches</article-title><source>New J. Phys.</source><year>2017</year><volume>19</volume><fpage>023024</fpage><pub-id pub-id-type="doi">10.1088/1367-2630/aa59c4</pub-id></element-citation><mixed-citation id="mc-CR45" publication-type="journal">Chancellor, N. Modernizing quantum annealing using local searches. <italic>New J. Phys.</italic><bold>19</bold>, 023024. 10.1088/1367-2630/aa59c4 (2017).</mixed-citation></citation-alternatives></ref><ref id="CR46"><label>46.</label><citation-alternatives><element-citation id="ec-CR46" publication-type="journal"><person-group person-group-type="author"><name><surname>Cao</surname><given-names>C</given-names></name><name><surname>Xue</surname><given-names>J</given-names></name><name><surname>Shannon</surname><given-names>N</given-names></name><name><surname>Joynt</surname><given-names>R</given-names></name></person-group><article-title>Speedup of the quantum adiabatic algorithm using delocalization catalysis</article-title><source>Phys. Rev. Res.</source><year>2021</year><volume>3</volume><fpage>013092</fpage><pub-id pub-id-type="doi">10.1103/PhysRevResearch.3.013092</pub-id></element-citation><mixed-citation id="mc-CR46" publication-type="journal">Cao, C., Xue, J., Shannon, N. &#x00026; Joynt, R. Speedup of the quantum adiabatic algorithm using delocalization catalysis. <italic>Phys. Rev. Res.</italic><bold>3</bold>, 013092. 10.1103/PhysRevResearch.3.013092 (2021).</mixed-citation></citation-alternatives></ref><ref id="CR47"><label>47.</label><citation-alternatives><element-citation id="ec-CR47" publication-type="journal"><person-group person-group-type="author"><name><surname>Pal</surname><given-names>A</given-names></name><name><surname>Huse</surname><given-names>DA</given-names></name></person-group><article-title>Many-body localization phase transition</article-title><source>Phys. Rev. B</source><year>2010</year><volume>82</volume><fpage>174411</fpage><pub-id pub-id-type="doi">10.1103/PhysRevB.82.174411</pub-id></element-citation><mixed-citation id="mc-CR47" publication-type="journal">Pal, A. &#x00026; Huse, D. A. Many-body localization phase transition. <italic>Phys. Rev. B</italic><bold>82</bold>, 174411. 10.1103/PhysRevB.82.174411 (2010).</mixed-citation></citation-alternatives></ref><ref id="CR48"><label>48.</label><citation-alternatives><element-citation id="ec-CR48" publication-type="journal"><person-group person-group-type="author"><name><surname>Gornyi</surname><given-names>IV</given-names></name><name><surname>Mirlin</surname><given-names>AD</given-names></name><name><surname>Polyakov</surname><given-names>DG</given-names></name></person-group><article-title>Many-body delocalization transition and relaxation in a quantum dot</article-title><source>Phys. Rev. B</source><year>2016</year><volume>93</volume><fpage>125419</fpage><pub-id pub-id-type="doi">10.1103/PhysRevB.93.125419</pub-id></element-citation><mixed-citation id="mc-CR48" publication-type="journal">Gornyi, I. V., Mirlin, A. D. &#x00026; Polyakov, D. G. Many-body delocalization transition and relaxation in a quantum dot. <italic>Phys. Rev. B</italic><bold>93</bold>, 125419. 10.1103/PhysRevB.93.125419 (2016).</mixed-citation></citation-alternatives></ref><ref id="CR49"><label>49.</label><citation-alternatives><element-citation id="ec-CR49" publication-type="journal"><person-group person-group-type="author"><name><surname>Mukherjee</surname><given-names>S</given-names></name><name><surname>Nag</surname><given-names>S</given-names></name><name><surname>Garg</surname><given-names>A</given-names></name></person-group><article-title>Many-body localization-delocalization transition in the quantum Sherrington-Kirkpatrick model</article-title><source>Phys. Rev. B</source><year>2018</year><volume>97</volume><fpage>144202</fpage><pub-id pub-id-type="doi">10.1103/PhysRevB.97.144202</pub-id></element-citation><mixed-citation id="mc-CR49" publication-type="journal">Mukherjee, S., Nag, S. &#x00026; Garg, A. Many-body localization-delocalization transition in the quantum Sherrington-Kirkpatrick model. <italic>Phys. Rev. B</italic><bold>97</bold>, 144202. 10.1103/PhysRevB.97.144202 (2018).</mixed-citation></citation-alternatives></ref><ref id="CR50"><label>50.</label><citation-alternatives><element-citation id="ec-CR50" publication-type="journal"><person-group person-group-type="author"><name><surname>Palassini</surname><given-names>M</given-names></name><name><surname>Young</surname><given-names>AP</given-names></name></person-group><article-title>Triviality of the Ground State Structure in Ising Spin Glasses</article-title><source>Phys. Rev. Lett.</source><year>1999</year><volume>83</volume><fpage>5126</fpage><pub-id pub-id-type="doi">10.1103/PhysRevLett.83.5126</pub-id></element-citation><mixed-citation id="mc-CR50" publication-type="journal">Palassini, M. &#x00026; Young, A. P. Triviality of the Ground State Structure in Ising Spin Glasses. <italic>Phys. Rev. Lett.</italic><bold>83</bold>, 5126. 10.1103/PhysRevLett.83.5126 (1999) <ext-link ext-link-type="uri" xlink:href="http://arxiv.org/abs/cond-mat/9906323">arxiv:cond-mat/9906323</ext-link>.</mixed-citation></citation-alternatives></ref><ref id="CR51"><label>51.</label><citation-alternatives><element-citation id="ec-CR51" publication-type="journal"><person-group person-group-type="author"><name><surname>Marinari</surname><given-names>E</given-names></name><name><surname>Parisi</surname><given-names>G</given-names></name></person-group><article-title>Effects of changing the boundary conditions on the ground state of Ising spin glasses</article-title><source>Phys. Rev. B</source><year>2000</year><volume>62</volume><fpage>11677</fpage><pub-id pub-id-type="doi">10.1103/PhysRevB.62.11677</pub-id></element-citation><mixed-citation id="mc-CR51" publication-type="journal">Marinari, E. &#x00026; Parisi, G. Effects of changing the boundary conditions on the ground state of Ising spin glasses. <italic>Phys. Rev. B</italic><bold>62</bold>, 11677. 10.1103/PhysRevB.62.11677 (2000).</mixed-citation></citation-alternatives></ref><ref id="CR52"><label>52.</label><citation-alternatives><element-citation id="ec-CR52" publication-type="journal"><person-group person-group-type="author"><name><surname>Marinari</surname><given-names>E</given-names></name><name><surname>Parisi</surname><given-names>G</given-names></name></person-group><article-title>Effects of a Bulk Perturbation on the Ground State of 3D Ising Spin Glasses</article-title><source>Phys. Rev. Lett.</source><year>2001</year><volume>86</volume><fpage>3887</fpage><pub-id pub-id-type="doi">10.1103/PhysRevLett.86.3887</pub-id><pub-id pub-id-type="pmid">11329349</pub-id>
+</element-citation><mixed-citation id="mc-CR52" publication-type="journal">Marinari, E. &#x00026; Parisi, G. Effects of a Bulk Perturbation on the Ground State of 3D Ising Spin Glasses. <italic>Phys. Rev. Lett.</italic><bold>86</bold>, 3887. 10.1103/PhysRevLett.86.3887 (2001).<pub-id pub-id-type="pmid">11329349</pub-id>
+</mixed-citation></citation-alternatives></ref><ref id="CR53"><label>53.</label><mixed-citation publication-type="other">Boothby, K., Bunyk, P., Raymond, J., &#x00026; Roy, A. Next-generation topology of d-wave quantum processors. 10.48550/arXiv.2003.00133</mixed-citation></ref><ref id="CR54"><label>54.</label><citation-alternatives><element-citation id="ec-CR54" publication-type="journal"><person-group person-group-type="author"><name><surname>Misra-Spieldenner</surname><given-names>A</given-names></name><name><surname>Bode</surname><given-names>T</given-names></name><name><surname>Schuhmacher</surname><given-names>PK</given-names></name><name><surname>Stollenwerk</surname><given-names>T</given-names></name><name><surname>Bagrets</surname><given-names>D</given-names></name><name><surname>Wilhelm</surname><given-names>FK</given-names></name></person-group><article-title>Mean-field approximate optimization algorithm</article-title><source>PRX Quantum</source><year>2023</year><pub-id pub-id-type="doi">10.1103/PRXQuantum.4.030335</pub-id></element-citation><mixed-citation id="mc-CR54" publication-type="journal">Misra-Spieldenner, A. et al. Mean-field approximate optimization algorithm. <italic>PRX Quantum</italic>[SPACE]10.1103/PRXQuantum.4.030335 (2023).</mixed-citation></citation-alternatives></ref></ref-list></back></article>
