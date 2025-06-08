@@ -1,28 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <title>🩺 Medical Spellchecker</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <style>
-    body {
-    background: url('/static/background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    margin: 0;
-    padding: 0;
-  }
-    .highlight {
-      background-color: #fff3cd;
-      border-bottom: 2px dashed #ffc107;
-      cursor: pointer;
-    }
-    .suggestion-box {
-      font-size: 0.9em;
-    }
-  </style>
+  <link rel="stylesheet" href="/static/css/style.css">
 </head>
+
 <body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -30,15 +17,15 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <a class="navbar-brand" href="#">
-<img src="/favicon.ico" alt="" width="30" height="30" class="d-inline-block align-text-top">
-        S2-24_AIMLCZG519 - NLP Applications </a>
+          <img src="/favicon.ico" alt="" width="30" height="30" class="d-inline-block align-text-top">
+          S2-24_AIMLCZG519 - NLP Applications </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <li class="nav-item active">
-          <a class="nav-link" href="https://taxila-aws.bits-pilani.ac.in/mod/assign/view.php?id=260441">Assignment 1<span
-              class="sr-only">(Problem Statement 14)</span></a>
+          <a class="nav-link" href="https://taxila-aws.bits-pilani.ac.in/mod/assign/view.php?id=260441">Assignment
+            1<span class="sr-only">(Problem Statement 14)</span></a>
         </li>
 
         <!-- Modal -->
@@ -50,8 +37,10 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <p><strong>🩺 Medical Spellchecker</strong> is an NLP-powered tool built for identifying and correcting misspellings in clinical or scientific text relevant to the medical domain.</p>
-                <p>This application is developed as part of the <strong>BITS Pilani WILP M.Tech program (AIMLCZG519 - NLP Applications) - Assignment-1_Problem Statement-14.</strong></p>
+                <p><strong>🩺 Medical Spellchecker</strong> is an NLP-powered tool built for identifying and correcting
+                  misspellings in clinical or scientific text relevant to the medical domain.</p>
+                <p>This application is developed as part of the <strong>BITS Pilani WILP M.Tech program (AIMLCZG519 -
+                    NLP Applications) - Assignment-1_Problem Statement-14.</strong></p>
                 <p>Models used: Bigram and Trigram-based language models.</p>
                 <hr>
                 <p style="text-align: center">Group No. <strong>120</strong></p>
@@ -96,8 +85,8 @@
                       <td>2023AC05815</td>
                       <td>100%</td>
                     </tr>
-                  </thead>
-                </tbody>
+                    </thead>
+                  </tbody>
                 </table>
               </div>
               <div class="modal-footer">
@@ -114,14 +103,16 @@
 
       <button type="button" class="btn btn-outline-info me-3" data-bs-toggle="modal" data-bs-target="#infoModal">
         ℹ️ About This Tool
-        </button>
+      </button>
 
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="https://bits-pilani-wilp.ac.in/m-tech/artificial-intelligence-and-machine-learning.php">BITS Pilani WILP | M.Tech - ML & AI 🏫</a>
-      </li>
-    </ul>
-  </div>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link"
+            href="https://bits-pilani-wilp.ac.in/m-tech/artificial-intelligence-and-machine-learning.php">BITS Pilani
+            WILP | M.Tech - ML & AI 🏫</a>
+        </li>
+      </ul>
+    </div>
   </nav>
 
   <div class="container mt-5">
@@ -129,7 +120,7 @@
     <form id="spellcheck-form">
       <div class="mb-3">
         <h5>
-        <label for="model-select" class="form-label"><strong> 🛠 Select Model:</strong></label>
+          <label for="model-select" class="form-label"><strong> 🛠 Select Model:</strong></label>
         </h5>
         <select class="form-select" id="model-select">
           <option value="bigram">Bigram</option>
@@ -139,109 +130,79 @@
 
       <div class="mb-3">
         <h5>
-        <label for="text-input" class="form-label"><strong> 📝 Enter Text:</strong></label>
+          <label for="text-input" class="form-label"><strong> 📝 Enter Text:</strong></label>
         </h5>
         <textarea class="form-control" id="text-input" rows="6"></textarea>
       </div>
 
       <div class="mb-3">
         <h5>
-        <label for="file-input" class="form-label"><strong>📄 Upload File <strong>(.txt or .docx)</strong></strong>:</label>
-        <h5>
-        <input class="form-control" type="file" id="file-input" accept=".txt,.docx">
+          <label for="file-input" class="form-label"><strong>📄 Upload File <strong>(.txt or
+                .docx)</strong></strong>:</label>
+          <h5>
+            <input class="form-control" type="file" id="file-input" accept=".txt,.docx">
       </div>
 
       <button type="submit" class="btn btn-primary">Check Spelling 🚀</button>
-      <a href="#" id="download-btn" class="btn btn-success d-none" download="corrected_output.txt">Download Corrected File 📩</a>
+      <a href="#" id="download-btn" class="btn btn-success d-none" download="corrected_output.txt">Download Corrected
+        File 📩</a>
     </form>
+
+    <!-- Batch Processing Section -->
+    <div class="mt-5">
+      <h4><strong>📁 Batch File Processing:</strong></h4>
+      <div class="card">
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="batch-files" class="form-label">Select multiple files (.txt or .docx):</label>
+            <input class="form-control" type="file" id="batch-files" multiple accept=".txt,.docx">
+          </div>
+          <button id="batch-process-btn" class="btn btn-info">Process All Files 🔄</button>
+          <div id="batch-progress" class="mt-3 d-none">
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%">
+                0%</div>
+            </div>
+            <p class="mt-2">Processing: <span id="current-file"></span></p>
+          </div>
+          <div id="batch-results" class="mt-3"></div>
+        </div>
+      </div>
+    </div>
 
     <hr class="my-4">
 
     <h4><strong>✅ Corrected Text:</strong></h4>
     <div id="corrected-output" class="p-3 bg-white border rounded"></div>
     <br>
-    <h6>💡 <strong>Hover + click</strong> over the highlighted corrections to see the confidence scores for each correction.</h6>
+    <h6>💡 <strong>Hover</strong> over highlighted words to see suggestions. <strong>Click</strong> to lock the popup
+      open (click again or elsewhere to close).</h6>
+
+    <!-- Statistics Section -->
+    <div id="statistics-section" class="mt-4 d-none">
+      <h4><strong>📊 Correction Statistics:</strong></h4>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Error Summary</h5>
+              <div id="error-summary"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Error Types Distribution</h5>
+              <div id="error-types"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <script>
-    const form = document.getElementById('spellcheck-form');
-    const fileInput = document.getElementById('file-input');
-    const textInput = document.getElementById('text-input');
-    const correctedOutput = document.getElementById('corrected-output');
-    const downloadBtn = document.getElementById('download-btn');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      correctedOutput.innerHTML = 'Checking...💫 This may take a few seconds, we appreciate your patience.';
-      downloadBtn.classList.add('d-none');
-
-      const model = document.getElementById('model-select').value;
-      let response;
-
-      if (fileInput.files.length > 0) {
-        const formData = new FormData();
-        formData.append('file', fileInput.files[0]);
-        formData.append('model_type', model);
-
-        response = await fetch('/api/upload', {
-          method: 'POST',
-          body: formData
-        });
-      } else {
-        response = await fetch('/api/spellcheck', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            text: textInput.value,
-            model_type: model
-          })
-        });
-      }
-
-      const data = await response.json();
-      if (data.corrected_text) {
-        correctedOutput.innerHTML = highlightErrors(data.corrected_text, data.errors);
-        activatePopovers();
-
-        const blob = new Blob([data.corrected_text], { type: 'text/plain' });
-        const url = URL.createObjectURL(blob);
-        downloadBtn.href = url;
-        downloadBtn.classList.remove('d-none');
-      } else {
-        correctedOutput.innerText = 'Error processing text.';
-      }
-    });
-
-    function highlightErrors(correctedText, errors) {
-      const tokens = correctedText.split(/\s+/);
-      const highlighted = tokens.map((token, idx) => {
-        const err = errors?.find(e => e.position === idx);
-        if (!err) return token;
-
-        const suggestionsHTML = err.suggestions.map(s =>
-          `${s.word} [${(s.score * 100).toFixed(1)}%]`
-        ).join('<br>');
-
-        return `
-          <span class="highlight" 
-                data-bs-toggle="popover" 
-                data-bs-html="true" 
-                data-bs-content="${suggestionsHTML}"
-                title="Suggestions for '${err.original}'"
-          >${token}</span>`;
-      });
-
-      return highlighted.join(' ');
-    }
-
-    function activatePopovers() {
-      const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
-      popoverTriggerList.map(el => new bootstrap.Popover(el));
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      activatePopovers(); // in case of static content
-    });
-  </script>
+  <script src="/static/js/script.js"></script>
 </body>
+
 </html>

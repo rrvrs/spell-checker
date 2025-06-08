@@ -1,5 +1,3 @@
-# backend/utils/file_handler.py
-
 import os
 from docx import Document
 
