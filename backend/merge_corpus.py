@@ -1,15 +1,11 @@
-# backend/merge_corpus.py
-
 import os
 
 def merge_medical_corpus(pmc_file, gutenberg_dir, output_file):
     combined = []
 
-    # Load PMC abstracts
     with open(pmc_file, "r", encoding="utf-8") as f:
         combined += f.readlines()
 
-    # Load Gutenberg medical books
     for file in os.listdir(gutenberg_dir):
         if file.endswith(".txt"):
             with open(os.path.join(gutenberg_dir, file), "r", encoding="utf-8") as f:

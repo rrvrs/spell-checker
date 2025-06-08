@@ -1,5 +1,3 @@
-# backend/utils/helpers.py
-
 import os
 from collections import deque
 

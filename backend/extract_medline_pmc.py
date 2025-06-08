@@ -1,5 +1,3 @@
-# backend/extract_medline_pmc.py
-
 from bs4 import BeautifulSoup
 import os
 import glob

@@ -1,9 +1,6 @@
-# backend/build_gutenberg_medical_corpus.py
-
 import os
 from gutenbergpy.textget import get_text_by_id
 
-# List of medical book IDs (can be expanded)
 BOOK_IDS = {
     1566: "evolution_modern_medicine.txt",
     20200: "grays_anatomy.txt",
